@@ -1,0 +1,208 @@
+@use 'sass:math';
+
+@import './colors';
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+
+  &.field-inline {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .field-label {
+      display: inline-block;
+      padding-right: 10px;
+      padding-bottom: 0px;
+    }
+  }
+
+  .field-label {
+    display: flex;
+    font-weight: 600;
+    padding-bottom: 8px;
+    align-items: center;
+
+    .field-label-mandatory {
+      padding-left: 4px;
+      color: $error;
+    }
+  }
+
+  .field-message {
+    margin-top: 4px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    color: $pebble;
+
+    .field-helper-text {
+      font-size: 11px;
+      font-style: italic;
+    }
+
+    .field-counter {
+      font-size: 11px;
+      text-align: right;
+    }
+
+    .field-error-message {
+      font-size: 11px;
+      color: $error;
+    }
+  }
+}
+
+.field-highlighted {
+  color: $tangerine;
+}
+
+/*********/
+/* INPUT */
+/*********/
+
+input {
+  border-radius: 4px;
+  border: 1px solid $chalk;
+  padding: 6px 10px;
+  outline: 0;
+
+  &:not(.input-error):not(:disabled):focus,
+  &:not(.input-error):not(:disabled):active {
+    border: 1px solid $cerulean;
+  }
+
+  &.input-error {
+    border: 1px solid $error;
+  }
+
+  &:disabled {
+    border: 0px;
+    background-color: $chalk;
+    color: $pebble;
+  }
+}
+
+/************/
+/* TEXTAREA */
+/************/
+
+div.input-textarea-parent {
+  width: auto;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+}
+
+textarea {
+  flex: 1;
+  resize: none;
+  min-height: 80px;
+  max-height: 200px;
+  border-radius: 4px;
+  border: 1px solid $chalk;
+  padding: 6px 10px;
+  outline: 0;
+
+  &:not(.input-error):not(:disabled):focus,
+  &:not(.input-error):not(:disabled):active {
+    border: 1px solid $cerulean;
+  }
+
+  &.input-error {
+    border: 1px solid $error;
+  }
+
+  &:disabled {
+    border: 0px;
+    background-color: $chalk;
+    color: $pebble;
+  }
+}
+
+/**************/
+/* Field size */
+/**************/
+
+.field {
+  display: flex;
+}
+
+.field-size-0,
+.field-label-size-0,
+.field-input-size-0 {
+  width: 0;
+}
+
+.field-size-1,
+.field-label-size-1,
+.field-input-size-1 {
+  width: percentage(math.div(1, 12));
+}
+
+.field-size-2,
+.field-label-size-2,
+.field-input-size-2 {
+  width: percentage(math.div(2, 12));
+}
+
+.field-size-3,
+.field-label-size-3,
+.field-input-size-3 {
+  width: percentage(math.div(3, 12));
+}
+
+.field-size-4,
+.field-label-size-4,
+.field-input-size-4 {
+  width: percentage(math.div(4, 12));
+}
+
+.field-size-5,
+.field-label-size-5,
+.field-input-size-5 {
+  width: percentage(math.div(5, 12));
+}
+
+.field-size-6,
+.field-label-size-6,
+.field-input-size-6 {
+  width: percentage(math.div(6, 12));
+}
+
+.field-size-7,
+.field-label-size-7,
+.field-input-size-7 {
+  width: percentage(math.div(7, 12));
+}
+
+.field-size-8,
+.field-label-size-8,
+.field-input-size-8 {
+  width: percentage(math.div(8, 12));
+}
+
+.field-size-9,
+.field-label-size-9,
+.field-input-size-9 {
+  width: percentage(math.div(9, 12));
+}
+
+.field-size-10,
+.field-label-size-10,
+.field-input-size-10 {
+  width: percentage(math.div(10, 12));
+}
+
+.field-size-11,
+.field-label-size-11,
+.field-input-size-11 {
+  width: percentage(math.div(11, 12));
+}
+
+.field-size-12,
+.field-input-size-12,
+.field-label-size-12 {
+  width: percentage(math.div(12, 12));
+}
