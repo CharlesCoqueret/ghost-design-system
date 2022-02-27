@@ -2,7 +2,7 @@ import React, { ReactElement } from 'react';
 import { Menu, MenuDivider, MenuItem, MenuDirection, MenuAlign } from '@szhsin/react-menu';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import classNames from 'classnames';
+import classnames from 'classnames';
 
 import { Tooltip } from '../../Atoms';
 import { IItemListProps } from './ItemList';
@@ -57,11 +57,11 @@ const Button = (props: IButtonProps): ReactElement => {
       type={type}
       onClick={onClick}
       disabled={loading || disabled}
-      className={classNames('button-content', className)}
+      className={classnames('button-content', className)}
       color={color}>
       {(icon !== undefined || loading !== false) && (
         <div key='icon' className='button-icon-container'>
-          {loading && <FontAwesomeIcon icon={['fal', 'spinner']} /*spin*/ size='1x' className='button-icon' />}
+          {loading && <FontAwesomeIcon icon={['fal', 'spinner']} spin size='1x' className='button-icon' />}
           {!loading && icon && <FontAwesomeIcon icon={icon} size='1x' className='button-icon' />}
         </div>
       )}
@@ -90,7 +90,7 @@ const Button = (props: IButtonProps): ReactElement => {
   return (
     <Tooltip direction={tooltipDirection} tooltip={label ? undefined : tooltip}>
       {hasMenu ? (
-        <Menu menuButton={button} align={dropdownAlign} className={className}>
+        <Menu menuButton={button} align={dropdownAlign} className={classnames('button', className)}>
           {itemList?.map((item): ReactElement => {
             if (item.hidden) return <></>;
             return (

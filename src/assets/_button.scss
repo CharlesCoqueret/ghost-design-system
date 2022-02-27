@@ -81,3 +81,18 @@
     margin: auto 5px;
   }
 }
+
+.button {
+  .szh-menu__item {
+    background-color: $white;
+    color: $charcoal;
+  }
+  .szh-menu__item--hover {
+    background-color: $chalk;
+    color: $charcoal;
+  }
+  .szh-menu__item--active {
+    background-color: $primary;
+    color: $white;
+  }
+}
