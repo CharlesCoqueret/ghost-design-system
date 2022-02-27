@@ -1,0 +1,127 @@
+import React, { ReactElement, useRef, useState } from 'react';
+import classNames from 'classnames';
+
+import { useRunAfterUpdate } from '../../../hooks/use-run-after-update';
+
+export interface ITextAreaInputProps {
+  /** Disabled field (optional, default: false) */
+  disabled?: boolean;
+  /** Size of the field in a 12 column grid (optional, default: undefined) */
+  fieldSize?: number;
+  /** Highlighted field (optional, default: false) */
+  highlighted?: boolean;
+  /** Class for the input (optional, default: undefined) */
+  inputClassName?: string;
+  /** Input string value (optional, default: undefined) */
+  inputValue?: string;
+  /** Is in Error (optional, default: false) */
+  isInError?: boolean;
+  /** Maximum length of the textfield (optional, default: undefined) */
+  maxLength?: number;
+  /** Minimum length of textfield (optional, default: undefined) */
+  minLength?: number;
+  /** Name of text field */
+  name: string;
+  /** Handler of value changes (optional, default: undefined) */
+  onChange?: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
+  /** Placeholder value (optional, default: undefined) */
+  placeholder?: string;
+  /** Read only field (optional, default: false) */
+  readOnly?: boolean;
+}
+
+const TextAreaInput = (props: ITextAreaInputProps): ReactElement => {
+  const {
+    disabled,
+    isInError,
+    fieldSize,
+    highlighted,
+    inputClassName,
+    inputValue,
+    maxLength,
+    minLength,
+    name,
+    onChange,
+    placeholder,
+    readOnly,
+  } = props;
+
+  /**
+   * Mecanics to update the text area height
+   */
+  const runAfterUpdate = useRunAfterUpdate();
+  const textAreaRef = useRef<HTMLTextAreaElement>(null);
+  const [textAreaHeight, setTextAreaHeight] = useState('auto');
+
+  const updateHeight = () => {
+    setTextAreaHeight(`${textAreaRef.current?.scrollHeight}px`);
+  };
+
+  /**
+   * Handler of changes
+   *
+   * @param event input event
+   */
+  const onChangeHandler = (event: React.ChangeEvent<HTMLTextAreaElement>): void => {
+    setTextAreaHeight('auto');
+    runAfterUpdate(updateHeight);
+
+    if (onChange) {
+      onChange(event);
+    }
+  };
+
+  if (readOnly) {
+    return (
+      <div
+        className={classNames(
+          inputClassName,
+          'field',
+          'input-textarea-field-read-only',
+          fieldSize && `field-input-size-${fieldSize}`,
+          highlighted && `field-highlighted`,
+        )}>
+        {inputValue}
+      </div>
+    );
+  }
+  return (
+    <div className={classNames('input-textarea-parent', fieldSize && `field-input-size-${fieldSize}`)}>
+      <textarea
+        className={classNames(inputClassName, 'field', 'input-textarea-field', {
+          'input-error': isInError,
+        })}
+        ref={textAreaRef}
+        rows={1}
+        style={{
+          height: textAreaHeight,
+        }}
+        id={name}
+        name={name}
+        placeholder={placeholder}
+        maxLength={maxLength}
+        minLength={minLength}
+        onChange={onChangeHandler}
+        disabled={disabled}
+        readOnly={readOnly}
+        value={inputValue}
+      />
+    </div>
+  );
+};
+
+TextAreaInput.defaultProps = {
+  disabled: false,
+  fieldSize: undefined,
+  highlighted: false,
+  inputClassName: undefined,
+  inputValue: undefined,
+  isInError: false,
+  maxLength: undefined,
+  minLength: undefined,
+  onChange: undefined,
+  placeholder: undefined,
+  readOnly: false,
+};
+
+export default TextAreaInput;

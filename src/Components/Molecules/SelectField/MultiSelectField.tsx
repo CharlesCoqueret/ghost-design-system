@@ -1,11 +1,15 @@
-import React, { useState } from 'react';
-import classNames from 'classnames';
+import React from 'react';
+import classnames from 'classnames';
 
-import { GenericField } from '../GenericField/';
+import { GenericField } from '../../Atoms/GenericField';
+import { IOption } from './types';
+import { MultiSelect } from '../../Atoms/Select';
 
-export interface ITextFieldProps {
+export interface IMultiSelectFieldProps {
   /** Disabled field (optional, default: false) */
   disabled?: boolean;
+  /** Empty option available */
+  emptyOption?: boolean;
   /** Error message (optional, default: undefined) */
   errorMessage?: string;
   /** Class for the field surrounding the input (optional, default: undefined) */
@@ -21,21 +25,19 @@ export interface ITextFieldProps {
   /** Class for the input (optional, default: undefined) */
   inputClassName?: string;
   /** Input string value (optional, default: undefined) */
-  inputValue?: string;
+  inputValue: Readonly<Array<IOption>> | Array<IOption> | undefined;
   /** Label (optional, default: undefined) */
   label?: string;
   /** Size of the field in a 12 column grid (optional, default: undefined) */
   labelSize?: number;
   /** Mandatory field (optional, default: false) */
   mandatory?: boolean;
-  /** Maximum length of the textfield (optional, default: undefined) */
-  maxLength?: number;
-  /** Minimum length of textfield (optional, default: undefined) */
-  minLength?: number;
   /** Name of text field */
   name: string;
   /** Handler of value changes (optional, default: undefined) */
-  onChange?: (newValue: string) => void;
+  onChange?: (newValue: Readonly<Array<IOption>> | null | undefined) => void;
+  /** Options available to be picked from */
+  options: Array<IOption>;
   /** Placeholder value (optional, default: undefined) */
   placeholder?: string;
   /** Read only field (optional, default: false) */
@@ -43,17 +45,17 @@ export interface ITextFieldProps {
 }
 
 /**
- * Text field component
+ * Select field component
  *
- * Text field wrapped in a generic field ( @see GenericField ).
+ * Select field wrapped in a generic field ( @see GenericField ).
  *
  * Calls @param onChange for every input change.
  *
- * When the @param maxLength , the letter counter is displayed.
  */
-export const TextField = (props: ITextFieldProps): React.ReactElement => {
+export const SelectField = (props: IMultiSelectFieldProps): React.ReactElement => {
   const {
     disabled,
+    // emptyOption,
     errorMessage,
     fieldClassName,
     fieldSize,
@@ -65,27 +67,12 @@ export const TextField = (props: ITextFieldProps): React.ReactElement => {
     label,
     labelSize,
     mandatory,
-    maxLength,
-    minLength,
     name,
     onChange,
+    options,
     placeholder,
     readOnly,
   } = props;
-
-  const [inputLength, setInputLength] = useState<number>(inputValue ? inputValue.toString().length : 0);
-
-  /**
-   * Handler of changes
-   *
-   * @param event input event
-   */
-  const onChangeHandler = (event: React.ChangeEvent<HTMLInputElement>): void => {
-    setInputLength(event.target.value.length);
-    if (onChange) {
-      onChange(event.target.value);
-    }
-  };
 
   return (
     <GenericField
@@ -97,49 +84,30 @@ export const TextField = (props: ITextFieldProps): React.ReactElement => {
       label={label}
       labelSize={labelSize}
       mandatory={mandatory}
-      readOnly={readOnly}
-      maxLength={maxLength}
-      inputLength={inputLength}>
-      {readOnly ? (
-        <div
-          className={classNames(
-            inputClassName,
-            'field',
-            'input-text-field-read-only',
-            fieldSize && `field-input-size-${fieldSize}`,
-            highlighted && `field-highlighted`,
-          )}>
-          {inputValue}
-        </div>
-      ) : (
-        <input
-          className={classNames(
-            inputClassName,
-            'field',
-            'input-text-field',
-            fieldSize && `field-input-size-${fieldSize}`,
-            {
-              'input-error': errorMessage,
-            },
-          )}
-          id={name}
-          name={name}
-          type='text'
-          placeholder={placeholder}
-          maxLength={maxLength}
-          minLength={minLength}
-          onChange={onChangeHandler}
-          disabled={disabled}
-          readOnly={readOnly}
-          value={inputValue}
-        />
-      )}
+      readOnly={readOnly}>
+      <MultiSelect
+        className={classnames(
+          inputClassName,
+          'field',
+          'input-select-field',
+          fieldSize && `field-input-size-${fieldSize}`,
+        )}
+        isInError={errorMessage !== undefined}
+        name={name}
+        placeholder={placeholder}
+        options={options}
+        disabled={disabled}
+        selectedOptions={inputValue}
+        onChange={onChange}
+        readOnly={readOnly}
+      />
     </GenericField>
   );
 };
 
-TextField.defaultProps = {
+SelectField.defaultProps = {
   disabled: false,
+  emptyOption: false,
   errorMessage: undefined,
   fieldClassName: undefined,
   fieldSize: undefined,
@@ -151,11 +119,9 @@ TextField.defaultProps = {
   label: undefined,
   labelSize: undefined,
   mandatory: false,
-  maxLength: undefined,
-  minLength: undefined,
   onChange: undefined,
   placeholder: undefined,
   readOnly: false,
 };
 
-export default TextField;
+export default SelectField;

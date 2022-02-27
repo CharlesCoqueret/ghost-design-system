@@ -1,0 +1,23 @@
+@import '@szhsin/react-menu/dist/index.css';
+@import '@szhsin/react-menu/dist/transitions/slide.css';
+
+.tooltip-container {
+  .szh-menu {
+    background-color: $charcoal;
+    color: $white;
+    min-width: unset;
+    padding: 8px 10px;
+    max-width: 300px;
+    text-overflow: wrap;
+
+    .szh-menu__arrow {
+      border: none;
+      background-color: $charcoal;
+    }
+  }
+}
+
+.tooltip-parent {
+  width: fit-content;
+  height: fit-content;
+}

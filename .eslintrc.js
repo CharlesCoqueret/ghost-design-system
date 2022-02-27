@@ -12,7 +12,7 @@ module.exports = {
   },
   ignorePatterns: ['**/*.stories.tsx', 'webpack.*.js'],
   parser: '@typescript-eslint/parser',
-  plugins: ['react-hooks'],
+  plugins: ['react-hooks', 'prettier'],
   parserOptions: {
     ecmaVersion: 2018,
     ecmaFeatures: {
@@ -25,11 +25,20 @@ module.exports = {
     'plugin:react/recommended',
     'prettier/@typescript-eslint',
     'eslint-config-prettier',
+    'prettier',
   ],
   rules: {
+    '@typescript-eslint/naming-convention': [
+      rules.ON,
+      {
+        format: ['StrictPascalCase'],
+        prefix: ['I'],
+        selector: 'interface',
+      },
+    ],
     'react-hooks/rules-of-hooks': rules.ON,
     'react-hooks/exhaustive-deps': rules.OFF,
-    // 'prefer-spread': rules.WARN,
+    'prettier/prettier': rules.ON,
   },
   settings: {
     react: {

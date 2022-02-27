@@ -2,6 +2,7 @@ import React, { PropsWithChildren, ReactElement } from 'react';
 import classNames from 'classnames';
 
 import GenericFieldLabel from './GenericFieldLabel';
+import GenericFieldDescription from './GenericFieldDescrption';
 
 interface IGenericFieldProps {
   /** Error message (optional, default: undefined) */
@@ -54,24 +55,6 @@ const GenericField = (props: PropsWithChildren<IGenericFieldProps>): ReactElemen
     readOnly,
   } = props;
 
-  const message = (
-    helperText?: string,
-    maxLength?: number,
-    errorMessage?: string,
-    readOnly?: boolean,
-  ): ReactElement => {
-    if (!readOnly && errorMessage) {
-      return <div className='field-error-message'>{errorMessage}</div>;
-    }
-
-    return (
-      <>
-        <div className='field-helper-text'>{helperText}</div>
-        {!readOnly && maxLength && <div className='field-counter'>{`${inputLength} / ${maxLength}`}</div>}
-      </>
-    );
-  };
-
   return (
     <div
       className={classNames(
@@ -82,9 +65,14 @@ const GenericField = (props: PropsWithChildren<IGenericFieldProps>): ReactElemen
       )}>
       <GenericFieldLabel label={label} mandatory={mandatory} readOnly={readOnly} size={labelSize} />
       {children}
-      {!inline && (helperText || maxLength || errorMessage) && (
-        <div className='field-message'>{message(helperText, maxLength, errorMessage, readOnly)}</div>
-      )}
+      <GenericFieldDescription
+        errorMessage={errorMessage}
+        helperText={helperText}
+        inline={inline}
+        inputLength={inputLength}
+        maxLength={maxLength}
+        readOnly={readOnly}
+      />
     </div>
   );
 };

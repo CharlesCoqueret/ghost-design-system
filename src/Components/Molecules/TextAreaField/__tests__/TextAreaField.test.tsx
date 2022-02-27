@@ -60,7 +60,7 @@ describe('TextAreaField Component', () => {
     const { container } = render(<TextAreaField onChange={onChangeMock} name='NAME' />);
 
     const parentNode = container.querySelector('div.input-textarea-parent');
-    expect(parentNode).toHaveProperty('style.minHeight', 'auto');
+    expect(parentNode).toHaveProperty('style.minHeight', '');
 
     const inputNode = container.querySelector('textarea.field');
     expect(inputNode).not.toBeNull();

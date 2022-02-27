@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { TextAreaField, ITextAreaFieldProps } from './TextAreaField';
 
-import '../../assets/index.scss';
+import '../../../assets/index.scss';
 
 export default {
   title: 'Molecule/Textarea',
@@ -19,7 +19,7 @@ export const Default = Template.bind({});
 Default.args = {
   placeholder: 'Placeholder text',
   name: 'name',
-  label: 'Text field test',
+  label: 'Text field',
 };
 
 export const ReadOnly = Template.bind({});
@@ -62,7 +62,7 @@ Highlighted.args = {
 export const Disabled = Template.bind({});
 Disabled.args = {
   name: 'name',
-  label: 'Text field highlighted',
+  label: 'Text field disabled',
   inputValue: 'This is a disabled sample text',
   disabled: true,
   helperText: 'Helper text',

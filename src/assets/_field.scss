@@ -1,0 +1,71 @@
+@use 'sass:math';
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+
+  &.field-inline {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .field-label {
+      display: inline-block;
+      padding-right: 10px;
+      padding-bottom: 0px;
+    }
+  }
+
+  .field-label {
+    display: flex;
+    font-weight: 600;
+    padding-bottom: 8px;
+    align-items: center;
+
+    .field-label-mandatory {
+      padding-left: 4px;
+      color: $error;
+    }
+  }
+
+  .field-message {
+    margin-top: 4px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    color: $pebble;
+    font-size: 12px;
+
+    .field-helper-text {
+      font-style: italic;
+    }
+
+    .field-counter {
+      text-align: right;
+    }
+
+    .field-error-message {
+      color: $error;
+    }
+  }
+}
+
+.field-highlighted {
+  color: $tangerine;
+}
+
+/**************/
+/* Field size */
+/**************/
+
+.field {
+  display: flex;
+}
+
+@for $size from 0 through 12 {
+  .field-size-#{$size},
+  .field-label-size-#{$size},
+  .field-input-size-#{$size} {
+    width: percentage(math.div($size, 12));
+  }
+}

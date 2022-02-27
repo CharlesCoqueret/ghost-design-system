@@ -1,8 +1,6 @@
-import React, { useRef, useState } from 'react';
-import classNames from 'classnames';
+import React, { useState } from 'react';
 
-import { GenericField } from '../GenericField';
-import { useRunAfterUpdate } from '../../hooks/use-run-after-update';
+import { GenericField, TextAreaInput } from '../../Atoms';
 
 export interface ITextAreaFieldProps {
   /** Disabled field (optional, default: false) */
@@ -73,25 +71,11 @@ export const TextAreaField = (props: ITextAreaFieldProps): React.ReactElement =>
   const [inputLength, setInputLength] = useState<number>(inputValue ? inputValue.toString().length : 0);
 
   /**
-   * Mecanics to update the text area height
-   */
-  const runAfterUpdate = useRunAfterUpdate();
-  const textAreaRef = useRef<HTMLTextAreaElement>(null);
-  const [textAreaHeight, setTextAreaHeight] = useState('auto');
-
-  const updateHeight = () => {
-    setTextAreaHeight(`${textAreaRef.current?.scrollHeight}px`);
-  };
-
-  /**
    * Handler of changes
    *
    * @param event input event
    */
   const onChangeHandler = (event: React.ChangeEvent<HTMLTextAreaElement>): void => {
-    setTextAreaHeight('auto');
-    runAfterUpdate(updateHeight);
-
     setInputLength(event.target.value.length);
     if (onChange) {
       onChange(event.target.value);
@@ -110,40 +94,20 @@ export const TextAreaField = (props: ITextAreaFieldProps): React.ReactElement =>
       readOnly={readOnly}
       maxLength={maxLength}
       inputLength={inputLength}>
-      {readOnly ? (
-        <div
-          className={classNames(
-            inputClassName,
-            'field',
-            'input-textarea-field-read-only',
-            fieldSize && `field-input-size-${fieldSize}`,
-            highlighted && `field-highlighted`,
-          )}>
-          {inputValue}
-        </div>
-      ) : (
-        <div className={classNames('input-textarea-parent', fieldSize && `field-input-size-${fieldSize}`)}>
-          <textarea
-            className={classNames(inputClassName, 'field', 'input-textarea-field', {
-              'input-error': errorMessage,
-            })}
-            ref={textAreaRef}
-            rows={1}
-            style={{
-              height: textAreaHeight,
-            }}
-            id={name}
-            name={name}
-            placeholder={placeholder}
-            maxLength={maxLength}
-            minLength={minLength}
-            onChange={onChangeHandler}
-            disabled={disabled}
-            readOnly={readOnly}
-            value={inputValue}
-          />
-        </div>
-      )}
+      <TextAreaInput
+        disabled={disabled}
+        fieldSize={fieldSize}
+        highlighted={highlighted}
+        inputClassName={inputClassName}
+        inputValue={inputValue}
+        isInError={errorMessage !== undefined}
+        maxLength={maxLength}
+        minLength={minLength}
+        name={name}
+        onChange={onChangeHandler}
+        placeholder={placeholder}
+        readOnly={readOnly}
+      />
     </GenericField>
   );
 };

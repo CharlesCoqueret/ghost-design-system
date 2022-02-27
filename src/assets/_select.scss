@@ -1,0 +1,31 @@
+.select-container {
+  max-width: 100%;
+
+  .visible {
+    order: 1;
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .invisible {
+    order: 10;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  .toolbarWrapper {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    align-items: center;
+  }
+
+  .overflowStyle {
+    order: 20;
+    position: sticky;
+    right: 0;
+    white-space: nowrap;
+    min-width: 20px;
+    margin: 0px 4px;
+  }
+}
