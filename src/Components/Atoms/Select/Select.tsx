@@ -8,6 +8,7 @@ import { customStyles } from './selectStyles';
 export interface ISelectProps {
   className?: string;
   disabled?: boolean;
+  isClearable?: boolean;
   isInError?: boolean;
   maxMenuHeight?: number;
   name: string;
@@ -22,6 +23,7 @@ const Select = (props: ISelectProps): ReactElement => {
   const {
     className,
     disabled,
+    isClearable,
     isInError,
     maxMenuHeight,
     name,
@@ -41,7 +43,7 @@ const Select = (props: ISelectProps): ReactElement => {
     <div className={classnames(className, 'select-container')}>
       <ReactSelect<IOption, false>
         hideSelectedOptions={false}
-        isClearable
+        isClearable={isClearable}
         isDisabled={disabled}
         isSearchable
         maxMenuHeight={maxMenuHeight}
@@ -59,6 +61,7 @@ const Select = (props: ISelectProps): ReactElement => {
 
 Select.defaultProps = {
   disabled: false,
+  isClearable: false,
   isInError: false,
   maxMenuHeight: 300,
   placeholder: undefined,

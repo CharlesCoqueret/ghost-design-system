@@ -9,6 +9,7 @@ import classnames from 'classnames';
 export interface IMultiSelectProps {
   className?: string;
   disabled?: boolean;
+  isClearable?: boolean;
   isInError?: boolean;
   maxMenuHeight?: number;
   name: string;
@@ -41,6 +42,7 @@ const MultiSelect = (props: IMultiSelectProps): ReactElement => {
   const {
     className,
     disabled,
+    isClearable,
     isInError,
     maxMenuHeight,
     name,
@@ -67,7 +69,7 @@ const MultiSelect = (props: IMultiSelectProps): ReactElement => {
           MultiValueContainer,
         }}
         hideSelectedOptions={false}
-        isClearable
+        isClearable={isClearable}
         isDisabled={disabled}
         isMulti
         isSearchable
@@ -87,6 +89,7 @@ const MultiSelect = (props: IMultiSelectProps): ReactElement => {
 MultiSelect.defaultProps = {
   classname: undefined,
   disabled: false,
+  isClearable: false,
   isInError: false,
   maxMenuHeight: 300,
   placeholder: undefined,
