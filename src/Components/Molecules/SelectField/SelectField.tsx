@@ -25,6 +25,8 @@ export interface ISelectFieldProps {
   inputClassName?: string;
   /** Input string value (optional, default: undefined) */
   inputValue: IOption | undefined;
+  /** Provide the ability to clear the value (optional, default: false) */
+  isClearable?: boolean;
   /** Label (optional, default: undefined) */
   label?: string;
   /** Size of the field in a 12 column grid (optional, default: undefined) */
@@ -63,6 +65,7 @@ export const SelectField = (props: ISelectFieldProps): React.ReactElement => {
     inline,
     inputClassName,
     inputValue,
+    isClearable,
     label,
     labelSize,
     mandatory,
@@ -92,6 +95,7 @@ export const SelectField = (props: ISelectFieldProps): React.ReactElement => {
           fieldSize && `field-input-size-${fieldSize}`,
         )}
         isInError={errorMessage !== undefined}
+        isClearable={isClearable}
         name={name}
         placeholder={placeholder}
         options={options}
@@ -115,6 +119,7 @@ SelectField.defaultProps = {
   inline: false,
   inputClassName: undefined,
   inputValue: undefined,
+  isClearable: false,
   label: undefined,
   labelSize: undefined,
   mandatory: false,

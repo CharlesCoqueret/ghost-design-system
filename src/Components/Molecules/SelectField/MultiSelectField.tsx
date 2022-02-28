@@ -26,6 +26,8 @@ export interface IMultiSelectFieldProps {
   inputClassName?: string;
   /** Input string value (optional, default: undefined) */
   inputValue: Readonly<Array<IOption>> | Array<IOption> | undefined;
+  /** Provide the ability to clear the value (optional, default: false) */
+  isClearable?: boolean;
   /** Label (optional, default: undefined) */
   label?: string;
   /** Size of the field in a 12 column grid (optional, default: undefined) */
@@ -64,6 +66,7 @@ export const SelectField = (props: IMultiSelectFieldProps): React.ReactElement =
     inline,
     inputClassName,
     inputValue,
+    isClearable,
     label,
     labelSize,
     mandatory,
@@ -92,6 +95,7 @@ export const SelectField = (props: IMultiSelectFieldProps): React.ReactElement =
           'input-select-field',
           fieldSize && `field-input-size-${fieldSize}`,
         )}
+        isClearable={isClearable}
         isInError={errorMessage !== undefined}
         name={name}
         placeholder={placeholder}
@@ -116,6 +120,7 @@ SelectField.defaultProps = {
   inline: false,
   inputClassName: undefined,
   inputValue: undefined,
+  isClearable: false,
   label: undefined,
   labelSize: undefined,
   mandatory: false,
