@@ -1,9 +1,13 @@
 import React from 'react';
 import classnames from 'classnames';
 
-import { GenericField, SelectInput, IOption } from '../../Atoms';
+import { GenericField, DatePickerInput, WeekDayEnum, DateFormat } from '../../Atoms';
 
-export interface ISelectFieldProps {
+export interface IDatePickerFieldProps {
+  /** Calendar start week day (optional: default: WeekDayEnum.MONDAY )  */
+  calendarStartDay?: WeekDayEnum;
+  /** Date format */
+  dateFormat?: DateFormat;
   /** Disabled field (optional, default: false) */
   disabled?: boolean;
   /** Error message (optional, default: undefined) */
@@ -20,22 +24,22 @@ export interface ISelectFieldProps {
   inline?: boolean;
   /** Class for the input (optional, default: undefined) */
   inputClassName?: string;
-  /** Input string value (optional, default: undefined) */
-  inputValue: IOption | undefined;
+  /** Input date value (optional, default: undefined) */
+  inputValue?: Date | null;
   /** Provide the ability to clear the value (optional, default: false) */
   isClearable?: boolean;
   /** Label (optional, default: undefined) */
   label?: string;
   /** Size of the field in a 12 column grid (optional, default: undefined) */
   labelSize?: number;
+  /** Locale to display months and day (optional, default: undefined) */
+  locale?: string;
   /** Mandatory field (optional, default: false) */
   mandatory?: boolean;
   /** Name of text field */
   name: string;
   /** Handler of value changes (optional, default: undefined) */
-  onChange?: (newValue: IOption | null | undefined) => void;
-  /** Options available to be picked from */
-  options: Array<IOption>;
+  onChange?: (date: Date | null) => void;
   /** Placeholder value (optional, default: undefined) */
   placeholder?: string;
   /** Read only field (optional, default: false) */
@@ -43,15 +47,17 @@ export interface ISelectFieldProps {
 }
 
 /**
- * Select field component
+ * Date picker field component
  *
- * Select field wrapped in a generic field ( @see GenericField ).
+ * Date picker input wrapped in a generic field ( @see GenericField ).
  *
  * Calls @param onChange for every input change.
  *
  */
-export const SelectField = (props: ISelectFieldProps): React.ReactElement => {
+export const DatePickerField = (props: IDatePickerFieldProps): React.ReactElement => {
   const {
+    calendarStartDay,
+    dateFormat,
     disabled,
     errorMessage,
     fieldClassName,
@@ -67,7 +73,6 @@ export const SelectField = (props: ISelectFieldProps): React.ReactElement => {
     mandatory,
     name,
     onChange,
-    options,
     placeholder,
     readOnly,
   } = props;
@@ -83,19 +88,20 @@ export const SelectField = (props: ISelectFieldProps): React.ReactElement => {
       labelSize={labelSize}
       mandatory={mandatory}
       readOnly={readOnly}>
-      <SelectInput
+      <DatePickerInput
+        calendarStartDay={calendarStartDay}
         className={classnames(
-          inputClassName,
           'field',
-          'input-select-field',
+          'input-date-picker-field',
           fieldSize && `field-input-size-${fieldSize}`,
+          inputClassName,
         )}
+        dateFormat={dateFormat}
+        disabled={disabled}
         isInError={errorMessage !== undefined}
         isClearable={isClearable}
         name={name}
         placeholder={placeholder}
-        options={options}
-        disabled={disabled}
         inputValue={inputValue}
         onChange={onChange}
         readOnly={readOnly}
@@ -104,7 +110,7 @@ export const SelectField = (props: ISelectFieldProps): React.ReactElement => {
   );
 };
 
-SelectField.defaultProps = {
+DatePickerField.defaultProps = {
   disabled: false,
   errorMessage: undefined,
   fieldClassName: undefined,
@@ -123,4 +129,4 @@ SelectField.defaultProps = {
   readOnly: false,
 };
 
-export default SelectField;
+export default DatePickerField;

@@ -1,5 +1,18 @@
 import React, { PropsWithChildren, ReactElement, useRef } from 'react';
-import { ControlledMenu, MenuDirection, useMenuState } from '@szhsin/react-menu';
+import { ControlledMenu, useMenuState } from '@szhsin/react-menu';
+
+export enum MenuDirectionEnum {
+  LEFT = 'left',
+  RIGHT = 'right',
+  TOP = 'top',
+  BOTTOM = 'bottom',
+}
+
+export type MenuDirection =
+  | MenuDirectionEnum.LEFT
+  | MenuDirectionEnum.RIGHT
+  | MenuDirectionEnum.TOP
+  | MenuDirectionEnum.BOTTOM;
 
 export interface ITooltipProps {
   // Tooltip content (optional, default: undefined)

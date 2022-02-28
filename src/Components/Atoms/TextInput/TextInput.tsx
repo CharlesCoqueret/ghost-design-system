@@ -1,12 +1,12 @@
 import React, { ReactElement } from 'react';
-import classNames from 'classnames';
+import classnames from 'classnames';
 
 export interface ITextInputProps {
   /** Disabled field (optional, default: false) */
   disabled?: boolean;
   /** Size of the field in a 12 column grid (optional, default: undefined) */
   fieldSize?: number;
-  /** Highlighted field (optional, default: false) */
+  /** Highlight value in readonly mode (optional, default: false) */
   highlighted?: boolean;
   /** Class for the input (optional, default: undefined) */
   inputClassName?: string;
@@ -47,12 +47,14 @@ const TextInput = (props: ITextInputProps): ReactElement => {
   if (readOnly)
     return (
       <div
-        className={classNames(
-          inputClassName,
+        className={classnames(
           'field',
           'input-text-field-read-only',
           fieldSize && `field-input-size-${fieldSize}`,
-          highlighted && `field-highlighted`,
+          {
+            'field-highlighted': highlighted,
+          },
+          inputClassName,
         )}>
         {inputValue}
       </div>
@@ -60,9 +62,15 @@ const TextInput = (props: ITextInputProps): ReactElement => {
 
   return (
     <input
-      className={classNames(inputClassName, 'field', 'input-text-field', fieldSize && `field-input-size-${fieldSize}`, {
-        'input-error': isInError,
-      })}
+      className={classnames(
+        'field',
+        'input-text-field',
+        fieldSize && `field-input-size-${fieldSize}`,
+        {
+          'input-error': isInError && !disabled,
+        },
+        inputClassName,
+      )}
       id={name}
       name={name}
       type='text'

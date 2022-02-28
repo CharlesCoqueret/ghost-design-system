@@ -1,7 +1,7 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import Tooltip, { ITooltipProps } from './Tooltip';
+import Tooltip, { ITooltipProps, MenuDirectionEnum } from './Tooltip';
 
 export default {
   title: 'Atom/Tooltip',
@@ -27,32 +27,13 @@ const Template: ComponentStory<typeof Tooltip> = (args: ITooltipProps) => (
 
 export const Default = Template.bind({});
 Default.args = {
-  tooltip: 'Tooltip',
-};
-
-export const Right = Template.bind({});
-Right.args = {
-  tooltip: 'Tooltip on the right',
-  direction: 'right',
-};
-
-export const VeryLong = Template.bind({});
-VeryLong.args = {
-  tooltip: 'Very very very long tooltip on the beginning left of the component',
-  direction: 'right',
-};
-
-export const Component = Template.bind({});
-Component.args = {
   tooltip: (
-    <>
-      <p>- Item #1</p>
-      <p>- Item #2</p>
-      <p>- Item #3</p>
-    </>
+    <ul>
+      <li>Item #1</li>
+      <li>Item #2</li>
+      <li>Item #3</li>
+    </ul>
   ),
-  direction: 'right',
+  direction: MenuDirectionEnum.BOTTOM,
+  delay: 300,
 };
-
-export const Empty = Template.bind({});
-Empty.args = {};

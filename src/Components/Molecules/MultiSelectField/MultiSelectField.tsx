@@ -1,15 +1,11 @@
 import React from 'react';
 import classnames from 'classnames';
 
-import { GenericField } from '../../Atoms/GenericField';
-import { IOption } from './types';
-import { MultiSelect } from '../../Atoms/Select';
+import { GenericField, IOption, MultiSelectInput } from '../../Atoms';
 
 export interface IMultiSelectFieldProps {
   /** Disabled field (optional, default: false) */
   disabled?: boolean;
-  /** Empty option available */
-  emptyOption?: boolean;
   /** Error message (optional, default: undefined) */
   errorMessage?: string;
   /** Class for the field surrounding the input (optional, default: undefined) */
@@ -57,7 +53,6 @@ export interface IMultiSelectFieldProps {
 export const SelectField = (props: IMultiSelectFieldProps): React.ReactElement => {
   const {
     disabled,
-    // emptyOption,
     errorMessage,
     fieldClassName,
     fieldSize,
@@ -88,21 +83,21 @@ export const SelectField = (props: IMultiSelectFieldProps): React.ReactElement =
       labelSize={labelSize}
       mandatory={mandatory}
       readOnly={readOnly}>
-      <MultiSelect
+      <MultiSelectInput
         className={classnames(
           inputClassName,
           'field',
           'input-select-field',
           fieldSize && `field-input-size-${fieldSize}`,
         )}
+        disabled={disabled}
+        inputValue={inputValue}
         isClearable={isClearable}
         isInError={errorMessage !== undefined}
         name={name}
-        placeholder={placeholder}
-        options={options}
-        disabled={disabled}
-        selectedOptions={inputValue}
         onChange={onChange}
+        options={options}
+        placeholder={placeholder}
         readOnly={readOnly}
       />
     </GenericField>
@@ -111,7 +106,6 @@ export const SelectField = (props: IMultiSelectFieldProps): React.ReactElement =
 
 SelectField.defaultProps = {
   disabled: false,
-  emptyOption: false,
   errorMessage: undefined,
   fieldClassName: undefined,
   fieldSize: undefined,

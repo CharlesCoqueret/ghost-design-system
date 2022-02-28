@@ -1,11 +1,13 @@
 import alpha from 'color-alpha';
 import { StylesConfig } from 'react-select';
 
-import { IOption } from '../../Molecules/SelectField/types';
+import { IOption } from './types';
 
 interface ICustomStylesProps {
   controlErrorColor?: string;
   controlFocusColor?: string;
+  controlBackgroundColorDisabled?: string;
+  controlColorDisabled?: string;
   fontColor?: string;
   optionSelectedColor?: string;
   optionFocusColor?: string;
@@ -16,6 +18,8 @@ export const customStyles = (props: ICustomStylesProps = {}): StylesConfig<IOpti
   const {
     controlErrorColor = 'rgb(255,52,24);',
     controlFocusColor = 'rgb(1,82,129)',
+    controlBackgroundColorDisabled = 'rgb(228,228,228)',
+    controlColorDisabled = 'rgb(117,117,117)',
     fontColor = 'rgb(0,0,0)',
     optionFocusColor = 'rgb(228,228,228)',
     optionSelectedColor = 'rgb(38,186,212)',
@@ -26,6 +30,7 @@ export const customStyles = (props: ICustomStylesProps = {}): StylesConfig<IOpti
     control: (provided, state) => {
       let border = provided.border;
       let hover = { border: `1px solid ${controlFocusColor}` };
+      let disabled = {};
 
       if (state.isFocused) {
         border = `1px solid ${controlFocusColor}`;
@@ -36,12 +41,18 @@ export const customStyles = (props: ICustomStylesProps = {}): StylesConfig<IOpti
         hover = { border: `1px solid ${controlErrorColor}` };
       }
 
+      if (state.isDisabled) {
+        disabled = { backgroundColor: controlBackgroundColorDisabled, border: 'none' };
+      }
+
       return {
         ...provided,
         outline: 0,
         boxShadow: 'none',
         border,
+        ...disabled,
         ':hover': hover,
+        ':disabled': disabled,
       };
     },
     multiValue: (provided) => {
@@ -51,10 +62,16 @@ export const customStyles = (props: ICustomStylesProps = {}): StylesConfig<IOpti
       return { ...provided, textOverflow: 'unset', fontSize: 'unsert' };
     },
     input: (provided, state) => {
+      let multi = {};
+      let disabled = {};
+
       if (state.isMulti && state.hasValue) {
-        return { provided, order: 5, width: 'fit-content' };
+        multi = { order: 5, width: 'fit-content' };
       }
-      return provided;
+      if (state.isDisabled) {
+        disabled = { color: controlColorDisabled };
+      }
+      return { ...provided, ...multi, disabled };
     },
     option: (provided, state) => {
       let backgroundColor = provided.backgroundColor;

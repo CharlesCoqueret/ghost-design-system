@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import MultiSelect, { IMultiSelectProps } from './MultiSelect';
-import { IOption } from '../../Molecules/SelectField/types';
+import { IOption } from './types';
+import MultiSelectInput, { IMultiSelectInputProps } from './MultiSelectInput';
 
 const options = [
   { label: 'selection label 0', value: 'KEY_0' },
@@ -25,18 +25,33 @@ const options = [
 ];
 
 export default {
-  title: 'Atom/MultiSelect',
-  component: MultiSelect,
+  title: 'Atom/MultiSelectInput',
+  component: MultiSelectInput,
   parameters: { actions: { argTypesRegex: '^on.*' } },
-} as ComponentMeta<typeof MultiSelect>;
+} as ComponentMeta<typeof MultiSelectInput>;
 
-const Template: ComponentStory<typeof MultiSelect> = (args: IMultiSelectProps) => {
-  const [inputValue, setInputValue] = useState<Readonly<Array<IOption>> | undefined>(undefined);
-  return <MultiSelect {...args} selectedOptions={inputValue} onChange={setInputValue} />;
+const Template: ComponentStory<typeof MultiSelectInput> = ({ inputValue, ...args }: IMultiSelectInputProps) => {
+  const [localValue, setLocalValue] = useState<Readonly<Array<IOption>> | undefined>(inputValue);
+
+  return (
+    <>
+      <MultiSelectInput {...args} inputValue={localValue} onChange={setLocalValue} />
+      <div style={{ height: '10vh' }} />
+      <MultiSelectInput {...args} readOnly inputValue={localValue} onChange={setLocalValue} />
+    </>
+  );
 };
 
 export const Default = Template.bind({});
 Default.args = {
   options: options,
+  disabled: false,
+  fieldSize: undefined,
+  highlighted: false,
+  inputValue: [options[0], options[1]],
+  isClearable: true,
+  isInError: false,
+  name: 'name',
+  readOnly: false,
   placeholder: 'Multi select placeholder',
 };

@@ -1,5 +1,5 @@
 import React, { ReactElement, useRef, useState } from 'react';
-import classNames from 'classnames';
+import classnames from 'classnames';
 
 import { useRunAfterUpdate } from '../../../hooks/use-run-after-update';
 
@@ -74,23 +74,30 @@ const TextAreaInput = (props: ITextAreaInputProps): ReactElement => {
   if (readOnly) {
     return (
       <div
-        className={classNames(
-          inputClassName,
+        className={classnames(
           'field',
           'input-textarea-field-read-only',
           fieldSize && `field-input-size-${fieldSize}`,
-          highlighted && `field-highlighted`,
+          {
+            'field-highlighted': highlighted,
+          },
+          inputClassName,
         )}>
         {inputValue}
       </div>
     );
   }
   return (
-    <div className={classNames('input-textarea-parent', fieldSize && `field-input-size-${fieldSize}`)}>
+    <div className={classnames('input-textarea-parent', fieldSize && `field-input-size-${fieldSize}`)}>
       <textarea
-        className={classNames(inputClassName, 'field', 'input-textarea-field', {
-          'input-error': isInError,
-        })}
+        className={classnames(
+          'field',
+          'input-textarea-field',
+          {
+            'input-error': isInError && !disabled,
+          },
+          inputClassName,
+        )}
         ref={textAreaRef}
         rows={1}
         style={{

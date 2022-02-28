@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import Select, { ISelectProps } from './Select';
-import { IOption } from '../../Molecules/SelectField/types';
+import SelectInput, { ISelectInputProps } from './SelectInput';
+import { IOption } from './types';
 
 const options = [
   { label: 'selection label 0', value: 'KEY_0' },
@@ -25,24 +25,33 @@ const options = [
 ];
 
 export default {
-  title: 'Atom/Select',
-  component: Select,
+  title: 'Atom/SelectInput',
+  component: SelectInput,
   parameters: { actions: { argTypesRegex: '^on.*' } },
-} as ComponentMeta<typeof Select>;
+} as ComponentMeta<typeof SelectInput>;
 
-const Template: ComponentStory<typeof Select> = (args: ISelectProps) => {
-  const [inputValue, setInputValue] = useState<IOption | null | undefined>(undefined);
+const Template: ComponentStory<typeof SelectInput> = ({ inputValue, ...args }: ISelectInputProps) => {
+  const [localValue, setLocalValue] = useState<IOption | null | undefined>(inputValue);
+
   return (
     <>
-      <Select {...args} selectedOption={inputValue} onChange={setInputValue} />
+      <SelectInput {...args} inputValue={localValue} onChange={setLocalValue} />
       <div style={{ height: '10vh' }} />
-      <Select {...args} readOnly selectedOption={inputValue} onChange={setInputValue} />
+      <SelectInput {...args} readOnly inputValue={localValue} onChange={setLocalValue} />
     </>
   );
 };
 
-export const Simple = Template.bind({});
-Simple.args = {
+export const Default = Template.bind({});
+Default.args = {
+  disabled: false,
+  fieldSize: undefined,
+  highlighted: false,
+  inputValue: options[0],
+  isClearable: true,
+  isInError: false,
+  name: 'name',
+  readOnly: false,
   options: options,
   placeholder: 'Select placeholder',
 };
