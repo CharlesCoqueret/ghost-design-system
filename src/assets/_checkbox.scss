@@ -1,0 +1,58 @@
+@use 'sass:color';
+
+.checkbox-container {
+  display: flex;
+  flex-direction: column;
+
+  label {
+    display: inline-flex;
+    position: relative;
+    margin-bottom: 8px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    .checkbox-marker {
+      margin-right: 8px;
+    }
+
+    &:not(.input-checkbox-field-read-only),
+    &:not(.input-checkbox-field-disabled) {
+      &:not(.input-checkbox-field-checked) {
+        .checkbox-marker {
+          color: $pebble;
+          &:hover {
+            color: $primary;
+          }
+        }
+      }
+
+      &.input-checkbox-field-checked {
+        .checkbox-marker {
+          color: $primary;
+        }
+      }
+    }
+
+    &.input-checkbox-field-read-only,
+    &.input-checkbox-field-disabled {
+      cursor: default;
+      color: $pebble;
+
+      &:not(.input-checkbox-field-checked) {
+        .checkbox-marker,
+        .checkbox-marker:hover {
+          color: $silver;
+        }
+      }
+
+      &.input-checkbox-field-checked {
+        .checkbox-marker .checkbox-marker:hover {
+          color: color.change($primary, $alpha: 0.8);
+        }
+      }
+    }
+  }
+}

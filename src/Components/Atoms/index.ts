@@ -1,3 +1,4 @@
+export * from './CheckBoxInput';
 export * from './GenericField';
 export * from './DatePickerInput';
 export * from './Colors';

@@ -74,6 +74,7 @@ List.args = {
     ['fal', 'sort-down'],
     ['fal', 'sort-up'],
     ['fal', 'spinner'],
+    ['fal', 'square'],
     ['fal', 'table'],
     ['fal', 'text-size'],
     ['fal', 'times'],
@@ -95,5 +96,7 @@ List.args = {
     ['far', 'strikethrough'],
     ['far', 'underline'],
     ['fas', 'caret-down'],
+    ['fas', 'square'],
+    ['fas', 'square-check'],
   ],
 };

@@ -41,6 +41,7 @@ import {
   faSortDown,
   faSortUp,
   faSpinner,
+  faSquare as faSquareLight,
   faTable,
   faTextSize,
   faTimes,
@@ -70,8 +71,8 @@ import {
   // faSpinner,
 } from '@fortawesome/pro-regular-svg-icons';
 
-// Button
-import { faCaretDown } from '@fortawesome/pro-solid-svg-icons';
+// Button and checkbox
+import { faCaretDown, faSquare, faSquareCheck } from '@fortawesome/pro-solid-svg-icons';
 
 const loadIcons = (): void => {
   library.add(
@@ -112,6 +113,7 @@ const loadIcons = (): void => {
     faSortDown,
     faSortUp,
     faSpinner,
+    faSquareLight,
     faTimes,
     faTimesCircle,
     faTrashAlt,
@@ -140,6 +142,8 @@ const loadIcons = (): void => {
 
     // button
     faCaretDown,
+    faSquare,
+    faSquareCheck,
   );
 
   dom.watch();

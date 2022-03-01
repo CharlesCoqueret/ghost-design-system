@@ -19,7 +19,7 @@
   .field-label {
     display: flex;
     font-weight: 600;
-    padding-bottom: 8px;
+    padding: 4px 0;
     align-items: center;
 
     .field-label-mandatory {
@@ -29,12 +29,17 @@
   }
 
   .field-message {
-    margin-top: 4px;
+    padding: 4px 0;
     display: flex;
     justify-content: space-between;
     flex-direction: row;
     color: $pebble;
     font-size: 12px;
+
+    &.field-inverted {
+      margin-top: 0px;
+      padding: 4px 0;
+    }
 
     .field-helper-text {
       font-style: italic;
@@ -52,7 +57,7 @@
 
 .field-highlighted,
 .field-highlighted input {
-  color: $tangerine;
+  color: $tangerine !important;
 }
 
 /**************/
@@ -61,6 +66,7 @@
 
 .field {
   display: flex;
+  padding: 4px 0;
 }
 
 @for $size from 0 through 12 {

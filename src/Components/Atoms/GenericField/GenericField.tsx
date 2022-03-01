@@ -17,6 +17,8 @@ interface IGenericFieldProps {
   inline?: boolean;
   /** Input string value (optional, default: 0) */
   inputLength?: number;
+  /** Invert input and description order, speicfic for switches and checkbox (optional, default: false) */
+  invertInputDescription?: boolean;
   /** Label (optional, default: undefined) */
   label?: string;
   /** Size of the field in a 12 column grid (optional, default: undefined) */
@@ -48,6 +50,7 @@ const GenericField = (props: PropsWithChildren<IGenericFieldProps>): ReactElemen
     highlighted,
     inline,
     inputLength,
+    invertInputDescription,
     label,
     labelSize,
     mandatory,
@@ -64,7 +67,7 @@ const GenericField = (props: PropsWithChildren<IGenericFieldProps>): ReactElemen
         { 'field-inline': inline },
       )}>
       <GenericFieldLabel label={label} mandatory={mandatory} readOnly={readOnly} size={labelSize} />
-      {children}
+      {!invertInputDescription && children}
       <GenericFieldDescription
         errorMessage={errorMessage}
         helperText={helperText}
@@ -72,7 +75,9 @@ const GenericField = (props: PropsWithChildren<IGenericFieldProps>): ReactElemen
         inputLength={inputLength}
         maxLength={maxLength}
         readOnly={readOnly}
+        invertInputDescription={invertInputDescription}
       />
+      {invertInputDescription && children}
     </div>
   );
 };
@@ -84,6 +89,7 @@ GenericField.defaultProps = {
   highlighted: false,
   inline: false,
   inputLength: 0,
+  invertInputDescription: false,
   label: undefined,
   labelSize: undefined,
   mandatory: false,

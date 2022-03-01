@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import React, { ReactElement } from 'react';
 
 interface IGenericFieldDescriptionProps {
@@ -9,6 +10,8 @@ interface IGenericFieldDescriptionProps {
   inline?: boolean;
   /** Input string value (optional, default: 0) */
   inputLength?: number;
+  /** Invert input and description order, speicfic for switches and checkbox (optional, default: false) */
+  invertInputDescription?: boolean;
   /** Maximum length of the textfield (optional, default: undefined) */
   maxLength?: number;
   /** Read only field (optional, default: false) */
@@ -44,17 +47,20 @@ const message = ({
  *
  */
 const GenericFieldDescription = (props: IGenericFieldDescriptionProps): ReactElement => {
-  const { errorMessage, helperText, inline, maxLength } = props;
+  const { errorMessage, helperText, inline, invertInputDescription, maxLength } = props;
 
   if (inline || (!helperText && !maxLength && !errorMessage)) return <></>;
 
-  return <div className='field-message'>{message(props)}</div>;
+  return (
+    <div className={classNames('field-message', { 'field-inverted': invertInputDescription })}>{message(props)}</div>
+  );
 };
 
 GenericFieldDescription.defaultProps = {
   errorMessage: undefined,
   helperText: undefined,
   inline: false,
+  invertInputDescription: false,
   inputLength: 0,
   maxLength: undefined,
   readOnly: false,
