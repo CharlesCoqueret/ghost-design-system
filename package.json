@@ -12,6 +12,7 @@
     "format": "prettier --write \"src/**/*.{ts,tsx,json,js,jsx}\"",
     "format:check": "prettier --list-different \"src/**/*.{ts,tsx,json,js,jsx}\"",
     "storybook": "start-storybook -p 9001 -c .storybook",
+    "build-storybook": "build-storybook -o public",
     "test": "jest --maxWorkers=2 --colors --coverage",
     "test:watch": "yarn test --watch"
   },
@@ -37,6 +38,8 @@
   },
   "devDependencies": {
     "@babel/core": "^7.12.7",
+    "@storybook/addon-essentials": "^6.1.2",
+    "@storybook/addon-links": "^6.1.2",
     "@storybook/react": "^6.1.2",
     "@testing-library/react": "^11.2.2",
     "@types/classnames": "^2.2.11",
