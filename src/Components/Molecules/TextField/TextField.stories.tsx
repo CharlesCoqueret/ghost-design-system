@@ -3,8 +3,6 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { TextField, ITextFieldProps } from './TextField';
 
-import '../../../assets/index.scss';
-
 export default {
   title: 'Molecule/TextField',
   component: TextField,

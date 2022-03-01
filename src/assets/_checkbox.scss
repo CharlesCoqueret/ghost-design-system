@@ -49,8 +49,9 @@
       }
 
       &.input-checkbox-field-checked {
-        .checkbox-marker .checkbox-marker:hover {
-          color: color.change($primary, $alpha: 0.8);
+        .checkbox-marker,
+        .checkbox-marker:hover {
+          color: $silver;
         }
       }
     }

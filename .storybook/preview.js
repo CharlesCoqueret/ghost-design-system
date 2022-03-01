@@ -1,4 +1,5 @@
 import { loadIcons } from '../src/Components';
+import '../src/assets/index.scss';
 
 loadIcons();
 

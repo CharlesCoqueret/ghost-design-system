@@ -18,7 +18,7 @@ const options: Array<IToggleEntry> = [
     checked: undefined,
   },
   { label: 'checkbox label 4 highlighted', value: 'KEY_4', highlighted: true },
-  { label: 'checkbox label 5', value: 'KEY_5' },
+  { label: 'checkbox label 5 highlighted and checked', value: 'KEY_5', highlighted: true, checked: true },
 ];
 
 export default {

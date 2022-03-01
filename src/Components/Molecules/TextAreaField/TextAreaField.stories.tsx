@@ -3,8 +3,6 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { TextAreaField, ITextAreaFieldProps } from './TextAreaField';
 
-import '../../../assets/index.scss';
-
 export default {
   title: 'Molecule/TextareaField',
   component: TextAreaField,
