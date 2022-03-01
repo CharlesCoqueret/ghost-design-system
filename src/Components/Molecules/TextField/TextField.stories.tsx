@@ -6,7 +6,7 @@ import { TextField, ITextFieldProps } from './TextField';
 import '../../../assets/index.scss';
 
 export default {
-  title: 'Molecule/Text',
+  title: 'Molecule/TextField',
   component: TextField,
   parameters: { controls: { sort: 'requiredFirst' } },
 } as ComponentMeta<typeof TextField>;

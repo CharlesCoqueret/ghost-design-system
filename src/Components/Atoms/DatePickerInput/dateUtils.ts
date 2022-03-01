@@ -9,7 +9,7 @@ export const importFnsLocaleFile = async (locale: string): Promise<void> => {
   if (locale in Object.keys(REGISTRAR_LOCALES)) {
     registerLocale(locale, REGISTRAR_LOCALES[locale]);
   } else {
-    import(`date-fns/locale/${locale}`)
+    import(`date-fns/locale/${locale}/index.js`)
       .then((localeDataset) => {
         registerLocale(locale, localeDataset);
       })

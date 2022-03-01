@@ -6,7 +6,7 @@ import { TextAreaField, ITextAreaFieldProps } from './TextAreaField';
 import '../../../assets/index.scss';
 
 export default {
-  title: 'Molecule/Textarea',
+  title: 'Molecule/TextareaField',
   component: TextAreaField,
   parameters: { controls: { sort: 'requiredFirst' } },
 } as ComponentMeta<typeof TextAreaField>;

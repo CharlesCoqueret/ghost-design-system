@@ -9,6 +9,7 @@ interface ICustomStylesProps {
   controlBackgroundColorDisabled?: string;
   controlColorDisabled?: string;
   fontColor?: string;
+  multiValueBorderColorDisabled?: string;
   optionSelectedColor?: string;
   optionFocusColor?: string;
   isInError?: boolean;
@@ -21,6 +22,7 @@ export const customStyles = (props: ICustomStylesProps = {}): StylesConfig<IOpti
     controlBackgroundColorDisabled = 'rgb(228,228,228)',
     controlColorDisabled = 'rgb(117,117,117)',
     fontColor = 'rgb(0,0,0)',
+    multiValueBorderColorDisabled = 'rgb(196,196,196)',
     optionFocusColor = 'rgb(228,228,228)',
     optionSelectedColor = 'rgb(38,186,212)',
     isInError = false,
@@ -55,11 +57,22 @@ export const customStyles = (props: ICustomStylesProps = {}): StylesConfig<IOpti
         ':disabled': disabled,
       };
     },
-    multiValue: (provided) => {
-      return { ...provided, minWidth: 'unset', maxWidth: '100%' };
+    multiValue: (provided, state) => {
+      let disabled = {};
+      if (state.isDisabled) {
+        disabled = { border: `1px solid ${multiValueBorderColorDisabled}` };
+      }
+      return { ...provided, ...disabled, minWidth: 'unset', maxWidth: '100%' };
     },
     multiValueLabel: (provided) => {
       return { ...provided, textOverflow: 'unset', fontSize: 'unsert' };
+    },
+    multiValueRemove: (provided, state) => {
+      let disabled = {};
+      if (state.isDisabled) {
+        disabled = { display: 'none' };
+      }
+      return { ...provided, ...disabled };
     },
     input: (provided, state) => {
       let multi = {};
