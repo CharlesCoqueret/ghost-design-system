@@ -1,4 +1,4 @@
-import rgba from 'color-rgba';
+import { colorBuilder, IColor } from './colorUtils';
 import colorsVariables from './variables.module.scss';
 
 export enum COLORSENUM {
@@ -20,32 +20,6 @@ export enum COLORSENUM {
   TANGERINE = 'tangerine',
   ERROR = 'error',
 }
-
-export interface IColor {
-  name: string;
-  rgb: string;
-  hex: string;
-  code: string;
-}
-
-const componentToHex = (c: number | string): string => {
-  const hex = c.toString(16);
-  return hex.length == 1 ? '0' + hex : hex;
-};
-
-const rgbToHex = ([r, g, b, _a]: Array<string>): string => {
-  return '#' + componentToHex(r) + componentToHex(g) + componentToHex(b);
-};
-
-const colorBuilder = (name: string, inputColor: string): IColor => {
-  const rgb = rgba(inputColor);
-  return {
-    name,
-    rgb: `rgba(${rgb.join(', ')})`,
-    hex: rgbToHex(rgb).toUpperCase(),
-    code: `colors[COLORSENUM.${name.toUpperCase()}]`,
-  };
-};
 
 const colors: Record<COLORSENUM, IColor> = {
   [COLORSENUM.PRIMARY]: colorBuilder(COLORSENUM.PRIMARY, colorsVariables.primary),
