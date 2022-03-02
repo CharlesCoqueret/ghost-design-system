@@ -75,7 +75,6 @@ const TextAreaInput = (props: ITextAreaInputProps): ReactElement => {
     return (
       <div
         className={classnames(
-          'field',
           'input-textarea-field-read-only',
           fieldSize && `field-input-size-${fieldSize}`,
           {
@@ -91,7 +90,6 @@ const TextAreaInput = (props: ITextAreaInputProps): ReactElement => {
     <div className={classnames('input-textarea-parent', fieldSize && `field-input-size-${fieldSize}`)}>
       <textarea
         className={classnames(
-          'field',
           'input-textarea-field',
           {
             'input-error': isInError && !disabled,

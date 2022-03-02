@@ -1,4 +1,4 @@
-import React, { ReactElement, useState } from 'react';
+import React, { ReactElement } from 'react';
 import classnames from 'classnames';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -25,17 +25,15 @@ export interface ICheckboxInputProps {
 const CheckboxInput = (props: ICheckboxInputProps): ReactElement => {
   const { className, disabled, fieldSize, highlighted, isInError, options, onChange, readOnly } = props;
 
-  const [state, setState] = useState<Array<IToggleEntry>>(options);
-
   /** flip the check status of the checkbox that was checked */
   const updateState = (optionValue: string) => {
-    const newState = state.map((option) => {
+    const newState = options.map((option) => {
       if (option.value === optionValue) {
         option.checked = !option.checked;
       }
       return option;
     });
-    setState(newState);
+
     if (onChange) {
       onChange(newState);
     }
@@ -48,7 +46,7 @@ const CheckboxInput = (props: ICheckboxInputProps): ReactElement => {
 
   return (
     <div className={classnames('field', 'checkbox-container', fieldSize && `field-input-size-${fieldSize}`, className)}>
-      {state?.map((option) => {
+      {options?.map((option) => {
         return (
           <label
             key={option.value}
@@ -59,7 +57,8 @@ const CheckboxInput = (props: ICheckboxInputProps): ReactElement => {
               'input-checkbox-field-error': !readOnly && !disabled && isInError,
               'field-highlighted': (readOnly || disabled) && highlighted && option.highlighted,
               'input-checkbox-field-checked': option.checked,
-            })}>
+            })}
+            data-testid={option.value}>
             <div className='checkbox-marker'>
               <FontAwesomeIcon
                 icon={[

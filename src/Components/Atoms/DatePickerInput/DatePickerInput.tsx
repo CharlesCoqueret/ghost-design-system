@@ -59,7 +59,7 @@ const DatePickerInput = (props: IDatePickerProps): ReactElement => {
         className={classnames({
           'input-date-picker-input-read-only': readOnly,
           'input-date-picker-input': !readOnly,
-          'field-highlighted': highlighted && readOnly,
+          'field-highlighted': highlighted && (readOnly || disabled),
           'input-error': isInError && !readOnly && !disabled,
         })}
         autoFocus={false}

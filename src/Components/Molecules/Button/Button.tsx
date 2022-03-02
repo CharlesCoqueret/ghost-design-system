@@ -1,10 +1,10 @@
 import React, { ReactElement } from 'react';
-import { Menu, MenuDivider, MenuItem, MenuDirection, MenuAlign } from '@szhsin/react-menu';
+import { Menu, MenuDivider, MenuItem, MenuAlign } from '@szhsin/react-menu';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classnames from 'classnames';
 
-import { Tooltip } from '../../Atoms';
+import { MenuDirectionEnum, Tooltip } from '../../Atoms';
 import { IItemListProps } from './ItemList';
 
 export interface IButtonProps {
@@ -13,7 +13,7 @@ export interface IButtonProps {
   /** text to be displayed as a tooltip (optional, default: undefinef=d) */
   tooltip?: string | ReactElement;
   /** position of the tooltip (optional, default: 'bottom') */
-  tooltipDirection?: MenuDirection;
+  tooltipDirection?: MenuDirectionEnum;
   /** Icon name (optional, default: undefined) */
   icon?: IconProp;
   /** :ist of items to display in the dropdown on click on the button (optional, default: undefined) */
@@ -121,7 +121,7 @@ const Button = (props: IButtonProps): ReactElement => {
 Button.defaultProps = {
   label: undefined,
   tooltip: undefined,
-  tooltipDirection: 'bottom',
+  tooltipDirection: MenuDirectionEnum.BOTTOM,
   icon: undefined,
   itemList: undefined,
   dropdownAlign: 'end',

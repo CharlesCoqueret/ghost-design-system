@@ -8,17 +8,11 @@ export enum MenuDirectionEnum {
   BOTTOM = 'bottom',
 }
 
-export type MenuDirection =
-  | MenuDirectionEnum.LEFT
-  | MenuDirectionEnum.RIGHT
-  | MenuDirectionEnum.TOP
-  | MenuDirectionEnum.BOTTOM;
-
 export interface ITooltipProps {
   // Tooltip content (optional, default: undefined)
   tooltip?: string | ReactElement;
   // Direction of the tooltip (optional, default: bottom)
-  direction?: MenuDirection;
+  direction?: MenuDirectionEnum;
   // Delay for the tooltip in ms (optional, default: 400)
   delay?: number;
 }

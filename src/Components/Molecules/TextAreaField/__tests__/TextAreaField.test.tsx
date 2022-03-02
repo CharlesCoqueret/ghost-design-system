@@ -10,8 +10,7 @@ describe('TextAreaField Component', () => {
     expect(node).not.toBeNull();
     const parentNode = container.querySelector('div.input-textarea-parent');
     expect(parentNode?.className).toEqual('input-textarea-parent field-input-size-2');
-    const inputNode = container.querySelector('textarea.field');
-    expect(inputNode?.className).toEqual('field input-textarea-field');
+    const inputNode = container.querySelector('textarea.input-textarea-field');
     expect(inputNode).toHaveProperty('name', 'NAME');
     expect(inputNode).toHaveProperty('id', 'NAME');
     expect(inputNode).toHaveProperty('type', 'textarea');
@@ -24,8 +23,8 @@ describe('TextAreaField Component', () => {
 
     const node = container.querySelector('div.field-group');
     expect(node).not.toBeNull();
-    const inputNode = container.querySelector('textarea.field');
-    expect(inputNode?.className).toEqual('field input-textarea-field input-error');
+    const inputNode = container.querySelector('textarea.input-textarea-field');
+    expect(inputNode?.className).toEqual('input-textarea-field input-error');
     expect(inputNode).toHaveProperty('value', 'INPUT-VALUE');
     const readOnlyNode = container.querySelector('div.field');
     expect(readOnlyNode).toBeNull();
@@ -36,10 +35,10 @@ describe('TextAreaField Component', () => {
 
     const node = container.querySelector('div.field-group');
     expect(node).not.toBeNull();
-    const inputNode = container.querySelector('textarea.field');
+    const inputNode = container.querySelector('textarea.input-textarea-field');
     expect(inputNode).toBeNull();
-    const readOnlyNode = container.querySelector('div.field');
-    expect(readOnlyNode?.className).toEqual('field input-textarea-field-read-only field-input-size-6');
+    const readOnlyNode = container.querySelector('div.input-textarea-field-read-only');
+    expect(readOnlyNode?.className).toEqual('input-textarea-field-read-only field-input-size-6');
     expect(readOnlyNode?.innerHTML).toEqual('INPUT-VALUE');
   });
 
@@ -48,10 +47,10 @@ describe('TextAreaField Component', () => {
 
     const node = container.querySelector('div.field-group');
     expect(node).not.toBeNull();
-    const inputNode = container.querySelector('textarea.field');
+    const inputNode = container.querySelector('textarea.input-textarea-field');
     expect(inputNode).toBeNull();
-    const readOnlyNode = container.querySelector('div.field');
-    expect(readOnlyNode?.className).toEqual('field input-textarea-field-read-only field-highlighted');
+    const readOnlyNode = container.querySelector('div.input-textarea-field-read-only');
+    expect(readOnlyNode?.className).toEqual('input-textarea-field-read-only field-highlighted');
   });
 
   it('TextAreaField renders handles changes', () => {
@@ -62,7 +61,7 @@ describe('TextAreaField Component', () => {
     const parentNode = container.querySelector('div.input-textarea-parent');
     expect(parentNode).toHaveProperty('style.minHeight', '');
 
-    const inputNode = container.querySelector('textarea.field');
+    const inputNode = container.querySelector('textarea.input-textarea-field');
     expect(inputNode).not.toBeNull();
     expect(inputNode).toHaveProperty('style.height', 'auto');
 

@@ -17,7 +17,7 @@ export const importFnsLocaleFile = async (locale: string): Promise<void> => {
   }
 };
 
-const getLocaleObject = (localeSpec?: string) => {
+const getLocaleObject = (localeSpec?: string): Locale | string | undefined => {
   if (typeof localeSpec === 'string') {
     // Treat it as a locale name registered by registerLocale
     const scope = typeof window !== 'undefined' ? window : globalThis;
@@ -28,7 +28,7 @@ const getLocaleObject = (localeSpec?: string) => {
   }
 };
 
-export const getDefaultLocale = () => {
+export const getDefaultLocale = (): string => {
   const scope = typeof window !== 'undefined' ? window : globalThis;
 
   return scope.__localeId__;

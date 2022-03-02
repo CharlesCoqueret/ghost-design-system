@@ -1,2 +1,2 @@
-export { default as Tooltip } from './Tooltip';
-export type { MenuDirection, MenuDirectionEnum } from './Tooltip';
+export { default as Tooltip, MenuDirectionEnum } from './Tooltip';
+export type { MenuDirection } from './Tooltip';
