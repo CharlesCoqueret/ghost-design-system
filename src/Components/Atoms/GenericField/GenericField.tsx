@@ -1,10 +1,12 @@
 import React, { PropsWithChildren, ReactElement } from 'react';
-import classNames from 'classnames';
+import classnames from 'classnames';
 
 import GenericFieldLabel from './GenericFieldLabel';
 import GenericFieldDescription from './GenericFieldDescrption';
 
 interface IGenericFieldProps {
+  /** Disabled field (optional, default: undefined) */
+  disabled?: boolean;
   /** Error message (optional, default: undefined) */
   errorMessage?: string;
   /** Class for the field surrounding the input (optional, default: undefined) */
@@ -44,6 +46,7 @@ interface IGenericFieldProps {
 const GenericField = (props: PropsWithChildren<IGenericFieldProps>): ReactElement => {
   const {
     children,
+    disabled,
     errorMessage,
     fieldClassName,
     helperText,
@@ -59,14 +62,14 @@ const GenericField = (props: PropsWithChildren<IGenericFieldProps>): ReactElemen
   } = props;
 
   return (
-    <div
-      className={classNames(
-        'field-group',
-        fieldClassName,
-        { 'field-highlighted': highlighted && readOnly },
-        { 'field-inline': inline },
-      )}>
-      <GenericFieldLabel label={label} mandatory={mandatory} readOnly={readOnly} size={labelSize} />
+    <div className={classnames('field-group', fieldClassName, { 'field-inline': inline })}>
+      <GenericFieldLabel
+        className={classnames({ 'field-highlighted': highlighted && (readOnly || disabled) })}
+        label={label}
+        mandatory={mandatory}
+        readOnly={readOnly}
+        size={labelSize}
+      />
       {!invertInputDescription && children}
       <GenericFieldDescription
         errorMessage={errorMessage}

@@ -91,6 +91,7 @@ export const SelectField = (props: IMultiSelectFieldProps): React.ReactElement =
           fieldSize && `field-input-size-${fieldSize}`,
         )}
         disabled={disabled}
+        highlighted={highlighted}
         inputValue={inputValue}
         isClearable={isClearable}
         isInError={errorMessage !== undefined}

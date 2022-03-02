@@ -119,7 +119,7 @@ describe('GenericField Component', () => {
     const counterNode = container.querySelector('div.field-counter');
     expect(counterNode).toBeNull();
     const node = container.querySelector('div.field-group');
-    expect(node?.className).toEqual('field-group field-highlighted');
+    expect(node?.className).toEqual('field-group');
   });
 
   it('GenericField renders with highlight not in readonly', () => {

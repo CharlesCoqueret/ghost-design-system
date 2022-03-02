@@ -1,0 +1,624 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SwitchInput Component SwitchInput renders highlighted 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="field switch-container"
+      >
+        <label
+          class="input-switch-field-read-only"
+          data-testid="KEY_0"
+        >
+          <div
+            class="switch-marker"
+          >
+            <input
+              readonly=""
+              type="checkbox"
+            />
+            <span
+              class="silver"
+            />
+          </div>
+          Switch label 0
+        </label>
+        <label
+          class="input-switch-field-read-only input-switch-field-checked"
+          data-testid="KEY_1"
+        >
+          <div
+            class="switch-marker"
+          >
+            <input
+              checked=""
+              readonly=""
+              type="checkbox"
+            />
+            <span
+              class="silver"
+            />
+          </div>
+          Switch label 1
+        </label>
+        <label
+          class="input-switch-field-read-only"
+          data-testid="KEY_2"
+        >
+          <div
+            class="switch-marker"
+          >
+            <input
+              readonly=""
+              type="checkbox"
+            />
+            <span
+              class="silver"
+            />
+          </div>
+          Switch label 2
+        </label>
+        <label
+          class="input-switch-field-read-only"
+          data-testid="KEY_3"
+        >
+          <div
+            class="switch-marker"
+          >
+            <input
+              readonly=""
+              type="checkbox"
+            />
+            <span
+              class="silver"
+            />
+          </div>
+          Switch label 3
+        </label>
+        <label
+          class="input-switch-field-read-only field-highlighted"
+          data-testid="KEY_4"
+        >
+          <div
+            class="switch-marker"
+          >
+            <input
+              readonly=""
+              type="checkbox"
+            />
+            <span
+              class="silver"
+            />
+          </div>
+          Switch label 4
+        </label>
+        <label
+          class="input-switch-field-read-only"
+          data-testid="KEY_5"
+        >
+          <div
+            class="switch-marker"
+          >
+            <input
+              readonly=""
+              type="checkbox"
+            />
+            <span
+              class="silver"
+            />
+          </div>
+          Switch label 5
+        </label>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="field switch-container"
+    >
+      <label
+        class="input-switch-field-read-only"
+        data-testid="KEY_0"
+      >
+        <div
+          class="switch-marker"
+        >
+          <input
+            readonly=""
+            type="checkbox"
+          />
+          <span
+            class="silver"
+          />
+        </div>
+        Switch label 0
+      </label>
+      <label
+        class="input-switch-field-read-only input-switch-field-checked"
+        data-testid="KEY_1"
+      >
+        <div
+          class="switch-marker"
+        >
+          <input
+            checked=""
+            readonly=""
+            type="checkbox"
+          />
+          <span
+            class="silver"
+          />
+        </div>
+        Switch label 1
+      </label>
+      <label
+        class="input-switch-field-read-only"
+        data-testid="KEY_2"
+      >
+        <div
+          class="switch-marker"
+        >
+          <input
+            readonly=""
+            type="checkbox"
+          />
+          <span
+            class="silver"
+          />
+        </div>
+        Switch label 2
+      </label>
+      <label
+        class="input-switch-field-read-only"
+        data-testid="KEY_3"
+      >
+        <div
+          class="switch-marker"
+        >
+          <input
+            readonly=""
+            type="checkbox"
+          />
+          <span
+            class="silver"
+          />
+        </div>
+        Switch label 3
+      </label>
+      <label
+        class="input-switch-field-read-only field-highlighted"
+        data-testid="KEY_4"
+      >
+        <div
+          class="switch-marker"
+        >
+          <input
+            readonly=""
+            type="checkbox"
+          />
+          <span
+            class="silver"
+          />
+        </div>
+        Switch label 4
+      </label>
+      <label
+        class="input-switch-field-read-only"
+        data-testid="KEY_5"
+      >
+        <div
+          class="switch-marker"
+        >
+          <input
+            readonly=""
+            type="checkbox"
+          />
+          <span
+            class="silver"
+          />
+        </div>
+        Switch label 5
+      </label>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`SwitchInput Component SwitchInput renders with input 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="field switch-container"
+      >
+        <label
+          class=""
+          data-testid="KEY_0"
+        >
+          <div
+            class="switch-marker"
+          >
+            <input
+              readonly=""
+              type="checkbox"
+            />
+            <span
+              class="pebble"
+            />
+          </div>
+          Switch label 0
+        </label>
+        <label
+          class="input-switch-field-checked"
+          data-testid="KEY_1"
+        >
+          <div
+            class="switch-marker"
+          >
+            <input
+              checked=""
+              readonly=""
+              type="checkbox"
+            />
+            <span
+              class="primary"
+            />
+          </div>
+          Switch label 1
+        </label>
+        <label
+          class=""
+          data-testid="KEY_2"
+        >
+          <div
+            class="switch-marker"
+          >
+            <input
+              readonly=""
+              type="checkbox"
+            />
+            <span
+              class="pebble"
+            />
+          </div>
+          Switch label 2
+        </label>
+        <label
+          class=""
+          data-testid="KEY_3"
+        >
+          <div
+            class="switch-marker"
+          >
+            <input
+              readonly=""
+              type="checkbox"
+            />
+            <span
+              class="pebble"
+            />
+          </div>
+          Switch label 3
+        </label>
+        <label
+          class=""
+          data-testid="KEY_4"
+        >
+          <div
+            class="switch-marker"
+          >
+            <input
+              readonly=""
+              type="checkbox"
+            />
+            <span
+              class="pebble"
+            />
+          </div>
+          Switch label 4
+        </label>
+        <label
+          class=""
+          data-testid="KEY_5"
+        >
+          <div
+            class="switch-marker"
+          >
+            <input
+              readonly=""
+              type="checkbox"
+            />
+            <span
+              class="pebble"
+            />
+          </div>
+          Switch label 5
+        </label>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="field switch-container"
+    >
+      <label
+        class=""
+        data-testid="KEY_0"
+      >
+        <div
+          class="switch-marker"
+        >
+          <input
+            readonly=""
+            type="checkbox"
+          />
+          <span
+            class="pebble"
+          />
+        </div>
+        Switch label 0
+      </label>
+      <label
+        class="input-switch-field-checked"
+        data-testid="KEY_1"
+      >
+        <div
+          class="switch-marker"
+        >
+          <input
+            checked=""
+            readonly=""
+            type="checkbox"
+          />
+          <span
+            class="primary"
+          />
+        </div>
+        Switch label 1
+      </label>
+      <label
+        class=""
+        data-testid="KEY_2"
+      >
+        <div
+          class="switch-marker"
+        >
+          <input
+            readonly=""
+            type="checkbox"
+          />
+          <span
+            class="pebble"
+          />
+        </div>
+        Switch label 2
+      </label>
+      <label
+        class=""
+        data-testid="KEY_3"
+      >
+        <div
+          class="switch-marker"
+        >
+          <input
+            readonly=""
+            type="checkbox"
+          />
+          <span
+            class="pebble"
+          />
+        </div>
+        Switch label 3
+      </label>
+      <label
+        class=""
+        data-testid="KEY_4"
+      >
+        <div
+          class="switch-marker"
+        >
+          <input
+            readonly=""
+            type="checkbox"
+          />
+          <span
+            class="pebble"
+          />
+        </div>
+        Switch label 4
+      </label>
+      <label
+        class=""
+        data-testid="KEY_5"
+      >
+        <div
+          class="switch-marker"
+        >
+          <input
+            readonly=""
+            type="checkbox"
+          />
+          <span
+            class="pebble"
+          />
+        </div>
+        Switch label 5
+      </label>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`SwitchInput Component SwitchInput renders with no options 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="field switch-container"
+      />
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="field switch-container"
+    />
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

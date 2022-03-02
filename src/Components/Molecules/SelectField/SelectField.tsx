@@ -90,6 +90,7 @@ export const SelectField = (props: ISelectFieldProps): React.ReactElement => {
           'input-select-field',
           fieldSize && `field-input-size-${fieldSize}`,
         )}
+        highlighted={highlighted}
         isInError={errorMessage !== undefined}
         isClearable={isClearable}
         name={name}

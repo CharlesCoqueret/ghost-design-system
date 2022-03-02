@@ -52,7 +52,7 @@ exports[`DatePickerField Component DatePickerField renders with values in disabl
         <input
           autoComplete="off"
           autoFocus={false}
-          className="input-date-picker-input"
+          className="input-date-picker-input field-highlighted"
           disabled={true}
           name="name"
           onBlur={[Function]}

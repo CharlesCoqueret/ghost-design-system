@@ -13,10 +13,9 @@ const options: Array<IToggleEntry> = [
   { label: 'checkbox label 5', value: 'KEY_5' },
 ];
 
-// eslint-disable-next-line react/display-name
 jest.mock('@fortawesome/react-fontawesome', () => {
   return {
-    FontAwesomeIcon: (props) => {
+    FontAwesomeIcon: (props: Record<string, string>) => {
       return <i className='fa' {...props} />;
     },
   };

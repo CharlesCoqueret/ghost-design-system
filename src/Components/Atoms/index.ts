@@ -4,6 +4,7 @@ export * from './DatePickerInput';
 export * from './Colors';
 export * from './Icon';
 export * from './SelectInput';
+export * from './SwitchInput';
 export * from './TextAreaInput';
 export * from './TextInput';
 export * from './Tooltip';

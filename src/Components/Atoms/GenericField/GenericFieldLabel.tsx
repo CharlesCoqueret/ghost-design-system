@@ -2,6 +2,8 @@ import React, { ReactElement } from 'react';
 import classNames from 'classnames';
 
 interface IGenericFieldLabelProps {
+  /** Additional class name (optional, default: undefined) */
+  className?: string;
   /** Label text (optional, default: undefined) */
   label?: string;
   /** Mandatory field, adding a red star after the text (optional, default: false) */
@@ -21,12 +23,12 @@ interface IGenericFieldLabelProps {
  *
  */
 const GenericFieldLabel = (props: IGenericFieldLabelProps): ReactElement => {
-  const { label, mandatory, readOnly, size } = props;
+  const { className, label, mandatory, readOnly, size } = props;
 
   if (label === undefined || label === '') return <></>;
 
   return (
-    <label className={classNames(size && `field-label-size-${size}`, 'field-label')}>
+    <label className={classNames(size && `field-label-size-${size}`, 'field-label', className)}>
       {label}
       {!readOnly && mandatory && <span className='field-label-mandatory'>*</span>}
     </label>

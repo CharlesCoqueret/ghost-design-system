@@ -1,9 +1,9 @@
 import React from 'react';
 import classnames from 'classnames';
 
-import { GenericField, YearPickerInput } from '../../Atoms';
+import { GenericField, IToggleEntry, SwitchInput } from '../../Atoms';
 
-export interface IYearPickerFieldProps {
+export interface ISwitchFieldProps {
   /** Disabled field (optional, default: false) */
   disabled?: boolean;
   /** Error message (optional, default: undefined) */
@@ -14,43 +14,35 @@ export interface IYearPickerFieldProps {
   fieldSize?: number;
   /** Helper text (optional, default: undefined) */
   helperText?: string;
-  /** Highlighted field (optional, default: false) */
+  /** Highlighted field and highlight the toggle entries marked as highlight (optional, default: false) */
   highlighted?: boolean;
   /** Inline field (optional, default: false) */
   inline?: boolean;
   /** Class for the input (optional, default: undefined) */
   inputClassName?: string;
-  /** Input year value (optional, default: undefined) */
-  inputValue?: number;
-  /** Provide the ability to clear the value (optional, default: false) */
-  isClearable?: boolean;
+  /** Input value */
+  inputValue: Array<IToggleEntry>;
   /** Label (optional, default: undefined) */
   label?: string;
   /** Size of the field in a 12 column grid (optional, default: undefined) */
   labelSize?: number;
-  /** Locale to display months and day (optional, default: undefined) */
-  locale?: string;
   /** Mandatory field (optional, default: false) */
   mandatory?: boolean;
-  /** Name of text field */
-  name: string;
   /** Handler of value changes (optional, default: undefined) */
-  onChange?: (year: number | undefined) => void;
-  /** Placeholder value (optional, default: undefined) */
-  placeholder?: string;
+  onChange?: (values: Array<IToggleEntry>) => void;
   /** Read only field (optional, default: false) */
   readOnly?: boolean;
 }
 
 /**
- * Date picker field component
+ * Switch field component
  *
- * Date picker input wrapped in a generic field ( @see GenericField ).
+ * Checbox input wrapped in a generic field ( @see GenericField ).
  *
  * Calls @param onChange for every input change.
  *
  */
-export const YearPickerField = (props: IYearPickerFieldProps): React.ReactElement => {
+export const SwitchField = (props: ISwitchFieldProps): React.ReactElement => {
   const {
     disabled,
     errorMessage,
@@ -61,13 +53,10 @@ export const YearPickerField = (props: IYearPickerFieldProps): React.ReactElemen
     inline,
     inputClassName,
     inputValue,
-    isClearable,
     label,
     labelSize,
     mandatory,
-    name,
     onChange,
-    placeholder,
     readOnly,
   } = props;
 
@@ -78,24 +67,22 @@ export const YearPickerField = (props: IYearPickerFieldProps): React.ReactElemen
       helperText={helperText}
       highlighted={highlighted}
       inline={inline}
+      invertInputDescription
       label={label}
       labelSize={labelSize}
       mandatory={mandatory}
       readOnly={readOnly}>
-      <YearPickerInput
+      <SwitchInput
         className={classnames(
           'field',
-          'input-year-picker-field',
+          'input-switch-field',
           fieldSize && `field-input-size-${fieldSize}`,
           inputClassName,
         )}
         disabled={disabled}
         highlighted={highlighted}
         isInError={errorMessage !== undefined}
-        isClearable={isClearable}
-        name={name}
-        placeholder={placeholder}
-        inputValue={inputValue}
+        options={inputValue}
         onChange={onChange}
         readOnly={readOnly}
       />
@@ -103,7 +90,7 @@ export const YearPickerField = (props: IYearPickerFieldProps): React.ReactElemen
   );
 };
 
-YearPickerField.defaultProps = {
+SwitchField.defaultProps = {
   disabled: false,
   errorMessage: undefined,
   fieldClassName: undefined,
@@ -122,4 +109,4 @@ YearPickerField.defaultProps = {
   readOnly: false,
 };
 
-export default YearPickerField;
+export default SwitchField;

@@ -98,6 +98,7 @@ export const DatePickerField = (props: IDatePickerFieldProps): React.ReactElemen
         )}
         dateFormat={dateFormat}
         disabled={disabled}
+        highlighted={highlighted}
         isInError={errorMessage !== undefined}
         isClearable={isClearable}
         name={name}
