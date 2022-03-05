@@ -49,6 +49,7 @@ Default.args = {
   name: 'name',
   options: options,
   placeholder: 'Multi select placeholder',
+  isClearable: true,
 };
 
 export const ReadOnly = Template.bind({});

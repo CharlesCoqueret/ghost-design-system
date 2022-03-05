@@ -15,7 +15,7 @@ const Template: ComponentStory<typeof AmountField> = (args: IAmountFieldProps) =
 
 export const Default = Template.bind({});
 Default.args = {
-  placeholder: 'Placeholder Amount',
+  placeholder: 'Placeholder amount',
   name: 'name',
   label: 'Amount field',
 };
@@ -32,11 +32,11 @@ ReadOnly.args = {
 
 export const Error = Template.bind({});
 Error.args = {
-  placeholder: 'Placeholder Amount',
+  placeholder: 'Placeholder amount',
   name: 'name',
   inputValue: 1234567890,
   label: 'Amount field in error',
-  errorMessage: 'This Amount is on error',
+  errorMessage: 'This amount is on error',
 };
 
 export const HelperAndCounter = Template.bind({});

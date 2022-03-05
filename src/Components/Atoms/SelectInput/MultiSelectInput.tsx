@@ -43,18 +43,18 @@ export interface IMultiSelectInputProps {
 
 const CustomMultiValueContainer = (props: MultiValueGenericProps<IOption>) => {
   return (
-    <div data-targetid={props.data.value} {...props.innerProps}>
-      {props.children}
+    <div data-targetid={props.data.value}>
+      <components.MultiValueContainer {...props} />
     </div>
   );
 };
 
 const CustomValueContainer = (props: ValueContainerProps<IOption, true>) => {
-  const { children, ...innerProps } = props;
+  const { children } = props;
 
   return (
-    <components.ValueContainer {...innerProps}>
-      {innerProps.hasValue ? <OverflowWrapper>{children}</OverflowWrapper> : children}
+    <components.ValueContainer {...props}>
+      <OverflowWrapper>{children}</OverflowWrapper>
     </components.ValueContainer>
   );
 };
