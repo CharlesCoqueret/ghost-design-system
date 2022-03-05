@@ -21,6 +21,9 @@ const getLocaleObject = (localeSpec?: string): Locale | string | undefined => {
   if (typeof localeSpec === 'string') {
     // Treat it as a locale name registered by registerLocale
     const scope = typeof window !== 'undefined' ? window : globalThis;
+
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
     return scope.__localeData__ ? scope.__localeData__[localeSpec] : null;
   } else {
     // Treat it as a raw date-fns locale object
@@ -31,6 +34,8 @@ const getLocaleObject = (localeSpec?: string): Locale | string | undefined => {
 export const getDefaultLocale = (): string => {
   const scope = typeof window !== 'undefined' ? window : globalThis;
 
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
   return scope.__localeId__;
 };
 
@@ -46,6 +51,8 @@ export const formatDate = (date: Date, formatStr: string, locale?: string): stri
     localeObj = getLocaleObject(getDefaultLocale());
   }
   return format(date, formatStr, {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
     locale: localeObj ? localeObj : null,
   });
 };

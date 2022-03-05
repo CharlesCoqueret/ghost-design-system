@@ -37,9 +37,6 @@ import {
   faPlus,
   faQuestionCircle,
   faSave,
-  faSort,
-  faSortDown,
-  faSortUp,
   faSpinner,
   faSquare as faSquareLight,
   faTable,
@@ -72,7 +69,7 @@ import {
 } from '@fortawesome/pro-regular-svg-icons';
 
 // Button and checkbox
-import { faCaretDown, faSquare, faSquareCheck } from '@fortawesome/pro-solid-svg-icons';
+import { faCaretDown, faSquare, faSquareCheck, faSort, faSortDown, faSortUp } from '@fortawesome/pro-solid-svg-icons';
 
 const loadIcons = (): void => {
   library.add(

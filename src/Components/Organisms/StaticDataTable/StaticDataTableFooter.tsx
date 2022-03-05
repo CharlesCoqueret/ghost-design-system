@@ -1,0 +1,33 @@
+import React, { ReactElement } from 'react';
+
+import StaticDataTableFooterCell from './StaticDataTableFooterCell';
+import { IColumnType, IExtraStaticDataTableProps, TableType } from './types';
+
+interface IStaticDataTableFooterProps<T> {
+  columns: Array<IColumnType<TableType<T>>>;
+  data: Array<TableType<T>>;
+  extra?: IExtraStaticDataTableProps<TableType<T>>;
+}
+
+const StaticDataTableFooter = <T,>(props: IStaticDataTableFooterProps<T>): ReactElement => {
+  const { columns, data, extra } = props;
+
+  const isSelectable = extra?.onRowSelect;
+
+  if (!extra?.computeTotal) {
+    return <></>;
+  }
+
+  return (
+    <tfoot>
+      <tr>
+        {isSelectable && <td key='footer-selectable' className='table--footer--selectable'></td>}
+        {columns.map((column) => {
+          return <StaticDataTableFooterCell column={column} data={data} extra={extra} key={`footer-${column.title}`} />;
+        })}
+      </tr>
+    </tfoot>
+  );
+};
+
+export default StaticDataTableFooter;

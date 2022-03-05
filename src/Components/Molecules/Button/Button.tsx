@@ -55,7 +55,12 @@ const Button = (props: IButtonProps): ReactElement => {
   const button = (
     <button
       type={type}
-      onClick={onClick}
+      onClick={(event) => {
+        event.stopPropagation();
+        if (onClick) {
+          onClick(event);
+        }
+      }}
       disabled={loading || disabled}
       className={classnames('button-content', className)}
       color={color}>
@@ -67,18 +72,19 @@ const Button = (props: IButtonProps): ReactElement => {
       )}
 
       {label ? (
-        <div key='label' className='button-label-container'>
-          {typeof label === 'string' ? `${label}` : label}
-        </div>
-      ) : (
-        <></>
-      )}
-
-      {hasMenu ? (
-        <div key='control' className='button-menu-control-container'>
-          <FontAwesomeIcon icon={['fal', 'pipe']} size='1x' className='button-icon' />
-          <FontAwesomeIcon icon={['fas', 'caret-down']} size='1x' className='button-icon' />
-        </div>
+        <>
+          <div key='label' className='button-label-container'>
+            {typeof label === 'string' ? `${label}` : label}
+          </div>
+          {hasMenu ? (
+            <div key='control' className='button-menu-control-container'>
+              <FontAwesomeIcon icon={['fal', 'pipe']} size='1x' className='button-icon' />
+              <FontAwesomeIcon icon={['fas', 'caret-down']} size='1x' className='button-icon' />
+            </div>
+          ) : (
+            <></>
+          )}
+        </>
       ) : (
         <></>
       )}
@@ -100,10 +106,10 @@ const Button = (props: IButtonProps): ReactElement => {
                   key={item.itemId}
                   value={item.itemId}
                   onClick={(event) => {
+                    event.stopPropagation = true;
                     if (item.onClick) {
                       item.onClick(event.value);
                     }
-                    event.stopPropagation = true;
                   }}>
                   {item.value}
                 </MenuItem>

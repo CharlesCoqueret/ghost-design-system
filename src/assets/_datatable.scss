@@ -1,0 +1,148 @@
+@use 'sass:color';
+
+.table--header-value {
+  align-items: center;
+  display: flex;
+  flex: auto;
+  justify-content: space-between;
+
+  &.table--header-value--sortable {
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .table--header-value--title {
+    flex: 1;
+    position: relative;
+    z-index: 1;
+    font-weight: 700;
+    &.center {
+      text-align: center;
+    }
+    &.left {
+      text-align: left;
+    }
+    &.right {
+      text-align: right;
+    }
+  }
+
+  .table--header-value--sorter {
+    color: $charcoal;
+    width: 1.5rem;
+  }
+}
+.table--cell-value--date-readonly input {
+  text-align: center;
+}
+
+.table--cell-value--amount-readonly,
+.table--cell-value--number-readonly,
+.table--cell-value--percentage-readonly {
+  text-align: right !important;
+}
+
+.table--cell--value--badge-no-margin {
+  margin: 0px;
+}
+
+.table--cell-value--negative {
+  color: $error;
+}
+
+.table--cell--code {
+  text-align: center;
+}
+
+.table--cell--value--button {
+  display: flex;
+  position: relative;
+  float: right;
+}
+
+.table--footer-value {
+  flex: 1;
+  position: relative;
+  z-index: 1;
+  font-weight: 700;
+  &.center {
+    text-align: center;
+  }
+  &.left {
+    text-align: left;
+  }
+  &.right {
+    text-align: right;
+  }
+}
+
+/// STYLING
+
+table {
+  width: 100%;
+  table-layout: fixed;
+  overflow: hidden;
+  border-collapse: collapse;
+
+  tbody > tr {
+    &.pointer {
+      cursor: pointer;
+    }
+    &:hover {
+      background-color: color.change($chalk, $alpha: 0.33);
+    }
+
+    &:active {
+      background-color: color.change($chalk, $alpha: 0.66);
+    }
+
+    &:active {
+      background-color: color.change($chalk, $alpha: 0.66);
+    }
+
+    &.selected {
+      background-color: color.change($primary, $alpha: 0.33);
+    }
+
+    &:active.selected {
+      background-color: color.change($primary, $alpha: 0.66);
+    }
+  }
+
+  thead > tr > th {
+    padding: 8px 12px;
+    border-bottom: 1px solid $chalk;
+
+    &.table--header--selectable {
+      padding: auto 2px;
+      width: 20px;
+    }
+  }
+
+  tbody > tr > td {
+    white-space: normal;
+    border-bottom: 1px solid $chalk;
+    padding: 6px 12px;
+
+    &.ellipsis {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    &.table--value--selectable {
+      padding: auto 2px;
+      width: 20px;
+    }
+  }
+
+  tbody > tr:last-child > td {
+    border-bottom: none;
+  }
+
+  tfoot > tr > td {
+    white-space: normal;
+    border-top: 1px solid $silver;
+    padding: 6px 12px;
+  }
+}

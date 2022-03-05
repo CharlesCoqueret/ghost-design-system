@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IToggleEntry } from './types';
 
 export interface ICheckboxInputProps {
+  /** Additional class names to be added (optional, default: undefined) */
   className?: string;
   /** Disabled field (optional, default: false) */
   disabled?: boolean;
@@ -74,6 +75,16 @@ const CheckboxInput = (props: ICheckboxInputProps): ReactElement => {
       })}
     </div>
   );
+};
+
+CheckboxInput.defaultProps = {
+  classname: undefined,
+  disabled: false,
+  fieldSize: undefined,
+  highlighted: false,
+  isInError: false,
+  onChange: undefined,
+  readOnly: false,
 };
 
 export default CheckboxInput;
