@@ -27,13 +27,7 @@ const Template: ComponentStory<typeof Tooltip> = (args: ITooltipProps) => (
 
 export const Default = Template.bind({});
 Default.args = {
-  tooltip: (
-    <ul>
-      <li>Item #1</li>
-      <li>Item #2</li>
-      <li>Item #3</li>
-    </ul>
-  ),
+  tooltip: 'Tooltip',
   direction: MenuDirectionEnum.BOTTOM,
-  delay: 300,
+  delay: 200,
 };

@@ -1,5 +1,5 @@
-import React, { PropsWithChildren, ReactElement, useRef } from 'react';
-import { ControlledMenu, useMenuState } from '@szhsin/react-menu';
+import React, { PropsWithChildren, ReactElement } from 'react';
+import { usePopperTooltip } from 'react-popper-tooltip';
 
 export enum MenuDirectionEnum {
   LEFT = 'left',
@@ -10,51 +10,46 @@ export enum MenuDirectionEnum {
 
 export interface ITooltipProps {
   // Tooltip content (optional, default: undefined)
-  tooltip?: string | ReactElement;
+  tooltip?: string;
   // Direction of the tooltip (optional, default: bottom)
   direction?: MenuDirectionEnum;
-  // Delay for the tooltip in ms (optional, default: 400)
+  // Delay for the tooltip in ms (optional, default: 0)
   delay?: number;
 }
 
 const Tooltip = (props: PropsWithChildren<ITooltipProps>): ReactElement => {
-  const { children, direction, tooltip } = props;
+  const { children, direction, tooltip, delay } = props;
 
-  const ref = useRef<HTMLDivElement>(null);
-  const { toggleMenu, ...menuProps } = useMenuState({ transition: true });
-  let timeout: NodeJS.Timeout;
+  const { getArrowProps, getTooltipProps, setTooltipRef, setTriggerRef, visible } = usePopperTooltip({
+    placement: direction,
+    delayHide: delay,
+    delayShow: delay,
+    interactive: false,
+    closeOnTriggerHidden: true,
+    trigger: ['hover', 'click'],
+  });
 
-  const openTooltip = () => toggleMenu(true);
-  const closeTooltip = () => toggleMenu(false);
-
-  if (!tooltip || ((typeof tooltip === 'string' || tooltip instanceof String) && tooltip.trim() === '')) {
+  if (!tooltip || tooltip?.trim() === '') {
     return <>{children}</>;
   }
 
   return (
     <>
-      <div
-        className='tooltip-parent'
-        ref={ref}
-        onMouseEnter={() => {
-          timeout = setTimeout(openTooltip, 400);
-        }}
-        onMouseLeave={() => {
-          if (timeout) clearTimeout(timeout);
-          closeTooltip();
-        }}>
-        {children}
-      </div>
+      {React.Children.map(children, (child) => {
+        if (React.isValidElement(child)) {
+          return React.cloneElement(child, {
+            ref: setTriggerRef,
+          });
+        }
+        return child;
+      })}
 
-      <ControlledMenu
-        {...menuProps}
-        arrow
-        align='center'
-        className='tooltip-container'
-        direction={direction}
-        anchorRef={ref}>
-        {tooltip}
-      </ControlledMenu>
+      {visible && (
+        <div ref={setTooltipRef} {...getTooltipProps({ className: 'tooltip-container' })}>
+          {tooltip}
+          <div {...getArrowProps({ className: 'tooltip-arrow' })} />
+        </div>
+      )}
     </>
   );
 };
@@ -62,7 +57,7 @@ const Tooltip = (props: PropsWithChildren<ITooltipProps>): ReactElement => {
 Tooltip.defaultProps = {
   tooltip: undefined,
   direction: undefined,
-  delay: 400,
+  delay: 0,
 };
 
 export default Tooltip;

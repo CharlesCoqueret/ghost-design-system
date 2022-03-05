@@ -56,15 +56,11 @@
 
 .table--cell--value--button {
   display: flex;
-  position: relative;
   float: right;
 }
 
 .table--footer-value {
   flex: 1;
-  position: relative;
-  z-index: 1;
-  font-weight: 700;
   &.center {
     text-align: center;
   }

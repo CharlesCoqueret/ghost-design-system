@@ -1,5 +1,8 @@
 @use 'sass:color';
 
+@import '@szhsin/react-menu/dist/index.css';
+@import '@szhsin/react-menu/dist/transitions/slide.css';
+
 .button-content {
   display: flex;
   flex-direction: row;

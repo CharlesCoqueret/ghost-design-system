@@ -11,7 +11,7 @@ export interface IButtonProps {
   /** Label (optional, default: undefined) */
   label?: string;
   /** text to be displayed as a tooltip (optional, default: undefinef=d) */
-  tooltip?: string | ReactElement;
+  tooltip?: string;
   /** position of the tooltip (optional, default: 'bottom') */
   tooltipDirection?: MenuDirectionEnum;
   /** Icon name (optional, default: undefined) */
@@ -95,31 +95,33 @@ const Button = (props: IButtonProps): ReactElement => {
 
   return (
     <Tooltip direction={tooltipDirection} tooltip={label ? undefined : tooltip}>
-      {hasMenu ? (
-        <Menu menuButton={button} align={dropdownAlign} className={classnames('button', className)}>
-          {itemList?.map((item): ReactElement => {
-            if (item.hidden) return <></>;
-            return (
-              <>
-                {item.divider && <MenuDivider />}
-                <MenuItem
-                  key={item.itemId}
-                  value={item.itemId}
-                  onClick={(event) => {
-                    event.stopPropagation = true;
-                    if (item.onClick) {
-                      item.onClick(event.value);
-                    }
-                  }}>
-                  {item.value}
-                </MenuItem>
-              </>
-            );
-          })}
-        </Menu>
-      ) : (
-        button
-      )}
+      <span>
+        {hasMenu ? (
+          <Menu menuButton={button} align={dropdownAlign} className={classnames('button', className)}>
+            {itemList?.map((item): ReactElement => {
+              if (item.hidden) return <></>;
+              return (
+                <>
+                  {item.divider && <MenuDivider />}
+                  <MenuItem
+                    key={item.itemId}
+                    value={item.itemId}
+                    onClick={(event) => {
+                      event.stopPropagation = true;
+                      if (item.onClick) {
+                        item.onClick(event.value);
+                      }
+                    }}>
+                    {item.value}
+                  </MenuItem>
+                </>
+              );
+            })}
+          </Menu>
+        ) : (
+          button
+        )}
+      </span>
     </Tooltip>
   );
 };
