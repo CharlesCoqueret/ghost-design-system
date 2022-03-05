@@ -1,4 +1,6 @@
 import React, { MouseEvent, ReactElement } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import classnames from 'classnames';
 
 interface IStaticDataTableCellSelectableProps {
   handleSelectClick?: (event: MouseEvent<HTMLElement>, selected: boolean) => void;
@@ -39,7 +41,12 @@ class StaticDataTableCellSelectable extends React.Component<
   render(): ReactElement {
     return (
       <td key='cell-selectable' className='table--value--selectable' onClick={this.onClick}>
-        <input type='checkbox' checked={this.props.selected} />
+        <div className={classnames('checkbox-marker', { selected: this.props.selected })}>
+          <FontAwesomeIcon
+            icon={[this.props.selected ? 'fas' : 'fal', this.props.selected ? 'square-check' : 'square']}
+            size='lg'
+          />
+        </div>
       </td>
     );
   }

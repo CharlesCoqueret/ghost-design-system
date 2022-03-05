@@ -186,7 +186,7 @@ computeTotal.args = {
   data: data,
   columns: columns,
   extra: {
-    computeTotal: (data: Array<TableType<demoType>>, dataIndex: keyof demoType) => {
+    computeTotal: (data: Array<demoType>, dataIndex: keyof demoType) => {
       if (dataIndex === 'price' || dataIndex === 'parts') {
         return data
           .map((row: TableType<demoType>) => {

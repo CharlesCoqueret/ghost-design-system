@@ -51,15 +51,6 @@ Helper.args = {
   placeholder: 'Year picker placeholder',
 };
 
-export const InLine = Template.bind({});
-InLine.args = {
-  name: 'name',
-  label: 'Year picker inline mandatory and field size = 1',
-  inline: true,
-  mandatory: true,
-  fieldSize: 1,
-};
-
 export const Highlighted = Template.bind({});
 Highlighted.args = {
   helperText: 'Helper text',

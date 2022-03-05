@@ -32,14 +32,14 @@ const StaticDataTableHeader = <T,>(props: IStaticDataTableHeaderProps<T>): React
     return 'sort-down';
   };
 
-  const isSelectable = extra?.getSelectedRows || extra?.onRowSelect;
+  const isSelectable = extra?.onRowSelect;
 
   return (
     <thead>
       <tr>
         {isSelectable && (
           <th key='header-selectable' className='table--header--selectable'>
-            <input type='checkbox' />
+            {/* <input type='checkbox' />  // TODO implement the select all, select partial to deselect */}
           </th>
         )}
         {columns.map((column, index) => {
@@ -53,7 +53,7 @@ const StaticDataTableHeader = <T,>(props: IStaticDataTableHeaderProps<T>): React
                 <div
                   className={classnames('table--header-value', { 'table--header-value--sortable': column.sorter })}
                   onClick={
-                    column.sorter
+                    column.sorter && column.type !== ColumnType.BUTTON
                       ? () => {
                           updateSort(column.dataIndex);
                         }
@@ -67,7 +67,7 @@ const StaticDataTableHeader = <T,>(props: IStaticDataTableHeaderProps<T>): React
                     })}>
                     {column.title}
                   </span>
-                  {column.sorter && (
+                  {column.sorter && column.type !== ColumnType.BUTTON && (
                     <span className='table--header-value--sorter'>
                       <FontAwesomeIcon icon={['fas', iconName(column.dataIndex)]} />
                     </span>

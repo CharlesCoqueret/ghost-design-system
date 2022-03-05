@@ -63,15 +63,6 @@ Helper.args = {
   inputValue: options,
 };
 
-export const InLine = Template.bind({});
-InLine.args = {
-  label: 'Checkbox inline mandatory and field size = 3',
-  inline: true,
-  mandatory: true,
-  inputValue: [options[0]],
-  fieldSize: 3,
-};
-
 export const Highlighted = Template.bind({});
 Highlighted.args = {
   helperText: 'Helper text',

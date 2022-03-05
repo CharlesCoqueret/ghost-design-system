@@ -46,15 +46,6 @@ HelperAndCounter.args = {
   maxLength: 20,
 };
 
-export const InLine = Template.bind({});
-InLine.args = {
-  name: 'name',
-  label: 'Text field inline mandatory and field size = 4',
-  inline: true,
-  mandatory: true,
-  fieldSize: 4,
-};
-
 export const Highlighted = Template.bind({});
 Highlighted.args = {
   name: 'name',
