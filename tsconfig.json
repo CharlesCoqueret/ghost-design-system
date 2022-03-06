@@ -22,6 +22,6 @@
     "target": "es5",
     "types": ["node", "jest"]
   },
-  "exclude": ["node_modules"],
+  "exclude": ["node_modules", "dist", "**/*.stories.tsx", "**/*.test.tsx", "**/*.spec.tsx"],
   "include": ["./src"]
 }

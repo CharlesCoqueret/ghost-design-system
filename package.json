@@ -6,16 +6,18 @@
   "description": "React Component Library",
   "author": "Charles Coqueret",
   "scripts": {
+    "build-storybook": "build-storybook -o public",
+    "clean": "rm -rf npm-*.log package-lock.json node_modules coverage dist && npm cache verify",
     "dev": "yarn storybook",
-    "lint": "eslint . --ext .js,.ts,.jsx,.tsx,.json --color ./",
-    "lint:fix": "eslint . --ext .js,.ts,.jsx,.tsx,.json --fix --color ./",
     "format": "prettier --write \"src/**/*.{ts,tsx,json,js,jsx}\"",
     "format:check": "prettier --list-different \"src/**/*.{ts,tsx,json,js,jsx}\"",
+    "lint": "eslint . --ext .js,.ts,.jsx,.tsx,.json --color ./",
+    "lint:fix": "eslint . --ext .js,.ts,.jsx,.tsx,.json --fix --color ./",
+    "nuke": "npm run clean && npm install",
     "storybook": "start-storybook -p 9001 -c .storybook",
-    "build-storybook": "build-storybook -o public",
     "test": "jest",
-    "test:watch": "jest --watch",
-    "test:coverage": "jest --maxWorkers=2 --colors --coverage"
+    "test:coverage": "jest --maxWorkers=2 --colors --coverage",
+    "test:watch": "jest --watch"
   },
   "main": "index.js",
   "module": "index.esm.js",
