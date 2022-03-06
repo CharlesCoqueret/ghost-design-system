@@ -3,7 +3,7 @@ import classnames from 'classnames';
 
 import { ICellProps } from './types';
 import { IColumnDate } from '../types';
-import { DatePickerField } from '../../..';
+import { DatePickerField } from '../../../Molecules/DatePickerField';
 
 const DateCell = <T,>(props: ICellProps<T, IColumnDate<T>>): ReactElement => {
   const { column, forcedValue, row, extra } = props;

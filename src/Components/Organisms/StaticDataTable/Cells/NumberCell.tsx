@@ -2,7 +2,7 @@ import React, { ReactElement } from 'react';
 import classnames from 'classnames';
 import { ICellProps } from './types';
 import { IColumnNumber } from '../types';
-import { AmountField } from '../../..';
+import { AmountField } from '../../../Molecules/AmountField';
 
 const NumberCell = <T,>(props: ICellProps<T, IColumnNumber<T>>): ReactElement => {
   const { column, forcedValue, row } = props;

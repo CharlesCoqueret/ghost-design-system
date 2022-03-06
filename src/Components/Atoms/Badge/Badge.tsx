@@ -1,6 +1,6 @@
 import React, { PropsWithChildren, ReactElement } from 'react';
 import classnames from 'classnames';
-import { MenuDirectionEnum, Tooltip } from '..';
+import { MenuDirectionEnum, Tooltip } from '../Tooltip';
 
 export enum BadgeColorsEnum {
   PRIMARY = 'primary',

@@ -3,7 +3,7 @@ import classnames from 'classnames';
 
 import { ICellProps } from './types';
 import { IColumnButton } from '../types';
-import { Button } from '../../..';
+import { Button } from '../../../Molecules/Button';
 
 const ButtonCell = <T,>(props: ICellProps<T, IColumnButton<T>>): ReactElement => {
   const { column, row } = props;

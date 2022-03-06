@@ -3,7 +3,7 @@ import classnames from 'classnames';
 
 import { ICellProps } from './types';
 import { IColumnBadge } from '../types';
-import { Badge, BadgeColorsEnum } from '../../..';
+import { Badge, BadgeColorsEnum } from '../../../Atoms/Badge';
 
 const BadgeCell = <T,>(props: ICellProps<T, IColumnBadge<T>>): ReactElement => {
   const { column, forcedValue, row } = props;

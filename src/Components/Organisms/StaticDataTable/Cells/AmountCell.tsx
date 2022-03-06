@@ -3,7 +3,7 @@ import classnames from 'classnames';
 
 import { ICellProps } from './types';
 import { IColumnAmount } from '../types';
-import { AmountField } from '../../..';
+import { AmountField } from '../../../Molecules/AmountField';
 
 const AmountCell = <T,>(props: ICellProps<T, IColumnAmount<T>>): ReactElement => {
   const { column, extra, forcedValue, row } = props;

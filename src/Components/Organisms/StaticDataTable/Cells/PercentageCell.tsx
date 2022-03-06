@@ -2,7 +2,7 @@ import React, { ReactElement } from 'react';
 import classnames from 'classnames';
 import { ICellProps } from './types';
 import { IColumnPercentage } from '../types';
-import { PercentageField } from '../../..';
+import { PercentageField } from '../../../Molecules/PercentageField';
 
 const PercentageCell = <T,>(props: ICellProps<T, IColumnPercentage<T>>): ReactElement => {
   const { column, forcedValue, row } = props;

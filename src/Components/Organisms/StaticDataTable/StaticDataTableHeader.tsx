@@ -3,7 +3,7 @@ import React, { ReactElement } from 'react';
 import classnames from 'classnames';
 
 import { ColumnType, IColumnType, IExtraStaticDataTableProps, SortDirectionEnum } from './types';
-import { MenuDirectionEnum, Tooltip } from '../..';
+import { MenuDirectionEnum, Tooltip } from '../../Atoms/Tooltip';
 
 interface IStaticDataTableHeaderProps<T> {
   columns: Array<IColumnType<T>>;
