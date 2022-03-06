@@ -23,6 +23,15 @@
     "target": "es5",
     "types": ["node", "jest"]
   },
-  "exclude": ["node_modules", "dist", "**/*.stories.tsx", "**/*.test.tsx", "**/*.spec.tsx"],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "public",
+    "**/*.stories.tsx",
+    "**/*.test.tsx",
+    "**/*.test.ts",
+    "**/*.spec.tsx",
+    "**/*.spec.ts"
+  ],
   "include": ["./src"]
 }

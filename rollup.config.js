@@ -22,6 +22,9 @@ export default {
       sourcemap: true,
     },
   ],
+  onwarn: (warning) => {
+    throw new Error(warning.message);
+  },
   plugins: [
     peerDepsExternal(),
     resolve(),
