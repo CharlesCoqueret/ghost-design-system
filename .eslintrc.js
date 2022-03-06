@@ -10,7 +10,7 @@ module.exports = {
     jest: true,
     node: true,
   },
-  ignorePatterns: ['**/*.stories.tsx', 'webpack.*.js', 'coverage/'],
+  ignorePatterns: ['**/*.stories.tsx', 'webpack.*.js', 'coverage/*', 'node_modules/*'],
   parser: '@typescript-eslint/parser',
   plugins: ['react-hooks', 'prettier'],
   parserOptions: {

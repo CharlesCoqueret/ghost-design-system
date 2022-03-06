@@ -44,7 +44,7 @@ You can develop your new component using storybook as your playground. Once you 
 
 ```
 
-$ yarn test
+$ npm run test
 
 ```
 
@@ -52,7 +52,7 @@ Watch
 
 ```
 
-$ yarn test:watch
+$ npm run test:watch
 
 ```
 
@@ -60,7 +60,7 @@ $ yarn test:watch
 
 ```
 
-$ yarn format
+$ npm run format
 
 ```
 
@@ -68,7 +68,7 @@ Validate project formatting
 
 ```
 
-$ yarn format:check
+$ npm run format:check
 
 ```
 
@@ -76,7 +76,7 @@ $ yarn format:check
 
 ```
 
-$ yarn lint
+$ npm run lint
 
 ```
 
@@ -84,7 +84,7 @@ $ yarn lint
 
 ```
 
-$ yarn storybook
+$ npm run storybook
 
 ```
 
@@ -92,7 +92,7 @@ $ yarn storybook
 
 ```
 
-$ yarn build
+$ npm run build
 
 ```
 
@@ -157,3 +157,29 @@ The changelog.md is automatically generated from the following types of commits:
 - `revert`
 
 In addition to these types, any `breaking change` will also be added to the changelog.
+
+---
+
+## Usage
+
+- Install the library
+
+```
+
+$ npm run react-components
+
+```
+
+- Define the set of colors for the client (by copying the file: `~/react-components/dist/assets/_colors.scss`)
+- Generate your `index.scss` file
+
+```
+@import './YOUR_COLOR_FILE.scss';
+@import '~/react-components/dist/assets/global.scss';
+```
+
+- In your first component using the library, simply import the lib
+
+```
+import { Button } from 'react-components';
+```
