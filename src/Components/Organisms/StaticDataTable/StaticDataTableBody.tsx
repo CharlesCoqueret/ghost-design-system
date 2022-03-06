@@ -57,6 +57,7 @@ const StaticDataTableBody = <T extends TableType<T>>(props: IStaticDataTableBody
               <StaticDataTableCellSelectable
                 handleSelectClick={handleSelectClick(row, index)}
                 selected={selectedRows[index]}
+                selectable={extra.isSelectable ? extra.isSelectable(row) : true}
               />
             )}
 

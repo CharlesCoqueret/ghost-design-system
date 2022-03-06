@@ -2,14 +2,14 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import StaticDataTable, { IStaticDataTableProps } from './StaticDataTable';
-import { ColumnType, IColumnType } from './types';
+import { ColumnType, IColumnType, TableType } from './types';
 
 export default {
-  title: 'Organism/StaticDataTable',
+  title: 'Organism/LineEditableDataTable',
   component: StaticDataTable,
 } as ComponentMeta<typeof StaticDataTable>;
 
-const columns: IColumnType<demoType>[] = [
+const columns: IColumnType<TableType<demoType>>[] = [
   {
     title: 'Code',
     dataIndex: 'id',
@@ -22,12 +22,14 @@ const columns: IColumnType<demoType>[] = [
     type: ColumnType.TEXT,
     ellipsis: true,
     sorter: true,
+    editable: true,
   },
   {
     title: 'Badge',
     dataIndex: 'status',
     sorter: true,
     type: ColumnType.BADGE,
+    editable: true,
     options: [
       { label: 'Inactive', value: 'INACTIVE' },
       { label: 'In progress', value: 'IN_PROGRESS' },
@@ -40,18 +42,21 @@ const columns: IColumnType<demoType>[] = [
     sorter: true,
     type: ColumnType.AMOUNT,
     currency: '€',
+    editable: true,
   },
   {
     title: 'Percentage',
     dataIndex: 'parts',
     sorter: true,
     type: ColumnType.PERCENTAGE,
+    editable: true,
   },
   {
     title: 'Date',
     dataIndex: 'startDate',
     sorter: true,
     type: ColumnType.DATE,
+    editable: true,
   },
   {
     title: 'Actions',
@@ -149,8 +154,8 @@ const data = [
   },
 ];
 
-const Template: ComponentStory<typeof StaticDataTable> = (args: IStaticDataTableProps<demoType>) => {
-  return <StaticDataTable<demoType> {...args} />;
+const Template: ComponentStory<typeof StaticDataTable> = (args: IStaticDataTableProps<TableType<demoType>>) => {
+  return <StaticDataTable<TableType<demoType>> {...args} />;
 };
 
 export const Default = Template.bind({});
@@ -164,7 +169,7 @@ ClickableRow.args = {
   data: data,
   columns: columns,
   extra: {
-    onRowClick: (row: demoType) => {
+    onRowClick: (row: TableType<demoType>) => {
       alert(`clicked row: ${row.id}`);
     },
   },
@@ -175,12 +180,8 @@ SelectableRows.args = {
   data: data,
   columns: columns,
   extra: {
-    onRowSelect: (rows: Array<demoType>, row: demoType) => {
-      alert(`Number of rows selected: ${rows.length}\nClicked row: ${row.id}`);
-    },
-    isSelectable: (row: demoType) => {
-      console.log('isSelectable', row);
-      return row.id !== 'UGA';
+    onRowSelect: (rows: Array<TableType<demoType>>) => {
+      alert(`selected rows: ${rows.length}`);
     },
   },
 };
@@ -193,7 +194,7 @@ computeTotal.args = {
     computeTotal: (data: Array<demoType>, dataIndex: keyof demoType) => {
       if (dataIndex === 'price' || dataIndex === 'parts') {
         return data
-          .map((row: demoType) => {
+          .map((row: TableType<demoType>) => {
             return row[dataIndex];
           })
           .reduce((a, b) => Number(a) + Number(b), 0);

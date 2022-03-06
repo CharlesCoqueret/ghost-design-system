@@ -5,6 +5,7 @@ import classnames from 'classnames';
 interface IStaticDataTableCellSelectableProps {
   handleSelectClick?: (event: MouseEvent<HTMLElement>, selected: boolean) => void;
   selected: boolean;
+  selectable: boolean;
 }
 
 interface IStaticDataTableCellSelectableState {
@@ -40,10 +41,16 @@ class StaticDataTableCellSelectable extends React.Component<
 
   render(): ReactElement {
     return (
-      <td key='cell-selectable' className='table--value--selectable' onClick={this.onClick}>
+      <td
+        key='cell-selectable'
+        className={this.props.selectable ? 'table--value--selectable' : 'table--value--selectable-disabled'}
+        onClick={this.props.selectable ? this.onClick : undefined}>
         <div className={classnames('checkbox-marker', { selected: this.props.selected })}>
           <FontAwesomeIcon
-            icon={[this.props.selected ? 'fas' : 'fal', this.props.selected ? 'square-check' : 'square']}
+            icon={[
+              this.props.selected || !this.props.selectable ? 'fas' : 'fal',
+              this.props.selected ? 'square-check' : 'square',
+            ]}
             size='lg'
           />
         </div>

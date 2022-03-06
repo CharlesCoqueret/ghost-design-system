@@ -140,6 +140,14 @@ table {
         }
       }
     }
+    &.table--value--selectable-disabled {
+      padding: auto 2px;
+      width: 20px;
+
+      .checkbox-marker {
+        color: $pebble;
+      }
+    }
   }
 
   tbody > tr:last-child > td {

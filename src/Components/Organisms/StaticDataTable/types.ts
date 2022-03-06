@@ -107,4 +107,5 @@ export interface IExtraStaticDataTableProps<T> {
   dateFormat?: DateFormatEnum;
   onRowClick?: (row: T) => void;
   onRowSelect?: (selectedRows: Array<T>, clickedRow: T) => void;
+  isSelectable?: (row: T) => boolean;
 }

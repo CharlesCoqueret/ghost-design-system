@@ -15,23 +15,24 @@ export interface IStaticDataTableProps<T> extends IPaginatedTableProps<T> {
   data: Array<T>;
   columns: Array<IColumnType<T>>;
   extra?: IExtraStaticDataTableProps<T>;
+  onSortChange?: (sortField?: keyof T, sortDirection?: SortDirectionEnum) => void;
+  // TODO Add no data message
+  // TODO Add loading state
 }
 
 const StaticDataTable = <T extends TableType<T>>(props: IStaticDataTableProps<T>): ReactElement => {
-  const { data, columns, extra, getPage } = props;
+  const { data, columns, extra, onSortChange } = props;
 
   const [sortField, setSortField] = useState<keyof T | undefined>();
   const [sortDirection, setSortDirection] = useState<SortDirectionEnum | undefined>();
-  const [, /*currentPage*/ setCurrentPage] = useState<number>(0);
 
-  const onSortChange = useCallback((newSortField: keyof T, newSortDirection?: SortDirectionEnum) => {
+  const handleSortChange = useCallback((newSortField: keyof T, newSortDirection?: SortDirectionEnum) => {
     if (sortField !== newSortField || newSortDirection !== newSortDirection) {
       setSortField(newSortField);
       setSortDirection(newSortDirection);
-      setCurrentPage(0);
 
-      if (getPage) {
-        getPage(0, newSortField, newSortDirection);
+      if (onSortChange) {
+        onSortChange(newSortField, newSortDirection);
       }
     }
   }, []);
@@ -40,7 +41,7 @@ const StaticDataTable = <T extends TableType<T>>(props: IStaticDataTableProps<T>
     <table className='cui-table'>
       <StaticDataTableHeader<T>
         columns={columns}
-        onSortChange={onSortChange}
+        onSortChange={handleSortChange}
         sortField={sortField}
         sortDirection={sortDirection}
         extra={extra}
