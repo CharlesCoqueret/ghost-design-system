@@ -17,7 +17,7 @@ interface ICustomStylesProps {
 
 export const customStyles = (props: ICustomStylesProps = {}): StylesConfig<IOption> => {
   const {
-    controlErrorColor = 'rgb(255,52,24);',
+    controlErrorColor = 'rgb(255,52,24)',
     controlFocusColor = 'rgb(1,82,129)',
     controlBackgroundColorDisabled = 'rgb(228,228,228)',
     controlColorDisabled = 'rgb(117,117,117)',

@@ -1,5 +1,5 @@
 $datepicker__background-color: $chalk !default;
-$datepicker__border-color: $silver !default;
+$datepicker__border-color: $chalk !default;
 $datepicker__highlighted-color: $primary !default;
 $datepicker__muted-color: $silver !default;
 $datepicker__selected-color: $primary !default;
@@ -238,6 +238,7 @@ $datepicker__triangle-size: 0px !default;
 }
 
 .react-datepicker__month {
+  background-color: $white;
   margin: $datepicker__margin;
   text-align: center;
 
@@ -690,7 +691,7 @@ $datepicker__triangle-size: 0px !default;
   border-radius: 4px;
   outline: none;
   box-shadow: none;
-  border: 1px solid $silver;
+  border: 1px solid $chalk;
   width: 100%;
 
   &:hover:not(:disabled):not(:read-only),

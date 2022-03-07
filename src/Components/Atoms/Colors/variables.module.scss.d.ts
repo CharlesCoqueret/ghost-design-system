@@ -1,4 +1,4 @@
-declare const styles: {
+export interface IStyle {
   readonly buttercup: string;
   readonly cerulean: string;
   readonly charcoal: string;
@@ -16,6 +16,8 @@ declare const styles: {
   readonly tangerine: string;
   readonly tertiary: string;
   readonly whiteColor: string;
-};
+}
 
-export = styles;
+export const colorsVariables: IStyle;
+
+export default colorsVariables;

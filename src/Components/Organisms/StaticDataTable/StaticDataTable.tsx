@@ -5,13 +5,7 @@ import StaticDataTableFooter from './StaticDataTableFooter';
 import StaticDataTableHeader from './StaticDataTableHeader';
 import { IColumnType, IExtraStaticDataTableProps, SortDirectionEnum, TableType } from './types';
 
-export interface IPaginatedTableProps<T> {
-  getPage?: (pageNumber: number, sortField?: keyof T, sortDirection?: SortDirectionEnum) => void;
-  totalItems?: number;
-  itemsPerPage?: number;
-}
-
-export interface IStaticDataTableProps<T> extends IPaginatedTableProps<T> {
+export interface IStaticDataTableProps<T> {
   data: Array<T>;
   columns: Array<IColumnType<T>>;
   extra?: IExtraStaticDataTableProps<T>;

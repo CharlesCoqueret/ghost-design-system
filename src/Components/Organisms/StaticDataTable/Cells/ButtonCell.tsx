@@ -5,15 +5,21 @@ import { ICellProps } from './types';
 import { IColumnButton } from '../types';
 import { Button } from '../../../Molecules/Button';
 
+const DISPLAY_BUTTON_THRESHOLD = 2;
+
 const ButtonCell = <T,>(props: ICellProps<T, IColumnButton<T>>): ReactElement => {
-  const { column, row } = props;
+  const { column, row, rowIndex } = props;
 
   if (!row) throw new Error('missing row property');
+
+  const visibleButtons = column.buttons.filter((button) => {
+    return !button.hidden || !button.hidden(row, rowIndex);
+  });
 
   return (
     <td className={classnames({ ellipsis: column.ellipsis })}>
       <div className='table--cell--value--button'>
-        {column.buttons?.length > 2 ? (
+        {visibleButtons.length > DISPLAY_BUTTON_THRESHOLD ? (
           <Button
             tooltip='More elements' // TODO to manage translation
             icon={['fal', 'ellipsis-h']}
@@ -21,10 +27,9 @@ const ButtonCell = <T,>(props: ICellProps<T, IColumnButton<T>>): ReactElement =>
               return {
                 itemId: item.label,
                 value: item.label,
-                hidden: (item.hidden && item.hidden(row)) || false,
                 onClick: () => {
                   if (item.onClick) {
-                    item.onClick(row);
+                    item.onClick(row, rowIndex);
                   }
                 },
               };
@@ -32,11 +37,7 @@ const ButtonCell = <T,>(props: ICellProps<T, IColumnButton<T>>): ReactElement =>
             color={'reversed'}
           />
         ) : (
-          column.buttons?.map((button) => {
-            if ((button.hidden && button.hidden(row)) || false) {
-              return;
-            }
-
+          visibleButtons.map((button) => {
             return (
               <Button
                 key={button.label}
@@ -45,21 +46,9 @@ const ButtonCell = <T,>(props: ICellProps<T, IColumnButton<T>>): ReactElement =>
                 onClick={(event) => {
                   event.stopPropagation();
                   if (button.onClick) {
-                    button.onClick(row);
+                    button.onClick(row, rowIndex);
                   }
                 }}
-                itemList={button?.itemList?.map((item) => {
-                  return {
-                    itemId: item.label,
-                    value: item.label,
-                    hidden: (item.hidden && item.hidden(row)) || false,
-                    onClick: () => {
-                      if (item.onClick) {
-                        item.onClick(row);
-                      }
-                    },
-                  };
-                })}
                 color={'reversed'}
               />
             );

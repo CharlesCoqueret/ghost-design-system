@@ -3,6 +3,7 @@ import copy from 'rollup-plugin-copy';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import resolve from '@rollup/plugin-node-resolve';
 import typescript from 'rollup-plugin-typescript2';
+import scss from 'rollup-plugin-scss';
 
 import packageJson from './package.json';
 
@@ -29,6 +30,7 @@ export default {
     peerDepsExternal(),
     resolve(),
     commonjs(),
+    scss({ output: false }),
     typescript({ exclude: ['**/__tests__', '**/*.test.ts'], useTsconfigDeclarationDir: true }),
     copy({
       targets: [

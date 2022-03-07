@@ -59,30 +59,17 @@ const columns: IColumnType<demoType>[] = [
     moreActionsMessage: 'Nore actions',
     buttons: [
       {
-        icon: ['fal', 'edit'],
-        label: 'Edit',
+        icon: ['fal', 'arrow-to-bottom'],
+        label: 'Download',
         onClick: (row) => {
-          alert(`edit icon clicked on row: ${row.id}`);
+          alert(`download icon clicked on row: ${row.id}`);
         },
       },
       {
-        icon: ['fal', 'trash-alt'],
-        label: 'Delete',
+        icon: ['fal', 'eye'],
+        label: 'Watch',
         onClick: (row) => {
-          alert(`erasing icon clicked on row: ${row.id}`);
-        },
-      },
-      {
-        icon: ['fal', 'undo'],
-        label: 'Undo',
-        hidden: (row) => {
-          if (row) {
-            return Number(row.parts) < 0;
-          }
-          return false;
-        },
-        onClick: (row) => {
-          alert(`undo icon clicked on row: ${row.id}`);
+          alert(`Eye icon clicked on row: ${row.id}`);
         },
       },
     ],

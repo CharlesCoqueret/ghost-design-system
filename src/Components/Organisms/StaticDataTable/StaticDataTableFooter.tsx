@@ -23,7 +23,15 @@ const StaticDataTableFooter = <T,>(props: IStaticDataTableFooterProps<T>): React
       <tr>
         {isSelectable && <td key='footer-selectable' className='table--footer--selectable'></td>}
         {columns.map((column) => {
-          return <StaticDataTableFooterCell column={column} data={data} extra={extra} key={`footer-${column.title}`} />;
+          return (
+            <StaticDataTableFooterCell
+              column={column}
+              data={data}
+              extra={extra}
+              key={`footer-${column.title}`}
+              rowIndex={data.length + 1}
+            />
+          );
         })}
       </tr>
     </tfoot>

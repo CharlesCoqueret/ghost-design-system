@@ -39,8 +39,8 @@ Error.args = {
   errorMessage: 'This amount is on error',
 };
 
-export const HelperAndCounter = Template.bind({});
-HelperAndCounter.args = {
+export const HelperAndLimit = Template.bind({});
+HelperAndLimit.args = {
   name: 'name',
   label: 'Amount field with helper and maximum value: 100',
   helperText: 'Helper text',

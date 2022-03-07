@@ -1,18 +1,19 @@
 import React, { ReactElement, MouseEvent, useState } from 'react';
 import classnames from 'classnames';
 
-import StaticDataTableCell from './StaticDataTableCell';
-import { IColumnType, IExtraLineEditableDataTableProps, TableType } from './types';
-import StaticDataTableCellSelectable from './StaticDataTableCellSelectable';
+import { IColumnType, IExtraLineEditableDataTableProps, TableType } from '../StaticDataTable/types';
+import StaticDataTableCellSelectable from '../StaticDataTable/StaticDataTableCellSelectable';
+import LineEditableDataTableCell from './LineEditableDataTableCell';
 
-interface IStaticDataTableBodyProps<T> {
+interface ILineEditableDataTableBodyProps<T> {
   columns: Array<IColumnType<T>>;
   data: Array<T>;
   extra?: IExtraLineEditableDataTableProps<T>;
+  handUpdateDataChange: (rowIndex: number, dataIndex: keyof T, newData: T[keyof T]) => void;
 }
 
-const StaticDataTableBody = <T extends TableType<T>>(props: IStaticDataTableBodyProps<T>): ReactElement => {
-  const { columns, data, extra } = props;
+const LineEditableDataTableBody = <T extends TableType<T>>(props: ILineEditableDataTableBodyProps<T>): ReactElement => {
+  const { columns, data, extra, handUpdateDataChange } = props;
 
   const [selectedRows, setSelectedRows] = useState<Record<number, boolean>>({});
 
@@ -56,18 +57,19 @@ const StaticDataTableBody = <T extends TableType<T>>(props: IStaticDataTableBody
               <StaticDataTableCellSelectable
                 handleSelectClick={handleSelectClick(row, rowIndex)}
                 selected={selectedRows[rowIndex]}
-                selectable={(extra && extra.isSelectable ? extra?.isSelectable(row) : true) && !extra?.editedRowIndex}
+                selectable={(extra.isSelectable ? extra.isSelectable(row) : true) && !extra?.editedRowIndex}
               />
             )}
 
             {columns.map((column) => {
               return (
-                <StaticDataTableCell<T>
+                <LineEditableDataTableCell<T>
                   key={`cell-${rowIndex}-${column.title}`}
                   column={column}
                   row={row}
                   extra={extra}
                   rowIndex={rowIndex}
+                  handUpdateDataChange={handUpdateDataChange}
                 />
               );
             })}
@@ -78,4 +80,4 @@ const StaticDataTableBody = <T extends TableType<T>>(props: IStaticDataTableBody
   );
 };
 
-export default StaticDataTableBody;
+export default LineEditableDataTableBody;

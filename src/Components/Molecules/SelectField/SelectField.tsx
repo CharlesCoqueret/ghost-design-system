@@ -2,8 +2,20 @@ import React from 'react';
 import classnames from 'classnames';
 
 import { GenericField, SelectInput, IOption } from '../../Atoms';
+import colors from '../../Atoms/Colors/colors';
 
 export interface ISelectFieldProps {
+  /** Custom colors settings */
+  colors?: {
+    controlErrorColor: string; // colors.error,
+    controlFocusColor: string; // colors.primary,
+    controlBackgroundColorDisabled: string; // colors.chalk,
+    controlColorDisabled: string; // colors.pebble,
+    fontColor: string; // 'rgb(0, 0, 0)',
+    multiValueBorderColorDisabled: string; // colors.silver,
+    optionFocusColor: string; // colors.chalk,
+    optionSelectedColor: string; // colors.primary,
+  };
   /** Disabled field (optional, default: false) */
   disabled?: boolean;
   /** Error message (optional, default: undefined) */
@@ -52,6 +64,7 @@ export interface ISelectFieldProps {
  */
 export const SelectField = (props: ISelectFieldProps): React.ReactElement => {
   const {
+    colors,
     disabled,
     errorMessage,
     fieldClassName,
@@ -84,6 +97,7 @@ export const SelectField = (props: ISelectFieldProps): React.ReactElement => {
       mandatory={mandatory}
       readOnly={readOnly}>
       <SelectInput
+        colors={colors}
         className={classnames(
           inputClassName,
           'field',
@@ -106,6 +120,16 @@ export const SelectField = (props: ISelectFieldProps): React.ReactElement => {
 };
 
 SelectField.defaultProps = {
+  colors: {
+    controlErrorColor: colors.error.rgb,
+    controlFocusColor: colors.primary.rgb,
+    controlBackgroundColorDisabled: colors.chalk.rgb,
+    controlColorDisabled: colors.pebble.rgb,
+    fontColor: 'rgb(0, 0, 0)',
+    multiValueBorderColorDisabled: colors.silver.rgb,
+    optionFocusColor: colors.chalk.rgb,
+    optionSelectedColor: colors.primary.rgb,
+  },
   disabled: false,
   errorMessage: undefined,
   fieldClassName: undefined,

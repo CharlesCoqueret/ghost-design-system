@@ -2,12 +2,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { ReactElement } from 'react';
 import classnames from 'classnames';
 
-import { ColumnType, IColumnType, IExtraStaticDataTableProps, SortDirectionEnum } from './types';
+import { ColumnType, IColumnType, IExtraLineEditableDataTableProps, SortDirectionEnum } from './types';
 import { MenuDirectionEnum, Tooltip } from '../../Atoms/Tooltip';
 
 interface IStaticDataTableHeaderProps<T> {
   columns: Array<IColumnType<T>>;
-  extra?: IExtraStaticDataTableProps<T>;
+  extra?: IExtraLineEditableDataTableProps<T>;
   onSortChange: (newSortField: keyof T, newSortDirection?: SortDirectionEnum) => void;
   sortField?: keyof T;
   sortDirection?: SortDirectionEnum;
@@ -47,7 +47,7 @@ const StaticDataTableHeader = <T,>(props: IStaticDataTableHeaderProps<T>): React
             <th key={`header-${index}`}>
               <Tooltip
                 tooltip={
-                  column.sorter ? 'Click to sort' : undefined // TODO Manage translation and the different states of filtering
+                  column.sorter && !extra?.editedRowIndex ? 'Click to sort' : undefined // TODO Manage translation and the different states of filtering
                 }
                 direction={MenuDirectionEnum.TOP}>
                 <div
@@ -67,7 +67,7 @@ const StaticDataTableHeader = <T,>(props: IStaticDataTableHeaderProps<T>): React
                     })}>
                     {column.title}
                   </span>
-                  {column.sorter && column.type !== ColumnType.BUTTON && (
+                  {column.sorter && !extra?.editedRowIndex && column.type !== ColumnType.BUTTON && (
                     <span className='table--header-value--sorter'>
                       <FontAwesomeIcon icon={['fas', iconName(column.dataIndex)]} />
                     </span>

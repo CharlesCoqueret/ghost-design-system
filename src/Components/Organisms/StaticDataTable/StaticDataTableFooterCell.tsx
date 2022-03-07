@@ -7,10 +7,11 @@ export interface IStaticDataTableFooterCellProps<T> {
   column: IColumnType<T>;
   data: Array<T>;
   extra?: IExtraStaticDataTableProps<T>;
+  rowIndex: number;
 }
 
 const StaticDataTableFooterCell = <T,>(props: IStaticDataTableFooterCellProps<T>): ReactElement => {
-  const { column, data, extra } = props;
+  const { column, data, extra, rowIndex } = props;
 
   switch (column.type) {
     case ColumnType.AMOUNT: {
@@ -19,6 +20,7 @@ const StaticDataTableFooterCell = <T,>(props: IStaticDataTableFooterCellProps<T>
           column={column}
           forcedValue={extra?.computeTotal && extra.computeTotal(data, column.dataIndex)}
           extra={extra}
+          rowIndex={rowIndex}
         />
       );
     }
@@ -28,6 +30,7 @@ const StaticDataTableFooterCell = <T,>(props: IStaticDataTableFooterCellProps<T>
           column={column}
           forcedValue={extra?.computeTotal && extra.computeTotal(data, column.dataIndex)}
           extra={extra}
+          rowIndex={rowIndex}
         />
       );
     }
@@ -37,6 +40,7 @@ const StaticDataTableFooterCell = <T,>(props: IStaticDataTableFooterCellProps<T>
           column={column}
           forcedValue={extra?.computeTotal && extra.computeTotal(data, column.dataIndex)}
           extra={extra}
+          rowIndex={rowIndex}
         />
       );
     }

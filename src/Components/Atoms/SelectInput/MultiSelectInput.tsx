@@ -11,10 +11,22 @@ import classnames from 'classnames';
 import OverflowWrapper from './OverflowWrapper';
 import { customStyles } from './selectStyles';
 import { IOption } from './types';
+import colors from '../Colors/colors';
 
 export interface IMultiSelectInputProps {
   /** Class for the input (optional, default: undefined) */
   className?: string;
+  /** Custom colors settings */
+  colors?: {
+    controlErrorColor: string; // colors.error,
+    controlFocusColor: string; // colors.primary,
+    controlBackgroundColorDisabled: string; // colors.chalk,
+    controlColorDisabled: string; // colors.pebble,
+    fontColor: string; // 'rgb(0, 0, 0)',
+    multiValueBorderColorDisabled: string; // colors.silver,
+    optionFocusColor: string; // colors.chalk,
+    optionSelectedColor: string; // colors.primary,
+  };
   /** Disabled field (optional, default: false) */
   disabled?: boolean;
   /** Size of the field in a 12 column grid (optional, default: undefined) */
@@ -62,6 +74,7 @@ const CustomValueContainer = (props: ValueContainerProps<IOption, true>) => {
 const MultiSelectInput = (props: IMultiSelectInputProps): ReactElement => {
   const {
     className,
+    colors,
     disabled,
     fieldSize,
     highlighted,
@@ -122,7 +135,17 @@ const MultiSelectInput = (props: IMultiSelectInputProps): ReactElement => {
         onChange={onChange}
         options={options}
         placeholder={placeholder}
-        styles={customStyles({ isInError })}
+        styles={customStyles({
+          controlBackgroundColorDisabled: colors?.controlBackgroundColorDisabled,
+          controlColorDisabled: colors?.controlColorDisabled,
+          controlErrorColor: colors?.controlErrorColor,
+          controlFocusColor: colors?.controlFocusColor,
+          fontColor: colors?.fontColor,
+          isInError,
+          multiValueBorderColorDisabled: colors?.multiValueBorderColorDisabled,
+          optionFocusColor: colors?.optionFocusColor,
+          optionSelectedColor: colors?.optionSelectedColor,
+        })}
         value={inputValue}
       />
     </div>
@@ -131,6 +154,16 @@ const MultiSelectInput = (props: IMultiSelectInputProps): ReactElement => {
 
 MultiSelectInput.defaultProps = {
   className: undefined,
+  colors: {
+    controlErrorColor: colors.error.rgb,
+    controlFocusColor: colors.primary.rgb,
+    controlBackgroundColorDisabled: colors.chalk.rgb,
+    controlColorDisabled: colors.pebble.rgb,
+    fontColor: 'rgb(0, 0, 0)',
+    multiValueBorderColorDisabled: colors.silver.rgb,
+    optionFocusColor: colors.chalk.rgb,
+    optionSelectedColor: colors.primary.rgb,
+  },
   disabled: false,
   fieldSize: undefined,
   highlighted: false,

@@ -3,10 +3,14 @@ input.input-text-field {
   border: 1px solid $chalk;
   padding: 6px 10px;
   outline: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 
   &:not(.input-error):not(:disabled):focus,
-  &:not(.input-error):not(:disabled):active {
-    border: 1px solid $cerulean;
+  &:not(.input-error):not(:disabled):active,
+  &:not(.input-error):not(:disabled):hover {
+    border: 1px solid $primary;
   }
 
   &.input-error {
