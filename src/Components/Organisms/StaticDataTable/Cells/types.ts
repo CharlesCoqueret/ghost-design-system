@@ -6,5 +6,5 @@ export interface ICellProps<T, U extends IColumnType<T>> {
   rowIndex: number;
   extra?: IExtraStaticDataTableProps<T> | IExtraLineEditableDataTableProps<T>;
   forcedValue?: T[keyof T] | number | string | Date | null;
-  onChange?: (newValue: T[keyof T] | number | string | Date | null | undefined) => void;
+  onChange?: (newValue?: T[keyof T]) => void;
 }

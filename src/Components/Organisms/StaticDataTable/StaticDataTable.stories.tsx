@@ -172,11 +172,33 @@ SelectableRows.args = {
   },
 };
 
-export const computeTotal = Template.bind({});
-computeTotal.args = {
+export const ComputeTotal = Template.bind({});
+ComputeTotal.args = {
   data: data,
   columns: columns,
   extra: {
+    computeTotal: (data: Array<demoType>, dataIndex: keyof demoType) => {
+      if (dataIndex === 'price' || dataIndex === 'parts') {
+        return data
+          .map((row: demoType) => {
+            return row[dataIndex];
+          })
+          .reduce((a, b) => Number(a) + Number(b), 0);
+      } else {
+        return '-';
+      }
+    },
+  },
+};
+
+export const SelectableAndComputeTotal = Template.bind({});
+SelectableAndComputeTotal.args = {
+  data: data,
+  columns: columns,
+  extra: {
+    onRowSelect: (rows: Array<demoType>, row: demoType) => {
+      alert(`Number of rows selected: ${rows.length}\nClicked row: ${row.id}`);
+    },
     computeTotal: (data: Array<demoType>, dataIndex: keyof demoType) => {
       if (dataIndex === 'price' || dataIndex === 'parts') {
         return data

@@ -1,7 +1,7 @@
 import React, { ReactElement, MouseEvent, useState } from 'react';
 import classnames from 'classnames';
 
-import { IColumnType, IExtraLineEditableDataTableProps, TableType } from '../StaticDataTable/types';
+import { IColumnType, IExtraLineEditableDataTableProps } from '../StaticDataTable/types';
 import StaticDataTableCellSelectable from '../StaticDataTable/StaticDataTableCellSelectable';
 import LineEditableDataTableCell from './LineEditableDataTableCell';
 
@@ -12,7 +12,7 @@ interface ILineEditableDataTableBodyProps<T> {
   handUpdateDataChange: (rowIndex: number, dataIndex: keyof T, newData: T[keyof T]) => void;
 }
 
-const LineEditableDataTableBody = <T extends TableType<T>>(props: ILineEditableDataTableBodyProps<T>): ReactElement => {
+const LineEditableDataTableBody = <T,>(props: ILineEditableDataTableBodyProps<T>): ReactElement => {
   const { columns, data, extra, handUpdateDataChange } = props;
 
   const [selectedRows, setSelectedRows] = useState<Record<number, boolean>>({});

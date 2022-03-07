@@ -24,7 +24,11 @@ const AmountCell = <T,>(props: ICellProps<T, IColumnAmount<T>>): ReactElement =>
         inputValue={displayValue}
         suffix={currency}
         readOnly={!isCurrentlyEditedRow}
-        onChange={onChange}
+        onChange={(newValue: number | undefined) => {
+          if (onChange) {
+            onChange(newValue as unknown as T[keyof T]);
+          }
+        }}
       />
     </td>
   );

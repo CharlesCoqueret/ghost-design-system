@@ -5,6 +5,7 @@ import { ICellProps } from './types';
 import { IColumnBadge } from '../types';
 import { Badge, BadgeColorsEnum } from '../../../Atoms/Badge';
 import { SelectField } from '../../../Molecules/SelectField';
+import { IOption } from '../../../Atoms/SelectInput/types';
 
 const BadgeCell = <T,>(props: ICellProps<T, IColumnBadge<T>>): ReactElement => {
   const { column, extra, forcedValue, onChange, row, rowIndex } = props;
@@ -20,9 +21,9 @@ const BadgeCell = <T,>(props: ICellProps<T, IColumnBadge<T>>): ReactElement => {
           name={column.title.toString()}
           inputValue={column.options?.find((option) => option.value === displayValue)}
           options={column.options}
-          onChange={(option) => {
+          onChange={(newValue: IOption | null | undefined) => {
             if (onChange) {
-              onChange(option?.value);
+              onChange(newValue as unknown as T[keyof T]);
             }
           }}
         />

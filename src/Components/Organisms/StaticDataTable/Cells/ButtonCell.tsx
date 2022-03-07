@@ -21,7 +21,7 @@ const ButtonCell = <T,>(props: ICellProps<T, IColumnButton<T>>): ReactElement =>
       <div className='table--cell--value--button'>
         {visibleButtons.length > DISPLAY_BUTTON_THRESHOLD ? (
           <Button
-            tooltip='More elements' // TODO to manage translation
+            tooltip={column.moreActionsMessage}
             icon={['fal', 'ellipsis-h']}
             itemList={column.buttons?.map((item) => {
               return {

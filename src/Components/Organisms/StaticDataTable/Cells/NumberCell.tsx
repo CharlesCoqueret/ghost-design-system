@@ -22,7 +22,11 @@ const NumberCell = <T,>(props: ICellProps<T, IColumnNumber<T>>): ReactElement =>
         )}
         inputValue={displayValue}
         readOnly={!isCurrentlyEditedRow}
-        onChange={onChange}
+        onChange={(newValue: number | undefined) => {
+          if (onChange) {
+            onChange(newValue as unknown as T[keyof T]);
+          }
+        }}
       />
     </td>
   );

@@ -17,6 +17,7 @@ const StaticDataTableBody = <T extends TableType<T>>(props: IStaticDataTableBody
   const [selectedRows, setSelectedRows] = useState<Record<number, boolean>>({});
 
   const isSelectable = extra?.onRowSelect;
+  const isExtended = extra?.onRowSelect || extra?.computeTotal;
 
   const handleRowClick = (row: T) => {
     return extra && extra.onRowClick
@@ -52,13 +53,16 @@ const StaticDataTableBody = <T extends TableType<T>>(props: IStaticDataTableBody
             key={`row-${rowIndex}`}
             onClick={handleRowClick(row)}
             className={classnames({ pointer: extra && extra.onRowClick, selected: selectedRows[rowIndex] })}>
-            {isSelectable && (
-              <StaticDataTableCellSelectable
-                handleSelectClick={handleSelectClick(row, rowIndex)}
-                selected={selectedRows[rowIndex]}
-                selectable={(extra && extra.isSelectable ? extra?.isSelectable(row) : true) && !extra?.editedRowIndex}
-              />
-            )}
+            {isExtended &&
+              (isSelectable ? (
+                <StaticDataTableCellSelectable
+                  handleSelectClick={handleSelectClick(row, rowIndex)}
+                  selected={selectedRows[rowIndex]}
+                  selectable={(extra && extra.isSelectable ? extra?.isSelectable(row) : true) && !extra?.editedRowIndex}
+                />
+              ) : (
+                <td></td>
+              ))}
 
             {columns.map((column) => {
               return (

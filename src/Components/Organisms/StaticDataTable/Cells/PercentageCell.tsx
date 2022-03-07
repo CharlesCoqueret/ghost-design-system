@@ -21,7 +21,11 @@ const PercentageCell = <T,>(props: ICellProps<T, IColumnPercentage<T>>): ReactEl
         )}
         inputValue={displayValue}
         readOnly={!isCurrentlyEditedRow}
-        onChange={onChange}
+        onChange={(newValue: number | undefined) => {
+          if (onChange) {
+            onChange(newValue as unknown as T[keyof T]);
+          }
+        }}
       />
     </td>
   );

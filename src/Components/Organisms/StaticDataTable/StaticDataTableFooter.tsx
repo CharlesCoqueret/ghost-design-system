@@ -12,16 +12,19 @@ interface IStaticDataTableFooterProps<T> {
 const StaticDataTableFooter = <T,>(props: IStaticDataTableFooterProps<T>): ReactElement => {
   const { columns, data, extra } = props;
 
-  const isSelectable = extra?.onRowSelect;
+  const isExtended = extra?.onRowSelect || extra?.computeTotal;
 
-  if (!extra?.computeTotal) {
+  if (!isExtended) {
     return <></>;
   }
 
   return (
     <tfoot>
       <tr>
-        {isSelectable && <td key='footer-selectable' className='table--footer--selectable'></td>}
+        <td key='footer-selectable' className='table--footer--selectable'>
+          {extra?.computeTotal ? 'Total' : undefined}
+        </td>
+
         {columns.map((column) => {
           return (
             <StaticDataTableFooterCell

@@ -33,15 +33,19 @@ const StaticDataTableHeader = <T,>(props: IStaticDataTableHeaderProps<T>): React
   };
 
   const isSelectable = extra?.onRowSelect;
+  const isExtended = extra?.onRowSelect || extra?.computeTotal;
 
   return (
     <thead>
       <tr>
-        {isSelectable && (
-          <th key='header-selectable' className='table--header--selectable'>
-            {/* <input type='checkbox' />  // TODO implement the select all, select partial to deselect */}
-          </th>
-        )}
+        {isExtended &&
+          (isSelectable ? (
+            <th key='header-selectable' className='table--header--selectable'>
+              {/* <input type='checkbox' />  // TODO implement the select all, select partial to deselect */}
+            </th>
+          ) : (
+            <th key='header-extended' className='table--header--selectable'></th>
+          ))}
         {columns.map((column, index) => {
           return (
             <th key={`header-${index}`}>

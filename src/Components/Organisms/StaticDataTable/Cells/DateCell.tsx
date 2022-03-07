@@ -20,7 +20,11 @@ const DateCell = <T,>(props: ICellProps<T, IColumnDate<T>>): ReactElement => {
         inputValue={displayValue}
         dateFormat={dateFormat}
         readOnly={!isCurrentlyEditedRow}
-        onChange={onChange}
+        onChange={(newValue: Date | null) => {
+          if (onChange) {
+            onChange(newValue as unknown as T[keyof T]);
+          }
+        }}
       />
     </td>
   );

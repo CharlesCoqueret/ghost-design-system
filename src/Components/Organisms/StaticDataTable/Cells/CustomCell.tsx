@@ -5,10 +5,18 @@ import { ICellProps } from './types';
 import { IColumnCustom } from '../types';
 
 const CustomCell = <T,>(props: ICellProps<T, IColumnCustom<T>>): ReactElement => {
-  const { column, forcedValue, row } = props;
+  const { column, extra, forcedValue, onChange, row, rowIndex } = props;
 
+  const isCurrentlyEditedRow = extra && 'editedRowIndex' in extra ? extra.editedRowIndex === rowIndex : false;
+  const currentCustomRenderer = isCurrentlyEditedRow ? column.customRenderEdit : column.customRender;
   const displayValue =
-    row && column.customRender ? column.customRender(row, column.dataIndex) : forcedValue ? forcedValue : '-';
+    row && currentCustomRenderer
+      ? isCurrentlyEditedRow && onChange
+        ? column.customRenderEdit(row, column.dataIndex, onChange)
+        : column.customRender(row, column.dataIndex)
+      : forcedValue
+      ? forcedValue
+      : '-';
 
   return <td className={classnames({ ellipsis: column.ellipsis })}>{displayValue}</td>;
 };

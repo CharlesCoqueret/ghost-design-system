@@ -2,7 +2,7 @@ import React, { ReactElement, useCallback, useEffect, useState } from 'react';
 
 import StaticDataTableFooter from '../StaticDataTable/StaticDataTableFooter';
 import StaticDataTableHeader from '../StaticDataTable/StaticDataTableHeader';
-import { IColumnType, IExtraLineEditableDataTableProps, SortDirectionEnum, TableType } from '../StaticDataTable/types';
+import { ColumnType, IColumnType, IExtraLineEditableDataTableProps, SortDirectionEnum } from '../StaticDataTable/types';
 import LineEditableDataTableBody from './LineEditableDataTableBody';
 
 export interface ILineEditableDataTableProps<T> {
@@ -14,12 +14,88 @@ export interface ILineEditableDataTableProps<T> {
   // TODO Add loading state
 }
 
-const LineEditableDataTable = <T extends TableType<T>>(props: ILineEditableDataTableProps<T>): ReactElement => {
+const LineEditableDataTable = <T,>(props: ILineEditableDataTableProps<T>): ReactElement => {
   const { data, columns, extra, onSortChange } = props;
 
   const [currentData, setCurrentData] = useState<Array<T>>(data);
   const [sortField, setSortField] = useState<keyof T | undefined>();
   const [sortDirection, setSortDirection] = useState<SortDirectionEnum | undefined>();
+  const [editedRowIndex, setEditedRowIndex] = useState<number | undefined>(extra?.editedRowIndex);
+
+  const currentColumns: Array<IColumnType<T>> = [
+    ...columns.filter((column) => column.type !== ColumnType.BUTTON),
+    {
+      title: 'Actions', // TODO manage translation
+      type: ColumnType.BUTTON,
+      moreActionsMessage: 'More actions', // TODO manage translation
+      buttons: [
+        {
+          hidden: (row, rowIndex) => {
+            if (!extra?.onRowSubmit) return true;
+            if (extra.isEditable === undefined || extra.isEditable(row, rowIndex)) {
+              return editedRowIndex === rowIndex;
+            }
+            return true;
+          },
+          icon: ['fal', 'edit'],
+          label: 'Edit',
+          onClick: (row, rowIndex) => {
+            if (extra?.onRowEdit) {
+              extra.onRowEdit(row, rowIndex);
+            }
+            setEditedRowIndex(rowIndex);
+          },
+        },
+        {
+          hidden: (row, rowIndex) => {
+            if (!extra?.onRowDelete) return true;
+            if (extra.isDeletable === undefined || extra.isDeletable(row, rowIndex)) {
+              return editedRowIndex === rowIndex;
+            }
+            return true;
+          },
+          icon: ['fal', 'trash-alt'],
+          label: 'Delete',
+          onClick: (row, rowIndex) => {
+            if (extra?.onRowDelete) {
+              extra.onRowDelete(row, rowIndex);
+            }
+            setCurrentData((prev) => [...prev.filter((_item, index) => index !== rowIndex)]);
+          },
+        },
+        {
+          hidden: (_row, rowIndex) => {
+            return editedRowIndex !== rowIndex;
+          },
+          icon: ['fal', 'check'],
+          label: 'Submit',
+          onClick: (row, rowIndex) => {
+            if (extra?.onRowSubmit) {
+              extra.onRowSubmit(row, rowIndex);
+            }
+            setEditedRowIndex(undefined);
+            setCurrentData((prev) => {
+              prev[rowIndex] = row;
+              return [...prev];
+            });
+          },
+        },
+        {
+          hidden: (_row, rowIndex) => {
+            return editedRowIndex !== rowIndex;
+          },
+          icon: ['fal', 'times'],
+          label: 'Cancel',
+          onClick: (row, rowIndex) => {
+            if (extra?.onRowCancelEdit) {
+              extra.onRowCancelEdit(row, rowIndex);
+            }
+            setEditedRowIndex(undefined);
+          },
+        },
+      ],
+    },
+  ];
 
   // Updating local copy of data whenever the provided data changes.
   useEffect(() => {
@@ -47,19 +123,19 @@ const LineEditableDataTable = <T extends TableType<T>>(props: ILineEditableDataT
   return (
     <table className='cui-table'>
       <StaticDataTableHeader<T>
-        columns={columns}
+        columns={currentColumns}
         onSortChange={handleSortChange}
         sortField={sortField}
         sortDirection={sortDirection}
-        extra={extra}
+        extra={{ ...extra, editedRowIndex }}
       />
       <LineEditableDataTableBody<T>
-        columns={columns}
+        columns={currentColumns}
         data={currentData}
-        extra={extra}
+        extra={{ ...extra, editedRowIndex }}
         handUpdateDataChange={handUpdateDataChange}
       />
-      <StaticDataTableFooter<T> columns={columns} data={currentData} extra={extra} />
+      <StaticDataTableFooter<T> columns={currentColumns} data={currentData} extra={extra} />
     </table>
   );
 };

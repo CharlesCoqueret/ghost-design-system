@@ -18,11 +18,7 @@ export interface ILineEditableDataTableCellProps<T> {
   row: T;
   extra?: IExtraLineEditableDataTableProps<T>;
   rowIndex: number;
-  handUpdateDataChange: (
-    rowIndex: number,
-    dataIndex: keyof T,
-    newData: T[keyof T] | number | Date | string | undefined | null,
-  ) => void;
+  handUpdateDataChange: (rowIndex: number, dataIndex: keyof T, newData?: T[keyof T]) => void;
 }
 
 const LineEditableDataTableCell = <T extends TableType<T>>(props: ILineEditableDataTableCellProps<T>): ReactElement => {
@@ -62,7 +58,17 @@ const LineEditableDataTableCell = <T extends TableType<T>>(props: ILineEditableD
       return <CodeCell<T> column={column} row={row} extra={extra} rowIndex={rowIndex} />;
     }
     case ColumnType.CUSTOM: {
-      return <CustomCell<T> column={column} row={row} extra={extra} rowIndex={rowIndex} />;
+      return (
+        <CustomCell<T>
+          column={column}
+          row={row}
+          extra={extra}
+          rowIndex={rowIndex}
+          onChange={(newValue) => {
+            handUpdateDataChange(rowIndex, column.dataIndex, newValue);
+          }}
+        />
+      );
     }
     case ColumnType.DATE: {
       return (

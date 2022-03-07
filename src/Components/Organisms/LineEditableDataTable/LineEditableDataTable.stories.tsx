@@ -70,7 +70,6 @@ const initialData = [
 ];
 
 const Template: ComponentStory<typeof LineEditableDataTable> = (args: ILineEditableDataTableProps<demoType>) => {
-  const [editedRowIndex, setEditedRowIndex] = useState<number | undefined>(undefined);
   const [data, setData] = useState<Array<demoType>>(initialData);
 
   const columns: IColumnType<demoType>[] = [
@@ -122,68 +121,15 @@ const Template: ComponentStory<typeof LineEditableDataTable> = (args: ILineEdita
       type: ColumnType.DATE,
       editable: true,
     },
-    {
-      title: 'Actions',
-      type: ColumnType.BUTTON,
-      moreActionsMessage: 'Nore actions',
-      buttons: [
-        {
-          icon: ['fal', 'edit'],
-          label: 'Edit',
-          hidden: (_row, rowIndex) => {
-            return editedRowIndex === rowIndex;
-          },
-          onClick: (_row, rowIndex) => {
-            setEditedRowIndex(rowIndex);
-          },
-        },
-        {
-          icon: ['fal', 'trash-alt'],
-          label: 'Delete',
-          hidden: (_row, rowIndex) => {
-            return editedRowIndex === rowIndex;
-          },
-          onClick: (_row, rowIndex) => {
-            setData((prev) => [...prev.filter((_item, index) => index !== rowIndex)]);
-          },
-        },
-        {
-          icon: ['fal', 'check'],
-          label: 'Submit',
-          hidden: (_row, rowIndex) => {
-            return editedRowIndex !== rowIndex;
-          },
-          onClick: (row, rowIndex) => {
-            setEditedRowIndex(undefined);
-            setData((prev) => {
-              prev[rowIndex] = row;
-              return [...prev];
-            });
-          },
-        },
-        {
-          icon: ['fal', 'times'],
-          label: 'Cancel',
-          hidden: (_row, rowIndex) => {
-            return editedRowIndex !== rowIndex;
-          },
-          onClick: (row) => {
-            setEditedRowIndex(undefined);
-          },
-        },
-      ],
-    },
   ];
 
-  return (
-    <LineEditableDataTable<demoType>
-      data={data}
-      columns={columns}
-      extra={{ editedRowIndex: editedRowIndex }}
-      {...args}
-    />
-  );
+  return <LineEditableDataTable<demoType> data={data} columns={columns} {...args} />;
 };
 
 export const Default = Template.bind({});
-Default.args = {};
+Default.args = {
+  extra: {
+    onRowDelete: () => {},
+    onRowSubmit: () => {},
+  },
+};

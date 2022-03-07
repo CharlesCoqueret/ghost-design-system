@@ -22,8 +22,6 @@ export enum SortDirectionEnum {
 export interface IButtonCellProps<T> {
   /** Custom className (optional, default: undefined) */
   className?: string;
-  /** Color of the button (optional, default: 'reversed') */
-  color?: 'reversed';
   /** Button is hidden (optional, default: false) */
   hidden?: (row: T, rowIndex: number) => boolean;
   /** Icon name (optional, default: undefined) */
@@ -67,7 +65,7 @@ export interface IColumnCode<T> extends IColumn {
 }
 export interface IColumnCustom<T> extends IColumn {
   customRender: (row: T, dataIndex: keyof T) => ReactElement;
-  customRenderEdit: (row: T, dataIndex: keyof T) => ReactElement; // must support props: onChange: (newValue: T[keyof T]) => void;
+  customRenderEdit: (row: T, dataIndex: keyof T, onChangeCallback: (newValue?: T[keyof T]) => void) => ReactElement;
   dataIndex: keyof T;
   type: ColumnType.CUSTOM;
   editable?: boolean;
@@ -108,15 +106,33 @@ export type IColumnType<T> =
 export type TableType<T> = Record<keyof T, string | number | Date | undefined | null>;
 
 export interface IExtraStaticDataTableProps<T> {
+  /** Method used to enable and compute the total for each column (optional, default: undefined) */
   computeTotal?: (data: Array<T>, dataIndex: keyof T) => string | number | undefined;
+  /** Global currency, which can be override by the amount column setting (optional, default: undefined) */
   currency?: string;
+  /** Global date format, which can be override by the date column setting (optional, default: undefined) */
   dateFormat?: DateFormatEnum;
+  /** Method used to enable the click on row, and handle the click on a specific row (optional, default: undefined) */
   onRowClick?: (row: T) => void;
+  /** Method used to enable the selection of rows, and handle the selection of a specific row (optional, default: undefined) */
   onRowSelect?: (selectedRows: Array<T>, clickedRow: T) => void;
+  /** Method used to disable the selection of a specific row, by default not called and considered as selectable (optional, default: undefined) */
   isSelectable?: (row: T) => boolean;
 }
 
 export interface IExtraLineEditableDataTableProps<T> extends IExtraStaticDataTableProps<T> {
-  onRowSubmit?: (editedRow: T) => void;
+  /** Notification of initiation of changes on a specific row (optional, default: undefined) */
+  onRowEdit?: (editRow: T, editedRowIndex: number) => void;
+  /** Notification of changes cancellation on a specific row (optional, default: undefined) */
+  onRowCancelEdit?: (editRow: T, editedRowIndex: number) => void;
+  /** Notification of changes on a specific row (optional, default: undefined) */
+  onRowSubmit?: (editedRow: T, submittedRowIndex: number) => void;
+  /** Method used to disable the edition of a specific row, by default not called and considered as editable (optional, default: undefined) */
+  isEditable?: (row: T, rowIndex: number) => boolean;
+  /** Method used to enable the deletion of a specific row (optional, default: undefined) */
+  onRowDelete?: (deletedRow: T, deletedRowIndex: number) => void;
+  /** Method used to disable the deletion of a specific row, by default not called and considered as deletable (optional, default: undefined) */
+  isDeletable?: (row: T, rowIndex: number) => boolean;
+  /** Initial index of edited row */
   editedRowIndex?: number;
 }

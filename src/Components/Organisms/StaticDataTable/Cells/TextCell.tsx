@@ -17,10 +17,9 @@ const TextCell = <T,>(props: ICellProps<T, IColumnText<T>>): ReactElement => {
         <TextField
           name={String(column.dataIndex)}
           inputValue={displayValue}
-          onChange={(s) => {
-            console.log('change', s);
+          onChange={(newValue: string) => {
             if (onChange) {
-              onChange(s);
+              onChange(newValue as unknown as T[keyof T]);
             }
           }}
         />
