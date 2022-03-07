@@ -1,5 +1,5 @@
-import React, { PropsWithChildren, ReactElement } from 'react';
-import { usePopperTooltip } from 'react-popper-tooltip';
+import React, { CSSProperties, ReactElement, ReactNode } from 'react';
+import classnames from 'classnames';
 
 export enum MenuDirectionEnum {
   LEFT = 'left',
@@ -8,56 +8,165 @@ export enum MenuDirectionEnum {
   BOTTOM = 'bottom',
 }
 
+const MenuDirectionOrder = [
+  MenuDirectionEnum.TOP,
+  MenuDirectionEnum.RIGHT,
+  MenuDirectionEnum.BOTTOM,
+  MenuDirectionEnum.LEFT,
+];
+
 export interface ITooltipProps {
-  // Tooltip content (optional, default: undefined)
-  tooltip?: string;
-  // Direction of the tooltip (optional, default: bottom)
-  direction?: MenuDirectionEnum;
-  // Delay for the tooltip in ms (optional, default: 0)
+  /** Tooltip has arrow (optional, default: true) */
+  arrow?: boolean;
+  /** Delay for the tooltip in ms (optional, default: 0) */
   delay?: number;
+  /** Direction of the tooltip (optional, default: bottom) */
+  direction?: MenuDirectionEnum;
+  /** Extra margin for position computation (optional, default: 8) */
+  extraMargin?: number;
+  /** Maximum width of the tooltip (optional, default: 256) */
+  maxWidth?: number;
+  /** Childre node (optional, default: undefined) */
+  children: ReactNode;
+  /** Tooltip content (optional, default: undefined) */
+  tooltip?: string;
 }
 
-const Tooltip = (props: PropsWithChildren<ITooltipProps>): ReactElement => {
-  const { children, direction, tooltip, delay } = props;
+export interface ITooltipStates {
+  visible: boolean;
+  style?: CSSProperties;
+}
 
-  const { getArrowProps, getTooltipProps, setTooltipRef, setTriggerRef, visible } = usePopperTooltip({
-    placement: direction,
-    delayHide: delay,
-    delayShow: delay,
-    interactive: false,
-    closeOnTriggerHidden: true,
-    trigger: ['hover', 'click'],
+const ARRROW_HEIGHT = 5;
+
+const computePosition = (
+  preferedDirection: MenuDirectionEnum,
+  triggerDimensions: DOMRect,
+  tooltipDimensions: DOMRect,
+  extraMargin: number,
+  arrow: boolean,
+): { left: number; top: number; direction: MenuDirectionEnum } => {
+  const results = {
+    [MenuDirectionEnum.TOP]: {
+      left: triggerDimensions.left + triggerDimensions.width / 2 - tooltipDimensions.width / 2,
+      top: triggerDimensions.top - tooltipDimensions.height - extraMargin - (arrow ? ARRROW_HEIGHT : 0),
+    },
+    [MenuDirectionEnum.RIGHT]: {
+      left: triggerDimensions.left + triggerDimensions.width + extraMargin + (arrow ? ARRROW_HEIGHT : 0),
+      top: triggerDimensions.top + triggerDimensions.height / 2 - tooltipDimensions.height / 2,
+    },
+    [MenuDirectionEnum.BOTTOM]: {
+      left: triggerDimensions.left + triggerDimensions.width / 2 - tooltipDimensions.width / 2,
+      top: triggerDimensions.top + triggerDimensions.height + extraMargin,
+    },
+    [MenuDirectionEnum.LEFT]: {
+      left: triggerDimensions.left - tooltipDimensions.width - (arrow ? ARRROW_HEIGHT : 0) - extraMargin,
+      top: triggerDimensions.top + triggerDimensions.height / 2 - tooltipDimensions.height / 2,
+    },
+  };
+
+  const fitMap = MenuDirectionOrder.filter((direction) => {
+    return (
+      results[direction].left > 0 &&
+      results[direction].left + tooltipDimensions.width <= screen.availWidth &&
+      results[direction].top > 0 &&
+      results[direction].top + tooltipDimensions.height <= screen.availHeight
+    );
   });
 
-  if (!tooltip || tooltip?.trim() === '') {
-    return <>{children}</>;
+  if (fitMap.length === 0 || preferedDirection in fitMap) {
+    return { ...results[preferedDirection], direction: preferedDirection };
   }
 
-  return (
-    <>
-      {React.Children.map(children, (child) => {
-        if (React.isValidElement(child)) {
-          return React.cloneElement(child, {
-            ref: setTriggerRef,
-          });
-        }
-        return child;
-      })}
+  const fitingDirection = fitMap[0];
+  return { ...results[fitingDirection], direction: fitingDirection };
+};
 
-      {visible && (
-        <div ref={setTooltipRef} {...getTooltipProps({ className: 'tooltip-container' })}>
-          {tooltip}
-          <div {...getArrowProps({ className: 'tooltip-arrow' })} />
+class Tooltip extends React.PureComponent<ITooltipProps, ITooltipStates> {
+  arrow: boolean;
+  direction: MenuDirectionEnum;
+  extraMargin: number;
+  maxWidth: number;
+  tooltip: HTMLSpanElement | null;
+  trigger: HTMLSpanElement | null;
+
+  constructor(props: ITooltipProps) {
+    super(props);
+
+    this.arrow = props.arrow || true;
+    this.direction = props.direction || MenuDirectionEnum.BOTTOM;
+    this.extraMargin = props.extraMargin || 8;
+    this.maxWidth = props.maxWidth || 256;
+    this.tooltip = null;
+    this.trigger = null;
+
+    this.state = {
+      visible: false,
+      style: {
+        left: -99999,
+        top: -99999,
+      },
+    };
+
+    this.showTooltip = this.showTooltip.bind(this);
+    this.hideTooltip = this.hideTooltip.bind(this);
+  }
+
+  showTooltip(): void {
+    if (!this.trigger || !this.tooltip) return;
+
+    const triggerDimensions = this.trigger.getBoundingClientRect();
+    const tooltipDimensions = this.tooltip.getBoundingClientRect();
+
+    const { left, top, direction } = computePosition(
+      this.direction,
+      triggerDimensions,
+      tooltipDimensions,
+      this.extraMargin,
+      this.arrow,
+    );
+
+    this.direction = direction;
+
+    this.setState({
+      visible: true,
+      style: { left, top, maxWidth: this.maxWidth },
+    });
+  }
+
+  hideTooltip(): void {
+    this.setState({
+      visible: false,
+      style: {
+        left: -99999,
+        top: -99999,
+      },
+    });
+  }
+
+  render(): ReactElement {
+    if (!this.props.tooltip) return <>{this.props.children}</>;
+
+    return (
+      <>
+        <span
+          onMouseOver={this.showTooltip}
+          onMouseOut={this.hideTooltip}
+          onClick={this.hideTooltip}
+          ref={(el) => (this.trigger = el)}>
+          {this.props.children}
+        </span>
+
+        <div
+          className={classnames('tooltip', this.direction)}
+          ref={(el) => (this.tooltip = el)}
+          style={{ ...this.state.style, opacity: this.state.visible ? 1 : 0 }}>
+          {this.arrow && <div className='tooltip-arrow' />}
+          <div className='tooltip-label'>{this.props.tooltip}</div>
         </div>
-      )}
-    </>
-  );
-};
-
-Tooltip.defaultProps = {
-  tooltip: undefined,
-  direction: undefined,
-  delay: 0,
-};
+      </>
+    );
+  }
+}
 
 export default Tooltip;

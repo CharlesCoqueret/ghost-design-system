@@ -1,112 +1,88 @@
-.tooltip-container {
-  background-color: $charcoal;
-  border-radius: 3px;
-  border: 1px solid $charcoal;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
-  color: $white;
-  display: flex;
-  flex-direction: column;
-  padding: 0.4rem;
-  transition: opacity 0.3s;
-  z-index: 9999;
-}
-
-.tooltip-container[data-popper-interactive='false'] {
-  pointer-events: none;
-}
-
-.tooltip-arrow {
-  height: 1rem;
+.tooltip {
   position: absolute;
-  width: 1rem;
-  pointer-events: none;
-}
+  left: 0px;
+  top: 0px;
+  text-shadow: none;
+  text-transform: none;
+  white-space: normal;
+  word-break: normal;
+  word-spacing: normal;
+  word-wrap: normal;
+  display: inline-block;
+  z-index: 10;
 
-.tooltip-arrow::before {
-  border-style: solid;
-  content: '';
-  display: block;
-  height: 0;
-  margin: auto;
-  width: 0;
-}
+  &.right {
+    margin-left: 5px;
 
-.tooltip-arrow::after {
-  border-style: solid;
-  content: '';
-  display: block;
-  height: 0;
-  margin: auto;
-  position: absolute;
-  width: 0;
-}
+    .tooltip-arrow {
+      top: 50%;
+      left: auto;
+      margin-left: -5px;
+      border-width: 5px 5px 5px 0;
+      border-right-color: $charcoal;
+    }
+  }
 
-.tooltip-container[data-popper-placement*='bottom'] .tooltip-arrow {
-  left: 0;
-  margin-top: -0.4rem;
-  top: 0;
-}
+  &.left {
+    margin-left: -5px;
 
-.tooltip-container[data-popper-placement*='bottom'] .tooltip-arrow::before {
-  border-color: transparent transparent $charcoal transparent;
-  border-width: 0 0.5rem 0.4rem 0.5rem;
-  position: absolute;
-  top: -1px;
-}
+    .tooltip-arrow {
+      top: 50%;
+      margin-top: -5px;
+      border-width: 5px 0 5px 5px;
+      border-left-color: $charcoal;
+      right: -5px;
+      left: auto;
+    }
+  }
 
-.tooltip-container[data-popper-placement*='bottom'] .tooltip-arrow::after {
-  border-color: transparent transparent $charcoal transparent;
-  border-width: 0 0.5rem 0.4rem 0.5rem;
-}
+  &.top {
+    margin-top: -5px;
 
-.tooltip-container[data-popper-placement*='top'] .tooltip-arrow {
-  bottom: 0;
-  left: 0;
-  margin-bottom: -1rem;
-}
+    .tooltip-arrow {
+      top: auto;
+      bottom: -5px;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px 5px 0;
+      border-top-color: $charcoal;
+    }
+  }
 
-.tooltip-container[data-popper-placement*='top'] .tooltip-arrow::before {
-  border-color: $charcoal transparent transparent transparent;
-  border-width: 0.4rem 0.5rem 0 0.5rem;
-  position: absolute;
-  top: 1px;
-}
+  &.bottom {
+    margin-top: 5px;
 
-.tooltip-container[data-popper-placement*='top'] .tooltip-arrow::after {
-  border-color: $charcoal transparent transparent transparent;
-  border-width: 0.4rem 0.5rem 0 0.5rem;
-}
+    .tooltip-arrow {
+      top: 0;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 0 5px 5px;
+      border-bottom-color: $charcoal;
+    }
+  }
 
-.tooltip-container[data-popper-placement*='right'] .tooltip-arrow {
-  left: 0;
-  margin-left: -0.7rem;
-}
+  .tooltip-arrow {
+    top: 50%;
+    left: 0;
+    margin-top: -5px;
+    border-width: 5px 5px 5px 0;
+    border-right-color: $charcoal;
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-right-color: transparent;
+    border-style: solid;
+  }
 
-.tooltip-container[data-popper-placement*='right'] .tooltip-arrow::before {
-  border-color: transparent $charcoal transparent transparent;
-  border-width: 0.5rem 0.4rem 0.5rem 0;
-}
-
-.tooltip-container[data-popper-placement*='right'] .tooltip-arrow::after {
-  border-color: transparent $charcoal transparent transparent;
-  border-width: 0.5rem 0.4rem 0.5rem 0;
-  left: 6px;
-  top: 0;
-}
-
-.tooltip-container[data-popper-placement*='left'] .tooltip-arrow {
-  margin-right: -0.7rem;
-  right: 0;
-}
-
-.tooltip-container[data-popper-placement*='left'] .tooltip-arrow::before {
-  border-color: transparent transparent transparent $charcoal;
-  border-width: 0.5rem 0 0.5rem 0.4em;
-}
-
-.tooltip-container[data-popper-placement*='left'] .tooltip-arrow::after {
-  border-color: transparent transparent transparent $charcoal;
-  border-width: 0.5rem 0 0.5rem 0.4em;
-  left: 3px;
-  top: 0;
+  .tooltip-label {
+    max-width: 300px;
+    padding: 6px 8px;
+    color: $white;
+    text-align: center;
+    background-color: $charcoal;
+    border-radius: 4px;
+    overflow-x: hidden;
+    white-space: wrap;
+  }
 }
