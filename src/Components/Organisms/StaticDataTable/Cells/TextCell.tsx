@@ -6,10 +6,11 @@ import { IColumnText } from '../types';
 import { TextField } from '../../../Molecules/TextField';
 
 const TextCell = <T,>(props: ICellProps<T, IColumnText<T>>): ReactElement => {
-  const { column, extra, forcedValue, onChange, row, rowIndex } = props;
+  const { column, editing, extra, forcedValue, onChange, row, rowIndex } = props;
 
   const displayValue = (forcedValue || (row && row[column.dataIndex])) as string | undefined;
-  const isCurrentlyEditedRow = extra && 'editedRowIndex' in extra ? extra.editedRowIndex === rowIndex : false;
+  const isCurrentlyEditedRow =
+    editing || (extra && 'editedRowIndex' in extra ? extra.editedRowIndex === rowIndex : false);
 
   return (
     <td className={classnames({ ellipsis: column.ellipsis })}>

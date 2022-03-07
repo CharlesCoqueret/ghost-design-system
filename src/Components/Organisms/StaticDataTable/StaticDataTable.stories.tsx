@@ -15,6 +15,7 @@ const columns: IColumnType<demoType>[] = [
     dataIndex: 'id',
     sorter: true,
     type: ColumnType.CODE,
+    width: '50px',
   },
   {
     title: 'Text',
@@ -22,6 +23,7 @@ const columns: IColumnType<demoType>[] = [
     type: ColumnType.TEXT,
     ellipsis: true,
     sorter: true,
+    width: '20%',
   },
   {
     title: 'Badge',

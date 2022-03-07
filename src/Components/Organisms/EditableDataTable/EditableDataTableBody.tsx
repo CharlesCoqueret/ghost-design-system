@@ -1,23 +1,23 @@
 import React, { ReactElement, MouseEvent, useState } from 'react';
 import classnames from 'classnames';
 
-import StaticDataTableCell from './StaticDataTableCell';
-import { IColumnType, IExtraLineEditableDataTableProps } from './types';
-import StaticDataTableCellSelectable from './StaticDataTableCellSelectable';
+import { IColumnType, IExtraEditableDataTableProps } from '../StaticDataTable/types';
+import StaticDataTableCellSelectable from '../StaticDataTable/StaticDataTableCellSelectable';
+import EditableDataTableCell from './EditableDataTableCell';
 
-interface IStaticDataTableBodyProps<T> {
+interface IEditableDataTableBodyProps<T> {
   columns: Array<IColumnType<T>>;
   data: Array<T>;
-  extra?: IExtraLineEditableDataTableProps<T>;
+  extra: IExtraEditableDataTableProps<T>;
+  handUpdateDataChange: (rowIndex: number, dataIndex: keyof T, newData: T[keyof T]) => void;
 }
 
-const StaticDataTableBody = <T,>(props: IStaticDataTableBodyProps<T>): ReactElement => {
-  const { columns, data, extra } = props;
+const EditableDataTableBody = <T,>(props: IEditableDataTableBodyProps<T>): ReactElement => {
+  const { columns, data, extra, handUpdateDataChange } = props;
 
   const [selectedRows, setSelectedRows] = useState<Record<number, boolean>>({});
 
   const isSelectable = extra?.onRowSelect;
-  const isExtended = extra?.onRowSelect || extra?.computeTotal;
 
   const handleRowClick = (row: T) => {
     return extra && extra.onRowClick
@@ -53,25 +53,23 @@ const StaticDataTableBody = <T,>(props: IStaticDataTableBodyProps<T>): ReactElem
             key={`row-${rowIndex}`}
             onClick={handleRowClick(row)}
             className={classnames({ pointer: extra && extra.onRowClick, selected: selectedRows[rowIndex] })}>
-            {isExtended &&
-              (isSelectable ? (
-                <StaticDataTableCellSelectable
-                  handleSelectClick={handleSelectClick(row, rowIndex)}
-                  selected={selectedRows[rowIndex]}
-                  selectable={(extra && extra.isSelectable ? extra?.isSelectable(row) : true) && !extra?.editedRowIndex}
-                />
-              ) : (
-                <td></td>
-              ))}
+            {isSelectable && (
+              <StaticDataTableCellSelectable
+                handleSelectClick={handleSelectClick(row, rowIndex)}
+                selected={selectedRows[rowIndex]}
+                selectable={extra.isSelectable ? extra.isSelectable(row) : true}
+              />
+            )}
 
             {columns.map((column) => {
               return (
-                <StaticDataTableCell<T>
+                <EditableDataTableCell<T>
                   key={`cell-${rowIndex}-${column.title}`}
                   column={column}
                   row={row}
                   extra={extra}
                   rowIndex={rowIndex}
+                  handUpdateDataChange={handUpdateDataChange}
                 />
               );
             })}
@@ -82,4 +80,4 @@ const StaticDataTableBody = <T,>(props: IStaticDataTableBodyProps<T>): ReactElem
   );
 };
 
-export default StaticDataTableBody;
+export default EditableDataTableBody;

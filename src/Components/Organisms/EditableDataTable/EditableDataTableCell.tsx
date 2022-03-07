@@ -11,12 +11,12 @@ import {
   PercentageCell,
   TextCell,
 } from '../StaticDataTable/Cells';
-import { ColumnType, IColumnType, IExtraLineEditableDataTableProps } from '../StaticDataTable/types';
+import { ColumnType, IColumnType, IExtraEditableDataTableProps } from '../StaticDataTable/types';
 
 export interface ILineEditableDataTableCellProps<T> {
   column: IColumnType<T>;
   row: T;
-  extra?: IExtraLineEditableDataTableProps<T>;
+  extra?: IExtraEditableDataTableProps<T>;
   rowIndex: number;
   handUpdateDataChange: (rowIndex: number, dataIndex: keyof T, newData: T[keyof T]) => void;
 }
@@ -35,6 +35,7 @@ const LineEditableDataTableCell = <T,>(props: ILineEditableDataTableCellProps<T>
           onChange={(newValue) => {
             handUpdateDataChange(rowIndex, column.dataIndex, newValue);
           }}
+          editing
         />
       );
     }
@@ -48,6 +49,7 @@ const LineEditableDataTableCell = <T,>(props: ILineEditableDataTableCellProps<T>
           onChange={(newValue) => {
             handUpdateDataChange(rowIndex, column.dataIndex, newValue);
           }}
+          editing
         />
       );
     }
@@ -67,6 +69,7 @@ const LineEditableDataTableCell = <T,>(props: ILineEditableDataTableCellProps<T>
           onChange={(newValue) => {
             handUpdateDataChange(rowIndex, column.dataIndex, newValue);
           }}
+          editing
         />
       );
     }
@@ -80,6 +83,7 @@ const LineEditableDataTableCell = <T,>(props: ILineEditableDataTableCellProps<T>
           onChange={(newValue) => {
             handUpdateDataChange(rowIndex, column.dataIndex, newValue);
           }}
+          editing
         />
       );
     }
@@ -93,6 +97,7 @@ const LineEditableDataTableCell = <T,>(props: ILineEditableDataTableCellProps<T>
           onChange={(newValue) => {
             handUpdateDataChange(rowIndex, column.dataIndex, newValue);
           }}
+          editing
         />
       );
     }
@@ -106,6 +111,7 @@ const LineEditableDataTableCell = <T,>(props: ILineEditableDataTableCellProps<T>
           onChange={(newValue) => {
             handUpdateDataChange(rowIndex, column.dataIndex, newValue);
           }}
+          editing
         />
       );
     }
@@ -119,6 +125,7 @@ const LineEditableDataTableCell = <T,>(props: ILineEditableDataTableCellProps<T>
           onChange={(newValue) => {
             handUpdateDataChange(rowIndex, column.dataIndex, newValue);
           }}
+          editing
         />
       );
     }

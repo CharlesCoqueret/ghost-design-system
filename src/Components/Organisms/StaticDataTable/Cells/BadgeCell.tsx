@@ -8,11 +8,12 @@ import { SelectField } from '../../../Molecules/SelectField';
 import { IOption } from '../../../Atoms/SelectInput/types';
 
 const BadgeCell = <T,>(props: ICellProps<T, IColumnBadge<T>>): ReactElement => {
-  const { column, extra, forcedValue, onChange, row, rowIndex } = props;
+  const { column, editing, extra, forcedValue, onChange, row, rowIndex } = props;
 
   const displayValue = (forcedValue || (row && row[column.dataIndex])) as number | string | undefined;
   const isCurrentlyEditedRow =
-    extra && 'editedRowIndex' in extra ? extra.editedRowIndex === rowIndex && column.options?.length > 0 : false;
+    editing ||
+    (extra && 'editedRowIndex' in extra ? extra.editedRowIndex === rowIndex && column.options?.length > 0 : false);
 
   return (
     <td className={classnames({ ellipsis: column.ellipsis })}>

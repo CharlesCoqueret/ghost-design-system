@@ -48,7 +48,7 @@ const StaticDataTableHeader = <T,>(props: IStaticDataTableHeaderProps<T>): React
           ))}
         {columns.map((column, index) => {
           return (
-            <th key={`header-${index}`}>
+            <th key={`header-${index}`} style={{ width: column.width }}>
               <Tooltip
                 tooltip={
                   column.sorter && !extra?.editedRowIndex ? 'Click to sort' : undefined // TODO Manage translation and the different states of filtering

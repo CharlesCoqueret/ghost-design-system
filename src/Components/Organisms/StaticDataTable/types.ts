@@ -1,5 +1,5 @@
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
-import { ReactElement } from 'react';
+import { CSSProperties, ReactElement } from 'react';
 import { DateFormatEnum, IOption } from '../..';
 
 export enum ColumnType {
@@ -38,6 +38,8 @@ interface IColumn {
   ellipsis?: boolean;
   sorter?: boolean;
   title: string | ReactElement;
+  /** Column width (as a CSSProperty) (optional, default: undefined) */
+  width?: CSSProperties['width'];
 }
 
 export interface IColumnAmount<T> extends IColumn {
@@ -65,7 +67,7 @@ export interface IColumnCode<T> extends IColumn {
 }
 export interface IColumnCustom<T> extends IColumn {
   customRender: (row: T, dataIndex: keyof T) => ReactElement;
-  customRenderEdit: (row: T, dataIndex: keyof T, onChangeCallback: (newValue?: T[keyof T]) => void) => ReactElement;
+  customRenderEdit: (row: T, dataIndex: keyof T, onChangeCallback: (newValue: T[keyof T]) => void) => ReactElement;
   dataIndex: keyof T;
   type: ColumnType.CUSTOM;
   editable?: boolean;
@@ -135,4 +137,9 @@ export interface IExtraLineEditableDataTableProps<T> extends IExtraStaticDataTab
   isDeletable?: (row: T, rowIndex: number) => boolean;
   /** Initial index of edited row */
   editedRowIndex?: number;
+}
+
+export interface IExtraEditableDataTableProps<T> extends IExtraStaticDataTableProps<T> {
+  /** Notification of changes on a specific row (optional, default: undefined) */
+  onEdit: (editRow: T, editedRowIndex: number, dataIndex: keyof T) => void;
 }

@@ -57,7 +57,7 @@ const LineEditableDataTableBody = <T,>(props: ILineEditableDataTableBodyProps<T>
               <StaticDataTableCellSelectable
                 handleSelectClick={handleSelectClick(row, rowIndex)}
                 selected={selectedRows[rowIndex]}
-                selectable={(extra.isSelectable ? extra.isSelectable(row) : true) && !extra?.editedRowIndex}
+                selectable={(extra?.isSelectable ? extra?.isSelectable(row) : true) && !extra?.editedRowIndex}
               />
             )}
 

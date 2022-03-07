@@ -7,7 +7,8 @@
   padding-right: 8px;
   white-space: nowrap;
 
-  &:hover {
+  &:hover,
+  &:focus {
     border: 1px solid $primary;
   }
 

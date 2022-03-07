@@ -5,9 +5,10 @@ import { ICellProps } from './types';
 import { IColumnCustom } from '../types';
 
 const CustomCell = <T,>(props: ICellProps<T, IColumnCustom<T>>): ReactElement => {
-  const { column, extra, forcedValue, onChange, row, rowIndex } = props;
+  const { column, editing, extra, forcedValue, onChange, row, rowIndex } = props;
 
-  const isCurrentlyEditedRow = extra && 'editedRowIndex' in extra ? extra.editedRowIndex === rowIndex : false;
+  const isCurrentlyEditedRow =
+    editing || (extra && 'editedRowIndex' in extra ? extra.editedRowIndex === rowIndex : false);
   const currentCustomRenderer = isCurrentlyEditedRow ? column.customRenderEdit : column.customRender;
   const displayValue =
     row && currentCustomRenderer

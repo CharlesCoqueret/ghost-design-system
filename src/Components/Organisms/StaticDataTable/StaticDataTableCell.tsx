@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react';
 
-import { ColumnType, IColumnType, IExtraStaticDataTableProps, TableType } from './types';
+import { ColumnType, IColumnType, IExtraStaticDataTableProps } from './types';
 import {
   AmountCell,
   BadgeCell,
@@ -20,7 +20,7 @@ export interface IStaticDataTableCellProps<T> {
   rowIndex: number;
 }
 
-const StaticDataTableCell = <T extends TableType<T>>(props: IStaticDataTableCellProps<T>): ReactElement => {
+const StaticDataTableCell = <T,>(props: IStaticDataTableCellProps<T>): ReactElement => {
   const { column, row, extra, rowIndex } = props;
 
   switch (column.type) {

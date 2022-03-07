@@ -3,7 +3,7 @@ import React, { ReactElement, useCallback, useState } from 'react';
 import StaticDataTableBody from './StaticDataTableBody';
 import StaticDataTableFooter from './StaticDataTableFooter';
 import StaticDataTableHeader from './StaticDataTableHeader';
-import { IColumnType, IExtraStaticDataTableProps, SortDirectionEnum, TableType } from './types';
+import { IColumnType, IExtraStaticDataTableProps, SortDirectionEnum } from './types';
 
 export interface IStaticDataTableProps<T> {
   data: Array<T>;
@@ -14,7 +14,7 @@ export interface IStaticDataTableProps<T> {
   // TODO Add loading state
 }
 
-const StaticDataTable = <T extends TableType<T>>(props: IStaticDataTableProps<T>): ReactElement => {
+const StaticDataTable = <T,>(props: IStaticDataTableProps<T>): ReactElement => {
   const { data, columns, extra, onSortChange } = props;
 
   const [sortField, setSortField] = useState<keyof T | undefined>();

@@ -2,9 +2,10 @@ import { IColumnType, IExtraLineEditableDataTableProps, IExtraStaticDataTablePro
 
 export interface ICellProps<T, U extends IColumnType<T>> {
   column: U;
-  row?: T;
-  rowIndex: number;
+  editing?: boolean;
   extra?: IExtraStaticDataTableProps<T> | IExtraLineEditableDataTableProps<T>;
   forcedValue?: T[keyof T] | number | string | Date | null;
-  onChange?: (newValue?: T[keyof T]) => void;
+  onChange?: (newValue: T[keyof T]) => void;
+  row?: T;
+  rowIndex: number;
 }
