@@ -1,12 +1,14 @@
 .DS_STORE
 
-/dist/
+coverage
+dist
 node_modules
+public
+
 .rpt2_cache
 .cache
 .env*
 
-/coverage
 
 # Ignore npm/yarn debug log
 npm-debug.log
@@ -14,5 +16,3 @@ yarn-error.log
 
 # storybook
 .out
-
-/coverage
