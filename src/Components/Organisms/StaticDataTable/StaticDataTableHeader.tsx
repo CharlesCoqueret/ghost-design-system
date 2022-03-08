@@ -71,7 +71,7 @@ const StaticDataTableHeader = <T,>(props: IStaticDataTableHeaderProps<T>): React
                     })}>
                     {column.title}
                   </span>
-                  {column.sorter && !extra?.editedRowIndex && column.type !== ColumnType.BUTTON && (
+                  {column.sorter && extra?.editedRowIndex === undefined && column.type !== ColumnType.BUTTON && (
                     <span className='table--header-value--sorter'>
                       <FontAwesomeIcon icon={['fas', iconName(column.dataIndex)]} />
                     </span>

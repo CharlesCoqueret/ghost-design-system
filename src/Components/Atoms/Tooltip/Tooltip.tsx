@@ -74,8 +74,15 @@ const computePosition = (
     );
   });
 
-  if (fitMap.length === 0 || preferedDirection in fitMap) {
+  // Check prefered direction
+  if (fitMap.length === 0 || fitMap.indexOf(preferedDirection) >= 0) {
     return { ...results[preferedDirection], direction: preferedDirection };
+  }
+
+  // Check opposite to prefered direction
+  const oppositeToPreferedDirection = MenuDirectionOrder[(MenuDirectionOrder.indexOf(preferedDirection) + 2) % 4];
+  if (fitMap.indexOf(oppositeToPreferedDirection) >= 0) {
+    return { ...results[oppositeToPreferedDirection], direction: oppositeToPreferedDirection };
   }
 
   const fitingDirection = fitMap[0];

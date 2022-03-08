@@ -9,17 +9,58 @@ export default {
 } as ComponentMeta<typeof Tooltip>;
 
 const Template: ComponentStory<typeof Tooltip> = (args: ITooltipProps) => (
-  <div style={{ width: '70%', margin: 'auto' }}>
-    <Tooltip {...args}>
+  <div
+    style={{
+      display: 'grid',
+      gridTemplateColumns: 'repeat(3, 1fr)',
+      gridGap: '20px',
+      gridAutoRows: 'minmax(100px, auto)',
+    }}>
+    <Tooltip {...args} direction={MenuDirectionEnum.BOTTOM}>
       <div
         style={{
           height: '100px',
-          width: 200,
           lineHeight: '100px',
           textAlign: 'center',
           backgroundColor: 'lightblue',
         }}>
-        Hover me
+        Hover me (bottom)
+      </div>
+    </Tooltip>
+
+    <Tooltip {...args} direction={MenuDirectionEnum.RIGHT}>
+      <div
+        style={{
+          height: '100px',
+          lineHeight: '100px',
+          textAlign: 'center',
+          backgroundColor: 'lightblue',
+        }}>
+        Hover me (right)
+      </div>
+    </Tooltip>
+
+    <Tooltip {...args} direction={MenuDirectionEnum.LEFT}>
+      <div
+        style={{
+          height: '100px',
+          lineHeight: '100px',
+          textAlign: 'center',
+          backgroundColor: 'lightblue',
+        }}>
+        Hover me (left)
+      </div>
+    </Tooltip>
+
+    <Tooltip {...args} direction={MenuDirectionEnum.TOP}>
+      <div
+        style={{
+          height: '100px',
+          lineHeight: '100px',
+          textAlign: 'center',
+          backgroundColor: 'lightblue',
+        }}>
+        Hover me (top)
       </div>
     </Tooltip>
   </div>
@@ -28,6 +69,5 @@ const Template: ComponentStory<typeof Tooltip> = (args: ITooltipProps) => (
 export const Default = Template.bind({});
 Default.args = {
   tooltip: 'Tooltip',
-  direction: MenuDirectionEnum.BOTTOM,
   delay: 200,
 };
