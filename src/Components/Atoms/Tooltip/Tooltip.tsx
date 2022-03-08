@@ -22,7 +22,7 @@ export interface ITooltipProps {
   delay?: number;
   /** Direction of the tooltip (optional, default: bottom) */
   direction?: MenuDirectionEnum;
-  /** Extra margin for position computation (optional, default: 8) */
+  /** Extra margin for position computation (optional, default: 0) */
   extraMargin?: number;
   /** Maximum width of the tooltip (optional, default: 256) */
   maxWidth?: number;
@@ -37,8 +37,6 @@ export interface ITooltipStates {
   style?: CSSProperties;
 }
 
-const ARRROW_HEIGHT = 5;
-
 const computePosition = (
   preferedDirection: MenuDirectionEnum,
   triggerDimensions: DOMRect,
@@ -49,10 +47,10 @@ const computePosition = (
   const results = {
     [MenuDirectionEnum.TOP]: {
       left: triggerDimensions.left + triggerDimensions.width / 2 - tooltipDimensions.width / 2,
-      top: triggerDimensions.top - tooltipDimensions.height - extraMargin - (arrow ? ARRROW_HEIGHT : 0),
+      top: triggerDimensions.top - tooltipDimensions.height - extraMargin,
     },
     [MenuDirectionEnum.RIGHT]: {
-      left: triggerDimensions.left + triggerDimensions.width + extraMargin + (arrow ? ARRROW_HEIGHT : 0),
+      left: triggerDimensions.left + triggerDimensions.width + extraMargin,
       top: triggerDimensions.top + triggerDimensions.height / 2 - tooltipDimensions.height / 2,
     },
     [MenuDirectionEnum.BOTTOM]: {
@@ -60,7 +58,7 @@ const computePosition = (
       top: triggerDimensions.top + triggerDimensions.height + extraMargin,
     },
     [MenuDirectionEnum.LEFT]: {
-      left: triggerDimensions.left - tooltipDimensions.width - (arrow ? ARRROW_HEIGHT : 0) - extraMargin,
+      left: triggerDimensions.left - tooltipDimensions.width - extraMargin,
       top: triggerDimensions.top + triggerDimensions.height / 2 - tooltipDimensions.height / 2,
     },
   };
@@ -100,10 +98,10 @@ class Tooltip extends React.PureComponent<ITooltipProps, ITooltipStates> {
   constructor(props: ITooltipProps) {
     super(props);
 
-    this.arrow = props.arrow || true;
+    this.arrow = props.arrow === undefined ? true : props.arrow;
     this.direction = props.direction || MenuDirectionEnum.BOTTOM;
-    this.extraMargin = props.extraMargin || 8;
-    this.maxWidth = props.maxWidth || 256;
+    this.extraMargin = props.extraMargin === undefined ? 0 : props.extraMargin;
+    this.maxWidth = props.maxWidth === undefined ? 256 : props.maxWidth;
     this.tooltip = null;
     this.trigger = null;
 
