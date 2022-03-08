@@ -3,7 +3,7 @@ import classnames from 'classnames';
 
 import { ICellProps } from './types';
 import { IColumnButton } from '../types';
-import { Button } from '../../../Molecules/Button';
+import { Button, ColorButtonEnum } from '../../../Molecules/Button';
 
 const DISPLAY_BUTTON_THRESHOLD = 2;
 
@@ -34,7 +34,7 @@ const ButtonCell = <T,>(props: ICellProps<T, IColumnButton<T>>): ReactElement =>
                 },
               };
             })}
-            color={'reversed'}
+            color={ColorButtonEnum.REVERSED}
           />
         ) : (
           visibleButtons.map((button) => {
@@ -49,7 +49,7 @@ const ButtonCell = <T,>(props: ICellProps<T, IColumnButton<T>>): ReactElement =>
                     button.onClick(row, rowIndex);
                   }
                 }}
-                color={'reversed'}
+                color={ColorButtonEnum.REVERSED}
               />
             );
           })

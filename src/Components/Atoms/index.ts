@@ -5,6 +5,7 @@ export * from './Colors';
 export * from './DatePickerInput';
 export * from './GenericField';
 export * from './Icon';
+export * from './Portal';
 export * from './SelectInput';
 export * from './SwitchInput';
 export * from './TextAreaInput';

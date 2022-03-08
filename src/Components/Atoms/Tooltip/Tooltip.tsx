@@ -1,5 +1,6 @@
 import React, { CSSProperties, ReactElement, ReactNode } from 'react';
 import classnames from 'classnames';
+import { Portal } from '../Portal';
 
 export enum MenuDirectionEnum {
   LEFT = 'left',
@@ -42,7 +43,6 @@ const computePosition = (
   triggerDimensions: DOMRect,
   tooltipDimensions: DOMRect,
   extraMargin: number,
-  arrow: boolean,
 ): { left: number; top: number; direction: MenuDirectionEnum } => {
   const results = {
     [MenuDirectionEnum.TOP]: {
@@ -128,7 +128,6 @@ class Tooltip extends React.PureComponent<ITooltipProps, ITooltipStates> {
       triggerDimensions,
       tooltipDimensions,
       this.extraMargin,
-      this.arrow,
     );
 
     this.direction = direction;
@@ -161,14 +160,15 @@ class Tooltip extends React.PureComponent<ITooltipProps, ITooltipStates> {
           ref={(el) => (this.trigger = el)}>
           {this.props.children}
         </span>
-
-        <div
-          className={classnames('tooltip', this.direction)}
-          ref={(el) => (this.tooltip = el)}
-          style={{ ...this.state.style, opacity: this.state.visible ? 1 : 0 }}>
-          {this.arrow && <div className='tooltip-arrow' />}
-          <div className='tooltip-label'>{this.props.tooltip}</div>
-        </div>
+        <Portal>
+          <div
+            className={classnames('tooltip', this.direction)}
+            ref={(el) => (this.tooltip = el)}
+            style={{ ...this.state.style, opacity: this.state.visible ? 1 : 0 }}>
+            {this.arrow && <div className='tooltip-arrow' />}
+            <div className='tooltip-label'>{this.props.tooltip}</div>
+          </div>
+        </Portal>
       </>
     );
   }

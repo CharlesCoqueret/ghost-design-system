@@ -1,11 +1,18 @@
-import React, { ReactElement } from 'react';
-import { Menu, MenuDivider, MenuItem, MenuAlign } from '@szhsin/react-menu';
+import React, { ReactElement, useRef, useState } from 'react';
+import { MenuDivider, MenuItem, MenuAlign, ControlledMenu } from '@szhsin/react-menu';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classnames from 'classnames';
 
 import { MenuDirectionEnum, Tooltip } from '../../Atoms';
 import { IItemListProps } from './ItemList';
+import Portal from '../../Atoms/Portal/Portal';
+
+export enum ColorButtonEnum {
+  PRIMARY = 'primary',
+  SECONDARY = 'secondary',
+  REVERSED = 'reversed',
+}
 
 export interface IButtonProps {
   /** Label (optional, default: undefined) */
@@ -20,8 +27,8 @@ export interface IButtonProps {
   itemList?: Array<IItemListProps>;
   /** Dropdown alignment option (optional, default: 'end' ) */
   dropdownAlign?: MenuAlign;
-  /** Color of the button (optional, default: 'secondary') */
-  color?: 'primary' | 'secondary' | 'reversed';
+  /** Color of the button (optional, default: ColorButtonEnum.SECONDARY) */
+  color?: ColorButtonEnum;
   /** button type (optional, default: 'button') */
   type?: 'submit' | 'button' | 'reset';
   /** Button is disabled (optional, default: false) */
@@ -50,54 +57,66 @@ const Button = (props: IButtonProps): ReactElement => {
     type,
   } = props;
 
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const skipOpen = useRef(false);
+  const ref = useRef<HTMLButtonElement>(null);
+
   const hasMenu = itemList && itemList.length > 0;
-
-  const button = (
-    <button
-      type={type}
-      onClick={(event) => {
-        event.stopPropagation();
-        if (onClick) {
-          onClick(event);
-        }
-      }}
-      disabled={loading || disabled}
-      className={classnames('button-content', className)}
-      color={color}>
-      {(icon !== undefined || loading !== false) && (
-        <div key='icon' className='button-icon-container'>
-          {loading && <FontAwesomeIcon icon={['fal', 'spinner']} spin size='1x' className='button-icon' />}
-          {!loading && icon && <FontAwesomeIcon icon={icon} size='1x' className='button-icon' />}
-        </div>
-      )}
-
-      {label ? (
-        <>
-          <div key='label' className='button-label-container'>
-            {typeof label === 'string' ? `${label}` : label}
-          </div>
-          {hasMenu ? (
-            <div key='control' className='button-menu-control-container'>
-              <FontAwesomeIcon icon={['fal', 'pipe']} size='1x' className='button-icon' />
-              <FontAwesomeIcon icon={['fas', 'caret-down']} size='1x' className='button-icon' />
-            </div>
-          ) : (
-            <></>
-          )}
-        </>
-      ) : (
-        <></>
-      )}
-    </button>
-  );
 
   if (!label && !icon) return <></>;
 
   return (
-    <Tooltip direction={tooltipDirection} tooltip={label ? undefined : tooltip}>
-      <span>
-        {hasMenu ? (
-          <Menu menuButton={button} align={dropdownAlign} className={classnames('button', className)}>
+    <>
+      <Tooltip direction={tooltipDirection} tooltip={label ? undefined : tooltip}>
+        <button
+          ref={ref}
+          type={type}
+          onClick={(event) => {
+            if (onClick) {
+              onClick(event);
+            }
+            if (hasMenu) {
+              if (!skipOpen.current) setIsOpen((prev) => !prev);
+            }
+          }}
+          disabled={loading || disabled}
+          className={classnames('button-content', className)}
+          color={color}>
+          {(icon !== undefined || loading !== false) && (
+            <div key='icon' className='button-icon-container'>
+              {loading && <FontAwesomeIcon icon={['fal', 'spinner']} spin size='1x' className='button-icon' />}
+              {!loading && icon && <FontAwesomeIcon icon={icon} size='1x' className='button-icon' />}
+            </div>
+          )}
+
+          {label ? (
+            <>
+              <div key='label' className='button-label-container'>
+                {typeof label === 'string' ? `${label}` : label}
+              </div>
+              {hasMenu ? (
+                <div key='control' className='button-menu-control-container'>
+                  <FontAwesomeIcon icon={['fal', 'pipe']} size='1x' className='button-icon' />
+                  <FontAwesomeIcon icon={['fas', 'caret-down']} size='1x' className='button-icon' />
+                </div>
+              ) : (
+                <></>
+              )}
+            </>
+          ) : (
+            <></>
+          )}
+        </button>
+      </Tooltip>
+
+      {hasMenu ? (
+        <Portal>
+          <ControlledMenu
+            state={isOpen ? 'open' : 'closed'}
+            align={dropdownAlign}
+            anchorRef={ref}
+            skipOpen={skipOpen}
+            onClose={() => setIsOpen(false)}>
             {itemList?.map((item): ReactElement => {
               if (item.hidden) return <></>;
               return (
@@ -117,12 +136,12 @@ const Button = (props: IButtonProps): ReactElement => {
                 </>
               );
             })}
-          </Menu>
-        ) : (
-          button
-        )}
-      </span>
-    </Tooltip>
+          </ControlledMenu>
+        </Portal>
+      ) : (
+        <></>
+      )}
+    </>
   );
 };
 
