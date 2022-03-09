@@ -15,6 +15,7 @@ import { ColumnType, IColumnType, IExtraEditableDataTableProps } from '../Static
 
 export interface ILineEditableDataTableCellProps<T> {
   column: IColumnType<T>;
+  editable: boolean;
   row: T;
   extra?: IExtraEditableDataTableProps<T>;
   rowIndex: number;
@@ -22,7 +23,7 @@ export interface ILineEditableDataTableCellProps<T> {
 }
 
 const LineEditableDataTableCell = <T,>(props: ILineEditableDataTableCellProps<T>): ReactElement => {
-  const { column, row, extra, rowIndex, handUpdateDataChange } = props;
+  const { column, editable, row, extra, rowIndex, handUpdateDataChange } = props;
 
   switch (column.type) {
     case ColumnType.AMOUNT: {
@@ -35,7 +36,7 @@ const LineEditableDataTableCell = <T,>(props: ILineEditableDataTableCellProps<T>
           onChange={(newValue) => {
             handUpdateDataChange(rowIndex, column.dataIndex, newValue);
           }}
-          editing
+          editing={editable}
         />
       );
     }
@@ -49,7 +50,7 @@ const LineEditableDataTableCell = <T,>(props: ILineEditableDataTableCellProps<T>
           onChange={(newValue) => {
             handUpdateDataChange(rowIndex, column.dataIndex, newValue);
           }}
-          editing
+          editing={editable}
         />
       );
     }
@@ -69,7 +70,7 @@ const LineEditableDataTableCell = <T,>(props: ILineEditableDataTableCellProps<T>
           onChange={(newValue) => {
             handUpdateDataChange(rowIndex, column.dataIndex, newValue);
           }}
-          editing
+          editing={editable}
         />
       );
     }
@@ -83,7 +84,7 @@ const LineEditableDataTableCell = <T,>(props: ILineEditableDataTableCellProps<T>
           onChange={(newValue) => {
             handUpdateDataChange(rowIndex, column.dataIndex, newValue);
           }}
-          editing
+          editing={editable}
         />
       );
     }
@@ -97,7 +98,7 @@ const LineEditableDataTableCell = <T,>(props: ILineEditableDataTableCellProps<T>
           onChange={(newValue) => {
             handUpdateDataChange(rowIndex, column.dataIndex, newValue);
           }}
-          editing
+          editing={editable}
         />
       );
     }
@@ -111,7 +112,7 @@ const LineEditableDataTableCell = <T,>(props: ILineEditableDataTableCellProps<T>
           onChange={(newValue) => {
             handUpdateDataChange(rowIndex, column.dataIndex, newValue);
           }}
-          editing
+          editing={editable}
         />
       );
     }
@@ -125,7 +126,7 @@ const LineEditableDataTableCell = <T,>(props: ILineEditableDataTableCellProps<T>
           onChange={(newValue) => {
             handUpdateDataChange(rowIndex, column.dataIndex, newValue);
           }}
-          editing
+          editing={editable}
         />
       );
     }

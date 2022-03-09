@@ -35,7 +35,7 @@ class StaticDataTableCellSelectable extends React.Component<
     if (this.props.handleSelectClick) {
       this.props.handleSelectClick(event, selected);
     } else {
-      throw new Error('Missing handleSelectClick in StaticDataTableCellSelectable');
+      throw new Error('Missing handleSelectClick');
     }
   }
 

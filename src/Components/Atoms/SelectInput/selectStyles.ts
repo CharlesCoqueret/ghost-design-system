@@ -51,6 +51,7 @@ export const customStyles = (props: ICustomStylesProps = {}): StylesConfig<IOpti
         ...provided,
         outline: 0,
         boxShadow: 'none',
+        minHeight: '32px',
         border,
         ...disabled,
         ':hover': hover,
@@ -127,10 +128,13 @@ export const customStyles = (props: ICustomStylesProps = {}): StylesConfig<IOpti
       };
     },
     valueContainer: (provided) => {
-      return { ...provided, flexWrap: 'nowrap' };
+      return { ...provided, flexWrap: 'nowrap', padding: '0px 8px' };
     },
     container: (provided) => {
       return { ...provided, maxWidth: '100%', width: '100%' };
+    },
+    dropdownIndicator: (provided) => {
+      return { ...provided, height: '32px', padding: '6px' };
     },
   };
 };

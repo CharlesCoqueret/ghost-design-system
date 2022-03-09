@@ -11,11 +11,11 @@ export default {
 
 interface demoType {
   id: string;
-  name: string;
-  status: string;
-  price: number;
-  parts: number;
-  startDate: Date;
+  name?: string;
+  status?: string;
+  price?: number;
+  parts?: number;
+  startDate?: Date;
 }
 
 const initialData = [
@@ -132,5 +132,14 @@ Default.args = {
     onRowDelete: () => {},
     onRowDownload: () => {},
     onRowSubmit: () => {},
+    canAddNewLine: () => true,
+    onNewLine: () => {
+      return {
+        id: 'TEST',
+      };
+    },
+    isEditable: (row) => {
+      return row.id !== 'GBR';
+    },
   },
 };

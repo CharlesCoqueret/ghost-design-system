@@ -34,7 +34,8 @@ export interface IAmountInputProps {
   fieldSize?: number;
   /** Highlighted field (optional, default: false) */
   highlighted?: boolean;
-  /** Input or number string value (optional, default: undefined) */
+  /** Input or number string value (optional, default: '') */
+  /** Note: '' is used as default to ensure update of the underlaying component */
   inputValue?: string | number;
   /** Error indication should be present (optional, default: undefined) */
   isInError?: boolean;
@@ -193,6 +194,7 @@ AmountInput.defaultProps = {
   allowNegative: true,
   decimalScale: 2,
   decimalSeparator: '.',
+  inputValue: '',
   fieldSize: undefined,
   placeholder: undefined,
   prefix: undefined,

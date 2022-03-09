@@ -26,7 +26,8 @@ const StaticDataTable = <T,>(props: IStaticDataTableProps<T>): ReactElement => {
       setSortDirection(newSortDirection);
 
       if (onSortChange) {
-        onSortChange(newSortField, newSortDirection);
+        if (newSortField && newSortDirection) onSortChange(newSortField, newSortDirection);
+        else onSortChange();
       }
     }
   }, []);

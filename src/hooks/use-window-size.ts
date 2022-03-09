@@ -5,6 +5,7 @@ interface IWindowSize {
   height?: number;
 }
 
+/** Hook providing the size of the window and monitoring its size in case of resize */
 const useWindowSize = (): IWindowSize => {
   const [windowSize, setWindowSize] = useState<IWindowSize>({});
 

@@ -39,12 +39,15 @@ export interface IButtonProps {
   className?: string;
   /** Loading state, disabling the button and replacing icon with spiner (optional, default: false) */
   loading?: boolean;
+  /** For test purpose only */
+  dataTestId?: string;
 }
 
 const Button = (props: IButtonProps): ReactElement => {
   const {
     className,
     color,
+    dataTestId,
     disabled,
     dropdownAlign,
     icon,
@@ -81,7 +84,8 @@ const Button = (props: IButtonProps): ReactElement => {
           }}
           disabled={loading || disabled}
           className={classnames('button-content', className)}
-          color={color}>
+          color={color}
+          data-testid={dataTestId}>
           {(icon !== undefined || loading !== false) && (
             <div key='icon' className='button-icon-container'>
               {loading && <FontAwesomeIcon icon={['fal', 'spinner']} spin size='1x' className='button-icon' />}

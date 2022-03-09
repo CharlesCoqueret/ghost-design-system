@@ -48,6 +48,7 @@ const EditableDataTableBody = <T,>(props: IEditableDataTableBodyProps<T>): React
   return (
     <tbody>
       {data.map((row, rowIndex) => {
+        const isEditable = extra?.isEditable === undefined || extra.isEditable(row, rowIndex);
         return (
           <tr
             key={`row-${rowIndex}`}
@@ -70,6 +71,7 @@ const EditableDataTableBody = <T,>(props: IEditableDataTableBodyProps<T>): React
                   extra={extra}
                   rowIndex={rowIndex}
                   handUpdateDataChange={handUpdateDataChange}
+                  editable={isEditable}
                 />
               );
             })}

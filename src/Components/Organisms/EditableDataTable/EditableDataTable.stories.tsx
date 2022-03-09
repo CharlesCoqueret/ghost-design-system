@@ -129,8 +129,16 @@ const Template: ComponentStory<typeof EditableDataTable> = (args: IEditableDataT
 export const Default = Template.bind({});
 Default.args = {
   extra: {
-    onEdit: (row, rowIndex, dataIndex) => {
-      alert(JSON.stringify(row) + '\nRow index: ' + rowIndex + '\nData index: ' + dataIndex);
+    onEdit: () => {},
+    canAddNewLine: () => true,
+    onRowDelete: () => {},
+    onNewLine: () => {
+      return {
+        id: 'TEST',
+      };
+    },
+    isEditable: (row) => {
+      return row.id !== 'GBR';
     },
   },
 };

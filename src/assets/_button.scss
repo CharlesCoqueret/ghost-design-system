@@ -114,7 +114,6 @@
   box-sizing: border-box;
   width: max-content;
   position: absolute;
-  z-index: 100;
   border: 1px solid rgba(0, 0, 0, 0.1);
   background-color: #fff;
 }
@@ -133,7 +132,6 @@
   border-left-color: rgba(0, 0, 0, 0.1);
   border-top-color: rgba(0, 0, 0, 0.1);
   position: absolute;
-  z-index: -1;
 }
 .szh-menu__arrow--dir-left {
   right: -0.375rem;

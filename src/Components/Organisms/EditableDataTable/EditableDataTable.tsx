@@ -1,4 +1,5 @@
 import React, { ReactElement, useCallback, useEffect, useState } from 'react';
+import Button, { ColorButtonEnum } from '../../Molecules/Button/Button';
 
 import StaticDataTableFooter from '../StaticDataTable/StaticDataTableFooter';
 import StaticDataTableHeader from '../StaticDataTable/StaticDataTableHeader';
@@ -47,6 +48,7 @@ const EditableDataTable = <T,>(props: IEditableDataTableProps<T>): ReactElement 
                   }
                   setCurrentData((prev) => [...prev.filter((_item, index) => index !== rowIndex)]);
                 },
+                dataTestId: 'delete',
               },
               {
                 hidden: (row, rowIndex) => {
@@ -63,6 +65,7 @@ const EditableDataTable = <T,>(props: IEditableDataTableProps<T>): ReactElement 
                     extra.onRowDownload(row, rowIndex);
                   }
                 },
+                dataTestId: 'download',
               },
             ],
           },
@@ -79,7 +82,8 @@ const EditableDataTable = <T,>(props: IEditableDataTableProps<T>): ReactElement 
       setSortDirection(newSortDirection);
 
       if (onSortChange) {
-        onSortChange(newSortField, newSortDirection);
+        if (newSortField && newSortDirection) onSortChange(newSortField, newSortDirection);
+        else onSortChange();
       }
     }
   }, []);
@@ -92,23 +96,45 @@ const EditableDataTable = <T,>(props: IEditableDataTableProps<T>): ReactElement 
     extra.onEdit({ ...currentData[rowIndex], dataIndex: newData }, rowIndex, dataIndex);
   };
 
+  const addNewLine = () => {
+    if (extra?.onNewLine === undefined) {
+      console.warn('Missing onNewLine function');
+      return;
+    }
+    const newLine = extra.onNewLine();
+    setCurrentData((prev) => {
+      prev.push(newLine);
+      return [...prev];
+    });
+  };
+
   return (
-    <table className='cui-table'>
-      <StaticDataTableHeader<T>
-        columns={currentColumns}
-        onSortChange={handleSortChange}
-        sortField={sortField}
-        sortDirection={sortDirection}
-        extra={extra}
-      />
-      <EditableDataTableBody<T>
-        columns={currentColumns}
-        data={currentData}
-        extra={extra}
-        handUpdateDataChange={handUpdateDataChange}
-      />
-      <StaticDataTableFooter<T> columns={currentColumns} data={currentData} extra={extra} />
-    </table>
+    <>
+      <table className='cui-table'>
+        <StaticDataTableHeader<T>
+          columns={currentColumns}
+          onSortChange={handleSortChange}
+          sortField={sortField}
+          sortDirection={sortDirection}
+          extra={extra}
+        />
+        <EditableDataTableBody<T>
+          columns={currentColumns}
+          data={currentData}
+          extra={extra}
+          handUpdateDataChange={handUpdateDataChange}
+        />
+        <StaticDataTableFooter<T> columns={currentColumns} data={currentData} extra={extra} />
+      </table>
+      {extra?.canAddNewLine && extra?.canAddNewLine() && (
+        <Button
+          className='cui-table-new-line'
+          color={ColorButtonEnum.PRIMARY}
+          label='Add Line' // TODO manage translation
+          onClick={addNewLine}
+        />
+      )}
+    </>
   );
 };
 

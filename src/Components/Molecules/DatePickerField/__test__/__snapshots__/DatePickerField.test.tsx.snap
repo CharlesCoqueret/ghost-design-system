@@ -26,7 +26,6 @@ exports[`DatePickerField Component DatePickerField renders 1`] = `
           onKeyDown={[Function]}
           placeholder="MMM DD, YYYY"
           readOnly={false}
-          tabIndex={1}
           type="text"
           value=""
         />
@@ -62,7 +61,6 @@ exports[`DatePickerField Component DatePickerField renders with values in disabl
           onKeyDown={[Function]}
           placeholder="MMM DD, YYYY"
           readOnly={false}
-          tabIndex={1}
           type="text"
           value="Mar 02, 2022"
         />
@@ -98,7 +96,6 @@ exports[`DatePickerField Component DatePickerField renders with values in readon
           onKeyDown={[Function]}
           placeholder="-"
           readOnly={true}
-          tabIndex={1}
           type="text"
           value="Mar 02, 2022"
         />
@@ -134,7 +131,6 @@ exports[`DatePickerField Component DatePickerField renders with values with fiel
           onKeyDown={[Function]}
           placeholder="MMM DD, YYYY"
           readOnly={false}
-          tabIndex={1}
           type="text"
           value="Mar 02, 2022"
         />

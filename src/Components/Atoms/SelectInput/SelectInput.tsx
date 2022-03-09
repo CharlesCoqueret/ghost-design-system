@@ -68,7 +68,6 @@ const SelectInput = (props: ISelectInputProps): ReactElement => {
     return (
       <div
         className={classnames(
-          'field',
           'select-container',
           'input-multi-select-field-read-only',
           fieldSize && `field-input-size-${fieldSize}`,
@@ -84,7 +83,6 @@ const SelectInput = (props: ISelectInputProps): ReactElement => {
   return (
     <div
       className={classnames(
-        'field',
         'select-container',
         'input-multi-select-field',
         fieldSize && `field-input-size-${fieldSize}`,

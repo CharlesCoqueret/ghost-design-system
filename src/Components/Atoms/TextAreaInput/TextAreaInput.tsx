@@ -12,7 +12,7 @@ export interface ITextAreaInputProps {
   highlighted?: boolean;
   /** Class for the input (optional, default: undefined) */
   inputClassName?: string;
-  /** Input string value (optional, default: undefined) */
+  /** Input string value (optional, default: '') */
   inputValue?: string;
   /** Is in Error (optional, default: false) */
   isInError?: boolean;
@@ -120,7 +120,7 @@ TextAreaInput.defaultProps = {
   fieldSize: undefined,
   highlighted: false,
   inputClassName: undefined,
-  inputValue: undefined,
+  inputValue: '',
   isInError: false,
   maxLength: undefined,
   minLength: undefined,

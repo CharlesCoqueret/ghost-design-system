@@ -41,6 +41,7 @@ const ButtonCell = <T,>(props: ICellProps<T, IColumnButton<T>>): ReactElement =>
           visibleButtons.map((button) => {
             return (
               <Button
+                dataTestId={button.dataTestId}
                 key={button.label}
                 tooltip={button.label}
                 icon={button.icon}

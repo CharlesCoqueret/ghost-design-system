@@ -75,7 +75,6 @@ const YearPickerInput = (props: IYearPickerProps): ReactElement => {
         isClearable={!disabled && isClearable}
         placeholderText={readOnly ? '-' : placeholder || dateFormat?.toUpperCase()}
         dateFormat={dateFormat}
-        tabIndex={1}
         disabledKeyboardNavigation
         showPopperArrow={false}
         renderCustomHeader={YearPickerHeader}

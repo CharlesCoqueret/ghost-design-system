@@ -1,5 +1,6 @@
-import { RefObject, useEffect } from 'react';
+import { useEffect } from 'react';
 
+/** Hook capturing the press on the escape key and triggering the callback function */
 const useOnEscapePressed = (callback: (event: KeyboardEvent) => void): void => {
   useEffect(() => {
     const listener = (event: KeyboardEvent) => {

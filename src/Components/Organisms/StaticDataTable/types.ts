@@ -1,6 +1,7 @@
-import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { CSSProperties, ReactElement } from 'react';
-import { DateFormatEnum, IOption } from '../..';
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
+
+import { DateFormatEnum, IOption } from '../../Atoms';
 
 export enum ColumnType {
   AMOUNT = 'amount',
@@ -32,6 +33,8 @@ export interface IButtonCellProps<T> {
   loading?: boolean;
   /** Button click event handler (optional, default: undefined) */
   onClick?: (row: T, rowIndex: number) => void;
+  /** For test purpose only */
+  dataTestId?: string;
 }
 
 interface IColumn {
@@ -141,11 +144,17 @@ export interface IExtraLineEditableDataTableProps<T> extends IExtraStaticDataTab
   onRowDownload?: (downloadRow: T, downloadRowIndex: number) => void;
   /** Method used to disable the download of a specific row, by default not called and considered as deletable (optional, default: undefined) */
   isDownloadable?: (row: T, rowIndex: number) => boolean;
+  /** Method used to enable the button to add a new line (optional, default: undefined) */
+  canAddNewLine?: () => boolean;
+  /** Method used to when the new line button is clicked to get initial values (optional, default: undefined) */
+  onNewLine?: () => T;
 }
 
 export interface IExtraEditableDataTableProps<T> extends IExtraStaticDataTableProps<T> {
   /** Notification of changes on a specific row (optional, default: undefined) */
   onEdit: (editRow: T, editedRowIndex: number, dataIndex: keyof T) => void;
+  /** Method used to disable the edition of a specific row, by default not called and considered as editable (optional, default: undefined) */
+  isEditable?: (row: T, rowIndex: number) => boolean;
   /** Method used to enable the deletion of a specific row (optional, default: undefined) */
   onRowDelete?: (deletedRow: T, deletedRowIndex: number) => void;
   /** Method used to disable the deletion of a specific row, by default not called and considered as deletable (optional, default: undefined) */
@@ -154,4 +163,8 @@ export interface IExtraEditableDataTableProps<T> extends IExtraStaticDataTablePr
   onRowDownload?: (downloadRow: T, downloadRowIndex: number) => void;
   /** Method used to disable the download of a specific row, by default not called and considered as deletable (optional, default: undefined) */
   isDownloadable?: (row: T, rowIndex: number) => boolean;
+  /** Method used to enable the button to add a new line (optional, default: undefined) */
+  canAddNewLine?: () => boolean;
+  /** Method used to when the new line button is clicked to get initial values (optional, default: undefined) */
+  onNewLine?: () => T;
 }
