@@ -23,10 +23,35 @@ const Template: ComponentStory<typeof Modal> = (args: IModalProps) => {
 
   return (
     <>
+      <Button label='Click to open the modal' onClick={openModal} />
+      <Modal title='Lorem ipsum' {...args} show={show} onHide={closeModal}>
+        <ModalBody>
+          <p>Lorem ipsum dolor sit amet.</p>
+        </ModalBody>
+        <ModalFooter>
+          <Button color={ColorButtonEnum.PRIMARY} label='Ok' onClick={closeModal} />
+        </ModalFooter>
+      </Modal>
+    </>
+  );
+};
+
+const TemplateScroll: ComponentStory<typeof Modal> = (args: IModalProps) => {
+  const [show, setShow] = useState(false);
+
+  const closeModal = () => {
+    setShow(false);
+  };
+  const openModal = () => {
+    setShow(true);
+  };
+
+  return (
+    <>
       <div style={{ display: 'flex', height: '150vh', width: '150vw' }}>
-        <button style={{ margin: 'auto' }} onClick={openModal}>
-          Click to open the modal
-        </button>
+        <div style={{ margin: 'auto' }}>
+          <Button label='Click to open the modal' onClick={openModal} />
+        </div>
         <Modal title='Lorem ipsum' {...args} show={show} onHide={closeModal}>
           <ModalBody>
             <p>
@@ -54,4 +79,11 @@ const Template: ComponentStory<typeof Modal> = (args: IModalProps) => {
 };
 
 export const Default = Template.bind({});
-Default.args = {};
+Default.args = {
+  size: 'sm',
+};
+
+export const Scroll = TemplateScroll.bind({});
+Scroll.args = {
+  size: 'lg',
+};

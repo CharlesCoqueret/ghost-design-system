@@ -5,7 +5,7 @@ import { ICellProps } from './types';
 import { IColumnButton } from '../types';
 import { Button, ColorButtonEnum } from '../../../Molecules/Button';
 
-const DISPLAY_BUTTON_THRESHOLD = 2;
+const DISPLAY_BUTTON_THRESHOLD = 3;
 
 const ButtonCell = <T,>(props: ICellProps<T, IColumnButton<T>>): ReactElement => {
   const { column, row, rowIndex } = props;
@@ -27,6 +27,7 @@ const ButtonCell = <T,>(props: ICellProps<T, IColumnButton<T>>): ReactElement =>
               return {
                 itemId: item.label,
                 value: item.label,
+                hidden: !(!item.hidden || !item.hidden(row, rowIndex)),
                 onClick: () => {
                   if (item.onClick) {
                     item.onClick(row, rowIndex);

@@ -137,9 +137,21 @@ export interface IExtraLineEditableDataTableProps<T> extends IExtraStaticDataTab
   isDeletable?: (row: T, rowIndex: number) => boolean;
   /** Initial index of edited row */
   editedRowIndex?: number;
+  /** Method used to enable the download of a specific row (optional, default: undefined) */
+  onRowDownload?: (downloadRow: T, downloadRowIndex: number) => void;
+  /** Method used to disable the download of a specific row, by default not called and considered as deletable (optional, default: undefined) */
+  isDownloadable?: (row: T, rowIndex: number) => boolean;
 }
 
 export interface IExtraEditableDataTableProps<T> extends IExtraStaticDataTableProps<T> {
   /** Notification of changes on a specific row (optional, default: undefined) */
   onEdit: (editRow: T, editedRowIndex: number, dataIndex: keyof T) => void;
+  /** Method used to enable the deletion of a specific row (optional, default: undefined) */
+  onRowDelete?: (deletedRow: T, deletedRowIndex: number) => void;
+  /** Method used to disable the deletion of a specific row, by default not called and considered as deletable (optional, default: undefined) */
+  isDeletable?: (row: T, rowIndex: number) => boolean;
+  /** Method used to enable the download of a specific row (optional, default: undefined) */
+  onRowDownload?: (downloadRow: T, downloadRowIndex: number) => void;
+  /** Method used to disable the download of a specific row, by default not called and considered as deletable (optional, default: undefined) */
+  isDownloadable?: (row: T, rowIndex: number) => boolean;
 }

@@ -22,80 +22,99 @@ const LineEditableDataTable = <T,>(props: ILineEditableDataTableProps<T>): React
   const [sortDirection, setSortDirection] = useState<SortDirectionEnum | undefined>();
   const [editedRowIndex, setEditedRowIndex] = useState<number | undefined>(extra?.editedRowIndex);
 
-  const currentColumns: Array<IColumnType<T>> = [
-    ...columns.filter((column) => column.type !== ColumnType.BUTTON),
-    {
-      title: 'Actions', // TODO manage translation
-      type: ColumnType.BUTTON,
-      moreActionsMessage: 'More actions', // TODO manage translation
-      buttons: [
-        {
-          hidden: (row, rowIndex) => {
-            if (!extra?.onRowSubmit) return true;
-            if (extra.isEditable === undefined || extra.isEditable(row, rowIndex)) {
-              return editedRowIndex === rowIndex;
-            }
-            return true;
+  const currentColumns: Array<IColumnType<T>> =
+    !extra?.onRowSubmit && !extra?.onRowDelete && !extra?.onRowDownload
+      ? columns
+      : [
+          ...columns.filter((column) => column.type !== ColumnType.BUTTON),
+          {
+            title: 'Actions', // TODO manage translation
+            type: ColumnType.BUTTON,
+            moreActionsMessage: 'More actions', // TODO manage translation
+            buttons: [
+              {
+                hidden: (row, rowIndex) => {
+                  if (!extra?.onRowSubmit) return true;
+                  if (extra.isEditable === undefined || extra.isEditable(row, rowIndex)) {
+                    return editedRowIndex === rowIndex;
+                  }
+                  return true;
+                },
+                icon: ['fal', 'edit'],
+                label: 'Edit', // TODO manage translation
+                onClick: (row, rowIndex) => {
+                  if (extra?.onRowEdit) {
+                    extra.onRowEdit(row, rowIndex);
+                  }
+                  setEditedRowIndex(rowIndex);
+                },
+              },
+              {
+                hidden: (row, rowIndex) => {
+                  if (!extra?.onRowDelete) return true;
+                  if (extra.isDeletable === undefined || extra.isDeletable(row, rowIndex)) {
+                    return editedRowIndex === rowIndex;
+                  }
+                  return true;
+                },
+                icon: ['fal', 'trash-alt'],
+                label: 'Delete', // TODO manage translation
+                onClick: (row, rowIndex) => {
+                  if (extra?.onRowDelete) {
+                    extra.onRowDelete(row, rowIndex);
+                  }
+                  setCurrentData((prev) => [...prev.filter((_item, index) => index !== rowIndex)]);
+                },
+              },
+              {
+                hidden: (_row, rowIndex) => {
+                  return editedRowIndex !== rowIndex;
+                },
+                icon: ['fal', 'check'],
+                label: 'Submit', // TODO manage translation
+                onClick: (row, rowIndex) => {
+                  if (extra?.onRowSubmit) {
+                    extra.onRowSubmit(row, rowIndex);
+                  }
+                  setEditedRowIndex(undefined);
+                  setCurrentData((prev) => {
+                    prev[rowIndex] = row;
+                    return [...prev];
+                  });
+                },
+              },
+              {
+                hidden: (_row, rowIndex) => {
+                  return editedRowIndex !== rowIndex;
+                },
+                icon: ['fal', 'times'],
+                label: 'Cancel', // TODO manage translation
+                onClick: (row, rowIndex) => {
+                  if (extra?.onRowCancelEdit) {
+                    extra.onRowCancelEdit(row, rowIndex);
+                  }
+                  setEditedRowIndex(undefined);
+                },
+              },
+              {
+                hidden: (row, rowIndex) => {
+                  if (!extra?.onRowDownload) return true;
+                  if (extra.isDownloadable === undefined || extra.isDownloadable(row, rowIndex)) {
+                    return editedRowIndex === rowIndex;
+                  }
+                  return true;
+                },
+                icon: ['fal', 'arrow-to-bottom'],
+                label: 'Download', // TODO manage translation
+                onClick: (row, rowIndex) => {
+                  if (extra?.onRowDownload) {
+                    extra.onRowDownload(row, rowIndex);
+                  }
+                },
+              },
+            ],
           },
-          icon: ['fal', 'edit'],
-          label: 'Edit',
-          onClick: (row, rowIndex) => {
-            if (extra?.onRowEdit) {
-              extra.onRowEdit(row, rowIndex);
-            }
-            setEditedRowIndex(rowIndex);
-          },
-        },
-        {
-          hidden: (row, rowIndex) => {
-            if (!extra?.onRowDelete) return true;
-            if (extra.isDeletable === undefined || extra.isDeletable(row, rowIndex)) {
-              return editedRowIndex === rowIndex;
-            }
-            return true;
-          },
-          icon: ['fal', 'trash-alt'],
-          label: 'Delete',
-          onClick: (row, rowIndex) => {
-            if (extra?.onRowDelete) {
-              extra.onRowDelete(row, rowIndex);
-            }
-            setCurrentData((prev) => [...prev.filter((_item, index) => index !== rowIndex)]);
-          },
-        },
-        {
-          hidden: (_row, rowIndex) => {
-            return editedRowIndex !== rowIndex;
-          },
-          icon: ['fal', 'check'],
-          label: 'Submit',
-          onClick: (row, rowIndex) => {
-            if (extra?.onRowSubmit) {
-              extra.onRowSubmit(row, rowIndex);
-            }
-            setEditedRowIndex(undefined);
-            setCurrentData((prev) => {
-              prev[rowIndex] = row;
-              return [...prev];
-            });
-          },
-        },
-        {
-          hidden: (_row, rowIndex) => {
-            return editedRowIndex !== rowIndex;
-          },
-          icon: ['fal', 'times'],
-          label: 'Cancel',
-          onClick: (row, rowIndex) => {
-            if (extra?.onRowCancelEdit) {
-              extra.onRowCancelEdit(row, rowIndex);
-            }
-            setEditedRowIndex(undefined);
-          },
-        },
-      ],
-    },
-  ];
+        ];
 
   // Updating local copy of data whenever the provided data changes.
   useEffect(() => {

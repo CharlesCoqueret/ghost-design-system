@@ -130,6 +130,7 @@ export const Default = Template.bind({});
 Default.args = {
   extra: {
     onRowDelete: () => {},
+    onRowDownload: () => {},
     onRowSubmit: () => {},
   },
 };
