@@ -21,49 +21,52 @@ const EditableDataTable = <T,>(props: IEditableDataTableProps<T>): ReactElement 
   const [sortField, setSortField] = useState<keyof T | undefined>();
   const [sortDirection, setSortDirection] = useState<SortDirectionEnum | undefined>();
 
-  const currentColumns: Array<IColumnType<T>> = [
-    ...columns.filter((column) => column.type !== ColumnType.BUTTON),
-    {
-      title: 'Actions', // TODO manage translation
-      type: ColumnType.BUTTON,
-      moreActionsMessage: 'More actions', // TODO manage translation
-      buttons: [
-        {
-          hidden: (row, rowIndex) => {
-            if (!extra?.onRowDelete) return true;
-            if (extra.isDeletable === undefined || extra.isDeletable(row, rowIndex)) {
-              return false;
-            }
-            return true;
+  const currentColumns: Array<IColumnType<T>> =
+    !extra?.onRowDelete && !extra?.onRowDownload
+      ? columns
+      : [
+          ...columns.filter((column) => column.type !== ColumnType.BUTTON),
+          {
+            title: 'Actions', // TODO manage translation
+            type: ColumnType.BUTTON,
+            moreActionsMessage: 'More actions', // TODO manage translation
+            buttons: [
+              {
+                hidden: (row, rowIndex) => {
+                  if (!extra?.onRowDelete) return true;
+                  if (extra.isDeletable === undefined || extra.isDeletable(row, rowIndex)) {
+                    return false;
+                  }
+                  return true;
+                },
+                icon: ['fal', 'trash-alt'],
+                label: 'Delete', // TODO manage translation
+                onClick: (row, rowIndex) => {
+                  if (extra?.onRowDelete) {
+                    extra.onRowDelete(row, rowIndex);
+                  }
+                  setCurrentData((prev) => [...prev.filter((_item, index) => index !== rowIndex)]);
+                },
+              },
+              {
+                hidden: (row, rowIndex) => {
+                  if (!extra?.onRowDownload) return true;
+                  if (extra.isDownloadable === undefined || extra.isDownloadable(row, rowIndex)) {
+                    return false;
+                  }
+                  return true;
+                },
+                icon: ['fal', 'arrow-to-bottom'],
+                label: 'Download', // TODO manage translation
+                onClick: (row, rowIndex) => {
+                  if (extra?.onRowDownload) {
+                    extra.onRowDownload(row, rowIndex);
+                  }
+                },
+              },
+            ],
           },
-          icon: ['fal', 'trash-alt'],
-          label: 'Delete', // TODO manage translation
-          onClick: (row, rowIndex) => {
-            if (extra?.onRowDelete) {
-              extra.onRowDelete(row, rowIndex);
-            }
-            setCurrentData((prev) => [...prev.filter((_item, index) => index !== rowIndex)]);
-          },
-        },
-        {
-          hidden: (row, rowIndex) => {
-            if (!extra?.onRowDownload) return true;
-            if (extra.isDownloadable === undefined || extra.isDownloadable(row, rowIndex)) {
-              return false;
-            }
-            return true;
-          },
-          icon: ['fal', 'arrow-to-bottom'],
-          label: 'Download', // TODO manage translation
-          onClick: (row, rowIndex) => {
-            if (extra?.onRowDownload) {
-              extra.onRowDownload(row, rowIndex);
-            }
-          },
-        },
-      ],
-    },
-  ];
+        ];
 
   // Updating local copy of data whenever the provided data changes.
   useEffect(() => {
