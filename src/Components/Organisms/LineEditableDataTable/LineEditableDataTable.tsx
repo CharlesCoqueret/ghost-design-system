@@ -21,6 +21,7 @@ const LineEditableDataTable = <T,>(props: ILineEditableDataTableProps<T>): React
   const [sortField, setSortField] = useState<keyof T | undefined>();
   const [sortDirection, setSortDirection] = useState<SortDirectionEnum | undefined>();
   const [editedRowIndex, setEditedRowIndex] = useState<number | undefined>(extra?.editedRowIndex);
+  const [snapshotEditedRow, setSnapshotEditedRow] = useState<T>();
 
   const currentColumns: Array<IColumnType<T>> =
     !extra?.onRowSubmit && !extra?.onRowDelete && !extra?.onRowDownload
@@ -46,6 +47,7 @@ const LineEditableDataTable = <T,>(props: ILineEditableDataTableProps<T>): React
                   if (extra?.onRowEdit) {
                     extra.onRowEdit(row, rowIndex);
                   }
+                  setSnapshotEditedRow({ ...row });
                   setEditedRowIndex(rowIndex);
                 },
               },
@@ -77,6 +79,7 @@ const LineEditableDataTable = <T,>(props: ILineEditableDataTableProps<T>): React
                     extra.onRowSubmit(row, rowIndex);
                   }
                   setEditedRowIndex(undefined);
+                  setSnapshotEditedRow(undefined);
                   setCurrentData((prev) => {
                     prev[rowIndex] = row;
                     return [...prev];
@@ -93,7 +96,12 @@ const LineEditableDataTable = <T,>(props: ILineEditableDataTableProps<T>): React
                   if (extra?.onRowCancelEdit) {
                     extra.onRowCancelEdit(row, rowIndex);
                   }
+                  setCurrentData((prev) => {
+                    prev[rowIndex] = snapshotEditedRow as T;
+                    return [...prev];
+                  });
                   setEditedRowIndex(undefined);
+                  setSnapshotEditedRow(undefined);
                 },
               },
               {

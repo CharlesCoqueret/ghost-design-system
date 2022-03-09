@@ -168,7 +168,6 @@ SelectableRows.args = {
       alert(`Number of rows selected: ${rows.length}\nClicked row: ${row.id}`);
     },
     isSelectable: (row: demoType) => {
-      console.log('isSelectable', row);
       return row.id !== 'UGA';
     },
   },
