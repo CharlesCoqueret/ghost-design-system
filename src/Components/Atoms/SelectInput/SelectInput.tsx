@@ -69,7 +69,7 @@ const SelectInput = (props: ISelectInputProps): ReactElement => {
       <div
         className={classnames(
           'select-container',
-          'input-multi-select-field-read-only',
+          'input-select-field-read-only',
           fieldSize && `field-input-size-${fieldSize}`,
           {
             'field-highlighted': highlighted,
@@ -84,7 +84,7 @@ const SelectInput = (props: ISelectInputProps): ReactElement => {
     <div
       className={classnames(
         'select-container',
-        'input-multi-select-field',
+        'input-select-field',
         fieldSize && `field-input-size-${fieldSize}`,
         {
           'input-error': isInError && !disabled,

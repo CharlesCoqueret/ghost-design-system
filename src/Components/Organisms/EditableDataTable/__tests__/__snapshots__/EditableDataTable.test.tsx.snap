@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`EditableDataTable Component EditableDataTable renders and handles line delete 1`] = `
+exports[`EditableDataTable Component EditableDataTable renders and handles line download and line delete 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
@@ -180,7 +180,7 @@ Object {
                 class="field-group"
               >
                 <div
-                  class="field select-container input-multi-select-field field input-select-field"
+                  class="select-container input-select-field field input-select-field"
                 >
                   <div
                     class=" css-1959ul7-container"
@@ -397,7 +397,7 @@ Object {
                 class="field-group"
               >
                 <div
-                  class="field select-container input-multi-select-field field input-select-field"
+                  class="select-container input-select-field field input-select-field"
                 >
                   <div
                     class=" css-1959ul7-container"
@@ -920,7 +920,7 @@ Object {
               class="field-group"
             >
               <div
-                class="field select-container input-multi-select-field field input-select-field"
+                class="select-container input-select-field field input-select-field"
               >
                 <div
                   class=" css-1959ul7-container"
@@ -1137,7 +1137,7 @@ Object {
               class="field-group"
             >
               <div
-                class="field select-container input-multi-select-field field input-select-field"
+                class="select-container input-select-field field input-select-field"
               >
                 <div
                   class=" css-1959ul7-container"
@@ -1383,7 +1383,7 @@ Object {
 }
 `;
 
-exports[`EditableDataTable Component EditableDataTable renders and handles line delete 2`] = `
+exports[`EditableDataTable Component EditableDataTable renders and handles line download and line delete 2`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
@@ -1563,7 +1563,7 @@ Object {
                 class="field-group"
               >
                 <div
-                  class="field select-container input-multi-select-field field input-select-field"
+                  class="select-container input-select-field field input-select-field"
                 >
                   <div
                     class=" css-1959ul7-container"
@@ -2054,7 +2054,7 @@ Object {
               class="field-group"
             >
               <div
-                class="field select-container input-multi-select-field field input-select-field"
+                class="select-container input-select-field field input-select-field"
               >
                 <div
                   class=" css-1959ul7-container"
@@ -2467,7 +2467,7 @@ Object {
                 class="field-group"
               >
                 <div
-                  class="field select-container input-multi-select-field field input-select-field"
+                  class="select-container input-select-field field input-select-field"
                 >
                   <div
                     class=" css-1959ul7-container"
@@ -2642,7 +2642,7 @@ Object {
                 class="field-group"
               >
                 <div
-                  class="field select-container input-multi-select-field field input-select-field"
+                  class="select-container input-select-field field input-select-field"
                 >
                   <div
                     class=" css-1959ul7-container"
@@ -3052,7 +3052,7 @@ Object {
               class="field-group"
             >
               <div
-                class="field select-container input-multi-select-field field input-select-field"
+                class="select-container input-select-field field input-select-field"
               >
                 <div
                   class=" css-1959ul7-container"
@@ -3227,7 +3227,7 @@ Object {
               class="field-group"
             >
               <div
-                class="field select-container input-multi-select-field field input-select-field"
+                class="select-container input-select-field field input-select-field"
               >
                 <div
                   class=" css-1959ul7-container"
@@ -3611,7 +3611,7 @@ Object {
                 class="field-group"
               >
                 <div
-                  class="field select-container input-multi-select-field field input-select-field"
+                  class="select-container input-select-field field input-select-field"
                 >
                   <div
                     class=" css-1959ul7-container"
@@ -3828,7 +3828,7 @@ Object {
                 class="field-group"
               >
                 <div
-                  class="field select-container input-multi-select-field field input-select-field"
+                  class="select-container input-select-field field input-select-field"
                 >
                   <div
                     class=" css-1959ul7-container"
@@ -4362,7 +4362,7 @@ Object {
               class="field-group"
             >
               <div
-                class="field select-container input-multi-select-field field input-select-field"
+                class="select-container input-select-field field input-select-field"
               >
                 <div
                   class=" css-1959ul7-container"
@@ -4579,7 +4579,7 @@ Object {
               class="field-group"
             >
               <div
-                class="field select-container input-multi-select-field field input-select-field"
+                class="select-container input-select-field field input-select-field"
               >
                 <div
                   class=" css-1959ul7-container"
@@ -5016,7 +5016,7 @@ Object {
                 class="field-group"
               >
                 <div
-                  class="field select-container input-multi-select-field field input-select-field"
+                  class="select-container input-select-field field input-select-field"
                 >
                   <div
                     class=" css-1959ul7-container"
@@ -5233,7 +5233,7 @@ Object {
                 class="field-group"
               >
                 <div
-                  class="field select-container input-multi-select-field field input-select-field"
+                  class="select-container input-select-field field input-select-field"
                 >
                   <div
                     class=" css-1959ul7-container"
@@ -5767,7 +5767,7 @@ Object {
               class="field-group"
             >
               <div
-                class="field select-container input-multi-select-field field input-select-field"
+                class="select-container input-select-field field input-select-field"
               >
                 <div
                   class=" css-1959ul7-container"
@@ -5984,7 +5984,7 @@ Object {
               class="field-group"
             >
               <div
-                class="field select-container input-multi-select-field field input-select-field"
+                class="select-container input-select-field field input-select-field"
               >
                 <div
                   class=" css-1959ul7-container"
@@ -6421,7 +6421,7 @@ Object {
                 class="field-group"
               >
                 <div
-                  class="field select-container input-multi-select-field field input-select-field"
+                  class="select-container input-select-field field input-select-field"
                 >
                   <div
                     class=" css-1959ul7-container"
@@ -6912,7 +6912,7 @@ Object {
               class="field-group"
             >
               <div
-                class="field select-container input-multi-select-field field input-select-field"
+                class="select-container input-select-field field input-select-field"
               >
                 <div
                   class=" css-1959ul7-container"

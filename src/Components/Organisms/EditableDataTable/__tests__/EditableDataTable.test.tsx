@@ -305,7 +305,7 @@ describe.only('EditableDataTable Component', () => {
     expect(onSortChangeMock).toHaveBeenCalledWith();
   });
 
-  it('EditableDataTable renders and handles line delete', async () => {
+  it('EditableDataTable renders and handles line download and line delete', async () => {
     const onEditMock = jest.fn();
     const onRowDeleteMock = jest.fn();
     const onRowDownloadMock = jest.fn();
