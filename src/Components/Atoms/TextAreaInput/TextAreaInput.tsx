@@ -1,7 +1,7 @@
 import React, { ReactElement, useRef, useState } from 'react';
 import classnames from 'classnames';
 
-import { useRunAfterUpdate } from '../../../hooks/use-run-after-update';
+import useRunAfterUpdate from '../../../hooks/use-run-after-update';
 
 export interface ITextAreaInputProps {
   /** Disabled field (optional, default: false) */
