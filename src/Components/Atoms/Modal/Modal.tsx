@@ -1,4 +1,4 @@
-import React, { PropsWithChildren, ReactElement, useRef, useState } from 'react';
+import React, { PropsWithChildren, ReactElement, useEffect, useRef, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classnames from 'classnames';
 
@@ -26,7 +26,19 @@ const Modal = (props: PropsWithChildren<IModalProps>): ReactElement => {
   const { children, closeIcon, closeOnClickEscape, closeOnClickOutide, onHide, show, size, title } = props;
 
   const [isShaking, setIsShaking] = useState(false);
+  const [initialBodyStyle, setInitialBodyStyle] = useState<Partial<CSSStyleDeclaration>>();
   const contentRef = useRef(null);
+
+  useEffect(() => {
+    if (show) {
+      setInitialBodyStyle({ overflowX: document.body.style.overflowX, overflowY: document.body.style.overflowX });
+      document.body.style.overflowY = 'hidden';
+      document.body.style.overflowX = 'hidden';
+    } else {
+      document.body.style.overflowX = initialBodyStyle?.overflowX || '';
+      document.body.style.overflowY = initialBodyStyle?.overflowY || '';
+    }
+  }, [show]);
 
   const shake = () => {
     setIsShaking(true);
