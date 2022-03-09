@@ -6,6 +6,7 @@ interface IStaticDataTableCellSelectableProps {
   handleSelectClick?: (event: MouseEvent<HTMLElement>, selected: boolean) => void;
   selected: boolean;
   selectable: boolean;
+  dataTestId?: string;
 }
 
 interface IStaticDataTableCellSelectableState {
@@ -52,6 +53,7 @@ class StaticDataTableCellSelectable extends React.Component<
               this.props.selected ? 'square-check' : 'square',
             ]}
             size='lg'
+            data-testid={this.props.dataTestId}
           />
         </div>
       </td>

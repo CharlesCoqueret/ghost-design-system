@@ -59,6 +59,7 @@ const EditableDataTableBody = <T,>(props: IEditableDataTableBodyProps<T>): React
                 handleSelectClick={handleSelectClick(row, rowIndex)}
                 selected={selectedRows[rowIndex]}
                 selectable={extra.isSelectable ? extra.isSelectable(row) : true}
+                dataTestId={`select-row-${rowIndex}`}
               />
             )}
 

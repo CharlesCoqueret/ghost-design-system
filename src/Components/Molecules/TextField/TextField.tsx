@@ -4,6 +4,8 @@ import { GenericField } from '../../Atoms/GenericField';
 import { TextInput } from '../../Atoms/';
 
 export interface ITextFieldProps {
+  /** For test purpose only */
+  dataTestId?: string;
   /** Disabled field (optional, default: false) */
   disabled?: boolean;
   /** Error message (optional, default: undefined) */
@@ -53,6 +55,7 @@ export interface ITextFieldProps {
  */
 export const TextField = (props: ITextFieldProps): React.ReactElement => {
   const {
+    dataTestId,
     disabled,
     errorMessage,
     fieldClassName,
@@ -101,6 +104,7 @@ export const TextField = (props: ITextFieldProps): React.ReactElement => {
       maxLength={maxLength}
       inputLength={inputLength}>
       <TextInput
+        dataTestId={dataTestId}
         disabled={disabled}
         fieldSize={fieldSize}
         highlighted={highlighted}

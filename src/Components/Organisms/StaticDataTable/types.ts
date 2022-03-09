@@ -152,7 +152,7 @@ export interface IExtraLineEditableDataTableProps<T> extends IExtraStaticDataTab
 
 export interface IExtraEditableDataTableProps<T> extends IExtraStaticDataTableProps<T> {
   /** Notification of changes on a specific row (optional, default: undefined) */
-  onEdit: (editRow: T, editedRowIndex: number, dataIndex: keyof T) => void;
+  onEdit: (editRow: T, dataIndex: keyof T, editedRowIndex: number) => void;
   /** Method used to disable the edition of a specific row, by default not called and considered as editable (optional, default: undefined) */
   isEditable?: (row: T, rowIndex: number) => boolean;
   /** Method used to enable the deletion of a specific row (optional, default: undefined) */

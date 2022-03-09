@@ -2,6 +2,8 @@ import React, { ReactElement } from 'react';
 import classnames from 'classnames';
 
 export interface ITextInputProps {
+  /** For test purpose only */
+  dataTestId?: string;
   /** Disabled field (optional, default: false) */
   disabled?: boolean;
   /** Size of the field in a 12 column grid (optional, default: undefined) */
@@ -30,6 +32,7 @@ export interface ITextInputProps {
 
 const TextInput = (props: ITextInputProps): ReactElement => {
   const {
+    dataTestId,
     disabled,
     isInError,
     fieldSize,
@@ -71,6 +74,7 @@ const TextInput = (props: ITextInputProps): ReactElement => {
         },
         inputClassName,
       )}
+      data-testid={dataTestId}
       id={name}
       name={name}
       type='text'

@@ -79,7 +79,7 @@ jest.mock('@fortawesome/react-fontawesome', () => {
   };
 });
 
-describe.only('EditableDataTable Component', () => {
+describe('EditableDataTable Component', () => {
   it('EditableDataTable renders with all buttons', async () => {
     const onEditMock = jest.fn();
     const isEditableMock = jest.fn().mockImplementation(() => true);
@@ -341,5 +341,31 @@ describe.only('EditableDataTable Component', () => {
 
     expect(container).toMatchSnapshot();
     expect(onRowDeleteMock).toBeCalledWith(initialData[0], 0);
+  });
+
+  it('EditableDataTable renders and handles changes', async () => {
+    const onEditMock = jest.fn();
+
+    const extra = {
+      onEdit: onEditMock,
+    };
+
+    const newInput = 'test input';
+
+    const container = render(<EditableDataTable<ITestType> columns={columns} data={initialData} extra={extra} />);
+
+    const nameInputField = await screen.findAllByTestId('name-0');
+    expect(nameInputField.length).toBeGreaterThan(0);
+
+    act(() => {
+      if (nameInputField.length > 0) {
+        userEvent.click(nameInputField[0]);
+        userEvent.clear(nameInputField[0]);
+        userEvent.type(nameInputField[0], newInput);
+      }
+    });
+
+    expect(container).toMatchSnapshot();
+    expect(onEditMock).toHaveBeenCalledTimes(newInput.length + 1);
   });
 });

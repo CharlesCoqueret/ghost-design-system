@@ -16,6 +16,7 @@ const TextCell = <T,>(props: ICellProps<T, IColumnText<T>>): ReactElement => {
     <td className={classnames({ ellipsis: column.ellipsis })}>
       {isCurrentlyEditedRow ? (
         <TextField
+          dataTestId={`${column.dataIndex}-${rowIndex}`}
           name={String(column.dataIndex)}
           inputValue={displayValue}
           onChange={(newValue: string) => {

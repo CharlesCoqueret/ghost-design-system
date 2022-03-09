@@ -93,7 +93,7 @@ const EditableDataTable = <T,>(props: IEditableDataTableProps<T>): ReactElement 
       prev[rowIndex][dataIndex] = newData;
       return [...prev];
     });
-    extra.onEdit({ ...currentData[rowIndex], dataIndex: newData }, rowIndex, dataIndex);
+    extra.onEdit({ ...currentData[rowIndex], [dataIndex]: newData }, dataIndex, rowIndex);
   };
 
   const addNewLine = () => {
