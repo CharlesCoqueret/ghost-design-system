@@ -7,6 +7,8 @@ import YearPickerHeader from './YearPickerHeader';
 export interface IYearPickerProps {
   /** Class for the input (optional, default: undefined) */
   className?: string;
+  /** For test purpose only */
+  dataTestId?: string;
   /** Disabled input (optional, default: false) */
   disabled?: boolean;
   /** Highlight value in readonly mode (optional, default: false) */
@@ -30,6 +32,7 @@ export interface IYearPickerProps {
 const YearPickerInput = (props: IYearPickerProps): ReactElement => {
   const {
     className,
+    dataTestId,
     disabled,
     highlighted,
     inputValue,
@@ -59,6 +62,7 @@ const YearPickerInput = (props: IYearPickerProps): ReactElement => {
     <div className={className}>
       <DatePicker
         name={name}
+        data-testid={dataTestId}
         selected={selected}
         className={classnames('field', {
           'input-year-picker-input-read-only': readOnly,

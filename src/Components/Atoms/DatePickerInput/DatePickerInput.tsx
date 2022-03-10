@@ -10,6 +10,8 @@ export interface IDatePickerProps {
   calendarStartDay?: WeekDayEnum;
   /** Class for the input (optional, default: undefined) */
   className?: string;
+  /** For test purpose only */
+  dataTestId?: string;
   /** Date format */
   dateFormat?: DateFormat;
   /** Disabled input (optional, default: false) */
@@ -38,6 +40,7 @@ const DatePickerInput = (props: IDatePickerProps): ReactElement => {
   const {
     calendarStartDay,
     className,
+    dataTestId,
     dateFormat,
     disabled,
     highlighted,
@@ -62,6 +65,7 @@ const DatePickerInput = (props: IDatePickerProps): ReactElement => {
           'field-highlighted': highlighted && (readOnly || disabled),
           'input-error': isInError && !readOnly && !disabled,
         })}
+        data-testid={dataTestId}
         autoFocus={false}
         preventOpenOnFocus
         onChange={

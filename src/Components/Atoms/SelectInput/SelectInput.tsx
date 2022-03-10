@@ -20,6 +20,8 @@ export interface ISelectInputProps {
     optionFocusColor: string; // colors.chalk,
     optionSelectedColor: string; // colors.primary,
   };
+  /** For test purpose only */
+  dataTestId?: string;
   /** Disabled field (optional, default: false) */
   disabled?: boolean;
   /** Size of the field in a 12 column grid (optional, default: undefined) */
@@ -50,6 +52,7 @@ const SelectInput = (props: ISelectInputProps): ReactElement => {
   const {
     className,
     colors,
+    dataTestId,
     disabled,
     fieldSize,
     highlighted,
@@ -75,7 +78,8 @@ const SelectInput = (props: ISelectInputProps): ReactElement => {
             'field-highlighted': highlighted,
           },
           className,
-        )}>
+        )}
+        data-testid={dataTestId}>
         {inputValue ? inputValue.label : '-'}
       </div>
     );
@@ -92,6 +96,7 @@ const SelectInput = (props: ISelectInputProps): ReactElement => {
         className,
       )}>
       <ReactSelect<IOption, false>
+        data-testid={dataTestId}
         hideSelectedOptions={false}
         isClearable={isClearable}
         isDisabled={disabled}

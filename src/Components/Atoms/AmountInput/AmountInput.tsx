@@ -24,6 +24,8 @@ export interface IAmountInputProps {
   allowNegative?: boolean;
   /** Additional class names to be added (optional, default: undefined) */
   className?: string;
+  /** For test purpose only */
+  dataTestId?: string;
   /** Decimal scale (optional, default: 2) */
   decimalScale?: number;
   /** Decimal separator (optional, default: '.') */
@@ -65,6 +67,7 @@ const AmountInput = (props: IAmountInputProps): React.ReactElement => {
   const {
     allowNegative,
     className,
+    dataTestId,
     decimalScale,
     decimalSeparator,
     disabled,
@@ -113,7 +116,7 @@ const AmountInput = (props: IAmountInputProps): React.ReactElement => {
             fieldSize && `field-input-size-${fieldSize}`,
             className,
           )}
-          data-testid={name}>
+          data-testid={dataTestId}>
           {prefix ? `${prefix} ` : ''}-{suffix ? ` ${suffix}` : ''}
         </div>
       );
@@ -127,7 +130,7 @@ const AmountInput = (props: IAmountInputProps): React.ReactElement => {
             { 'field-highlighted': readOnly && highlighted },
             className,
           )}
-          data-testid={name}>
+          data-testid={dataTestId}>
           {prefix ? ` ${prefix}` : undefined}
           {Numeral(inputValue).format('0.' + '0'.repeat(decimalScale ?? AmountInput.defaultProps.decimalScale) + ' a')}
           {suffix ? ` ${suffix}` : undefined}
@@ -139,7 +142,7 @@ const AmountInput = (props: IAmountInputProps): React.ReactElement => {
         thousandSeparator={numberFormatThousandSeparator}
         decimalSeparator={decimalSeparator}
         thousandsGroupStyle={numberFormatThousandGroupStyle}
-        data-testid={name}
+        data-testid={dataTestId}
         decimalScale={decimalScale}
         id={name}
         name={name}
@@ -168,7 +171,7 @@ const AmountInput = (props: IAmountInputProps): React.ReactElement => {
       thousandSeparator={numberFormatThousandSeparator}
       decimalSeparator={decimalSeparator}
       thousandsGroupStyle={numberFormatThousandGroupStyle}
-      data-testid={name}
+      data-testid={dataTestId}
       decimalScale={decimalScale}
       allowNegative={allowNegative}
       name={name}

@@ -9,7 +9,7 @@ describe('AmountInput Component', () => {
   it('AmountInput renders with input', async () => {
     const onChangeMock = jest.fn();
 
-    const container = render(<AmountInput name='name' onChange={onChangeMock} />);
+    const container = render(<AmountInput name='name' dataTestId='name' onChange={onChangeMock} />);
     expect(onChangeMock).toBeCalledTimes(0);
 
     expect(container).toMatchSnapshot();
@@ -18,7 +18,7 @@ describe('AmountInput Component', () => {
   it('CheckboxInput renders triggers onChange', async () => {
     const onChangeMock = jest.fn();
 
-    const container = render(<AmountInput name='name' onChange={onChangeMock} />);
+    const container = render(<AmountInput name='name' dataTestId='name' onChange={onChangeMock} />);
 
     const input = container.getByTestId('name');
 
@@ -32,7 +32,7 @@ describe('AmountInput Component', () => {
   it('CheckboxInput renders with empty input in read only', async () => {
     const onChangeMock = jest.fn();
 
-    const container = render(<AmountInput name='name' onChange={onChangeMock} readOnly />);
+    const container = render(<AmountInput name='name' dataTestId='name' onChange={onChangeMock} readOnly />);
 
     const input = container.getByTestId('name');
     userEvent.type(input, '123456789');
@@ -43,19 +43,8 @@ describe('AmountInput Component', () => {
   it('CheckboxInput renders with empty input in read only prefix and suffix', async () => {
     const onChangeMock = jest.fn();
 
-    const container = render(<AmountInput name='name' onChange={onChangeMock} prefix='A' suffix='B' readOnly />);
-
-    const input = container.getByTestId('name');
-    userEvent.type(input, '123456789');
-    expect(onChangeMock).toBeCalledTimes(0);
-    expect(container).toMatchSnapshot();
-  });
-
-  it('CheckboxInput renders with empty input in read only prefix and suffix shorten', async () => {
-    const onChangeMock = jest.fn();
-
     const container = render(
-      <AmountInput name='name' onChange={onChangeMock} inputValue='10' prefix='A' suffix='B' readOnly />,
+      <AmountInput name='name' dataTestId='name' onChange={onChangeMock} prefix='A' suffix='B' readOnly />,
     );
 
     const input = container.getByTestId('name');
@@ -68,7 +57,36 @@ describe('AmountInput Component', () => {
     const onChangeMock = jest.fn();
 
     const container = render(
-      <AmountInput name='name' onChange={onChangeMock} inputValue='10' prefix='A' suffix='B' readOnly />,
+      <AmountInput
+        name='name'
+        onChange={onChangeMock}
+        dataTestId='name'
+        inputValue='10'
+        prefix='A'
+        suffix='B'
+        readOnly
+      />,
+    );
+
+    const input = container.getByTestId('name');
+    userEvent.type(input, '123456789');
+    expect(onChangeMock).toBeCalledTimes(0);
+    expect(container).toMatchSnapshot();
+  });
+
+  it('CheckboxInput renders with empty input in read only prefix and suffix shorten', async () => {
+    const onChangeMock = jest.fn();
+
+    const container = render(
+      <AmountInput
+        name='name'
+        onChange={onChangeMock}
+        dataTestId='name'
+        inputValue='10'
+        prefix='A'
+        suffix='B'
+        readOnly
+      />,
     );
 
     const input = container.getByTestId('name');
@@ -83,6 +101,7 @@ describe('AmountInput Component', () => {
     const container = render(
       <AmountInput
         name='name'
+        dataTestId='name'
         onChange={onChangeMock}
         thousandsGroupStyle={ThousandsGroupStyle.SHORTEN}
         inputValue='1234567890.1234'
@@ -105,6 +124,7 @@ describe('AmountInput Component', () => {
     const container = render(
       <AmountInput
         name='name'
+        dataTestId='name'
         onChange={onChangeMock}
         thousandsGroupStyle={ThousandsGroupStyle.SHORTEN}
         inputValue='1234567890.1234'

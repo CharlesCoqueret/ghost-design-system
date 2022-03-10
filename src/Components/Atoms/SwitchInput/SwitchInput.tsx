@@ -5,6 +5,8 @@ import { IToggleEntry } from '../CheckBoxInput/types';
 
 export interface ISwitchInputProps {
   className?: string;
+  /** For test purpose only */
+  dataTestId?: string;
   /** Disabled field (optional, default: false) */
   disabled?: boolean;
   /** Size of the field in a 12 column grid (optional, default: undefined) */
@@ -22,7 +24,7 @@ export interface ISwitchInputProps {
 }
 
 const SwitchInput = (props: ISwitchInputProps): ReactElement => {
-  const { className, disabled, fieldSize, highlighted, isInError, options, onChange, readOnly } = props;
+  const { className, dataTestId, disabled, fieldSize, highlighted, isInError, options, onChange, readOnly } = props;
 
   /** flip the check status of the switch that was checked */
   const updateState = (optionValue: string) => {
@@ -45,7 +47,9 @@ const SwitchInput = (props: ISwitchInputProps): ReactElement => {
   };
 
   return (
-    <div className={classnames('field', 'switch-container', fieldSize && `field-input-size-${fieldSize}`, className)}>
+    <div
+      className={classnames('field', 'switch-container', fieldSize && `field-input-size-${fieldSize}`, className)}
+      data-testid={dataTestId}>
       {options?.map((option) => {
         return (
           <label

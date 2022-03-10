@@ -16,6 +16,8 @@ export interface IMultiSelectFieldProps {
     optionFocusColor: string; // colors.chalk,
     optionSelectedColor: string; // colors.primary,
   };
+  /** For test purpose only */
+  dataTestId?: string;
   /** Disabled field (optional, default: false) */
   disabled?: boolean;
   /** Error message (optional, default: undefined) */
@@ -65,6 +67,7 @@ export interface IMultiSelectFieldProps {
 export const SelectField = (props: IMultiSelectFieldProps): React.ReactElement => {
   const {
     colors,
+    dataTestId,
     disabled,
     errorMessage,
     fieldClassName,
@@ -104,6 +107,7 @@ export const SelectField = (props: IMultiSelectFieldProps): React.ReactElement =
           fieldSize && `field-input-size-${fieldSize}`,
         )}
         colors={colors}
+        dataTestId={dataTestId}
         disabled={disabled}
         highlighted={highlighted}
         inputValue={inputValue}

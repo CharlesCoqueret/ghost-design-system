@@ -6,6 +6,8 @@ import { GenericField, AmountInput, ThousandsGroupStyle } from '../../Atoms';
 export interface IAmountFieldProps {
   /** Allows negative values (optional, default: true) */
   allowNegative?: boolean;
+  /** For test purpose only */
+  dataTestId?: string;
   /** Decimal scale (optional, default: 2) */
   decimalScale?: number;
   /** Decimal separator (optional, default: '.') */
@@ -67,6 +69,7 @@ export interface IAmountFieldProps {
 export const AmountField = (props: IAmountFieldProps): React.ReactElement => {
   const {
     allowNegative,
+    dataTestId,
     decimalScale,
     decimalSeparator,
     disabled,
@@ -107,6 +110,7 @@ export const AmountField = (props: IAmountFieldProps): React.ReactElement => {
       <AmountInput
         allowNegative={allowNegative}
         className={classnames(fieldSize && `field-input-size-${fieldSize}`, inputClassName)}
+        dataTestId={dataTestId}
         decimalScale={decimalScale}
         decimalSeparator={decimalSeparator}
         disabled={disabled}

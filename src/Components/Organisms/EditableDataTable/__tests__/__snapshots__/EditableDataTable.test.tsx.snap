@@ -24,7 +24,7 @@ Object {
                     class="table--header-value--sorter"
                   >
                     <i
-                      class="fa"
+                      class="icon"
                       icon="fas,sort"
                     />
                   </span>
@@ -45,7 +45,7 @@ Object {
                     class="table--header-value--sorter"
                   >
                     <i
-                      class="fa"
+                      class="icon"
                       icon="fas,sort"
                     />
                   </span>
@@ -66,7 +66,7 @@ Object {
                     class="table--header-value--sorter"
                   >
                     <i
-                      class="fa"
+                      class="icon"
                       icon="fas,sort"
                     />
                   </span>
@@ -87,7 +87,7 @@ Object {
                     class="table--header-value--sorter"
                   >
                     <i
-                      class="fa"
+                      class="icon"
                       icon="fas,sort"
                     />
                   </span>
@@ -108,7 +108,7 @@ Object {
                     class="table--header-value--sorter"
                   >
                     <i
-                      class="fa"
+                      class="icon"
                       icon="fas,sort"
                     />
                   </span>
@@ -129,7 +129,7 @@ Object {
                     class="table--header-value--sorter"
                   >
                     <i
-                      class="fa"
+                      class="icon"
                       icon="fas,sort"
                     />
                   </span>
@@ -263,7 +263,6 @@ Object {
               >
                 <input
                   class="amount-field"
-                  data-testid="price"
                   inputmode="numeric"
                   name="price"
                   type="text"
@@ -279,7 +278,6 @@ Object {
               >
                 <input
                   class="amount-field"
-                  data-testid="parts"
                   inputmode="numeric"
                   name="parts"
                   type="text"
@@ -442,7 +440,6 @@ Object {
               >
                 <input
                   class="amount-field"
-                  data-testid="price"
                   inputmode="numeric"
                   name="price"
                   type="text"
@@ -458,7 +455,6 @@ Object {
               >
                 <input
                   class="amount-field"
-                  data-testid="parts"
                   inputmode="numeric"
                   name="parts"
                   type="text"
@@ -613,7 +609,7 @@ Object {
                   class="table--header-value--sorter"
                 >
                   <i
-                    class="fa"
+                    class="icon"
                     icon="fas,sort"
                   />
                 </span>
@@ -634,7 +630,7 @@ Object {
                   class="table--header-value--sorter"
                 >
                   <i
-                    class="fa"
+                    class="icon"
                     icon="fas,sort"
                   />
                 </span>
@@ -655,7 +651,7 @@ Object {
                   class="table--header-value--sorter"
                 >
                   <i
-                    class="fa"
+                    class="icon"
                     icon="fas,sort"
                   />
                 </span>
@@ -676,7 +672,7 @@ Object {
                   class="table--header-value--sorter"
                 >
                   <i
-                    class="fa"
+                    class="icon"
                     icon="fas,sort"
                   />
                 </span>
@@ -697,7 +693,7 @@ Object {
                   class="table--header-value--sorter"
                 >
                   <i
-                    class="fa"
+                    class="icon"
                     icon="fas,sort"
                   />
                 </span>
@@ -718,7 +714,7 @@ Object {
                   class="table--header-value--sorter"
                 >
                   <i
-                    class="fa"
+                    class="icon"
                     icon="fas,sort"
                   />
                 </span>
@@ -852,7 +848,6 @@ Object {
             >
               <input
                 class="amount-field"
-                data-testid="price"
                 inputmode="numeric"
                 name="price"
                 type="text"
@@ -868,7 +863,6 @@ Object {
             >
               <input
                 class="amount-field"
-                data-testid="parts"
                 inputmode="numeric"
                 name="parts"
                 type="text"
@@ -1031,7 +1025,6 @@ Object {
             >
               <input
                 class="amount-field"
-                data-testid="price"
                 inputmode="numeric"
                 name="price"
                 type="text"
@@ -1047,7 +1040,6 @@ Object {
             >
               <input
                 class="amount-field"
-                data-testid="parts"
                 inputmode="numeric"
                 name="parts"
                 type="text"
@@ -1165,7 +1157,7 @@ Object {
                     class="table--header-value--sorter"
                   >
                     <i
-                      class="fa"
+                      class="icon"
                       icon="fas,sort"
                     />
                   </span>
@@ -1186,7 +1178,7 @@ Object {
                     class="table--header-value--sorter"
                   >
                     <i
-                      class="fa"
+                      class="icon"
                       icon="fas,sort"
                     />
                   </span>
@@ -1207,7 +1199,7 @@ Object {
                     class="table--header-value--sorter"
                   >
                     <i
-                      class="fa"
+                      class="icon"
                       icon="fas,sort"
                     />
                   </span>
@@ -1228,7 +1220,7 @@ Object {
                     class="table--header-value--sorter"
                   >
                     <i
-                      class="fa"
+                      class="icon"
                       icon="fas,sort"
                     />
                   </span>
@@ -1249,7 +1241,7 @@ Object {
                     class="table--header-value--sorter"
                   >
                     <i
-                      class="fa"
+                      class="icon"
                       icon="fas,sort"
                     />
                   </span>
@@ -1270,7 +1262,7 @@ Object {
                     class="table--header-value--sorter"
                   >
                     <i
-                      class="fa"
+                      class="icon"
                       icon="fas,sort"
                     />
                   </span>
@@ -1415,7 +1407,6 @@ Object {
               >
                 <input
                   class="amount-field"
-                  data-testid="price"
                   inputmode="numeric"
                   name="price"
                   type="text"
@@ -1431,7 +1422,6 @@ Object {
               >
                 <input
                   class="amount-field"
-                  data-testid="parts"
                   inputmode="numeric"
                   name="parts"
                   type="text"
@@ -1484,7 +1474,7 @@ Object {
                       class="button-icon-container"
                     >
                       <i
-                        class="button-icon"
+                        class="button-icon icon"
                         icon="fal,trash-alt"
                       />
                     </div>
@@ -1501,7 +1491,7 @@ Object {
                       class="button-icon-container"
                     >
                       <i
-                        class="button-icon"
+                        class="button-icon icon"
                         icon="fal,arrow-to-bottom"
                       />
                     </div>
@@ -1636,7 +1626,6 @@ Object {
               >
                 <input
                   class="amount-field"
-                  data-testid="price"
                   inputmode="numeric"
                   name="price"
                   type="text"
@@ -1652,7 +1641,6 @@ Object {
               >
                 <input
                   class="amount-field"
-                  data-testid="parts"
                   inputmode="numeric"
                   name="parts"
                   type="text"
@@ -1705,7 +1693,7 @@ Object {
                       class="button-icon-container"
                     >
                       <i
-                        class="button-icon"
+                        class="button-icon icon"
                         icon="fal,trash-alt"
                       />
                     </div>
@@ -1722,7 +1710,7 @@ Object {
                       class="button-icon-container"
                     >
                       <i
-                        class="button-icon"
+                        class="button-icon icon"
                         icon="fal,arrow-to-bottom"
                       />
                     </div>
@@ -1909,7 +1897,7 @@ Object {
                   class="table--header-value--sorter"
                 >
                   <i
-                    class="fa"
+                    class="icon"
                     icon="fas,sort"
                   />
                 </span>
@@ -1930,7 +1918,7 @@ Object {
                   class="table--header-value--sorter"
                 >
                   <i
-                    class="fa"
+                    class="icon"
                     icon="fas,sort"
                   />
                 </span>
@@ -1951,7 +1939,7 @@ Object {
                   class="table--header-value--sorter"
                 >
                   <i
-                    class="fa"
+                    class="icon"
                     icon="fas,sort"
                   />
                 </span>
@@ -1972,7 +1960,7 @@ Object {
                   class="table--header-value--sorter"
                 >
                   <i
-                    class="fa"
+                    class="icon"
                     icon="fas,sort"
                   />
                 </span>
@@ -1993,7 +1981,7 @@ Object {
                   class="table--header-value--sorter"
                 >
                   <i
-                    class="fa"
+                    class="icon"
                     icon="fas,sort"
                   />
                 </span>
@@ -2014,7 +2002,7 @@ Object {
                   class="table--header-value--sorter"
                 >
                   <i
-                    class="fa"
+                    class="icon"
                     icon="fas,sort"
                   />
                 </span>
@@ -2159,7 +2147,6 @@ Object {
             >
               <input
                 class="amount-field"
-                data-testid="price"
                 inputmode="numeric"
                 name="price"
                 type="text"
@@ -2175,7 +2162,6 @@ Object {
             >
               <input
                 class="amount-field"
-                data-testid="parts"
                 inputmode="numeric"
                 name="parts"
                 type="text"
@@ -2228,7 +2214,7 @@ Object {
                     class="button-icon-container"
                   >
                     <i
-                      class="button-icon"
+                      class="button-icon icon"
                       icon="fal,trash-alt"
                     />
                   </div>
@@ -2245,7 +2231,7 @@ Object {
                     class="button-icon-container"
                   >
                     <i
-                      class="button-icon"
+                      class="button-icon icon"
                       icon="fal,arrow-to-bottom"
                     />
                   </div>
@@ -2380,7 +2366,6 @@ Object {
             >
               <input
                 class="amount-field"
-                data-testid="price"
                 inputmode="numeric"
                 name="price"
                 type="text"
@@ -2396,7 +2381,6 @@ Object {
             >
               <input
                 class="amount-field"
-                data-testid="parts"
                 inputmode="numeric"
                 name="parts"
                 type="text"
@@ -2449,7 +2433,7 @@ Object {
                     class="button-icon-container"
                   >
                     <i
-                      class="button-icon"
+                      class="button-icon icon"
                       icon="fal,trash-alt"
                     />
                   </div>
@@ -2466,7 +2450,7 @@ Object {
                     class="button-icon-container"
                   >
                     <i
-                      class="button-icon"
+                      class="button-icon icon"
                       icon="fal,arrow-to-bottom"
                     />
                   </div>
@@ -2556,7 +2540,7 @@ Object {
                     class="table--header-value--sorter"
                   >
                     <i
-                      class="fa"
+                      class="icon"
                       icon="fas,sort"
                     />
                   </span>
@@ -2577,7 +2561,7 @@ Object {
                     class="table--header-value--sorter"
                   >
                     <i
-                      class="fa"
+                      class="icon"
                       icon="fas,sort"
                     />
                   </span>
@@ -2598,7 +2582,7 @@ Object {
                     class="table--header-value--sorter"
                   >
                     <i
-                      class="fa"
+                      class="icon"
                       icon="fas,sort"
                     />
                   </span>
@@ -2619,7 +2603,7 @@ Object {
                     class="table--header-value--sorter"
                   >
                     <i
-                      class="fa"
+                      class="icon"
                       icon="fas,sort"
                     />
                   </span>
@@ -2640,7 +2624,7 @@ Object {
                     class="table--header-value--sorter"
                   >
                     <i
-                      class="fa"
+                      class="icon"
                       icon="fas,sort"
                     />
                   </span>
@@ -2661,7 +2645,7 @@ Object {
                     class="table--header-value--sorter"
                   >
                     <i
-                      class="fa"
+                      class="icon"
                       icon="fas,sort"
                     />
                   </span>
@@ -2806,7 +2790,6 @@ Object {
               >
                 <input
                   class="amount-field"
-                  data-testid="price"
                   inputmode="numeric"
                   name="price"
                   type="text"
@@ -2822,7 +2805,6 @@ Object {
               >
                 <input
                   class="amount-field"
-                  data-testid="parts"
                   inputmode="numeric"
                   name="parts"
                   type="text"
@@ -2875,7 +2857,7 @@ Object {
                       class="button-icon-container"
                     >
                       <i
-                        class="button-icon"
+                        class="button-icon icon"
                         icon="fal,trash-alt"
                       />
                     </div>
@@ -2892,7 +2874,7 @@ Object {
                       class="button-icon-container"
                     >
                       <i
-                        class="button-icon"
+                        class="button-icon icon"
                         icon="fal,arrow-to-bottom"
                       />
                     </div>
@@ -3049,7 +3031,7 @@ Object {
                   class="table--header-value--sorter"
                 >
                   <i
-                    class="fa"
+                    class="icon"
                     icon="fas,sort"
                   />
                 </span>
@@ -3070,7 +3052,7 @@ Object {
                   class="table--header-value--sorter"
                 >
                   <i
-                    class="fa"
+                    class="icon"
                     icon="fas,sort"
                   />
                 </span>
@@ -3091,7 +3073,7 @@ Object {
                   class="table--header-value--sorter"
                 >
                   <i
-                    class="fa"
+                    class="icon"
                     icon="fas,sort"
                   />
                 </span>
@@ -3112,7 +3094,7 @@ Object {
                   class="table--header-value--sorter"
                 >
                   <i
-                    class="fa"
+                    class="icon"
                     icon="fas,sort"
                   />
                 </span>
@@ -3133,7 +3115,7 @@ Object {
                   class="table--header-value--sorter"
                 >
                   <i
-                    class="fa"
+                    class="icon"
                     icon="fas,sort"
                   />
                 </span>
@@ -3154,7 +3136,7 @@ Object {
                   class="table--header-value--sorter"
                 >
                   <i
-                    class="fa"
+                    class="icon"
                     icon="fas,sort"
                   />
                 </span>
@@ -3299,7 +3281,6 @@ Object {
             >
               <input
                 class="amount-field"
-                data-testid="price"
                 inputmode="numeric"
                 name="price"
                 type="text"
@@ -3315,7 +3296,6 @@ Object {
             >
               <input
                 class="amount-field"
-                data-testid="parts"
                 inputmode="numeric"
                 name="parts"
                 type="text"
@@ -3368,7 +3348,7 @@ Object {
                     class="button-icon-container"
                   >
                     <i
-                      class="button-icon"
+                      class="button-icon icon"
                       icon="fal,trash-alt"
                     />
                   </div>
@@ -3385,7 +3365,7 @@ Object {
                     class="button-icon-container"
                   >
                     <i
-                      class="button-icon"
+                      class="button-icon icon"
                       icon="fal,arrow-to-bottom"
                     />
                   </div>
@@ -3475,7 +3455,7 @@ Object {
                     class="table--header-value--sorter"
                   >
                     <i
-                      class="fa"
+                      class="icon"
                       icon="fas,sort"
                     />
                   </span>
@@ -3496,7 +3476,7 @@ Object {
                     class="table--header-value--sorter"
                   >
                     <i
-                      class="fa"
+                      class="icon"
                       icon="fas,sort"
                     />
                   </span>
@@ -3517,7 +3497,7 @@ Object {
                     class="table--header-value--sorter"
                   >
                     <i
-                      class="fa"
+                      class="icon"
                       icon="fas,sort-down"
                     />
                   </span>
@@ -3538,7 +3518,7 @@ Object {
                     class="table--header-value--sorter"
                   >
                     <i
-                      class="fa"
+                      class="icon"
                       icon="fas,sort"
                     />
                   </span>
@@ -3559,7 +3539,7 @@ Object {
                     class="table--header-value--sorter"
                   >
                     <i
-                      class="fa"
+                      class="icon"
                       icon="fas,sort"
                     />
                   </span>
@@ -3580,7 +3560,7 @@ Object {
                     class="table--header-value--sorter"
                   >
                     <i
-                      class="fa"
+                      class="icon"
                       icon="fas,sort"
                     />
                   </span>
@@ -3714,7 +3694,6 @@ Object {
               >
                 <input
                   class="amount-field"
-                  data-testid="price"
                   inputmode="numeric"
                   name="price"
                   type="text"
@@ -3730,7 +3709,6 @@ Object {
               >
                 <input
                   class="amount-field"
-                  data-testid="parts"
                   inputmode="numeric"
                   name="parts"
                   type="text"
@@ -3893,7 +3871,6 @@ Object {
               >
                 <input
                   class="amount-field"
-                  data-testid="price"
                   inputmode="numeric"
                   name="price"
                   type="text"
@@ -3909,7 +3886,6 @@ Object {
               >
                 <input
                   class="amount-field"
-                  data-testid="parts"
                   inputmode="numeric"
                   name="parts"
                   type="text"
@@ -4064,7 +4040,7 @@ Object {
                   class="table--header-value--sorter"
                 >
                   <i
-                    class="fa"
+                    class="icon"
                     icon="fas,sort"
                   />
                 </span>
@@ -4085,7 +4061,7 @@ Object {
                   class="table--header-value--sorter"
                 >
                   <i
-                    class="fa"
+                    class="icon"
                     icon="fas,sort"
                   />
                 </span>
@@ -4106,7 +4082,7 @@ Object {
                   class="table--header-value--sorter"
                 >
                   <i
-                    class="fa"
+                    class="icon"
                     icon="fas,sort-down"
                   />
                 </span>
@@ -4127,7 +4103,7 @@ Object {
                   class="table--header-value--sorter"
                 >
                   <i
-                    class="fa"
+                    class="icon"
                     icon="fas,sort"
                   />
                 </span>
@@ -4148,7 +4124,7 @@ Object {
                   class="table--header-value--sorter"
                 >
                   <i
-                    class="fa"
+                    class="icon"
                     icon="fas,sort"
                   />
                 </span>
@@ -4169,7 +4145,7 @@ Object {
                   class="table--header-value--sorter"
                 >
                   <i
-                    class="fa"
+                    class="icon"
                     icon="fas,sort"
                   />
                 </span>
@@ -4303,7 +4279,6 @@ Object {
             >
               <input
                 class="amount-field"
-                data-testid="price"
                 inputmode="numeric"
                 name="price"
                 type="text"
@@ -4319,7 +4294,6 @@ Object {
             >
               <input
                 class="amount-field"
-                data-testid="parts"
                 inputmode="numeric"
                 name="parts"
                 type="text"
@@ -4482,7 +4456,6 @@ Object {
             >
               <input
                 class="amount-field"
-                data-testid="price"
                 inputmode="numeric"
                 name="price"
                 type="text"
@@ -4498,7 +4471,6 @@ Object {
             >
               <input
                 class="amount-field"
-                data-testid="parts"
                 inputmode="numeric"
                 name="parts"
                 type="text"
@@ -4616,7 +4588,7 @@ Object {
                     class="table--header-value--sorter"
                   >
                     <i
-                      class="fa"
+                      class="icon"
                       icon="fas,sort"
                     />
                   </span>
@@ -4637,7 +4609,7 @@ Object {
                     class="table--header-value--sorter"
                   >
                     <i
-                      class="fa"
+                      class="icon"
                       icon="fas,sort"
                     />
                   </span>
@@ -4658,7 +4630,7 @@ Object {
                     class="table--header-value--sorter"
                   >
                     <i
-                      class="fa"
+                      class="icon"
                       icon="fas,sort"
                     />
                   </span>
@@ -4679,7 +4651,7 @@ Object {
                     class="table--header-value--sorter"
                   >
                     <i
-                      class="fa"
+                      class="icon"
                       icon="fas,sort"
                     />
                   </span>
@@ -4700,7 +4672,7 @@ Object {
                     class="table--header-value--sorter"
                   >
                     <i
-                      class="fa"
+                      class="icon"
                       icon="fas,sort"
                     />
                   </span>
@@ -4721,7 +4693,7 @@ Object {
                     class="table--header-value--sorter"
                   >
                     <i
-                      class="fa"
+                      class="icon"
                       icon="fas,sort"
                     />
                   </span>
@@ -4866,7 +4838,6 @@ Object {
               >
                 <input
                   class="amount-field"
-                  data-testid="price"
                   inputmode="numeric"
                   name="price"
                   type="text"
@@ -4882,7 +4853,6 @@ Object {
               >
                 <input
                   class="amount-field"
-                  data-testid="parts"
                   inputmode="numeric"
                   name="parts"
                   type="text"
@@ -4935,7 +4905,7 @@ Object {
                       class="button-icon-container"
                     >
                       <i
-                        class="button-icon"
+                        class="button-icon icon"
                         icon="fal,trash-alt"
                       />
                     </div>
@@ -4952,7 +4922,7 @@ Object {
                       class="button-icon-container"
                     >
                       <i
-                        class="button-icon"
+                        class="button-icon icon"
                         icon="fal,arrow-to-bottom"
                       />
                     </div>
@@ -5087,7 +5057,6 @@ Object {
               >
                 <input
                   class="amount-field"
-                  data-testid="price"
                   inputmode="numeric"
                   name="price"
                   type="text"
@@ -5103,7 +5072,6 @@ Object {
               >
                 <input
                   class="amount-field"
-                  data-testid="parts"
                   inputmode="numeric"
                   name="parts"
                   type="text"
@@ -5156,7 +5124,7 @@ Object {
                       class="button-icon-container"
                     >
                       <i
-                        class="button-icon"
+                        class="button-icon icon"
                         icon="fal,trash-alt"
                       />
                     </div>
@@ -5173,7 +5141,7 @@ Object {
                       class="button-icon-container"
                     >
                       <i
-                        class="button-icon"
+                        class="button-icon icon"
                         icon="fal,arrow-to-bottom"
                       />
                     </div>
@@ -5371,7 +5339,7 @@ Object {
                   class="table--header-value--sorter"
                 >
                   <i
-                    class="fa"
+                    class="icon"
                     icon="fas,sort"
                   />
                 </span>
@@ -5392,7 +5360,7 @@ Object {
                   class="table--header-value--sorter"
                 >
                   <i
-                    class="fa"
+                    class="icon"
                     icon="fas,sort"
                   />
                 </span>
@@ -5413,7 +5381,7 @@ Object {
                   class="table--header-value--sorter"
                 >
                   <i
-                    class="fa"
+                    class="icon"
                     icon="fas,sort"
                   />
                 </span>
@@ -5434,7 +5402,7 @@ Object {
                   class="table--header-value--sorter"
                 >
                   <i
-                    class="fa"
+                    class="icon"
                     icon="fas,sort"
                   />
                 </span>
@@ -5455,7 +5423,7 @@ Object {
                   class="table--header-value--sorter"
                 >
                   <i
-                    class="fa"
+                    class="icon"
                     icon="fas,sort"
                   />
                 </span>
@@ -5476,7 +5444,7 @@ Object {
                   class="table--header-value--sorter"
                 >
                   <i
-                    class="fa"
+                    class="icon"
                     icon="fas,sort"
                   />
                 </span>
@@ -5621,7 +5589,6 @@ Object {
             >
               <input
                 class="amount-field"
-                data-testid="price"
                 inputmode="numeric"
                 name="price"
                 type="text"
@@ -5637,7 +5604,6 @@ Object {
             >
               <input
                 class="amount-field"
-                data-testid="parts"
                 inputmode="numeric"
                 name="parts"
                 type="text"
@@ -5690,7 +5656,7 @@ Object {
                     class="button-icon-container"
                   >
                     <i
-                      class="button-icon"
+                      class="button-icon icon"
                       icon="fal,trash-alt"
                     />
                   </div>
@@ -5707,7 +5673,7 @@ Object {
                     class="button-icon-container"
                   >
                     <i
-                      class="button-icon"
+                      class="button-icon icon"
                       icon="fal,arrow-to-bottom"
                     />
                   </div>
@@ -5842,7 +5808,6 @@ Object {
             >
               <input
                 class="amount-field"
-                data-testid="price"
                 inputmode="numeric"
                 name="price"
                 type="text"
@@ -5858,7 +5823,6 @@ Object {
             >
               <input
                 class="amount-field"
-                data-testid="parts"
                 inputmode="numeric"
                 name="parts"
                 type="text"
@@ -5911,7 +5875,7 @@ Object {
                     class="button-icon-container"
                   >
                     <i
-                      class="button-icon"
+                      class="button-icon icon"
                       icon="fal,trash-alt"
                     />
                   </div>
@@ -5928,7 +5892,7 @@ Object {
                     class="button-icon-container"
                   >
                     <i
-                      class="button-icon"
+                      class="button-icon icon"
                       icon="fal,arrow-to-bottom"
                     />
                   </div>
@@ -6029,7 +5993,7 @@ Object {
                     class="table--header-value--sorter"
                   >
                     <i
-                      class="fa"
+                      class="icon"
                       icon="fas,sort"
                     />
                   </span>
@@ -6050,7 +6014,7 @@ Object {
                     class="table--header-value--sorter"
                   >
                     <i
-                      class="fa"
+                      class="icon"
                       icon="fas,sort"
                     />
                   </span>
@@ -6071,7 +6035,7 @@ Object {
                     class="table--header-value--sorter"
                   >
                     <i
-                      class="fa"
+                      class="icon"
                       icon="fas,sort"
                     />
                   </span>
@@ -6092,7 +6056,7 @@ Object {
                     class="table--header-value--sorter"
                   >
                     <i
-                      class="fa"
+                      class="icon"
                       icon="fas,sort"
                     />
                   </span>
@@ -6113,7 +6077,7 @@ Object {
                     class="table--header-value--sorter"
                   >
                     <i
-                      class="fa"
+                      class="icon"
                       icon="fas,sort"
                     />
                   </span>
@@ -6134,7 +6098,7 @@ Object {
                     class="table--header-value--sorter"
                   >
                     <i
-                      class="fa"
+                      class="icon"
                       icon="fas,sort"
                     />
                   </span>
@@ -6279,7 +6243,6 @@ Object {
               >
                 <input
                   class="amount-field"
-                  data-testid="price"
                   inputmode="numeric"
                   name="price"
                   type="text"
@@ -6295,7 +6258,6 @@ Object {
               >
                 <input
                   class="amount-field"
-                  data-testid="parts"
                   inputmode="numeric"
                   name="parts"
                   type="text"
@@ -6348,7 +6310,7 @@ Object {
                       class="button-icon-container"
                     >
                       <i
-                        class="button-icon"
+                        class="button-icon icon"
                         icon="fal,trash-alt"
                       />
                     </div>
@@ -6365,7 +6327,7 @@ Object {
                       class="button-icon-container"
                     >
                       <i
-                        class="button-icon"
+                        class="button-icon icon"
                         icon="fal,arrow-to-bottom"
                       />
                     </div>
@@ -6500,7 +6462,6 @@ Object {
               >
                 <input
                   class="amount-field"
-                  data-testid="price"
                   inputmode="numeric"
                   name="price"
                   type="text"
@@ -6516,7 +6477,6 @@ Object {
               >
                 <input
                   class="amount-field"
-                  data-testid="parts"
                   inputmode="numeric"
                   name="parts"
                   type="text"
@@ -6569,7 +6529,7 @@ Object {
                       class="button-icon-container"
                     >
                       <i
-                        class="button-icon"
+                        class="button-icon icon"
                         icon="fal,trash-alt"
                       />
                     </div>
@@ -6586,7 +6546,7 @@ Object {
                       class="button-icon-container"
                     >
                       <i
-                        class="button-icon"
+                        class="button-icon icon"
                         icon="fal,arrow-to-bottom"
                       />
                     </div>
@@ -6784,7 +6744,7 @@ Object {
                   class="table--header-value--sorter"
                 >
                   <i
-                    class="fa"
+                    class="icon"
                     icon="fas,sort"
                   />
                 </span>
@@ -6805,7 +6765,7 @@ Object {
                   class="table--header-value--sorter"
                 >
                   <i
-                    class="fa"
+                    class="icon"
                     icon="fas,sort"
                   />
                 </span>
@@ -6826,7 +6786,7 @@ Object {
                   class="table--header-value--sorter"
                 >
                   <i
-                    class="fa"
+                    class="icon"
                     icon="fas,sort"
                   />
                 </span>
@@ -6847,7 +6807,7 @@ Object {
                   class="table--header-value--sorter"
                 >
                   <i
-                    class="fa"
+                    class="icon"
                     icon="fas,sort"
                   />
                 </span>
@@ -6868,7 +6828,7 @@ Object {
                   class="table--header-value--sorter"
                 >
                   <i
-                    class="fa"
+                    class="icon"
                     icon="fas,sort"
                   />
                 </span>
@@ -6889,7 +6849,7 @@ Object {
                   class="table--header-value--sorter"
                 >
                   <i
-                    class="fa"
+                    class="icon"
                     icon="fas,sort"
                   />
                 </span>
@@ -7034,7 +6994,6 @@ Object {
             >
               <input
                 class="amount-field"
-                data-testid="price"
                 inputmode="numeric"
                 name="price"
                 type="text"
@@ -7050,7 +7009,6 @@ Object {
             >
               <input
                 class="amount-field"
-                data-testid="parts"
                 inputmode="numeric"
                 name="parts"
                 type="text"
@@ -7103,7 +7061,7 @@ Object {
                     class="button-icon-container"
                   >
                     <i
-                      class="button-icon"
+                      class="button-icon icon"
                       icon="fal,trash-alt"
                     />
                   </div>
@@ -7120,7 +7078,7 @@ Object {
                     class="button-icon-container"
                   >
                     <i
-                      class="button-icon"
+                      class="button-icon icon"
                       icon="fal,arrow-to-bottom"
                     />
                   </div>
@@ -7255,7 +7213,6 @@ Object {
             >
               <input
                 class="amount-field"
-                data-testid="price"
                 inputmode="numeric"
                 name="price"
                 type="text"
@@ -7271,7 +7228,6 @@ Object {
             >
               <input
                 class="amount-field"
-                data-testid="parts"
                 inputmode="numeric"
                 name="parts"
                 type="text"
@@ -7324,7 +7280,7 @@ Object {
                     class="button-icon-container"
                   >
                     <i
-                      class="button-icon"
+                      class="button-icon icon"
                       icon="fal,trash-alt"
                     />
                   </div>
@@ -7341,7 +7297,7 @@ Object {
                     class="button-icon-container"
                   >
                     <i
-                      class="button-icon"
+                      class="button-icon icon"
                       icon="fal,arrow-to-bottom"
                     />
                   </div>
@@ -7442,7 +7398,7 @@ Object {
                     class="table--header-value--sorter"
                   >
                     <i
-                      class="fa"
+                      class="icon"
                       icon="fas,sort"
                     />
                   </span>
@@ -7463,7 +7419,7 @@ Object {
                     class="table--header-value--sorter"
                   >
                     <i
-                      class="fa"
+                      class="icon"
                       icon="fas,sort"
                     />
                   </span>
@@ -7484,7 +7440,7 @@ Object {
                     class="table--header-value--sorter"
                   >
                     <i
-                      class="fa"
+                      class="icon"
                       icon="fas,sort"
                     />
                   </span>
@@ -7505,7 +7461,7 @@ Object {
                     class="table--header-value--sorter"
                   >
                     <i
-                      class="fa"
+                      class="icon"
                       icon="fas,sort"
                     />
                   </span>
@@ -7526,7 +7482,7 @@ Object {
                     class="table--header-value--sorter"
                   >
                     <i
-                      class="fa"
+                      class="icon"
                       icon="fas,sort"
                     />
                   </span>
@@ -7547,7 +7503,7 @@ Object {
                     class="table--header-value--sorter"
                   >
                     <i
-                      class="fa"
+                      class="icon"
                       icon="fas,sort"
                     />
                   </span>
@@ -7692,7 +7648,6 @@ Object {
               >
                 <input
                   class="amount-field"
-                  data-testid="price"
                   inputmode="numeric"
                   name="price"
                   type="text"
@@ -7708,7 +7663,6 @@ Object {
               >
                 <input
                   class="amount-field"
-                  data-testid="parts"
                   inputmode="numeric"
                   name="parts"
                   type="text"
@@ -7761,7 +7715,7 @@ Object {
                       class="button-icon-container"
                     >
                       <i
-                        class="button-icon"
+                        class="button-icon icon"
                         icon="fal,trash-alt"
                       />
                     </div>
@@ -7778,7 +7732,7 @@ Object {
                       class="button-icon-container"
                     >
                       <i
-                        class="button-icon"
+                        class="button-icon icon"
                         icon="fal,arrow-to-bottom"
                       />
                     </div>
@@ -7935,7 +7889,7 @@ Object {
                   class="table--header-value--sorter"
                 >
                   <i
-                    class="fa"
+                    class="icon"
                     icon="fas,sort"
                   />
                 </span>
@@ -7956,7 +7910,7 @@ Object {
                   class="table--header-value--sorter"
                 >
                   <i
-                    class="fa"
+                    class="icon"
                     icon="fas,sort"
                   />
                 </span>
@@ -7977,7 +7931,7 @@ Object {
                   class="table--header-value--sorter"
                 >
                   <i
-                    class="fa"
+                    class="icon"
                     icon="fas,sort"
                   />
                 </span>
@@ -7998,7 +7952,7 @@ Object {
                   class="table--header-value--sorter"
                 >
                   <i
-                    class="fa"
+                    class="icon"
                     icon="fas,sort"
                   />
                 </span>
@@ -8019,7 +7973,7 @@ Object {
                   class="table--header-value--sorter"
                 >
                   <i
-                    class="fa"
+                    class="icon"
                     icon="fas,sort"
                   />
                 </span>
@@ -8040,7 +7994,7 @@ Object {
                   class="table--header-value--sorter"
                 >
                   <i
-                    class="fa"
+                    class="icon"
                     icon="fas,sort"
                   />
                 </span>
@@ -8185,7 +8139,6 @@ Object {
             >
               <input
                 class="amount-field"
-                data-testid="price"
                 inputmode="numeric"
                 name="price"
                 type="text"
@@ -8201,7 +8154,6 @@ Object {
             >
               <input
                 class="amount-field"
-                data-testid="parts"
                 inputmode="numeric"
                 name="parts"
                 type="text"
@@ -8254,7 +8206,7 @@ Object {
                     class="button-icon-container"
                   >
                     <i
-                      class="button-icon"
+                      class="button-icon icon"
                       icon="fal,trash-alt"
                     />
                   </div>
@@ -8271,7 +8223,7 @@ Object {
                     class="button-icon-container"
                   >
                     <i
-                      class="button-icon"
+                      class="button-icon icon"
                       icon="fal,arrow-to-bottom"
                     />
                   </div>
@@ -8361,7 +8313,7 @@ Object {
                     class="table--header-value--sorter"
                   >
                     <i
-                      class="fa"
+                      class="icon"
                       icon="fas,sort"
                     />
                   </span>
@@ -8382,7 +8334,7 @@ Object {
                     class="table--header-value--sorter"
                   >
                     <i
-                      class="fa"
+                      class="icon"
                       icon="fas,sort"
                     />
                   </span>
@@ -8403,7 +8355,7 @@ Object {
                     class="table--header-value--sorter"
                   >
                     <i
-                      class="fa"
+                      class="icon"
                       icon="fas,sort"
                     />
                   </span>
@@ -8424,7 +8376,7 @@ Object {
                     class="table--header-value--sorter"
                   >
                     <i
-                      class="fa"
+                      class="icon"
                       icon="fas,sort"
                     />
                   </span>
@@ -8445,7 +8397,7 @@ Object {
                     class="table--header-value--sorter"
                   >
                     <i
-                      class="fa"
+                      class="icon"
                       icon="fas,sort"
                     />
                   </span>
@@ -8466,7 +8418,7 @@ Object {
                     class="table--header-value--sorter"
                   >
                     <i
-                      class="fa"
+                      class="icon"
                       icon="fas,sort"
                     />
                   </span>
@@ -8518,7 +8470,6 @@ Object {
               >
                 <span
                   class="amount-field amount-field-read-only table--cell-value--negative table--cell-value--amount-readonly"
-                  data-testid="price"
                   id="price"
                   name="price"
                 >
@@ -8534,7 +8485,6 @@ Object {
               >
                 <span
                   class="amount-field amount-field-read-only table--cell-value--negative table--cell-value--amount-readonly"
-                  data-testid="parts"
                   id="parts"
                   name="parts"
                 >
@@ -8697,7 +8647,7 @@ Object {
                   class="table--header-value--sorter"
                 >
                   <i
-                    class="fa"
+                    class="icon"
                     icon="fas,sort"
                   />
                 </span>
@@ -8718,7 +8668,7 @@ Object {
                   class="table--header-value--sorter"
                 >
                   <i
-                    class="fa"
+                    class="icon"
                     icon="fas,sort"
                   />
                 </span>
@@ -8739,7 +8689,7 @@ Object {
                   class="table--header-value--sorter"
                 >
                   <i
-                    class="fa"
+                    class="icon"
                     icon="fas,sort"
                   />
                 </span>
@@ -8760,7 +8710,7 @@ Object {
                   class="table--header-value--sorter"
                 >
                   <i
-                    class="fa"
+                    class="icon"
                     icon="fas,sort"
                   />
                 </span>
@@ -8781,7 +8731,7 @@ Object {
                   class="table--header-value--sorter"
                 >
                   <i
-                    class="fa"
+                    class="icon"
                     icon="fas,sort"
                   />
                 </span>
@@ -8802,7 +8752,7 @@ Object {
                   class="table--header-value--sorter"
                 >
                   <i
-                    class="fa"
+                    class="icon"
                     icon="fas,sort"
                   />
                 </span>
@@ -8854,7 +8804,6 @@ Object {
             >
               <span
                 class="amount-field amount-field-read-only table--cell-value--negative table--cell-value--amount-readonly"
-                data-testid="price"
                 id="price"
                 name="price"
               >
@@ -8870,7 +8819,6 @@ Object {
             >
               <span
                 class="amount-field amount-field-read-only table--cell-value--negative table--cell-value--amount-readonly"
-                data-testid="parts"
                 id="parts"
                 name="parts"
               >
@@ -8996,7 +8944,7 @@ Object {
                     class="table--header-value--sorter"
                   >
                     <i
-                      class="fa"
+                      class="icon"
                       icon="fas,sort"
                     />
                   </span>
@@ -9017,7 +8965,7 @@ Object {
                     class="table--header-value--sorter"
                   >
                     <i
-                      class="fa"
+                      class="icon"
                       icon="fas,sort"
                     />
                   </span>
@@ -9038,7 +8986,7 @@ Object {
                     class="table--header-value--sorter"
                   >
                     <i
-                      class="fa"
+                      class="icon"
                       icon="fas,sort"
                     />
                   </span>
@@ -9059,7 +9007,7 @@ Object {
                     class="table--header-value--sorter"
                   >
                     <i
-                      class="fa"
+                      class="icon"
                       icon="fas,sort"
                     />
                   </span>
@@ -9080,7 +9028,7 @@ Object {
                     class="table--header-value--sorter"
                   >
                     <i
-                      class="fa"
+                      class="icon"
                       icon="fas,sort"
                     />
                   </span>
@@ -9101,7 +9049,7 @@ Object {
                     class="table--header-value--sorter"
                   >
                     <i
-                      class="fa"
+                      class="icon"
                       icon="fas,sort"
                     />
                   </span>
@@ -9142,7 +9090,6 @@ Object {
               >
                 <span
                   class="amount-field amount-field-read-only table--cell-value--negative table--cell-value--amount-readonly"
-                  data-testid="price"
                   id="price"
                   name="price"
                 >
@@ -9158,7 +9105,6 @@ Object {
               >
                 <span
                   class="amount-field amount-field-read-only table--cell-value--negative table--cell-value--amount-readonly"
-                  data-testid="parts"
                   id="parts"
                   name="parts"
                 >
@@ -9314,7 +9260,7 @@ Object {
                   class="table--header-value--sorter"
                 >
                   <i
-                    class="fa"
+                    class="icon"
                     icon="fas,sort"
                   />
                 </span>
@@ -9335,7 +9281,7 @@ Object {
                   class="table--header-value--sorter"
                 >
                   <i
-                    class="fa"
+                    class="icon"
                     icon="fas,sort"
                   />
                 </span>
@@ -9356,7 +9302,7 @@ Object {
                   class="table--header-value--sorter"
                 >
                   <i
-                    class="fa"
+                    class="icon"
                     icon="fas,sort"
                   />
                 </span>
@@ -9377,7 +9323,7 @@ Object {
                   class="table--header-value--sorter"
                 >
                   <i
-                    class="fa"
+                    class="icon"
                     icon="fas,sort"
                   />
                 </span>
@@ -9398,7 +9344,7 @@ Object {
                   class="table--header-value--sorter"
                 >
                   <i
-                    class="fa"
+                    class="icon"
                     icon="fas,sort"
                   />
                 </span>
@@ -9419,7 +9365,7 @@ Object {
                   class="table--header-value--sorter"
                 >
                   <i
-                    class="fa"
+                    class="icon"
                     icon="fas,sort"
                   />
                 </span>
@@ -9460,7 +9406,6 @@ Object {
             >
               <span
                 class="amount-field amount-field-read-only table--cell-value--negative table--cell-value--amount-readonly"
-                data-testid="price"
                 id="price"
                 name="price"
               >
@@ -9476,7 +9421,6 @@ Object {
             >
               <span
                 class="amount-field amount-field-read-only table--cell-value--negative table--cell-value--amount-readonly"
-                data-testid="parts"
                 id="parts"
                 name="parts"
               >

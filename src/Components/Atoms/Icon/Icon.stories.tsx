@@ -1,13 +1,12 @@
 import React from 'react';
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { IconName, IconPrefix } from '@fortawesome/fontawesome-svg-core';
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
+import Icon from './Icon';
 
 export default {
   title: 'Atom/Icon',
 };
 
-const Template = (args: { icons: Array<[IconPrefix, IconName]> }) => {
+const Template = (args: { icons: Array<IconProp> }) => {
   const { icons } = args;
   return (
     <div
@@ -21,7 +20,7 @@ const Template = (args: { icons: Array<[IconPrefix, IconName]> }) => {
         const spin = index % 7 == 0;
         return (
           <div key={icon[1]} style={{ display: 'flex', flexDirection: 'column', margin: 'auto' }}>
-            <FontAwesomeIcon icon={icon} size='2x' spin={spin} />
+            <Icon icon={icon} size='2x' spin={spin} />
             <div style={{ fontWeight: '400', fontSize: '14px', margin: '10px auto' }}>{`${icon[0]} ${icon[1]}`}</div>
             <div style={{ fontWeight: '300', fontSize: '10px', margin: 'auto' }}>{spin && '(Spinning)'}</div>
           </div>

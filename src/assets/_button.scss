@@ -83,19 +83,17 @@
   }
 }
 
-.button {
-  .szh-menu__item {
-    background-color: $white;
-    color: $charcoal;
-  }
-  .szh-menu__item--hover {
-    background-color: $chalk;
-    color: $charcoal;
-  }
-  .szh-menu__item--active {
-    background-color: $primary;
-    color: $white;
-  }
+.szh-menu__item {
+  background-color: $white;
+  color: $charcoal;
+}
+.szh-menu__item--hover {
+  background-color: $chalk;
+  color: $charcoal;
+}
+.szh-menu__item--active {
+  background-color: $primary;
+  color: $white;
 }
 
 // FROM @import '~@szhsin/react-menu/dist/index.css';
@@ -155,9 +153,6 @@
 .szh-menu__item:focus {
   outline: none;
 }
-.szh-menu__item--hover {
-  background-color: #ebebeb;
-}
 .szh-menu__item--focusable {
   cursor: default;
   background-color: inherit;
@@ -207,10 +202,7 @@
   transition-duration: 0.15s;
   transition-timing-function: ease-in-out;
 }
-.szh-menu__item--active {
-  color: #fff;
-  background-color: #007bff;
-}
+
 .szh-menu__item--type-radio {
   padding-left: 2.2rem;
 }

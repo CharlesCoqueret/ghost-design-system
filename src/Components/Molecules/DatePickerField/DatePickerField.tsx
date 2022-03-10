@@ -6,6 +6,8 @@ import { GenericField, DatePickerInput, WeekDayEnum, DateFormat } from '../../At
 export interface IDatePickerFieldProps {
   /** Calendar start week day (optional: default: WeekDayEnum.MONDAY )  */
   calendarStartDay?: WeekDayEnum;
+  /** For test purpose only */
+  dataTestId?: string;
   /** Date format */
   dateFormat?: DateFormat;
   /** Disabled field (optional, default: false) */
@@ -57,6 +59,7 @@ export interface IDatePickerFieldProps {
 export const DatePickerField = (props: IDatePickerFieldProps): React.ReactElement => {
   const {
     calendarStartDay,
+    dataTestId,
     dateFormat,
     disabled,
     errorMessage,
@@ -96,6 +99,7 @@ export const DatePickerField = (props: IDatePickerFieldProps): React.ReactElemen
           fieldSize && `field-input-size-${fieldSize}`,
           inputClassName,
         )}
+        dataTestId={dataTestId}
         dateFormat={dateFormat}
         disabled={disabled}
         highlighted={highlighted}

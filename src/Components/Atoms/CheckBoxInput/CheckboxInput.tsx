@@ -1,12 +1,14 @@
 import React, { ReactElement } from 'react';
 import classnames from 'classnames';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { IToggleEntry } from './types';
+import { Icon } from '../Icon';
 
 export interface ICheckboxInputProps {
   /** Additional class names to be added (optional, default: undefined) */
   className?: string;
+  /** For test purpose only */
+  dataTestId?: string;
   /** Disabled field (optional, default: false) */
   disabled?: boolean;
   /** Size of the field in a 12 column grid (optional, default: undefined) */
@@ -24,7 +26,7 @@ export interface ICheckboxInputProps {
 }
 
 const CheckboxInput = (props: ICheckboxInputProps): ReactElement => {
-  const { className, disabled, fieldSize, highlighted, isInError, options, onChange, readOnly } = props;
+  const { className, dataTestId, disabled, fieldSize, highlighted, isInError, options, onChange, readOnly } = props;
 
   /** flip the check status of the checkbox that was checked */
   const updateState = (optionValue: string) => {
@@ -59,9 +61,9 @@ const CheckboxInput = (props: ICheckboxInputProps): ReactElement => {
               'field-highlighted': (readOnly || disabled) && highlighted && option.highlighted,
               'input-checkbox-field-checked': option.checked,
             })}
-            data-testid={option.value}>
+            data-testid={dataTestId || option.value}>
             <div className='checkbox-marker'>
-              <FontAwesomeIcon
+              <Icon
                 icon={[
                   option.checked || disabled || readOnly ? 'fas' : 'fal',
                   option.checked ? 'square-check' : 'square',

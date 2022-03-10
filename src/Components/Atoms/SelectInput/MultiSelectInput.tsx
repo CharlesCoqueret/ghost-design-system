@@ -27,6 +27,8 @@ export interface IMultiSelectInputProps {
     optionFocusColor: string; // colors.chalk,
     optionSelectedColor: string; // colors.primary,
   };
+  /** For test purpose only */
+  dataTestId?: string;
   /** Disabled field (optional, default: false) */
   disabled?: boolean;
   /** Size of the field in a 12 column grid (optional, default: undefined) */
@@ -75,6 +77,7 @@ const MultiSelectInput = (props: IMultiSelectInputProps): ReactElement => {
   const {
     className,
     colors,
+    dataTestId,
     disabled,
     fieldSize,
     highlighted,
@@ -100,7 +103,8 @@ const MultiSelectInput = (props: IMultiSelectInputProps): ReactElement => {
             'field-highlighted': highlighted,
           },
           className,
-        )}>
+        )}
+        data-testid={dataTestId}>
         {inputValue && inputValue.length > 0 ? inputValue.map((option) => option.label).join(', ') : '-'}
       </div>
     );
@@ -122,6 +126,7 @@ const MultiSelectInput = (props: IMultiSelectInputProps): ReactElement => {
           ValueContainer: CustomValueContainer,
           MultiValueContainer: CustomMultiValueContainer,
         }}
+        data-testid={dataTestId}
         hideSelectedOptions={false}
         isClearable={isClearable}
         isDisabled={disabled}

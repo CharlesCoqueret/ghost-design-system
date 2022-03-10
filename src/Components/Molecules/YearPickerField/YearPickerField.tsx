@@ -4,6 +4,8 @@ import classnames from 'classnames';
 import { GenericField, YearPickerInput } from '../../Atoms';
 
 export interface IYearPickerFieldProps {
+  /** For test purpose only */
+  dataTestId?: string;
   /** Disabled field (optional, default: false) */
   disabled?: boolean;
   /** Error message (optional, default: undefined) */
@@ -52,6 +54,7 @@ export interface IYearPickerFieldProps {
  */
 export const YearPickerField = (props: IYearPickerFieldProps): React.ReactElement => {
   const {
+    dataTestId,
     disabled,
     errorMessage,
     fieldClassName,
@@ -89,6 +92,7 @@ export const YearPickerField = (props: IYearPickerFieldProps): React.ReactElemen
           fieldSize && `field-input-size-${fieldSize}`,
           inputClassName,
         )}
+        dataTestId={dataTestId}
         disabled={disabled}
         highlighted={highlighted}
         isInError={errorMessage !== undefined}

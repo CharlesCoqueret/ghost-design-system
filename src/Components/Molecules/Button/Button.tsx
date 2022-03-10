@@ -1,10 +1,8 @@
 import React, { ReactElement, useRef, useState } from 'react';
 import { MenuDivider, MenuItem, MenuAlign, ControlledMenu } from '@szhsin/react-menu';
-import { IconProp } from '@fortawesome/fontawesome-svg-core';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classnames from 'classnames';
 
-import { MenuDirectionEnum, Tooltip } from '../../Atoms';
+import { Icon, MenuDirectionEnum, Tooltip, IconProp } from '../../Atoms';
 import { IItemListProps } from './ItemList';
 import Portal from '../../Atoms/Portal/Portal';
 
@@ -88,8 +86,8 @@ const Button = (props: IButtonProps): ReactElement => {
           data-testid={dataTestId}>
           {(icon !== undefined || loading !== false) && (
             <div key='icon' className='button-icon-container'>
-              {loading && <FontAwesomeIcon icon={['fal', 'spinner']} spin size='1x' className='button-icon' />}
-              {!loading && icon && <FontAwesomeIcon icon={icon} size='1x' className='button-icon' />}
+              {loading && <Icon icon={['fal', 'spinner']} spin size='1x' className='button-icon' />}
+              {!loading && icon && <Icon icon={icon} size='1x' className='button-icon' />}
             </div>
           )}
 
@@ -100,8 +98,8 @@ const Button = (props: IButtonProps): ReactElement => {
               </div>
               {hasMenu ? (
                 <div key='control' className='button-menu-control-container'>
-                  <FontAwesomeIcon icon={['fal', 'pipe']} size='1x' className='button-icon' />
-                  <FontAwesomeIcon icon={['fas', 'caret-down']} size='1x' className='button-icon' />
+                  <Icon icon={['fal', 'pipe']} size='1x' className='button-icon' />
+                  <Icon icon={['fas', 'caret-down']} size='1x' className='button-icon' />
                 </div>
               ) : (
                 <></>
@@ -118,6 +116,7 @@ const Button = (props: IButtonProps): ReactElement => {
           <ControlledMenu
             state={isOpen ? 'open' : 'closed'}
             align={dropdownAlign}
+            menuClassName='button-menu'
             anchorRef={ref}
             skipOpen={skipOpen}
             onClose={() => setIsOpen(false)}>

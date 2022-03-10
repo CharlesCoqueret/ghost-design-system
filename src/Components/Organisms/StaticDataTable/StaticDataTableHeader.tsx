@@ -1,9 +1,9 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { ReactElement } from 'react';
 import classnames from 'classnames';
 
 import { ColumnType, IColumnType, IExtraLineEditableDataTableProps, SortDirectionEnum } from './types';
 import { MenuDirectionEnum, Tooltip } from '../../Atoms/Tooltip';
+import { Icon } from '../../Atoms';
 
 interface IStaticDataTableHeaderProps<T> {
   columns: Array<IColumnType<T>>;
@@ -73,7 +73,7 @@ const StaticDataTableHeader = <T,>(props: IStaticDataTableHeaderProps<T>): React
                   </span>
                   {column.sorter && extra?.editedRowIndex === undefined && column.type !== ColumnType.BUTTON && (
                     <span className='table--header-value--sorter'>
-                      <FontAwesomeIcon icon={['fas', iconName(column.dataIndex)]} />
+                      <Icon icon={['fas', iconName(column.dataIndex)]} />
                     </span>
                   )}
                 </div>

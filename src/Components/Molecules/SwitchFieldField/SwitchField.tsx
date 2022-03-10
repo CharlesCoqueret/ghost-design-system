@@ -4,6 +4,8 @@ import classnames from 'classnames';
 import { GenericField, IToggleEntry, SwitchInput } from '../../Atoms';
 
 export interface ISwitchFieldProps {
+  /** For test purpose only */
+  dataTestId?: string;
   /** Disabled field (optional, default: false) */
   disabled?: boolean;
   /** Error message (optional, default: undefined) */
@@ -44,6 +46,7 @@ export interface ISwitchFieldProps {
  */
 export const SwitchField = (props: ISwitchFieldProps): React.ReactElement => {
   const {
+    dataTestId,
     disabled,
     errorMessage,
     fieldClassName,
@@ -79,6 +82,7 @@ export const SwitchField = (props: ISwitchFieldProps): React.ReactElement => {
           fieldSize && `field-input-size-${fieldSize}`,
           inputClassName,
         )}
+        dataTestId={dataTestId}
         disabled={disabled}
         highlighted={highlighted}
         isInError={errorMessage !== undefined}

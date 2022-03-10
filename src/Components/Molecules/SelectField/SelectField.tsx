@@ -16,6 +16,8 @@ export interface ISelectFieldProps {
     optionFocusColor: string; // colors.chalk,
     optionSelectedColor: string; // colors.primary,
   };
+  /** For test purpose only */
+  dataTestId?: string;
   /** Disabled field (optional, default: false) */
   disabled?: boolean;
   /** Error message (optional, default: undefined) */
@@ -65,6 +67,7 @@ export interface ISelectFieldProps {
 export const SelectField = (props: ISelectFieldProps): React.ReactElement => {
   const {
     colors,
+    dataTestId,
     disabled,
     errorMessage,
     fieldClassName,
@@ -104,6 +107,7 @@ export const SelectField = (props: ISelectFieldProps): React.ReactElement => {
           'input-select-field',
           fieldSize && `field-input-size-${fieldSize}`,
         )}
+        dataTestId={dataTestId}
         highlighted={highlighted}
         isInError={errorMessage !== undefined}
         isClearable={isClearable}

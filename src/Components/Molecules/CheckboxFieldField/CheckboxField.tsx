@@ -4,6 +4,8 @@ import classnames from 'classnames';
 import { GenericField, IToggleEntry, CheckboxInput } from '../../Atoms';
 
 export interface ICheckboxFieldProps {
+  /** For test purpose only */
+  dataTestId?: string;
   /** Disabled field (optional, default: false) */
   disabled?: boolean;
   /** Error message (optional, default: undefined) */
@@ -44,6 +46,7 @@ export interface ICheckboxFieldProps {
  */
 export const CheckboxField = (props: ICheckboxFieldProps): React.ReactElement => {
   const {
+    dataTestId,
     disabled,
     errorMessage,
     fieldClassName,
@@ -79,6 +82,7 @@ export const CheckboxField = (props: ICheckboxFieldProps): React.ReactElement =>
           fieldSize && `field-input-size-${fieldSize}`,
           inputClassName,
         )}
+        dataTestId={dataTestId}
         disabled={disabled}
         highlighted={highlighted}
         isInError={errorMessage !== undefined}

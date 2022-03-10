@@ -131,7 +131,6 @@ Object {
               >
                 <input
                   class="amount-field"
-                  data-testid="price"
                   inputmode="numeric"
                   name="price"
                   type="text"
@@ -147,7 +146,6 @@ Object {
               >
                 <input
                   class="amount-field"
-                  data-testid="parts"
                   inputmode="numeric"
                   name="parts"
                   type="text"
@@ -315,7 +313,6 @@ Object {
             >
               <input
                 class="amount-field"
-                data-testid="price"
                 inputmode="numeric"
                 name="price"
                 type="text"
@@ -331,7 +328,6 @@ Object {
             >
               <input
                 class="amount-field"
-                data-testid="parts"
                 inputmode="numeric"
                 name="parts"
                 type="text"
@@ -442,7 +438,7 @@ Object {
                 class="checkbox-marker selected"
               >
                 <i
-                  class="fa"
+                  class="icon"
                   data-testid="select-row-0"
                   icon="fas,square-check"
                 />
@@ -569,7 +565,6 @@ Object {
               >
                 <input
                   class="amount-field"
-                  data-testid="price"
                   inputmode="numeric"
                   name="price"
                   type="text"
@@ -585,7 +580,6 @@ Object {
               >
                 <input
                   class="amount-field"
-                  data-testid="parts"
                   inputmode="numeric"
                   name="parts"
                   type="text"
@@ -639,7 +633,7 @@ Object {
               class="checkbox-marker selected"
             >
               <i
-                class="fa"
+                class="icon"
                 data-testid="select-row-0"
                 icon="fas,square-check"
               />
@@ -766,7 +760,6 @@ Object {
             >
               <input
                 class="amount-field"
-                data-testid="price"
                 inputmode="numeric"
                 name="price"
                 type="text"
@@ -782,7 +775,6 @@ Object {
             >
               <input
                 class="amount-field"
-                data-testid="parts"
                 inputmode="numeric"
                 name="parts"
                 type="text"

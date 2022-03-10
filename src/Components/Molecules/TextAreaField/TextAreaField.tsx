@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import { GenericField, TextAreaInput } from '../../Atoms';
 
 export interface ITextAreaFieldProps {
+  /** For test purpose only */
+  dataTestId?: string;
   /** Disabled field (optional, default: false) */
   disabled?: boolean;
   /** Error message (optional, default: undefined) */
@@ -49,6 +51,7 @@ export interface ITextAreaFieldProps {
  */
 export const TextAreaField = (props: ITextAreaFieldProps): React.ReactElement => {
   const {
+    dataTestId,
     disabled,
     errorMessage,
     fieldClassName,
@@ -95,6 +98,7 @@ export const TextAreaField = (props: ITextAreaFieldProps): React.ReactElement =>
       maxLength={maxLength}
       inputLength={inputLength}>
       <TextAreaInput
+        dataTestId={dataTestId}
         disabled={disabled}
         fieldSize={fieldSize}
         highlighted={highlighted}

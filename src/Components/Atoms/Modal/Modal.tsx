@@ -1,9 +1,9 @@
 import React, { PropsWithChildren, ReactElement, useEffect, useRef, useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classnames from 'classnames';
 
 import { useOnClickOutside, useOnEscapePressed } from '../../../hooks';
 import { Portal } from '../Portal';
+import { Icon } from '../Icon';
 
 export interface IModalProps {
   /** Show the close icon (optional, default: false) */
@@ -86,7 +86,7 @@ const Modal = (props: PropsWithChildren<IModalProps>): ReactElement => {
                         onHide();
                       }
                     }}>
-                    <FontAwesomeIcon icon={['fal', 'times']} size='2x' />
+                    <Icon icon={['fal', 'times']} size='2x' />
                   </div>
                 )}
               </div>

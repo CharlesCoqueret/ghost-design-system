@@ -4,6 +4,8 @@ import classnames from 'classnames';
 import useRunAfterUpdate from '../../../hooks/use-run-after-update';
 
 export interface ITextAreaInputProps {
+  /** For test purpose only */
+  dataTestId?: string;
   /** Disabled field (optional, default: false) */
   disabled?: boolean;
   /** Size of the field in a 12 column grid (optional, default: undefined) */
@@ -32,6 +34,7 @@ export interface ITextAreaInputProps {
 
 const TextAreaInput = (props: ITextAreaInputProps): ReactElement => {
   const {
+    dataTestId,
     disabled,
     isInError,
     fieldSize,
@@ -81,7 +84,8 @@ const TextAreaInput = (props: ITextAreaInputProps): ReactElement => {
             'field-highlighted': highlighted,
           },
           inputClassName,
-        )}>
+        )}
+        data-testid={dataTestId}>
         {inputValue}
       </div>
     );
@@ -96,6 +100,7 @@ const TextAreaInput = (props: ITextAreaInputProps): ReactElement => {
           },
           inputClassName,
         )}
+        data-testid={dataTestId}
         ref={textAreaRef}
         rows={1}
         style={{
