@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import LineEditableDataTable, { ILineEditableDataTableProps } from './LineEditableDataTable';
+import LineEditableInPlaceDataTable, { ILineEditableInPlaceDataTableProps } from './LineEditableInPlaceDataTable';
 import { ColumnType, IColumnType } from '../StaticDataTable/types';
 
 export default {
-  title: 'Organism/LineEditableDataTable',
-  component: LineEditableDataTable,
-} as ComponentMeta<typeof LineEditableDataTable>;
+  title: 'Organism/LineEditableInPlaceDataTable',
+  component: LineEditableInPlaceDataTable,
+} as ComponentMeta<typeof LineEditableInPlaceDataTable>;
 
 interface demoType {
   id: string;
@@ -69,7 +69,9 @@ const initialData = [
   },
 ];
 
-const Template: ComponentStory<typeof LineEditableDataTable> = (args: ILineEditableDataTableProps<demoType>) => {
+const Template: ComponentStory<typeof LineEditableInPlaceDataTable> = (
+  args: ILineEditableInPlaceDataTableProps<demoType>,
+) => {
   const [data, setData] = useState<Array<demoType>>(initialData);
 
   const columns: IColumnType<demoType>[] = [
@@ -123,7 +125,7 @@ const Template: ComponentStory<typeof LineEditableDataTable> = (args: ILineEdita
     },
   ];
 
-  return <LineEditableDataTable<demoType> data={data} columns={columns} {...args} />;
+  return <LineEditableInPlaceDataTable<demoType> data={data} columns={columns} {...args} />;
 };
 
 export const Default = Template.bind({});

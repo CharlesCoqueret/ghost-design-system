@@ -125,7 +125,7 @@ export interface IExtraStaticDataTableProps<T> {
   isSelectable?: (row: T) => boolean;
 }
 
-export interface IExtraLineEditableDataTableProps<T> extends IExtraStaticDataTableProps<T> {
+export interface IExtraLineEditableInPlaceDataTableProps<T> extends IExtraStaticDataTableProps<T> {
   /** Notification of initiation of changes on a specific row (optional, default: undefined) */
   onRowEdit?: (editRow: T, editedRowIndex: number) => void;
   /** Notification of changes cancellation on a specific row (optional, default: undefined) */

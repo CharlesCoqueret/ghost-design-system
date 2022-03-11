@@ -1,13 +1,13 @@
 import React, { ReactElement } from 'react';
 import classnames from 'classnames';
 
-import { ColumnType, IColumnType, IExtraLineEditableDataTableProps, SortDirectionEnum } from './types';
+import { ColumnType, IColumnType, IExtraLineEditableInPlaceDataTableProps, SortDirectionEnum } from './types';
 import { MenuDirectionEnum, Tooltip } from '../../Atoms/Tooltip';
 import { Icon } from '../../Atoms';
 
 interface IStaticDataTableHeaderProps<T> {
   columns: Array<IColumnType<T>>;
-  extra?: IExtraLineEditableDataTableProps<T>;
+  extra?: IExtraLineEditableInPlaceDataTableProps<T>;
   onSortChange: (newSortField: keyof T, newSortDirection?: SortDirectionEnum) => void;
   sortField?: keyof T;
   sortDirection?: SortDirectionEnum;

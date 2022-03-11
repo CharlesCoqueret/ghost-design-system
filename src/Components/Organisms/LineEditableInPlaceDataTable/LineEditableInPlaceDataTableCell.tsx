@@ -11,17 +11,17 @@ import {
   PercentageCell,
   TextCell,
 } from '../StaticDataTable/Cells';
-import { ColumnType, IColumnType, IExtraLineEditableDataTableProps } from '../StaticDataTable/types';
+import { ColumnType, IColumnType, IExtraLineEditableInPlaceDataTableProps } from '../StaticDataTable/types';
 
-export interface ILineEditableDataTableCellProps<T> {
+export interface ILineEditableInPlaceDataTableCellProps<T> {
   column: IColumnType<T>;
   row: T;
-  extra?: IExtraLineEditableDataTableProps<T>;
+  extra?: IExtraLineEditableInPlaceDataTableProps<T>;
   rowIndex: number;
   handUpdateDataChange: (rowIndex: number, dataIndex: keyof T, newData: T[keyof T]) => void;
 }
 
-const LineEditableDataTableCell = <T,>(props: ILineEditableDataTableCellProps<T>): ReactElement => {
+const LineEditableInPlaceDataTableCell = <T,>(props: ILineEditableInPlaceDataTableCellProps<T>): ReactElement => {
   const { column, row, extra, rowIndex, handUpdateDataChange } = props;
 
   switch (column.type) {
@@ -131,4 +131,4 @@ const LineEditableDataTableCell = <T,>(props: ILineEditableDataTableCellProps<T>
   throw new Error('Should have returned by then');
 };
 
-export default LineEditableDataTableCell;
+export default LineEditableInPlaceDataTableCell;

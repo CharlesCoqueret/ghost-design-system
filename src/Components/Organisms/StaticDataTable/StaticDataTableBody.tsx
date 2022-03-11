@@ -2,13 +2,13 @@ import React, { ReactElement, MouseEvent, useState } from 'react';
 import classnames from 'classnames';
 
 import StaticDataTableCell from './StaticDataTableCell';
-import { IColumnType, IExtraLineEditableDataTableProps } from './types';
+import { IColumnType, IExtraLineEditableInPlaceDataTableProps } from './types';
 import StaticDataTableCellSelectable from './StaticDataTableCellSelectable';
 
 interface IStaticDataTableBodyProps<T> {
   columns: Array<IColumnType<T>>;
   data: Array<T>;
-  extra?: IExtraLineEditableDataTableProps<T>;
+  extra?: IExtraLineEditableInPlaceDataTableProps<T>;
 }
 
 const StaticDataTableBody = <T,>(props: IStaticDataTableBodyProps<T>): ReactElement => {

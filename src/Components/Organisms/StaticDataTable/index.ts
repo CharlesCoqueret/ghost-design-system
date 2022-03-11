@@ -6,6 +6,6 @@ export {
   IColumnType,
   TableType,
   IExtraStaticDataTableProps,
-  IExtraLineEditableDataTableProps,
+  IExtraLineEditableInPlaceDataTableProps,
   IExtraEditableDataTableProps,
 } from './types';

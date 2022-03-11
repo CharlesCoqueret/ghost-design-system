@@ -1,18 +1,18 @@
 import React, { ReactElement, MouseEvent, useState } from 'react';
 import classnames from 'classnames';
 
-import { IColumnType, IExtraLineEditableDataTableProps } from '../StaticDataTable/types';
+import { IColumnType, IExtraLineEditableInPlaceDataTableProps } from '../StaticDataTable/types';
 import StaticDataTableCellSelectable from '../StaticDataTable/StaticDataTableCellSelectable';
-import LineEditableDataTableCell from './LineEditableDataTableCell';
+import LineEditableInPlaceDataTableCell from './LineEditableInPlaceDataTableCell';
 
-interface ILineEditableDataTableBodyProps<T> {
+interface ILineEditableInPlaceDataTableBodyProps<T> {
   columns: Array<IColumnType<T>>;
   data: Array<T>;
-  extra?: IExtraLineEditableDataTableProps<T>;
+  extra?: IExtraLineEditableInPlaceDataTableProps<T>;
   handUpdateDataChange: (rowIndex: number, dataIndex: keyof T, newData: T[keyof T]) => void;
 }
 
-const LineEditableDataTableBody = <T,>(props: ILineEditableDataTableBodyProps<T>): ReactElement => {
+const LineEditableInPlaceDataTableBody = <T,>(props: ILineEditableInPlaceDataTableBodyProps<T>): ReactElement => {
   const { columns, data, extra, handUpdateDataChange } = props;
 
   const [selectedRows, setSelectedRows] = useState<Record<number, boolean>>({});
@@ -63,7 +63,7 @@ const LineEditableDataTableBody = <T,>(props: ILineEditableDataTableBodyProps<T>
 
             {columns.map((column) => {
               return (
-                <LineEditableDataTableCell<T>
+                <LineEditableInPlaceDataTableCell<T>
                   key={`cell-${rowIndex}-${column.title}`}
                   column={column}
                   row={row}
@@ -80,4 +80,4 @@ const LineEditableDataTableBody = <T,>(props: ILineEditableDataTableBodyProps<T>
   );
 };
 
-export default LineEditableDataTableBody;
+export default LineEditableInPlaceDataTableBody;

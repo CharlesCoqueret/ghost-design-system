@@ -3,19 +3,24 @@ import { Button, ColorButtonEnum } from '../../Molecules/Button';
 
 import StaticDataTableFooter from '../StaticDataTable/StaticDataTableFooter';
 import StaticDataTableHeader from '../StaticDataTable/StaticDataTableHeader';
-import { ColumnType, IColumnType, IExtraLineEditableDataTableProps, SortDirectionEnum } from '../StaticDataTable/types';
-import LineEditableDataTableBody from './LineEditableDataTableBody';
+import {
+  ColumnType,
+  IColumnType,
+  IExtraLineEditableInPlaceDataTableProps,
+  SortDirectionEnum,
+} from '../StaticDataTable/types';
+import LineEditableInPlaceDataTableBody from './LineEditableInPlaceDataTableBody';
 
-export interface ILineEditableDataTableProps<T> {
+export interface ILineEditableInPlaceDataTableProps<T> {
   data: Array<T>;
   columns: Array<IColumnType<T>>;
-  extra?: IExtraLineEditableDataTableProps<T>;
+  extra?: IExtraLineEditableInPlaceDataTableProps<T>;
   onSortChange?: (sortField?: keyof T, sortDirection?: SortDirectionEnum) => void;
   // TODO Add no data message
   // TODO Add loading state
 }
 
-const LineEditableDataTable = <T,>(props: ILineEditableDataTableProps<T>): ReactElement => {
+const LineEditableInPlaceDataTable = <T,>(props: ILineEditableInPlaceDataTableProps<T>): ReactElement => {
   const { data, columns, extra, onSortChange } = props;
 
   const [currentData, setCurrentData] = useState<Array<T>>(data);
@@ -181,7 +186,7 @@ const LineEditableDataTable = <T,>(props: ILineEditableDataTableProps<T>): React
           sortDirection={sortDirection}
           extra={{ ...extra, editedRowIndex }}
         />
-        <LineEditableDataTableBody<T>
+        <LineEditableInPlaceDataTableBody<T>
           columns={currentColumns}
           data={currentData}
           extra={{ ...extra, editedRowIndex }}
@@ -202,4 +207,4 @@ const LineEditableDataTable = <T,>(props: ILineEditableDataTableProps<T>): React
   );
 };
 
-export default LineEditableDataTable;
+export default LineEditableInPlaceDataTable;

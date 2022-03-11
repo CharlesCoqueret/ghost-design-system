@@ -1,4 +1,4 @@
-import React, { ReactElement, Ref, useEffect, useRef, useState } from 'react';
+import React, { ReactElement, useEffect, useRef, useState } from 'react';
 import { ControlledMenu } from '@szhsin/react-menu';
 import classnames from 'classnames';
 

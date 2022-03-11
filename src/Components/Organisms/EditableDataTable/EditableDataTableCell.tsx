@@ -13,7 +13,7 @@ import {
 } from '../StaticDataTable/Cells';
 import { ColumnType, IColumnType, IExtraEditableDataTableProps } from '../StaticDataTable/types';
 
-export interface ILineEditableDataTableCellProps<T> {
+export interface IEditableDataTableCellProps<T> {
   column: IColumnType<T>;
   editable: boolean;
   row: T;
@@ -22,7 +22,7 @@ export interface ILineEditableDataTableCellProps<T> {
   handUpdateDataChange: (rowIndex: number, dataIndex: keyof T, newData: T[keyof T]) => void;
 }
 
-const LineEditableDataTableCell = <T,>(props: ILineEditableDataTableCellProps<T>): ReactElement => {
+const EditableDataTableCell = <T,>(props: IEditableDataTableCellProps<T>): ReactElement => {
   const { column, editable, row, extra, rowIndex, handUpdateDataChange } = props;
 
   switch (column.type) {
@@ -139,4 +139,4 @@ const LineEditableDataTableCell = <T,>(props: ILineEditableDataTableCellProps<T>
   throw new Error('Should have returned by then');
 };
 
-export default LineEditableDataTableCell;
+export default EditableDataTableCell;
