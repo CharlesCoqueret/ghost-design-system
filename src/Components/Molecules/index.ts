@@ -1,12 +1,13 @@
 export * from './AmountField';
 export * from './Button';
-export * from './CheckboxFieldField';
+export * from './CheckboxField';
 export * from './DatePickerField';
 // export * from './DynamicSearch';
 export * from './MultiSelectField';
 export * from './PercentageField';
 // export * from './SelectCreatableField';
 export * from './SelectField';
+export * from './SwitchField';
 export * from './TextAreaField';
 export * from './TextField';
 export * from './YearPickerField';

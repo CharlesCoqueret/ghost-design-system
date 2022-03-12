@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import classnames from 'classnames';
 
 import { GenericField, DatePickerInput, WeekDayEnum, DateFormat } from '../../Atoms';
@@ -56,7 +56,7 @@ export interface IDatePickerFieldProps {
  * Calls @param onChange for every input change.
  *
  */
-export const DatePickerField = (props: IDatePickerFieldProps): React.ReactElement => {
+export const DatePickerField = (props: IDatePickerFieldProps): ReactElement => {
   const {
     calendarStartDay,
     dataTestId,

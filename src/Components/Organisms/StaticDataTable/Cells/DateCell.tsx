@@ -16,16 +16,19 @@ const DateCell = <T,>(props: ICellProps<T, IColumnDate<T>>): ReactElement => {
   return (
     <td className={classnames({ ellipsis: column.ellipsis })}>
       <DatePickerField
+        calendarStartDay={column.calendarStartDay}
+        dateFormat={dateFormat}
         name={String(column.dataIndex)}
         inputClassName={classnames({ 'table--cell-value--date-readonly': !isCurrentlyEditedRow })}
         inputValue={displayValue}
-        dateFormat={dateFormat}
-        readOnly={!isCurrentlyEditedRow}
+        isClearable={column.isClearable}
+        locale={column.locale}
         onChange={(newValue: Date | null) => {
           if (onChange) {
             onChange(newValue as unknown as T[keyof T]);
           }
         }}
+        readOnly={!isCurrentlyEditedRow}
       />
     </td>
   );

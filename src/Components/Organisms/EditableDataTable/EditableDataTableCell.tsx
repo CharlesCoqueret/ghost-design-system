@@ -132,7 +132,6 @@ const EditableDataTableCell = <T,>(props: IEditableDataTableCellProps<T>): React
     }
     default: {
       throw new Error('Missing ColumnType');
-      break;
     }
   }
 

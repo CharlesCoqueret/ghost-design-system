@@ -1,4 +1,4 @@
-import React, { ReactElement, useRef, useState } from 'react';
+import React, { ReactElement, useEffect, useRef, useState } from 'react';
 import classnames from 'classnames';
 
 import useRunAfterUpdate from '../../../hooks/use-run-after-update';
@@ -61,6 +61,13 @@ const TextAreaInput = (props: ITextAreaInputProps): ReactElement => {
   };
 
   /**
+   * Ensure the height is properly set when initial value requires a bigger height.
+   */
+  useEffect(() => {
+    updateHeight();
+  }, []);
+
+  /**
    * Handler of changes
    *
    * @param event input event
@@ -74,29 +81,17 @@ const TextAreaInput = (props: ITextAreaInputProps): ReactElement => {
     }
   };
 
-  if (readOnly) {
-    return (
-      <div
-        className={classnames(
-          'input-textarea-field-read-only',
-          fieldSize && `field-input-size-${fieldSize}`,
-          {
-            'field-highlighted': highlighted,
-          },
-          inputClassName,
-        )}
-        data-testid={dataTestId}>
-        {inputValue}
-      </div>
-    );
-  }
   return (
     <div className={classnames('input-textarea-parent', fieldSize && `field-input-size-${fieldSize}`)}>
       <textarea
         className={classnames(
-          'input-textarea-field',
+          { 'input-textarea-field': !readOnly },
+          { 'input-textarea-field-read-only': readOnly },
           {
             'input-error': isInError && !disabled,
+          },
+          {
+            'field-highlighted': highlighted,
           },
           inputClassName,
         )}

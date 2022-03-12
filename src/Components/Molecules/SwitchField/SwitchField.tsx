@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import classnames from 'classnames';
 
-import { GenericField, IToggleEntry, CheckboxInput } from '../../Atoms';
+import { GenericField, IToggleEntry, SwitchInput } from '../../Atoms';
 
-export interface ICheckboxFieldProps {
+export interface ISwitchFieldProps {
   /** For test purpose only */
   dataTestId?: string;
   /** Disabled field (optional, default: false) */
@@ -30,6 +30,7 @@ export interface ICheckboxFieldProps {
   labelSize?: number;
   /** Mandatory field (optional, default: false) */
   mandatory?: boolean;
+  // TODO add name
   /** Handler of value changes (optional, default: undefined) */
   onChange?: (values: Array<IToggleEntry>) => void;
   /** Read only field (optional, default: false) */
@@ -37,14 +38,14 @@ export interface ICheckboxFieldProps {
 }
 
 /**
- * Checkbox field component
+ * Switch field component
  *
  * Checbox input wrapped in a generic field ( @see GenericField ).
  *
  * Calls @param onChange for every input change.
  *
  */
-export const CheckboxField = (props: ICheckboxFieldProps): React.ReactElement => {
+export const SwitchField = (props: ISwitchFieldProps): ReactElement => {
   const {
     dataTestId,
     disabled,
@@ -75,10 +76,10 @@ export const CheckboxField = (props: ICheckboxFieldProps): React.ReactElement =>
       labelSize={labelSize}
       mandatory={mandatory}
       readOnly={readOnly}>
-      <CheckboxInput
+      <SwitchInput
         className={classnames(
           'field',
-          'input-checkbox-field',
+          'input-switch-field',
           fieldSize && `field-input-size-${fieldSize}`,
           inputClassName,
         )}
@@ -94,7 +95,7 @@ export const CheckboxField = (props: ICheckboxFieldProps): React.ReactElement =>
   );
 };
 
-CheckboxField.defaultProps = {
+SwitchField.defaultProps = {
   disabled: false,
   errorMessage: undefined,
   fieldClassName: undefined,
@@ -113,4 +114,4 @@ CheckboxField.defaultProps = {
   readOnly: false,
 };
 
-export default CheckboxField;
+export default SwitchField;

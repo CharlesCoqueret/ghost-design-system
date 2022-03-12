@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import classnames from 'classnames';
 
 import { GenericField, AmountInput, ThousandsGroupStyle } from '../../Atoms';
@@ -66,7 +66,7 @@ export interface IAmountFieldProps {
  * Calls @param onChange for every input change.
  *
  */
-export const AmountField = (props: IAmountFieldProps): React.ReactElement => {
+export const AmountField = (props: IAmountFieldProps): ReactElement => {
   const {
     allowNegative,
     dataTestId,

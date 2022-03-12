@@ -29,7 +29,7 @@ export interface ISelectInputProps {
   /** Highlight value in readonly mode (optional, default: false) */
   highlighted?: boolean;
   /** Input string value (optional, default: undefined) */
-  inputValue?: IOption | null | undefined;
+  inputValue?: string | null | undefined;
   /** Provide the ability to clear the value (optional, default: false) */
   isClearable?: boolean;
   /** Is in Error (optional, default: false) */
@@ -39,7 +39,7 @@ export interface ISelectInputProps {
   /** Name of select input */
   name: string;
   /** Handler of value changes (optional, default: undefined) */
-  onChange?: (selectedOption: IOption | null | undefined) => void;
+  onChange?: (selectedOption: string | null | undefined) => void;
   /** Options to be displayed */
   options: Array<IOption>;
   /** Placeholder value (optional, default: undefined) */
@@ -67,7 +67,8 @@ const SelectInput = (props: ISelectInputProps): ReactElement => {
     readOnly,
   } = props;
 
-  if (readOnly)
+  if (readOnly) {
+    const displayValue = (inputValue && options.find((option) => option.value === inputValue)?.label) || '-';
     return (
       <div
         className={classnames(
@@ -80,9 +81,10 @@ const SelectInput = (props: ISelectInputProps): ReactElement => {
           className,
         )}
         data-testid={dataTestId}>
-        {inputValue ? inputValue.label : '-'}
+        {displayValue}
       </div>
     );
+  }
 
   return (
     <div
@@ -104,9 +106,14 @@ const SelectInput = (props: ISelectInputProps): ReactElement => {
         maxMenuHeight={maxMenuHeight}
         menuPlacement='auto'
         name={name}
-        onChange={onChange}
+        onChange={(option) => {
+          if (onChange) {
+            onChange(option?.value);
+          }
+        }}
         options={options}
         placeholder={placeholder}
+        menuPortalTarget={document.querySelector('body')}
         styles={customStyles({
           controlBackgroundColorDisabled: colors?.controlBackgroundColorDisabled,
           controlColorDisabled: colors?.controlColorDisabled,
@@ -118,7 +125,7 @@ const SelectInput = (props: ISelectInputProps): ReactElement => {
           optionFocusColor: colors?.optionFocusColor,
           optionSelectedColor: colors?.optionSelectedColor,
         })}
-        value={inputValue}
+        value={options.find((option) => option.value === inputValue)}
       />
     </div>
   );

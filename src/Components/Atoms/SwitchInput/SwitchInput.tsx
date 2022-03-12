@@ -64,7 +64,7 @@ const SwitchInput = (props: ISwitchInputProps): ReactElement => {
             })}
             data-testid={option.value}>
             <div className='switch-marker'>
-              <input type='checkbox' checked={option.checked} disabled={disabled} readOnly />
+              <input type='checkbox' checked={option.checked || false} disabled={disabled} readOnly />
               <span
                 className={classnames({
                   primary: option.checked && !readOnly && !disabled,

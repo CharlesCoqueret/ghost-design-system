@@ -31,7 +31,7 @@ export default {
 } as ComponentMeta<typeof MultiSelectInput>;
 
 const Template: ComponentStory<typeof MultiSelectInput> = ({ inputValue, ...args }: IMultiSelectInputProps) => {
-  const [localValue, setLocalValue] = useState<Readonly<Array<IOption>> | undefined>(inputValue);
+  const [localValue, setLocalValue] = useState<Array<string> | undefined>(inputValue);
 
   return (
     <>
@@ -48,7 +48,7 @@ Default.args = {
   disabled: false,
   fieldSize: undefined,
   highlighted: false,
-  inputValue: [options[0], options[1]],
+  inputValue: [options[0].value, options[1].value],
   isClearable: true,
   isInError: false,
   name: 'name',

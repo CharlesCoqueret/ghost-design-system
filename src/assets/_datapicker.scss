@@ -25,6 +25,7 @@ $datepicker__triangle-size: 0px !default;
 }
 
 .react-datepicker {
+  background-color: $white;
   color: $datepicker__text-color;
   border: 1px solid $datepicker__border-color;
   border-radius: $datepicker__border-radius;
@@ -704,6 +705,7 @@ $datepicker__triangle-size: 0px !default;
     border: none;
     padding: 0px;
     margin: 0px;
+    cursor: default;
   }
 
   &:disabled {

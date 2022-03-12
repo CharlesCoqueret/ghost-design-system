@@ -124,7 +124,6 @@ const LineEditableInPlaceDataTableCell = <T,>(props: ILineEditableInPlaceDataTab
     }
     default: {
       throw new Error('Missing ColumnType');
-      break;
     }
   }
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import classnames from 'classnames';
 
 import { GenericField, YearPickerInput } from '../../Atoms';
@@ -52,7 +52,7 @@ export interface IYearPickerFieldProps {
  * Calls @param onChange for every input change.
  *
  */
-export const YearPickerField = (props: IYearPickerFieldProps): React.ReactElement => {
+export const YearPickerField = (props: IYearPickerFieldProps): ReactElement => {
   const {
     dataTestId,
     disabled,

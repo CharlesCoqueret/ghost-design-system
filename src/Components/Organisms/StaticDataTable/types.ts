@@ -1,7 +1,7 @@
 import { CSSProperties, ReactElement } from 'react';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 
-import { DateFormatEnum, IOption } from '../../Atoms';
+import { BadgeColorsEnum, DateFormat, DateFormatEnum, IOption, ThousandsGroupStyle, WeekDayEnum } from '../../Atoms';
 
 export enum ColumnType {
   AMOUNT = 'amount',
@@ -38,25 +38,48 @@ export interface IButtonCellProps<T> {
 }
 
 interface IColumn {
+  /** Enables ellipsis on the colum when it overflows (optional, default: undefined) */
   ellipsis?: boolean;
+  /** Enables sort on the colum (optional, default: undefined) */
   sorter?: boolean;
+  /** Title of the column */
   title: string | ReactElement;
   /** Column width (as a CSSProperty) (optional, default: undefined) */
   width?: CSSProperties['width'];
 }
 
 export interface IColumnAmount<T> extends IColumn {
+  allowNegative?: boolean;
   currency?: string;
   dataIndex: keyof T;
-  type: ColumnType.AMOUNT;
+  decimalScale?: number;
+  decimalSeparator?: string;
   editable?: boolean;
+  maxValue?: number;
+  minValue?: number;
+  placeholder?: string;
+  thousandSeparator?: string;
+  thousandsGroupStyle?: ThousandsGroupStyle;
+  type: ColumnType.AMOUNT;
 }
 
 export interface IColumnBadge<T> extends IColumn {
+  color?: BadgeColorsEnum;
   dataIndex: keyof T;
-  options: Array<IOption>;
-  type: ColumnType.BADGE;
   editable?: boolean;
+  isClearable?: boolean;
+  options: Array<IOption>;
+  selectColors?: {
+    controlErrorColor: string; // colors.error,
+    controlFocusColor: string; // colors.primary,
+    controlBackgroundColorDisabled: string; // colors.chalk,
+    controlColorDisabled: string; // colors.pebble,
+    fontColor: string; // 'rgb(0, 0, 0)',
+    multiValueBorderColorDisabled: string; // colors.silver,
+    optionFocusColor: string; // colors.chalk,
+    optionSelectedColor: string; // colors.primary,
+  };
+  type: ColumnType.BADGE;
 }
 
 export interface IColumnButton<T> extends IColumn {
@@ -72,29 +95,53 @@ export interface IColumnCustom<T> extends IColumn {
   customRender: (row: T, dataIndex: keyof T) => ReactElement;
   customRenderEdit: (row: T, dataIndex: keyof T, onChangeCallback: (newValue: T[keyof T]) => void) => ReactElement;
   dataIndex: keyof T;
-  type: ColumnType.CUSTOM;
   editable?: boolean;
+  type: ColumnType.CUSTOM;
 }
 export interface IColumnDate<T> extends IColumn {
+  calendarStartDay?: WeekDayEnum;
   dataIndex: keyof T;
-  dateFormat?: DateFormatEnum;
-  type: ColumnType.DATE;
+  dateFormat?: DateFormat;
   editable?: boolean;
+  isClearable?: boolean;
+  locale?: string;
+  type: ColumnType.DATE;
 }
 export interface IColumnNumber<T> extends IColumn {
+  allowNegative?: boolean;
   dataIndex: keyof T;
-  type: ColumnType.NUMBER;
+  decimalScale?: number;
+  decimalSeparator?: string;
   editable?: boolean;
+  maxValue?: number;
+  minValue?: number;
+  placeholder?: string;
+  prefix?: string;
+  suffix?: string;
+  thousandSeparator?: string;
+  thousandsGroupStyle?: ThousandsGroupStyle;
+  type: ColumnType.NUMBER;
 }
 export interface IColumnPercentage<T> extends IColumn {
+  allowNegative?: boolean;
   dataIndex: keyof T;
-  type: ColumnType.PERCENTAGE;
+  decimalScale?: number;
+  decimalSeparator?: string;
   editable?: boolean;
+  maxValue?: number;
+  minValue?: number;
+  placeholder?: string;
+  thousandSeparator?: string;
+  thousandsGroupStyle?: ThousandsGroupStyle;
+  type: ColumnType.PERCENTAGE;
 }
 export interface IColumnText<T> extends IColumn {
   dataIndex: keyof T;
-  type: ColumnType.TEXT;
   editable?: boolean;
+  maxLength?: number;
+  minLength?: number;
+  placeholder?: string;
+  type: ColumnType.TEXT;
 }
 
 export type IColumnType<T> =

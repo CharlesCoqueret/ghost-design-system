@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import classnames from 'classnames';
 
 import { GenericField, AmountInput, ThousandsGroupStyle } from '../../Atoms';
@@ -62,7 +62,7 @@ export interface IPercentageFieldProps {
  * Calls @param onChange for every input change.
  *
  */
-export const PercentageField = (props: IPercentageFieldProps): React.ReactElement => {
+export const PercentageField = (props: IPercentageFieldProps): ReactElement => {
   const {
     allowNegative,
     dataTestId,

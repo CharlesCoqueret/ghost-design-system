@@ -53,7 +53,6 @@ const StaticDataTableCell = <T,>(props: IStaticDataTableCellProps<T>): ReactElem
     }
     default: {
       throw new Error('Missing ColumnType');
-      break;
     }
   }
 

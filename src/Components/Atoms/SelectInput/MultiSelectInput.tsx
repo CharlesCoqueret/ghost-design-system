@@ -1,11 +1,5 @@
 import React, { ReactElement } from 'react';
-import {
-  default as ReactSelect,
-  components,
-  MultiValue,
-  MultiValueGenericProps,
-  ValueContainerProps,
-} from 'react-select';
+import { default as ReactSelect, components, MultiValueGenericProps, ValueContainerProps } from 'react-select';
 import classnames from 'classnames';
 
 import OverflowWrapper from './OverflowWrapper';
@@ -36,7 +30,7 @@ export interface IMultiSelectInputProps {
   /** Highlight value in readonly mode (optional, default: false) */
   highlighted?: boolean;
   /** Input string value (optional, default: undefined) */
-  inputValue?: MultiValue<IOption>;
+  inputValue?: Array<string>;
   /** Provide the ability to clear the value (optional, default: false) */
   isClearable?: boolean;
   /** Is in Error (optional, default: false) */
@@ -46,7 +40,7 @@ export interface IMultiSelectInputProps {
   /** Name of select input */
   name: string;
   /** Handler of value changes (optional, default: undefined) */
-  onChange?: (selectedOptions: MultiValue<IOption> | undefined) => void;
+  onChange?: (selectedOptions: Array<string> | undefined) => void;
   /** Options to be displayed */
   options: Array<IOption>;
   /** Placeholder value (optional, default: undefined) */
@@ -105,7 +99,10 @@ const MultiSelectInput = (props: IMultiSelectInputProps): ReactElement => {
           className,
         )}
         data-testid={dataTestId}>
-        {inputValue && inputValue.length > 0 ? inputValue.map((option) => option.label).join(', ') : '-'}
+        {options
+          .filter((option) => inputValue?.includes(option.value))
+          .map((option) => option.label)
+          .join(', ') || '-'}
       </div>
     );
 
@@ -135,7 +132,12 @@ const MultiSelectInput = (props: IMultiSelectInputProps): ReactElement => {
         name={name}
         maxMenuHeight={maxMenuHeight}
         menuPlacement='auto'
-        onChange={onChange}
+        menuPortalTarget={document.querySelector('body')}
+        onChange={(options) => {
+          if (onChange) {
+            onChange(options.map((option) => option.value));
+          }
+        }}
         options={options}
         placeholder={placeholder}
         styles={customStyles({
@@ -149,7 +151,7 @@ const MultiSelectInput = (props: IMultiSelectInputProps): ReactElement => {
           optionFocusColor: colors?.optionFocusColor,
           optionSelectedColor: colors?.optionSelectedColor,
         })}
-        value={inputValue}
+        value={options.filter((option) => inputValue?.includes(option.value))}
       />
     </div>
   );

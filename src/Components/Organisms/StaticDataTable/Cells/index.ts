@@ -7,4 +7,4 @@ export { default as DateCell } from './DateCell';
 export { default as NumberCell } from './NumberCell';
 export { default as PercentageCell } from './PercentageCell';
 export { default as TextCell } from './TextCell';
-export { ICellProps } from './types';
+export type { ICellProps } from './types';

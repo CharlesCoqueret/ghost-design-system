@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import classnames from 'classnames';
 
 import { GenericField, SelectInput, IOption } from '../../Atoms';
@@ -35,7 +35,7 @@ export interface ISelectFieldProps {
   /** Class for the input (optional, default: undefined) */
   inputClassName?: string;
   /** Input string value (optional, default: undefined) */
-  inputValue: IOption | undefined;
+  inputValue: string | undefined;
   /** Provide the ability to clear the value (optional, default: false) */
   isClearable?: boolean;
   /** Label (optional, default: undefined) */
@@ -47,7 +47,7 @@ export interface ISelectFieldProps {
   /** Name of text field */
   name: string;
   /** Handler of value changes (optional, default: undefined) */
-  onChange?: (newValue: IOption | null | undefined) => void;
+  onChange?: (newValue: string | null | undefined) => void;
   /** Options available to be picked from */
   options: Array<IOption>;
   /** Placeholder value (optional, default: undefined) */
@@ -64,7 +64,7 @@ export interface ISelectFieldProps {
  * Calls @param onChange for every input change.
  *
  */
-export const SelectField = (props: ISelectFieldProps): React.ReactElement => {
+export const SelectField = (props: ISelectFieldProps): ReactElement => {
   const {
     colors,
     dataTestId,

@@ -8484,7 +8484,7 @@ Object {
                 class="field-group"
               >
                 <span
-                  class="amount-field amount-field-read-only table--cell-value--negative table--cell-value--amount-readonly"
+                  class="amount-field amount-field-read-only table--cell-value--negative table--cell-value--percentage-readonly"
                   id="parts"
                   name="parts"
                 >
@@ -8818,7 +8818,7 @@ Object {
               class="field-group"
             >
               <span
-                class="amount-field amount-field-read-only table--cell-value--negative table--cell-value--amount-readonly"
+                class="amount-field amount-field-read-only table--cell-value--negative table--cell-value--percentage-readonly"
                 id="parts"
                 name="parts"
               >
@@ -9104,7 +9104,7 @@ Object {
                 class="field-group"
               >
                 <span
-                  class="amount-field amount-field-read-only table--cell-value--negative table--cell-value--amount-readonly"
+                  class="amount-field amount-field-read-only table--cell-value--negative table--cell-value--percentage-readonly"
                   id="parts"
                   name="parts"
                 >
@@ -9420,7 +9420,7 @@ Object {
               class="field-group"
             >
               <span
-                class="amount-field amount-field-read-only table--cell-value--negative table--cell-value--amount-readonly"
+                class="amount-field amount-field-read-only table--cell-value--negative table--cell-value--percentage-readonly"
                 id="parts"
                 name="parts"
               >

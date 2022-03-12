@@ -17,13 +17,16 @@ const TextCell = <T,>(props: ICellProps<T, IColumnText<T>>): ReactElement => {
       {isCurrentlyEditedRow ? (
         <TextField
           dataTestId={`${column.dataIndex}-${rowIndex}`}
-          name={String(column.dataIndex)}
           inputValue={displayValue}
+          maxLength={column.maxLength}
+          minLength={column.minLength}
+          name={String(column.dataIndex)}
           onChange={(newValue: string) => {
             if (onChange) {
               onChange(newValue as unknown as T[keyof T]);
             }
           }}
+          placeholder={column.placeholder}
         />
       ) : (
         displayValue

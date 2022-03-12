@@ -39,7 +39,7 @@ const Badge = (props: PropsWithChildren<IBadgeProps>): ReactElement => {
 
 Badge.defaultProps = {
   type: 'indicator',
-  color: BadgeColorsEnum.PRIMARY,
+  color: BadgeColorsEnum.SECONDARY,
 };
 
 export default Badge;

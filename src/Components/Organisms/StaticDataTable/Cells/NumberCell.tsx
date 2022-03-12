@@ -16,18 +16,28 @@ const NumberCell = <T,>(props: ICellProps<T, IColumnNumber<T>>): ReactElement =>
   return (
     <td className={classnames({ ellipsis: column.ellipsis })}>
       <AmountField
-        name={String(column.dataIndex)}
+        allowNegative={column.allowNegative}
+        decimalScale={column.decimalScale}
+        decimalSeparator={column.decimalSeparator}
         inputClassName={classnames(
           { 'table--cell-value--negative': isNegative && !isCurrentlyEditedRow },
-          { 'table--cell-value--amount-readonly': !isCurrentlyEditedRow },
+          { 'table--cell-value--number-readonly': !isCurrentlyEditedRow },
         )}
         inputValue={displayValue}
-        readOnly={!isCurrentlyEditedRow}
+        maxValue={column.maxValue}
+        minValue={column.minValue}
+        name={String(column.dataIndex)}
         onChange={(newValue: number | undefined) => {
           if (onChange) {
             onChange(newValue as unknown as T[keyof T]);
           }
         }}
+        placeholder={column.placeholder}
+        prefix={column.prefix}
+        readOnly={!isCurrentlyEditedRow}
+        suffix={column.suffix}
+        thousandSeparator={column.thousandSeparator}
+        thousandsGroupStyle={column.thousandsGroupStyle}
       />
     </td>
   );

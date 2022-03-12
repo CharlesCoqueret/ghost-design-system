@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { ReactElement, useState } from 'react';
 
 import { GenericField } from '../../Atoms/GenericField';
 import { TextInput } from '../../Atoms/';
@@ -53,7 +53,7 @@ export interface ITextFieldProps {
  *
  * When the @param maxLength , the letter counter is displayed.
  */
-export const TextField = (props: ITextFieldProps): React.ReactElement => {
+export const TextField = (props: ITextFieldProps): ReactElement => {
   const {
     dataTestId,
     disabled,

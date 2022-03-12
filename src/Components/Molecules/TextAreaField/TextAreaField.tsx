@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { ReactElement, useState } from 'react';
 
 import { GenericField, TextAreaInput } from '../../Atoms';
 
@@ -49,7 +49,7 @@ export interface ITextAreaFieldProps {
  * Calls @param onChange for every input change.
  *
  */
-export const TextAreaField = (props: ITextAreaFieldProps): React.ReactElement => {
+export const TextAreaField = (props: ITextAreaFieldProps): ReactElement => {
   const {
     dataTestId,
     disabled,

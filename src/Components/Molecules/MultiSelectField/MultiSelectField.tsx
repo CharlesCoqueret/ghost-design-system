@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import classnames from 'classnames';
 
 import { GenericField, IOption, MultiSelectInput } from '../../Atoms';
@@ -35,7 +35,7 @@ export interface IMultiSelectFieldProps {
   /** Class for the input (optional, default: undefined) */
   inputClassName?: string;
   /** Input string value (optional, default: undefined) */
-  inputValue: Readonly<Array<IOption>> | Array<IOption> | undefined;
+  inputValue: Array<string> | undefined;
   /** Provide the ability to clear the value (optional, default: false) */
   isClearable?: boolean;
   /** Label (optional, default: undefined) */
@@ -47,7 +47,7 @@ export interface IMultiSelectFieldProps {
   /** Name of text field */
   name: string;
   /** Handler of value changes (optional, default: undefined) */
-  onChange?: (newValue: Readonly<Array<IOption>> | null | undefined) => void;
+  onChange?: (newValue: Array<string> | null | undefined) => void;
   /** Options available to be picked from */
   options: Array<IOption>;
   /** Placeholder value (optional, default: undefined) */
@@ -64,7 +64,7 @@ export interface IMultiSelectFieldProps {
  * Calls @param onChange for every input change.
  *
  */
-export const SelectField = (props: IMultiSelectFieldProps): React.ReactElement => {
+export const MultiSelectField = (props: IMultiSelectFieldProps): ReactElement => {
   const {
     colors,
     dataTestId,
@@ -123,7 +123,7 @@ export const SelectField = (props: IMultiSelectFieldProps): React.ReactElement =
   );
 };
 
-SelectField.defaultProps = {
+MultiSelectField.defaultProps = {
   colors: {
     controlErrorColor: colors.error.rgb,
     controlFocusColor: colors.primary.rgb,
@@ -152,4 +152,4 @@ SelectField.defaultProps = {
   readOnly: false,
 };
 
-export default SelectField;
+export default MultiSelectField;

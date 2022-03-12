@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import Numeral from 'numeral';
 import NumberFormat, { NumberFormatValues } from 'react-number-format';
 import classnames from 'classnames';
@@ -63,7 +63,7 @@ export interface IAmountInputProps {
   thousandsGroupStyle?: ThousandsGroupStyle;
 }
 
-const AmountInput = (props: IAmountInputProps): React.ReactElement => {
+const AmountInput = (props: IAmountInputProps): ReactElement => {
   const {
     allowNegative,
     className,
