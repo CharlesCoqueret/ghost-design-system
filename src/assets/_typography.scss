@@ -51,4 +51,10 @@ span.typography {
     font-size: 12px;
     color: $error;
   }
+  &.highlighted {
+    color: $tangerine;
+  }
+  &.disabled {
+    color: $pebble;
+  }
 }

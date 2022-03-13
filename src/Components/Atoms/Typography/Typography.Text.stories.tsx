@@ -17,6 +17,8 @@ const Template: ComponentStory<typeof Text> = (arg: ITextProps) => {
       <Typography.Text type={TextTypeEnum.LABEL}>Typography.Text type: label</Typography.Text>
       <Typography.Text type={TextTypeEnum.PLACEHOLDER}>Typography.Text type: placeholder</Typography.Text>
       <Typography.Text type={TextTypeEnum.TINY}>Typography.Text type: tiny</Typography.Text>
+      <Typography.Text type={TextTypeEnum.HIGHLIGHTED}>Typography.Text type: highlighted</Typography.Text>
+      <Typography.Text type={TextTypeEnum.DISABLED}>Typography.Text type: disabled</Typography.Text>
       <hr />
       <Typography.Title level={3}>Your own example here: </Typography.Title>
       <Typography.Text {...arg}>

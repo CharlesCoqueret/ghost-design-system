@@ -26,11 +26,13 @@ Title.defaultProps = {
 
 export enum TextTypeEnum {
   BODY = 'body',
-  TINY = 'tiny',
+  ERROR = 'error',
+  DISABLED = 'disabled',
+  HELPER = 'helper',
+  HIGHLIGHTED = 'highlighted',
   LABEL = 'label',
   PLACEHOLDER = 'placeholder',
-  HELPER = 'helper',
-  ERROR = 'error',
+  TINY = 'tiny',
 }
 
 export interface ITextProps {
@@ -41,7 +43,7 @@ export interface ITextProps {
   /** Additional style */
   style?: CSSProperties;
   /** Type of text (optional, default: TextTypeEnum.BODY)*/
-  type?: TextTypeEnum;
+  type?: TextTypeEnum | Array<TextTypeEnum | undefined>;
 }
 
 const Text = (props: PropsWithChildren<ITextProps>): ReactElement => {
@@ -53,12 +55,16 @@ const Text = (props: PropsWithChildren<ITextProps>): ReactElement => {
     <span
       className={classNames('typography', {
         ellipsis: ellipsis,
+        error: type === TextTypeEnum.ERROR || (Array.isArray(type) && type?.includes(TextTypeEnum.PLACEHOLDER)),
+        disabled: type === TextTypeEnum.DISABLED || (Array.isArray(type) && type?.includes(TextTypeEnum.DISABLED)),
+        helper: type === TextTypeEnum.HELPER || (Array.isArray(type) && type?.includes(TextTypeEnum.HELPER)),
+        highlighted:
+          type === TextTypeEnum.HIGHLIGHTED || (Array.isArray(type) && type?.includes(TextTypeEnum.HIGHLIGHTED)),
+        label: type === TextTypeEnum.LABEL || (Array.isArray(type) && type?.includes(TextTypeEnum.TINY)),
         link: isLink,
-        tiny: type === TextTypeEnum.TINY,
-        label: type === TextTypeEnum.LABEL,
-        placeholder: type === TextTypeEnum.PLACEHOLDER,
-        helper: type === TextTypeEnum.HELPER,
-        error: type === TextTypeEnum.ERROR,
+        placeholder:
+          type === TextTypeEnum.PLACEHOLDER || (Array.isArray(type) && type?.includes(TextTypeEnum.PLACEHOLDER)),
+        tiny: type === TextTypeEnum.TINY || (Array.isArray(type) && type?.includes(TextTypeEnum.TINY)),
       })}
       style={style}>
       {children}
