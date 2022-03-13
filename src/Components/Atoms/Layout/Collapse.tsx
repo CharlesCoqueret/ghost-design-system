@@ -1,8 +1,7 @@
-import React, { CSSProperties, PropsWithChildren, ReactElement, useRef, useState } from 'react';
+import React, { PropsWithChildren, ReactElement, useEffect, useRef, useState } from 'react';
 import classnames from 'classnames';
 
 import { Icon } from '../Icon';
-import { useRunAfterUpdate } from '../../../hooks';
 
 export interface ICollapseProps {
   /** Open initially the collapse elemeent (optional, default: false) */
@@ -14,7 +13,7 @@ export interface ICollapseProps {
 const Collapse = (props: PropsWithChildren<ICollapseProps>): ReactElement => {
   const { children, openInitially, title } = props;
 
-  const [open, setOpen] = useState<boolean>(openInitially || Collapse.defaultProps.openInitially);
+  const [open, setOpen] = useState(openInitially);
   const contentRef = useRef<HTMLDivElement>(null);
 
   const transitionEnd = (event: TransitionEvent) => {
@@ -26,16 +25,23 @@ const Collapse = (props: PropsWithChildren<ICollapseProps>): ReactElement => {
     }
   };
 
-  const handleClick = () => {
-    if (!contentRef.current) return;
+  useEffect(() => {
+    if (!contentRef.current) {
+      return;
+    }
+
+    // Initial run, to ensure the proper value
+    if (contentRef.current.style.height === '') {
+      contentRef.current.style.height = open ? 'auto' : '0px';
+      return;
+    }
 
     // From height auto to 0px
-    if (open) {
+    if (!open) {
       contentRef.current.style.height = getComputedStyle(contentRef.current).height;
       contentRef.current.style.transition = 'height 500ms linear';
       contentRef.current.offsetHeight;
       contentRef.current.style.height = '0px';
-      setOpen(false);
     }
     // From 0px to auto
     else {
@@ -47,8 +53,11 @@ const Collapse = (props: PropsWithChildren<ICollapseProps>): ReactElement => {
       contentRef.current.style.transition = 'height 500ms linear';
       contentRef.current.style.height = endHeight;
       contentRef.current.addEventListener('transitionend', transitionEnd, false);
-      setOpen(true);
     }
+  }, [open]);
+
+  const handleClick = () => {
+    setOpen((prev) => !prev);
   };
 
   return (
@@ -57,7 +66,7 @@ const Collapse = (props: PropsWithChildren<ICollapseProps>): ReactElement => {
         {title}
         <Icon icon={['fal', 'chevron-left']} size='1x' className={classnames('icon', { open: open })} />
       </div>
-      <div className={classnames('collapse-body')} ref={contentRef}>
+      <div className='collapse-body' ref={contentRef}>
         {children}
       </div>
       <div className='collapse-footer' />
