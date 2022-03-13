@@ -7,16 +7,15 @@ import { ColumnType, IColumnType, IExtraEditableDataTableProps, SortDirectionEnu
 import EditableDataTableBody from './EditableDataTableBody';
 
 export interface IEditableDataTableProps<T> {
-  data: Array<T>;
   columns: Array<IColumnType<T>>;
+  data: Array<T>;
   extra: IExtraEditableDataTableProps<T>;
+  loading?: ReactElement;
   onSortChange?: (sortField?: keyof T, sortDirection?: SortDirectionEnum) => void;
-  // TODO Add no data message
-  // TODO Add loading state
 }
 
 const EditableDataTable = <T,>(props: IEditableDataTableProps<T>): ReactElement => {
-  const { data, columns, extra, onSortChange } = props;
+  const { data, columns, extra, loading, onSortChange } = props;
 
   const [currentData, setCurrentData] = useState<Array<T>>(data);
   const [sortField, setSortField] = useState<keyof T | undefined>();
@@ -28,9 +27,9 @@ const EditableDataTable = <T,>(props: IEditableDataTableProps<T>): ReactElement 
       : [
           ...columns.filter((column) => column.type !== ColumnType.BUTTON),
           {
-            title: 'Actions', // TODO manage translation
+            title: extra?.localization?.actionColumn || 'Actions',
             type: ColumnType.BUTTON,
-            moreActionsMessage: 'More actions', // TODO manage translation
+            moreActionsMessage: extra?.localization?.moreActionsMessage || 'More actions',
             buttons: [
               {
                 hidden: (row, rowIndex) => {
@@ -41,12 +40,17 @@ const EditableDataTable = <T,>(props: IEditableDataTableProps<T>): ReactElement 
                   return true;
                 },
                 icon: ['fal', 'trash-alt'],
-                label: 'Delete', // TODO manage translation
+                label: extra?.localization?.deleteButton || 'Delete',
                 onClick: (row, rowIndex) => {
                   if (extra?.onRowDelete) {
                     extra.onRowDelete(row, rowIndex);
                   }
                   setCurrentData((prev) => [...prev.filter((_item, index) => index !== rowIndex)]);
+                },
+                popover: {
+                  message: extra?.localization?.deletePopoverMessage || 'Delete?',
+                  cancel: extra?.localization?.deletePopoverCancel || 'Cancel',
+                  confirm: extra?.localization?.deletePopoverConfirm || 'Confirm',
                 },
                 dataTestId: 'delete',
               },
@@ -59,7 +63,7 @@ const EditableDataTable = <T,>(props: IEditableDataTableProps<T>): ReactElement 
                   return true;
                 },
                 icon: ['fal', 'arrow-to-bottom'],
-                label: 'Download', // TODO manage translation
+                label: extra?.localization?.downloadButton || 'Download',
                 onClick: (row, rowIndex) => {
                   if (extra?.onRowDownload) {
                     extra.onRowDownload(row, rowIndex);
@@ -123,6 +127,7 @@ const EditableDataTable = <T,>(props: IEditableDataTableProps<T>): ReactElement 
           data={currentData}
           extra={extra}
           handUpdateDataChange={handUpdateDataChange}
+          loading={loading}
         />
         <StaticDataTableFooter<T> columns={currentColumns} data={currentData} extra={extra} />
       </table>
@@ -130,7 +135,7 @@ const EditableDataTable = <T,>(props: IEditableDataTableProps<T>): ReactElement 
         <Button
           className='cui-table-new-line'
           color={ColorButtonEnum.PRIMARY}
-          label='Add Line' // TODO manage translation
+          label={extra?.localization?.addRow || 'Add Line'}
           onClick={addNewLine}
         />
       )}

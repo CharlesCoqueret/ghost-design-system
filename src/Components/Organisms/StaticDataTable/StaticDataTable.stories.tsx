@@ -3,6 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import StaticDataTable, { IStaticDataTableProps } from './StaticDataTable';
 import { ColumnType, IColumnType } from './types';
+import { Icon } from '../../Atoms';
 
 export default {
   title: 'Organism/StaticDataTable',
@@ -196,6 +197,55 @@ export const SelectableAndComputeTotal = Template.bind({});
 SelectableAndComputeTotal.args = {
   data: data,
   columns: columns,
+  extra: {
+    onRowSelect: (rows: Array<demoType>, row: demoType) => {
+      alert(`Number of rows selected: ${rows.length}\nClicked row: ${row.id}`);
+    },
+    computeTotal: (data: Array<demoType>, dataIndex: keyof demoType) => {
+      if (dataIndex === 'price' || dataIndex === 'parts') {
+        return data
+          .map((row: demoType) => {
+            return row[dataIndex];
+          })
+          .reduce((a, b) => Number(a) + Number(b), 0);
+      } else {
+        return '-';
+      }
+    },
+  },
+};
+
+export const NoData = Template.bind({});
+NoData.args = {
+  data: [],
+  columns: columns,
+  extra: {
+    onRowSelect: (rows: Array<demoType>, row: demoType) => {
+      alert(`Number of rows selected: ${rows.length}\nClicked row: ${row.id}`);
+    },
+    computeTotal: (data: Array<demoType>, dataIndex: keyof demoType) => {
+      if (dataIndex === 'price' || dataIndex === 'parts') {
+        return data
+          .map((row: demoType) => {
+            return row[dataIndex];
+          })
+          .reduce((a, b) => Number(a) + Number(b), 0);
+      } else {
+        return '-';
+      }
+    },
+  },
+};
+
+export const Loading = Template.bind({});
+Loading.args = {
+  data: data,
+  columns: columns,
+  loading: (
+    <div style={{ display: 'flex', justifyContent: 'space-around' }}>
+      <Icon icon={['fal', 'spinner']} size='3x' spin />
+    </div>
+  ),
   extra: {
     onRowSelect: (rows: Array<demoType>, row: demoType) => {
       alert(`Number of rows selected: ${rows.length}\nClicked row: ${row.id}`);

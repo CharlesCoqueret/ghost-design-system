@@ -5,6 +5,7 @@ import classnames from 'classnames';
 import { Icon, MenuDirectionEnum, Tooltip, IconProp } from '../../Atoms';
 import { IItemListProps } from './ItemList';
 import Portal from '../../Atoms/Portal/Portal';
+import Popover from '../Popover/Popover';
 
 export enum ColorButtonEnum {
   PRIMARY = 'primary',
@@ -13,30 +14,32 @@ export enum ColorButtonEnum {
 }
 
 export interface IButtonProps {
-  /** Label (optional, default: undefined) */
-  label?: string;
-  /** text to be displayed as a tooltip (optional, default: undefinef=d) */
-  tooltip?: string;
-  /** position of the tooltip (optional, default: 'bottom') */
-  tooltipDirection?: MenuDirectionEnum;
+  /** Custom className (optional, default: undefined) */
+  className?: string;
+  /** Color of the button (optional, default: ColorButtonEnum.SECONDARY) */
+  color?: ColorButtonEnum;
+  /** Button is disabled (optional, default: false) */
+  disabled?: boolean;
+  /** Dropdown alignment option (optional, default: 'end' ) */
+  dropdownAlign?: MenuAlign;
   /** Icon name (optional, default: undefined) */
   icon?: IconProp;
   /** :ist of items to display in the dropdown on click on the button (optional, default: undefined) */
   itemList?: Array<IItemListProps>;
-  /** Dropdown alignment option (optional, default: 'end' ) */
-  dropdownAlign?: MenuAlign;
-  /** Color of the button (optional, default: ColorButtonEnum.SECONDARY) */
-  color?: ColorButtonEnum;
-  /** button type (optional, default: 'button') */
-  type?: 'submit' | 'button' | 'reset';
-  /** Button is disabled (optional, default: false) */
-  disabled?: boolean;
-  /** Button click event handler (optional, default: undefined) */
-  onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
-  /** Custom className (optional, default: undefined) */
-  className?: string;
+  /** Label (optional, default: undefined) */
+  label?: string;
   /** Loading state, disabling the button and replacing icon with spiner (optional, default: false) */
   loading?: boolean;
+  /** Button click event handler (optional, default: undefined) */
+  onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+  /** Optional popover (optional, default: undefined) */
+  popover?: { buttons?: Array<IButtonProps>; title?: string };
+  /** text to be displayed as a tooltip (optional, default: undefinef=d) */
+  tooltip?: string;
+  /** position of the tooltip (optional, default: 'bottom') */
+  tooltipDirection?: MenuDirectionEnum;
+  /** button type (optional, default: 'button') */
+  type?: 'submit' | 'button' | 'reset';
   /** For test purpose only */
   dataTestId?: string;
 }
@@ -53,16 +56,20 @@ const Button = (props: IButtonProps): ReactElement => {
     label,
     loading,
     onClick,
+    popover,
     tooltip,
     tooltipDirection,
     type,
   } = props;
 
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+  const [isPopoverOpen, setIsPopoverOpen] = useState<boolean>(false);
+
   const skipOpen = useRef(false);
   const ref = useRef<HTMLButtonElement>(null);
 
   const hasMenu = itemList && itemList.length > 0;
+  const hasPopover = popover !== undefined;
 
   if (!label && !icon) return <></>;
 
@@ -77,7 +84,10 @@ const Button = (props: IButtonProps): ReactElement => {
               onClick(event);
             }
             if (hasMenu) {
-              if (!skipOpen.current) setIsOpen((prev) => !prev);
+              if (!skipOpen.current) setIsMenuOpen((prev) => !prev);
+            }
+            if (hasPopover) {
+              setIsPopoverOpen(true);
             }
           }}
           disabled={loading || disabled}
@@ -114,12 +124,12 @@ const Button = (props: IButtonProps): ReactElement => {
       {hasMenu ? (
         <Portal>
           <ControlledMenu
-            state={isOpen ? 'open' : 'closed'}
+            state={isMenuOpen ? 'open' : 'closed'}
             align={dropdownAlign}
             menuClassName='button-menu'
             anchorRef={ref}
             skipOpen={skipOpen}
-            onClose={() => setIsOpen(false)}>
+            onClose={() => setIsMenuOpen(false)}>
             {itemList?.map((item): ReactElement => {
               if (item.hidden) return <></>;
               return (
@@ -144,23 +154,50 @@ const Button = (props: IButtonProps): ReactElement => {
       ) : (
         <></>
       )}
+      {hasPopover && popover ? (
+        <Popover
+          anchorRef={ref}
+          open={isPopoverOpen}
+          onClose={() => {
+            setIsPopoverOpen(false);
+          }}>
+          {popover.title && <div className='popover-title'>{popover.title}</div>}
+          <div className='popover-buttons'>
+            {popover.buttons?.map((button) => (
+              <Button
+                key={`${button.label}-${button.icon?.toString()}`}
+                {...button}
+                onClick={(e) => {
+                  setIsPopoverOpen(false);
+                  if (button.onClick) {
+                    button.onClick(e);
+                  }
+                }}
+              />
+            ))}
+          </div>
+        </Popover>
+      ) : (
+        <></>
+      )}
     </>
   );
 };
 
 Button.defaultProps = {
-  label: undefined,
-  tooltip: undefined,
-  tooltipDirection: MenuDirectionEnum.BOTTOM,
-  icon: undefined,
-  itemList: undefined,
-  dropdownAlign: 'end',
+  className: undefined,
   color: 'secondary',
   disabled: false,
-  onClick: undefined,
-  className: undefined,
-  type: 'button',
+  dropdownAlign: 'end',
+  icon: undefined,
+  itemList: undefined,
+  label: undefined,
   loading: false,
+  onClick: undefined,
+  popover: undefined,
+  tooltip: undefined,
+  tooltipDirection: MenuDirectionEnum.BOTTOM,
+  type: 'button',
 };
 
 export default Button;

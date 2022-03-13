@@ -10,10 +10,11 @@ interface IEditableDataTableBodyProps<T> {
   data: Array<T>;
   extra: IExtraEditableDataTableProps<T>;
   handUpdateDataChange: (rowIndex: number, dataIndex: keyof T, newData: T[keyof T]) => void;
+  loading?: ReactElement;
 }
 
 const EditableDataTableBody = <T,>(props: IEditableDataTableBodyProps<T>): ReactElement => {
-  const { columns, data, extra, handUpdateDataChange } = props;
+  const { columns, data, extra, handUpdateDataChange, loading } = props;
 
   const [selectedRows, setSelectedRows] = useState<Record<number, boolean>>({});
 
@@ -79,6 +80,16 @@ const EditableDataTableBody = <T,>(props: IEditableDataTableBodyProps<T>): React
           </tr>
         );
       })}
+      {(!data || data?.length === 0) && (
+        <tr className='no-data'>
+          <td colSpan={columns.length + (isSelectable ? 1 : 0)}>{extra?.localization?.noData || 'No data'}</td>
+        </tr>
+      )}
+      {loading && (
+        <tr className='no-data'>
+          <td colSpan={columns.length + (isSelectable ? 1 : 0)}>{loading}</td>
+        </tr>
+      )}
     </tbody>
   );
 };

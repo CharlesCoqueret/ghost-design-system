@@ -33,6 +33,12 @@ export interface IButtonCellProps<T> {
   loading?: boolean;
   /** Button click event handler (optional, default: undefined) */
   onClick?: (row: T, rowIndex: number) => void;
+  /** Confirmation Popover enabled (optional, default: false) */
+  popover?: {
+    message: string;
+    confirm: string;
+    cancel: string;
+  };
   /** For test purpose only */
   dataTestId?: string;
 }
@@ -170,6 +176,17 @@ export interface IExtraStaticDataTableProps<T> {
   onRowSelect?: (selectedRows: Array<T>, clickedRow: T) => void;
   /** Method used to disable the selection of a specific row, by default not called and considered as selectable (optional, default: undefined) */
   isSelectable?: (row: T) => boolean;
+  /** localization (optional, default:
+   *    moreActionsMessage: 'More actions'
+   *    noData: 'No data'
+   *    sortMessage: 'Click to sort'
+   * )
+   */
+  localization?: {
+    moreActionsMessage?: string;
+    noData?: string;
+    sortMessage?: string;
+  };
 }
 
 export interface IExtraLineEditableInPlaceDataTableProps<T> extends IExtraStaticDataTableProps<T> {
@@ -195,6 +212,37 @@ export interface IExtraLineEditableInPlaceDataTableProps<T> extends IExtraStatic
   canAddNewLine?: () => boolean;
   /** Method used to when the new line button is clicked to get initial values (optional, default: undefined) */
   onNewLine?: () => T;
+  /** localization (optional, default:
+   *    actionColumn: 'Actions'
+   *    addRow: 'Add row'
+   *    cancelButton: 'Cancel'
+   *    deleteButton: 'Delete'
+   *    deletePopoverMessage: 'Delete?'
+   *    deletePopoverConfirm: 'Confirm'
+   *    deletePopoverCancel: 'Cancel'
+   *    downloadButton: 'Download'
+   *    editButton: 'Edit'
+   *    moreActionsMessage: 'More actions'
+   *    noData: 'No data'
+   *    sortMessage: 'Click to sort'
+   *    submitButton: 'Submit'
+   * )
+   */
+  localization?: {
+    actionColumn?: string;
+    addRow?: string;
+    cancelButton?: string;
+    deleteButton?: string;
+    deletePopoverMessage?: string;
+    deletePopoverConfirm?: string;
+    deletePopoverCancel?: string;
+    downloadButton?: string;
+    editButton?: string;
+    moreActionsMessage?: string;
+    noData?: string;
+    sortMessage?: string;
+    submitButton?: string;
+  };
 }
 
 export interface IExtraEditableDataTableProps<T> extends IExtraStaticDataTableProps<T> {
@@ -214,4 +262,29 @@ export interface IExtraEditableDataTableProps<T> extends IExtraStaticDataTablePr
   canAddNewLine?: () => boolean;
   /** Method used to when the new line button is clicked to get initial values (optional, default: undefined) */
   onNewLine?: () => T;
+  /** localization (optional, default:
+   *    actionColumn: 'Actions'
+   *    addRow: 'Add row'
+   *    deleteButton: 'Delete'
+   *    deletePopoverMessage: 'Delete?'
+   *    deletePopoverConfirm: 'Confirm'
+   *    deletePopoverCancel: 'Cancel'
+   *    downloadButton: 'Download'
+   *    moreActionsMessage: 'More actions'
+   *    noData: 'No data'
+   *    sortMessage: 'Click to sort'
+   * )
+   */
+  localization?: {
+    actionColumn?: string;
+    addRow?: string;
+    deleteButton?: string;
+    deletePopoverMessage?: string;
+    deletePopoverConfirm?: string;
+    deletePopoverCancel?: string;
+    downloadButton?: string;
+    moreActionsMessage?: string;
+    noData?: string;
+    sortMessage?: string;
+  };
 }

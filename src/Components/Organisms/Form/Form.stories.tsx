@@ -241,7 +241,7 @@ const HighlightedTemplate = (args: IUseFormProps<dataType>) => {
       </div>
       <div>
         Current data:
-        <textarea style={{ width: '100%', height: '300px' }}>{JSON.stringify(getData(), null, 2)}</textarea>
+        <textarea style={{ width: '100%', height: '300px' }} value={JSON.stringify(getData(), null, 2)} readOnly />
       </div>
     </>
   );

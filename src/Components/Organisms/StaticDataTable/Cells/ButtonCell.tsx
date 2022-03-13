@@ -47,11 +47,33 @@ const ButtonCell = <T,>(props: ICellProps<T, IColumnButton<T>>): ReactElement =>
                 icon={button.icon}
                 onClick={(event) => {
                   event.stopPropagation();
-                  if (button.onClick) {
+                  if (!button.popover && button.onClick) {
                     button.onClick(row, rowIndex);
                   }
                 }}
                 color={ColorButtonEnum.REVERSED}
+                popover={
+                  button.popover
+                    ? {
+                        title: button.popover.message,
+                        buttons: [
+                          {
+                            label: button.popover.cancel,
+                            color: ColorButtonEnum.SECONDARY,
+                          },
+                          {
+                            label: button.popover.confirm,
+                            color: ColorButtonEnum.PRIMARY,
+                            onClick: () => {
+                              if (button.onClick) {
+                                button.onClick(row, rowIndex);
+                              }
+                            },
+                          },
+                        ],
+                      }
+                    : undefined
+                }
               />
             );
           })

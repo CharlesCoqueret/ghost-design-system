@@ -1,36 +1,28 @@
-import React, { ReactElement, useEffect, useRef, useState } from 'react';
+import React, { PropsWithChildren, ReactElement, useEffect, useRef, useState } from 'react';
 import { ControlledMenu } from '@szhsin/react-menu';
-import classnames from 'classnames';
 
 import { useOnClickOutside } from '../../../hooks';
 import { Portal } from '../../Atoms/Portal';
-import Button, { IButtonProps } from '../Button/Button';
 
 export interface IPopoverProps {
-  buttons: Array<IButtonProps>;
-  open?: boolean;
+  /** Reference of the element from which the popover pops */
   anchorRef: React.RefObject<HTMLElement>;
-  title?: string;
+  /** Callback when a click is captured outside the popover (it is recommended to set open to close) */
+  onClose: () => void;
+  /** Control of the popover (true to open the popover) */
+  open: boolean;
 }
 
-const Popover = (props: IPopoverProps): ReactElement => {
-  const { buttons, open, anchorRef, title } = props;
+const Popover = (props: PropsWithChildren<IPopoverProps>): ReactElement => {
+  const { anchorRef, children, onClose, open } = props;
 
   const [isOpen, setIsOpen] = useState<boolean | undefined>(open);
-  const [isShaking, setIsShaking] = useState(false);
   const skipOpen = useRef(false);
   const menuRef = useRef(null);
 
-  const pnClickOutside = () => {
-    setIsShaking(true);
-    setTimeout(() => {
-      setIsShaking(false);
-    }, 500);
-  };
-
   useOnClickOutside(menuRef, () => {
     if (open) {
-      pnClickOutside();
+      onClose();
     }
   });
 
@@ -48,20 +40,16 @@ const Popover = (props: IPopoverProps): ReactElement => {
         align='center'
         direction='top'
         arrow
-        className={classnames({ shake: isShaking })}
         anchorRef={anchorRef}
         skipOpen={skipOpen}>
-        <div className='popover-container'>
-          <div className='popover-title'>{title}</div>
-          <div className='popover-buttons'>
-            {buttons.map((button) => (
-              <Button key={`${button.label}-${button.icon?.toString()}`} {...button} />
-            ))}
-          </div>
-        </div>
+        <div className='popover-container'>{children}</div>
       </ControlledMenu>
     </Portal>
   );
+};
+
+Popover.defaultProps = {
+  title: undefined,
 };
 
 export default Popover;

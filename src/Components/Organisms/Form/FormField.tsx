@@ -116,7 +116,6 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
           sortBy(previousData[field.dataIndex] as unknown as Array<string> | undefined),
           sortBy(data[field.dataIndex] as unknown as Array<string> | undefined),
         );
-      console.log(field.options);
       return (
         <Highlighter
           highlight={previousData !== undefined}

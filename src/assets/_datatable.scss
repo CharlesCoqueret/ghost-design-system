@@ -14,7 +14,6 @@
   .table--header-value--title {
     flex: 1;
     position: relative;
-    z-index: 1;
     font-weight: 700;
     &.center {
       text-align: center;
@@ -101,6 +100,12 @@ table {
 
     &:active.selected {
       background-color: color.change($primary, $alpha: 0.66);
+    }
+    &.no-data {
+      background-color: $white !important;
+      td {
+        text-align: center;
+      }
     }
   }
 

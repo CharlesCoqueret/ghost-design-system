@@ -10,10 +10,11 @@ interface ILineEditableInPlaceDataTableBodyProps<T> {
   data: Array<T>;
   extra?: IExtraLineEditableInPlaceDataTableProps<T>;
   handUpdateDataChange: (rowIndex: number, dataIndex: keyof T, newData: T[keyof T]) => void;
+  loading?: ReactElement;
 }
 
 const LineEditableInPlaceDataTableBody = <T,>(props: ILineEditableInPlaceDataTableBodyProps<T>): ReactElement => {
-  const { columns, data, extra, handUpdateDataChange } = props;
+  const { columns, data, extra, handUpdateDataChange, loading } = props;
 
   const [selectedRows, setSelectedRows] = useState<Record<number, boolean>>({});
 
@@ -76,6 +77,16 @@ const LineEditableInPlaceDataTableBody = <T,>(props: ILineEditableInPlaceDataTab
           </tr>
         );
       })}
+      {(!data || data?.length === 0) && (
+        <tr className='no-data'>
+          <td colSpan={columns.length + (isSelectable ? 1 : 0)}>{extra?.localization?.noData || 'No data'}</td>
+        </tr>
+      )}
+      {loading && (
+        <tr className='no-data'>
+          <td colSpan={columns.length + (isSelectable ? 1 : 0)}>{loading}</td>
+        </tr>
+      )}
     </tbody>
   );
 };

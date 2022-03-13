@@ -12,16 +12,15 @@ import {
 import LineEditableInPlaceDataTableBody from './LineEditableInPlaceDataTableBody';
 
 export interface ILineEditableInPlaceDataTableProps<T> {
-  data: Array<T>;
   columns: Array<IColumnType<T>>;
+  data: Array<T>;
   extra?: IExtraLineEditableInPlaceDataTableProps<T>;
+  loading?: ReactElement;
   onSortChange?: (sortField?: keyof T, sortDirection?: SortDirectionEnum) => void;
-  // TODO Add no data message
-  // TODO Add loading state
 }
 
 const LineEditableInPlaceDataTable = <T,>(props: ILineEditableInPlaceDataTableProps<T>): ReactElement => {
-  const { data, columns, extra, onSortChange } = props;
+  const { data, columns, extra, loading, onSortChange } = props;
 
   const [currentData, setCurrentData] = useState<Array<T>>(data);
   const [sortField, setSortField] = useState<keyof T | undefined>();
@@ -35,9 +34,9 @@ const LineEditableInPlaceDataTable = <T,>(props: ILineEditableInPlaceDataTablePr
       : [
           ...columns.filter((column) => column.type !== ColumnType.BUTTON),
           {
-            title: 'Actions', // TODO manage translation
+            title: extra?.localization?.actionColumn || 'Actions',
             type: ColumnType.BUTTON,
-            moreActionsMessage: 'More actions', // TODO manage translation
+            moreActionsMessage: extra?.localization?.moreActionsMessage || 'More actions',
             buttons: [
               {
                 hidden: (row, rowIndex) => {
@@ -52,7 +51,7 @@ const LineEditableInPlaceDataTable = <T,>(props: ILineEditableInPlaceDataTablePr
                   return true;
                 },
                 icon: ['fal', 'edit'],
-                label: 'Edit', // TODO manage translation
+                label: extra?.localization?.editButton || 'Edit',
                 onClick: (row, rowIndex) => {
                   if (extra?.onRowEdit) {
                     extra.onRowEdit(row, rowIndex);
@@ -72,7 +71,7 @@ const LineEditableInPlaceDataTable = <T,>(props: ILineEditableInPlaceDataTablePr
                   return true;
                 },
                 icon: ['fal', 'trash-alt'],
-                label: 'Delete', // TODO manage translation
+                label: extra?.localization?.deleteButton || 'Delete',
                 onClick: (row, rowIndex) => {
                   if (extra?.onRowDelete) {
                     extra.onRowDelete(row, rowIndex);
@@ -82,13 +81,18 @@ const LineEditableInPlaceDataTable = <T,>(props: ILineEditableInPlaceDataTablePr
                   }
                   setCurrentData((prev) => [...prev.filter((_item, index) => index !== rowIndex)]);
                 },
+                popover: {
+                  message: extra?.localization?.deletePopoverMessage || 'Delete?',
+                  cancel: extra?.localization?.deletePopoverCancel || 'Cancel',
+                  confirm: extra?.localization?.deletePopoverConfirm || 'Confirm',
+                },
               },
               {
                 hidden: (_row, rowIndex) => {
                   return editedRowIndex !== rowIndex;
                 },
                 icon: ['fal', 'check'],
-                label: 'Submit', // TODO manage translation
+                label: extra?.localization?.submitButton || 'Submit',
                 onClick: (row, rowIndex) => {
                   if (extra?.onRowSubmit) {
                     extra.onRowSubmit(row, rowIndex);
@@ -106,7 +110,7 @@ const LineEditableInPlaceDataTable = <T,>(props: ILineEditableInPlaceDataTablePr
                   return editedRowIndex !== rowIndex;
                 },
                 icon: ['fal', 'times'],
-                label: 'Cancel', // TODO manage translation
+                label: extra?.localization?.cancelButton || 'Cancel',
                 onClick: (row, rowIndex) => {
                   if (extra?.onRowCancelEdit) {
                     extra.onRowCancelEdit(row, rowIndex);
@@ -128,7 +132,7 @@ const LineEditableInPlaceDataTable = <T,>(props: ILineEditableInPlaceDataTablePr
                   return true;
                 },
                 icon: ['fal', 'arrow-to-bottom'],
-                label: 'Download', // TODO manage translation
+                label: extra?.localization?.downloadButton || 'Download',
                 onClick: (row, rowIndex) => {
                   if (extra?.onRowDownload) {
                     extra.onRowDownload(row, rowIndex);
@@ -191,6 +195,7 @@ const LineEditableInPlaceDataTable = <T,>(props: ILineEditableInPlaceDataTablePr
           data={currentData}
           extra={{ ...extra, editedRowIndex }}
           handUpdateDataChange={handUpdateDataChange}
+          loading={loading}
         />
         <StaticDataTableFooter<T> columns={currentColumns} data={currentData} extra={extra} />
       </table>
@@ -198,7 +203,7 @@ const LineEditableInPlaceDataTable = <T,>(props: ILineEditableInPlaceDataTablePr
         <Button
           className='cui-table-new-line'
           color={ColorButtonEnum.PRIMARY}
-          label='Add Line' // TODO manage translation
+          label={extra?.localization?.addRow || 'Add row'}
           onClick={addNewLine}
           disabled={editedRowIndex !== undefined}
         />

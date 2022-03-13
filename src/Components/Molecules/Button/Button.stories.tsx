@@ -102,3 +102,23 @@ IconReversedWithItemList.args = {
   tooltip: 'Icon reversed',
   itemList,
 };
+
+export const Popover = Template.bind({});
+Popover.args = {
+  icon: ['fal', 'trash-alt'],
+  color: ColorButtonEnum.REVERSED,
+  tooltip: 'Delete',
+  popover: {
+    title: 'Delete?',
+    buttons: [
+      {
+        label: 'Cancel',
+        color: ColorButtonEnum.SECONDARY,
+      },
+      {
+        label: 'Confirm',
+        color: ColorButtonEnum.PRIMARY,
+      },
+    ],
+  },
+};

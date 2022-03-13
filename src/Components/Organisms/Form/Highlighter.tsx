@@ -29,6 +29,8 @@ const Highlighter = (props: PropsWithChildren<IHighlighterProps>): ReactElement 
               helperText: undefined,
               disabled: undefined,
               maxLength: undefined,
+              id: undefined,
+              name: undefined,
             })}
           </Row>
         );

@@ -1,13 +1,20 @@
 import React, { ReactElement } from 'react';
 import classnames from 'classnames';
 
-import { ColumnType, IColumnType, IExtraLineEditableInPlaceDataTableProps, SortDirectionEnum } from './types';
+import {
+  ColumnType,
+  IColumnType,
+  IExtraEditableDataTableProps,
+  IExtraLineEditableInPlaceDataTableProps,
+  IExtraStaticDataTableProps,
+  SortDirectionEnum,
+} from './types';
 import { MenuDirectionEnum, Tooltip } from '../../Atoms/Tooltip';
 import { Icon } from '../../Atoms';
 
 interface IStaticDataTableHeaderProps<T> {
   columns: Array<IColumnType<T>>;
-  extra?: IExtraLineEditableInPlaceDataTableProps<T>;
+  extra?: IExtraStaticDataTableProps<T> | IExtraLineEditableInPlaceDataTableProps<T> | IExtraEditableDataTableProps<T>;
   onSortChange: (newSortField: keyof T, newSortDirection?: SortDirectionEnum) => void;
   sortField?: keyof T;
   sortDirection?: SortDirectionEnum;
@@ -34,6 +41,7 @@ const StaticDataTableHeader = <T,>(props: IStaticDataTableHeaderProps<T>): React
 
   const isSelectable = extra?.onRowSelect;
   const isExtended = extra?.onRowSelect || extra?.computeTotal;
+  const isEditingRow = extra && 'editedRowIndex' in extra && extra?.editedRowIndex !== undefined;
 
   return (
     <thead>
@@ -51,7 +59,7 @@ const StaticDataTableHeader = <T,>(props: IStaticDataTableHeaderProps<T>): React
             <th key={`header-${index}`} style={{ width: column.width }}>
               <Tooltip
                 tooltip={
-                  column.sorter && !extra?.editedRowIndex ? 'Click to sort' : undefined // TODO Manage translation and the different states of filtering
+                  column.sorter && !isEditingRow ? extra?.localization?.sortMessage || 'Click to sort' : undefined
                 }
                 direction={MenuDirectionEnum.TOP}>
                 <div
@@ -71,7 +79,7 @@ const StaticDataTableHeader = <T,>(props: IStaticDataTableHeaderProps<T>): React
                     })}>
                     {column.title}
                   </span>
-                  {column.sorter && extra?.editedRowIndex === undefined && column.type !== ColumnType.BUTTON && (
+                  {column.sorter && !isEditingRow && column.type !== ColumnType.BUTTON && (
                     <span className='table--header-value--sorter'>
                       <Icon icon={['fas', iconName(column.dataIndex)]} />
                     </span>

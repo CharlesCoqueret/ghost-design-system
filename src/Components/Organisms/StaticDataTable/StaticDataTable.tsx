@@ -9,13 +9,12 @@ export interface IStaticDataTableProps<T> {
   data: Array<T>;
   columns: Array<IColumnType<T>>;
   extra?: IExtraStaticDataTableProps<T>;
+  loading?: ReactElement;
   onSortChange?: (sortField?: keyof T, sortDirection?: SortDirectionEnum) => void;
-  // TODO Add no data message
-  // TODO Add loading state
 }
 
 const StaticDataTable = <T,>(props: IStaticDataTableProps<T>): ReactElement => {
-  const { data, columns, extra, onSortChange } = props;
+  const { data, columns, extra, loading, onSortChange } = props;
 
   const [sortField, setSortField] = useState<keyof T | undefined>();
   const [sortDirection, setSortDirection] = useState<SortDirectionEnum | undefined>();
@@ -36,12 +35,12 @@ const StaticDataTable = <T,>(props: IStaticDataTableProps<T>): ReactElement => {
     <table className='cui-table'>
       <StaticDataTableHeader<T>
         columns={columns}
-        onSortChange={handleSortChange}
-        sortField={sortField}
-        sortDirection={sortDirection}
         extra={extra}
+        onSortChange={handleSortChange}
+        sortDirection={sortDirection}
+        sortField={sortField}
       />
-      <StaticDataTableBody<T> columns={columns} data={data} extra={extra} />
+      <StaticDataTableBody<T> columns={columns} data={data} extra={extra} loading={loading} />
       <StaticDataTableFooter<T> columns={columns} data={data} extra={extra} />
     </table>
   );

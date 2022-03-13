@@ -17,6 +17,7 @@ const Template: ComponentStory<typeof Popover> = (args: IPopoverProps) => {
   return (
     <div style={{ display: 'flex', justifyContent: 'space-around' }} ref={ref}>
       <Button
+        label='Click me to see the popover'
         icon={['fal', 'trash-alt']}
         onClick={() => {
           setOpen(true);
@@ -26,26 +27,31 @@ const Template: ComponentStory<typeof Popover> = (args: IPopoverProps) => {
       <Popover
         anchorRef={ref}
         open={open}
-        title='Delete?'
-        buttons={[
-          {
-            label: 'Cancel',
-            color: ColorButtonEnum.SECONDARY,
-            onClick: () => {
-              console.log('cancelled');
+        onClose={() => {
+          console.log('Cancelled because of click outside');
+          setOpen(false);
+        }}>
+        <div className='popover-title'>Delete?</div>
+
+        <div className='popover-buttons'>
+          <Button
+            label='Cancel'
+            color={ColorButtonEnum.SECONDARY}
+            onClick={() => {
+              console.log('Cancelled');
               setOpen(false);
-            },
-          },
-          {
-            label: 'Confirm',
-            color: ColorButtonEnum.PRIMARY,
-            onClick: () => {
-              console.log('confirmed');
+            }}
+          />
+          <Button
+            label='Confirm'
+            color={ColorButtonEnum.PRIMARY}
+            onClick={() => {
+              console.log('Confirmed');
               setOpen(false);
-            },
-          },
-        ]}
-      />
+            }}
+          />
+        </div>
+      </Popover>
     </div>
   );
 };

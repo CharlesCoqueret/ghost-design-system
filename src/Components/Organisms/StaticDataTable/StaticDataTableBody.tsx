@@ -9,10 +9,11 @@ interface IStaticDataTableBodyProps<T> {
   columns: Array<IColumnType<T>>;
   data: Array<T>;
   extra?: IExtraLineEditableInPlaceDataTableProps<T>;
+  loading?: ReactElement;
 }
 
 const StaticDataTableBody = <T,>(props: IStaticDataTableBodyProps<T>): ReactElement => {
-  const { columns, data, extra } = props;
+  const { columns, data, extra, loading } = props;
 
   const [selectedRows, setSelectedRows] = useState<Record<number, boolean>>({});
 
@@ -78,6 +79,16 @@ const StaticDataTableBody = <T,>(props: IStaticDataTableBodyProps<T>): ReactElem
           </tr>
         );
       })}
+      {(!data || data?.length === 0) && (
+        <tr className='no-data'>
+          <td colSpan={columns.length + (isSelectable ? 1 : 0)}>{extra?.localization?.noData || 'No data'}</td>
+        </tr>
+      )}
+      {loading && (
+        <tr className='no-data'>
+          <td colSpan={columns.length + (isSelectable ? 1 : 0)}>{loading}</td>
+        </tr>
+      )}
     </tbody>
   );
 };
