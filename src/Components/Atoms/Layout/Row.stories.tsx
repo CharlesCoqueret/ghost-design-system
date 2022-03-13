@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import Row, { IRowProps } from './Row';
 import { AmountField, DatePickerField, TextAreaField, YearPickerField } from '../../Molecules';
+import Col from './Col';
 
 const initialData = {
   amount: 100000,
@@ -26,13 +27,41 @@ export default {
 } as ComponentMeta<typeof Row>;
 
 const Template: ComponentStory<typeof Row> = (args: IRowProps) => {
+  const [help, setHelp] = useState(false);
   return (
-    <Row {...args}>
-      <AmountField inputValue={initialData.amount} label='Amount' suffix='$' name='amount' readOnly />
-      <DatePickerField inputValue={initialData.date} label='Date' name='date' readOnly />
-      <TextAreaField inputValue={initialData.textarea} label='Textarea' name='textarea' readOnly />
-      <YearPickerField inputValue={initialData.year} label='Year' name='year' readOnly />
-    </Row>
+    <>
+      <Col style={help && { border: '2px dotted green' }}>
+        <Row {...args} style={help && { border: '3px dotted red' }}>
+          <AmountField inputValue={initialData.amount} label='Amount' suffix='$' name='amount' readOnly />
+        </Row>
+        <Row {...args} style={help && { border: '3px dotted red' }}>
+          <DatePickerField inputValue={initialData.date} label='Date' name='date' readOnly />
+        </Row>
+        <Row {...args} style={help && { border: '3px dotted red' }}>
+          <TextAreaField inputValue={initialData.textarea} label='Textarea' name='textarea' readOnly />
+        </Row>
+        <Row {...args} style={help && { border: '3px dotted red' }}>
+          <YearPickerField inputValue={initialData.year} label='Year' name='year' readOnly />
+        </Row>
+      </Col>
+
+      <label>
+        <input
+          type='checkbox'
+          checked={help}
+          onChange={() => {
+            setHelp((prev) => !prev);
+          }}
+        />
+        Enable Helper
+      </label>
+      {help && (
+        <>
+          <p>Col in green</p>
+          <p>Row in red</p>
+        </>
+      )}
+    </>
   );
 };
 
