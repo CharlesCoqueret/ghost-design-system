@@ -20,3 +20,36 @@
     overflow-y: hidden;
   }
 }
+
+.collapse-container {
+  padding: 20px;
+
+  .collapse-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: $charcoal;
+    cursor: pointer;
+    padding: 10px 0px;
+    font-size: 18px;
+    font-weight: 600;
+
+    .icon {
+      transform: rotate(-90deg);
+      transition: transform 0.5s linear;
+      &.open {
+        transform: rotate(90deg);
+      }
+    }
+  }
+
+  .collapse-body {
+    position: inherit;
+    overflow: hidden;
+  }
+
+  .collapse-footer {
+    padding: 10px 0px;
+    border-bottom: 1px solid $silver;
+  }
+}
