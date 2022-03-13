@@ -86,7 +86,7 @@ const MultiSelectInput = (props: IMultiSelectInputProps): ReactElement => {
     readOnly,
   } = props;
 
-  if (readOnly)
+  if (readOnly) {
     return (
       <div
         className={classnames(
@@ -105,6 +105,7 @@ const MultiSelectInput = (props: IMultiSelectInputProps): ReactElement => {
           .join(', ') || '-'}
       </div>
     );
+  }
 
   return (
     <div

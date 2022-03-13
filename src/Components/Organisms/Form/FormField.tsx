@@ -119,12 +119,7 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
       return (
         <Highlighter
           highlight={previousData !== undefined}
-          oldData={
-            previousData &&
-            field.options.filter((option) =>
-              (previousData[field.dataIndex] as unknown as Array<string> | undefined)?.includes(option.value),
-            )
-          }
+          oldData={previousData && (previousData[field.dataIndex] as unknown as Array<string> | undefined)}
           shouldHighlight={shouldHighlight}>
           <MultiSelectField
             {...field}
