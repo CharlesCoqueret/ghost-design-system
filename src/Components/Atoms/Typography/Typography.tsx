@@ -15,7 +15,7 @@ const Title = (props: PropsWithChildren<ITitleProps>): ReactElement => {
 
   const innerProps = { className: classNames('typography', { ellipsis: ellipsis }), style: style };
 
-  const HeaderTag = `h${level || 3}`;
+  const HeaderTag = `h${level || 3}` as keyof JSX.IntrinsicElements;
 
   return <HeaderTag {...innerProps}>{children}</HeaderTag>;
 };
