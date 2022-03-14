@@ -339,6 +339,17 @@ describe('EditableDataTable Component', () => {
       }
     });
 
+    const confirmButton = await screen.findAllByTestId('confirm');
+    expect(confirmButton.length).toBeGreaterThan(0);
+
+    expect(container).toMatchSnapshot();
+
+    act(() => {
+      if (confirmButton.length > 0) {
+        userEvent.click(confirmButton[0]);
+      }
+    });
+
     expect(container).toMatchSnapshot();
     expect(onRowDeleteMock).toBeCalledWith(initialData[0], 0);
   });

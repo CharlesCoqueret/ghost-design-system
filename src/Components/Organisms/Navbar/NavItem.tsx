@@ -59,7 +59,7 @@ const NavItem = (props: INavItemProps): ReactElement => {
             {counter}
           </Badge>
         )}
-        {hasMenu && label && <Icon icon={['fas', 'caret-down']} size='1x' className='nav-bar-menu-caret' />}
+        {hasMenu && label && <Icon icon={['fas', 'caret-down']} size='lg' className='nav-bar-menu-caret' />}
       </div>
       {hasMenu ? (
         <Portal>

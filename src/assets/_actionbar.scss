@@ -1,0 +1,82 @@
+.action-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 20px;
+  padding-right: 20px;
+  height: 50px;
+
+  &.primary {
+    box-shadow: 0 2px 10px 0 rgb(51 51 51 / 20%);
+  }
+
+  .left-side {
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+
+    cursor: default;
+    // border: 1px dotted green;
+    .align-edit {
+      border: 1px solid transparent;
+      margin-left: 2px;
+      margin-right: 2px;
+      overflow: hidden;
+      // text-overflow: ellipsis;
+    }
+    .clickable {
+      cursor: pointer;
+    }
+    .title-edit {
+      display: flex;
+      margin: auto 0px;
+      text-transform: uppercase;
+      font-size: 22px;
+      white-space: nowrap;
+      overflow: hidden;
+      border: 1px solid $pebble;
+      outline: none;
+      box-shadow: none;
+      &:hover,
+      &:focus {
+        border: 1px solid $primary;
+        outline: none;
+      }
+    }
+  }
+
+  .right-side {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    // border: 1px dotted red;
+
+    .actions {
+      display: flex;
+      & > *:first-child {
+        margin: auto 5px auto 0px;
+      }
+      & > * {
+        margin: auto 5px;
+      }
+      & > *:last-child {
+        margin: auto 10px auto 5px;
+      }
+    }
+
+    .separator {
+      display: flex;
+      margin: auto 5px;
+    }
+
+    .basic-actions {
+      display: flex;
+      & > * {
+        margin: auto 5px;
+      }
+      & > *:last-child {
+        margin: auto 0px auto 3px;
+      }
+    }
+  }
+}

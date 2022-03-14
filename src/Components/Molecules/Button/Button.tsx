@@ -96,8 +96,8 @@ const Button = (props: IButtonProps): ReactElement => {
           data-testid={dataTestId}>
           {(icon !== undefined || loading !== false) && (
             <div key='icon' className='button-icon-container'>
-              {loading && <Icon icon={['fal', 'spinner']} spin size='1x' className='button-icon' />}
-              {!loading && icon && <Icon icon={icon} size='1x' className='button-icon' />}
+              {loading && <Icon icon={['fal', 'spinner']} spin size='lg' className='button-icon' />}
+              {!loading && icon && <Icon icon={icon} size='lg' className='button-icon' />}
             </div>
           )}
 
@@ -108,8 +108,8 @@ const Button = (props: IButtonProps): ReactElement => {
               </div>
               {hasMenu ? (
                 <div key='control' className='button-menu-control-container'>
-                  <Icon icon={['fal', 'pipe']} size='1x' className='button-icon' />
-                  <Icon icon={['fas', 'caret-down']} size='1x' className='button-icon' />
+                  <Icon icon={['fal', 'pipe']} size='lg' className='button-icon' />
+                  <Icon icon={['fas', 'caret-down']} size='lg' className='button-icon' />
                 </div>
               ) : (
                 <></>

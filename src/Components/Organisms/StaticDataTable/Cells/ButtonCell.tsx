@@ -60,10 +60,12 @@ const ButtonCell = <T,>(props: ICellProps<T, IColumnButton<T>>): ReactElement =>
                           {
                             label: button.popover.cancel,
                             color: ColorButtonEnum.SECONDARY,
+                            dataTestId: 'cancel',
                           },
                           {
                             label: button.popover.confirm,
                             color: ColorButtonEnum.PRIMARY,
+                            dataTestId: 'confirm',
                             onClick: () => {
                               if (button.onClick) {
                                 button.onClick(row, rowIndex);

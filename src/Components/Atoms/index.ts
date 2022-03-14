@@ -13,4 +13,4 @@ export * from './SwitchInput';
 export * from './TextAreaInput';
 export * from './TextInput';
 export * from './Tooltip';
-// export * from './Typography';
+export * from './Typography';

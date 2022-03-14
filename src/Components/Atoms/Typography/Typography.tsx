@@ -2,24 +2,33 @@ import classNames from 'classnames';
 import React, { CSSProperties, PropsWithChildren, ReactElement } from 'react';
 
 export interface ITitleProps {
+  /** custom classname */
+  className?: string;
   /** Ellipse text when it overflows, or wrap (optional, default: false) */
   ellipsis?: boolean;
   /** Header level */
   level: 1 | 2 | 3;
   /** Additional style (optional, default: undefined) */
   style?: CSSProperties;
+  /** Click handler (options, default: undefined) */
+  onClick?: () => void;
 }
 
 const Title = (props: PropsWithChildren<ITitleProps>): ReactElement => {
-  const { children, ellipsis, level, style } = props;
+  const { children, className, ellipsis, level, onClick, style } = props;
 
-  const innerProps = { className: classNames('typography', { ellipsis: ellipsis }), style: style };
+  const innerProps = { className: classNames('typography', className, { ellipsis: ellipsis }), style: style };
 
   const HeaderTag = `h${level || 3}` as keyof JSX.IntrinsicElements;
 
-  return <HeaderTag {...innerProps}>{children}</HeaderTag>;
+  return (
+    <HeaderTag {...innerProps} onClick={onClick}>
+      {children}
+    </HeaderTag>
+  );
 };
 Title.defaultProps = {
+  className: undefined,
   ellipsis: false,
   style: undefined,
 };
@@ -36,6 +45,8 @@ export enum TextTypeEnum {
 }
 
 export interface ITextProps {
+  /** custom classname */
+  className?: string;
   /** Ellipse text when it overflows, or wrap (optional, default: false) */
   ellipsis?: boolean;
   /** Click handler (options, default: undefined) */
@@ -47,13 +58,13 @@ export interface ITextProps {
 }
 
 const Text = (props: PropsWithChildren<ITextProps>): ReactElement => {
-  const { children, ellipsis, onClick, style, type } = props;
+  const { children, className, ellipsis, onClick, style, type } = props;
 
   const isLink = onClick !== undefined;
 
   return (
     <span
-      className={classNames('typography', {
+      className={classNames('typography', className, {
         ellipsis: ellipsis,
         error: type === TextTypeEnum.ERROR || (Array.isArray(type) && type?.includes(TextTypeEnum.PLACEHOLDER)),
         disabled: type === TextTypeEnum.DISABLED || (Array.isArray(type) && type?.includes(TextTypeEnum.DISABLED)),

@@ -1832,6 +1832,60 @@ Object {
       </div>
       <div>
         <div
+          class="szh-menu-container"
+        >
+          <ul
+            aria-label="Menu"
+            class="szh-menu szh-menu--state-closed szh-menu--dir-top"
+            role="menu"
+            style="left: 0px; top: 0px;"
+            tabindex="-1"
+          >
+            <div
+              class="szh-menu__arrow szh-menu__arrow--dir-top"
+            />
+            <div
+              class="popover-container"
+            >
+              <div
+                class="popover-title"
+              >
+                Delete?
+              </div>
+              <div
+                class="popover-buttons"
+              >
+                <button
+                  class="button-content"
+                  color="secondary"
+                  data-testid="cancel"
+                  type="button"
+                >
+                  <div
+                    class="button-label-container"
+                  >
+                    Cancel
+                  </div>
+                </button>
+                <button
+                  class="button-content"
+                  color="primary"
+                  data-testid="confirm"
+                  type="button"
+                >
+                  <div
+                    class="button-label-container"
+                  >
+                    Confirm
+                  </div>
+                </button>
+              </div>
+            </div>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <div
           class="tooltip bottom"
           style="left: 0px; top: 0px; opacity: 1; max-width: 256px;"
         >
@@ -1858,6 +1912,60 @@ Object {
           >
             Delete
           </div>
+        </div>
+      </div>
+      <div>
+        <div
+          class="szh-menu-container"
+        >
+          <ul
+            aria-label="Menu"
+            class="szh-menu szh-menu--state-closed szh-menu--dir-top"
+            role="menu"
+            style="left: 0px; top: 0px;"
+            tabindex="-1"
+          >
+            <div
+              class="szh-menu__arrow szh-menu__arrow--dir-top"
+            />
+            <div
+              class="popover-container"
+            >
+              <div
+                class="popover-title"
+              >
+                Delete?
+              </div>
+              <div
+                class="popover-buttons"
+              >
+                <button
+                  class="button-content"
+                  color="secondary"
+                  data-testid="cancel"
+                  type="button"
+                >
+                  <div
+                    class="button-label-container"
+                  >
+                    Cancel
+                  </div>
+                </button>
+                <button
+                  class="button-content"
+                  color="primary"
+                  data-testid="confirm"
+                  type="button"
+                >
+                  <div
+                    class="button-label-container"
+                  >
+                    Confirm
+                  </div>
+                </button>
+              </div>
+            </div>
+          </ul>
         </div>
       </div>
       <div>
@@ -2673,6 +2781,1498 @@ Object {
               class="table--cell--code"
               data-testid="id-0"
             >
+              id
+            </td>
+            <td
+              class="ellipsis"
+            >
+              <div
+                class="field-group"
+              >
+                <input
+                  class="field input-text-field"
+                  data-testid="name-0"
+                  id="name"
+                  name="name"
+                  type="text"
+                  value="name"
+                />
+              </div>
+            </td>
+            <td
+              class=""
+            >
+              <div
+                class="field-group"
+              >
+                <div
+                  class="select-container input-select-field field input-select-field"
+                >
+                  <div
+                    class=" css-1959ul7-container"
+                  >
+                    <span
+                      class="css-1f43avz-a11yText-A11yText"
+                      id="react-select-9-live-region"
+                    />
+                    <span
+                      aria-atomic="false"
+                      aria-live="polite"
+                      aria-relevant="additions text"
+                      class="css-1f43avz-a11yText-A11yText"
+                    />
+                    <div
+                      class=" css-lg4uvg-control"
+                    >
+                      <div
+                        class=" css-16jl9sr-ValueContainer"
+                      >
+                        <div
+                          class=" css-qc6sy-singleValue"
+                        >
+                          Status
+                        </div>
+                        <div
+                          class=" css-1j77j9s-Input"
+                          data-value=""
+                        >
+                          <input
+                            aria-autocomplete="list"
+                            aria-controls="react-select-9-listbox"
+                            aria-expanded="false"
+                            aria-haspopup="true"
+                            aria-owns="react-select-9-listbox"
+                            autocapitalize="none"
+                            autocomplete="off"
+                            autocorrect="off"
+                            class=""
+                            id="react-select-9-input"
+                            role="combobox"
+                            spellcheck="false"
+                            style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+                            tabindex="0"
+                            type="text"
+                            value=""
+                          />
+                        </div>
+                      </div>
+                      <div
+                        class=" css-1hb7zxy-IndicatorsContainer"
+                      >
+                        <span
+                          class=" css-1okebmr-indicatorSeparator"
+                        />
+                        <div
+                          aria-hidden="true"
+                          class=" css-1pxvqqx-indicatorContainer"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="css-tj5bde-Svg"
+                            focusable="false"
+                            height="20"
+                            viewBox="0 0 20 20"
+                            width="20"
+                          >
+                            <path
+                              d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                    <input
+                      name="Badge"
+                      type="hidden"
+                      value="status"
+                    />
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td
+              class=""
+            >
+              <div
+                class="field-group"
+              >
+                <input
+                  class="amount-field"
+                  inputmode="numeric"
+                  name="price"
+                  type="text"
+                  value="-100,000 €"
+                />
+              </div>
+            </td>
+            <td
+              class=""
+            >
+              <div
+                class="field-group"
+              >
+                <input
+                  class="amount-field"
+                  inputmode="numeric"
+                  name="parts"
+                  type="text"
+                  value="-10 %"
+                />
+              </div>
+            </td>
+            <td
+              class=""
+            >
+              <div
+                class="field-group"
+              >
+                <div
+                  class="field input-date-picker-field"
+                >
+                  <div
+                    class="react-datepicker-wrapper"
+                  >
+                    <div
+                      class="react-datepicker__input-container"
+                    >
+                      <input
+                        autocomplete="off"
+                        class="input-date-picker-input"
+                        name="startDate"
+                        placeholder="MMM DD, YYYY"
+                        type="text"
+                        value="Mar 24, 2021"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td
+              class=""
+            >
+              <div
+                class="table--cell--value--button"
+              >
+                <span>
+                  <button
+                    class="button-content"
+                    color="reversed"
+                    data-testid="delete"
+                    type="button"
+                  >
+                    <div
+                      class="button-icon-container"
+                    >
+                      <i
+                        class="button-icon icon"
+                        icon="fal,trash-alt"
+                      />
+                    </div>
+                  </button>
+                </span>
+                <span>
+                  <button
+                    class="button-content"
+                    color="reversed"
+                    data-testid="download"
+                    type="button"
+                  >
+                    <div
+                      class="button-icon-container"
+                    >
+                      <i
+                        class="button-icon icon"
+                        icon="fal,arrow-to-bottom"
+                      />
+                    </div>
+                  </button>
+                </span>
+              </div>
+            </td>
+          </tr>
+          <tr
+            class=""
+          >
+            <td
+              class="table--cell--code"
+              data-testid="id-1"
+            >
+              test
+            </td>
+            <td
+              class="ellipsis"
+            >
+              <div
+                class="field-group"
+              >
+                <input
+                  class="field input-text-field"
+                  data-testid="name-1"
+                  id="name"
+                  name="name"
+                  type="text"
+                  value=""
+                />
+              </div>
+            </td>
+            <td
+              class=""
+            >
+              <div
+                class="field-group"
+              >
+                <div
+                  class="select-container input-select-field field input-select-field"
+                >
+                  <div
+                    class=" css-1959ul7-container"
+                  >
+                    <span
+                      class="css-1f43avz-a11yText-A11yText"
+                      id="react-select-10-live-region"
+                    />
+                    <span
+                      aria-atomic="false"
+                      aria-live="polite"
+                      aria-relevant="additions text"
+                      class="css-1f43avz-a11yText-A11yText"
+                    />
+                    <div
+                      class=" css-lg4uvg-control"
+                    >
+                      <div
+                        class=" css-16jl9sr-ValueContainer"
+                      >
+                        <div
+                          class=" css-14el2xx-placeholder"
+                          id="react-select-10-placeholder"
+                        >
+                          Select...
+                        </div>
+                        <div
+                          class=" css-1j77j9s-Input"
+                          data-value=""
+                        >
+                          <input
+                            aria-autocomplete="list"
+                            aria-controls="react-select-10-listbox"
+                            aria-describedby="react-select-10-placeholder"
+                            aria-expanded="false"
+                            aria-haspopup="true"
+                            aria-owns="react-select-10-listbox"
+                            autocapitalize="none"
+                            autocomplete="off"
+                            autocorrect="off"
+                            class=""
+                            id="react-select-10-input"
+                            role="combobox"
+                            spellcheck="false"
+                            style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+                            tabindex="0"
+                            type="text"
+                            value=""
+                          />
+                        </div>
+                      </div>
+                      <div
+                        class=" css-1hb7zxy-IndicatorsContainer"
+                      >
+                        <span
+                          class=" css-1okebmr-indicatorSeparator"
+                        />
+                        <div
+                          aria-hidden="true"
+                          class=" css-1pxvqqx-indicatorContainer"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="css-tj5bde-Svg"
+                            focusable="false"
+                            height="20"
+                            viewBox="0 0 20 20"
+                            width="20"
+                          >
+                            <path
+                              d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                    <input
+                      name="Badge"
+                      type="hidden"
+                      value=""
+                    />
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td
+              class=""
+            >
+              <div
+                class="field-group"
+              >
+                <input
+                  class="amount-field"
+                  inputmode="numeric"
+                  name="price"
+                  type="text"
+                  value=" €"
+                />
+              </div>
+            </td>
+            <td
+              class=""
+            >
+              <div
+                class="field-group"
+              >
+                <input
+                  class="amount-field"
+                  inputmode="numeric"
+                  name="parts"
+                  type="text"
+                  value=" %"
+                />
+              </div>
+            </td>
+            <td
+              class=""
+            >
+              <div
+                class="field-group"
+              >
+                <div
+                  class="field input-date-picker-field"
+                >
+                  <div
+                    class="react-datepicker-wrapper"
+                  >
+                    <div
+                      class="react-datepicker__input-container"
+                    >
+                      <input
+                        autocomplete="off"
+                        class="input-date-picker-input"
+                        name="startDate"
+                        placeholder="MMM DD, YYYY"
+                        type="text"
+                        value=""
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td
+              class=""
+            >
+              <div
+                class="table--cell--value--button"
+              >
+                <span>
+                  <button
+                    class="button-content"
+                    color="reversed"
+                    data-testid="delete"
+                    type="button"
+                  >
+                    <div
+                      class="button-icon-container"
+                    >
+                      <i
+                        class="button-icon icon"
+                        icon="fal,trash-alt"
+                      />
+                    </div>
+                  </button>
+                </span>
+                <span>
+                  <button
+                    class="button-content"
+                    color="reversed"
+                    data-testid="download"
+                    type="button"
+                  >
+                    <div
+                      class="button-icon-container"
+                    >
+                      <i
+                        class="button-icon icon"
+                        icon="fal,arrow-to-bottom"
+                      />
+                    </div>
+                  </button>
+                </span>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div
+      id="root-portal-id"
+    >
+      <div>
+        <div
+          class="tooltip top"
+          style="left: -99999px; top: -99999px; opacity: 0;"
+        >
+          <div
+            class="tooltip-arrow"
+          />
+          <div
+            class="tooltip-label"
+          >
+            Click to sort
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          class="tooltip top"
+          style="left: -99999px; top: -99999px; opacity: 0;"
+        >
+          <div
+            class="tooltip-arrow"
+          />
+          <div
+            class="tooltip-label"
+          >
+            Click to sort
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          class="tooltip top"
+          style="left: -99999px; top: -99999px; opacity: 0;"
+        >
+          <div
+            class="tooltip-arrow"
+          />
+          <div
+            class="tooltip-label"
+          >
+            Click to sort
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          class="tooltip top"
+          style="left: -99999px; top: -99999px; opacity: 0;"
+        >
+          <div
+            class="tooltip-arrow"
+          />
+          <div
+            class="tooltip-label"
+          >
+            Click to sort
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          class="tooltip top"
+          style="left: -99999px; top: -99999px; opacity: 0;"
+        >
+          <div
+            class="tooltip-arrow"
+          />
+          <div
+            class="tooltip-label"
+          >
+            Click to sort
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          class="tooltip top"
+          style="left: -99999px; top: -99999px; opacity: 0;"
+        >
+          <div
+            class="tooltip-arrow"
+          />
+          <div
+            class="tooltip-label"
+          >
+            Click to sort
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          class="tooltip bottom"
+          style="left: 0px; top: 0px; opacity: 1; max-width: 256px;"
+        >
+          <div
+            class="tooltip-arrow"
+          />
+          <div
+            class="tooltip-label"
+          >
+            Delete
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          class="szh-menu-container"
+        >
+          <ul
+            aria-label="Menu"
+            class="szh-menu szh-menu--state-open szh-menu--dir-top"
+            role="menu"
+            style="left: 0px; top: 0px;"
+            tabindex="-1"
+          >
+            <div
+              class="szh-menu__arrow szh-menu__arrow--dir-top"
+              style="left: 0px;"
+            />
+            <div
+              class="popover-container"
+            >
+              <div
+                class="popover-title"
+              >
+                Delete?
+              </div>
+              <div
+                class="popover-buttons"
+              >
+                <button
+                  class="button-content"
+                  color="secondary"
+                  data-testid="cancel"
+                  type="button"
+                >
+                  <div
+                    class="button-label-container"
+                  >
+                    Cancel
+                  </div>
+                </button>
+                <button
+                  class="button-content"
+                  color="primary"
+                  data-testid="confirm"
+                  type="button"
+                >
+                  <div
+                    class="button-label-container"
+                  >
+                    Confirm
+                  </div>
+                </button>
+              </div>
+            </div>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <div
+          class="tooltip bottom"
+          style="left: 0px; top: 0px; opacity: 1; max-width: 256px;"
+        >
+          <div
+            class="tooltip-arrow"
+          />
+          <div
+            class="tooltip-label"
+          >
+            Download
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          class="tooltip bottom"
+          style="left: -99999px; top: -99999px; opacity: 0;"
+        >
+          <div
+            class="tooltip-arrow"
+          />
+          <div
+            class="tooltip-label"
+          >
+            Delete
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          class="szh-menu-container"
+        >
+          <ul
+            aria-label="Menu"
+            class="szh-menu szh-menu--state-closed szh-menu--dir-top"
+            role="menu"
+            style="left: 0px; top: 0px;"
+            tabindex="-1"
+          >
+            <div
+              class="szh-menu__arrow szh-menu__arrow--dir-top"
+            />
+            <div
+              class="popover-container"
+            >
+              <div
+                class="popover-title"
+              >
+                Delete?
+              </div>
+              <div
+                class="popover-buttons"
+              >
+                <button
+                  class="button-content"
+                  color="secondary"
+                  data-testid="cancel"
+                  type="button"
+                >
+                  <div
+                    class="button-label-container"
+                  >
+                    Cancel
+                  </div>
+                </button>
+                <button
+                  class="button-content"
+                  color="primary"
+                  data-testid="confirm"
+                  type="button"
+                >
+                  <div
+                    class="button-label-container"
+                  >
+                    Confirm
+                  </div>
+                </button>
+              </div>
+            </div>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <div
+          class="tooltip bottom"
+          style="left: -99999px; top: -99999px; opacity: 0;"
+        >
+          <div
+            class="tooltip-arrow"
+          />
+          <div
+            class="tooltip-label"
+          >
+            Download
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <table
+      class="cui-table"
+    >
+      <thead>
+        <tr>
+          <th>
+            <span>
+              <div
+                class="table--header-value table--header-value--sortable"
+              >
+                <span
+                  class="table--header-value--title center"
+                >
+                  Code
+                </span>
+                <span
+                  class="table--header-value--sorter"
+                >
+                  <i
+                    class="icon"
+                    icon="fas,sort"
+                  />
+                </span>
+              </div>
+            </span>
+          </th>
+          <th>
+            <span>
+              <div
+                class="table--header-value table--header-value--sortable"
+              >
+                <span
+                  class="table--header-value--title left"
+                >
+                  Text
+                </span>
+                <span
+                  class="table--header-value--sorter"
+                >
+                  <i
+                    class="icon"
+                    icon="fas,sort"
+                  />
+                </span>
+              </div>
+            </span>
+          </th>
+          <th>
+            <span>
+              <div
+                class="table--header-value table--header-value--sortable"
+              >
+                <span
+                  class="table--header-value--title left"
+                >
+                  Badge
+                </span>
+                <span
+                  class="table--header-value--sorter"
+                >
+                  <i
+                    class="icon"
+                    icon="fas,sort"
+                  />
+                </span>
+              </div>
+            </span>
+          </th>
+          <th>
+            <span>
+              <div
+                class="table--header-value table--header-value--sortable"
+              >
+                <span
+                  class="table--header-value--title right"
+                >
+                  Amount
+                </span>
+                <span
+                  class="table--header-value--sorter"
+                >
+                  <i
+                    class="icon"
+                    icon="fas,sort"
+                  />
+                </span>
+              </div>
+            </span>
+          </th>
+          <th>
+            <span>
+              <div
+                class="table--header-value table--header-value--sortable"
+              >
+                <span
+                  class="table--header-value--title right"
+                >
+                  Percentage
+                </span>
+                <span
+                  class="table--header-value--sorter"
+                >
+                  <i
+                    class="icon"
+                    icon="fas,sort"
+                  />
+                </span>
+              </div>
+            </span>
+          </th>
+          <th>
+            <span>
+              <div
+                class="table--header-value table--header-value--sortable"
+              >
+                <span
+                  class="table--header-value--title center"
+                >
+                  Date
+                </span>
+                <span
+                  class="table--header-value--sorter"
+                >
+                  <i
+                    class="icon"
+                    icon="fas,sort"
+                  />
+                </span>
+              </div>
+            </span>
+          </th>
+          <th>
+            <div
+              class="table--header-value"
+            >
+              <span
+                class="table--header-value--title center"
+              >
+                Actions
+              </span>
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          class=""
+        >
+          <td
+            class="table--cell--code"
+            data-testid="id-0"
+          >
+            id
+          </td>
+          <td
+            class="ellipsis"
+          >
+            <div
+              class="field-group"
+            >
+              <input
+                class="field input-text-field"
+                data-testid="name-0"
+                id="name"
+                name="name"
+                type="text"
+                value="name"
+              />
+            </div>
+          </td>
+          <td
+            class=""
+          >
+            <div
+              class="field-group"
+            >
+              <div
+                class="select-container input-select-field field input-select-field"
+              >
+                <div
+                  class=" css-1959ul7-container"
+                >
+                  <span
+                    class="css-1f43avz-a11yText-A11yText"
+                    id="react-select-9-live-region"
+                  />
+                  <span
+                    aria-atomic="false"
+                    aria-live="polite"
+                    aria-relevant="additions text"
+                    class="css-1f43avz-a11yText-A11yText"
+                  />
+                  <div
+                    class=" css-lg4uvg-control"
+                  >
+                    <div
+                      class=" css-16jl9sr-ValueContainer"
+                    >
+                      <div
+                        class=" css-qc6sy-singleValue"
+                      >
+                        Status
+                      </div>
+                      <div
+                        class=" css-1j77j9s-Input"
+                        data-value=""
+                      >
+                        <input
+                          aria-autocomplete="list"
+                          aria-controls="react-select-9-listbox"
+                          aria-expanded="false"
+                          aria-haspopup="true"
+                          aria-owns="react-select-9-listbox"
+                          autocapitalize="none"
+                          autocomplete="off"
+                          autocorrect="off"
+                          class=""
+                          id="react-select-9-input"
+                          role="combobox"
+                          spellcheck="false"
+                          style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+                          tabindex="0"
+                          type="text"
+                          value=""
+                        />
+                      </div>
+                    </div>
+                    <div
+                      class=" css-1hb7zxy-IndicatorsContainer"
+                    >
+                      <span
+                        class=" css-1okebmr-indicatorSeparator"
+                      />
+                      <div
+                        aria-hidden="true"
+                        class=" css-1pxvqqx-indicatorContainer"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="css-tj5bde-Svg"
+                          focusable="false"
+                          height="20"
+                          viewBox="0 0 20 20"
+                          width="20"
+                        >
+                          <path
+                            d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                  <input
+                    name="Badge"
+                    type="hidden"
+                    value="status"
+                  />
+                </div>
+              </div>
+            </div>
+          </td>
+          <td
+            class=""
+          >
+            <div
+              class="field-group"
+            >
+              <input
+                class="amount-field"
+                inputmode="numeric"
+                name="price"
+                type="text"
+                value="-100,000 €"
+              />
+            </div>
+          </td>
+          <td
+            class=""
+          >
+            <div
+              class="field-group"
+            >
+              <input
+                class="amount-field"
+                inputmode="numeric"
+                name="parts"
+                type="text"
+                value="-10 %"
+              />
+            </div>
+          </td>
+          <td
+            class=""
+          >
+            <div
+              class="field-group"
+            >
+              <div
+                class="field input-date-picker-field"
+              >
+                <div
+                  class="react-datepicker-wrapper"
+                >
+                  <div
+                    class="react-datepicker__input-container"
+                  >
+                    <input
+                      autocomplete="off"
+                      class="input-date-picker-input"
+                      name="startDate"
+                      placeholder="MMM DD, YYYY"
+                      type="text"
+                      value="Mar 24, 2021"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td
+            class=""
+          >
+            <div
+              class="table--cell--value--button"
+            >
+              <span>
+                <button
+                  class="button-content"
+                  color="reversed"
+                  data-testid="delete"
+                  type="button"
+                >
+                  <div
+                    class="button-icon-container"
+                  >
+                    <i
+                      class="button-icon icon"
+                      icon="fal,trash-alt"
+                    />
+                  </div>
+                </button>
+              </span>
+              <span>
+                <button
+                  class="button-content"
+                  color="reversed"
+                  data-testid="download"
+                  type="button"
+                >
+                  <div
+                    class="button-icon-container"
+                  >
+                    <i
+                      class="button-icon icon"
+                      icon="fal,arrow-to-bottom"
+                    />
+                  </div>
+                </button>
+              </span>
+            </div>
+          </td>
+        </tr>
+        <tr
+          class=""
+        >
+          <td
+            class="table--cell--code"
+            data-testid="id-1"
+          >
+            test
+          </td>
+          <td
+            class="ellipsis"
+          >
+            <div
+              class="field-group"
+            >
+              <input
+                class="field input-text-field"
+                data-testid="name-1"
+                id="name"
+                name="name"
+                type="text"
+                value=""
+              />
+            </div>
+          </td>
+          <td
+            class=""
+          >
+            <div
+              class="field-group"
+            >
+              <div
+                class="select-container input-select-field field input-select-field"
+              >
+                <div
+                  class=" css-1959ul7-container"
+                >
+                  <span
+                    class="css-1f43avz-a11yText-A11yText"
+                    id="react-select-10-live-region"
+                  />
+                  <span
+                    aria-atomic="false"
+                    aria-live="polite"
+                    aria-relevant="additions text"
+                    class="css-1f43avz-a11yText-A11yText"
+                  />
+                  <div
+                    class=" css-lg4uvg-control"
+                  >
+                    <div
+                      class=" css-16jl9sr-ValueContainer"
+                    >
+                      <div
+                        class=" css-14el2xx-placeholder"
+                        id="react-select-10-placeholder"
+                      >
+                        Select...
+                      </div>
+                      <div
+                        class=" css-1j77j9s-Input"
+                        data-value=""
+                      >
+                        <input
+                          aria-autocomplete="list"
+                          aria-controls="react-select-10-listbox"
+                          aria-describedby="react-select-10-placeholder"
+                          aria-expanded="false"
+                          aria-haspopup="true"
+                          aria-owns="react-select-10-listbox"
+                          autocapitalize="none"
+                          autocomplete="off"
+                          autocorrect="off"
+                          class=""
+                          id="react-select-10-input"
+                          role="combobox"
+                          spellcheck="false"
+                          style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+                          tabindex="0"
+                          type="text"
+                          value=""
+                        />
+                      </div>
+                    </div>
+                    <div
+                      class=" css-1hb7zxy-IndicatorsContainer"
+                    >
+                      <span
+                        class=" css-1okebmr-indicatorSeparator"
+                      />
+                      <div
+                        aria-hidden="true"
+                        class=" css-1pxvqqx-indicatorContainer"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="css-tj5bde-Svg"
+                          focusable="false"
+                          height="20"
+                          viewBox="0 0 20 20"
+                          width="20"
+                        >
+                          <path
+                            d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                  <input
+                    name="Badge"
+                    type="hidden"
+                    value=""
+                  />
+                </div>
+              </div>
+            </div>
+          </td>
+          <td
+            class=""
+          >
+            <div
+              class="field-group"
+            >
+              <input
+                class="amount-field"
+                inputmode="numeric"
+                name="price"
+                type="text"
+                value=" €"
+              />
+            </div>
+          </td>
+          <td
+            class=""
+          >
+            <div
+              class="field-group"
+            >
+              <input
+                class="amount-field"
+                inputmode="numeric"
+                name="parts"
+                type="text"
+                value=" %"
+              />
+            </div>
+          </td>
+          <td
+            class=""
+          >
+            <div
+              class="field-group"
+            >
+              <div
+                class="field input-date-picker-field"
+              >
+                <div
+                  class="react-datepicker-wrapper"
+                >
+                  <div
+                    class="react-datepicker__input-container"
+                  >
+                    <input
+                      autocomplete="off"
+                      class="input-date-picker-input"
+                      name="startDate"
+                      placeholder="MMM DD, YYYY"
+                      type="text"
+                      value=""
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td
+            class=""
+          >
+            <div
+              class="table--cell--value--button"
+            >
+              <span>
+                <button
+                  class="button-content"
+                  color="reversed"
+                  data-testid="delete"
+                  type="button"
+                >
+                  <div
+                    class="button-icon-container"
+                  >
+                    <i
+                      class="button-icon icon"
+                      icon="fal,trash-alt"
+                    />
+                  </div>
+                </button>
+              </span>
+              <span>
+                <button
+                  class="button-content"
+                  color="reversed"
+                  data-testid="download"
+                  type="button"
+                >
+                  <div
+                    class="button-icon-container"
+                  >
+                    <i
+                      class="button-icon icon"
+                      icon="fal,arrow-to-bottom"
+                    />
+                  </div>
+                </button>
+              </span>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`EditableDataTable Component EditableDataTable renders and handles line download and line delete 3`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <table
+        class="cui-table"
+      >
+        <thead>
+          <tr>
+            <th>
+              <span>
+                <div
+                  class="table--header-value table--header-value--sortable"
+                >
+                  <span
+                    class="table--header-value--title center"
+                  >
+                    Code
+                  </span>
+                  <span
+                    class="table--header-value--sorter"
+                  >
+                    <i
+                      class="icon"
+                      icon="fas,sort"
+                    />
+                  </span>
+                </div>
+              </span>
+            </th>
+            <th>
+              <span>
+                <div
+                  class="table--header-value table--header-value--sortable"
+                >
+                  <span
+                    class="table--header-value--title left"
+                  >
+                    Text
+                  </span>
+                  <span
+                    class="table--header-value--sorter"
+                  >
+                    <i
+                      class="icon"
+                      icon="fas,sort"
+                    />
+                  </span>
+                </div>
+              </span>
+            </th>
+            <th>
+              <span>
+                <div
+                  class="table--header-value table--header-value--sortable"
+                >
+                  <span
+                    class="table--header-value--title left"
+                  >
+                    Badge
+                  </span>
+                  <span
+                    class="table--header-value--sorter"
+                  >
+                    <i
+                      class="icon"
+                      icon="fas,sort"
+                    />
+                  </span>
+                </div>
+              </span>
+            </th>
+            <th>
+              <span>
+                <div
+                  class="table--header-value table--header-value--sortable"
+                >
+                  <span
+                    class="table--header-value--title right"
+                  >
+                    Amount
+                  </span>
+                  <span
+                    class="table--header-value--sorter"
+                  >
+                    <i
+                      class="icon"
+                      icon="fas,sort"
+                    />
+                  </span>
+                </div>
+              </span>
+            </th>
+            <th>
+              <span>
+                <div
+                  class="table--header-value table--header-value--sortable"
+                >
+                  <span
+                    class="table--header-value--title right"
+                  >
+                    Percentage
+                  </span>
+                  <span
+                    class="table--header-value--sorter"
+                  >
+                    <i
+                      class="icon"
+                      icon="fas,sort"
+                    />
+                  </span>
+                </div>
+              </span>
+            </th>
+            <th>
+              <span>
+                <div
+                  class="table--header-value table--header-value--sortable"
+                >
+                  <span
+                    class="table--header-value--title center"
+                  >
+                    Date
+                  </span>
+                  <span
+                    class="table--header-value--sorter"
+                  >
+                    <i
+                      class="icon"
+                      icon="fas,sort"
+                    />
+                  </span>
+                </div>
+              </span>
+            </th>
+            <th>
+              <div
+                class="table--header-value"
+              >
+                <span
+                  class="table--header-value--title center"
+                >
+                  Actions
+                </span>
+              </div>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            class=""
+          >
+            <td
+              class="table--cell--code"
+              data-testid="id-0"
+            >
               test
             </td>
             <td
@@ -2992,6 +4592,61 @@ Object {
           >
             Delete
           </div>
+        </div>
+      </div>
+      <div>
+        <div
+          class="szh-menu-container"
+        >
+          <ul
+            aria-label="Menu"
+            class="szh-menu szh-menu--state-closed szh-menu--dir-top"
+            role="menu"
+            style="left: 0px; top: 0px;"
+            tabindex="-1"
+          >
+            <div
+              class="szh-menu__arrow szh-menu__arrow--dir-top"
+              style="left: 0px;"
+            />
+            <div
+              class="popover-container"
+            >
+              <div
+                class="popover-title"
+              >
+                Delete?
+              </div>
+              <div
+                class="popover-buttons"
+              >
+                <button
+                  class="button-content"
+                  color="secondary"
+                  data-testid="cancel"
+                  type="button"
+                >
+                  <div
+                    class="button-label-container"
+                  >
+                    Cancel
+                  </div>
+                </button>
+                <button
+                  class="button-content"
+                  color="primary"
+                  data-testid="confirm"
+                  type="button"
+                >
+                  <div
+                    class="button-label-container"
+                  >
+                    Confirm
+                  </div>
+                </button>
+              </div>
+            </div>
+          </ul>
         </div>
       </div>
       <div>
@@ -5274,6 +6929,60 @@ Object {
       </div>
       <div>
         <div
+          class="szh-menu-container"
+        >
+          <ul
+            aria-label="Menu"
+            class="szh-menu szh-menu--state-closed szh-menu--dir-top"
+            role="menu"
+            style="left: 0px; top: 0px;"
+            tabindex="-1"
+          >
+            <div
+              class="szh-menu__arrow szh-menu__arrow--dir-top"
+            />
+            <div
+              class="popover-container"
+            >
+              <div
+                class="popover-title"
+              >
+                Delete?
+              </div>
+              <div
+                class="popover-buttons"
+              >
+                <button
+                  class="button-content"
+                  color="secondary"
+                  data-testid="cancel"
+                  type="button"
+                >
+                  <div
+                    class="button-label-container"
+                  >
+                    Cancel
+                  </div>
+                </button>
+                <button
+                  class="button-content"
+                  color="primary"
+                  data-testid="confirm"
+                  type="button"
+                >
+                  <div
+                    class="button-label-container"
+                  >
+                    Confirm
+                  </div>
+                </button>
+              </div>
+            </div>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <div
           class="tooltip bottom"
           style="left: -99999px; top: -99999px; opacity: 0;"
         >
@@ -5300,6 +7009,60 @@ Object {
           >
             Delete
           </div>
+        </div>
+      </div>
+      <div>
+        <div
+          class="szh-menu-container"
+        >
+          <ul
+            aria-label="Menu"
+            class="szh-menu szh-menu--state-closed szh-menu--dir-top"
+            role="menu"
+            style="left: 0px; top: 0px;"
+            tabindex="-1"
+          >
+            <div
+              class="szh-menu__arrow szh-menu__arrow--dir-top"
+            />
+            <div
+              class="popover-container"
+            >
+              <div
+                class="popover-title"
+              >
+                Delete?
+              </div>
+              <div
+                class="popover-buttons"
+              >
+                <button
+                  class="button-content"
+                  color="secondary"
+                  data-testid="cancel"
+                  type="button"
+                >
+                  <div
+                    class="button-label-container"
+                  >
+                    Cancel
+                  </div>
+                </button>
+                <button
+                  class="button-content"
+                  color="primary"
+                  data-testid="confirm"
+                  type="button"
+                >
+                  <div
+                    class="button-label-container"
+                  >
+                    Confirm
+                  </div>
+                </button>
+              </div>
+            </div>
+          </ul>
         </div>
       </div>
       <div>
@@ -6679,6 +8442,60 @@ Object {
       </div>
       <div>
         <div
+          class="szh-menu-container"
+        >
+          <ul
+            aria-label="Menu"
+            class="szh-menu szh-menu--state-closed szh-menu--dir-top"
+            role="menu"
+            style="left: 0px; top: 0px;"
+            tabindex="-1"
+          >
+            <div
+              class="szh-menu__arrow szh-menu__arrow--dir-top"
+            />
+            <div
+              class="popover-container"
+            >
+              <div
+                class="popover-title"
+              >
+                Delete?
+              </div>
+              <div
+                class="popover-buttons"
+              >
+                <button
+                  class="button-content"
+                  color="secondary"
+                  data-testid="cancel"
+                  type="button"
+                >
+                  <div
+                    class="button-label-container"
+                  >
+                    Cancel
+                  </div>
+                </button>
+                <button
+                  class="button-content"
+                  color="primary"
+                  data-testid="confirm"
+                  type="button"
+                >
+                  <div
+                    class="button-label-container"
+                  >
+                    Confirm
+                  </div>
+                </button>
+              </div>
+            </div>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <div
           class="tooltip bottom"
           style="left: -99999px; top: -99999px; opacity: 0;"
         >
@@ -6705,6 +8522,60 @@ Object {
           >
             Delete
           </div>
+        </div>
+      </div>
+      <div>
+        <div
+          class="szh-menu-container"
+        >
+          <ul
+            aria-label="Menu"
+            class="szh-menu szh-menu--state-closed szh-menu--dir-top"
+            role="menu"
+            style="left: 0px; top: 0px;"
+            tabindex="-1"
+          >
+            <div
+              class="szh-menu__arrow szh-menu__arrow--dir-top"
+            />
+            <div
+              class="popover-container"
+            >
+              <div
+                class="popover-title"
+              >
+                Delete?
+              </div>
+              <div
+                class="popover-buttons"
+              >
+                <button
+                  class="button-content"
+                  color="secondary"
+                  data-testid="cancel"
+                  type="button"
+                >
+                  <div
+                    class="button-label-container"
+                  >
+                    Cancel
+                  </div>
+                </button>
+                <button
+                  class="button-content"
+                  color="primary"
+                  data-testid="confirm"
+                  type="button"
+                >
+                  <div
+                    class="button-label-container"
+                  >
+                    Confirm
+                  </div>
+                </button>
+              </div>
+            </div>
+          </ul>
         </div>
       </div>
       <div>
@@ -7850,6 +9721,60 @@ Object {
           >
             Delete
           </div>
+        </div>
+      </div>
+      <div>
+        <div
+          class="szh-menu-container"
+        >
+          <ul
+            aria-label="Menu"
+            class="szh-menu szh-menu--state-closed szh-menu--dir-top"
+            role="menu"
+            style="left: 0px; top: 0px;"
+            tabindex="-1"
+          >
+            <div
+              class="szh-menu__arrow szh-menu__arrow--dir-top"
+            />
+            <div
+              class="popover-container"
+            >
+              <div
+                class="popover-title"
+              >
+                Delete?
+              </div>
+              <div
+                class="popover-buttons"
+              >
+                <button
+                  class="button-content"
+                  color="secondary"
+                  data-testid="cancel"
+                  type="button"
+                >
+                  <div
+                    class="button-label-container"
+                  >
+                    Cancel
+                  </div>
+                </button>
+                <button
+                  class="button-content"
+                  color="primary"
+                  data-testid="confirm"
+                  type="button"
+                >
+                  <div
+                    class="button-label-container"
+                  >
+                    Confirm
+                  </div>
+                </button>
+              </div>
+            </div>
+          </ul>
         </div>
       </div>
       <div>

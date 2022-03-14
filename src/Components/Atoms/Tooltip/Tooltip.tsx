@@ -19,6 +19,8 @@ const MenuDirectionOrder = [
 export interface ITooltipProps {
   /** Tooltip has arrow (optional, default: true) */
   arrow?: boolean;
+  /** Custom classname (optional, default: undefined) */
+  className?: string;
   /** Delay for the tooltip in ms (optional, default: 0) */
   delay?: number;
   /** Direction of the tooltip (optional, default: bottom) */
@@ -29,6 +31,8 @@ export interface ITooltipProps {
   maxWidth?: number;
   /** Childre node (optional, default: undefined) */
   children: ReactNode;
+  /** Additional style (optional, deafault: undefined) */
+  style?: CSSProperties;
   /** Tooltip content (optional, default: undefined) */
   tooltip?: string;
 }
@@ -154,10 +158,12 @@ class Tooltip extends React.PureComponent<ITooltipProps, ITooltipStates> {
     return (
       <>
         <span
+          className={this.props.className}
           onMouseOver={this.showTooltip}
           onMouseOut={this.hideTooltip}
           onClick={this.hideTooltip}
-          ref={(el) => (this.trigger = el)}>
+          ref={(el) => (this.trigger = el)}
+          style={this.props.style}>
           {this.props.children}
         </span>
         <Portal>

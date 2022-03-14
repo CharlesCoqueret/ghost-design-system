@@ -7,7 +7,6 @@
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  margin: auto 4px;
 
   &[color='primary'] {
     background-color: $primary;
@@ -73,8 +72,9 @@
   .button-icon-container,
   .button-menu-control-container {
     margin: auto;
-    .button-icon {
-      margin: 0 5px;
+    & > * {
+      margin-left: 4px;
+      margin-right: 4px;
     }
   }
 

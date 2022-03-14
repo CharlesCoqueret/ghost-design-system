@@ -64,7 +64,7 @@ const Collapse = (props: PropsWithChildren<ICollapseProps>): ReactElement => {
     <div className='collapse-container'>
       <div className='collapse-header' onClick={handleClick}>
         {title}
-        <Icon icon={['fal', 'chevron-left']} size='1x' className={classnames('icon', { open: open })} />
+        <Icon icon={['fal', 'chevron-left']} size='lg' className={classnames('icon', { open: open })} />
       </div>
       <div className='collapse-body' ref={contentRef}>
         {children}
