@@ -1,5 +1,4 @@
 import React, { ReactElement } from 'react';
-import * as yup from 'yup';
 import compact from 'lodash/compact';
 import cloneDeep from 'lodash/cloneDeep';
 
