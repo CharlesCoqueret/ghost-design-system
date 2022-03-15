@@ -9,7 +9,6 @@ interface ICustomStylesProps {
   controlBackgroundColorDisabled?: string;
   controlColorDisabled?: string;
   fontColor?: string;
-  multiValueBorderColorDisabled?: string;
   optionSelectedColor?: string;
   optionFocusColor?: string;
   isInError?: boolean;
@@ -22,7 +21,6 @@ export const customStyles = (props: ICustomStylesProps = {}): StylesConfig<IOpti
     controlBackgroundColorDisabled = 'rgb(228,228,228)',
     controlColorDisabled = 'rgb(117,117,117)',
     fontColor = 'rgb(0,0,0)',
-    multiValueBorderColorDisabled = 'rgb(196,196,196)',
     optionFocusColor = 'rgb(228,228,228)',
     optionSelectedColor = 'rgb(38,186,212)',
     isInError = false,
@@ -51,7 +49,7 @@ export const customStyles = (props: ICustomStylesProps = {}): StylesConfig<IOpti
         ...provided,
         outline: 0,
         boxShadow: 'none',
-        minHeight: '32px',
+        minHeight: 'unset',
         border,
         ...disabled,
         ':hover': hover,
@@ -61,12 +59,16 @@ export const customStyles = (props: ICustomStylesProps = {}): StylesConfig<IOpti
     multiValue: (provided, state) => {
       let disabled = {};
       if (state.isDisabled) {
-        disabled = { border: `1px solid ${multiValueBorderColorDisabled}` };
+        disabled = { border: 'none', color: controlColorDisabled };
       }
       return { ...provided, ...disabled, minWidth: 'unset', maxWidth: '100%' };
     },
-    multiValueLabel: (provided) => {
-      return { ...provided, textOverflow: 'unset', fontSize: 'unsert' };
+    multiValueLabel: (provided, state) => {
+      let disabled = {};
+      if (state.isDisabled) {
+        disabled = { color: controlColorDisabled };
+      }
+      return { ...provided, textOverflow: 'unset', fontSize: 'unsert', ...disabled };
     },
     multiValueRemove: (provided, state) => {
       let disabled = {};
@@ -133,8 +135,11 @@ export const customStyles = (props: ICustomStylesProps = {}): StylesConfig<IOpti
     container: (provided) => {
       return { ...provided, maxWidth: '100%', width: '100%' };
     },
+    clearIndicator: (provided) => {
+      return { ...provided, padding: '6px' };
+    },
     dropdownIndicator: (provided) => {
-      return { ...provided, height: '32px', padding: '6px' };
+      return { ...provided, padding: '5px', height: 'unset' };
     },
   };
 };

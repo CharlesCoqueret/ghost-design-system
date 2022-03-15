@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, Ref } from 'react';
 import classnames from 'classnames';
 
 import { GenericField, AmountInput, ThousandsGroupStyle } from '../../Atoms';
@@ -6,6 +6,8 @@ import { GenericField, AmountInput, ThousandsGroupStyle } from '../../Atoms';
 export interface IPercentageFieldProps {
   /** Allows negative values (optional, default: true) */
   allowNegative?: boolean;
+  /** React Container ref (optional, default: undefined) */
+  containerRef?: Ref<HTMLDivElement>;
   /** For test purpose only */
   dataTestId?: string;
   /** Decimal scale (optional, default: 2) */
@@ -65,6 +67,7 @@ export interface IPercentageFieldProps {
 export const PercentageField = (props: IPercentageFieldProps): ReactElement => {
   const {
     allowNegative,
+    containerRef,
     dataTestId,
     decimalScale,
     decimalSeparator,
@@ -92,6 +95,7 @@ export const PercentageField = (props: IPercentageFieldProps): ReactElement => {
 
   return (
     <GenericField
+      containerRef={containerRef}
       errorMessage={errorMessage}
       fieldClassName={fieldClassName}
       helperText={helperText}

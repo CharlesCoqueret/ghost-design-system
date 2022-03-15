@@ -1,8 +1,10 @@
-import React, { ReactElement, useState } from 'react';
+import React, { ReactElement, Ref, useState } from 'react';
 
 import { GenericField, TextAreaInput } from '../../Atoms';
 
 export interface ITextAreaFieldProps {
+  /** React Container ref (optional, default: undefined) */
+  containerRef?: Ref<HTMLDivElement>;
   /** For test purpose only */
   dataTestId?: string;
   /** Disabled field (optional, default: false) */
@@ -51,6 +53,7 @@ export interface ITextAreaFieldProps {
  */
 export const TextAreaField = (props: ITextAreaFieldProps): ReactElement => {
   const {
+    containerRef,
     dataTestId,
     disabled,
     errorMessage,
@@ -87,6 +90,7 @@ export const TextAreaField = (props: ITextAreaFieldProps): ReactElement => {
 
   return (
     <GenericField
+      containerRef={containerRef}
       errorMessage={errorMessage}
       fieldClassName={fieldClassName}
       helperText={helperText}

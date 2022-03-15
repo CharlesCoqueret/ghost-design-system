@@ -9,19 +9,20 @@ export interface ITitleProps {
   onTitleEdit?: (newTitle: string) => void;
   placeholder?: string;
   prefix?: string;
+  renameTooltip?: string;
   suffix?: string;
   title?: string;
 }
 
 const Title = (props: ITitleProps): ReactElement => {
-  const { entityId, onTitleEdit, placeholder, prefix, suffix, title } = props;
+  const { entityId, onTitleEdit, placeholder, prefix, renameTooltip, suffix, title } = props;
 
   const [isEditing, setIsEditing] = useState<boolean>(false);
   const [currentTitle, setCurrentTitle] = useState<string | undefined>(title);
 
   return (
     <>
-      {prefix && (
+      {prefix && !isEditing && (
         <Typography.Title level={1} ellipsis className='align-edit'>
           {prefix}
         </Typography.Title>
@@ -50,7 +51,11 @@ const Title = (props: ITitleProps): ReactElement => {
           }}
         />
       ) : (
-        <Tooltip tooltip='Rename' style={{ margin: 'auto' }}>
+        <Tooltip
+          tooltip={onTitleEdit ? renameTooltip : undefined}
+          style={{
+            display: 'flex',
+          }}>
           <Typography.Title
             level={1}
             ellipsis
@@ -61,24 +66,34 @@ const Title = (props: ITitleProps): ReactElement => {
                   }
                 : undefined
             }
-            className={classnames('align-edit', { clickable: onTitleEdit !== undefined })}>
+            className={classnames({ clickable: onTitleEdit !== undefined })}>
             {currentTitle}
           </Typography.Title>
         </Tooltip>
       )}
-      {entityId && (
+      {entityId && !isEditing && (
         <Typography.Title level={1} className='align-edit'>
           - {entityId}
         </Typography.Title>
       )}
 
-      {suffix && (
+      {suffix && !isEditing && (
         <Typography.Title level={1} ellipsis className='align-edit'>
           {suffix}
         </Typography.Title>
       )}
     </>
   );
+};
+
+Title.defaultProps = {
+  entityId: undefined,
+  onTitleEdit: undefined,
+  placeholder: undefined,
+  prefix: undefined,
+  renameTooltip: 'Rename',
+  suffix: undefined,
+  title: undefined,
 };
 
 export default Title;

@@ -4,6 +4,7 @@ import classnames from 'classnames';
 
 import DatePickerHeader from './DatePickerHeader';
 import { DateFormat, WeekDayEnum } from './types';
+import { Portal } from '../Portal';
 
 export interface IDatePickerProps {
   /** Calendar start week day (optional: default: WeekDayEnum.MONDAY )  */
@@ -84,6 +85,7 @@ const DatePickerInput = (props: IDatePickerProps): ReactElement => {
         calendarStartDay={calendarStartDay}
         locale={locale}
         showPopperArrow={false}
+        popperContainer={Portal}
         renderCustomHeader={DatePickerHeader(locale)}
         autoComplete='off'
       />

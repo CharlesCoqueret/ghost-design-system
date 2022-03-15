@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, Ref } from 'react';
 import classnames from 'classnames';
 
 import { GenericField, AmountInput, ThousandsGroupStyle } from '../../Atoms';
@@ -6,6 +6,8 @@ import { GenericField, AmountInput, ThousandsGroupStyle } from '../../Atoms';
 export interface IAmountFieldProps {
   /** Allows negative values (optional, default: true) */
   allowNegative?: boolean;
+  /** REact Container ref (optional, default: undefined) */
+  containerRef?: Ref<HTMLDivElement>;
   /** For test purpose only */
   dataTestId?: string;
   /** Decimal scale (optional, default: 2) */
@@ -69,6 +71,7 @@ export interface IAmountFieldProps {
 export const AmountField = (props: IAmountFieldProps): ReactElement => {
   const {
     allowNegative,
+    containerRef,
     dataTestId,
     decimalScale,
     decimalSeparator,
@@ -98,6 +101,7 @@ export const AmountField = (props: IAmountFieldProps): ReactElement => {
 
   return (
     <GenericField
+      containerRef={containerRef}
       errorMessage={errorMessage}
       fieldClassName={fieldClassName}
       helperText={helperText}

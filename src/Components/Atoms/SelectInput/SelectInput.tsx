@@ -121,7 +121,6 @@ const SelectInput = (props: ISelectInputProps): ReactElement => {
           controlFocusColor: colors?.controlFocusColor,
           fontColor: colors?.fontColor,
           isInError,
-          multiValueBorderColorDisabled: colors?.multiValueBorderColorDisabled,
           optionFocusColor: colors?.optionFocusColor,
           optionSelectedColor: colors?.optionSelectedColor,
         })}
@@ -139,7 +138,6 @@ SelectInput.defaultProps = {
     controlBackgroundColorDisabled: colors.chalk.rgb,
     controlColorDisabled: colors.pebble.rgb,
     fontColor: 'rgb(0, 0, 0)',
-    multiValueBorderColorDisabled: colors.silver.rgb,
     optionFocusColor: colors.chalk.rgb,
     optionSelectedColor: colors.primary.rgb,
   },

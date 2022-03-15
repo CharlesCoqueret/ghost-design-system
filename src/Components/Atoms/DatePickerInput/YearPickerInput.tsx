@@ -3,6 +3,7 @@ import DatePicker from 'react-datepicker';
 import classnames from 'classnames';
 
 import YearPickerHeader from './YearPickerHeader';
+import { Portal } from '../Portal';
 
 export interface IYearPickerProps {
   /** Class for the input (optional, default: undefined) */
@@ -83,6 +84,7 @@ const YearPickerInput = (props: IYearPickerProps): ReactElement => {
         showPopperArrow={false}
         renderCustomHeader={YearPickerHeader}
         autoComplete='off'
+        popperContainer={Portal}
         showYearPicker
       />
     </div>

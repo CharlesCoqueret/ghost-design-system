@@ -1,15 +1,20 @@
 .amount-field {
-  height: 32px;
   outline: none;
   text-align: right;
   border: 1px solid $chalk;
   border-radius: 4px;
-  padding-right: 8px;
+  padding: 6px 8px;
   white-space: nowrap;
 
-  &:hover,
-  &:focus {
+  &:hover:not(:disabled):not(:read-only),
+  &:focus:not(:disabled):not(:read-only) {
     border: 1px solid $primary;
+  }
+
+  &:disabled {
+    border: 1px solid transparent;
+    background-color: $chalk;
+    color: $pebble;
   }
 
   &.amount-field-read-only {

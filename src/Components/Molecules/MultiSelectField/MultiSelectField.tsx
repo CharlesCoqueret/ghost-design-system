@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, Ref } from 'react';
 import classnames from 'classnames';
 
 import { GenericField, IOption, MultiSelectInput } from '../../Atoms';
@@ -16,6 +16,8 @@ export interface IMultiSelectFieldProps {
     optionFocusColor: string; // colors.chalk,
     optionSelectedColor: string; // colors.primary,
   };
+  /** React Container ref (optional, default: undefined) */
+  containerRef?: Ref<HTMLDivElement>;
   /** For test purpose only */
   dataTestId?: string;
   /** Disabled field (optional, default: false) */
@@ -67,6 +69,7 @@ export interface IMultiSelectFieldProps {
 export const MultiSelectField = (props: IMultiSelectFieldProps): ReactElement => {
   const {
     colors,
+    containerRef,
     dataTestId,
     disabled,
     errorMessage,
@@ -90,6 +93,7 @@ export const MultiSelectField = (props: IMultiSelectFieldProps): ReactElement =>
 
   return (
     <GenericField
+      containerRef={containerRef}
       errorMessage={errorMessage}
       fieldClassName={fieldClassName}
       helperText={helperText}

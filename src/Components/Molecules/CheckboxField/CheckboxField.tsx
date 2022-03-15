@@ -1,9 +1,11 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, Ref } from 'react';
 import classnames from 'classnames';
 
 import { GenericField, IToggleEntry, CheckboxInput } from '../../Atoms';
 
 export interface ICheckboxFieldProps {
+  /** React Container ref (optional, default: undefined) */
+  containerRef?: Ref<HTMLDivElement>;
   /** For test purpose only */
   dataTestId?: string;
   /** Disabled field (optional, default: false) */
@@ -47,6 +49,7 @@ export interface ICheckboxFieldProps {
  */
 export const CheckboxField = (props: ICheckboxFieldProps): ReactElement => {
   const {
+    containerRef,
     dataTestId,
     disabled,
     errorMessage,
@@ -66,6 +69,7 @@ export const CheckboxField = (props: ICheckboxFieldProps): ReactElement => {
 
   return (
     <GenericField
+      containerRef={containerRef}
       errorMessage={errorMessage}
       fieldClassName={fieldClassName}
       helperText={helperText}

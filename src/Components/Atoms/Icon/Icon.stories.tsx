@@ -34,6 +34,7 @@ export const List = Template.bind({});
 List.args = {
   icons: [
     ['fal', 'arrow-to-bottom'],
+    ['fal', 'arrow-left'],
     ['fal', 'balance-scale'],
     ['fal', 'ballot-check'],
     ['fal', 'bell'],

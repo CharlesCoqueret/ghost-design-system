@@ -1,9 +1,11 @@
-import React, { ReactElement, useState } from 'react';
+import React, { ReactElement, Ref, useState } from 'react';
 
 import { GenericField } from '../../Atoms/GenericField';
 import { TextInput } from '../../Atoms/';
 
 export interface ITextFieldProps {
+  /** React Container ref (optional, default: undefined) */
+  containerRef?: Ref<HTMLDivElement>;
   /** For test purpose only */
   dataTestId?: string;
   /** Disabled field (optional, default: false) */
@@ -55,6 +57,7 @@ export interface ITextFieldProps {
  */
 export const TextField = (props: ITextFieldProps): ReactElement => {
   const {
+    containerRef,
     dataTestId,
     disabled,
     errorMessage,
@@ -92,6 +95,7 @@ export const TextField = (props: ITextFieldProps): ReactElement => {
 
   return (
     <GenericField
+      containerRef={containerRef}
       errorMessage={errorMessage}
       fieldClassName={fieldClassName}
       helperText={helperText}

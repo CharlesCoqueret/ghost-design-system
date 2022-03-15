@@ -2,6 +2,7 @@ import { dom, library } from '@fortawesome/fontawesome-svg-core';
 
 import {
   faArrowToBottom,
+  faArrowLeft,
   faBalanceScale,
   faBallotCheck,
   faBell,
@@ -74,6 +75,7 @@ import { faCaretDown, faSquare, faSquareCheck, faSort, faSortDown, faSortUp } fr
 const loadIcons = (): void => {
   library.add(
     faArrowToBottom,
+    faArrowLeft,
     faBalanceScale,
     faBallotCheck,
     faBell,

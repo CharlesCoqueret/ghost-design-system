@@ -1,10 +1,11 @@
-import React, { PropsWithChildren, ReactElement } from 'react';
+import React, { PropsWithChildren, ReactElement, Ref } from 'react';
 import classnames from 'classnames';
 
 import GenericFieldLabel from './GenericFieldLabel';
 import GenericFieldDescription from './GenericFieldDescrption';
 
 interface IGenericFieldProps {
+  containerRef?: Ref<HTMLDivElement>;
   /** Disabled field (optional, default: undefined) */
   disabled?: boolean;
   /** Error message (optional, default: undefined) */
@@ -46,6 +47,7 @@ interface IGenericFieldProps {
 const GenericField = (props: PropsWithChildren<IGenericFieldProps>): ReactElement => {
   const {
     children,
+    containerRef,
     disabled,
     errorMessage,
     fieldClassName,
@@ -62,7 +64,7 @@ const GenericField = (props: PropsWithChildren<IGenericFieldProps>): ReactElemen
   } = props;
 
   return (
-    <div className={classnames('field-group', fieldClassName, { 'field-inline': inline })}>
+    <div className={classnames('field-group', fieldClassName, { 'field-inline': inline })} ref={containerRef}>
       <GenericFieldLabel
         className={classnames({ 'field-highlighted': highlighted && (readOnly || disabled) })}
         label={label}

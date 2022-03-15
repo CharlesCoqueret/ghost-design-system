@@ -1,9 +1,11 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, Ref } from 'react';
 import classnames from 'classnames';
 
 import { GenericField, YearPickerInput } from '../../Atoms';
 
 export interface IYearPickerFieldProps {
+  /** React Container ref (optional, default: undefined) */
+  containerRef?: Ref<HTMLDivElement>;
   /** For test purpose only */
   dataTestId?: string;
   /** Disabled field (optional, default: false) */
@@ -54,6 +56,7 @@ export interface IYearPickerFieldProps {
  */
 export const YearPickerField = (props: IYearPickerFieldProps): ReactElement => {
   const {
+    containerRef,
     dataTestId,
     disabled,
     errorMessage,
@@ -76,6 +79,7 @@ export const YearPickerField = (props: IYearPickerFieldProps): ReactElement => {
 
   return (
     <GenericField
+      containerRef={containerRef}
       errorMessage={errorMessage}
       fieldClassName={fieldClassName}
       helperText={helperText}
