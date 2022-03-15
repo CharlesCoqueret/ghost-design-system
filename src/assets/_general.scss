@@ -18,3 +18,10 @@
   -ms-user-select: none;
   user-select: none;
 }
+
+a,
+a:hover,
+a:focus,
+a:visited {
+  color: unset;
+}

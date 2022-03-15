@@ -1,27 +1,48 @@
 import React, { ReactElement } from 'react';
 import * as yup from 'yup';
 import { AnyObject } from 'yup/lib/object';
-
-import { IFieldProps } from './types';
-import FormField from './FormField';
-import { FieldError } from './yupResolver';
 import { SchemaDescription, SchemaObjectDescription } from 'yup/lib/schema';
 
+import { FieldTypeEnum, IFieldAndLayoutProps } from './types';
+import FormField from './FormField';
+import { FieldError } from './yupResolver';
+import { Collapse, Row } from '../../Atoms';
+
 export interface IFormProps<T extends AnyObject> {
-  fields: Array<IFieldProps<T>>;
+  fields: Array<IFieldAndLayoutProps<T>>;
   handleDataChange: (dataIndex: keyof T, newValue: T[keyof T]) => void;
   initialData: T;
   previousData?: T;
   validationError?: Record<keyof T, FieldError>;
   validationSchema?: yup.SchemaOf<T>;
+  usePortal?: boolean;
 }
 
 const Form = <T,>(props: IFormProps<T>): ReactElement => {
-  const { fields, handleDataChange, initialData, previousData, validationSchema, validationError } = props;
+  const { fields, handleDataChange, initialData, previousData, validationSchema, validationError, usePortal } = props;
 
   return (
     <>
-      {fields.map((field) => {
+      {fields.map((field, index) => {
+        if (field.fieldType === FieldTypeEnum.SECTION) {
+          return (
+            <Collapse key={`section-${field.label}`} title={field.label} openInitially={field.openInitially}>
+              <Form
+                fields={field.fields}
+                handleDataChange={handleDataChange}
+                initialData={initialData}
+                previousData={previousData}
+                validationError={validationError}
+                validationSchema={validationSchema}
+                usePortal={usePortal}
+              />
+            </Collapse>
+          );
+        }
+        if (field.fieldType === FieldTypeEnum.DESCRIPTION) {
+          return <Row key={`description-${index}`}>{field.description}</Row>;
+        }
+
         let isRequired = false;
 
         try {
@@ -32,18 +53,26 @@ const Form = <T,>(props: IFormProps<T>): ReactElement => {
 
         return (
           <FormField<T>
-            key={field.label}
+            key={`field-${field.label}`}
             field={field}
             data={initialData}
             previousData={previousData}
             handleChange={handleDataChange}
             validationError={validationError}
             requiredFromValidation={isRequired}
+            usePortal={usePortal}
           />
         );
       })}
     </>
   );
+};
+
+Form.defaultProps = {
+  previousData: undefined,
+  validationError: undefined,
+  validationSchema: undefined,
+  usePortal: true,
 };
 
 export default Form;

@@ -9,12 +9,12 @@ interface ILineEditableInPlaceDataTableBodyProps<T> {
   columns: Array<IColumnType<T>>;
   data: Array<T>;
   extra?: IExtraLineEditableInPlaceDataTableProps<T>;
-  handUpdateDataChange: (rowIndex: number, dataIndex: keyof T, newData: T[keyof T]) => void;
+  handleUpdateDataChange: (rowIndex: number, dataIndex: keyof T, newData: T[keyof T]) => void;
   loading?: ReactElement;
 }
 
 const LineEditableInPlaceDataTableBody = <T,>(props: ILineEditableInPlaceDataTableBodyProps<T>): ReactElement => {
-  const { columns, data, extra, handUpdateDataChange, loading } = props;
+  const { columns, data, extra, handleUpdateDataChange, loading } = props;
 
   const [selectedRows, setSelectedRows] = useState<Record<number, boolean>>({});
 
@@ -70,7 +70,7 @@ const LineEditableInPlaceDataTableBody = <T,>(props: ILineEditableInPlaceDataTab
                   row={row}
                   extra={extra}
                   rowIndex={rowIndex}
-                  handUpdateDataChange={handUpdateDataChange}
+                  handleUpdateDataChange={handleUpdateDataChange}
                 />
               );
             })}

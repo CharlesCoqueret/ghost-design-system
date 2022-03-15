@@ -28,6 +28,8 @@ export interface IYearPickerProps {
   placeholder?: string;
   /** Read only input (optional, default: false) */
   readOnly?: boolean;
+  /** Use portal, it is remmended to set it to false for modal (optional, default true) */
+  usePortal?: boolean;
 }
 
 const YearPickerInput = (props: IYearPickerProps): ReactElement => {
@@ -43,6 +45,7 @@ const YearPickerInput = (props: IYearPickerProps): ReactElement => {
     onChange,
     placeholder,
     readOnly,
+    usePortal,
   } = props;
 
   const dateFormat = 'yyyy';
@@ -84,7 +87,7 @@ const YearPickerInput = (props: IYearPickerProps): ReactElement => {
         showPopperArrow={false}
         renderCustomHeader={YearPickerHeader}
         autoComplete='off'
-        popperContainer={Portal}
+        popperContainer={usePortal ? Portal : undefined}
         showYearPicker
       />
     </div>
@@ -95,12 +98,13 @@ YearPickerInput.defaultProps = {
   calendarStartDay: 1,
   className: undefined,
   dateValue: undefined,
-  isInError: false,
-  isClearable: false,
-  highlighted: false,
-  readOnly: false,
-  placeholder: undefined,
   disabled: false,
+  highlighted: false,
+  isClearable: false,
+  isInError: false,
+  placeholder: undefined,
+  readOnly: false,
+  usePortal: true,
 };
 
 export default YearPickerInput;

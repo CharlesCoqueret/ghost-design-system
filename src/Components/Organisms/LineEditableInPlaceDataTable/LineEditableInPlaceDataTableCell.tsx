@@ -18,11 +18,11 @@ export interface ILineEditableInPlaceDataTableCellProps<T> {
   row: T;
   extra?: IExtraLineEditableInPlaceDataTableProps<T>;
   rowIndex: number;
-  handUpdateDataChange: (rowIndex: number, dataIndex: keyof T, newData: T[keyof T]) => void;
+  handleUpdateDataChange: (rowIndex: number, dataIndex: keyof T, newData: T[keyof T]) => void;
 }
 
 const LineEditableInPlaceDataTableCell = <T,>(props: ILineEditableInPlaceDataTableCellProps<T>): ReactElement => {
-  const { column, row, extra, rowIndex, handUpdateDataChange } = props;
+  const { column, row, extra, rowIndex, handleUpdateDataChange } = props;
 
   switch (column.type) {
     case ColumnType.AMOUNT: {
@@ -33,7 +33,7 @@ const LineEditableInPlaceDataTableCell = <T,>(props: ILineEditableInPlaceDataTab
           extra={extra}
           rowIndex={rowIndex}
           onChange={(newValue) => {
-            handUpdateDataChange(rowIndex, column.dataIndex, newValue);
+            handleUpdateDataChange(rowIndex, column.dataIndex, newValue);
           }}
         />
       );
@@ -46,7 +46,7 @@ const LineEditableInPlaceDataTableCell = <T,>(props: ILineEditableInPlaceDataTab
           extra={extra}
           rowIndex={rowIndex}
           onChange={(newValue) => {
-            handUpdateDataChange(rowIndex, column.dataIndex, newValue);
+            handleUpdateDataChange(rowIndex, column.dataIndex, newValue);
           }}
         />
       );
@@ -65,7 +65,7 @@ const LineEditableInPlaceDataTableCell = <T,>(props: ILineEditableInPlaceDataTab
           extra={extra}
           rowIndex={rowIndex}
           onChange={(newValue) => {
-            handUpdateDataChange(rowIndex, column.dataIndex, newValue);
+            handleUpdateDataChange(rowIndex, column.dataIndex, newValue);
           }}
         />
       );
@@ -78,7 +78,7 @@ const LineEditableInPlaceDataTableCell = <T,>(props: ILineEditableInPlaceDataTab
           extra={extra}
           rowIndex={rowIndex}
           onChange={(newValue) => {
-            handUpdateDataChange(rowIndex, column.dataIndex, newValue);
+            handleUpdateDataChange(rowIndex, column.dataIndex, newValue);
           }}
         />
       );
@@ -91,7 +91,7 @@ const LineEditableInPlaceDataTableCell = <T,>(props: ILineEditableInPlaceDataTab
           extra={extra}
           rowIndex={rowIndex}
           onChange={(newValue) => {
-            handUpdateDataChange(rowIndex, column.dataIndex, newValue);
+            handleUpdateDataChange(rowIndex, column.dataIndex, newValue);
           }}
         />
       );
@@ -104,7 +104,7 @@ const LineEditableInPlaceDataTableCell = <T,>(props: ILineEditableInPlaceDataTab
           extra={extra}
           rowIndex={rowIndex}
           onChange={(newValue) => {
-            handUpdateDataChange(rowIndex, column.dataIndex, newValue);
+            handleUpdateDataChange(rowIndex, column.dataIndex, newValue);
           }}
         />
       );
@@ -117,7 +117,7 @@ const LineEditableInPlaceDataTableCell = <T,>(props: ILineEditableInPlaceDataTab
           extra={extra}
           rowIndex={rowIndex}
           onChange={(newValue) => {
-            handUpdateDataChange(rowIndex, column.dataIndex, newValue);
+            handleUpdateDataChange(rowIndex, column.dataIndex, newValue);
           }}
         />
       );

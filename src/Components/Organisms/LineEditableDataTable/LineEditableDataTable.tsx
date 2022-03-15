@@ -1,32 +1,28 @@
 import React, { ReactElement, useCallback, useEffect, useState } from 'react';
 import { Button, ColorButtonEnum } from '../../Molecules/Button';
+import StaticDataTableBody from '../StaticDataTable/StaticDataTableBody';
 
 import StaticDataTableFooter from '../StaticDataTable/StaticDataTableFooter';
 import StaticDataTableHeader from '../StaticDataTable/StaticDataTableHeader';
-import {
-  ColumnType,
-  IColumnType,
-  IExtraLineEditableInPlaceDataTableProps,
-  SortDirectionEnum,
-} from '../StaticDataTable/types';
-import LineEditableInPlaceDataTableBody from './LineEditableInPlaceDataTableBody';
+import { ColumnType, IColumnType, IExtraLineEditableDataTableProps, SortDirectionEnum } from '../StaticDataTable/types';
+import LineEditableModal from './LineEditableModal';
 
-export interface ILineEditableInPlaceDataTableProps<T> {
+export interface ILineEditableDataTableProps<T> {
   columns: Array<IColumnType<T>>;
   data: Array<T>;
-  extra?: IExtraLineEditableInPlaceDataTableProps<T>;
+  extra?: IExtraLineEditableDataTableProps<T>;
   loading?: ReactElement;
   onSortChange?: (sortField?: keyof T, sortDirection?: SortDirectionEnum) => void;
 }
 
-const LineEditableInPlaceDataTable = <T,>(props: ILineEditableInPlaceDataTableProps<T>): ReactElement => {
+const LineEditableDataTable = <T,>(props: ILineEditableDataTableProps<T>): ReactElement => {
   const { data, columns, extra, loading, onSortChange } = props;
 
   const [currentData, setCurrentData] = useState<Array<T>>(data);
   const [sortField, setSortField] = useState<keyof T | undefined>();
   const [sortDirection, setSortDirection] = useState<SortDirectionEnum | undefined>();
   const [editedRowIndex, setEditedRowIndex] = useState<number | undefined>(extra?.editedRowIndex);
-  const [snapshotEditedRow, setSnapshotEditedRow] = useState<T>();
+  const [isNewLine, setIsNewLine] = useState(false);
 
   const currentColumns: Array<IColumnType<T>> =
     !extra?.onRowSubmit && !extra?.onRowDelete && !extra?.onRowDownload
@@ -56,7 +52,6 @@ const LineEditableInPlaceDataTable = <T,>(props: ILineEditableInPlaceDataTablePr
                   if (extra?.onRowEdit) {
                     extra.onRowEdit(row, rowIndex);
                   }
-                  setSnapshotEditedRow({ ...row });
                   setEditedRowIndex(rowIndex);
                 },
               },
@@ -85,42 +80,6 @@ const LineEditableInPlaceDataTable = <T,>(props: ILineEditableInPlaceDataTablePr
                   message: extra?.localization?.deletePopoverMessage || 'Delete?',
                   cancel: extra?.localization?.deletePopoverCancel || 'Cancel',
                   confirm: extra?.localization?.deletePopoverConfirm || 'Confirm',
-                },
-              },
-              {
-                hidden: (_row, rowIndex) => {
-                  return editedRowIndex !== rowIndex;
-                },
-                icon: ['fal', 'check'],
-                label: extra?.localization?.submitButton || 'Submit',
-                onClick: (row, rowIndex) => {
-                  if (extra?.onRowSubmit) {
-                    extra.onRowSubmit(row, rowIndex);
-                  }
-                  setEditedRowIndex(undefined);
-                  setSnapshotEditedRow(undefined);
-                  setCurrentData((prev) => {
-                    prev[rowIndex] = row;
-                    return [...prev];
-                  });
-                },
-              },
-              {
-                hidden: (_row, rowIndex) => {
-                  return editedRowIndex !== rowIndex;
-                },
-                icon: ['fal', 'times'],
-                label: extra?.localization?.cancelButton || 'Cancel',
-                onClick: (row, rowIndex) => {
-                  if (extra?.onRowCancelEdit) {
-                    extra.onRowCancelEdit(row, rowIndex);
-                  }
-                  setCurrentData((prev) => {
-                    prev[rowIndex] = snapshotEditedRow as T;
-                    return [...prev];
-                  });
-                  setEditedRowIndex(undefined);
-                  setSnapshotEditedRow(undefined);
                 },
               },
               {
@@ -160,24 +119,18 @@ const LineEditableInPlaceDataTable = <T,>(props: ILineEditableInPlaceDataTablePr
     }
   }, []);
 
-  const handleUpdateDataChange = (rowIndex: number, dataIndex: keyof T, newData: T[keyof T]) => {
-    setCurrentData((prev) => {
-      prev[rowIndex][dataIndex] = newData;
-      return [...prev];
-    });
-  };
-
   const addNewLine = () => {
     if (extra?.onNewLine === undefined) {
       throw new Error('Missing onNewLine function');
     }
     const newLine = extra.onNewLine() || ({} as T);
-    setSnapshotEditedRow(newLine);
+    const newLineIndex = currentData.length;
     setCurrentData((prev) => {
       prev.push(newLine);
       return [...prev];
     });
-    setEditedRowIndex(currentData.length);
+    setIsNewLine(true);
+    setEditedRowIndex(newLineIndex);
   };
 
   return (
@@ -190,11 +143,10 @@ const LineEditableInPlaceDataTable = <T,>(props: ILineEditableInPlaceDataTablePr
           sortDirection={sortDirection}
           extra={{ ...extra, editedRowIndex }}
         />
-        <LineEditableInPlaceDataTableBody<T>
+        <StaticDataTableBody<T>
           columns={currentColumns}
           data={currentData}
           extra={{ ...extra, editedRowIndex }}
-          handleUpdateDataChange={handleUpdateDataChange}
           loading={loading}
         />
         <StaticDataTableFooter<T> columns={currentColumns} data={currentData} extra={extra} />
@@ -208,8 +160,36 @@ const LineEditableInPlaceDataTable = <T,>(props: ILineEditableInPlaceDataTablePr
           disabled={editedRowIndex !== undefined}
         />
       )}
+      {editedRowIndex !== undefined && (
+        <LineEditableModal<T>
+          title={'TITLE'} //TODO add modal edit title to localization
+          showChanges={true} // TODO expose show change option to extra
+          onSubmit={(newRow) => {
+            setCurrentData((prev) => {
+              prev[editedRowIndex] = newRow;
+              return [...prev];
+            });
+            setEditedRowIndex(undefined);
+            setIsNewLine(false);
+          }}
+          row={currentData[editedRowIndex]}
+          onCancel={() => {
+            if (isNewLine) {
+              setCurrentData((prev) => {
+                return [...prev.slice(0, prev.length - 1)];
+              });
+            }
+            setEditedRowIndex(undefined);
+            setIsNewLine(false);
+            return;
+          }}
+          columns={columns}
+          extra={extra}
+        />
+      )}
+      ;
     </>
   );
 };
 
-export default LineEditableInPlaceDataTable;
+export default LineEditableDataTable;

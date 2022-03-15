@@ -46,6 +46,8 @@ export interface ISelectInputProps {
   placeholder?: string;
   /** Read only field (optional, default: false) */
   readOnly?: boolean;
+  /** Use portal, it is remmended to set it to false for modal (optional, default true) */
+  usePortal?: boolean;
 }
 
 const SelectInput = (props: ISelectInputProps): ReactElement => {
@@ -65,6 +67,7 @@ const SelectInput = (props: ISelectInputProps): ReactElement => {
     options,
     placeholder,
     readOnly,
+    usePortal,
   } = props;
 
   if (readOnly) {
@@ -113,7 +116,7 @@ const SelectInput = (props: ISelectInputProps): ReactElement => {
         }}
         options={options}
         placeholder={placeholder}
-        menuPortalTarget={document.querySelector('body')}
+        menuPortalTarget={usePortal ? document.querySelector('body') : undefined}
         styles={customStyles({
           controlBackgroundColorDisabled: colors?.controlBackgroundColorDisabled,
           controlColorDisabled: colors?.controlColorDisabled,
@@ -151,6 +154,7 @@ SelectInput.defaultProps = {
   onChange: undefined,
   placeholder: undefined,
   readOnly: false,
+  usePortal: true,
 };
 
 export default SelectInput;

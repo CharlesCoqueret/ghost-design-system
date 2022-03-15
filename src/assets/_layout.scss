@@ -5,7 +5,6 @@
   > * {
     flex: 1;
     margin: 10px 10px;
-    overflow-x: hidden;
   }
 }
 
@@ -17,20 +16,17 @@
   > * {
     flex: 1;
     margin: 10px 10px;
-    overflow-y: hidden;
   }
 }
 
 .collapse-container {
-  padding: 20px;
-
   .collapse-header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     color: $charcoal;
     cursor: pointer;
-    padding: 10px 0px;
+    padding: 10px 10px;
     font-size: 18px;
     font-weight: 600;
 

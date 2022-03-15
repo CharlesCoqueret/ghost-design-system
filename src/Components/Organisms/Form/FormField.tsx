@@ -26,13 +26,14 @@ export interface IFormFieldProps<T> {
   handleChange: (dataIndex: keyof T, newValue: T[keyof T]) => void;
   previousData?: T;
   requiredFromValidation?: boolean;
-  validationError?: Record<keyof T, FieldError | undefined>;
+  validationError?: Record<keyof T, FieldError>;
+  usePortal?: boolean;
 }
 
 const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
-  const { data, field, handleChange, previousData, requiredFromValidation, validationError } = props;
+  const { data, field, handleChange, previousData, requiredFromValidation, usePortal, validationError } = props;
 
-  const errorMessage = validationError && validationError[field.dataIndex]?.message;
+  const errorMessage = validationError && validationError[field.dataIndex as keyof T]?.message;
 
   switch (field.fieldType) {
     case FieldTypeEnum.AMOUNT: {
@@ -49,7 +50,7 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
             onChange={(newValue: number | undefined) => {
               handleChange(field.dataIndex, newValue as unknown as T[keyof T]);
             }}
-            inputValue={data[field.dataIndex] as unknown as string | number | undefined}
+            inputValue={(data && (data[field.dataIndex] as unknown as string | number | undefined)) || undefined}
             errorMessage={errorMessage}
           />
         </Highlighter>
@@ -81,7 +82,7 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
             onChange={(newValue: Array<IToggleEntry> | undefined) => {
               handleChange(field.dataIndex, newValue as unknown as T[keyof T]);
             }}
-            inputValue={data[field.dataIndex] as unknown as Array<IToggleEntry> | undefined}
+            inputValue={(data && (data[field.dataIndex] as unknown as Array<IToggleEntry> | undefined)) || undefined}
             errorMessage={errorMessage}
           />
         </Highlighter>
@@ -103,8 +104,9 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
             onChange={(newValue: Date | null) => {
               handleChange(field.dataIndex, newValue as unknown as T[keyof T]);
             }}
-            inputValue={data[field.dataIndex] as unknown as Date | null | undefined}
+            inputValue={(data && (data[field.dataIndex] as unknown as Date | null | undefined)) || undefined}
             errorMessage={errorMessage}
+            usePortal={usePortal}
           />
         </Highlighter>
       );
@@ -128,8 +130,9 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
             onChange={(newValue: Array<string> | null | undefined) => {
               handleChange(field.dataIndex, newValue as unknown as T[keyof T]);
             }}
-            inputValue={data[field.dataIndex] as unknown as Array<string> | undefined}
+            inputValue={(data && (data[field.dataIndex] as unknown as Array<string> | undefined)) || undefined}
             errorMessage={errorMessage}
+            usePortal={usePortal}
           />
         </Highlighter>
       );
@@ -168,7 +171,7 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
             onChange={(newValue: number | undefined) => {
               handleChange(field.dataIndex, newValue as unknown as T[keyof T]);
             }}
-            inputValue={data[field.dataIndex] as unknown as string | number | undefined}
+            inputValue={(data && (data[field.dataIndex] as unknown as string | number | undefined)) || undefined}
             errorMessage={errorMessage}
           />
         </Highlighter>
@@ -188,8 +191,9 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
             onChange={(newValue: string | null | undefined) => {
               handleChange(field.dataIndex, newValue as unknown as T[keyof T]);
             }}
-            inputValue={data[field.dataIndex] as unknown as string}
+            inputValue={(data && (data[field.dataIndex] as unknown as string | undefined)) || undefined}
             errorMessage={errorMessage}
+            usePortal={usePortal}
           />
         </Highlighter>
       );
@@ -220,7 +224,7 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
             onChange={(newValue: IToggleEntry[]) => {
               handleChange(field.dataIndex, newValue as unknown as T[keyof T]);
             }}
-            inputValue={data[field.dataIndex] as unknown as IToggleEntry[] | undefined}
+            inputValue={(data && (data[field.dataIndex] as unknown as IToggleEntry[] | undefined)) || undefined}
             errorMessage={errorMessage}
           />
         </Highlighter>
@@ -240,7 +244,7 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
             onChange={(newValue: string) => {
               handleChange(field.dataIndex, newValue as unknown as T[keyof T]);
             }}
-            inputValue={data[field.dataIndex] as unknown as string | undefined}
+            inputValue={(data && (data[field.dataIndex] as unknown as string | undefined)) || undefined}
             errorMessage={errorMessage}
           />
         </Highlighter>
@@ -260,7 +264,7 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
             onChange={(newValue: string) => {
               handleChange(field.dataIndex, newValue as unknown as T[keyof T]);
             }}
-            inputValue={data[field.dataIndex] as unknown as string | undefined}
+            inputValue={(data && (data[field.dataIndex] as unknown as string | undefined)) || undefined}
             errorMessage={errorMessage}
           />
         </Highlighter>
@@ -280,8 +284,9 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
             onChange={(newValue: number | undefined) => {
               handleChange(field.dataIndex, newValue as unknown as T[keyof T]);
             }}
-            inputValue={data[field.dataIndex] as unknown as number | undefined}
+            inputValue={(data && (data[field.dataIndex] as unknown as number | undefined)) || undefined}
             errorMessage={errorMessage}
+            usePortal={usePortal}
           />
         </Highlighter>
       );
@@ -293,6 +298,13 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
   }
 
   throw new Error('Should have returned by then');
+};
+
+FormField.defaultProps = {
+  previousData: undefined,
+  requiredFromValidation: undefined,
+  validationError: undefined,
+  usePortal: true,
 };
 
 export default FormField;

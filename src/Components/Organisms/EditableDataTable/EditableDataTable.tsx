@@ -92,7 +92,7 @@ const EditableDataTable = <T,>(props: IEditableDataTableProps<T>): ReactElement 
     }
   }, []);
 
-  const handUpdateDataChange = (rowIndex: number, dataIndex: keyof T, newData: T[keyof T]) => {
+  const handleUpdateDataChange = (rowIndex: number, dataIndex: keyof T, newData: T[keyof T]) => {
     setCurrentData((prev) => {
       prev[rowIndex][dataIndex] = newData;
       return [...prev];
@@ -126,7 +126,7 @@ const EditableDataTable = <T,>(props: IEditableDataTableProps<T>): ReactElement 
           columns={currentColumns}
           data={currentData}
           extra={extra}
-          handUpdateDataChange={handUpdateDataChange}
+          handleUpdateDataChange={handleUpdateDataChange}
           loading={loading}
         />
         <StaticDataTableFooter<T> columns={currentColumns} data={currentData} extra={extra} />

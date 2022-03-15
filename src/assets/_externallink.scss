@@ -1,0 +1,13 @@
+.external-link {
+  margin: auto;
+  color: $charcoal;
+
+  &:hover,
+  &:focus {
+    color: $primary;
+  }
+
+  .icon {
+    margin: auto 8px;
+  }
+}

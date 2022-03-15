@@ -47,6 +47,8 @@ export interface IMultiSelectInputProps {
   placeholder?: string;
   /** Read only field (optional, default: false) */
   readOnly?: boolean;
+  /** Use portal, it is remmended to set it to false for modal (optional, default true) */
+  usePortal?: boolean;
 }
 
 const CustomMultiValueContainer = (props: MultiValueGenericProps<IOption>) => {
@@ -84,6 +86,7 @@ const MultiSelectInput = (props: IMultiSelectInputProps): ReactElement => {
     options,
     placeholder,
     readOnly,
+    usePortal,
   } = props;
 
   if (readOnly) {
@@ -133,7 +136,7 @@ const MultiSelectInput = (props: IMultiSelectInputProps): ReactElement => {
         name={name}
         maxMenuHeight={maxMenuHeight}
         menuPlacement='auto'
-        menuPortalTarget={document.querySelector('body')}
+        menuPortalTarget={usePortal ? document.querySelector('body') : undefined}
         onChange={(options) => {
           if (onChange) {
             onChange(options.map((option) => option.value));
@@ -178,6 +181,7 @@ MultiSelectInput.defaultProps = {
   onChange: undefined,
   placeholder: undefined,
   readOnly: false,
+  usePortal: true,
 };
 
 export default MultiSelectInput;

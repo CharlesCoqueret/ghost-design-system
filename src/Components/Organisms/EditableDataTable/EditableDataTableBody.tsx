@@ -9,12 +9,12 @@ interface IEditableDataTableBodyProps<T> {
   columns: Array<IColumnType<T>>;
   data: Array<T>;
   extra: IExtraEditableDataTableProps<T>;
-  handUpdateDataChange: (rowIndex: number, dataIndex: keyof T, newData: T[keyof T]) => void;
+  handleUpdateDataChange: (rowIndex: number, dataIndex: keyof T, newData: T[keyof T]) => void;
   loading?: ReactElement;
 }
 
 const EditableDataTableBody = <T,>(props: IEditableDataTableBodyProps<T>): ReactElement => {
-  const { columns, data, extra, handUpdateDataChange, loading } = props;
+  const { columns, data, extra, handleUpdateDataChange, loading } = props;
 
   const [selectedRows, setSelectedRows] = useState<Record<number, boolean>>({});
 
@@ -72,7 +72,7 @@ const EditableDataTableBody = <T,>(props: IEditableDataTableBodyProps<T>): React
                   row={row}
                   extra={extra}
                   rowIndex={rowIndex}
-                  handUpdateDataChange={handUpdateDataChange}
+                  handleUpdateDataChange={handleUpdateDataChange}
                   editable={isEditable}
                 />
               );

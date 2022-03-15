@@ -19,11 +19,11 @@ export interface IEditableDataTableCellProps<T> {
   row: T;
   extra?: IExtraEditableDataTableProps<T>;
   rowIndex: number;
-  handUpdateDataChange: (rowIndex: number, dataIndex: keyof T, newData: T[keyof T]) => void;
+  handleUpdateDataChange: (rowIndex: number, dataIndex: keyof T, newData: T[keyof T]) => void;
 }
 
 const EditableDataTableCell = <T,>(props: IEditableDataTableCellProps<T>): ReactElement => {
-  const { column, editable, row, extra, rowIndex, handUpdateDataChange } = props;
+  const { column, editable, row, extra, rowIndex, handleUpdateDataChange } = props;
 
   switch (column.type) {
     case ColumnType.AMOUNT: {
@@ -34,7 +34,7 @@ const EditableDataTableCell = <T,>(props: IEditableDataTableCellProps<T>): React
           extra={extra}
           rowIndex={rowIndex}
           onChange={(newValue) => {
-            handUpdateDataChange(rowIndex, column.dataIndex, newValue);
+            handleUpdateDataChange(rowIndex, column.dataIndex, newValue);
           }}
           editing={editable}
         />
@@ -48,7 +48,7 @@ const EditableDataTableCell = <T,>(props: IEditableDataTableCellProps<T>): React
           extra={extra}
           rowIndex={rowIndex}
           onChange={(newValue) => {
-            handUpdateDataChange(rowIndex, column.dataIndex, newValue);
+            handleUpdateDataChange(rowIndex, column.dataIndex, newValue);
           }}
           editing={editable}
         />
@@ -68,7 +68,7 @@ const EditableDataTableCell = <T,>(props: IEditableDataTableCellProps<T>): React
           extra={extra}
           rowIndex={rowIndex}
           onChange={(newValue) => {
-            handUpdateDataChange(rowIndex, column.dataIndex, newValue);
+            handleUpdateDataChange(rowIndex, column.dataIndex, newValue);
           }}
           editing={editable}
         />
@@ -82,7 +82,7 @@ const EditableDataTableCell = <T,>(props: IEditableDataTableCellProps<T>): React
           extra={extra}
           rowIndex={rowIndex}
           onChange={(newValue) => {
-            handUpdateDataChange(rowIndex, column.dataIndex, newValue);
+            handleUpdateDataChange(rowIndex, column.dataIndex, newValue);
           }}
           editing={editable}
         />
@@ -96,7 +96,7 @@ const EditableDataTableCell = <T,>(props: IEditableDataTableCellProps<T>): React
           extra={extra}
           rowIndex={rowIndex}
           onChange={(newValue) => {
-            handUpdateDataChange(rowIndex, column.dataIndex, newValue);
+            handleUpdateDataChange(rowIndex, column.dataIndex, newValue);
           }}
           editing={editable}
         />
@@ -110,7 +110,7 @@ const EditableDataTableCell = <T,>(props: IEditableDataTableCellProps<T>): React
           extra={extra}
           rowIndex={rowIndex}
           onChange={(newValue) => {
-            handUpdateDataChange(rowIndex, column.dataIndex, newValue);
+            handleUpdateDataChange(rowIndex, column.dataIndex, newValue);
           }}
           editing={editable}
         />
@@ -124,7 +124,7 @@ const EditableDataTableCell = <T,>(props: IEditableDataTableCellProps<T>): React
           extra={extra}
           rowIndex={rowIndex}
           onChange={(newValue) => {
-            handUpdateDataChange(rowIndex, column.dataIndex, newValue);
+            handleUpdateDataChange(rowIndex, column.dataIndex, newValue);
           }}
           editing={editable}
         />

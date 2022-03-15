@@ -51,6 +51,8 @@ export interface IDynamicSearchInputProps {
   resolveValue: (value: string) => Promise<IOption | undefined>;
   /** Search for different options based on the term provided by the user */
   searchOptions: (searchTerm: string) => Promise<Array<IOption> | undefined>;
+  /** Use portal, it is remmended to set it to false for modal (optional, default true) */
+  usePortal?: boolean;
 }
 
 const DynamicSearchInput = (props: IDynamicSearchInputProps): ReactElement => {
@@ -72,6 +74,7 @@ const DynamicSearchInput = (props: IDynamicSearchInputProps): ReactElement => {
     readOnly,
     resolveValue,
     searchOptions,
+    usePortal,
   } = props;
 
   const [isLoading, setIsLoading] = useState(false);
@@ -146,7 +149,7 @@ const DynamicSearchInput = (props: IDynamicSearchInputProps): ReactElement => {
         name={name}
         maxMenuHeight={maxMenuHeight}
         menuPlacement='auto'
-        menuPortalTarget={document.querySelector('body')}
+        menuPortalTarget={usePortal ? document.querySelector('body') : undefined}
         noOptionsMessage={noOptionsMessage}
         onChange={(option) => {
           if (onChange) {
@@ -194,6 +197,7 @@ DynamicSearchInput.defaultProps = {
   options: undefined,
   placeholder: undefined,
   readOnly: false,
+  usePortal: true,
 };
 
 export default DynamicSearchInput;

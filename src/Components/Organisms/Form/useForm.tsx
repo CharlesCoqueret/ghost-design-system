@@ -4,18 +4,19 @@ import * as yup from 'yup';
 import { AnyObject } from 'yup/lib/object';
 
 import Form from './Form';
-import { IFieldProps, IFormSubmitReturnedType, IUseFormReturnedType } from './types';
+import { IFieldAndLayoutProps, IFormSubmitReturnedType, IUseFormReturnedType } from './types';
 import { yupResolver, FieldError } from './yupResolver';
 
 export interface IUseFormProps<T extends AnyObject> {
   initialData: T;
-  fields: Array<IFieldProps<T>>;
+  fields: Array<IFieldAndLayoutProps<T>>;
   previousData?: T;
+  usePortal?: boolean;
   validationSchema?: yup.SchemaOf<T>;
 }
 
 const useForm = <T extends AnyObject>(props: IUseFormProps<T>): IUseFormReturnedType<T> => {
-  const { fields, initialData, previousData, validationSchema } = props;
+  const { fields, initialData, previousData, usePortal, validationSchema } = props;
 
   const [currentData, setCurrentData] = useState<T>(cloneDeep(initialData));
   const [isModified, setIsModified] = useState<boolean>(false);
@@ -53,7 +54,7 @@ const useForm = <T extends AnyObject>(props: IUseFormProps<T>): IUseFormReturned
       setValidationError(errors);
     }
 
-    return { data: cloneDeep(initialData), valid: isValid };
+    return { data: cloneDeep(currentData), valid: isValid };
   };
 
   return {
@@ -65,6 +66,7 @@ const useForm = <T extends AnyObject>(props: IUseFormProps<T>): IUseFormReturned
         validationError={validationError}
         previousData={previousData}
         validationSchema={validationSchema}
+        usePortal={usePortal}
       />
     ),
     getData,
@@ -72,6 +74,12 @@ const useForm = <T extends AnyObject>(props: IUseFormProps<T>): IUseFormReturned
     reset,
     submit,
   };
+};
+
+useForm.defaultProps = {
+  previousData: undefined,
+  validationSchema: undefined,
+  usePortal: true,
 };
 
 export default useForm;

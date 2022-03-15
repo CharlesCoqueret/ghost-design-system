@@ -48,6 +48,8 @@ export interface IDatePickerFieldProps {
   placeholder?: string;
   /** Read only field (optional, default: false) */
   readOnly?: boolean;
+  /** Use portal, it is remmended to set it to false for modal (optional, default true) */
+  usePortal?: boolean;
 }
 
 /**
@@ -81,6 +83,7 @@ export const DatePickerField = (props: IDatePickerFieldProps): ReactElement => {
     onChange,
     placeholder,
     readOnly,
+    usePortal,
   } = props;
 
   return (
@@ -114,6 +117,7 @@ export const DatePickerField = (props: IDatePickerFieldProps): ReactElement => {
         inputValue={inputValue}
         onChange={onChange}
         readOnly={readOnly}
+        usePortal={usePortal}
       />
     </GenericField>
   );
@@ -136,6 +140,7 @@ DatePickerField.defaultProps = {
   onChange: undefined,
   placeholder: undefined,
   readOnly: false,
+  usePortal: true,
 };
 
 export default DatePickerField;

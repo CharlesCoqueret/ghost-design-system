@@ -84,7 +84,7 @@ describe('EditableDataTableBody Component', () => {
   it('EditableDataTableBody renders and handles row click', async () => {
     const onEditMock = jest.fn();
     const onRowClickMock = jest.fn();
-    const handUpdateDataChangeMock = jest.fn();
+    const handleUpdateDataChangeMock = jest.fn();
 
     const extra = {
       onEdit: onEditMock,
@@ -97,7 +97,7 @@ describe('EditableDataTableBody Component', () => {
           columns={columns}
           data={initialData}
           extra={extra}
-          handUpdateDataChange={handUpdateDataChangeMock}
+          handleUpdateDataChange={handleUpdateDataChangeMock}
         />
       </table>,
     );
@@ -119,7 +119,7 @@ describe('EditableDataTableBody Component', () => {
   it('EditableDataTableBody renders and handles row selection', async () => {
     const onEditMock = jest.fn();
     const onRowSelectMock = jest.fn();
-    const handUpdateDataChangeMock = jest.fn();
+    const handleUpdateDataChangeMock = jest.fn();
 
     const extra = {
       onEdit: onEditMock,
@@ -132,7 +132,7 @@ describe('EditableDataTableBody Component', () => {
           columns={columns}
           data={initialData}
           extra={extra}
-          handUpdateDataChange={handUpdateDataChangeMock}
+          handleUpdateDataChange={handleUpdateDataChangeMock}
         />
       </table>,
     );

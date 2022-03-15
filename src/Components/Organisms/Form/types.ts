@@ -22,10 +22,11 @@ export enum FieldTypeEnum {
   AMOUNT = 'amount',
   CHECKBOX = 'checkbox',
   DATE = 'date',
+  DESCRIPTION = 'description',
   MULTISELECT = 'multiselect',
   NUMBER = 'number',
   PERCENTAGE = 'percentage',
-  SECTION = 'section', // TODO section
+  SECTION = 'section',
   SELECT = 'select',
   SWITCH = 'switch',
   TABLE = 'table', // TODO table
@@ -33,6 +34,10 @@ export enum FieldTypeEnum {
   TEXTAREA = 'textared',
   YEAR = 'year',
 }
+
+export type IFieldAndLayoutProps<T> = IFieldProps<T> | ILayoutProps<T>;
+
+export type ILayoutProps<T> = IFieldSectionProps<T> | IFieldDescriptionProps;
 
 export type IFieldProps<T> =
   | IFieldAmountProps<T>
@@ -58,7 +63,7 @@ export interface IFieldBaseProps<T> {
   label: string;
   mandatory?: boolean;
   name?: string;
-  readonly?: boolean;
+  readOnly?: boolean;
 }
 
 export interface IFieldAmountProps<T> extends IFieldBaseProps<T> {
@@ -89,6 +94,11 @@ export interface IFieldDateProps<T> extends IFieldBaseProps<T> {
   locale?: string;
   onChange?: (date: Date | null) => void;
   placeholder?: string;
+}
+
+export interface IFieldDescriptionProps {
+  description: ReactElement;
+  fieldType: FieldTypeEnum.DESCRIPTION;
 }
 
 export interface IFieldMultiSelectProps<T> extends IFieldBaseProps<T> {
@@ -135,6 +145,13 @@ export interface IFieldPercentageProps<T> extends IFieldBaseProps<T> {
   placeholder?: string;
   thousandSeparator?: string;
   thousandsGroupStyle?: ThousandsGroupStyle;
+}
+
+export interface IFieldSectionProps<T> {
+  fieldType: FieldTypeEnum.SECTION;
+  openInitially?: boolean;
+  fields: Array<IFieldProps<T>>;
+  label: string;
 }
 
 export interface IFieldSelectProps<T> extends IFieldBaseProps<T> {

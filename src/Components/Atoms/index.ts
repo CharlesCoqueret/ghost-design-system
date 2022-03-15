@@ -6,6 +6,7 @@ export * from './DatePickerInput';
 export * from './GenericField';
 export * from './Icon';
 export * from './Layout';
+export * from './Link';
 export * from './Modal';
 export * from './Portal';
 export * from './SelectInput';

@@ -6,7 +6,8 @@ import { IToggleEntry } from '../../Atoms/CheckBoxInput/types';
 import { Button, ColorButtonEnum } from '../../Molecules';
 
 import useForm, { IUseFormProps } from './useForm';
-import { FieldTypeEnum, IFieldProps } from './types';
+import { FieldTypeEnum, IFieldAndLayoutProps } from './types';
+import { Link, Typography } from '../../Atoms';
 
 export default {
   title: 'Organism/Form',
@@ -16,6 +17,7 @@ interface dataType {
   amount: number | undefined;
   checkbox: Array<IToggleEntry>;
   date: Date | undefined | null;
+  description?: string;
   multiselect: Array<string> | undefined;
   number: number | undefined;
   percentage: number | undefined;
@@ -47,6 +49,7 @@ const initialData: dataType = {
   amount: 100000,
   checkbox: cloneDeep(checkboxOption),
   date: new Date(),
+  description: 'Description',
   multiselect: options.map((option) => option.value),
   number: 10,
   percentage: 50,
@@ -120,6 +123,7 @@ const validationSchema = yup.object({
     })
     .required(),
   date: yup.date().min(new Date('01/01/1980'), 'Date needs to be after Jan 1 1980').required(),
+  description: yup.string().optional(),
   multiselect: yup.array().of(yup.string()).min(1, 'At least one item required').required(),
   number: yup.number().required('Value for number is required').min(5, 'Minimum value is 5'),
   percentage: yup.number().required(),
@@ -153,7 +157,17 @@ const validationSchema = yup.object({
   year: yup.number().min(1984, 'Date needs to be after 1984').required(),
 });
 
-const fields: Array<IFieldProps<dataType>> = [
+const fields: Array<IFieldAndLayoutProps<dataType>> = [
+  {
+    description: (
+      <div>
+        <Typography.Text>Any description</Typography.Text>
+        <Link link='http://google.com' text='external link' />
+        <Link link='#' text='internal link' />
+      </div>
+    ),
+    fieldType: FieldTypeEnum.DESCRIPTION,
+  },
   {
     label: 'Amount',
     dataIndex: 'amount',
@@ -163,21 +177,35 @@ const fields: Array<IFieldProps<dataType>> = [
   { label: 'Date', dataIndex: 'date', fieldType: FieldTypeEnum.DATE },
   { label: 'Multiselect', dataIndex: 'multiselect', fieldType: FieldTypeEnum.MULTISELECT, options: options },
   {
-    label: 'Number',
-    dataIndex: 'number',
-    fieldType: FieldTypeEnum.NUMBER,
-    mandatory: true,
+    label: 'Section',
+    fieldType: FieldTypeEnum.SECTION,
+    openInitially: true,
+    fields: [
+      {
+        label: 'Number',
+        dataIndex: 'number',
+        fieldType: FieldTypeEnum.NUMBER,
+        mandatory: true,
+      },
+      {
+        label: 'Percentage',
+        dataIndex: 'percentage',
+        fieldType: FieldTypeEnum.PERCENTAGE,
+      },
+    ],
   },
   {
-    label: 'Percentage',
-    dataIndex: 'percentage',
-    fieldType: FieldTypeEnum.PERCENTAGE,
+    label: 'Additional Section',
+    fieldType: FieldTypeEnum.SECTION,
+    openInitially: true,
+    fields: [
+      { label: 'Select', dataIndex: 'select', fieldType: FieldTypeEnum.SELECT, options: options },
+      { label: 'Switch', dataIndex: 'switch', fieldType: FieldTypeEnum.SWITCH },
+      { label: 'Text', dataIndex: 'text', fieldType: FieldTypeEnum.TEXT },
+      { label: 'Textarea', dataIndex: 'textarea', fieldType: FieldTypeEnum.TEXTAREA },
+      { label: 'Year', dataIndex: 'year', fieldType: FieldTypeEnum.YEAR },
+    ],
   },
-  { label: 'Select', dataIndex: 'select', fieldType: FieldTypeEnum.SELECT, options: options },
-  { label: 'Switch', dataIndex: 'switch', fieldType: FieldTypeEnum.SWITCH },
-  { label: 'Text', dataIndex: 'text', fieldType: FieldTypeEnum.TEXT },
-  { label: 'Textarea', dataIndex: 'textarea', fieldType: FieldTypeEnum.TEXTAREA },
-  { label: 'Year', dataIndex: 'year', fieldType: FieldTypeEnum.YEAR },
 ];
 
 const Template = (args: IUseFormProps<dataType>) => {

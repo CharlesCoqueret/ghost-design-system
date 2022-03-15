@@ -62,6 +62,8 @@ export interface IDynamicSearchCreatableFieldProps {
   resolveValue: (value: string) => Promise<IOption | undefined>;
   /** Search for different options based on the term provided by the user */
   searchOptions: (searchTerm: string) => Promise<Array<IOption> | undefined>;
+  /** Use portal, it is remmended to set it to false for modal (optional, default true) */
+  usePortal?: boolean;
 }
 
 /**
@@ -98,6 +100,7 @@ export const DynamicSearchCreatableField = (props: IDynamicSearchCreatableFieldP
     readOnly,
     resolveValue,
     searchOptions,
+    usePortal,
   } = props;
 
   return (
@@ -121,6 +124,7 @@ export const DynamicSearchCreatableField = (props: IDynamicSearchCreatableFieldP
           fieldSize && `field-input-size-${fieldSize}`,
         )}
         dataTestId={dataTestId}
+        handleCreate={handleCreate}
         highlighted={highlighted}
         isInError={errorMessage !== undefined}
         isClearable={isClearable}
@@ -133,7 +137,7 @@ export const DynamicSearchCreatableField = (props: IDynamicSearchCreatableFieldP
         readOnly={readOnly}
         resolveValue={resolveValue}
         searchOptions={searchOptions}
-        handleCreate={handleCreate}
+        usePortal={usePortal}
       />
     </GenericField>
   );
@@ -166,6 +170,7 @@ DynamicSearchCreatableField.defaultProps = {
   onChange: undefined,
   placeholder: undefined,
   readOnly: false,
+  usePortal: true,
 };
 
 export default DynamicSearchCreatableField;
