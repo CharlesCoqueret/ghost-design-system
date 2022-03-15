@@ -13,7 +13,7 @@ jobs:
 
       - name: Configure npm ⚙
         run : |
-          npm config set '//npm.fontawesome.com/:_authToken' "${{ secrets.FONTAWESOME_NPM_AUTH_TOKEN }}"
+          npm config set //npm.fontawesome.com/:_authToken ${{ secrets.FONTAWESOME_NPM_AUTH_TOKEN }}
 
       - name: Install and Build 🔧
         run: |
