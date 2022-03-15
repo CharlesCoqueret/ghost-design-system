@@ -354,7 +354,6 @@ $datepicker__triangle-size: 0px !default;
             color: $datepicker__muted-color;
 
             &:hover {
-              cursor: default;
               background-color: transparent;
             }
           }
@@ -421,7 +420,6 @@ $datepicker__triangle-size: 0px !default;
     pointer-events: none;
 
     &:hover {
-      cursor: default;
       background-color: transparent;
     }
   }
@@ -494,7 +492,6 @@ $datepicker__triangle-size: 0px !default;
   }
 
   &--disabled {
-    cursor: default;
     color: $datepicker__muted-color;
 
     &:hover {
@@ -705,7 +702,6 @@ $datepicker__triangle-size: 0px !default;
     border: none;
     padding: 0px;
     margin: 0px;
-    cursor: default;
   }
 
   &:disabled {

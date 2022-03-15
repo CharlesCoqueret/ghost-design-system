@@ -4,33 +4,6 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { IOption } from './types';
 import DynamicSearchInput, { IDynamicSearchInputProps } from './DynamicSearchInput';
 
-const delay = (ms: number) => new Promise((res) => setTimeout(res, ms));
-
-interface Record {
-  datasetid: string;
-  recordid: string;
-  fields: {
-    sexe: string;
-    nombre: number;
-    nombre_total_cumule: number;
-    prenoms: string;
-  };
-  record_timestamp: string;
-}
-
-interface PaginatedResult<T> {
-  nhits: number;
-  paramaters: {
-    dataset: string;
-    q: string;
-    rows: number;
-    start: number;
-    format: string;
-    timezone: string;
-  };
-  records: Array<T>;
-}
-
 const requestInit: RequestInit = {
   method: 'GET',
 };
@@ -68,7 +41,7 @@ const searchRecords = async (
   });
 };
 
-const searchOptions = (searchTerm: string = ''): Promise<Array<IOption>> => {
+const searchOptions = async (searchTerm: string = ''): Promise<Array<IOption>> => {
   return searchRecords(searchTerm).then((result) => {
     return result.records.map((record) => {
       return {
@@ -87,7 +60,7 @@ const resolveRecord = async (value: string = ''): Promise<Record> => {
   });
 };
 
-const resolveValue = (searchTerm: string = ''): Promise<IOption> => {
+const resolveValue = async (searchTerm: string = ''): Promise<IOption> => {
   return resolveRecord(searchTerm).then((result) => {
     return {
       value: result.recordid,
@@ -135,3 +108,31 @@ Default.args = {
     return { value: inputValue, label: inputValue.toUpperCase() };
   },
 };
+
+const delay = (ms: number) => new Promise((res) => setTimeout(res, ms));
+
+interface Record {
+  datasetid: string;
+  recordid: string;
+  fields: {
+    sexe: string;
+    nombre: number;
+    annee: string;
+    nombre_total_cumule: number;
+    prenoms: string;
+  };
+  record_timestamp: string;
+}
+
+interface PaginatedResult<T> {
+  nhits: number;
+  paramaters: {
+    dataset: string;
+    q: string;
+    rows: number;
+    start: number;
+    format: string;
+    timezone: string;
+  };
+  records: Array<T>;
+}

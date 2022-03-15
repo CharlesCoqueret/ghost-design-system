@@ -29,7 +29,6 @@ div.input-textarea-parent {
     &:read-only:active,
     &:read-only:focus {
       border: 1px solid $chalk;
-      cursor: default;
     }
 
     &.input-error {

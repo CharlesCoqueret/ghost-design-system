@@ -6,16 +6,11 @@
     display: inline-flex;
     position: relative;
     margin-bottom: 8px;
-    cursor: default;
     width: fit-content;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-
-    &:not(.input-switch-field-disabled):not(.input-switch-field-read-only) {
-      cursor: pointer;
-    }
 
     .switch-marker {
       margin-right: 10px;

@@ -24,7 +24,6 @@
     }
     &:disabled {
       background-color: $silver;
-      cursor: default;
     }
   }
 
@@ -44,7 +43,6 @@
     }
     &:disabled {
       background-color: $silver;
-      cursor: default;
     }
   }
 
@@ -65,7 +63,6 @@
     }
     &:disabled {
       color: $silver;
-      cursor: default;
     }
   }
 
@@ -154,11 +151,9 @@
   outline: none;
 }
 .szh-menu__item--focusable {
-  cursor: default;
   background-color: inherit;
 }
 .szh-menu__item--disabled {
-  cursor: default;
   color: #aaa;
 }
 .szh-menu__submenu {

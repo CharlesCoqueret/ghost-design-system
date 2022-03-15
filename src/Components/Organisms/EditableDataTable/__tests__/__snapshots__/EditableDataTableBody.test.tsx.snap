@@ -14,16 +14,22 @@ Object {
               class="table--cell--code"
               data-testid="id-0"
             >
-              id
+              <div
+                class="field-group"
+              >
+                <div
+                  class="field input-text-field-read-only typography"
+                >
+                  id
+                </div>
+              </div>
             </td>
-            <td
-              class="ellipsis"
-            >
+            <td>
               <div
                 class="field-group"
               >
                 <input
-                  class="field input-text-field"
+                  class="field input-text-field typography ellipsis"
                   data-testid="name-0"
                   id="name"
                   name="name"
@@ -55,7 +61,7 @@ Object {
                       class="css-1f43avz-a11yText-A11yText"
                     />
                     <div
-                      class=" css-lg4uvg-control"
+                      class=" css-8dxjxk-control"
                     >
                       <div
                         class=" css-16jl9sr-ValueContainer"
@@ -97,7 +103,7 @@ Object {
                         />
                         <div
                           aria-hidden="true"
-                          class=" css-1pxvqqx-indicatorContainer"
+                          class=" css-yuu8po-indicatorContainer"
                         >
                           <svg
                             aria-hidden="true"
@@ -185,6 +191,11 @@ Object {
         </tbody>
       </table>
     </div>
+    <div
+      id="root-portal-id"
+    >
+      <div />
+    </div>
   </body>,
   "container": <div>
     <table>
@@ -196,16 +207,22 @@ Object {
             class="table--cell--code"
             data-testid="id-0"
           >
-            id
+            <div
+              class="field-group"
+            >
+              <div
+                class="field input-text-field-read-only typography"
+              >
+                id
+              </div>
+            </div>
           </td>
-          <td
-            class="ellipsis"
-          >
+          <td>
             <div
               class="field-group"
             >
               <input
-                class="field input-text-field"
+                class="field input-text-field typography ellipsis"
                 data-testid="name-0"
                 id="name"
                 name="name"
@@ -237,7 +254,7 @@ Object {
                     class="css-1f43avz-a11yText-A11yText"
                   />
                   <div
-                    class=" css-lg4uvg-control"
+                    class=" css-8dxjxk-control"
                   >
                     <div
                       class=" css-16jl9sr-ValueContainer"
@@ -279,7 +296,7 @@ Object {
                       />
                       <div
                         aria-hidden="true"
-                        class=" css-1pxvqqx-indicatorContainer"
+                        class=" css-yuu8po-indicatorContainer"
                       >
                         <svg
                           aria-hidden="true"
@@ -448,16 +465,22 @@ Object {
               class="table--cell--code"
               data-testid="id-0"
             >
-              id
+              <div
+                class="field-group"
+              >
+                <div
+                  class="field input-text-field-read-only typography"
+                >
+                  id
+                </div>
+              </div>
             </td>
-            <td
-              class="ellipsis"
-            >
+            <td>
               <div
                 class="field-group"
               >
                 <input
-                  class="field input-text-field"
+                  class="field input-text-field typography ellipsis"
                   data-testid="name-0"
                   id="name"
                   name="name"
@@ -489,7 +512,7 @@ Object {
                       class="css-1f43avz-a11yText-A11yText"
                     />
                     <div
-                      class=" css-lg4uvg-control"
+                      class=" css-8dxjxk-control"
                     >
                       <div
                         class=" css-16jl9sr-ValueContainer"
@@ -531,7 +554,7 @@ Object {
                         />
                         <div
                           aria-hidden="true"
-                          class=" css-1pxvqqx-indicatorContainer"
+                          class=" css-yuu8po-indicatorContainer"
                         >
                           <svg
                             aria-hidden="true"
@@ -619,6 +642,11 @@ Object {
         </tbody>
       </table>
     </div>
+    <div
+      id="root-portal-id"
+    >
+      <div />
+    </div>
   </body>,
   "container": <div>
     <table>
@@ -643,16 +671,22 @@ Object {
             class="table--cell--code"
             data-testid="id-0"
           >
-            id
+            <div
+              class="field-group"
+            >
+              <div
+                class="field input-text-field-read-only typography"
+              >
+                id
+              </div>
+            </div>
           </td>
-          <td
-            class="ellipsis"
-          >
+          <td>
             <div
               class="field-group"
             >
               <input
-                class="field input-text-field"
+                class="field input-text-field typography ellipsis"
                 data-testid="name-0"
                 id="name"
                 name="name"
@@ -684,7 +718,7 @@ Object {
                     class="css-1f43avz-a11yText-A11yText"
                   />
                   <div
-                    class=" css-lg4uvg-control"
+                    class=" css-8dxjxk-control"
                   >
                     <div
                       class=" css-16jl9sr-ValueContainer"
@@ -726,7 +760,7 @@ Object {
                       />
                       <div
                         aria-hidden="true"
-                        class=" css-1pxvqqx-indicatorContainer"
+                        class=" css-yuu8po-indicatorContainer"
                       >
                         <svg
                           aria-hidden="true"

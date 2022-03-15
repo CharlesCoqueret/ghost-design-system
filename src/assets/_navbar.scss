@@ -40,10 +40,9 @@
         &.nav-bar-search-container {
           border-radius: 4px;
           border: 1px solid $chalk;
-          cursor: unset;
 
-          & > input:focus,
-          &:hover {
+          .nav-bar-search:focus,
+          .nav-bar-search:hover {
             border: 1px solid $primary;
           }
 

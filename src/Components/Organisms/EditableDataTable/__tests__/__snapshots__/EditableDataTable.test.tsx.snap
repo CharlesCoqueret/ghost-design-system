@@ -146,16 +146,22 @@ Object {
               class="table--cell--code"
               data-testid="id-0"
             >
-              id
+              <div
+                class="field-group"
+              >
+                <div
+                  class="field input-text-field-read-only typography"
+                >
+                  id
+                </div>
+              </div>
             </td>
-            <td
-              class="ellipsis"
-            >
+            <td>
               <div
                 class="field-group"
               >
                 <input
-                  class="field input-text-field"
+                  class="field input-text-field typography ellipsis"
                   data-testid="name-0"
                   id="name"
                   name="name"
@@ -187,7 +193,7 @@ Object {
                       class="css-1f43avz-a11yText-A11yText"
                     />
                     <div
-                      class=" css-lg4uvg-control"
+                      class=" css-8dxjxk-control"
                     >
                       <div
                         class=" css-16jl9sr-ValueContainer"
@@ -229,7 +235,7 @@ Object {
                         />
                         <div
                           aria-hidden="true"
-                          class=" css-1pxvqqx-indicatorContainer"
+                          class=" css-yuu8po-indicatorContainer"
                         >
                           <svg
                             aria-hidden="true"
@@ -321,16 +327,22 @@ Object {
               class="table--cell--code"
               data-testid="id-1"
             >
-              test
+              <div
+                class="field-group"
+              >
+                <div
+                  class="field input-text-field-read-only typography"
+                >
+                  test
+                </div>
+              </div>
             </td>
-            <td
-              class="ellipsis"
-            >
+            <td>
               <div
                 class="field-group"
               >
                 <input
-                  class="field input-text-field"
+                  class="field input-text-field typography ellipsis"
                   data-testid="name-1"
                   id="name"
                   name="name"
@@ -362,7 +374,7 @@ Object {
                       class="css-1f43avz-a11yText-A11yText"
                     />
                     <div
-                      class=" css-lg4uvg-control"
+                      class=" css-8dxjxk-control"
                     >
                       <div
                         class=" css-16jl9sr-ValueContainer"
@@ -406,7 +418,7 @@ Object {
                         />
                         <div
                           aria-hidden="true"
-                          class=" css-1pxvqqx-indicatorContainer"
+                          class=" css-yuu8po-indicatorContainer"
                         >
                           <svg
                             aria-hidden="true"
@@ -587,6 +599,8 @@ Object {
           </div>
         </div>
       </div>
+      <div />
+      <div />
     </div>
   </body>,
   "container": <div>
@@ -731,16 +745,22 @@ Object {
             class="table--cell--code"
             data-testid="id-0"
           >
-            id
+            <div
+              class="field-group"
+            >
+              <div
+                class="field input-text-field-read-only typography"
+              >
+                id
+              </div>
+            </div>
           </td>
-          <td
-            class="ellipsis"
-          >
+          <td>
             <div
               class="field-group"
             >
               <input
-                class="field input-text-field"
+                class="field input-text-field typography ellipsis"
                 data-testid="name-0"
                 id="name"
                 name="name"
@@ -772,7 +792,7 @@ Object {
                     class="css-1f43avz-a11yText-A11yText"
                   />
                   <div
-                    class=" css-lg4uvg-control"
+                    class=" css-8dxjxk-control"
                   >
                     <div
                       class=" css-16jl9sr-ValueContainer"
@@ -814,7 +834,7 @@ Object {
                       />
                       <div
                         aria-hidden="true"
-                        class=" css-1pxvqqx-indicatorContainer"
+                        class=" css-yuu8po-indicatorContainer"
                       >
                         <svg
                           aria-hidden="true"
@@ -906,16 +926,22 @@ Object {
             class="table--cell--code"
             data-testid="id-1"
           >
-            test
+            <div
+              class="field-group"
+            >
+              <div
+                class="field input-text-field-read-only typography"
+              >
+                test
+              </div>
+            </div>
           </td>
-          <td
-            class="ellipsis"
-          >
+          <td>
             <div
               class="field-group"
             >
               <input
-                class="field input-text-field"
+                class="field input-text-field typography ellipsis"
                 data-testid="name-1"
                 id="name"
                 name="name"
@@ -947,7 +973,7 @@ Object {
                     class="css-1f43avz-a11yText-A11yText"
                   />
                   <div
-                    class=" css-lg4uvg-control"
+                    class=" css-8dxjxk-control"
                   >
                     <div
                       class=" css-16jl9sr-ValueContainer"
@@ -991,7 +1017,7 @@ Object {
                       />
                       <div
                         aria-hidden="true"
-                        class=" css-1pxvqqx-indicatorContainer"
+                        class=" css-yuu8po-indicatorContainer"
                       >
                         <svg
                           aria-hidden="true"
@@ -1290,16 +1316,22 @@ Object {
               class="table--cell--code"
               data-testid="id-0"
             >
-              id
+              <div
+                class="field-group"
+              >
+                <div
+                  class="field input-text-field-read-only typography"
+                >
+                  id
+                </div>
+              </div>
             </td>
-            <td
-              class="ellipsis"
-            >
+            <td>
               <div
                 class="field-group"
               >
                 <input
-                  class="field input-text-field"
+                  class="field input-text-field typography ellipsis"
                   data-testid="name-0"
                   id="name"
                   name="name"
@@ -1331,7 +1363,7 @@ Object {
                       class="css-1f43avz-a11yText-A11yText"
                     />
                     <div
-                      class=" css-lg4uvg-control"
+                      class=" css-8dxjxk-control"
                     >
                       <div
                         class=" css-16jl9sr-ValueContainer"
@@ -1373,7 +1405,7 @@ Object {
                         />
                         <div
                           aria-hidden="true"
-                          class=" css-1pxvqqx-indicatorContainer"
+                          class=" css-yuu8po-indicatorContainer"
                         >
                           <svg
                             aria-hidden="true"
@@ -1507,16 +1539,22 @@ Object {
               class="table--cell--code"
               data-testid="id-1"
             >
-              test
+              <div
+                class="field-group"
+              >
+                <div
+                  class="field input-text-field-read-only typography"
+                >
+                  test
+                </div>
+              </div>
             </td>
-            <td
-              class="ellipsis"
-            >
+            <td>
               <div
                 class="field-group"
               >
                 <input
-                  class="field input-text-field"
+                  class="field input-text-field typography ellipsis"
                   data-testid="name-1"
                   id="name"
                   name="name"
@@ -1548,7 +1586,7 @@ Object {
                       class="css-1f43avz-a11yText-A11yText"
                     />
                     <div
-                      class=" css-lg4uvg-control"
+                      class=" css-8dxjxk-control"
                     >
                       <div
                         class=" css-16jl9sr-ValueContainer"
@@ -1592,7 +1630,7 @@ Object {
                         />
                         <div
                           aria-hidden="true"
-                          class=" css-1pxvqqx-indicatorContainer"
+                          class=" css-yuu8po-indicatorContainer"
                         >
                           <svg
                             aria-hidden="true"
@@ -1815,6 +1853,7 @@ Object {
           </div>
         </div>
       </div>
+      <div />
       <div>
         <div
           class="tooltip bottom"
@@ -1899,6 +1938,7 @@ Object {
           </div>
         </div>
       </div>
+      <div />
       <div>
         <div
           class="tooltip bottom"
@@ -2138,16 +2178,22 @@ Object {
             class="table--cell--code"
             data-testid="id-0"
           >
-            id
+            <div
+              class="field-group"
+            >
+              <div
+                class="field input-text-field-read-only typography"
+              >
+                id
+              </div>
+            </div>
           </td>
-          <td
-            class="ellipsis"
-          >
+          <td>
             <div
               class="field-group"
             >
               <input
-                class="field input-text-field"
+                class="field input-text-field typography ellipsis"
                 data-testid="name-0"
                 id="name"
                 name="name"
@@ -2179,7 +2225,7 @@ Object {
                     class="css-1f43avz-a11yText-A11yText"
                   />
                   <div
-                    class=" css-lg4uvg-control"
+                    class=" css-8dxjxk-control"
                   >
                     <div
                       class=" css-16jl9sr-ValueContainer"
@@ -2221,7 +2267,7 @@ Object {
                       />
                       <div
                         aria-hidden="true"
-                        class=" css-1pxvqqx-indicatorContainer"
+                        class=" css-yuu8po-indicatorContainer"
                       >
                         <svg
                           aria-hidden="true"
@@ -2355,16 +2401,22 @@ Object {
             class="table--cell--code"
             data-testid="id-1"
           >
-            test
+            <div
+              class="field-group"
+            >
+              <div
+                class="field input-text-field-read-only typography"
+              >
+                test
+              </div>
+            </div>
           </td>
-          <td
-            class="ellipsis"
-          >
+          <td>
             <div
               class="field-group"
             >
               <input
-                class="field input-text-field"
+                class="field input-text-field typography ellipsis"
                 data-testid="name-1"
                 id="name"
                 name="name"
@@ -2396,7 +2448,7 @@ Object {
                     class="css-1f43avz-a11yText-A11yText"
                   />
                   <div
-                    class=" css-lg4uvg-control"
+                    class=" css-8dxjxk-control"
                   >
                     <div
                       class=" css-16jl9sr-ValueContainer"
@@ -2440,7 +2492,7 @@ Object {
                       />
                       <div
                         aria-hidden="true"
-                        class=" css-1pxvqqx-indicatorContainer"
+                        class=" css-yuu8po-indicatorContainer"
                       >
                         <svg
                           aria-hidden="true"
@@ -2781,16 +2833,22 @@ Object {
               class="table--cell--code"
               data-testid="id-0"
             >
-              id
+              <div
+                class="field-group"
+              >
+                <div
+                  class="field input-text-field-read-only typography"
+                >
+                  id
+                </div>
+              </div>
             </td>
-            <td
-              class="ellipsis"
-            >
+            <td>
               <div
                 class="field-group"
               >
                 <input
-                  class="field input-text-field"
+                  class="field input-text-field typography ellipsis"
                   data-testid="name-0"
                   id="name"
                   name="name"
@@ -2822,7 +2880,7 @@ Object {
                       class="css-1f43avz-a11yText-A11yText"
                     />
                     <div
-                      class=" css-lg4uvg-control"
+                      class=" css-8dxjxk-control"
                     >
                       <div
                         class=" css-16jl9sr-ValueContainer"
@@ -2864,7 +2922,7 @@ Object {
                         />
                         <div
                           aria-hidden="true"
-                          class=" css-1pxvqqx-indicatorContainer"
+                          class=" css-yuu8po-indicatorContainer"
                         >
                           <svg
                             aria-hidden="true"
@@ -2998,16 +3056,22 @@ Object {
               class="table--cell--code"
               data-testid="id-1"
             >
-              test
+              <div
+                class="field-group"
+              >
+                <div
+                  class="field input-text-field-read-only typography"
+                >
+                  test
+                </div>
+              </div>
             </td>
-            <td
-              class="ellipsis"
-            >
+            <td>
               <div
                 class="field-group"
               >
                 <input
-                  class="field input-text-field"
+                  class="field input-text-field typography ellipsis"
                   data-testid="name-1"
                   id="name"
                   name="name"
@@ -3039,7 +3103,7 @@ Object {
                       class="css-1f43avz-a11yText-A11yText"
                     />
                     <div
-                      class=" css-lg4uvg-control"
+                      class=" css-8dxjxk-control"
                     >
                       <div
                         class=" css-16jl9sr-ValueContainer"
@@ -3083,7 +3147,7 @@ Object {
                         />
                         <div
                           aria-hidden="true"
-                          class=" css-1pxvqqx-indicatorContainer"
+                          class=" css-yuu8po-indicatorContainer"
                         >
                           <svg
                             aria-hidden="true"
@@ -3306,6 +3370,7 @@ Object {
           </div>
         </div>
       </div>
+      <div />
       <div>
         <div
           class="tooltip bottom"
@@ -3391,6 +3456,7 @@ Object {
           </div>
         </div>
       </div>
+      <div />
       <div>
         <div
           class="tooltip bottom"
@@ -3630,16 +3696,22 @@ Object {
             class="table--cell--code"
             data-testid="id-0"
           >
-            id
+            <div
+              class="field-group"
+            >
+              <div
+                class="field input-text-field-read-only typography"
+              >
+                id
+              </div>
+            </div>
           </td>
-          <td
-            class="ellipsis"
-          >
+          <td>
             <div
               class="field-group"
             >
               <input
-                class="field input-text-field"
+                class="field input-text-field typography ellipsis"
                 data-testid="name-0"
                 id="name"
                 name="name"
@@ -3671,7 +3743,7 @@ Object {
                     class="css-1f43avz-a11yText-A11yText"
                   />
                   <div
-                    class=" css-lg4uvg-control"
+                    class=" css-8dxjxk-control"
                   >
                     <div
                       class=" css-16jl9sr-ValueContainer"
@@ -3713,7 +3785,7 @@ Object {
                       />
                       <div
                         aria-hidden="true"
-                        class=" css-1pxvqqx-indicatorContainer"
+                        class=" css-yuu8po-indicatorContainer"
                       >
                         <svg
                           aria-hidden="true"
@@ -3847,16 +3919,22 @@ Object {
             class="table--cell--code"
             data-testid="id-1"
           >
-            test
+            <div
+              class="field-group"
+            >
+              <div
+                class="field input-text-field-read-only typography"
+              >
+                test
+              </div>
+            </div>
           </td>
-          <td
-            class="ellipsis"
-          >
+          <td>
             <div
               class="field-group"
             >
               <input
-                class="field input-text-field"
+                class="field input-text-field typography ellipsis"
                 data-testid="name-1"
                 id="name"
                 name="name"
@@ -3888,7 +3966,7 @@ Object {
                     class="css-1f43avz-a11yText-A11yText"
                   />
                   <div
-                    class=" css-lg4uvg-control"
+                    class=" css-8dxjxk-control"
                   >
                     <div
                       class=" css-16jl9sr-ValueContainer"
@@ -3932,7 +4010,7 @@ Object {
                       />
                       <div
                         aria-hidden="true"
-                        class=" css-1pxvqqx-indicatorContainer"
+                        class=" css-yuu8po-indicatorContainer"
                       >
                         <svg
                           aria-hidden="true"
@@ -4273,16 +4351,22 @@ Object {
               class="table--cell--code"
               data-testid="id-0"
             >
-              test
+              <div
+                class="field-group"
+              >
+                <div
+                  class="field input-text-field-read-only typography"
+                >
+                  test
+                </div>
+              </div>
             </td>
-            <td
-              class="ellipsis"
-            >
+            <td>
               <div
                 class="field-group"
               >
                 <input
-                  class="field input-text-field"
+                  class="field input-text-field typography ellipsis"
                   data-testid="name-0"
                   id="name"
                   name="name"
@@ -4314,7 +4398,7 @@ Object {
                       class="css-1f43avz-a11yText-A11yText"
                     />
                     <div
-                      class=" css-lg4uvg-control"
+                      class=" css-8dxjxk-control"
                     >
                       <div
                         class=" css-16jl9sr-ValueContainer"
@@ -4356,7 +4440,7 @@ Object {
                         />
                         <div
                           aria-hidden="true"
-                          class=" css-1pxvqqx-indicatorContainer"
+                          class=" css-yuu8po-indicatorContainer"
                         >
                           <svg
                             aria-hidden="true"
@@ -4579,6 +4663,7 @@ Object {
           </div>
         </div>
       </div>
+      <div />
       <div>
         <div
           class="tooltip bottom"
@@ -4819,16 +4904,22 @@ Object {
             class="table--cell--code"
             data-testid="id-0"
           >
-            test
+            <div
+              class="field-group"
+            >
+              <div
+                class="field input-text-field-read-only typography"
+              >
+                test
+              </div>
+            </div>
           </td>
-          <td
-            class="ellipsis"
-          >
+          <td>
             <div
               class="field-group"
             >
               <input
-                class="field input-text-field"
+                class="field input-text-field typography ellipsis"
                 data-testid="name-0"
                 id="name"
                 name="name"
@@ -4860,7 +4951,7 @@ Object {
                     class="css-1f43avz-a11yText-A11yText"
                   />
                   <div
-                    class=" css-lg4uvg-control"
+                    class=" css-8dxjxk-control"
                   >
                     <div
                       class=" css-16jl9sr-ValueContainer"
@@ -4902,7 +4993,7 @@ Object {
                       />
                       <div
                         aria-hidden="true"
-                        class=" css-1pxvqqx-indicatorContainer"
+                        class=" css-yuu8po-indicatorContainer"
                       >
                         <svg
                           aria-hidden="true"
@@ -5232,16 +5323,22 @@ Object {
               class="table--cell--code"
               data-testid="id-0"
             >
-              id
+              <div
+                class="field-group"
+              >
+                <div
+                  class="field input-text-field-read-only typography"
+                >
+                  id
+                </div>
+              </div>
             </td>
-            <td
-              class="ellipsis"
-            >
+            <td>
               <div
                 class="field-group"
               >
                 <input
-                  class="field input-text-field"
+                  class="field input-text-field typography ellipsis"
                   data-testid="name-0"
                   id="name"
                   name="name"
@@ -5273,7 +5370,7 @@ Object {
                       class="css-1f43avz-a11yText-A11yText"
                     />
                     <div
-                      class=" css-lg4uvg-control"
+                      class=" css-8dxjxk-control"
                     >
                       <div
                         class=" css-16jl9sr-ValueContainer"
@@ -5315,7 +5412,7 @@ Object {
                         />
                         <div
                           aria-hidden="true"
-                          class=" css-1pxvqqx-indicatorContainer"
+                          class=" css-yuu8po-indicatorContainer"
                         >
                           <svg
                             aria-hidden="true"
@@ -5407,16 +5504,22 @@ Object {
               class="table--cell--code"
               data-testid="id-1"
             >
-              test
+              <div
+                class="field-group"
+              >
+                <div
+                  class="field input-text-field-read-only typography"
+                >
+                  test
+                </div>
+              </div>
             </td>
-            <td
-              class="ellipsis"
-            >
+            <td>
               <div
                 class="field-group"
               >
                 <input
-                  class="field input-text-field"
+                  class="field input-text-field typography ellipsis"
                   data-testid="name-1"
                   id="name"
                   name="name"
@@ -5448,7 +5551,7 @@ Object {
                       class="css-1f43avz-a11yText-A11yText"
                     />
                     <div
-                      class=" css-lg4uvg-control"
+                      class=" css-8dxjxk-control"
                     >
                       <div
                         class=" css-16jl9sr-ValueContainer"
@@ -5492,7 +5595,7 @@ Object {
                         />
                         <div
                           aria-hidden="true"
-                          class=" css-1pxvqqx-indicatorContainer"
+                          class=" css-yuu8po-indicatorContainer"
                         >
                           <svg
                             aria-hidden="true"
@@ -5673,6 +5776,8 @@ Object {
           </div>
         </div>
       </div>
+      <div />
+      <div />
     </div>
   </body>,
   "container": <div>
@@ -5817,16 +5922,22 @@ Object {
             class="table--cell--code"
             data-testid="id-0"
           >
-            id
+            <div
+              class="field-group"
+            >
+              <div
+                class="field input-text-field-read-only typography"
+              >
+                id
+              </div>
+            </div>
           </td>
-          <td
-            class="ellipsis"
-          >
+          <td>
             <div
               class="field-group"
             >
               <input
-                class="field input-text-field"
+                class="field input-text-field typography ellipsis"
                 data-testid="name-0"
                 id="name"
                 name="name"
@@ -5858,7 +5969,7 @@ Object {
                     class="css-1f43avz-a11yText-A11yText"
                   />
                   <div
-                    class=" css-lg4uvg-control"
+                    class=" css-8dxjxk-control"
                   >
                     <div
                       class=" css-16jl9sr-ValueContainer"
@@ -5900,7 +6011,7 @@ Object {
                       />
                       <div
                         aria-hidden="true"
-                        class=" css-1pxvqqx-indicatorContainer"
+                        class=" css-yuu8po-indicatorContainer"
                       >
                         <svg
                           aria-hidden="true"
@@ -5992,16 +6103,22 @@ Object {
             class="table--cell--code"
             data-testid="id-1"
           >
-            test
+            <div
+              class="field-group"
+            >
+              <div
+                class="field input-text-field-read-only typography"
+              >
+                test
+              </div>
+            </div>
           </td>
-          <td
-            class="ellipsis"
-          >
+          <td>
             <div
               class="field-group"
             >
               <input
-                class="field input-text-field"
+                class="field input-text-field typography ellipsis"
                 data-testid="name-1"
                 id="name"
                 name="name"
@@ -6033,7 +6150,7 @@ Object {
                     class="css-1f43avz-a11yText-A11yText"
                   />
                   <div
-                    class=" css-lg4uvg-control"
+                    class=" css-8dxjxk-control"
                   >
                     <div
                       class=" css-16jl9sr-ValueContainer"
@@ -6077,7 +6194,7 @@ Object {
                       />
                       <div
                         aria-hidden="true"
-                        class=" css-1pxvqqx-indicatorContainer"
+                        class=" css-yuu8po-indicatorContainer"
                       >
                         <svg
                           aria-hidden="true"
@@ -6376,16 +6493,22 @@ Object {
               class="table--cell--code"
               data-testid="id-0"
             >
-              id
+              <div
+                class="field-group"
+              >
+                <div
+                  class="field input-text-field-read-only typography"
+                >
+                  id
+                </div>
+              </div>
             </td>
-            <td
-              class="ellipsis"
-            >
+            <td>
               <div
                 class="field-group"
               >
                 <input
-                  class="field input-text-field"
+                  class="field input-text-field typography ellipsis"
                   data-testid="name-0"
                   id="name"
                   name="name"
@@ -6417,7 +6540,7 @@ Object {
                       class="css-1f43avz-a11yText-A11yText"
                     />
                     <div
-                      class=" css-lg4uvg-control"
+                      class=" css-8dxjxk-control"
                     >
                       <div
                         class=" css-16jl9sr-ValueContainer"
@@ -6459,7 +6582,7 @@ Object {
                         />
                         <div
                           aria-hidden="true"
-                          class=" css-1pxvqqx-indicatorContainer"
+                          class=" css-yuu8po-indicatorContainer"
                         >
                           <svg
                             aria-hidden="true"
@@ -6593,16 +6716,22 @@ Object {
               class="table--cell--code"
               data-testid="id-1"
             >
-              test
+              <div
+                class="field-group"
+              >
+                <div
+                  class="field input-text-field-read-only typography"
+                >
+                  test
+                </div>
+              </div>
             </td>
-            <td
-              class="ellipsis"
-            >
+            <td>
               <div
                 class="field-group"
               >
                 <input
-                  class="field input-text-field"
+                  class="field input-text-field typography ellipsis"
                   data-testid="name-1"
                   id="name"
                   name="name"
@@ -6634,7 +6763,7 @@ Object {
                       class="css-1f43avz-a11yText-A11yText"
                     />
                     <div
-                      class=" css-lg4uvg-control"
+                      class=" css-8dxjxk-control"
                     >
                       <div
                         class=" css-16jl9sr-ValueContainer"
@@ -6678,7 +6807,7 @@ Object {
                         />
                         <div
                           aria-hidden="true"
-                          class=" css-1pxvqqx-indicatorContainer"
+                          class=" css-yuu8po-indicatorContainer"
                         >
                           <svg
                             aria-hidden="true"
@@ -6912,6 +7041,7 @@ Object {
           </div>
         </div>
       </div>
+      <div />
       <div>
         <div
           class="tooltip bottom"
@@ -6996,6 +7126,7 @@ Object {
           </div>
         </div>
       </div>
+      <div />
       <div>
         <div
           class="tooltip bottom"
@@ -7235,16 +7366,22 @@ Object {
             class="table--cell--code"
             data-testid="id-0"
           >
-            id
+            <div
+              class="field-group"
+            >
+              <div
+                class="field input-text-field-read-only typography"
+              >
+                id
+              </div>
+            </div>
           </td>
-          <td
-            class="ellipsis"
-          >
+          <td>
             <div
               class="field-group"
             >
               <input
-                class="field input-text-field"
+                class="field input-text-field typography ellipsis"
                 data-testid="name-0"
                 id="name"
                 name="name"
@@ -7276,7 +7413,7 @@ Object {
                     class="css-1f43avz-a11yText-A11yText"
                   />
                   <div
-                    class=" css-lg4uvg-control"
+                    class=" css-8dxjxk-control"
                   >
                     <div
                       class=" css-16jl9sr-ValueContainer"
@@ -7318,7 +7455,7 @@ Object {
                       />
                       <div
                         aria-hidden="true"
-                        class=" css-1pxvqqx-indicatorContainer"
+                        class=" css-yuu8po-indicatorContainer"
                       >
                         <svg
                           aria-hidden="true"
@@ -7452,16 +7589,22 @@ Object {
             class="table--cell--code"
             data-testid="id-1"
           >
-            test
+            <div
+              class="field-group"
+            >
+              <div
+                class="field input-text-field-read-only typography"
+              >
+                test
+              </div>
+            </div>
           </td>
-          <td
-            class="ellipsis"
-          >
+          <td>
             <div
               class="field-group"
             >
               <input
-                class="field input-text-field"
+                class="field input-text-field typography ellipsis"
                 data-testid="name-1"
                 id="name"
                 name="name"
@@ -7493,7 +7636,7 @@ Object {
                     class="css-1f43avz-a11yText-A11yText"
                   />
                   <div
-                    class=" css-lg4uvg-control"
+                    class=" css-8dxjxk-control"
                   >
                     <div
                       class=" css-16jl9sr-ValueContainer"
@@ -7537,7 +7680,7 @@ Object {
                       />
                       <div
                         aria-hidden="true"
-                        class=" css-1pxvqqx-indicatorContainer"
+                        class=" css-yuu8po-indicatorContainer"
                       >
                         <svg
                           aria-hidden="true"
@@ -7889,16 +8032,22 @@ Object {
               class="table--cell--code"
               data-testid="id-0"
             >
-              id
+              <div
+                class="field-group"
+              >
+                <div
+                  class="field input-text-field-read-only typography"
+                >
+                  id
+                </div>
+              </div>
             </td>
-            <td
-              class="ellipsis"
-            >
+            <td>
               <div
                 class="field-group"
               >
                 <input
-                  class="field input-text-field"
+                  class="field input-text-field typography ellipsis"
                   data-testid="name-0"
                   id="name"
                   name="name"
@@ -7930,7 +8079,7 @@ Object {
                       class="css-1f43avz-a11yText-A11yText"
                     />
                     <div
-                      class=" css-lg4uvg-control"
+                      class=" css-8dxjxk-control"
                     >
                       <div
                         class=" css-16jl9sr-ValueContainer"
@@ -7972,7 +8121,7 @@ Object {
                         />
                         <div
                           aria-hidden="true"
-                          class=" css-1pxvqqx-indicatorContainer"
+                          class=" css-yuu8po-indicatorContainer"
                         >
                           <svg
                             aria-hidden="true"
@@ -8106,16 +8255,22 @@ Object {
               class="table--cell--code"
               data-testid="id-1"
             >
-              test
+              <div
+                class="field-group"
+              >
+                <div
+                  class="field input-text-field-read-only typography"
+                >
+                  test
+                </div>
+              </div>
             </td>
-            <td
-              class="ellipsis"
-            >
+            <td>
               <div
                 class="field-group"
               >
                 <input
-                  class="field input-text-field"
+                  class="field input-text-field typography ellipsis"
                   data-testid="name-1"
                   id="name"
                   name="name"
@@ -8147,7 +8302,7 @@ Object {
                       class="css-1f43avz-a11yText-A11yText"
                     />
                     <div
-                      class=" css-lg4uvg-control"
+                      class=" css-8dxjxk-control"
                     >
                       <div
                         class=" css-16jl9sr-ValueContainer"
@@ -8191,7 +8346,7 @@ Object {
                         />
                         <div
                           aria-hidden="true"
-                          class=" css-1pxvqqx-indicatorContainer"
+                          class=" css-yuu8po-indicatorContainer"
                         >
                           <svg
                             aria-hidden="true"
@@ -8425,6 +8580,7 @@ Object {
           </div>
         </div>
       </div>
+      <div />
       <div>
         <div
           class="tooltip bottom"
@@ -8509,6 +8665,7 @@ Object {
           </div>
         </div>
       </div>
+      <div />
       <div>
         <div
           class="tooltip bottom"
@@ -8748,16 +8905,22 @@ Object {
             class="table--cell--code"
             data-testid="id-0"
           >
-            id
+            <div
+              class="field-group"
+            >
+              <div
+                class="field input-text-field-read-only typography"
+              >
+                id
+              </div>
+            </div>
           </td>
-          <td
-            class="ellipsis"
-          >
+          <td>
             <div
               class="field-group"
             >
               <input
-                class="field input-text-field"
+                class="field input-text-field typography ellipsis"
                 data-testid="name-0"
                 id="name"
                 name="name"
@@ -8789,7 +8952,7 @@ Object {
                     class="css-1f43avz-a11yText-A11yText"
                   />
                   <div
-                    class=" css-lg4uvg-control"
+                    class=" css-8dxjxk-control"
                   >
                     <div
                       class=" css-16jl9sr-ValueContainer"
@@ -8831,7 +8994,7 @@ Object {
                       />
                       <div
                         aria-hidden="true"
-                        class=" css-1pxvqqx-indicatorContainer"
+                        class=" css-yuu8po-indicatorContainer"
                       >
                         <svg
                           aria-hidden="true"
@@ -8965,16 +9128,22 @@ Object {
             class="table--cell--code"
             data-testid="id-1"
           >
-            test
+            <div
+              class="field-group"
+            >
+              <div
+                class="field input-text-field-read-only typography"
+              >
+                test
+              </div>
+            </div>
           </td>
-          <td
-            class="ellipsis"
-          >
+          <td>
             <div
               class="field-group"
             >
               <input
-                class="field input-text-field"
+                class="field input-text-field typography ellipsis"
                 data-testid="name-1"
                 id="name"
                 name="name"
@@ -9006,7 +9175,7 @@ Object {
                     class="css-1f43avz-a11yText-A11yText"
                   />
                   <div
-                    class=" css-lg4uvg-control"
+                    class=" css-8dxjxk-control"
                   >
                     <div
                       class=" css-16jl9sr-ValueContainer"
@@ -9050,7 +9219,7 @@ Object {
                       />
                       <div
                         aria-hidden="true"
-                        class=" css-1pxvqqx-indicatorContainer"
+                        class=" css-yuu8po-indicatorContainer"
                       >
                         <svg
                           aria-hidden="true"
@@ -9402,16 +9571,22 @@ Object {
               class="table--cell--code"
               data-testid="id-0"
             >
-              id
+              <div
+                class="field-group"
+              >
+                <div
+                  class="field input-text-field-read-only typography"
+                >
+                  id
+                </div>
+              </div>
             </td>
-            <td
-              class="ellipsis"
-            >
+            <td>
               <div
                 class="field-group"
               >
                 <input
-                  class="field input-text-field"
+                  class="field input-text-field typography ellipsis"
                   data-testid="name-0"
                   id="name"
                   name="name"
@@ -9443,7 +9618,7 @@ Object {
                       class="css-1f43avz-a11yText-A11yText"
                     />
                     <div
-                      class=" css-lg4uvg-control"
+                      class=" css-8dxjxk-control"
                     >
                       <div
                         class=" css-16jl9sr-ValueContainer"
@@ -9485,7 +9660,7 @@ Object {
                         />
                         <div
                           aria-hidden="true"
-                          class=" css-1pxvqqx-indicatorContainer"
+                          class=" css-yuu8po-indicatorContainer"
                         >
                           <svg
                             aria-hidden="true"
@@ -9708,6 +9883,7 @@ Object {
           </div>
         </div>
       </div>
+      <div />
       <div>
         <div
           class="tooltip bottom"
@@ -9947,16 +10123,22 @@ Object {
             class="table--cell--code"
             data-testid="id-0"
           >
-            id
+            <div
+              class="field-group"
+            >
+              <div
+                class="field input-text-field-read-only typography"
+              >
+                id
+              </div>
+            </div>
           </td>
-          <td
-            class="ellipsis"
-          >
+          <td>
             <div
               class="field-group"
             >
               <input
-                class="field input-text-field"
+                class="field input-text-field typography ellipsis"
                 data-testid="name-0"
                 id="name"
                 name="name"
@@ -9988,7 +10170,7 @@ Object {
                     class="css-1f43avz-a11yText-A11yText"
                   />
                   <div
-                    class=" css-lg4uvg-control"
+                    class=" css-8dxjxk-control"
                   >
                     <div
                       class=" css-16jl9sr-ValueContainer"
@@ -10030,7 +10212,7 @@ Object {
                       />
                       <div
                         aria-hidden="true"
-                        class=" css-1pxvqqx-indicatorContainer"
+                        class=" css-yuu8po-indicatorContainer"
                       >
                         <svg
                           aria-hidden="true"
@@ -10371,12 +10553,26 @@ Object {
               class="table--cell--code"
               data-testid="id-0"
             >
-              id
+              <div
+                class="field-group"
+              >
+                <div
+                  class="field input-text-field-read-only typography"
+                >
+                  id
+                </div>
+              </div>
             </td>
-            <td
-              class="ellipsis"
-            >
-              name
+            <td>
+              <div
+                class="field-group"
+              >
+                <div
+                  class="field input-text-field-read-only typography ellipsis"
+                >
+                  name
+                </div>
+              </div>
             </td>
             <td
               class=""
@@ -10550,6 +10746,7 @@ Object {
           </div>
         </div>
       </div>
+      <div />
     </div>
   </body>,
   "container": <div>
@@ -10705,12 +10902,26 @@ Object {
             class="table--cell--code"
             data-testid="id-0"
           >
-            id
+            <div
+              class="field-group"
+            >
+              <div
+                class="field input-text-field-read-only typography"
+              >
+                id
+              </div>
+            </div>
           </td>
-          <td
-            class="ellipsis"
-          >
-            name
+          <td>
+            <div
+              class="field-group"
+            >
+              <div
+                class="field input-text-field-read-only typography ellipsis"
+              >
+                name
+              </div>
+            </div>
           </td>
           <td
             class=""
@@ -10991,12 +11202,26 @@ Object {
               class="table--cell--code"
               data-testid="id-0"
             >
-              id
+              <div
+                class="field-group"
+              >
+                <div
+                  class="field input-text-field-read-only typography"
+                >
+                  id
+                </div>
+              </div>
             </td>
-            <td
-              class="ellipsis"
-            >
-              name
+            <td>
+              <div
+                class="field-group"
+              >
+                <div
+                  class="field input-text-field-read-only typography ellipsis"
+                >
+                  name
+                </div>
+              </div>
             </td>
             <td
               class=""
@@ -11163,6 +11388,7 @@ Object {
           </div>
         </div>
       </div>
+      <div />
     </div>
   </body>,
   "container": <div>
@@ -11307,12 +11533,26 @@ Object {
             class="table--cell--code"
             data-testid="id-0"
           >
-            id
+            <div
+              class="field-group"
+            >
+              <div
+                class="field input-text-field-read-only typography"
+              >
+                id
+              </div>
+            </div>
           </td>
-          <td
-            class="ellipsis"
-          >
-            name
+          <td>
+            <div
+              class="field-group"
+            >
+              <div
+                class="field input-text-field-read-only typography ellipsis"
+              >
+                name
+              </div>
+            </div>
           </td>
           <td
             class=""
