@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React, { Fragment, ReactElement } from 'react';
 import * as yup from 'yup';
 import { AnyObject } from 'yup/lib/object';
 import { SchemaDescription, SchemaObjectDescription } from 'yup/lib/schema';
@@ -29,7 +29,7 @@ const Form = <T,>(props: IFormProps<T>): ReactElement => {
           field.hidden !== undefined &&
           ((typeof field.hidden === 'function' && field.hidden(initialData) === true) || field.hidden === true)
         ) {
-          return <></>;
+          return <Fragment key={`hidden-${index}`}></Fragment>;
         }
 
         if (field.fieldType === FieldTypeEnum.SECTION) {
