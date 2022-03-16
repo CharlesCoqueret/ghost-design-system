@@ -1,31 +1,52 @@
-name: Build and Deploy
+name: Build, Lint, Test, Coverage and Deploy
 on:
   push:
     branches:
       - main
 
 jobs:
-  build-and-deploy:
+  build-and-test:
+    name: Build and test 🔧
     concurrency: ci-${{ github.ref }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout 🛎️
+      - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Configure npm ⚙
+      - name: Configure npm
         run : |
           npm config set "@fortawesome:registry" https://npm.fontawesome.com/
           npm config set "//npm.fontawesome.com/:_authToken" ${{ secrets.FONTAWESOME_NPM_AUTH_TOKEN }}
 
-      - name: Install and Build 🔧
+      - name: Install, lint, test and Build
         run: |
-          npm install
+          npm install -ci
+          npm run lint
+          npm run test
           npm run build-storybook
 
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4.2.5
+  coverage:
+    name: Code Coverage 🛎️
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    needs: build-and-test
+    steps:
+      - name: Let Coveralls know that all tests have finished
+        uses: coverallsapp/github-action@v1.1.0
         with:
-          branch: gh-pages
-          folder: docs-build
-          clean: true
-          target-folder: docs
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          parallel-finished: true
+  
+  deploy:
+    name: Deploy 🚀
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    needs: build-and-test
+    steps:
+        - name: Deploy 
+          uses: JamesIves/github-pages-deploy-action@v4.2.5
+          with:
+            branch: gh-pages
+            folder: docs-build
+            clean: true
+            target-folder: docs

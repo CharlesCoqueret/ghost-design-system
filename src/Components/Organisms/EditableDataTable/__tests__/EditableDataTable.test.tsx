@@ -71,14 +71,6 @@ const initialData = [
   },
 ];
 
-jest.mock('@fortawesome/react-fontawesome', () => {
-  return {
-    FontAwesomeIcon: (props: Record<string, string>) => {
-      return <i className='fa' {...props} />;
-    },
-  };
-});
-
 describe('EditableDataTable Component', () => {
   it('EditableDataTable renders with all buttons', async () => {
     const onEditMock = jest.fn();

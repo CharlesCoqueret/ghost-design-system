@@ -13,14 +13,6 @@ const options: Array<IToggleEntry> = [
   { label: 'checkbox label 5', value: 'KEY_5' },
 ];
 
-jest.mock('@fortawesome/react-fontawesome', () => {
-  return {
-    FontAwesomeIcon: (props: Record<string, string>) => {
-      return <i className='fa' {...props} />;
-    },
-  };
-});
-
 describe('CheckboxInput Component', () => {
   it('CheckboxInput renders with input', async () => {
     const onChangeMock = jest.fn();
