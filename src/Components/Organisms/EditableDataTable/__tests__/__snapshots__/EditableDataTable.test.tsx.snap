@@ -4404,9 +4404,10 @@ Object {
                         class=" css-16jl9sr-ValueContainer"
                       >
                         <div
-                          class=" css-qc6sy-singleValue"
+                          class=" css-14el2xx-placeholder"
+                          id="react-select-9-placeholder"
                         >
-                          Status
+                          Select...
                         </div>
                         <div
                           class=" css-1j77j9s-Input"
@@ -4415,6 +4416,7 @@ Object {
                           <input
                             aria-autocomplete="list"
                             aria-controls="react-select-9-listbox"
+                            aria-describedby="react-select-9-placeholder"
                             aria-expanded="false"
                             aria-haspopup="true"
                             aria-owns="react-select-9-listbox"
@@ -4460,7 +4462,7 @@ Object {
                     <input
                       name="Badge"
                       type="hidden"
-                      value="status"
+                      value=""
                     />
                   </div>
                 </div>
@@ -4957,9 +4959,10 @@ Object {
                       class=" css-16jl9sr-ValueContainer"
                     >
                       <div
-                        class=" css-qc6sy-singleValue"
+                        class=" css-14el2xx-placeholder"
+                        id="react-select-9-placeholder"
                       >
-                        Status
+                        Select...
                       </div>
                       <div
                         class=" css-1j77j9s-Input"
@@ -4968,6 +4971,7 @@ Object {
                         <input
                           aria-autocomplete="list"
                           aria-controls="react-select-9-listbox"
+                          aria-describedby="react-select-9-placeholder"
                           aria-expanded="false"
                           aria-haspopup="true"
                           aria-owns="react-select-9-listbox"
@@ -5013,7 +5017,7 @@ Object {
                   <input
                     name="Badge"
                     type="hidden"
-                    value="status"
+                    value=""
                   />
                 </div>
               </div>
