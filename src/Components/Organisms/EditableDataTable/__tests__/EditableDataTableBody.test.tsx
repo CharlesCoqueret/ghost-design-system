@@ -105,7 +105,7 @@ describe('EditableDataTableBody Component', () => {
 
     expect(container).toMatchSnapshot();
     expect(onRowClickMock).toHaveBeenCalledTimes(1);
-    expect(onRowClickMock).toHaveBeenCalledWith(initialData[0]);
+    expect(onRowClickMock).toHaveBeenCalledWith(initialData[0], 0);
   });
 
   it('EditableDataTableBody renders and handles row selection', async () => {
@@ -140,6 +140,6 @@ describe('EditableDataTableBody Component', () => {
 
     expect(container).toMatchSnapshot();
     expect(onRowSelectMock).toHaveBeenCalledTimes(1);
-    expect(onRowSelectMock).toHaveBeenCalledWith([initialData[0]], initialData[0]);
+    expect(onRowSelectMock).toHaveBeenCalledWith([initialData[0]], initialData[0], 0);
   });
 });
