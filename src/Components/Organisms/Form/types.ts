@@ -117,10 +117,12 @@ export interface IFieldMultiSelectProps<T> extends IFieldBaseProps<T> {
     optionFocusColor: string; // colors.chalk,
     optionSelectedColor: string; // colors.primary,
   };
+  // When the value is not present in the options, should the value be erased (optional, default: false)
+  eraseValueWhenNotInOptions?: boolean;
   isClearable?: boolean;
   fieldType: FieldTypeEnum.MULTISELECT;
   onChange?: (newValue: Readonly<Array<IOption>> | null | undefined) => void;
-  options: Array<IOption>;
+  options: Array<IOption> | ((data: T) => Array<IOption>);
   placeholder?: string;
 }
 
@@ -171,10 +173,12 @@ export interface IFieldSelectProps<T> extends IFieldBaseProps<T> {
     optionFocusColor: string; // colors.chalk,
     optionSelectedColor: string; // colors.primary,
   };
+  // When the value is not present in the options, should the value be erased (optional, default: false)
+  eraseValueWhenNotInOptions?: boolean;
   isClearable?: boolean;
   fieldType: FieldTypeEnum.SELECT;
   onChange?: (newValue: IOption | null | undefined) => void;
-  options: Array<IOption>; // TODO provide (data: T) => Array<IOption>; cf https://github.com/CharlesCoqueret/ghost-design-system/issues/3
+  options: Array<IOption> | ((data: T) => Array<IOption>);
   placeholder?: string;
 }
 

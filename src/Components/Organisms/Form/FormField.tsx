@@ -2,6 +2,8 @@ import React, { ReactElement } from 'react';
 import isSameDay from 'date-fns/isSameDay';
 import isEqual from 'lodash/isEqual';
 import sortBy from 'lodash/sortBy';
+import map from 'lodash/map';
+import intersection from 'lodash/intersection';
 
 import { IToggleEntry } from '../../Atoms';
 import {
@@ -19,6 +21,7 @@ import {
 import Highlighter from './Highlighter';
 import { FieldTypeEnum, IFieldProps } from './types';
 import { FieldError } from './yupResolver';
+import { useRunAfterUpdate } from '../../../hooks';
 
 export interface IFormFieldProps<T> {
   data: T;
@@ -34,6 +37,8 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
   const { data, field, handleChange, previousData, requiredFromValidation, usePortal, validationError } = props;
 
   const errorMessage = validationError && validationError[field.dataIndex as keyof T]?.message;
+
+  const runAfterUpdate = useRunAfterUpdate();
 
   switch (field.fieldType) {
     case FieldTypeEnum.AMOUNT: {
@@ -112,6 +117,19 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
       );
     }
     case FieldTypeEnum.MULTISELECT: {
+      const { options, ...rest } = field;
+      const localOptions = typeof options === 'function' ? options(data) : options;
+      if (field.eraseValueWhenNotInOptions && data && data[field.dataIndex]) {
+        const commonValues = intersection(
+          map(localOptions, 'value'),
+          data[field.dataIndex] as unknown as Array<string>,
+        );
+        if (!isEqual(commonValues, data[field.dataIndex])) {
+          runAfterUpdate(() => {
+            handleChange(field.dataIndex, commonValues as unknown as T[keyof T]);
+          });
+        }
+      }
       const shouldHighlight =
         previousData &&
         !isEqual(
@@ -124,7 +142,8 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
           oldData={previousData && (previousData[field.dataIndex] as unknown as Array<string> | undefined)}
           shouldHighlight={shouldHighlight}>
           <MultiSelectField
-            {...field}
+            {...rest}
+            options={localOptions}
             mandatory={requiredFromValidation || field.mandatory}
             name={field.dataIndex.toString()}
             onChange={(newValue: Array<string> | null | undefined) => {
@@ -178,6 +197,15 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
       );
     }
     case FieldTypeEnum.SELECT: {
+      const { options, ...rest } = field;
+      const localOptions = typeof options === 'function' ? options(data) : options;
+      if (field.eraseValueWhenNotInOptions && data && data[field.dataIndex]) {
+        if (!map(localOptions, 'value').includes(data[field.dataIndex] as unknown as string)) {
+          runAfterUpdate(() => {
+            handleChange(field.dataIndex, undefined as unknown as T[keyof T]);
+          });
+        }
+      }
       const shouldHighlight = previousData && previousData[field.dataIndex] !== data[field.dataIndex];
       return (
         <Highlighter
@@ -185,7 +213,8 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
           oldData={previousData && previousData[field.dataIndex]}
           shouldHighlight={shouldHighlight}>
           <SelectField
-            {...field}
+            {...rest}
+            options={localOptions}
             mandatory={requiredFromValidation || field.mandatory}
             name={field.dataIndex.toString()}
             onChange={(newValue: string | null | undefined) => {

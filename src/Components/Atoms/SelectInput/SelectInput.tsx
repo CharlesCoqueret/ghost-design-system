@@ -127,7 +127,7 @@ const SelectInput = (props: ISelectInputProps): ReactElement => {
           optionFocusColor: colors?.optionFocusColor,
           optionSelectedColor: colors?.optionSelectedColor,
         })}
-        value={options.find((option) => option.value === inputValue)}
+        value={options.find((option) => option.value === inputValue) || null}
       />
     </div>
   );
