@@ -177,8 +177,9 @@ const fields: Array<IFieldAndLayoutProps<dataType>> = [
   { label: 'Date', dataIndex: 'date', fieldType: FieldTypeEnum.DATE },
   { label: 'Multiselect', dataIndex: 'multiselect', fieldType: FieldTypeEnum.MULTISELECT, options: options },
   {
-    label: 'Section',
+    label: 'Section collapsable and open initially',
     fieldType: FieldTypeEnum.SECTION,
+    collapsable: true,
     openInitially: true,
     fields: [
       {
@@ -195,12 +196,20 @@ const fields: Array<IFieldAndLayoutProps<dataType>> = [
     ],
   },
   {
-    label: 'Additional Section',
+    label: 'Section collapsable and closed initially',
     fieldType: FieldTypeEnum.SECTION,
-    openInitially: true,
+    collapsable: true,
+    openInitially: false,
     fields: [
       { label: 'Select', dataIndex: 'select', fieldType: FieldTypeEnum.SELECT, options: options },
       { label: 'Switch', dataIndex: 'switch', fieldType: FieldTypeEnum.SWITCH },
+    ],
+  },
+  {
+    label: 'Section not collapsable',
+    fieldType: FieldTypeEnum.SECTION,
+    collapsable: false,
+    fields: [
       { label: 'Text', dataIndex: 'text', fieldType: FieldTypeEnum.TEXT },
       { label: 'Textarea', dataIndex: 'textarea', fieldType: FieldTypeEnum.TEXTAREA },
       { label: 'Year', dataIndex: 'year', fieldType: FieldTypeEnum.YEAR },

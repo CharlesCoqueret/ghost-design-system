@@ -19,16 +19,18 @@
   }
 }
 
-.collapse-container {
-  .collapse-header {
+.section-container {
+  .section-header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     color: $charcoal;
-    cursor: pointer;
     padding: 10px 10px;
     font-size: 18px;
     font-weight: 600;
+    &.collapsable {
+      cursor: pointer;
+    }
 
     .icon {
       transform: rotate(-90deg);
@@ -39,11 +41,11 @@
     }
   }
 
-  .collapse-body {
+  .section-body {
     overflow: hidden;
   }
 
-  .collapse-footer {
+  .section-footer {
     padding: 10px 0px;
     border-bottom: 1px solid $silver;
   }

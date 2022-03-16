@@ -1,7 +1,7 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import Collapse, { ICollapseProps } from './Collapse';
+import Section, { ISectionProps } from './Section';
 import { AmountField, DatePickerField, TextAreaField, YearPickerField } from '../../Molecules';
 
 const initialData = {
@@ -20,19 +20,19 @@ const initialData = {
 };
 
 export default {
-  title: 'Atom/Layout/Collapse',
-  component: Collapse,
+  title: 'Atom/Layout/Section',
+  component: Section,
   parameters: { actions: { argTypesRegex: '^on.*' } },
-} as ComponentMeta<typeof Collapse>;
+} as ComponentMeta<typeof Section>;
 
-const Template: ComponentStory<typeof Collapse> = (args: ICollapseProps) => {
+const Template: ComponentStory<typeof Section> = (args: ISectionProps) => {
   return (
-    <Collapse {...args}>
+    <Section {...args}>
       <AmountField inputValue={initialData.amount} label='Amount' suffix='$' name='amount' readOnly />
       <DatePickerField inputValue={initialData.date} label='Date' name='date' readOnly />
       <TextAreaField inputValue={initialData.textarea} label='Textarea' name='textarea' readOnly />
       <YearPickerField inputValue={initialData.year} label='Year' name='year' readOnly />
-    </Collapse>
+    </Section>
   );
 };
 
