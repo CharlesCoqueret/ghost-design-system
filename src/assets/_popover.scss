@@ -14,6 +14,8 @@
     display: flex;
     flex-direction: row;
     justify-content: end;
+    -webkit-justify-content: flex-end;
+
     & > * {
       margin: auto 4px;
     }
