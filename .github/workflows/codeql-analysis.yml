@@ -33,15 +33,5 @@ jobs:
       with:
         languages: ${{ matrix.language }}
 
-    - name: Configure npm ⚙
-      run : |
-        npm config set "@fortawesome:registry" https://npm.fontawesome.com/
-        npm config set "//npm.fontawesome.com/:_authToken" ${{ secrets.FONTAWESOME_NPM_AUTH_TOKEN }}
-
-    - name: Clean install dependencies and build 🔧
-      run: |
-        npm ci
-        npm run build
-
     - name: Perform CodeQL Analysis 🚀
       uses: github/codeql-action/analyze@v1
