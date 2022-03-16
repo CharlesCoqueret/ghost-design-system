@@ -1,22 +1,12 @@
-# For most projects, this workflow file will not need changing; you simply need
-# to commit it to your repository.
-#
-# You may wish to alter this file to override the set of languages analyzed,
-# or to provide custom queries or build logic.
-#
-# ******** NOTE ********
-# We have attempted to detect the languages in your repository. Please check
-# the `language` matrix defined below to confirm you have the correct set of
-# supported CodeQL languages.
-#
 name: "CodeQL"
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
   pull_request:
-    # The branches below must be a subset of the branches above
-    branches: [ main ]
+    branches:
+      - main
   schedule:
     - cron: '45 22 * * 3'
 
@@ -35,19 +25,23 @@ jobs:
         language: [ 'javascript' ]
 
     steps:
-    - name: Checkout repository
+    - name: Checkout repository 🛎️
       uses: actions/checkout@v2
 
-    # Initializes the CodeQL tools for scanning.
-    - name: Initialize CodeQL
+    - name: Initialize CodeQL 🛎️
       uses: github/codeql-action/init@v1
       with:
         languages: ${{ matrix.language }}
 
-    - name: Clean install dependencies and build
+    - name: Configure npm ⚙
+      run : |
+        npm config set "@fortawesome:registry" https://npm.fontawesome.com/
+        npm config set "//npm.fontawesome.com/:_authToken" ${{ secrets.FONTAWESOME_NPM_AUTH_TOKEN }}
+
+    - name: Clean install dependencies and build 🔧
       run: |
         npm ci
         npm run build
 
-    - name: Perform CodeQL Analysis
+    - name: Perform CodeQL Analysis 🚀
       uses: github/codeql-action/analyze@v1
