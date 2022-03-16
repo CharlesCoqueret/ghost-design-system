@@ -14,11 +14,11 @@ describe('DatePickerInput Component properly calls onChange', () => {
     userEvent.click(inputNode);
     userEvent.type(inputNode, '3/2/22{enter}');
 
+    // Using dynamic date instead of static value to ensure local time is taken into consideration.
+    const expectedDate = new Date('Wed Mar 02 2022');
+
     await waitFor(() => {
-      expect(onChangeMock).toHaveBeenLastCalledWith(
-        new Date('Wed Mar 02 2022 00:00:00 GMT+0100 (CET)'),
-        expect.anything(),
-      );
+      expect(onChangeMock).toHaveBeenLastCalledWith(expectedDate, expect.anything());
     });
   });
 
