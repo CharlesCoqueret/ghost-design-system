@@ -19,7 +19,7 @@ const Template = (args: { icons: Array<IconProp> }) => {
       {icons.map((icon, index) => {
         const spin = index % 7 == 0;
         return (
-          <div key={icon[1]} style={{ display: 'flex', flexDirection: 'column', margin: 'auto' }}>
+          <div key={icon.toString()} style={{ display: 'flex', flexDirection: 'column', margin: 'auto' }}>
             <Icon icon={icon} size='2x' spin={spin} />
             <div style={{ fontWeight: '400', fontSize: '14px', margin: '10px auto' }}>{`${icon[0]} ${icon[1]}`}</div>
             <div style={{ fontWeight: '300', fontSize: '10px', margin: 'auto' }}>{spin && '(Spinning)'}</div>

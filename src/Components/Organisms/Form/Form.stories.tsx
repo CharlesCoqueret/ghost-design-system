@@ -257,6 +257,51 @@ const HighlightedTemplate = (args: IUseFormProps<dataType>) => {
   return (
     <>
       <div style={{ display: 'flex', justifyContent: 'space-around' }}>
+        <Typography.Title level={1}>With changed highlighted</Typography.Title>
+      </div>
+      <div style={{ display: 'flex', justifyContent: 'space-around' }}>
+        <Button
+          label='Submit'
+          onClick={() => {
+            console.log('submit', JSON.stringify(submit()));
+          }}
+          color={ColorButtonEnum.PRIMARY}
+        />
+        <Button
+          label='Reset'
+          onClick={() => {
+            console.log('reset', JSON.stringify(reset()));
+          }}
+          color={ColorButtonEnum.SECONDARY}
+        />
+      </div>
+      <div>{formElement}</div>
+      <div>
+        <pre>Has been modified: {isModified().toString()}</pre>
+      </div>
+      <div>
+        Current data:
+        <textarea style={{ width: '100%', height: '300px' }} value={JSON.stringify(getData(), null, 2)} readOnly />
+      </div>
+    </>
+  );
+};
+
+const WithDisabledFieldsTemplate = (args: IUseFormProps<dataType>) => {
+  const { formElement, getData, isModified, submit, reset } = useForm<dataType>({
+    initialData: initialData,
+    fields: fields.map((field, index) => {
+      return { ...field, hidden: index % 3 === 0 };
+    }),
+    validationSchema: validationSchema,
+  });
+
+  return (
+    <>
+      <div style={{ display: 'flex', justifyContent: 'space-around' }}>
+        <Typography.Title level={1}>Every 3 fields or sections are hidden</Typography.Title>
+      </div>
+      <div style={{ display: 'flex', justifyContent: 'space-around' }}>
         <Button
           label='Submit'
           onClick={() => {
@@ -289,3 +334,6 @@ Default.args = {};
 
 export const Highlighted = HighlightedTemplate.bind({});
 Highlighted.args = {};
+
+export const WithDisabledFields = WithDisabledFieldsTemplate.bind({});
+WithDisabledFields.args = {};
