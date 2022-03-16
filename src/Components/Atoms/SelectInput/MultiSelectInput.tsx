@@ -154,7 +154,7 @@ const MultiSelectInput = (props: IMultiSelectInputProps): ReactElement => {
           optionFocusColor: colors?.optionFocusColor,
           optionSelectedColor: colors?.optionSelectedColor,
         })}
-        value={options.filter((option) => inputValue?.includes(option.value))}
+        value={options.filter((option) => inputValue?.includes(option.value)) || null}
       />
     </div>
   );
