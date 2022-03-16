@@ -3,17 +3,19 @@ import classnames from 'classnames';
 
 import { Icon } from '../Icon';
 
-export interface ICollapseProps {
-  /** Open initially the collapse elemeent (optional, default: false) */
+export interface ISectionProps {
+  /** When set the section gets collapsable ability (optional, default true) */
+  collapsable?: boolean;
+  /** Open initially if collapsable (optional, default: true) */
   openInitially?: boolean;
-  /** Title of the collapse element */
+  /** Title of the section element */
   title: string;
 }
 
-const Collapse = (props: PropsWithChildren<ICollapseProps>): ReactElement => {
-  const { children, openInitially, title } = props;
+const Section = (props: PropsWithChildren<ISectionProps>): ReactElement => {
+  const { children, collapsable, openInitially, title } = props;
 
-  const [open, setOpen] = useState(openInitially);
+  const [open, setOpen] = useState<boolean>(collapsable ? openInitially === true : true);
   const contentRef = useRef<HTMLDivElement>(null);
 
   const transitionEnd = (event: TransitionEvent) => {
@@ -57,25 +59,30 @@ const Collapse = (props: PropsWithChildren<ICollapseProps>): ReactElement => {
   }, [open]);
 
   const handleClick = () => {
-    setOpen((prev) => !prev);
+    if (collapsable) {
+      setOpen((prev) => !prev);
+    }
   };
 
   return (
-    <div className='collapse-container'>
-      <div className='collapse-header' onClick={handleClick}>
+    <div className='section-container'>
+      <div className={classnames('section-header', { collapsable: collapsable })} onClick={handleClick}>
         {title}
-        <Icon icon={['fal', 'chevron-left']} size='lg' className={classnames('icon', { open: open })} />
+        {collapsable && (
+          <Icon icon={['fal', 'chevron-left']} size='lg' className={classnames('icon', { open: open })} />
+        )}
       </div>
-      <div className='collapse-body' ref={contentRef}>
+      <div className='section-body' ref={contentRef}>
         {children}
       </div>
-      <div className='collapse-footer' />
+      <div className='section-footer' />
     </div>
   );
 };
 
-Collapse.defaultProps = {
-  openInitially: false,
+Section.defaultProps = {
+  collapsable: true,
+  openInitially: true,
 };
 
-export default Collapse;
+export default Section;

@@ -148,6 +148,7 @@ export interface IFieldPercentageProps<T> extends IFieldBaseProps<T> {
 }
 
 export interface IFieldSectionProps<T> {
+  collapsable?: boolean;
   fieldType: FieldTypeEnum.SECTION;
   openInitially?: boolean;
   fields: Array<IFieldProps<T>>;

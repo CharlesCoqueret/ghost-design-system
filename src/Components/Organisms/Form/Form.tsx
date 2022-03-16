@@ -6,7 +6,7 @@ import { SchemaDescription, SchemaObjectDescription } from 'yup/lib/schema';
 import { FieldTypeEnum, IFieldAndLayoutProps } from './types';
 import FormField from './FormField';
 import { FieldError } from './yupResolver';
-import { Collapse, Row } from '../../Atoms';
+import { Row, Section } from '../../Atoms';
 
 export interface IFormProps<T extends AnyObject> {
   fields: Array<IFieldAndLayoutProps<T>>;
@@ -26,7 +26,11 @@ const Form = <T,>(props: IFormProps<T>): ReactElement => {
       {fields.map((field, index) => {
         if (field.fieldType === FieldTypeEnum.SECTION) {
           return (
-            <Collapse key={`section-${field.label}`} title={field.label} openInitially={field.openInitially}>
+            <Section
+              key={`section-${field.label}`}
+              title={field.label}
+              collapsable={field.collapsable}
+              openInitially={field.openInitially}>
               <Form
                 fields={field.fields}
                 handleDataChange={handleDataChange}
@@ -36,7 +40,7 @@ const Form = <T,>(props: IFormProps<T>): ReactElement => {
                 validationSchema={validationSchema}
                 usePortal={usePortal}
               />
-            </Collapse>
+            </Section>
           );
         }
         if (field.fieldType === FieldTypeEnum.DESCRIPTION) {
