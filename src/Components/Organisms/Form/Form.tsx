@@ -24,6 +24,14 @@ const Form = <T,>(props: IFormProps<T>): ReactElement => {
   return (
     <>
       {fields.map((field, index) => {
+        // Managing hidden field
+        if (
+          field.hidden !== undefined &&
+          ((typeof field.hidden === 'function' && field.hidden(initialData) === true) || field.hidden === true)
+        ) {
+          return <></>;
+        }
+
         if (field.fieldType === FieldTypeEnum.SECTION) {
           return (
             <Section

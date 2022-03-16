@@ -37,7 +37,7 @@ export enum FieldTypeEnum {
 
 export type IFieldAndLayoutProps<T> = IFieldProps<T> | ILayoutProps<T>;
 
-export type ILayoutProps<T> = IFieldSectionProps<T> | IFieldDescriptionProps;
+export type ILayoutProps<T> = IFieldSectionProps<T> | IFieldDescriptionProps<T>;
 
 export type IFieldProps<T> =
   | IFieldAmountProps<T>
@@ -52,7 +52,12 @@ export type IFieldProps<T> =
   | IFieldTextProps<T>
   | IFieldYearProps<T>;
 
-export interface IFieldBaseProps<T> {
+export interface IVisibilityProps<T> {
+  /** When set to true or when called, returning true, it hides the field or description or section (and children fields) (optional, default: false) */
+  hidden?: boolean | ((data: T) => boolean);
+}
+
+export interface IFieldBaseProps<T> extends Partial<IVisibilityProps<T>> {
   dataIndex: keyof T;
   disabled?: boolean;
   errorMessage?: string;
@@ -96,7 +101,7 @@ export interface IFieldDateProps<T> extends IFieldBaseProps<T> {
   placeholder?: string;
 }
 
-export interface IFieldDescriptionProps {
+export interface IFieldDescriptionProps<T> extends Partial<IVisibilityProps<T>> {
   description: ReactElement;
   fieldType: FieldTypeEnum.DESCRIPTION;
 }
@@ -147,7 +152,7 @@ export interface IFieldPercentageProps<T> extends IFieldBaseProps<T> {
   thousandsGroupStyle?: ThousandsGroupStyle;
 }
 
-export interface IFieldSectionProps<T> {
+export interface IFieldSectionProps<T> extends Partial<IVisibilityProps<T>> {
   collapsable?: boolean;
   fieldType: FieldTypeEnum.SECTION;
   openInitially?: boolean;
@@ -169,7 +174,7 @@ export interface IFieldSelectProps<T> extends IFieldBaseProps<T> {
   isClearable?: boolean;
   fieldType: FieldTypeEnum.SELECT;
   onChange?: (newValue: IOption | null | undefined) => void;
-  options: Array<IOption>;
+  options: Array<IOption>; // TODO provide (data: T) => Array<IOption>; cf https://github.com/CharlesCoqueret/ghost-design-system/issues/3
   placeholder?: string;
 }
 
