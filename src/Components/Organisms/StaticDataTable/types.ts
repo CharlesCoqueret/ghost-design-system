@@ -101,8 +101,13 @@ export interface IColumnCode<T> extends IColumn {
   type: ColumnType.CODE;
 }
 export interface IColumnCustom<T> extends IColumn {
-  customRender: (row: T, dataIndex: keyof T) => ReactElement;
-  customRenderEdit: (row: T, dataIndex: keyof T, onChangeCallback: (newValue: T[keyof T]) => void) => ReactElement;
+  customRender: (row: T, dataIndex: keyof T, rowIndex: number) => ReactElement;
+  customRenderEdit: (
+    row: T,
+    dataIndex: keyof T,
+    onChangeCallback: (newValue: T[keyof T]) => void,
+    rowIndex: number,
+  ) => ReactElement;
   dataIndex: keyof T;
   editable?: boolean;
   type: ColumnType.CUSTOM;
@@ -178,11 +183,11 @@ export interface IExtraStaticDataTableProps<T> {
   /** Global date format, which can be override by the date column setting (optional, default: undefined) */
   dateFormat?: DateFormatEnum;
   /** Method used to enable the click on row, and handle the click on a specific row (optional, default: undefined) */
-  onRowClick?: (row: T) => void;
+  onRowClick?: (row: T, rowIndex: number) => void;
   /** Method used to enable the selection of rows, and handle the selection of a specific row (optional, default: undefined) */
-  onRowSelect?: (selectedRows: Array<T>, clickedRow: T) => void;
+  onRowSelect?: (selectedRows: Array<T>, clickedRow: T, rowIndex: number) => void;
   /** Method used to disable the selection of a specific row, by default not called and considered as selectable (optional, default: undefined) */
-  isSelectable?: (row: T) => boolean;
+  isSelectable?: (row: T, rowIndex: number) => boolean;
   /** localization (optional, default:
    *    moreActionsMessage: 'More actions'
    *    noData: 'No data'
