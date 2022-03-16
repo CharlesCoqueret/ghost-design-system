@@ -22,7 +22,7 @@ const Title = (props: ITitleProps): ReactElement => {
 
   return (
     <>
-      {prefix && !isEditing && (
+      {prefix && (
         <Typography.Title level={1} ellipsis className='align-edit'>
           {prefix}
         </Typography.Title>
@@ -58,7 +58,6 @@ const Title = (props: ITitleProps): ReactElement => {
           }}>
           <Typography.Title
             level={1}
-            ellipsis
             onClick={
               onTitleEdit
                 ? () => {
@@ -71,13 +70,13 @@ const Title = (props: ITitleProps): ReactElement => {
           </Typography.Title>
         </Tooltip>
       )}
-      {entityId && !isEditing && (
-        <Typography.Title level={1} className='align-edit'>
+      {entityId && (
+        <Typography.Title level={1} ellipsis className='align-edit'>
           - {entityId}
         </Typography.Title>
       )}
 
-      {suffix && !isEditing && (
+      {suffix && (
         <Typography.Title level={1} ellipsis className='align-edit'>
           {suffix}
         </Typography.Title>

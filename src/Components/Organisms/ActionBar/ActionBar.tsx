@@ -75,14 +75,16 @@ const ActionBar = (props: IActionBarProps): ReactElement => {
             />
           </div>
         )}
-        <Title
-          entityId={entityId}
-          onTitleEdit={onTitleEdit}
-          placeholder={placeholder}
-          prefix={prefix}
-          suffix={suffix}
-          title={title}
-        />
+        <div className='title'>
+          <Title
+            entityId={entityId}
+            onTitleEdit={onTitleEdit}
+            placeholder={placeholder}
+            prefix={prefix}
+            suffix={suffix}
+            title={title}
+          />
+        </div>
         {(icon || indicator || status) && (
           <div className='badges'>
             {icon}
