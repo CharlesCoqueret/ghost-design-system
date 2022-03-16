@@ -20,27 +20,28 @@ const EditableDataTableBody = <T,>(props: IEditableDataTableBodyProps<T>): React
 
   const isSelectable = extra?.onRowSelect;
 
-  const handleRowClick = (row: T) => {
+  const handleRowClick = (row: T, rowIndex: number) => {
     return extra && extra.onRowClick
       ? (event: MouseEvent<HTMLElement>) => {
           event.preventDefault();
           if (extra && extra.onRowClick) {
-            extra.onRowClick(row);
+            extra.onRowClick(row, rowIndex);
           }
         }
       : undefined;
   };
 
   /** Handle */
-  const handleSelectClick = (row: T, index: number) => {
+  const handleSelectClick = (row: T, rowIndex: number) => {
     return (_event: MouseEvent<HTMLElement>, selected: boolean) => {
       const newSelectedRows = { ...selectedRows };
-      newSelectedRows[index] = selected;
+      newSelectedRows[rowIndex] = selected;
       setSelectedRows(newSelectedRows);
       if (extra?.onRowSelect) {
         extra.onRowSelect(
           data.filter((_row, index) => newSelectedRows[index]),
           row,
+          rowIndex,
         );
       }
     };
@@ -53,13 +54,13 @@ const EditableDataTableBody = <T,>(props: IEditableDataTableBodyProps<T>): React
         return (
           <tr
             key={`row-${rowIndex}`}
-            onClick={handleRowClick(row)}
+            onClick={handleRowClick(row, rowIndex)}
             className={classnames({ pointer: extra && extra.onRowClick, selected: selectedRows[rowIndex] })}>
             {isSelectable && (
               <StaticDataTableCellSelectable
                 handleSelectClick={handleSelectClick(row, rowIndex)}
                 selected={selectedRows[rowIndex]}
-                selectable={extra.isSelectable ? extra.isSelectable(row) : true}
+                selectable={extra.isSelectable ? extra.isSelectable(row, rowIndex) : true}
                 dataTestId={`select-row-${rowIndex}`}
               />
             )}
