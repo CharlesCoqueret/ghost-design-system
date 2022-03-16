@@ -15,7 +15,7 @@ const Template: ComponentStory<typeof Navbar> = (args: INavBarProps) => {
 export const Default = Template.bind({});
 Default.args = {
   brand: {
-    logoSource: './static/images/logo.svg',
+    logoSource: './images/logo.svg',
     link: '/',
   },
   navButtons: [
