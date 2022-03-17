@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react';
-import { ControlledMenuProps, MenuItemProps } from '@szhsin/react-menu';
+import { ClickEvent, ControlledMenuProps, MenuItemProps } from '@szhsin/react-menu';
 
 const ControlledMenu = forwardRef((props: ControlledMenuProps, ref) => (
   <div>
@@ -11,7 +11,17 @@ const ControlledMenu = forwardRef((props: ControlledMenuProps, ref) => (
 ));
 ControlledMenu.displayName = 'ControlledMenu';
 
-const MenuItem = (props: MenuItemProps) => <div>MenuItem{props.children}</div>;
+const MenuItem = (props: MenuItemProps & { ['data-testid']: string }) => (
+  <div
+    data-testid={'data-testid' in props ? props['data-testid'] : undefined}
+    onClick={(event) => {
+      if (props.onClick) {
+        props.onClick(event as unknown as ClickEvent);
+      }
+    }}>
+    MenuItem{props.children}
+  </div>
+);
 
 const MenuDivider = () => <div>MenuDivider</div>;
 

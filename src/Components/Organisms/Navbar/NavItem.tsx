@@ -10,6 +10,8 @@ export interface INavItemProps {
   counter?: string | number;
   /** custom submenu (optional, default: undefined) */
   customSubItem?: ReactElement;
+  /** For test purpose only */
+  dataTestId?: string;
   /** Icon on the left of the clickable button (optional if label is defined, default: undefined) */
   icon?: IconProp;
   /** Label of the menu (optional if icon is defuned, default: undefined) */
@@ -23,7 +25,7 @@ export interface INavItemProps {
 }
 
 const NavItem = (props: INavItemProps): ReactElement => {
-  const { counter, customSubItem, icon, label, onClick, subItems } = props;
+  const { counter, customSubItem, dataTestId, icon, label, onClick, subItems } = props;
 
   const ref = useRef<HTMLDivElement>(null);
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -51,7 +53,7 @@ const NavItem = (props: INavItemProps): ReactElement => {
 
   return (
     <>
-      <div className='nav-bar-menu-item' ref={ref} onClick={handleClick}>
+      <div className='nav-bar-menu-item' data-testid={dataTestId} ref={ref} onClick={handleClick}>
         {icon && <Icon icon={icon} size='2x' />}
         {label && <div className='nav-bar-menu-label'>{label}</div>}
         {counter && (
@@ -74,6 +76,7 @@ const NavItem = (props: INavItemProps): ReactElement => {
               return (
                 <MenuItem
                   key={item.label}
+                  data-testid={item.dataTestId}
                   onClick={() => {
                     if (item.onClick) {
                       item.onClick();
