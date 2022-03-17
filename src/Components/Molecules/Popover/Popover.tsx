@@ -1,4 +1,4 @@
-import React, { PropsWithChildren, ReactElement, useEffect, useRef, useState } from 'react';
+import React, { PropsWithChildren, ReactElement, RefObject, useEffect, useRef, useState } from 'react';
 import { ControlledMenu } from '@szhsin/react-menu';
 
 import { useOnClickOutside } from '../../../hooks';
@@ -6,7 +6,7 @@ import { Portal } from '../../Atoms/Portal';
 
 export interface IPopoverProps {
   /** Reference of the element from which the popover pops */
-  anchorRef: React.RefObject<HTMLElement>;
+  anchorRef: RefObject<HTMLElement>;
   /** Callback when a click is captured outside the popover (it is recommended to set open to close) */
   onClose: () => void;
   /** Control of the popover (true to open the popover) */

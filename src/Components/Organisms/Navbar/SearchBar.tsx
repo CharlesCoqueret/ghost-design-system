@@ -1,15 +1,16 @@
-import { ControlledMenu, MenuItem } from '@szhsin/react-menu';
 import React, { ChangeEvent, ReactElement, useRef, useState } from 'react';
+import { ControlledMenu, MenuItem } from '@szhsin/react-menu';
 import { Portal } from '../../Atoms/Portal';
 
 export interface ISearchBarProps {
   onSearch: (searchTerm: string) => Promise<Array<ReactElement>>;
   placeholder: string;
   searchingIndicator?: ReactElement;
+  dataTestId?: string;
 }
 
 const SearchBar = (props: ISearchBarProps): ReactElement => {
-  const { onSearch, placeholder, searchingIndicator } = props;
+  const { dataTestId, onSearch, placeholder, searchingIndicator } = props;
 
   const [searching, setSearching] = useState(false);
   const [result, setResult] = useState<Array<ReactElement>>();
@@ -53,6 +54,7 @@ const SearchBar = (props: ISearchBarProps): ReactElement => {
           className='nav-bar-search'
           onChange={handleChange}
           autoComplete='false'
+          data-testid={dataTestId}
         />
       </div>
       <Portal>

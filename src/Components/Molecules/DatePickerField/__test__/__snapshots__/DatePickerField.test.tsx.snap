@@ -31,6 +31,7 @@ exports[`DatePickerField Component DatePickerField renders 1`] = `
         />
       </div>
     </div>
+    <div />
   </div>
 </div>
 `;
@@ -66,6 +67,7 @@ exports[`DatePickerField Component DatePickerField renders with values in disabl
         />
       </div>
     </div>
+    <div />
   </div>
 </div>
 `;
@@ -101,6 +103,7 @@ exports[`DatePickerField Component DatePickerField renders with values in readon
         />
       </div>
     </div>
+    <div />
   </div>
 </div>
 `;
@@ -136,6 +139,7 @@ exports[`DatePickerField Component DatePickerField renders with values with fiel
         />
       </div>
     </div>
+    <div />
   </div>
 </div>
 `;
