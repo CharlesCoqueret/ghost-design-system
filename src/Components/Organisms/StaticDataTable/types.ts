@@ -75,7 +75,9 @@ export interface IColumnBadge<T> extends IColumn {
   dataIndex: keyof T;
   editable?: boolean;
   isClearable?: boolean;
-  options: Array<IOption>;
+  // When the value is not present in the options, should the value be erased (optional, default: false)
+  eraseValueWhenNotInOptions?: boolean;
+  options: Array<IOption> | ((row: T | undefined) => Array<IOption>);
   selectColors?: {
     controlErrorColor: string; // colors.error,
     controlFocusColor: string; // colors.primary,

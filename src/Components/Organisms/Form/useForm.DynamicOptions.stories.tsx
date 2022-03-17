@@ -1,14 +1,11 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 import * as yup from 'yup';
-import cloneDeep from 'lodash/cloneDeep';
 
 import { Button, ColorButtonEnum } from '../../Molecules';
 
 import useForm, { IUseFormProps } from './useForm';
 import { FieldTypeEnum, IFieldAndLayoutProps } from './types';
-import { IOption, Link, Typography } from '../../Atoms';
-import { map } from 'lodash';
-import { access } from 'fs';
+import { IOption } from '../../Atoms';
 
 export default {
   title: 'Organism/useForm',
@@ -95,18 +92,24 @@ const validationSchema = yup.object({
     .string()
     .required()
     .when('select1', (select1: string) => {
+      if (!select1) {
+        return yup.string().required();
+      }
       return yup
         .string()
-        .oneOf(option2[select1].map((option) => option.value))
+        .oneOf(option2[select1]?.map((option) => option.value))
         .required(`option2 must be on of ${option2[select1].map((option) => option.label)}`);
     }),
   select3: yup
     .string()
     .required()
     .when('select2', (select2: string) => {
+      if (!select2) {
+        return yup.string().required();
+      }
       return yup
         .string()
-        .oneOf(option3[select2].map((option) => option.value))
+        .oneOf(option3[select2]?.map((option) => option.value))
         .required(`option3 must be on of ${option3[select2].map((option) => option.label)}`);
     }),
 });

@@ -72,7 +72,7 @@ const initialData = [
 const Template: ComponentStory<typeof LineEditableInPlaceDataTable> = (
   args: ILineEditableInPlaceDataTableProps<demoType>,
 ) => {
-  const [data, setData] = useState<Array<demoType>>(initialData);
+  const [data] = useState<Array<demoType>>(initialData);
 
   const columns: IColumnType<demoType>[] = [
     {
@@ -95,11 +95,22 @@ const Template: ComponentStory<typeof LineEditableInPlaceDataTable> = (
       sorter: true,
       type: ColumnType.BADGE,
       editable: true,
-      options: [
-        { label: 'Inactive', value: 'INACTIVE' },
-        { label: 'In progress', value: 'IN_PROGRESS' },
-        { label: 'Active', value: 'ACTIVE' },
-      ],
+      eraseValueWhenNotInOptions: true,
+      options: (row: demoType) => {
+        if (row.price > 0) {
+          return [
+            { label: 'Inactive', value: 'INACTIVE' },
+            { label: 'In progress', value: 'IN_PROGRESS' },
+            { label: 'Active', value: 'ACTIVE' },
+            { label: 'Option only visible when amount is about 0', value: 'SPECIAL' },
+          ];
+        }
+        return [
+          { label: 'Inactive', value: 'INACTIVE' },
+          { label: 'In progress', value: 'IN_PROGRESS' },
+          { label: 'Active', value: 'ACTIVE' },
+        ];
+      },
     },
     {
       title: 'Amount',

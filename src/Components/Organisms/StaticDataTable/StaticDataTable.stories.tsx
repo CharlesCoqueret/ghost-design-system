@@ -65,14 +65,14 @@ const columns: IColumnType<demoType>[] = [
         icon: ['fal', 'arrow-to-bottom'],
         label: 'Download',
         onClick: (row) => {
-          alert(`download icon clicked on row: ${row.id}`);
+          console.log(`download icon clicked on row: ${row.id}`);
         },
       },
       {
         icon: ['fal', 'eye'],
         label: 'Watch',
         onClick: (row) => {
-          alert(`Eye icon clicked on row: ${row.id}`);
+          console.log(`Eye icon clicked on row: ${row.id}`);
         },
       },
     ],
@@ -155,7 +155,7 @@ ClickableRow.args = {
   columns: columns,
   extra: {
     onRowClick: (row: demoType) => {
-      alert(`clicked row: ${row.id}`);
+      console.log(`clicked row: ${row.id}`);
     },
   },
 };
@@ -166,7 +166,7 @@ SelectableRows.args = {
   columns: columns,
   extra: {
     onRowSelect: (rows: Array<demoType>, row: demoType) => {
-      alert(`Number of rows selected: ${rows.length}\nClicked row: ${row.id}`);
+      console.log(`Number of rows selected: ${rows.length}\nClicked row: ${row.id}`);
     },
     isSelectable: (row: demoType) => {
       return row.id !== 'UGA';
@@ -199,7 +199,7 @@ SelectableAndComputeTotal.args = {
   columns: columns,
   extra: {
     onRowSelect: (rows: Array<demoType>, row: demoType) => {
-      alert(`Number of rows selected: ${rows.length}\nClicked row: ${row.id}`);
+      console.log(`Number of rows selected: ${rows.length}\nClicked row: ${row.id}`);
     },
     computeTotal: (data: Array<demoType>, dataIndex: keyof demoType) => {
       if (dataIndex === 'price' || dataIndex === 'parts') {
@@ -221,7 +221,7 @@ NoData.args = {
   columns: columns,
   extra: {
     onRowSelect: (rows: Array<demoType>, row: demoType) => {
-      alert(`Number of rows selected: ${rows.length}\nClicked row: ${row.id}`);
+      console.log(`Number of rows selected: ${rows.length}\nClicked row: ${row.id}`);
     },
     computeTotal: (data: Array<demoType>, dataIndex: keyof demoType) => {
       if (dataIndex === 'price' || dataIndex === 'parts') {
@@ -248,7 +248,7 @@ Loading.args = {
   ),
   extra: {
     onRowSelect: (rows: Array<demoType>, row: demoType) => {
-      alert(`Number of rows selected: ${rows.length}\nClicked row: ${row.id}`);
+      console.log(`Number of rows selected: ${rows.length}\nClicked row: ${row.id}`);
     },
     computeTotal: (data: Array<demoType>, dataIndex: keyof demoType) => {
       if (dataIndex === 'price' || dataIndex === 'parts') {
