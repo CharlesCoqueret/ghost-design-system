@@ -16,4 +16,5 @@ module.exports = {
   //     statements: 90,
   //   },
   // },
+  testEnvironment: 'jest-environment-jsdom',
 };

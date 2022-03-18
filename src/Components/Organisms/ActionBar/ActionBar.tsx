@@ -97,7 +97,7 @@ const ActionBar = (props: IActionBarProps): ReactElement => {
         {actions && actions.length > 0 && (
           <div className='actions'>
             {actions?.map((action) => {
-              return <Button key={action.label} {...action} icon={undefined} />;
+              return <Button key={action.label || action.tooltip} {...action} icon={undefined} />;
             })}
           </div>
         )}
@@ -109,7 +109,13 @@ const ActionBar = (props: IActionBarProps): ReactElement => {
         {basicActions && basicActions.length > 0 && (
           <div className='basic-actions'>
             {basicActions?.map((basicAction) => {
-              return <Button key={basicAction.tooltip} {...basicAction} color={ColorButtonEnum.REVERSED} />;
+              return (
+                <Button
+                  key={basicAction.tooltip || basicAction.label}
+                  {...basicAction}
+                  color={ColorButtonEnum.REVERSED}
+                />
+              );
             })}
           </div>
         )}
