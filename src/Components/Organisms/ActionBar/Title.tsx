@@ -1,10 +1,20 @@
-import React, { FocusEvent, KeyboardEvent, ReactElement, useState } from 'react';
-import classnames from 'classnames';
+import React, {
+  ChangeEvent,
+  CSSProperties,
+  FocusEvent,
+  KeyboardEvent,
+  ReactElement,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
 
 import { Tooltip } from '../../Atoms/Tooltip';
 import { Typography } from '../../Atoms/Typography';
 
 export interface ITitleProps {
+  dataTestId?: string;
   entityId?: string;
   onTitleEdit?: (newTitle: string) => void;
   placeholder?: string;
@@ -15,10 +25,53 @@ export interface ITitleProps {
 }
 
 const Title = (props: ITitleProps): ReactElement => {
-  const { entityId, onTitleEdit, placeholder, prefix, renameTooltip, suffix, title } = props;
+  const { dataTestId, entityId, onTitleEdit, placeholder, prefix, renameTooltip, suffix, title } = props;
 
-  const [isEditing, setIsEditing] = useState<boolean>(false);
   const [currentTitle, setCurrentTitle] = useState<string | undefined>(title);
+  const [currentInputStyle, setCurrentInputStyle] = useState<CSSProperties>({ display: 'flex', width: '0px' });
+  const spanRef = useRef<HTMLSpanElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  const isEditable = onTitleEdit !== undefined;
+
+  const updateInputWidth = useCallback(() => {
+    setCurrentInputStyle({
+      display: 'flex',
+      margin: 'auto',
+      width: `${spanRef?.current?.offsetWidth}px`,
+    });
+  }, [spanRef]);
+
+  const handleKeyDown = useCallback((event: KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === 'Enter' || event.key === 'Tab') {
+      event.currentTarget.blur();
+    }
+  }, []);
+
+  const handleChange = useCallback(
+    (event: ChangeEvent<HTMLInputElement>) => {
+      setCurrentTitle(event.target.value);
+      updateInputWidth();
+    },
+    [spanRef],
+  );
+
+  const handleBlur = useCallback(
+    (event: FocusEvent<HTMLInputElement>) => {
+      if (event.target.value.trim().length == 0) {
+        setCurrentTitle(title);
+        return;
+      }
+      if (onTitleEdit) {
+        onTitleEdit(event.target.value.trim());
+      }
+    },
+    [currentTitle],
+  );
+
+  useEffect(() => {
+    updateInputWidth();
+  }, [currentTitle]);
 
   return (
     <>
@@ -27,55 +80,33 @@ const Title = (props: ITitleProps): ReactElement => {
           {prefix}
         </Typography.Title>
       )}
-
-      {isEditing ? (
+      <Tooltip
+        tooltip={isEditable ? renameTooltip : undefined}
+        style={{ display: 'inline-flex', margin: 'auto', overflow: 'hidden' }}>
+        <span ref={spanRef} className={'title-edit-hidden'}>
+          {currentTitle || placeholder}
+        </span>
         <input
-          type='text'
-          autoFocus={true}
-          defaultValue={currentTitle}
+          autoComplete='off'
+          autoFocus={false}
           className='title-edit'
+          data-testid={dataTestId}
+          onBlur={handleBlur}
+          onChange={handleChange}
+          onKeyDown={handleKeyDown}
           placeholder={placeholder}
-          onKeyDown={(event: KeyboardEvent<HTMLInputElement>) => {
-            if (event.key === 'Enter' || event.key === 'Tab') {
-              event.currentTarget.blur();
-            }
-          }}
-          onBlur={(event: FocusEvent<HTMLInputElement>) => {
-            if (event.target.value.trim().length > 0) {
-              setCurrentTitle(event.target.value.trim());
-            }
-            setIsEditing(false);
-            if (onTitleEdit) {
-              onTitleEdit(event.target.value.trim());
-            }
-          }}
+          readOnly={!isEditable}
+          ref={inputRef}
+          style={currentInputStyle}
+          type='text'
+          value={currentTitle}
         />
-      ) : (
-        <Tooltip
-          tooltip={onTitleEdit ? renameTooltip : undefined}
-          style={{
-            display: 'flex',
-          }}>
-          <Typography.Title
-            level={1}
-            onClick={
-              onTitleEdit
-                ? () => {
-                    setIsEditing(true);
-                  }
-                : undefined
-            }
-            className={classnames({ clickable: onTitleEdit !== undefined })}>
-            {currentTitle}
-          </Typography.Title>
-        </Tooltip>
-      )}
+      </Tooltip>
       {entityId && (
         <Typography.Title level={1} ellipsis className='align-edit'>
           - {entityId}
         </Typography.Title>
       )}
-
       {suffix && (
         <Typography.Title level={1} ellipsis className='align-edit'>
           {suffix}
@@ -92,7 +123,7 @@ Title.defaultProps = {
   prefix: undefined,
   renameTooltip: 'Rename',
   suffix: undefined,
-  title: undefined,
+  title: '',
 };
 
 export default Title;

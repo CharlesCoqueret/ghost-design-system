@@ -19,4 +19,13 @@ describe('NavBar Component', () => {
     expect(container).toMatchSnapshot();
     expect(onSearchMock).not.toBeCalled();
   });
+
+  it('NavBar renders without buttons or icons', async () => {
+    const onSearchMock = jest.fn();
+
+    const container = render(<NavBar brand={{ logoSource: 'logoSource', redirection: 'redirection', alt: 'alt' }} />);
+
+    expect(container).toMatchSnapshot();
+    expect(onSearchMock).not.toBeCalled();
+  });
 });
