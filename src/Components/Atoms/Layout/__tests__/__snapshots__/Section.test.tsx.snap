@@ -1,0 +1,358 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Section Component Section renders 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="section-container"
+      >
+        <div
+          class="section-header collapsable"
+          data-testid="DATA-TEST-ID"
+        >
+          TITLE
+          <i
+            class="icon open icon"
+            icon="fal,chevron-left"
+          />
+        </div>
+        <div
+          class="section-body"
+          style="height: auto;"
+        >
+          <div
+            id="CHILD1"
+          />
+          <div
+            id="CHILD2"
+          />
+        </div>
+        <div
+          class="section-footer"
+        />
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="section-container"
+    >
+      <div
+        class="section-header collapsable"
+        data-testid="DATA-TEST-ID"
+      >
+        TITLE
+        <i
+          class="icon open icon"
+          icon="fal,chevron-left"
+        />
+      </div>
+      <div
+        class="section-body"
+        style="height: auto;"
+      >
+        <div
+          id="CHILD1"
+        />
+        <div
+          id="CHILD2"
+        />
+      </div>
+      <div
+        class="section-footer"
+      />
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`Section Component Section renders 2`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="section-container"
+      >
+        <div
+          class="section-header collapsable"
+          data-testid="DATA-TEST-ID"
+        >
+          TITLE
+          <i
+            class="icon icon"
+            icon="fal,chevron-left"
+          />
+        </div>
+        <div
+          class="section-body"
+          style="height: 0px; transition: height 500ms linear;"
+        >
+          <div
+            id="CHILD1"
+          />
+          <div
+            id="CHILD2"
+          />
+        </div>
+        <div
+          class="section-footer"
+        />
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="section-container"
+    >
+      <div
+        class="section-header collapsable"
+        data-testid="DATA-TEST-ID"
+      >
+        TITLE
+        <i
+          class="icon icon"
+          icon="fal,chevron-left"
+        />
+      </div>
+      <div
+        class="section-body"
+        style="height: 0px; transition: height 500ms linear;"
+      >
+        <div
+          id="CHILD1"
+        />
+        <div
+          id="CHILD2"
+        />
+      </div>
+      <div
+        class="section-footer"
+      />
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`Section Component Section renders 3`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="section-container"
+      >
+        <div
+          class="section-header collapsable"
+          data-testid="DATA-TEST-ID"
+        >
+          TITLE
+          <i
+            class="icon open icon"
+            icon="fal,chevron-left"
+          />
+        </div>
+        <div
+          class="section-body"
+          style="height: auto; transition: height 500ms linear;"
+        >
+          <div
+            id="CHILD1"
+          />
+          <div
+            id="CHILD2"
+          />
+        </div>
+        <div
+          class="section-footer"
+        />
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="section-container"
+    >
+      <div
+        class="section-header collapsable"
+        data-testid="DATA-TEST-ID"
+      >
+        TITLE
+        <i
+          class="icon open icon"
+          icon="fal,chevron-left"
+        />
+      </div>
+      <div
+        class="section-body"
+        style="height: auto; transition: height 500ms linear;"
+      >
+        <div
+          id="CHILD1"
+        />
+        <div
+          id="CHILD2"
+        />
+      </div>
+      <div
+        class="section-footer"
+      />
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

@@ -10,10 +10,12 @@ export interface ISectionProps {
   openInitially?: boolean;
   /** Title of the section element */
   title: string;
+  /** For test purpose only */
+  dataTestId?: string;
 }
 
 const Section = (props: PropsWithChildren<ISectionProps>): ReactElement => {
-  const { children, collapsable, openInitially, title } = props;
+  const { children, collapsable, dataTestId, openInitially, title } = props;
 
   const [open, setOpen] = useState<boolean>(collapsable ? openInitially === true : true);
   const contentRef = useRef<HTMLDivElement>(null);
@@ -66,7 +68,10 @@ const Section = (props: PropsWithChildren<ISectionProps>): ReactElement => {
 
   return (
     <div className='section-container'>
-      <div className={classnames('section-header', { collapsable: collapsable })} onClick={handleClick}>
+      <div
+        className={classnames('section-header', { collapsable: collapsable })}
+        onClick={handleClick}
+        data-testid={dataTestId}>
         {title}
         {collapsable && (
           <Icon icon={['fal', 'chevron-left']} size='lg' className={classnames('icon', { open: open })} />
