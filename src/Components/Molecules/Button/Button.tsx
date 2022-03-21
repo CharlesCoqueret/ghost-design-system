@@ -144,7 +144,7 @@ const Button = (props: IButtonProps): ReactElement => {
                         item.onClick(event.value);
                       }
                     }}>
-                    {item.value}
+                    {item.label}
                   </MenuItem>
                 </>
               );

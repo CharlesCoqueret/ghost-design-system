@@ -21,9 +21,9 @@ const Template: ComponentStory<typeof Button> = (args: IButtonProps) => {
 };
 
 const itemList = [
-  { itemId: 'key1', value: 'First option' },
-  { itemId: 'key2', value: 'Second option' },
-  { itemId: 'key3', value: 'Third option', divider: true },
+  { itemId: 'key1', label: 'First option' },
+  { itemId: 'key2', label: 'Second option' },
+  { itemId: 'key3', label: 'Third option', divider: true },
 ];
 
 export const Simple = Template.bind({});

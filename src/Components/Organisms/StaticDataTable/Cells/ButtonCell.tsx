@@ -26,7 +26,7 @@ const ButtonCell = <T,>(props: ICellProps<T, IColumnButton<T>>): ReactElement =>
             itemList={column.buttons?.map((item) => {
               return {
                 itemId: item.label,
-                value: item.label,
+                label: item.label,
                 hidden: !(!item.hidden || !item.hidden(row, rowIndex)),
                 onClick: () => {
                   if (item.onClick) {
