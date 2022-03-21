@@ -3,14 +3,12 @@ import { ReactElement } from 'react';
 export interface IItemListProps {
   /** item identifier */
   itemId: string;
-  /** value of the item to display if elementValue not defined (optional) */
-  value?: string | ReactElement;
-  /** determine if the item should be preceded by a dropdown divider (optional) */
+  /** Item name (optional, default: undefined) */
+  label: string | ReactElement;
+  /** Should the item be preceeded by a divider (optional, default: false) */
   divider?: boolean;
-  /** on click event handler on the item (optional) */
-  onClick?: (key: string | undefined) => void;
-  /** react route link on click on item (optional) */
-  link?: string;
-  /** do not render the item if true (render the item otherwise) */
+  /** Handler of click on the item (optional, default: undefined) */
+  onClick?: (itemId: string | undefined) => void;
+  /** Item entry is hidden (optional, default: false) */
   hidden?: boolean;
 }
