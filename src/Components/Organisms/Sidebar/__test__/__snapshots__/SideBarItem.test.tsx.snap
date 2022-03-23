@@ -1,0 +1,1259 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SideBarItem Component SideBarItem handles click on entry in main menu and handles click on submenu 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <nav
+        class="sidebar-container"
+        style="height: 600px;"
+      >
+        <ul
+          class="mainmenu"
+        >
+          <li
+            class="item "
+          >
+            <a
+              class=""
+              data-testid="PARENT-TEST-ID"
+              href="/link"
+            >
+              partial url
+              <div
+                class="label"
+              >
+                LABEL
+              </div>
+              <i
+                class="chevron-right icon"
+                icon="fal,chevron-right"
+              />
+            </a>
+          </li>
+          <ul
+            class="submenu"
+          >
+            <li
+              class="back"
+            >
+              <div
+                class="label"
+              >
+                <i
+                  class="chevron-left icon"
+                  icon="fal,chevron-left"
+                />
+                Back to menu
+              </div>
+            </li>
+            <div
+              class="sidebar-divider"
+            />
+            <li
+              class="item "
+            >
+              <a
+                class=""
+                data-testid="CHILD-TEST-ID"
+                href="/link/link1"
+              >
+                full url
+                <div
+                  class="label"
+                >
+                  LINK1
+                </div>
+              </a>
+            </li>
+            <li
+              class="item "
+            >
+              <a
+                class=""
+                href="/link/link2"
+              >
+                full url
+                <div
+                  class="label"
+                >
+                  LINK2
+                </div>
+              </a>
+            </li>
+          </ul>
+        </ul>
+      </nav>
+    </div>
+  </body>,
+  "container": <div>
+    <nav
+      class="sidebar-container"
+      style="height: 600px;"
+    >
+      <ul
+        class="mainmenu"
+      >
+        <li
+          class="item "
+        >
+          <a
+            class=""
+            data-testid="PARENT-TEST-ID"
+            href="/link"
+          >
+            partial url
+            <div
+              class="label"
+            >
+              LABEL
+            </div>
+            <i
+              class="chevron-right icon"
+              icon="fal,chevron-right"
+            />
+          </a>
+        </li>
+        <ul
+          class="submenu"
+        >
+          <li
+            class="back"
+          >
+            <div
+              class="label"
+            >
+              <i
+                class="chevron-left icon"
+                icon="fal,chevron-left"
+              />
+              Back to menu
+            </div>
+          </li>
+          <div
+            class="sidebar-divider"
+          />
+          <li
+            class="item "
+          >
+            <a
+              class=""
+              data-testid="CHILD-TEST-ID"
+              href="/link/link1"
+            >
+              full url
+              <div
+                class="label"
+              >
+                LINK1
+              </div>
+            </a>
+          </li>
+          <li
+            class="item "
+          >
+            <a
+              class=""
+              href="/link/link2"
+            >
+              full url
+              <div
+                class="label"
+              >
+                LINK2
+              </div>
+            </a>
+          </li>
+        </ul>
+      </ul>
+    </nav>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`SideBarItem Component SideBarItem handles click on entry in main menu and handles click on submenu 2`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <nav
+        class="sidebar-container"
+        style="height: 600px;"
+      >
+        <ul
+          class="mainmenu in-submenu"
+        >
+          <li
+            class="item "
+          >
+            <a
+              class=""
+              data-testid="PARENT-TEST-ID"
+              href="/link"
+            >
+              partial url
+              <div
+                class="label"
+              >
+                LABEL
+              </div>
+              <i
+                class="chevron-right icon"
+                icon="fal,chevron-right"
+              />
+            </a>
+          </li>
+          <ul
+            class="submenu in-submenu"
+          >
+            <li
+              class="back"
+            >
+              <div
+                class="label"
+              >
+                <i
+                  class="chevron-left icon"
+                  icon="fal,chevron-left"
+                />
+                Back to menu
+              </div>
+            </li>
+            <div
+              class="sidebar-divider"
+            />
+            <li
+              class="item "
+            >
+              <a
+                class=""
+                data-testid="CHILD-TEST-ID"
+                href="/link/link1"
+              >
+                full url
+                <div
+                  class="label"
+                >
+                  LINK1
+                </div>
+              </a>
+            </li>
+            <li
+              class="item "
+            >
+              <a
+                class=""
+                href="/link/link2"
+              >
+                full url
+                <div
+                  class="label"
+                >
+                  LINK2
+                </div>
+              </a>
+            </li>
+          </ul>
+        </ul>
+      </nav>
+    </div>
+  </body>,
+  "container": <div>
+    <nav
+      class="sidebar-container"
+      style="height: 600px;"
+    >
+      <ul
+        class="mainmenu in-submenu"
+      >
+        <li
+          class="item "
+        >
+          <a
+            class=""
+            data-testid="PARENT-TEST-ID"
+            href="/link"
+          >
+            partial url
+            <div
+              class="label"
+            >
+              LABEL
+            </div>
+            <i
+              class="chevron-right icon"
+              icon="fal,chevron-right"
+            />
+          </a>
+        </li>
+        <ul
+          class="submenu in-submenu"
+        >
+          <li
+            class="back"
+          >
+            <div
+              class="label"
+            >
+              <i
+                class="chevron-left icon"
+                icon="fal,chevron-left"
+              />
+              Back to menu
+            </div>
+          </li>
+          <div
+            class="sidebar-divider"
+          />
+          <li
+            class="item "
+          >
+            <a
+              class=""
+              data-testid="CHILD-TEST-ID"
+              href="/link/link1"
+            >
+              full url
+              <div
+                class="label"
+              >
+                LINK1
+              </div>
+            </a>
+          </li>
+          <li
+            class="item "
+          >
+            <a
+              class=""
+              href="/link/link2"
+            >
+              full url
+              <div
+                class="label"
+              >
+                LINK2
+              </div>
+            </a>
+          </li>
+        </ul>
+      </ul>
+    </nav>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`SideBarItem Component SideBarItem handles click on entry in main menu and handles click on submenu 3`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <nav
+        class="sidebar-container"
+        style="height: 600px;"
+      >
+        <ul
+          class="mainmenu in-submenu"
+        >
+          <li
+            class="item "
+          >
+            <a
+              class=""
+              data-testid="PARENT-TEST-ID"
+              href="/link"
+            >
+              partial url
+              <div
+                class="label"
+              >
+                LABEL
+              </div>
+              <i
+                class="chevron-right icon"
+                icon="fal,chevron-right"
+              />
+            </a>
+          </li>
+          <ul
+            class="submenu in-submenu"
+          >
+            <li
+              class="back"
+            >
+              <div
+                class="label"
+              >
+                <i
+                  class="chevron-left icon"
+                  icon="fal,chevron-left"
+                />
+                Back to menu
+              </div>
+            </li>
+            <div
+              class="sidebar-divider"
+            />
+            <li
+              class="item "
+            >
+              <a
+                class=""
+                data-testid="CHILD-TEST-ID"
+                href="/link/link1"
+              >
+                full url
+                <div
+                  class="label"
+                >
+                  LINK1
+                </div>
+              </a>
+            </li>
+            <li
+              class="item "
+            >
+              <a
+                class=""
+                href="/link/link2"
+              >
+                full url
+                <div
+                  class="label"
+                >
+                  LINK2
+                </div>
+              </a>
+            </li>
+          </ul>
+        </ul>
+      </nav>
+    </div>
+  </body>,
+  "container": <div>
+    <nav
+      class="sidebar-container"
+      style="height: 600px;"
+    >
+      <ul
+        class="mainmenu in-submenu"
+      >
+        <li
+          class="item "
+        >
+          <a
+            class=""
+            data-testid="PARENT-TEST-ID"
+            href="/link"
+          >
+            partial url
+            <div
+              class="label"
+            >
+              LABEL
+            </div>
+            <i
+              class="chevron-right icon"
+              icon="fal,chevron-right"
+            />
+          </a>
+        </li>
+        <ul
+          class="submenu in-submenu"
+        >
+          <li
+            class="back"
+          >
+            <div
+              class="label"
+            >
+              <i
+                class="chevron-left icon"
+                icon="fal,chevron-left"
+              />
+              Back to menu
+            </div>
+          </li>
+          <div
+            class="sidebar-divider"
+          />
+          <li
+            class="item "
+          >
+            <a
+              class=""
+              data-testid="CHILD-TEST-ID"
+              href="/link/link1"
+            >
+              full url
+              <div
+                class="label"
+              >
+                LINK1
+              </div>
+            </a>
+          </li>
+          <li
+            class="item "
+          >
+            <a
+              class=""
+              href="/link/link2"
+            >
+              full url
+              <div
+                class="label"
+              >
+                LINK2
+              </div>
+            </a>
+          </li>
+        </ul>
+      </ul>
+    </nav>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`SideBarItem Component SideBarItem renders 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <nav
+        class="sidebar-container"
+        style="height: 600px;"
+      >
+        <ul
+          class="mainmenu"
+        >
+          <li
+            class="item "
+          >
+            <a
+              class=""
+              href="/link"
+            >
+              partial url
+              <div
+                class="label"
+              >
+                LABEL
+              </div>
+              <i
+                class="chevron-right icon"
+                icon="fal,chevron-right"
+              />
+            </a>
+          </li>
+          <ul
+            class="submenu"
+          >
+            <li
+              class="back"
+            >
+              <div
+                class="label"
+              >
+                <i
+                  class="chevron-left icon"
+                  icon="fal,chevron-left"
+                />
+                Back to menu
+              </div>
+            </li>
+            <div
+              class="sidebar-divider"
+            />
+            <li
+              class="item "
+            >
+              <a
+                class=""
+                href="/link"
+                target="_blank"
+              >
+                full url
+                <div
+                  class="label"
+                >
+                  EXTERNAL
+                </div>
+                <i
+                  class="external-link icon"
+                  icon="fal,external-link"
+                />
+              </a>
+            </li>
+            <li
+              class="item disabled"
+            >
+              <a
+                class="disabled"
+                href="/link"
+              >
+                full url
+                <div
+                  class="label"
+                >
+                  DISABLED
+                </div>
+              </a>
+            </li>
+            <li
+              class="item "
+            >
+              <a
+                class=""
+                href="/link"
+              >
+                full url
+                <div
+                  class="label"
+                >
+                  NORMAL
+                </div>
+              </a>
+            </li>
+          </ul>
+        </ul>
+      </nav>
+    </div>
+  </body>,
+  "container": <div>
+    <nav
+      class="sidebar-container"
+      style="height: 600px;"
+    >
+      <ul
+        class="mainmenu"
+      >
+        <li
+          class="item "
+        >
+          <a
+            class=""
+            href="/link"
+          >
+            partial url
+            <div
+              class="label"
+            >
+              LABEL
+            </div>
+            <i
+              class="chevron-right icon"
+              icon="fal,chevron-right"
+            />
+          </a>
+        </li>
+        <ul
+          class="submenu"
+        >
+          <li
+            class="back"
+          >
+            <div
+              class="label"
+            >
+              <i
+                class="chevron-left icon"
+                icon="fal,chevron-left"
+              />
+              Back to menu
+            </div>
+          </li>
+          <div
+            class="sidebar-divider"
+          />
+          <li
+            class="item "
+          >
+            <a
+              class=""
+              href="/link"
+              target="_blank"
+            >
+              full url
+              <div
+                class="label"
+              >
+                EXTERNAL
+              </div>
+              <i
+                class="external-link icon"
+                icon="fal,external-link"
+              />
+            </a>
+          </li>
+          <li
+            class="item disabled"
+          >
+            <a
+              class="disabled"
+              href="/link"
+            >
+              full url
+              <div
+                class="label"
+              >
+                DISABLED
+              </div>
+            </a>
+          </li>
+          <li
+            class="item "
+          >
+            <a
+              class=""
+              href="/link"
+            >
+              full url
+              <div
+                class="label"
+              >
+                NORMAL
+              </div>
+            </a>
+          </li>
+        </ul>
+      </ul>
+    </nav>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`SideBarItem Component SideBarItem renders with only one subitem visible 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <nav
+        class="sidebar-container"
+        style="height: 600px;"
+      >
+        <ul
+          class="mainmenu"
+        >
+          <li
+            class="item "
+          >
+            <a
+              class=""
+              href="/link"
+            >
+              full url
+              <div
+                class="label"
+              >
+                LABEL
+              </div>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </body>,
+  "container": <div>
+    <nav
+      class="sidebar-container"
+      style="height: 600px;"
+    >
+      <ul
+        class="mainmenu"
+      >
+        <li
+          class="item "
+        >
+          <a
+            class=""
+            href="/link"
+          >
+            full url
+            <div
+              class="label"
+            >
+              LABEL
+            </div>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`SideBarItem Component SideBarItem renders with url as Location 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <nav
+        class="sidebar-container"
+        style="height: 600px;"
+      >
+        <ul
+          class="mainmenu"
+        >
+          <li
+            class="item "
+          >
+            <a
+              class=""
+              href="/link"
+            >
+              partial url
+              <div
+                class="label"
+              >
+                LABEL
+              </div>
+              <i
+                class="chevron-right icon"
+                icon="fal,chevron-right"
+              />
+            </a>
+          </li>
+          <ul
+            class="submenu"
+          >
+            <li
+              class="back"
+            >
+              <div
+                class="label"
+              >
+                <i
+                  class="chevron-left icon"
+                  icon="fal,chevron-left"
+                />
+                Back to menu
+              </div>
+            </li>
+            <div
+              class="sidebar-divider"
+            />
+            <li
+              class="item "
+            >
+              <a
+                class=""
+                href="PATHNAME"
+              >
+                full url
+                <div
+                  class="label"
+                >
+                  LINK
+                </div>
+              </a>
+            </li>
+            <li
+              class="item "
+            >
+              <a
+                class=""
+                href="/link2"
+              >
+                full url
+                <div
+                  class="label"
+                >
+                  Link2
+                </div>
+              </a>
+            </li>
+          </ul>
+        </ul>
+      </nav>
+    </div>
+  </body>,
+  "container": <div>
+    <nav
+      class="sidebar-container"
+      style="height: 600px;"
+    >
+      <ul
+        class="mainmenu"
+      >
+        <li
+          class="item "
+        >
+          <a
+            class=""
+            href="/link"
+          >
+            partial url
+            <div
+              class="label"
+            >
+              LABEL
+            </div>
+            <i
+              class="chevron-right icon"
+              icon="fal,chevron-right"
+            />
+          </a>
+        </li>
+        <ul
+          class="submenu"
+        >
+          <li
+            class="back"
+          >
+            <div
+              class="label"
+            >
+              <i
+                class="chevron-left icon"
+                icon="fal,chevron-left"
+              />
+              Back to menu
+            </div>
+          </li>
+          <div
+            class="sidebar-divider"
+          />
+          <li
+            class="item "
+          >
+            <a
+              class=""
+              href="PATHNAME"
+            >
+              full url
+              <div
+                class="label"
+              >
+                LINK
+              </div>
+            </a>
+          </li>
+          <li
+            class="item "
+          >
+            <a
+              class=""
+              href="/link2"
+            >
+              full url
+              <div
+                class="label"
+              >
+                Link2
+              </div>
+            </a>
+          </li>
+        </ul>
+      </ul>
+    </nav>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
