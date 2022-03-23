@@ -20,7 +20,7 @@ Object {
         </div>
         <div
           class="section-body"
-          style="height: auto;"
+          style="transition: height 500ms linear; height: auto;"
         >
           <div
             id="CHILD1"
@@ -51,7 +51,7 @@ Object {
       </div>
       <div
         class="section-body"
-        style="height: auto;"
+        style="transition: height 500ms linear; height: auto;"
       >
         <div
           id="CHILD1"
@@ -139,7 +139,7 @@ Object {
         </div>
         <div
           class="section-body"
-          style="height: 0px; transition: height 500ms linear;"
+          style="transition: height 500ms linear; height: 0px;"
         >
           <div
             id="CHILD1"
@@ -170,7 +170,7 @@ Object {
       </div>
       <div
         class="section-body"
-        style="height: 0px; transition: height 500ms linear;"
+        style="transition: height 500ms linear; height: 0px;"
       >
         <div
           id="CHILD1"
@@ -258,7 +258,7 @@ Object {
         </div>
         <div
           class="section-body"
-          style="height: auto; transition: height 500ms linear;"
+          style="transition: height 500ms linear; height: auto;"
         >
           <div
             id="CHILD1"
@@ -289,7 +289,7 @@ Object {
       </div>
       <div
         class="section-body"
-        style="height: auto; transition: height 500ms linear;"
+        style="transition: height 500ms linear; height: auto;"
       >
         <div
           id="CHILD1"
@@ -373,7 +373,7 @@ Object {
         </div>
         <div
           class="section-body"
-          style="height: auto;"
+          style="transition: height 500ms linear; height: auto;"
         >
           <div
             id="CHILD1"
@@ -400,7 +400,7 @@ Object {
       </div>
       <div
         class="section-body"
-        style="height: auto;"
+        style="transition: height 500ms linear; height: auto;"
       >
         <div
           id="CHILD1"
@@ -484,7 +484,7 @@ Object {
         </div>
         <div
           class="section-body"
-          style="height: auto;"
+          style="transition: height 500ms linear; height: auto;"
         >
           <div
             id="CHILD1"
@@ -511,7 +511,7 @@ Object {
       </div>
       <div
         class="section-body"
-        style="height: auto;"
+        style="transition: height 500ms linear; height: auto;"
       >
         <div
           id="CHILD1"
@@ -595,7 +595,7 @@ Object {
         </div>
         <div
           class="section-body"
-          style="height: auto;"
+          style="transition: height 500ms linear; height: auto;"
         >
           <div
             id="CHILD1"
@@ -622,7 +622,7 @@ Object {
       </div>
       <div
         class="section-body"
-        style="height: auto;"
+        style="transition: height 500ms linear; height: auto;"
       >
         <div
           id="CHILD1"

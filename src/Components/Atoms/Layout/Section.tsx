@@ -20,29 +20,13 @@ const Section = (props: PropsWithChildren<ISectionProps>): ReactElement => {
   const [open, setOpen] = useState<boolean>(collapsable ? openInitially === true : true);
   const contentRef = useRef<HTMLDivElement>(null);
 
-  const transitionEnd = (event: TransitionEvent) => {
-    if (!contentRef.current) return;
-    if (event.propertyName == 'height') {
-      contentRef.current.style.transition = '';
-      contentRef.current.style.height = 'auto';
-      contentRef.current.removeEventListener('transitionend', transitionEnd, false);
-    }
-  };
-
   useEffect(() => {
     if (!contentRef.current) {
       return;
     }
 
-    // Initial run, to ensure the proper value
-    if (contentRef.current.style.height === '') {
-      contentRef.current.style.height = open ? 'auto' : '0px';
-      return;
-    }
-
     // From height auto to 0px
     if (!open) {
-      contentRef.current.style.height = getComputedStyle(contentRef.current).height;
       contentRef.current.style.transition = 'height 500ms linear';
       contentRef.current.offsetHeight;
       contentRef.current.style.height = '0px';
@@ -56,7 +40,6 @@ const Section = (props: PropsWithChildren<ISectionProps>): ReactElement => {
       contentRef.current.offsetHeight;
       contentRef.current.style.transition = 'height 500ms linear';
       contentRef.current.style.height = endHeight;
-      contentRef.current.addEventListener('transitionend', transitionEnd, false);
     }
   }, [open]);
 
