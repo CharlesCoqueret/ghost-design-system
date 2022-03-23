@@ -49,7 +49,7 @@ const locationString = (location: string | Location): string => {
 };
 
 /**
- * Inidicates if the url is an external link
+ * Indicates if the url is an external link
  *
  * @param url string or Location object
  * @returns true if the link is an external link
