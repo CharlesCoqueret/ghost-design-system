@@ -3,7 +3,7 @@ import { DatePickerInput } from '..';
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-describe('DatePickerInput Component properly calls onChange', () => {
+describe('DatePickerInput Component', () => {
   it('DatePickerInput renders handles changes', async () => {
     const onChangeMock = jest.fn();
 
@@ -36,34 +36,32 @@ describe('DatePickerInput Component properly calls onChange', () => {
   });
 
   it('DatePickerInput renders highlighted in readonly', async () => {
-    render(<DatePickerInput name='NAME' highlighted readOnly dateFormat={''} />);
+    const container = render(<DatePickerInput name='NAME' highlighted readOnly dateFormat={''} />);
+    expect(container).toMatchSnapshot();
+  });
 
-    const inputNode = await screen.findByPlaceholderText('-');
+  it('DatePickerInput renders with placeholder', async () => {
+    const container = render(<DatePickerInput name='NAME' placeholder='TESTPLACEHOLDER' />);
+    expect(container).toMatchSnapshot();
+  });
 
-    expect(inputNode.className).toBe('input-date-picker-input-read-only field-highlighted');
+  it('DatePickerInput renders without Portal', async () => {
+    const container = render(<DatePickerInput usePortal={false} name='NAME' />);
+    expect(container).toMatchSnapshot();
   });
 
   it('DatePickerInput renders highlighted in disabled', async () => {
-    render(<DatePickerInput name='NAME' highlighted disabled />);
-
-    const inputNode = await screen.findByPlaceholderText('MMM DD, YYYY');
-
-    expect(inputNode.className).toBe('input-date-picker-input field-highlighted');
-    expect(inputNode).toHaveProperty('disabled', true);
+    const container = render(<DatePickerInput name='NAME' highlighted disabled />);
+    expect(container).toMatchSnapshot();
   });
 
   it('DatePickerInput renders in error in readonly', async () => {
-    render(<DatePickerInput name='NAME' readOnly isInError />);
-
-    const inputNode = await screen.findByPlaceholderText('-');
-    expect(inputNode.className).toBe('input-date-picker-input-read-only');
+    const container = render(<DatePickerInput name='NAME' readOnly isInError />);
+    expect(container).toMatchSnapshot();
   });
 
   it('DatePickerInput renders in error', async () => {
-    render(<DatePickerInput name='NAME' isInError />);
-
-    const inputNode = await screen.findByPlaceholderText('MMM DD, YYYY');
-
-    expect(inputNode.className).toBe('input-date-picker-input input-error');
+    const container = render(<DatePickerInput name='NAME' isInError />);
+    expect(container).toMatchSnapshot();
   });
 });

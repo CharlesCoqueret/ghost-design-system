@@ -7,12 +7,24 @@ import { DateFormatEnum, WeekDayEnum } from './types';
 export default {
   title: 'Atom/DatePickerInput',
   component: DatePickerInput,
+  parameters: { actions: { argTypesRegex: '^on.*' } },
 } as ComponentMeta<typeof DatePickerInput>;
 
 const Template: ComponentStory<typeof DatePickerInput> = ({ inputValue, ...args }: IDatePickerProps) => {
   const [date, setDate] = useState<Date | null>(inputValue ? inputValue : null);
 
-  return <DatePickerInput {...args} inputValue={date} onChange={setDate} />;
+  return (
+    <DatePickerInput
+      {...args}
+      inputValue={date}
+      onChange={(v) => {
+        if (args.onChange) {
+          args.onChange(v);
+        }
+        setDate(v);
+      }}
+    />
+  );
 };
 
 export const Default = Template.bind({});

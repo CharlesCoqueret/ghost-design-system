@@ -1,29 +1,31 @@
-import React, { ReactElement } from 'react';
+import React, { ChangeEvent, ReactElement } from 'react';
 import { ReactDatePickerCustomHeaderProps /*registerLocale*/ } from 'react-datepicker';
+import { Button, ColorButtonEnum } from '../../Molecules/Button';
 // import fr from "date-fns/locale/fr";
 
 import { getMonthInLocale } from './dateUtils';
 
 const DatePickerHeader = (locale?: string) =>
-  function DatePickerHeaderInner(props: ReactDatePickerCustomHeaderProps): ReactElement {
+  function DatePickerHeaderInner(props: ReactDatePickerCustomHeaderProps & { dataTestId?: string }): ReactElement {
     const {
-      monthDate,
-      date,
-      changeYear,
       changeMonth,
+      changeYear,
+      dataTestId,
+      date,
       decreaseMonth,
-      increaseMonth,
-      prevMonthButtonDisabled,
-      nextMonthButtonDisabled,
       decreaseYear,
+      increaseMonth,
       increaseYear,
-      prevYearButtonDisabled,
+      monthDate,
+      nextMonthButtonDisabled,
       nextYearButtonDisabled,
+      prevMonthButtonDisabled,
+      prevYearButtonDisabled,
     } = props;
 
-    const years: Array<string> = [];
+    const years: Array<number> = [];
     for (let yearNumber = monthDate.getFullYear() - 50; yearNumber <= monthDate.getFullYear() + 50; yearNumber++) {
-      years.push(Number(yearNumber).toString());
+      years.push(yearNumber);
     }
 
     const months: Array<string> = [];
@@ -34,14 +36,22 @@ const DatePickerHeader = (locale?: string) =>
     return (
       <div>
         <div className='react-datepicker__header-select-wrapper'>
-          <button onClick={decreaseMonth} disabled={prevMonthButtonDisabled}>
-            {'<'}
-          </button>
+          <Button
+            color={ColorButtonEnum.REVERSED}
+            dataTestId={dataTestId ? `${dataTestId}-decreaseMonth` : undefined}
+            disabled={prevMonthButtonDisabled}
+            icon={['fal', 'chevron-left']}
+            onClick={decreaseMonth}
+          />
 
           <select
-            value={months[date.getMonth()]}
-            onChange={({ target: { value } }) => changeMonth(months.indexOf(value))}
-            className='react-datepicker__header-select'>
+            className='react-datepicker__header-select'
+            data-testid={dataTestId ? `${dataTestId}-month` : undefined}
+            onChange={(event: ChangeEvent<HTMLSelectElement>) => {
+              const newValue = event.target.value;
+              changeMonth(months.indexOf(newValue));
+            }}
+            value={months[date.getMonth()]}>
             {months.map((option) => (
               <option key={option} value={option}>
                 {option}
@@ -49,18 +59,32 @@ const DatePickerHeader = (locale?: string) =>
             ))}
           </select>
 
-          <button onClick={increaseMonth} disabled={nextMonthButtonDisabled}>
-            {'>'}
-          </button>
+          <Button
+            color={ColorButtonEnum.REVERSED}
+            dataTestId={dataTestId ? `${dataTestId}-increaseMonth` : undefined}
+            disabled={nextMonthButtonDisabled}
+            icon={['fal', 'chevron-right']}
+            onClick={increaseMonth}
+          />
         </div>
-        <div className='react-datepicker__header-wrapper'>
-          <button onClick={decreaseYear} disabled={prevYearButtonDisabled}>
-            {'<'}
-          </button>
+
+        <div className='react-datepicker__header-select-wrapper'>
+          <Button
+            color={ColorButtonEnum.REVERSED}
+            dataTestId={dataTestId ? `${dataTestId}-decreaseYear` : undefined}
+            disabled={prevYearButtonDisabled}
+            onClick={decreaseYear}
+            icon={['fal', 'chevron-left']}
+          />
+
           <select
-            value={date.getFullYear()}
-            onChange={({ target: { value } }) => changeYear(Number(value))}
-            className='react-datepicker__header-select'>
+            className='react-datepicker__header-select'
+            data-testid={dataTestId ? `${dataTestId}-year` : undefined}
+            onChange={(event: ChangeEvent<HTMLSelectElement>) => {
+              const newValue = event.target.value;
+              changeYear(Number(newValue));
+            }}
+            value={date.getFullYear()}>
             {years.map((option) => (
               <option key={option} value={option}>
                 {option}
@@ -68,9 +92,13 @@ const DatePickerHeader = (locale?: string) =>
             ))}
           </select>
 
-          <button onClick={increaseYear} disabled={nextYearButtonDisabled}>
-            {'>'}
-          </button>
+          <Button
+            color={ColorButtonEnum.REVERSED}
+            dataTestId={dataTestId ? `${dataTestId}-increaseYear` : undefined}
+            disabled={nextYearButtonDisabled}
+            onClick={increaseYear}
+            icon={['fal', 'chevron-right']}
+          />
         </div>
       </div>
     );
