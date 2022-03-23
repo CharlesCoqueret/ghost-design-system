@@ -6,16 +6,24 @@ import YearPickerInput, { IYearPickerProps } from './YearPickerInput';
 export default {
   title: 'Atom/YearPickerInput',
   component: YearPickerInput,
-  argTypes: {
-    onClick: { action: 'clicked' },
-    onSelectItem: { action: 'item selected' },
-  },
+  parameters: { actions: { argTypesRegex: '^on.*' } },
 } as ComponentMeta<typeof YearPickerInput>;
 
 const Template: ComponentStory<typeof YearPickerInput> = ({ inputValue, ...args }: IYearPickerProps) => {
   const [date, setDate] = useState<number | undefined>(inputValue);
 
-  return <YearPickerInput {...args} inputValue={date} onChange={setDate} />;
+  return (
+    <YearPickerInput
+      {...args}
+      inputValue={date}
+      onChange={(v) => {
+        if (args.onChange) {
+          args.onChange(v);
+        }
+        setDate(v);
+      }}
+    />
+  );
 };
 
 export const Default = Template.bind({});

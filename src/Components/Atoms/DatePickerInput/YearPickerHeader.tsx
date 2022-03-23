@@ -1,8 +1,9 @@
 import React, { ReactElement } from 'react';
 import { ReactDatePickerCustomHeaderProps } from 'react-datepicker';
+import { Button, ColorButtonEnum } from '../../Molecules/Button';
 
-const YearPickerHeader = (props: ReactDatePickerCustomHeaderProps): ReactElement => {
-  const { decreaseYear, increaseYear, prevYearButtonDisabled, nextYearButtonDisabled } = props;
+const YearPickerHeader = (props: ReactDatePickerCustomHeaderProps & { dataTestId?: string }): ReactElement => {
+  const { dataTestId, decreaseYear, increaseYear, prevYearButtonDisabled, nextYearButtonDisabled } = props;
 
   return (
     <div>
@@ -11,13 +12,21 @@ const YearPickerHeader = (props: ReactDatePickerCustomHeaderProps): ReactElement
           display: 'flex',
           justifyContent: 'space-evenly',
         }}>
-        <button onClick={decreaseYear} disabled={prevYearButtonDisabled}>
-          {'<'}
-        </button>
+        <Button
+          color={ColorButtonEnum.REVERSED}
+          dataTestId={dataTestId ? `${dataTestId}-decreaseYear` : undefined}
+          disabled={prevYearButtonDisabled}
+          icon={['fal', 'chevron-left']}
+          onClick={decreaseYear}
+        />
 
-        <button onClick={increaseYear} disabled={nextYearButtonDisabled}>
-          {'>'}
-        </button>
+        <Button
+          color={ColorButtonEnum.REVERSED}
+          dataTestId={dataTestId ? `${dataTestId}-increaseYear` : undefined}
+          disabled={nextYearButtonDisabled}
+          onClick={increaseYear}
+          icon={['fal', 'chevron-right']}
+        />
       </div>
     </div>
   );

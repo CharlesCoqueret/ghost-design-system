@@ -16,8 +16,6 @@ export interface IYearPickerProps {
   highlighted?: boolean;
   /** Input year value (optional, default: undefined) */
   inputValue?: number;
-  /** Ability to clear the value (optional, default: false) */
-  isClearable?: boolean;
   /** Is in Error (optional, default: false) */
   isInError?: boolean;
   /** Name of year picker input */
@@ -39,7 +37,6 @@ const YearPickerInput = (props: IYearPickerProps): ReactElement => {
     disabled,
     highlighted,
     inputValue,
-    isClearable,
     isInError,
     name,
     onChange,
@@ -80,7 +77,6 @@ const YearPickerInput = (props: IYearPickerProps): ReactElement => {
         disabled={disabled}
         fixedHeight
         readOnly={readOnly}
-        isClearable={!disabled && isClearable}
         placeholderText={readOnly ? '-' : placeholder || dateFormat?.toUpperCase()}
         dateFormat={dateFormat}
         disabledKeyboardNavigation

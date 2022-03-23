@@ -26,8 +26,6 @@ export interface IYearPickerFieldProps {
   inputClassName?: string;
   /** Input year value (optional, default: undefined) */
   inputValue?: number;
-  /** Provide the ability to clear the value (optional, default: false) */
-  isClearable?: boolean;
   /** Label (optional, default: undefined) */
   label?: string;
   /** Size of the field in a 12 column grid (optional, default: undefined) */
@@ -69,7 +67,6 @@ export const YearPickerField = (props: IYearPickerFieldProps): ReactElement => {
     inline,
     inputClassName,
     inputValue,
-    isClearable,
     label,
     labelSize,
     mandatory,
@@ -103,7 +100,6 @@ export const YearPickerField = (props: IYearPickerFieldProps): ReactElement => {
         disabled={disabled}
         highlighted={highlighted}
         isInError={errorMessage !== undefined}
-        isClearable={isClearable}
         name={name}
         placeholder={placeholder}
         inputValue={inputValue}
@@ -125,7 +121,6 @@ YearPickerField.defaultProps = {
   inline: false,
   inputClassName: undefined,
   inputValue: undefined,
-  isClearable: false,
   label: undefined,
   labelSize: undefined,
   mandatory: false,

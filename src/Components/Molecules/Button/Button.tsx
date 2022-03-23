@@ -2,10 +2,11 @@ import React, { ReactElement, useRef, useState } from 'react';
 import { MenuDivider, MenuItem, MenuAlign, ControlledMenu } from '@szhsin/react-menu';
 import classnames from 'classnames';
 
-import { Icon, MenuDirectionEnum, Tooltip, IconProp } from '../../Atoms';
-import { IItemListProps } from './ItemList';
+import { Icon, IconProp } from '../../Atoms/Icon';
+import { MenuDirectionEnum, Tooltip } from '../../Atoms/Tooltip';
 import Portal from '../../Atoms/Portal/Portal';
 import Popover from '../Popover/Popover';
+import { IItemListProps } from './ItemList';
 
 export enum ColorButtonEnum {
   PRIMARY = 'primary',
