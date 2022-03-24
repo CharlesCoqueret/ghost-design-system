@@ -142,7 +142,7 @@ const LineEditableModal = <T,>(props: ILineEditableModalProps<T>): ReactElement 
   });
 
   return (
-    <Modal show={true} title={title} closeIcon={false} closeOnClickEscape={false} closeOnClickOutide={false} size='lg'>
+    <Modal show={true} title={title} closeIcon={false} closeOnPressEscape={false} closeOnClickOutside={false} size='lg'>
       <ModalBody>{formElement}</ModalBody>
       <ModalFooter>
         <Button

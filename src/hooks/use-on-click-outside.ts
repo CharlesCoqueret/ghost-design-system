@@ -1,24 +1,25 @@
-import { RefObject, useEffect } from 'react';
+import { RefObject } from 'react';
+import useEventListener from './use-event-listener';
+
+type Handler = (event: Event) => void;
 
 /** Hook capturing the click outside of a reference element and triggering the callback function */
-const useOnClickOutside = <T extends HTMLElement = HTMLElement>(
-  ref: RefObject<T>,
-  callback: (event: MouseEvent | TouchEvent) => void,
-): void => {
-  useEffect(() => {
-    const listener = (event: MouseEvent | TouchEvent) => {
-      if (!ref.current || ref.current.contains(event.target as Node)) {
-        return;
-      }
-      callback(event);
-    };
-    document.addEventListener('mousedown', listener, true);
-    document.addEventListener('touchstart', listener, true);
-    return () => {
-      document.removeEventListener('mousedown', listener);
-      document.removeEventListener('touchstart', listener);
-    };
-  }, [ref, callback]);
+const useOnClickOutside = <T extends HTMLElement = HTMLElement>(ref: RefObject<T>, handler: Handler): void => {
+  useEventListener('mousedown', (event) => {
+    const el = ref?.current;
+    if (!el || el.contains(event.target as Node)) {
+      return;
+    }
+    handler(event);
+  });
+
+  useEventListener('touchstart', (event) => {
+    const el = ref?.current;
+    if (!el || el.contains(event.target as Node)) {
+      return;
+    }
+    handler(event);
+  });
 };
 
 export default useOnClickOutside;
