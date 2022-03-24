@@ -19,6 +19,8 @@
     transition: top 0.4s, opacity 0.4s;
     overflow: scroll;
     z-index: auto;
+    box-sizing: border-box;
+    max-width: 100%;
 
     &.shake {
       animation: shake 0.5s;

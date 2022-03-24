@@ -9,9 +9,11 @@ export interface IModalProps {
   /** Show the close icon (optional, default: false) */
   closeIcon?: boolean;
   /** Enable closing the dialog by pressing the escape key (optional, default: false) */
-  closeOnClickEscape?: boolean;
+  closeOnPressEscape?: boolean;
   /** Enable closing the dialog by clicking outside the dialog (optional, default: false) */
-  closeOnClickOutide?: boolean;
+  closeOnClickOutside?: boolean;
+  /** For test purpose only */
+  dataTestId?: string;
   /** Callback when a closing button has been triggered (close icon or click outiside for example) (optional, default: undefined) */
   onHide?: () => void;
   /** Control of the modal */
@@ -23,7 +25,7 @@ export interface IModalProps {
 }
 
 const Modal = (props: PropsWithChildren<IModalProps>): ReactElement => {
-  const { children, closeIcon, closeOnClickEscape, closeOnClickOutide, onHide, show, size, title } = props;
+  const { children, closeIcon, closeOnPressEscape, closeOnClickOutside, dataTestId, onHide, show, size, title } = props;
 
   const [isShaking, setIsShaking] = useState(false);
   const [initialBodyStyle, setInitialBodyStyle] = useState<Partial<CSSStyleDeclaration>>();
@@ -42,13 +44,14 @@ const Modal = (props: PropsWithChildren<IModalProps>): ReactElement => {
 
   const shake = () => {
     setIsShaking(true);
+
     setTimeout(() => {
       setIsShaking(false);
     }, 500);
   };
 
   useOnClickOutside(contentRef, () => {
-    if (closeOnClickOutide && onHide) {
+    if (closeOnClickOutside && onHide) {
       onHide();
     } else {
       shake();
@@ -56,7 +59,7 @@ const Modal = (props: PropsWithChildren<IModalProps>): ReactElement => {
   });
 
   useOnEscapePressed(() => {
-    if (closeOnClickEscape && onHide) {
+    if (closeOnPressEscape && onHide) {
       onHide();
     } else {
       shake();
@@ -80,6 +83,7 @@ const Modal = (props: PropsWithChildren<IModalProps>): ReactElement => {
                 {closeIcon && (
                   <div
                     className='modal-close-icon'
+                    data-testid={dataTestId}
                     onClick={(event) => {
                       event.stopPropagation();
                       if (onHide) {

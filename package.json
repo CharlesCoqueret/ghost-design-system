@@ -20,7 +20,7 @@
     "nuke": "npm run clean && npm install",
     "storybook": "start-storybook -p 9001 -c .storybook -s ./static",
     "test": "jest",
-    "test:coverage": "jest --maxWorkers=2 --colors --coverage",
+    "test:coverage": "jest --maxWorkers --colors --coverage",
     "test:watch": "jest --watch"
   },
   "main": "dist/index.js",
