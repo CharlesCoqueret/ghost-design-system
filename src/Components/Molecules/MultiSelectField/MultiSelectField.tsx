@@ -48,6 +48,12 @@ export interface IMultiSelectFieldProps {
   mandatory?: boolean;
   /** Name of text field */
   name: string;
+  /** Label to be used when one item is selected (example: "{} item selected")
+   * Note: the {} will be replaced by the actual number */
+  numberOfItemLabel: string;
+  /** Label to be used when more than one item is selected (example: "{} items selected")
+   * Note: the {} will be replaced by the actual number */
+  numberOfItemsLabel: string;
   /** Handler of value changes (optional, default: undefined) */
   onChange?: (newValue: Array<string> | null | undefined) => void;
   /** Options available to be picked from */
@@ -87,6 +93,8 @@ export const MultiSelectField = (props: IMultiSelectFieldProps): ReactElement =>
     labelSize,
     mandatory,
     name,
+    numberOfItemLabel,
+    numberOfItemsLabel,
     onChange,
     options,
     placeholder,
@@ -121,6 +129,8 @@ export const MultiSelectField = (props: IMultiSelectFieldProps): ReactElement =>
         isClearable={isClearable}
         isInError={errorMessage !== undefined}
         name={name}
+        numberOfItemLabel={numberOfItemLabel}
+        numberOfItemsLabel={numberOfItemsLabel}
         onChange={onChange}
         options={options}
         placeholder={placeholder}

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { IOption } from './types';
+import { Link } from '../Link';
 import DynamicSearchCreatableInput, { IDynamicSearchCreatableInputProps } from './DynamicSearchCreatableInput';
 
 const delay = (ms: number) => new Promise((res) => setTimeout(res, ms));
@@ -66,7 +67,7 @@ const resolveValue = async (searchTerm: string = ''): Promise<IOption> => {
   return resolveRecord(searchTerm).then((result) => {
     return {
       value: result.recordid,
-      label: `${result.fields.prenoms} (${result.fields.nombre_total_cumule})`,
+      label: `${result.fields.prenoms} (${result.fields.nombre} in ${result.fields.annee})`,
     };
   });
 };
@@ -74,6 +75,7 @@ const resolveValue = async (searchTerm: string = ''): Promise<IOption> => {
 export default {
   title: 'Atom/DynamicSearchCreatableInput',
   component: DynamicSearchCreatableInput,
+  parameters: { actions: { argTypesRegex: '^on.*' } },
 } as ComponentMeta<typeof DynamicSearchCreatableInput>;
 
 const Template: ComponentStory<typeof DynamicSearchCreatableInput> = ({
@@ -84,9 +86,23 @@ const Template: ComponentStory<typeof DynamicSearchCreatableInput> = ({
 
   return (
     <>
-      <DynamicSearchCreatableInput {...args} inputValue={localValue} onChange={setLocalValue} />
+      <DynamicSearchCreatableInput
+        {...args}
+        inputValue={localValue}
+        onChange={(newValue) => {
+          if (args.onChange) {
+            args.onChange(newValue);
+          }
+          setLocalValue(newValue);
+        }}
+      />
       <div style={{ height: '10vh' }} />
       <DynamicSearchCreatableInput {...args} readOnly inputValue={localValue} onChange={setLocalValue} />
+      Source:
+      <Link
+        link='https://opendata.paris.fr/explore/dataset/liste_des_prenoms/information/?disjunctive.annee&disjunctive.prenoms'
+        text='List of declared first names - Open data Paris'
+      />
     </>
   );
 };

@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import SelectInput, { ISelectInputProps } from './SelectInput';
-import { IOption } from './types';
 
 const options = [
   { label: 'selection label 0', value: 'KEY_0' },
@@ -31,11 +30,20 @@ export default {
 } as ComponentMeta<typeof SelectInput>;
 
 const Template: ComponentStory<typeof SelectInput> = ({ inputValue, ...args }: ISelectInputProps) => {
-  const [localValue, setLocalValue] = useState<IOption | null | undefined>(inputValue);
+  const [localValue, setLocalValue] = useState<string | null | undefined>(inputValue);
 
   return (
     <>
-      <SelectInput {...args} inputValue={localValue} onChange={setLocalValue} />
+      <SelectInput
+        {...args}
+        inputValue={localValue}
+        onChange={(newValue) => {
+          if (args.onChange) {
+            args.onChange(newValue);
+          }
+          setLocalValue(newValue);
+        }}
+      />
       <div style={{ height: '10vh' }} />
       <SelectInput {...args} readOnly inputValue={localValue} onChange={setLocalValue} />
     </>

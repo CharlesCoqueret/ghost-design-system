@@ -13,10 +13,7 @@ export interface ISelectInputProps {
   colors?: {
     controlErrorColor: string; // colors.error,
     controlFocusColor: string; // colors.primary,
-    controlBackgroundColorDisabled: string; // colors.chalk,
-    controlColorDisabled: string; // colors.pebble,
     fontColor: string; // 'rgb(0, 0, 0)',
-    multiValueBorderColorDisabled: string; // colors.silver,
     optionFocusColor: string; // colors.chalk,
     optionSelectedColor: string; // colors.primary,
   };
@@ -117,16 +114,7 @@ const SelectInput = (props: ISelectInputProps): ReactElement => {
         options={options}
         placeholder={placeholder}
         menuPortalTarget={usePortal ? document.querySelector('body') : undefined}
-        styles={customStyles({
-          controlBackgroundColorDisabled: colors?.controlBackgroundColorDisabled,
-          controlColorDisabled: colors?.controlColorDisabled,
-          controlErrorColor: colors?.controlErrorColor,
-          controlFocusColor: colors?.controlFocusColor,
-          fontColor: colors?.fontColor,
-          isInError,
-          optionFocusColor: colors?.optionFocusColor,
-          optionSelectedColor: colors?.optionSelectedColor,
-        })}
+        styles={customStyles({ ...colors, isInError })}
         value={options.find((option) => option.value === inputValue) || null}
       />
     </div>
@@ -138,8 +126,6 @@ SelectInput.defaultProps = {
   colors: {
     controlErrorColor: colors.error.rgb,
     controlFocusColor: colors.primary.rgb,
-    controlBackgroundColorDisabled: colors.chalk.rgb,
-    controlColorDisabled: colors.pebble.rgb,
     fontColor: 'rgb(0, 0, 0)',
     optionFocusColor: colors.chalk.rgb,
     optionSelectedColor: colors.primary.rgb,

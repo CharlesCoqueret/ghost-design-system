@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { IOption } from './types';
 import MultiSelectInput, { IMultiSelectInputProps } from './MultiSelectInput';
 
 const options = [
@@ -35,7 +34,16 @@ const Template: ComponentStory<typeof MultiSelectInput> = ({ inputValue, ...args
 
   return (
     <>
-      <MultiSelectInput {...args} inputValue={localValue} onChange={setLocalValue} />
+      <MultiSelectInput
+        {...args}
+        inputValue={localValue}
+        onChange={(newValue) => {
+          if (args.onChange) {
+            args.onChange(newValue);
+          }
+          setLocalValue(newValue);
+        }}
+      />
       <div style={{ height: '10vh' }} />
       <MultiSelectInput {...args} readOnly inputValue={localValue} onChange={setLocalValue} />
     </>
