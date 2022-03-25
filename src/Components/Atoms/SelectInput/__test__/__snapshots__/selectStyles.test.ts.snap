@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`customStyles method customStyles option 1`] = `
+Object {
+  ":active": Object {
+    "backgroundColor": "rgba(38,186,212,0.5)",
+  },
+  "backgroundColor": "rgba(38,186,212,0.5)",
+  "color": "rgb(0,0,0)",
+  "cursor": "pointer",
+  "height": "5px",
+  "maxWidth": "100%",
+  "overflow": "hidden",
+  "textOverflow": "ellipsis",
+  "whiteSpace": "nowrap",
+  "width": "100%",
+}
+`;
+
+exports[`customStyles method customStyles option 2`] = `
+Object {
+  ":active": Object {
+    "backgroundColor": "rgba(38,186,212,0.66)",
+  },
+  "backgroundColor": "rgba(38,186,212,0.33)",
+  "color": "rgb(0,0,0)",
+  "cursor": "pointer",
+  "height": "5px",
+  "maxWidth": "100%",
+  "overflow": "hidden",
+  "textOverflow": "ellipsis",
+  "whiteSpace": "nowrap",
+  "width": "100%",
+}
+`;

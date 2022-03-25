@@ -45,11 +45,13 @@ const Template: ComponentStory<typeof MultiSelectField> = (args: IMultiSelectFie
 
 export const Default = ManagedTemplate.bind({});
 Default.args = {
+  isClearable: true,
   label: 'MultiSelect field',
   name: 'name',
+  numberOfItemLabel: '{} item selected',
+  numberOfItemsLabel: '{} items selected',
   options: options,
   placeholder: 'Multi select placeholder',
-  isClearable: true,
 };
 
 export const ReadOnly = Template.bind({});
@@ -58,6 +60,8 @@ ReadOnly.args = {
   label: 'MuliSelect field in read only with label size = 4 and field size = 6',
   labelSize: 4,
   name: 'name',
+  numberOfItemLabel: '{} item selected',
+  numberOfItemsLabel: '{} items selected',
   options: options,
   placeholder: 'Multi select placeholder',
   readOnly: true,
@@ -70,6 +74,8 @@ Error.args = {
   label: 'MuliSelect field in error with label size = 4 and field size = 6',
   labelSize: 4,
   name: 'name',
+  numberOfItemLabel: '{} item selected',
+  numberOfItemsLabel: '{} items selected',
   options: options,
   placeholder: 'Multi select placeholder',
   errorMessage: 'This text is on error',
@@ -81,6 +87,8 @@ Helper.args = {
   label: 'MultiSelect field with helper and counter',
   mandatory: true,
   name: 'name',
+  numberOfItemLabel: '{} item selected',
+  numberOfItemsLabel: '{} items selected',
   options: options,
   placeholder: 'Multi select placeholder',
 };
@@ -91,6 +99,8 @@ Highlighted.args = {
   highlighted: true,
   label: 'MultiSelect field highlighted',
   name: 'name',
+  numberOfItemLabel: '{} item selected',
+  numberOfItemsLabel: '{} items selected',
   options: options,
   placeholder: 'Multi select placeholder',
   readOnly: true,
@@ -103,6 +113,8 @@ Disabled.args = {
   helperText: 'Helper text',
   label: 'MultiSelect field disabled',
   name: 'name',
+  numberOfItemLabel: '{} item selected',
+  numberOfItemsLabel: '{} items selected',
   options: options,
   placeholder: 'Multi select placeholder',
   inputValue: selectedOptions,

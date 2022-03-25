@@ -61,10 +61,10 @@ Object {
                       class="css-1f43avz-a11yText-A11yText"
                     />
                     <div
-                      class=" css-8dxjxk-control"
+                      class=" css-1ge5ogn-control"
                     >
                       <div
-                        class=" css-16jl9sr-ValueContainer"
+                        class=" css-9plg90-ValueContainer"
                       >
                         <div
                           class=" css-qc6sy-singleValue"
@@ -72,7 +72,7 @@ Object {
                           Status
                         </div>
                         <div
-                          class=" css-1j77j9s-Input"
+                          class=" css-6j8wv5-Input"
                           data-value=""
                         >
                           <input
@@ -255,10 +255,10 @@ Object {
                     class="css-1f43avz-a11yText-A11yText"
                   />
                   <div
-                    class=" css-8dxjxk-control"
+                    class=" css-1ge5ogn-control"
                   >
                     <div
-                      class=" css-16jl9sr-ValueContainer"
+                      class=" css-9plg90-ValueContainer"
                     >
                       <div
                         class=" css-qc6sy-singleValue"
@@ -266,7 +266,7 @@ Object {
                         Status
                       </div>
                       <div
-                        class=" css-1j77j9s-Input"
+                        class=" css-6j8wv5-Input"
                         data-value=""
                       >
                         <input
@@ -514,10 +514,10 @@ Object {
                       class="css-1f43avz-a11yText-A11yText"
                     />
                     <div
-                      class=" css-8dxjxk-control"
+                      class=" css-1ge5ogn-control"
                     >
                       <div
-                        class=" css-16jl9sr-ValueContainer"
+                        class=" css-9plg90-ValueContainer"
                       >
                         <div
                           class=" css-qc6sy-singleValue"
@@ -525,7 +525,7 @@ Object {
                           Status
                         </div>
                         <div
-                          class=" css-1j77j9s-Input"
+                          class=" css-6j8wv5-Input"
                           data-value=""
                         >
                           <input
@@ -721,10 +721,10 @@ Object {
                     class="css-1f43avz-a11yText-A11yText"
                   />
                   <div
-                    class=" css-8dxjxk-control"
+                    class=" css-1ge5ogn-control"
                   >
                     <div
-                      class=" css-16jl9sr-ValueContainer"
+                      class=" css-9plg90-ValueContainer"
                     >
                       <div
                         class=" css-qc6sy-singleValue"
@@ -732,7 +732,7 @@ Object {
                         Status
                       </div>
                       <div
-                        class=" css-1j77j9s-Input"
+                        class=" css-6j8wv5-Input"
                         data-value=""
                       >
                         <input

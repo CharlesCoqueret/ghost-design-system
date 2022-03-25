@@ -123,6 +123,8 @@ export interface IFieldMultiSelectProps<T> extends IFieldBaseProps<T> {
   fieldType: FieldTypeEnum.MULTISELECT;
   onChange?: (newValue: Readonly<Array<IOption>> | null | undefined) => void;
   options: Array<IOption> | ((data: T) => Array<IOption>);
+  numberOfItemLabel: string;
+  numberOfItemsLabel: string;
   placeholder?: string;
 }
 

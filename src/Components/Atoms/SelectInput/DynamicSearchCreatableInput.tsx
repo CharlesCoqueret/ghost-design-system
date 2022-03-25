@@ -1,4 +1,4 @@
-import React, { ReactElement, useEffect, useState } from 'react';
+import React, { ReactElement, useCallback, useEffect, useState } from 'react';
 import { default as ReactSelectAsyncCreatable } from 'react-select/async-creatable';
 import classnames from 'classnames';
 
@@ -14,10 +14,7 @@ export interface IDynamicSearchCreatableInputProps {
   colors?: {
     controlErrorColor: string; // colors.error,
     controlFocusColor: string; // colors.primary,
-    controlBackgroundColorDisabled: string; // colors.chalk,
-    controlColorDisabled: string; // colors.pebble,
     fontColor: string; // 'rgb(0, 0, 0)',
-    multiValueBorderColorDisabled: string; // colors.silver,
     optionFocusColor: string; // colors.chalk,
     optionSelectedColor: string; // colors.primary,
   };
@@ -42,7 +39,7 @@ export interface IDynamicSearchCreatableInputProps {
   /** Name of select input */
   name: string;
   /** No option message (dispayed when no results are available) */
-  noOptionsMessage: (obj: { inputValue: string }) => string;
+  noOptionsMessage: string | ((obj: { inputValue: string }) => string);
   /** Handler of value changes (optional, default: undefined) */
   onChange?: (selectedOption: string | undefined) => void;
   /** Placeholder value (optional, default: undefined) */
@@ -83,6 +80,16 @@ const DynamicSearchCreatableInput = (props: IDynamicSearchCreatableInputProps): 
   const [isLoading, setIsLoading] = useState(false);
   const [isCreating, setIsCreating] = useState(false);
   const [currentOption, setCurrentOption] = useState<IOption>();
+
+  const localNoOptionMessage = useCallback(
+    (inputObject: { inputValue: string }): string => {
+      if (typeof noOptionsMessage === 'string') {
+        return noOptionsMessage;
+      }
+      return noOptionsMessage(inputObject);
+    },
+    [noOptionsMessage],
+  );
 
   const resolveIncomingValue = () => {
     if (inputValue && inputValue !== currentOption?.value) {
@@ -138,7 +145,13 @@ const DynamicSearchCreatableInput = (props: IDynamicSearchCreatableInputProps): 
           className,
         )}
         data-testid={dataTestId}>
-        {isLoading ? <Icon icon={['fal', 'spinner']} spin /> : currentOption ? currentOption.label : '-'}
+        {isLoading ? (
+          <Icon icon={['fal', 'spinner']} spin data-testid={dataTestId ? `${dataTestId}-spinner` : undefined} />
+        ) : currentOption ? (
+          currentOption.label
+        ) : (
+          '-'
+        )}
       </div>
     );
   }
@@ -158,11 +171,18 @@ const DynamicSearchCreatableInput = (props: IDynamicSearchCreatableInputProps): 
         allowCreateWhileLoading={false}
         closeMenuOnSelect={false}
         components={{
-          LoadingIndicator: () => <Icon icon={['fal', 'spinner']} spin className='dynamic-search-spinner' />,
+          LoadingIndicator: () => (
+            <Icon
+              icon={['fal', 'spinner']}
+              spin
+              className='dynamic-search-spinner'
+              data-testid={dataTestId ? `${dataTestId}-spinner` : undefined}
+            />
+          ),
         }}
         createOptionPosition='last'
-        data-testid={dataTestId}
         hideSelectedOptions={false}
+        inputId={dataTestId}
         isClearable={isClearable}
         isDisabled={isCreating || disabled}
         isLoading={isLoading}
@@ -172,7 +192,7 @@ const DynamicSearchCreatableInput = (props: IDynamicSearchCreatableInputProps): 
         maxMenuHeight={maxMenuHeight}
         menuPlacement='auto'
         menuPortalTarget={usePortal ? document.querySelector('body') : undefined}
-        noOptionsMessage={noOptionsMessage}
+        noOptionsMessage={localNoOptionMessage}
         onChange={(option) => {
           if (onChange) {
             onChange(option?.value);
@@ -182,16 +202,7 @@ const DynamicSearchCreatableInput = (props: IDynamicSearchCreatableInputProps): 
         }}
         onCreateOption={localHandleCreate}
         placeholder={placeholder}
-        styles={customStyles({
-          controlBackgroundColorDisabled: colors?.controlBackgroundColorDisabled,
-          controlColorDisabled: colors?.controlColorDisabled,
-          controlErrorColor: colors?.controlErrorColor,
-          controlFocusColor: colors?.controlFocusColor,
-          fontColor: colors?.fontColor,
-          isInError,
-          optionFocusColor: colors?.optionFocusColor,
-          optionSelectedColor: colors?.optionSelectedColor,
-        })}
+        styles={customStyles({ ...colors, isInError })}
         value={currentOption}
       />
     </div>
@@ -203,8 +214,6 @@ DynamicSearchCreatableInput.defaultProps = {
   colors: {
     controlErrorColor: colors.error.rgb,
     controlFocusColor: colors.primary.rgb,
-    controlBackgroundColorDisabled: colors.chalk.rgb,
-    controlColorDisabled: colors.pebble.rgb,
     fontColor: 'rgb(0, 0, 0)',
     optionFocusColor: colors.chalk.rgb,
     optionSelectedColor: colors.primary.rgb,

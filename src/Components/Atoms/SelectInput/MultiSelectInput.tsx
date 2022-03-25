@@ -1,8 +1,7 @@
-import React, { ReactElement } from 'react';
-import { default as ReactSelect, components, MultiValueGenericProps, ValueContainerProps } from 'react-select';
+import React, { ReactElement, useCallback } from 'react';
+import { default as ReactSelect, components, ValueContainerProps } from 'react-select';
 import classnames from 'classnames';
 
-import OverflowWrapper from './OverflowWrapper';
 import { customStyles } from './selectStyles';
 import { IOption } from './types';
 import colors from '../Colors/colors';
@@ -14,10 +13,7 @@ export interface IMultiSelectInputProps {
   colors?: {
     controlErrorColor: string; // colors.error,
     controlFocusColor: string; // colors.primary,
-    controlBackgroundColorDisabled: string; // colors.chalk,
-    controlColorDisabled: string; // colors.pebble,
     fontColor: string; // 'rgb(0, 0, 0)',
-    multiValueBorderColorDisabled: string; // colors.silver,
     optionFocusColor: string; // colors.chalk,
     optionSelectedColor: string; // colors.primary,
   };
@@ -39,6 +35,12 @@ export interface IMultiSelectInputProps {
   maxMenuHeight?: number;
   /** Name of select input */
   name: string;
+  /** Label to be used when one item is selected (example: "{} item selected")
+   * Note: the {} will be replaced by the actual number */
+  numberOfItemLabel: string;
+  /** Label to be used when more than one item is selected (example: "{} items selected")
+   * Note: the {} will be replaced by the actual number */
+  numberOfItemsLabel: string;
   /** Handler of value changes (optional, default: undefined) */
   onChange?: (selectedOptions: Array<string> | undefined) => void;
   /** Options to be displayed */
@@ -51,20 +53,35 @@ export interface IMultiSelectInputProps {
   usePortal?: boolean;
 }
 
-const CustomMultiValueContainer = (props: MultiValueGenericProps<IOption>) => {
-  return (
-    <div data-targetid={props.data.value}>
-      <components.MultiValueContainer {...props} />
-    </div>
-  );
-};
+const CustomValueContainer = ({
+  numberOfItemsLabel,
+  numberOfItemLabel,
+  ...props
+}: ValueContainerProps<IOption, true> & { numberOfItemsLabel: string; numberOfItemLabel: string }) => {
+  const { getValue, hasValue, children } = props;
 
-const CustomValueContainer = (props: ValueContainerProps<IOption, true>) => {
-  const { children } = props;
+  const nbValues = getValue().length;
+  const selectedResult =
+    getValue().length === 1
+      ? numberOfItemLabel.replaceAll('{}', '1')
+      : numberOfItemsLabel.replaceAll('{}', nbValues.toString());
 
   return (
     <components.ValueContainer {...props}>
-      <OverflowWrapper>{children}</OverflowWrapper>
+      {hasValue && selectedResult}
+      {React.Children.map(children, (child) => {
+        if (
+          React.isValidElement(child) &&
+          'type' in child &&
+          typeof child.type !== 'string' &&
+          typeof child.type !== 'number' &&
+          ['Input', 'DummyInput', 'Placeholder', 'w'].indexOf(child.type.name) >= 0
+        ) {
+          return child;
+        }
+
+        return <></>;
+      })}
     </components.ValueContainer>
   );
 };
@@ -82,6 +99,8 @@ const MultiSelectInput = (props: IMultiSelectInputProps): ReactElement => {
     isInError,
     maxMenuHeight,
     name,
+    numberOfItemLabel,
+    numberOfItemsLabel,
     onChange,
     options,
     placeholder,
@@ -89,7 +108,18 @@ const MultiSelectInput = (props: IMultiSelectInputProps): ReactElement => {
     usePortal,
   } = props;
 
-  if (readOnly) {
+  const localValueContainer = useCallback(
+    (inputProps: ValueContainerProps<IOption, true>) => (
+      <CustomValueContainer
+        {...inputProps}
+        numberOfItemLabel={numberOfItemLabel}
+        numberOfItemsLabel={numberOfItemsLabel}
+      />
+    ),
+    [],
+  );
+
+  if (readOnly || disabled) {
     return (
       <div
         className={classnames(
@@ -124,13 +154,11 @@ const MultiSelectInput = (props: IMultiSelectInputProps): ReactElement => {
       <ReactSelect<IOption, true>
         closeMenuOnSelect={false}
         components={{
-          ValueContainer: CustomValueContainer,
-          MultiValueContainer: CustomMultiValueContainer,
+          ValueContainer: localValueContainer,
         }}
         data-testid={dataTestId}
         hideSelectedOptions={false}
         isClearable={isClearable}
-        isDisabled={disabled}
         isMulti
         isSearchable
         name={name}
@@ -144,17 +172,8 @@ const MultiSelectInput = (props: IMultiSelectInputProps): ReactElement => {
         }}
         options={options}
         placeholder={placeholder}
-        styles={customStyles({
-          controlBackgroundColorDisabled: colors?.controlBackgroundColorDisabled,
-          controlColorDisabled: colors?.controlColorDisabled,
-          controlErrorColor: colors?.controlErrorColor,
-          controlFocusColor: colors?.controlFocusColor,
-          fontColor: colors?.fontColor,
-          isInError,
-          optionFocusColor: colors?.optionFocusColor,
-          optionSelectedColor: colors?.optionSelectedColor,
-        })}
-        value={options.filter((option) => inputValue?.includes(option.value)) || null}
+        styles={customStyles({ ...colors, isInError })}
+        value={options.filter((option) => inputValue && inputValue.indexOf(option.value) >= 0)}
       />
     </div>
   );
@@ -165,8 +184,6 @@ MultiSelectInput.defaultProps = {
   colors: {
     controlErrorColor: colors.error.rgb,
     controlFocusColor: colors.primary.rgb,
-    controlBackgroundColorDisabled: colors.chalk.rgb,
-    controlColorDisabled: colors.pebble.rgb,
     fontColor: 'rgb(0, 0, 0)',
     optionFocusColor: colors.chalk.rgb,
     optionSelectedColor: colors.primary.rgb,

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { IOption } from './types';
+import { Link } from '../Link';
 import DynamicSearchInput, { IDynamicSearchInputProps } from './DynamicSearchInput';
 
 const requestInit: RequestInit = {
@@ -23,7 +24,7 @@ const searchRecords = async (
   baseUrl.searchParams.append('dataset', datasetId);
 
   if (searchTerm && searchTerm.trim().length > 0) {
-    baseUrl.searchParams.append('q', searchTerm);
+    baseUrl.searchParams.append('q', encodeURIComponent(searchTerm));
   }
 
   baseUrl.searchParams.append('facet', 'sexe');
@@ -64,7 +65,7 @@ const resolveValue = async (searchTerm: string = ''): Promise<IOption> => {
   return resolveRecord(searchTerm).then((result) => {
     return {
       value: result.recordid,
-      label: `${result.fields.prenoms} (${result.fields.nombre_total_cumule})`,
+      label: `${result.fields.prenoms} (${result.fields.nombre} in ${result.fields.annee})`,
     };
   });
 };
@@ -72,6 +73,7 @@ const resolveValue = async (searchTerm: string = ''): Promise<IOption> => {
 export default {
   title: 'Atom/DynamicSearchInput',
   component: DynamicSearchInput,
+  parameters: { actions: { argTypesRegex: '^on.*' } },
 } as ComponentMeta<typeof DynamicSearchInput>;
 
 const Template: ComponentStory<typeof DynamicSearchInput> = ({ inputValue, ...args }: IDynamicSearchInputProps) => {
@@ -79,9 +81,23 @@ const Template: ComponentStory<typeof DynamicSearchInput> = ({ inputValue, ...ar
 
   return (
     <>
-      <DynamicSearchInput {...args} inputValue={localValue} onChange={setLocalValue} />
+      <DynamicSearchInput
+        {...args}
+        inputValue={localValue}
+        onChange={(newValue) => {
+          if (args.onChange) {
+            args.onChange(newValue);
+          }
+          setLocalValue(newValue);
+        }}
+      />
       <div style={{ height: '10vh' }} />
       <DynamicSearchInput {...args} readOnly inputValue={localValue} onChange={setLocalValue} />
+      Source:
+      <Link
+        link='https://opendata.paris.fr/explore/dataset/liste_des_prenoms/information/?disjunctive.annee&disjunctive.prenoms'
+        text='List of declared first names - Open data Paris'
+      />
     </>
   );
 };
