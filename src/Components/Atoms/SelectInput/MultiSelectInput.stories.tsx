@@ -30,7 +30,7 @@ export default {
 } as ComponentMeta<typeof MultiSelectInput>;
 
 const Template: ComponentStory<typeof MultiSelectInput> = ({ inputValue, ...args }: IMultiSelectInputProps) => {
-  const [localValue, setLocalValue] = useState<Array<string> | undefined>(inputValue);
+  const [localValue, setLocalValue] = useState<Array<string>>(inputValue || []);
 
   return (
     <>
@@ -60,6 +60,8 @@ Default.args = {
   isClearable: true,
   isInError: false,
   name: 'name',
+  numberOfItemLabel: '{} item selected',
+  numberOfItemsLabel: '{} items selected',
   readOnly: false,
   placeholder: 'Multi select placeholder',
 };

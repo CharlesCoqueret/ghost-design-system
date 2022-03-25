@@ -35,8 +35,8 @@ export default {
 } as ComponentMeta<typeof MultiSelectField>;
 
 const ManagedTemplate: ComponentStory<typeof MultiSelectField> = (args: IMultiSelectFieldProps) => {
-  const [inputValue, setInputValue] = useState<Readonly<Array<IOption>> | null | undefined>(undefined);
-  return <MultiSelectField {...args} inputValue={inputValue ? inputValue : undefined} onChange={setInputValue} />;
+  const [inputValue, setInputValue] = useState<Array<string>>(args.inputValue || []);
+  return <MultiSelectField {...args} inputValue={inputValue} onChange={setInputValue} />;
 };
 
 const Template: ComponentStory<typeof MultiSelectField> = (args: IMultiSelectFieldProps) => {
