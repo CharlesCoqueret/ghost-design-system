@@ -112,7 +112,7 @@ const AmountInput = (props: IAmountInputProps): ReactElement => {
           className={classnames(
             'amount-field',
             'amount-field-read-only',
-            { 'field-highlighted': (readOnly || disabled) && highlighted },
+            { 'field-highlighted': readOnly && highlighted },
             fieldSize && `field-input-size-${fieldSize}`,
             className,
           )}
@@ -128,6 +128,7 @@ const AmountInput = (props: IAmountInputProps): ReactElement => {
             'amount-field',
             'amount-field-read-only',
             { 'field-highlighted': readOnly && highlighted },
+            fieldSize && `field-input-size-${fieldSize}`,
             className,
           )}
           data-testid={dataTestId}>
@@ -150,10 +151,11 @@ const AmountInput = (props: IAmountInputProps): ReactElement => {
         className={classnames(
           'amount-field',
           'amount-field-read-only',
-          { 'field-highlighted': (readOnly || disabled) && highlighted },
+          { 'field-highlighted': readOnly && highlighted },
+          fieldSize && `field-input-size-${fieldSize}`,
           className,
         )}
-        format={Number.isNaN(Number(inputValue)) ? placeholder : undefined}
+        format={placeholder}
         allowEmptyFormatting
         displayType={'text'}
         isNumericString={typeof inputValue === 'string'}
@@ -175,7 +177,12 @@ const AmountInput = (props: IAmountInputProps): ReactElement => {
       decimalScale={decimalScale}
       allowNegative={allowNegative}
       name={name}
-      className={classnames('amount-field', { 'amount-field-error': !readOnly && !disabled && isInError }, className)}
+      className={classnames(
+        'amount-field',
+        { 'amount-field-error': !readOnly && !disabled && isInError },
+        fieldSize && `field-input-size-${fieldSize}`,
+        className,
+      )}
       isAllowed={(newValue: NumberFormatValues): boolean => {
         if (minValue && newValue.floatValue && newValue.floatValue < minValue) return false;
         if (maxValue && newValue.floatValue && newValue.floatValue > maxValue) return false;
