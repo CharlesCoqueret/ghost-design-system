@@ -195,6 +195,8 @@ MultiSelectInput.defaultProps = {
   isClearable: false,
   isInError: false,
   maxMenuHeight: 300,
+  numberOfItemLabel: '{} item selected',
+  numberOfItemsLabel: '{} items selected',
   onChange: undefined,
   placeholder: undefined,
   readOnly: false,

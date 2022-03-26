@@ -161,7 +161,14 @@ const fields: Array<IFieldAndLayoutProps<IDataType>> = [
   },
   { label: 'Checkbox', dataIndex: 'checkbox', fieldType: FieldTypeEnum.CHECKBOX },
   { label: 'Date', dataIndex: 'date', fieldType: FieldTypeEnum.DATE },
-  { label: 'Multiselect', dataIndex: 'multiselect', fieldType: FieldTypeEnum.MULTISELECT, options: options },
+  {
+    label: 'Multiselect',
+    dataIndex: 'multiselect',
+    fieldType: FieldTypeEnum.MULTISELECT,
+    numberOfItemLabel: '{} item selected',
+    numberOfItemsLabel: '{} items selected',
+    options: options,
+  },
   {
     label: 'Section collapsable and open initially',
     fieldType: FieldTypeEnum.SECTION,
