@@ -13,7 +13,7 @@ export default {
   title: 'Organism/useForm',
 };
 
-interface dataType {
+interface IDataType {
   amount: number | undefined;
   checkbox: Array<IToggleEntry>;
   date: Date | undefined | null;
@@ -28,8 +28,8 @@ interface dataType {
   year: number | undefined;
 }
 
-const Template = (args: IUseFormProps<dataType>) => {
-  const { formElement, submit, reset } = useForm<dataType>(args);
+const Template = (args: IUseFormProps<IDataType>) => {
+  const { formElement, submit, reset } = useForm<IDataType>(args);
   return (
     <>
       <div style={{ display: 'flex', justifyContent: 'space-around' }}>
@@ -70,7 +70,7 @@ const options = [
   { value: 'COUNTRY', label: 'country' },
 ];
 
-const initialData: dataType = {
+const initialData: IDataType = {
   amount: 100000,
   checkbox: cloneDeep(checkboxOption),
   date: new Date(),
@@ -143,7 +143,7 @@ const validationSchema = yup.object({
   year: yup.number().min(1984, 'Date needs to be after 1984').required(),
 });
 
-const fields: Array<IFieldAndLayoutProps<dataType>> = [
+const fields: Array<IFieldAndLayoutProps<IDataType>> = [
   {
     description: (
       <div>

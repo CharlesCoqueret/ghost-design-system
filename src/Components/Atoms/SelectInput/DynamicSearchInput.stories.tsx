@@ -12,10 +12,10 @@ const requestInit: RequestInit = {
 const datasetId = 'liste_des_prenoms';
 
 const searchRecords = async (
-  searchTerm: string = '',
+  searchTerm = '',
   inPage?: number,
   inPageSize?: number,
-): Promise<PaginatedResult<Record>> => {
+): Promise<IPaginatedResult<IRecord>> => {
   const page = inPage || 0;
   const pageSize = inPageSize || 50;
 
@@ -42,7 +42,7 @@ const searchRecords = async (
   });
 };
 
-const searchOptions = async (searchTerm: string = ''): Promise<Array<IOption>> => {
+const searchOptions = async (searchTerm = ''): Promise<Array<IOption>> => {
   return searchRecords(searchTerm).then((result) => {
     return result.records.map((record) => {
       return {
@@ -53,7 +53,7 @@ const searchOptions = async (searchTerm: string = ''): Promise<Array<IOption>> =
   });
 };
 
-const resolveRecord = async (value: string = ''): Promise<Record> => {
+const resolveRecord = async (value = ''): Promise<IRecord> => {
   const baseUrl = new URL(`https://opendata.paris.fr/api/datasets/1.0/${datasetId}/records/${value}`);
 
   return fetch(baseUrl.toString(), requestInit).then((response) => {
@@ -61,7 +61,7 @@ const resolveRecord = async (value: string = ''): Promise<Record> => {
   });
 };
 
-const resolveValue = async (searchTerm: string = ''): Promise<IOption> => {
+const resolveValue = async (searchTerm = ''): Promise<IOption> => {
   return resolveRecord(searchTerm).then((result) => {
     return {
       value: result.recordid,
@@ -127,7 +127,7 @@ Default.args = {
 
 const delay = (ms: number) => new Promise((res) => setTimeout(res, ms));
 
-interface Record {
+interface IRecord {
   datasetid: string;
   recordid: string;
   fields: {
@@ -140,7 +140,7 @@ interface Record {
   record_timestamp: string;
 }
 
-interface PaginatedResult<T> {
+interface IPaginatedResult<T> {
   nhits: number;
   paramaters: {
     dataset: string;

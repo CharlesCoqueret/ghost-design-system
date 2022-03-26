@@ -25,6 +25,7 @@ const Template: ComponentStory<typeof Popover> = (args: IPopoverProps) => {
         color={ColorButtonEnum.REVERSED}
       />
       <Popover
+        {...args}
         anchorRef={ref}
         open={open}
         onClose={() => {

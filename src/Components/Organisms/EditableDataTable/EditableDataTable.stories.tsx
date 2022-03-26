@@ -9,7 +9,7 @@ export default {
   component: EditableDataTable,
 } as ComponentMeta<typeof EditableDataTable>;
 
-interface demoType {
+interface IDemoType {
   id: string;
   name: string;
   status: string;
@@ -69,10 +69,10 @@ const initialData = [
   },
 ];
 
-const Template: ComponentStory<typeof EditableDataTable> = (args: IEditableDataTableProps<demoType>) => {
-  const [data] = useState<Array<demoType>>(initialData);
+const Template: ComponentStory<typeof EditableDataTable> = (args: IEditableDataTableProps<IDemoType>) => {
+  const [data] = useState<Array<IDemoType>>(initialData);
 
-  const columns: IColumnType<demoType>[] = [
+  const columns: IColumnType<IDemoType>[] = [
     {
       title: 'Code',
       dataIndex: 'id',
@@ -123,15 +123,19 @@ const Template: ComponentStory<typeof EditableDataTable> = (args: IEditableDataT
     },
   ];
 
-  return <EditableDataTable<demoType> data={data} columns={columns} {...args} />;
+  return <EditableDataTable<IDemoType> data={data} columns={columns} {...args} />;
 };
 
 export const Default = Template.bind({});
 Default.args = {
   extra: {
-    onEdit: () => {},
+    onEdit: () => {
+      return;
+    },
     canAddNewLine: () => true,
-    onRowDelete: () => {},
+    onRowDelete: () => {
+      return;
+    },
     onNewLine: () => {
       return {
         id: 'TEST',

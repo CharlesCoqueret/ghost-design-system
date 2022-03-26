@@ -9,7 +9,7 @@ export default {
   component: LineEditableInPlaceDataTable,
 } as ComponentMeta<typeof LineEditableInPlaceDataTable>;
 
-interface demoType {
+interface IDemoType {
   id: string;
   name?: string;
   status?: string;
@@ -70,11 +70,11 @@ const initialData = [
 ];
 
 const Template: ComponentStory<typeof LineEditableInPlaceDataTable> = (
-  args: ILineEditableInPlaceDataTableProps<demoType>,
+  args: ILineEditableInPlaceDataTableProps<IDemoType>,
 ) => {
-  const [data] = useState<Array<demoType>>(initialData);
+  const [data] = useState<Array<IDemoType>>(initialData);
 
-  const columns: IColumnType<demoType>[] = [
+  const columns: IColumnType<IDemoType>[] = [
     {
       title: 'Code',
       dataIndex: 'id',
@@ -96,7 +96,7 @@ const Template: ComponentStory<typeof LineEditableInPlaceDataTable> = (
       type: ColumnType.BADGE,
       editable: true,
       eraseValueWhenNotInOptions: true,
-      options: (row: demoType) => {
+      options: (row: IDemoType) => {
         if (row.price > 0) {
           return [
             { label: 'Inactive', value: 'INACTIVE' },
@@ -136,15 +136,21 @@ const Template: ComponentStory<typeof LineEditableInPlaceDataTable> = (
     },
   ];
 
-  return <LineEditableInPlaceDataTable<demoType> data={data} columns={columns} {...args} />;
+  return <LineEditableInPlaceDataTable<IDemoType> data={data} columns={columns} {...args} />;
 };
 
 export const Default = Template.bind({});
 Default.args = {
   extra: {
-    onRowDelete: () => {},
-    onRowDownload: () => {},
-    onRowSubmit: () => {},
+    onRowDelete: () => {
+      return;
+    },
+    onRowDownload: () => {
+      return;
+    },
+    onRowSubmit: () => {
+      return;
+    },
     canAddNewLine: () => true,
     onNewLine: () => {
       return {

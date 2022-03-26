@@ -10,7 +10,7 @@ export default {
   component: StaticDataTable,
 } as ComponentMeta<typeof StaticDataTable>;
 
-const columns: IColumnType<demoType>[] = [
+const columns: IColumnType<IDemoType>[] = [
   {
     title: 'Code',
     dataIndex: 'id',
@@ -79,7 +79,7 @@ const columns: IColumnType<demoType>[] = [
   },
 ];
 
-interface demoType {
+interface IDemoType {
   id: string;
   name: string;
   status: string;
@@ -139,8 +139,8 @@ const data = [
   },
 ];
 
-const Template: ComponentStory<typeof StaticDataTable> = (args: IStaticDataTableProps<demoType>) => {
-  return <StaticDataTable<demoType> {...args} />;
+const Template: ComponentStory<typeof StaticDataTable> = (args: IStaticDataTableProps<IDemoType>) => {
+  return <StaticDataTable<IDemoType> {...args} />;
 };
 
 export const Default = Template.bind({});
@@ -154,7 +154,7 @@ ClickableRow.args = {
   data: data,
   columns: columns,
   extra: {
-    onRowClick: (row: demoType) => {
+    onRowClick: (row: IDemoType) => {
       console.log(`clicked row: ${row.id}`);
     },
   },
@@ -165,10 +165,10 @@ SelectableRows.args = {
   data: data,
   columns: columns,
   extra: {
-    onRowSelect: (rows: Array<demoType>, row: demoType) => {
+    onRowSelect: (rows: Array<IDemoType>, row: IDemoType) => {
       console.log(`Number of rows selected: ${rows.length}\nClicked row: ${row.id}`);
     },
-    isSelectable: (row: demoType) => {
+    isSelectable: (row: IDemoType) => {
       return row.id !== 'UGA';
     },
   },
@@ -179,10 +179,10 @@ ComputeTotal.args = {
   data: data,
   columns: columns,
   extra: {
-    computeTotal: (data: Array<demoType>, dataIndex: keyof demoType) => {
+    computeTotal: (data: Array<IDemoType>, dataIndex: keyof IDemoType) => {
       if (dataIndex === 'price' || dataIndex === 'parts') {
         return data
-          .map((row: demoType) => {
+          .map((row: IDemoType) => {
             return row[dataIndex];
           })
           .reduce((a, b) => Number(a) + Number(b), 0);
@@ -198,13 +198,13 @@ SelectableAndComputeTotal.args = {
   data: data,
   columns: columns,
   extra: {
-    onRowSelect: (rows: Array<demoType>, row: demoType) => {
+    onRowSelect: (rows: Array<IDemoType>, row: IDemoType) => {
       console.log(`Number of rows selected: ${rows.length}\nClicked row: ${row.id}`);
     },
-    computeTotal: (data: Array<demoType>, dataIndex: keyof demoType) => {
+    computeTotal: (data: Array<IDemoType>, dataIndex: keyof IDemoType) => {
       if (dataIndex === 'price' || dataIndex === 'parts') {
         return data
-          .map((row: demoType) => {
+          .map((row: IDemoType) => {
             return row[dataIndex];
           })
           .reduce((a, b) => Number(a) + Number(b), 0);
@@ -220,13 +220,13 @@ NoData.args = {
   data: [],
   columns: columns,
   extra: {
-    onRowSelect: (rows: Array<demoType>, row: demoType) => {
+    onRowSelect: (rows: Array<IDemoType>, row: IDemoType) => {
       console.log(`Number of rows selected: ${rows.length}\nClicked row: ${row.id}`);
     },
-    computeTotal: (data: Array<demoType>, dataIndex: keyof demoType) => {
+    computeTotal: (data: Array<IDemoType>, dataIndex: keyof IDemoType) => {
       if (dataIndex === 'price' || dataIndex === 'parts') {
         return data
-          .map((row: demoType) => {
+          .map((row: IDemoType) => {
             return row[dataIndex];
           })
           .reduce((a, b) => Number(a) + Number(b), 0);
@@ -247,13 +247,13 @@ Loading.args = {
     </div>
   ),
   extra: {
-    onRowSelect: (rows: Array<demoType>, row: demoType) => {
+    onRowSelect: (rows: Array<IDemoType>, row: IDemoType) => {
       console.log(`Number of rows selected: ${rows.length}\nClicked row: ${row.id}`);
     },
-    computeTotal: (data: Array<demoType>, dataIndex: keyof demoType) => {
+    computeTotal: (data: Array<IDemoType>, dataIndex: keyof IDemoType) => {
       if (dataIndex === 'price' || dataIndex === 'parts') {
         return data
-          .map((row: demoType) => {
+          .map((row: IDemoType) => {
             return row[dataIndex];
           })
           .reduce((a, b) => Number(a) + Number(b), 0);

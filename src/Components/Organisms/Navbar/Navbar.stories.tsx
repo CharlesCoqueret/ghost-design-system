@@ -87,7 +87,11 @@ Default.args = {
   searchBar: {
     placeholder: 'Search',
     onSearch: () => {
-      return Promise.resolve([<div>Result 1</div>, <div>Result 2</div>, <div>Result 3</div>]);
+      return Promise.resolve([
+        <div key='result1'>Result 1</div>,
+        <div key='result2'>Result 2</div>,
+        <div key='result3'>Result 3</div>,
+      ]);
     },
   },
   navIcons: [

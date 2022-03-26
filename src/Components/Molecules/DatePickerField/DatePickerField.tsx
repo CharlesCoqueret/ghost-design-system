@@ -78,6 +78,7 @@ export const DatePickerField = (props: IDatePickerFieldProps): ReactElement => {
     isClearable,
     label,
     labelSize,
+    locale,
     mandatory,
     name,
     onChange,
@@ -112,6 +113,7 @@ export const DatePickerField = (props: IDatePickerFieldProps): ReactElement => {
         highlighted={highlighted}
         isInError={errorMessage !== undefined}
         isClearable={isClearable}
+        locale={locale}
         name={name}
         placeholder={placeholder}
         inputValue={inputValue}
