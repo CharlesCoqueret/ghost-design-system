@@ -10,7 +10,7 @@ export default {
   title: 'Organism/useForm',
 };
 
-interface dataType {
+interface IDataType {
   amount: number | undefined;
   date: Date | undefined | null;
   description?: string;
@@ -20,8 +20,8 @@ interface dataType {
   year: number | undefined;
 }
 
-const Template = (args: IUseFormProps<dataType>) => {
-  const { formElement, getData, isModified, submit, reset } = useForm<dataType>(args);
+const Template = (args: IUseFormProps<IDataType>) => {
+  const { formElement, getData, isModified, submit, reset } = useForm<IDataType>(args);
 
   return (
     <>
@@ -58,7 +58,7 @@ const Template = (args: IUseFormProps<dataType>) => {
 
 const checkboxOption = [{ value: 'value 1', label: 'When checked the magic happens' }];
 
-const initialData: dataType = {
+const initialData: IDataType = {
   amount: 100000,
   date: new Date(),
   description: 'Description',
@@ -68,7 +68,7 @@ const initialData: dataType = {
   year: 1984,
 };
 
-const fields: Array<IFieldAndLayoutProps<dataType>> = [
+const fields: Array<IFieldAndLayoutProps<IDataType>> = [
   {
     description: (
       <div>
@@ -76,7 +76,7 @@ const fields: Array<IFieldAndLayoutProps<dataType>> = [
       </div>
     ),
     fieldType: FieldTypeEnum.DESCRIPTION,
-    hidden: (data: dataType) => {
+    hidden: (data: IDataType) => {
       return data.amount < 1000;
     },
   },
@@ -96,7 +96,7 @@ const fields: Array<IFieldAndLayoutProps<dataType>> = [
     label: 'Percentage is only visible when number is above 0',
     dataIndex: 'percentage',
     fieldType: FieldTypeEnum.PERCENTAGE,
-    hidden: (data: dataType) => {
+    hidden: (data: IDataType) => {
       return data.number < 0;
     },
   },
@@ -105,7 +105,7 @@ const fields: Array<IFieldAndLayoutProps<dataType>> = [
     label: 'Year',
     dataIndex: 'year',
     fieldType: FieldTypeEnum.YEAR,
-    hidden: (data: dataType) => {
+    hidden: (data: IDataType) => {
       return !data.checkbox[0].checked;
     },
   },

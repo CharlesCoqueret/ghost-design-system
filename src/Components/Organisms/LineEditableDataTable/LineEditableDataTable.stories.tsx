@@ -10,7 +10,7 @@ export default {
   component: LineEditableDataTable,
 } as ComponentMeta<typeof LineEditableDataTable>;
 
-interface demoType {
+interface IDemoType {
   id: string;
   name?: string;
   status?: string;
@@ -70,7 +70,7 @@ const initialData = [
   },
 ];
 
-const columns: IColumnType<demoType>[] = [
+const columns: IColumnType<IDemoType>[] = [
   {
     title: 'Code',
     dataIndex: 'id',
@@ -121,7 +121,7 @@ const columns: IColumnType<demoType>[] = [
   },
 ];
 
-const validationSchema: yup.SchemaOf<demoType> = yup.object({
+const validationSchema: yup.SchemaOf<IDemoType> = yup.object({
   id: yup.string().required(),
   name: yup.string().required(),
   status: yup.string().required(),
@@ -130,8 +130,8 @@ const validationSchema: yup.SchemaOf<demoType> = yup.object({
   startDate: yup.date().min(new Date(), 'start date must be after today').required(),
 });
 
-const Template: ComponentStory<typeof LineEditableDataTable> = (args: ILineEditableDataTableProps<demoType>) => {
-  return <LineEditableDataTable<demoType> {...args} />;
+const Template: ComponentStory<typeof LineEditableDataTable> = (args: ILineEditableDataTableProps<IDemoType>) => {
+  return <LineEditableDataTable<IDemoType> {...args} />;
 };
 
 export const Default = Template.bind({});
@@ -139,9 +139,15 @@ Default.args = {
   data: initialData,
   columns: columns,
   extra: {
-    onRowDelete: () => {},
-    onRowDownload: () => {},
-    onRowSubmit: () => {},
+    onRowDelete: () => {
+      return;
+    },
+    onRowDownload: () => {
+      return;
+    },
+    onRowSubmit: () => {
+      return;
+    },
     canAddNewLine: () => true,
     onNewLine: () => {
       return {

@@ -12,15 +12,15 @@ export default {
   title: 'Organism/useForm',
 };
 
-interface dataType {
+interface IDataType {
   amount: number | undefined;
   checkbox: Array<IToggleEntry>;
   date: Date | undefined | null;
   description?: string;
 }
 
-const Template = (args: IUseFormProps<dataType>) => {
-  const { formElement, getData, isModified, submit, reset } = useForm<dataType>(args);
+const Template = (args: IUseFormProps<IDataType>) => {
+  const { formElement, getData, isModified, submit, reset } = useForm<IDataType>(args);
 
   return (
     <>
@@ -60,14 +60,14 @@ const checkboxOption = [
   { value: 'value 2', checked: true, label: 'label 2' },
 ];
 
-const initialData: dataType = {
+const initialData: IDataType = {
   amount: 100000,
   checkbox: cloneDeep(checkboxOption),
   date: new Date(),
   description: 'Description',
 };
 
-const previousData: dataType = {
+const previousData: IDataType = {
   amount: 10000,
   checkbox: cloneDeep(checkboxOption).map((option) => {
     option.checked = !option.checked;
@@ -76,7 +76,7 @@ const previousData: dataType = {
   date: new Date('09/24/1984'),
 };
 
-const fields: Array<IFieldAndLayoutProps<dataType>> = [
+const fields: Array<IFieldAndLayoutProps<IDataType>> = [
   {
     description: (
       <div>

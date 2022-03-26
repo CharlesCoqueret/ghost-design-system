@@ -11,14 +11,14 @@ export default {
   title: 'Organism/useForm',
 };
 
-interface dataType {
+interface IDataType {
   select1: string;
   select2: string;
   select3: string;
 }
 
-const Template = (args: IUseFormProps<dataType>) => {
-  const { formElement, submit, reset } = useForm<dataType>(args);
+const Template = (args: IUseFormProps<IDataType>) => {
+  const { formElement, submit, reset } = useForm<IDataType>(args);
   return (
     <>
       <div style={{ display: 'flex', justifyContent: 'space-around' }}>
@@ -77,7 +77,7 @@ const option3: Record<string, Array<IOption>> = {
   ],
 };
 
-const initialData: dataType = {
+const initialData: IDataType = {
   select1: option1[0].value,
   select2: option2[option1[0].value][0].value,
   select3: option3[option2[option1[0].value][0].value][0].value,
@@ -114,7 +114,7 @@ const validationSchema = yup.object({
     }),
 });
 
-const fields: Array<IFieldAndLayoutProps<dataType>> = [
+const fields: Array<IFieldAndLayoutProps<IDataType>> = [
   {
     label: 'Select 1',
     dataIndex: 'select1',
@@ -126,7 +126,7 @@ const fields: Array<IFieldAndLayoutProps<dataType>> = [
     dataIndex: 'select2',
     eraseValueWhenNotInOptions: true,
     fieldType: FieldTypeEnum.SELECT,
-    options: (data: dataType) => {
+    options: (data: IDataType) => {
       if (data.select1) return option2[data.select1];
       return [];
     },
@@ -136,7 +136,7 @@ const fields: Array<IFieldAndLayoutProps<dataType>> = [
     dataIndex: 'select3',
     eraseValueWhenNotInOptions: true,
     fieldType: FieldTypeEnum.SELECT,
-    options: (data: dataType) => {
+    options: (data: IDataType) => {
       if (data.select2) return option3[data.select2];
       return [];
     },

@@ -1,7 +1,6 @@
 import React, { ChangeEvent, ReactElement } from 'react';
-import { ReactDatePickerCustomHeaderProps /*registerLocale*/ } from 'react-datepicker';
+import { ReactDatePickerCustomHeaderProps } from 'react-datepicker';
 import { Button, ColorButtonEnum } from '../../Molecules/Button';
-// import fr from "date-fns/locale/fr";
 
 import { getMonthInLocale } from './dateUtils';
 

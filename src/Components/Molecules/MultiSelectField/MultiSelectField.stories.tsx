@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import MultiSelectField, { IMultiSelectFieldProps } from './MultiSelectField';
-import { IOption } from '../../Atoms';
 
 const selectedOptions = [
   { label: 'selection label 0', value: 'KEY_0' },

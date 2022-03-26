@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import DatePickerField, { IDatePickerFieldProps } from './DatePickerField';
-import { DateFormatEnum } from '../..';
+import { DateFormatEnum, Icon, importFnsLocaleFile } from '../..';
 
 export default {
   title: 'Molecule/DatePickerField',
@@ -10,7 +10,29 @@ export default {
 } as ComponentMeta<typeof DatePickerField>;
 
 const Template: ComponentStory<typeof DatePickerField> = ({ inputValue, ...args }: IDatePickerFieldProps) => {
+  const [loading, setLoading] = useState(true);
   const [localValue, setLocalValue] = useState<Date | null | undefined>(inputValue);
+
+  useEffect(() => {
+    setLoading(true);
+    const loadLocale = async () => {
+      if (args.locale)
+        await importFnsLocaleFile(args.locale).finally(() => {
+          setLoading(false);
+        });
+    };
+
+    loadLocale();
+  }, [args.locale]);
+
+  if (loading)
+    return (
+      <>
+        <Icon icon={['fal', 'spinner']} spin />
+        Loading locale
+      </>
+    );
+
   return <DatePickerField {...args} inputValue={localValue} onChange={setLocalValue} />;
 };
 
@@ -18,6 +40,7 @@ export const Default = Template.bind({});
 Default.args = {
   label: 'Date picker field',
   name: 'name',
+  locale: 'fr',
   placeholder: 'Select a date',
 };
 

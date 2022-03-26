@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import DatePickerHeader from '../DatePickerHeader';
-import { registerLocale } from 'react-datepicker';
+import { importFnsLocaleFile } from '../dateUtils';
 
 describe('DatePickerHeader Component', () => {
   it('DatePickerHeader renders handles changes in French', async () => {
@@ -14,9 +14,7 @@ describe('DatePickerHeader Component', () => {
     const decreaseYearMock = jest.fn();
     const increaseYearMock = jest.fn();
 
-    await import('date-fns/locale/fr').then((fr: unknown) => {
-      registerLocale('fr', fr as Locale);
-    });
+    await importFnsLocaleFile('fr');
 
     const DatePickerHeaderComponent = DatePickerHeader('fr');
     const container = render(

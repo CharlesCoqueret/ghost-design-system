@@ -64,9 +64,6 @@ import {
   faPalette,
   faStrikethrough,
   faUnderline,
-
-  // Button
-  // faSpinner,
 } from '@fortawesome/pro-regular-svg-icons';
 
 // Button and checkbox
