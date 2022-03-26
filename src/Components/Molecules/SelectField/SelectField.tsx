@@ -9,10 +9,7 @@ export interface ISelectFieldProps {
   colors?: {
     controlErrorColor: string; // colors.error,
     controlFocusColor: string; // colors.primary,
-    controlBackgroundColorDisabled: string; // colors.chalk,
-    controlColorDisabled: string; // colors.pebble,
     fontColor: string; // 'rgb(0, 0, 0)',
-    multiValueBorderColorDisabled: string; // colors.silver,
     optionFocusColor: string; // colors.chalk,
     optionSelectedColor: string; // colors.primary,
   };
@@ -135,10 +132,7 @@ SelectField.defaultProps = {
   colors: {
     controlErrorColor: colors.error.rgb,
     controlFocusColor: colors.primary.rgb,
-    controlBackgroundColorDisabled: colors.chalk.rgb,
-    controlColorDisabled: colors.pebble.rgb,
     fontColor: 'rgb(0, 0, 0)',
-    multiValueBorderColorDisabled: colors.silver.rgb,
     optionFocusColor: colors.chalk.rgb,
     optionSelectedColor: colors.primary.rgb,
   },

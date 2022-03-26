@@ -11,7 +11,6 @@
     "build:css": "sass src/assets/index.scss dist/index.css --error-css --stop-on-error",
     "build:css-min": "sass src/assets/index.scss dist/index.min.css --error-css --stop-on-error --style=compressed",
     "clean": "rm -rf npm-*.log package-lock.json node_modules coverage dist docs-build && npm cache verify",
-    "dev": "yarn storybook",
     "format": "prettier --write \"src/**/*.{ts,tsx,json,js,jsx}\"",
     "format:check": "prettier --list-different \"src/**/*.{ts,tsx,json,js,jsx}\"",
     "license": "license-checker --production --relativeLicensePath --csv --out ./THIRD-PARTY.txt",

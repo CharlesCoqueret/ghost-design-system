@@ -110,10 +110,7 @@ export interface IFieldMultiSelectProps<T> extends IFieldBaseProps<T> {
   colors?: {
     controlErrorColor: string; // colors.error,
     controlFocusColor: string; // colors.primary,
-    controlBackgroundColorDisabled: string; // colors.chalk,
-    controlColorDisabled: string; // colors.pebble,
     fontColor: string; // 'rgb(0, 0, 0)',
-    multiValueBorderColorDisabled: string; // colors.silver,
     optionFocusColor: string; // colors.chalk,
     optionSelectedColor: string; // colors.primary,
   };
@@ -168,10 +165,7 @@ export interface IFieldSelectProps<T> extends IFieldBaseProps<T> {
   colors?: {
     controlErrorColor: string; // colors.error,
     controlFocusColor: string; // colors.primary,
-    controlBackgroundColorDisabled: string; // colors.chalk,
-    controlColorDisabled: string; // colors.pebble,
     fontColor: string; // 'rgb(0, 0, 0)',
-    multiValueBorderColorDisabled: string; // colors.silver,
     optionFocusColor: string; // colors.chalk,
     optionSelectedColor: string; // colors.primary,
   };
