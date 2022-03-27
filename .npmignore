@@ -1,10 +1,19 @@
 .DS_STORE
-.npmrc
+.eslintrc.js
+.github/
+.nvmrc
+.prettierc
+.storybook/
+
 
 coverage
-dist
 node_modules
 public
+src
+static
+
+*.config.js
+*.config.ts
 
 .rpt2_cache
 .cache
