@@ -4,7 +4,6 @@ import classnames from 'classnames';
 
 import { IOption } from './types';
 import { customStyles } from './selectStyles';
-import colors from '../Colors/colors';
 
 export interface ISelectInputProps {
   /** Class for the input (optional, default: undefined) */
@@ -124,11 +123,11 @@ const SelectInput = (props: ISelectInputProps): ReactElement => {
 SelectInput.defaultProps = {
   className: undefined,
   colors: {
-    controlErrorColor: colors.error.rgb,
-    controlFocusColor: colors.primary.rgb,
+    controlErrorColor: 'rgb(255, 52, 24)',
+    controlFocusColor: 'rgb(38, 186, 212)',
     fontColor: 'rgb(0, 0, 0)',
-    optionFocusColor: colors.chalk.rgb,
-    optionSelectedColor: colors.primary.rgb,
+    optionFocusColor: 'rgb(228, 228, 228)',
+    optionSelectedColor: 'rgb(38, 186, 212)',
   },
   disabled: false,
   fieldSize: undefined,

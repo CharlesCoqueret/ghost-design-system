@@ -4,7 +4,6 @@ import classnames from 'classnames';
 
 import { customStyles } from './selectStyles';
 import { IOption } from './types';
-import colors from '../Colors/colors';
 
 export interface IMultiSelectInputProps {
   /** Class for the input (optional, default: undefined) */
@@ -182,11 +181,11 @@ const MultiSelectInput = (props: IMultiSelectInputProps): ReactElement => {
 MultiSelectInput.defaultProps = {
   className: undefined,
   colors: {
-    controlErrorColor: colors.error.rgb,
-    controlFocusColor: colors.primary.rgb,
+    controlErrorColor: 'rgb(255, 52, 24)',
+    controlFocusColor: 'rgb(38, 186, 212)',
     fontColor: 'rgb(0, 0, 0)',
-    optionFocusColor: colors.chalk.rgb,
-    optionSelectedColor: colors.primary.rgb,
+    optionFocusColor: 'rgb(228, 228, 228)',
+    optionSelectedColor: 'rgb(38, 186, 212)',
   },
   disabled: false,
   fieldSize: undefined,
