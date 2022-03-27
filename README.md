@@ -1,6 +1,73 @@
-# React Components library
+# Ghost Design System - React Components library
+
+[Demo](https://charlescoqueret.github.io/ghost-design-system/)
+
+<details>
+  <summary>Available components:</summary>
+  
+  * Atoms:
+  * Badge (notification and indicator)
+  * Colors
+  * Icons
+  * Layout (Row, Col, Collapsable section)
+  * Link
+  * Modal
+  * Portal
+  * Tooltip
+* Molecules:
+  * Amount field
+  * Button
+  * Checkbox field
+  * Datepicker field
+  * Percentage field
+  * Popover
+  * Select field:
+    * Single
+    * Multi
+    * Autocomplete (aka Dynamic Search)
+    * Autocomplete creatable (aka Dynamic Search Creatable)
+  * Switch field
+  * Textarea field
+  * Text field
+  * Yearpicker field
+* Organisms:
+  * ActionBar
+  * Datatable:
+    * Editable Data Table (full editable)
+    * Line editable Data Table (edit in popup form with data validation)
+    * Line editable in place data table (edit of a line in place)
+    * Static data table
+  * Form:
+    * Form component
+    * useForm hook
+  * NavBar
+  * SideBar
+</details>
 
 This react components library uses the following:
+
+- [classnames](https://github.com/JedWatson/classnames#readme)
+- [color-alpha](https://github.com/colorjs/color-alpha)
+- [color-rgba](https://github.com/colorjs/color-rgba)
+- [date-fns](https://date-fns.org/)
+- [lodash](https://lodash.com/)
+- [numeral](http://numeraljs.com/)
+- [react-datepicker](https://reactdatepicker.com/)
+- [react-number-format](https://github.com/s-yadav/react-number-format#readme)
+- [react-select](https://react-select.com/)
+
+Peer dependencies:
+
+- [@fortawesome/fontawesome-svg-core](https://fontawesome.com/)
+- [@fortawesome/pro-light-svg-icons](https://fontawesome.com/)
+- [@fortawesome/pro-regular-svg-icons](https://fontawesome.com/)
+- [@fortawesome/pro-solid-svg-icons](https://fontawesome.com/)
+- [@fortawesome/react-fontawesome](https://fontawesome.com/)
+- [react ^16.8.0](https://fr.reactjs.org/)
+- [react-dom ^16.8.0](https://fr.reactjs.org/docs/react-dom.html)
+- [react-router-dom ^6.2.2](https://reactrouter.com/)
+
+Dev dependencies:
 
 - [Typescript](https://www.typescriptlang.org/)
 - [Prettier](https://prettier.io/)
@@ -8,8 +75,9 @@ This react components library uses the following:
 - [Storybook](https://storybook.js.org/)
 - [SCSS](https://sass-lang.com/)
 - [Jest](https://jestjs.io/)
-- [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
 
+<details>
+  <summary>Read further</summary>
 ## Basic Folder Structure
 
 ```
@@ -56,6 +124,14 @@ $ npm run test:watch
 
 ```
 
+Coverage
+
+```
+
+$ npm run test:coverage
+
+```
+
 ## Prettier
 
 ```
@@ -80,11 +156,27 @@ $ npm run lint
 
 ```
 
+Fix
+
+```
+
+$ npm run lint:fix
+
+```
+
 ## Storybook
 
 ```
 
 $ npm run storybook
+
+```
+
+Build storybook
+
+```
+
+$ npm run build-storybook
 
 ```
 
@@ -166,11 +258,11 @@ In addition to these types, any `breaking change` will also be added to the chan
 
 ```
 
-$ npm run react-components
+$ npm install @cc/ghost-design-system
 
 ```
 
-- Define the set of colors for the client (by copying the file: `~/react-components/dist/assets/_colors.scss`)
+- Define the set of colors for the client (by copying the file: `~/@cc/ghost-design-system/dist/assets/_colors.scss`)
 - Generate your `index.scss` file
 
 ```
@@ -181,5 +273,7 @@ $ npm run react-components
 - In your first component using the library, simply import the lib
 
 ```
-import { Button } from 'react-components';
+import { Button } from '@cc/ghost-design-system';
 ```
+
+</details>
