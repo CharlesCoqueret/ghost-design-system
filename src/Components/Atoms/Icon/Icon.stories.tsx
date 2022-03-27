@@ -64,6 +64,7 @@ List.args = {
     ['fal', 'long-arrow-alt-left'],
     ['fal', 'long-arrow-alt-up'],
     ['fal', 'minus'],
+    ['fal', 'paperclip'],
     ['fal', 'paper-plane'],
     ['fal', 'pen'],
     ['fal', 'pipe'],

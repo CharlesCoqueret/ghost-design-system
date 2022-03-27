@@ -33,7 +33,6 @@
     "lint": "eslint --ext .js,.ts,.jsx,.tsx,.json --color ./",
     "lint:fix": "eslint --ext .js,.ts,.jsx,.tsx,.json --fix --color ./",
     "nuke": "npm run clean && npm install",
-    "prepublish": "rm -rf build && npm run build",
     "storybook": "start-storybook -p 9001 -c .storybook -s ./static",
     "test": "jest",
     "test:coverage": "jest --maxWorkers --colors --coverage",
