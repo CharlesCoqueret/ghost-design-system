@@ -1,5 +1,5 @@
 {
-  "name": "@cc/ghost-design-system",
+  "name": "ghost-design-system",
   "license": "MIT",
   "version": "0.0.1",
   "description": "Ghost design system - React Component Library",

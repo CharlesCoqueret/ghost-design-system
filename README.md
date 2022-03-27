@@ -258,11 +258,11 @@ In addition to these types, any `breaking change` will also be added to the chan
 
 ```
 
-$ npm install @cc/ghost-design-system
+$ npm install ghost-design-system
 
 ```
 
-- Define the set of colors for the client (by copying the file: `~/@cc/ghost-design-system/dist/assets/_colors.scss`)
+- Define the set of colors for the client (by copying the file: `~/ghost-design-system/dist/assets/_colors.scss`)
 - Generate your `index.scss` file
 
 ```
@@ -273,7 +273,7 @@ $ npm install @cc/ghost-design-system
 - In your first component using the library, simply import the lib
 
 ```
-import { Button } from '@cc/ghost-design-system';
+import { Button } from 'ghost-design-system';
 ```
 
 </details>
