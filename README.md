@@ -46,6 +46,8 @@
 
 This react components library uses the following:
 
+- [@fortawesome/fontawesome-svg-core](https://fontawesome.com/)
+- [@fortawesome/react-fontawesome](https://fontawesome.com/)
 - [classnames](https://github.com/JedWatson/classnames#readme)
 - [color-alpha](https://github.com/colorjs/color-alpha)
 - [color-rgba](https://github.com/colorjs/color-rgba)
@@ -58,23 +60,21 @@ This react components library uses the following:
 
 Peer dependencies:
 
-- [@fortawesome/fontawesome-svg-core](https://fontawesome.com/)
 - [@fortawesome/pro-light-svg-icons](https://fontawesome.com/)
 - [@fortawesome/pro-regular-svg-icons](https://fontawesome.com/)
 - [@fortawesome/pro-solid-svg-icons](https://fontawesome.com/)
-- [@fortawesome/react-fontawesome](https://fontawesome.com/)
 - [react ^16.8.0](https://fr.reactjs.org/)
 - [react-dom ^16.8.0](https://fr.reactjs.org/docs/react-dom.html)
 - [react-router-dom ^6.2.2](https://reactrouter.com/)
 
 Dev dependencies:
 
-- [Typescript](https://www.typescriptlang.org/)
-- [Prettier](https://prettier.io/)
 - [ESLint](https://eslint.org/)
-- [Storybook](https://storybook.js.org/)
-- [SCSS](https://sass-lang.com/)
 - [Jest](https://jestjs.io/)
+- [Prettier](https://prettier.io/)
+- [SCSS](https://sass-lang.com/)
+- [Storybook](https://storybook.js.org/)
+- [Typescript](https://www.typescriptlang.org/)
 
 <details>
   <summary>Read further</summary>
