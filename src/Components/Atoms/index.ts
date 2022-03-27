@@ -1,7 +1,6 @@
 export * from './AmountInput';
 export * from './Badge';
 export * from './CheckBoxInput';
-export * from './Colors';
 export * from './DatePickerInput';
 export * from './GenericField';
 export * from './Icon';

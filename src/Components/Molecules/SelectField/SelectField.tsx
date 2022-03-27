@@ -2,7 +2,6 @@ import React, { ReactElement, Ref } from 'react';
 import classnames from 'classnames';
 
 import { GenericField, SelectInput, IOption } from '../../Atoms';
-import colors from '../../Atoms/Colors/colors';
 
 export interface ISelectFieldProps {
   /** Custom colors settings */
@@ -130,11 +129,11 @@ export const SelectField = (props: ISelectFieldProps): ReactElement => {
 
 SelectField.defaultProps = {
   colors: {
-    controlErrorColor: colors.error.rgb,
-    controlFocusColor: colors.primary.rgb,
+    controlErrorColor: 'rgb(255, 52, 24)',
+    controlFocusColor: 'rgb(38, 186, 212)',
     fontColor: 'rgb(0, 0, 0)',
-    optionFocusColor: colors.chalk.rgb,
-    optionSelectedColor: colors.primary.rgb,
+    optionFocusColor: 'rgb(228, 228, 228)',
+    optionSelectedColor: 'rgb(38, 186, 212)',
   },
   disabled: false,
   errorMessage: undefined,

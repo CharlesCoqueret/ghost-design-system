@@ -2,47 +2,95 @@
 
 [Demo](https://charlescoqueret.github.io/ghost-design-system/)
 
-<details>
-  <summary>Available components:</summary>
-  
-  * Atoms:
-  * Badge (notification and indicator)
-  * Colors
-  * Icons
-  * Layout (Row, Col, Collapsable section)
-  * Link
-  * Modal
-  * Portal
-  * Tooltip
-* Molecules:
-  * Amount field
-  * Button
-  * Checkbox field
-  * Datepicker field
-  * Percentage field
-  * Popover
-  * Select field:
-    * Single
-    * Multi
-    * Autocomplete (aka Dynamic Search)
-    * Autocomplete creatable (aka Dynamic Search Creatable)
-  * Switch field
-  * Textarea field
-  * Text field
-  * Yearpicker field
-* Organisms:
-  * ActionBar
-  * Datatable:
-    * Editable Data Table (full editable)
-    * Line editable Data Table (edit in popup form with data validation)
-    * Line editable in place data table (edit of a line in place)
-    * Static data table
-  * Form:
-    * Form component
-    * useForm hook
-  * NavBar
-  * SideBar
-</details>
+## Available components:
+
+- Atoms:
+- Badge (notification and indicator)
+- Colors
+- Icons
+- Layout (Row, Col, Collapsable section)
+- Link
+- Modal
+- Portal
+- Tooltip
+- Molecules:
+  - Amount field
+  - Button
+  - Checkbox field
+  - Datepicker field
+  - Percentage field
+  - Popover
+  - Select field:
+    - Single
+    - Multi
+    - Autocomplete (aka Dynamic Search)
+    - Autocomplete creatable (aka Dynamic Search Creatable)
+  - Switch field
+  - Textarea field
+  - Text field
+  - Yearpicker field
+- Organisms:
+  - ActionBar
+  - Datatable:
+    - Editable Data Table (full editable)
+    - Line editable Data Table (edit in popup form with data validation)
+    - Line editable in place data table (edit of a line in place)
+    - Static data table
+  - Form:
+    - Form component
+    - useForm hook
+  - NavBar
+  - SideBar
+
+## Usage
+
+1. In the root directory of you project, ensure you have a .npmrc file with your valid fontawesome license (you can skip this step if it is configured for your session)
+2. Run the command:
+
+```
+npm install ghost-design-system
+```
+
+3. Define the set of colors by copying the file: ~ghost-design-system/dist/assets/\_colors.scss)
+
+```{scss}
+// Neutral pallet
+$chalk: rgb(228, 228, 228);
+$charcoal: rgb(51, 51, 51);
+$pebble: rgb(117, 117, 117);
+$silver: rgb(196, 196, 196);
+$smoke: rgb(248, 248, 248);
+$white: rgb(255, 255, 255);
+
+// Additional pallet
+$scooter: rgb(38, 186, 212);
+$buttercup: rgb(244, 174, 38);
+$cerulean: rgb(1, 82, 129);
+$cinnabar: rgb(232, 61, 71);
+$fern: rgb(92, 184, 92);
+$sky: rgb(16, 156, 241);
+$tangerine: rgb(229, 114, 0);
+
+$error: rgb(255, 52, 24);
+
+$primary: $scooter;
+$secondary: $pebble;
+$tertiary: $charcoal;
+```
+
+4. Create your `index.scss` file by starting it with:
+
+```{scss}
+@import 'colors.scss';
+@import '~ghost-design-system/assets/_global.scss';
+
+```
+
+5. You should be ready to use any of the components of the library.
+
+---
+
+## References
 
 This react components library uses the following:
 
@@ -76,8 +124,10 @@ Dev dependencies:
 - [Storybook](https://storybook.js.org/)
 - [Typescript](https://www.typescriptlang.org/)
 
-<details>
-  <summary>Read further</summary>
+---
+
+# To go firther
+
 ## Basic Folder Structure
 
 ```
@@ -249,31 +299,3 @@ The changelog.md is automatically generated from the following types of commits:
 - `revert`
 
 In addition to these types, any `breaking change` will also be added to the changelog.
-
----
-
-## Usage
-
-- Install the library
-
-```
-
-$ npm install ghost-design-system
-
-```
-
-- Define the set of colors for the client (by copying the file: `~/ghost-design-system/dist/assets/_colors.scss`)
-- Generate your `index.scss` file
-
-```
-@import './YOUR_COLOR_FILE.scss';
-@import '~/react-components/dist/assets/global.scss';
-```
-
-- In your first component using the library, simply import the lib
-
-```
-import { Button } from 'ghost-design-system';
-```
-
-</details>
