@@ -5,7 +5,7 @@ const maxAssetSize = 250 * 1024;
 module.exports = {
   stories: ['../src/**/*.stories.tsx'],
   addons: ['@storybook/addon-links', '@storybook/addon-essentials', '@storybook/addon-postcss'],
-  webpackFinal: async (config, { configType }) => {
+  webpackFinal: async (config) => {
     // SCSS ALL EXCEPT local
     config.module.rules.push({
       test: /\.module\.scss$/i,
@@ -39,4 +39,5 @@ module.exports = {
 
     return config;
   },
+  staticDirs: ['../static'],
 };
