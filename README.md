@@ -28,13 +28,13 @@
   - Switch field
   - Textarea field
   - Text field
-  - Yearpicker field
+  - YearPicker field
 - Organisms:
   - ActionBar
   - Datatable:
     - Editable Data Table (full editable)
-    - Line editable Data Table (edit in popup form with data validation)
-    - Line editable in place data table (edit of a line in place)
+    - Line editable Data Table (editon in popup form with data validation)
+    - Line editable in place data table (edition of a line in place)
     - Static data table
   - Form:
     - Form component
@@ -44,7 +44,7 @@
 
 ## Usage
 
-1. In the root directory of you project, ensure you have a .npmrc file with your valid fontawesome license (you can skip this step if it is configured for your session)
+1. In the root directory of your project, ensure you have a .npmrc file with your valid fontawesome license (you can skip this step if it is configured for your session)
 2. Run the command:
 
 ```
@@ -82,7 +82,7 @@ $tertiary: $charcoal;
 
 ```{scss}
 @import 'colors.scss';
-@import '~ghost-design-system/assets/_global.scss';
+@import '~ghost-design-system/dist/assets/_global.scss';
 
 ```
 
@@ -126,7 +126,7 @@ Dev dependencies:
 
 ---
 
-# To go firther
+# To go further
 
 ## Basic Folder Structure
 
@@ -251,7 +251,7 @@ Must be one of the following:
 - **fix**: A bug fix (this correlates with `PATCH` in semantic versioning).
 - **perf**: A code change that improves performance (this correlates with `PATCH` in semantic versioning).
 - **refactor**: A code change that neither fixes a bug nor adds a feature (no version changes)
-- **style**: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc) (no version changes)
+- **style**: Changes that do not affect the meaning of the code (white-space, formatting, missing semicolons, etc) (no version changes)
 - **test**: Adding missing tests or correcting existing tests (no version changes)
 - **revert**: Reverts a previous commit (this correlates with `PATCH` in semantic versioning).
 
