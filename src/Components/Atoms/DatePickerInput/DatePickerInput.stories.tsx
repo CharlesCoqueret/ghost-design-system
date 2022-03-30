@@ -17,12 +17,15 @@ const Template: ComponentStory<typeof DatePickerInput> = ({ inputValue, ...args 
   const [date, setDate] = useState<Date | null>(inputValue ? inputValue : null);
 
   useEffect(() => {
-    setLoading(true);
     const loadLocale = async () => {
-      if (args.locale)
-        await importFnsLocaleFile(args.locale).finally(() => {
-          setLoading(false);
-        });
+      setLoading(true);
+      if (args.locale) {
+        await importFnsLocaleFile(args.locale)
+          .catch(console.error)
+          .finally(() => {
+            setLoading(false);
+          });
+      }
     };
 
     loadLocale();

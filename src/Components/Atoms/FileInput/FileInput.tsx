@@ -9,14 +9,14 @@ import FileGallery from './FileGallery';
 export interface IFileInputProps {
   /** Accepted types (optional, default: '\*\/\*') */
   acceptTypes?: string;
+  /** Class for the input (optional, default: undefined) */
+  className?: string;
   /** For test purpose only */
   dataTestId?: string;
   /** Disabled field (optional, default: false) */
   disabled?: boolean;
   /** Size of the field in a 12 column grid (optional, default: undefined) */
   fieldSize?: number;
-  /** Class for the input (optional, default: undefined) */
-  inputClassName?: string;
   /** Initial values for the field (optional, default: []) */
   inputValue?: Array<IFile>;
   /** Field is in error state (optiona, default: false) */
@@ -76,10 +76,10 @@ const unhighlight = (event: DragEvent) => {
 const FileInput = (props: IFileInputProps): ReactElement => {
   const {
     acceptTypes,
+    className,
     dataTestId,
     disabled,
     fieldSize,
-    inputClassName,
     inputValue,
     isInError,
     maxFiles,
@@ -358,7 +358,7 @@ const FileInput = (props: IFileInputProps): ReactElement => {
 
   return (
     <div
-      className={classnames('file-input-container', inputClassName, fieldSize && `field-input-size-${fieldSize}`)}
+      className={classnames('file-input-container', className, fieldSize && `field-input-size-${fieldSize}`)}
       style={style}>
       <div
         key='droparea'
