@@ -51,7 +51,7 @@ export interface IAmountInputProps {
   onChange?: (value: number | undefined) => void;
   /** Placeholder value (optional, default: undefined) */
   placeholder?: string;
-  /** Prefix (optiona, default: undefined) */
+  /** Prefix (optional, default: undefined) */
   prefix?: string;
   /** Read only field (optional, default: false) */
   readOnly?: boolean;
