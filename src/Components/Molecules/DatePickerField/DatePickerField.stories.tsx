@@ -10,16 +10,19 @@ export default {
 } as ComponentMeta<typeof DatePickerField>;
 
 const Template: ComponentStory<typeof DatePickerField> = ({ inputValue, ...args }: IDatePickerFieldProps) => {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [localValue, setLocalValue] = useState<Date | null | undefined>(inputValue);
 
   useEffect(() => {
-    setLoading(true);
     const loadLocale = async () => {
-      if (args.locale)
-        await importFnsLocaleFile(args.locale).finally(() => {
-          setLoading(false);
-        });
+      if (args.locale) {
+        setLoading(true);
+        return await importFnsLocaleFile(args.locale)
+          .catch(console.error)
+          .finally(() => {
+            setLoading(false);
+          });
+      }
     };
 
     loadLocale();

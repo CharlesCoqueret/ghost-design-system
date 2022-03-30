@@ -20,9 +20,9 @@ export interface IFile {
   type: string;
   /** Status of the file (optional, if not provided, will be automatically set to FileStatusEnum.DONE) */
   status?: FileStatusEnum;
-  /** Progress of the upload, meaningfull while status is FileStatusEnum.UPLOADING */
+  /** Progress of the upload, meaningful while status is FileStatusEnum.UPLOADING */
   progress?: number;
-  /** Error message of the upload, meaningfull while status is FileStatusEnum.ERROR */
+  /** Error message of the upload, meaningful while status is FileStatusEnum.ERROR */
   error?: string;
   /** Result provided by the upload call
    * (usually as a string, which might need to be parsed, for example using JSON.parse) */

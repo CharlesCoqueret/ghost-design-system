@@ -4,6 +4,7 @@ export * from './CheckboxField';
 export * from './DatePickerField';
 export * from './DynamicSearchCreatableField';
 export * from './DynamicSearchField';
+export * from './FileField';
 export * from './MultiSelectField';
 export * from './PercentageField';
 export * from './Popover';

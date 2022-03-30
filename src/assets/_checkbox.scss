@@ -39,6 +39,7 @@
 
     &.input-checkbox-field-read-only,
     &.input-checkbox-field-disabled {
+      cursor: default;
       color: $pebble;
 
       &:not(.input-checkbox-field-checked) {

@@ -7,10 +7,16 @@
     position: relative;
     margin-bottom: 8px;
     width: fit-content;
+    cursor: pointer;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+
+    &.input-switch-field-disabled,
+    &.input-switch-field-read-only {
+      cursor: default;
+    }
 
     .switch-marker {
       margin-right: 10px;
