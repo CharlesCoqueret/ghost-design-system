@@ -1,0 +1,107 @@
+.file-input-container {
+  .droparea {
+    border: 2px dashed $chalk;
+    border-radius: 4px;
+    width: auto;
+
+    &.readonly,
+    &.disabled {
+      border: none;
+      display: none;
+    }
+
+    &.error {
+      border: 2px dashed $error;
+    }
+
+    &:not(.error):hover {
+      border-color: $primary;
+    }
+
+    &:not(.error).highlight {
+      border-color: $primary;
+    }
+
+    .label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100px;
+      padding: 20px;
+      cursor: pointer;
+    }
+
+    .input {
+      display: none;
+    }
+  }
+
+  .gallery {
+    margin-top: 10px;
+    .item-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      transition: all 0.3s ease-in-out;
+      margin-bottom: 5px;
+      padding: 4px 4px;
+
+      &:hover {
+        background-color: $chalk;
+      }
+
+      &.error {
+        color: $error;
+      }
+
+      .left {
+        display: flex;
+        flex-direction: row;
+        overflow-x: hidden;
+
+        .paperclip-icon {
+          margin-right: 8px;
+        }
+
+        .name {
+          overflow-x: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+
+          &.downloadable {
+            cursor: pointer;
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+
+      .right {
+        display: flex;
+        flex-direction: row;
+        .delete-icon {
+          visibility: visible;
+          cursor: pointer;
+        }
+        progress {
+          border: 1px solid $silver;
+          margin: auto 8px;
+          border-radius: 4px;
+          height: 10px;
+          color: $primary;
+          background-color: $chalk;
+          &::-moz-progress-bar {
+            background: $chalk;
+          }
+          &::-webkit-progress-value {
+            background: $primary;
+          }
+          &::-webkit-progress-bar {
+            background: $chalk;
+          }
+        }
+      }
+    }
+  }
+}
