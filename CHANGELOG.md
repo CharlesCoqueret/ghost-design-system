@@ -1,10 +1,29 @@
 # Changelog
 
+## 1.1.0 (2022-03-31)
+
+### Features
+
+- Organisms/FileField component creation ([4ab8772b](https://github.com/CharlesCoqueret/ghost-design-system/commit/4ab8772bf3f753c7f63f49507edfac1e9a83f9f1))
+- Atoms/RichTextInput component creation ([51e36b02](https://github.com/CharlesCoqueret/ghost-design-system/commit/51e36b02905a052457fd93a38236233fcd638fe6))
+
+### Bug Fixes
+
+- Atoms/AmountInput fix border color which was changing when in error and being hovered
+- Atoms/CheckboxInput fix cursor to default when in readonly of disabled
+- Atoms/SwitchInput fix cursor to be a point when input is editable, and default when in readonly or disabled
+- Atoms/DatePickerInput fix story using locale
+- Organisms/DatePickerField fix story using locale
+
 ## 1.0.2 (2022-03-27)
+
+### Bug Fixes
 
 - Build fix
 
 ## 1.0.1 (2022-03-27)
+
+### Bug Fixes
 
 - Build fix
 
