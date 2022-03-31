@@ -1,0 +1,63 @@
+@import '~suneditor/dist/css/suneditor.min.css';
+
+.rich-text-container {
+  .se-wrapper-inner {
+    border: 1px solid transparent;
+    &:focus {
+      border: 1px solid $primary;
+    }
+  }
+
+  &.error {
+    .se-wrapper-inner,
+    .se-wrapper-inner:focus {
+      border: 1px solid $error;
+    }
+  }
+
+  &.disabled,
+  &.readonly {
+    .sun-editor {
+      border: none;
+    }
+    .se-wrapper-inner,
+    .se-wrapper-inner:focus {
+      border: 1px solid transparent;
+      user-select: text;
+    }
+  }
+
+  .sun-editor-editable {
+    * {
+      box-sizing: border-box;
+    }
+
+    table {
+      border-collapse: collapse;
+    }
+
+    table,
+    td,
+    th {
+      border: 1px solid $pebble;
+    }
+  }
+
+  // Replacement of the toolbar bottom outline by a border
+  .sun-editor .se-toolbar {
+    outline: unset;
+    border-bottom: 1px solid #dadada;
+  }
+
+  // Prevent usage of image via links
+  .se-dialog-image {
+    // Hide tabs in the image dialog to avoid accessing to url settings
+    .se-dialog-tabs {
+      display: none;
+    }
+    // Hide form for image dialog to avoid accessing to url settings
+    ._se_tab_content_url {
+      display: none !important;
+    }
+  }
+}

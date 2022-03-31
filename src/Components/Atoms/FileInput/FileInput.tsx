@@ -19,7 +19,7 @@ export interface IFileInputProps {
   fieldSize?: number;
   /** Initial values for the field (optional, default: []) */
   inputValue?: Array<IFile>;
-  /** Field is in error state (optiona, default: false) */
+  /** Field is in error state (optional, default: false) */
   isInError?: boolean;
   /** Maximum number of files, if undefined: unlimited (optional, default: undefined) */
   maxFiles?: number;

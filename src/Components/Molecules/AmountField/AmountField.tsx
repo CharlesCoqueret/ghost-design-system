@@ -48,7 +48,7 @@ export interface IAmountFieldProps {
   onChange?: (value: number | undefined) => void;
   /** Placeholder value (optional, default: undefined) */
   placeholder?: string;
-  /** Prefix (optiona, default: undefined) */
+  /** Prefix (optional, default: undefined) */
   prefix?: string | undefined;
   /** Read only field (optional, default: false) */
   readOnly?: boolean;
