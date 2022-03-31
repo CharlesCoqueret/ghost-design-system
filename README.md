@@ -5,46 +5,51 @@
 ## Available components:
 
 - Atoms:
-- Badge (notification and indicator)
-- Colors
-- Icons
-- Layout (Row, Col, Collapsable section)
-- Link
-- Modal
-- Portal
-- Tooltip
+  - [Badge (notification and indicator)](https://charlescoqueret.github.io/ghost-design-system/?path=/story/atom-badge--default)
+  - [Colors](https://charlescoqueret.github.io/ghost-design-system/?path=/story/atom-colors--brand-palette)
+  - [Icons](https://charlescoqueret.github.io/ghost-design-system/?path=/story/atom-icon--list)
+  - Layout
+    - [Row](https://charlescoqueret.github.io/ghost-design-system/?path=/story/atom-layout-row--default)
+    - [Col](https://charlescoqueret.github.io/ghost-design-system/?path=/story/atom-layout-col--default)
+    - [Collapsable section](https://charlescoqueret.github.io/ghost-design-system/?path=/story/atom-layout-section--default)
+  - [Link](https://charlescoqueret.github.io/ghost-design-system/?path=/story/atom-link--default)
+  - [Modal](https://charlescoqueret.github.io/ghost-design-system/?path=/story/atom-modal--default)
+  - Portal
+  - [Tooltip](https://charlescoqueret.github.io/ghost-design-system/?path=/story/atom-tooltip--default)
 - Molecules:
-  - Amount field
-  - Button
-  - Checkbox field
-  - Datepicker field
-  - Percentage field
-  - Popover
+  - [Amount field](https://charlescoqueret.github.io/ghost-design-system/?path=/story/molecule-amountfield--default)
+  - [Button](https://charlescoqueret.github.io/ghost-design-system/?path=/story/molecule-button--simple)
+  - [Checkbox field](https://charlescoqueret.github.io/ghost-design-system/?path=/story/molecule-checkboxfield--default)
+  - [Datepicker field](https://charlescoqueret.github.io/ghost-design-system/?path=/story/molecule-datepickerfield--default)
+  - [File field](https://charlescoqueret.github.io/ghost-design-system/?path=/story/molecule-filefield--default)
+  - [Percentage field](https://charlescoqueret.github.io/ghost-design-system/?path=/story/molecule-percentagefield--default)
+  - [Popover](https://charlescoqueret.github.io/ghost-design-system/?path=/story/molecule-popover--default)
+  - [Rich Text field](https://charlescoqueret.github.io/ghost-design-system/?path=/story/molecule-richtextfield--default)
   - Select field:
-    - Single
-    - Multi
-    - Autocomplete (aka Dynamic Search)
-    - Autocomplete creatable (aka Dynamic Search Creatable)
-  - Switch field
-  - Textarea field
-  - Text field
-  - Yearpicker field
+    - [Single](https://charlescoqueret.github.io/ghost-design-system/?path=/story/molecule-selectfield--default)
+    - [Multi](https://charlescoqueret.github.io/ghost-design-system/?path=/story/molecule-multiselectfield--default)
+    - [Autocomplete (aka Dynamic Search)](https://charlescoqueret.github.io/ghost-design-system/?path=/story/molecule-dynamicsearchfield--default)
+    - [Autocomplete creatable (aka Dynamic Search Creatable)](https://charlescoqueret.github.io/ghost-design-system/?path=/story/molecule-dynamicsearchcreatablefield--default)
+  - [Switch field](https://charlescoqueret.github.io/ghost-design-system/?path=/story/molecule-switchfield--default)
+  - [Textarea field](https://charlescoqueret.github.io/ghost-design-system/?path=/story/molecule-textareafield--default)
+  - [Text field](https://charlescoqueret.github.io/ghost-design-system/?path=/story/molecule-textfield--default)
+  - [YearPicker field](https://charlescoqueret.github.io/ghost-design-system/?path=/story/molecule-yearpickerfield--default)
 - Organisms:
-  - ActionBar
+  - [ActionBar](https://charlescoqueret.github.io/ghost-design-system/?path=/story/organism-actionbar--default)
   - Datatable:
-    - Editable Data Table (full editable)
-    - Line editable Data Table (edit in popup form with data validation)
-    - Line editable in place data table (edit of a line in place)
-    - Static data table
+    - [Editable Data Table (full editable)](https://charlescoqueret.github.io/ghost-design-system/?path=/story/organism-datatable-editabledatatable--default)
+    - [Line editable Data Table (editon in popup form with data validation)](https://charlescoqueret.github.io/ghost-design-system/?path=/story/organism-datatable-lineeditabledatatable--default)
+    - [Line editable in place data table (edition of a line in place)](https://charlescoqueret.github.io/ghost-design-system/?path=/story/organism-datatable-lineeditableinplacedatatable--default)
+    - [Static data table](https://charlescoqueret.github.io/ghost-design-system/?path=/story/organism-datatable-staticdatatable--default)
   - Form:
     - Form component
-    - useForm hook
-  - NavBar
-  - SideBar
+    - [useForm hook](https://charlescoqueret.github.io/ghost-design-system/?path=/story/organism-useform--default)
+  - [NavBar](https://charlescoqueret.github.io/ghost-design-system/?path=/story/organism-navbar--default)
+  - [SideBar](https://charlescoqueret.github.io/ghost-design-system/?path=/story/organism-sidebar--default)
 
 ## Usage
 
-1. In the root directory of you project, ensure you have a .npmrc file with your valid fontawesome license (you can skip this step if it is configured for your session)
+1. In the root directory of your project, ensure you have a .npmrc file with your valid fontawesome license (you can skip this step if it is configured for your session)
 2. Run the command:
 
 ```
@@ -82,7 +87,7 @@ $tertiary: $charcoal;
 
 ```{scss}
 @import 'colors.scss';
-@import '~ghost-design-system/assets/_global.scss';
+@import '~ghost-design-system/dist/assets/_global.scss';
 
 ```
 
@@ -94,8 +99,7 @@ $tertiary: $charcoal;
 
 This react components library uses the following:
 
-- [@fortawesome/fontawesome-svg-core](https://fontawesome.com/)
-- [@fortawesome/react-fontawesome](https://fontawesome.com/)
+- [@fortawesome](https://fontawesome.com/)
 - [classnames](https://github.com/JedWatson/classnames#readme)
 - [color-alpha](https://github.com/colorjs/color-alpha)
 - [color-rgba](https://github.com/colorjs/color-rgba)
@@ -105,15 +109,14 @@ This react components library uses the following:
 - [react-datepicker](https://reactdatepicker.com/)
 - [react-number-format](https://github.com/s-yadav/react-number-format#readme)
 - [react-select](https://react-select.com/)
+- [suneditor](http://suneditor.com/)
 
 Peer dependencies:
 
-- [@fortawesome/pro-light-svg-icons](https://fontawesome.com/)
-- [@fortawesome/pro-regular-svg-icons](https://fontawesome.com/)
-- [@fortawesome/pro-solid-svg-icons](https://fontawesome.com/)
-- [react ^16.8.0](https://fr.reactjs.org/)
-- [react-dom ^16.8.0](https://fr.reactjs.org/docs/react-dom.html)
-- [react-router-dom ^6.2.2](https://reactrouter.com/)
+- [@fortawesome - pro](https://fontawesome.com/)
+- [react](https://fr.reactjs.org/)
+- [react-dom](https://fr.reactjs.org/docs/react-dom.html)
+- [react-router-dom](https://reactrouter.com/)
 
 Dev dependencies:
 
@@ -122,11 +125,12 @@ Dev dependencies:
 - [Prettier](https://prettier.io/)
 - [SCSS](https://sass-lang.com/)
 - [Storybook](https://storybook.js.org/)
+- [Testing-library](https://testing-library.com/)
 - [Typescript](https://www.typescriptlang.org/)
 
 ---
 
-# To go firther
+# To go further
 
 ## Basic Folder Structure
 
@@ -251,7 +255,7 @@ Must be one of the following:
 - **fix**: A bug fix (this correlates with `PATCH` in semantic versioning).
 - **perf**: A code change that improves performance (this correlates with `PATCH` in semantic versioning).
 - **refactor**: A code change that neither fixes a bug nor adds a feature (no version changes)
-- **style**: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc) (no version changes)
+- **style**: Changes that do not affect the meaning of the code (white-space, formatting, missing semicolons, etc) (no version changes)
 - **test**: Adding missing tests or correcting existing tests (no version changes)
 - **revert**: Reverts a previous commit (this correlates with `PATCH` in semantic versioning).
 

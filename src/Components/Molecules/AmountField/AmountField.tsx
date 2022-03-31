@@ -6,7 +6,7 @@ import { GenericField, AmountInput, ThousandsGroupStyle } from '../../Atoms';
 export interface IAmountFieldProps {
   /** Allows negative values (optional, default: true) */
   allowNegative?: boolean;
-  /** REact Container ref (optional, default: undefined) */
+  /** React Container ref (optional, default: undefined) */
   containerRef?: Ref<HTMLDivElement>;
   /** For test purpose only */
   dataTestId?: string;
@@ -48,7 +48,7 @@ export interface IAmountFieldProps {
   onChange?: (value: number | undefined) => void;
   /** Placeholder value (optional, default: undefined) */
   placeholder?: string;
-  /** Prefix (optiona, default: undefined) */
+  /** Prefix (optional, default: undefined) */
   prefix?: string | undefined;
   /** Read only field (optional, default: false) */
   readOnly?: boolean;
@@ -63,7 +63,7 @@ export interface IAmountFieldProps {
 /**
  * Amount field component
  *
- * Date picker input wrapped in a generic field ( @see GenericField ).
+ * Amount picker input wrapped in a generic field ( @see GenericField ).
  *
  * Calls @param onChange for every input change.
  *
