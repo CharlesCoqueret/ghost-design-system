@@ -168,7 +168,7 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
             options={localOptions}
             mandatory={requiredFromValidation || field.mandatory}
             name={field.dataIndex.toString()}
-            onChange={(newValue: Array<string> | null | undefined) => {
+            onChange={(newValue: Array<string | number> | null | undefined) => {
               handleChange(field.dataIndex, newValue as unknown as T[keyof T]);
             }}
             inputValue={(data && (data[field.dataIndex] as unknown as Array<string> | undefined)) || undefined}
@@ -239,7 +239,7 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
             options={localOptions}
             mandatory={requiredFromValidation || field.mandatory}
             name={field.dataIndex.toString()}
-            onChange={(newValue: string | null | undefined) => {
+            onChange={(newValue: string | number | null | undefined) => {
               handleChange(field.dataIndex, newValue as unknown as T[keyof T]);
             }}
             inputValue={(data && (data[field.dataIndex] as unknown as string | undefined)) || undefined}
