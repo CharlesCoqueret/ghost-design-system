@@ -14,7 +14,7 @@ const NumberCell = <T,>(props: ICellProps<T, IColumnNumber<T>>): ReactElement =>
     editing || (extra && 'editedRowIndex' in extra ? extra.editedRowIndex === rowIndex : false);
 
   return (
-    <td className={classnames({ ellipsis: column.ellipsis })}>
+    <td className={classnames({ ellipsis: column.ellipsis })} style={{ display: column.hidden ? 'none' : undefined }}>
       <AmountField
         allowNegative={column.allowNegative}
         decimalScale={column.decimalScale}

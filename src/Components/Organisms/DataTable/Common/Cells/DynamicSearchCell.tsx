@@ -13,7 +13,7 @@ const DynamicSearchCell = <T,>(props: ICellProps<T, IColumnDynamicSearch<T>>): R
     editing || (extra && 'editedRowIndex' in extra ? extra.editedRowIndex === rowIndex : false);
 
   return (
-    <td className={classnames({ ellipsis: column.ellipsis })}>
+    <td className={classnames({ ellipsis: column.ellipsis })} style={{ display: column.hidden ? 'none' : undefined }}>
       <DynamicSearchField
         colors={column.selectColors}
         inputValue={displayValue}

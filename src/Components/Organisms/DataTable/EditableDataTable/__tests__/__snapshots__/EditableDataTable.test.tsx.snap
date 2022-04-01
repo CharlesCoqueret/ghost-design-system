@@ -246,7 +246,9 @@ Object {
                 </div>
               </div>
             </td>
-            <td>
+            <td
+              class="ellipsis"
+            >
               <div
                 class="field-group"
               >
@@ -428,7 +430,9 @@ Object {
                 </div>
               </div>
             </td>
-            <td>
+            <td
+              class="ellipsis"
+            >
               <div
                 class="field-group"
               >
@@ -853,7 +857,9 @@ Object {
               </div>
             </div>
           </td>
-          <td>
+          <td
+            class="ellipsis"
+          >
             <div
               class="field-group"
             >
@@ -1035,7 +1041,9 @@ Object {
               </div>
             </div>
           </td>
-          <td>
+          <td
+            class="ellipsis"
+          >
             <div
               class="field-group"
             >
@@ -1516,7 +1524,9 @@ Object {
                 </div>
               </div>
             </td>
-            <td>
+            <td
+              class="ellipsis"
+            >
               <div
                 class="field-group"
               >
@@ -1814,7 +1824,9 @@ Object {
                 </div>
               </div>
             </td>
-            <td>
+            <td
+              class="ellipsis"
+            >
               <div
                 class="field-group"
               >
@@ -2372,7 +2384,9 @@ Object {
               </div>
             </div>
           </td>
-          <td>
+          <td
+            class="ellipsis"
+          >
             <div
               class="field-group"
             >
@@ -2670,7 +2684,9 @@ Object {
               </div>
             </div>
           </td>
-          <td>
+          <td
+            class="ellipsis"
+          >
             <div
               class="field-group"
             >
@@ -3267,7 +3283,9 @@ Object {
                 </div>
               </div>
             </td>
-            <td>
+            <td
+              class="ellipsis"
+            >
               <div
                 class="field-group"
               >
@@ -3565,7 +3583,9 @@ Object {
                 </div>
               </div>
             </td>
-            <td>
+            <td
+              class="ellipsis"
+            >
               <div
                 class="field-group"
               >
@@ -4123,7 +4143,9 @@ Object {
               </div>
             </div>
           </td>
-          <td>
+          <td
+            class="ellipsis"
+          >
             <div
               class="field-group"
             >
@@ -4421,7 +4443,9 @@ Object {
               </div>
             </div>
           </td>
-          <td>
+          <td
+            class="ellipsis"
+          >
             <div
               class="field-group"
             >
@@ -5018,7 +5042,9 @@ Object {
                 </div>
               </div>
             </td>
-            <td>
+            <td
+              class="ellipsis"
+            >
               <div
                 class="field-group"
               >
@@ -5572,7 +5598,9 @@ Object {
               </div>
             </div>
           </td>
-          <td>
+          <td
+            class="ellipsis"
+          >
             <div
               class="field-group"
             >
@@ -6158,7 +6186,9 @@ Object {
                 </div>
               </div>
             </td>
-            <td>
+            <td
+              class="ellipsis"
+            >
               <div
                 class="field-group"
               >
@@ -6340,7 +6370,9 @@ Object {
                 </div>
               </div>
             </td>
-            <td>
+            <td
+              class="ellipsis"
+            >
               <div
                 class="field-group"
               >
@@ -6765,7 +6797,9 @@ Object {
               </div>
             </div>
           </td>
-          <td>
+          <td
+            class="ellipsis"
+          >
             <div
               class="field-group"
             >
@@ -6947,7 +6981,9 @@ Object {
               </div>
             </div>
           </td>
-          <td>
+          <td
+            class="ellipsis"
+          >
             <div
               class="field-group"
             >
@@ -7428,7 +7464,9 @@ Object {
                 </div>
               </div>
             </td>
-            <td>
+            <td
+              class="ellipsis"
+            >
               <div
                 class="field-group"
               >
@@ -7726,7 +7764,9 @@ Object {
                 </div>
               </div>
             </td>
-            <td>
+            <td
+              class="ellipsis"
+            >
               <div
                 class="field-group"
               >
@@ -8295,7 +8335,9 @@ Object {
               </div>
             </div>
           </td>
-          <td>
+          <td
+            class="ellipsis"
+          >
             <div
               class="field-group"
             >
@@ -8593,7 +8635,9 @@ Object {
               </div>
             </div>
           </td>
-          <td>
+          <td
+            class="ellipsis"
+          >
             <div
               class="field-group"
             >
@@ -9201,7 +9245,9 @@ Object {
                 </div>
               </div>
             </td>
-            <td>
+            <td
+              class="ellipsis"
+            >
               <div
                 class="field-group"
               >
@@ -9499,7 +9545,9 @@ Object {
                 </div>
               </div>
             </td>
-            <td>
+            <td
+              class="ellipsis"
+            >
               <div
                 class="field-group"
               >
@@ -10068,7 +10116,9 @@ Object {
               </div>
             </div>
           </td>
-          <td>
+          <td
+            class="ellipsis"
+          >
             <div
               class="field-group"
             >
@@ -10366,7 +10416,9 @@ Object {
               </div>
             </div>
           </td>
-          <td>
+          <td
+            class="ellipsis"
+          >
             <div
               class="field-group"
             >
@@ -10974,7 +11026,9 @@ Object {
                 </div>
               </div>
             </td>
-            <td>
+            <td
+              class="ellipsis"
+            >
               <div
                 class="field-group"
               >
@@ -11526,7 +11580,9 @@ Object {
               </div>
             </div>
           </td>
-          <td>
+          <td
+            class="ellipsis"
+          >
             <div
               class="field-group"
             >
@@ -12121,7 +12177,9 @@ Object {
                 </div>
               </div>
             </td>
-            <td>
+            <td
+              class="ellipsis"
+            >
               <div
                 class="field-group"
               >
@@ -12477,7 +12535,9 @@ Object {
               </div>
             </div>
           </td>
-          <td>
+          <td
+            class="ellipsis"
+          >
             <div
               class="field-group"
             >
@@ -12868,7 +12928,9 @@ Object {
                 </div>
               </div>
             </td>
-            <td>
+            <td
+              class="ellipsis"
+            >
               <div
                 class="field-group"
               >
@@ -13206,7 +13268,9 @@ Object {
               </div>
             </div>
           </td>
-          <td>
+          <td
+            class="ellipsis"
+          >
             <div
               class="field-group"
             >

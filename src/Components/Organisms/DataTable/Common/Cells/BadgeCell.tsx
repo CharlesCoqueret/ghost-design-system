@@ -30,7 +30,7 @@ const BadgeCell = <T,>(props: ICellProps<T, IColumnBadge<T>>): ReactElement => {
   }
 
   return (
-    <td className={classnames({ ellipsis: column.ellipsis })}>
+    <td className={classnames({ ellipsis: column.ellipsis })} style={{ display: column.hidden ? 'none' : undefined }}>
       {isCurrentlyEditedRow ? (
         <SelectField
           colors={column.selectColors}

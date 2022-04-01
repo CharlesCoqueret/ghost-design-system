@@ -13,6 +13,7 @@ const CodeCell = <T,>(props: ICellProps<T, IColumnCode<T>>): ReactElement => {
   return (
     <td
       className={classnames({ ellipsis: column.ellipsis }, 'table--cell--code')}
+      style={{ display: column.hidden ? 'none' : undefined }}
       data-testid={`${column.dataIndex}-${rowIndex}`}>
       <TextField
         dataTestId={`${column.dataIndex}-${rowIndex}`}

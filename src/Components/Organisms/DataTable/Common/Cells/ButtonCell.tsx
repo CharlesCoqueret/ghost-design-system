@@ -17,7 +17,7 @@ const ButtonCell = <T,>(props: ICellProps<T, IColumnButton<T>>): ReactElement =>
   });
 
   return (
-    <td className={classnames({ ellipsis: column.ellipsis })}>
+    <td className={classnames({ ellipsis: column.ellipsis })} style={{ display: column.hidden ? 'none' : undefined }}>
       <div className='table--cell--value--button'>
         {visibleButtons.length > DISPLAY_BUTTON_THRESHOLD ? (
           <Button

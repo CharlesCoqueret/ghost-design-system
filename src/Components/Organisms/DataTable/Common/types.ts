@@ -55,6 +55,8 @@ export interface IButtonCellProps<T> {
 interface IColumn {
   /** Enables ellipsis on the colum when it overflows (optional, default: undefined) */
   ellipsis?: boolean;
+  /** Makes the column invisible (optional, default: false) */
+  hidden?: boolean;
   /** Enables sort on the colum (optional, default: undefined) */
   sorter?: boolean;
   /** Title of the column */

@@ -19,7 +19,11 @@ const CustomCell = <T,>(props: ICellProps<T, IColumnCustom<T>>): ReactElement =>
       ? forcedValue
       : '-';
 
-  return <td className={classnames({ ellipsis: column.ellipsis })}>{displayValue}</td>;
+  return (
+    <td className={classnames({ ellipsis: column.ellipsis })} style={{ display: column.hidden ? 'none' : undefined }}>
+      {displayValue}
+    </td>
+  );
 };
 
 export default CustomCell;
