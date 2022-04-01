@@ -160,14 +160,14 @@ const LineEditableModal = <T,>(props: ILineEditableModalProps<T>): ReactElement 
       <ModalFooter>
         <Button
           color={ColorButtonEnum.SECONDARY}
-          label={extra?.localization?.cancelButton || 'Cancel'}
+          label={extra?.localization?.cancelButton ?? 'Cancel'}
           onClick={() => {
             onCancel(getData());
           }}
         />
         <Button
           color={ColorButtonEnum.PRIMARY}
-          label={extra?.localization?.submitButton || 'Submit'}
+          label={extra?.localization?.submitButton ?? 'Submit'}
           onClick={() => {
             const result = submit();
             if (!result.valid) {

@@ -59,7 +59,7 @@ const StaticDataTableHeader = <T,>(props: IStaticDataTableHeaderProps<T>): React
             <th key={`header-${index}`} style={{ width: column.width }}>
               <Tooltip
                 tooltip={
-                  column.sorter && !isEditingRow ? extra?.localization?.sortMessage || 'Click to sort' : undefined
+                  column.sorter && !isEditingRow ? extra?.localization?.sortMessage ?? 'Click to sort' : undefined
                 }
                 direction={MenuDirectionEnum.TOP}>
                 <div

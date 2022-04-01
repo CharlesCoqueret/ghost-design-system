@@ -27,9 +27,9 @@ const EditableDataTable = <T,>(props: IEditableDataTableProps<T>): ReactElement 
       : [
           ...columns.filter((column) => column.type !== ColumnType.BUTTON),
           {
-            title: extra?.localization?.actionColumn || 'Actions',
+            title: extra?.localization?.actionColumn ?? 'Actions',
             type: ColumnType.BUTTON,
-            moreActionsMessage: extra?.localization?.moreActionsMessage || 'More actions',
+            moreActionsMessage: extra?.localization?.moreActionsMessage ?? 'More actions',
             buttons: [
               {
                 hidden: (row, rowIndex) => {
@@ -40,7 +40,7 @@ const EditableDataTable = <T,>(props: IEditableDataTableProps<T>): ReactElement 
                   return true;
                 },
                 icon: ['fal', 'trash-alt'],
-                label: extra?.localization?.deleteButton || 'Delete',
+                label: extra?.localization?.deleteButton ?? 'Delete',
                 onClick: (row, rowIndex) => {
                   if (extra?.onRowDelete) {
                     extra.onRowDelete(row, rowIndex);
@@ -48,9 +48,9 @@ const EditableDataTable = <T,>(props: IEditableDataTableProps<T>): ReactElement 
                   setCurrentData((prev) => [...prev.filter((_item, index) => index !== rowIndex)]);
                 },
                 popover: {
-                  message: extra?.localization?.deletePopoverMessage || 'Delete?',
-                  cancel: extra?.localization?.deletePopoverCancel || 'Cancel',
-                  confirm: extra?.localization?.deletePopoverConfirm || 'Confirm',
+                  message: extra?.localization?.deletePopoverMessage ?? 'Delete?',
+                  cancel: extra?.localization?.deletePopoverCancel ?? 'Cancel',
+                  confirm: extra?.localization?.deletePopoverConfirm ?? 'Confirm',
                 },
                 dataTestId: 'delete',
               },
@@ -63,7 +63,7 @@ const EditableDataTable = <T,>(props: IEditableDataTableProps<T>): ReactElement 
                   return true;
                 },
                 icon: ['fal', 'arrow-to-bottom'],
-                label: extra?.localization?.downloadButton || 'Download',
+                label: extra?.localization?.downloadButton ?? 'Download',
                 onClick: (row, rowIndex) => {
                   if (extra?.onRowDownload) {
                     extra.onRowDownload(row, rowIndex);
@@ -135,7 +135,7 @@ const EditableDataTable = <T,>(props: IEditableDataTableProps<T>): ReactElement 
         <Button
           className='cui-table-new-line'
           color={ColorButtonEnum.PRIMARY}
-          label={extra?.localization?.addRow || 'Add Line'}
+          label={extra?.localization?.addRow ?? 'Add Line'}
           onClick={addNewLine}
         />
       )}
