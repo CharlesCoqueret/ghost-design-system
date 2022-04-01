@@ -48,7 +48,7 @@ const SwitchInput = (props: ISwitchInputProps): ReactElement => {
 
   return (
     <div
-      className={classnames('field', 'switch-container', fieldSize && `field-input-size-${fieldSize}`, className)}
+      className={classnames('field', 'gds-switch-container', fieldSize && `field-input-size-${fieldSize}`, className)}
       data-testid={dataTestId}>
       {options?.map((option) => {
         return (

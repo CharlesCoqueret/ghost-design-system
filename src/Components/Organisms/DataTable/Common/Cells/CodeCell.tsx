@@ -17,7 +17,7 @@ const CodeCell = <T,>(props: ICellProps<T, IColumnCode<T>>): ReactElement => {
       data-testid={`${column.dataIndex}-${rowIndex}`}>
       <TextField
         dataTestId={`${column.dataIndex}-${rowIndex}`}
-        inputClassName={classnames('typography', { ellipsis: column.ellipsis })}
+        inputClassName={classnames('gds-typography', { ellipsis: column.ellipsis })}
         inputValue={displayValue}
         name={String(column.dataIndex)}
         readOnly

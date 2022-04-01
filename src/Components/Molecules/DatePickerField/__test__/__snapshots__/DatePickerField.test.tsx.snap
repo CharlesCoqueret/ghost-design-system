@@ -2,7 +2,7 @@
 
 exports[`DatePickerField Component DatePickerField renders 1`] = `
 <div
-  className="field-group"
+  className="gds-field-group"
 >
   <div
     className="field input-date-picker-field"
@@ -38,7 +38,7 @@ exports[`DatePickerField Component DatePickerField renders 1`] = `
 
 exports[`DatePickerField Component DatePickerField renders with values in disabled highligted 1`] = `
 <div
-  className="field-group"
+  className="gds-field-group"
 >
   <div
     className="field input-date-picker-field"
@@ -74,7 +74,7 @@ exports[`DatePickerField Component DatePickerField renders with values in disabl
 
 exports[`DatePickerField Component DatePickerField renders with values in readonly 1`] = `
 <div
-  className="field-group"
+  className="gds-field-group"
 >
   <div
     className="field input-date-picker-field"
@@ -110,7 +110,7 @@ exports[`DatePickerField Component DatePickerField renders with values in readon
 
 exports[`DatePickerField Component DatePickerField renders with values with fieldSize and inline 1`] = `
 <div
-  className="field-group field-inline"
+  className="gds-field-group field-inline"
 >
   <div
     className="field input-date-picker-field field-input-size-6"

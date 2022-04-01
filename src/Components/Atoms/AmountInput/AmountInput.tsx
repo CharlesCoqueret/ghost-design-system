@@ -110,7 +110,7 @@ const AmountInput = (props: IAmountInputProps): ReactElement => {
       return (
         <div
           className={classnames(
-            'amount-field',
+            'gds-amount-field',
             'amount-field-read-only',
             { 'field-highlighted': readOnly && highlighted },
             fieldSize && `field-input-size-${fieldSize}`,
@@ -125,7 +125,7 @@ const AmountInput = (props: IAmountInputProps): ReactElement => {
       return (
         <div
           className={classnames(
-            'amount-field',
+            'gds-amount-field',
             'amount-field-read-only',
             { 'field-highlighted': readOnly && highlighted },
             fieldSize && `field-input-size-${fieldSize}`,
@@ -149,7 +149,7 @@ const AmountInput = (props: IAmountInputProps): ReactElement => {
         name={name}
         value={inputValue}
         className={classnames(
-          'amount-field',
+          'gds-amount-field',
           'amount-field-read-only',
           { 'field-highlighted': readOnly && highlighted },
           fieldSize && `field-input-size-${fieldSize}`,
@@ -178,7 +178,7 @@ const AmountInput = (props: IAmountInputProps): ReactElement => {
       allowNegative={allowNegative}
       name={name}
       className={classnames(
-        'amount-field',
+        'gds-amount-field',
         { 'amount-field-error': !readOnly && !disabled && isInError },
         fieldSize && `field-input-size-${fieldSize}`,
         className,

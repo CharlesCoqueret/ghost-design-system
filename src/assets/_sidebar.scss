@@ -1,7 +1,7 @@
 $width: 270px;
 
 // Container
-.sidebar-container {
+.gds-sidebar-container {
   align-items: center;
   box-sizing: border-box;
   display: flex;
@@ -12,7 +12,6 @@ $width: 270px;
   position: fixed;
   width: $width;
   border-right: $chalk 1px solid;
-  // clip-path: inset(0px);
 
   // Disable scrollbar
   -ms-overflow-style: none;
@@ -138,7 +137,11 @@ $width: 270px;
       }
 
       &.active {
-        background-color: rgba($primary, 0.33);
+        background-color: rgba($primary, 0.1);
+        color: $primary;
+        &:hover {
+          background-color: rgba($primary, 0.2);
+        }
         .label {
           font-weight: 800;
         }
@@ -159,7 +162,7 @@ $width: 270px;
 }
 
 // Special demo case
-.sidebar-container.unfixed {
+.gds-sidebar-container.unfixed {
   position: relative;
   height: -moz-available;
   height: -webkit-fill-available;

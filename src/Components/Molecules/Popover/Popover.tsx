@@ -42,7 +42,7 @@ const Popover = (props: PropsWithChildren<IPopoverProps>): ReactElement => {
         arrow
         anchorRef={anchorRef}
         skipOpen={skipOpen}>
-        <div className='popover-container'>{children}</div>
+        <div className='gds-popover-container'>{children}</div>
       </ControlledMenu>
     </Portal>
   );

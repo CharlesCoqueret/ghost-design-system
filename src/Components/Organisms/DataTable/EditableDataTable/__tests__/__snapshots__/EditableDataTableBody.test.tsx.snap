@@ -15,10 +15,10 @@ Object {
               data-testid="id-0"
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <div
-                  class="field input-text-field-read-only typography"
+                  class="field input-text-field-read-only gds-typography"
                 >
                   id
                 </div>
@@ -28,10 +28,10 @@ Object {
               class="ellipsis"
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <input
-                  class="field input-text-field typography ellipsis"
+                  class="field gds-input-text-field gds-typography ellipsis"
                   data-testid="name-0"
                   id="name"
                   name="name"
@@ -44,10 +44,10 @@ Object {
               class=""
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <div
-                  class="select-container input-select-field field input-select-field"
+                  class="gds-select-container input-select-field field input-select-field"
                 >
                   <div
                     class=" css-1959ul7-container"
@@ -135,10 +135,10 @@ Object {
               class=""
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <input
-                  class="amount-field"
+                  class="gds-amount-field"
                   inputmode="numeric"
                   name="price"
                   type="text"
@@ -150,10 +150,10 @@ Object {
               class=""
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <input
-                  class="amount-field"
+                  class="gds-amount-field"
                   inputmode="numeric"
                   name="parts"
                   type="text"
@@ -165,7 +165,7 @@ Object {
               class=""
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <div
                   class="field input-date-picker-field"
@@ -211,10 +211,10 @@ Object {
             data-testid="id-0"
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <div
-                class="field input-text-field-read-only typography"
+                class="field input-text-field-read-only gds-typography"
               >
                 id
               </div>
@@ -224,10 +224,10 @@ Object {
             class="ellipsis"
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <input
-                class="field input-text-field typography ellipsis"
+                class="field gds-input-text-field gds-typography ellipsis"
                 data-testid="name-0"
                 id="name"
                 name="name"
@@ -240,10 +240,10 @@ Object {
             class=""
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <div
-                class="select-container input-select-field field input-select-field"
+                class="gds-select-container input-select-field field input-select-field"
               >
                 <div
                   class=" css-1959ul7-container"
@@ -331,10 +331,10 @@ Object {
             class=""
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <input
-                class="amount-field"
+                class="gds-amount-field"
                 inputmode="numeric"
                 name="price"
                 type="text"
@@ -346,10 +346,10 @@ Object {
             class=""
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <input
-                class="amount-field"
+                class="gds-amount-field"
                 inputmode="numeric"
                 name="parts"
                 type="text"
@@ -361,7 +361,7 @@ Object {
             class=""
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <div
                 class="field input-date-picker-field"
@@ -472,10 +472,10 @@ Object {
               data-testid="id-0"
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <div
-                  class="field input-text-field-read-only typography"
+                  class="field input-text-field-read-only gds-typography"
                 >
                   id
                 </div>
@@ -485,10 +485,10 @@ Object {
               class="ellipsis"
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <input
-                  class="field input-text-field typography ellipsis"
+                  class="field gds-input-text-field gds-typography ellipsis"
                   data-testid="name-0"
                   id="name"
                   name="name"
@@ -501,10 +501,10 @@ Object {
               class=""
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <div
-                  class="select-container input-select-field field input-select-field"
+                  class="gds-select-container input-select-field field input-select-field"
                 >
                   <div
                     class=" css-1959ul7-container"
@@ -592,10 +592,10 @@ Object {
               class=""
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <input
-                  class="amount-field"
+                  class="gds-amount-field"
                   inputmode="numeric"
                   name="price"
                   type="text"
@@ -607,10 +607,10 @@ Object {
               class=""
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <input
-                  class="amount-field"
+                  class="gds-amount-field"
                   inputmode="numeric"
                   name="parts"
                   type="text"
@@ -622,7 +622,7 @@ Object {
               class=""
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <div
                   class="field input-date-picker-field"
@@ -681,10 +681,10 @@ Object {
             data-testid="id-0"
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <div
-                class="field input-text-field-read-only typography"
+                class="field input-text-field-read-only gds-typography"
               >
                 id
               </div>
@@ -694,10 +694,10 @@ Object {
             class="ellipsis"
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <input
-                class="field input-text-field typography ellipsis"
+                class="field gds-input-text-field gds-typography ellipsis"
                 data-testid="name-0"
                 id="name"
                 name="name"
@@ -710,10 +710,10 @@ Object {
             class=""
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <div
-                class="select-container input-select-field field input-select-field"
+                class="gds-select-container input-select-field field input-select-field"
               >
                 <div
                   class=" css-1959ul7-container"
@@ -801,10 +801,10 @@ Object {
             class=""
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <input
-                class="amount-field"
+                class="gds-amount-field"
                 inputmode="numeric"
                 name="price"
                 type="text"
@@ -816,10 +816,10 @@ Object {
             class=""
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <input
-                class="amount-field"
+                class="gds-amount-field"
                 inputmode="numeric"
                 name="parts"
                 type="text"
@@ -831,7 +831,7 @@ Object {
             class=""
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <div
                 class="field input-date-picker-field"

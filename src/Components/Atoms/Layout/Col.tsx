@@ -11,7 +11,7 @@ const Col = (props: PropsWithChildren<IColProps>): ReactElement => {
   const { children, className, height, style } = props;
 
   return (
-    <div className={classnames(className, 'col')} style={{ ...style, height: height }}>
+    <div className={classnames(className, 'gds-col')} style={{ ...style, height: height }}>
       {React.Children.map(children, (child) => {
         return <div>{child}</div>;
       })}

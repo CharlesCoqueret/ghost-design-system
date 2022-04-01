@@ -136,7 +136,7 @@ const LineEditableDataTable = <T,>(props: ILineEditableDataTableProps<T>): React
 
   return (
     <>
-      <table className='cui-table'>
+      <table className='gds-table'>
         <StaticDataTableHeader<T>
           columns={currentColumns}
           onSortChange={handleSortChange}
@@ -149,7 +149,7 @@ const LineEditableDataTable = <T,>(props: ILineEditableDataTableProps<T>): React
       </table>
       {extra?.canAddNewLine && extra?.canAddNewLine() && (
         <Button
-          className='cui-table-new-line'
+          className='gds-table-new-line'
           color={ColorButtonEnum.PRIMARY}
           label={extra?.localization?.addRow ?? 'Add row'}
           onClick={addNewLine}

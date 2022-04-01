@@ -6,7 +6,7 @@ Object {
   "baseElement": <body>
     <div>
       <table
-        class="cui-table"
+        class="gds-table"
       >
         <thead>
           <tr>
@@ -32,7 +32,7 @@ Object {
               </span>
               <div>
                 <div
-                  class="tooltip top"
+                  class="gds-tooltip top"
                   style="left: -99999px; top: -99999px; opacity: 0;"
                 >
                   <div
@@ -68,7 +68,7 @@ Object {
               </span>
               <div>
                 <div
-                  class="tooltip top"
+                  class="gds-tooltip top"
                   style="left: -99999px; top: -99999px; opacity: 0;"
                 >
                   <div
@@ -104,7 +104,7 @@ Object {
               </span>
               <div>
                 <div
-                  class="tooltip top"
+                  class="gds-tooltip top"
                   style="left: -99999px; top: -99999px; opacity: 0;"
                 >
                   <div
@@ -140,7 +140,7 @@ Object {
               </span>
               <div>
                 <div
-                  class="tooltip top"
+                  class="gds-tooltip top"
                   style="left: -99999px; top: -99999px; opacity: 0;"
                 >
                   <div
@@ -176,7 +176,7 @@ Object {
               </span>
               <div>
                 <div
-                  class="tooltip top"
+                  class="gds-tooltip top"
                   style="left: -99999px; top: -99999px; opacity: 0;"
                 >
                   <div
@@ -212,7 +212,7 @@ Object {
               </span>
               <div>
                 <div
-                  class="tooltip top"
+                  class="gds-tooltip top"
                   style="left: -99999px; top: -99999px; opacity: 0;"
                 >
                   <div
@@ -237,10 +237,10 @@ Object {
               data-testid="id-0"
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <div
-                  class="field input-text-field-read-only typography"
+                  class="field input-text-field-read-only gds-typography"
                 >
                   id
                 </div>
@@ -250,10 +250,10 @@ Object {
               class="ellipsis"
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <input
-                  class="field input-text-field typography ellipsis"
+                  class="field gds-input-text-field gds-typography ellipsis"
                   data-testid="name-0"
                   id="name"
                   name="name"
@@ -266,10 +266,10 @@ Object {
               class=""
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <div
-                  class="select-container input-select-field field input-select-field"
+                  class="gds-select-container input-select-field field input-select-field"
                 >
                   <div
                     class=" css-1959ul7-container"
@@ -357,10 +357,10 @@ Object {
               class=""
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <input
-                  class="amount-field"
+                  class="gds-amount-field"
                   inputmode="numeric"
                   name="price"
                   type="text"
@@ -372,10 +372,10 @@ Object {
               class=""
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <input
-                  class="amount-field"
+                  class="gds-amount-field"
                   inputmode="numeric"
                   name="parts"
                   type="text"
@@ -387,7 +387,7 @@ Object {
               class=""
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <div
                   class="field input-date-picker-field"
@@ -421,10 +421,10 @@ Object {
               data-testid="id-1"
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <div
-                  class="field input-text-field-read-only typography"
+                  class="field input-text-field-read-only gds-typography"
                 >
                   test
                 </div>
@@ -434,10 +434,10 @@ Object {
               class="ellipsis"
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <input
-                  class="field input-text-field typography ellipsis"
+                  class="field gds-input-text-field gds-typography ellipsis"
                   data-testid="name-1"
                   id="name"
                   name="name"
@@ -450,10 +450,10 @@ Object {
               class=""
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <div
-                  class="select-container input-select-field field input-select-field"
+                  class="gds-select-container input-select-field field input-select-field"
                 >
                   <div
                     class=" css-1959ul7-container"
@@ -543,10 +543,10 @@ Object {
               class=""
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <input
-                  class="amount-field"
+                  class="gds-amount-field"
                   inputmode="numeric"
                   name="price"
                   type="text"
@@ -558,10 +558,10 @@ Object {
               class=""
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <input
-                  class="amount-field"
+                  class="gds-amount-field"
                   inputmode="numeric"
                   name="parts"
                   type="text"
@@ -573,7 +573,7 @@ Object {
               class=""
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <div
                   class="field input-date-picker-field"
@@ -617,7 +617,7 @@ Object {
   </body>,
   "container": <div>
     <table
-      class="cui-table"
+      class="gds-table"
     >
       <thead>
         <tr>
@@ -643,7 +643,7 @@ Object {
             </span>
             <div>
               <div
-                class="tooltip top"
+                class="gds-tooltip top"
                 style="left: -99999px; top: -99999px; opacity: 0;"
               >
                 <div
@@ -679,7 +679,7 @@ Object {
             </span>
             <div>
               <div
-                class="tooltip top"
+                class="gds-tooltip top"
                 style="left: -99999px; top: -99999px; opacity: 0;"
               >
                 <div
@@ -715,7 +715,7 @@ Object {
             </span>
             <div>
               <div
-                class="tooltip top"
+                class="gds-tooltip top"
                 style="left: -99999px; top: -99999px; opacity: 0;"
               >
                 <div
@@ -751,7 +751,7 @@ Object {
             </span>
             <div>
               <div
-                class="tooltip top"
+                class="gds-tooltip top"
                 style="left: -99999px; top: -99999px; opacity: 0;"
               >
                 <div
@@ -787,7 +787,7 @@ Object {
             </span>
             <div>
               <div
-                class="tooltip top"
+                class="gds-tooltip top"
                 style="left: -99999px; top: -99999px; opacity: 0;"
               >
                 <div
@@ -823,7 +823,7 @@ Object {
             </span>
             <div>
               <div
-                class="tooltip top"
+                class="gds-tooltip top"
                 style="left: -99999px; top: -99999px; opacity: 0;"
               >
                 <div
@@ -848,10 +848,10 @@ Object {
             data-testid="id-0"
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <div
-                class="field input-text-field-read-only typography"
+                class="field input-text-field-read-only gds-typography"
               >
                 id
               </div>
@@ -861,10 +861,10 @@ Object {
             class="ellipsis"
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <input
-                class="field input-text-field typography ellipsis"
+                class="field gds-input-text-field gds-typography ellipsis"
                 data-testid="name-0"
                 id="name"
                 name="name"
@@ -877,10 +877,10 @@ Object {
             class=""
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <div
-                class="select-container input-select-field field input-select-field"
+                class="gds-select-container input-select-field field input-select-field"
               >
                 <div
                   class=" css-1959ul7-container"
@@ -968,10 +968,10 @@ Object {
             class=""
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <input
-                class="amount-field"
+                class="gds-amount-field"
                 inputmode="numeric"
                 name="price"
                 type="text"
@@ -983,10 +983,10 @@ Object {
             class=""
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <input
-                class="amount-field"
+                class="gds-amount-field"
                 inputmode="numeric"
                 name="parts"
                 type="text"
@@ -998,7 +998,7 @@ Object {
             class=""
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <div
                 class="field input-date-picker-field"
@@ -1032,10 +1032,10 @@ Object {
             data-testid="id-1"
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <div
-                class="field input-text-field-read-only typography"
+                class="field input-text-field-read-only gds-typography"
               >
                 test
               </div>
@@ -1045,10 +1045,10 @@ Object {
             class="ellipsis"
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <input
-                class="field input-text-field typography ellipsis"
+                class="field gds-input-text-field gds-typography ellipsis"
                 data-testid="name-1"
                 id="name"
                 name="name"
@@ -1061,10 +1061,10 @@ Object {
             class=""
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <div
-                class="select-container input-select-field field input-select-field"
+                class="gds-select-container input-select-field field input-select-field"
               >
                 <div
                   class=" css-1959ul7-container"
@@ -1154,10 +1154,10 @@ Object {
             class=""
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <input
-                class="amount-field"
+                class="gds-amount-field"
                 inputmode="numeric"
                 name="price"
                 type="text"
@@ -1169,10 +1169,10 @@ Object {
             class=""
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <input
-                class="amount-field"
+                class="gds-amount-field"
                 inputmode="numeric"
                 name="parts"
                 type="text"
@@ -1184,7 +1184,7 @@ Object {
             class=""
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <div
                 class="field input-date-picker-field"
@@ -1273,7 +1273,7 @@ Object {
   "baseElement": <body>
     <div>
       <table
-        class="cui-table"
+        class="gds-table"
       >
         <thead>
           <tr>
@@ -1299,7 +1299,7 @@ Object {
               </span>
               <div>
                 <div
-                  class="tooltip top"
+                  class="gds-tooltip top"
                   style="left: -99999px; top: -99999px; opacity: 0;"
                 >
                   <div
@@ -1335,7 +1335,7 @@ Object {
               </span>
               <div>
                 <div
-                  class="tooltip top"
+                  class="gds-tooltip top"
                   style="left: -99999px; top: -99999px; opacity: 0;"
                 >
                   <div
@@ -1371,7 +1371,7 @@ Object {
               </span>
               <div>
                 <div
-                  class="tooltip top"
+                  class="gds-tooltip top"
                   style="left: -99999px; top: -99999px; opacity: 0;"
                 >
                   <div
@@ -1407,7 +1407,7 @@ Object {
               </span>
               <div>
                 <div
-                  class="tooltip top"
+                  class="gds-tooltip top"
                   style="left: -99999px; top: -99999px; opacity: 0;"
                 >
                   <div
@@ -1443,7 +1443,7 @@ Object {
               </span>
               <div>
                 <div
-                  class="tooltip top"
+                  class="gds-tooltip top"
                   style="left: -99999px; top: -99999px; opacity: 0;"
                 >
                   <div
@@ -1479,7 +1479,7 @@ Object {
               </span>
               <div>
                 <div
-                  class="tooltip top"
+                  class="gds-tooltip top"
                   style="left: -99999px; top: -99999px; opacity: 0;"
                 >
                   <div
@@ -1515,10 +1515,10 @@ Object {
               data-testid="id-0"
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <div
-                  class="field input-text-field-read-only typography"
+                  class="field input-text-field-read-only gds-typography"
                 >
                   id
                 </div>
@@ -1528,10 +1528,10 @@ Object {
               class="ellipsis"
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <input
-                  class="field input-text-field typography ellipsis"
+                  class="field gds-input-text-field gds-typography ellipsis"
                   data-testid="name-0"
                   id="name"
                   name="name"
@@ -1544,10 +1544,10 @@ Object {
               class=""
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <div
-                  class="select-container input-select-field field input-select-field"
+                  class="gds-select-container input-select-field field input-select-field"
                 >
                   <div
                     class=" css-1959ul7-container"
@@ -1635,10 +1635,10 @@ Object {
               class=""
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <input
-                  class="amount-field"
+                  class="gds-amount-field"
                   inputmode="numeric"
                   name="price"
                   type="text"
@@ -1650,10 +1650,10 @@ Object {
               class=""
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <input
-                  class="amount-field"
+                  class="gds-amount-field"
                   inputmode="numeric"
                   name="parts"
                   type="text"
@@ -1665,7 +1665,7 @@ Object {
               class=""
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <div
                   class="field input-date-picker-field"
@@ -1698,7 +1698,7 @@ Object {
               >
                 <span>
                   <button
-                    class="button-content"
+                    class="gds-button-content"
                     color="reversed"
                     data-testid="delete"
                     type="button"
@@ -1715,7 +1715,7 @@ Object {
                 </span>
                 <div>
                   <div
-                    class="tooltip bottom"
+                    class="gds-tooltip bottom"
                     style="left: -99999px; top: -99999px; opacity: 0;"
                   >
                     <div
@@ -1733,7 +1733,7 @@ Object {
                     ControlleMenu
                     closed
                     <div
-                      class="popover-container"
+                      class="gds-popover-container"
                     >
                       <div
                         class="popover-title"
@@ -1744,7 +1744,7 @@ Object {
                         class="popover-buttons"
                       >
                         <button
-                          class="button-content"
+                          class="gds-button-content"
                           color="secondary"
                           data-testid="cancel"
                           type="button"
@@ -1756,7 +1756,7 @@ Object {
                           </div>
                         </button>
                         <button
-                          class="button-content"
+                          class="gds-button-content"
                           color="primary"
                           data-testid="confirm"
                           type="button"
@@ -1774,7 +1774,7 @@ Object {
                 </div>
                 <span>
                   <button
-                    class="button-content"
+                    class="gds-button-content"
                     color="reversed"
                     data-testid="download"
                     type="button"
@@ -1791,7 +1791,7 @@ Object {
                 </span>
                 <div>
                   <div
-                    class="tooltip bottom"
+                    class="gds-tooltip bottom"
                     style="left: 0px; top: 0px; opacity: 1; max-width: 256px;"
                   >
                     <div
@@ -1815,10 +1815,10 @@ Object {
               data-testid="id-1"
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <div
-                  class="field input-text-field-read-only typography"
+                  class="field input-text-field-read-only gds-typography"
                 >
                   test
                 </div>
@@ -1828,10 +1828,10 @@ Object {
               class="ellipsis"
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <input
-                  class="field input-text-field typography ellipsis"
+                  class="field gds-input-text-field gds-typography ellipsis"
                   data-testid="name-1"
                   id="name"
                   name="name"
@@ -1844,10 +1844,10 @@ Object {
               class=""
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <div
-                  class="select-container input-select-field field input-select-field"
+                  class="gds-select-container input-select-field field input-select-field"
                 >
                   <div
                     class=" css-1959ul7-container"
@@ -1937,10 +1937,10 @@ Object {
               class=""
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <input
-                  class="amount-field"
+                  class="gds-amount-field"
                   inputmode="numeric"
                   name="price"
                   type="text"
@@ -1952,10 +1952,10 @@ Object {
               class=""
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <input
-                  class="amount-field"
+                  class="gds-amount-field"
                   inputmode="numeric"
                   name="parts"
                   type="text"
@@ -1967,7 +1967,7 @@ Object {
               class=""
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <div
                   class="field input-date-picker-field"
@@ -2000,7 +2000,7 @@ Object {
               >
                 <span>
                   <button
-                    class="button-content"
+                    class="gds-button-content"
                     color="reversed"
                     data-testid="delete"
                     type="button"
@@ -2017,7 +2017,7 @@ Object {
                 </span>
                 <div>
                   <div
-                    class="tooltip bottom"
+                    class="gds-tooltip bottom"
                     style="left: -99999px; top: -99999px; opacity: 0;"
                   >
                     <div
@@ -2035,7 +2035,7 @@ Object {
                     ControlleMenu
                     closed
                     <div
-                      class="popover-container"
+                      class="gds-popover-container"
                     >
                       <div
                         class="popover-title"
@@ -2046,7 +2046,7 @@ Object {
                         class="popover-buttons"
                       >
                         <button
-                          class="button-content"
+                          class="gds-button-content"
                           color="secondary"
                           data-testid="cancel"
                           type="button"
@@ -2058,7 +2058,7 @@ Object {
                           </div>
                         </button>
                         <button
-                          class="button-content"
+                          class="gds-button-content"
                           color="primary"
                           data-testid="confirm"
                           type="button"
@@ -2076,7 +2076,7 @@ Object {
                 </div>
                 <span>
                   <button
-                    class="button-content"
+                    class="gds-button-content"
                     color="reversed"
                     data-testid="download"
                     type="button"
@@ -2093,7 +2093,7 @@ Object {
                 </span>
                 <div>
                   <div
-                    class="tooltip bottom"
+                    class="gds-tooltip bottom"
                     style="left: -99999px; top: -99999px; opacity: 0;"
                   >
                     <div
@@ -2133,7 +2133,7 @@ Object {
   </body>,
   "container": <div>
     <table
-      class="cui-table"
+      class="gds-table"
     >
       <thead>
         <tr>
@@ -2159,7 +2159,7 @@ Object {
             </span>
             <div>
               <div
-                class="tooltip top"
+                class="gds-tooltip top"
                 style="left: -99999px; top: -99999px; opacity: 0;"
               >
                 <div
@@ -2195,7 +2195,7 @@ Object {
             </span>
             <div>
               <div
-                class="tooltip top"
+                class="gds-tooltip top"
                 style="left: -99999px; top: -99999px; opacity: 0;"
               >
                 <div
@@ -2231,7 +2231,7 @@ Object {
             </span>
             <div>
               <div
-                class="tooltip top"
+                class="gds-tooltip top"
                 style="left: -99999px; top: -99999px; opacity: 0;"
               >
                 <div
@@ -2267,7 +2267,7 @@ Object {
             </span>
             <div>
               <div
-                class="tooltip top"
+                class="gds-tooltip top"
                 style="left: -99999px; top: -99999px; opacity: 0;"
               >
                 <div
@@ -2303,7 +2303,7 @@ Object {
             </span>
             <div>
               <div
-                class="tooltip top"
+                class="gds-tooltip top"
                 style="left: -99999px; top: -99999px; opacity: 0;"
               >
                 <div
@@ -2339,7 +2339,7 @@ Object {
             </span>
             <div>
               <div
-                class="tooltip top"
+                class="gds-tooltip top"
                 style="left: -99999px; top: -99999px; opacity: 0;"
               >
                 <div
@@ -2375,10 +2375,10 @@ Object {
             data-testid="id-0"
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <div
-                class="field input-text-field-read-only typography"
+                class="field input-text-field-read-only gds-typography"
               >
                 id
               </div>
@@ -2388,10 +2388,10 @@ Object {
             class="ellipsis"
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <input
-                class="field input-text-field typography ellipsis"
+                class="field gds-input-text-field gds-typography ellipsis"
                 data-testid="name-0"
                 id="name"
                 name="name"
@@ -2404,10 +2404,10 @@ Object {
             class=""
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <div
-                class="select-container input-select-field field input-select-field"
+                class="gds-select-container input-select-field field input-select-field"
               >
                 <div
                   class=" css-1959ul7-container"
@@ -2495,10 +2495,10 @@ Object {
             class=""
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <input
-                class="amount-field"
+                class="gds-amount-field"
                 inputmode="numeric"
                 name="price"
                 type="text"
@@ -2510,10 +2510,10 @@ Object {
             class=""
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <input
-                class="amount-field"
+                class="gds-amount-field"
                 inputmode="numeric"
                 name="parts"
                 type="text"
@@ -2525,7 +2525,7 @@ Object {
             class=""
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <div
                 class="field input-date-picker-field"
@@ -2558,7 +2558,7 @@ Object {
             >
               <span>
                 <button
-                  class="button-content"
+                  class="gds-button-content"
                   color="reversed"
                   data-testid="delete"
                   type="button"
@@ -2575,7 +2575,7 @@ Object {
               </span>
               <div>
                 <div
-                  class="tooltip bottom"
+                  class="gds-tooltip bottom"
                   style="left: -99999px; top: -99999px; opacity: 0;"
                 >
                   <div
@@ -2593,7 +2593,7 @@ Object {
                   ControlleMenu
                   closed
                   <div
-                    class="popover-container"
+                    class="gds-popover-container"
                   >
                     <div
                       class="popover-title"
@@ -2604,7 +2604,7 @@ Object {
                       class="popover-buttons"
                     >
                       <button
-                        class="button-content"
+                        class="gds-button-content"
                         color="secondary"
                         data-testid="cancel"
                         type="button"
@@ -2616,7 +2616,7 @@ Object {
                         </div>
                       </button>
                       <button
-                        class="button-content"
+                        class="gds-button-content"
                         color="primary"
                         data-testid="confirm"
                         type="button"
@@ -2634,7 +2634,7 @@ Object {
               </div>
               <span>
                 <button
-                  class="button-content"
+                  class="gds-button-content"
                   color="reversed"
                   data-testid="download"
                   type="button"
@@ -2651,7 +2651,7 @@ Object {
               </span>
               <div>
                 <div
-                  class="tooltip bottom"
+                  class="gds-tooltip bottom"
                   style="left: 0px; top: 0px; opacity: 1; max-width: 256px;"
                 >
                   <div
@@ -2675,10 +2675,10 @@ Object {
             data-testid="id-1"
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <div
-                class="field input-text-field-read-only typography"
+                class="field input-text-field-read-only gds-typography"
               >
                 test
               </div>
@@ -2688,10 +2688,10 @@ Object {
             class="ellipsis"
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <input
-                class="field input-text-field typography ellipsis"
+                class="field gds-input-text-field gds-typography ellipsis"
                 data-testid="name-1"
                 id="name"
                 name="name"
@@ -2704,10 +2704,10 @@ Object {
             class=""
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <div
-                class="select-container input-select-field field input-select-field"
+                class="gds-select-container input-select-field field input-select-field"
               >
                 <div
                   class=" css-1959ul7-container"
@@ -2797,10 +2797,10 @@ Object {
             class=""
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <input
-                class="amount-field"
+                class="gds-amount-field"
                 inputmode="numeric"
                 name="price"
                 type="text"
@@ -2812,10 +2812,10 @@ Object {
             class=""
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <input
-                class="amount-field"
+                class="gds-amount-field"
                 inputmode="numeric"
                 name="parts"
                 type="text"
@@ -2827,7 +2827,7 @@ Object {
             class=""
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <div
                 class="field input-date-picker-field"
@@ -2860,7 +2860,7 @@ Object {
             >
               <span>
                 <button
-                  class="button-content"
+                  class="gds-button-content"
                   color="reversed"
                   data-testid="delete"
                   type="button"
@@ -2877,7 +2877,7 @@ Object {
               </span>
               <div>
                 <div
-                  class="tooltip bottom"
+                  class="gds-tooltip bottom"
                   style="left: -99999px; top: -99999px; opacity: 0;"
                 >
                   <div
@@ -2895,7 +2895,7 @@ Object {
                   ControlleMenu
                   closed
                   <div
-                    class="popover-container"
+                    class="gds-popover-container"
                   >
                     <div
                       class="popover-title"
@@ -2906,7 +2906,7 @@ Object {
                       class="popover-buttons"
                     >
                       <button
-                        class="button-content"
+                        class="gds-button-content"
                         color="secondary"
                         data-testid="cancel"
                         type="button"
@@ -2918,7 +2918,7 @@ Object {
                         </div>
                       </button>
                       <button
-                        class="button-content"
+                        class="gds-button-content"
                         color="primary"
                         data-testid="confirm"
                         type="button"
@@ -2936,7 +2936,7 @@ Object {
               </div>
               <span>
                 <button
-                  class="button-content"
+                  class="gds-button-content"
                   color="reversed"
                   data-testid="download"
                   type="button"
@@ -2953,7 +2953,7 @@ Object {
               </span>
               <div>
                 <div
-                  class="tooltip bottom"
+                  class="gds-tooltip bottom"
                   style="left: -99999px; top: -99999px; opacity: 0;"
                 >
                   <div
@@ -3032,7 +3032,7 @@ Object {
   "baseElement": <body>
     <div>
       <table
-        class="cui-table"
+        class="gds-table"
       >
         <thead>
           <tr>
@@ -3058,7 +3058,7 @@ Object {
               </span>
               <div>
                 <div
-                  class="tooltip top"
+                  class="gds-tooltip top"
                   style="left: -99999px; top: -99999px; opacity: 0;"
                 >
                   <div
@@ -3094,7 +3094,7 @@ Object {
               </span>
               <div>
                 <div
-                  class="tooltip top"
+                  class="gds-tooltip top"
                   style="left: -99999px; top: -99999px; opacity: 0;"
                 >
                   <div
@@ -3130,7 +3130,7 @@ Object {
               </span>
               <div>
                 <div
-                  class="tooltip top"
+                  class="gds-tooltip top"
                   style="left: -99999px; top: -99999px; opacity: 0;"
                 >
                   <div
@@ -3166,7 +3166,7 @@ Object {
               </span>
               <div>
                 <div
-                  class="tooltip top"
+                  class="gds-tooltip top"
                   style="left: -99999px; top: -99999px; opacity: 0;"
                 >
                   <div
@@ -3202,7 +3202,7 @@ Object {
               </span>
               <div>
                 <div
-                  class="tooltip top"
+                  class="gds-tooltip top"
                   style="left: -99999px; top: -99999px; opacity: 0;"
                 >
                   <div
@@ -3238,7 +3238,7 @@ Object {
               </span>
               <div>
                 <div
-                  class="tooltip top"
+                  class="gds-tooltip top"
                   style="left: -99999px; top: -99999px; opacity: 0;"
                 >
                   <div
@@ -3274,10 +3274,10 @@ Object {
               data-testid="id-0"
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <div
-                  class="field input-text-field-read-only typography"
+                  class="field input-text-field-read-only gds-typography"
                 >
                   id
                 </div>
@@ -3287,10 +3287,10 @@ Object {
               class="ellipsis"
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <input
-                  class="field input-text-field typography ellipsis"
+                  class="field gds-input-text-field gds-typography ellipsis"
                   data-testid="name-0"
                   id="name"
                   name="name"
@@ -3303,10 +3303,10 @@ Object {
               class=""
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <div
-                  class="select-container input-select-field field input-select-field"
+                  class="gds-select-container input-select-field field input-select-field"
                 >
                   <div
                     class=" css-1959ul7-container"
@@ -3394,10 +3394,10 @@ Object {
               class=""
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <input
-                  class="amount-field"
+                  class="gds-amount-field"
                   inputmode="numeric"
                   name="price"
                   type="text"
@@ -3409,10 +3409,10 @@ Object {
               class=""
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <input
-                  class="amount-field"
+                  class="gds-amount-field"
                   inputmode="numeric"
                   name="parts"
                   type="text"
@@ -3424,7 +3424,7 @@ Object {
               class=""
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <div
                   class="field input-date-picker-field"
@@ -3457,7 +3457,7 @@ Object {
               >
                 <span>
                   <button
-                    class="button-content"
+                    class="gds-button-content"
                     color="reversed"
                     data-testid="delete"
                     type="button"
@@ -3474,7 +3474,7 @@ Object {
                 </span>
                 <div>
                   <div
-                    class="tooltip bottom"
+                    class="gds-tooltip bottom"
                     style="left: 0px; top: 0px; opacity: 1; max-width: 256px;"
                   >
                     <div
@@ -3492,7 +3492,7 @@ Object {
                     ControlleMenu
                     open
                     <div
-                      class="popover-container"
+                      class="gds-popover-container"
                     >
                       <div
                         class="popover-title"
@@ -3503,7 +3503,7 @@ Object {
                         class="popover-buttons"
                       >
                         <button
-                          class="button-content"
+                          class="gds-button-content"
                           color="secondary"
                           data-testid="cancel"
                           type="button"
@@ -3515,7 +3515,7 @@ Object {
                           </div>
                         </button>
                         <button
-                          class="button-content"
+                          class="gds-button-content"
                           color="primary"
                           data-testid="confirm"
                           type="button"
@@ -3533,7 +3533,7 @@ Object {
                 </div>
                 <span>
                   <button
-                    class="button-content"
+                    class="gds-button-content"
                     color="reversed"
                     data-testid="download"
                     type="button"
@@ -3550,7 +3550,7 @@ Object {
                 </span>
                 <div>
                   <div
-                    class="tooltip bottom"
+                    class="gds-tooltip bottom"
                     style="left: 0px; top: 0px; opacity: 1; max-width: 256px;"
                   >
                     <div
@@ -3574,10 +3574,10 @@ Object {
               data-testid="id-1"
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <div
-                  class="field input-text-field-read-only typography"
+                  class="field input-text-field-read-only gds-typography"
                 >
                   test
                 </div>
@@ -3587,10 +3587,10 @@ Object {
               class="ellipsis"
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <input
-                  class="field input-text-field typography ellipsis"
+                  class="field gds-input-text-field gds-typography ellipsis"
                   data-testid="name-1"
                   id="name"
                   name="name"
@@ -3603,10 +3603,10 @@ Object {
               class=""
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <div
-                  class="select-container input-select-field field input-select-field"
+                  class="gds-select-container input-select-field field input-select-field"
                 >
                   <div
                     class=" css-1959ul7-container"
@@ -3696,10 +3696,10 @@ Object {
               class=""
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <input
-                  class="amount-field"
+                  class="gds-amount-field"
                   inputmode="numeric"
                   name="price"
                   type="text"
@@ -3711,10 +3711,10 @@ Object {
               class=""
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <input
-                  class="amount-field"
+                  class="gds-amount-field"
                   inputmode="numeric"
                   name="parts"
                   type="text"
@@ -3726,7 +3726,7 @@ Object {
               class=""
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <div
                   class="field input-date-picker-field"
@@ -3759,7 +3759,7 @@ Object {
               >
                 <span>
                   <button
-                    class="button-content"
+                    class="gds-button-content"
                     color="reversed"
                     data-testid="delete"
                     type="button"
@@ -3776,7 +3776,7 @@ Object {
                 </span>
                 <div>
                   <div
-                    class="tooltip bottom"
+                    class="gds-tooltip bottom"
                     style="left: -99999px; top: -99999px; opacity: 0;"
                   >
                     <div
@@ -3794,7 +3794,7 @@ Object {
                     ControlleMenu
                     closed
                     <div
-                      class="popover-container"
+                      class="gds-popover-container"
                     >
                       <div
                         class="popover-title"
@@ -3805,7 +3805,7 @@ Object {
                         class="popover-buttons"
                       >
                         <button
-                          class="button-content"
+                          class="gds-button-content"
                           color="secondary"
                           data-testid="cancel"
                           type="button"
@@ -3817,7 +3817,7 @@ Object {
                           </div>
                         </button>
                         <button
-                          class="button-content"
+                          class="gds-button-content"
                           color="primary"
                           data-testid="confirm"
                           type="button"
@@ -3835,7 +3835,7 @@ Object {
                 </div>
                 <span>
                   <button
-                    class="button-content"
+                    class="gds-button-content"
                     color="reversed"
                     data-testid="download"
                     type="button"
@@ -3852,7 +3852,7 @@ Object {
                 </span>
                 <div>
                   <div
-                    class="tooltip bottom"
+                    class="gds-tooltip bottom"
                     style="left: -99999px; top: -99999px; opacity: 0;"
                   >
                     <div
@@ -3892,7 +3892,7 @@ Object {
   </body>,
   "container": <div>
     <table
-      class="cui-table"
+      class="gds-table"
     >
       <thead>
         <tr>
@@ -3918,7 +3918,7 @@ Object {
             </span>
             <div>
               <div
-                class="tooltip top"
+                class="gds-tooltip top"
                 style="left: -99999px; top: -99999px; opacity: 0;"
               >
                 <div
@@ -3954,7 +3954,7 @@ Object {
             </span>
             <div>
               <div
-                class="tooltip top"
+                class="gds-tooltip top"
                 style="left: -99999px; top: -99999px; opacity: 0;"
               >
                 <div
@@ -3990,7 +3990,7 @@ Object {
             </span>
             <div>
               <div
-                class="tooltip top"
+                class="gds-tooltip top"
                 style="left: -99999px; top: -99999px; opacity: 0;"
               >
                 <div
@@ -4026,7 +4026,7 @@ Object {
             </span>
             <div>
               <div
-                class="tooltip top"
+                class="gds-tooltip top"
                 style="left: -99999px; top: -99999px; opacity: 0;"
               >
                 <div
@@ -4062,7 +4062,7 @@ Object {
             </span>
             <div>
               <div
-                class="tooltip top"
+                class="gds-tooltip top"
                 style="left: -99999px; top: -99999px; opacity: 0;"
               >
                 <div
@@ -4098,7 +4098,7 @@ Object {
             </span>
             <div>
               <div
-                class="tooltip top"
+                class="gds-tooltip top"
                 style="left: -99999px; top: -99999px; opacity: 0;"
               >
                 <div
@@ -4134,10 +4134,10 @@ Object {
             data-testid="id-0"
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <div
-                class="field input-text-field-read-only typography"
+                class="field input-text-field-read-only gds-typography"
               >
                 id
               </div>
@@ -4147,10 +4147,10 @@ Object {
             class="ellipsis"
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <input
-                class="field input-text-field typography ellipsis"
+                class="field gds-input-text-field gds-typography ellipsis"
                 data-testid="name-0"
                 id="name"
                 name="name"
@@ -4163,10 +4163,10 @@ Object {
             class=""
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <div
-                class="select-container input-select-field field input-select-field"
+                class="gds-select-container input-select-field field input-select-field"
               >
                 <div
                   class=" css-1959ul7-container"
@@ -4254,10 +4254,10 @@ Object {
             class=""
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <input
-                class="amount-field"
+                class="gds-amount-field"
                 inputmode="numeric"
                 name="price"
                 type="text"
@@ -4269,10 +4269,10 @@ Object {
             class=""
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <input
-                class="amount-field"
+                class="gds-amount-field"
                 inputmode="numeric"
                 name="parts"
                 type="text"
@@ -4284,7 +4284,7 @@ Object {
             class=""
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <div
                 class="field input-date-picker-field"
@@ -4317,7 +4317,7 @@ Object {
             >
               <span>
                 <button
-                  class="button-content"
+                  class="gds-button-content"
                   color="reversed"
                   data-testid="delete"
                   type="button"
@@ -4334,7 +4334,7 @@ Object {
               </span>
               <div>
                 <div
-                  class="tooltip bottom"
+                  class="gds-tooltip bottom"
                   style="left: 0px; top: 0px; opacity: 1; max-width: 256px;"
                 >
                   <div
@@ -4352,7 +4352,7 @@ Object {
                   ControlleMenu
                   open
                   <div
-                    class="popover-container"
+                    class="gds-popover-container"
                   >
                     <div
                       class="popover-title"
@@ -4363,7 +4363,7 @@ Object {
                       class="popover-buttons"
                     >
                       <button
-                        class="button-content"
+                        class="gds-button-content"
                         color="secondary"
                         data-testid="cancel"
                         type="button"
@@ -4375,7 +4375,7 @@ Object {
                         </div>
                       </button>
                       <button
-                        class="button-content"
+                        class="gds-button-content"
                         color="primary"
                         data-testid="confirm"
                         type="button"
@@ -4393,7 +4393,7 @@ Object {
               </div>
               <span>
                 <button
-                  class="button-content"
+                  class="gds-button-content"
                   color="reversed"
                   data-testid="download"
                   type="button"
@@ -4410,7 +4410,7 @@ Object {
               </span>
               <div>
                 <div
-                  class="tooltip bottom"
+                  class="gds-tooltip bottom"
                   style="left: 0px; top: 0px; opacity: 1; max-width: 256px;"
                 >
                   <div
@@ -4434,10 +4434,10 @@ Object {
             data-testid="id-1"
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <div
-                class="field input-text-field-read-only typography"
+                class="field input-text-field-read-only gds-typography"
               >
                 test
               </div>
@@ -4447,10 +4447,10 @@ Object {
             class="ellipsis"
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <input
-                class="field input-text-field typography ellipsis"
+                class="field gds-input-text-field gds-typography ellipsis"
                 data-testid="name-1"
                 id="name"
                 name="name"
@@ -4463,10 +4463,10 @@ Object {
             class=""
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <div
-                class="select-container input-select-field field input-select-field"
+                class="gds-select-container input-select-field field input-select-field"
               >
                 <div
                   class=" css-1959ul7-container"
@@ -4556,10 +4556,10 @@ Object {
             class=""
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <input
-                class="amount-field"
+                class="gds-amount-field"
                 inputmode="numeric"
                 name="price"
                 type="text"
@@ -4571,10 +4571,10 @@ Object {
             class=""
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <input
-                class="amount-field"
+                class="gds-amount-field"
                 inputmode="numeric"
                 name="parts"
                 type="text"
@@ -4586,7 +4586,7 @@ Object {
             class=""
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <div
                 class="field input-date-picker-field"
@@ -4619,7 +4619,7 @@ Object {
             >
               <span>
                 <button
-                  class="button-content"
+                  class="gds-button-content"
                   color="reversed"
                   data-testid="delete"
                   type="button"
@@ -4636,7 +4636,7 @@ Object {
               </span>
               <div>
                 <div
-                  class="tooltip bottom"
+                  class="gds-tooltip bottom"
                   style="left: -99999px; top: -99999px; opacity: 0;"
                 >
                   <div
@@ -4654,7 +4654,7 @@ Object {
                   ControlleMenu
                   closed
                   <div
-                    class="popover-container"
+                    class="gds-popover-container"
                   >
                     <div
                       class="popover-title"
@@ -4665,7 +4665,7 @@ Object {
                       class="popover-buttons"
                     >
                       <button
-                        class="button-content"
+                        class="gds-button-content"
                         color="secondary"
                         data-testid="cancel"
                         type="button"
@@ -4677,7 +4677,7 @@ Object {
                         </div>
                       </button>
                       <button
-                        class="button-content"
+                        class="gds-button-content"
                         color="primary"
                         data-testid="confirm"
                         type="button"
@@ -4695,7 +4695,7 @@ Object {
               </div>
               <span>
                 <button
-                  class="button-content"
+                  class="gds-button-content"
                   color="reversed"
                   data-testid="download"
                   type="button"
@@ -4712,7 +4712,7 @@ Object {
               </span>
               <div>
                 <div
-                  class="tooltip bottom"
+                  class="gds-tooltip bottom"
                   style="left: -99999px; top: -99999px; opacity: 0;"
                 >
                   <div
@@ -4791,7 +4791,7 @@ Object {
   "baseElement": <body>
     <div>
       <table
-        class="cui-table"
+        class="gds-table"
       >
         <thead>
           <tr>
@@ -4817,7 +4817,7 @@ Object {
               </span>
               <div>
                 <div
-                  class="tooltip top"
+                  class="gds-tooltip top"
                   style="left: -99999px; top: -99999px; opacity: 0;"
                 >
                   <div
@@ -4853,7 +4853,7 @@ Object {
               </span>
               <div>
                 <div
-                  class="tooltip top"
+                  class="gds-tooltip top"
                   style="left: -99999px; top: -99999px; opacity: 0;"
                 >
                   <div
@@ -4889,7 +4889,7 @@ Object {
               </span>
               <div>
                 <div
-                  class="tooltip top"
+                  class="gds-tooltip top"
                   style="left: -99999px; top: -99999px; opacity: 0;"
                 >
                   <div
@@ -4925,7 +4925,7 @@ Object {
               </span>
               <div>
                 <div
-                  class="tooltip top"
+                  class="gds-tooltip top"
                   style="left: -99999px; top: -99999px; opacity: 0;"
                 >
                   <div
@@ -4961,7 +4961,7 @@ Object {
               </span>
               <div>
                 <div
-                  class="tooltip top"
+                  class="gds-tooltip top"
                   style="left: -99999px; top: -99999px; opacity: 0;"
                 >
                   <div
@@ -4997,7 +4997,7 @@ Object {
               </span>
               <div>
                 <div
-                  class="tooltip top"
+                  class="gds-tooltip top"
                   style="left: -99999px; top: -99999px; opacity: 0;"
                 >
                   <div
@@ -5033,10 +5033,10 @@ Object {
               data-testid="id-0"
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <div
-                  class="field input-text-field-read-only typography"
+                  class="field input-text-field-read-only gds-typography"
                 >
                   test
                 </div>
@@ -5046,10 +5046,10 @@ Object {
               class="ellipsis"
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <input
-                  class="field input-text-field typography ellipsis"
+                  class="field gds-input-text-field gds-typography ellipsis"
                   data-testid="name-0"
                   id="name"
                   name="name"
@@ -5062,10 +5062,10 @@ Object {
               class=""
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <div
-                  class="select-container input-select-field field input-select-field"
+                  class="gds-select-container input-select-field field input-select-field"
                 >
                   <div
                     class=" css-1959ul7-container"
@@ -5155,10 +5155,10 @@ Object {
               class=""
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <input
-                  class="amount-field"
+                  class="gds-amount-field"
                   inputmode="numeric"
                   name="price"
                   type="text"
@@ -5170,10 +5170,10 @@ Object {
               class=""
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <input
-                  class="amount-field"
+                  class="gds-amount-field"
                   inputmode="numeric"
                   name="parts"
                   type="text"
@@ -5185,7 +5185,7 @@ Object {
               class=""
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <div
                   class="field input-date-picker-field"
@@ -5218,7 +5218,7 @@ Object {
               >
                 <span>
                   <button
-                    class="button-content"
+                    class="gds-button-content"
                     color="reversed"
                     data-testid="delete"
                     type="button"
@@ -5235,7 +5235,7 @@ Object {
                 </span>
                 <div>
                   <div
-                    class="tooltip bottom"
+                    class="gds-tooltip bottom"
                     style="left: 0px; top: 0px; opacity: 1; max-width: 256px;"
                   >
                     <div
@@ -5253,7 +5253,7 @@ Object {
                     ControlleMenu
                     closed
                     <div
-                      class="popover-container"
+                      class="gds-popover-container"
                     >
                       <div
                         class="popover-title"
@@ -5264,7 +5264,7 @@ Object {
                         class="popover-buttons"
                       >
                         <button
-                          class="button-content"
+                          class="gds-button-content"
                           color="secondary"
                           data-testid="cancel"
                           type="button"
@@ -5276,7 +5276,7 @@ Object {
                           </div>
                         </button>
                         <button
-                          class="button-content"
+                          class="gds-button-content"
                           color="primary"
                           data-testid="confirm"
                           type="button"
@@ -5294,7 +5294,7 @@ Object {
                 </div>
                 <span>
                   <button
-                    class="button-content"
+                    class="gds-button-content"
                     color="reversed"
                     data-testid="download"
                     type="button"
@@ -5311,7 +5311,7 @@ Object {
                 </span>
                 <div>
                   <div
-                    class="tooltip bottom"
+                    class="gds-tooltip bottom"
                     style="left: 0px; top: 0px; opacity: 1; max-width: 256px;"
                   >
                     <div
@@ -5347,7 +5347,7 @@ Object {
   </body>,
   "container": <div>
     <table
-      class="cui-table"
+      class="gds-table"
     >
       <thead>
         <tr>
@@ -5373,7 +5373,7 @@ Object {
             </span>
             <div>
               <div
-                class="tooltip top"
+                class="gds-tooltip top"
                 style="left: -99999px; top: -99999px; opacity: 0;"
               >
                 <div
@@ -5409,7 +5409,7 @@ Object {
             </span>
             <div>
               <div
-                class="tooltip top"
+                class="gds-tooltip top"
                 style="left: -99999px; top: -99999px; opacity: 0;"
               >
                 <div
@@ -5445,7 +5445,7 @@ Object {
             </span>
             <div>
               <div
-                class="tooltip top"
+                class="gds-tooltip top"
                 style="left: -99999px; top: -99999px; opacity: 0;"
               >
                 <div
@@ -5481,7 +5481,7 @@ Object {
             </span>
             <div>
               <div
-                class="tooltip top"
+                class="gds-tooltip top"
                 style="left: -99999px; top: -99999px; opacity: 0;"
               >
                 <div
@@ -5517,7 +5517,7 @@ Object {
             </span>
             <div>
               <div
-                class="tooltip top"
+                class="gds-tooltip top"
                 style="left: -99999px; top: -99999px; opacity: 0;"
               >
                 <div
@@ -5553,7 +5553,7 @@ Object {
             </span>
             <div>
               <div
-                class="tooltip top"
+                class="gds-tooltip top"
                 style="left: -99999px; top: -99999px; opacity: 0;"
               >
                 <div
@@ -5589,10 +5589,10 @@ Object {
             data-testid="id-0"
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <div
-                class="field input-text-field-read-only typography"
+                class="field input-text-field-read-only gds-typography"
               >
                 test
               </div>
@@ -5602,10 +5602,10 @@ Object {
             class="ellipsis"
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <input
-                class="field input-text-field typography ellipsis"
+                class="field gds-input-text-field gds-typography ellipsis"
                 data-testid="name-0"
                 id="name"
                 name="name"
@@ -5618,10 +5618,10 @@ Object {
             class=""
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <div
-                class="select-container input-select-field field input-select-field"
+                class="gds-select-container input-select-field field input-select-field"
               >
                 <div
                   class=" css-1959ul7-container"
@@ -5711,10 +5711,10 @@ Object {
             class=""
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <input
-                class="amount-field"
+                class="gds-amount-field"
                 inputmode="numeric"
                 name="price"
                 type="text"
@@ -5726,10 +5726,10 @@ Object {
             class=""
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <input
-                class="amount-field"
+                class="gds-amount-field"
                 inputmode="numeric"
                 name="parts"
                 type="text"
@@ -5741,7 +5741,7 @@ Object {
             class=""
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <div
                 class="field input-date-picker-field"
@@ -5774,7 +5774,7 @@ Object {
             >
               <span>
                 <button
-                  class="button-content"
+                  class="gds-button-content"
                   color="reversed"
                   data-testid="delete"
                   type="button"
@@ -5791,7 +5791,7 @@ Object {
               </span>
               <div>
                 <div
-                  class="tooltip bottom"
+                  class="gds-tooltip bottom"
                   style="left: 0px; top: 0px; opacity: 1; max-width: 256px;"
                 >
                   <div
@@ -5809,7 +5809,7 @@ Object {
                   ControlleMenu
                   closed
                   <div
-                    class="popover-container"
+                    class="gds-popover-container"
                   >
                     <div
                       class="popover-title"
@@ -5820,7 +5820,7 @@ Object {
                       class="popover-buttons"
                     >
                       <button
-                        class="button-content"
+                        class="gds-button-content"
                         color="secondary"
                         data-testid="cancel"
                         type="button"
@@ -5832,7 +5832,7 @@ Object {
                         </div>
                       </button>
                       <button
-                        class="button-content"
+                        class="gds-button-content"
                         color="primary"
                         data-testid="confirm"
                         type="button"
@@ -5850,7 +5850,7 @@ Object {
               </div>
               <span>
                 <button
-                  class="button-content"
+                  class="gds-button-content"
                   color="reversed"
                   data-testid="download"
                   type="button"
@@ -5867,7 +5867,7 @@ Object {
               </span>
               <div>
                 <div
-                  class="tooltip bottom"
+                  class="gds-tooltip bottom"
                   style="left: 0px; top: 0px; opacity: 1; max-width: 256px;"
                 >
                   <div
@@ -5946,7 +5946,7 @@ Object {
   "baseElement": <body>
     <div>
       <table
-        class="cui-table"
+        class="gds-table"
       >
         <thead>
           <tr>
@@ -5972,7 +5972,7 @@ Object {
               </span>
               <div>
                 <div
-                  class="tooltip top"
+                  class="gds-tooltip top"
                   style="left: -99999px; top: -99999px; opacity: 0;"
                 >
                   <div
@@ -6008,7 +6008,7 @@ Object {
               </span>
               <div>
                 <div
-                  class="tooltip top"
+                  class="gds-tooltip top"
                   style="left: -99999px; top: -99999px; opacity: 0;"
                 >
                   <div
@@ -6044,7 +6044,7 @@ Object {
               </span>
               <div>
                 <div
-                  class="tooltip top"
+                  class="gds-tooltip top"
                   style="left: -99999px; top: -99999px; opacity: 0;"
                 >
                   <div
@@ -6080,7 +6080,7 @@ Object {
               </span>
               <div>
                 <div
-                  class="tooltip top"
+                  class="gds-tooltip top"
                   style="left: -99999px; top: -99999px; opacity: 0;"
                 >
                   <div
@@ -6116,7 +6116,7 @@ Object {
               </span>
               <div>
                 <div
-                  class="tooltip top"
+                  class="gds-tooltip top"
                   style="left: -99999px; top: -99999px; opacity: 0;"
                 >
                   <div
@@ -6152,7 +6152,7 @@ Object {
               </span>
               <div>
                 <div
-                  class="tooltip top"
+                  class="gds-tooltip top"
                   style="left: -99999px; top: -99999px; opacity: 0;"
                 >
                   <div
@@ -6177,10 +6177,10 @@ Object {
               data-testid="id-0"
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <div
-                  class="field input-text-field-read-only typography"
+                  class="field input-text-field-read-only gds-typography"
                 >
                   id
                 </div>
@@ -6190,10 +6190,10 @@ Object {
               class="ellipsis"
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <input
-                  class="field input-text-field typography ellipsis"
+                  class="field gds-input-text-field gds-typography ellipsis"
                   data-testid="name-0"
                   id="name"
                   name="name"
@@ -6206,10 +6206,10 @@ Object {
               class=""
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <div
-                  class="select-container input-select-field field input-select-field"
+                  class="gds-select-container input-select-field field input-select-field"
                 >
                   <div
                     class=" css-1959ul7-container"
@@ -6297,10 +6297,10 @@ Object {
               class=""
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <input
-                  class="amount-field"
+                  class="gds-amount-field"
                   inputmode="numeric"
                   name="price"
                   type="text"
@@ -6312,10 +6312,10 @@ Object {
               class=""
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <input
-                  class="amount-field"
+                  class="gds-amount-field"
                   inputmode="numeric"
                   name="parts"
                   type="text"
@@ -6327,7 +6327,7 @@ Object {
               class=""
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <div
                   class="field input-date-picker-field"
@@ -6361,10 +6361,10 @@ Object {
               data-testid="id-1"
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <div
-                  class="field input-text-field-read-only typography"
+                  class="field input-text-field-read-only gds-typography"
                 >
                   test
                 </div>
@@ -6374,10 +6374,10 @@ Object {
               class="ellipsis"
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <input
-                  class="field input-text-field typography ellipsis"
+                  class="field gds-input-text-field gds-typography ellipsis"
                   data-testid="name-1"
                   id="name"
                   name="name"
@@ -6390,10 +6390,10 @@ Object {
               class=""
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <div
-                  class="select-container input-select-field field input-select-field"
+                  class="gds-select-container input-select-field field input-select-field"
                 >
                   <div
                     class=" css-1959ul7-container"
@@ -6483,10 +6483,10 @@ Object {
               class=""
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <input
-                  class="amount-field"
+                  class="gds-amount-field"
                   inputmode="numeric"
                   name="price"
                   type="text"
@@ -6498,10 +6498,10 @@ Object {
               class=""
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <input
-                  class="amount-field"
+                  class="gds-amount-field"
                   inputmode="numeric"
                   name="parts"
                   type="text"
@@ -6513,7 +6513,7 @@ Object {
               class=""
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <div
                   class="field input-date-picker-field"
@@ -6557,7 +6557,7 @@ Object {
   </body>,
   "container": <div>
     <table
-      class="cui-table"
+      class="gds-table"
     >
       <thead>
         <tr>
@@ -6583,7 +6583,7 @@ Object {
             </span>
             <div>
               <div
-                class="tooltip top"
+                class="gds-tooltip top"
                 style="left: -99999px; top: -99999px; opacity: 0;"
               >
                 <div
@@ -6619,7 +6619,7 @@ Object {
             </span>
             <div>
               <div
-                class="tooltip top"
+                class="gds-tooltip top"
                 style="left: -99999px; top: -99999px; opacity: 0;"
               >
                 <div
@@ -6655,7 +6655,7 @@ Object {
             </span>
             <div>
               <div
-                class="tooltip top"
+                class="gds-tooltip top"
                 style="left: -99999px; top: -99999px; opacity: 0;"
               >
                 <div
@@ -6691,7 +6691,7 @@ Object {
             </span>
             <div>
               <div
-                class="tooltip top"
+                class="gds-tooltip top"
                 style="left: -99999px; top: -99999px; opacity: 0;"
               >
                 <div
@@ -6727,7 +6727,7 @@ Object {
             </span>
             <div>
               <div
-                class="tooltip top"
+                class="gds-tooltip top"
                 style="left: -99999px; top: -99999px; opacity: 0;"
               >
                 <div
@@ -6763,7 +6763,7 @@ Object {
             </span>
             <div>
               <div
-                class="tooltip top"
+                class="gds-tooltip top"
                 style="left: -99999px; top: -99999px; opacity: 0;"
               >
                 <div
@@ -6788,10 +6788,10 @@ Object {
             data-testid="id-0"
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <div
-                class="field input-text-field-read-only typography"
+                class="field input-text-field-read-only gds-typography"
               >
                 id
               </div>
@@ -6801,10 +6801,10 @@ Object {
             class="ellipsis"
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <input
-                class="field input-text-field typography ellipsis"
+                class="field gds-input-text-field gds-typography ellipsis"
                 data-testid="name-0"
                 id="name"
                 name="name"
@@ -6817,10 +6817,10 @@ Object {
             class=""
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <div
-                class="select-container input-select-field field input-select-field"
+                class="gds-select-container input-select-field field input-select-field"
               >
                 <div
                   class=" css-1959ul7-container"
@@ -6908,10 +6908,10 @@ Object {
             class=""
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <input
-                class="amount-field"
+                class="gds-amount-field"
                 inputmode="numeric"
                 name="price"
                 type="text"
@@ -6923,10 +6923,10 @@ Object {
             class=""
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <input
-                class="amount-field"
+                class="gds-amount-field"
                 inputmode="numeric"
                 name="parts"
                 type="text"
@@ -6938,7 +6938,7 @@ Object {
             class=""
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <div
                 class="field input-date-picker-field"
@@ -6972,10 +6972,10 @@ Object {
             data-testid="id-1"
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <div
-                class="field input-text-field-read-only typography"
+                class="field input-text-field-read-only gds-typography"
               >
                 test
               </div>
@@ -6985,10 +6985,10 @@ Object {
             class="ellipsis"
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <input
-                class="field input-text-field typography ellipsis"
+                class="field gds-input-text-field gds-typography ellipsis"
                 data-testid="name-1"
                 id="name"
                 name="name"
@@ -7001,10 +7001,10 @@ Object {
             class=""
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <div
-                class="select-container input-select-field field input-select-field"
+                class="gds-select-container input-select-field field input-select-field"
               >
                 <div
                   class=" css-1959ul7-container"
@@ -7094,10 +7094,10 @@ Object {
             class=""
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <input
-                class="amount-field"
+                class="gds-amount-field"
                 inputmode="numeric"
                 name="price"
                 type="text"
@@ -7109,10 +7109,10 @@ Object {
             class=""
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <input
-                class="amount-field"
+                class="gds-amount-field"
                 inputmode="numeric"
                 name="parts"
                 type="text"
@@ -7124,7 +7124,7 @@ Object {
             class=""
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <div
                 class="field input-date-picker-field"
@@ -7213,7 +7213,7 @@ Object {
   "baseElement": <body>
     <div>
       <table
-        class="cui-table"
+        class="gds-table"
       >
         <thead>
           <tr>
@@ -7239,7 +7239,7 @@ Object {
               </span>
               <div>
                 <div
-                  class="tooltip top"
+                  class="gds-tooltip top"
                   style="left: -99999px; top: -99999px; opacity: 0;"
                 >
                   <div
@@ -7275,7 +7275,7 @@ Object {
               </span>
               <div>
                 <div
-                  class="tooltip top"
+                  class="gds-tooltip top"
                   style="left: -99999px; top: -99999px; opacity: 0;"
                 >
                   <div
@@ -7311,7 +7311,7 @@ Object {
               </span>
               <div>
                 <div
-                  class="tooltip top"
+                  class="gds-tooltip top"
                   style="left: -99999px; top: -99999px; opacity: 0;"
                 >
                   <div
@@ -7347,7 +7347,7 @@ Object {
               </span>
               <div>
                 <div
-                  class="tooltip top"
+                  class="gds-tooltip top"
                   style="left: -99999px; top: -99999px; opacity: 0;"
                 >
                   <div
@@ -7383,7 +7383,7 @@ Object {
               </span>
               <div>
                 <div
-                  class="tooltip top"
+                  class="gds-tooltip top"
                   style="left: -99999px; top: -99999px; opacity: 0;"
                 >
                   <div
@@ -7419,7 +7419,7 @@ Object {
               </span>
               <div>
                 <div
-                  class="tooltip top"
+                  class="gds-tooltip top"
                   style="left: -99999px; top: -99999px; opacity: 0;"
                 >
                   <div
@@ -7455,10 +7455,10 @@ Object {
               data-testid="id-0"
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <div
-                  class="field input-text-field-read-only typography"
+                  class="field input-text-field-read-only gds-typography"
                 >
                   id
                 </div>
@@ -7468,10 +7468,10 @@ Object {
               class="ellipsis"
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <input
-                  class="field input-text-field typography ellipsis"
+                  class="field gds-input-text-field gds-typography ellipsis"
                   data-testid="name-0"
                   id="name"
                   name="name"
@@ -7484,10 +7484,10 @@ Object {
               class=""
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <div
-                  class="select-container input-select-field field input-select-field"
+                  class="gds-select-container input-select-field field input-select-field"
                 >
                   <div
                     class=" css-1959ul7-container"
@@ -7575,10 +7575,10 @@ Object {
               class=""
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <input
-                  class="amount-field"
+                  class="gds-amount-field"
                   inputmode="numeric"
                   name="price"
                   type="text"
@@ -7590,10 +7590,10 @@ Object {
               class=""
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <input
-                  class="amount-field"
+                  class="gds-amount-field"
                   inputmode="numeric"
                   name="parts"
                   type="text"
@@ -7605,7 +7605,7 @@ Object {
               class=""
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <div
                   class="field input-date-picker-field"
@@ -7638,7 +7638,7 @@ Object {
               >
                 <span>
                   <button
-                    class="button-content"
+                    class="gds-button-content"
                     color="reversed"
                     data-testid="delete"
                     type="button"
@@ -7655,7 +7655,7 @@ Object {
                 </span>
                 <div>
                   <div
-                    class="tooltip bottom"
+                    class="gds-tooltip bottom"
                     style="left: -99999px; top: -99999px; opacity: 0;"
                   >
                     <div
@@ -7673,7 +7673,7 @@ Object {
                     ControlleMenu
                     closed
                     <div
-                      class="popover-container"
+                      class="gds-popover-container"
                     >
                       <div
                         class="popover-title"
@@ -7684,7 +7684,7 @@ Object {
                         class="popover-buttons"
                       >
                         <button
-                          class="button-content"
+                          class="gds-button-content"
                           color="secondary"
                           data-testid="cancel"
                           type="button"
@@ -7696,7 +7696,7 @@ Object {
                           </div>
                         </button>
                         <button
-                          class="button-content"
+                          class="gds-button-content"
                           color="primary"
                           data-testid="confirm"
                           type="button"
@@ -7714,7 +7714,7 @@ Object {
                 </div>
                 <span>
                   <button
-                    class="button-content"
+                    class="gds-button-content"
                     color="reversed"
                     data-testid="download"
                     type="button"
@@ -7731,7 +7731,7 @@ Object {
                 </span>
                 <div>
                   <div
-                    class="tooltip bottom"
+                    class="gds-tooltip bottom"
                     style="left: -99999px; top: -99999px; opacity: 0;"
                   >
                     <div
@@ -7755,10 +7755,10 @@ Object {
               data-testid="id-1"
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <div
-                  class="field input-text-field-read-only typography"
+                  class="field input-text-field-read-only gds-typography"
                 >
                   test
                 </div>
@@ -7768,10 +7768,10 @@ Object {
               class="ellipsis"
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <input
-                  class="field input-text-field typography ellipsis"
+                  class="field gds-input-text-field gds-typography ellipsis"
                   data-testid="name-1"
                   id="name"
                   name="name"
@@ -7784,10 +7784,10 @@ Object {
               class=""
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <div
-                  class="select-container input-select-field field input-select-field"
+                  class="gds-select-container input-select-field field input-select-field"
                 >
                   <div
                     class=" css-1959ul7-container"
@@ -7877,10 +7877,10 @@ Object {
               class=""
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <input
-                  class="amount-field"
+                  class="gds-amount-field"
                   inputmode="numeric"
                   name="price"
                   type="text"
@@ -7892,10 +7892,10 @@ Object {
               class=""
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <input
-                  class="amount-field"
+                  class="gds-amount-field"
                   inputmode="numeric"
                   name="parts"
                   type="text"
@@ -7907,7 +7907,7 @@ Object {
               class=""
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <div
                   class="field input-date-picker-field"
@@ -7940,7 +7940,7 @@ Object {
               >
                 <span>
                   <button
-                    class="button-content"
+                    class="gds-button-content"
                     color="reversed"
                     data-testid="delete"
                     type="button"
@@ -7957,7 +7957,7 @@ Object {
                 </span>
                 <div>
                   <div
-                    class="tooltip bottom"
+                    class="gds-tooltip bottom"
                     style="left: -99999px; top: -99999px; opacity: 0;"
                   >
                     <div
@@ -7975,7 +7975,7 @@ Object {
                     ControlleMenu
                     closed
                     <div
-                      class="popover-container"
+                      class="gds-popover-container"
                     >
                       <div
                         class="popover-title"
@@ -7986,7 +7986,7 @@ Object {
                         class="popover-buttons"
                       >
                         <button
-                          class="button-content"
+                          class="gds-button-content"
                           color="secondary"
                           data-testid="cancel"
                           type="button"
@@ -7998,7 +7998,7 @@ Object {
                           </div>
                         </button>
                         <button
-                          class="button-content"
+                          class="gds-button-content"
                           color="primary"
                           data-testid="confirm"
                           type="button"
@@ -8016,7 +8016,7 @@ Object {
                 </div>
                 <span>
                   <button
-                    class="button-content"
+                    class="gds-button-content"
                     color="reversed"
                     data-testid="download"
                     type="button"
@@ -8033,7 +8033,7 @@ Object {
                 </span>
                 <div>
                   <div
-                    class="tooltip bottom"
+                    class="gds-tooltip bottom"
                     style="left: -99999px; top: -99999px; opacity: 0;"
                   >
                     <div
@@ -8052,7 +8052,7 @@ Object {
         </tbody>
       </table>
       <button
-        class="button-content cui-table-new-line"
+        class="gds-button-content gds-table-new-line"
         color="primary"
         type="button"
       >
@@ -8084,7 +8084,7 @@ Object {
   </body>,
   "container": <div>
     <table
-      class="cui-table"
+      class="gds-table"
     >
       <thead>
         <tr>
@@ -8110,7 +8110,7 @@ Object {
             </span>
             <div>
               <div
-                class="tooltip top"
+                class="gds-tooltip top"
                 style="left: -99999px; top: -99999px; opacity: 0;"
               >
                 <div
@@ -8146,7 +8146,7 @@ Object {
             </span>
             <div>
               <div
-                class="tooltip top"
+                class="gds-tooltip top"
                 style="left: -99999px; top: -99999px; opacity: 0;"
               >
                 <div
@@ -8182,7 +8182,7 @@ Object {
             </span>
             <div>
               <div
-                class="tooltip top"
+                class="gds-tooltip top"
                 style="left: -99999px; top: -99999px; opacity: 0;"
               >
                 <div
@@ -8218,7 +8218,7 @@ Object {
             </span>
             <div>
               <div
-                class="tooltip top"
+                class="gds-tooltip top"
                 style="left: -99999px; top: -99999px; opacity: 0;"
               >
                 <div
@@ -8254,7 +8254,7 @@ Object {
             </span>
             <div>
               <div
-                class="tooltip top"
+                class="gds-tooltip top"
                 style="left: -99999px; top: -99999px; opacity: 0;"
               >
                 <div
@@ -8290,7 +8290,7 @@ Object {
             </span>
             <div>
               <div
-                class="tooltip top"
+                class="gds-tooltip top"
                 style="left: -99999px; top: -99999px; opacity: 0;"
               >
                 <div
@@ -8326,10 +8326,10 @@ Object {
             data-testid="id-0"
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <div
-                class="field input-text-field-read-only typography"
+                class="field input-text-field-read-only gds-typography"
               >
                 id
               </div>
@@ -8339,10 +8339,10 @@ Object {
             class="ellipsis"
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <input
-                class="field input-text-field typography ellipsis"
+                class="field gds-input-text-field gds-typography ellipsis"
                 data-testid="name-0"
                 id="name"
                 name="name"
@@ -8355,10 +8355,10 @@ Object {
             class=""
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <div
-                class="select-container input-select-field field input-select-field"
+                class="gds-select-container input-select-field field input-select-field"
               >
                 <div
                   class=" css-1959ul7-container"
@@ -8446,10 +8446,10 @@ Object {
             class=""
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <input
-                class="amount-field"
+                class="gds-amount-field"
                 inputmode="numeric"
                 name="price"
                 type="text"
@@ -8461,10 +8461,10 @@ Object {
             class=""
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <input
-                class="amount-field"
+                class="gds-amount-field"
                 inputmode="numeric"
                 name="parts"
                 type="text"
@@ -8476,7 +8476,7 @@ Object {
             class=""
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <div
                 class="field input-date-picker-field"
@@ -8509,7 +8509,7 @@ Object {
             >
               <span>
                 <button
-                  class="button-content"
+                  class="gds-button-content"
                   color="reversed"
                   data-testid="delete"
                   type="button"
@@ -8526,7 +8526,7 @@ Object {
               </span>
               <div>
                 <div
-                  class="tooltip bottom"
+                  class="gds-tooltip bottom"
                   style="left: -99999px; top: -99999px; opacity: 0;"
                 >
                   <div
@@ -8544,7 +8544,7 @@ Object {
                   ControlleMenu
                   closed
                   <div
-                    class="popover-container"
+                    class="gds-popover-container"
                   >
                     <div
                       class="popover-title"
@@ -8555,7 +8555,7 @@ Object {
                       class="popover-buttons"
                     >
                       <button
-                        class="button-content"
+                        class="gds-button-content"
                         color="secondary"
                         data-testid="cancel"
                         type="button"
@@ -8567,7 +8567,7 @@ Object {
                         </div>
                       </button>
                       <button
-                        class="button-content"
+                        class="gds-button-content"
                         color="primary"
                         data-testid="confirm"
                         type="button"
@@ -8585,7 +8585,7 @@ Object {
               </div>
               <span>
                 <button
-                  class="button-content"
+                  class="gds-button-content"
                   color="reversed"
                   data-testid="download"
                   type="button"
@@ -8602,7 +8602,7 @@ Object {
               </span>
               <div>
                 <div
-                  class="tooltip bottom"
+                  class="gds-tooltip bottom"
                   style="left: -99999px; top: -99999px; opacity: 0;"
                 >
                   <div
@@ -8626,10 +8626,10 @@ Object {
             data-testid="id-1"
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <div
-                class="field input-text-field-read-only typography"
+                class="field input-text-field-read-only gds-typography"
               >
                 test
               </div>
@@ -8639,10 +8639,10 @@ Object {
             class="ellipsis"
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <input
-                class="field input-text-field typography ellipsis"
+                class="field gds-input-text-field gds-typography ellipsis"
                 data-testid="name-1"
                 id="name"
                 name="name"
@@ -8655,10 +8655,10 @@ Object {
             class=""
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <div
-                class="select-container input-select-field field input-select-field"
+                class="gds-select-container input-select-field field input-select-field"
               >
                 <div
                   class=" css-1959ul7-container"
@@ -8748,10 +8748,10 @@ Object {
             class=""
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <input
-                class="amount-field"
+                class="gds-amount-field"
                 inputmode="numeric"
                 name="price"
                 type="text"
@@ -8763,10 +8763,10 @@ Object {
             class=""
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <input
-                class="amount-field"
+                class="gds-amount-field"
                 inputmode="numeric"
                 name="parts"
                 type="text"
@@ -8778,7 +8778,7 @@ Object {
             class=""
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <div
                 class="field input-date-picker-field"
@@ -8811,7 +8811,7 @@ Object {
             >
               <span>
                 <button
-                  class="button-content"
+                  class="gds-button-content"
                   color="reversed"
                   data-testid="delete"
                   type="button"
@@ -8828,7 +8828,7 @@ Object {
               </span>
               <div>
                 <div
-                  class="tooltip bottom"
+                  class="gds-tooltip bottom"
                   style="left: -99999px; top: -99999px; opacity: 0;"
                 >
                   <div
@@ -8846,7 +8846,7 @@ Object {
                   ControlleMenu
                   closed
                   <div
-                    class="popover-container"
+                    class="gds-popover-container"
                   >
                     <div
                       class="popover-title"
@@ -8857,7 +8857,7 @@ Object {
                       class="popover-buttons"
                     >
                       <button
-                        class="button-content"
+                        class="gds-button-content"
                         color="secondary"
                         data-testid="cancel"
                         type="button"
@@ -8869,7 +8869,7 @@ Object {
                         </div>
                       </button>
                       <button
-                        class="button-content"
+                        class="gds-button-content"
                         color="primary"
                         data-testid="confirm"
                         type="button"
@@ -8887,7 +8887,7 @@ Object {
               </div>
               <span>
                 <button
-                  class="button-content"
+                  class="gds-button-content"
                   color="reversed"
                   data-testid="download"
                   type="button"
@@ -8904,7 +8904,7 @@ Object {
               </span>
               <div>
                 <div
-                  class="tooltip bottom"
+                  class="gds-tooltip bottom"
                   style="left: -99999px; top: -99999px; opacity: 0;"
                 >
                   <div
@@ -8923,7 +8923,7 @@ Object {
       </tbody>
     </table>
     <button
-      class="button-content cui-table-new-line"
+      class="gds-button-content gds-table-new-line"
       color="primary"
       type="button"
     >
@@ -8994,7 +8994,7 @@ Object {
   "baseElement": <body>
     <div>
       <table
-        class="cui-table"
+        class="gds-table"
       >
         <thead>
           <tr>
@@ -9020,7 +9020,7 @@ Object {
               </span>
               <div>
                 <div
-                  class="tooltip top"
+                  class="gds-tooltip top"
                   style="left: -99999px; top: -99999px; opacity: 0;"
                 >
                   <div
@@ -9056,7 +9056,7 @@ Object {
               </span>
               <div>
                 <div
-                  class="tooltip top"
+                  class="gds-tooltip top"
                   style="left: -99999px; top: -99999px; opacity: 0;"
                 >
                   <div
@@ -9092,7 +9092,7 @@ Object {
               </span>
               <div>
                 <div
-                  class="tooltip top"
+                  class="gds-tooltip top"
                   style="left: -99999px; top: -99999px; opacity: 0;"
                 >
                   <div
@@ -9128,7 +9128,7 @@ Object {
               </span>
               <div>
                 <div
-                  class="tooltip top"
+                  class="gds-tooltip top"
                   style="left: -99999px; top: -99999px; opacity: 0;"
                 >
                   <div
@@ -9164,7 +9164,7 @@ Object {
               </span>
               <div>
                 <div
-                  class="tooltip top"
+                  class="gds-tooltip top"
                   style="left: -99999px; top: -99999px; opacity: 0;"
                 >
                   <div
@@ -9200,7 +9200,7 @@ Object {
               </span>
               <div>
                 <div
-                  class="tooltip top"
+                  class="gds-tooltip top"
                   style="left: -99999px; top: -99999px; opacity: 0;"
                 >
                   <div
@@ -9236,10 +9236,10 @@ Object {
               data-testid="id-0"
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <div
-                  class="field input-text-field-read-only typography"
+                  class="field input-text-field-read-only gds-typography"
                 >
                   id
                 </div>
@@ -9249,10 +9249,10 @@ Object {
               class="ellipsis"
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <input
-                  class="field input-text-field typography ellipsis"
+                  class="field gds-input-text-field gds-typography ellipsis"
                   data-testid="name-0"
                   id="name"
                   name="name"
@@ -9265,10 +9265,10 @@ Object {
               class=""
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <div
-                  class="select-container input-select-field field input-select-field"
+                  class="gds-select-container input-select-field field input-select-field"
                 >
                   <div
                     class=" css-1959ul7-container"
@@ -9356,10 +9356,10 @@ Object {
               class=""
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <input
-                  class="amount-field"
+                  class="gds-amount-field"
                   inputmode="numeric"
                   name="price"
                   type="text"
@@ -9371,10 +9371,10 @@ Object {
               class=""
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <input
-                  class="amount-field"
+                  class="gds-amount-field"
                   inputmode="numeric"
                   name="parts"
                   type="text"
@@ -9386,7 +9386,7 @@ Object {
               class=""
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <div
                   class="field input-date-picker-field"
@@ -9419,7 +9419,7 @@ Object {
               >
                 <span>
                   <button
-                    class="button-content"
+                    class="gds-button-content"
                     color="reversed"
                     data-testid="delete"
                     type="button"
@@ -9436,7 +9436,7 @@ Object {
                 </span>
                 <div>
                   <div
-                    class="tooltip bottom"
+                    class="gds-tooltip bottom"
                     style="left: -99999px; top: -99999px; opacity: 0;"
                   >
                     <div
@@ -9454,7 +9454,7 @@ Object {
                     ControlleMenu
                     closed
                     <div
-                      class="popover-container"
+                      class="gds-popover-container"
                     >
                       <div
                         class="popover-title"
@@ -9465,7 +9465,7 @@ Object {
                         class="popover-buttons"
                       >
                         <button
-                          class="button-content"
+                          class="gds-button-content"
                           color="secondary"
                           data-testid="cancel"
                           type="button"
@@ -9477,7 +9477,7 @@ Object {
                           </div>
                         </button>
                         <button
-                          class="button-content"
+                          class="gds-button-content"
                           color="primary"
                           data-testid="confirm"
                           type="button"
@@ -9495,7 +9495,7 @@ Object {
                 </div>
                 <span>
                   <button
-                    class="button-content"
+                    class="gds-button-content"
                     color="reversed"
                     data-testid="download"
                     type="button"
@@ -9512,7 +9512,7 @@ Object {
                 </span>
                 <div>
                   <div
-                    class="tooltip bottom"
+                    class="gds-tooltip bottom"
                     style="left: -99999px; top: -99999px; opacity: 0;"
                   >
                     <div
@@ -9536,10 +9536,10 @@ Object {
               data-testid="id-1"
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <div
-                  class="field input-text-field-read-only typography"
+                  class="field input-text-field-read-only gds-typography"
                 >
                   test
                 </div>
@@ -9549,10 +9549,10 @@ Object {
               class="ellipsis"
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <input
-                  class="field input-text-field typography ellipsis"
+                  class="field gds-input-text-field gds-typography ellipsis"
                   data-testid="name-1"
                   id="name"
                   name="name"
@@ -9565,10 +9565,10 @@ Object {
               class=""
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <div
-                  class="select-container input-select-field field input-select-field"
+                  class="gds-select-container input-select-field field input-select-field"
                 >
                   <div
                     class=" css-1959ul7-container"
@@ -9658,10 +9658,10 @@ Object {
               class=""
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <input
-                  class="amount-field"
+                  class="gds-amount-field"
                   inputmode="numeric"
                   name="price"
                   type="text"
@@ -9673,10 +9673,10 @@ Object {
               class=""
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <input
-                  class="amount-field"
+                  class="gds-amount-field"
                   inputmode="numeric"
                   name="parts"
                   type="text"
@@ -9688,7 +9688,7 @@ Object {
               class=""
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <div
                   class="field input-date-picker-field"
@@ -9721,7 +9721,7 @@ Object {
               >
                 <span>
                   <button
-                    class="button-content"
+                    class="gds-button-content"
                     color="reversed"
                     data-testid="delete"
                     type="button"
@@ -9738,7 +9738,7 @@ Object {
                 </span>
                 <div>
                   <div
-                    class="tooltip bottom"
+                    class="gds-tooltip bottom"
                     style="left: -99999px; top: -99999px; opacity: 0;"
                   >
                     <div
@@ -9756,7 +9756,7 @@ Object {
                     ControlleMenu
                     closed
                     <div
-                      class="popover-container"
+                      class="gds-popover-container"
                     >
                       <div
                         class="popover-title"
@@ -9767,7 +9767,7 @@ Object {
                         class="popover-buttons"
                       >
                         <button
-                          class="button-content"
+                          class="gds-button-content"
                           color="secondary"
                           data-testid="cancel"
                           type="button"
@@ -9779,7 +9779,7 @@ Object {
                           </div>
                         </button>
                         <button
-                          class="button-content"
+                          class="gds-button-content"
                           color="primary"
                           data-testid="confirm"
                           type="button"
@@ -9797,7 +9797,7 @@ Object {
                 </div>
                 <span>
                   <button
-                    class="button-content"
+                    class="gds-button-content"
                     color="reversed"
                     data-testid="download"
                     type="button"
@@ -9814,7 +9814,7 @@ Object {
                 </span>
                 <div>
                   <div
-                    class="tooltip bottom"
+                    class="gds-tooltip bottom"
                     style="left: -99999px; top: -99999px; opacity: 0;"
                   >
                     <div
@@ -9833,7 +9833,7 @@ Object {
         </tbody>
       </table>
       <button
-        class="button-content cui-table-new-line"
+        class="gds-button-content gds-table-new-line"
         color="primary"
         type="button"
       >
@@ -9865,7 +9865,7 @@ Object {
   </body>,
   "container": <div>
     <table
-      class="cui-table"
+      class="gds-table"
     >
       <thead>
         <tr>
@@ -9891,7 +9891,7 @@ Object {
             </span>
             <div>
               <div
-                class="tooltip top"
+                class="gds-tooltip top"
                 style="left: -99999px; top: -99999px; opacity: 0;"
               >
                 <div
@@ -9927,7 +9927,7 @@ Object {
             </span>
             <div>
               <div
-                class="tooltip top"
+                class="gds-tooltip top"
                 style="left: -99999px; top: -99999px; opacity: 0;"
               >
                 <div
@@ -9963,7 +9963,7 @@ Object {
             </span>
             <div>
               <div
-                class="tooltip top"
+                class="gds-tooltip top"
                 style="left: -99999px; top: -99999px; opacity: 0;"
               >
                 <div
@@ -9999,7 +9999,7 @@ Object {
             </span>
             <div>
               <div
-                class="tooltip top"
+                class="gds-tooltip top"
                 style="left: -99999px; top: -99999px; opacity: 0;"
               >
                 <div
@@ -10035,7 +10035,7 @@ Object {
             </span>
             <div>
               <div
-                class="tooltip top"
+                class="gds-tooltip top"
                 style="left: -99999px; top: -99999px; opacity: 0;"
               >
                 <div
@@ -10071,7 +10071,7 @@ Object {
             </span>
             <div>
               <div
-                class="tooltip top"
+                class="gds-tooltip top"
                 style="left: -99999px; top: -99999px; opacity: 0;"
               >
                 <div
@@ -10107,10 +10107,10 @@ Object {
             data-testid="id-0"
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <div
-                class="field input-text-field-read-only typography"
+                class="field input-text-field-read-only gds-typography"
               >
                 id
               </div>
@@ -10120,10 +10120,10 @@ Object {
             class="ellipsis"
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <input
-                class="field input-text-field typography ellipsis"
+                class="field gds-input-text-field gds-typography ellipsis"
                 data-testid="name-0"
                 id="name"
                 name="name"
@@ -10136,10 +10136,10 @@ Object {
             class=""
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <div
-                class="select-container input-select-field field input-select-field"
+                class="gds-select-container input-select-field field input-select-field"
               >
                 <div
                   class=" css-1959ul7-container"
@@ -10227,10 +10227,10 @@ Object {
             class=""
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <input
-                class="amount-field"
+                class="gds-amount-field"
                 inputmode="numeric"
                 name="price"
                 type="text"
@@ -10242,10 +10242,10 @@ Object {
             class=""
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <input
-                class="amount-field"
+                class="gds-amount-field"
                 inputmode="numeric"
                 name="parts"
                 type="text"
@@ -10257,7 +10257,7 @@ Object {
             class=""
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <div
                 class="field input-date-picker-field"
@@ -10290,7 +10290,7 @@ Object {
             >
               <span>
                 <button
-                  class="button-content"
+                  class="gds-button-content"
                   color="reversed"
                   data-testid="delete"
                   type="button"
@@ -10307,7 +10307,7 @@ Object {
               </span>
               <div>
                 <div
-                  class="tooltip bottom"
+                  class="gds-tooltip bottom"
                   style="left: -99999px; top: -99999px; opacity: 0;"
                 >
                   <div
@@ -10325,7 +10325,7 @@ Object {
                   ControlleMenu
                   closed
                   <div
-                    class="popover-container"
+                    class="gds-popover-container"
                   >
                     <div
                       class="popover-title"
@@ -10336,7 +10336,7 @@ Object {
                       class="popover-buttons"
                     >
                       <button
-                        class="button-content"
+                        class="gds-button-content"
                         color="secondary"
                         data-testid="cancel"
                         type="button"
@@ -10348,7 +10348,7 @@ Object {
                         </div>
                       </button>
                       <button
-                        class="button-content"
+                        class="gds-button-content"
                         color="primary"
                         data-testid="confirm"
                         type="button"
@@ -10366,7 +10366,7 @@ Object {
               </div>
               <span>
                 <button
-                  class="button-content"
+                  class="gds-button-content"
                   color="reversed"
                   data-testid="download"
                   type="button"
@@ -10383,7 +10383,7 @@ Object {
               </span>
               <div>
                 <div
-                  class="tooltip bottom"
+                  class="gds-tooltip bottom"
                   style="left: -99999px; top: -99999px; opacity: 0;"
                 >
                   <div
@@ -10407,10 +10407,10 @@ Object {
             data-testid="id-1"
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <div
-                class="field input-text-field-read-only typography"
+                class="field input-text-field-read-only gds-typography"
               >
                 test
               </div>
@@ -10420,10 +10420,10 @@ Object {
             class="ellipsis"
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <input
-                class="field input-text-field typography ellipsis"
+                class="field gds-input-text-field gds-typography ellipsis"
                 data-testid="name-1"
                 id="name"
                 name="name"
@@ -10436,10 +10436,10 @@ Object {
             class=""
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <div
-                class="select-container input-select-field field input-select-field"
+                class="gds-select-container input-select-field field input-select-field"
               >
                 <div
                   class=" css-1959ul7-container"
@@ -10529,10 +10529,10 @@ Object {
             class=""
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <input
-                class="amount-field"
+                class="gds-amount-field"
                 inputmode="numeric"
                 name="price"
                 type="text"
@@ -10544,10 +10544,10 @@ Object {
             class=""
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <input
-                class="amount-field"
+                class="gds-amount-field"
                 inputmode="numeric"
                 name="parts"
                 type="text"
@@ -10559,7 +10559,7 @@ Object {
             class=""
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <div
                 class="field input-date-picker-field"
@@ -10592,7 +10592,7 @@ Object {
             >
               <span>
                 <button
-                  class="button-content"
+                  class="gds-button-content"
                   color="reversed"
                   data-testid="delete"
                   type="button"
@@ -10609,7 +10609,7 @@ Object {
               </span>
               <div>
                 <div
-                  class="tooltip bottom"
+                  class="gds-tooltip bottom"
                   style="left: -99999px; top: -99999px; opacity: 0;"
                 >
                   <div
@@ -10627,7 +10627,7 @@ Object {
                   ControlleMenu
                   closed
                   <div
-                    class="popover-container"
+                    class="gds-popover-container"
                   >
                     <div
                       class="popover-title"
@@ -10638,7 +10638,7 @@ Object {
                       class="popover-buttons"
                     >
                       <button
-                        class="button-content"
+                        class="gds-button-content"
                         color="secondary"
                         data-testid="cancel"
                         type="button"
@@ -10650,7 +10650,7 @@ Object {
                         </div>
                       </button>
                       <button
-                        class="button-content"
+                        class="gds-button-content"
                         color="primary"
                         data-testid="confirm"
                         type="button"
@@ -10668,7 +10668,7 @@ Object {
               </div>
               <span>
                 <button
-                  class="button-content"
+                  class="gds-button-content"
                   color="reversed"
                   data-testid="download"
                   type="button"
@@ -10685,7 +10685,7 @@ Object {
               </span>
               <div>
                 <div
-                  class="tooltip bottom"
+                  class="gds-tooltip bottom"
                   style="left: -99999px; top: -99999px; opacity: 0;"
                 >
                   <div
@@ -10704,7 +10704,7 @@ Object {
       </tbody>
     </table>
     <button
-      class="button-content cui-table-new-line"
+      class="gds-button-content gds-table-new-line"
       color="primary"
       type="button"
     >
@@ -10775,7 +10775,7 @@ Object {
   "baseElement": <body>
     <div>
       <table
-        class="cui-table"
+        class="gds-table"
       >
         <thead>
           <tr>
@@ -10801,7 +10801,7 @@ Object {
               </span>
               <div>
                 <div
-                  class="tooltip top"
+                  class="gds-tooltip top"
                   style="left: -99999px; top: -99999px; opacity: 0;"
                 >
                   <div
@@ -10837,7 +10837,7 @@ Object {
               </span>
               <div>
                 <div
-                  class="tooltip top"
+                  class="gds-tooltip top"
                   style="left: -99999px; top: -99999px; opacity: 0;"
                 >
                   <div
@@ -10873,7 +10873,7 @@ Object {
               </span>
               <div>
                 <div
-                  class="tooltip top"
+                  class="gds-tooltip top"
                   style="left: -99999px; top: -99999px; opacity: 0;"
                 >
                   <div
@@ -10909,7 +10909,7 @@ Object {
               </span>
               <div>
                 <div
-                  class="tooltip top"
+                  class="gds-tooltip top"
                   style="left: -99999px; top: -99999px; opacity: 0;"
                 >
                   <div
@@ -10945,7 +10945,7 @@ Object {
               </span>
               <div>
                 <div
-                  class="tooltip top"
+                  class="gds-tooltip top"
                   style="left: -99999px; top: -99999px; opacity: 0;"
                 >
                   <div
@@ -10981,7 +10981,7 @@ Object {
               </span>
               <div>
                 <div
-                  class="tooltip top"
+                  class="gds-tooltip top"
                   style="left: -99999px; top: -99999px; opacity: 0;"
                 >
                   <div
@@ -11017,10 +11017,10 @@ Object {
               data-testid="id-0"
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <div
-                  class="field input-text-field-read-only typography"
+                  class="field input-text-field-read-only gds-typography"
                 >
                   id
                 </div>
@@ -11030,10 +11030,10 @@ Object {
               class="ellipsis"
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <input
-                  class="field input-text-field typography ellipsis"
+                  class="field gds-input-text-field gds-typography ellipsis"
                   data-testid="name-0"
                   id="name"
                   name="name"
@@ -11046,10 +11046,10 @@ Object {
               class=""
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <div
-                  class="select-container input-select-field field input-select-field"
+                  class="gds-select-container input-select-field field input-select-field"
                 >
                   <div
                     class=" css-1959ul7-container"
@@ -11137,10 +11137,10 @@ Object {
               class=""
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <input
-                  class="amount-field"
+                  class="gds-amount-field"
                   inputmode="numeric"
                   name="price"
                   type="text"
@@ -11152,10 +11152,10 @@ Object {
               class=""
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <input
-                  class="amount-field"
+                  class="gds-amount-field"
                   inputmode="numeric"
                   name="parts"
                   type="text"
@@ -11167,7 +11167,7 @@ Object {
               class=""
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <div
                   class="field input-date-picker-field"
@@ -11200,7 +11200,7 @@ Object {
               >
                 <span>
                   <button
-                    class="button-content"
+                    class="gds-button-content"
                     color="reversed"
                     data-testid="delete"
                     type="button"
@@ -11217,7 +11217,7 @@ Object {
                 </span>
                 <div>
                   <div
-                    class="tooltip bottom"
+                    class="gds-tooltip bottom"
                     style="left: -99999px; top: -99999px; opacity: 0;"
                   >
                     <div
@@ -11235,7 +11235,7 @@ Object {
                     ControlleMenu
                     closed
                     <div
-                      class="popover-container"
+                      class="gds-popover-container"
                     >
                       <div
                         class="popover-title"
@@ -11246,7 +11246,7 @@ Object {
                         class="popover-buttons"
                       >
                         <button
-                          class="button-content"
+                          class="gds-button-content"
                           color="secondary"
                           data-testid="cancel"
                           type="button"
@@ -11258,7 +11258,7 @@ Object {
                           </div>
                         </button>
                         <button
-                          class="button-content"
+                          class="gds-button-content"
                           color="primary"
                           data-testid="confirm"
                           type="button"
@@ -11276,7 +11276,7 @@ Object {
                 </div>
                 <span>
                   <button
-                    class="button-content"
+                    class="gds-button-content"
                     color="reversed"
                     data-testid="download"
                     type="button"
@@ -11293,7 +11293,7 @@ Object {
                 </span>
                 <div>
                   <div
-                    class="tooltip bottom"
+                    class="gds-tooltip bottom"
                     style="left: -99999px; top: -99999px; opacity: 0;"
                   >
                     <div
@@ -11329,7 +11329,7 @@ Object {
   </body>,
   "container": <div>
     <table
-      class="cui-table"
+      class="gds-table"
     >
       <thead>
         <tr>
@@ -11355,7 +11355,7 @@ Object {
             </span>
             <div>
               <div
-                class="tooltip top"
+                class="gds-tooltip top"
                 style="left: -99999px; top: -99999px; opacity: 0;"
               >
                 <div
@@ -11391,7 +11391,7 @@ Object {
             </span>
             <div>
               <div
-                class="tooltip top"
+                class="gds-tooltip top"
                 style="left: -99999px; top: -99999px; opacity: 0;"
               >
                 <div
@@ -11427,7 +11427,7 @@ Object {
             </span>
             <div>
               <div
-                class="tooltip top"
+                class="gds-tooltip top"
                 style="left: -99999px; top: -99999px; opacity: 0;"
               >
                 <div
@@ -11463,7 +11463,7 @@ Object {
             </span>
             <div>
               <div
-                class="tooltip top"
+                class="gds-tooltip top"
                 style="left: -99999px; top: -99999px; opacity: 0;"
               >
                 <div
@@ -11499,7 +11499,7 @@ Object {
             </span>
             <div>
               <div
-                class="tooltip top"
+                class="gds-tooltip top"
                 style="left: -99999px; top: -99999px; opacity: 0;"
               >
                 <div
@@ -11535,7 +11535,7 @@ Object {
             </span>
             <div>
               <div
-                class="tooltip top"
+                class="gds-tooltip top"
                 style="left: -99999px; top: -99999px; opacity: 0;"
               >
                 <div
@@ -11571,10 +11571,10 @@ Object {
             data-testid="id-0"
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <div
-                class="field input-text-field-read-only typography"
+                class="field input-text-field-read-only gds-typography"
               >
                 id
               </div>
@@ -11584,10 +11584,10 @@ Object {
             class="ellipsis"
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <input
-                class="field input-text-field typography ellipsis"
+                class="field gds-input-text-field gds-typography ellipsis"
                 data-testid="name-0"
                 id="name"
                 name="name"
@@ -11600,10 +11600,10 @@ Object {
             class=""
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <div
-                class="select-container input-select-field field input-select-field"
+                class="gds-select-container input-select-field field input-select-field"
               >
                 <div
                   class=" css-1959ul7-container"
@@ -11691,10 +11691,10 @@ Object {
             class=""
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <input
-                class="amount-field"
+                class="gds-amount-field"
                 inputmode="numeric"
                 name="price"
                 type="text"
@@ -11706,10 +11706,10 @@ Object {
             class=""
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <input
-                class="amount-field"
+                class="gds-amount-field"
                 inputmode="numeric"
                 name="parts"
                 type="text"
@@ -11721,7 +11721,7 @@ Object {
             class=""
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <div
                 class="field input-date-picker-field"
@@ -11754,7 +11754,7 @@ Object {
             >
               <span>
                 <button
-                  class="button-content"
+                  class="gds-button-content"
                   color="reversed"
                   data-testid="delete"
                   type="button"
@@ -11771,7 +11771,7 @@ Object {
               </span>
               <div>
                 <div
-                  class="tooltip bottom"
+                  class="gds-tooltip bottom"
                   style="left: -99999px; top: -99999px; opacity: 0;"
                 >
                   <div
@@ -11789,7 +11789,7 @@ Object {
                   ControlleMenu
                   closed
                   <div
-                    class="popover-container"
+                    class="gds-popover-container"
                   >
                     <div
                       class="popover-title"
@@ -11800,7 +11800,7 @@ Object {
                       class="popover-buttons"
                     >
                       <button
-                        class="button-content"
+                        class="gds-button-content"
                         color="secondary"
                         data-testid="cancel"
                         type="button"
@@ -11812,7 +11812,7 @@ Object {
                         </div>
                       </button>
                       <button
-                        class="button-content"
+                        class="gds-button-content"
                         color="primary"
                         data-testid="confirm"
                         type="button"
@@ -11830,7 +11830,7 @@ Object {
               </div>
               <span>
                 <button
-                  class="button-content"
+                  class="gds-button-content"
                   color="reversed"
                   data-testid="download"
                   type="button"
@@ -11847,7 +11847,7 @@ Object {
               </span>
               <div>
                 <div
-                  class="tooltip bottom"
+                  class="gds-tooltip bottom"
                   style="left: -99999px; top: -99999px; opacity: 0;"
                 >
                   <div
@@ -11926,7 +11926,7 @@ Object {
   "baseElement": <body>
     <div>
       <table
-        class="cui-table"
+        class="gds-table"
       >
         <thead>
           <tr>
@@ -11952,7 +11952,7 @@ Object {
               </span>
               <div>
                 <div
-                  class="tooltip top"
+                  class="gds-tooltip top"
                   style="left: -99999px; top: -99999px; opacity: 0;"
                 >
                   <div
@@ -11988,7 +11988,7 @@ Object {
               </span>
               <div>
                 <div
-                  class="tooltip top"
+                  class="gds-tooltip top"
                   style="left: -99999px; top: -99999px; opacity: 0;"
                 >
                   <div
@@ -12024,7 +12024,7 @@ Object {
               </span>
               <div>
                 <div
-                  class="tooltip top"
+                  class="gds-tooltip top"
                   style="left: -99999px; top: -99999px; opacity: 0;"
                 >
                   <div
@@ -12060,7 +12060,7 @@ Object {
               </span>
               <div>
                 <div
-                  class="tooltip top"
+                  class="gds-tooltip top"
                   style="left: -99999px; top: -99999px; opacity: 0;"
                 >
                   <div
@@ -12096,7 +12096,7 @@ Object {
               </span>
               <div>
                 <div
-                  class="tooltip top"
+                  class="gds-tooltip top"
                   style="left: -99999px; top: -99999px; opacity: 0;"
                 >
                   <div
@@ -12132,7 +12132,7 @@ Object {
               </span>
               <div>
                 <div
-                  class="tooltip top"
+                  class="gds-tooltip top"
                   style="left: -99999px; top: -99999px; opacity: 0;"
                 >
                   <div
@@ -12168,10 +12168,10 @@ Object {
               data-testid="id-0"
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <div
-                  class="field input-text-field-read-only typography"
+                  class="field input-text-field-read-only gds-typography"
                 >
                   id
                 </div>
@@ -12181,10 +12181,10 @@ Object {
               class="ellipsis"
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <div
-                  class="field input-text-field-read-only typography ellipsis"
+                  class="field input-text-field-read-only gds-typography ellipsis"
                 >
                   name
                 </div>
@@ -12194,7 +12194,7 @@ Object {
               class=""
             >
               <span
-                class="badge secondary table--cell--value--badge-no-margin"
+                class="gds-badge secondary table--cell--value--badge-no-margin"
               >
                 Status
               </span>
@@ -12203,10 +12203,10 @@ Object {
               class=""
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <span
-                  class="amount-field amount-field-read-only table--cell-value--negative table--cell-value--amount-readonly"
+                  class="gds-amount-field amount-field-read-only table--cell-value--negative table--cell-value--amount-readonly"
                   id="price"
                   name="price"
                 >
@@ -12218,10 +12218,10 @@ Object {
               class=""
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <span
-                  class="amount-field amount-field-read-only table--cell-value--negative table--cell-value--percentage-readonly"
+                  class="gds-amount-field amount-field-read-only table--cell-value--negative table--cell-value--percentage-readonly"
                   id="parts"
                   name="parts"
                 >
@@ -12233,7 +12233,7 @@ Object {
               class=""
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <div
                   class="field input-date-picker-field table--cell-value--date-readonly"
@@ -12284,7 +12284,7 @@ Object {
   </body>,
   "container": <div>
     <table
-      class="cui-table"
+      class="gds-table"
     >
       <thead>
         <tr>
@@ -12310,7 +12310,7 @@ Object {
             </span>
             <div>
               <div
-                class="tooltip top"
+                class="gds-tooltip top"
                 style="left: -99999px; top: -99999px; opacity: 0;"
               >
                 <div
@@ -12346,7 +12346,7 @@ Object {
             </span>
             <div>
               <div
-                class="tooltip top"
+                class="gds-tooltip top"
                 style="left: -99999px; top: -99999px; opacity: 0;"
               >
                 <div
@@ -12382,7 +12382,7 @@ Object {
             </span>
             <div>
               <div
-                class="tooltip top"
+                class="gds-tooltip top"
                 style="left: -99999px; top: -99999px; opacity: 0;"
               >
                 <div
@@ -12418,7 +12418,7 @@ Object {
             </span>
             <div>
               <div
-                class="tooltip top"
+                class="gds-tooltip top"
                 style="left: -99999px; top: -99999px; opacity: 0;"
               >
                 <div
@@ -12454,7 +12454,7 @@ Object {
             </span>
             <div>
               <div
-                class="tooltip top"
+                class="gds-tooltip top"
                 style="left: -99999px; top: -99999px; opacity: 0;"
               >
                 <div
@@ -12490,7 +12490,7 @@ Object {
             </span>
             <div>
               <div
-                class="tooltip top"
+                class="gds-tooltip top"
                 style="left: -99999px; top: -99999px; opacity: 0;"
               >
                 <div
@@ -12526,10 +12526,10 @@ Object {
             data-testid="id-0"
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <div
-                class="field input-text-field-read-only typography"
+                class="field input-text-field-read-only gds-typography"
               >
                 id
               </div>
@@ -12539,10 +12539,10 @@ Object {
             class="ellipsis"
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <div
-                class="field input-text-field-read-only typography ellipsis"
+                class="field input-text-field-read-only gds-typography ellipsis"
               >
                 name
               </div>
@@ -12552,7 +12552,7 @@ Object {
             class=""
           >
             <span
-              class="badge secondary table--cell--value--badge-no-margin"
+              class="gds-badge secondary table--cell--value--badge-no-margin"
             >
               Status
             </span>
@@ -12561,10 +12561,10 @@ Object {
             class=""
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <span
-                class="amount-field amount-field-read-only table--cell-value--negative table--cell-value--amount-readonly"
+                class="gds-amount-field amount-field-read-only table--cell-value--negative table--cell-value--amount-readonly"
                 id="price"
                 name="price"
               >
@@ -12576,10 +12576,10 @@ Object {
             class=""
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <span
-                class="amount-field amount-field-read-only table--cell-value--negative table--cell-value--percentage-readonly"
+                class="gds-amount-field amount-field-read-only table--cell-value--negative table--cell-value--percentage-readonly"
                 id="parts"
                 name="parts"
               >
@@ -12591,7 +12591,7 @@ Object {
             class=""
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <div
                 class="field input-date-picker-field table--cell-value--date-readonly"
@@ -12688,7 +12688,7 @@ Object {
   "baseElement": <body>
     <div>
       <table
-        class="cui-table"
+        class="gds-table"
       >
         <thead>
           <tr>
@@ -12714,7 +12714,7 @@ Object {
               </span>
               <div>
                 <div
-                  class="tooltip top"
+                  class="gds-tooltip top"
                   style="left: -99999px; top: -99999px; opacity: 0;"
                 >
                   <div
@@ -12750,7 +12750,7 @@ Object {
               </span>
               <div>
                 <div
-                  class="tooltip top"
+                  class="gds-tooltip top"
                   style="left: -99999px; top: -99999px; opacity: 0;"
                 >
                   <div
@@ -12786,7 +12786,7 @@ Object {
               </span>
               <div>
                 <div
-                  class="tooltip top"
+                  class="gds-tooltip top"
                   style="left: -99999px; top: -99999px; opacity: 0;"
                 >
                   <div
@@ -12822,7 +12822,7 @@ Object {
               </span>
               <div>
                 <div
-                  class="tooltip top"
+                  class="gds-tooltip top"
                   style="left: -99999px; top: -99999px; opacity: 0;"
                 >
                   <div
@@ -12858,7 +12858,7 @@ Object {
               </span>
               <div>
                 <div
-                  class="tooltip top"
+                  class="gds-tooltip top"
                   style="left: -99999px; top: -99999px; opacity: 0;"
                 >
                   <div
@@ -12894,7 +12894,7 @@ Object {
               </span>
               <div>
                 <div
-                  class="tooltip top"
+                  class="gds-tooltip top"
                   style="left: -99999px; top: -99999px; opacity: 0;"
                 >
                   <div
@@ -12919,10 +12919,10 @@ Object {
               data-testid="id-0"
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <div
-                  class="field input-text-field-read-only typography"
+                  class="field input-text-field-read-only gds-typography"
                 >
                   id
                 </div>
@@ -12932,10 +12932,10 @@ Object {
               class="ellipsis"
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <div
-                  class="field input-text-field-read-only typography ellipsis"
+                  class="field input-text-field-read-only gds-typography ellipsis"
                 >
                   name
                 </div>
@@ -12945,7 +12945,7 @@ Object {
               class=""
             >
               <span
-                class="badge secondary table--cell--value--badge-no-margin"
+                class="gds-badge secondary table--cell--value--badge-no-margin"
               >
                 Status
               </span>
@@ -12954,10 +12954,10 @@ Object {
               class=""
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <span
-                  class="amount-field amount-field-read-only table--cell-value--negative table--cell-value--amount-readonly"
+                  class="gds-amount-field amount-field-read-only table--cell-value--negative table--cell-value--amount-readonly"
                   id="price"
                   name="price"
                 >
@@ -12969,10 +12969,10 @@ Object {
               class=""
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <span
-                  class="amount-field amount-field-read-only table--cell-value--negative table--cell-value--percentage-readonly"
+                  class="gds-amount-field amount-field-read-only table--cell-value--negative table--cell-value--percentage-readonly"
                   id="parts"
                   name="parts"
                 >
@@ -12984,7 +12984,7 @@ Object {
               class=""
             >
               <div
-                class="field-group"
+                class="gds-field-group"
               >
                 <div
                   class="field input-date-picker-field table--cell-value--date-readonly"
@@ -13028,7 +13028,7 @@ Object {
   </body>,
   "container": <div>
     <table
-      class="cui-table"
+      class="gds-table"
     >
       <thead>
         <tr>
@@ -13054,7 +13054,7 @@ Object {
             </span>
             <div>
               <div
-                class="tooltip top"
+                class="gds-tooltip top"
                 style="left: -99999px; top: -99999px; opacity: 0;"
               >
                 <div
@@ -13090,7 +13090,7 @@ Object {
             </span>
             <div>
               <div
-                class="tooltip top"
+                class="gds-tooltip top"
                 style="left: -99999px; top: -99999px; opacity: 0;"
               >
                 <div
@@ -13126,7 +13126,7 @@ Object {
             </span>
             <div>
               <div
-                class="tooltip top"
+                class="gds-tooltip top"
                 style="left: -99999px; top: -99999px; opacity: 0;"
               >
                 <div
@@ -13162,7 +13162,7 @@ Object {
             </span>
             <div>
               <div
-                class="tooltip top"
+                class="gds-tooltip top"
                 style="left: -99999px; top: -99999px; opacity: 0;"
               >
                 <div
@@ -13198,7 +13198,7 @@ Object {
             </span>
             <div>
               <div
-                class="tooltip top"
+                class="gds-tooltip top"
                 style="left: -99999px; top: -99999px; opacity: 0;"
               >
                 <div
@@ -13234,7 +13234,7 @@ Object {
             </span>
             <div>
               <div
-                class="tooltip top"
+                class="gds-tooltip top"
                 style="left: -99999px; top: -99999px; opacity: 0;"
               >
                 <div
@@ -13259,10 +13259,10 @@ Object {
             data-testid="id-0"
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <div
-                class="field input-text-field-read-only typography"
+                class="field input-text-field-read-only gds-typography"
               >
                 id
               </div>
@@ -13272,10 +13272,10 @@ Object {
             class="ellipsis"
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <div
-                class="field input-text-field-read-only typography ellipsis"
+                class="field input-text-field-read-only gds-typography ellipsis"
               >
                 name
               </div>
@@ -13285,7 +13285,7 @@ Object {
             class=""
           >
             <span
-              class="badge secondary table--cell--value--badge-no-margin"
+              class="gds-badge secondary table--cell--value--badge-no-margin"
             >
               Status
             </span>
@@ -13294,10 +13294,10 @@ Object {
             class=""
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <span
-                class="amount-field amount-field-read-only table--cell-value--negative table--cell-value--amount-readonly"
+                class="gds-amount-field amount-field-read-only table--cell-value--negative table--cell-value--amount-readonly"
                 id="price"
                 name="price"
               >
@@ -13309,10 +13309,10 @@ Object {
             class=""
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <span
-                class="amount-field amount-field-read-only table--cell-value--negative table--cell-value--percentage-readonly"
+                class="gds-amount-field amount-field-read-only table--cell-value--negative table--cell-value--percentage-readonly"
                 id="parts"
                 name="parts"
               >
@@ -13324,7 +13324,7 @@ Object {
             class=""
           >
             <div
-              class="field-group"
+              class="gds-field-group"
             >
               <div
                 class="field input-date-picker-field table--cell-value--date-readonly"

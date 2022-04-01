@@ -6,8 +6,8 @@ describe('GenericField Component', () => {
   it('GenericField renders', () => {
     const { container } = render(<GenericField />);
 
-    const node = container.querySelector('div.field-group');
-    expect(node?.className).toEqual('field-group');
+    const node = container.querySelector('div.gds-field-group');
+    expect(node?.className).toEqual('gds-field-group');
     expect(node?.innerHTML).toBeFalsy();
     const messageNode = container.querySelector('div.field-message');
     expect(messageNode).toBeNull();
@@ -20,8 +20,8 @@ describe('GenericField Component', () => {
       </GenericField>,
     );
 
-    const node = container.querySelector('div.field-group');
-    expect(node?.className).toEqual('field-group');
+    const node = container.querySelector('div.gds-field-group');
+    expect(node?.className).toEqual('gds-field-group');
     const children = container.querySelector('div.CHILD-TEST');
     expect(children?.className).toEqual('CHILD-TEST');
     const messageNode = container.querySelector('div.field-message');
@@ -118,8 +118,8 @@ describe('GenericField Component', () => {
     expect(helperNode).toBeNull();
     const counterNode = container.querySelector('div.field-counter');
     expect(counterNode).toBeNull();
-    const node = container.querySelector('div.field-group');
-    expect(node?.className).toEqual('field-group');
+    const node = container.querySelector('div.gds-field-group');
+    expect(node?.className).toEqual('gds-field-group');
   });
 
   it('GenericField renders with highlight not in readonly', () => {
@@ -133,7 +133,7 @@ describe('GenericField Component', () => {
     expect(helperNode).toBeNull();
     const counterNode = container.querySelector('div.field-counter');
     expect(counterNode).toBeNull();
-    const node = container.querySelector('div.field-group');
-    expect(node?.className).toEqual('field-group');
+    const node = container.querySelector('div.gds-field-group');
+    expect(node?.className).toEqual('gds-field-group');
   });
 });

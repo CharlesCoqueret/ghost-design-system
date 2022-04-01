@@ -1,4 +1,4 @@
-.row {
+.gds-row {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -8,7 +8,7 @@
   }
 }
 
-.col {
+.gds-col {
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -19,7 +19,7 @@
   }
 }
 
-.section-container {
+.gds-section-container {
   .section-header {
     display: flex;
     flex-direction: row;

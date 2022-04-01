@@ -17,7 +17,7 @@ export interface ITitleProps {
 const Title = (props: PropsWithChildren<ITitleProps>): ReactElement => {
   const { children, className, ellipsis, level, onClick, style } = props;
 
-  const innerProps = { className: classNames('typography', className, { ellipsis: ellipsis }), style: style };
+  const innerProps = { className: classNames('gds-typography', className, { ellipsis: ellipsis }), style: style };
 
   const HeaderTag = `h${level || 3}` as keyof JSX.IntrinsicElements;
 
@@ -64,7 +64,7 @@ const Text = (props: PropsWithChildren<ITextProps>): ReactElement => {
 
   return (
     <span
-      className={classNames('typography', className, {
+      className={classNames('gds-typography', className, {
         ellipsis: ellipsis,
         error: type === TextTypeEnum.ERROR || (Array.isArray(type) && type?.includes(TextTypeEnum.PLACEHOLDER)),
         disabled: type === TextTypeEnum.DISABLED || (Array.isArray(type) && type?.includes(TextTypeEnum.DISABLED)),

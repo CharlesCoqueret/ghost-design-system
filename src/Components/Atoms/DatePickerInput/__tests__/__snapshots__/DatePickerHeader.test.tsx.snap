@@ -10,7 +10,7 @@ Object {
           class="react-datepicker__header-select-wrapper"
         >
           <button
-            class="button-content"
+            class="gds-button-content"
             color="reversed"
             data-testid="TESTID-decreaseMonth"
             type="button"
@@ -90,7 +90,7 @@ Object {
             </option>
           </select>
           <button
-            class="button-content"
+            class="gds-button-content"
             color="reversed"
             data-testid="TESTID-increaseMonth"
             type="button"
@@ -109,7 +109,7 @@ Object {
           class="react-datepicker__header-select-wrapper"
         >
           <button
-            class="button-content"
+            class="gds-button-content"
             color="reversed"
             data-testid="TESTID-decreaseYear"
             type="button"
@@ -634,7 +634,7 @@ Object {
             </option>
           </select>
           <button
-            class="button-content"
+            class="gds-button-content"
             color="reversed"
             data-testid="TESTID-increaseYear"
             type="button"
@@ -658,7 +658,7 @@ Object {
         class="react-datepicker__header-select-wrapper"
       >
         <button
-          class="button-content"
+          class="gds-button-content"
           color="reversed"
           data-testid="TESTID-decreaseMonth"
           type="button"
@@ -738,7 +738,7 @@ Object {
           </option>
         </select>
         <button
-          class="button-content"
+          class="gds-button-content"
           color="reversed"
           data-testid="TESTID-increaseMonth"
           type="button"
@@ -757,7 +757,7 @@ Object {
         class="react-datepicker__header-select-wrapper"
       >
         <button
-          class="button-content"
+          class="gds-button-content"
           color="reversed"
           data-testid="TESTID-decreaseYear"
           type="button"
@@ -1282,7 +1282,7 @@ Object {
           </option>
         </select>
         <button
-          class="button-content"
+          class="gds-button-content"
           color="reversed"
           data-testid="TESTID-increaseYear"
           type="button"

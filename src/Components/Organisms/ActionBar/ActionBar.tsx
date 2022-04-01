@@ -63,7 +63,7 @@ const ActionBar = (props: IActionBarProps): ReactElement => {
   } = props;
 
   return (
-    <div className={classnames('action-bar', { primary: primary }, className)}>
+    <div className={classnames('gds-action-bar', { primary: primary }, className)}>
       <div className='left-side'>
         {onBackClicked && (
           <div className='back-icon'>

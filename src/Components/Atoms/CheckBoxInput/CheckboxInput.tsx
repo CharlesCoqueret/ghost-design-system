@@ -48,7 +48,13 @@ const CheckboxInput = (props: ICheckboxInputProps): ReactElement => {
   };
 
   return (
-    <div className={classnames('field', 'checkbox-container', fieldSize && `field-input-size-${fieldSize}`, className)}>
+    <div
+      className={classnames(
+        'field',
+        'gds-checkbox-container',
+        fieldSize && `field-input-size-${fieldSize}`,
+        className,
+      )}>
       {options?.map((option) => {
         return (
           <label

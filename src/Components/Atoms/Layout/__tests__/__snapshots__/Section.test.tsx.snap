@@ -6,7 +6,7 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="section-container"
+        class="gds-section-container"
       >
         <div
           class="section-header collapsable"
@@ -37,7 +37,7 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="section-container"
+      class="gds-section-container"
     >
       <div
         class="section-header collapsable"
@@ -125,7 +125,7 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="section-container"
+        class="gds-section-container"
       >
         <div
           class="section-header collapsable"
@@ -156,7 +156,7 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="section-container"
+      class="gds-section-container"
     >
       <div
         class="section-header collapsable"
@@ -244,7 +244,7 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="section-container"
+        class="gds-section-container"
       >
         <div
           class="section-header collapsable"
@@ -275,7 +275,7 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="section-container"
+      class="gds-section-container"
     >
       <div
         class="section-header collapsable"
@@ -363,7 +363,7 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="section-container"
+        class="gds-section-container"
       >
         <div
           class="section-header"
@@ -390,7 +390,7 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="section-container"
+      class="gds-section-container"
     >
       <div
         class="section-header"
@@ -474,7 +474,7 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="section-container"
+        class="gds-section-container"
       >
         <div
           class="section-header"
@@ -501,7 +501,7 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="section-container"
+      class="gds-section-container"
     >
       <div
         class="section-header"
@@ -585,7 +585,7 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="section-container"
+        class="gds-section-container"
       >
         <div
           class="section-header"
@@ -612,7 +612,7 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="section-container"
+      class="gds-section-container"
     >
       <div
         class="section-header"

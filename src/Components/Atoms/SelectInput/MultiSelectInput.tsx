@@ -122,7 +122,7 @@ const MultiSelectInput = (props: IMultiSelectInputProps): ReactElement => {
     return (
       <div
         className={classnames(
-          'select-container',
+          'gds-select-container',
           'input-select-field-read-only',
           fieldSize && `field-input-size-${fieldSize}`,
           {
@@ -142,7 +142,7 @@ const MultiSelectInput = (props: IMultiSelectInputProps): ReactElement => {
   return (
     <div
       className={classnames(
-        'select-container',
+        'gds-select-container',
         'input-select-field',
         fieldSize && `field-input-size-${fieldSize}`,
         {

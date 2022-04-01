@@ -6,10 +6,10 @@ describe('TextField Component', () => {
   it('TextField renders', () => {
     const { container } = render(<TextField fieldSize={2} name='NAME' />);
 
-    const node = container.querySelector('div.field-group');
+    const node = container.querySelector('div.gds-field-group');
     expect(node).not.toBeNull();
     const inputNode = container.querySelector('input.field');
-    expect(inputNode?.className).toEqual('field input-text-field field-input-size-2');
+    expect(inputNode?.className).toEqual('field gds-input-text-field field-input-size-2');
     expect(inputNode).toHaveProperty('name', 'NAME');
     expect(inputNode).toHaveProperty('id', 'NAME');
     expect(inputNode).toHaveProperty('type', 'text');
@@ -20,10 +20,10 @@ describe('TextField Component', () => {
   it('TextField renders with error', () => {
     const { container } = render(<TextField inputValue='INPUT-VALUE' errorMessage='ERROR-MESSAGE' name='NAME' />);
 
-    const node = container.querySelector('div.field-group');
+    const node = container.querySelector('div.gds-field-group');
     expect(node).not.toBeNull();
     const inputNode = container.querySelector('input.field');
-    expect(inputNode?.className).toEqual('field input-text-field input-error');
+    expect(inputNode?.className).toEqual('field gds-input-text-field input-error');
     expect(inputNode).toHaveProperty('value', 'INPUT-VALUE');
     const readOnlyNode = container.querySelector('div.field');
     expect(readOnlyNode).toBeNull();
@@ -32,7 +32,7 @@ describe('TextField Component', () => {
   it('TextField renders in readonly', () => {
     const { container } = render(<TextField readOnly fieldSize={6} inputValue='INPUT-VALUE' name='NAME' />);
 
-    const node = container.querySelector('div.field-group');
+    const node = container.querySelector('div.gds-field-group');
     expect(node).not.toBeNull();
     const inputNode = container.querySelector('input.field');
     expect(inputNode).toBeNull();
@@ -44,7 +44,7 @@ describe('TextField Component', () => {
   it('TextField renders in readonly highlighted', () => {
     const { container } = render(<TextField readOnly highlighted name='NAME' />);
 
-    const node = container.querySelector('div.field-group');
+    const node = container.querySelector('div.gds-field-group');
     expect(node).not.toBeNull();
     const inputNode = container.querySelector('input.field');
     expect(inputNode).toBeNull();

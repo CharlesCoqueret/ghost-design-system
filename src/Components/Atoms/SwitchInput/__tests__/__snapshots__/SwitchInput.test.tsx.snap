@@ -6,7 +6,7 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="field switch-container"
+        class="field gds-switch-container"
       >
         <label
           class="input-switch-field-read-only"
@@ -116,7 +116,7 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="field switch-container"
+      class="field gds-switch-container"
     >
       <label
         class="input-switch-field-read-only"
@@ -283,7 +283,7 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="field switch-container"
+        class="field gds-switch-container"
       >
         <label
           class=""
@@ -393,7 +393,7 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="field switch-container"
+      class="field gds-switch-container"
     >
       <label
         class=""
@@ -560,13 +560,13 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="field switch-container"
+        class="field gds-switch-container"
       />
     </div>
   </body>,
   "container": <div>
     <div
-      class="field switch-container"
+      class="field gds-switch-container"
     />
   </div>,
   "debug": [Function],

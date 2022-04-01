@@ -6,7 +6,7 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="field checkbox-container"
+        class="field gds-checkbox-container"
       >
         <label
           class="input-checkbox-field-read-only"
@@ -97,7 +97,7 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="field checkbox-container"
+      class="field gds-checkbox-container"
     >
       <label
         class="input-checkbox-field-read-only"
@@ -245,7 +245,7 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="field checkbox-container"
+        class="field gds-checkbox-container"
       >
         <label
           class=""
@@ -336,7 +336,7 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="field checkbox-container"
+      class="field gds-checkbox-container"
     >
       <label
         class=""
@@ -484,13 +484,13 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="field checkbox-container"
+        class="field gds-checkbox-container"
       />
     </div>
   </body>,
   "container": <div>
     <div
-      class="field checkbox-container"
+      class="field gds-checkbox-container"
     />
   </div>,
   "debug": [Function],

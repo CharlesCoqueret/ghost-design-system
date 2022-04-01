@@ -10,7 +10,7 @@ Object {
           style="display: flex; justify-content: space-evenly;"
         >
           <button
-            class="button-content"
+            class="gds-button-content"
             color="reversed"
             data-testid="TESTID-decreaseYear"
             type="button"
@@ -25,7 +25,7 @@ Object {
             </div>
           </button>
           <button
-            class="button-content"
+            class="gds-button-content"
             color="reversed"
             data-testid="TESTID-increaseYear"
             type="button"
@@ -49,7 +49,7 @@ Object {
         style="display: flex; justify-content: space-evenly;"
       >
         <button
-          class="button-content"
+          class="gds-button-content"
           color="reversed"
           data-testid="TESTID-decreaseYear"
           type="button"
@@ -64,7 +64,7 @@ Object {
           </div>
         </button>
         <button
-          class="button-content"
+          class="gds-button-content"
           color="reversed"
           data-testid="TESTID-increaseYear"
           type="button"
@@ -145,7 +145,7 @@ Object {
           style="display: flex; justify-content: space-evenly;"
         >
           <button
-            class="button-content"
+            class="gds-button-content"
             color="reversed"
             type="button"
           >
@@ -159,7 +159,7 @@ Object {
             </div>
           </button>
           <button
-            class="button-content"
+            class="gds-button-content"
             color="reversed"
             type="button"
           >
@@ -182,7 +182,7 @@ Object {
         style="display: flex; justify-content: space-evenly;"
       >
         <button
-          class="button-content"
+          class="gds-button-content"
           color="reversed"
           type="button"
         >
@@ -196,7 +196,7 @@ Object {
           </div>
         </button>
         <button
-          class="button-content"
+          class="gds-button-content"
           color="reversed"
           type="button"
         >

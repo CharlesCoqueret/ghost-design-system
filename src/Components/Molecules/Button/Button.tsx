@@ -92,7 +92,7 @@ const Button = (props: IButtonProps): ReactElement => {
             }
           }}
           disabled={loading || disabled}
-          className={classnames('button-content', className)}
+          className={classnames('gds-button-content', className)}
           color={color}
           data-testid={dataTestId}>
           {(icon !== undefined || loading !== false) && (

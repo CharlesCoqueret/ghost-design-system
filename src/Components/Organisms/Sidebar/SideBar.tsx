@@ -23,7 +23,7 @@ const SideBar = (props: PropsWithChildren<ISideBarProps>): React.ReactElement =>
   const [isInSubMenu, setIsInSubMenu] = useState(false);
 
   return (
-    <nav className={classnames('sidebar-container', className, { unfixed: unfixed })} style={style}>
+    <nav className={classnames('gds-sidebar-container', className, { unfixed: unfixed })} style={style}>
       <SideBarContext.Provider
         value={{
           backToMenu: backToMenu,
