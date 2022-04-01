@@ -25,7 +25,7 @@ export interface IMultiSelectInputProps {
   /** Highlight value in readonly mode (optional, default: false) */
   highlighted?: boolean;
   /** Input string value (optional, default: undefined) */
-  inputValue?: Array<string>;
+  inputValue?: Array<string | number>;
   /** Provide the ability to clear the value (optional, default: false) */
   isClearable?: boolean;
   /** Is in Error (optional, default: false) */
@@ -41,7 +41,7 @@ export interface IMultiSelectInputProps {
    * Note: the {} will be replaced by the actual number */
   numberOfItemsLabel: string;
   /** Handler of value changes (optional, default: undefined) */
-  onChange?: (selectedOptions: Array<string> | undefined) => void;
+  onChange?: (selectedOptions: Array<string | number> | undefined) => void;
   /** Options to be displayed */
   options: Array<IOption>;
   /** Placeholder value (optional, default: undefined) */

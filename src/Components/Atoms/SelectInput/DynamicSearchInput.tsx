@@ -26,7 +26,7 @@ export interface IDynamicSearchInputProps {
   /** Highlight value in readonly mode (optional, default: false) */
   highlighted?: boolean;
   /** Input string value (optional, default: undefined) */
-  inputValue?: string;
+  inputValue?: string | number;
   /** Provide the ability to clear the value (optional, default: false) */
   isClearable?: boolean;
   /** Is in Error (optional, default: false) */
@@ -38,13 +38,13 @@ export interface IDynamicSearchInputProps {
   /** No option message (dispayed when no results are available) */
   noOptionsMessage: string | ((obj: { inputValue: string }) => string);
   /** Handler of value changes (optional, default: undefined) */
-  onChange?: (selectedOption: string | undefined) => void;
+  onChange?: (selectedOption: string | number | undefined) => void;
   /** Placeholder value (optional, default: undefined) */
   placeholder?: string;
   /** Read only field (optional, default: false) */
   readOnly?: boolean;
   /** Resolved the value from the provided input (value of the {value, label} object) */
-  resolveValue: (value: string) => Promise<IOption | undefined>;
+  resolveValue: (value: string | number) => Promise<IOption | undefined>;
   /** Search for different options based on the term provided by the user */
   searchOptions: (searchTerm: string) => Promise<Array<IOption> | undefined>;
   /** Use portal, it is remmended to set it to false for modal (optional, default true) */
