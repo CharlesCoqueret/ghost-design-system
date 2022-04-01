@@ -28,7 +28,7 @@ const Link = (props: ILinkProps): ReactElement => {
   const externalLink = isExternalLink(link);
 
   return (
-    <div className='link-container'>
+    <div className='gds-link-container'>
       {externalLink ? (
         <>
           <a href={link} target='_blank' rel='noreferrer'>

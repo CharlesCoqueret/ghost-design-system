@@ -6,7 +6,7 @@ Object {
   "baseElement": <body>
     <div>
       <nav
-        class="sidebar-container"
+        class="gds-sidebar-container"
         style="height: 600px;"
       >
         <ul
@@ -56,7 +56,7 @@ Object {
   </body>,
   "container": <div>
     <nav
-      class="sidebar-container"
+      class="gds-sidebar-container"
       style="height: 600px;"
     >
       <ul
@@ -163,7 +163,7 @@ Object {
   "baseElement": <body>
     <div>
       <nav
-        class="sidebar-container"
+        class="gds-sidebar-container"
         style="height: 600px;"
       >
         <ul
@@ -174,7 +174,7 @@ Object {
   </body>,
   "container": <div>
     <nav
-      class="sidebar-container"
+      class="gds-sidebar-container"
       style="height: 600px;"
     >
       <ul

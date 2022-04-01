@@ -135,7 +135,7 @@ const DynamicSearchCreatableInput = (props: IDynamicSearchCreatableInputProps): 
     return (
       <div
         className={classnames(
-          'select-container',
+          'gds-select-container',
           'input-select-field-read-only',
           fieldSize && `field-input-size-${fieldSize}`,
           {
@@ -158,7 +158,7 @@ const DynamicSearchCreatableInput = (props: IDynamicSearchCreatableInputProps): 
   return (
     <div
       className={classnames(
-        'select-container',
+        'gds-select-container',
         'input-select-field',
         fieldSize && `field-input-size-${fieldSize}`,
         {

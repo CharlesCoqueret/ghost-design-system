@@ -30,7 +30,7 @@ const Badge = (props: PropsWithChildren<IBadgeProps>): ReactElement => {
 
   return (
     <Tooltip tooltip={tooltip} direction={tooltipDirection}>
-      <span className={classnames('badge', { pill: type === 'notification' }, color, className)}>
+      <span className={classnames('gds-badge', { pill: type === 'notification' }, color, className)}>
         {typeof children === 'string' ? children.trim() : children}
       </span>
     </Tooltip>

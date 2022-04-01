@@ -69,7 +69,7 @@ const Modal = (props: PropsWithChildren<IModalProps>): ReactElement => {
   if (show)
     return (
       <Portal>
-        <div className='modal-overlay'>
+        <div className='gds-modal-overlay'>
           <div
             className={classnames('modal-content', {
               'size-sm': size === 'sm',

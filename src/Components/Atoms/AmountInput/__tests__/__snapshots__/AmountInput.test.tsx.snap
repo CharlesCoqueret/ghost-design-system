@@ -6,7 +6,7 @@ Object {
   "baseElement": <body>
     <div>
       <input
-        class="amount-field"
+        class="gds-amount-field"
         data-testid="name"
         inputmode="numeric"
         name="name"
@@ -17,7 +17,7 @@ Object {
   </body>,
   "container": <div>
     <input
-      class="amount-field"
+      class="gds-amount-field"
       data-testid="name"
       inputmode="numeric"
       name="name"
@@ -85,7 +85,7 @@ Object {
   "baseElement": <body>
     <div>
       <input
-        class="amount-field"
+        class="gds-amount-field"
         inputmode="numeric"
         name="name"
         type="text"
@@ -95,7 +95,7 @@ Object {
   </body>,
   "container": <div>
     <input
-      class="amount-field"
+      class="gds-amount-field"
       inputmode="numeric"
       name="name"
       type="text"
@@ -162,7 +162,7 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="amount-field amount-field-read-only field-highlighted field-input-size-5"
+        class="gds-amount-field amount-field-read-only field-highlighted field-input-size-5"
       >
         A 
         -
@@ -172,7 +172,7 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="amount-field amount-field-read-only field-highlighted field-input-size-5"
+      class="gds-amount-field amount-field-read-only field-highlighted field-input-size-5"
     >
       A 
       -
@@ -239,7 +239,7 @@ Object {
   "baseElement": <body>
     <div>
       <span
-        class="amount-field amount-field-read-only field-highlighted field-input-size-5"
+        class="gds-amount-field amount-field-read-only field-highlighted field-input-size-5"
         id="name"
         name="name"
       >
@@ -249,7 +249,7 @@ Object {
   </body>,
   "container": <div>
     <span
-      class="amount-field amount-field-read-only field-highlighted field-input-size-5"
+      class="gds-amount-field amount-field-read-only field-highlighted field-input-size-5"
       id="name"
       name="name"
     >
@@ -316,7 +316,7 @@ Object {
   "baseElement": <body>
     <div>
       <span
-        class="amount-field amount-field-read-only field-highlighted field-input-size-5"
+        class="gds-amount-field amount-field-read-only field-highlighted field-input-size-5"
         id="name"
         name="name"
       >
@@ -326,7 +326,7 @@ Object {
   </body>,
   "container": <div>
     <span
-      class="amount-field amount-field-read-only field-highlighted field-input-size-5"
+      class="gds-amount-field amount-field-read-only field-highlighted field-input-size-5"
       id="name"
       name="name"
     >
@@ -393,7 +393,7 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="amount-field amount-field-read-only field-highlighted field-input-size-5"
+        class="gds-amount-field amount-field-read-only field-highlighted field-input-size-5"
       >
          A
         1.23 b
@@ -403,7 +403,7 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="amount-field amount-field-read-only field-highlighted field-input-size-5"
+      class="gds-amount-field amount-field-read-only field-highlighted field-input-size-5"
     >
        A
       1.23 b
@@ -470,7 +470,7 @@ Object {
   "baseElement": <body>
     <div>
       <input
-        class="amount-field field-input-size-8"
+        class="gds-amount-field field-input-size-8"
         data-testid="name"
         inputmode="numeric"
         name="name"
@@ -481,7 +481,7 @@ Object {
   </body>,
   "container": <div>
     <input
-      class="amount-field field-input-size-8"
+      class="gds-amount-field field-input-size-8"
       data-testid="name"
       inputmode="numeric"
       name="name"
@@ -549,7 +549,7 @@ Object {
   "baseElement": <body>
     <div>
       <input
-        class="amount-field"
+        class="gds-amount-field"
         data-testid="name"
         inputmode="numeric"
         name="name"
@@ -560,7 +560,7 @@ Object {
   </body>,
   "container": <div>
     <input
-      class="amount-field"
+      class="gds-amount-field"
       data-testid="name"
       inputmode="numeric"
       name="name"
@@ -628,7 +628,7 @@ Object {
   "baseElement": <body>
     <div>
       <input
-        class="amount-field"
+        class="gds-amount-field"
         data-testid="name"
         inputmode="numeric"
         name="name"
@@ -639,7 +639,7 @@ Object {
   </body>,
   "container": <div>
     <input
-      class="amount-field"
+      class="gds-amount-field"
       data-testid="name"
       inputmode="numeric"
       name="name"
@@ -707,7 +707,7 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="amount-field amount-field-read-only"
+        class="gds-amount-field amount-field-read-only"
         data-testid="name"
       >
         
@@ -718,7 +718,7 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="amount-field amount-field-read-only"
+      class="gds-amount-field amount-field-read-only"
       data-testid="name"
     >
       
@@ -786,7 +786,7 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="amount-field amount-field-read-only"
+        class="gds-amount-field amount-field-read-only"
         data-testid="name"
       >
         A 
@@ -797,7 +797,7 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="amount-field amount-field-read-only"
+      class="gds-amount-field amount-field-read-only"
       data-testid="name"
     >
       A 
@@ -865,7 +865,7 @@ Object {
   "baseElement": <body>
     <div>
       <span
-        class="amount-field amount-field-read-only"
+        class="gds-amount-field amount-field-read-only"
         data-testid="name"
         id="name"
         name="name"
@@ -876,7 +876,7 @@ Object {
   </body>,
   "container": <div>
     <span
-      class="amount-field amount-field-read-only"
+      class="gds-amount-field amount-field-read-only"
       data-testid="name"
       id="name"
       name="name"
@@ -944,7 +944,7 @@ Object {
   "baseElement": <body>
     <div>
       <span
-        class="amount-field amount-field-read-only"
+        class="gds-amount-field amount-field-read-only"
         data-testid="name"
         id="name"
         name="name"
@@ -955,7 +955,7 @@ Object {
   </body>,
   "container": <div>
     <span
-      class="amount-field amount-field-read-only"
+      class="gds-amount-field amount-field-read-only"
       data-testid="name"
       id="name"
       name="name"
@@ -1023,7 +1023,7 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="amount-field amount-field-read-only field-highlighted"
+        class="gds-amount-field amount-field-read-only field-highlighted"
         data-testid="name"
       >
          A
@@ -1034,7 +1034,7 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="amount-field amount-field-read-only field-highlighted"
+      class="gds-amount-field amount-field-read-only field-highlighted"
       data-testid="name"
     >
        A
@@ -1102,7 +1102,7 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="amount-field amount-field-read-only field-highlighted"
+        class="gds-amount-field amount-field-read-only field-highlighted"
         data-testid="name"
       >
         1.23 b
@@ -1111,7 +1111,7 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="amount-field amount-field-read-only field-highlighted"
+      class="gds-amount-field amount-field-read-only field-highlighted"
       data-testid="name"
     >
       1.23 b

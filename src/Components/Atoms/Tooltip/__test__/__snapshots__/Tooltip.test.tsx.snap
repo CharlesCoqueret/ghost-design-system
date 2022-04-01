@@ -10,7 +10,7 @@ Object {
       </span>
       <div>
         <div
-          class="tooltip bottom"
+          class="gds-tooltip bottom"
           style="left: -99999px; top: -99999px; opacity: 0;"
         >
           <div
@@ -36,7 +36,7 @@ Object {
     </span>
     <div>
       <div
-        class="tooltip bottom"
+        class="gds-tooltip bottom"
         style="left: -99999px; top: -99999px; opacity: 0;"
       >
         <div
@@ -114,7 +114,7 @@ Object {
       </span>
       <div>
         <div
-          class="tooltip bottom"
+          class="gds-tooltip bottom"
           style="left: -99999px; top: -99999px; opacity: 0;"
         >
           <div
@@ -140,7 +140,7 @@ Object {
     </span>
     <div>
       <div
-        class="tooltip bottom"
+        class="gds-tooltip bottom"
         style="left: -99999px; top: -99999px; opacity: 0;"
       >
         <div
@@ -218,7 +218,7 @@ Object {
       </span>
       <div>
         <div
-          class="tooltip bottom"
+          class="gds-tooltip bottom"
           style="left: 0px; top: 0px; opacity: 1; max-width: 256px;"
         >
           <div
@@ -244,7 +244,7 @@ Object {
     </span>
     <div>
       <div
-        class="tooltip bottom"
+        class="gds-tooltip bottom"
         style="left: 0px; top: 0px; opacity: 1; max-width: 256px;"
       >
         <div
@@ -322,7 +322,7 @@ Object {
       </span>
       <div>
         <div
-          class="tooltip bottom"
+          class="gds-tooltip bottom"
           style="left: -99999px; top: -99999px; opacity: 0;"
         >
           <div
@@ -348,7 +348,7 @@ Object {
     </span>
     <div>
       <div
-        class="tooltip bottom"
+        class="gds-tooltip bottom"
         style="left: -99999px; top: -99999px; opacity: 0;"
       >
         <div
@@ -429,7 +429,7 @@ Object {
       </span>
       <div>
         <div
-          class="tooltip right"
+          class="gds-tooltip right"
           style="left: -99999px; top: -99999px; opacity: 0;"
         >
           <div
@@ -455,7 +455,7 @@ Object {
     </span>
     <div>
       <div
-        class="tooltip right"
+        class="gds-tooltip right"
         style="left: -99999px; top: -99999px; opacity: 0;"
       >
         <div

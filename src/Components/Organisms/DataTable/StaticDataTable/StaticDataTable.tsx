@@ -32,7 +32,7 @@ const StaticDataTable = <T,>(props: IStaticDataTableProps<T>): ReactElement => {
   }, []);
 
   return (
-    <table className='cui-table'>
+    <table className='gds-table'>
       <StaticDataTableHeader<T>
         columns={columns}
         extra={extra}

@@ -6,7 +6,7 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="select-container input-select-field"
+        class="gds-select-container input-select-field"
       >
         <div
           class=" css-1959ul7-container"
@@ -120,7 +120,7 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="select-container input-select-field"
+      class="gds-select-container input-select-field"
     >
       <div
         class=" css-1959ul7-container"
@@ -291,7 +291,7 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="select-container input-select-field"
+        class="gds-select-container input-select-field"
       >
         <div
           class=" css-1959ul7-container"
@@ -394,7 +394,7 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="select-container input-select-field"
+      class="gds-select-container input-select-field"
     >
       <div
         class=" css-1959ul7-container"
@@ -554,7 +554,7 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="select-container input-select-field"
+        class="gds-select-container input-select-field"
       >
         <div
           class=" css-1959ul7-container"
@@ -673,7 +673,7 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="select-container input-select-field"
+      class="gds-select-container input-select-field"
     >
       <div
         class=" css-1959ul7-container"
@@ -849,7 +849,7 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="select-container input-select-field"
+        class="gds-select-container input-select-field"
       >
         <div
           class=" css-1959ul7-container"
@@ -935,7 +935,7 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="select-container input-select-field"
+      class="gds-select-container input-select-field"
     >
       <div
         class=" css-1959ul7-container"
@@ -1078,7 +1078,7 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="select-container input-select-field"
+        class="gds-select-container input-select-field"
       >
         <div
           class=" css-1959ul7-container"
@@ -1166,7 +1166,7 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="select-container input-select-field"
+      class="gds-select-container input-select-field"
     >
       <div
         class=" css-1959ul7-container"
@@ -1311,7 +1311,7 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="select-container input-select-field"
+        class="gds-select-container input-select-field"
       >
         <div
           class=" css-1959ul7-container"
@@ -1414,7 +1414,7 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="select-container input-select-field"
+      class="gds-select-container input-select-field"
     >
       <div
         class=" css-1959ul7-container"
@@ -1574,7 +1574,7 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="select-container input-select-field"
+        class="gds-select-container input-select-field"
       >
         <div
           class=" css-1959ul7-container"
@@ -1662,7 +1662,7 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="select-container input-select-field"
+      class="gds-select-container input-select-field"
     >
       <div
         class=" css-1959ul7-container"
@@ -1807,7 +1807,7 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="select-container input-select-field"
+        class="gds-select-container input-select-field"
       >
         <div
           class=" css-1959ul7-container"
@@ -1895,7 +1895,7 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="select-container input-select-field"
+      class="gds-select-container input-select-field"
     >
       <div
         class=" css-1959ul7-container"
@@ -2040,7 +2040,7 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="select-container input-select-field"
+        class="gds-select-container input-select-field"
       >
         <div
           class=" css-1959ul7-container"
@@ -2126,7 +2126,7 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="select-container input-select-field"
+      class="gds-select-container input-select-field"
     >
       <div
         class=" css-1959ul7-container"
@@ -2269,7 +2269,7 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="select-container input-select-field"
+        class="gds-select-container input-select-field"
       >
         <div
           class=" css-1959ul7-container"
@@ -2355,7 +2355,7 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="select-container input-select-field"
+      class="gds-select-container input-select-field"
     >
       <div
         class=" css-1959ul7-container"
@@ -2498,7 +2498,7 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="select-container input-select-field"
+        class="gds-select-container input-select-field"
       >
         <div
           class=" css-1959ul7-container"
@@ -2584,7 +2584,7 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="select-container input-select-field"
+      class="gds-select-container input-select-field"
     >
       <div
         class=" css-1959ul7-container"
@@ -2727,7 +2727,7 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="select-container input-select-field field-input-size-4"
+        class="gds-select-container input-select-field field-input-size-4"
       >
         <div
           class=" css-j5ssuk-container"
@@ -2809,7 +2809,7 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="select-container input-select-field field-input-size-4"
+      class="gds-select-container input-select-field field-input-size-4"
     >
       <div
         class=" css-j5ssuk-container"
@@ -2948,7 +2948,7 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="select-container input-select-field field-input-size-4 input-error"
+        class="gds-select-container input-select-field field-input-size-4 input-error"
       >
         <div
           class=" css-1959ul7-container"
@@ -3036,7 +3036,7 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="select-container input-select-field field-input-size-4 input-error"
+      class="gds-select-container input-select-field field-input-size-4 input-error"
     >
       <div
         class=" css-1959ul7-container"
@@ -3181,7 +3181,7 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="select-container input-select-field-read-only field-input-size-4 field-highlighted"
+        class="gds-select-container input-select-field-read-only field-input-size-4 field-highlighted"
         data-testid="DATA-TEST-ID"
       >
         option 1
@@ -3190,7 +3190,7 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="select-container input-select-field-read-only field-input-size-4 field-highlighted"
+      class="gds-select-container input-select-field-read-only field-input-size-4 field-highlighted"
       data-testid="DATA-TEST-ID"
     >
       option 1
@@ -3256,7 +3256,7 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="select-container input-select-field-read-only field-input-size-4 field-highlighted"
+        class="gds-select-container input-select-field-read-only field-input-size-4 field-highlighted"
       >
         option 1
       </div>
@@ -3264,7 +3264,7 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="select-container input-select-field-read-only field-input-size-4 field-highlighted"
+      class="gds-select-container input-select-field-read-only field-input-size-4 field-highlighted"
     >
       option 1
     </div>
@@ -3329,7 +3329,7 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="select-container input-select-field"
+        class="gds-select-container input-select-field"
       >
         <div
           class=" css-1959ul7-container"
@@ -3417,7 +3417,7 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="select-container input-select-field"
+      class="gds-select-container input-select-field"
     >
       <div
         class=" css-1959ul7-container"
@@ -3562,7 +3562,7 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="select-container input-select-field"
+        class="gds-select-container input-select-field"
       >
         <div
           class=" css-1959ul7-container"
@@ -3650,7 +3650,7 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="select-container input-select-field"
+      class="gds-select-container input-select-field"
     >
       <div
         class=" css-1959ul7-container"
@@ -3795,7 +3795,7 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="select-container input-select-field"
+        class="gds-select-container input-select-field"
       >
         <div
           class=" css-1959ul7-container"
@@ -3883,7 +3883,7 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="select-container input-select-field"
+      class="gds-select-container input-select-field"
     >
       <div
         class=" css-1959ul7-container"

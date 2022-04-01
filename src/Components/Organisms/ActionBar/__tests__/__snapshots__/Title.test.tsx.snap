@@ -6,7 +6,7 @@ Object {
   "baseElement": <body>
     <div>
       <h1
-        class="typography align-edit ellipsis"
+        class="gds-typography align-edit ellipsis"
       >
         PREFIX
       </h1>
@@ -29,7 +29,7 @@ Object {
       </span>
       <div>
         <div
-          class="tooltip bottom"
+          class="gds-tooltip bottom"
           style="left: -99999px; top: -99999px; opacity: 0;"
         >
           <div
@@ -43,13 +43,13 @@ Object {
         </div>
       </div>
       <h1
-        class="typography align-edit ellipsis"
+        class="gds-typography align-edit ellipsis"
       >
         - 
         ENTITYID
       </h1>
       <h1
-        class="typography align-edit ellipsis"
+        class="gds-typography align-edit ellipsis"
       >
         SUFFIX
       </h1>
@@ -62,7 +62,7 @@ Object {
   </body>,
   "container": <div>
     <h1
-      class="typography align-edit ellipsis"
+      class="gds-typography align-edit ellipsis"
     >
       PREFIX
     </h1>
@@ -85,7 +85,7 @@ Object {
     </span>
     <div>
       <div
-        class="tooltip bottom"
+        class="gds-tooltip bottom"
         style="left: -99999px; top: -99999px; opacity: 0;"
       >
         <div
@@ -99,13 +99,13 @@ Object {
       </div>
     </div>
     <h1
-      class="typography align-edit ellipsis"
+      class="gds-typography align-edit ellipsis"
     >
       - 
       ENTITYID
     </h1>
     <h1
-      class="typography align-edit ellipsis"
+      class="gds-typography align-edit ellipsis"
     >
       SUFFIX
     </h1>
@@ -188,7 +188,7 @@ Object {
       </span>
       <div>
         <div
-          class="tooltip bottom"
+          class="gds-tooltip bottom"
           style="left: -99999px; top: -99999px; opacity: 0;"
         >
           <div
@@ -228,7 +228,7 @@ Object {
     </span>
     <div>
       <div
-        class="tooltip bottom"
+        class="gds-tooltip bottom"
         style="left: -99999px; top: -99999px; opacity: 0;"
       >
         <div
@@ -320,7 +320,7 @@ Object {
       </span>
       <div>
         <div
-          class="tooltip bottom"
+          class="gds-tooltip bottom"
           style="left: -99999px; top: -99999px; opacity: 0;"
         >
           <div
@@ -360,7 +360,7 @@ Object {
     </span>
     <div>
       <div
-        class="tooltip bottom"
+        class="gds-tooltip bottom"
         style="left: -99999px; top: -99999px; opacity: 0;"
       >
         <div
@@ -452,7 +452,7 @@ Object {
       </span>
       <div>
         <div
-          class="tooltip bottom"
+          class="gds-tooltip bottom"
           style="left: -99999px; top: -99999px; opacity: 0;"
         >
           <div
@@ -492,7 +492,7 @@ Object {
     </span>
     <div>
       <div
-        class="tooltip bottom"
+        class="gds-tooltip bottom"
         style="left: -99999px; top: -99999px; opacity: 0;"
       >
         <div
@@ -675,7 +675,7 @@ Object {
       </span>
       <div>
         <div
-          class="tooltip bottom"
+          class="gds-tooltip bottom"
           style="left: -99999px; top: -99999px; opacity: 0;"
         >
           <div
@@ -715,7 +715,7 @@ Object {
     </span>
     <div>
       <div
-        class="tooltip bottom"
+        class="gds-tooltip bottom"
         style="left: -99999px; top: -99999px; opacity: 0;"
       >
         <div

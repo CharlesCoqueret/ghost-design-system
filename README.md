@@ -88,6 +88,7 @@ $tertiary: $charcoal;
 ```{scss}
 @import 'colors.scss';
 @import '~ghost-design-system/dist/assets/_global.scss';
+@import '~ghost-design-system/dist/assets/_general.scss';
 
 ```
 

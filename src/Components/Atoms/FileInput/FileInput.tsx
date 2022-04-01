@@ -358,7 +358,7 @@ const FileInput = (props: IFileInputProps): ReactElement => {
 
   return (
     <div
-      className={classnames('file-input-container', className, fieldSize && `field-input-size-${fieldSize}`)}
+      className={classnames('gds-file-input-container', className, fieldSize && `field-input-size-${fieldSize}`)}
       style={style}>
       <div
         key='droparea'

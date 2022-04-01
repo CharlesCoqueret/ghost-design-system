@@ -114,7 +114,7 @@ const EditableDataTable = <T,>(props: IEditableDataTableProps<T>): ReactElement 
 
   return (
     <>
-      <table className='cui-table'>
+      <table className='gds-table'>
         <StaticDataTableHeader<T>
           columns={currentColumns}
           onSortChange={handleSortChange}
@@ -133,7 +133,7 @@ const EditableDataTable = <T,>(props: IEditableDataTableProps<T>): ReactElement 
       </table>
       {extra?.canAddNewLine && extra?.canAddNewLine() && (
         <Button
-          className='cui-table-new-line'
+          className='gds-table-new-line'
           color={ColorButtonEnum.PRIMARY}
           label={extra?.localization?.addRow ?? 'Add Line'}
           onClick={addNewLine}
