@@ -23,6 +23,7 @@ export enum FieldTypeEnum {
   CHECKBOX = 'checkbox',
   DATE = 'date',
   DESCRIPTION = 'description',
+  DYNAMICSEARCH = 'dynamicsearch',
   MULTISELECT = 'multiselect',
   NUMBER = 'number',
   PERCENTAGE = 'percentage',
@@ -43,6 +44,7 @@ export type IFieldProps<T> =
   | IFieldAmountProps<T>
   | IFieldCheckboxProps<T>
   | IFieldDateProps<T>
+  | IFieldDynamicSearchProps<T>
   | IFieldMultiSelectProps<T>
   | IFieldNumberProps<T>
   | IFieldPercentageProps<T>
@@ -104,6 +106,24 @@ export interface IFieldDateProps<T> extends IFieldBaseProps<T> {
 export interface IFieldDescriptionProps<T> extends Partial<IVisibilityProps<T>> {
   description: ReactElement;
   fieldType: FieldTypeEnum.DESCRIPTION;
+}
+
+export interface IFieldDynamicSearchProps<T> extends IFieldBaseProps<T> {
+  colors?: {
+    controlErrorColor: string; // colors.error,
+    controlFocusColor: string; // colors.primary,
+    fontColor: string; // 'rgb(0, 0, 0)',
+    optionFocusColor: string; // colors.chalk,
+    optionSelectedColor: string; // colors.primary,
+  };
+  fieldType: FieldTypeEnum.DYNAMICSEARCH;
+  isClearable?: boolean;
+  noOptionsMessage: (obj: { inputValue: string }) => string;
+  onChange?: (newValue: string | null | undefined) => void;
+  placeholder?: string;
+  resolveValue: (value: string | number) => Promise<IOption | undefined>;
+  searchOptions: (searchTerm: string) => Promise<Array<IOption> | undefined>;
+  usePortal?: boolean;
 }
 
 export interface IFieldMultiSelectProps<T> extends IFieldBaseProps<T> {

@@ -10,6 +10,7 @@ import {
   AmountField,
   CheckboxField,
   DatePickerField,
+  DynamicSearchField,
   MultiSelectField,
   PercentageField,
   SelectField,
@@ -110,6 +111,27 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
               handleChange(field.dataIndex, newValue as unknown as T[keyof T]);
             }}
             inputValue={(data && (data[field.dataIndex] as unknown as Date | null | undefined)) || undefined}
+            errorMessage={errorMessage}
+            usePortal={usePortal}
+          />
+        </Highlighter>
+      );
+    }
+    case FieldTypeEnum.DYNAMICSEARCH: {
+      const shouldHighlight = previousData && previousData[field.dataIndex] !== data[field.dataIndex];
+      return (
+        <Highlighter
+          highlight={previousData !== undefined}
+          oldData={previousData && previousData[field.dataIndex]}
+          shouldHighlight={shouldHighlight}>
+          <DynamicSearchField
+            {...field}
+            mandatory={requiredFromValidation || field.mandatory}
+            name={field.dataIndex.toString()}
+            onChange={(newValue: string | number | null | undefined) => {
+              handleChange(field.dataIndex, newValue as unknown as T[keyof T]);
+            }}
+            inputValue={(data && (data[field.dataIndex] as unknown as string | number | undefined)) || undefined}
             errorMessage={errorMessage}
             usePortal={usePortal}
           />

@@ -18,6 +18,7 @@ export enum ColumnType {
   CODE = 'code',
   CUSTOM = 'custom',
   DATE = 'date',
+  DYNAMICSEARCH = 'dynamicsearch',
   NUMBER = 'number',
   PERCENTAGE = 'percentage',
   TEXT = 'text',
@@ -129,6 +130,25 @@ export interface IColumnDate<T> extends IColumn {
   type: ColumnType.DATE;
 }
 
+export interface IColumnDynamicSearch<T> extends IColumn {
+  dataIndex: keyof T;
+  editable?: boolean;
+  isClearable?: boolean;
+  noOptionsMessage: (obj: { inputValue: string }) => string;
+  placeholder?: string;
+  resolveValue: (value: string | number) => Promise<IOption | undefined>;
+  searchOptions: (searchTerm: string) => Promise<Array<IOption> | undefined>;
+  selectColors?: {
+    controlErrorColor: string; // colors.error,
+    controlFocusColor: string; // colors.primary,
+    fontColor: string; // 'rgb(0, 0, 0)',
+    optionFocusColor: string; // colors.chalk,
+    optionSelectedColor: string; // colors.primary,
+  };
+  type: ColumnType.DYNAMICSEARCH;
+  usePortal?: boolean;
+}
+
 export interface IColumnNumber<T> extends IColumn {
   allowNegative?: boolean;
   dataIndex: keyof T;
@@ -175,6 +195,7 @@ export type IColumnType<T> =
   | IColumnCode<T>
   | IColumnCustom<T>
   | IColumnDate<T>
+  | IColumnDynamicSearch<T>
   | IColumnNumber<T>
   | IColumnPercentage<T>
   | IColumnText<T>;
@@ -208,6 +229,8 @@ export interface IExtraStaticDataTableProps<T> {
 }
 
 export interface IExtraLineEditableDataTableProps<T> extends IExtraStaticDataTableProps<T> {
+  /** Action column width (as a CSSProperty) (optional, default: undefined) */
+  actionColumnWidth?: string;
   /** Notification of initiation of changes on a specific row (optional, default: undefined) */
   onRowEdit?: (editRow: T, editedRowIndex: number) => void;
   /** Show side by side in modal (optional, default: false) */

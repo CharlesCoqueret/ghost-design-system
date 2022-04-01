@@ -76,6 +76,20 @@ const columnToFieldMapper = <T,>(columns: Array<IColumnType<T>>): Array<IFieldAn
             readOnly: !column.editable,
           };
         }
+        case ColumnType.DYNAMICSEARCH: {
+          return {
+            colors: column.selectColors,
+            dataIndex: column.dataIndex,
+            fieldType: FieldTypeEnum.DYNAMICSEARCH,
+            isClearable: column.isClearable,
+            label: column.title,
+            noOptionsMessage: column.noOptionsMessage,
+            placeholder: column.placeholder,
+            resolveValue: column.resolveValue,
+            searchOptions: column.searchOptions,
+            usePortal: column.usePortal,
+          };
+        }
         case ColumnType.NUMBER: {
           return {
             allowNegative: column.allowNegative,
