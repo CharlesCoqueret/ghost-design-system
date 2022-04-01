@@ -14,6 +14,7 @@ interface IDemoType {
   dynamicSearch: string;
   id: string;
   name?: string;
+  hidden?: string;
   status?: string;
   price?: number;
   parts?: number;
@@ -25,6 +26,7 @@ const initialData = [
     dynamicSearch: 'test',
     id: 'UGA',
     name: 'Lorem ipsum dolor sit amet consectetur adipiscing elit',
+    hidden: 'hidden value',
     status: 'INACTIVE',
     price: -100000,
     parts: -10,
@@ -34,6 +36,7 @@ const initialData = [
     dynamicSearch: 'test',
     id: 'ARE',
     name: 'Consecte',
+    hidden: 'hidden value',
     status: 'ACTIVE',
     price: -2500000,
     parts: 15,
@@ -43,6 +46,7 @@ const initialData = [
     dynamicSearch: 'test',
     id: 'GBR',
     name: 'Sed',
+    hidden: 'hidden value',
     status: 'IN_PROGRESS',
     price: 150000,
     parts: 3,
@@ -52,6 +56,7 @@ const initialData = [
     dynamicSearch: 'test',
     id: 'JUF',
     name: 'dolore eu fugiat nulla pariatur',
+    hidden: 'hidden value',
     status: 'IN_PROGRESS',
     price: -354000,
     parts: 70,
@@ -61,6 +66,7 @@ const initialData = [
     dynamicSearch: 'test',
     id: 'YAI',
     name: 'Sed ut perspiciatis',
+    hidden: 'hidden value',
     status: 'ACTIVE',
     price: 4150000,
     parts: 30,
@@ -70,6 +76,7 @@ const initialData = [
     dynamicSearch: 'test',
     id: 'SML',
     name: 'Ut enim ad minima veniam',
+    hidden: 'hidden value',
     status: 'ACTIVE',
     price: -70500,
     parts: 10,
@@ -91,6 +98,13 @@ const columns: IColumnType<IDemoType>[] = [
     ellipsis: true,
     sorter: true,
     editable: true,
+  },
+  {
+    title: 'Hidden',
+    dataIndex: 'hidden',
+    type: ColumnType.TEXT,
+    editable: true,
+    hidden: true,
   },
   {
     title: 'Badge',
@@ -148,6 +162,7 @@ const columns: IColumnType<IDemoType>[] = [
 
 const validationSchema: yup.SchemaOf<IDemoType> = yup.object({
   dynamicSearch: yup.mixed().optional(),
+  hidden: yup.string().required(),
   id: yup.string().required(),
   name: yup.string().required(),
   status: yup.string().required(),

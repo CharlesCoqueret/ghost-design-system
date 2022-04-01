@@ -13,7 +13,7 @@ const PercentageCell = <T,>(props: ICellProps<T, IColumnPercentage<T>>): ReactEl
     editing || (extra && 'editedRowIndex' in extra ? extra.editedRowIndex === rowIndex : false);
 
   return (
-    <td className={classnames({ ellipsis: column.ellipsis })}>
+    <td className={classnames({ ellipsis: column.ellipsis })} style={{ display: column.hidden ? 'none' : undefined }}>
       <PercentageField
         allowNegative={column.allowNegative}
         decimalScale={column.decimalScale}

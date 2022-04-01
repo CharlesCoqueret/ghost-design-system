@@ -56,7 +56,7 @@ const StaticDataTableHeader = <T,>(props: IStaticDataTableHeaderProps<T>): React
           ))}
         {columns.map((column, index) => {
           return (
-            <th key={`header-${index}`} style={{ width: column.width }}>
+            <th key={`header-${index}`} style={{ display: column.hidden ? 'none' : undefined, width: column.width }}>
               <Tooltip
                 tooltip={
                   column.sorter && !isEditingRow ? extra?.localization?.sortMessage ?? 'Click to sort' : undefined

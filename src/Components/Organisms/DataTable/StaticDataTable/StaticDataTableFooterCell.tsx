@@ -49,6 +49,7 @@ const StaticDataTableFooterCell = <T,>(props: IStaticDataTableFooterCellProps<T>
     case ColumnType.CODE:
     case ColumnType.CUSTOM:
     case ColumnType.DATE:
+    case ColumnType.DYNAMICSEARCH:
     case ColumnType.TEXT:
       return <td className='table--footer-value center'>-</td>;
 

@@ -14,7 +14,7 @@ const DateCell = <T,>(props: ICellProps<T, IColumnDate<T>>): ReactElement => {
     editing || (extra && 'editedRowIndex' in extra ? extra.editedRowIndex === rowIndex : false);
 
   return (
-    <td className={classnames({ ellipsis: column.ellipsis })}>
+    <td className={classnames({ ellipsis: column.ellipsis })} style={{ display: column.hidden ? 'none' : undefined }}>
       <DatePickerField
         calendarStartDay={column.calendarStartDay}
         dateFormat={dateFormat}
