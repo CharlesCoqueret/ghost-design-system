@@ -37,7 +37,7 @@ const BadgeCell = <T,>(props: ICellProps<T, IColumnBadge<T>>): ReactElement => {
           inputValue={displayValue}
           isClearable={column.isClearable}
           name={column.title.toString()}
-          onChange={(newValue: string | null | undefined) => {
+          onChange={(newValue: string | number | null | undefined) => {
             if (onChange) {
               onChange(newValue as unknown as T[keyof T]);
             }

@@ -45,7 +45,7 @@ export interface ISelectFieldProps {
   /** Name of text field */
   name: string;
   /** Handler of value changes (optional, default: undefined) */
-  onChange?: (newValue: string | null | undefined) => void;
+  onChange?: (newValue: string | number | null | undefined) => void;
   /** Options available to be picked from */
   options: Array<IOption>;
   /** Placeholder value (optional, default: undefined) */

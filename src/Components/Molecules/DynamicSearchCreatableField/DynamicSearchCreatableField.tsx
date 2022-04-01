@@ -49,13 +49,13 @@ export interface IDynamicSearchCreatableFieldProps {
   /** No option message (dispayed when no results are available) */
   noOptionsMessage: (obj: { inputValue: string }) => string;
   /** Handler of value changes (optional, default: undefined) */
-  onChange?: (newValue: string | null | undefined) => void;
+  onChange?: (newValue: string | number | null | undefined) => void;
   /** Placeholder value (optional, default: undefined) */
   placeholder?: string;
   /** Read only field (optional, default: false) */
   readOnly?: boolean;
   /** Resolved the value from the provided input (value of the {value, label} object) */
-  resolveValue: (value: string) => Promise<IOption | undefined>;
+  resolveValue: (value: string | number) => Promise<IOption | undefined>;
   /** Search for different options based on the term provided by the user */
   searchOptions: (searchTerm: string) => Promise<Array<IOption> | undefined>;
   /** Use portal, it is remmended to set it to false for modal (optional, default true) */
