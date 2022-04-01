@@ -7,6 +7,8 @@ import { FileStatusEnum, IFile } from './types';
 import { formatBytes } from './fileUtils';
 
 export interface IFileGallery {
+  /** For test purpose only */
+  dataTestId?: string;
   /** Disabled field (optional, default: false) */
   disabled?: boolean;
   /** File to be displayed */
@@ -26,8 +28,17 @@ export interface IFileGallery {
 }
 
 const FileGallery = (props: IFileGallery): ReactElement => {
-  const { disabled, file, progress, readOnly, showFileSize, showProgressBar, updateFileDelete, updateFileDownload } =
-    props;
+  const {
+    dataTestId,
+    disabled,
+    file,
+    progress,
+    readOnly,
+    showFileSize,
+    showProgressBar,
+    updateFileDelete,
+    updateFileDownload,
+  } = props;
 
   const [downloading, setDownloading] = useState(false);
 
@@ -45,6 +56,7 @@ const FileGallery = (props: IFileGallery): ReactElement => {
             {file.error ? <Icon icon={['fal', 'exclamation-triangle']} /> : <Icon icon={['fal', 'paperclip']} />}
           </div>
           <div
+            data-testid={dataTestId ? `${dataTestId}-download` : undefined}
             className={classnames('name', {
               downloadable: downloadable,
             })}
@@ -78,6 +90,7 @@ const FileGallery = (props: IFileGallery): ReactElement => {
           ) : (
             <div
               className='delete-icon'
+              data-testid={dataTestId ? `${dataTestId}-delete` : undefined}
               onClick={() => {
                 updateFileDelete(file);
               }}>
@@ -91,6 +104,7 @@ const FileGallery = (props: IFileGallery): ReactElement => {
 };
 
 FileGallery.defaultProps = {
+  dataTestId: undefined,
   disabled: false,
   progress: undefined,
   readOnly: false,
