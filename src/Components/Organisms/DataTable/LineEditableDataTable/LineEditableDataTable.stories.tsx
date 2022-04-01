@@ -11,6 +11,7 @@ export default {
 } as ComponentMeta<typeof LineEditableDataTable>;
 
 interface IDemoType {
+  dynamicSearch: string;
   id: string;
   name?: string;
   status?: string;
@@ -21,6 +22,7 @@ interface IDemoType {
 
 const initialData = [
   {
+    dynamicSearch: 'test',
     id: 'UGA',
     name: 'Lorem ipsum dolor sit amet consectetur adipiscing elit',
     status: 'INACTIVE',
@@ -29,6 +31,7 @@ const initialData = [
     startDate: new Date(2021, 2, 24),
   },
   {
+    dynamicSearch: 'test',
     id: 'ARE',
     name: 'Consecte',
     status: 'ACTIVE',
@@ -37,6 +40,7 @@ const initialData = [
     startDate: new Date(2021, 1, 13),
   },
   {
+    dynamicSearch: 'test',
     id: 'GBR',
     name: 'Sed',
     status: 'IN_PROGRESS',
@@ -45,6 +49,7 @@ const initialData = [
     startDate: new Date(2021, 1, 4),
   },
   {
+    dynamicSearch: 'test',
     id: 'JUF',
     name: 'dolore eu fugiat nulla pariatur',
     status: 'IN_PROGRESS',
@@ -53,6 +58,7 @@ const initialData = [
     startDate: new Date(2021, 1, 15),
   },
   {
+    dynamicSearch: 'test',
     id: 'YAI',
     name: 'Sed ut perspiciatis',
     status: 'ACTIVE',
@@ -61,6 +67,7 @@ const initialData = [
     startDate: new Date(2021, 2, 17),
   },
   {
+    dynamicSearch: 'test',
     id: 'SML',
     name: 'Ut enim ad minima veniam',
     status: 'ACTIVE',
@@ -106,6 +113,24 @@ const columns: IColumnType<IDemoType>[] = [
     editable: true,
   },
   {
+    title: 'Dynamic Search',
+    dataIndex: 'dynamicSearch',
+    type: ColumnType.DYNAMICSEARCH,
+    editable: true,
+    resolveValue: () => {
+      return Promise.resolve({ value: 'test', label: 'LABEL 1' });
+    },
+    noOptionsMessage: () => {
+      return 'No results';
+    },
+    searchOptions: () => {
+      return Promise.resolve([
+        { value: 'test', label: 'LABEL 1' },
+        { value: 'test2', label: 'LABEL 2' },
+      ]);
+    },
+  },
+  {
     title: 'Percentage',
     dataIndex: 'parts',
     sorter: true,
@@ -122,6 +147,7 @@ const columns: IColumnType<IDemoType>[] = [
 ];
 
 const validationSchema: yup.SchemaOf<IDemoType> = yup.object({
+  dynamicSearch: yup.mixed().optional(),
   id: yup.string().required(),
   name: yup.string().required(),
   status: yup.string().required(),

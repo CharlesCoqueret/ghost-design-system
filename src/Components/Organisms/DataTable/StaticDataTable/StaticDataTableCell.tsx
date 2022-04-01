@@ -7,6 +7,7 @@ import {
   ButtonCell,
   CodeCell,
   CustomCell,
+  DynamicSearchCell,
   DateCell,
   NumberCell,
   PercentageCell,
@@ -41,6 +42,9 @@ const StaticDataTableCell = <T,>(props: IStaticDataTableCellProps<T>): ReactElem
     }
     case ColumnType.DATE: {
       return <DateCell<T> column={column} row={row} extra={extra} rowIndex={rowIndex} />;
+    }
+    case ColumnType.DYNAMICSEARCH: {
+      return <DynamicSearchCell<T> column={column} row={row} extra={extra} rowIndex={rowIndex} />;
     }
     case ColumnType.NUMBER: {
       return <NumberCell<T> column={column} row={row} extra={extra} rowIndex={rowIndex} />;

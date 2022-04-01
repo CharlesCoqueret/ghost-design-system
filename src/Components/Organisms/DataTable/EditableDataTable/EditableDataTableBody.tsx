@@ -83,7 +83,7 @@ const EditableDataTableBody = <T,>(props: IEditableDataTableBodyProps<T>): React
       })}
       {(!data || data?.length === 0) && (
         <tr className='no-data'>
-          <td colSpan={columns.length + (isSelectable ? 1 : 0)}>{extra?.localization?.noData || 'No data'}</td>
+          <td colSpan={columns.length + (isSelectable ? 1 : 0)}>{extra?.localization?.noData ?? 'No data'}</td>
         </tr>
       )}
       {loading && (

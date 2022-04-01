@@ -51,7 +51,7 @@ export interface IMultiSelectFieldProps {
    * Note: the {} will be replaced by the actual number */
   numberOfItemsLabel: string;
   /** Handler of value changes (optional, default: undefined) */
-  onChange?: (newValue: Array<string> | null | undefined) => void;
+  onChange?: (newValue: Array<string | number> | null | undefined) => void;
   /** Options available to be picked from */
   options: Array<IOption>;
   /** Placeholder value (optional, default: undefined) */

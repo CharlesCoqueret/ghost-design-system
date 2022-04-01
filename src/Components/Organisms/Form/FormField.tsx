@@ -10,6 +10,7 @@ import {
   AmountField,
   CheckboxField,
   DatePickerField,
+  DynamicSearchField,
   MultiSelectField,
   PercentageField,
   SelectField,
@@ -116,6 +117,27 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
         </Highlighter>
       );
     }
+    case FieldTypeEnum.DYNAMICSEARCH: {
+      const shouldHighlight = previousData && previousData[field.dataIndex] !== data[field.dataIndex];
+      return (
+        <Highlighter
+          highlight={previousData !== undefined}
+          oldData={previousData && previousData[field.dataIndex]}
+          shouldHighlight={shouldHighlight}>
+          <DynamicSearchField
+            {...field}
+            mandatory={requiredFromValidation || field.mandatory}
+            name={field.dataIndex.toString()}
+            onChange={(newValue: string | number | null | undefined) => {
+              handleChange(field.dataIndex, newValue as unknown as T[keyof T]);
+            }}
+            inputValue={(data && (data[field.dataIndex] as unknown as string | number | undefined)) || undefined}
+            errorMessage={errorMessage}
+            usePortal={usePortal}
+          />
+        </Highlighter>
+      );
+    }
     case FieldTypeEnum.MULTISELECT: {
       const { options, ...rest } = field;
       const localOptions = typeof options === 'function' ? options(data) : options;
@@ -146,7 +168,7 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
             options={localOptions}
             mandatory={requiredFromValidation || field.mandatory}
             name={field.dataIndex.toString()}
-            onChange={(newValue: Array<string> | null | undefined) => {
+            onChange={(newValue: Array<string | number> | null | undefined) => {
               handleChange(field.dataIndex, newValue as unknown as T[keyof T]);
             }}
             inputValue={(data && (data[field.dataIndex] as unknown as Array<string> | undefined)) || undefined}
@@ -217,7 +239,7 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
             options={localOptions}
             mandatory={requiredFromValidation || field.mandatory}
             name={field.dataIndex.toString()}
-            onChange={(newValue: string | null | undefined) => {
+            onChange={(newValue: string | number | null | undefined) => {
               handleChange(field.dataIndex, newValue as unknown as T[keyof T]);
             }}
             inputValue={(data && (data[field.dataIndex] as unknown as string | undefined)) || undefined}
