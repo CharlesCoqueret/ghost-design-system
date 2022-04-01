@@ -143,12 +143,7 @@ const LineEditableDataTable = <T,>(props: ILineEditableDataTableProps<T>): React
           sortDirection={sortDirection}
           extra={{ ...extra, editedRowIndex }}
         />
-        <StaticDataTableBody<T>
-          columns={currentColumns}
-          data={currentData}
-          extra={{ ...extra, editedRowIndex }}
-          loading={loading}
-        />
+        <StaticDataTableBody<T> columns={currentColumns} data={currentData} extra={extra} loading={loading} />
         <StaticDataTableFooter<T> columns={currentColumns} data={currentData} extra={extra} />
       </table>
       {extra?.canAddNewLine && extra?.canAddNewLine() && (
