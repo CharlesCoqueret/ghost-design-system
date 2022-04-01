@@ -1,23 +1,20 @@
-import React, { ReactElement, Ref } from 'react';
-import classnames from 'classnames';
+import { faGlassEmpty } from '@fortawesome/pro-solid-svg-icons';
+import React, { CSSProperties, ReactElement, Ref } from 'react';
+import lang from 'suneditor-react/dist/types/lang';
 
-import { GenericField, SelectInput, IOption } from '../../Atoms';
+import { GenericField, RichTextInput } from '../../Atoms';
 
-export interface ISelectFieldProps {
-  /** Custom colors settings */
-  colors?: {
-    controlErrorColor: string; // colors.error,
-    controlFocusColor: string; // colors.primary,
-    fontColor: string; // 'rgb(0, 0, 0)',
-    optionFocusColor: string; // colors.chalk,
-    optionSelectedColor: string; // colors.primary,
-  };
+export interface IRichTextFieldProps {
   /** React Container ref (optional, default: undefined) */
   containerRef?: Ref<HTMLDivElement>;
   /** For test purpose only */
   dataTestId?: string;
   /** Disabled field (optional, default: false) */
   disabled?: boolean;
+  /** Enable image (optional, default: false) */
+  enableImage?: boolean;
+  /** Enable link  (optional, default: false) */
+  enableLink?: boolean;
   /** Error message (optional, default: undefined) */
   errorMessage?: string;
   /** Class for the field surrounding the input (optional, default: undefined) */
@@ -32,44 +29,43 @@ export interface ISelectFieldProps {
   inline?: boolean;
   /** Class for the input (optional, default: undefined) */
   inputClassName?: string;
-  /** Input string value (optional, default: undefined) */
-  inputValue: string | number | undefined;
-  /** Provide the ability to clear the value (optional, default: false) */
-  isClearable?: boolean;
+  /** Input value (optional, default: undefined) */
+  inputValue?: string;
   /** Label (optional, default: undefined) */
   label?: string;
   /** Size of the field in a 12 column grid (optional, default: undefined) */
   labelSize?: number;
+  /** Locale for tooltips (optional, default: undefined, meaning english) */
+  locale?: lang;
   /** Mandatory field (optional, default: false) */
   mandatory?: boolean;
+  /** Maximum number of character of the field (optionsl, default: undefined) */
+  maxLength?: number;
   /** Name of text field */
   name: string;
-  /** Handler of value changes (optional, default: undefined) */
-  onChange?: (newValue: string | number | null | undefined) => void;
-  /** Options available to be picked from */
-  options: Array<IOption>;
-  /** Placeholder value (optional, default: undefined) */
-  placeholder?: string;
+  /** handler of changes notifying only on blur of the input for performance reason */
+  onChange: (newValue: string) => void;
   /** Read only field (optional, default: false) */
   readOnly?: boolean;
-  /** Use portal, it is remmended to set it to false for modal (optional, default true) */
-  usePortal?: boolean;
+  /** Custom style (optional, default: undefined) */
+  style?: CSSProperties;
 }
 
 /**
- * Select field component
+ * Rich Text field component
  *
- * Select field wrapped in a generic field ( @see GenericField ).
+ * Rich Text input wrapped in a generic field ( @see GenericField ).
  *
- * Calls @param onChange for every input change.
+ * Calls @param onChange for every blur.
  *
  */
-export const SelectField = (props: ISelectFieldProps): ReactElement => {
+export const RichTextField = (props: IRichTextFieldProps): ReactElement => {
   const {
-    colors,
     containerRef,
     dataTestId,
     disabled,
+    enableImage,
+    enableLink,
     errorMessage,
     fieldClassName,
     fieldSize,
@@ -78,64 +74,59 @@ export const SelectField = (props: ISelectFieldProps): ReactElement => {
     inline,
     inputClassName,
     inputValue,
-    isClearable,
     label,
     labelSize,
+    locale,
     mandatory,
+    maxLength,
     name,
     onChange,
-    options,
-    placeholder,
     readOnly,
-    usePortal,
+    style,
   } = props;
 
   return (
     <GenericField
       containerRef={containerRef}
+      inputLength={inputValue?.length || undefined}
       errorMessage={errorMessage}
       fieldClassName={fieldClassName}
       helperText={helperText}
       highlighted={highlighted}
       inline={inline}
+      invertInputDescription
       label={label}
       labelSize={labelSize}
       mandatory={mandatory}
+      maxLength={maxLength}
       readOnly={readOnly}>
-      <SelectInput
-        colors={colors}
-        className={classnames(
-          inputClassName,
-          'field',
-          'input-select-field',
-          fieldSize && `field-input-size-${fieldSize}`,
-        )}
+      <RichTextInput
+        className={inputClassName}
         dataTestId={dataTestId}
-        highlighted={highlighted}
-        isInError={errorMessage !== undefined}
-        isClearable={isClearable}
-        name={name}
-        placeholder={placeholder}
-        options={options}
         disabled={disabled}
+        enableImage={enableImage}
+        enableLink={enableLink}
+        fieldSize={fieldSize}
+        highlighted={highlighted}
         inputValue={inputValue}
+        isInError={errorMessage !== undefined}
+        locale={locale}
+        maxLength={maxLength}
+        name={name}
         onChange={onChange}
         readOnly={readOnly}
-        usePortal={usePortal}
+        style={style}
       />
     </GenericField>
   );
 };
 
-SelectField.defaultProps = {
-  colors: {
-    controlErrorColor: 'rgb(255, 52, 24)',
-    controlFocusColor: 'rgb(38, 186, 212)',
-    fontColor: 'rgb(0, 0, 0)',
-    optionFocusColor: 'rgb(228, 228, 228)',
-    optionSelectedColor: 'rgb(38, 186, 212)',
-  },
+RichTextField.defaultProps = {
+  containerRef: undefined,
+  dataTestId: undefined,
   disabled: false,
+  enableImage: false,
+  enableLink: false,
   errorMessage: undefined,
   fieldClassName: undefined,
   fieldSize: undefined,
@@ -144,14 +135,13 @@ SelectField.defaultProps = {
   inline: false,
   inputClassName: undefined,
   inputValue: undefined,
-  isClearable: false,
   label: undefined,
   labelSize: undefined,
-  mandatory: false,
-  onChange: undefined,
-  placeholder: undefined,
+  locale: undefined,
+  mandatory: faGlassEmpty,
+  maxLength: undefined,
   readOnly: false,
-  usePortal: true,
+  style: undefined,
 };
 
-export default SelectField;
+export default RichTextField;

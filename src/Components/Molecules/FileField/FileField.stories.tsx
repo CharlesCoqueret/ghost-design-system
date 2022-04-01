@@ -7,7 +7,7 @@ import { FileStatusEnum, IFile } from '../../Atoms';
 export default {
   title: 'Molecule/FileField',
   component: FileField,
-  parameters: { controls: { sort: 'requiredFirst' } },
+  parameters: { actions: { argTypesRegex: '^on.*' }, controls: { sort: 'requiredFirst' } },
 } as ComponentMeta<typeof FileField>;
 
 const Template: ComponentStory<typeof FileField> = (args: IFileFieldProps) => {

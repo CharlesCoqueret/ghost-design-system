@@ -73,11 +73,11 @@ const resolveValue = async (searchTerm = ''): Promise<IOption> => {
 export default {
   title: 'Atom/DynamicSearchInput',
   component: DynamicSearchInput,
-  parameters: { actions: { argTypesRegex: '^on.*' } },
+  parameters: { actions: { argTypesRegex: '^on.*' }, controls: { sort: 'requiredFirst' } },
 } as ComponentMeta<typeof DynamicSearchInput>;
 
 const Template: ComponentStory<typeof DynamicSearchInput> = ({ inputValue, ...args }: IDynamicSearchInputProps) => {
-  const [localValue, setLocalValue] = useState<string | undefined>(inputValue);
+  const [localValue, setLocalValue] = useState<string | number | undefined>(inputValue);
 
   return (
     <>

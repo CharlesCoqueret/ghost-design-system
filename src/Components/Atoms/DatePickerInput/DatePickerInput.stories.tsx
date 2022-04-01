@@ -9,7 +9,7 @@ import { Icon } from '../Icon';
 export default {
   title: 'Atom/DatePickerInput',
   component: DatePickerInput,
-  parameters: { actions: { argTypesRegex: '^on.*' } },
+  parameters: { actions: { argTypesRegex: '^on.*' }, controls: { sort: 'requiredFirst' } },
 } as ComponentMeta<typeof DatePickerInput>;
 
 const Template: ComponentStory<typeof DatePickerInput> = ({ inputValue, ...args }: IDatePickerProps) => {

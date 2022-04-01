@@ -33,7 +33,7 @@ export interface IMultiSelectFieldProps {
   /** Class for the input (optional, default: undefined) */
   inputClassName?: string;
   /** Input string value (optional, default: undefined) */
-  inputValue: Array<string> | undefined;
+  inputValue: Array<string | number> | undefined;
   /** Provide the ability to clear the value (optional, default: false) */
   isClearable?: boolean;
   /** Label (optional, default: undefined) */

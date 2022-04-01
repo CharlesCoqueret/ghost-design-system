@@ -29,11 +29,11 @@ const options = [
 export default {
   title: 'Molecule/SelectField',
   component: SelectField,
-  parameters: { actions: { argTypesRegex: '^on.*' } },
+  parameters: { actions: { argTypesRegex: '^on.*' }, controls: { sort: 'requiredFirst' } },
 } as ComponentMeta<typeof SelectField>;
 
 const ManagedTemplate: ComponentStory<typeof SelectField> = (args: ISelectFieldProps) => {
-  const [inputValue, setInputValue] = useState<Readonly<IOption> | null | undefined>(undefined);
+  const [inputValue, setInputValue] = useState<string | number | null | undefined>(undefined);
   return <SelectField {...args} inputValue={inputValue ? inputValue : undefined} onChange={setInputValue} />;
 };
 

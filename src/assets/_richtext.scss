@@ -27,6 +27,13 @@
     }
   }
 
+  &.highlighted {
+    .se-wrapper-inner,
+    .se-wrapper-inner:focus {
+      border: 1px solid $tangerine;
+    }
+  }
+
   .sun-editor-editable {
     * {
       box-sizing: border-box;

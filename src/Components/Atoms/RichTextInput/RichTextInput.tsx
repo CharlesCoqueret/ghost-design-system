@@ -1,4 +1,4 @@
-import React, { ReactElement, useCallback } from 'react';
+import React, { CSSProperties, ReactElement, useCallback } from 'react';
 import SunEditor from 'suneditor-react';
 import lang from 'suneditor-react/dist/types/lang';
 import align from 'suneditor/src/plugins/submenu/align';
@@ -30,6 +30,8 @@ export interface IRichTextInputProps {
   enableLink?: boolean;
   /** Size of the field in a 12 column grid (optional, default: undefined) */
   fieldSize?: number;
+  /** Highlighted field (optional, default: false) */
+  highlighted?: boolean;
   /** Initial values for the field (optional, default: undefined or '-' when disabled or readOnly) */
   inputValue?: string;
   /** Field is in error state (optional, default: false) */
@@ -44,6 +46,8 @@ export interface IRichTextInputProps {
   onChange: (newValue: string) => void;
   /** Read only field (optional, default: false) */
   readOnly?: boolean;
+  /** Custom style (optional, default: undefined) */
+  style?: CSSProperties;
 }
 
 const forbiddenTags = ['video', 'audio', 'track', 'source', 'script', 'object', 'iframe', 'embed', 'input', 'select'];
@@ -51,8 +55,20 @@ const imageTags = ['img', 'svg', 'picture'];
 const linkTags = ['a'];
 
 const RichTextInput = (props: IRichTextInputProps): ReactElement => {
-  const { disabled, enableImage, enableLink, inputValue, isInError, locale, maxLength, name, onChange, readOnly } =
-    props;
+  const {
+    disabled,
+    enableImage,
+    enableLink,
+    highlighted,
+    inputValue,
+    isInError,
+    locale,
+    maxLength,
+    name,
+    onChange,
+    readOnly,
+    style,
+  } = props;
 
   const editorOptions = useCallback((): SunEditorOptions => {
     return {
@@ -76,7 +92,7 @@ const RichTextInput = (props: IRichTextInputProps): ReactElement => {
         ['list', 'indent', 'outdent'],
         ['fontSize', 'fontColor', 'hiliteColor'],
         ['horizontalRule', 'table'],
-        enableLink && enableImage ? ['link', 'image'] : enableImage ? ['image'] : enableLink ? ['link'] : undefined,
+        enableLink && enableImage ? ['link', 'image'] : enableImage ? ['image'] : enableLink ? ['link'] : [],
       ],
       // Do not replace <i></i> by <i /> as it breaks ol ul alignment
       icons: {
@@ -134,7 +150,9 @@ const RichTextInput = (props: IRichTextInputProps): ReactElement => {
         disabled: disabled,
         readonly: readOnly,
         error: !disabled && !readOnly && isInError,
-      })}>
+        highlighted: (readOnly || disabled) && highlighted,
+      })}
+      style={style}>
       <SunEditor
         defaultValue={(readOnly || disabled) && inputValue === undefined ? '-' : inputValue}
         disable={disabled || readOnly}
@@ -155,11 +173,13 @@ RichTextInput.defaultProps = {
   enableImage: false,
   enableLink: false,
   fieldSize: undefined,
-  inputValue: undefined,
+  inputValue: '',
   isInError: false,
+  locale: undefined,
   maxLength: undefined,
   name: undefined,
   readOnly: false,
+  style: undefined,
 };
 
 export default RichTextInput;

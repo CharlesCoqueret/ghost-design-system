@@ -8,6 +8,7 @@ import { Icon } from '../../../Atoms';
 export default {
   title: 'Organism/DataTable/StaticDataTable',
   component: StaticDataTable,
+  parameters: { actions: { argTypesRegex: '^on.*' }, controls: { sort: 'requiredFirst' } },
 } as ComponentMeta<typeof StaticDataTable>;
 
 const columns: IColumnType<IDemoType>[] = [

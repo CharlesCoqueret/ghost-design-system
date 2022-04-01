@@ -23,7 +23,7 @@ const initialData = {
 export default {
   title: 'Atom/Layout/Row',
   component: Row,
-  parameters: { actions: { argTypesRegex: '^on.*' } },
+  parameters: { actions: { argTypesRegex: '^on.*' }, controls: { sort: 'requiredFirst' } },
 } as ComponentMeta<typeof Row>;
 
 const Template: ComponentStory<typeof Row> = (args: IRowProps) => {

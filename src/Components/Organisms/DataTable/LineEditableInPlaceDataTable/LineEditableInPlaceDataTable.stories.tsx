@@ -7,6 +7,7 @@ import { ColumnType, IColumnType } from '../Common/types';
 export default {
   title: 'Organism/DataTable/LineEditableInPlaceDataTable',
   component: LineEditableInPlaceDataTable,
+  parameters: { actions: { argTypesRegex: '^on.*' }, controls: { sort: 'requiredFirst' } },
 } as ComponentMeta<typeof LineEditableInPlaceDataTable>;
 
 interface IDemoType {

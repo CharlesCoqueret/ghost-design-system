@@ -22,7 +22,7 @@ const initialData = {
 export default {
   title: 'Atom/Layout/Section',
   component: Section,
-  parameters: { actions: { argTypesRegex: '^on.*' } },
+  parameters: { actions: { argTypesRegex: '^on.*' }, controls: { sort: 'requiredFirst' } },
 } as ComponentMeta<typeof Section>;
 
 const Template: ComponentStory<typeof Section> = (args: ISectionProps) => {

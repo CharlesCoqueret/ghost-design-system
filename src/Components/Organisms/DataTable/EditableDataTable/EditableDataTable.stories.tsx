@@ -7,6 +7,7 @@ import { ColumnType, IColumnType } from '../Common/types';
 export default {
   title: 'Organism/DataTable/EditableDataTable',
   component: EditableDataTable,
+  parameters: { actions: { argTypesRegex: '^on.*' }, controls: { sort: 'requiredFirst' } },
 } as ComponentMeta<typeof EditableDataTable>;
 
 interface IDemoType {

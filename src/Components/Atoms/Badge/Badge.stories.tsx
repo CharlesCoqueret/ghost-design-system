@@ -7,6 +7,7 @@ import Badge, { BadgeColorsEnum, IBadgeProps } from './Badge';
 export default {
   title: 'Atom/Badge',
   component: Badge,
+  parameters: { actions: { argTypesRegex: '^on.*' }, controls: { sort: 'requiredFirst' } },
 } as ComponentMeta<typeof Badge>;
 
 const getRandomInt = (min = 1, max = 100): number => {

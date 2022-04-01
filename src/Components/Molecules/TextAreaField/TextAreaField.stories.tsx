@@ -6,7 +6,7 @@ import { TextAreaField, ITextAreaFieldProps } from './TextAreaField';
 export default {
   title: 'Molecule/TextareaField',
   component: TextAreaField,
-  parameters: { controls: { sort: 'requiredFirst' } },
+  parameters: { actions: { argTypesRegex: '^on.*' }, controls: { sort: 'requiredFirst' } },
 } as ComponentMeta<typeof TextAreaField>;
 
 const Template: ComponentStory<typeof TextAreaField> = (args: ITextAreaFieldProps) => {

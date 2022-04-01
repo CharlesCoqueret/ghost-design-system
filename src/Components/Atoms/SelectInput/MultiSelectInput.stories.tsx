@@ -26,11 +26,11 @@ const options = [
 export default {
   title: 'Atom/MultiSelectInput',
   component: MultiSelectInput,
-  parameters: { actions: { argTypesRegex: '^on.*' } },
+  parameters: { actions: { argTypesRegex: '^on.*' }, controls: { sort: 'requiredFirst' } },
 } as ComponentMeta<typeof MultiSelectInput>;
 
 const Template: ComponentStory<typeof MultiSelectInput> = ({ inputValue, ...args }: IMultiSelectInputProps) => {
-  const [localValue, setLocalValue] = useState<Array<string>>(inputValue || []);
+  const [localValue, setLocalValue] = useState<Array<string | number>>(inputValue || []);
 
   return (
     <>

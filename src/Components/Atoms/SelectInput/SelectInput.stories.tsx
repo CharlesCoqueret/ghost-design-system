@@ -26,11 +26,11 @@ const options = [
 export default {
   title: 'Atom/SelectInput',
   component: SelectInput,
-  parameters: { actions: { argTypesRegex: '^on.*' } },
+  parameters: { actions: { argTypesRegex: '^on.*' }, controls: { sort: 'requiredFirst' } },
 } as ComponentMeta<typeof SelectInput>;
 
 const Template: ComponentStory<typeof SelectInput> = ({ inputValue, ...args }: ISelectInputProps) => {
-  const [localValue, setLocalValue] = useState<string | null | undefined>(inputValue);
+  const [localValue, setLocalValue] = useState<string | number | null | undefined>(inputValue);
 
   return (
     <>
