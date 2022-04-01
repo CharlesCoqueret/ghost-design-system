@@ -210,6 +210,8 @@ export interface IExtraStaticDataTableProps<T> {
 export interface IExtraLineEditableDataTableProps<T> extends IExtraStaticDataTableProps<T> {
   /** Notification of initiation of changes on a specific row (optional, default: undefined) */
   onRowEdit?: (editRow: T, editedRowIndex: number) => void;
+  /** Show side by side in modal (optional, default: false) */
+  showChanges?: boolean;
   /** Notification of changes cancellation on a specific row (optional, default: undefined) */
   onRowCancelEdit?: (editRow: T, editedRowIndex: number) => void;
   /** Notification of changes on a specific row (optional, default: undefined) */
@@ -242,6 +244,7 @@ export interface IExtraLineEditableDataTableProps<T> extends IExtraStaticDataTab
    *    deletePopoverCancel: 'Cancel'
    *    downloadButton: 'Download'
    *    editButton: 'Edit'
+   *    modalTitle: 'Edit row'
    *    moreActionsMessage: 'More actions'
    *    noData: 'No data'
    *    sortMessage: 'Click to sort'
@@ -258,6 +261,7 @@ export interface IExtraLineEditableDataTableProps<T> extends IExtraStaticDataTab
     deletePopoverCancel?: string;
     downloadButton?: string;
     editButton?: string;
+    modalTitle?: string;
     moreActionsMessage?: string;
     noData?: string;
     sortMessage?: string;

@@ -162,8 +162,8 @@ const LineEditableDataTable = <T,>(props: ILineEditableDataTableProps<T>): React
       )}
       {editedRowIndex !== undefined && (
         <LineEditableModal<T>
-          title={'TITLE'} //TODO add modal edit title to localization
-          showChanges={true} // TODO expose show change option to extra
+          title={extra?.localization?.modalTitle || 'Edit row'}
+          showChanges={extra?.showChanges || false}
           onSubmit={(newRow) => {
             setCurrentData((prev) => {
               prev[editedRowIndex] = newRow;
@@ -187,7 +187,6 @@ const LineEditableDataTable = <T,>(props: ILineEditableDataTableProps<T>): React
           extra={extra}
         />
       )}
-      ;
     </>
   );
 };
