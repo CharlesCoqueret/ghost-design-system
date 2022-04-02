@@ -1,7 +1,8 @@
 import React, { ReactElement, Ref } from 'react';
 import classnames from 'classnames';
 
-import { GenericField, AmountInput, ThousandsGroupStyle } from '../../Atoms';
+import { GenericField } from '../../Atoms/GenericField';
+import { AmountInput, ThousandsGroupStyle } from '../../Atoms/AmountInput';
 
 export interface IPercentageFieldProps {
   /** Allows negative values (optional, default: true) */

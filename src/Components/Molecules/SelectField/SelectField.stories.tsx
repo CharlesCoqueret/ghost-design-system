@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import SelectField, { ISelectFieldProps } from './SelectField';
-import { IOption } from '../../Atoms/';
 
 const selectedOptions = {
   label: 'selection label 2 - which can sometimes be ' + 'very '.repeat(10) + ' long',

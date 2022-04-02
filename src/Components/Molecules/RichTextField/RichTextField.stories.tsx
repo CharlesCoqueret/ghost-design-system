@@ -85,21 +85,6 @@ HelperAndLimit.args = {
     'facilisis eleifend.</p>',
 };
 
-export const Highlighted = Template.bind({});
-Highlighted.args = {
-  readOnly: true,
-  highlighted: true,
-  label: 'Rich text field highlighted',
-  inputValue:
-    '<h1>Lorem ipsum</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin consectetur ' +
-    'tortor nec lorem euismod imperdiet quis vel turpis. Phasellus ultricies nibh vitae laoreet tempus. ' +
-    'Quisque vel dolor id arcu dignissim condimentum eu vel purus. Donec auctor, ipsum vel hendrerit ' +
-    'molestie, ex quam convallis quam, aliquam laoreet metus nibh in diam. Nam id vulputate magna. Cras ' +
-    'ullamcorper eget ipsum ut finibus. Suspendisse a porttitor velit. Integer condimentum mauris et ' +
-    'mollis imperdiet. Fusce blandit convallis posuere. Phasellus vehicula purus ullamcorper mauris ' +
-    'facilisis eleifend.</p>',
-};
-
 export const Disabled = Template.bind({});
 Disabled.args = {
   disabled: true,

@@ -1,5 +1,6 @@
 import React, { PropsWithChildren, ReactElement } from 'react';
-import { Row } from '../../Atoms';
+
+import { Row } from '../../Atoms/Layout';
 
 export interface IHighlighterProps {
   highlight?: boolean;

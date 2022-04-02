@@ -1,8 +1,7 @@
-import { faGlassEmpty } from '@fortawesome/pro-solid-svg-icons';
 import React, { CSSProperties, ReactElement, Ref } from 'react';
-import lang from 'suneditor-react/dist/types/lang';
 
-import { GenericField, RichTextInput } from '../../Atoms';
+import { GenericField } from '../../Atoms/GenericField';
+import { RichTextInput, lang } from '../../Atoms/RichTextInput';
 
 export interface IRichTextFieldProps {
   /** React Container ref (optional, default: undefined) */
@@ -23,8 +22,6 @@ export interface IRichTextFieldProps {
   fieldSize?: number;
   /** Helper text (optional, default: undefined) */
   helperText?: string;
-  /** Highlighted field (optional, default: false) */
-  highlighted?: boolean;
   /** Inline field (optional, default: false) */
   inline?: boolean;
   /** Class for the input (optional, default: undefined) */
@@ -70,7 +67,6 @@ export const RichTextField = (props: IRichTextFieldProps): ReactElement => {
     fieldClassName,
     fieldSize,
     helperText,
-    highlighted,
     inline,
     inputClassName,
     inputValue,
@@ -92,9 +88,7 @@ export const RichTextField = (props: IRichTextFieldProps): ReactElement => {
       errorMessage={errorMessage}
       fieldClassName={fieldClassName}
       helperText={helperText}
-      highlighted={highlighted}
       inline={inline}
-      invertInputDescription
       label={label}
       labelSize={labelSize}
       mandatory={mandatory}
@@ -107,7 +101,6 @@ export const RichTextField = (props: IRichTextFieldProps): ReactElement => {
         enableImage={enableImage}
         enableLink={enableLink}
         fieldSize={fieldSize}
-        highlighted={highlighted}
         inputValue={inputValue}
         isInError={errorMessage !== undefined}
         locale={locale}
@@ -131,14 +124,13 @@ RichTextField.defaultProps = {
   fieldClassName: undefined,
   fieldSize: undefined,
   helperText: undefined,
-  highlighted: false,
   inline: false,
   inputClassName: undefined,
   inputValue: undefined,
   label: undefined,
   labelSize: undefined,
   locale: undefined,
-  mandatory: faGlassEmpty,
+  mandatory: undefined,
   maxLength: undefined,
   readOnly: false,
   style: undefined,

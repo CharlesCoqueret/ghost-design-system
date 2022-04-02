@@ -1,7 +1,8 @@
 import React, { ReactElement, Ref } from 'react';
 import classnames from 'classnames';
 
-import { GenericField, IOption, DynamicSearchCreatableInput } from '../../Atoms';
+import { GenericField } from '../../Atoms/GenericField';
+import { IOption, DynamicSearchCreatableInput } from '../../Atoms/SelectInput';
 
 export interface IDynamicSearchCreatableFieldProps {
   /** Custom colors settings */

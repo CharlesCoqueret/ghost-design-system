@@ -1,7 +1,8 @@
 import React, { ReactElement, Ref } from 'react';
 import classnames from 'classnames';
 
-import { GenericField, AmountInput, ThousandsGroupStyle } from '../../Atoms';
+import { AmountInput, ThousandsGroupStyle } from '../../Atoms/AmountInput';
+import { GenericField } from '../../Atoms/GenericField';
 
 export interface IAmountFieldProps {
   /** Allows negative values (optional, default: true) */

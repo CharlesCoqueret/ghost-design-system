@@ -1,4 +1,4 @@
-import React, { CSSProperties, ReactElement, useCallback } from 'react';
+import React, { CSSProperties, ReactElement } from 'react';
 import SunEditor from 'suneditor-react';
 import lang from 'suneditor-react/dist/types/lang';
 import align from 'suneditor/src/plugins/submenu/align';
@@ -30,8 +30,6 @@ export interface IRichTextInputProps {
   enableLink?: boolean;
   /** Size of the field in a 12 column grid (optional, default: undefined) */
   fieldSize?: number;
-  /** Highlighted field (optional, default: false) */
-  highlighted?: boolean;
   /** Initial values for the field (optional, default: undefined or '-' when disabled or readOnly) */
   inputValue?: string;
   /** Field is in error state (optional, default: false) */
@@ -56,10 +54,10 @@ const linkTags = ['a'];
 
 const RichTextInput = (props: IRichTextInputProps): ReactElement => {
   const {
+    dataTestId,
     disabled,
     enableImage,
     enableLink,
-    highlighted,
     inputValue,
     isInError,
     locale,
@@ -70,66 +68,64 @@ const RichTextInput = (props: IRichTextInputProps): ReactElement => {
     style,
   } = props;
 
-  const editorOptions = useCallback((): SunEditorOptions => {
-    return {
-      plugins: [
-        align,
-        blockquote,
-        fontColor,
-        fontSize,
-        formatBlock,
-        hiliteColor,
-        horizontalRule,
-        image,
-        lineHeight,
-        link,
-        list,
-        paragraphStyle,
-        table,
-      ],
-      buttonList: [
-        ['bold', 'italic', 'underline', 'strike'],
-        ['list', 'indent', 'outdent'],
-        ['fontSize', 'fontColor', 'hiliteColor'],
-        ['horizontalRule', 'table'],
-        enableLink && enableImage ? ['link', 'image'] : enableImage ? ['image'] : enableLink ? ['link'] : [],
-      ],
-      // Do not replace <i></i> by <i /> as it breaks ol ul alignment
-      icons: {
-        bold: '<i class="far fa-bold"></i>',
-        font_color: '<i class="far fa-palette"></i>',
-        highlight_color: '<i class="fal fa-highlighter"></i>',
-        horizontal_rule: '<i class="far fa-horizontal-rule"></i>',
-        image: '<i class="far fa-image"></i>',
-        // indent/outdent might need to be swapped when https://github.com/JiHong88/SunEditor/issues/884 gets fixed
-        indent: '<i class="far fa-outdent"></i>',
-        italic: '<i class="far fa-italic"></i>',
-        link: '<i class="far fa-link"></i>',
-        list_bullets: '<i class="fal fa-list-ul"></i>',
-        list_number: '<i class="fal fa-list-ol"></i>',
-        // indent/outdent might need to be swapped when https://github.com/JiHong88/SunEditor/issues/884 gets fixed
-        outdent: '<i class="far fa-indent"></i>',
-        strike: '<i class="far fa-strikethrough"></i>',
-        table: '<i class="fal fa-table"></i>',
-        underline: '<i class="far fa-underline"></i>',
-      },
-      showPathLabel: false,
-      height: 'auto',
-      imageUploadUrl: undefined,
-      imageUrlInput: false,
-      videoFileInput: false,
-      resizingBar: false,
-      charCounter: maxLength ? true : false,
-      maxCharCount: maxLength,
-      minHeight: readOnly || disabled ? undefined : '200px',
-      maxHeight: readOnly || disabled ? undefined : '600px',
-      pasteTagsBlacklist: [
-        ...forbiddenTags,
-        ...[enableImage ? imageTags : undefined],
-        ...[enableLink ? linkTags : undefined],
-      ].join('|'),
-    };
-  }, [maxLength, readOnly, disabled, enableImage]);
+  const editorOptions: SunEditorOptions = {
+    plugins: [
+      align,
+      blockquote,
+      fontColor,
+      fontSize,
+      formatBlock,
+      hiliteColor,
+      horizontalRule,
+      image,
+      lineHeight,
+      link,
+      list,
+      paragraphStyle,
+      table,
+    ],
+    buttonList: [
+      ['bold', 'italic', 'underline', 'strike'],
+      ['list', 'indent', 'outdent'],
+      ['fontSize', 'fontColor', 'hiliteColor'],
+      ['horizontalRule', 'table'],
+      enableLink && enableImage ? ['link', 'image'] : enableImage ? ['image'] : enableLink ? ['link'] : [],
+    ],
+    // Do not replace <i></i> by <i /> as it breaks ol ul alignment
+    icons: {
+      bold: '<i class="far fa-bold"></i>',
+      font_color: '<i class="far fa-palette"></i>',
+      highlight_color: '<i class="fal fa-highlighter"></i>',
+      horizontal_rule: '<i class="far fa-horizontal-rule"></i>',
+      image: '<i class="far fa-image"></i>',
+      // indent/outdent might need to be swapped when https://github.com/JiHong88/SunEditor/issues/884 gets fixed
+      indent: '<i class="far fa-outdent"></i>',
+      italic: '<i class="far fa-italic"></i>',
+      link: '<i class="far fa-link"></i>',
+      list_bullets: '<i class="fal fa-list-ul"></i>',
+      list_number: '<i class="fal fa-list-ol"></i>',
+      // indent/outdent might need to be swapped when https://github.com/JiHong88/SunEditor/issues/884 gets fixed
+      outdent: '<i class="far fa-indent"></i>',
+      strike: '<i class="far fa-strikethrough"></i>',
+      table: '<i class="fal fa-table"></i>',
+      underline: '<i class="far fa-underline"></i>',
+    },
+    showPathLabel: false,
+    height: 'auto',
+    imageUploadUrl: undefined,
+    imageUrlInput: false,
+    videoFileInput: false,
+    resizingBar: false,
+    charCounter: maxLength ? true : false,
+    maxCharCount: maxLength,
+    minHeight: readOnly || disabled ? undefined : '200px',
+    maxHeight: readOnly || disabled ? undefined : '600px',
+    pasteTagsBlacklist: [
+      ...forbiddenTags,
+      ...[enableImage ? imageTags : undefined],
+      ...[enableLink ? linkTags : undefined],
+    ].join('|'),
+  };
 
   /**
    * Handles blur event and triggers the provided onChange callback.
@@ -150,17 +146,17 @@ const RichTextInput = (props: IRichTextInputProps): ReactElement => {
         disabled: disabled,
         readonly: readOnly,
         error: !disabled && !readOnly && isInError,
-        highlighted: (readOnly || disabled) && highlighted,
       })}
       style={style}>
       <SunEditor
+        data-testid={dataTestId}
         defaultValue={(readOnly || disabled) && inputValue === undefined ? '-' : inputValue}
         disable={disabled || readOnly}
         hideToolbar={readOnly || disabled}
         lang={locale}
         name={name}
         onBlur={blurHandler}
-        setOptions={editorOptions()}
+        setOptions={editorOptions}
       />
     </div>
   );
@@ -173,7 +169,7 @@ RichTextInput.defaultProps = {
   enableImage: false,
   enableLink: false,
   fieldSize: undefined,
-  inputValue: '',
+  inputValue: undefined,
   isInError: false,
   locale: undefined,
   maxLength: undefined,

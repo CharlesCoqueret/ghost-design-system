@@ -2,7 +2,7 @@ import React, { MouseEvent, ReactElement, useContext, useEffect, useState } from
 import classnames from 'classnames';
 import { NavLink, useNavigate, Location } from 'react-router-dom';
 
-import { Icon } from '../../Atoms';
+import { Icon } from '../../Atoms/Icon';
 import { SideBarContext } from './SideBarContext';
 
 export interface ISideBarItem {

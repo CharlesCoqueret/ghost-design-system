@@ -2,8 +2,8 @@ import { ReactElement } from 'react';
 
 import { ThousandsGroupStyle } from '../../Atoms/AmountInput';
 import { IToggleEntry } from '../../Atoms/CheckBoxInput';
-import { DateFormat, WeekDayEnum } from '../../Atoms/DatePickerInput/types';
-import { IOption } from '../../Atoms/SelectInput/types';
+import { DateFormat, WeekDayEnum } from '../../Atoms/DatePickerInput';
+import { IOption } from '../../Atoms/SelectInput';
 
 export interface IFormSubmitReturnedType<T> {
   data: T;

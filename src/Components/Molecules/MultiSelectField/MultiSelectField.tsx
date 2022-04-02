@@ -1,7 +1,8 @@
 import React, { ReactElement, Ref } from 'react';
 import classnames from 'classnames';
 
-import { GenericField, IOption, MultiSelectInput } from '../../Atoms';
+import { GenericField } from '../../Atoms/GenericField';
+import { IOption, MultiSelectInput } from '../../Atoms/SelectInput';
 
 export interface IMultiSelectFieldProps {
   /** Custom colors settings */

@@ -36,8 +36,6 @@ export default {
       targets: [
         { src: 'src/assets/_*.scss', dest: 'dist/assets' },
         { src: ['src/assets/fonts/Montserrat-Regular.ttf'], dest: 'dist/assets/fonts' },
-        { src: 'package.json', dest: 'dist/' },
-        { src: 'LICENSE', dest: 'dist/' },
       ],
     }),
   ],

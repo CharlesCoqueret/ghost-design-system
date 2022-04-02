@@ -1,6 +1,7 @@
 import React, { CSSProperties, ReactElement, Ref } from 'react';
 
-import { GenericField, FileInput, IFile, FileStatusEnum } from '../../Atoms';
+import { GenericField } from '../../Atoms/GenericField';
+import { FileInput, IFile, FileStatusEnum } from '../../Atoms/FileInput';
 
 export interface IFileFieldProps {
   /** Accepted types (optional, default: '\*\/\*') */

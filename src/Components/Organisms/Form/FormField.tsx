@@ -5,20 +5,18 @@ import sortBy from 'lodash/sortBy';
 import map from 'lodash/map';
 import intersection from 'lodash/intersection';
 
-import { IToggleEntry } from '../../Atoms';
-import {
-  AmountField,
-  CheckboxField,
-  DatePickerField,
-  DynamicSearchField,
-  MultiSelectField,
-  PercentageField,
-  SelectField,
-  SwitchField,
-  TextAreaField,
-  TextField,
-  YearPickerField,
-} from '../../Molecules';
+import { IToggleEntry } from '../../Atoms/CheckBoxInput';
+import { AmountField } from '../../Molecules/AmountField';
+import { CheckboxField } from '../../Molecules/CheckboxField';
+import { DatePickerField } from '../../Molecules/DatePickerField';
+import { DynamicSearchField } from '../../Molecules/DynamicSearchField';
+import { MultiSelectField } from '../../Molecules/MultiSelectField';
+import { PercentageField } from '../../Molecules/PercentageField';
+import { SelectField } from '../../Molecules/SelectField';
+import { SwitchField } from '../../Molecules/SwitchField';
+import { TextAreaField } from '../../Molecules/TextAreaField';
+import { TextField } from '../../Molecules/TextField';
+import { YearPickerField } from '../../Molecules/YearPickerField';
 import Highlighter from './Highlighter';
 import { FieldTypeEnum, IFieldProps } from './types';
 import { FieldError } from './yupResolver';
