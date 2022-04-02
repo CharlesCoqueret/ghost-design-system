@@ -1,7 +1,8 @@
 import React, { ReactElement, Ref } from 'react';
 import classnames from 'classnames';
 
-import { GenericField, IOption, DynamicSearchCreatableInput } from '../../Atoms';
+import { GenericField } from '../../Atoms/GenericField';
+import { IOption, DynamicSearchCreatableInput } from '../../Atoms/SelectInput';
 
 export interface IDynamicSearchCreatableFieldProps {
   /** Custom colors settings */
@@ -35,7 +36,7 @@ export interface IDynamicSearchCreatableFieldProps {
   /** Class for the input (optional, default: undefined) */
   inputClassName?: string;
   /** Input string value (optional, default: undefined) */
-  inputValue: string | undefined;
+  inputValue: string | number | undefined;
   /** Provide the ability to clear the value (optional, default: false) */
   isClearable?: boolean;
   /** Label (optional, default: undefined) */

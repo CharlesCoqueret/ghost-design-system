@@ -8,6 +8,7 @@ export * from './FileField';
 export * from './MultiSelectField';
 export * from './PercentageField';
 export * from './Popover';
+export * from './RichTextField';
 export * from './SelectField';
 export * from './SwitchField';
 export * from './TextAreaField';

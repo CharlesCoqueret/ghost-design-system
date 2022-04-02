@@ -6,7 +6,7 @@ import { PercentageField, IPercentageFieldProps } from './PercentageField';
 export default {
   title: 'Molecule/PercentageField',
   component: PercentageField,
-  parameters: { controls: { sort: 'requiredFirst' } },
+  parameters: { actions: { argTypesRegex: '^on.*' }, controls: { sort: 'requiredFirst' } },
 } as ComponentMeta<typeof PercentageField>;
 
 const Template: ComponentStory<typeof PercentageField> = (args: IPercentageFieldProps) => {

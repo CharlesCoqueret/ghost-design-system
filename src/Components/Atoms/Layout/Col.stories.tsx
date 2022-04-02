@@ -23,7 +23,7 @@ const initialData = {
 export default {
   title: 'Atom/Layout/Col',
   component: Col,
-  parameters: { actions: { argTypesRegex: '^on.*' } },
+  parameters: { actions: { argTypesRegex: '^on.*' }, controls: { sort: 'requiredFirst' } },
 } as ComponentMeta<typeof Col>;
 
 const Template: ComponentStory<typeof Col> = (args: IColProps) => {

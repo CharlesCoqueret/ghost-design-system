@@ -9,6 +9,7 @@ import { Button, ColorButtonEnum } from '../../Molecules/Button';
 export default {
   title: 'Atom/Modal',
   component: Modal,
+  parameters: { actions: { argTypesRegex: '^on.*' }, controls: { sort: 'requiredFirst' } },
 } as ComponentMeta<typeof Modal>;
 
 const Template: ComponentStory<typeof Modal> = (args: IModalProps) => {

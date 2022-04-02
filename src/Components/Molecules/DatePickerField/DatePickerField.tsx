@@ -1,7 +1,8 @@
 import React, { ReactElement, Ref } from 'react';
 import classnames from 'classnames';
 
-import { GenericField, DatePickerInput, WeekDayEnum, DateFormat } from '../../Atoms';
+import { GenericField } from '../../Atoms/GenericField';
+import { DatePickerInput, WeekDayEnum, DateFormat } from '../../Atoms/DatePickerInput';
 
 export interface IDatePickerFieldProps {
   /** Calendar start week day (optional: default: WeekDayEnum.MONDAY )  */

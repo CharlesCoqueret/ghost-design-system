@@ -55,7 +55,9 @@ export const initializeIFile = (
  * @returns file with UID
  */
 export const injectUid = (file: IFile): IFile => {
-  if (file.uid) return file;
+  if (file.uid) {
+    return file;
+  }
   return { ...file, uid: uid() };
 };
 
@@ -65,10 +67,10 @@ export const injectUid = (file: IFile): IFile => {
  * @returns file with status.
  */
 export const injectDoneStatus = (file: IFile): IFile => {
-  if (!file.status) {
-    file = Object.assign(file, { status: FileStatusEnum.DONE });
+  if (file.status) {
+    return file;
   }
-  return file;
+  return { ...file, status: FileStatusEnum.DONE };
 };
 
 /**
@@ -84,7 +86,7 @@ export const formatBytes = (bytes: number | string, decimals = 2) => {
 
   const k = 1024;
   const dm = decimals < 0 ? 0 : decimals;
-  const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
+  const sizes = ['Bytes', 'kB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
 
   const i = Math.floor(Math.log(localBytes) / Math.log(k));
 

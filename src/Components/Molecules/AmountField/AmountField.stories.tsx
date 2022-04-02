@@ -6,7 +6,7 @@ import { AmountField, IAmountFieldProps } from './AmountField';
 export default {
   title: 'Molecule/AmountField',
   component: AmountField,
-  parameters: { controls: { sort: 'requiredFirst' } },
+  parameters: { actions: { argTypesRegex: '^on.*' }, controls: { sort: 'requiredFirst' } },
 } as ComponentMeta<typeof AmountField>;
 
 const Template: ComponentStory<typeof AmountField> = (args: IAmountFieldProps) => {

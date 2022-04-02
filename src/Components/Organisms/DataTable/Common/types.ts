@@ -1,15 +1,11 @@
 import { CSSProperties, ReactElement } from 'react';
 import * as yup from 'yup';
 
-import {
-  IconProp,
-  BadgeColorsEnum,
-  DateFormat,
-  DateFormatEnum,
-  IOption,
-  ThousandsGroupStyle,
-  WeekDayEnum,
-} from '../../../Atoms';
+import { IconProp } from '../../../Atoms/Icon';
+import { BadgeColorsEnum } from '../../../Atoms/Badge';
+import { DateFormat, DateFormatEnum, WeekDayEnum } from '../../../Atoms/DatePickerInput';
+import { IOption } from '../../../Atoms/SelectInput';
+import { ThousandsGroupStyle } from '../../../Atoms/AmountInput';
 
 export enum ColumnType {
   AMOUNT = 'amount',

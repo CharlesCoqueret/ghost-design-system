@@ -24,7 +24,7 @@ const options: Array<IToggleEntry> = [
 export default {
   title: 'Atom/SwitchInput',
   component: SwitchInput,
-  parameters: { actions: { argTypesRegex: '^on.*' } },
+  parameters: { actions: { argTypesRegex: '^on.*' }, controls: { sort: 'requiredFirst' } },
 } as ComponentMeta<typeof SwitchInput>;
 
 const Template: ComponentStory<typeof SwitchInput> = ({ options, ...args }: ISwitchInputProps) => {

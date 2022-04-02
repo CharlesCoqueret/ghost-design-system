@@ -74,15 +74,16 @@ const resolveValue = async (searchTerm = ''): Promise<IOption> => {
 export default {
   title: 'Molecule/DynamicSearchCreatableField',
   component: DynamicSearchCreatableField,
+  parameters: { actions: { argTypesRegex: '^on.*' }, controls: { sort: 'requiredFirst' } },
 } as ComponentMeta<typeof DynamicSearchCreatableField>;
 
 const Template: ComponentStory<typeof DynamicSearchCreatableField> = ({
   inputValue,
   ...args
 }: IDynamicSearchCreatableFieldProps) => {
-  const [localValue, setLocalValue] = useState<string | undefined>(inputValue);
+  const [localValue, setLocalValue] = useState<string | number | undefined>(inputValue);
 
-  return <DynamicSearchCreatableField {...args} inputValue={localValue} onChange={setLocalValue} />;
+  return <DynamicSearchCreatableField {...args} inputValue={localValue || ''} onChange={setLocalValue} />;
 };
 
 export const Default = Template.bind({});

@@ -8,6 +8,7 @@ import { ISideBarSection } from './SideBarSection';
 export default {
   title: 'Organism/SideBar',
   component: SideBar,
+  parameters: { actions: { argTypesRegex: '^on.*' }, controls: { sort: 'requiredFirst' } },
 } as ComponentMeta<typeof SideBar>;
 
 const Template: ComponentStory<typeof SideBar> = (args: ISideBarProps) => (

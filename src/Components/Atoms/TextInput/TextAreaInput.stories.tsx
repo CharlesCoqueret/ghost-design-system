@@ -6,7 +6,7 @@ import TextInput, { ITextInputProps } from './TextInput';
 export default {
   title: 'Atom/TextInput',
   component: TextInput,
-  parameters: { actions: { argTypesRegex: '^on.*' } },
+  parameters: { actions: { argTypesRegex: '^on.*' }, controls: { sort: 'requiredFirst' } },
 } as ComponentMeta<typeof TextInput>;
 
 const Template: ComponentStory<typeof TextInput> = ({ inputValue, ...args }: ITextInputProps) => {

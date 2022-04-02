@@ -3,7 +3,7 @@ import classnames from 'classnames';
 
 import { ICellProps } from './types';
 import { IColumnCode } from '../types';
-import { TextField } from '../../../../Molecules';
+import { TextField } from '../../../../Molecules/TextField';
 
 const CodeCell = <T,>(props: ICellProps<T, IColumnCode<T>>): ReactElement => {
   const { column, forcedValue, row, rowIndex } = props;

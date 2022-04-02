@@ -7,7 +7,7 @@ import { FileStatusEnum, IFile } from './types';
 export default {
   title: 'Atom/FileInput',
   component: FileInput,
-  parameters: { actions: { argTypesRegex: '^on.*' } },
+  parameters: { actions: { argTypesRegex: '^on.*' }, controls: { sort: 'requiredFirst' } },
 } as ComponentMeta<typeof FileInput>;
 
 const Template: ComponentStory<typeof FileInput> = (args: IFileInputProps) => {

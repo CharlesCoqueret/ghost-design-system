@@ -1,7 +1,7 @@
 import React, { ReactElement, Ref, useState } from 'react';
 
 import { GenericField } from '../../Atoms/GenericField';
-import { TextInput } from '../../Atoms/';
+import { TextInput } from '../../Atoms/TextInput';
 
 export interface ITextFieldProps {
   /** React Container ref (optional, default: undefined) */

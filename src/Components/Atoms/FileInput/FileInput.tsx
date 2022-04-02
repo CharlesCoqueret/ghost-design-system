@@ -384,6 +384,7 @@ const FileInput = (props: IFileInputProps): ReactElement => {
         {sortBy(localItems, 'uid').map((item) => {
           return (
             <FileGallery
+              dataTestId={dataTestId}
               disabled={disabled}
               file={item}
               key={`${item.uid}`}
@@ -406,7 +407,7 @@ FileInput.defaultProps = {
   className: undefined,
   disabled: false,
   isInError: false,
-  maxFile: undefined,
+  maxFiles: undefined,
   maxFileSize: undefined,
   maxFolderDepth: 2,
   readOnly: false,

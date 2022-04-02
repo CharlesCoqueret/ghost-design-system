@@ -1,7 +1,9 @@
 import React, { ReactElement, Ref } from 'react';
 import classnames from 'classnames';
 
-import { GenericField, IToggleEntry, SwitchInput } from '../../Atoms';
+import { GenericField } from '../../Atoms/GenericField';
+import { IToggleEntry } from '../../Atoms/CheckBoxInput';
+import { SwitchInput } from '../../Atoms/SwitchInput';
 
 export interface ISwitchFieldProps {
   /** React Container ref (optional, default: undefined) */
@@ -42,7 +44,7 @@ export interface ISwitchFieldProps {
 /**
  * Switch field component
  *
- * Checbox input wrapped in a generic field ( @see GenericField ).
+ * Switch input wrapped in a generic field ( @see GenericField ).
  *
  * Calls @param onChange for every input change.
  *

@@ -6,7 +6,7 @@ import YearPickerInput, { IYearPickerProps } from './YearPickerInput';
 export default {
   title: 'Atom/YearPickerInput',
   component: YearPickerInput,
-  parameters: { actions: { argTypesRegex: '^on.*' } },
+  parameters: { actions: { argTypesRegex: '^on.*' }, controls: { sort: 'requiredFirst' } },
 } as ComponentMeta<typeof YearPickerInput>;
 
 const Template: ComponentStory<typeof YearPickerInput> = ({ inputValue, ...args }: IYearPickerProps) => {

@@ -6,7 +6,7 @@ import TextAreaInput, { ITextAreaInputProps } from './TextAreaInput';
 export default {
   title: 'Atom/TextAreaInput',
   component: TextAreaInput,
-  parameters: { actions: { argTypesRegex: '^on.*' } },
+  parameters: { actions: { argTypesRegex: '^on.*' }, controls: { sort: 'requiredFirst' } },
 } as ComponentMeta<typeof TextAreaInput>;
 
 const Template: ComponentStory<typeof TextAreaInput> = ({ inputValue, ...args }: ITextAreaInputProps) => {

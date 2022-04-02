@@ -1,7 +1,7 @@
 import React, { MouseEvent, ReactElement } from 'react';
 import classnames from 'classnames';
 
-import { Icon } from '../../../Atoms';
+import { Icon } from '../../../Atoms/Icon';
 
 interface IDataTableCellSelectableProps {
   handleSelectClick?: (event: MouseEvent<HTMLElement>, selected: boolean) => void;

@@ -1,8 +1,8 @@
 import React, { ReactElement } from 'react';
 import classnames from 'classnames';
 
-import { Button, ColorButtonEnum, IButtonProps } from '../../Molecules/';
-import { Icon } from '../../Atoms';
+import { Button, ColorButtonEnum, IButtonProps } from '../../Molecules/Button';
+import { Icon } from '../../Atoms/Icon';
 import Title from './Title';
 
 export interface IActionBarProps {

@@ -2,9 +2,9 @@
 .eslintrc.js
 .github/
 .nvmrc
-.prettierc
+.prettierrc
 .storybook/
-
+tsconfig.json
 
 coverage
 node_modules

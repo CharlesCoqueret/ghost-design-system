@@ -10,7 +10,7 @@ import {
   SortDirectionEnum,
 } from '../Common/types';
 import { MenuDirectionEnum, Tooltip } from '../../../Atoms/Tooltip';
-import { Icon } from '../../../Atoms';
+import { Icon } from '../../../Atoms/Icon';
 
 interface IStaticDataTableHeaderProps<T> {
   columns: Array<IColumnType<T>>;

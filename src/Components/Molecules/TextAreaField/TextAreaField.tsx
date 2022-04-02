@@ -1,6 +1,7 @@
 import React, { ReactElement, Ref, useState } from 'react';
 
-import { GenericField, TextAreaInput } from '../../Atoms';
+import { GenericField } from '../../Atoms/GenericField';
+import { TextAreaInput } from '../../Atoms/TextAreaInput';
 
 export interface ITextAreaFieldProps {
   /** React Container ref (optional, default: undefined) */
