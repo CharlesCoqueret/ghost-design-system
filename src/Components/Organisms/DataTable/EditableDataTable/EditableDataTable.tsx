@@ -135,12 +135,17 @@ const EditableDataTable = <T,>(props: IEditableDataTableProps<T>): ReactElement 
         <Button
           className='gds-table-new-line'
           color={ColorButtonEnum.PRIMARY}
-          label={extra?.localization?.addRow ?? 'Add Line'}
+          label={extra?.localization?.addRow ?? 'Add row'}
           onClick={addNewLine}
         />
       )}
     </>
   );
+};
+
+EditableDataTable.defaultProps = {
+  columns: [],
+  data: [],
 };
 
 export default EditableDataTable;

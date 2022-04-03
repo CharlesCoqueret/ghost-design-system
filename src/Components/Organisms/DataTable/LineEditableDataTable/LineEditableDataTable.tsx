@@ -187,4 +187,9 @@ const LineEditableDataTable = <T,>(props: ILineEditableDataTableProps<T>): React
   );
 };
 
+LineEditableDataTable.defaultProps = {
+  columns: [],
+  data: [],
+};
+
 export default LineEditableDataTable;

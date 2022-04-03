@@ -8059,7 +8059,7 @@ Object {
         <div
           class="button-label-container"
         >
-          Add Line
+          Add row
         </div>
       </button>
     </div>
@@ -8930,7 +8930,7 @@ Object {
       <div
         class="button-label-container"
       >
-        Add Line
+        Add row
       </div>
     </button>
   </div>,
@@ -9840,7 +9840,7 @@ Object {
         <div
           class="button-label-container"
         >
-          Add Line
+          Add row
         </div>
       </button>
     </div>
@@ -10711,7 +10711,7 @@ Object {
       <div
         class="button-label-container"
       >
-        Add Line
+        Add row
       </div>
     </button>
   </div>,

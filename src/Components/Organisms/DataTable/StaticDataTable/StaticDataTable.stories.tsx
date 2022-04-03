@@ -17,7 +17,7 @@ const columns: IColumnType<IDemoType>[] = [
     dataIndex: 'id',
     sorter: true,
     type: ColumnType.CODE,
-    width: '50px',
+    width: '70px',
   },
   {
     title: 'Text',
@@ -225,17 +225,6 @@ NoData.args = {
   extra: {
     onRowSelect: (rows: Array<IDemoType>, row: IDemoType) => {
       console.log(`Number of rows selected: ${rows.length}\nClicked row: ${row.id}`);
-    },
-    computeTotal: (data: Array<IDemoType>, dataIndex: keyof IDemoType) => {
-      if (dataIndex === 'price' || dataIndex === 'parts') {
-        return data
-          .map((row: IDemoType) => {
-            return row[dataIndex];
-          })
-          .reduce((a, b) => Number(a) + Number(b), 0);
-      } else {
-        return '-';
-      }
     },
   },
 };

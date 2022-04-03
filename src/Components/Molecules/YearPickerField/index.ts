@@ -1,1 +1,1 @@
-export * from './YearPickerField';
+export { default as YearPickerField } from './YearPickerField';
