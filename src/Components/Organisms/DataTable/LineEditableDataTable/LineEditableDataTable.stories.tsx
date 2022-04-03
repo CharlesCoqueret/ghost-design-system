@@ -132,8 +132,10 @@ const columns: IColumnType<IDemoType>[] = [
     dataIndex: 'dynamicSearch',
     type: ColumnType.DYNAMICSEARCH,
     editable: true,
-    resolveValue: () => {
-      return Promise.resolve({ value: 'test', label: 'LABEL 1' });
+    resolveValue: (value) => {
+      if (value === 'test') return Promise.resolve({ value: 'test', label: 'LABEL 1' });
+      if (value === 'test2') return Promise.resolve({ value: 'test2', label: 'LABEL 2' });
+      return Promise.resolve(undefined);
     },
     noOptionsMessage: () => {
       return 'No results';
