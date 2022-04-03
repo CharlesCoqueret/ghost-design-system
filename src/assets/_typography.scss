@@ -1,4 +1,4 @@
-*.typography {
+*.gds-typography {
   white-space: wrap;
   display: block;
 
@@ -11,7 +11,7 @@
   }
 }
 
-[contenteditable='true'].typography {
+[contenteditable='true'].gds-typography {
   white-space: nowrap;
   overflow: hidden;
   br {
@@ -23,7 +23,7 @@
   }
 }
 
-h1.typography {
+h1.gds-typography {
   margin: auto 0px;
   text-transform: uppercase;
   font-size: 22px;
@@ -31,19 +31,19 @@ h1.typography {
   overflow: hidden;
 }
 
-h2.typography {
+h2.gds-typography {
   margin: auto 0px;
   font-size: 18px;
   font-weight: 600px;
 }
 
-h3.typography {
+h3.gds-typography {
   margin: auto 0px;
   font-size: 16px;
   font-weight: 600;
 }
 
-span.typography {
+span.gds-typography {
   &.link {
     cursor: pointer;
     text-decoration: underline;

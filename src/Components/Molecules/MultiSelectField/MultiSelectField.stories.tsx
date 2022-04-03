@@ -30,11 +30,11 @@ const options = [
 export default {
   title: 'Molecule/MultiSelectField',
   component: MultiSelectField,
-  parameters: { actions: { argTypesRegex: '^on.*' } },
+  parameters: { actions: { argTypesRegex: '^on.*' }, controls: { sort: 'requiredFirst' } },
 } as ComponentMeta<typeof MultiSelectField>;
 
 const ManagedTemplate: ComponentStory<typeof MultiSelectField> = (args: IMultiSelectFieldProps) => {
-  const [inputValue, setInputValue] = useState<Array<string>>(args.inputValue || []);
+  const [inputValue, setInputValue] = useState<Array<string | number>>(args.inputValue || []);
   return <MultiSelectField {...args} inputValue={inputValue} onChange={setInputValue} />;
 };
 

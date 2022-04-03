@@ -7,6 +7,7 @@ import { MenuDirectionEnum } from './tooltipUtils';
 export default {
   title: 'Atom/Tooltip',
   component: Tooltip,
+  parameters: { actions: { argTypesRegex: '^on.*' }, controls: { sort: 'requiredFirst' } },
 } as ComponentMeta<typeof Tooltip>;
 
 const ManagedTemplate: ComponentStory<typeof Tooltip> = (args: ITooltipProps) => (

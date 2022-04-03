@@ -8,6 +8,7 @@ import { Badge, BadgeColorsEnum, Icon, Tooltip } from '../../Atoms';
 export default {
   title: 'Organism/ActionBar',
   component: ActionBar,
+  parameters: { actions: { argTypesRegex: '^on.*' }, controls: { sort: 'requiredFirst' } },
 } as ComponentMeta<typeof ActionBar>;
 
 const Template: ComponentStory<typeof ActionBar> = (args: IActionBarProps) => {

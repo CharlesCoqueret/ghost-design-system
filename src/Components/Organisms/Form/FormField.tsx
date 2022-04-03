@@ -5,19 +5,18 @@ import sortBy from 'lodash/sortBy';
 import map from 'lodash/map';
 import intersection from 'lodash/intersection';
 
-import { IToggleEntry } from '../../Atoms';
-import {
-  AmountField,
-  CheckboxField,
-  DatePickerField,
-  MultiSelectField,
-  PercentageField,
-  SelectField,
-  SwitchField,
-  TextAreaField,
-  TextField,
-  YearPickerField,
-} from '../../Molecules';
+import { IToggleEntry } from '../../Atoms/CheckBoxInput';
+import { AmountField } from '../../Molecules/AmountField';
+import { CheckboxField } from '../../Molecules/CheckboxField';
+import { DatePickerField } from '../../Molecules/DatePickerField';
+import { DynamicSearchField } from '../../Molecules/DynamicSearchField';
+import { MultiSelectField } from '../../Molecules/MultiSelectField';
+import { PercentageField } from '../../Molecules/PercentageField';
+import { SelectField } from '../../Molecules/SelectField';
+import { SwitchField } from '../../Molecules/SwitchField';
+import { TextAreaField } from '../../Molecules/TextAreaField';
+import { TextField } from '../../Molecules/TextField';
+import { YearPickerField } from '../../Molecules/YearPickerField';
 import Highlighter from './Highlighter';
 import { FieldTypeEnum, IFieldProps } from './types';
 import { FieldError } from './yupResolver';
@@ -116,6 +115,27 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
         </Highlighter>
       );
     }
+    case FieldTypeEnum.DYNAMICSEARCH: {
+      const shouldHighlight = previousData && previousData[field.dataIndex] !== data[field.dataIndex];
+      return (
+        <Highlighter
+          highlight={previousData !== undefined}
+          oldData={previousData && previousData[field.dataIndex]}
+          shouldHighlight={shouldHighlight}>
+          <DynamicSearchField
+            {...field}
+            mandatory={requiredFromValidation || field.mandatory}
+            name={field.dataIndex.toString()}
+            onChange={(newValue: string | number | null | undefined) => {
+              handleChange(field.dataIndex, newValue as unknown as T[keyof T]);
+            }}
+            inputValue={(data && (data[field.dataIndex] as unknown as string | number | undefined)) || undefined}
+            errorMessage={errorMessage}
+            usePortal={usePortal}
+          />
+        </Highlighter>
+      );
+    }
     case FieldTypeEnum.MULTISELECT: {
       const { options, ...rest } = field;
       const localOptions = typeof options === 'function' ? options(data) : options;
@@ -146,7 +166,7 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
             options={localOptions}
             mandatory={requiredFromValidation || field.mandatory}
             name={field.dataIndex.toString()}
-            onChange={(newValue: Array<string> | null | undefined) => {
+            onChange={(newValue: Array<string | number> | null | undefined) => {
               handleChange(field.dataIndex, newValue as unknown as T[keyof T]);
             }}
             inputValue={(data && (data[field.dataIndex] as unknown as Array<string> | undefined)) || undefined}
@@ -217,7 +237,7 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
             options={localOptions}
             mandatory={requiredFromValidation || field.mandatory}
             name={field.dataIndex.toString()}
-            onChange={(newValue: string | null | undefined) => {
+            onChange={(newValue: string | number | null | undefined) => {
               handleChange(field.dataIndex, newValue as unknown as T[keyof T]);
             }}
             inputValue={(data && (data[field.dataIndex] as unknown as string | undefined)) || undefined}

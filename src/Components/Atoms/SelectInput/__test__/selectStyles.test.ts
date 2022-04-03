@@ -22,16 +22,16 @@ describe('customStyles method', () => {
     if (styles.option) {
       expect(
         styles.option({ height: '5px' }, { isFocused: true, isSelected: true } as OptionProps<
-          { value: string; label: string },
+          { value: string | number; label: string },
           true,
-          GroupBase<{ value: string; label: string }>
+          GroupBase<{ value: string | number; label: string }>
         >),
       )?.toMatchSnapshot();
       expect(
         styles.option({ height: '5px' }, { isSelected: true } as OptionProps<
-          { value: string; label: string },
+          { value: string | number; label: string },
           true,
-          GroupBase<{ value: string; label: string }>
+          GroupBase<{ value: string | number; label: string }>
         >),
       )?.toMatchSnapshot();
     }

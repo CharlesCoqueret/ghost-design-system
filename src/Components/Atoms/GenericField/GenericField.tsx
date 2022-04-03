@@ -64,7 +64,7 @@ const GenericField = (props: PropsWithChildren<IGenericFieldProps>): ReactElemen
   } = props;
 
   return (
-    <div className={classnames('field-group', fieldClassName, { 'field-inline': inline })} ref={containerRef}>
+    <div className={classnames('gds-field-group', fieldClassName, { 'field-inline': inline })} ref={containerRef}>
       <GenericFieldLabel
         className={classnames({ 'field-highlighted': highlighted && (readOnly || disabled) })}
         label={label}

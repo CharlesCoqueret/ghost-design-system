@@ -1,20 +1,70 @@
 @use 'sass:color';
 
-.table--header-value {
-  align-items: center;
-  display: flex;
-  flex: auto;
-  justify-content: space-between;
+.gds-table {
+  .table--header-value {
+    align-items: center;
+    display: flex;
+    flex: auto;
+    justify-content: space-between;
 
-  &.table--header-value--sortable {
-    cursor: pointer;
-    user-select: none;
+    &.table--header-value--sortable {
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .table--header-value--title {
+      flex: 1;
+      position: relative;
+      font-weight: 700;
+      overflow-x: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+
+      &.center {
+        text-align: center;
+      }
+      &.left {
+        text-align: left;
+      }
+      &.right {
+        text-align: right;
+      }
+    }
+
+    .table--header-value--sorter {
+      color: $charcoal;
+      width: 1.5rem;
+    }
+  }
+  .table--cell-value--date-readonly input {
+    text-align: center;
   }
 
-  .table--header-value--title {
+  .table--cell-value--amount-readonly,
+  .table--cell-value--number-readonly,
+  .table--cell-value--percentage-readonly {
+    text-align: right !important;
+  }
+
+  .table--cell--value--badge-no-margin {
+    margin: 0px;
+  }
+
+  .table--cell-value--negative {
+    color: $error;
+  }
+
+  .table--cell--code {
+    text-align: center;
+  }
+
+  .table--cell--value--button {
+    display: flex;
+    float: right;
+  }
+
+  .table--footer-value {
     flex: 1;
-    position: relative;
-    font-weight: 700;
     &.center {
       text-align: center;
     }
@@ -25,55 +75,11 @@
       text-align: right;
     }
   }
-
-  .table--header-value--sorter {
-    color: $charcoal;
-    width: 1.5rem;
-  }
-}
-.table--cell-value--date-readonly input {
-  text-align: center;
-}
-
-.table--cell-value--amount-readonly,
-.table--cell-value--number-readonly,
-.table--cell-value--percentage-readonly {
-  text-align: right !important;
-}
-
-.table--cell--value--badge-no-margin {
-  margin: 0px;
-}
-
-.table--cell-value--negative {
-  color: $error;
-}
-
-.table--cell--code {
-  text-align: center;
-}
-
-.table--cell--value--button {
-  display: flex;
-  float: right;
-}
-
-.table--footer-value {
-  flex: 1;
-  &.center {
-    text-align: center;
-  }
-  &.left {
-    text-align: left;
-  }
-  &.right {
-    text-align: right;
-  }
 }
 
 /// STYLING
 
-table.cui-table {
+.gds-table {
   width: 100%;
   table-layout: fixed;
   border-collapse: collapse;
@@ -105,6 +111,17 @@ table.cui-table {
       background-color: $white !important;
       td {
         text-align: center;
+        .no-data-container {
+          display: flex;
+          flex-direction: column;
+          color: $pebble;
+          .no-data-text {
+            margin-top: 20px;
+          }
+          .no-data-icon{
+            margin-top: 10px;
+          }
+        }
       }
     }
   }
@@ -166,7 +183,7 @@ table.cui-table {
   }
 }
 
-.cui-table-new-line {
+.gds-table-new-line {
   margin-top: 16px;
   margin-left: 16px;
 }

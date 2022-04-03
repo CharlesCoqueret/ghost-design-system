@@ -7,7 +7,7 @@ import Button, { ColorButtonEnum } from '../Button/Button';
 export default {
   title: 'Molecule/Popover',
   component: Popover,
-  parameters: { actions: { argTypesRegex: '^on.*' } },
+  parameters: { actions: { argTypesRegex: '^on.*' }, controls: { sort: 'requiredFirst' } },
 } as ComponentMeta<typeof Popover>;
 
 const Template: ComponentStory<typeof Popover> = (args: IPopoverProps) => {

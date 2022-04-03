@@ -6,7 +6,7 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="link-container"
+        class="gds-link-container"
       >
         <a
           href="http://www.link.com"
@@ -18,7 +18,7 @@ Object {
           </span>
           <div>
             <div
-              class="tooltip bottom"
+              class="gds-tooltip bottom"
               style="left: -99999px; top: -99999px; opacity: 0;"
             >
               <div
@@ -46,7 +46,7 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="link-container"
+      class="gds-link-container"
     >
       <a
         href="http://www.link.com"
@@ -58,7 +58,7 @@ Object {
         </span>
         <div>
           <div
-            class="tooltip bottom"
+            class="gds-tooltip bottom"
             style="left: -99999px; top: -99999px; opacity: 0;"
           >
             <div
@@ -138,7 +138,7 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="link-container"
+        class="gds-link-container"
       >
         <a
           href="/link"
@@ -150,7 +150,7 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="link-container"
+      class="gds-link-container"
     >
       <a
         href="/link"

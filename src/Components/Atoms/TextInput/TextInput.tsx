@@ -58,7 +58,8 @@ const TextInput = (props: ITextInputProps): ReactElement => {
             'field-highlighted': highlighted,
           },
           inputClassName,
-        )}>
+        )}
+        data-testid={dataTestId}>
         {inputValue}
       </div>
     );
@@ -67,7 +68,7 @@ const TextInput = (props: ITextInputProps): ReactElement => {
     <input
       className={classnames(
         'field',
-        'input-text-field',
+        'gds-input-text-field',
         fieldSize && `field-input-size-${fieldSize}`,
         {
           'input-error': isInError && !disabled,

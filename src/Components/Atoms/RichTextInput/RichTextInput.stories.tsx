@@ -6,7 +6,7 @@ import RichTextInput, { IRichTextInputProps } from './RichTextInput';
 export default {
   title: 'Atom/RichTextInput',
   component: RichTextInput,
-  parameters: { actions: { argTypesRegex: '^on.*' } },
+  parameters: { actions: { argTypesRegex: '^on.*' }, controls: { sort: 'requiredFirst' } },
 } as ComponentMeta<typeof RichTextInput>;
 
 const Template: ComponentStory<typeof RichTextInput> = (args: IRichTextInputProps) => {

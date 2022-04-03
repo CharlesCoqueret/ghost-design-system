@@ -1,6 +1,8 @@
 import { ReactElement } from 'react';
 
 export interface IItemListProps {
+  /** For test purpose only */
+  dataTestId?: string;
   /** item identifier */
   itemId: string;
   /** Item name (optional, default: undefined) */

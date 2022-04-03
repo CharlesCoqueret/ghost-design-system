@@ -6,7 +6,7 @@ import AmountInput, { IAmountInputProps } from './AmountInput';
 export default {
   title: 'Atom/AmountInput',
   component: AmountInput,
-  parameters: { actions: { AmountInput: '^on.*' } },
+  parameters: { actions: { argTypesRegex: '^on.*' }, controls: { sort: 'requiredFirst' } },
 } as ComponentMeta<typeof AmountInput>;
 
 const Template: ComponentStory<typeof AmountInput> = ({ inputValue, ...args }: IAmountInputProps) => {

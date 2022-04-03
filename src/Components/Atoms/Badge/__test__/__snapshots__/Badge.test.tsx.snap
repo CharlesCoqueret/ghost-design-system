@@ -7,14 +7,14 @@ Object {
     <div>
       <span>
         <span
-          class="badge pill danger CLASSNAME"
+          class="gds-badge pill danger CLASSNAME"
         >
           BADGE
         </span>
       </span>
       <div>
         <div
-          class="tooltip bottom"
+          class="gds-tooltip bottom"
           style="left: -99999px; top: -99999px; opacity: 0;"
         >
           <div
@@ -37,14 +37,14 @@ Object {
   "container": <div>
     <span>
       <span
-        class="badge pill danger CLASSNAME"
+        class="gds-badge pill danger CLASSNAME"
       >
         BADGE
       </span>
     </span>
     <div>
       <div
-        class="tooltip bottom"
+        class="gds-tooltip bottom"
         style="left: -99999px; top: -99999px; opacity: 0;"
       >
         <div
@@ -119,14 +119,14 @@ Object {
     <div>
       <span>
         <span
-          class="badge pill danger CLASSNAME"
+          class="gds-badge pill danger CLASSNAME"
         >
           <div />
         </span>
       </span>
       <div>
         <div
-          class="tooltip bottom"
+          class="gds-tooltip bottom"
           style="left: -99999px; top: -99999px; opacity: 0;"
         >
           <div
@@ -149,14 +149,14 @@ Object {
   "container": <div>
     <span>
       <span
-        class="badge pill danger CLASSNAME"
+        class="gds-badge pill danger CLASSNAME"
       >
         <div />
       </span>
     </span>
     <div>
       <div
-        class="tooltip bottom"
+        class="gds-tooltip bottom"
         style="left: -99999px; top: -99999px; opacity: 0;"
       >
         <div

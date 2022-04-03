@@ -156,7 +156,7 @@ describe('DynamicSearchInput Component', () => {
 
     await act(async () => {
       const select = await container?.findByRole('combobox');
-      expect(select).not.toBeUndefined();
+      expect(select).toBeDefined();
       if (select) {
         userEvent.type(select, 'option 2{enter}');
       }
@@ -469,7 +469,7 @@ describe('DynamicSearchInput Component', () => {
 
     await act(async () => {
       const select = await container?.findByRole('combobox');
-      expect(select).not.toBeUndefined();
+      expect(select).toBeDefined();
       if (select) {
         userEvent.type(select, '{backspace}');
       }

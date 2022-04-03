@@ -50,7 +50,7 @@ const Section = (props: PropsWithChildren<ISectionProps>): ReactElement => {
   };
 
   return (
-    <div className='section-container'>
+    <div className='gds-section-container'>
       <div
         className={classnames('section-header', { collapsable: collapsable })}
         onClick={handleClick}

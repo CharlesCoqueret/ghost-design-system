@@ -6,6 +6,7 @@ import Typography, { Text, ITextProps, TextTypeEnum } from './Typography';
 export default {
   title: 'Atom/Typography/Text',
   component: Text,
+  parameters: { actions: { argTypesRegex: '^on.*' }, controls: { sort: 'requiredFirst' } },
 } as ComponentMeta<typeof Text>;
 
 const Template: ComponentStory<typeof Text> = (arg: ITextProps) => {

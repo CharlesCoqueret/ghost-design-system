@@ -6,6 +6,7 @@ import Navbar, { INavBarProps } from './Navbar';
 export default {
   title: 'Organism/Navbar',
   component: Navbar,
+  parameters: { actions: { argTypesRegex: '^on.*' }, controls: { sort: 'requiredFirst' } },
 } as ComponentMeta<typeof Navbar>;
 
 const Template: ComponentStory<typeof Navbar> = (args: INavBarProps) => {

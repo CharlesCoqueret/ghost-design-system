@@ -29,9 +29,9 @@ const LineEditableInPlaceDataTable = <T,>(props: ILineEditableInPlaceDataTablePr
       : [
           ...columns.filter((column) => column.type !== ColumnType.BUTTON),
           {
-            title: extra?.localization?.actionColumn || 'Actions',
+            title: extra?.localization?.actionColumn ?? 'Actions',
             type: ColumnType.BUTTON,
-            moreActionsMessage: extra?.localization?.moreActionsMessage || 'More actions',
+            moreActionsMessage: extra?.localization?.moreActionsMessage ?? 'More actions',
             buttons: [
               {
                 hidden: (row, rowIndex) => {
@@ -46,7 +46,7 @@ const LineEditableInPlaceDataTable = <T,>(props: ILineEditableInPlaceDataTablePr
                   return true;
                 },
                 icon: ['fal', 'edit'],
-                label: extra?.localization?.editButton || 'Edit',
+                label: extra?.localization?.editButton ?? 'Edit',
                 onClick: (row, rowIndex) => {
                   if (extra?.onRowEdit) {
                     extra.onRowEdit(row, rowIndex);
@@ -66,7 +66,7 @@ const LineEditableInPlaceDataTable = <T,>(props: ILineEditableInPlaceDataTablePr
                   return true;
                 },
                 icon: ['fal', 'trash-alt'],
-                label: extra?.localization?.deleteButton || 'Delete',
+                label: extra?.localization?.deleteButton ?? 'Delete',
                 onClick: (row, rowIndex) => {
                   if (extra?.onRowDelete) {
                     extra.onRowDelete(row, rowIndex);
@@ -77,9 +77,9 @@ const LineEditableInPlaceDataTable = <T,>(props: ILineEditableInPlaceDataTablePr
                   setCurrentData((prev) => [...prev.filter((_item, index) => index !== rowIndex)]);
                 },
                 popover: {
-                  message: extra?.localization?.deletePopoverMessage || 'Delete?',
-                  cancel: extra?.localization?.deletePopoverCancel || 'Cancel',
-                  confirm: extra?.localization?.deletePopoverConfirm || 'Confirm',
+                  message: extra?.localization?.deletePopoverMessage ?? 'Delete?',
+                  cancel: extra?.localization?.deletePopoverCancel ?? 'Cancel',
+                  confirm: extra?.localization?.deletePopoverConfirm ?? 'Confirm',
                 },
               },
               {
@@ -87,7 +87,7 @@ const LineEditableInPlaceDataTable = <T,>(props: ILineEditableInPlaceDataTablePr
                   return editedRowIndex !== rowIndex;
                 },
                 icon: ['fal', 'check'],
-                label: extra?.localization?.submitButton || 'Submit',
+                label: extra?.localization?.submitButton ?? 'Submit',
                 onClick: (row, rowIndex) => {
                   if (extra?.onRowSubmit) {
                     extra.onRowSubmit(row, rowIndex);
@@ -105,7 +105,7 @@ const LineEditableInPlaceDataTable = <T,>(props: ILineEditableInPlaceDataTablePr
                   return editedRowIndex !== rowIndex;
                 },
                 icon: ['fal', 'times'],
-                label: extra?.localization?.cancelButton || 'Cancel',
+                label: extra?.localization?.cancelButton ?? 'Cancel',
                 onClick: (row, rowIndex) => {
                   if (extra?.onRowCancelEdit) {
                     extra.onRowCancelEdit(row, rowIndex);
@@ -127,7 +127,7 @@ const LineEditableInPlaceDataTable = <T,>(props: ILineEditableInPlaceDataTablePr
                   return true;
                 },
                 icon: ['fal', 'arrow-to-bottom'],
-                label: extra?.localization?.downloadButton || 'Download',
+                label: extra?.localization?.downloadButton ?? 'Download',
                 onClick: (row, rowIndex) => {
                   if (extra?.onRowDownload) {
                     extra.onRowDownload(row, rowIndex);
@@ -177,7 +177,7 @@ const LineEditableInPlaceDataTable = <T,>(props: ILineEditableInPlaceDataTablePr
 
   return (
     <>
-      <table className='cui-table'>
+      <table className='gds-table'>
         <StaticDataTableHeader<T>
           columns={currentColumns}
           onSortChange={handleSortChange}
@@ -196,15 +196,20 @@ const LineEditableInPlaceDataTable = <T,>(props: ILineEditableInPlaceDataTablePr
       </table>
       {extra?.canAddNewLine && extra?.canAddNewLine() && (
         <Button
-          className='cui-table-new-line'
+          className='gds-table-new-line'
           color={ColorButtonEnum.PRIMARY}
-          label={extra?.localization?.addRow || 'Add row'}
+          label={extra?.localization?.addRow ?? 'Add row'}
           onClick={addNewLine}
           disabled={editedRowIndex !== undefined}
         />
       )}
     </>
   );
+};
+
+LineEditableInPlaceDataTable.defaultProps = {
+  columns: [],
+  data: [],
 };
 
 export default LineEditableInPlaceDataTable;

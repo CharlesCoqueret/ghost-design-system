@@ -10,16 +10,19 @@ const CustomCell = <T,>(props: ICellProps<T, IColumnCustom<T>>): ReactElement =>
   const isCurrentlyEditedRow =
     editing || (extra && 'editedRowIndex' in extra ? extra.editedRowIndex === rowIndex : false);
   const currentCustomRenderer = isCurrentlyEditedRow ? column.customRenderEdit : column.customRender;
-  const displayValue =
-    row && currentCustomRenderer
-      ? isCurrentlyEditedRow && onChange
-        ? column.customRenderEdit(row, column.dataIndex, onChange, rowIndex)
-        : column.customRender(row, column.dataIndex, rowIndex)
-      : forcedValue
-      ? forcedValue
-      : '-';
+  const displayValue = forcedValue
+    ? forcedValue
+    : row && currentCustomRenderer
+    ? isCurrentlyEditedRow && onChange
+      ? column.customRenderEdit(row, column.dataIndex, onChange, rowIndex)
+      : column.customRender(row, column.dataIndex, rowIndex)
+    : '-';
 
-  return <td className={classnames({ ellipsis: column.ellipsis })}>{displayValue}</td>;
+  return (
+    <td className={classnames({ ellipsis: column.ellipsis })} style={{ display: column.hidden ? 'none' : undefined }}>
+      {displayValue}
+    </td>
+  );
 };
 
 export default CustomCell;

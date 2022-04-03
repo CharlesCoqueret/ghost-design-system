@@ -1,8 +1,8 @@
 import React, { ReactElement } from 'react';
 import classnames from 'classnames';
 
-import { Button, ColorButtonEnum, IButtonProps } from '../../Molecules/';
-import { Icon } from '../../Atoms';
+import { Button, ColorButtonEnum, IButtonProps } from '../../Molecules/Button';
+import { Icon } from '../../Atoms/Icon';
 import Title from './Title';
 
 export interface IActionBarProps {
@@ -63,7 +63,7 @@ const ActionBar = (props: IActionBarProps): ReactElement => {
   } = props;
 
   return (
-    <div className={classnames('action-bar', { primary: primary }, className)}>
+    <div className={classnames('gds-action-bar', { primary: primary }, className)}>
       <div className='left-side'>
         {onBackClicked && (
           <div className='back-icon'>

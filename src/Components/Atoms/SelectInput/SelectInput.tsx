@@ -25,7 +25,7 @@ export interface ISelectInputProps {
   /** Highlight value in readonly mode (optional, default: false) */
   highlighted?: boolean;
   /** Input string value (optional, default: undefined) */
-  inputValue?: string | null | undefined;
+  inputValue?: string | number | null | undefined;
   /** Provide the ability to clear the value (optional, default: false) */
   isClearable?: boolean;
   /** Is in Error (optional, default: false) */
@@ -35,7 +35,7 @@ export interface ISelectInputProps {
   /** Name of select input */
   name: string;
   /** Handler of value changes (optional, default: undefined) */
-  onChange?: (selectedOption: string | null | undefined) => void;
+  onChange?: (selectedOption: string | number | null | undefined) => void;
   /** Options to be displayed */
   options: Array<IOption>;
   /** Placeholder value (optional, default: undefined) */
@@ -71,7 +71,7 @@ const SelectInput = (props: ISelectInputProps): ReactElement => {
     return (
       <div
         className={classnames(
-          'select-container',
+          'gds-select-container',
           'input-select-field-read-only',
           fieldSize && `field-input-size-${fieldSize}`,
           {
@@ -88,7 +88,7 @@ const SelectInput = (props: ISelectInputProps): ReactElement => {
   return (
     <div
       className={classnames(
-        'select-container',
+        'gds-select-container',
         'input-select-field',
         fieldSize && `field-input-size-${fieldSize}`,
         {

@@ -9,13 +9,14 @@ import EditableDataTableBody from './EditableDataTableBody';
 export interface IEditableDataTableProps<T> {
   columns: Array<IColumnType<T>>;
   data: Array<T>;
+  dataTestId?: string;
   extra: IExtraEditableDataTableProps<T>;
   loading?: ReactElement;
   onSortChange?: (sortField?: keyof T, sortDirection?: SortDirectionEnum) => void;
 }
 
 const EditableDataTable = <T,>(props: IEditableDataTableProps<T>): ReactElement => {
-  const { data, columns, extra, loading, onSortChange } = props;
+  const { columns, data, dataTestId, extra, loading, onSortChange } = props;
 
   const [currentData, setCurrentData] = useState<Array<T>>(data);
   const [sortField, setSortField] = useState<keyof T | undefined>();
@@ -27,9 +28,9 @@ const EditableDataTable = <T,>(props: IEditableDataTableProps<T>): ReactElement 
       : [
           ...columns.filter((column) => column.type !== ColumnType.BUTTON),
           {
-            title: extra?.localization?.actionColumn || 'Actions',
+            title: extra?.localization?.actionColumn ?? 'Actions',
             type: ColumnType.BUTTON,
-            moreActionsMessage: extra?.localization?.moreActionsMessage || 'More actions',
+            moreActionsMessage: extra?.localization?.moreActionsMessage ?? 'More actions',
             buttons: [
               {
                 hidden: (row, rowIndex) => {
@@ -40,7 +41,7 @@ const EditableDataTable = <T,>(props: IEditableDataTableProps<T>): ReactElement 
                   return true;
                 },
                 icon: ['fal', 'trash-alt'],
-                label: extra?.localization?.deleteButton || 'Delete',
+                label: extra?.localization?.deleteButton ?? 'Delete',
                 onClick: (row, rowIndex) => {
                   if (extra?.onRowDelete) {
                     extra.onRowDelete(row, rowIndex);
@@ -48,9 +49,9 @@ const EditableDataTable = <T,>(props: IEditableDataTableProps<T>): ReactElement 
                   setCurrentData((prev) => [...prev.filter((_item, index) => index !== rowIndex)]);
                 },
                 popover: {
-                  message: extra?.localization?.deletePopoverMessage || 'Delete?',
-                  cancel: extra?.localization?.deletePopoverCancel || 'Cancel',
-                  confirm: extra?.localization?.deletePopoverConfirm || 'Confirm',
+                  message: extra?.localization?.deletePopoverMessage ?? 'Delete?',
+                  cancel: extra?.localization?.deletePopoverCancel ?? 'Cancel',
+                  confirm: extra?.localization?.deletePopoverConfirm ?? 'Confirm',
                 },
                 dataTestId: 'delete',
               },
@@ -63,7 +64,7 @@ const EditableDataTable = <T,>(props: IEditableDataTableProps<T>): ReactElement 
                   return true;
                 },
                 icon: ['fal', 'arrow-to-bottom'],
-                label: extra?.localization?.downloadButton || 'Download',
+                label: extra?.localization?.downloadButton ?? 'Download',
                 onClick: (row, rowIndex) => {
                   if (extra?.onRowDownload) {
                     extra.onRowDownload(row, rowIndex);
@@ -114,7 +115,7 @@ const EditableDataTable = <T,>(props: IEditableDataTableProps<T>): ReactElement 
 
   return (
     <>
-      <table className='cui-table'>
+      <table className='gds-table'>
         <StaticDataTableHeader<T>
           columns={currentColumns}
           onSortChange={handleSortChange}
@@ -125,6 +126,7 @@ const EditableDataTable = <T,>(props: IEditableDataTableProps<T>): ReactElement 
         <EditableDataTableBody<T>
           columns={currentColumns}
           data={currentData}
+          dataTestId={dataTestId}
           extra={extra}
           handleUpdateDataChange={handleUpdateDataChange}
           loading={loading}
@@ -133,14 +135,19 @@ const EditableDataTable = <T,>(props: IEditableDataTableProps<T>): ReactElement 
       </table>
       {extra?.canAddNewLine && extra?.canAddNewLine() && (
         <Button
-          className='cui-table-new-line'
+          className='gds-table-new-line'
           color={ColorButtonEnum.PRIMARY}
-          label={extra?.localization?.addRow || 'Add Line'}
+          label={extra?.localization?.addRow ?? 'Add row'}
           onClick={addNewLine}
         />
       )}
     </>
   );
+};
+
+EditableDataTable.defaultProps = {
+  columns: [],
+  data: [],
 };
 
 export default EditableDataTable;

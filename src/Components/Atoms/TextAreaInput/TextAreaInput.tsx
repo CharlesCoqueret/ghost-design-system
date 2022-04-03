@@ -82,7 +82,7 @@ const TextAreaInput = (props: ITextAreaInputProps): ReactElement => {
   };
 
   return (
-    <div className={classnames('input-textarea-parent', fieldSize && `field-input-size-${fieldSize}`)}>
+    <div className={classnames('gds-input-textarea-parent', fieldSize && `field-input-size-${fieldSize}`)}>
       <textarea
         className={classnames(
           { 'input-textarea-field': !readOnly },

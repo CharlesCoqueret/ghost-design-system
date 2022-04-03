@@ -72,10 +72,11 @@ const resolveValue = async (searchTerm = ''): Promise<IOption> => {
 export default {
   title: 'Molecule/DynamicSearchField',
   component: DynamicSearchField,
+  parameters: { actions: { argTypesRegex: '^on.*' }, controls: { sort: 'requiredFirst' } },
 } as ComponentMeta<typeof DynamicSearchField>;
 
 const Template: ComponentStory<typeof DynamicSearchField> = ({ inputValue, ...args }: IDynamicSearchFieldProps) => {
-  const [localValue, setLocalValue] = useState<string | undefined>(inputValue);
+  const [localValue, setLocalValue] = useState<string | number | undefined>(inputValue);
 
   return <DynamicSearchField {...args} inputValue={localValue} onChange={setLocalValue} />;
 };

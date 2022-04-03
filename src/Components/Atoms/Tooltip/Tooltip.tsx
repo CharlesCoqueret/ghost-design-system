@@ -107,7 +107,7 @@ class Tooltip extends React.PureComponent<ITooltipProps, ITooltipStates> {
         </span>
         <Portal>
           <div
-            className={classnames('tooltip', this.direction)}
+            className={classnames('gds-tooltip', this.direction)}
             ref={(el) => (this.tooltip = el)}
             style={{ ...this.state.style, opacity: this.state.visible ? 1 : 0 }}>
             {this.arrow && <div className='tooltip-arrow' />}

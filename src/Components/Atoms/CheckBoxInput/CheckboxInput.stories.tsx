@@ -24,7 +24,7 @@ const options: Array<IToggleEntry> = [
 export default {
   title: 'Atom/CheckboxInput',
   component: CheckboxInput,
-  parameters: { actions: { argTypesRegex: '^on.*' } },
+  parameters: { actions: { argTypesRegex: '^on.*' }, controls: { sort: 'requiredFirst' } },
 } as ComponentMeta<typeof CheckboxInput>;
 
 const Template: ComponentStory<typeof CheckboxInput> = ({ options, ...args }: ICheckboxInputProps) => {

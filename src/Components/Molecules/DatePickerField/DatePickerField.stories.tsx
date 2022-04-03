@@ -7,6 +7,7 @@ import { DateFormatEnum, Icon, importFnsLocaleFile } from '../..';
 export default {
   title: 'Molecule/DatePickerField',
   component: DatePickerField,
+  parameters: { actions: { argTypesRegex: '^on.*' }, controls: { sort: 'requiredFirst' } },
 } as ComponentMeta<typeof DatePickerField>;
 
 const Template: ComponentStory<typeof DatePickerField> = ({ inputValue, ...args }: IDatePickerFieldProps) => {

@@ -6,6 +6,7 @@ import YearPickerField, { IYearPickerFieldProps } from './YearPickerField';
 export default {
   title: 'Molecule/YearPickerField',
   component: YearPickerField,
+  parameters: { actions: { argTypesRegex: '^on.*' }, controls: { sort: 'requiredFirst' } },
 } as ComponentMeta<typeof YearPickerField>;
 
 const Template: ComponentStory<typeof YearPickerField> = ({ inputValue, ...args }: IYearPickerFieldProps) => {

@@ -1,0 +1,905 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ButtonCell component ButtonCell renders and handles click 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <table>
+        <tbody>
+          <tr>
+            <td
+              class=""
+            >
+              <div
+                class="table--cell--value--button"
+              >
+                <span>
+                  <button
+                    class="gds-button-content"
+                    color="reversed"
+                    data-testid="BUTTON1"
+                    type="button"
+                  >
+                    <div
+                      class="button-icon-container"
+                    >
+                      <i
+                        class="button-icon icon"
+                        icon="fal,briefcase"
+                      />
+                    </div>
+                  </button>
+                </span>
+                <div>
+                  <div
+                    class="gds-tooltip bottom"
+                    style="left: -99999px; top: -99999px; opacity: 0;"
+                  >
+                    <div
+                      class="tooltip-arrow"
+                    />
+                    <div
+                      class="tooltip-label"
+                    >
+                      Button 1
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div
+      id="root-portal-id"
+    >
+      <div />
+    </div>
+  </body>,
+  "container": <div>
+    <table>
+      <tbody>
+        <tr>
+          <td
+            class=""
+          >
+            <div
+              class="table--cell--value--button"
+            >
+              <span>
+                <button
+                  class="gds-button-content"
+                  color="reversed"
+                  data-testid="BUTTON1"
+                  type="button"
+                >
+                  <div
+                    class="button-icon-container"
+                  >
+                    <i
+                      class="button-icon icon"
+                      icon="fal,briefcase"
+                    />
+                  </div>
+                </button>
+              </span>
+              <div>
+                <div
+                  class="gds-tooltip bottom"
+                  style="left: -99999px; top: -99999px; opacity: 0;"
+                >
+                  <div
+                    class="tooltip-arrow"
+                  />
+                  <div
+                    class="tooltip-label"
+                  >
+                    Button 1
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`ButtonCell component ButtonCell renders hidden 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <table>
+        <tbody>
+          <tr>
+            <td
+              class=""
+              style="display: none;"
+            >
+              <div
+                class="table--cell--value--button"
+              >
+                <span>
+                  <button
+                    class="gds-button-content"
+                    color="reversed"
+                    type="button"
+                  >
+                    <div
+                      class="button-icon-container"
+                    >
+                      <i
+                        class="button-icon icon"
+                        icon="fal,briefcase"
+                      />
+                    </div>
+                  </button>
+                </span>
+                <div>
+                  <div
+                    class="gds-tooltip bottom"
+                    style="left: -99999px; top: -99999px; opacity: 0;"
+                  >
+                    <div
+                      class="tooltip-arrow"
+                    />
+                    <div
+                      class="tooltip-label"
+                    >
+                      Button 1
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div
+      id="root-portal-id"
+    >
+      <div />
+    </div>
+  </body>,
+  "container": <div>
+    <table>
+      <tbody>
+        <tr>
+          <td
+            class=""
+            style="display: none;"
+          >
+            <div
+              class="table--cell--value--button"
+            >
+              <span>
+                <button
+                  class="gds-button-content"
+                  color="reversed"
+                  type="button"
+                >
+                  <div
+                    class="button-icon-container"
+                  >
+                    <i
+                      class="button-icon icon"
+                      icon="fal,briefcase"
+                    />
+                  </div>
+                </button>
+              </span>
+              <div>
+                <div
+                  class="gds-tooltip bottom"
+                  style="left: -99999px; top: -99999px; opacity: 0;"
+                >
+                  <div
+                    class="tooltip-arrow"
+                  />
+                  <div
+                    class="tooltip-label"
+                  >
+                    Button 1
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`ButtonCell component ButtonCell renders hidden conditionnally 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <table>
+        <tbody>
+          <tr>
+            <td
+              class=""
+            >
+              <div
+                class="table--cell--value--button"
+              />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>,
+  "container": <div>
+    <table>
+      <tbody>
+        <tr>
+          <td
+            class=""
+          >
+            <div
+              class="table--cell--value--button"
+            />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`ButtonCell component ButtonCell renders with more than 3 buttons and handle click with conditionnally hidden entries 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <table>
+        <tbody>
+          <tr>
+            <td
+              class=""
+            >
+              <div
+                class="table--cell--value--button"
+              >
+                <span>
+                  <button
+                    class="gds-button-content"
+                    color="reversed"
+                    data-testid="MORE"
+                    type="button"
+                  >
+                    <div
+                      class="button-icon-container"
+                    >
+                      <i
+                        class="button-icon icon"
+                        icon="fal,ellipsis-h"
+                      />
+                    </div>
+                  </button>
+                </span>
+                <div>
+                  <div
+                    class="gds-tooltip bottom"
+                    style="left: -99999px; top: -99999px; opacity: 0;"
+                  >
+                    <div
+                      class="tooltip-arrow"
+                    />
+                    <div
+                      class="tooltip-label"
+                    >
+                      MOREACTION
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div>
+                    ControlleMenu
+                    closed
+                    <div
+                      data-testid="BUTTON1"
+                    >
+                      MenuItem
+                      Button 1
+                    </div>
+                    <div>
+                      MenuItem
+                      Button 2
+                    </div>
+                    <div>
+                      MenuItem
+                      Button 3
+                    </div>
+                    <div>
+                      MenuItem
+                      Button 4
+                    </div>
+                    has no ref
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div
+      id="root-portal-id"
+    >
+      <div />
+      <div />
+    </div>
+  </body>,
+  "container": <div>
+    <table>
+      <tbody>
+        <tr>
+          <td
+            class=""
+          >
+            <div
+              class="table--cell--value--button"
+            >
+              <span>
+                <button
+                  class="gds-button-content"
+                  color="reversed"
+                  data-testid="MORE"
+                  type="button"
+                >
+                  <div
+                    class="button-icon-container"
+                  >
+                    <i
+                      class="button-icon icon"
+                      icon="fal,ellipsis-h"
+                    />
+                  </div>
+                </button>
+              </span>
+              <div>
+                <div
+                  class="gds-tooltip bottom"
+                  style="left: -99999px; top: -99999px; opacity: 0;"
+                >
+                  <div
+                    class="tooltip-arrow"
+                  />
+                  <div
+                    class="tooltip-label"
+                  >
+                    MOREACTION
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div>
+                  ControlleMenu
+                  closed
+                  <div
+                    data-testid="BUTTON1"
+                  >
+                    MenuItem
+                    Button 1
+                  </div>
+                  <div>
+                    MenuItem
+                    Button 2
+                  </div>
+                  <div>
+                    MenuItem
+                    Button 3
+                  </div>
+                  <div>
+                    MenuItem
+                    Button 4
+                  </div>
+                  has no ref
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`ButtonCell component ButtonCell renders with more than 3 buttons and handle click with conditionnally hidden entries 2`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <table>
+        <tbody>
+          <tr>
+            <td
+              class=""
+            >
+              <div
+                class="table--cell--value--button"
+              >
+                <span>
+                  <button
+                    class="gds-button-content"
+                    color="reversed"
+                    data-testid="MORE"
+                    type="button"
+                  >
+                    <div
+                      class="button-icon-container"
+                    >
+                      <i
+                        class="button-icon icon"
+                        icon="fal,ellipsis-h"
+                      />
+                    </div>
+                  </button>
+                </span>
+                <div>
+                  <div
+                    class="gds-tooltip bottom"
+                    style="left: -99999px; top: -99999px; opacity: 0;"
+                  >
+                    <div
+                      class="tooltip-arrow"
+                    />
+                    <div
+                      class="tooltip-label"
+                    >
+                      MOREACTION
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div>
+                    ControlleMenu
+                    open
+                    <div
+                      data-testid="BUTTON1"
+                    >
+                      MenuItem
+                      Button 1
+                    </div>
+                    <div>
+                      MenuItem
+                      Button 2
+                    </div>
+                    <div>
+                      MenuItem
+                      Button 3
+                    </div>
+                    <div>
+                      MenuItem
+                      Button 4
+                    </div>
+                    has no ref
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div
+      id="root-portal-id"
+    >
+      <div />
+      <div />
+    </div>
+  </body>,
+  "container": <div>
+    <table>
+      <tbody>
+        <tr>
+          <td
+            class=""
+          >
+            <div
+              class="table--cell--value--button"
+            >
+              <span>
+                <button
+                  class="gds-button-content"
+                  color="reversed"
+                  data-testid="MORE"
+                  type="button"
+                >
+                  <div
+                    class="button-icon-container"
+                  >
+                    <i
+                      class="button-icon icon"
+                      icon="fal,ellipsis-h"
+                    />
+                  </div>
+                </button>
+              </span>
+              <div>
+                <div
+                  class="gds-tooltip bottom"
+                  style="left: -99999px; top: -99999px; opacity: 0;"
+                >
+                  <div
+                    class="tooltip-arrow"
+                  />
+                  <div
+                    class="tooltip-label"
+                  >
+                    MOREACTION
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div>
+                  ControlleMenu
+                  open
+                  <div
+                    data-testid="BUTTON1"
+                  >
+                    MenuItem
+                    Button 1
+                  </div>
+                  <div>
+                    MenuItem
+                    Button 2
+                  </div>
+                  <div>
+                    MenuItem
+                    Button 3
+                  </div>
+                  <div>
+                    MenuItem
+                    Button 4
+                  </div>
+                  has no ref
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`ButtonCell component ButtonCell runs an error when row is empty 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <table>
+        <tbody>
+          <tr />
+        </tbody>
+      </table>
+    </div>
+  </body>,
+  "container": <div>
+    <table>
+      <tbody>
+        <tr />
+      </tbody>
+    </table>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

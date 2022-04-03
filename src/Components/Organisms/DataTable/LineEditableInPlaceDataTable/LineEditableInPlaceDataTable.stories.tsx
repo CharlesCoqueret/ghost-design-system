@@ -1,4 +1,4 @@
-import React, { ReactElement, useState } from 'react';
+import React, { ReactElement } from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import LineEditableInPlaceDataTable, { ILineEditableInPlaceDataTableProps } from './LineEditableInPlaceDataTable';
@@ -7,6 +7,7 @@ import { ColumnType, IColumnType } from '../Common/types';
 export default {
   title: 'Organism/DataTable/LineEditableInPlaceDataTable',
   component: LineEditableInPlaceDataTable,
+  parameters: { actions: { argTypesRegex: '^on.*' }, controls: { sort: 'requiredFirst' } },
 } as ComponentMeta<typeof LineEditableInPlaceDataTable>;
 
 interface IDemoType {
@@ -72,75 +73,75 @@ const initialData = [
 const Template: ComponentStory<(args: ILineEditableInPlaceDataTableProps<IDemoType>) => ReactElement> = (
   args: ILineEditableInPlaceDataTableProps<IDemoType>,
 ) => {
-  const [data] = useState<Array<IDemoType>>(initialData);
+  return <LineEditableInPlaceDataTable<IDemoType> {...args} />;
+};
 
-  const columns: IColumnType<IDemoType>[] = [
-    {
-      title: 'Code',
-      dataIndex: 'id',
-      sorter: true,
-      type: ColumnType.CODE,
-    },
-    {
-      title: 'Text',
-      dataIndex: 'name',
-      type: ColumnType.TEXT,
-      ellipsis: true,
-      sorter: true,
-      editable: true,
-    },
-    {
-      title: 'Badge',
-      dataIndex: 'status',
-      sorter: true,
-      type: ColumnType.BADGE,
-      editable: true,
-      eraseValueWhenNotInOptions: true,
-      options: (row: IDemoType) => {
-        if (row.price > 0) {
-          return [
-            { label: 'Inactive', value: 'INACTIVE' },
-            { label: 'In progress', value: 'IN_PROGRESS' },
-            { label: 'Active', value: 'ACTIVE' },
-            { label: 'Option only visible when amount is about 0', value: 'SPECIAL' },
-          ];
-        }
+const columns: IColumnType<IDemoType>[] = [
+  {
+    title: 'Code',
+    dataIndex: 'id',
+    sorter: true,
+    type: ColumnType.CODE,
+  },
+  {
+    title: 'Text',
+    dataIndex: 'name',
+    type: ColumnType.TEXT,
+    ellipsis: true,
+    sorter: true,
+    editable: true,
+  },
+  {
+    title: 'Badge',
+    dataIndex: 'status',
+    sorter: true,
+    type: ColumnType.BADGE,
+    editable: true,
+    eraseValueWhenNotInOptions: true,
+    options: (row: IDemoType) => {
+      if (row.price > 0) {
         return [
           { label: 'Inactive', value: 'INACTIVE' },
           { label: 'In progress', value: 'IN_PROGRESS' },
           { label: 'Active', value: 'ACTIVE' },
+          { label: 'Option only visible when amount is about 0', value: 'SPECIAL' },
         ];
-      },
+      }
+      return [
+        { label: 'Inactive', value: 'INACTIVE' },
+        { label: 'In progress', value: 'IN_PROGRESS' },
+        { label: 'Active', value: 'ACTIVE' },
+      ];
     },
-    {
-      title: 'Amount',
-      dataIndex: 'price',
-      sorter: true,
-      type: ColumnType.AMOUNT,
-      currency: '€',
-      editable: true,
-    },
-    {
-      title: 'Percentage',
-      dataIndex: 'parts',
-      sorter: true,
-      type: ColumnType.PERCENTAGE,
-      editable: true,
-    },
-    {
-      title: 'Date',
-      dataIndex: 'startDate',
-      sorter: true,
-      type: ColumnType.DATE,
-      editable: true,
-    },
-  ];
-
-  return <LineEditableInPlaceDataTable<IDemoType> data={data} columns={columns} {...args} />;
-};
+  },
+  {
+    title: 'Amount',
+    dataIndex: 'price',
+    sorter: true,
+    type: ColumnType.AMOUNT,
+    currency: '€',
+    editable: true,
+  },
+  {
+    title: 'Percentage',
+    dataIndex: 'parts',
+    sorter: true,
+    type: ColumnType.PERCENTAGE,
+    editable: true,
+  },
+  {
+    title: 'Date',
+    dataIndex: 'startDate',
+    sorter: true,
+    type: ColumnType.DATE,
+    editable: true,
+  },
+];
 
 export const Default = Template.bind({});
 Default.args = {
+  data: initialData,
+  columns: columns,
   extra: {
     onRowDelete: () => {
       return;
@@ -157,7 +158,7 @@ Default.args = {
         id: 'TEST',
       };
     },
-    isEditable: (row) => {
+    isEditable: (row: IDemoType) => {
       return row.id !== 'GBR';
     },
   },

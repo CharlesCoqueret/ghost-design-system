@@ -6,7 +6,7 @@ import { SchemaDescription, SchemaObjectDescription } from 'yup/lib/schema';
 import { FieldTypeEnum, IFieldAndLayoutProps } from './types';
 import FormField from './FormField';
 import { FieldError } from './yupResolver';
-import { Row, Section } from '../../Atoms';
+import { Row, Section } from '../../Atoms/Layout';
 
 export interface IFormProps<T extends AnyObject> {
   fields: Array<IFieldAndLayoutProps<T>>;

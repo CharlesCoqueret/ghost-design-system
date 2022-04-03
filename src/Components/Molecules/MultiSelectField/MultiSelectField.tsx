@@ -1,7 +1,8 @@
 import React, { ReactElement, Ref } from 'react';
 import classnames from 'classnames';
 
-import { GenericField, IOption, MultiSelectInput } from '../../Atoms';
+import { GenericField } from '../../Atoms/GenericField';
+import { IOption, MultiSelectInput } from '../../Atoms/SelectInput';
 
 export interface IMultiSelectFieldProps {
   /** Custom colors settings */
@@ -33,7 +34,7 @@ export interface IMultiSelectFieldProps {
   /** Class for the input (optional, default: undefined) */
   inputClassName?: string;
   /** Input string value (optional, default: undefined) */
-  inputValue: Array<string> | undefined;
+  inputValue: Array<string | number> | undefined;
   /** Provide the ability to clear the value (optional, default: false) */
   isClearable?: boolean;
   /** Label (optional, default: undefined) */
@@ -51,7 +52,7 @@ export interface IMultiSelectFieldProps {
    * Note: the {} will be replaced by the actual number */
   numberOfItemsLabel: string;
   /** Handler of value changes (optional, default: undefined) */
-  onChange?: (newValue: Array<string> | null | undefined) => void;
+  onChange?: (newValue: Array<string | number> | null | undefined) => void;
   /** Options available to be picked from */
   options: Array<IOption>;
   /** Placeholder value (optional, default: undefined) */

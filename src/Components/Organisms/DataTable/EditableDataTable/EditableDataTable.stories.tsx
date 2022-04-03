@@ -1,4 +1,4 @@
-import React, { ReactElement, useState } from 'react';
+import React, { ReactElement } from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import EditableDataTable, { IEditableDataTableProps } from './EditableDataTable';
@@ -7,6 +7,7 @@ import { ColumnType, IColumnType } from '../Common/types';
 export default {
   title: 'Organism/DataTable/EditableDataTable',
   component: EditableDataTable,
+  parameters: { actions: { argTypesRegex: '^on.*' }, controls: { sort: 'requiredFirst' } },
 } as ComponentMeta<typeof EditableDataTable>;
 
 interface IDemoType {
@@ -72,64 +73,64 @@ const initialData = [
 const Template: ComponentStory<(arg: IEditableDataTableProps<IDemoType>) => ReactElement> = (
   args: IEditableDataTableProps<IDemoType>,
 ) => {
-  const [data] = useState<Array<IDemoType>>(initialData);
-
-  const columns: IColumnType<IDemoType>[] = [
-    {
-      title: 'Code',
-      dataIndex: 'id',
-      sorter: true,
-      type: ColumnType.CODE,
-    },
-    {
-      title: 'Text',
-      dataIndex: 'name',
-      type: ColumnType.TEXT,
-      ellipsis: true,
-      sorter: true,
-      editable: true,
-    },
-    {
-      title: 'Badge',
-      dataIndex: 'status',
-      sorter: true,
-      type: ColumnType.BADGE,
-      editable: true,
-      options: [
-        { label: 'Inactive', value: 'INACTIVE' },
-        { label: 'In progress', value: 'IN_PROGRESS' },
-        { label: 'Active', value: 'ACTIVE' },
-      ],
-    },
-    {
-      title: 'Amount',
-      dataIndex: 'price',
-      sorter: true,
-      type: ColumnType.AMOUNT,
-      currency: '€',
-      editable: true,
-    },
-    {
-      title: 'Percentage',
-      dataIndex: 'parts',
-      sorter: true,
-      type: ColumnType.PERCENTAGE,
-      editable: true,
-    },
-    {
-      title: 'Date',
-      dataIndex: 'startDate',
-      sorter: true,
-      type: ColumnType.DATE,
-      editable: true,
-    },
-  ];
-
-  return <EditableDataTable<IDemoType> data={data} columns={columns} {...args} />;
+  return <EditableDataTable<IDemoType> {...args} />;
 };
+
+const columns: IColumnType<IDemoType>[] = [
+  {
+    title: 'Code',
+    dataIndex: 'id',
+    sorter: true,
+    type: ColumnType.CODE,
+  },
+  {
+    title: 'Text',
+    dataIndex: 'name',
+    type: ColumnType.TEXT,
+    ellipsis: true,
+    sorter: true,
+    editable: true,
+  },
+  {
+    title: 'Badge',
+    dataIndex: 'status',
+    sorter: true,
+    type: ColumnType.BADGE,
+    editable: true,
+    options: [
+      { label: 'Inactive', value: 'INACTIVE' },
+      { label: 'In progress', value: 'IN_PROGRESS' },
+      { label: 'Active', value: 'ACTIVE' },
+    ],
+  },
+  {
+    title: 'Amount',
+    dataIndex: 'price',
+    sorter: true,
+    type: ColumnType.AMOUNT,
+    currency: '€',
+    editable: true,
+  },
+  {
+    title: 'Percentage',
+    dataIndex: 'parts',
+    sorter: true,
+    type: ColumnType.PERCENTAGE,
+    editable: true,
+  },
+  {
+    title: 'Date',
+    dataIndex: 'startDate',
+    sorter: true,
+    type: ColumnType.DATE,
+    editable: true,
+  },
+];
 
 export const Default = Template.bind({});
 Default.args = {
+  columns: columns,
+  data: initialData,
   extra: {
     onEdit: () => {
       return;

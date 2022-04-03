@@ -1,15 +1,12 @@
 import { CSSProperties, ReactElement } from 'react';
 import * as yup from 'yup';
 
-import {
-  IconProp,
-  BadgeColorsEnum,
-  DateFormat,
-  DateFormatEnum,
-  IOption,
-  ThousandsGroupStyle,
-  WeekDayEnum,
-} from '../../../Atoms';
+import { IconProp } from '../../../Atoms/Icon';
+import { BadgeColorsEnum } from '../../../Atoms/Badge';
+import { DateFormat, DateFormatEnum, WeekDayEnum } from '../../../Atoms/DatePickerInput';
+import { IOption } from '../../../Atoms/SelectInput';
+import { ThousandsGroupStyle } from '../../../Atoms/AmountInput';
+import { ColorButtonEnum } from '../../../Molecules/Button';
 
 export enum ColumnType {
   AMOUNT = 'amount',
@@ -18,9 +15,11 @@ export enum ColumnType {
   CODE = 'code',
   CUSTOM = 'custom',
   DATE = 'date',
+  DYNAMICSEARCH = 'dynamicsearch',
   NUMBER = 'number',
   PERCENTAGE = 'percentage',
   TEXT = 'text',
+  TEXTAREA = 'textarea',
 }
 
 export enum SortDirectionEnum {
@@ -52,8 +51,12 @@ export interface IButtonCellProps<T> {
 }
 
 interface IColumn {
+  /** For test purpose only */
+  dataTestId?: string;
   /** Enables ellipsis on the colum when it overflows (optional, default: undefined) */
   ellipsis?: boolean;
+  /** Makes the column invisible (optional, default: false) */
+  hidden?: boolean;
   /** Enables sort on the colum (optional, default: undefined) */
   sorter?: boolean;
   /** Title of the column */
@@ -129,6 +132,25 @@ export interface IColumnDate<T> extends IColumn {
   type: ColumnType.DATE;
 }
 
+export interface IColumnDynamicSearch<T> extends IColumn {
+  dataIndex: keyof T;
+  editable?: boolean;
+  isClearable?: boolean;
+  noOptionsMessage: (obj: { inputValue: string }) => string;
+  placeholder?: string;
+  resolveValue: (value: string | number) => Promise<IOption | undefined>;
+  searchOptions: (searchTerm: string) => Promise<Array<IOption> | undefined>;
+  selectColors?: {
+    controlErrorColor: string; // colors.error,
+    controlFocusColor: string; // colors.primary,
+    fontColor: string; // 'rgb(0, 0, 0)',
+    optionFocusColor: string; // colors.chalk,
+    optionSelectedColor: string; // colors.primary,
+  };
+  type: ColumnType.DYNAMICSEARCH;
+  usePortal?: boolean;
+}
+
 export interface IColumnNumber<T> extends IColumn {
   allowNegative?: boolean;
   dataIndex: keyof T;
@@ -168,6 +190,15 @@ export interface IColumnText<T> extends IColumn {
   type: ColumnType.TEXT;
 }
 
+export interface IColumnTextArea<T> extends IColumn {
+  dataIndex: keyof T;
+  editable?: boolean;
+  maxLength?: number;
+  minLength?: number;
+  placeholder?: string;
+  type: ColumnType.TEXTAREA;
+}
+
 export type IColumnType<T> =
   | IColumnAmount<T>
   | IColumnBadge<T>
@@ -175,9 +206,11 @@ export type IColumnType<T> =
   | IColumnCode<T>
   | IColumnCustom<T>
   | IColumnDate<T>
+  | IColumnDynamicSearch<T>
   | IColumnNumber<T>
   | IColumnPercentage<T>
-  | IColumnText<T>;
+  | IColumnText<T>
+  | IColumnTextArea<T>;
 
 export type TableType<T> = Record<keyof T, string | number | Date | undefined | null>;
 
@@ -198,18 +231,35 @@ export interface IExtraStaticDataTableProps<T> {
    *    moreActionsMessage: 'More actions'
    *    noData: 'No data'
    *    sortMessage: 'Click to sort'
+   *    total: 'Total'
    * )
    */
   localization?: {
     moreActionsMessage?: string;
     noData?: string;
     sortMessage?: string;
+    total?: string;
   };
 }
 
 export interface IExtraLineEditableDataTableProps<T> extends IExtraStaticDataTableProps<T> {
+  /** Action column width (as a CSSProperty) (optional, default: undefined) */
+  actionColumnWidth?: string;
   /** Notification of initiation of changes on a specific row (optional, default: undefined) */
   onRowEdit?: (editRow: T, editedRowIndex: number) => void;
+  /** Additional actions shown in the row edit modal (optional, default: undefined) */
+  rowEditExtraActions?: (
+    editRow: T,
+    editedRowIndex: number,
+  ) => Array<{
+    label: string;
+    // If the execution of this action fails, notify the user and reject the call.
+    onClick: (editRow: T, editedRowIndex: number) => Promise<void>;
+    // Color of the button (optional, default: ColorButtonEnum.SECONDARY)
+    color?: ColorButtonEnum;
+  }>;
+  /** Show side by side in modal (optional, default: false) */
+  showChanges?: boolean;
   /** Notification of changes cancellation on a specific row (optional, default: undefined) */
   onRowCancelEdit?: (editRow: T, editedRowIndex: number) => void;
   /** Notification of changes on a specific row (optional, default: undefined) */
@@ -242,10 +292,12 @@ export interface IExtraLineEditableDataTableProps<T> extends IExtraStaticDataTab
    *    deletePopoverCancel: 'Cancel'
    *    downloadButton: 'Download'
    *    editButton: 'Edit'
+   *    modalTitle: 'Edit row'
    *    moreActionsMessage: 'More actions'
    *    noData: 'No data'
    *    sortMessage: 'Click to sort'
    *    submitButton: 'Submit'
+   *    total: 'Total'
    * )
    */
   localization?: {
@@ -258,10 +310,12 @@ export interface IExtraLineEditableDataTableProps<T> extends IExtraStaticDataTab
     deletePopoverCancel?: string;
     downloadButton?: string;
     editButton?: string;
+    modalTitle?: string;
     moreActionsMessage?: string;
     noData?: string;
     sortMessage?: string;
     submitButton?: string;
+    total?: string;
   };
 }
 
@@ -302,6 +356,7 @@ export interface IExtraLineEditableInPlaceDataTableProps<T> extends IExtraStatic
    *    noData: 'No data'
    *    sortMessage: 'Click to sort'
    *    submitButton: 'Submit'
+   *     total: 'Total'
    * )
    */
   localization?: {
@@ -318,6 +373,7 @@ export interface IExtraLineEditableInPlaceDataTableProps<T> extends IExtraStatic
     noData?: string;
     sortMessage?: string;
     submitButton?: string;
+    total?: string;
   };
 }
 
@@ -349,6 +405,7 @@ export interface IExtraEditableDataTableProps<T> extends IExtraStaticDataTablePr
    *    moreActionsMessage: 'More actions'
    *    noData: 'No data'
    *    sortMessage: 'Click to sort'
+   *    total: 'Total'
    * )
    */
   localization?: {
@@ -362,5 +419,6 @@ export interface IExtraEditableDataTableProps<T> extends IExtraStaticDataTablePr
     moreActionsMessage?: string;
     noData?: string;
     sortMessage?: string;
+    total?: string;
   };
 }

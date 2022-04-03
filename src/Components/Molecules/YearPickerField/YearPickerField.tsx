@@ -1,7 +1,8 @@
 import React, { ReactElement, Ref } from 'react';
 import classnames from 'classnames';
 
-import { GenericField, YearPickerInput } from '../../Atoms';
+import { GenericField } from '../../Atoms/GenericField';
+import { YearPickerInput } from '../../Atoms/DatePickerInput';
 
 export interface IYearPickerFieldProps {
   /** React Container ref (optional, default: undefined) */

@@ -6,6 +6,7 @@ import Typography, { Title, ITitleProps } from './Typography';
 export default {
   title: 'Atom/Typography/Title',
   component: Title,
+  parameters: { actions: { argTypesRegex: '^on.*' }, controls: { sort: 'requiredFirst' } },
 } as ComponentMeta<typeof Title>;
 
 const Template: ComponentStory<typeof Title> = (arg: ITitleProps) => {

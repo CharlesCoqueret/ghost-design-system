@@ -24,6 +24,7 @@ const options: Array<IToggleEntry> = [
 export default {
   title: 'Molecule/CheckboxField',
   component: CheckboxField,
+  parameters: { actions: { argTypesRegex: '^on.*' }, controls: { sort: 'requiredFirst' } },
 } as ComponentMeta<typeof CheckboxField>;
 
 const Template: ComponentStory<typeof CheckboxField> = ({ inputValue, ...args }: ICheckboxFieldProps) => {

@@ -1,6 +1,7 @@
 import React, { CSSProperties, ReactElement, Ref } from 'react';
 
-import { GenericField, FileInput, IFile } from '../../Atoms';
+import { GenericField } from '../../Atoms/GenericField';
+import { FileInput, IFile, FileStatusEnum } from '../../Atoms/FileInput';
 
 export interface IFileFieldProps {
   /** Accepted types (optional, default: '\*\/\*') */
@@ -124,10 +125,17 @@ export const FileField = (props: IFileFieldProps): ReactElement => {
       helperText={helperText}
       highlighted={highlighted}
       inline={inline}
+      inputLength={
+        inputValue?.filter((file) => {
+          if (!file.status) return false;
+          return [FileStatusEnum.DONE, FileStatusEnum.UPLOADING].includes(file.status);
+        }).length
+      }
       invertInputDescription
       label={label}
       labelSize={labelSize}
       mandatory={mandatory}
+      maxLength={maxFiles}
       readOnly={readOnly}>
       {additionalInfo}
       <FileInput

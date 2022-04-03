@@ -8,23 +8,28 @@ import { Button, ColorButtonEnum } from '../../../../Molecules/Button';
 const DISPLAY_BUTTON_THRESHOLD = 3;
 
 const ButtonCell = <T,>(props: ICellProps<T, IColumnButton<T>>): ReactElement => {
-  const { column, row, rowIndex } = props;
+  const { column, dataTestId, row, rowIndex } = props;
 
-  if (!row) throw new Error('missing row property');
+  if (!row) {
+    console.error('missing row property');
+    return <></>;
+  }
 
   const visibleButtons = column.buttons.filter((button) => {
     return !button.hidden || !button.hidden(row, rowIndex);
   });
 
   return (
-    <td className={classnames({ ellipsis: column.ellipsis })}>
+    <td className={classnames({ ellipsis: column.ellipsis })} style={{ display: column.hidden ? 'none' : undefined }}>
       <div className='table--cell--value--button'>
         {visibleButtons.length > DISPLAY_BUTTON_THRESHOLD ? (
           <Button
-            tooltip={column.moreActionsMessage}
+            color={ColorButtonEnum.REVERSED}
+            dataTestId={dataTestId}
             icon={['fal', 'ellipsis-h']}
-            itemList={column.buttons?.map((item) => {
+            itemList={column.buttons.map((item) => {
               return {
+                dataTestId: item.dataTestId,
                 itemId: item.label,
                 label: item.label,
                 hidden: !(!item.hidden || !item.hidden(row, rowIndex)),
@@ -35,7 +40,7 @@ const ButtonCell = <T,>(props: ICellProps<T, IColumnButton<T>>): ReactElement =>
                 },
               };
             })}
-            color={ColorButtonEnum.REVERSED}
+            tooltip={column.moreActionsMessage}
           />
         ) : (
           visibleButtons.map((button) => {

@@ -4,17 +4,19 @@ import classnames from 'classnames';
 import { IColumnType, IExtraEditableDataTableProps } from '../Common/types';
 import DataTableCellSelectable from '../Common/DataTableCellSelectable';
 import EditableDataTableCell from './EditableDataTableCell';
+import { Icon } from '../../../Atoms/Icon';
 
 interface IEditableDataTableBodyProps<T> {
   columns: Array<IColumnType<T>>;
   data: Array<T>;
+  dataTestId?: string;
   extra: IExtraEditableDataTableProps<T>;
   handleUpdateDataChange: (rowIndex: number, dataIndex: keyof T, newData: T[keyof T]) => void;
   loading?: ReactElement;
 }
 
 const EditableDataTableBody = <T,>(props: IEditableDataTableBodyProps<T>): ReactElement => {
-  const { columns, data, extra, handleUpdateDataChange, loading } = props;
+  const { columns, data, dataTestId, extra, handleUpdateDataChange, loading } = props;
 
   const [selectedRows, setSelectedRows] = useState<Record<number, boolean>>({});
 
@@ -70,6 +72,7 @@ const EditableDataTableBody = <T,>(props: IEditableDataTableBodyProps<T>): React
                 <EditableDataTableCell<T>
                   key={`cell-${rowIndex}-${column.title}`}
                   column={column}
+                  dataTestId={dataTestId}
                   row={row}
                   extra={extra}
                   rowIndex={rowIndex}
@@ -83,7 +86,12 @@ const EditableDataTableBody = <T,>(props: IEditableDataTableBodyProps<T>): React
       })}
       {(!data || data?.length === 0) && (
         <tr className='no-data'>
-          <td colSpan={columns.length + (isSelectable ? 1 : 0)}>{extra?.localization?.noData || 'No data'}</td>
+          <td colSpan={columns.length + (isSelectable ? 1 : 0)}>
+            <div className='no-data-container'>
+              <div className='no-data-text'>{extra?.localization?.noData ?? 'No data'}</div>
+              <Icon icon={['fal', 'inbox']} size='2x' className='no-data-icon' />
+            </div>
+          </td>
         </tr>
       )}
       {loading && (

@@ -15,9 +15,9 @@ const BadgeCell = <T,>(props: ICellProps<T, IColumnBadge<T>>): ReactElement => {
   const displayValue = (forcedValue || (row && row[column.dataIndex]) || undefined) as string | undefined;
   const isCurrentlyEditedRow =
     editing ||
-    (extra && 'editedRowIndex' in extra ? extra.editedRowIndex === rowIndex && column.options?.length > 0 : false);
+    (extra && 'editedRowIndex' in extra ? extra.editedRowIndex === rowIndex && column.options.length > 0 : false);
 
-  const options = column.options ? (typeof column.options === 'function' ? column.options(row) : column.options) : [];
+  const options = typeof column.options === 'function' ? column.options(row) : column.options;
 
   if (column.eraseValueWhenNotInOptions && displayValue) {
     if (!options.map((option) => option.value).includes(displayValue)) {
@@ -30,14 +30,14 @@ const BadgeCell = <T,>(props: ICellProps<T, IColumnBadge<T>>): ReactElement => {
   }
 
   return (
-    <td className={classnames({ ellipsis: column.ellipsis })}>
+    <td className={classnames({ ellipsis: column.ellipsis })} style={{ display: column.hidden ? 'none' : undefined }}>
       {isCurrentlyEditedRow ? (
         <SelectField
           colors={column.selectColors}
           inputValue={displayValue}
           isClearable={column.isClearable}
           name={column.title.toString()}
-          onChange={(newValue: string | null | undefined) => {
+          onChange={(newValue: string | number | null | undefined) => {
             if (onChange) {
               onChange(newValue as unknown as T[keyof T]);
             }

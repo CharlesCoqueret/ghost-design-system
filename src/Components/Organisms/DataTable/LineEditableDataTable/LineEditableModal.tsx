@@ -11,8 +11,10 @@ export interface ILineEditableModalProps<T> {
   title: string;
   showChanges?: boolean;
   row: T;
-  onSubmit: (updatedRow: T) => void;
+  rowIndex: number;
   onCancel: (rowWithCancelledChanges: T) => void;
+  onClose: () => void;
+  onSubmit: (updatedRow: T) => void;
   columns: Array<IColumnType<T>>;
   extra?: IExtraLineEditableDataTableProps<T>;
 }
@@ -76,6 +78,20 @@ const columnToFieldMapper = <T,>(columns: Array<IColumnType<T>>): Array<IFieldAn
             readOnly: !column.editable,
           };
         }
+        case ColumnType.DYNAMICSEARCH: {
+          return {
+            colors: column.selectColors,
+            dataIndex: column.dataIndex,
+            fieldType: FieldTypeEnum.DYNAMICSEARCH,
+            isClearable: column.isClearable,
+            label: column.title,
+            noOptionsMessage: column.noOptionsMessage,
+            placeholder: column.placeholder,
+            resolveValue: column.resolveValue,
+            searchOptions: column.searchOptions,
+            usePortal: column.usePortal,
+          };
+        }
         case ColumnType.NUMBER: {
           return {
             allowNegative: column.allowNegative,
@@ -120,6 +136,16 @@ const columnToFieldMapper = <T,>(columns: Array<IColumnType<T>>): Array<IFieldAn
             readOnly: !column.editable,
           };
         }
+        case ColumnType.TEXTAREA: {
+          return {
+            maxLength: column.maxLength,
+            minLendth: column.minLength,
+            fieldType: FieldTypeEnum.TEXTAREA,
+            label: column.title,
+            dataIndex: column.dataIndex,
+            readOnly: !column.editable,
+          };
+        }
         default: {
           throw new Error('Missing ColumnType');
         }
@@ -130,7 +156,7 @@ const columnToFieldMapper = <T,>(columns: Array<IColumnType<T>>): Array<IFieldAn
 };
 
 const LineEditableModal = <T,>(props: ILineEditableModalProps<T>): ReactElement => {
-  const { columns, extra, onCancel, onSubmit, showChanges, row, title } = props;
+  const { columns, extra, onCancel, onClose, onSubmit, showChanges, row, rowIndex, title } = props;
 
   const { formElement, getData, submit } = useForm<T>({
     initialData: row,
@@ -144,16 +170,34 @@ const LineEditableModal = <T,>(props: ILineEditableModalProps<T>): ReactElement 
     <Modal show={true} title={title} closeIcon={false} closeOnPressEscape={false} closeOnClickOutside={false} size='lg'>
       <ModalBody>{formElement}</ModalBody>
       <ModalFooter>
+        {extra?.rowEditExtraActions !== undefined &&
+          extra.rowEditExtraActions(row, rowIndex).map((button) => {
+            return (
+              <Button
+                color={button.color || ColorButtonEnum.SECONDARY}
+                key={button.label}
+                label={button.label}
+                onClick={async () => {
+                  button
+                    .onClick(row, rowIndex)
+                    .then(() => {
+                      onClose();
+                    })
+                    .catch();
+                }}
+              />
+            );
+          })}
         <Button
           color={ColorButtonEnum.SECONDARY}
-          label={extra?.localization?.cancelButton || 'Cancel'}
+          label={extra?.localization?.cancelButton ?? 'Cancel'}
           onClick={() => {
             onCancel(getData());
           }}
         />
         <Button
           color={ColorButtonEnum.PRIMARY}
-          label={extra?.localization?.submitButton || 'Submit'}
+          label={extra?.localization?.submitButton ?? 'Submit'}
           onClick={() => {
             const result = submit();
             if (!result.valid) {

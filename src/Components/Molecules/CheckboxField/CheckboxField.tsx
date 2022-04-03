@@ -1,7 +1,8 @@
 import React, { ReactElement, Ref } from 'react';
 import classnames from 'classnames';
 
-import { GenericField, IToggleEntry, CheckboxInput } from '../../Atoms';
+import { GenericField } from '../../Atoms/GenericField';
+import { IToggleEntry, CheckboxInput } from '../../Atoms/CheckBoxInput';
 
 export interface ICheckboxFieldProps {
   /** React Container ref (optional, default: undefined) */

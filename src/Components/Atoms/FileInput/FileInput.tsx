@@ -358,7 +358,7 @@ const FileInput = (props: IFileInputProps): ReactElement => {
 
   return (
     <div
-      className={classnames('file-input-container', className, fieldSize && `field-input-size-${fieldSize}`)}
+      className={classnames('gds-file-input-container', className, fieldSize && `field-input-size-${fieldSize}`)}
       style={style}>
       <div
         key='droparea'
@@ -384,6 +384,7 @@ const FileInput = (props: IFileInputProps): ReactElement => {
         {sortBy(localItems, 'uid').map((item) => {
           return (
             <FileGallery
+              dataTestId={dataTestId}
               disabled={disabled}
               file={item}
               key={`${item.uid}`}
@@ -406,7 +407,7 @@ FileInput.defaultProps = {
   className: undefined,
   disabled: false,
   isInError: false,
-  maxFile: undefined,
+  maxFiles: undefined,
   maxFileSize: undefined,
   maxFolderDepth: 2,
   readOnly: false,

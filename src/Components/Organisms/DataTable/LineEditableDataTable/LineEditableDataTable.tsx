@@ -30,9 +30,10 @@ const LineEditableDataTable = <T,>(props: ILineEditableDataTableProps<T>): React
       : [
           ...columns.filter((column) => column.type !== ColumnType.BUTTON),
           {
-            title: extra?.localization?.actionColumn || 'Actions',
+            title: extra?.localization?.actionColumn ?? 'Actions',
             type: ColumnType.BUTTON,
-            moreActionsMessage: extra?.localization?.moreActionsMessage || 'More actions',
+            width: extra?.actionColumnWidth,
+            moreActionsMessage: extra?.localization?.moreActionsMessage ?? 'More actions',
             buttons: [
               {
                 hidden: (row, rowIndex) => {
@@ -47,7 +48,7 @@ const LineEditableDataTable = <T,>(props: ILineEditableDataTableProps<T>): React
                   return true;
                 },
                 icon: ['fal', 'edit'],
-                label: extra?.localization?.editButton || 'Edit',
+                label: extra?.localization?.editButton ?? 'Edit',
                 onClick: (row, rowIndex) => {
                   if (extra?.onRowEdit) {
                     extra.onRowEdit(row, rowIndex);
@@ -66,7 +67,7 @@ const LineEditableDataTable = <T,>(props: ILineEditableDataTableProps<T>): React
                   return true;
                 },
                 icon: ['fal', 'trash-alt'],
-                label: extra?.localization?.deleteButton || 'Delete',
+                label: extra?.localization?.deleteButton ?? 'Delete',
                 onClick: (row, rowIndex) => {
                   if (extra?.onRowDelete) {
                     extra.onRowDelete(row, rowIndex);
@@ -77,9 +78,9 @@ const LineEditableDataTable = <T,>(props: ILineEditableDataTableProps<T>): React
                   setCurrentData((prev) => [...prev.filter((_item, index) => index !== rowIndex)]);
                 },
                 popover: {
-                  message: extra?.localization?.deletePopoverMessage || 'Delete?',
-                  cancel: extra?.localization?.deletePopoverCancel || 'Cancel',
-                  confirm: extra?.localization?.deletePopoverConfirm || 'Confirm',
+                  message: extra?.localization?.deletePopoverMessage ?? 'Delete?',
+                  cancel: extra?.localization?.deletePopoverCancel ?? 'Cancel',
+                  confirm: extra?.localization?.deletePopoverConfirm ?? 'Confirm',
                 },
               },
               {
@@ -91,7 +92,7 @@ const LineEditableDataTable = <T,>(props: ILineEditableDataTableProps<T>): React
                   return true;
                 },
                 icon: ['fal', 'arrow-to-bottom'],
-                label: extra?.localization?.downloadButton || 'Download',
+                label: extra?.localization?.downloadButton ?? 'Download',
                 onClick: (row, rowIndex) => {
                   if (extra?.onRowDownload) {
                     extra.onRowDownload(row, rowIndex);
@@ -135,7 +136,7 @@ const LineEditableDataTable = <T,>(props: ILineEditableDataTableProps<T>): React
 
   return (
     <>
-      <table className='cui-table'>
+      <table className='gds-table'>
         <StaticDataTableHeader<T>
           columns={currentColumns}
           onSortChange={handleSortChange}
@@ -143,27 +144,22 @@ const LineEditableDataTable = <T,>(props: ILineEditableDataTableProps<T>): React
           sortDirection={sortDirection}
           extra={{ ...extra, editedRowIndex }}
         />
-        <StaticDataTableBody<T>
-          columns={currentColumns}
-          data={currentData}
-          extra={{ ...extra, editedRowIndex }}
-          loading={loading}
-        />
+        <StaticDataTableBody<T> columns={currentColumns} data={currentData} extra={extra} loading={loading} />
         <StaticDataTableFooter<T> columns={currentColumns} data={currentData} extra={extra} />
       </table>
       {extra?.canAddNewLine && extra?.canAddNewLine() && (
         <Button
-          className='cui-table-new-line'
+          className='gds-table-new-line'
           color={ColorButtonEnum.PRIMARY}
-          label={extra?.localization?.addRow || 'Add row'}
+          label={extra?.localization?.addRow ?? 'Add row'}
           onClick={addNewLine}
           disabled={editedRowIndex !== undefined}
         />
       )}
       {editedRowIndex !== undefined && (
         <LineEditableModal<T>
-          title={'TITLE'} //TODO add modal edit title to localization
-          showChanges={true} // TODO expose show change option to extra
+          title={extra?.localization?.modalTitle ?? 'Edit row'}
+          showChanges={extra?.showChanges || false}
           onSubmit={(newRow) => {
             setCurrentData((prev) => {
               prev[editedRowIndex] = newRow;
@@ -173,6 +169,7 @@ const LineEditableDataTable = <T,>(props: ILineEditableDataTableProps<T>): React
             setIsNewLine(false);
           }}
           row={currentData[editedRowIndex]}
+          rowIndex={editedRowIndex}
           onCancel={() => {
             if (isNewLine) {
               setCurrentData((prev) => {
@@ -183,13 +180,22 @@ const LineEditableDataTable = <T,>(props: ILineEditableDataTableProps<T>): React
             setIsNewLine(false);
             return;
           }}
+          onClose={() => {
+            setEditedRowIndex(undefined);
+            setIsNewLine(false);
+            return;
+          }}
           columns={columns}
           extra={extra}
         />
       )}
-      ;
     </>
   );
+};
+
+LineEditableDataTable.defaultProps = {
+  columns: [],
+  data: [],
 };
 
 export default LineEditableDataTable;

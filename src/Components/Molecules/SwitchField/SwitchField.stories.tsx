@@ -24,6 +24,7 @@ const options: Array<IToggleEntry> = [
 export default {
   title: 'Molecule/SwitchField',
   component: SwitchField,
+  parameters: { actions: { argTypesRegex: '^on.*' }, controls: { sort: 'requiredFirst' } },
 } as ComponentMeta<typeof SwitchField>;
 
 const Template: ComponentStory<typeof SwitchField> = ({ inputValue, ...args }: ISwitchFieldProps) => {

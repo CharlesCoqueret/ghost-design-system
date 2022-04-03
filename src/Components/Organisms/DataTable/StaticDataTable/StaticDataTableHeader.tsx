@@ -10,7 +10,7 @@ import {
   SortDirectionEnum,
 } from '../Common/types';
 import { MenuDirectionEnum, Tooltip } from '../../../Atoms/Tooltip';
-import { Icon } from '../../../Atoms';
+import { Icon } from '../../../Atoms/Icon';
 
 interface IStaticDataTableHeaderProps<T> {
   columns: Array<IColumnType<T>>;
@@ -56,10 +56,10 @@ const StaticDataTableHeader = <T,>(props: IStaticDataTableHeaderProps<T>): React
           ))}
         {columns.map((column, index) => {
           return (
-            <th key={`header-${index}`} style={{ width: column.width }}>
+            <th key={`header-${index}`} style={{ display: column.hidden ? 'none' : undefined, width: column.width }}>
               <Tooltip
                 tooltip={
-                  column.sorter && !isEditingRow ? extra?.localization?.sortMessage || 'Click to sort' : undefined
+                  column.sorter && !isEditingRow ? extra?.localization?.sortMessage ?? 'Click to sort' : undefined
                 }
                 direction={MenuDirectionEnum.TOP}>
                 <div
@@ -74,7 +74,9 @@ const StaticDataTableHeader = <T,>(props: IStaticDataTableHeaderProps<T>): React
                   <span
                     className={classnames('table--header-value--title', {
                       center: [ColumnType.CODE, ColumnType.DATE, ColumnType.BUTTON].includes(column.type),
-                      left: [ColumnType.TEXT, ColumnType.BADGE, ColumnType.CUSTOM].includes(column.type),
+                      left: [ColumnType.TEXT, ColumnType.BADGE, ColumnType.CUSTOM, ColumnType.DYNAMICSEARCH].includes(
+                        column.type,
+                      ),
                       right: [ColumnType.NUMBER, ColumnType.AMOUNT, ColumnType.PERCENTAGE].includes(column.type),
                     })}>
                     {column.title}
