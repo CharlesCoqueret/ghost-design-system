@@ -88,13 +88,14 @@ describe('EditableDataTableBody Component', () => {
         <EditableDataTableBody<ITestType>
           columns={columns}
           data={initialData}
+          dataTestId={'DATA-TEST-ID'}
           extra={extra}
           handleUpdateDataChange={handleUpdateDataChangeMock}
         />
       </table>,
     );
 
-    const codeCell = await screen.findAllByTestId('id-0');
+    const codeCell = await screen.findAllByTestId('DATA-TEST-ID-Code-0');
     expect(codeCell.length).toBeGreaterThan(0);
 
     act(() => {

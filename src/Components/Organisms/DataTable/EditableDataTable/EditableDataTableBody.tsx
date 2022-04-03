@@ -9,13 +9,14 @@ import { Icon } from '../../../Atoms/Icon';
 interface IEditableDataTableBodyProps<T> {
   columns: Array<IColumnType<T>>;
   data: Array<T>;
+  dataTestId?: string;
   extra: IExtraEditableDataTableProps<T>;
   handleUpdateDataChange: (rowIndex: number, dataIndex: keyof T, newData: T[keyof T]) => void;
   loading?: ReactElement;
 }
 
 const EditableDataTableBody = <T,>(props: IEditableDataTableBodyProps<T>): ReactElement => {
-  const { columns, data, extra, handleUpdateDataChange, loading } = props;
+  const { columns, data, dataTestId, extra, handleUpdateDataChange, loading } = props;
 
   const [selectedRows, setSelectedRows] = useState<Record<number, boolean>>({});
 
@@ -71,6 +72,7 @@ const EditableDataTableBody = <T,>(props: IEditableDataTableBodyProps<T>): React
                 <EditableDataTableCell<T>
                   key={`cell-${rowIndex}-${column.title}`}
                   column={column}
+                  dataTestId={dataTestId}
                   row={row}
                   extra={extra}
                   rowIndex={rowIndex}

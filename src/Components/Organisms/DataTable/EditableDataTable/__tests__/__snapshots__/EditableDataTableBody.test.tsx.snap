@@ -12,13 +12,13 @@ Object {
           >
             <td
               class="table--cell--code"
-              data-testid="id-0"
             >
               <div
                 class="gds-field-group"
               >
                 <div
                   class="field input-text-field-read-only gds-typography"
+                  data-testid="DATA-TEST-ID-Code-0"
                 >
                   id
                 </div>
@@ -32,7 +32,7 @@ Object {
               >
                 <input
                   class="field gds-input-text-field gds-typography ellipsis"
-                  data-testid="name-0"
+                  data-testid="DATA-TEST-ID-Text-0"
                   id="name"
                   name="name"
                   type="text"
@@ -154,6 +154,7 @@ Object {
               >
                 <input
                   class="gds-amount-field"
+                  data-testid="DATA-TEST-ID-Percentage-0"
                   inputmode="numeric"
                   name="parts"
                   type="text"
@@ -208,13 +209,13 @@ Object {
         >
           <td
             class="table--cell--code"
-            data-testid="id-0"
           >
             <div
               class="gds-field-group"
             >
               <div
                 class="field input-text-field-read-only gds-typography"
+                data-testid="DATA-TEST-ID-Code-0"
               >
                 id
               </div>
@@ -228,7 +229,7 @@ Object {
             >
               <input
                 class="field gds-input-text-field gds-typography ellipsis"
-                data-testid="name-0"
+                data-testid="DATA-TEST-ID-Text-0"
                 id="name"
                 name="name"
                 type="text"
@@ -350,6 +351,7 @@ Object {
             >
               <input
                 class="gds-amount-field"
+                data-testid="DATA-TEST-ID-Percentage-0"
                 inputmode="numeric"
                 name="parts"
                 type="text"
@@ -469,7 +471,6 @@ Object {
             </td>
             <td
               class="table--cell--code"
-              data-testid="id-0"
             >
               <div
                 class="gds-field-group"
@@ -489,7 +490,6 @@ Object {
               >
                 <input
                   class="field gds-input-text-field gds-typography ellipsis"
-                  data-testid="name-0"
                   id="name"
                   name="name"
                   type="text"
@@ -678,7 +678,6 @@ Object {
           </td>
           <td
             class="table--cell--code"
-            data-testid="id-0"
           >
             <div
               class="gds-field-group"
@@ -698,7 +697,6 @@ Object {
             >
               <input
                 class="field gds-input-text-field gds-typography ellipsis"
-                data-testid="name-0"
                 id="name"
                 name="name"
                 type="text"

@@ -9,9 +9,6 @@ interface ITestType {
   id: string;
   name: string;
   status: string;
-  price: number;
-  parts: number;
-  startDate: Date;
 }
 
 const columns: IColumnType<ITestType>[] = [
@@ -37,28 +34,6 @@ const columns: IColumnType<ITestType>[] = [
     editable: true,
     options: [{ label: 'Status', value: 'status' }],
   },
-  {
-    title: 'Amount',
-    dataIndex: 'price',
-    sorter: true,
-    type: ColumnType.AMOUNT,
-    currency: '€',
-    editable: true,
-  },
-  {
-    title: 'Percentage',
-    dataIndex: 'parts',
-    sorter: true,
-    type: ColumnType.PERCENTAGE,
-    editable: true,
-  },
-  {
-    title: 'Date',
-    dataIndex: 'startDate',
-    sorter: true,
-    type: ColumnType.DATE,
-    editable: true,
-  },
 ];
 
 const initialData = [
@@ -66,9 +41,6 @@ const initialData = [
     id: 'id',
     name: 'name',
     status: 'status',
-    price: -100000,
-    parts: -10,
-    startDate: new Date(2021, 2, 24),
   },
 ];
 
@@ -356,9 +328,13 @@ describe('EditableDataTable Component', () => {
 
     const newInput = 'test input';
 
-    const container = render(<EditableDataTable<ITestType> columns={columns} data={initialData} extra={extra} />);
+    const container = render(
+      <EditableDataTable<ITestType> columns={columns} data={initialData} dataTestId={'DATA-TEST-ID'} extra={extra} />,
+    );
 
-    const nameInputField = await screen.findAllByTestId('name-0');
+    expect(container).toMatchSnapshot();
+
+    const nameInputField = await screen.findAllByTestId('DATA-TEST-ID-Text-0');
     expect(nameInputField.length).toBeGreaterThan(0);
 
     act(() => {

@@ -15,6 +15,7 @@ import { ColumnType, IColumnType, IExtraEditableDataTableProps } from '../Common
 
 export interface IEditableDataTableCellProps<T> {
   column: IColumnType<T>;
+  dataTestId?: string;
   editable: boolean;
   row: T;
   extra?: IExtraEditableDataTableProps<T>;
@@ -23,13 +24,14 @@ export interface IEditableDataTableCellProps<T> {
 }
 
 const EditableDataTableCell = <T,>(props: IEditableDataTableCellProps<T>): ReactElement => {
-  const { column, editable, row, extra, rowIndex, handleUpdateDataChange } = props;
+  const { column, dataTestId, editable, row, extra, rowIndex, handleUpdateDataChange } = props;
 
   switch (column.type) {
     case ColumnType.AMOUNT: {
       return (
         <AmountCell<T>
           column={column}
+          dataTestId={dataTestId ? `${dataTestId}-${column.title}-${rowIndex}` : undefined}
           row={row}
           extra={extra}
           rowIndex={rowIndex}
@@ -44,6 +46,7 @@ const EditableDataTableCell = <T,>(props: IEditableDataTableCellProps<T>): React
       return (
         <BadgeCell<T>
           column={column}
+          dataTestId={dataTestId ? `${dataTestId}-${column.title}-${rowIndex}` : undefined}
           row={row}
           extra={extra}
           rowIndex={rowIndex}
@@ -55,15 +58,32 @@ const EditableDataTableCell = <T,>(props: IEditableDataTableCellProps<T>): React
       );
     }
     case ColumnType.BUTTON: {
-      return <ButtonCell<T> column={column} row={row} extra={extra} rowIndex={rowIndex} />;
+      return (
+        <ButtonCell<T>
+          column={column}
+          dataTestId={dataTestId ? `${dataTestId}-${column.title}-${rowIndex}` : undefined}
+          row={row}
+          extra={extra}
+          rowIndex={rowIndex}
+        />
+      );
     }
     case ColumnType.CODE: {
-      return <CodeCell<T> column={column} row={row} extra={extra} rowIndex={rowIndex} />;
+      return (
+        <CodeCell<T>
+          column={column}
+          dataTestId={dataTestId ? `${dataTestId}-${column.title}-${rowIndex}` : undefined}
+          row={row}
+          extra={extra}
+          rowIndex={rowIndex}
+        />
+      );
     }
     case ColumnType.CUSTOM: {
       return (
         <CustomCell<T>
           column={column}
+          dataTestId={dataTestId ? `${dataTestId}-${column.title}-${rowIndex}` : undefined}
           row={row}
           extra={extra}
           rowIndex={rowIndex}
@@ -78,6 +98,7 @@ const EditableDataTableCell = <T,>(props: IEditableDataTableCellProps<T>): React
       return (
         <DateCell<T>
           column={column}
+          dataTestId={dataTestId ? `${dataTestId}-${column.title}-${rowIndex}` : undefined}
           row={row}
           extra={extra}
           rowIndex={rowIndex}
@@ -92,6 +113,7 @@ const EditableDataTableCell = <T,>(props: IEditableDataTableCellProps<T>): React
       return (
         <NumberCell<T>
           column={column}
+          dataTestId={dataTestId ? `${dataTestId}-${column.title}-${rowIndex}` : undefined}
           row={row}
           extra={extra}
           rowIndex={rowIndex}
@@ -106,6 +128,7 @@ const EditableDataTableCell = <T,>(props: IEditableDataTableCellProps<T>): React
       return (
         <PercentageCell<T>
           column={column}
+          dataTestId={dataTestId ? `${dataTestId}-${column.title}-${rowIndex}` : undefined}
           row={row}
           extra={extra}
           rowIndex={rowIndex}
@@ -120,6 +143,7 @@ const EditableDataTableCell = <T,>(props: IEditableDataTableCellProps<T>): React
       return (
         <TextCell<T>
           column={column}
+          dataTestId={dataTestId ? `${dataTestId}-${column.title}-${rowIndex}` : undefined}
           row={row}
           extra={extra}
           rowIndex={rowIndex}

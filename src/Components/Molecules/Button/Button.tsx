@@ -1,4 +1,4 @@
-import React, { ReactElement, useRef, useState } from 'react';
+import React, { Fragment, ReactElement, useRef, useState } from 'react';
 import { MenuDivider, MenuItem, MenuAlign, ControlledMenu } from '@szhsin/react-menu';
 import classnames from 'classnames';
 
@@ -131,13 +131,13 @@ const Button = (props: IButtonProps): ReactElement => {
             anchorRef={ref}
             skipOpen={skipOpen}
             onClose={() => setIsMenuOpen(false)}>
-            {itemList?.map((item): ReactElement => {
-              if (item.hidden) return <></>;
+            {itemList?.map((item, index): ReactElement => {
+              if (item.hidden) return <Fragment key={item.itemId || `menu-item-${index}`}></Fragment>;
               return (
-                <>
+                <Fragment key={item.itemId || `menu-item-${index}`}>
                   {item.divider && <MenuDivider />}
                   <MenuItem
-                    key={item.itemId}
+                    data-testid={item.dataTestId}
                     value={item.itemId}
                     onClick={(event) => {
                       event.stopPropagation = true;
@@ -147,7 +147,7 @@ const Button = (props: IButtonProps): ReactElement => {
                     }}>
                     {item.label}
                   </MenuItem>
-                </>
+                </Fragment>
               );
             })}
           </ControlledMenu>
