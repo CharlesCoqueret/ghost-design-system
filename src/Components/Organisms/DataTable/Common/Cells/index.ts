@@ -8,4 +8,5 @@ export { default as DynamicSearchCell } from './DynamicSearchCell';
 export { default as NumberCell } from './NumberCell';
 export { default as PercentageCell } from './PercentageCell';
 export { default as TextCell } from './TextCell';
+export { default as TextAreaCell } from './TextAreaCell';
 export type { ICellProps } from './types';

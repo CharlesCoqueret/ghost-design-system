@@ -12,6 +12,7 @@ import {
   NumberCell,
   PercentageCell,
   TextCell,
+  TextAreaCell,
 } from '../Common/Cells';
 
 export interface IStaticDataTableCellProps<T> {
@@ -54,6 +55,9 @@ const StaticDataTableCell = <T,>(props: IStaticDataTableCellProps<T>): ReactElem
     }
     case ColumnType.TEXT: {
       return <TextCell<T> column={column} row={row} extra={extra} rowIndex={rowIndex} />;
+    }
+    case ColumnType.TEXTAREA: {
+      return <TextAreaCell<T> column={column} row={row} extra={extra} rowIndex={rowIndex} />;
     }
     default: {
       throw new Error('Missing ColumnType');

@@ -6,6 +6,7 @@ import { BadgeColorsEnum } from '../../../Atoms/Badge';
 import { DateFormat, DateFormatEnum, WeekDayEnum } from '../../../Atoms/DatePickerInput';
 import { IOption } from '../../../Atoms/SelectInput';
 import { ThousandsGroupStyle } from '../../../Atoms/AmountInput';
+import { ColorButtonEnum } from '../../../Molecules/Button';
 
 export enum ColumnType {
   AMOUNT = 'amount',
@@ -18,6 +19,7 @@ export enum ColumnType {
   NUMBER = 'number',
   PERCENTAGE = 'percentage',
   TEXT = 'text',
+  TEXTAREA = 'textarea',
 }
 
 export enum SortDirectionEnum {
@@ -49,6 +51,8 @@ export interface IButtonCellProps<T> {
 }
 
 interface IColumn {
+  /** For test purpose only */
+  dataTestId?: string;
   /** Enables ellipsis on the colum when it overflows (optional, default: undefined) */
   ellipsis?: boolean;
   /** Makes the column invisible (optional, default: false) */
@@ -186,6 +190,15 @@ export interface IColumnText<T> extends IColumn {
   type: ColumnType.TEXT;
 }
 
+export interface IColumnTextArea<T> extends IColumn {
+  dataIndex: keyof T;
+  editable?: boolean;
+  maxLength?: number;
+  minLength?: number;
+  placeholder?: string;
+  type: ColumnType.TEXTAREA;
+}
+
 export type IColumnType<T> =
   | IColumnAmount<T>
   | IColumnBadge<T>
@@ -196,7 +209,8 @@ export type IColumnType<T> =
   | IColumnDynamicSearch<T>
   | IColumnNumber<T>
   | IColumnPercentage<T>
-  | IColumnText<T>;
+  | IColumnText<T>
+  | IColumnTextArea<T>;
 
 export type TableType<T> = Record<keyof T, string | number | Date | undefined | null>;
 
@@ -233,6 +247,17 @@ export interface IExtraLineEditableDataTableProps<T> extends IExtraStaticDataTab
   actionColumnWidth?: string;
   /** Notification of initiation of changes on a specific row (optional, default: undefined) */
   onRowEdit?: (editRow: T, editedRowIndex: number) => void;
+  /** Additional actions shown in the row edit modal (optional, default: undefined) */
+  rowEditExtraActions?: (
+    editRow: T,
+    editedRowIndex: number,
+  ) => Array<{
+    label: string;
+    // If the execution of this action fails, notify the user and reject the call.
+    onClick: (editRow: T, editedRowIndex: number) => Promise<void>;
+    // Color of the button (optional, default: ColorButtonEnum.SECONDARY)
+    color?: ColorButtonEnum;
+  }>;
   /** Show side by side in modal (optional, default: false) */
   showChanges?: boolean;
   /** Notification of changes cancellation on a specific row (optional, default: undefined) */
