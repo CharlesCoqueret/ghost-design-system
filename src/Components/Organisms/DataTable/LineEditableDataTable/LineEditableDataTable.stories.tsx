@@ -201,6 +201,23 @@ Default.args = {
     isEditable: (row) => {
       return row.id !== 'GBR';
     },
+    rowEditExtraActions: (row) => {
+      if (row.id === 'UGA') return [];
+      return [
+        {
+          label: 'Extra action resolving',
+          onClick: () => {
+            return Promise.resolve();
+          },
+        },
+        {
+          label: 'Extra action rejecting',
+          onClick: () => {
+            return Promise.reject();
+          },
+        },
+      ];
+    },
     validationSchema: validationSchema,
   },
 };

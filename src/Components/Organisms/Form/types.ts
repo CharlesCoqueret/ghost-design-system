@@ -32,7 +32,7 @@ export enum FieldTypeEnum {
   SWITCH = 'switch',
   TABLE = 'table', // TODO table
   TEXT = 'text',
-  TEXTAREA = 'textared',
+  TEXTAREA = 'textarea',
   YEAR = 'year',
 }
 

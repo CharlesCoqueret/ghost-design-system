@@ -169,12 +169,18 @@ const LineEditableDataTable = <T,>(props: ILineEditableDataTableProps<T>): React
             setIsNewLine(false);
           }}
           row={currentData[editedRowIndex]}
+          rowIndex={editedRowIndex}
           onCancel={() => {
             if (isNewLine) {
               setCurrentData((prev) => {
                 return [...prev.slice(0, prev.length - 1)];
               });
             }
+            setEditedRowIndex(undefined);
+            setIsNewLine(false);
+            return;
+          }}
+          onClose={() => {
             setEditedRowIndex(undefined);
             setIsNewLine(false);
             return;
