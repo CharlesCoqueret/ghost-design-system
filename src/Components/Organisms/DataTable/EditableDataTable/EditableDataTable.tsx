@@ -9,13 +9,14 @@ import EditableDataTableBody from './EditableDataTableBody';
 export interface IEditableDataTableProps<T> {
   columns: Array<IColumnType<T>>;
   data: Array<T>;
+  dataTestId?: string;
   extra: IExtraEditableDataTableProps<T>;
   loading?: ReactElement;
   onSortChange?: (sortField?: keyof T, sortDirection?: SortDirectionEnum) => void;
 }
 
 const EditableDataTable = <T,>(props: IEditableDataTableProps<T>): ReactElement => {
-  const { data, columns, extra, loading, onSortChange } = props;
+  const { columns, data, dataTestId, extra, loading, onSortChange } = props;
 
   const [currentData, setCurrentData] = useState<Array<T>>(data);
   const [sortField, setSortField] = useState<keyof T | undefined>();
@@ -125,6 +126,7 @@ const EditableDataTable = <T,>(props: IEditableDataTableProps<T>): ReactElement 
         <EditableDataTableBody<T>
           columns={currentColumns}
           data={currentData}
+          dataTestId={dataTestId}
           extra={extra}
           handleUpdateDataChange={handleUpdateDataChange}
           loading={loading}

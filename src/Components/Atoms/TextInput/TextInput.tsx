@@ -58,7 +58,8 @@ const TextInput = (props: ITextInputProps): ReactElement => {
             'field-highlighted': highlighted,
           },
           inputClassName,
-        )}>
+        )}
+        data-testid={dataTestId}>
         {inputValue}
       </div>
     );

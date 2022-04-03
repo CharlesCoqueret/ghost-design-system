@@ -6,7 +6,7 @@ import { IColumnNumber } from '../types';
 import { AmountField } from '../../../../Molecules/AmountField';
 
 const NumberCell = <T,>(props: ICellProps<T, IColumnNumber<T>>): ReactElement => {
-  const { column, editing, extra, forcedValue, onChange, row, rowIndex } = props;
+  const { column, dataTestId, editing, extra, forcedValue, onChange, row, rowIndex } = props;
 
   const displayValue = (forcedValue || (row && row[column.dataIndex])) as number | string | undefined;
   const isNegative = Number.isFinite(Number(displayValue)) && Number(displayValue) < 0;
@@ -17,6 +17,7 @@ const NumberCell = <T,>(props: ICellProps<T, IColumnNumber<T>>): ReactElement =>
     <td className={classnames({ ellipsis: column.ellipsis })} style={{ display: column.hidden ? 'none' : undefined }}>
       <AmountField
         allowNegative={column.allowNegative}
+        dataTestId={dataTestId}
         decimalScale={column.decimalScale}
         decimalSeparator={column.decimalSeparator}
         inputClassName={classnames(

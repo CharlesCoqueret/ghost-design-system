@@ -6,7 +6,7 @@ import { IColumnDate } from '../types';
 import { DatePickerField } from '../../../../Molecules/DatePickerField';
 
 const DateCell = <T,>(props: ICellProps<T, IColumnDate<T>>): ReactElement => {
-  const { column, editing, extra, forcedValue, onChange, row, rowIndex } = props;
+  const { column, dataTestId, editing, extra, forcedValue, onChange, row, rowIndex } = props;
 
   const displayValue = (forcedValue || (row && row[column.dataIndex])) as Date | null | undefined;
   const dateFormat = column.dateFormat || extra?.dateFormat;
@@ -16,6 +16,7 @@ const DateCell = <T,>(props: ICellProps<T, IColumnDate<T>>): ReactElement => {
   return (
     <td className={classnames({ ellipsis: column.ellipsis })} style={{ display: column.hidden ? 'none' : undefined }}>
       <DatePickerField
+        dataTestId={dataTestId}
         calendarStartDay={column.calendarStartDay}
         dateFormat={dateFormat}
         name={String(column.dataIndex)}

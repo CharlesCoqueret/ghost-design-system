@@ -6,17 +6,16 @@ import { IColumnCode } from '../types';
 import { TextField } from '../../../../Molecules/TextField';
 
 const CodeCell = <T,>(props: ICellProps<T, IColumnCode<T>>): ReactElement => {
-  const { column, forcedValue, row, rowIndex } = props;
+  const { column, dataTestId, forcedValue, row } = props;
 
   const displayValue = (forcedValue || (row && row[column.dataIndex])) as string | undefined;
 
   return (
     <td
       className={classnames({ ellipsis: column.ellipsis }, 'table--cell--code')}
-      style={{ display: column.hidden ? 'none' : undefined }}
-      data-testid={`${column.dataIndex}-${rowIndex}`}>
+      style={{ display: column.hidden ? 'none' : undefined }}>
       <TextField
-        dataTestId={`${column.dataIndex}-${rowIndex}`}
+        dataTestId={dataTestId}
         inputClassName={classnames('gds-typography', { ellipsis: column.ellipsis })}
         inputValue={displayValue}
         name={String(column.dataIndex)}

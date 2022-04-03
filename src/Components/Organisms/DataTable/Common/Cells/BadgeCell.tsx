@@ -15,9 +15,9 @@ const BadgeCell = <T,>(props: ICellProps<T, IColumnBadge<T>>): ReactElement => {
   const displayValue = (forcedValue || (row && row[column.dataIndex]) || undefined) as string | undefined;
   const isCurrentlyEditedRow =
     editing ||
-    (extra && 'editedRowIndex' in extra ? extra.editedRowIndex === rowIndex && column.options?.length > 0 : false);
+    (extra && 'editedRowIndex' in extra ? extra.editedRowIndex === rowIndex && column.options.length > 0 : false);
 
-  const options = column.options ? (typeof column.options === 'function' ? column.options(row) : column.options) : [];
+  const options = typeof column.options === 'function' ? column.options(row) : column.options;
 
   if (column.eraseValueWhenNotInOptions && displayValue) {
     if (!options.map((option) => option.value).includes(displayValue)) {

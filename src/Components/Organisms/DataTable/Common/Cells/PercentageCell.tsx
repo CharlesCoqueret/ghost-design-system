@@ -5,7 +5,7 @@ import { IColumnPercentage } from '../types';
 import { PercentageField } from '../../../../Molecules/PercentageField';
 
 const PercentageCell = <T,>(props: ICellProps<T, IColumnPercentage<T>>): ReactElement => {
-  const { column, editing, extra, forcedValue, onChange, row, rowIndex } = props;
+  const { column, dataTestId, editing, extra, forcedValue, onChange, row, rowIndex } = props;
 
   const displayValue = (forcedValue || (row && row[column.dataIndex])) as number | string | undefined;
   const isNegative = Number.isFinite(Number(displayValue)) && Number(displayValue) < 0;
@@ -16,6 +16,7 @@ const PercentageCell = <T,>(props: ICellProps<T, IColumnPercentage<T>>): ReactEl
     <td className={classnames({ ellipsis: column.ellipsis })} style={{ display: column.hidden ? 'none' : undefined }}>
       <PercentageField
         allowNegative={column.allowNegative}
+        dataTestId={dataTestId}
         decimalScale={column.decimalScale}
         decimalSeparator={column.decimalSeparator}
         inputClassName={classnames(
