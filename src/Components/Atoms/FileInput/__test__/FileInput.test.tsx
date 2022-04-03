@@ -24,6 +24,37 @@ describe('FileInput Component', () => {
     expect(container).toMatchSnapshot();
   });
 
+  it('FileInput renders without input value', async () => {
+    const onChangeMock = jest.fn();
+    const onDeleteMock = jest.fn();
+    const onDownloadMock = jest.fn();
+
+    const container = render(
+      <FileInput
+        fieldSize={4}
+        onChange={onChangeMock}
+        onDelete={onDeleteMock}
+        onDownload={onDownloadMock}
+        requestMethod='POST'
+        requestUrl='http://test.com'
+      />,
+    );
+    expect(container).toMatchSnapshot();
+
+    container.rerender(
+      <FileInput
+        inputValue={[{ uid: '1', name: 'NAME', size: 1234, type: 'image/png' }]}
+        onChange={onChangeMock}
+        onDelete={onDeleteMock}
+        onDownload={onDownloadMock}
+        requestMethod='POST'
+        requestUrl='http://test.com'
+      />,
+    );
+
+    expect(container).toMatchSnapshot();
+  });
+
   it('FileInput handle add file successfully through input', async () => {
     let timeoutCallback: (() => void) | undefined = undefined;
     let progressCallback: ((event: ProgressEvent<XMLHttpRequestEventTarget>) => void) | undefined = undefined;
@@ -127,6 +158,53 @@ describe('FileInput Component', () => {
         uid: expect.anything(),
       },
     ]);
+  });
+
+  it('FileInput handle unsuccessfull add file when quota reached', async () => {
+    const onChangeMock = jest.fn();
+    const onDeleteMock = jest.fn();
+    const onDownloadMock = jest.fn();
+
+    const container = render(
+      <FileInput
+        dataTestId='TEST-ID'
+        inputValue={[{ uid: '1', name: 'AME', size: 1234, type: 'image/png' }]}
+        maxFiles={1}
+        onChange={onChangeMock}
+        onDelete={onDeleteMock}
+        onDownload={onDownloadMock}
+        requestMethod='POST'
+        requestUrl='http://test.com'
+      />,
+    );
+    expect(container).toMatchSnapshot();
+
+    const file = new File(['hello'], 'hello.png', { type: 'image/png' });
+
+    const input = container.getByTestId('TEST-ID');
+    userEvent.upload(input, file);
+
+    expect(onChangeMock).toBeCalledTimes(1);
+    expect(onChangeMock).toBeCalledWith([
+      {
+        error: undefined,
+        name: 'AME',
+        size: 1234,
+        status: FileStatusEnum.DONE,
+        type: 'image/png',
+        uid: '1',
+      },
+      {
+        error: 'Quota exceeded: Maximum number of files reached',
+        name: 'hello.png',
+        size: 5,
+        status: FileStatusEnum.ERROR,
+        type: 'image/png',
+        uid: expect.anything(),
+      },
+    ]);
+
+    expect(container).toMatchSnapshot();
   });
 
   it('FileInput handle add file unsucessfully through input', async () => {
@@ -413,7 +491,7 @@ describe('FileInput Component', () => {
     ]);
   });
 
-  it('FileInput handles downlaod and delete of a file', async () => {
+  it('FileInput handles download and delete of a file', async () => {
     const onChangeMock = jest.fn();
     const onDeleteMock = jest.fn().mockImplementation(() => {
       return Promise.resolve();
@@ -453,5 +531,42 @@ describe('FileInput Component', () => {
 
     expect(onDeleteMock).toBeCalledTimes(1);
     expect(onDeleteMock).toBeCalledWith({ uid: '1', name: 'AME', size: 1234, type: 'image/png', status: 'done' });
+
+    expect(container).toMatchSnapshot();
+  });
+
+  it('FileInput handles delete rejections of a file', async () => {
+    const onChangeMock = jest.fn();
+    const onDeleteMock = jest.fn().mockImplementation(() => {
+      return Promise.reject();
+    });
+    const onDownloadMock = jest.fn().mockImplementation(() => {
+      return Promise.resolve();
+    });
+
+    const container = render(
+      <FileInput
+        dataTestId='TEST-ID'
+        inputValue={[{ uid: '1', name: 'AME', size: 1234, type: 'image/png' }]}
+        maxFiles={1}
+        onChange={onChangeMock}
+        onDelete={onDeleteMock}
+        onDownload={onDownloadMock}
+        requestMethod='POST'
+        requestUrl='http://test.com'
+      />,
+    );
+    expect(container).toMatchSnapshot();
+
+    const deleteButton = container.getByTestId('TEST-ID-delete');
+
+    await act(async () => {
+      userEvent.click(deleteButton);
+    });
+
+    expect(onDeleteMock).toBeCalledTimes(1);
+    expect(onDeleteMock).toBeCalledWith({ uid: '1', name: 'AME', size: 1234, type: 'image/png', status: 'done' });
+
+    expect(container).toMatchSnapshot();
   });
 });

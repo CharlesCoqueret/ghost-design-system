@@ -57,6 +57,7 @@ List.args = {
     ['fal', 'filter'],
     ['fal', 'hand-paper'],
     ['fal', 'highlighter'],
+    ['fal', 'inbox'],
     ['fal', 'info-circle'],
     ['fal', 'list-ol'],
     ['fal', 'list-ul'],

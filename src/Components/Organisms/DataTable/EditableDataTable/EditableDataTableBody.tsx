@@ -4,6 +4,7 @@ import classnames from 'classnames';
 import { IColumnType, IExtraEditableDataTableProps } from '../Common/types';
 import DataTableCellSelectable from '../Common/DataTableCellSelectable';
 import EditableDataTableCell from './EditableDataTableCell';
+import { Icon } from '../../../Atoms/Icon';
 
 interface IEditableDataTableBodyProps<T> {
   columns: Array<IColumnType<T>>;
@@ -83,7 +84,12 @@ const EditableDataTableBody = <T,>(props: IEditableDataTableBodyProps<T>): React
       })}
       {(!data || data?.length === 0) && (
         <tr className='no-data'>
-          <td colSpan={columns.length + (isSelectable ? 1 : 0)}>{extra?.localization?.noData ?? 'No data'}</td>
+          <td colSpan={columns.length + (isSelectable ? 1 : 0)}>
+            <div className='no-data-container'>
+              <div className='no-data-text'>{extra?.localization?.noData ?? 'No data'}</div>
+              <Icon icon={['fal', 'inbox']} size='2x' className='no-data-icon' />
+            </div>
+          </td>
         </tr>
       )}
       {loading && (

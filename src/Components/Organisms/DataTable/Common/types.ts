@@ -217,12 +217,14 @@ export interface IExtraStaticDataTableProps<T> {
    *    moreActionsMessage: 'More actions'
    *    noData: 'No data'
    *    sortMessage: 'Click to sort'
+   *    total: 'Total'
    * )
    */
   localization?: {
     moreActionsMessage?: string;
     noData?: string;
     sortMessage?: string;
+    total?: string;
   };
 }
 
@@ -270,6 +272,7 @@ export interface IExtraLineEditableDataTableProps<T> extends IExtraStaticDataTab
    *    noData: 'No data'
    *    sortMessage: 'Click to sort'
    *    submitButton: 'Submit'
+   *    total: 'Total'
    * )
    */
   localization?: {
@@ -287,6 +290,7 @@ export interface IExtraLineEditableDataTableProps<T> extends IExtraStaticDataTab
     noData?: string;
     sortMessage?: string;
     submitButton?: string;
+    total?: string;
   };
 }
 
@@ -327,6 +331,7 @@ export interface IExtraLineEditableInPlaceDataTableProps<T> extends IExtraStatic
    *    noData: 'No data'
    *    sortMessage: 'Click to sort'
    *    submitButton: 'Submit'
+   *     total: 'Total'
    * )
    */
   localization?: {
@@ -343,6 +348,7 @@ export interface IExtraLineEditableInPlaceDataTableProps<T> extends IExtraStatic
     noData?: string;
     sortMessage?: string;
     submitButton?: string;
+    total?: string;
   };
 }
 
@@ -374,6 +380,7 @@ export interface IExtraEditableDataTableProps<T> extends IExtraStaticDataTablePr
    *    moreActionsMessage: 'More actions'
    *    noData: 'No data'
    *    sortMessage: 'Click to sort'
+   *    total: 'Total'
    * )
    */
   localization?: {
@@ -387,5 +394,6 @@ export interface IExtraEditableDataTableProps<T> extends IExtraStaticDataTablePr
     moreActionsMessage?: string;
     noData?: string;
     sortMessage?: string;
+    total?: string;
   };
 }

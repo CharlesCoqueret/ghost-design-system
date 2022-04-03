@@ -111,6 +111,17 @@
       background-color: $white !important;
       td {
         text-align: center;
+        .no-data-container {
+          display: flex;
+          flex-direction: column;
+          color: $pebble;
+          .no-data-text {
+            margin-top: 20px;
+          }
+          .no-data-icon{
+            margin-top: 10px;
+          }
+        }
       }
     }
   }

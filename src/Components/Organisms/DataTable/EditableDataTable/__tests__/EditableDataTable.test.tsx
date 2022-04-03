@@ -188,7 +188,7 @@ describe('EditableDataTable Component', () => {
 
     const container = render(<EditableDataTable<ITestType> columns={columns} data={initialData} extra={extra} />);
 
-    const addLineButton = await screen.findAllByText('Add Line');
+    const addLineButton = await screen.findAllByText('Add row');
 
     act(() => {
       if (addLineButton.length > 0) {
@@ -229,7 +229,7 @@ describe('EditableDataTable Component', () => {
 
     const container = render(<EditableDataTable<ITestType> columns={columns} data={initialData} extra={extra} />);
 
-    const addLineButton = await screen.findAllByText('Add Line');
+    const addLineButton = await screen.findAllByText('Add row');
 
     act(() => {
       if (addLineButton.length > 0) {

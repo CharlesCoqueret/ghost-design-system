@@ -207,4 +207,9 @@ const LineEditableInPlaceDataTable = <T,>(props: ILineEditableInPlaceDataTablePr
   );
 };
 
+LineEditableInPlaceDataTable.defaultProps = {
+  columns: [],
+  data: [],
+};
+
 export default LineEditableInPlaceDataTable;

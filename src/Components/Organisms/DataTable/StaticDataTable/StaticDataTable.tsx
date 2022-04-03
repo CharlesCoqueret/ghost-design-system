@@ -46,4 +46,9 @@ const StaticDataTable = <T,>(props: IStaticDataTableProps<T>): ReactElement => {
   );
 };
 
+StaticDataTable.defaultProps = {
+  columns: [],
+  data: [],
+};
+
 export default StaticDataTable;
