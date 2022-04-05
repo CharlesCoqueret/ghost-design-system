@@ -3,14 +3,22 @@ import * as yup from 'yup';
 import cloneDeep from 'lodash/cloneDeep';
 
 import { IToggleEntry } from '../../Atoms/CheckBoxInput/types';
-import { Button, ColorButtonEnum } from '../../Molecules';
+import { Button, ColorButtonEnum } from '../../Molecules/Button';
+import { IFile } from '../../Atoms/FileInput';
+import { Link } from '../../Atoms/Link';
+import { Typography } from '../../Atoms/Typography';
 
 import useForm, { IUseFormProps } from './useForm';
-import { FieldTypeEnum, IFieldAndLayoutProps } from './types';
-import { Link, Typography } from '../../Atoms';
+import { FieldTypeEnum, IFieldAndLayoutProps, IFieldTableProps } from './types';
+import { ColumnType } from '../DataTable/Common';
 
 export default {
   title: 'Organism/useForm',
+};
+
+type IDataTableType = {
+  number: number;
+  text: string;
 };
 
 interface IDataType {
@@ -18,11 +26,15 @@ interface IDataType {
   checkbox: Array<IToggleEntry>;
   date: Date | undefined | null;
   description?: string;
+  dynamicsearch?: string;
+  file: Array<IFile>;
   multiselect: Array<string> | undefined;
   number: number | undefined;
   percentage: number | undefined;
+  richtext: string;
   select: string | undefined;
   switch: Array<IToggleEntry> | undefined;
+  table: Array<IDataTableType>;
   text: string | undefined;
   textarea: string | undefined;
   year: number | undefined;
@@ -31,7 +43,7 @@ interface IDataType {
 const Template = (args: IUseFormProps<IDataType>) => {
   const { formElement, submit, reset } = useForm<IDataType>(args);
   return (
-    <>
+    <div>
       <div style={{ display: 'flex', justifyContent: 'space-around' }}>
         <Button
           label='Submit'
@@ -49,7 +61,7 @@ const Template = (args: IUseFormProps<IDataType>) => {
         />
       </div>
       <div>{formElement}</div>
-    </>
+    </div>
   );
 };
 
@@ -75,11 +87,19 @@ const initialData: IDataType = {
   checkbox: cloneDeep(checkboxOption),
   date: new Date(),
   description: 'Description',
+  dynamicsearch: 'value1',
+  file: [],
   multiselect: options.map((option) => option.value),
   number: 10,
   percentage: 50,
+  richtext: '<p><span style="font-size: 16px;"><strong>Test</strong></span></p><p>Test 2</p>',
   select: options[2].value,
   switch: cloneDeep(switchOption),
+  table: [
+    { number: 1, text: 'text 1' },
+    { number: 2, text: 'text 2' },
+    { number: 3, text: 'text 3' },
+  ],
   text: 'text',
   textarea:
     'Lorem ipsum dolor sit amet. Ut voluptas reiciendis vel praesentium laborum hic voluptas asperiores nam ' +
@@ -110,9 +130,12 @@ const validationSchema = yup.object({
     .required(),
   date: yup.date().min(new Date('01/01/1980'), 'Date needs to be after Jan 1 1980').required(),
   description: yup.string().optional(),
-  multiselect: yup.array().of(yup.string()).min(1, 'At least one item required').required(),
+  dynamicsearch: yup.mixed().optional(),
+  file: yup.array().min(1).required(),
+  multiselect: yup.array().of(yup.mixed()).min(1, 'At least one item required').required(),
   number: yup.number().required('Value for number is required').min(5, 'Minimum value is 5'),
   percentage: yup.number().required(),
+  richtext: yup.string().required(),
   select: yup.string().required(),
   switch: yup
     .array()
@@ -130,6 +153,7 @@ const validationSchema = yup.object({
       test: (val) => val.some((entry) => entry.checked === true),
     })
     .required(),
+  table: yup.array().min(1).required(),
   text: yup
     .string()
     .required()
@@ -162,6 +186,36 @@ const fields: Array<IFieldAndLayoutProps<IDataType>> = [
   { label: 'Checkbox', dataIndex: 'checkbox', fieldType: FieldTypeEnum.CHECKBOX },
   { label: 'Date', dataIndex: 'date', fieldType: FieldTypeEnum.DATE },
   {
+    label: 'DynamicSearch',
+    dataIndex: 'dynamicsearch',
+    fieldType: FieldTypeEnum.DYNAMICSEARCH,
+    noOptionsMessage: () => 'No option',
+    resolveValue: (value) => {
+      if (value === 'value1') return Promise.resolve({ value: 'value1', label: 'Label 1' });
+      else if (value === 'value2') return Promise.resolve({ value: 'value2', label: 'Label 2' });
+      else if (value === 'value3') return Promise.resolve({ value: 'value3', label: 'Label 3' });
+      return Promise.resolve(undefined);
+    },
+    searchOptions: () => {
+      return Promise.resolve([
+        { value: 'value1', label: 'Label 1' },
+        { value: 'value2', label: 'Label 2' },
+        { value: 'value3', label: 'Label 3' },
+      ]);
+    },
+  },
+  {
+    dataIndex: 'file',
+    fieldType: FieldTypeEnum.FILE,
+    helperText: 'does not support data reset as uploaded files are now uploaded, and deleted files are deleted',
+    label: 'File',
+    onDelete: () => {
+      return Promise.resolve();
+    },
+    requestMethod: 'POST',
+    requestUrl: 'https://file-upload-tester.herokuapp.com/upload/file',
+  },
+  {
     label: 'Multiselect',
     dataIndex: 'multiselect',
     fieldType: FieldTypeEnum.MULTISELECT,
@@ -170,44 +224,61 @@ const fields: Array<IFieldAndLayoutProps<IDataType>> = [
     options: options,
   },
   {
-    label: 'Section collapsable and open initially',
-    fieldType: FieldTypeEnum.SECTION,
-    collapsable: true,
-    openInitially: true,
-    fields: [
+    label: 'Number',
+    dataIndex: 'number',
+    fieldType: FieldTypeEnum.NUMBER,
+    mandatory: true,
+  },
+  {
+    label: 'Percentage',
+    dataIndex: 'percentage',
+    fieldType: FieldTypeEnum.PERCENTAGE,
+  },
+  {
+    label: 'Richtext',
+    helperText: 'does not support data reset for performance reason, reload the form if this is needed',
+    dataIndex: 'richtext',
+    fieldType: FieldTypeEnum.RICHTEXT,
+  },
+  { label: 'Select', dataIndex: 'select', fieldType: FieldTypeEnum.SELECT, options: options },
+  { label: 'Switch', dataIndex: 'switch', fieldType: FieldTypeEnum.SWITCH },
+  {
+    columns: [
       {
-        label: 'Number',
         dataIndex: 'number',
-        fieldType: FieldTypeEnum.NUMBER,
-        mandatory: true,
+        editable: true,
+        title: 'Number',
+        type: ColumnType.NUMBER,
       },
       {
-        label: 'Percentage',
-        dataIndex: 'percentage',
-        fieldType: FieldTypeEnum.PERCENTAGE,
+        dataIndex: 'text',
+        editable: true,
+        title: 'Text',
+        type: ColumnType.TEXT,
       },
     ],
-  },
-  {
-    label: 'Section collapsable and closed initially',
-    fieldType: FieldTypeEnum.SECTION,
-    collapsable: true,
-    openInitially: false,
-    fields: [
-      { label: 'Select', dataIndex: 'select', fieldType: FieldTypeEnum.SELECT, options: options },
-      { label: 'Switch', dataIndex: 'switch', fieldType: FieldTypeEnum.SWITCH },
-    ],
-  },
-  {
-    label: 'Section not collapsable',
-    fieldType: FieldTypeEnum.SECTION,
-    collapsable: false,
-    fields: [
-      { label: 'Text', dataIndex: 'text', fieldType: FieldTypeEnum.TEXT },
-      { label: 'Textarea', dataIndex: 'textarea', fieldType: FieldTypeEnum.TEXTAREA },
-      { label: 'Year', dataIndex: 'year', fieldType: FieldTypeEnum.YEAR },
-    ],
-  },
+    dataIndex: 'table',
+    extra: {
+      validationSchema: yup.object({
+        number: yup.number().required(),
+        text: yup.string().required(),
+      }),
+      onRowDelete: () => {
+        // Enabling deletion
+        return;
+      },
+      canAddNewLine: () => {
+        // Enabling Add new line
+        return true;
+      },
+      onNewLine: () => ({ number: 100, text: 'text' }),
+    },
+    fieldType: FieldTypeEnum.TABLE,
+    label: 'Table',
+  } as IFieldTableProps<IDataType, IDataTableType>,
+  { label: 'Text', dataIndex: 'text', fieldType: FieldTypeEnum.TEXT },
+  { label: 'Textarea', dataIndex: 'textarea', fieldType: FieldTypeEnum.TEXTAREA },
+  { label: 'Year', dataIndex: 'year', fieldType: FieldTypeEnum.YEAR },
 ];
 
 export const Default = Template.bind({});

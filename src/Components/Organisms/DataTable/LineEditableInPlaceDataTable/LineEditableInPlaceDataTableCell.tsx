@@ -4,9 +4,11 @@ import {
   AmountCell,
   BadgeCell,
   ButtonCell,
+  CheckboxCell,
   CodeCell,
   CustomCell,
   DateCell,
+  DynamicSearchCell,
   NumberCell,
   PercentageCell,
   TextCell,
@@ -15,6 +17,7 @@ import { ColumnType, IColumnType, IExtraLineEditableInPlaceDataTableProps } from
 
 export interface ILineEditableInPlaceDataTableCellProps<T> {
   column: IColumnType<T>;
+  dataTestId?: string;
   row: T;
   extra?: IExtraLineEditableInPlaceDataTableProps<T>;
   rowIndex: number;
@@ -22,13 +25,14 @@ export interface ILineEditableInPlaceDataTableCellProps<T> {
 }
 
 const LineEditableInPlaceDataTableCell = <T,>(props: ILineEditableInPlaceDataTableCellProps<T>): ReactElement => {
-  const { column, row, extra, rowIndex, handleUpdateDataChange } = props;
+  const { column, dataTestId, row, extra, rowIndex, handleUpdateDataChange } = props;
 
   switch (column.type) {
     case ColumnType.AMOUNT: {
       return (
         <AmountCell<T>
           column={column}
+          dataTestId={dataTestId ? `${dataTestId}-${column.title}-${rowIndex}` : undefined}
           row={row}
           extra={extra}
           rowIndex={rowIndex}
@@ -42,6 +46,7 @@ const LineEditableInPlaceDataTableCell = <T,>(props: ILineEditableInPlaceDataTab
       return (
         <BadgeCell<T>
           column={column}
+          dataTestId={dataTestId ? `${dataTestId}-${column.title}-${rowIndex}` : undefined}
           row={row}
           extra={extra}
           rowIndex={rowIndex}
@@ -52,10 +57,40 @@ const LineEditableInPlaceDataTableCell = <T,>(props: ILineEditableInPlaceDataTab
       );
     }
     case ColumnType.BUTTON: {
-      return <ButtonCell<T> column={column} row={row} extra={extra} rowIndex={rowIndex} />;
+      return (
+        <ButtonCell<T>
+          column={column}
+          dataTestId={dataTestId ? `${dataTestId}-${column.title}-${rowIndex}` : undefined}
+          row={row}
+          extra={extra}
+          rowIndex={rowIndex}
+        />
+      );
+    }
+    case ColumnType.CHECKBOX: {
+      return (
+        <CheckboxCell<T>
+          column={column}
+          dataTestId={dataTestId ? `${dataTestId}-${column.title}-${rowIndex}` : undefined}
+          row={row}
+          extra={extra}
+          rowIndex={rowIndex}
+          onChange={(newValue) => {
+            handleUpdateDataChange(rowIndex, column.dataIndex, newValue);
+          }}
+        />
+      );
     }
     case ColumnType.CODE: {
-      return <CodeCell<T> column={column} row={row} extra={extra} rowIndex={rowIndex} />;
+      return (
+        <CodeCell<T>
+          column={column}
+          dataTestId={dataTestId ? `${dataTestId}-${column.title}-${rowIndex}` : undefined}
+          row={row}
+          extra={extra}
+          rowIndex={rowIndex}
+        />
+      );
     }
     case ColumnType.CUSTOM: {
       return (
@@ -74,6 +109,21 @@ const LineEditableInPlaceDataTableCell = <T,>(props: ILineEditableInPlaceDataTab
       return (
         <DateCell<T>
           column={column}
+          dataTestId={dataTestId ? `${dataTestId}-${column.title}-${rowIndex}` : undefined}
+          row={row}
+          extra={extra}
+          rowIndex={rowIndex}
+          onChange={(newValue) => {
+            handleUpdateDataChange(rowIndex, column.dataIndex, newValue);
+          }}
+        />
+      );
+    }
+    case ColumnType.DYNAMICSEARCH: {
+      return (
+        <DynamicSearchCell<T>
+          column={column}
+          dataTestId={dataTestId ? `${dataTestId}-${column.title}-${rowIndex}` : undefined}
           row={row}
           extra={extra}
           rowIndex={rowIndex}
@@ -87,6 +137,7 @@ const LineEditableInPlaceDataTableCell = <T,>(props: ILineEditableInPlaceDataTab
       return (
         <NumberCell<T>
           column={column}
+          dataTestId={dataTestId ? `${dataTestId}-${column.title}-${rowIndex}` : undefined}
           row={row}
           extra={extra}
           rowIndex={rowIndex}
@@ -100,6 +151,7 @@ const LineEditableInPlaceDataTableCell = <T,>(props: ILineEditableInPlaceDataTab
       return (
         <PercentageCell<T>
           column={column}
+          dataTestId={dataTestId ? `${dataTestId}-${column.title}-${rowIndex}` : undefined}
           row={row}
           extra={extra}
           rowIndex={rowIndex}
@@ -113,6 +165,7 @@ const LineEditableInPlaceDataTableCell = <T,>(props: ILineEditableInPlaceDataTab
       return (
         <TextCell<T>
           column={column}
+          dataTestId={dataTestId ? `${dataTestId}-${column.title}-${rowIndex}` : undefined}
           row={row}
           extra={extra}
           rowIndex={rowIndex}

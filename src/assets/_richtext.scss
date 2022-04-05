@@ -3,7 +3,8 @@
 .gds-rich-text-container {
   .se-wrapper-inner {
     border: 1px solid transparent;
-    &:focus {
+    &:focus,
+    &:hover {
       border: 1px solid $primary;
     }
   }
@@ -46,7 +47,14 @@
   // Replacement of the toolbar bottom outline by a border
   .sun-editor .se-toolbar {
     outline: unset;
-    border-bottom: 1px solid #dadada;
+    border: none;
+    background-color: transparent;
+    .se-btn-select.se-btn-tool-format {
+      width: 100px;
+    }
+    .se-btn-module-border{
+      border: none;
+    }
   }
 
   // Prevent usage of image via links

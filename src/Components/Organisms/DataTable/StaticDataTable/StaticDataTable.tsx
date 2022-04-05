@@ -4,6 +4,7 @@ import StaticDataTableBody from './StaticDataTableBody';
 import StaticDataTableFooter from './StaticDataTableFooter';
 import StaticDataTableHeader from './StaticDataTableHeader';
 import { IColumnType, IExtraStaticDataTableProps, SortDirectionEnum } from '../Common/types';
+import usePropState from '../../../../hooks/use-prop-state';
 
 export interface IStaticDataTableProps<T> {
   data: Array<T>;
@@ -16,6 +17,7 @@ export interface IStaticDataTableProps<T> {
 const StaticDataTable = <T,>(props: IStaticDataTableProps<T>): ReactElement => {
   const { data, columns, extra, loading, onSortChange } = props;
 
+  const [currentData] = usePropState<Array<T>>(data);
   const [sortField, setSortField] = useState<keyof T | undefined>();
   const [sortDirection, setSortDirection] = useState<SortDirectionEnum | undefined>();
 
@@ -40,8 +42,8 @@ const StaticDataTable = <T,>(props: IStaticDataTableProps<T>): ReactElement => {
         sortDirection={sortDirection}
         sortField={sortField}
       />
-      <StaticDataTableBody<T> columns={columns} data={data} extra={extra} loading={loading} />
-      <StaticDataTableFooter<T> columns={columns} data={data} extra={extra} />
+      <StaticDataTableBody<T> columns={columns} data={currentData} extra={extra} loading={loading} />
+      <StaticDataTableFooter<T> columns={columns} data={currentData} extra={extra} />
     </table>
   );
 };
