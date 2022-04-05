@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, act, waitFor, waitForElementToBeRemoved } from '@testing-library/react';
+import { act, render, screen, waitFor, waitForElementToBeRemoved } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import SearchBar from '../SearchBar';
@@ -8,7 +8,7 @@ describe('SearchBar Component', () => {
   it('SearchBar renders', async () => {
     const onSearchMock = jest.fn();
 
-    const container = render(
+    const { container } = render(
       <SearchBar
         onSearch={onSearchMock}
         placeholder='PLACEHOLDER'
@@ -25,7 +25,7 @@ describe('SearchBar Component', () => {
       return Promise.resolve([]);
     });
 
-    const container = render(
+    const { container } = render(
       <SearchBar
         onSearch={onSearchMock}
         placeholder='PLACEHOLDER'
@@ -34,7 +34,7 @@ describe('SearchBar Component', () => {
       />,
     );
 
-    const input = container.getByTestId('SEARCH');
+    const input = screen.getByTestId('SEARCH');
 
     act(() => {
       userEvent.type(input, 'my new search');
@@ -52,9 +52,9 @@ describe('SearchBar Component', () => {
       return Promise.resolve([]);
     });
 
-    const container = render(<SearchBar onSearch={onSearchMock} placeholder='PLACEHOLDER' dataTestId='SEARCH' />);
+    const { container } = render(<SearchBar onSearch={onSearchMock} placeholder='PLACEHOLDER' dataTestId='SEARCH' />);
 
-    const input = container.getByTestId('SEARCH');
+    const input = screen.getByTestId('SEARCH');
 
     act(() => {
       userEvent.type(input, '         ');
@@ -76,7 +76,7 @@ describe('SearchBar Component', () => {
       ]);
     });
 
-    const container = render(
+    const { container } = render(
       <SearchBar
         onSearch={onSearchMock}
         placeholder='PLACEHOLDER'
@@ -85,13 +85,13 @@ describe('SearchBar Component', () => {
       />,
     );
 
-    const input = container.getByTestId('SEARCH');
+    const input = screen.getByTestId('SEARCH');
 
     act(() => {
       userEvent.type(input, 'TEST');
     });
 
-    await waitForElementToBeRemoved(() => container.getByTestId('SEARCH-INIDICATOR'));
+    await waitForElementToBeRemoved(() => screen.getByTestId('SEARCH-INIDICATOR'));
 
     expect(onSearchMock).toBeCalledTimes(4);
     expect(onSearchMock).lastCalledWith('TEST');

@@ -66,7 +66,7 @@ describe('EditableDataTable Component', () => {
       onNewLine: onNewLineMock,
     };
 
-    const container = render(<EditableDataTable<ITestType> columns={columns} data={initialData} extra={extra} />);
+    const { container } = render(<EditableDataTable<ITestType> columns={columns} data={initialData} extra={extra} />);
 
     expect(container).toMatchSnapshot();
     expect(onEditMock).not.toBeCalled();
@@ -88,7 +88,7 @@ describe('EditableDataTable Component', () => {
       isEditable: isEditableMock,
     };
 
-    const container = render(<EditableDataTable<ITestType> columns={columns} data={initialData} extra={extra} />);
+    const { container } = render(<EditableDataTable<ITestType> columns={columns} data={initialData} extra={extra} />);
 
     expect(container).toMatchSnapshot();
     expect(onEditMock).not.toBeCalled();
@@ -124,7 +124,7 @@ describe('EditableDataTable Component', () => {
       onNewLine: onNewLineMock,
     };
 
-    const container = render(<EditableDataTable<ITestType> columns={columns} data={initialData} extra={extra} />);
+    const { container } = render(<EditableDataTable<ITestType> columns={columns} data={initialData} extra={extra} />);
 
     expect(container).toMatchSnapshot();
     expect(onEditMock).not.toBeCalled();
@@ -158,7 +158,7 @@ describe('EditableDataTable Component', () => {
       canAddNewLine: canAddNewLineMock,
     };
 
-    const container = render(<EditableDataTable<ITestType> columns={columns} data={initialData} extra={extra} />);
+    const { container } = render(<EditableDataTable<ITestType> columns={columns} data={initialData} extra={extra} />);
 
     const addLineButton = await screen.findAllByText('Add row');
 
@@ -199,7 +199,7 @@ describe('EditableDataTable Component', () => {
       canAddNewLine: canAddNewLineMock,
     };
 
-    const container = render(<EditableDataTable<ITestType> columns={columns} data={initialData} extra={extra} />);
+    const { container } = render(<EditableDataTable<ITestType> columns={columns} data={initialData} extra={extra} />);
 
     const addLineButton = await screen.findAllByText('Add row');
 
@@ -231,7 +231,7 @@ describe('EditableDataTable Component', () => {
       onEdit: onEditMock,
     };
 
-    const container = render(
+    const { container } = render(
       <EditableDataTable<ITestType>
         columns={columns}
         data={initialData}
@@ -281,7 +281,7 @@ describe('EditableDataTable Component', () => {
       onRowDownload: onRowDownloadMock,
     };
 
-    const container = render(<EditableDataTable<ITestType> columns={columns} data={initialData} extra={extra} />);
+    const { container } = render(<EditableDataTable<ITestType> columns={columns} data={initialData} extra={extra} />);
 
     const downloadButton = await screen.findAllByTestId('download');
     expect(downloadButton.length).toBeGreaterThan(0);
@@ -328,7 +328,7 @@ describe('EditableDataTable Component', () => {
 
     const newInput = 'test input';
 
-    const container = render(
+    const { container } = render(
       <EditableDataTable<ITestType> columns={columns} data={initialData} dataTestId={'DATA-TEST-ID'} extra={extra} />,
     );
 

@@ -7,7 +7,7 @@ describe('ActionBar Component', () => {
   it('ActionBar renders', async () => {
     const onTitleEditMock = jest.fn();
 
-    const container = render(
+    const { container } = render(
       <ActionBar
         actions={[{ label: 'action1', dataTestId: 'ACTION1' }]}
         backTooltip='BACKTOOLTIP'
@@ -37,7 +37,7 @@ describe('ActionBar Component', () => {
   it('ActionBar renders without action, basicactions, icon, indicator or status', async () => {
     const onTitleEditMock = jest.fn();
 
-    const container = render(
+    const { container } = render(
       <ActionBar
         backTooltip='BACKTOOLTIP'
         className='CLASSNAME'

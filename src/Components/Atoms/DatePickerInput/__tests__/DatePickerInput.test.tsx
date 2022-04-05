@@ -56,12 +56,12 @@ describe('DatePickerInput Component', () => {
   });
 
   it('DatePickerInput renders in error in readonly', async () => {
-    const container = render(<DatePickerInput name='NAME' readOnly isInError />);
+    const { container } = render(<DatePickerInput name='NAME' readOnly isInError />);
     expect(container).toMatchSnapshot();
   });
 
   it('DatePickerInput renders in error', async () => {
-    const container = render(<DatePickerInput name='NAME' isInError />);
+    const { container } = render(<DatePickerInput name='NAME' isInError />);
     expect(container).toMatchSnapshot();
   });
 });

@@ -1,639 +1,261 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ActionBar Component ActionBar renders 1`] = `
-Object {
-  "asFragment": [Function],
-  "baseElement": <body>
-    <div>
-      <div
-        class="gds-action-bar primary CLASSNAME"
-      >
-        <div
-          class="left-side"
-        >
-          <div
-            class="back-icon"
-          >
-            <span>
-              <button
-                class="gds-button-content"
-                color="reversed"
-                type="button"
-              >
-                <div
-                  class="button-icon-container"
-                >
-                  <i
-                    class="button-icon icon"
-                    icon="fal,arrow-left"
-                  />
-                </div>
-              </button>
-            </span>
-            <div>
-              <div
-                class="gds-tooltip bottom"
-                style="left: -99999px; top: -99999px; opacity: 0;"
-              >
-                <div
-                  class="tooltip-arrow"
-                />
-                <div
-                  class="tooltip-label"
-                >
-                  BACKTOOLTIP
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="title"
-          >
-            <h1
-              class="gds-typography align-edit ellipsis"
-            >
-              PREFIX
-            </h1>
-            <span
-              style="display: inline-flex; margin: auto; overflow: hidden;"
-            >
-              <span
-                class="title-edit-hidden"
-              >
-                TITLE
-              </span>
-              <input
-                autocomplete="off"
-                class="title-edit"
-                placeholder="PLACEHOLDED"
-                style="display: flex; width: 0px; margin: auto;"
-                type="text"
-                value="TITLE"
-              />
-            </span>
-            <div>
-              <div
-                class="gds-tooltip bottom"
-                style="left: -99999px; top: -99999px; opacity: 0;"
-              >
-                <div
-                  class="tooltip-arrow"
-                />
-                <div
-                  class="tooltip-label"
-                >
-                  Rename
-                </div>
-              </div>
-            </div>
-            <h1
-              class="gds-typography align-edit ellipsis"
-            >
-              - 
-              ENTITYID
-            </h1>
-            <h1
-              class="gds-typography align-edit ellipsis"
-            >
-              SUFFIX
-            </h1>
-          </div>
-          <div
-            class="badges"
-          >
-            <div
-              id="ICON"
-            />
-            <div
-              id="INDICATOR"
-            />
-            <div
-              id="STATUS"
-            />
-          </div>
-        </div>
-        <div
-          class="right-side"
-        >
-          <div
-            class="actions"
-          >
-            <button
-              class="gds-button-content"
-              color="secondary"
-              data-testid="ACTION1"
-              type="button"
-            >
-              <div
-                class="button-label-container"
-              >
-                action1
-              </div>
-            </button>
-          </div>
-          <div
-            class="separator"
-          >
-            <i
-              class="icon"
-              icon="fal,pipe"
-            />
-          </div>
-          <div
-            class="basic-actions"
-          >
-            <button
-              class="gds-button-content"
-              color="reversed"
-              data-testid="BASICACTION1"
-              type="button"
-            >
-              <div
-                class="button-label-container"
-              >
-                basicaction1
-              </div>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
+<div>
+  <div
+    class="gds-action-bar primary CLASSNAME"
+  >
     <div
-      id="root-portal-id"
-    >
-      <div />
-      <div />
-    </div>
-  </body>,
-  "container": <div>
-    <div
-      class="gds-action-bar primary CLASSNAME"
+      class="left-side"
     >
       <div
-        class="left-side"
+        class="back-icon"
       >
-        <div
-          class="back-icon"
-        >
-          <span>
-            <button
-              class="gds-button-content"
-              color="reversed"
-              type="button"
-            >
-              <div
-                class="button-icon-container"
-              >
-                <i
-                  class="button-icon icon"
-                  icon="fal,arrow-left"
-                />
-              </div>
-            </button>
-          </span>
-          <div>
-            <div
-              class="gds-tooltip bottom"
-              style="left: -99999px; top: -99999px; opacity: 0;"
-            >
-              <div
-                class="tooltip-arrow"
-              />
-              <div
-                class="tooltip-label"
-              >
-                BACKTOOLTIP
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          class="title"
-        >
-          <h1
-            class="gds-typography align-edit ellipsis"
-          >
-            PREFIX
-          </h1>
-          <span
-            style="display: inline-flex; margin: auto; overflow: hidden;"
-          >
-            <span
-              class="title-edit-hidden"
-            >
-              TITLE
-            </span>
-            <input
-              autocomplete="off"
-              class="title-edit"
-              placeholder="PLACEHOLDED"
-              style="display: flex; width: 0px; margin: auto;"
-              type="text"
-              value="TITLE"
-            />
-          </span>
-          <div>
-            <div
-              class="gds-tooltip bottom"
-              style="left: -99999px; top: -99999px; opacity: 0;"
-            >
-              <div
-                class="tooltip-arrow"
-              />
-              <div
-                class="tooltip-label"
-              >
-                Rename
-              </div>
-            </div>
-          </div>
-          <h1
-            class="gds-typography align-edit ellipsis"
-          >
-            - 
-            ENTITYID
-          </h1>
-          <h1
-            class="gds-typography align-edit ellipsis"
-          >
-            SUFFIX
-          </h1>
-        </div>
-        <div
-          class="badges"
-        >
-          <div
-            id="ICON"
-          />
-          <div
-            id="INDICATOR"
-          />
-          <div
-            id="STATUS"
-          />
-        </div>
-      </div>
-      <div
-        class="right-side"
-      >
-        <div
-          class="actions"
-        >
-          <button
-            class="gds-button-content"
-            color="secondary"
-            data-testid="ACTION1"
-            type="button"
-          >
-            <div
-              class="button-label-container"
-            >
-              action1
-            </div>
-          </button>
-        </div>
-        <div
-          class="separator"
-        >
-          <i
-            class="icon"
-            icon="fal,pipe"
-          />
-        </div>
-        <div
-          class="basic-actions"
-        >
+        <span>
           <button
             class="gds-button-content"
             color="reversed"
-            data-testid="BASICACTION1"
             type="button"
           >
             <div
-              class="button-label-container"
+              class="button-icon-container"
             >
-              basicaction1
+              <i
+                class="button-icon icon"
+                icon="fal,arrow-left"
+              />
             </div>
           </button>
+        </span>
+        <div>
+          <div
+            class="gds-tooltip bottom"
+            style="left: -99999px; top: -99999px; opacity: 0;"
+          >
+            <div
+              class="tooltip-arrow"
+            />
+            <div
+              class="tooltip-label"
+            >
+              BACKTOOLTIP
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>,
-  "debug": [Function],
-  "findAllByAltText": [Function],
-  "findAllByDisplayValue": [Function],
-  "findAllByLabelText": [Function],
-  "findAllByPlaceholderText": [Function],
-  "findAllByRole": [Function],
-  "findAllByTestId": [Function],
-  "findAllByText": [Function],
-  "findAllByTitle": [Function],
-  "findByAltText": [Function],
-  "findByDisplayValue": [Function],
-  "findByLabelText": [Function],
-  "findByPlaceholderText": [Function],
-  "findByRole": [Function],
-  "findByTestId": [Function],
-  "findByText": [Function],
-  "findByTitle": [Function],
-  "getAllByAltText": [Function],
-  "getAllByDisplayValue": [Function],
-  "getAllByLabelText": [Function],
-  "getAllByPlaceholderText": [Function],
-  "getAllByRole": [Function],
-  "getAllByTestId": [Function],
-  "getAllByText": [Function],
-  "getAllByTitle": [Function],
-  "getByAltText": [Function],
-  "getByDisplayValue": [Function],
-  "getByLabelText": [Function],
-  "getByPlaceholderText": [Function],
-  "getByRole": [Function],
-  "getByTestId": [Function],
-  "getByText": [Function],
-  "getByTitle": [Function],
-  "queryAllByAltText": [Function],
-  "queryAllByDisplayValue": [Function],
-  "queryAllByLabelText": [Function],
-  "queryAllByPlaceholderText": [Function],
-  "queryAllByRole": [Function],
-  "queryAllByTestId": [Function],
-  "queryAllByText": [Function],
-  "queryAllByTitle": [Function],
-  "queryByAltText": [Function],
-  "queryByDisplayValue": [Function],
-  "queryByLabelText": [Function],
-  "queryByPlaceholderText": [Function],
-  "queryByRole": [Function],
-  "queryByTestId": [Function],
-  "queryByText": [Function],
-  "queryByTitle": [Function],
-  "rerender": [Function],
-  "unmount": [Function],
-}
-`;
-
-exports[`ActionBar Component ActionBar renders without action, basicactions, icon, indicator or status 1`] = `
-Object {
-  "asFragment": [Function],
-  "baseElement": <body>
-    <div>
       <div
-        class="gds-action-bar primary CLASSNAME"
+        class="title"
       >
-        <div
-          class="left-side"
+        <h1
+          class="gds-typography align-edit ellipsis"
         >
-          <div
-            class="back-icon"
+          PREFIX
+        </h1>
+        <span
+          style="display: inline-flex; margin: auto; overflow: hidden;"
+        >
+          <span
+            class="title-edit-hidden"
           >
-            <span>
-              <button
-                class="gds-button-content"
-                color="reversed"
-                type="button"
-              >
-                <div
-                  class="button-icon-container"
-                >
-                  <i
-                    class="button-icon icon"
-                    icon="fal,arrow-left"
-                  />
-                </div>
-              </button>
-            </span>
-            <div>
-              <div
-                class="gds-tooltip bottom"
-                style="left: -99999px; top: -99999px; opacity: 0;"
-              >
-                <div
-                  class="tooltip-arrow"
-                />
-                <div
-                  class="tooltip-label"
-                >
-                  BACKTOOLTIP
-                </div>
-              </div>
-            </div>
-          </div>
+            TITLE
+          </span>
+          <input
+            autocomplete="off"
+            class="title-edit"
+            placeholder="PLACEHOLDED"
+            style="display: flex; width: 0px; margin: auto;"
+            type="text"
+            value="TITLE"
+          />
+        </span>
+        <div>
           <div
-            class="title"
+            class="gds-tooltip bottom"
+            style="left: -99999px; top: -99999px; opacity: 0;"
           >
-            <h1
-              class="gds-typography align-edit ellipsis"
+            <div
+              class="tooltip-arrow"
+            />
+            <div
+              class="tooltip-label"
             >
-              PREFIX
-            </h1>
-            <span
-              style="display: inline-flex; margin: auto; overflow: hidden;"
-            >
-              <span
-                class="title-edit-hidden"
-              >
-                TITLE
-              </span>
-              <input
-                autocomplete="off"
-                class="title-edit"
-                placeholder="PLACEHOLDED"
-                style="display: flex; width: 0px; margin: auto;"
-                type="text"
-                value="TITLE"
-              />
-            </span>
-            <div>
-              <div
-                class="gds-tooltip bottom"
-                style="left: -99999px; top: -99999px; opacity: 0;"
-              >
-                <div
-                  class="tooltip-arrow"
-                />
-                <div
-                  class="tooltip-label"
-                >
-                  Rename
-                </div>
-              </div>
+              Rename
             </div>
-            <h1
-              class="gds-typography align-edit ellipsis"
-            >
-              - 
-              ENTITYID
-            </h1>
-            <h1
-              class="gds-typography align-edit ellipsis"
-            >
-              SUFFIX
-            </h1>
           </div>
         </div>
+        <h1
+          class="gds-typography align-edit ellipsis"
+        >
+          - 
+          ENTITYID
+        </h1>
+        <h1
+          class="gds-typography align-edit ellipsis"
+        >
+          SUFFIX
+        </h1>
+      </div>
+      <div
+        class="badges"
+      >
         <div
-          class="right-side"
+          id="ICON"
+        />
+        <div
+          id="INDICATOR"
+        />
+        <div
+          id="STATUS"
         />
       </div>
     </div>
     <div
-      id="root-portal-id"
-    >
-      <div />
-      <div />
-    </div>
-  </body>,
-  "container": <div>
-    <div
-      class="gds-action-bar primary CLASSNAME"
+      class="right-side"
     >
       <div
-        class="left-side"
+        class="actions"
       >
-        <div
-          class="back-icon"
+        <button
+          class="gds-button-content"
+          color="secondary"
+          data-testid="ACTION1"
+          type="button"
         >
-          <span>
-            <button
-              class="gds-button-content"
-              color="reversed"
-              type="button"
-            >
-              <div
-                class="button-icon-container"
-              >
-                <i
-                  class="button-icon icon"
-                  icon="fal,arrow-left"
-                />
-              </div>
-            </button>
-          </span>
-          <div>
-            <div
-              class="gds-tooltip bottom"
-              style="left: -99999px; top: -99999px; opacity: 0;"
-            >
-              <div
-                class="tooltip-arrow"
-              />
-              <div
-                class="tooltip-label"
-              >
-                BACKTOOLTIP
-              </div>
-            </div>
+          <div
+            class="button-label-container"
+          >
+            action1
           </div>
-        </div>
-        <div
-          class="title"
+        </button>
+      </div>
+      <div
+        class="separator"
+      >
+        <i
+          class="icon"
+          icon="fal,pipe"
+        />
+      </div>
+      <div
+        class="basic-actions"
+      >
+        <button
+          class="gds-button-content"
+          color="reversed"
+          data-testid="BASICACTION1"
+          type="button"
         >
-          <h1
-            class="gds-typography align-edit ellipsis"
+          <div
+            class="button-label-container"
           >
-            PREFIX
-          </h1>
-          <span
-            style="display: inline-flex; margin: auto; overflow: hidden;"
+            basicaction1
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ActionBar Component ActionBar renders without action, basicactions, icon, indicator or status 1`] = `
+<div>
+  <div
+    class="gds-action-bar primary CLASSNAME"
+  >
+    <div
+      class="left-side"
+    >
+      <div
+        class="back-icon"
+      >
+        <span>
+          <button
+            class="gds-button-content"
+            color="reversed"
+            type="button"
           >
-            <span
-              class="title-edit-hidden"
+            <div
+              class="button-icon-container"
             >
-              TITLE
-            </span>
-            <input
-              autocomplete="off"
-              class="title-edit"
-              placeholder="PLACEHOLDED"
-              style="display: flex; width: 0px; margin: auto;"
-              type="text"
-              value="TITLE"
+              <i
+                class="button-icon icon"
+                icon="fal,arrow-left"
+              />
+            </div>
+          </button>
+        </span>
+        <div>
+          <div
+            class="gds-tooltip bottom"
+            style="left: -99999px; top: -99999px; opacity: 0;"
+          >
+            <div
+              class="tooltip-arrow"
             />
-          </span>
-          <div>
             <div
-              class="gds-tooltip bottom"
-              style="left: -99999px; top: -99999px; opacity: 0;"
+              class="tooltip-label"
             >
-              <div
-                class="tooltip-arrow"
-              />
-              <div
-                class="tooltip-label"
-              >
-                Rename
-              </div>
+              BACKTOOLTIP
             </div>
           </div>
-          <h1
-            class="gds-typography align-edit ellipsis"
-          >
-            - 
-            ENTITYID
-          </h1>
-          <h1
-            class="gds-typography align-edit ellipsis"
-          >
-            SUFFIX
-          </h1>
         </div>
       </div>
       <div
-        class="right-side"
-      />
+        class="title"
+      >
+        <h1
+          class="gds-typography align-edit ellipsis"
+        >
+          PREFIX
+        </h1>
+        <span
+          style="display: inline-flex; margin: auto; overflow: hidden;"
+        >
+          <span
+            class="title-edit-hidden"
+          >
+            TITLE
+          </span>
+          <input
+            autocomplete="off"
+            class="title-edit"
+            placeholder="PLACEHOLDED"
+            style="display: flex; width: 0px; margin: auto;"
+            type="text"
+            value="TITLE"
+          />
+        </span>
+        <div>
+          <div
+            class="gds-tooltip bottom"
+            style="left: -99999px; top: -99999px; opacity: 0;"
+          >
+            <div
+              class="tooltip-arrow"
+            />
+            <div
+              class="tooltip-label"
+            >
+              Rename
+            </div>
+          </div>
+        </div>
+        <h1
+          class="gds-typography align-edit ellipsis"
+        >
+          - 
+          ENTITYID
+        </h1>
+        <h1
+          class="gds-typography align-edit ellipsis"
+        >
+          SUFFIX
+        </h1>
+      </div>
     </div>
-  </div>,
-  "debug": [Function],
-  "findAllByAltText": [Function],
-  "findAllByDisplayValue": [Function],
-  "findAllByLabelText": [Function],
-  "findAllByPlaceholderText": [Function],
-  "findAllByRole": [Function],
-  "findAllByTestId": [Function],
-  "findAllByText": [Function],
-  "findAllByTitle": [Function],
-  "findByAltText": [Function],
-  "findByDisplayValue": [Function],
-  "findByLabelText": [Function],
-  "findByPlaceholderText": [Function],
-  "findByRole": [Function],
-  "findByTestId": [Function],
-  "findByText": [Function],
-  "findByTitle": [Function],
-  "getAllByAltText": [Function],
-  "getAllByDisplayValue": [Function],
-  "getAllByLabelText": [Function],
-  "getAllByPlaceholderText": [Function],
-  "getAllByRole": [Function],
-  "getAllByTestId": [Function],
-  "getAllByText": [Function],
-  "getAllByTitle": [Function],
-  "getByAltText": [Function],
-  "getByDisplayValue": [Function],
-  "getByLabelText": [Function],
-  "getByPlaceholderText": [Function],
-  "getByRole": [Function],
-  "getByTestId": [Function],
-  "getByText": [Function],
-  "getByTitle": [Function],
-  "queryAllByAltText": [Function],
-  "queryAllByDisplayValue": [Function],
-  "queryAllByLabelText": [Function],
-  "queryAllByPlaceholderText": [Function],
-  "queryAllByRole": [Function],
-  "queryAllByTestId": [Function],
-  "queryAllByText": [Function],
-  "queryAllByTitle": [Function],
-  "queryByAltText": [Function],
-  "queryByDisplayValue": [Function],
-  "queryByLabelText": [Function],
-  "queryByPlaceholderText": [Function],
-  "queryByRole": [Function],
-  "queryByTestId": [Function],
-  "queryByText": [Function],
-  "queryByTitle": [Function],
-  "rerender": [Function],
-  "unmount": [Function],
-}
+    <div
+      class="right-side"
+    />
+  </div>
+</div>
 `;

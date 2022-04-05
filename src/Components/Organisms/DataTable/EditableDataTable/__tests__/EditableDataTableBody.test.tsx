@@ -83,7 +83,7 @@ describe('EditableDataTableBody Component', () => {
       onRowClick: onRowClickMock,
     };
 
-    const container = render(
+    const { container } = render(
       <table>
         <EditableDataTableBody<ITestType>
           columns={columns}
@@ -119,7 +119,7 @@ describe('EditableDataTableBody Component', () => {
       onRowSelect: onRowSelectMock,
     };
 
-    const container = render(
+    const { container } = render(
       <table>
         <EditableDataTableBody<ITestType>
           columns={columns}

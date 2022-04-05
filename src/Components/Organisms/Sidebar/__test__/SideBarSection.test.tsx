@@ -6,7 +6,7 @@ import SideBar from '../SideBar';
 
 describe('SideBarSection Component', () => {
   it('SideBarSection renders', async () => {
-    const container = render(
+    const { container } = render(
       <SideBar backToMenu={'Back to menu'} style={{ height: '600px' }}>
         <SideBarSection
           section={{
@@ -31,7 +31,7 @@ describe('SideBarSection Component', () => {
   });
 
   it('SideBarSection renders hidden section', async () => {
-    const container = render(
+    const { container } = render(
       <SideBar backToMenu={'Back to menu'} style={{ height: '600px' }}>
         <SideBarSection
           section={{

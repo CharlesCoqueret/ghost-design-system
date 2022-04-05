@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, act } from '@testing-library/react';
+import { act, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import DateCell from '../DateCell';
@@ -7,7 +7,7 @@ import { ColumnType } from '../../types';
 
 describe('DateCell component', () => {
   it('DateCell renders', async () => {
-    const container = render(
+    const { container } = render(
       <table>
         <tbody>
           <tr>
@@ -29,7 +29,7 @@ describe('DateCell component', () => {
   });
 
   it('DateCell renders with forced value', async () => {
-    const container = render(
+    const { container } = render(
       <table>
         <tbody>
           <tr>
@@ -52,7 +52,7 @@ describe('DateCell component', () => {
   });
 
   it('DateCell renders when hidden', async () => {
-    const container = render(
+    const { container } = render(
       <table>
         <tbody>
           <tr>
@@ -77,7 +77,7 @@ describe('DateCell component', () => {
   it('DateCell renders in edit mode and handles change', async () => {
     const onChangeMock = jest.fn();
 
-    const container = render(
+    const { container } = render(
       <table>
         <tbody>
           <tr>
@@ -100,7 +100,7 @@ describe('DateCell component', () => {
 
     expect(container).toMatchSnapshot();
 
-    const dateInput = await container.findByPlaceholderText('MMM DD, YYYY');
+    const dateInput = await screen.findByPlaceholderText('MMM DD, YYYY');
 
     act(() => {
       userEvent.clear(dateInput);
@@ -118,7 +118,7 @@ describe('DateCell component', () => {
   });
 
   it('DateCell renders in edit mode via extra', async () => {
-    const container = render(
+    const { container } = render(
       <table>
         <tbody>
           <tr>
