@@ -1,0 +1,904 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button Component Button renders and handle click 1`] = `
+<body>
+  <div>
+    <button
+      class="gds-button-content"
+      color="secondary"
+      data-testid="DATA-TEST-ID"
+      type="submit"
+    >
+      <div
+        class="button-icon-container"
+      >
+        <i
+          class="button-icon icon"
+          icon="fal,paper-plane"
+        />
+      </div>
+      <div
+        class="button-label-container"
+      >
+        LABEL
+      </div>
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Button Component Button renders when loading 1`] = `
+<body>
+  <div>
+    <button
+      class="gds-button-content"
+      color="primary"
+      data-testid="DATA-TEST-ID"
+      disabled=""
+      type="button"
+    >
+      <div
+        class="button-icon-container"
+      >
+        <i
+          class="button-icon icon"
+          icon="fal,spinner"
+          spin="true"
+        />
+      </div>
+      <div
+        class="button-label-container"
+      >
+        LABEL
+      </div>
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Button Component Button renders with list and handle open menu and click on item 1`] = `
+<body>
+  <div>
+    <button
+      class="gds-button-content"
+      color="secondary"
+      data-testid="MAIN-BUTTON"
+      type="button"
+    >
+      <div
+        class="button-label-container"
+      >
+        Menu button
+      </div>
+      <div
+        class="button-menu-control-container"
+      >
+        <i
+          class="button-icon icon"
+          icon="fal,pipe"
+        />
+        <i
+          class="button-icon icon"
+          icon="fas,caret-down"
+        />
+      </div>
+    </button>
+  </div>
+  <div
+    id="root-portal-id"
+  >
+    <div>
+      <div
+        class="szh-menu-container"
+      >
+        <ul
+          aria-label="Menu"
+          class="szh-menu szh-menu--state-closed szh-menu--dir-bottom button-menu"
+          role="menu"
+          style="left: 0px; top: 0px;"
+          tabindex="-1"
+        >
+          <li
+            class="szh-menu__item"
+            data-testid="BUTTON1"
+            role="menuitem"
+            tabindex="-1"
+          >
+            Label 1
+          </li>
+          <li
+            class="szh-menu__divider"
+            role="separator"
+          />
+          <li
+            class="szh-menu__item"
+            data-testid="BUTTON2"
+            role="menuitem"
+            tabindex="-1"
+          >
+            Label 2
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Button Component Button renders with list and handle open menu and click on item 2`] = `
+<body>
+  <div>
+    <button
+      class="gds-button-content"
+      color="secondary"
+      data-testid="MAIN-BUTTON"
+      type="button"
+    >
+      <div
+        class="button-label-container"
+      >
+        Menu button
+      </div>
+      <div
+        class="button-menu-control-container"
+      >
+        <i
+          class="button-icon icon"
+          icon="fal,pipe"
+        />
+        <i
+          class="button-icon icon"
+          icon="fas,caret-down"
+        />
+      </div>
+    </button>
+  </div>
+  <div
+    id="root-portal-id"
+  >
+    <div>
+      <div
+        class="szh-menu-container"
+      >
+        <ul
+          aria-label="Menu"
+          class="szh-menu szh-menu--state-open szh-menu--dir-bottom button-menu"
+          role="menu"
+          style="left: 0px; top: 0px;"
+          tabindex="-1"
+        >
+          <li
+            class="szh-menu__item"
+            data-testid="BUTTON1"
+            role="menuitem"
+            tabindex="-1"
+          >
+            Label 1
+          </li>
+          <li
+            class="szh-menu__divider"
+            role="separator"
+          />
+          <li
+            class="szh-menu__item"
+            data-testid="BUTTON2"
+            role="menuitem"
+            tabindex="-1"
+          >
+            Label 2
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Button Component Button renders with list and handle open menu and click on item 3`] = `
+<body>
+  <div>
+    <button
+      class="gds-button-content"
+      color="secondary"
+      data-testid="MAIN-BUTTON"
+      type="button"
+    >
+      <div
+        class="button-label-container"
+      >
+        Menu button
+      </div>
+      <div
+        class="button-menu-control-container"
+      >
+        <i
+          class="button-icon icon"
+          icon="fal,pipe"
+        />
+        <i
+          class="button-icon icon"
+          icon="fas,caret-down"
+        />
+      </div>
+    </button>
+  </div>
+  <div
+    id="root-portal-id"
+  >
+    <div>
+      <div
+        class="szh-menu-container"
+      >
+        <ul
+          aria-label="Menu"
+          class="szh-menu szh-menu--state-closed szh-menu--dir-bottom button-menu"
+          role="menu"
+          style="left: 0px; top: 0px;"
+          tabindex="-1"
+        >
+          <li
+            class="szh-menu__item"
+            data-testid="BUTTON1"
+            role="menuitem"
+            tabindex="-1"
+          >
+            Label 1
+          </li>
+          <li
+            class="szh-menu__divider"
+            role="separator"
+          />
+          <li
+            class="szh-menu__item"
+            data-testid="BUTTON2"
+            role="menuitem"
+            tabindex="-1"
+          >
+            Label 2
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Button Component Button renders with list and handle open menu and close on click outside 1`] = `
+<body>
+  <div>
+    <button
+      class="gds-button-content"
+      color="secondary"
+      data-testid="MAIN-BUTTON"
+      type="button"
+    >
+      <div
+        class="button-label-container"
+      >
+        Menu button
+      </div>
+      <div
+        class="button-menu-control-container"
+      >
+        <i
+          class="button-icon icon"
+          icon="fal,pipe"
+        />
+        <i
+          class="button-icon icon"
+          icon="fas,caret-down"
+        />
+      </div>
+    </button>
+  </div>
+  <div
+    id="root-portal-id"
+  >
+    <div>
+      <div
+        class="szh-menu-container"
+      >
+        <ul
+          aria-label="Menu"
+          class="szh-menu szh-menu--state-closed szh-menu--dir-bottom button-menu"
+          role="menu"
+          style="left: 0px; top: 0px;"
+          tabindex="-1"
+        >
+          <li
+            class="szh-menu__item"
+            role="menuitem"
+            tabindex="-1"
+          >
+            Label 1
+          </li>
+          <li
+            class="szh-menu__divider"
+            role="separator"
+          />
+          <li
+            class="szh-menu__item"
+            role="menuitem"
+            tabindex="-1"
+          >
+            Label 2
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Button Component Button renders with list and handle open menu and close on click outside 2`] = `
+<body>
+  <div>
+    <button
+      class="gds-button-content"
+      color="secondary"
+      data-testid="MAIN-BUTTON"
+      type="button"
+    >
+      <div
+        class="button-label-container"
+      >
+        Menu button
+      </div>
+      <div
+        class="button-menu-control-container"
+      >
+        <i
+          class="button-icon icon"
+          icon="fal,pipe"
+        />
+        <i
+          class="button-icon icon"
+          icon="fas,caret-down"
+        />
+      </div>
+    </button>
+  </div>
+  <div
+    id="root-portal-id"
+  >
+    <div>
+      <div
+        class="szh-menu-container"
+      >
+        <ul
+          aria-label="Menu"
+          class="szh-menu szh-menu--state-open szh-menu--dir-bottom button-menu"
+          role="menu"
+          style="left: 0px; top: 0px;"
+          tabindex="-1"
+        >
+          <li
+            class="szh-menu__item"
+            role="menuitem"
+            tabindex="-1"
+          >
+            Label 1
+          </li>
+          <li
+            class="szh-menu__divider"
+            role="separator"
+          />
+          <li
+            class="szh-menu__item"
+            role="menuitem"
+            tabindex="-1"
+          >
+            Label 2
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Button Component Button renders with list and handle open menu and close on click outside 3`] = `
+<body>
+  <div>
+    <button
+      class="gds-button-content"
+      color="secondary"
+      data-testid="MAIN-BUTTON"
+      type="button"
+    >
+      <div
+        class="button-label-container"
+      >
+        Menu button
+      </div>
+      <div
+        class="button-menu-control-container"
+      >
+        <i
+          class="button-icon icon"
+          icon="fal,pipe"
+        />
+        <i
+          class="button-icon icon"
+          icon="fas,caret-down"
+        />
+      </div>
+    </button>
+  </div>
+  <div
+    id="root-portal-id"
+  >
+    <div>
+      <div
+        class="szh-menu-container"
+      >
+        <ul
+          aria-label="Menu"
+          class="szh-menu szh-menu--state-open szh-menu--dir-bottom button-menu"
+          role="menu"
+          style="left: 0px; top: 0px;"
+          tabindex="-1"
+        >
+          <li
+            class="szh-menu__item"
+            role="menuitem"
+            tabindex="-1"
+          >
+            Label 1
+          </li>
+          <li
+            class="szh-menu__divider"
+            role="separator"
+          />
+          <li
+            class="szh-menu__item"
+            role="menuitem"
+            tabindex="-1"
+          >
+            Label 2
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Button Component Button renders with popover 1`] = `
+<body>
+  <div>
+    <button
+      class="gds-button-content"
+      color="secondary"
+      data-testid="MAIN-BUTTON"
+      type="button"
+    >
+      <div
+        class="button-label-container"
+      >
+        Tooltip button
+      </div>
+    </button>
+  </div>
+  <div
+    id="root-portal-id"
+  >
+    <div>
+      <div
+        class="szh-menu-container"
+      >
+        <ul
+          aria-label="Menu"
+          class="szh-menu szh-menu--state-closed szh-menu--dir-top"
+          role="menu"
+          style="left: 0px; top: 0px;"
+          tabindex="-1"
+        >
+          <div
+            class="szh-menu__arrow szh-menu__arrow--dir-top"
+          />
+          <div
+            class="gds-popover-container"
+          >
+            <div
+              class="popover-title"
+            >
+              POPOVER
+            </div>
+            <div
+              class="popover-buttons"
+            >
+              <button
+                class="gds-button-content"
+                color="primary"
+                data-testid="BUTTON1"
+                type="button"
+              >
+                <div
+                  class="button-icon-container"
+                >
+                  <i
+                    class="button-icon icon"
+                    icon="fal,paper-plane"
+                  />
+                </div>
+                <div
+                  class="button-label-container"
+                >
+                  Button 1
+                </div>
+              </button>
+              <button
+                class="gds-button-content"
+                color="secondary"
+                data-testid="BUTTON2"
+                type="button"
+              >
+                <div
+                  class="button-label-container"
+                >
+                  Button 2
+                </div>
+              </button>
+            </div>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Button Component Button renders with popover 2`] = `
+<body>
+  <div>
+    <button
+      class="gds-button-content"
+      color="secondary"
+      data-testid="MAIN-BUTTON"
+      type="button"
+    >
+      <div
+        class="button-label-container"
+      >
+        Tooltip button
+      </div>
+    </button>
+  </div>
+  <div
+    id="root-portal-id"
+  >
+    <div>
+      <div
+        class="szh-menu-container"
+      >
+        <ul
+          aria-label="Menu"
+          class="szh-menu szh-menu--state-open szh-menu--dir-top"
+          role="menu"
+          style="left: 0px; top: 0px;"
+          tabindex="-1"
+        >
+          <div
+            class="szh-menu__arrow szh-menu__arrow--dir-top"
+            style="left: 0px;"
+          />
+          <div
+            class="gds-popover-container"
+          >
+            <div
+              class="popover-title"
+            >
+              POPOVER
+            </div>
+            <div
+              class="popover-buttons"
+            >
+              <button
+                class="gds-button-content"
+                color="primary"
+                data-testid="BUTTON1"
+                type="button"
+              >
+                <div
+                  class="button-icon-container"
+                >
+                  <i
+                    class="button-icon icon"
+                    icon="fal,paper-plane"
+                  />
+                </div>
+                <div
+                  class="button-label-container"
+                >
+                  Button 1
+                </div>
+              </button>
+              <button
+                class="gds-button-content"
+                color="secondary"
+                data-testid="BUTTON2"
+                type="button"
+              >
+                <div
+                  class="button-label-container"
+                >
+                  Button 2
+                </div>
+              </button>
+            </div>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Button Component Button renders with popover 3`] = `
+<body>
+  <div>
+    <button
+      class="gds-button-content"
+      color="secondary"
+      data-testid="MAIN-BUTTON"
+      type="button"
+    >
+      <div
+        class="button-label-container"
+      >
+        Tooltip button
+      </div>
+    </button>
+  </div>
+  <div
+    id="root-portal-id"
+  >
+    <div>
+      <div
+        class="szh-menu-container"
+      >
+        <ul
+          aria-label="Menu"
+          class="szh-menu szh-menu--state-closed szh-menu--dir-top"
+          role="menu"
+          style="left: 0px; top: 0px;"
+          tabindex="-1"
+        >
+          <div
+            class="szh-menu__arrow szh-menu__arrow--dir-top"
+            style="left: 0px;"
+          />
+          <div
+            class="gds-popover-container"
+          >
+            <div
+              class="popover-title"
+            >
+              POPOVER
+            </div>
+            <div
+              class="popover-buttons"
+            >
+              <button
+                class="gds-button-content"
+                color="primary"
+                data-testid="BUTTON1"
+                type="button"
+              >
+                <div
+                  class="button-icon-container"
+                >
+                  <i
+                    class="button-icon icon"
+                    icon="fal,paper-plane"
+                  />
+                </div>
+                <div
+                  class="button-label-container"
+                >
+                  Button 1
+                </div>
+              </button>
+              <button
+                class="gds-button-content"
+                color="secondary"
+                data-testid="BUTTON2"
+                type="button"
+              >
+                <div
+                  class="button-label-container"
+                >
+                  Button 2
+                </div>
+              </button>
+            </div>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Button Component Button renders with popover without buttons 1`] = `
+<body>
+  <div>
+    <button
+      class="gds-button-content"
+      color="secondary"
+      data-testid="MAIN-BUTTON"
+      type="button"
+    >
+      <div
+        class="button-label-container"
+      >
+        Tooltip button
+      </div>
+    </button>
+  </div>
+  <div
+    id="root-portal-id"
+  >
+    <div>
+      <div
+        class="szh-menu-container"
+      >
+        <ul
+          aria-label="Menu"
+          class="szh-menu szh-menu--state-closed szh-menu--dir-top"
+          role="menu"
+          style="left: 0px; top: 0px;"
+          tabindex="-1"
+        >
+          <div
+            class="szh-menu__arrow szh-menu__arrow--dir-top"
+          />
+          <div
+            class="gds-popover-container"
+          >
+            <div
+              class="popover-title"
+            >
+              POPOVER
+            </div>
+            <div
+              class="popover-buttons"
+            />
+          </div>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Button Component Button renders with popover without buttons 2`] = `
+<body>
+  <div>
+    <button
+      class="gds-button-content"
+      color="secondary"
+      data-testid="MAIN-BUTTON"
+      type="button"
+    >
+      <div
+        class="button-label-container"
+      >
+        Tooltip button
+      </div>
+    </button>
+  </div>
+  <div
+    id="root-portal-id"
+  >
+    <div>
+      <div
+        class="szh-menu-container"
+      >
+        <ul
+          aria-label="Menu"
+          class="szh-menu szh-menu--state-open szh-menu--dir-top"
+          role="menu"
+          style="left: 0px; top: 0px;"
+          tabindex="-1"
+        >
+          <div
+            class="szh-menu__arrow szh-menu__arrow--dir-top"
+            style="left: 0px;"
+          />
+          <div
+            class="gds-popover-container"
+          >
+            <div
+              class="popover-title"
+            >
+              POPOVER
+            </div>
+            <div
+              class="popover-buttons"
+            />
+          </div>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Button Component Button renders with popover without buttons 3`] = `
+<body>
+  <div>
+    <button
+      class="gds-button-content"
+      color="secondary"
+      data-testid="MAIN-BUTTON"
+      type="button"
+    >
+      <div
+        class="button-label-container"
+      >
+        Tooltip button
+      </div>
+    </button>
+  </div>
+  <div
+    id="root-portal-id"
+  >
+    <div>
+      <div
+        class="szh-menu-container"
+      >
+        <ul
+          aria-label="Menu"
+          class="szh-menu szh-menu--state-closed szh-menu--dir-top"
+          role="menu"
+          style="left: 0px; top: 0px;"
+          tabindex="-1"
+        >
+          <div
+            class="szh-menu__arrow szh-menu__arrow--dir-top"
+            style="left: 0px;"
+          />
+          <div
+            class="gds-popover-container"
+          >
+            <div
+              class="popover-title"
+            >
+              POPOVER
+            </div>
+            <div
+              class="popover-buttons"
+            />
+          </div>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Button Component Button renders with tooltip 1`] = `
+<body>
+  <div>
+    <button
+      class="gds-button-content"
+      color="secondary"
+      type="button"
+    >
+      <div
+        class="button-label-container"
+      >
+        Tooltip button
+      </div>
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Button Component Button renders without label and icon 1`] = `
+<body>
+  <div />
+</body>
+`;
