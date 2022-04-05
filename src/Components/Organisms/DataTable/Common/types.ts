@@ -12,14 +12,21 @@ export enum ColumnType {
   AMOUNT = 'amount',
   BADGE = 'badge',
   BUTTON = 'button',
+  CHECKBOX = 'checkbox',
   CODE = 'code',
   CUSTOM = 'custom',
   DATE = 'date',
+  DESCRIPTION = 'description', // TODO Add description to table columns (for hidden use case)
   DYNAMICSEARCH = 'dynamicsearch',
+  FILE = 'file', // TODO Add file to table columns
   NUMBER = 'number',
   PERCENTAGE = 'percentage',
+  RICHTEXT = 'richtext', // TODO Add rich text to table columns (for hidden use case)
+  SWITCH = 'switch', // TODO Add switch to table columns
+  TABLE = 'table', // TODO Add Table to table columns (for hidden use case)
   TEXT = 'text',
   TEXTAREA = 'textarea',
+  YEAR = 'year', // TODO Add Year to table columns
 }
 
 export enum SortDirectionEnum {
@@ -109,6 +116,12 @@ export interface IColumnCode<T> extends IColumn {
   dataIndex: keyof T;
   type: ColumnType.CODE;
 }
+
+export interface IColumnCheckbox<T> extends IColumn {
+  dataIndex: keyof T;
+  type: ColumnType.CHECKBOX;
+}
+
 export interface IColumnCustom<T> extends IColumn {
   customRender: (row: T, dataIndex: keyof T, rowIndex: number) => ReactElement;
   customRenderEdit: (
@@ -204,6 +217,7 @@ export type IColumnType<T> =
   | IColumnBadge<T>
   | IColumnButton<T>
   | IColumnCode<T>
+  | IColumnCheckbox<T>
   | IColumnCustom<T>
   | IColumnDate<T>
   | IColumnDynamicSearch<T>
@@ -216,7 +230,7 @@ export type TableType<T> = Record<keyof T, string | number | Date | undefined | 
 
 export interface IExtraStaticDataTableProps<T> {
   /** Method used to enable and compute the total for each column (optional, default: undefined) */
-  computeTotal?: (data: Array<T>, dataIndex: keyof T) => string | number | undefined;
+  computeTotal?: (data: Array<T>, dataIndex: keyof T) => T[keyof T] | undefined;
   /** Global currency, which can be override by the amount column setting (optional, default: undefined) */
   currency?: string;
   /** Global date format, which can be override by the date column setting (optional, default: undefined) */

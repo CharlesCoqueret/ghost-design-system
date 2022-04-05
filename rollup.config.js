@@ -24,6 +24,10 @@ export default {
     },
   ],
   onwarn: (warning) => {
+    if (warning.code === 'CIRCULAR_DEPENDENCY') {
+      console.error(warning.message);
+      return;
+    }
     throw new Error(warning.message);
   },
   plugins: [

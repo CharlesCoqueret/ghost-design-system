@@ -1,22 +1,28 @@
 import React, { ReactElement } from 'react';
 import isSameDay from 'date-fns/isSameDay';
-import isEqual from 'lodash/isEqual';
-import sortBy from 'lodash/sortBy';
-import map from 'lodash/map';
 import intersection from 'lodash/intersection';
+import isEqual from 'lodash/isEqual';
+import map from 'lodash/map';
+import sortBy from 'lodash/sortBy';
+import { AnyObject } from 'yup/lib/types';
 
 import { IToggleEntry } from '../../Atoms/CheckBoxInput';
+import { GenericField } from '../../Atoms/GenericField';
+import { FileStatusEnum, IFile } from '../../Atoms/FileInput';
 import { AmountField } from '../../Molecules/AmountField';
 import { CheckboxField } from '../../Molecules/CheckboxField';
 import { DatePickerField } from '../../Molecules/DatePickerField';
 import { DynamicSearchField } from '../../Molecules/DynamicSearchField';
+import { FileField } from '../../Molecules/FileField';
 import { MultiSelectField } from '../../Molecules/MultiSelectField';
 import { PercentageField } from '../../Molecules/PercentageField';
 import { SelectField } from '../../Molecules/SelectField';
 import { SwitchField } from '../../Molecules/SwitchField';
+import { RichTextField } from '../../Molecules/RichTextField';
 import { TextAreaField } from '../../Molecules/TextAreaField';
 import { TextField } from '../../Molecules/TextField';
 import { YearPickerField } from '../../Molecules/YearPickerField';
+import { LineEditableDataTable } from '../DataTable/LineEditableDataTable';
 import Highlighter from './Highlighter';
 import { FieldTypeEnum, IFieldProps } from './types';
 import { FieldError } from './yupResolver';
@@ -82,13 +88,29 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
           <CheckboxField
             {...field}
             mandatory={requiredFromValidation || field.mandatory}
-            // name={field.dataIndex.toString()}
             onChange={(newValue: Array<IToggleEntry> | undefined) => {
               handleChange(field.dataIndex, newValue as unknown as T[keyof T]);
             }}
             inputValue={(data && (data[field.dataIndex] as unknown as Array<IToggleEntry> | undefined)) || undefined}
             errorMessage={errorMessage}
           />
+        </Highlighter>
+      );
+    }
+    case FieldTypeEnum.CUSTOM: {
+      const shouldHighlight =
+        previousData && field.isEqual && !field.isEqual(previousData[field.dataIndex], data[field.dataIndex]);
+      return (
+        <Highlighter
+          highlight={previousData !== undefined}
+          oldData={previousData && previousData[field.dataIndex]}
+          shouldHighlight={shouldHighlight}>
+          {field.customField({
+            ...data,
+            onChange: (newValue: T[keyof T]) => {
+              handleChange(field.dataIndex, newValue);
+            },
+          })}
         </Highlighter>
       );
     }
@@ -132,6 +154,37 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
             inputValue={(data && (data[field.dataIndex] as unknown as string | number | undefined)) || undefined}
             errorMessage={errorMessage}
             usePortal={usePortal}
+          />
+        </Highlighter>
+      );
+    }
+    case FieldTypeEnum.FILE: {
+      const shouldHighlight =
+        previousData &&
+        ((previousData[field.dataIndex] as unknown as Array<IFile>).length !==
+          (data[field.dataIndex] as unknown as Array<IFile>).length ||
+          (previousData[field.dataIndex] as unknown as Array<IFile>).every((file) => {
+            return (data[field.dataIndex] as unknown as Array<IFile>).includes(file);
+          }));
+      return (
+        <Highlighter
+          highlight={previousData !== undefined}
+          oldData={previousData && previousData[field.dataIndex]}
+          shouldHighlight={shouldHighlight}>
+          <FileField
+            {...field}
+            mandatory={requiredFromValidation || field.mandatory}
+            name={field.dataIndex.toString()}
+            onChange={(newValue: Array<IFile>) => {
+              handleChange(
+                field.dataIndex,
+                newValue.filter((file) => file.status && file.status === FileStatusEnum.DONE) as unknown as T[keyof T],
+              );
+              return Promise.resolve();
+            }}
+            onDelete={field.onDelete}
+            inputValue={(data && (data[field.dataIndex] as unknown as Array<IFile>)) || undefined}
+            errorMessage={errorMessage}
           />
         </Highlighter>
       );
@@ -247,6 +300,26 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
         </Highlighter>
       );
     }
+    case FieldTypeEnum.RICHTEXT: {
+      const shouldHighlight = previousData && previousData[field.dataIndex] !== data[field.dataIndex];
+      return (
+        <Highlighter
+          highlight={previousData !== undefined}
+          oldData={previousData && previousData[field.dataIndex]}
+          shouldHighlight={shouldHighlight}>
+          <RichTextField
+            {...field}
+            mandatory={requiredFromValidation || field.mandatory}
+            name={field.dataIndex.toString()}
+            onChange={(newValue: string) => {
+              handleChange(field.dataIndex, newValue as unknown as T[keyof T]);
+            }}
+            inputValue={(data && (data[field.dataIndex] as unknown as string)) || undefined}
+            errorMessage={errorMessage}
+          />
+        </Highlighter>
+      );
+    }
     case FieldTypeEnum.SWITCH: {
       let shouldHighlight = false;
       const highlightedOldData =
@@ -269,7 +342,6 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
           <SwitchField
             {...field}
             mandatory={requiredFromValidation || field.mandatory}
-            // name={field.dataIndex.toString()}
             onChange={(newValue: IToggleEntry[]) => {
               handleChange(field.dataIndex, newValue as unknown as T[keyof T]);
             }}
@@ -277,6 +349,30 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
             errorMessage={errorMessage}
           />
         </Highlighter>
+      );
+    }
+    case FieldTypeEnum.TABLE: {
+      return (
+        <>
+          <Highlighter>
+            <LineEditableDataTable
+              {...field}
+              extra={{
+                ...field.extra,
+                onRowSubmit: (editedRow, submittedRowIndex: number) => {
+                  (data[field.dataIndex] as unknown as Array<unknown>)[submittedRowIndex] = editedRow;
+                  handleChange(field.dataIndex, data[field.dataIndex] as unknown as T[keyof T]);
+                },
+                onRowDelete: (_editedRow, submittedRowIndex: number) => {
+                  (data[field.dataIndex] as unknown as Array<unknown>).splice(submittedRowIndex, 1);
+                  handleChange(field.dataIndex, data[field.dataIndex] as unknown as T[keyof T]);
+                },
+              }}
+              data={data && (data[field.dataIndex] as unknown as Array<AnyObject>)}
+            />
+          </Highlighter>
+          <GenericField errorMessage={errorMessage} />
+        </>
       );
     }
     case FieldTypeEnum.TEXT: {

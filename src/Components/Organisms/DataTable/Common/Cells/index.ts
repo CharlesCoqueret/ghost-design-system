@@ -1,6 +1,7 @@
 export { default as AmountCell } from './AmountCell';
 export { default as BadgeCell } from './BadgeCell';
 export { default as ButtonCell } from './ButtonCell';
+export { default as CheckboxCell } from './CheckboxCell';
 export { default as CodeCell } from './CodeCell';
 export { default as CustomCell } from './CustomCell';
 export { default as DateCell } from './DateCell';

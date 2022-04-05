@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import cloneDeep from 'lodash/cloneDeep';
 import * as yup from 'yup';
-import { AnyObject } from 'yup/lib/object';
+import { AnyObject } from 'yup/lib/types';
 
 import Form from './Form';
 import { IFieldAndLayoutProps, IFormSubmitReturnedType, IUseFormReturnedType } from './types';
@@ -51,6 +51,8 @@ const useForm = <T extends AnyObject>(props: IUseFormProps<T>): IUseFormReturned
     if (validationSchema) {
       const errors = yupResolver(validationSchema, { strict: true, abortEarly: false }, currentData);
       isValid = errors === undefined;
+      // Logging validation errors in case the developer has checked it.
+      if (!isValid) console.error(errors);
       setValidationError(errors);
     }
 
