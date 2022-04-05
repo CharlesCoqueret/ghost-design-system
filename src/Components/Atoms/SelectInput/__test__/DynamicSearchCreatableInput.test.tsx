@@ -33,7 +33,7 @@ describe('DynamicSearchCreatableInput Component', () => {
 
     expect(container?.queryByTestId('DATA-TEST-ID-spinner')).toBeFalsy();
 
-    expect(container).toMatchSnapshot();
+    expect(container?.container).toMatchSnapshot();
     expect(handleCreateMock).toBeCalledTimes(0);
     expect(noOptionsMessageMock).toBeCalledTimes(0);
     expect(resolveValueMock).toBeCalledTimes(1);
@@ -69,7 +69,7 @@ describe('DynamicSearchCreatableInput Component', () => {
 
     expect(container?.queryByTestId('DATA-TEST-ID-spinner')).toBeFalsy();
 
-    expect(container).toMatchSnapshot();
+    expect(container?.container).toMatchSnapshot();
     expect(handleCreateMock).toBeCalledTimes(0);
     expect(noOptionsMessageMock).toBeCalledTimes(0);
     expect(resolveValueMock).toBeCalledTimes(1);
@@ -105,7 +105,7 @@ describe('DynamicSearchCreatableInput Component', () => {
 
     expect(container?.queryByTestId('DATA-TEST-ID-spinner')).toBeFalsy();
 
-    expect(container).toMatchSnapshot();
+    expect(container?.container).toMatchSnapshot();
     expect(handleCreateMock).toBeCalledTimes(0);
     expect(resolveValueMock).toBeCalledTimes(1);
     expect(resolveValueMock).toBeCalledWith('OPTION1');
@@ -136,7 +136,7 @@ describe('DynamicSearchCreatableInput Component', () => {
       expect(container?.queryByTestId('DATA-TEST-ID-spinner')).toBeFalsy();
     });
 
-    expect(container).toMatchSnapshot();
+    expect(container?.container).toMatchSnapshot();
     expect(handleCreateMock).toBeCalledTimes(0);
     expect(resolveValueMock).toBeCalledTimes(0);
     expect(noOptionsMessageMock).toBeCalledTimes(0);
@@ -177,7 +177,7 @@ describe('DynamicSearchCreatableInput Component', () => {
       }
     });
 
-    expect(container).toMatchSnapshot();
+    expect(container?.container).toMatchSnapshot();
     expect(handleCreateMock).toBeCalledTimes(0);
     expect(resolveValueMock).toBeCalledTimes(0);
     expect(noOptionsMessageMock).toBeCalled();
@@ -234,7 +234,7 @@ describe('DynamicSearchCreatableInput Component', () => {
       }
     });
 
-    expect(container).toMatchSnapshot();
+    expect(container?.container).toMatchSnapshot();
     expect(handleCreateMock).toBeCalledTimes(0);
     expect(resolveValueMock).toBeCalledTimes(1);
     expect(searchOptionsMock).toBeCalledTimes('option 2'.length);
@@ -276,7 +276,7 @@ describe('DynamicSearchCreatableInput Component', () => {
 
     expect(container?.queryByTestId('DATA-TEST-ID-spinner')).toBeFalsy();
 
-    expect(container).toMatchSnapshot();
+    expect(container?.container).toMatchSnapshot();
     expect(handleCreateMock).toBeCalledTimes(0);
     expect(resolveValueMock).toBeCalledTimes(1);
     expect(noOptionsMessageMock).toBeCalledTimes(0);
@@ -313,7 +313,7 @@ describe('DynamicSearchCreatableInput Component', () => {
 
     expect(container?.queryByTestId('-spinner')).toBeFalsy();
 
-    expect(container).toMatchSnapshot();
+    expect(container?.container).toMatchSnapshot();
     expect(handleCreateMock).toBeCalledTimes(0);
     expect(resolveValueMock).toBeCalledTimes(1);
     expect(noOptionsMessageMock).toBeCalledTimes(0);
@@ -353,7 +353,7 @@ describe('DynamicSearchCreatableInput Component', () => {
 
     expect(container?.queryByTestId('DATA-TEST-ID-spinner')).toBeFalsy();
 
-    expect(container).toMatchSnapshot();
+    expect(container?.container).toMatchSnapshot();
     expect(handleCreateMock).toBeCalledTimes(0);
     expect(resolveValueMock).toBeCalledTimes(1);
     expect(noOptionsMessage).toBeCalledTimes(0);
@@ -388,7 +388,7 @@ describe('DynamicSearchCreatableInput Component', () => {
       expect(container?.queryByTestId('DATA-TEST-ID-spinner')).toBeFalsy();
     });
 
-    expect(container).toMatchSnapshot();
+    expect(container?.container).toMatchSnapshot();
     expect(handleCreateMock).toBeCalledTimes(0);
     expect(resolveValueMock).toBeCalledTimes(0);
     expect(noOptionsMessageMock).toBeCalledTimes(0);
@@ -427,7 +427,7 @@ describe('DynamicSearchCreatableInput Component', () => {
 
     expect(container?.queryByTestId('DATA-TEST-ID-spinner')).toBeFalsy();
 
-    expect(container).toMatchSnapshot();
+    expect(container?.container).toMatchSnapshot();
     expect(handleCreateMock).toBeCalledTimes(0);
     expect(resolveValueMock).toBeCalledTimes(1);
     expect(resolveValueMock).toBeCalledWith('OPTION1');
@@ -454,7 +454,7 @@ describe('DynamicSearchCreatableInput Component', () => {
 
     expect(container?.queryByTestId('DATA-TEST-ID-spinner')).toBeFalsy();
 
-    expect(container).toMatchSnapshot();
+    expect(container?.container).toMatchSnapshot();
     expect(handleCreateMock).toBeCalledTimes(0);
     expect(resolveValueMock).toBeCalledTimes(2);
     expect(resolveValueMock).toBeCalledWith('OPTION2');
@@ -497,7 +497,7 @@ describe('DynamicSearchCreatableInput Component', () => {
 
     expect(container?.queryByTestId('DATA-TEST-ID-spinner')).toBeFalsy();
 
-    expect(container).toMatchSnapshot();
+    expect(container?.container).toMatchSnapshot();
     expect(handleCreateMock).toBeCalledTimes(0);
     expect(resolveValueMock).toBeCalledTimes(1);
     expect(resolveValueMock).toBeCalledWith('OPTION1');
@@ -513,7 +513,7 @@ describe('DynamicSearchCreatableInput Component', () => {
       }
     });
 
-    expect(container).toMatchSnapshot();
+    expect(container?.container).toMatchSnapshot();
     expect(handleCreateMock).toBeCalledTimes(0);
     expect(resolveValueMock).toBeCalledTimes(1);
     expect(resolveValueMock).toBeCalledWith('OPTION1');
@@ -553,7 +553,7 @@ describe('DynamicSearchCreatableInput Component', () => {
       expect(container?.queryByTestId('DATA-TEST-ID-spinner')).toBeFalsy();
     });
 
-    expect(container).toMatchSnapshot();
+    expect(container?.container).toMatchSnapshot();
     expect(handleCreateMock).toBeCalledTimes(0);
     expect(handleCreateMock).toBeCalledTimes(0);
     expect(resolveValueMock).toBeCalledTimes(0);
@@ -577,7 +577,7 @@ describe('DynamicSearchCreatableInput Component', () => {
       }
     });
 
-    expect(container).toMatchSnapshot();
+    expect(container?.container).toMatchSnapshot();
     expect(handleCreateMock).toBeCalledTimes(1);
     expect(handleCreateMock).toBeCalledWith('abc');
     expect(resolveValueMock).toBeCalledTimes(0);
@@ -618,7 +618,7 @@ describe('DynamicSearchCreatableInput Component', () => {
       expect(container?.queryByTestId('DATA-TEST-ID-spinner')).toBeFalsy();
     });
 
-    expect(container).toMatchSnapshot();
+    expect(container?.container).toMatchSnapshot();
     expect(handleCreateMock).toBeCalledTimes(0);
     expect(handleCreateMock).toBeCalledTimes(0);
     expect(resolveValueMock).toBeCalledTimes(0);
@@ -642,7 +642,7 @@ describe('DynamicSearchCreatableInput Component', () => {
       }
     });
 
-    expect(container).toMatchSnapshot();
+    expect(container?.container).toMatchSnapshot();
     expect(handleCreateMock).toBeCalledTimes(1);
     expect(handleCreateMock).toBeCalledWith('abc');
     expect(resolveValueMock).toBeCalledTimes(0);

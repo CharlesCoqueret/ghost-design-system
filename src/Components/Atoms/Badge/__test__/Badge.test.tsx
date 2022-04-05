@@ -7,7 +7,7 @@ import { MenuDirectionEnum } from '../../Tooltip';
 
 describe('Badge Component', () => {
   it('Badge renders notification', async () => {
-    const container = render(
+    const { container } = render(
       <Badge
         type='notification'
         className='CLASSNAME'
@@ -21,7 +21,7 @@ describe('Badge Component', () => {
   });
 
   it('Badge renders notification', async () => {
-    const container = render(
+    const { container } = render(
       <Badge
         type='notification'
         className='CLASSNAME'
@@ -35,7 +35,7 @@ describe('Badge Component', () => {
   });
 
   it('Badge without children', async () => {
-    const container = render(<Badge />);
+    const { container } = render(<Badge />);
     expect(container).toMatchSnapshot();
   });
 });

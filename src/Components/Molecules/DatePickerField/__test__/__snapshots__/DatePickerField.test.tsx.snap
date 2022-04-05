@@ -1,145 +1,123 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DatePickerField Component DatePickerField renders 1`] = `
-<div
-  className="gds-field-group"
->
+<div>
   <div
-    className="field input-date-picker-field"
+    class="gds-field-group"
   >
     <div
-      className="react-datepicker-wrapper"
+      class="field input-date-picker-field"
     >
       <div
-        className="react-datepicker__input-container"
+        class="react-datepicker-wrapper"
       >
-        <input
-          autoComplete="off"
-          autoFocus={false}
-          className="input-date-picker-input"
-          disabled={false}
-          name="name"
-          onBlur={[Function]}
-          onChange={[Function]}
-          onClick={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          placeholder="MMM DD, YYYY"
-          readOnly={false}
-          type="text"
-          value=""
-        />
+        <div
+          class="react-datepicker__input-container"
+        >
+          <input
+            autocomplete="off"
+            class="input-date-picker-input"
+            name="name"
+            placeholder="MMM DD, YYYY"
+            type="text"
+            value=""
+          />
+        </div>
       </div>
+      <div />
     </div>
-    <div />
   </div>
 </div>
 `;
 
 exports[`DatePickerField Component DatePickerField renders with values in disabled highligted 1`] = `
-<div
-  className="gds-field-group"
->
+<div>
   <div
-    className="field input-date-picker-field"
+    class="gds-field-group"
   >
     <div
-      className="react-datepicker-wrapper"
+      class="field input-date-picker-field"
     >
       <div
-        className="react-datepicker__input-container"
+        class="react-datepicker-wrapper"
       >
-        <input
-          autoComplete="off"
-          autoFocus={false}
-          className="input-date-picker-input field-highlighted"
-          disabled={true}
-          name="name"
-          onBlur={[Function]}
-          onChange={[Function]}
-          onClick={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          placeholder="MMM DD, YYYY"
-          readOnly={false}
-          type="text"
-          value="Mar 02, 2022"
-        />
+        <div
+          class="react-datepicker__input-container"
+        >
+          <input
+            autocomplete="off"
+            class="input-date-picker-input field-highlighted"
+            disabled=""
+            name="name"
+            placeholder="MMM DD, YYYY"
+            type="text"
+            value="Mar 02, 2022"
+          />
+        </div>
       </div>
+      <div />
     </div>
-    <div />
   </div>
 </div>
 `;
 
 exports[`DatePickerField Component DatePickerField renders with values in readonly 1`] = `
-<div
-  className="gds-field-group"
->
+<div>
   <div
-    className="field input-date-picker-field"
+    class="gds-field-group"
   >
     <div
-      className="react-datepicker-wrapper"
+      class="field input-date-picker-field"
     >
       <div
-        className="react-datepicker__input-container"
+        class="react-datepicker-wrapper"
       >
-        <input
-          autoComplete="off"
-          autoFocus={false}
-          className="input-date-picker-input-read-only"
-          disabled={false}
-          name="name"
-          onBlur={[Function]}
-          onChange={[Function]}
-          onClick={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          placeholder="-"
-          readOnly={true}
-          type="text"
-          value="Mar 02, 2022"
-        />
+        <div
+          class="react-datepicker__input-container"
+        >
+          <input
+            autocomplete="off"
+            class="input-date-picker-input-read-only"
+            name="name"
+            placeholder="-"
+            readonly=""
+            type="text"
+            value="Mar 02, 2022"
+          />
+        </div>
       </div>
+      <div />
     </div>
-    <div />
   </div>
 </div>
 `;
 
 exports[`DatePickerField Component DatePickerField renders with values with fieldSize and inline 1`] = `
-<div
-  className="gds-field-group field-inline"
->
+<div>
   <div
-    className="field input-date-picker-field field-input-size-6"
+    class="gds-field-group field-inline"
   >
     <div
-      className="react-datepicker-wrapper"
+      class="field input-date-picker-field field-input-size-6"
     >
       <div
-        className="react-datepicker__input-container"
+        class="react-datepicker-wrapper"
       >
-        <input
-          autoComplete="off"
-          autoFocus={false}
-          className="input-date-picker-input"
-          disabled={false}
-          name="name"
-          onBlur={[Function]}
-          onChange={[Function]}
-          onClick={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          placeholder="MMM DD, YYYY"
-          readOnly={false}
-          type="text"
-          value="Mar 02, 2022"
-        />
+        <div
+          class="react-datepicker__input-container"
+        >
+          <input
+            autocomplete="off"
+            class="input-date-picker-input"
+            name="name"
+            placeholder="MMM DD, YYYY"
+            type="text"
+            value="Mar 02, 2022"
+          />
+        </div>
       </div>
+      <div />
     </div>
-    <div />
   </div>
 </div>
 `;

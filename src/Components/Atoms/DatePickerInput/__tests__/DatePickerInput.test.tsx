@@ -36,22 +36,22 @@ describe('DatePickerInput Component', () => {
   });
 
   it('DatePickerInput renders highlighted in readonly', async () => {
-    const container = render(<DatePickerInput name='NAME' highlighted readOnly dateFormat={''} />);
+    const { container } = render(<DatePickerInput name='NAME' highlighted readOnly dateFormat={''} />);
     expect(container).toMatchSnapshot();
   });
 
   it('DatePickerInput renders with placeholder', async () => {
-    const container = render(<DatePickerInput name='NAME' placeholder='TESTPLACEHOLDER' />);
+    const { container } = render(<DatePickerInput name='NAME' placeholder='TESTPLACEHOLDER' />);
     expect(container).toMatchSnapshot();
   });
 
   it('DatePickerInput renders without Portal', async () => {
-    const container = render(<DatePickerInput usePortal={false} name='NAME' />);
+    const { container } = render(<DatePickerInput usePortal={false} name='NAME' />);
     expect(container).toMatchSnapshot();
   });
 
   it('DatePickerInput renders highlighted in disabled', async () => {
-    const container = render(<DatePickerInput name='NAME' highlighted disabled />);
+    const { container } = render(<DatePickerInput name='NAME' highlighted disabled />);
     expect(container).toMatchSnapshot();
   });
 

@@ -31,7 +31,7 @@ describe('DynamicSearchInput Component', () => {
 
     expect(container?.queryByTestId('DATA-TEST-ID-spinner')).toBeFalsy();
 
-    expect(container).toMatchSnapshot();
+    expect(container?.container).toMatchSnapshot();
     expect(resolveValueMock).toBeCalledTimes(1);
     expect(resolveValueMock).toBeCalledWith('OPTION1');
     expect(noOptionsMessageMock).toBeCalledTimes(0);
@@ -64,7 +64,7 @@ describe('DynamicSearchInput Component', () => {
 
     expect(container?.queryByTestId('DATA-TEST-ID-spinner')).toBeFalsy();
 
-    expect(container).toMatchSnapshot();
+    expect(container?.container).toMatchSnapshot();
     expect(resolveValueMock).toBeCalledTimes(1);
     expect(resolveValueMock).toBeCalledWith('OPTION-VALUE-NOT-AVAILABLE');
     expect(noOptionsMessageMock).toBeCalledTimes(0);
@@ -97,7 +97,7 @@ describe('DynamicSearchInput Component', () => {
 
     expect(container?.queryByTestId('DATA-TEST-ID-spinner')).toBeFalsy();
 
-    expect(container).toMatchSnapshot();
+    expect(container?.container).toMatchSnapshot();
     expect(resolveValueMock).toBeCalledTimes(1);
     expect(resolveValueMock).toBeCalledWith('OPTION1');
     expect(noOptionsMessageMock).toBeCalledTimes(0);
@@ -125,7 +125,7 @@ describe('DynamicSearchInput Component', () => {
       expect(container?.queryByTestId('DATA-TEST-ID-spinner')).toBeFalsy();
     });
 
-    expect(container).toMatchSnapshot();
+    expect(container?.container).toMatchSnapshot();
     expect(resolveValueMock).toBeCalledTimes(0);
     expect(noOptionsMessageMock).toBeCalledTimes(0);
     expect(searchOptionsMock).toBeCalledTimes(0);
@@ -162,7 +162,7 @@ describe('DynamicSearchInput Component', () => {
       }
     });
 
-    expect(container).toMatchSnapshot();
+    expect(container?.container).toMatchSnapshot();
     expect(resolveValueMock).toBeCalledTimes(0);
     expect(noOptionsMessageMock).toBeCalled();
     expect(noOptionsMessageMock).toBeCalledWith({ inputValue: 'option 2' });
@@ -217,7 +217,7 @@ describe('DynamicSearchInput Component', () => {
       }
     });
 
-    expect(container).toMatchSnapshot();
+    expect(container?.container).toMatchSnapshot();
     expect(resolveValueMock).toBeCalledTimes(1);
     expect(searchOptionsMock).toBeCalledTimes('option 2'.length);
     expect(searchOptionsMock).toBeCalledWith('option 2', expect.any(Function));
@@ -256,7 +256,7 @@ describe('DynamicSearchInput Component', () => {
 
     expect(container?.queryByTestId('DATA-TEST-ID-spinner')).toBeFalsy();
 
-    expect(container).toMatchSnapshot();
+    expect(container?.container).toMatchSnapshot();
     expect(resolveValueMock).toBeCalledTimes(1);
     expect(noOptionsMessageMock).toBeCalledTimes(0);
     expect(searchOptionsMock).toBeCalledTimes(0);
@@ -290,7 +290,7 @@ describe('DynamicSearchInput Component', () => {
 
     expect(container?.queryByTestId('-spinner')).toBeFalsy();
 
-    expect(container).toMatchSnapshot();
+    expect(container?.container).toMatchSnapshot();
     expect(resolveValueMock).toBeCalledTimes(1);
     expect(noOptionsMessageMock).toBeCalledTimes(0);
     expect(searchOptionsMock).toBeCalledTimes(0);
@@ -327,7 +327,7 @@ describe('DynamicSearchInput Component', () => {
 
     expect(container?.queryByTestId('DATA-TEST-ID-spinner')).toBeFalsy();
 
-    expect(container).toMatchSnapshot();
+    expect(container?.container).toMatchSnapshot();
     expect(resolveValueMock).toBeCalledTimes(1);
     expect(noOptionsMessage).toBeCalledTimes(0);
     expect(searchOptionsMock).toBeCalledTimes(0);
@@ -359,7 +359,7 @@ describe('DynamicSearchInput Component', () => {
       expect(container?.queryByTestId('DATA-TEST-ID-spinner')).toBeFalsy();
     });
 
-    expect(container).toMatchSnapshot();
+    expect(container?.container).toMatchSnapshot();
     expect(resolveValueMock).toBeCalledTimes(0);
     expect(noOptionsMessageMock).toBeCalledTimes(0);
     expect(searchOptionsMock).toBeCalledTimes(0);
@@ -395,7 +395,7 @@ describe('DynamicSearchInput Component', () => {
 
     expect(container?.queryByTestId('DATA-TEST-ID-spinner')).toBeFalsy();
 
-    expect(container).toMatchSnapshot();
+    expect(container?.container).toMatchSnapshot();
     expect(resolveValueMock).toBeCalledTimes(1);
     expect(resolveValueMock).toBeCalledWith('OPTION1');
     expect(noOptionsMessageMock).toBeCalledTimes(0);
@@ -420,7 +420,7 @@ describe('DynamicSearchInput Component', () => {
 
     expect(container?.queryByTestId('DATA-TEST-ID-spinner')).toBeFalsy();
 
-    expect(container).toMatchSnapshot();
+    expect(container?.container).toMatchSnapshot();
     expect(resolveValueMock).toBeCalledTimes(2);
     expect(resolveValueMock).toBeCalledWith('OPTION2');
     expect(noOptionsMessageMock).toBeCalledTimes(0);
@@ -460,7 +460,7 @@ describe('DynamicSearchInput Component', () => {
 
     expect(container?.queryByTestId('DATA-TEST-ID-spinner')).toBeFalsy();
 
-    expect(container).toMatchSnapshot();
+    expect(container?.container).toMatchSnapshot();
     expect(resolveValueMock).toBeCalledTimes(1);
     expect(resolveValueMock).toBeCalledWith('OPTION1');
     expect(noOptionsMessageMock).toBeCalledTimes(0);
@@ -475,7 +475,7 @@ describe('DynamicSearchInput Component', () => {
       }
     });
 
-    expect(container).toMatchSnapshot();
+    expect(container?.container).toMatchSnapshot();
     expect(resolveValueMock).toBeCalledTimes(1);
     expect(resolveValueMock).toBeCalledWith('OPTION1');
     expect(noOptionsMessageMock).toBeCalledTimes(2);

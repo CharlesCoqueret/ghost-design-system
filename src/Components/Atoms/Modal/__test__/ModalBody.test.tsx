@@ -5,7 +5,7 @@ import ModalBody from '../ModalBody';
 
 describe('ModalBody Component', () => {
   it('ModalBody renders', async () => {
-    const container = render(
+    const { container } = render(
       <ModalBody>
         <div id='CHILD1' />
       </ModalBody>,

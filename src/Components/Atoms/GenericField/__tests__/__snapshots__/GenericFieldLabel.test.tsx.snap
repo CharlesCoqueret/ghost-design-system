@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GenericFieldLabel Component GenericFieldLabel renders 1`] = `<div />`;
+
+exports[`GenericFieldLabel Component GenericFieldLabel with label mandatory renders 1`] = `
+<div>
+  <label
+    class="field-label"
+  >
+    LABEL TEST
+    <span
+      class="field-label-mandatory"
+    >
+      *
+    </span>
+  </label>
+</div>
+`;
+
+exports[`GenericFieldLabel Component GenericFieldLabel with label of size 2 inline mandatory renders 1`] = `
+<div>
+  <label
+    class="field-label-size-2 field-label"
+  >
+    LABEL TEST
+    <span
+      class="field-label-mandatory"
+    >
+      *
+    </span>
+  </label>
+</div>
+`;
+
+exports[`GenericFieldLabel Component GenericFieldLabel with label read only mandatory renders 1`] = `
+<div>
+  <label
+    class="field-label"
+  >
+    LABEL TEST
+  </label>
+</div>
+`;
+
+exports[`GenericFieldLabel Component GenericFieldLabel with label renders 1`] = `
+<div>
+  <label
+    class="field-label"
+  >
+    LABEL TEST
+  </label>
+</div>
+`;

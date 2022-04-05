@@ -1,982 +1,194 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Modal Component Modal renders closed 1`] = `
-Object {
-  "asFragment": [Function],
-  "baseElement": <body>
-    <div />
-  </body>,
-  "container": <div />,
-  "debug": [Function],
-  "findAllByAltText": [Function],
-  "findAllByDisplayValue": [Function],
-  "findAllByLabelText": [Function],
-  "findAllByPlaceholderText": [Function],
-  "findAllByRole": [Function],
-  "findAllByTestId": [Function],
-  "findAllByText": [Function],
-  "findAllByTitle": [Function],
-  "findByAltText": [Function],
-  "findByDisplayValue": [Function],
-  "findByLabelText": [Function],
-  "findByPlaceholderText": [Function],
-  "findByRole": [Function],
-  "findByTestId": [Function],
-  "findByText": [Function],
-  "findByTitle": [Function],
-  "getAllByAltText": [Function],
-  "getAllByDisplayValue": [Function],
-  "getAllByLabelText": [Function],
-  "getAllByPlaceholderText": [Function],
-  "getAllByRole": [Function],
-  "getAllByTestId": [Function],
-  "getAllByText": [Function],
-  "getAllByTitle": [Function],
-  "getByAltText": [Function],
-  "getByDisplayValue": [Function],
-  "getByLabelText": [Function],
-  "getByPlaceholderText": [Function],
-  "getByRole": [Function],
-  "getByTestId": [Function],
-  "getByText": [Function],
-  "getByTitle": [Function],
-  "queryAllByAltText": [Function],
-  "queryAllByDisplayValue": [Function],
-  "queryAllByLabelText": [Function],
-  "queryAllByPlaceholderText": [Function],
-  "queryAllByRole": [Function],
-  "queryAllByTestId": [Function],
-  "queryAllByText": [Function],
-  "queryAllByTitle": [Function],
-  "queryByAltText": [Function],
-  "queryByDisplayValue": [Function],
-  "queryByLabelText": [Function],
-  "queryByPlaceholderText": [Function],
-  "queryByRole": [Function],
-  "queryByTestId": [Function],
-  "queryByText": [Function],
-  "queryByTitle": [Function],
-  "rerender": [Function],
-  "unmount": [Function],
-}
-`;
+exports[`Modal Component Modal renders closed 1`] = `<div />`;
 
 exports[`Modal Component Modal renders handles click outside 1`] = `
-Object {
-  "asFragment": [Function],
-  "baseElement": <body
-    style="overflow-y: hidden; overflow-x: hidden;"
-  >
-    <div>
-      <div>
-        <div
-          class="gds-modal-overlay"
-        >
-          <div
-            class="modal-content size-sm"
-          >
-            <div
-              id="CHILD1"
-            />
-          </div>
-        </div>
-      </div>
-    </div>
+<div>
+  <div>
     <div
-      id="root-portal-id"
+      class="gds-modal-overlay"
     >
-      <div />
-    </div>
-  </body>,
-  "container": <div>
-    <div>
       <div
-        class="gds-modal-overlay"
+        class="modal-content size-sm"
       >
         <div
-          class="modal-content size-sm"
-        >
-          <div
-            id="CHILD1"
-          />
-        </div>
+          id="CHILD1"
+        />
       </div>
     </div>
-  </div>,
-  "debug": [Function],
-  "findAllByAltText": [Function],
-  "findAllByDisplayValue": [Function],
-  "findAllByLabelText": [Function],
-  "findAllByPlaceholderText": [Function],
-  "findAllByRole": [Function],
-  "findAllByTestId": [Function],
-  "findAllByText": [Function],
-  "findAllByTitle": [Function],
-  "findByAltText": [Function],
-  "findByDisplayValue": [Function],
-  "findByLabelText": [Function],
-  "findByPlaceholderText": [Function],
-  "findByRole": [Function],
-  "findByTestId": [Function],
-  "findByText": [Function],
-  "findByTitle": [Function],
-  "getAllByAltText": [Function],
-  "getAllByDisplayValue": [Function],
-  "getAllByLabelText": [Function],
-  "getAllByPlaceholderText": [Function],
-  "getAllByRole": [Function],
-  "getAllByTestId": [Function],
-  "getAllByText": [Function],
-  "getAllByTitle": [Function],
-  "getByAltText": [Function],
-  "getByDisplayValue": [Function],
-  "getByLabelText": [Function],
-  "getByPlaceholderText": [Function],
-  "getByRole": [Function],
-  "getByTestId": [Function],
-  "getByText": [Function],
-  "getByTitle": [Function],
-  "queryAllByAltText": [Function],
-  "queryAllByDisplayValue": [Function],
-  "queryAllByLabelText": [Function],
-  "queryAllByPlaceholderText": [Function],
-  "queryAllByRole": [Function],
-  "queryAllByTestId": [Function],
-  "queryAllByText": [Function],
-  "queryAllByTitle": [Function],
-  "queryByAltText": [Function],
-  "queryByDisplayValue": [Function],
-  "queryByLabelText": [Function],
-  "queryByPlaceholderText": [Function],
-  "queryByRole": [Function],
-  "queryByTestId": [Function],
-  "queryByText": [Function],
-  "queryByTitle": [Function],
-  "rerender": [Function],
-  "unmount": [Function],
-}
+  </div>
+</div>
 `;
 
 exports[`Modal Component Modal renders handles close icon 1`] = `
-Object {
-  "asFragment": [Function],
-  "baseElement": <body
-    style="overflow-y: hidden; overflow-x: hidden;"
-  >
-    <div>
-      <div>
+<div>
+  <div>
+    <div
+      class="gds-modal-overlay"
+    >
+      <div
+        class="modal-content size-lg"
+      >
         <div
-          class="gds-modal-overlay"
+          class="modal-header"
         >
           <div
-            class="modal-content size-lg"
+            class="modal-title"
           >
-            <div
-              class="modal-header"
-            >
-              <div
-                class="modal-title"
-              >
-                MODALTITLE
-              </div>
-              <div
-                class="modal-close-icon"
-                data-testid="TESTID"
-              >
-                <i
-                  class="icon"
-                  icon="fal,times"
-                />
-              </div>
-            </div>
-            <div
-              id="CHILD1"
+            MODALTITLE
+          </div>
+          <div
+            class="modal-close-icon"
+            data-testid="TESTID"
+          >
+            <i
+              class="icon"
+              icon="fal,times"
             />
           </div>
         </div>
-      </div>
-    </div>
-    <div
-      id="root-portal-id"
-    >
-      <div />
-    </div>
-  </body>,
-  "container": <div>
-    <div>
-      <div
-        class="gds-modal-overlay"
-      >
         <div
-          class="modal-content size-lg"
-        >
-          <div
-            class="modal-header"
-          >
-            <div
-              class="modal-title"
-            >
-              MODALTITLE
-            </div>
-            <div
-              class="modal-close-icon"
-              data-testid="TESTID"
-            >
-              <i
-                class="icon"
-                icon="fal,times"
-              />
-            </div>
-          </div>
-          <div
-            id="CHILD1"
-          />
-        </div>
+          id="CHILD1"
+        />
       </div>
     </div>
-  </div>,
-  "debug": [Function],
-  "findAllByAltText": [Function],
-  "findAllByDisplayValue": [Function],
-  "findAllByLabelText": [Function],
-  "findAllByPlaceholderText": [Function],
-  "findAllByRole": [Function],
-  "findAllByTestId": [Function],
-  "findAllByText": [Function],
-  "findAllByTitle": [Function],
-  "findByAltText": [Function],
-  "findByDisplayValue": [Function],
-  "findByLabelText": [Function],
-  "findByPlaceholderText": [Function],
-  "findByRole": [Function],
-  "findByTestId": [Function],
-  "findByText": [Function],
-  "findByTitle": [Function],
-  "getAllByAltText": [Function],
-  "getAllByDisplayValue": [Function],
-  "getAllByLabelText": [Function],
-  "getAllByPlaceholderText": [Function],
-  "getAllByRole": [Function],
-  "getAllByTestId": [Function],
-  "getAllByText": [Function],
-  "getAllByTitle": [Function],
-  "getByAltText": [Function],
-  "getByDisplayValue": [Function],
-  "getByLabelText": [Function],
-  "getByPlaceholderText": [Function],
-  "getByRole": [Function],
-  "getByTestId": [Function],
-  "getByText": [Function],
-  "getByTitle": [Function],
-  "queryAllByAltText": [Function],
-  "queryAllByDisplayValue": [Function],
-  "queryAllByLabelText": [Function],
-  "queryAllByPlaceholderText": [Function],
-  "queryAllByRole": [Function],
-  "queryAllByTestId": [Function],
-  "queryAllByText": [Function],
-  "queryAllByTitle": [Function],
-  "queryByAltText": [Function],
-  "queryByDisplayValue": [Function],
-  "queryByLabelText": [Function],
-  "queryByPlaceholderText": [Function],
-  "queryByRole": [Function],
-  "queryByTestId": [Function],
-  "queryByText": [Function],
-  "queryByTitle": [Function],
-  "rerender": [Function],
-  "unmount": [Function],
-}
+  </div>
+</div>
 `;
 
 exports[`Modal Component Modal renders handles press escape 1`] = `
-Object {
-  "asFragment": [Function],
-  "baseElement": <body
-    style="overflow-y: hidden; overflow-x: hidden;"
-  >
-    <div>
-      <div>
-        <div
-          class="gds-modal-overlay"
-        >
-          <div
-            class="modal-content size-sm"
-          >
-            <div
-              id="CHILD1"
-            />
-          </div>
-        </div>
-      </div>
-    </div>
+<div>
+  <div>
     <div
-      id="root-portal-id"
+      class="gds-modal-overlay"
     >
-      <div />
-    </div>
-  </body>,
-  "container": <div>
-    <div>
       <div
-        class="gds-modal-overlay"
+        class="modal-content size-sm"
       >
         <div
-          class="modal-content size-sm"
-        >
-          <div
-            id="CHILD1"
-          />
-        </div>
+          id="CHILD1"
+        />
       </div>
     </div>
-  </div>,
-  "debug": [Function],
-  "findAllByAltText": [Function],
-  "findAllByDisplayValue": [Function],
-  "findAllByLabelText": [Function],
-  "findAllByPlaceholderText": [Function],
-  "findAllByRole": [Function],
-  "findAllByTestId": [Function],
-  "findAllByText": [Function],
-  "findAllByTitle": [Function],
-  "findByAltText": [Function],
-  "findByDisplayValue": [Function],
-  "findByLabelText": [Function],
-  "findByPlaceholderText": [Function],
-  "findByRole": [Function],
-  "findByTestId": [Function],
-  "findByText": [Function],
-  "findByTitle": [Function],
-  "getAllByAltText": [Function],
-  "getAllByDisplayValue": [Function],
-  "getAllByLabelText": [Function],
-  "getAllByPlaceholderText": [Function],
-  "getAllByRole": [Function],
-  "getAllByTestId": [Function],
-  "getAllByText": [Function],
-  "getAllByTitle": [Function],
-  "getByAltText": [Function],
-  "getByDisplayValue": [Function],
-  "getByLabelText": [Function],
-  "getByPlaceholderText": [Function],
-  "getByRole": [Function],
-  "getByTestId": [Function],
-  "getByText": [Function],
-  "getByTitle": [Function],
-  "queryAllByAltText": [Function],
-  "queryAllByDisplayValue": [Function],
-  "queryAllByLabelText": [Function],
-  "queryAllByPlaceholderText": [Function],
-  "queryAllByRole": [Function],
-  "queryAllByTestId": [Function],
-  "queryAllByText": [Function],
-  "queryAllByTitle": [Function],
-  "queryByAltText": [Function],
-  "queryByDisplayValue": [Function],
-  "queryByLabelText": [Function],
-  "queryByPlaceholderText": [Function],
-  "queryByRole": [Function],
-  "queryByTestId": [Function],
-  "queryByText": [Function],
-  "queryByTitle": [Function],
-  "rerender": [Function],
-  "unmount": [Function],
-}
+  </div>
+</div>
 `;
 
 exports[`Modal Component Modal renders open 1`] = `
-Object {
-  "asFragment": [Function],
-  "baseElement": <body
-    style="overflow-y: hidden; overflow-x: hidden;"
-  >
-    <div>
-      <div>
-        <div
-          class="gds-modal-overlay"
-        >
-          <div
-            class="modal-content size-sm"
-          >
-            <div
-              class="modal-header"
-            >
-              <div
-                class="modal-title"
-              >
-                MODALTITLE
-              </div>
-            </div>
-            <div
-              id="CHILD1"
-            />
-          </div>
-        </div>
-      </div>
-    </div>
+<div>
+  <div>
     <div
-      id="root-portal-id"
+      class="gds-modal-overlay"
     >
-      <div />
-    </div>
-  </body>,
-  "container": <div>
-    <div>
       <div
-        class="gds-modal-overlay"
+        class="modal-content size-sm"
       >
         <div
-          class="modal-content size-sm"
+          class="modal-header"
         >
           <div
-            class="modal-header"
+            class="modal-title"
           >
-            <div
-              class="modal-title"
-            >
-              MODALTITLE
-            </div>
+            MODALTITLE
           </div>
-          <div
-            id="CHILD1"
-          />
         </div>
+        <div
+          id="CHILD1"
+        />
       </div>
     </div>
-  </div>,
-  "debug": [Function],
-  "findAllByAltText": [Function],
-  "findAllByDisplayValue": [Function],
-  "findAllByLabelText": [Function],
-  "findAllByPlaceholderText": [Function],
-  "findAllByRole": [Function],
-  "findAllByTestId": [Function],
-  "findAllByText": [Function],
-  "findAllByTitle": [Function],
-  "findByAltText": [Function],
-  "findByDisplayValue": [Function],
-  "findByLabelText": [Function],
-  "findByPlaceholderText": [Function],
-  "findByRole": [Function],
-  "findByTestId": [Function],
-  "findByText": [Function],
-  "findByTitle": [Function],
-  "getAllByAltText": [Function],
-  "getAllByDisplayValue": [Function],
-  "getAllByLabelText": [Function],
-  "getAllByPlaceholderText": [Function],
-  "getAllByRole": [Function],
-  "getAllByTestId": [Function],
-  "getAllByText": [Function],
-  "getAllByTitle": [Function],
-  "getByAltText": [Function],
-  "getByDisplayValue": [Function],
-  "getByLabelText": [Function],
-  "getByPlaceholderText": [Function],
-  "getByRole": [Function],
-  "getByTestId": [Function],
-  "getByText": [Function],
-  "getByTitle": [Function],
-  "queryAllByAltText": [Function],
-  "queryAllByDisplayValue": [Function],
-  "queryAllByLabelText": [Function],
-  "queryAllByPlaceholderText": [Function],
-  "queryAllByRole": [Function],
-  "queryAllByTestId": [Function],
-  "queryAllByText": [Function],
-  "queryAllByTitle": [Function],
-  "queryByAltText": [Function],
-  "queryByDisplayValue": [Function],
-  "queryByLabelText": [Function],
-  "queryByPlaceholderText": [Function],
-  "queryByRole": [Function],
-  "queryByTestId": [Function],
-  "queryByText": [Function],
-  "queryByTitle": [Function],
-  "rerender": [Function],
-  "unmount": [Function],
-}
+  </div>
+</div>
 `;
 
 exports[`Modal Component Modal renders shakes when click outside when it is not allowed 1`] = `
-Object {
-  "asFragment": [Function],
-  "baseElement": <body
-    style="overflow-y: hidden; overflow-x: hidden;"
-  >
-    <div>
-      <div>
-        <div
-          class="gds-modal-overlay"
-        >
-          <div
-            class="modal-content size-sm"
-          >
-            <div
-              id="CHILD1"
-            />
-          </div>
-        </div>
-      </div>
-    </div>
+<div>
+  <div>
     <div
-      id="root-portal-id"
+      class="gds-modal-overlay"
     >
-      <div />
-    </div>
-  </body>,
-  "container": <div>
-    <div>
       <div
-        class="gds-modal-overlay"
+        class="modal-content size-sm"
       >
         <div
-          class="modal-content size-sm"
-        >
-          <div
-            id="CHILD1"
-          />
-        </div>
+          id="CHILD1"
+        />
       </div>
     </div>
-  </div>,
-  "debug": [Function],
-  "findAllByAltText": [Function],
-  "findAllByDisplayValue": [Function],
-  "findAllByLabelText": [Function],
-  "findAllByPlaceholderText": [Function],
-  "findAllByRole": [Function],
-  "findAllByTestId": [Function],
-  "findAllByText": [Function],
-  "findAllByTitle": [Function],
-  "findByAltText": [Function],
-  "findByDisplayValue": [Function],
-  "findByLabelText": [Function],
-  "findByPlaceholderText": [Function],
-  "findByRole": [Function],
-  "findByTestId": [Function],
-  "findByText": [Function],
-  "findByTitle": [Function],
-  "getAllByAltText": [Function],
-  "getAllByDisplayValue": [Function],
-  "getAllByLabelText": [Function],
-  "getAllByPlaceholderText": [Function],
-  "getAllByRole": [Function],
-  "getAllByTestId": [Function],
-  "getAllByText": [Function],
-  "getAllByTitle": [Function],
-  "getByAltText": [Function],
-  "getByDisplayValue": [Function],
-  "getByLabelText": [Function],
-  "getByPlaceholderText": [Function],
-  "getByRole": [Function],
-  "getByTestId": [Function],
-  "getByText": [Function],
-  "getByTitle": [Function],
-  "queryAllByAltText": [Function],
-  "queryAllByDisplayValue": [Function],
-  "queryAllByLabelText": [Function],
-  "queryAllByPlaceholderText": [Function],
-  "queryAllByRole": [Function],
-  "queryAllByTestId": [Function],
-  "queryAllByText": [Function],
-  "queryAllByTitle": [Function],
-  "queryByAltText": [Function],
-  "queryByDisplayValue": [Function],
-  "queryByLabelText": [Function],
-  "queryByPlaceholderText": [Function],
-  "queryByRole": [Function],
-  "queryByTestId": [Function],
-  "queryByText": [Function],
-  "queryByTitle": [Function],
-  "rerender": [Function],
-  "unmount": [Function],
-}
+  </div>
+</div>
 `;
 
 exports[`Modal Component Modal renders shakes when click outside when it is not allowed 2`] = `
-Object {
-  "asFragment": [Function],
-  "baseElement": <body
-    style="overflow-y: hidden; overflow-x: hidden;"
-  >
-    <div>
-      <div>
-        <div
-          class="gds-modal-overlay"
-        >
-          <div
-            class="modal-content size-sm shake"
-          >
-            <div
-              id="CHILD1"
-            />
-          </div>
-        </div>
-      </div>
-    </div>
+<div>
+  <div>
     <div
-      id="root-portal-id"
+      class="gds-modal-overlay"
     >
-      <div />
-    </div>
-  </body>,
-  "container": <div>
-    <div>
       <div
-        class="gds-modal-overlay"
+        class="modal-content size-sm shake"
       >
         <div
-          class="modal-content size-sm shake"
-        >
-          <div
-            id="CHILD1"
-          />
-        </div>
+          id="CHILD1"
+        />
       </div>
     </div>
-  </div>,
-  "debug": [Function],
-  "findAllByAltText": [Function],
-  "findAllByDisplayValue": [Function],
-  "findAllByLabelText": [Function],
-  "findAllByPlaceholderText": [Function],
-  "findAllByRole": [Function],
-  "findAllByTestId": [Function],
-  "findAllByText": [Function],
-  "findAllByTitle": [Function],
-  "findByAltText": [Function],
-  "findByDisplayValue": [Function],
-  "findByLabelText": [Function],
-  "findByPlaceholderText": [Function],
-  "findByRole": [Function],
-  "findByTestId": [Function],
-  "findByText": [Function],
-  "findByTitle": [Function],
-  "getAllByAltText": [Function],
-  "getAllByDisplayValue": [Function],
-  "getAllByLabelText": [Function],
-  "getAllByPlaceholderText": [Function],
-  "getAllByRole": [Function],
-  "getAllByTestId": [Function],
-  "getAllByText": [Function],
-  "getAllByTitle": [Function],
-  "getByAltText": [Function],
-  "getByDisplayValue": [Function],
-  "getByLabelText": [Function],
-  "getByPlaceholderText": [Function],
-  "getByRole": [Function],
-  "getByTestId": [Function],
-  "getByText": [Function],
-  "getByTitle": [Function],
-  "queryAllByAltText": [Function],
-  "queryAllByDisplayValue": [Function],
-  "queryAllByLabelText": [Function],
-  "queryAllByPlaceholderText": [Function],
-  "queryAllByRole": [Function],
-  "queryAllByTestId": [Function],
-  "queryAllByText": [Function],
-  "queryAllByTitle": [Function],
-  "queryByAltText": [Function],
-  "queryByDisplayValue": [Function],
-  "queryByLabelText": [Function],
-  "queryByPlaceholderText": [Function],
-  "queryByRole": [Function],
-  "queryByTestId": [Function],
-  "queryByText": [Function],
-  "queryByTitle": [Function],
-  "rerender": [Function],
-  "unmount": [Function],
-}
+  </div>
+</div>
 `;
 
 exports[`Modal Component Modal renders shakes when press escape when it is not allowed 1`] = `
-Object {
-  "asFragment": [Function],
-  "baseElement": <body
-    style="overflow-y: hidden; overflow-x: hidden;"
-  >
-    <div>
-      <div>
-        <div
-          class="gds-modal-overlay"
-        >
-          <div
-            class="modal-content size-sm"
-          >
-            <div
-              id="CHILD1"
-            />
-          </div>
-        </div>
-      </div>
-    </div>
+<div>
+  <div>
     <div
-      id="root-portal-id"
+      class="gds-modal-overlay"
     >
-      <div />
-    </div>
-  </body>,
-  "container": <div>
-    <div>
       <div
-        class="gds-modal-overlay"
+        class="modal-content size-sm"
       >
         <div
-          class="modal-content size-sm"
-        >
-          <div
-            id="CHILD1"
-          />
-        </div>
+          id="CHILD1"
+        />
       </div>
     </div>
-  </div>,
-  "debug": [Function],
-  "findAllByAltText": [Function],
-  "findAllByDisplayValue": [Function],
-  "findAllByLabelText": [Function],
-  "findAllByPlaceholderText": [Function],
-  "findAllByRole": [Function],
-  "findAllByTestId": [Function],
-  "findAllByText": [Function],
-  "findAllByTitle": [Function],
-  "findByAltText": [Function],
-  "findByDisplayValue": [Function],
-  "findByLabelText": [Function],
-  "findByPlaceholderText": [Function],
-  "findByRole": [Function],
-  "findByTestId": [Function],
-  "findByText": [Function],
-  "findByTitle": [Function],
-  "getAllByAltText": [Function],
-  "getAllByDisplayValue": [Function],
-  "getAllByLabelText": [Function],
-  "getAllByPlaceholderText": [Function],
-  "getAllByRole": [Function],
-  "getAllByTestId": [Function],
-  "getAllByText": [Function],
-  "getAllByTitle": [Function],
-  "getByAltText": [Function],
-  "getByDisplayValue": [Function],
-  "getByLabelText": [Function],
-  "getByPlaceholderText": [Function],
-  "getByRole": [Function],
-  "getByTestId": [Function],
-  "getByText": [Function],
-  "getByTitle": [Function],
-  "queryAllByAltText": [Function],
-  "queryAllByDisplayValue": [Function],
-  "queryAllByLabelText": [Function],
-  "queryAllByPlaceholderText": [Function],
-  "queryAllByRole": [Function],
-  "queryAllByTestId": [Function],
-  "queryAllByText": [Function],
-  "queryAllByTitle": [Function],
-  "queryByAltText": [Function],
-  "queryByDisplayValue": [Function],
-  "queryByLabelText": [Function],
-  "queryByPlaceholderText": [Function],
-  "queryByRole": [Function],
-  "queryByTestId": [Function],
-  "queryByText": [Function],
-  "queryByTitle": [Function],
-  "rerender": [Function],
-  "unmount": [Function],
-}
+  </div>
+</div>
 `;
 
 exports[`Modal Component Modal renders shakes when press escape when it is not allowed 2`] = `
-Object {
-  "asFragment": [Function],
-  "baseElement": <body
-    style="overflow-y: hidden; overflow-x: hidden;"
-  >
-    <div>
-      <div>
-        <div
-          class="gds-modal-overlay"
-        >
-          <div
-            class="modal-content size-sm shake"
-          >
-            <div
-              id="CHILD1"
-            />
-          </div>
-        </div>
-      </div>
-    </div>
+<div>
+  <div>
     <div
-      id="root-portal-id"
+      class="gds-modal-overlay"
     >
-      <div />
-    </div>
-  </body>,
-  "container": <div>
-    <div>
       <div
-        class="gds-modal-overlay"
+        class="modal-content size-sm shake"
       >
         <div
-          class="modal-content size-sm shake"
-        >
-          <div
-            id="CHILD1"
-          />
-        </div>
+          id="CHILD1"
+        />
       </div>
     </div>
-  </div>,
-  "debug": [Function],
-  "findAllByAltText": [Function],
-  "findAllByDisplayValue": [Function],
-  "findAllByLabelText": [Function],
-  "findAllByPlaceholderText": [Function],
-  "findAllByRole": [Function],
-  "findAllByTestId": [Function],
-  "findAllByText": [Function],
-  "findAllByTitle": [Function],
-  "findByAltText": [Function],
-  "findByDisplayValue": [Function],
-  "findByLabelText": [Function],
-  "findByPlaceholderText": [Function],
-  "findByRole": [Function],
-  "findByTestId": [Function],
-  "findByText": [Function],
-  "findByTitle": [Function],
-  "getAllByAltText": [Function],
-  "getAllByDisplayValue": [Function],
-  "getAllByLabelText": [Function],
-  "getAllByPlaceholderText": [Function],
-  "getAllByRole": [Function],
-  "getAllByTestId": [Function],
-  "getAllByText": [Function],
-  "getAllByTitle": [Function],
-  "getByAltText": [Function],
-  "getByDisplayValue": [Function],
-  "getByLabelText": [Function],
-  "getByPlaceholderText": [Function],
-  "getByRole": [Function],
-  "getByTestId": [Function],
-  "getByText": [Function],
-  "getByTitle": [Function],
-  "queryAllByAltText": [Function],
-  "queryAllByDisplayValue": [Function],
-  "queryAllByLabelText": [Function],
-  "queryAllByPlaceholderText": [Function],
-  "queryAllByRole": [Function],
-  "queryAllByTestId": [Function],
-  "queryAllByText": [Function],
-  "queryAllByTitle": [Function],
-  "queryByAltText": [Function],
-  "queryByDisplayValue": [Function],
-  "queryByLabelText": [Function],
-  "queryByPlaceholderText": [Function],
-  "queryByRole": [Function],
-  "queryByTestId": [Function],
-  "queryByText": [Function],
-  "queryByTitle": [Function],
-  "rerender": [Function],
-  "unmount": [Function],
-}
+  </div>
+</div>
 `;
 
 exports[`Modal Component Modal renders shakes when press escape when it is not allowed 3`] = `
-Object {
-  "asFragment": [Function],
-  "baseElement": <body
-    style="overflow-y: hidden; overflow-x: hidden;"
-  >
-    <div>
-      <div>
-        <div
-          class="gds-modal-overlay"
-        >
-          <div
-            class="modal-content size-sm"
-          >
-            <div
-              id="CHILD1"
-            />
-          </div>
-        </div>
-      </div>
-    </div>
+<div>
+  <div>
     <div
-      id="root-portal-id"
+      class="gds-modal-overlay"
     >
-      <div />
-    </div>
-  </body>,
-  "container": <div>
-    <div>
       <div
-        class="gds-modal-overlay"
+        class="modal-content size-sm"
       >
         <div
-          class="modal-content size-sm"
-        >
-          <div
-            id="CHILD1"
-          />
-        </div>
+          id="CHILD1"
+        />
       </div>
     </div>
-  </div>,
-  "debug": [Function],
-  "findAllByAltText": [Function],
-  "findAllByDisplayValue": [Function],
-  "findAllByLabelText": [Function],
-  "findAllByPlaceholderText": [Function],
-  "findAllByRole": [Function],
-  "findAllByTestId": [Function],
-  "findAllByText": [Function],
-  "findAllByTitle": [Function],
-  "findByAltText": [Function],
-  "findByDisplayValue": [Function],
-  "findByLabelText": [Function],
-  "findByPlaceholderText": [Function],
-  "findByRole": [Function],
-  "findByTestId": [Function],
-  "findByText": [Function],
-  "findByTitle": [Function],
-  "getAllByAltText": [Function],
-  "getAllByDisplayValue": [Function],
-  "getAllByLabelText": [Function],
-  "getAllByPlaceholderText": [Function],
-  "getAllByRole": [Function],
-  "getAllByTestId": [Function],
-  "getAllByText": [Function],
-  "getAllByTitle": [Function],
-  "getByAltText": [Function],
-  "getByDisplayValue": [Function],
-  "getByLabelText": [Function],
-  "getByPlaceholderText": [Function],
-  "getByRole": [Function],
-  "getByTestId": [Function],
-  "getByText": [Function],
-  "getByTitle": [Function],
-  "queryAllByAltText": [Function],
-  "queryAllByDisplayValue": [Function],
-  "queryAllByLabelText": [Function],
-  "queryAllByPlaceholderText": [Function],
-  "queryAllByRole": [Function],
-  "queryAllByTestId": [Function],
-  "queryAllByText": [Function],
-  "queryAllByTitle": [Function],
-  "queryByAltText": [Function],
-  "queryByDisplayValue": [Function],
-  "queryByLabelText": [Function],
-  "queryByPlaceholderText": [Function],
-  "queryByRole": [Function],
-  "queryByTestId": [Function],
-  "queryByText": [Function],
-  "queryByTitle": [Function],
-  "rerender": [Function],
-  "unmount": [Function],
-}
+  </div>
+</div>
 `;
 
 exports[`Modal Component Modal renders transition from open to close 1`] = `

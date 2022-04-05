@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { IToggleEntry } from '../../CheckBoxInput/types';
@@ -18,7 +18,7 @@ describe('SwitchInput Component', () => {
   it('SwitchInput renders with input', async () => {
     const onChangeMock = jest.fn();
 
-    const container = render(<SwitchInput onChange={onChangeMock} options={options} />);
+    const { container } = render(<SwitchInput onChange={onChangeMock} options={options} />);
     expect(container).toMatchSnapshot();
     expect(onChangeMock).toBeCalledTimes(0);
   });
@@ -26,9 +26,9 @@ describe('SwitchInput Component', () => {
   it('SwitchInput renders triggers onChange', async () => {
     const onChangeMock = jest.fn();
 
-    const container = render(<SwitchInput onChange={onChangeMock} options={options} />);
+    render(<SwitchInput onChange={onChangeMock} options={options} />);
 
-    const firstSwitch = container.getByTestId(options[0].value);
+    const firstSwitch = screen.getByTestId(options[0].value);
 
     userEvent.click(firstSwitch);
     expect(onChangeMock).toBeCalledTimes(1);
@@ -48,9 +48,9 @@ describe('SwitchInput Component', () => {
   it('SwitchInput renders does not trigger onChange when disabled', async () => {
     const onChangeMock = jest.fn();
 
-    const container = render(<SwitchInput onChange={onChangeMock} disabled options={options} />);
+    render(<SwitchInput onChange={onChangeMock} disabled options={options} />);
 
-    const firstSwitch = container.getByTestId(options[0].value);
+    const firstSwitch = screen.getByTestId(options[0].value);
 
     userEvent.click(firstSwitch);
     expect(onChangeMock).toBeCalledTimes(0);
@@ -62,9 +62,9 @@ describe('SwitchInput Component', () => {
   it('SwitchInput renders does not trigger onChange when readOnly', async () => {
     const onChangeMock = jest.fn();
 
-    const container = render(<SwitchInput onChange={onChangeMock} readOnly options={options} />);
+    render(<SwitchInput onChange={onChangeMock} readOnly options={options} />);
 
-    const firstSwitch = container.getByTestId(options[0].value);
+    const firstSwitch = screen.getByTestId(options[0].value);
 
     userEvent.click(firstSwitch);
     expect(onChangeMock).toBeCalledTimes(0);
@@ -76,7 +76,7 @@ describe('SwitchInput Component', () => {
   it('SwitchInput renders highlighted', async () => {
     const onChangeMock = jest.fn();
 
-    const container = render(<SwitchInput onChange={onChangeMock} readOnly highlighted options={options} />);
+    const { container } = render(<SwitchInput onChange={onChangeMock} readOnly highlighted options={options} />);
     expect(container).toMatchSnapshot();
     expect(onChangeMock).toBeCalledTimes(0);
   });
@@ -84,7 +84,7 @@ describe('SwitchInput Component', () => {
   it('SwitchInput renders with no options', async () => {
     const onChangeMock = jest.fn();
 
-    const container = render(<SwitchInput onChange={onChangeMock} readOnly highlighted options={[]} />);
+    const { container } = render(<SwitchInput onChange={onChangeMock} readOnly highlighted options={[]} />);
     expect(container).toMatchSnapshot();
     expect(onChangeMock).toBeCalledTimes(0);
   });

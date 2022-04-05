@@ -5,7 +5,7 @@ import Row from '../Row';
 
 describe('Row Component', () => {
   it('Row renders', async () => {
-    const container = render(
+    const { container } = render(
       <Row className='CLASSNAME' width='300px' style={{ height: '30%' }}>
         <div id='CHILD1' />
         <div id='CHILD2' />
