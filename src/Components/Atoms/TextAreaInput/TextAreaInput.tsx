@@ -65,6 +65,7 @@ const TextAreaInput = (props: ITextAreaInputProps): ReactElement => {
    */
   useEffect(() => {
     updateHeight();
+    runAfterUpdate(updateHeight);
   }, []);
 
   /**
