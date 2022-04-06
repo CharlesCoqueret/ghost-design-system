@@ -25,8 +25,9 @@ describe('MultiSelectInput Component', () => {
   it('MultiSelectInput renders with multiple input values', async () => {
     const { container } = render(
       <MultiSelectInput
-        name='SELECT'
+        dataTestId='DATA-TEST-ID'
         inputValue={['OPTION1', 'OPTION2']}
+        name='SELECT'
         numberOfItemLabel='{} item selected'
         numberOfItemsLabel='{} items selected'
         options={[
@@ -137,6 +138,41 @@ describe('MultiSelectInput Component', () => {
           { value: 'OPTION2', label: 'option 2' },
         ]}
         readOnly
+      />,
+    );
+    expect(container).toMatchSnapshot();
+  });
+
+  it('MultiSelectInput renders with valid value and clearable', async () => {
+    const { container } = render(
+      <MultiSelectInput
+        dataTestId='DATA-TEST-ID'
+        name='SELECT'
+        inputValue={['OPTION1']}
+        isClearable
+        numberOfItemLabel='{} item selected'
+        numberOfItemsLabel='{} items selected'
+        options={[
+          { value: 'OPTION1', label: 'option 1' },
+          { value: 'OPTION2', label: 'option 2' },
+        ]}
+      />,
+    );
+    expect(container).toMatchSnapshot();
+  });
+
+  it('MultiSelectInput renders with valid value and clearable without data-test-id', async () => {
+    const { container } = render(
+      <MultiSelectInput
+        name='SELECT'
+        inputValue={['OPTION1']}
+        isClearable
+        numberOfItemLabel='{} item selected'
+        numberOfItemsLabel='{} items selected'
+        options={[
+          { value: 'OPTION1', label: 'option 1' },
+          { value: 'OPTION2', label: 'option 2' },
+        ]}
       />,
     );
     expect(container).toMatchSnapshot();

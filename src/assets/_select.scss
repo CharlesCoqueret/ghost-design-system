@@ -25,11 +25,17 @@
     position: sticky;
     right: 0;
     white-space: nowrap;
-    min-width: 20px;
     margin: 0px 4px;
   }
   .dynamic-search-spinner {
     margin-right: 20px;
     color: $charcoal;
+  }
+  .dynamic-search-icon {
+    margin: 8px;
+    color: $silver;
+    &:hover {
+      color: $charcoal;
+    }
   }
 }

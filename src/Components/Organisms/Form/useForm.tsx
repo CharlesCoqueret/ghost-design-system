@@ -6,6 +6,7 @@ import { AnyObject } from 'yup/lib/types';
 import Form from './Form';
 import { IFieldAndLayoutProps, IFormSubmitReturnedType, IUseFormReturnedType } from './types';
 import { yupResolver, FieldError } from './yupResolver';
+import { useRunAfterUpdate } from '../../../hooks';
 
 export interface IUseFormProps<T extends AnyObject> {
   initialData: T;
@@ -21,6 +22,7 @@ const useForm = <T extends AnyObject>(props: IUseFormProps<T>): IUseFormReturned
   const [currentData, setCurrentData] = useState<T>(cloneDeep(initialData));
   const [isModified, setIsModified] = useState<boolean>(false);
   const [validationError, setValidationError] = useState<Record<keyof T, FieldError>>();
+  const runAfterUpdate = useRunAfterUpdate();
 
   const handleDataChange = (dataIndex: keyof T, newValue: T[keyof T]): void => {
     setCurrentData((prev) => {
@@ -46,6 +48,11 @@ const useForm = <T extends AnyObject>(props: IUseFormProps<T>): IUseFormReturned
     setIsModified(false);
   };
 
+  const scrollToError = () => {
+    const errors = document.getElementsByClassName('field-error-message');
+    errors.item(0)?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  };
+
   const submit = (): IFormSubmitReturnedType<T> => {
     let isValid = true;
     if (validationSchema) {
@@ -54,6 +61,10 @@ const useForm = <T extends AnyObject>(props: IUseFormProps<T>): IUseFormReturned
       // Logging validation errors in case the developer has checked it.
       if (!isValid) console.error(errors);
       setValidationError(errors);
+    }
+
+    if (!isValid) {
+      runAfterUpdate(scrollToError);
     }
 
     return { data: cloneDeep(currentData), valid: isValid };

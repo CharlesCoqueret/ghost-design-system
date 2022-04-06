@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextField Component TextField renders 1`] = `
+<div>
+  <div
+    class="gds-field-group"
+  >
+    <input
+      class="field gds-input-text-field field-input-size-2"
+      id="NAME"
+      name="NAME"
+      type="text"
+      value=""
+    />
+  </div>
+</div>
+`;
+
+exports[`TextField Component TextField renders handles changes 1`] = `
+<div>
+  <div
+    class="gds-field-group"
+  >
+    <input
+      class="field gds-input-text-field"
+      data-testid="DATA-TEST-ID"
+      id="NAME"
+      name="NAME"
+      type="text"
+      value=""
+    />
+  </div>
+</div>
+`;
+
+exports[`TextField Component TextField renders in readonly 1`] = `
+<div>
+  <div
+    class="gds-field-group"
+  >
+    <div
+      class="field input-text-field-read-only field-input-size-6"
+    >
+      <span
+        class="gds-typography"
+      >
+        INPUT-VALUE
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`TextField Component TextField renders in readonly highlighted 1`] = `
+<div>
+  <div
+    class="gds-field-group"
+  >
+    <div
+      class="field input-text-field-read-only field-highlighted"
+    >
+      <span
+        class="gds-typography"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`TextField Component TextField renders with error 1`] = `
+<div>
+  <div
+    class="gds-field-group"
+  >
+    <input
+      class="field gds-input-text-field input-error"
+      id="NAME"
+      name="NAME"
+      type="text"
+      value="INPUT-VALUE"
+    />
+    <div
+      class="field-message"
+    >
+      <div
+        class="field-error-message"
+      >
+        ERROR-MESSAGE
+      </div>
+    </div>
+  </div>
+</div>
+`;

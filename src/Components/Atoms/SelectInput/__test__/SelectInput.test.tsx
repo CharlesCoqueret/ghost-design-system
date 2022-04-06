@@ -24,6 +24,8 @@ describe('SelectInput Component', () => {
 
     const { container } = render(
       <SelectInput
+        inputValue={'OPTION1'}
+        isClearable
         name='SELECT'
         onChange={onChangeMock}
         options={[
@@ -36,17 +38,36 @@ describe('SelectInput Component', () => {
 
     const select = await screen.findByRole('combobox');
 
-    userEvent.type(select, 'option 2{enter}');
+    userEvent.type(select, '{backspace}option 2{enter}');
 
-    expect(onChangeMock).toBeCalledTimes(1);
+    expect(onChangeMock).toBeCalledTimes(2);
     expect(onChangeMock).toBeCalledWith('OPTION2');
   });
 
+  it('SelectInput handles change with data-testid', async () => {
+    const onChangeMock = jest.fn();
+
+    const { container } = render(
+      <SelectInput
+        dataTestId='DATA-TEST-ID'
+        inputValue='OPTION1'
+        isClearable
+        name='SELECT'
+        onChange={onChangeMock}
+        options={[
+          { value: 'OPTION1', label: 'option 1' },
+          { value: 'OPTION2', label: 'option 2' },
+        ]}
+      />,
+    );
+    expect(container).toMatchSnapshot();
+  });
   it('SelectInput handles change with empty value when clearable', async () => {
     const onChangeMock = jest.fn();
 
     const { container } = render(
       <SelectInput
+        dataTestId='DATA-TEST-ID'
         isClearable
         name='SELECT'
         onChange={onChangeMock}

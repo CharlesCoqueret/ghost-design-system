@@ -99,11 +99,5 @@ export const customStyles = (props: ICustomStylesProps = {}): StylesConfig<IOpti
     container: (provided) => {
       return { ...provided, maxWidth: '100%', width: '100%' };
     },
-    clearIndicator: (provided) => {
-      return { ...provided, padding: '6px' };
-    },
-    dropdownIndicator: (provided) => {
-      return { ...provided, padding: '5px', height: 'unset' };
-    },
   };
 };

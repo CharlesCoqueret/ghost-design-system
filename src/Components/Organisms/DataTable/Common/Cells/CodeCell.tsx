@@ -16,6 +16,7 @@ const CodeCell = <T,>(props: ICellProps<T, IColumnCode<T>>): ReactElement => {
       style={{ display: column.hidden ? 'none' : undefined }}>
       <TextField
         dataTestId={dataTestId}
+        ellipsis={column.ellipsis}
         inputClassName={classnames('gds-typography', { ellipsis: column.ellipsis })}
         inputValue={displayValue}
         name={String(column.dataIndex)}
