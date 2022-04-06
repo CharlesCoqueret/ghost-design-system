@@ -35,6 +35,7 @@ describe('DatePickerField Component', () => {
         name='name'
         inline
         fieldSize={6}
+        errorMessage='ERROR'
       />,
     );
     expect(container).toMatchSnapshot();
