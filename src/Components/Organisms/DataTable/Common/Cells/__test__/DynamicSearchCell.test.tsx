@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, act, RenderResult } from '@testing-library/react';
+import { act, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import DynamicSearchCell from '../DynamicSearchCell';
@@ -11,7 +11,7 @@ describe('DynamicSearchCell component', () => {
     const searchOptionsMock = jest.fn();
     const noOptionsMessageMock = jest.fn();
 
-    const container = render(
+    const { container } = render(
       <table>
         <tbody>
           <tr>
@@ -43,7 +43,7 @@ describe('DynamicSearchCell component', () => {
     const searchOptionsMock = jest.fn();
     const noOptionsMessageMock = jest.fn();
 
-    let container: RenderResult | undefined;
+    let container: HTMLElement | undefined;
 
     await act(async () => {
       container = render(
@@ -66,12 +66,12 @@ describe('DynamicSearchCell component', () => {
             </tr>
           </tbody>
         </table>,
-      );
+      ).container;
 
-      expect(await container?.findByTestId('DATA-TEST-ID-spinner')).toBeTruthy();
+      expect(await screen.findByTestId('DATA-TEST-ID-spinner')).toBeTruthy();
     });
 
-    expect(container?.queryByTestId('DATA-TEST-ID-spinner')).toBeFalsy();
+    expect(screen.queryByTestId('DATA-TEST-ID-spinner')).toBeFalsy();
 
     expect(container).toMatchSnapshot();
     expect(resolveValueMock).toBeCalledTimes(1);
@@ -84,7 +84,7 @@ describe('DynamicSearchCell component', () => {
     const searchOptionsMock = jest.fn();
     const noOptionsMessageMock = jest.fn();
 
-    const container = render(
+    const { container } = render(
       <table>
         <tbody>
           <tr>
@@ -122,7 +122,7 @@ describe('DynamicSearchCell component', () => {
     });
     const noOptionsMessageMock = jest.fn();
 
-    let container: RenderResult | undefined;
+    let container: HTMLElement | undefined;
 
     await act(async () => {
       container = render(
@@ -148,17 +148,17 @@ describe('DynamicSearchCell component', () => {
             </tr>
           </tbody>
         </table>,
-      );
+      ).container;
 
-      expect(await container?.findByTestId('DATA-TEST-ID-spinner')).toBeTruthy();
+      expect(await screen.findByTestId('DATA-TEST-ID-spinner')).toBeTruthy();
     });
 
-    expect(container?.queryByTestId('DATA-TEST-ID-spinner')).toBeFalsy();
+    expect(screen.queryByTestId('DATA-TEST-ID-spinner')).toBeFalsy();
 
     expect(container).toMatchSnapshot();
 
     await act(async () => {
-      const select = await container?.findByRole('combobox');
+      const select = await screen.findByRole('combobox');
       expect(select).toBeDefined();
       if (select) {
         userEvent.type(select, '{backspace}');
@@ -175,7 +175,7 @@ describe('DynamicSearchCell component', () => {
     const searchOptionsMock = jest.fn();
     const noOptionsMessageMock = jest.fn();
 
-    const container = render(
+    const { container } = render(
       <table>
         <tbody>
           <tr>

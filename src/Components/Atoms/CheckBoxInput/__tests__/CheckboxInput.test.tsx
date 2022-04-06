@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { CheckboxInput, IToggleEntry } from '..';
@@ -17,7 +17,7 @@ describe('CheckboxInput Component', () => {
   it('CheckboxInput renders with input', async () => {
     const onChangeMock = jest.fn();
 
-    const container = render(<CheckboxInput onChange={onChangeMock} options={options} />);
+    const { container } = render(<CheckboxInput onChange={onChangeMock} options={options} />);
     expect(container).toMatchSnapshot();
     expect(onChangeMock).toBeCalledTimes(0);
   });
@@ -25,9 +25,9 @@ describe('CheckboxInput Component', () => {
   it('CheckboxInput renders triggers onChange', async () => {
     const onChangeMock = jest.fn();
 
-    const container = render(<CheckboxInput dataTestId='DATA-TEST-ID' onChange={onChangeMock} options={options} />);
+    render(<CheckboxInput dataTestId='DATA-TEST-ID' onChange={onChangeMock} options={options} />);
 
-    const firstCheckbox = container.getByTestId('DATA-TEST-ID-0');
+    const firstCheckbox = screen.getByTestId('DATA-TEST-ID-0');
 
     userEvent.click(firstCheckbox);
     expect(onChangeMock).toBeCalledTimes(1);
@@ -47,11 +47,9 @@ describe('CheckboxInput Component', () => {
   it('CheckboxInput renders does not trigger onChange when disabled', async () => {
     const onChangeMock = jest.fn();
 
-    const container = render(
-      <CheckboxInput dataTestId='DATA-TEST-ID' disabled onChange={onChangeMock} options={options} />,
-    );
+    render(<CheckboxInput dataTestId='DATA-TEST-ID' disabled onChange={onChangeMock} options={options} />);
 
-    const firstCheckbox = container.getByTestId('DATA-TEST-ID-0');
+    const firstCheckbox = screen.getByTestId('DATA-TEST-ID-0');
 
     userEvent.click(firstCheckbox);
     expect(onChangeMock).toBeCalledTimes(0);
@@ -63,11 +61,9 @@ describe('CheckboxInput Component', () => {
   it('CheckboxInput renders does not trigger onChange when readOnly', async () => {
     const onChangeMock = jest.fn();
 
-    const container = render(
-      <CheckboxInput dataTestId='DATA-TEST-ID' onChange={onChangeMock} options={options} readOnly />,
-    );
+    render(<CheckboxInput dataTestId='DATA-TEST-ID' onChange={onChangeMock} options={options} readOnly />);
 
-    const firstCheckbox = container.getByTestId('DATA-TEST-ID-0');
+    const firstCheckbox = screen.getByTestId('DATA-TEST-ID-0');
 
     userEvent.click(firstCheckbox);
     expect(onChangeMock).toBeCalledTimes(0);
@@ -79,7 +75,7 @@ describe('CheckboxInput Component', () => {
   it('CheckboxInput renders highlighted', async () => {
     const onChangeMock = jest.fn();
 
-    const container = render(<CheckboxInput onChange={onChangeMock} readOnly highlighted options={options} />);
+    const { container } = render(<CheckboxInput onChange={onChangeMock} readOnly highlighted options={options} />);
     expect(container).toMatchSnapshot();
     expect(onChangeMock).toBeCalledTimes(0);
   });
@@ -87,7 +83,7 @@ describe('CheckboxInput Component', () => {
   it('CheckboxInput renders with no options', async () => {
     const onChangeMock = jest.fn();
 
-    const container = render(<CheckboxInput onChange={onChangeMock} readOnly highlighted options={[]} />);
+    const { container } = render(<CheckboxInput onChange={onChangeMock} readOnly highlighted options={[]} />);
     expect(container).toMatchSnapshot();
     expect(onChangeMock).toBeCalledTimes(0);
   });

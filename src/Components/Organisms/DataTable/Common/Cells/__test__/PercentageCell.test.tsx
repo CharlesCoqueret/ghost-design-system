@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import PercentageCell from '../PercentageCell';
@@ -7,7 +7,7 @@ import { ColumnType } from '../../types';
 
 describe('PercentageCell component', () => {
   it('PercentageCell renders', async () => {
-    const container = render(
+    const { container } = render(
       <table>
         <tbody>
           <tr>
@@ -24,7 +24,7 @@ describe('PercentageCell component', () => {
   });
 
   it('PercentageCell renders row editing with no row input', async () => {
-    const container = render(
+    const { container } = render(
       <table>
         <tbody>
           <tr>
@@ -41,7 +41,7 @@ describe('PercentageCell component', () => {
   });
 
   it('PercentageCell renders cell editing with no row input', async () => {
-    const container = render(
+    const { container } = render(
       <table>
         <tbody>
           <tr>
@@ -63,7 +63,7 @@ describe('PercentageCell component', () => {
   });
 
   it('PercentageCell renders hidden', async () => {
-    const container = render(
+    const { container } = render(
       <table>
         <tbody>
           <tr>
@@ -80,7 +80,7 @@ describe('PercentageCell component', () => {
   });
 
   it('PercentageCell renders with forced value', async () => {
-    const container = render(
+    const { container } = render(
       <table>
         <tbody>
           <tr>
@@ -100,7 +100,7 @@ describe('PercentageCell component', () => {
   it('PercentageCell handles changes', async () => {
     const onChangeMock = jest.fn();
 
-    const container = render(
+    const { container } = render(
       <table>
         <tbody>
           <tr>
@@ -117,7 +117,7 @@ describe('PercentageCell component', () => {
     );
     expect(container).toMatchSnapshot();
 
-    const PERCENTAGE = await container.findByDisplayValue('12.34 %');
+    const PERCENTAGE = await screen.findByDisplayValue('12.34 %');
 
     userEvent.clear(PERCENTAGE);
 

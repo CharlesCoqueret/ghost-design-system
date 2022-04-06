@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, act } from '@testing-library/react';
+import { act, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import CheckboxCell from '../CheckboxCell';
@@ -7,7 +7,7 @@ import { ColumnType } from '../../types';
 
 describe('CheckboxCell component', () => {
   it('CheckboxCell renders', async () => {
-    const container = render(
+    const { container } = render(
       <table>
         <tbody>
           <tr>
@@ -47,7 +47,7 @@ describe('CheckboxCell component', () => {
   });
 
   it('CheckboxCell renders with forced value', async () => {
-    const container = render(
+    const { container } = render(
       <table>
         <tbody>
           <tr>
@@ -94,7 +94,7 @@ describe('CheckboxCell component', () => {
   });
 
   it('CheckboxCell renders when hidden', async () => {
-    const container = render(
+    const { container } = render(
       <table>
         <tbody>
           <tr>
@@ -137,7 +137,7 @@ describe('CheckboxCell component', () => {
   it('CheckboxCell renders in edit mode and handles change', async () => {
     const onChangeMock = jest.fn();
 
-    const container = render(
+    const { container } = render(
       <table>
         <tbody>
           <tr>
@@ -178,7 +178,7 @@ describe('CheckboxCell component', () => {
 
     expect(container).toMatchSnapshot();
 
-    const checkbox = await container.findByTestId('DATA-TEST-ID-2');
+    const checkbox = await screen.findByTestId('DATA-TEST-ID-2');
 
     act(() => {
       userEvent.click(checkbox);
@@ -206,7 +206,7 @@ describe('CheckboxCell component', () => {
   });
 
   it('CheckboxCell renders in edit mode via extra', async () => {
-    const container = render(
+    const { container } = render(
       <table>
         <tbody>
           <tr>

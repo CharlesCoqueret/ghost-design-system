@@ -23,6 +23,9 @@ export interface ILineEditableModalProps<T> {
 const columnToFieldMapper = <T,>(columns: Array<IColumnType<T>>): Array<IFieldAndLayoutProps<T>> => {
   return compact(
     columns.map((column) => {
+      // Manage the case of hidden field in form
+      if (column.hiddenInForm) return undefined;
+
       switch (column.type) {
         case ColumnType.AMOUNT: {
           return {

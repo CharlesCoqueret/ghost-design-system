@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import TextAreaCell from '../TextAreaCell';
@@ -7,7 +7,7 @@ import { ColumnType } from '../../types';
 
 describe('TextAreaCell component', () => {
   it('TextAreaCell renders', async () => {
-    const container = render(
+    const { container } = render(
       <table>
         <tbody>
           <tr>
@@ -28,7 +28,7 @@ describe('TextAreaCell component', () => {
   });
 
   it('TextAreaCell renders row editing with no row input', async () => {
-    const container = render(
+    const { container } = render(
       <table>
         <tbody>
           <tr>
@@ -49,7 +49,7 @@ describe('TextAreaCell component', () => {
   });
 
   it('TextAreaCell renders cell editing with no row input', async () => {
-    const container = render(
+    const { container } = render(
       <table>
         <tbody>
           <tr>
@@ -70,7 +70,7 @@ describe('TextAreaCell component', () => {
   });
 
   it('TextAreaCell renders hidden', async () => {
-    const container = render(
+    const { container } = render(
       <table>
         <tbody>
           <tr>
@@ -92,7 +92,7 @@ describe('TextAreaCell component', () => {
   });
 
   it('TextAreaCell renders with forced value', async () => {
-    const container = render(
+    const { container } = render(
       <table>
         <tbody>
           <tr>
@@ -116,7 +116,7 @@ describe('TextAreaCell component', () => {
   it('TextAreaCell handles changes', async () => {
     const onChangeMock = jest.fn();
 
-    const container = render(
+    const { container } = render(
       <table>
         <tbody>
           <tr>
@@ -138,7 +138,7 @@ describe('TextAreaCell component', () => {
     );
     expect(container).toMatchSnapshot();
 
-    const TEXTAREA = await container.findByTestId('DATA-TEST-ID');
+    const TEXTAREA = await screen.findByTestId('DATA-TEST-ID');
     userEvent.type(TEXTAREA, '{backspace}');
 
     expect(container).toMatchSnapshot();

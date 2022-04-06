@@ -5,7 +5,7 @@ import SideBar from '../SideBar';
 
 describe('SideBar Component', () => {
   it('SideBar renders', async () => {
-    const container = render(
+    const { container } = render(
       <SideBar
         backToMenu={'Back to menu'}
         style={{ height: '600px' }}
@@ -42,7 +42,7 @@ describe('SideBar Component', () => {
   });
 
   it('SideBar renders without sections', async () => {
-    const container = render(<SideBar backToMenu={'Back to menu'} style={{ height: '600px' }} />);
+    const { container } = render(<SideBar backToMenu={'Back to menu'} style={{ height: '600px' }} />);
 
     expect(container).toMatchSnapshot();
   });

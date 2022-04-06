@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import TextCell from '../TextCell';
@@ -7,7 +7,7 @@ import { ColumnType } from '../../types';
 
 describe('TextCell component', () => {
   it('TextCell renders', async () => {
-    const container = render(
+    const { container } = render(
       <table>
         <tbody>
           <tr>
@@ -28,7 +28,7 @@ describe('TextCell component', () => {
   });
 
   it('TextCell renders row editing with no row input', async () => {
-    const container = render(
+    const { container } = render(
       <table>
         <tbody>
           <tr>
@@ -49,7 +49,7 @@ describe('TextCell component', () => {
   });
 
   it('TextCell renders cell editing with no row input', async () => {
-    const container = render(
+    const { container } = render(
       <table>
         <tbody>
           <tr>
@@ -70,7 +70,7 @@ describe('TextCell component', () => {
   });
 
   it('TextCell renders hidden', async () => {
-    const container = render(
+    const { container } = render(
       <table>
         <tbody>
           <tr>
@@ -92,7 +92,7 @@ describe('TextCell component', () => {
   });
 
   it('TextCell renders with forced value', async () => {
-    const container = render(
+    const { container } = render(
       <table>
         <tbody>
           <tr>
@@ -116,7 +116,7 @@ describe('TextCell component', () => {
   it('TextCell handles changes', async () => {
     const onChangeMock = jest.fn();
 
-    const container = render(
+    const { container } = render(
       <table>
         <tbody>
           <tr>
@@ -138,7 +138,7 @@ describe('TextCell component', () => {
     );
     expect(container).toMatchSnapshot();
 
-    const TEXT = await container.findByTestId('DATA-TEST-ID');
+    const TEXT = await screen.findByTestId('DATA-TEST-ID');
     userEvent.type(TEXT, '{backspace}');
 
     expect(container).toMatchSnapshot();

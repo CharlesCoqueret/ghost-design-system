@@ -1,0 +1,159 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CheckboxField Component CheckboxField renders and handles changes 1`] = `
+<div>
+  <div
+    class="gds-field-group"
+  >
+    <div
+      class="field gds-checkbox-container field input-checkbox-field"
+    >
+      <label
+        class=""
+        data-testid="DATA-TEST-ID-0"
+      >
+        <div
+          class="checkbox-marker"
+        >
+          <i
+            class="icon"
+            icon="fal,square"
+          />
+        </div>
+        Label 1
+      </label>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`CheckboxField Component CheckboxField renders and handles changes 2`] = `
+<div>
+  <div
+    class="gds-field-group"
+  >
+    <div
+      class="field gds-checkbox-container field input-checkbox-field"
+    >
+      <label
+        class=""
+        data-testid="DATA-TEST-ID-0"
+      >
+        <div
+          class="checkbox-marker"
+        >
+          <i
+            class="icon"
+            icon="fal,square"
+          />
+        </div>
+        Label 1
+      </label>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`CheckboxField Component CheckboxField renders with values in disabled highligted 1`] = `
+<div>
+  <div
+    class="gds-field-group"
+  >
+    <div
+      class="field gds-checkbox-container field input-checkbox-field"
+    >
+      <label
+        class="input-checkbox-field-disabled field-highlighted"
+      >
+        <div
+          class="checkbox-marker"
+        >
+          <i
+            class="icon"
+            icon="fas,square"
+          />
+        </div>
+        Label 1
+      </label>
+      <label
+        class="input-checkbox-field-disabled"
+      >
+        <div
+          class="checkbox-marker"
+        >
+          <i
+            class="icon"
+            icon="fas,square"
+          />
+        </div>
+        Label 2
+      </label>
+      <label
+        class="input-checkbox-field-disabled"
+      >
+        <div
+          class="checkbox-marker"
+        >
+          <i
+            class="icon"
+            icon="fas,square"
+          />
+        </div>
+        Label 3
+      </label>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`CheckboxField Component CheckboxField renders with values in readonly 1`] = `
+<div>
+  <div
+    class="gds-field-group"
+  >
+    <div
+      class="field gds-checkbox-container field input-checkbox-field"
+    >
+      <label
+        class="input-checkbox-field-read-only"
+      >
+        <div
+          class="checkbox-marker"
+        >
+          <i
+            class="icon"
+            icon="fas,square"
+          />
+        </div>
+        Label 1
+      </label>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`CheckboxField Component CheckboxField renders with values with fieldSize and inline 1`] = `
+<div>
+  <div
+    class="gds-field-group field-inline"
+  >
+    <div
+      class="field gds-checkbox-container field input-checkbox-field field-input-size-6"
+    >
+      <label
+        class="input-checkbox-field-error"
+      >
+        <div
+          class="checkbox-marker"
+        >
+          <i
+            class="icon"
+            icon="fal,square"
+          />
+        </div>
+        Label 1
+      </label>
+    </div>
+  </div>
+</div>
+`;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import ButtonCell from '../ButtonCell';
@@ -9,7 +9,7 @@ describe('ButtonCell component', () => {
   it('ButtonCell renders and handles click', async () => {
     const button1ClickMock = jest.fn();
 
-    const container = render(
+    const { container } = render(
       <table>
         <tbody>
           <tr>
@@ -37,7 +37,7 @@ describe('ButtonCell component', () => {
 
     expect(container).toMatchSnapshot();
 
-    const button = await container.findByTestId('BUTTON1');
+    const button = await screen.findByTestId('BUTTON1');
     userEvent.click(button);
 
     expect(button1ClickMock).toBeCalledTimes(1);
@@ -46,7 +46,7 @@ describe('ButtonCell component', () => {
 
   it('ButtonCell renders with more than 3 buttons and handle click with conditionnally hidden entries', async () => {
     const button1ClickMock = jest.fn();
-    const container = render(
+    const { container } = render(
       <table>
         <tbody>
           <tr>
@@ -87,12 +87,12 @@ describe('ButtonCell component', () => {
 
     expect(container).toMatchSnapshot();
 
-    const buttonMore = await container.findByTestId('MORE');
+    const buttonMore = await screen.findByTestId('MORE');
     userEvent.click(buttonMore);
 
     expect(container).toMatchSnapshot();
 
-    const button1 = await container.findByTestId('BUTTON1');
+    const button1 = await screen.findByTestId('BUTTON1');
     userEvent.click(button1);
 
     expect(button1ClickMock).toBeCalledTimes(1);
@@ -100,7 +100,7 @@ describe('ButtonCell component', () => {
   });
 
   it('ButtonCell renders hidden', async () => {
-    const container = render(
+    const { container } = render(
       <table>
         <tbody>
           <tr>
@@ -128,7 +128,7 @@ describe('ButtonCell component', () => {
   });
 
   it('ButtonCell renders hidden conditionnally', async () => {
-    const container = render(
+    const { container } = render(
       <table>
         <tbody>
           <tr>
@@ -158,7 +158,7 @@ describe('ButtonCell component', () => {
   it('ButtonCell runs an error when row is empty', async () => {
     console.error = jest.fn();
 
-    const container = render(
+    const { container } = render(
       <table>
         <tbody>
           <tr>

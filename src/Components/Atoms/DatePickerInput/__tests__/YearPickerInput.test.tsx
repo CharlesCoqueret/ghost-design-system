@@ -8,7 +8,7 @@ describe('YearPickerInput Component', () => {
   it('YearPickerInput renders handles changes', async () => {
     const onChangeMock = jest.fn();
 
-    const container = render(
+    const { container } = render(
       <YearPickerInput onChange={onChangeMock} inputValue={1984} name='NAME' placeholder='TESTPLACEHOLDER' />,
     );
 
@@ -30,7 +30,7 @@ describe('YearPickerInput Component', () => {
   });
 
   it('YearPickerInput renders and changes without onChange prop', async () => {
-    const container = render(<YearPickerInput name='NAME' placeholder='TESTPLACEHOLDER' />);
+    const { container } = render(<YearPickerInput name='NAME' placeholder='TESTPLACEHOLDER' />);
 
     const inputNode = await screen.findByPlaceholderText('TESTPLACEHOLDER');
 
@@ -47,7 +47,7 @@ describe('YearPickerInput Component', () => {
   it('YearPickerInput renders and changes with empty value', async () => {
     const onChangeMock = jest.fn();
 
-    const container = render(
+    const { container } = render(
       <YearPickerInput name='NAME' onChange={onChangeMock} inputValue={2022} placeholder='TESTPLACEHOLDER' />,
     );
 
@@ -65,12 +65,14 @@ describe('YearPickerInput Component', () => {
   });
 
   it('YearPickerInput renders in readOnly, highlighted without portal', async () => {
-    const container = render(<YearPickerInput name='NAME' readOnly highlighted usePortal={false} inputValue={2022} />);
+    const { container } = render(
+      <YearPickerInput name='NAME' readOnly highlighted usePortal={false} inputValue={2022} />,
+    );
     expect(container).toMatchSnapshot();
   });
 
   it('YearPickerInput renders in Error', async () => {
-    const container = render(<YearPickerInput name='NAME' isInError inputValue={2022} />);
+    const { container } = render(<YearPickerInput name='NAME' isInError inputValue={2022} />);
     expect(container).toMatchSnapshot();
   });
 });

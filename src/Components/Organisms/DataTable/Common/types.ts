@@ -62,6 +62,8 @@ interface IColumn {
   dataTestId?: string;
   /** Enables ellipsis on the colum when it overflows (optional, default: undefined) */
   ellipsis?: boolean;
+  /** Make the field when in edition (for lineeditabledatatable (optional, default: false) */
+  hiddenInForm?: boolean;
   /** Makes the column invisible (optional, default: false) */
   hidden?: boolean;
   /** Enables sort on the colum (optional, default: undefined) */
@@ -324,7 +326,7 @@ export interface IExtraLineEditableDataTableProps<T> extends IExtraStaticDataTab
     deletePopoverCancel?: string;
     downloadButton?: string;
     editButton?: string;
-    modalTitle?: string;
+    modalTitle?: ((row: T, rowIndex: number) => string) | string;
     moreActionsMessage?: string;
     noData?: string;
     sortMessage?: string;

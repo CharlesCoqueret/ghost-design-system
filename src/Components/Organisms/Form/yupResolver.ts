@@ -23,13 +23,20 @@ export const yupResolver = <T extends AnyObject>(
 ): Record<keyof T, FieldError> | undefined => {
   try {
     schema.validateSync(values, schemaOptions);
-
-    return undefined;
   } catch (error) {
+    // IF error if of yup.ValidationError type
     if (error instanceof yup.ValidationError) {
       return parseErrorSchema(error) as Record<keyof T, FieldError>;
-    } else {
-      throw error;
+    }
+    // Else, we will try to resolve it and logging it.
+    else {
+      console.error('Error with incorrect type:', error, 'Trying to resolve it.');
+      try {
+        return parseErrorSchema(error as yup.ValidationError) as Record<keyof T, FieldError>;
+      } catch {
+        console.error('Error with incorrect that could not be resolved');
+      }
     }
   }
+  return undefined;
 };

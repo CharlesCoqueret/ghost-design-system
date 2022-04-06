@@ -33,7 +33,7 @@ describe('RichTextInput Component', () => {
     const RichTextInput = require('../RichTextInput').default;
     const onChangeMock = jest.fn();
 
-    const container = render(<RichTextInput name='SELECT' onChange={onChangeMock} />);
+    const { container } = render(<RichTextInput name='SELECT' onChange={onChangeMock} />);
 
     expect(container).toMatchSnapshot();
   });
@@ -48,7 +48,7 @@ describe('RichTextInput Component', () => {
     const RichTextInput = require('../RichTextInput').default;
     const onChangeMock = jest.fn();
 
-    const container = render(<RichTextInput enableImage name='SELECT' onChange={onChangeMock} />);
+    const { container } = render(<RichTextInput enableImage name='SELECT' onChange={onChangeMock} />);
 
     expect(container).toMatchSnapshot();
   });
@@ -63,7 +63,7 @@ describe('RichTextInput Component', () => {
     const RichTextInput = require('../RichTextInput').default;
     const onChangeMock = jest.fn();
 
-    const container = render(
+    const { container } = render(
       <RichTextInput enableImage enableLink maxLength={100} name='SELECT' onChange={onChangeMock} />,
     );
 
@@ -80,7 +80,7 @@ describe('RichTextInput Component', () => {
     const RichTextInput = require('../RichTextInput').default;
     const onChangeMock = jest.fn();
 
-    const container = render(<RichTextInput readOnly enableLink name='SELECT' onChange={onChangeMock} />);
+    const { container } = render(<RichTextInput readOnly enableLink name='SELECT' onChange={onChangeMock} />);
 
     expect(container).toMatchSnapshot();
   });
@@ -95,7 +95,7 @@ describe('RichTextInput Component', () => {
     const RichTextInput = require('../RichTextInput').default;
     const onChangeMock = jest.fn();
 
-    const container = render(<RichTextInput readOnly inputValue='TEST' name='SELECT' onChange={onChangeMock} />);
+    const { container } = render(<RichTextInput readOnly inputValue='TEST' name='SELECT' onChange={onChangeMock} />);
 
     expect(container).toMatchSnapshot();
   });
@@ -112,7 +112,7 @@ describe('RichTextInput Component', () => {
     const RichTextInput = require('../RichTextInput').default;
     const onChangeMock = jest.fn();
 
-    const container = render(<RichTextInput name='SELECT' onChange={onChangeMock} />);
+    const { container } = render(<RichTextInput name='SELECT' onChange={onChangeMock} />);
 
     expect(onBlurCallback).not.toBeUndefined();
 

@@ -91,6 +91,7 @@ const columns: IColumnType<IDemoType>[] = [
     dataIndex: 'id',
     sorter: true,
     type: ColumnType.CODE,
+    hiddenInForm: true,
   },
   {
     title: 'Text',

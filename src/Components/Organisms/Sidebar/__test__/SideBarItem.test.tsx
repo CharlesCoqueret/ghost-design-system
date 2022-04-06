@@ -7,7 +7,7 @@ import SideBar from '../SideBar';
 
 describe('SideBarItem Component', () => {
   it('SideBarItem renders', async () => {
-    const container = render(
+    const { container } = render(
       <SideBar backToMenu={'Back to menu'} style={{ height: '600px' }}>
         <SideBarItem
           item={{
@@ -43,7 +43,7 @@ describe('SideBarItem Component', () => {
   });
 
   it('SideBarItem renders with only one subitem visible', async () => {
-    const container = render(
+    const { container } = render(
       <SideBar backToMenu={'Back to menu'} style={{ height: '600px' }}>
         <SideBarItem
           item={{
@@ -71,7 +71,7 @@ describe('SideBarItem Component', () => {
   it('SideBarItem handles click on entry in main menu and handles click on submenu', async () => {
     console.info = jest.fn();
 
-    const container = render(
+    const { container } = render(
       <SideBar backToMenu={'Back to menu'} style={{ height: '600px' }}>
         <SideBarItem
           item={{
@@ -109,7 +109,7 @@ describe('SideBarItem Component', () => {
   });
 
   it('SideBarItem renders with url as Location', async () => {
-    const container = render(
+    const { container } = render(
       <SideBar backToMenu={'Back to menu'} style={{ height: '600px' }}>
         <SideBarItem
           item={{
@@ -142,7 +142,7 @@ describe('SideBarItem Component', () => {
   it('SideBarItem should generate an error when not in a SideBar component', async () => {
     console.error = jest.fn();
 
-    const { unmount } = render(
+    const { unmount, container } = render(
       <SideBarItem
         item={{
           label: 'LABEL',
@@ -162,8 +162,12 @@ describe('SideBarItem Component', () => {
       />,
     );
 
+    expect(container).toMatchSnapshot();
+
     unmount();
 
     expect(console.error).toBeCalledWith('Sidebar component should wrap that component');
+
+    expect(container).toMatchSnapshot();
   });
 });

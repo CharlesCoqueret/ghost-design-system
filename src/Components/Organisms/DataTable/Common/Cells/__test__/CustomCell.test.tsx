@@ -13,7 +13,7 @@ describe('CustomCell component', () => {
       return 'customRenderEdit';
     });
 
-    const container = render(
+    const { container } = render(
       <table>
         <tbody>
           <tr>
@@ -47,7 +47,7 @@ describe('CustomCell component', () => {
       return 'customRenderEdit';
     });
 
-    const container = render(
+    const { container } = render(
       <table>
         <tbody>
           <tr>
@@ -81,7 +81,7 @@ describe('CustomCell component', () => {
       return 'customRenderEdit';
     });
 
-    const container = render(
+    const { container } = render(
       <table>
         <tbody>
           <tr>
@@ -124,7 +124,7 @@ describe('CustomCell component', () => {
         },
       );
 
-    const container = render(
+    const { container } = render(
       <table>
         <tbody>
           <tr>
@@ -168,7 +168,7 @@ describe('CustomCell component', () => {
       return 'customRenderEdit';
     });
 
-    const container = render(
+    const { container } = render(
       <table>
         <tbody>
           <tr>
@@ -204,7 +204,7 @@ describe('CustomCell component', () => {
       return 'customRenderEdit';
     });
 
-    const container = render(
+    const { container } = render(
       <table>
         <tbody>
           <tr>

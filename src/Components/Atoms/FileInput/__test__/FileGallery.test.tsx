@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import FileGallery from '../FileGallery';
@@ -22,7 +22,7 @@ describe('FileGallery Component', () => {
       status: FileStatusEnum.DONE,
     };
 
-    const container = render(
+    const { container } = render(
       <FileGallery
         dataTestId='TEST-ID'
         file={file}
@@ -32,14 +32,14 @@ describe('FileGallery Component', () => {
     );
     expect(container).toMatchSnapshot();
 
-    const downloadButton = await container.findByTestId('TEST-ID-download');
+    const downloadButton = await screen.findByTestId('TEST-ID-download');
 
     userEvent.click(downloadButton);
 
     expect(updateFileDownloadMock).toBeCalledTimes(1);
     expect(updateFileDownloadMock).toBeCalledWith(file);
 
-    const deleteButton = await container.findByTestId('TEST-ID-delete');
+    const deleteButton = await screen.findByTestId('TEST-ID-delete');
 
     userEvent.click(deleteButton);
 
@@ -64,7 +64,7 @@ describe('FileGallery Component', () => {
       error: 'ERROR',
     };
 
-    const container = render(
+    const { container } = render(
       <FileGallery
         dataTestId='TEST-ID'
         file={file}
@@ -75,7 +75,7 @@ describe('FileGallery Component', () => {
     );
     expect(container).toMatchSnapshot();
 
-    const deleteButton = await container.findByTestId('TEST-ID-delete');
+    const deleteButton = await screen.findByTestId('TEST-ID-delete');
 
     userEvent.click(deleteButton);
 
@@ -95,7 +95,7 @@ describe('FileGallery Component', () => {
       status: FileStatusEnum.UPLOADING,
     };
 
-    const container = render(
+    const { container } = render(
       <FileGallery
         dataTestId='TEST-ID'
         file={file}
@@ -120,7 +120,7 @@ describe('FileGallery Component', () => {
       status: FileStatusEnum.UPLOADING,
     };
 
-    const container = render(
+    const { container } = render(
       <FileGallery
         dataTestId='TEST-ID'
         file={file}
@@ -146,7 +146,7 @@ describe('FileGallery Component', () => {
       status: FileStatusEnum.DELETING,
     };
 
-    const container = render(
+    const { container } = render(
       <FileGallery
         dataTestId='TEST-ID'
         file={file}
@@ -170,7 +170,7 @@ describe('FileGallery Component', () => {
       status: FileStatusEnum.DONE,
     };
 
-    const container = render(
+    const { container } = render(
       <FileGallery file={file} updateFileDelete={updateFileDeleteMock} updateFileDownload={updateFileDownloadMock} />,
     );
     expect(container).toMatchSnapshot();

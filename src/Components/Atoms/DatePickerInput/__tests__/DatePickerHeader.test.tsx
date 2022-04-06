@@ -17,7 +17,7 @@ describe('DatePickerHeader Component', () => {
     await importFnsLocaleFile('fr');
 
     const DatePickerHeaderComponent = DatePickerHeader('fr');
-    const container = render(
+    const { container } = render(
       <DatePickerHeaderComponent
         changeMonth={changeMonthMock}
         changeYear={changeYearMock}

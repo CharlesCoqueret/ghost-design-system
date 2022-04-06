@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, act } from '@testing-library/react';
+import { act, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import NavItem from '../NavItem';
@@ -8,7 +8,7 @@ describe('NavItem Component', () => {
   it('NavItem renders', async () => {
     const onClickMock = jest.fn();
 
-    const container = render(
+    const { container } = render(
       <NavItem
         counter={1}
         customSubItem={<div data-testid={'CUSTOM-SUB-ITEM'} />}
@@ -23,7 +23,7 @@ describe('NavItem Component', () => {
     expect(container).toMatchSnapshot();
     expect(onClickMock).not.toBeCalled();
 
-    const item = container.getByTestId('DATA-TEST-ID');
+    const item = screen.getByTestId('DATA-TEST-ID');
 
     act(() => {
       userEvent.click(item);
@@ -43,7 +43,7 @@ describe('NavItem Component', () => {
   it('NavItem renders with subitems', async () => {
     const onClickMock = jest.fn();
 
-    const container = render(
+    const { container } = render(
       <NavItem
         label='ITEM'
         dataTestId='DATA-TEST-ID'
@@ -62,7 +62,7 @@ describe('NavItem Component', () => {
     expect(container).toMatchSnapshot();
     expect(onClickMock).not.toBeCalled();
 
-    const item = container.getByTestId('DATA-TEST-ID');
+    const item = screen.getByTestId('DATA-TEST-ID');
 
     act(() => {
       userEvent.click(item);
@@ -71,7 +71,7 @@ describe('NavItem Component', () => {
     expect(container).toMatchSnapshot();
     expect(onClickMock).not.toBeCalled();
 
-    const subitem = container.getByTestId('SUBITEMDATA-TEST-ID');
+    const subitem = screen.getByTestId('SUBITEMDATA-TEST-ID');
 
     act(() => {
       userEvent.click(subitem);

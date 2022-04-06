@@ -105,7 +105,7 @@ const Button = (props: IButtonProps): ReactElement => {
           {label ? (
             <>
               <div key='label' className='button-label-container'>
-                {typeof label === 'string' ? `${label}` : label}
+                {label}
               </div>
               {hasMenu ? (
                 <div key='control' className='button-menu-control-container'>
@@ -131,10 +131,10 @@ const Button = (props: IButtonProps): ReactElement => {
             anchorRef={ref}
             skipOpen={skipOpen}
             onClose={() => setIsMenuOpen(false)}>
-            {itemList?.map((item, index): ReactElement => {
-              if (item.hidden) return <Fragment key={item.itemId || `menu-item-${index}`}></Fragment>;
+            {itemList.map((item): ReactElement => {
+              if (item.hidden) return <Fragment key={item.itemId}></Fragment>;
               return (
-                <Fragment key={item.itemId || `menu-item-${index}`}>
+                <Fragment key={item.itemId}>
                   {item.divider && <MenuDivider />}
                   <MenuItem
                     data-testid={item.dataTestId}
