@@ -55,7 +55,7 @@ const CheckboxInput = (props: ICheckboxInputProps): ReactElement => {
         fieldSize && `field-input-size-${fieldSize}`,
         className,
       )}>
-      {options?.map((option, index) => {
+      {options.map((option, index) => {
         return (
           <label
             key={option.value}

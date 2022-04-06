@@ -11,6 +11,8 @@ export interface ITooltipProps {
   className?: string;
   /** Delay for the tooltip in ms (optional, default: 0) */
   delay?: number;
+  /** Should the tooltip be enabled (optional, default: false) */
+  disabled?: boolean;
   /** Direction of the tooltip (optional, default: bottom) */
   direction?: MenuDirectionEnum;
   /** Extra margin for position computation (optional, default: 0) */
@@ -33,6 +35,7 @@ export interface ITooltipStates {
 class Tooltip extends React.PureComponent<ITooltipProps, ITooltipStates> {
   arrow: boolean;
   direction: MenuDirectionEnum;
+  disabled: boolean;
   extraMargin: number;
   maxWidth: number;
   tooltip: HTMLSpanElement | null;
@@ -43,6 +46,7 @@ class Tooltip extends React.PureComponent<ITooltipProps, ITooltipStates> {
 
     this.arrow = props.arrow === undefined ? true : props.arrow;
     this.direction = props.direction || MenuDirectionEnum.BOTTOM;
+    this.disabled = props.disabled || false;
     this.extraMargin = props.extraMargin === undefined ? 0 : props.extraMargin;
     this.maxWidth = props.maxWidth === undefined ? 256 : props.maxWidth;
     this.tooltip = null;
@@ -92,7 +96,7 @@ class Tooltip extends React.PureComponent<ITooltipProps, ITooltipStates> {
   }
 
   render(): ReactElement {
-    if (!this.props.tooltip) return <>{this.props.children}</>;
+    if (!this.props.tooltip || this.props.disabled) return <>{this.props.children}</>;
 
     return (
       <>

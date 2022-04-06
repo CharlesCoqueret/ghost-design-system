@@ -14,7 +14,11 @@ exports[`CodeCell component CodeCell renders 1`] = `
             <div
               class="field input-text-field-read-only gds-typography"
             >
-              DATA
+              <span
+                class="gds-typography"
+              >
+                DATA
+              </span>
             </div>
           </div>
         </td>
@@ -39,7 +43,11 @@ exports[`CodeCell component CodeCell renders when hidden 1`] = `
             <div
               class="field input-text-field-read-only gds-typography"
             >
-              DATA
+              <span
+                class="gds-typography"
+              >
+                DATA
+              </span>
             </div>
           </div>
         </td>
@@ -63,7 +71,11 @@ exports[`CodeCell component CodeCell renders with forced value 1`] = `
             <div
               class="field input-text-field-read-only gds-typography ellipsis"
             >
-              FORCEDVALUE
+              <span
+                class="gds-typography ellipsis"
+              >
+                FORCEDVALUE
+              </span>
             </div>
           </div>
         </td>

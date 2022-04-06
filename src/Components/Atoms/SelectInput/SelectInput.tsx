@@ -1,9 +1,11 @@
 import React, { ReactElement } from 'react';
-import { default as ReactSelect } from 'react-select';
+import { ClearIndicatorProps, default as ReactSelect, DropdownIndicatorProps } from 'react-select';
 import classnames from 'classnames';
 
 import { IOption } from './types';
 import { customStyles } from './selectStyles';
+import { Icon } from '../Icon';
+import { Typography } from '../Typography';
 
 export interface ISelectInputProps {
   /** Class for the input (optional, default: undefined) */
@@ -20,6 +22,8 @@ export interface ISelectInputProps {
   dataTestId?: string;
   /** Disabled field (optional, default: false) */
   disabled?: boolean;
+  /** Ellipsis in readonly (optional, default: false) */
+  ellipsis?: boolean;
   /** Size of the field in a 12 column grid (optional, default: undefined) */
   fieldSize?: number;
   /** Highlight value in readonly mode (optional, default: false) */
@@ -52,6 +56,7 @@ const SelectInput = (props: ISelectInputProps): ReactElement => {
     colors,
     dataTestId,
     disabled,
+    ellipsis,
     fieldSize,
     highlighted,
     inputValue,
@@ -80,7 +85,7 @@ const SelectInput = (props: ISelectInputProps): ReactElement => {
           className,
         )}
         data-testid={dataTestId}>
-        {displayValue}
+        <Typography.Text ellipsis={ellipsis}>{displayValue}</Typography.Text>
       </div>
     );
   }
@@ -97,6 +102,32 @@ const SelectInput = (props: ISelectInputProps): ReactElement => {
         className,
       )}>
       <ReactSelect<IOption, false>
+        components={{
+          DropdownIndicator: (props: DropdownIndicatorProps<IOption, false>) => {
+            const { innerProps } = props;
+            return (
+              <div {...innerProps}>
+                <Icon
+                  icon={['fal', 'chevron-down']}
+                  className='dynamic-search-icon'
+                  data-testid={dataTestId ? `${dataTestId}-magnifier` : undefined}
+                />
+              </div>
+            );
+          },
+          ClearIndicator: (props: ClearIndicatorProps<IOption, false>) => {
+            const { innerProps } = props;
+            return (
+              <div {...innerProps}>
+                <Icon
+                  icon={['fal', 'xmark']}
+                  className='dynamic-search-icon'
+                  data-testid={dataTestId ? `${dataTestId}-clear` : undefined}
+                />
+              </div>
+            );
+          },
+        }}
         data-testid={dataTestId}
         hideSelectedOptions={false}
         isClearable={isClearable}
@@ -130,6 +161,7 @@ SelectInput.defaultProps = {
     optionSelectedColor: 'rgb(38, 186, 212)',
   },
   disabled: false,
+  ellipsis: false,
   fieldSize: undefined,
   highlighted: false,
   inputValue: undefined,

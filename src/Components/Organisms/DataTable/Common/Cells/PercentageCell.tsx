@@ -19,6 +19,7 @@ const PercentageCell = <T,>(props: ICellProps<T, IColumnPercentage<T>>): ReactEl
         dataTestId={dataTestId}
         decimalScale={column.decimalScale}
         decimalSeparator={column.decimalSeparator}
+        ellipsis={column.ellipsis}
         inputClassName={classnames(
           { 'table--cell-value--negative': isNegative && !isCurrentlyEditedRow },
           { 'table--cell-value--percentage-readonly': !isCurrentlyEditedRow },

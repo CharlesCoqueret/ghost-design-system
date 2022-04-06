@@ -19,7 +19,16 @@ describe('AmountInput Component', () => {
     const onChangeMock = jest.fn();
 
     const { container } = render(
-      <AmountInput fieldSize={5} highlighted name='name' onChange={onChangeMock} prefix='A' readOnly suffix='B' />,
+      <AmountInput
+        fieldSize={5}
+        highlighted
+        name='name'
+        ellipsis
+        onChange={onChangeMock}
+        prefix='A'
+        readOnly
+        suffix='B'
+      />,
     );
     expect(onChangeMock).toBeCalledTimes(0);
 

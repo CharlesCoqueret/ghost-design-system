@@ -16,6 +16,7 @@ const TextCell = <T,>(props: ICellProps<T, IColumnText<T>>): ReactElement => {
     <td className={classnames({ ellipsis: column.ellipsis })} style={{ display: column.hidden ? 'none' : undefined }}>
       <TextField
         dataTestId={dataTestId}
+        ellipsis={column.ellipsis}
         inputClassName={classnames('gds-typography', { ellipsis: column.ellipsis })}
         inputValue={displayValue}
         maxLength={column.maxLength}

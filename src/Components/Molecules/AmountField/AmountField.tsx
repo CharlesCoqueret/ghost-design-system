@@ -17,6 +17,8 @@ export interface IAmountFieldProps {
   decimalSeparator?: string;
   /** Disabled field (optional, default: false) */
   disabled?: boolean;
+  /** Ellipsis in readonly (optional, default: false) */
+  ellipsis?: boolean;
   /** Error message (optional, default: undefined) */
   errorMessage?: string;
   /** Class for the field surrounding the input (optional, default: undefined) */
@@ -77,6 +79,7 @@ export const AmountField = (props: IAmountFieldProps): ReactElement => {
     decimalScale,
     decimalSeparator,
     disabled,
+    ellipsis,
     errorMessage,
     fieldClassName,
     fieldSize,
@@ -119,6 +122,7 @@ export const AmountField = (props: IAmountFieldProps): ReactElement => {
         decimalScale={decimalScale}
         decimalSeparator={decimalSeparator}
         disabled={disabled}
+        ellipsis={ellipsis}
         fieldSize={fieldSize}
         highlighted={highlighted}
         inputValue={inputValue}
@@ -143,6 +147,7 @@ AmountField.defaultProps = {
   decimalScale: 2,
   decimalSeparator: '.',
   disabled: false,
+  ellipsis: false,
   errorMessage: undefined,
   fieldClassName: undefined,
   fieldSize: undefined,

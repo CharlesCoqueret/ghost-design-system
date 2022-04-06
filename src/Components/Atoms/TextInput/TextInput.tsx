@@ -1,11 +1,14 @@
 import React, { ReactElement } from 'react';
 import classnames from 'classnames';
+import { Typography } from '../Typography';
 
 export interface ITextInputProps {
   /** For test purpose only */
   dataTestId?: string;
   /** Disabled field (optional, default: false) */
   disabled?: boolean;
+  /** Ellipsis in readonly (optional, default: false) */
+  ellipsis?: boolean;
   /** Size of the field in a 12 column grid (optional, default: undefined) */
   fieldSize?: number;
   /** Highlight value in readonly mode (optional, default: false) */
@@ -34,10 +37,11 @@ const TextInput = (props: ITextInputProps): ReactElement => {
   const {
     dataTestId,
     disabled,
-    isInError,
+    ellipsis,
     fieldSize,
     highlighted,
     inputClassName,
+    isInError,
     inputValue,
     maxLength,
     minLength,
@@ -60,7 +64,7 @@ const TextInput = (props: ITextInputProps): ReactElement => {
           inputClassName,
         )}
         data-testid={dataTestId}>
-        {inputValue}
+        <Typography.Text ellipsis={ellipsis}>{inputValue}</Typography.Text>
       </div>
     );
 
@@ -92,6 +96,7 @@ const TextInput = (props: ITextInputProps): ReactElement => {
 
 TextInput.defaultProps = {
   disabled: false,
+  ellipsis: false,
   fieldSize: undefined,
   highlighted: false,
   inputClassName: undefined,

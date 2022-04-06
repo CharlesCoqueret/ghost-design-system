@@ -10,8 +10,6 @@ describe('customStyles method', () => {
     expect(styles.option).toBeDefined();
     expect(styles.valueContainer).toBeDefined();
     expect(styles.container).toBeDefined();
-    expect(styles.clearIndicator).toBeDefined();
-    expect(styles.dropdownIndicator).toBeDefined();
   });
 
   it('customStyles option', async () => {

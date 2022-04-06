@@ -2,6 +2,7 @@ import React, { ReactElement } from 'react';
 import Numeral from 'numeral';
 import NumberFormat, { NumberFormatValues } from 'react-number-format';
 import classnames from 'classnames';
+import { Typography } from '../Typography';
 
 /**
  * Numeral Options:
@@ -32,6 +33,8 @@ export interface IAmountInputProps {
   decimalSeparator?: string;
   /** Disabled field (optional, default: false) */
   disabled?: boolean;
+  /** Ellipsis in readonly (optional, default: false) */
+  ellipsis?: boolean;
   /** Size of the field in a 12 column grid (optional, default: undefined) */
   fieldSize?: number;
   /** Highlighted field (optional, default: false) */
@@ -71,6 +74,7 @@ const AmountInput = (props: IAmountInputProps): ReactElement => {
     decimalScale,
     decimalSeparator,
     disabled,
+    ellipsis,
     fieldSize,
     highlighted,
     inputValue,
@@ -117,7 +121,9 @@ const AmountInput = (props: IAmountInputProps): ReactElement => {
             className,
           )}
           data-testid={dataTestId}>
-          {prefix ? `${prefix} ` : ''}-{suffix ? ` ${suffix}` : ''}
+          <Typography.Text ellipsis={ellipsis}>
+            {prefix ? `${prefix} ` : ''}-{suffix ? ` ${suffix}` : ''}
+          </Typography.Text>
         </div>
       );
     }
@@ -132,9 +138,13 @@ const AmountInput = (props: IAmountInputProps): ReactElement => {
             className,
           )}
           data-testid={dataTestId}>
-          {prefix ? ` ${prefix}` : undefined}
-          {Numeral(inputValue).format('0.' + '0'.repeat(decimalScale ?? AmountInput.defaultProps.decimalScale) + ' a')}
-          {suffix ? ` ${suffix}` : undefined}
+          <Typography.Text ellipsis={ellipsis}>
+            {prefix ? ` ${prefix}` : undefined}
+            {Numeral(inputValue).format(
+              '0.' + '0'.repeat(decimalScale ?? AmountInput.defaultProps.decimalScale) + ' a',
+            )}
+            {suffix ? ` ${suffix}` : undefined}
+          </Typography.Text>
         </div>
       );
     }
@@ -204,6 +214,7 @@ AmountInput.defaultProps = {
   allowNegative: true,
   decimalScale: 2,
   decimalSeparator: '.',
+  ellipsis: false,
   inputValue: '',
   fieldSize: undefined,
   placeholder: undefined,
