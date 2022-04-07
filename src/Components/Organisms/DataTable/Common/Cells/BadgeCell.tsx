@@ -43,6 +43,7 @@ const BadgeCell = <T,>(props: ICellProps<T, IColumnBadge<T>>): ReactElement => {
             }
           }}
           options={options}
+          usePortal={column.usePortal}
         />
       ) : (
         <Badge className='table--cell--value--badge-no-margin' color={column.color}>

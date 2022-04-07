@@ -135,6 +135,7 @@ const SelectInput = (props: ISelectInputProps): ReactElement => {
         isSearchable
         maxMenuHeight={maxMenuHeight}
         menuPlacement='auto'
+        menuShouldBlockScroll={true}
         name={name}
         onChange={(option) => {
           if (onChange) {

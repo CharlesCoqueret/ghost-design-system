@@ -204,6 +204,7 @@ const DynamicSearchInput = (props: IDynamicSearchInputProps): ReactElement => {
         maxMenuHeight={maxMenuHeight}
         menuPlacement='auto'
         menuPortalTarget={usePortal ? document.querySelector('body') : undefined}
+        menuShouldBlockScroll={true}
         noOptionsMessage={localNoOptionMessage}
         onChange={(option) => {
           if (onChange) {

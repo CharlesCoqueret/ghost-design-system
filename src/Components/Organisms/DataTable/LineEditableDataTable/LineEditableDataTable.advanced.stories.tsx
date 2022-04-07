@@ -34,6 +34,16 @@ const teams: Array<ITeam> = [
     name: 'Product',
     description: 'Making the possible impossible',
   },
+  {
+    teamId: 4,
+    name: 'Architect',
+    description: 'Making the impossible strong',
+  },
+  {
+    teamId: 5,
+    name: 'Designer',
+    description: 'Making the impossible look nice',
+  },
 ];
 
 enum LinkedObjectType {
@@ -134,6 +144,13 @@ const columns: Array<IColumnType<ITaskView>> = [
       ]),
   },
   {
+    dataIndex: 'comment',
+    editable: true,
+    title: 'Comment',
+    type: ColumnType.TEXTAREA,
+    hidden: true,
+  },
+  {
     dataIndex: 'team',
     editable: true,
     ellipsis: true,
@@ -144,13 +161,6 @@ const columns: Array<IColumnType<ITaskView>> = [
       label: team.name,
       value: team.teamId,
     })),
-  },
-  {
-    dataIndex: 'comment',
-    editable: true,
-    title: 'Comment',
-    type: ColumnType.TEXTAREA,
-    hidden: true,
   },
 ];
 
