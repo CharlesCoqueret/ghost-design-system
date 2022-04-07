@@ -109,7 +109,6 @@ const columns: IColumnType<IDemoType>[] = [
     sorter: true,
     type: ColumnType.AMOUNT,
     currency: '€',
-    editable: true,
   },
   {
     title: 'Percentage',

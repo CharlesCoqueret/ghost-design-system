@@ -121,6 +121,7 @@ export interface IColumnCode<T> extends IColumn {
 
 export interface IColumnCheckbox<T> extends IColumn {
   dataIndex: keyof T;
+  editable?: boolean;
   type: ColumnType.CHECKBOX;
 }
 
