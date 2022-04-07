@@ -83,6 +83,9 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handl
             id="react-select-6-listbox"
           >
             <div
+              class="css-bp8cua-ScrollManager"
+            />
+            <div
               class=" css-4ljt47-MenuList"
             >
               <div
@@ -287,6 +290,9 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handl
             class=" css-26l3qy-menu"
             id="react-select-11-listbox"
           >
+            <div
+              class="css-bp8cua-ScrollManager"
+            />
             <div
               class=" css-4ljt47-MenuList"
             >

@@ -228,6 +228,9 @@ exports[`DynamicSearchCell component DynamicSearchCell renders in edit mode and 
                       id="react-select-2-listbox"
                     >
                       <div
+                        class="css-bp8cua-ScrollManager"
+                      />
+                      <div
                         class=" css-4ljt47-MenuList"
                       >
                         <div

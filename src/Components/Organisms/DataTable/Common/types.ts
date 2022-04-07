@@ -106,6 +106,7 @@ export interface IColumnBadge<T> extends IColumn {
   };
   placeholder?: string;
   type: ColumnType.BADGE;
+  usePortal?: boolean;
 }
 
 export interface IColumnButton<T> extends IColumn {
@@ -146,6 +147,7 @@ export interface IColumnDate<T> extends IColumn {
   isClearable?: boolean;
   locale?: string;
   type: ColumnType.DATE;
+  usePortal?: boolean;
 }
 
 export interface IColumnDynamicSearch<T> extends IColumn {

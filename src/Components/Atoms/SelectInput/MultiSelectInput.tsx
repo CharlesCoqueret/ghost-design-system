@@ -201,6 +201,7 @@ const MultiSelectInput = (props: IMultiSelectInputProps): ReactElement => {
         maxMenuHeight={maxMenuHeight}
         menuPlacement='auto'
         menuPortalTarget={usePortal ? document.querySelector('body') : undefined}
+        menuShouldBlockScroll={true}
         onChange={(options) => {
           if (onChange) {
             onChange(options.map((option) => option.value));

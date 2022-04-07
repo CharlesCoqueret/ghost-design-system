@@ -54,6 +54,7 @@ const columnToFieldMapper = <T,>(columns: Array<IColumnType<T>>): Array<IFieldAn
             options: column.options,
             placeholder: column.placeholder,
             readOnly: !column.editable,
+            usePortal: column.usePortal,
           };
         }
         case ColumnType.BUTTON: {
@@ -79,6 +80,7 @@ const columnToFieldMapper = <T,>(columns: Array<IColumnType<T>>): Array<IFieldAn
             label: column.title,
             locale: column.locale,
             readOnly: !column.editable,
+            usePortal: column.usePortal,
           };
         }
         // TODO add description mapping
@@ -169,7 +171,6 @@ const LineEditableModal = <T,>(props: ILineEditableModalProps<T>): ReactElement 
     initialData: row,
     previousData: showChanges ? cloneDeep(row) : undefined,
     fields: columnToFieldMapper(columns),
-    usePortal: false,
     validationSchema: extra?.validationSchema,
   });
 
