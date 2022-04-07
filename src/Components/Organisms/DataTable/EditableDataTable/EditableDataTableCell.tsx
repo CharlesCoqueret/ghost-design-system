@@ -40,7 +40,7 @@ const EditableDataTableCell = <T,>(props: IEditableDataTableCellProps<T>): React
           onChange={(newValue) => {
             handleUpdateDataChange(rowIndex, column.dataIndex, newValue);
           }}
-          editing={editable}
+          editing={column.editable && editable}
         />
       );
     }
@@ -55,7 +55,7 @@ const EditableDataTableCell = <T,>(props: IEditableDataTableCellProps<T>): React
           onChange={(newValue) => {
             handleUpdateDataChange(rowIndex, column.dataIndex, newValue);
           }}
-          editing={editable}
+          editing={column.editable && editable}
         />
       );
     }
@@ -92,6 +92,7 @@ const EditableDataTableCell = <T,>(props: IEditableDataTableCellProps<T>): React
           onChange={(newValue) => {
             handleUpdateDataChange(rowIndex, column.dataIndex, newValue);
           }}
+          editing={column.editable && editable}
         />
       );
     }
@@ -106,7 +107,7 @@ const EditableDataTableCell = <T,>(props: IEditableDataTableCellProps<T>): React
           onChange={(newValue) => {
             handleUpdateDataChange(rowIndex, column.dataIndex, newValue);
           }}
-          editing={editable}
+          editing={column.editable && editable}
         />
       );
     }
@@ -121,7 +122,7 @@ const EditableDataTableCell = <T,>(props: IEditableDataTableCellProps<T>): React
           onChange={(newValue) => {
             handleUpdateDataChange(rowIndex, column.dataIndex, newValue);
           }}
-          editing={editable}
+          editing={column.editable && editable}
         />
       );
     }
@@ -136,6 +137,7 @@ const EditableDataTableCell = <T,>(props: IEditableDataTableCellProps<T>): React
           onChange={(newValue) => {
             handleUpdateDataChange(rowIndex, column.dataIndex, newValue);
           }}
+          editing={column.editable && editable}
         />
       );
     }
@@ -150,7 +152,7 @@ const EditableDataTableCell = <T,>(props: IEditableDataTableCellProps<T>): React
           onChange={(newValue) => {
             handleUpdateDataChange(rowIndex, column.dataIndex, newValue);
           }}
-          editing={editable}
+          editing={column.editable && editable}
         />
       );
     }
@@ -165,7 +167,7 @@ const EditableDataTableCell = <T,>(props: IEditableDataTableCellProps<T>): React
           onChange={(newValue) => {
             handleUpdateDataChange(rowIndex, column.dataIndex, newValue);
           }}
-          editing={editable}
+          editing={column.editable && editable}
         />
       );
     }
@@ -180,7 +182,7 @@ const EditableDataTableCell = <T,>(props: IEditableDataTableCellProps<T>): React
           onChange={(newValue) => {
             handleUpdateDataChange(rowIndex, column.dataIndex, newValue);
           }}
-          editing={editable}
+          editing={column.editable && editable}
         />
       );
     }
