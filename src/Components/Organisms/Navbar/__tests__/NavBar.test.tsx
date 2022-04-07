@@ -7,7 +7,7 @@ describe('NavBar Component', () => {
   it('NavBar renders', async () => {
     const onSearchMock = jest.fn();
 
-    const container = render(
+    const { container } = render(
       <NavBar
         brand={{ logoSource: 'logoSource', redirection: 'redirection', alt: 'alt' }}
         navButtons={[{ label: 'button' }]}
@@ -23,7 +23,9 @@ describe('NavBar Component', () => {
   it('NavBar renders without buttons or icons', async () => {
     const onSearchMock = jest.fn();
 
-    const container = render(<NavBar brand={{ logoSource: 'logoSource', redirection: 'redirection', alt: 'alt' }} />);
+    const { container } = render(
+      <NavBar brand={{ logoSource: 'logoSource', redirection: 'redirection', alt: 'alt' }} />,
+    );
 
     expect(container).toMatchSnapshot();
     expect(onSearchMock).not.toBeCalled();

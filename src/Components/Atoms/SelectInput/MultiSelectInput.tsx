@@ -1,9 +1,17 @@
 import React, { ReactElement, useCallback } from 'react';
-import { default as ReactSelect, components, ValueContainerProps } from 'react-select';
+import {
+  default as ReactSelect,
+  components,
+  ValueContainerProps,
+  DropdownIndicatorProps,
+  ClearIndicatorProps,
+} from 'react-select';
 import classnames from 'classnames';
 
 import { customStyles } from './selectStyles';
 import { IOption } from './types';
+import { Icon } from '../Icon';
+import { Typography } from '../Typography';
 
 export interface IMultiSelectInputProps {
   /** Class for the input (optional, default: undefined) */
@@ -20,6 +28,8 @@ export interface IMultiSelectInputProps {
   dataTestId?: string;
   /** Disabled field (optional, default: false) */
   disabled?: boolean;
+  /** Ellipsis in readonly (optional, default: false) */
+  ellipsis?: boolean;
   /** Size of the field in a 12 column grid (optional, default: undefined) */
   fieldSize?: number;
   /** Highlight value in readonly mode (optional, default: false) */
@@ -91,6 +101,7 @@ const MultiSelectInput = (props: IMultiSelectInputProps): ReactElement => {
     colors,
     dataTestId,
     disabled,
+    ellipsis,
     fieldSize,
     highlighted,
     inputValue,
@@ -131,10 +142,12 @@ const MultiSelectInput = (props: IMultiSelectInputProps): ReactElement => {
           className,
         )}
         data-testid={dataTestId}>
-        {options
-          .filter((option) => inputValue?.includes(option.value))
-          .map((option) => option.label)
-          .join(', ') || '-'}
+        <Typography.Text ellipsis={ellipsis}>
+          {options
+            .filter((option) => inputValue?.includes(option.value))
+            .map((option) => option.label)
+            .join(', ') || '-'}
+        </Typography.Text>
       </div>
     );
   }
@@ -153,6 +166,30 @@ const MultiSelectInput = (props: IMultiSelectInputProps): ReactElement => {
       <ReactSelect<IOption, true>
         closeMenuOnSelect={false}
         components={{
+          DropdownIndicator: (props: DropdownIndicatorProps<IOption, true>) => {
+            const { innerProps } = props;
+            return (
+              <div {...innerProps}>
+                <Icon
+                  icon={['fal', 'chevron-down']}
+                  className='dynamic-search-icon'
+                  data-testid={dataTestId ? `${dataTestId}-magnifier` : undefined}
+                />
+              </div>
+            );
+          },
+          ClearIndicator: (props: ClearIndicatorProps<IOption, true>) => {
+            const { innerProps } = props;
+            return (
+              <div {...innerProps}>
+                <Icon
+                  icon={['fal', 'xmark']}
+                  className='dynamic-search-icon'
+                  data-testid={dataTestId ? `${dataTestId}-clear` : undefined}
+                />
+              </div>
+            );
+          },
           ValueContainer: localValueContainer,
         }}
         data-testid={dataTestId}
@@ -164,6 +201,7 @@ const MultiSelectInput = (props: IMultiSelectInputProps): ReactElement => {
         maxMenuHeight={maxMenuHeight}
         menuPlacement='auto'
         menuPortalTarget={usePortal ? document.querySelector('body') : undefined}
+        menuShouldBlockScroll={true}
         onChange={(options) => {
           if (onChange) {
             onChange(options.map((option) => option.value));
@@ -188,6 +226,7 @@ MultiSelectInput.defaultProps = {
     optionSelectedColor: 'rgb(38, 186, 212)',
   },
   disabled: false,
+  ellipsis: false,
   fieldSize: undefined,
   highlighted: false,
   inputValue: undefined,

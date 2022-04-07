@@ -1,10 +1,11 @@
-import React, { ReactElement, useCallback, useEffect, useState } from 'react';
+import React, { ReactElement, useCallback, useState } from 'react';
 import { Button, ColorButtonEnum } from '../../../Molecules/Button';
 
 import StaticDataTableFooter from '../StaticDataTable/StaticDataTableFooter';
 import StaticDataTableHeader from '../StaticDataTable/StaticDataTableHeader';
 import { ColumnType, IColumnType, IExtraLineEditableInPlaceDataTableProps, SortDirectionEnum } from '../Common/types';
 import LineEditableInPlaceDataTableBody from './LineEditableInPlaceDataTableBody';
+import usePropState from '../../../../hooks/use-prop-state';
 
 export interface ILineEditableInPlaceDataTableProps<T> {
   columns: Array<IColumnType<T>>;
@@ -17,7 +18,7 @@ export interface ILineEditableInPlaceDataTableProps<T> {
 const LineEditableInPlaceDataTable = <T,>(props: ILineEditableInPlaceDataTableProps<T>): ReactElement => {
   const { data, columns, extra, loading, onSortChange } = props;
 
-  const [currentData, setCurrentData] = useState<Array<T>>(data);
+  const [currentData, setCurrentData] = usePropState<Array<T>>(data);
   const [sortField, setSortField] = useState<keyof T | undefined>();
   const [sortDirection, setSortDirection] = useState<SortDirectionEnum | undefined>();
   const [editedRowIndex, setEditedRowIndex] = useState<number | undefined>(extra?.editedRowIndex);
@@ -137,11 +138,6 @@ const LineEditableInPlaceDataTable = <T,>(props: ILineEditableInPlaceDataTablePr
             ],
           },
         ];
-
-  // Updating local copy of data whenever the provided data changes.
-  useEffect(() => {
-    setCurrentData(data);
-  }, [data]);
 
   const handleSortChange = useCallback((newSortField: keyof T, newSortDirection?: SortDirectionEnum) => {
     if (sortField !== newSortField || newSortDirection !== newSortDirection) {

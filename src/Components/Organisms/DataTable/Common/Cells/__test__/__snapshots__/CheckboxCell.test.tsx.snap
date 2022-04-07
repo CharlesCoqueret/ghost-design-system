@@ -1,0 +1,289 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CheckboxCell component CheckboxCell renders 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class="table--cell--checkbox"
+        >
+          <div
+            class="gds-field-group"
+          >
+            <div
+              class="field gds-checkbox-container field input-checkbox-field gds-typography"
+            >
+              <label
+                class="input-checkbox-field-read-only input-checkbox-field-checked"
+              >
+                <div
+                  class="checkbox-marker"
+                >
+                  <i
+                    class="icon"
+                    icon="fas,square-check"
+                  />
+                </div>
+                Label 1
+              </label>
+              <label
+                class="input-checkbox-field-read-only"
+              >
+                <div
+                  class="checkbox-marker"
+                >
+                  <i
+                    class="icon"
+                    icon="fas,square"
+                  />
+                </div>
+                Label 2
+              </label>
+              <label
+                class="input-checkbox-field-read-only"
+              >
+                <div
+                  class="checkbox-marker"
+                >
+                  <i
+                    class="icon"
+                    icon="fas,square"
+                  />
+                </div>
+                Label 3
+              </label>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`CheckboxCell component CheckboxCell renders in edit mode and handles change 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class="table--cell--checkbox"
+        >
+          <div
+            class="gds-field-group"
+          >
+            <div
+              class="field gds-checkbox-container field input-checkbox-field gds-typography"
+            >
+              <label
+                class="input-checkbox-field-checked"
+                data-testid="DATA-TEST-ID-0"
+              >
+                <div
+                  class="checkbox-marker"
+                >
+                  <i
+                    class="icon"
+                    icon="fas,square-check"
+                  />
+                </div>
+                Label 1
+              </label>
+              <label
+                class=""
+                data-testid="DATA-TEST-ID-1"
+              >
+                <div
+                  class="checkbox-marker"
+                >
+                  <i
+                    class="icon"
+                    icon="fal,square"
+                  />
+                </div>
+                Label 2
+              </label>
+              <label
+                class=""
+                data-testid="DATA-TEST-ID-2"
+              >
+                <div
+                  class="checkbox-marker"
+                >
+                  <i
+                    class="icon"
+                    icon="fal,square"
+                  />
+                </div>
+                Label 3
+              </label>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`CheckboxCell component CheckboxCell renders in edit mode via extra 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class="table--cell--checkbox"
+        >
+          <div
+            class="gds-field-group"
+          >
+            <div
+              class="field gds-checkbox-container field input-checkbox-field gds-typography"
+            >
+              <label
+                class="input-checkbox-field-checked"
+              >
+                <div
+                  class="checkbox-marker"
+                >
+                  <i
+                    class="icon"
+                    icon="fas,square-check"
+                  />
+                </div>
+                Label 1
+              </label>
+              <label
+                class=""
+              >
+                <div
+                  class="checkbox-marker"
+                >
+                  <i
+                    class="icon"
+                    icon="fal,square"
+                  />
+                </div>
+                Label 2
+              </label>
+              <label
+                class=""
+              >
+                <div
+                  class="checkbox-marker"
+                >
+                  <i
+                    class="icon"
+                    icon="fal,square"
+                  />
+                </div>
+                Label 3
+              </label>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`CheckboxCell component CheckboxCell renders when hidden 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class="table--cell--checkbox"
+          style="display: none;"
+        >
+          <div
+            class="gds-field-group"
+          >
+            <div
+              class="field gds-checkbox-container field input-checkbox-field gds-typography"
+            >
+              <label
+                class="input-checkbox-field-read-only input-checkbox-field-checked"
+              >
+                <div
+                  class="checkbox-marker"
+                >
+                  <i
+                    class="icon"
+                    icon="fas,square-check"
+                  />
+                </div>
+                Label 1
+              </label>
+              <label
+                class="input-checkbox-field-read-only"
+              >
+                <div
+                  class="checkbox-marker"
+                >
+                  <i
+                    class="icon"
+                    icon="fas,square"
+                  />
+                </div>
+                Label 2
+              </label>
+              <label
+                class="input-checkbox-field-read-only"
+              >
+                <div
+                  class="checkbox-marker"
+                >
+                  <i
+                    class="icon"
+                    icon="fas,square"
+                  />
+                </div>
+                Label 3
+              </label>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`CheckboxCell component CheckboxCell renders with forced value 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class="table--cell--checkbox"
+        >
+          <div
+            class="gds-field-group"
+          >
+            <div
+              class="field gds-checkbox-container field input-checkbox-field gds-typography"
+            >
+              <label
+                class="input-checkbox-field-read-only input-checkbox-field-checked"
+              >
+                <div
+                  class="checkbox-marker"
+                >
+                  <i
+                    class="icon"
+                    icon="fas,square-check"
+                  />
+                </div>
+                Label 4
+              </label>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;

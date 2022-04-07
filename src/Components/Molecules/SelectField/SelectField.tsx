@@ -19,6 +19,8 @@ export interface ISelectFieldProps {
   dataTestId?: string;
   /** Disabled field (optional, default: false) */
   disabled?: boolean;
+  /** Ellipsis in readonly (optional, default: false) */
+  ellipsis?: boolean;
   /** Error message (optional, default: undefined) */
   errorMessage?: string;
   /** Class for the field surrounding the input (optional, default: undefined) */
@@ -71,6 +73,7 @@ export const SelectField = (props: ISelectFieldProps): ReactElement => {
     containerRef,
     dataTestId,
     disabled,
+    ellipsis,
     errorMessage,
     fieldClassName,
     fieldSize,
@@ -112,6 +115,7 @@ export const SelectField = (props: ISelectFieldProps): ReactElement => {
           fieldSize && `field-input-size-${fieldSize}`,
         )}
         dataTestId={dataTestId}
+        ellipsis={ellipsis}
         highlighted={highlighted}
         isInError={errorMessage !== undefined}
         isClearable={isClearable}
@@ -137,6 +141,7 @@ SelectField.defaultProps = {
     optionSelectedColor: 'rgb(38, 186, 212)',
   },
   disabled: false,
+  ellipsis: false,
   errorMessage: undefined,
   fieldClassName: undefined,
   fieldSize: undefined,

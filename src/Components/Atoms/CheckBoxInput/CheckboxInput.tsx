@@ -55,7 +55,7 @@ const CheckboxInput = (props: ICheckboxInputProps): ReactElement => {
         fieldSize && `field-input-size-${fieldSize}`,
         className,
       )}>
-      {options?.map((option) => {
+      {options.map((option, index) => {
         return (
           <label
             key={option.value}
@@ -67,7 +67,7 @@ const CheckboxInput = (props: ICheckboxInputProps): ReactElement => {
               'field-highlighted': (readOnly || disabled) && highlighted && option.highlighted,
               'input-checkbox-field-checked': option.checked,
             })}
-            data-testid={dataTestId || option.value}>
+            data-testid={dataTestId ? `${dataTestId}-${index}` : undefined}>
             <div className='checkbox-marker'>
               <Icon
                 icon={[

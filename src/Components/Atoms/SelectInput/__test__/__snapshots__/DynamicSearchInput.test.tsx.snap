@@ -1,3061 +1,1069 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DynamicSearchInput Component DynamicSearchInput handles change 1`] = `
-Object {
-  "asFragment": [Function],
-  "baseElement": <body>
-    <div>
-      <div
-        class="gds-select-container input-select-field"
-      >
-        <div
-          class=" css-1959ul7-container"
-        >
-          <span
-            class="css-1f43avz-a11yText-A11yText"
-            id="react-select-6-live-region"
-          />
-          <span
-            aria-atomic="false"
-            aria-live="polite"
-            aria-relevant="additions text"
-            class="css-1f43avz-a11yText-A11yText"
-          >
-            <span
-              id="aria-selection"
-            />
-            <span
-              id="aria-context"
-            >
-              option option 2 focused, 1 of 1. 1 result available for search term option 2. Use Up and Down to choose options, press Enter to select the currently focused option, press Escape to exit the menu, press Tab to select the option and exit the menu.
-            </span>
-          </span>
-          <div
-            class=" css-1tkmbhg-control"
-          >
-            <div
-              class=" css-9plg90-ValueContainer"
-            >
-              <div
-                class=" css-1pndypt-Input"
-                data-value="option 2"
-              >
-                <input
-                  aria-autocomplete="list"
-                  aria-controls="react-select-6-listbox"
-                  aria-describedby="react-select-6-placeholder"
-                  aria-expanded="true"
-                  aria-haspopup="true"
-                  aria-owns="react-select-6-listbox"
-                  autocapitalize="none"
-                  autocomplete="off"
-                  autocorrect="off"
-                  class=""
-                  id="react-select-6-input"
-                  role="combobox"
-                  spellcheck="false"
-                  style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
-                  tabindex="0"
-                  type="text"
-                  value="option 2"
-                />
-              </div>
-            </div>
-            <div
-              class=" css-1hb7zxy-IndicatorsContainer"
-            >
-              <span
-                class=" css-1okebmr-indicatorSeparator"
-              />
-              <div
-                aria-hidden="true"
-                class=" css-tza9gy-indicatorContainer"
-              >
-                <svg
-                  aria-hidden="true"
-                  class="css-tj5bde-Svg"
-                  focusable="false"
-                  height="20"
-                  viewBox="0 0 20 20"
-                  width="20"
-                >
-                  <path
-                    d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
-                  />
-                </svg>
-              </div>
-            </div>
-          </div>
-          <div>
-            <div
-              class=" css-omztxt"
-            >
-              <div
-                class=" css-26l3qy-menu"
-                id="react-select-6-listbox"
-              >
-                <div
-                  class=" css-4ljt47-MenuList"
-                >
-                  <div
-                    aria-disabled="false"
-                    class=" css-cfsx9x-option"
-                    id="react-select-6-option-0"
-                    tabindex="-1"
-                  >
-                    option 2
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <input
-            name="SELECT"
-            type="hidden"
-            value=""
-          />
-        </div>
-      </div>
-    </div>
-  </body>,
-  "container": <div>
+<div>
+  <div
+    class="gds-select-container input-select-field"
+  >
     <div
-      class="gds-select-container input-select-field"
+      class=" css-1959ul7-container"
     >
-      <div
-        class=" css-1959ul7-container"
+      <span
+        class="css-1f43avz-a11yText-A11yText"
+        id="react-select-6-live-region"
+      />
+      <span
+        aria-atomic="false"
+        aria-live="polite"
+        aria-relevant="additions text"
+        class="css-1f43avz-a11yText-A11yText"
       >
         <span
-          class="css-1f43avz-a11yText-A11yText"
-          id="react-select-6-live-region"
+          id="aria-selection"
         />
         <span
-          aria-atomic="false"
-          aria-live="polite"
-          aria-relevant="additions text"
-          class="css-1f43avz-a11yText-A11yText"
+          id="aria-context"
         >
-          <span
-            id="aria-selection"
-          />
-          <span
-            id="aria-context"
-          >
-            option option 2 focused, 1 of 1. 1 result available for search term option 2. Use Up and Down to choose options, press Enter to select the currently focused option, press Escape to exit the menu, press Tab to select the option and exit the menu.
-          </span>
+          option option 2 focused, 1 of 1. 1 result available for search term option 2. Use Up and Down to choose options, press Enter to select the currently focused option, press Escape to exit the menu, press Tab to select the option and exit the menu.
         </span>
+      </span>
+      <div
+        class=" css-1tkmbhg-control"
+      >
         <div
-          class=" css-1tkmbhg-control"
+          class=" css-9plg90-ValueContainer"
         >
           <div
-            class=" css-9plg90-ValueContainer"
+            class=" css-1pndypt-Input"
+            data-value="option 2"
           >
-            <div
-              class=" css-1pndypt-Input"
-              data-value="option 2"
-            >
-              <input
-                aria-autocomplete="list"
-                aria-controls="react-select-6-listbox"
-                aria-describedby="react-select-6-placeholder"
-                aria-expanded="true"
-                aria-haspopup="true"
-                aria-owns="react-select-6-listbox"
-                autocapitalize="none"
-                autocomplete="off"
-                autocorrect="off"
-                class=""
-                id="react-select-6-input"
-                role="combobox"
-                spellcheck="false"
-                style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
-                tabindex="0"
-                type="text"
-                value="option 2"
-              />
-            </div>
-          </div>
-          <div
-            class=" css-1hb7zxy-IndicatorsContainer"
-          >
-            <span
-              class=" css-1okebmr-indicatorSeparator"
+            <input
+              aria-autocomplete="list"
+              aria-controls="react-select-6-listbox"
+              aria-describedby="react-select-6-placeholder"
+              aria-expanded="true"
+              aria-haspopup="true"
+              aria-owns="react-select-6-listbox"
+              autocapitalize="none"
+              autocomplete="off"
+              autocorrect="off"
+              class=""
+              id="react-select-6-input"
+              role="combobox"
+              spellcheck="false"
+              style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+              tabindex="0"
+              type="text"
+              value="option 2"
             />
-            <div
-              aria-hidden="true"
-              class=" css-tza9gy-indicatorContainer"
-            >
-              <svg
-                aria-hidden="true"
-                class="css-tj5bde-Svg"
-                focusable="false"
-                height="20"
-                viewBox="0 0 20 20"
-                width="20"
-              >
-                <path
-                  d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
-                />
-              </svg>
-            </div>
           </div>
         </div>
-        <div>
+        <div
+          class=" css-1hb7zxy-IndicatorsContainer"
+        >
+          <span
+            class=" css-1okebmr-indicatorSeparator"
+          />
           <div
-            class=" css-omztxt"
+            aria-hidden="true"
+          >
+            <i
+              class="dynamic-search-icon icon"
+              icon="fal,magnifying-glass"
+            />
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          class=" css-omztxt"
+        >
+          <div
+            class=" css-26l3qy-menu"
+            id="react-select-6-listbox"
           >
             <div
-              class=" css-26l3qy-menu"
-              id="react-select-6-listbox"
+              class="css-bp8cua-ScrollManager"
+            />
+            <div
+              class=" css-4ljt47-MenuList"
             >
               <div
-                class=" css-4ljt47-MenuList"
+                aria-disabled="false"
+                class=" css-cfsx9x-option"
+                id="react-select-6-option-0"
+                tabindex="-1"
               >
-                <div
-                  aria-disabled="false"
-                  class=" css-cfsx9x-option"
-                  id="react-select-6-option-0"
-                  tabindex="-1"
-                >
-                  option 2
-                </div>
+                option 2
               </div>
             </div>
           </div>
         </div>
-        <input
-          name="SELECT"
-          type="hidden"
-          value=""
-        />
       </div>
+      <input
+        name="SELECT"
+        type="hidden"
+        value=""
+      />
     </div>
-  </div>,
-  "debug": [Function],
-  "findAllByAltText": [Function],
-  "findAllByDisplayValue": [Function],
-  "findAllByLabelText": [Function],
-  "findAllByPlaceholderText": [Function],
-  "findAllByRole": [Function],
-  "findAllByTestId": [Function],
-  "findAllByText": [Function],
-  "findAllByTitle": [Function],
-  "findByAltText": [Function],
-  "findByDisplayValue": [Function],
-  "findByLabelText": [Function],
-  "findByPlaceholderText": [Function],
-  "findByRole": [Function],
-  "findByTestId": [Function],
-  "findByText": [Function],
-  "findByTitle": [Function],
-  "getAllByAltText": [Function],
-  "getAllByDisplayValue": [Function],
-  "getAllByLabelText": [Function],
-  "getAllByPlaceholderText": [Function],
-  "getAllByRole": [Function],
-  "getAllByTestId": [Function],
-  "getAllByText": [Function],
-  "getAllByTitle": [Function],
-  "getByAltText": [Function],
-  "getByDisplayValue": [Function],
-  "getByLabelText": [Function],
-  "getByPlaceholderText": [Function],
-  "getByRole": [Function],
-  "getByTestId": [Function],
-  "getByText": [Function],
-  "getByTitle": [Function],
-  "queryAllByAltText": [Function],
-  "queryAllByDisplayValue": [Function],
-  "queryAllByLabelText": [Function],
-  "queryAllByPlaceholderText": [Function],
-  "queryAllByRole": [Function],
-  "queryAllByTestId": [Function],
-  "queryAllByText": [Function],
-  "queryAllByTitle": [Function],
-  "queryByAltText": [Function],
-  "queryByDisplayValue": [Function],
-  "queryByLabelText": [Function],
-  "queryByPlaceholderText": [Function],
-  "queryByRole": [Function],
-  "queryByTestId": [Function],
-  "queryByText": [Function],
-  "queryByTitle": [Function],
-  "rerender": [Function],
-  "unmount": [Function],
-}
+  </div>
+</div>
 `;
 
 exports[`DynamicSearchInput Component DynamicSearchInput handles change to undefined 1`] = `
-Object {
-  "asFragment": [Function],
-  "baseElement": <body>
-    <div>
-      <div
-        class="gds-select-container input-select-field"
-      >
-        <div
-          class=" css-1959ul7-container"
-        >
-          <span
-            class="css-1f43avz-a11yText-A11yText"
-            id="react-select-11-live-region"
-          />
-          <span
-            aria-atomic="false"
-            aria-live="polite"
-            aria-relevant="additions text"
-            class="css-1f43avz-a11yText-A11yText"
-          />
-          <div
-            class=" css-154lpzf-control"
-          >
-            <div
-              class=" css-9plg90-ValueContainer"
-            >
-              <div
-                class=" css-qc6sy-singleValue"
-              >
-                option 1
-              </div>
-              <div
-                class=" css-6j8wv5-Input"
-                data-value=""
-              >
-                <input
-                  aria-autocomplete="list"
-                  aria-controls="react-select-11-listbox"
-                  aria-expanded="false"
-                  aria-haspopup="true"
-                  aria-owns="react-select-11-listbox"
-                  autocapitalize="none"
-                  autocomplete="off"
-                  autocorrect="off"
-                  class=""
-                  id="DATA-TEST-ID"
-                  role="combobox"
-                  spellcheck="false"
-                  style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
-                  tabindex="0"
-                  type="text"
-                  value=""
-                />
-              </div>
-            </div>
-            <div
-              class=" css-1hb7zxy-IndicatorsContainer"
-            >
-              <div
-                aria-hidden="true"
-                class=" css-1lwklm9-indicatorContainer"
-              >
-                <svg
-                  aria-hidden="true"
-                  class="css-tj5bde-Svg"
-                  focusable="false"
-                  height="20"
-                  viewBox="0 0 20 20"
-                  width="20"
-                >
-                  <path
-                    d="M14.348 14.849c-0.469 0.469-1.229 0.469-1.697 0l-2.651-3.030-2.651 3.029c-0.469 0.469-1.229 0.469-1.697 0-0.469-0.469-0.469-1.229 0-1.697l2.758-3.15-2.759-3.152c-0.469-0.469-0.469-1.228 0-1.697s1.228-0.469 1.697 0l2.652 3.031 2.651-3.031c0.469-0.469 1.228-0.469 1.697 0s0.469 1.229 0 1.697l-2.758 3.152 2.758 3.15c0.469 0.469 0.469 1.229 0 1.698z"
-                  />
-                </svg>
-              </div>
-              <span
-                class=" css-1okebmr-indicatorSeparator"
-              />
-              <div
-                aria-hidden="true"
-                class=" css-yuu8po-indicatorContainer"
-              >
-                <svg
-                  aria-hidden="true"
-                  class="css-tj5bde-Svg"
-                  focusable="false"
-                  height="20"
-                  viewBox="0 0 20 20"
-                  width="20"
-                >
-                  <path
-                    d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
-                  />
-                </svg>
-              </div>
-            </div>
-          </div>
-          <input
-            name="SELECT"
-            type="hidden"
-            value="OPTION1"
-          />
-        </div>
-      </div>
-    </div>
-  </body>,
-  "container": <div>
+<div>
+  <div
+    class="gds-select-container input-select-field"
+  >
     <div
-      class="gds-select-container input-select-field"
+      class=" css-1959ul7-container"
     >
+      <span
+        class="css-1f43avz-a11yText-A11yText"
+        id="react-select-11-live-region"
+      />
+      <span
+        aria-atomic="false"
+        aria-live="polite"
+        aria-relevant="additions text"
+        class="css-1f43avz-a11yText-A11yText"
+      />
       <div
-        class=" css-1959ul7-container"
+        class=" css-154lpzf-control"
       >
-        <span
-          class="css-1f43avz-a11yText-A11yText"
-          id="react-select-11-live-region"
-        />
-        <span
-          aria-atomic="false"
-          aria-live="polite"
-          aria-relevant="additions text"
-          class="css-1f43avz-a11yText-A11yText"
-        />
         <div
-          class=" css-154lpzf-control"
+          class=" css-9plg90-ValueContainer"
         >
           <div
-            class=" css-9plg90-ValueContainer"
+            class=" css-qc6sy-singleValue"
           >
-            <div
-              class=" css-qc6sy-singleValue"
-            >
-              option 1
-            </div>
-            <div
-              class=" css-6j8wv5-Input"
-              data-value=""
-            >
-              <input
-                aria-autocomplete="list"
-                aria-controls="react-select-11-listbox"
-                aria-expanded="false"
-                aria-haspopup="true"
-                aria-owns="react-select-11-listbox"
-                autocapitalize="none"
-                autocomplete="off"
-                autocorrect="off"
-                class=""
-                id="DATA-TEST-ID"
-                role="combobox"
-                spellcheck="false"
-                style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
-                tabindex="0"
-                type="text"
-                value=""
-              />
-            </div>
+            option 1
           </div>
           <div
-            class=" css-1hb7zxy-IndicatorsContainer"
+            class=" css-6j8wv5-Input"
+            data-value=""
           >
-            <div
-              aria-hidden="true"
-              class=" css-1lwklm9-indicatorContainer"
-            >
-              <svg
-                aria-hidden="true"
-                class="css-tj5bde-Svg"
-                focusable="false"
-                height="20"
-                viewBox="0 0 20 20"
-                width="20"
-              >
-                <path
-                  d="M14.348 14.849c-0.469 0.469-1.229 0.469-1.697 0l-2.651-3.030-2.651 3.029c-0.469 0.469-1.229 0.469-1.697 0-0.469-0.469-0.469-1.229 0-1.697l2.758-3.15-2.759-3.152c-0.469-0.469-0.469-1.228 0-1.697s1.228-0.469 1.697 0l2.652 3.031 2.651-3.031c0.469-0.469 1.228-0.469 1.697 0s0.469 1.229 0 1.697l-2.758 3.152 2.758 3.15c0.469 0.469 0.469 1.229 0 1.698z"
-                />
-              </svg>
-            </div>
-            <span
-              class=" css-1okebmr-indicatorSeparator"
+            <input
+              aria-autocomplete="list"
+              aria-controls="react-select-11-listbox"
+              aria-expanded="false"
+              aria-haspopup="true"
+              aria-owns="react-select-11-listbox"
+              autocapitalize="none"
+              autocomplete="off"
+              autocorrect="off"
+              class=""
+              id="DATA-TEST-ID"
+              role="combobox"
+              spellcheck="false"
+              style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+              tabindex="0"
+              type="text"
+              value=""
             />
-            <div
-              aria-hidden="true"
-              class=" css-yuu8po-indicatorContainer"
-            >
-              <svg
-                aria-hidden="true"
-                class="css-tj5bde-Svg"
-                focusable="false"
-                height="20"
-                viewBox="0 0 20 20"
-                width="20"
-              >
-                <path
-                  d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
-                />
-              </svg>
-            </div>
           </div>
         </div>
-        <input
-          name="SELECT"
-          type="hidden"
-          value="OPTION1"
-        />
+        <div
+          class=" css-1hb7zxy-IndicatorsContainer"
+        >
+          <div
+            aria-hidden="true"
+          >
+            <i
+              class="dynamic-search-icon icon"
+              data-testid="DATA-TEST-ID-clear"
+              icon="fal,xmark"
+            />
+          </div>
+          <span
+            class=" css-1okebmr-indicatorSeparator"
+          />
+          <div
+            aria-hidden="true"
+          >
+            <i
+              class="dynamic-search-icon icon"
+              data-testid="DATA-TEST-ID-magnifier"
+              icon="fal,magnifying-glass"
+            />
+          </div>
+        </div>
       </div>
+      <input
+        name="SELECT"
+        type="hidden"
+        value="OPTION1"
+      />
     </div>
-  </div>,
-  "debug": [Function],
-  "findAllByAltText": [Function],
-  "findAllByDisplayValue": [Function],
-  "findAllByLabelText": [Function],
-  "findAllByPlaceholderText": [Function],
-  "findAllByRole": [Function],
-  "findAllByTestId": [Function],
-  "findAllByText": [Function],
-  "findAllByTitle": [Function],
-  "findByAltText": [Function],
-  "findByDisplayValue": [Function],
-  "findByLabelText": [Function],
-  "findByPlaceholderText": [Function],
-  "findByRole": [Function],
-  "findByTestId": [Function],
-  "findByText": [Function],
-  "findByTitle": [Function],
-  "getAllByAltText": [Function],
-  "getAllByDisplayValue": [Function],
-  "getAllByLabelText": [Function],
-  "getAllByPlaceholderText": [Function],
-  "getAllByRole": [Function],
-  "getAllByTestId": [Function],
-  "getAllByText": [Function],
-  "getAllByTitle": [Function],
-  "getByAltText": [Function],
-  "getByDisplayValue": [Function],
-  "getByLabelText": [Function],
-  "getByPlaceholderText": [Function],
-  "getByRole": [Function],
-  "getByTestId": [Function],
-  "getByText": [Function],
-  "getByTitle": [Function],
-  "queryAllByAltText": [Function],
-  "queryAllByDisplayValue": [Function],
-  "queryAllByLabelText": [Function],
-  "queryAllByPlaceholderText": [Function],
-  "queryAllByRole": [Function],
-  "queryAllByTestId": [Function],
-  "queryAllByText": [Function],
-  "queryAllByTitle": [Function],
-  "queryByAltText": [Function],
-  "queryByDisplayValue": [Function],
-  "queryByLabelText": [Function],
-  "queryByPlaceholderText": [Function],
-  "queryByRole": [Function],
-  "queryByTestId": [Function],
-  "queryByText": [Function],
-  "queryByTitle": [Function],
-  "rerender": [Function],
-  "unmount": [Function],
-}
+  </div>
+</div>
 `;
 
 exports[`DynamicSearchInput Component DynamicSearchInput handles change to undefined 2`] = `
-Object {
-  "asFragment": [Function],
-  "baseElement": <body>
-    <div>
+<div>
+  <div
+    class="gds-select-container input-select-field"
+  >
+    <div
+      class=" css-1959ul7-container"
+    >
+      <span
+        class="css-1f43avz-a11yText-A11yText"
+        id="react-select-11-live-region"
+      />
+      <span
+        aria-atomic="false"
+        aria-live="polite"
+        aria-relevant="additions text"
+        class="css-1f43avz-a11yText-A11yText"
+      >
+        <span
+          id="aria-selection"
+        >
+          All selected options have been cleared.
+        </span>
+        <span
+          id="aria-context"
+        >
+            Use Up and Down to choose options, press Enter to select the currently focused option, press Escape to exit the menu, press Tab to select the option and exit the menu.
+        </span>
+      </span>
       <div
-        class="gds-select-container input-select-field"
+        class=" css-1tkmbhg-control"
       >
         <div
-          class=" css-1959ul7-container"
+          class=" css-9plg90-ValueContainer"
+        >
+          <div
+            class=" css-14el2xx-placeholder"
+            id="react-select-11-placeholder"
+          >
+            Select...
+          </div>
+          <div
+            class=" css-6j8wv5-Input"
+            data-value=""
+          >
+            <input
+              aria-autocomplete="list"
+              aria-controls="react-select-11-listbox"
+              aria-describedby="react-select-11-placeholder"
+              aria-expanded="true"
+              aria-haspopup="true"
+              aria-owns="react-select-11-listbox"
+              autocapitalize="none"
+              autocomplete="off"
+              autocorrect="off"
+              class=""
+              id="DATA-TEST-ID"
+              role="combobox"
+              spellcheck="false"
+              style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+              tabindex="0"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          class=" css-1hb7zxy-IndicatorsContainer"
         >
           <span
-            class="css-1f43avz-a11yText-A11yText"
-            id="react-select-11-live-region"
+            class=" css-1okebmr-indicatorSeparator"
           />
-          <span
-            aria-atomic="false"
-            aria-live="polite"
-            aria-relevant="additions text"
-            class="css-1f43avz-a11yText-A11yText"
-          >
-            <span
-              id="aria-selection"
-            >
-              All selected options have been cleared.
-            </span>
-            <span
-              id="aria-context"
-            >
-                Use Up and Down to choose options, press Enter to select the currently focused option, press Escape to exit the menu, press Tab to select the option and exit the menu.
-            </span>
-          </span>
           <div
-            class=" css-1tkmbhg-control"
+            aria-hidden="true"
           >
-            <div
-              class=" css-9plg90-ValueContainer"
-            >
-              <div
-                class=" css-14el2xx-placeholder"
-                id="react-select-11-placeholder"
-              >
-                Select...
-              </div>
-              <div
-                class=" css-6j8wv5-Input"
-                data-value=""
-              >
-                <input
-                  aria-autocomplete="list"
-                  aria-controls="react-select-11-listbox"
-                  aria-describedby="react-select-11-placeholder"
-                  aria-expanded="true"
-                  aria-haspopup="true"
-                  aria-owns="react-select-11-listbox"
-                  autocapitalize="none"
-                  autocomplete="off"
-                  autocorrect="off"
-                  class=""
-                  id="DATA-TEST-ID"
-                  role="combobox"
-                  spellcheck="false"
-                  style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
-                  tabindex="0"
-                  type="text"
-                  value=""
-                />
-              </div>
-            </div>
-            <div
-              class=" css-1hb7zxy-IndicatorsContainer"
-            >
-              <span
-                class=" css-1okebmr-indicatorSeparator"
-              />
-              <div
-                aria-hidden="true"
-                class=" css-tza9gy-indicatorContainer"
-              >
-                <svg
-                  aria-hidden="true"
-                  class="css-tj5bde-Svg"
-                  focusable="false"
-                  height="20"
-                  viewBox="0 0 20 20"
-                  width="20"
-                >
-                  <path
-                    d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
-                  />
-                </svg>
-              </div>
-            </div>
+            <i
+              class="dynamic-search-icon icon"
+              data-testid="DATA-TEST-ID-magnifier"
+              icon="fal,magnifying-glass"
+            />
           </div>
-          <div>
-            <div
-              class=" css-omztxt"
-            >
-              <div
-                class=" css-26l3qy-menu"
-                id="react-select-11-listbox"
-              >
-                <div
-                  class=" css-4ljt47-MenuList"
-                >
-                  <div
-                    class=" css-gg45go-NoOptionsMessage"
-                  >
-                    No options
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <input
-            name="SELECT"
-            type="hidden"
-            value=""
-          />
         </div>
       </div>
-    </div>
-  </body>,
-  "container": <div>
-    <div
-      class="gds-select-container input-select-field"
-    >
-      <div
-        class=" css-1959ul7-container"
-      >
-        <span
-          class="css-1f43avz-a11yText-A11yText"
-          id="react-select-11-live-region"
-        />
-        <span
-          aria-atomic="false"
-          aria-live="polite"
-          aria-relevant="additions text"
-          class="css-1f43avz-a11yText-A11yText"
-        >
-          <span
-            id="aria-selection"
-          >
-            All selected options have been cleared.
-          </span>
-          <span
-            id="aria-context"
-          >
-              Use Up and Down to choose options, press Enter to select the currently focused option, press Escape to exit the menu, press Tab to select the option and exit the menu.
-          </span>
-        </span>
+      <div>
         <div
-          class=" css-1tkmbhg-control"
+          class=" css-omztxt"
         >
           <div
-            class=" css-9plg90-ValueContainer"
+            class=" css-26l3qy-menu"
+            id="react-select-11-listbox"
           >
             <div
-              class=" css-14el2xx-placeholder"
-              id="react-select-11-placeholder"
-            >
-              Select...
-            </div>
-            <div
-              class=" css-6j8wv5-Input"
-              data-value=""
-            >
-              <input
-                aria-autocomplete="list"
-                aria-controls="react-select-11-listbox"
-                aria-describedby="react-select-11-placeholder"
-                aria-expanded="true"
-                aria-haspopup="true"
-                aria-owns="react-select-11-listbox"
-                autocapitalize="none"
-                autocomplete="off"
-                autocorrect="off"
-                class=""
-                id="DATA-TEST-ID"
-                role="combobox"
-                spellcheck="false"
-                style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
-                tabindex="0"
-                type="text"
-                value=""
-              />
-            </div>
-          </div>
-          <div
-            class=" css-1hb7zxy-IndicatorsContainer"
-          >
-            <span
-              class=" css-1okebmr-indicatorSeparator"
+              class="css-bp8cua-ScrollManager"
             />
             <div
-              aria-hidden="true"
-              class=" css-tza9gy-indicatorContainer"
-            >
-              <svg
-                aria-hidden="true"
-                class="css-tj5bde-Svg"
-                focusable="false"
-                height="20"
-                viewBox="0 0 20 20"
-                width="20"
-              >
-                <path
-                  d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
-                />
-              </svg>
-            </div>
-          </div>
-        </div>
-        <div>
-          <div
-            class=" css-omztxt"
-          >
-            <div
-              class=" css-26l3qy-menu"
-              id="react-select-11-listbox"
+              class=" css-4ljt47-MenuList"
             >
               <div
-                class=" css-4ljt47-MenuList"
+                class=" css-gg45go-NoOptionsMessage"
               >
-                <div
-                  class=" css-gg45go-NoOptionsMessage"
-                >
-                  No options
-                </div>
+                No options
               </div>
             </div>
           </div>
         </div>
-        <input
-          name="SELECT"
-          type="hidden"
-          value=""
-        />
       </div>
+      <input
+        name="SELECT"
+        type="hidden"
+        value=""
+      />
     </div>
-  </div>,
-  "debug": [Function],
-  "findAllByAltText": [Function],
-  "findAllByDisplayValue": [Function],
-  "findAllByLabelText": [Function],
-  "findAllByPlaceholderText": [Function],
-  "findAllByRole": [Function],
-  "findAllByTestId": [Function],
-  "findAllByText": [Function],
-  "findAllByTitle": [Function],
-  "findByAltText": [Function],
-  "findByDisplayValue": [Function],
-  "findByLabelText": [Function],
-  "findByPlaceholderText": [Function],
-  "findByRole": [Function],
-  "findByTestId": [Function],
-  "findByText": [Function],
-  "findByTitle": [Function],
-  "getAllByAltText": [Function],
-  "getAllByDisplayValue": [Function],
-  "getAllByLabelText": [Function],
-  "getAllByPlaceholderText": [Function],
-  "getAllByRole": [Function],
-  "getAllByTestId": [Function],
-  "getAllByText": [Function],
-  "getAllByTitle": [Function],
-  "getByAltText": [Function],
-  "getByDisplayValue": [Function],
-  "getByLabelText": [Function],
-  "getByPlaceholderText": [Function],
-  "getByRole": [Function],
-  "getByTestId": [Function],
-  "getByText": [Function],
-  "getByTitle": [Function],
-  "queryAllByAltText": [Function],
-  "queryAllByDisplayValue": [Function],
-  "queryAllByLabelText": [Function],
-  "queryAllByPlaceholderText": [Function],
-  "queryAllByRole": [Function],
-  "queryAllByTestId": [Function],
-  "queryAllByText": [Function],
-  "queryAllByTitle": [Function],
-  "queryByAltText": [Function],
-  "queryByDisplayValue": [Function],
-  "queryByLabelText": [Function],
-  "queryByPlaceholderText": [Function],
-  "queryByRole": [Function],
-  "queryByTestId": [Function],
-  "queryByText": [Function],
-  "queryByTitle": [Function],
-  "rerender": [Function],
-  "unmount": [Function],
-}
+  </div>
+</div>
 `;
 
 exports[`DynamicSearchInput Component DynamicSearchInput handles change with no option string 1`] = `
-Object {
-  "asFragment": [Function],
-  "baseElement": <body>
-    <div>
-      <div
-        class="gds-select-container input-select-field"
-      >
-        <div
-          class=" css-1959ul7-container"
-        >
-          <span
-            class="css-1f43avz-a11yText-A11yText"
-            id="react-select-7-live-region"
-          />
-          <span
-            aria-atomic="false"
-            aria-live="polite"
-            aria-relevant="additions text"
-            class="css-1f43avz-a11yText-A11yText"
-          />
-          <div
-            class=" css-154lpzf-control"
-          >
-            <div
-              class=" css-9plg90-ValueContainer"
-            >
-              <div
-                class=" css-qc6sy-singleValue"
-              >
-                option 2
-              </div>
-              <div
-                class=" css-6j8wv5-Input"
-                data-value=""
-              >
-                <input
-                  aria-autocomplete="list"
-                  aria-controls="react-select-7-listbox"
-                  aria-expanded="false"
-                  aria-haspopup="true"
-                  aria-owns="react-select-7-listbox"
-                  autocapitalize="none"
-                  autocomplete="off"
-                  autocorrect="off"
-                  class=""
-                  id="DATA-TEST-ID"
-                  role="combobox"
-                  spellcheck="false"
-                  style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
-                  tabindex="0"
-                  type="text"
-                  value=""
-                />
-              </div>
-            </div>
-            <div
-              class=" css-1hb7zxy-IndicatorsContainer"
-            >
-              <span
-                class=" css-1okebmr-indicatorSeparator"
-              />
-              <div
-                aria-hidden="true"
-                class=" css-yuu8po-indicatorContainer"
-              >
-                <svg
-                  aria-hidden="true"
-                  class="css-tj5bde-Svg"
-                  focusable="false"
-                  height="20"
-                  viewBox="0 0 20 20"
-                  width="20"
-                >
-                  <path
-                    d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
-                  />
-                </svg>
-              </div>
-            </div>
-          </div>
-          <input
-            name="SELECT"
-            type="hidden"
-            value="OPTION2"
-          />
-        </div>
-      </div>
-    </div>
-  </body>,
-  "container": <div>
+<div>
+  <div
+    class="gds-select-container input-select-field"
+  >
     <div
-      class="gds-select-container input-select-field"
+      class=" css-1959ul7-container"
     >
+      <span
+        class="css-1f43avz-a11yText-A11yText"
+        id="react-select-7-live-region"
+      />
+      <span
+        aria-atomic="false"
+        aria-live="polite"
+        aria-relevant="additions text"
+        class="css-1f43avz-a11yText-A11yText"
+      />
       <div
-        class=" css-1959ul7-container"
+        class=" css-154lpzf-control"
       >
-        <span
-          class="css-1f43avz-a11yText-A11yText"
-          id="react-select-7-live-region"
-        />
-        <span
-          aria-atomic="false"
-          aria-live="polite"
-          aria-relevant="additions text"
-          class="css-1f43avz-a11yText-A11yText"
-        />
         <div
-          class=" css-154lpzf-control"
+          class=" css-9plg90-ValueContainer"
         >
           <div
-            class=" css-9plg90-ValueContainer"
+            class=" css-qc6sy-singleValue"
           >
-            <div
-              class=" css-qc6sy-singleValue"
-            >
-              option 2
-            </div>
-            <div
-              class=" css-6j8wv5-Input"
-              data-value=""
-            >
-              <input
-                aria-autocomplete="list"
-                aria-controls="react-select-7-listbox"
-                aria-expanded="false"
-                aria-haspopup="true"
-                aria-owns="react-select-7-listbox"
-                autocapitalize="none"
-                autocomplete="off"
-                autocorrect="off"
-                class=""
-                id="DATA-TEST-ID"
-                role="combobox"
-                spellcheck="false"
-                style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
-                tabindex="0"
-                type="text"
-                value=""
-              />
-            </div>
+            option 2
           </div>
           <div
-            class=" css-1hb7zxy-IndicatorsContainer"
+            class=" css-6j8wv5-Input"
+            data-value=""
           >
-            <span
-              class=" css-1okebmr-indicatorSeparator"
+            <input
+              aria-autocomplete="list"
+              aria-controls="react-select-7-listbox"
+              aria-expanded="false"
+              aria-haspopup="true"
+              aria-owns="react-select-7-listbox"
+              autocapitalize="none"
+              autocomplete="off"
+              autocorrect="off"
+              class=""
+              id="DATA-TEST-ID"
+              role="combobox"
+              spellcheck="false"
+              style="opacity: 0; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+              tabindex="0"
+              type="text"
+              value=""
             />
-            <div
-              aria-hidden="true"
-              class=" css-yuu8po-indicatorContainer"
-            >
-              <svg
-                aria-hidden="true"
-                class="css-tj5bde-Svg"
-                focusable="false"
-                height="20"
-                viewBox="0 0 20 20"
-                width="20"
-              >
-                <path
-                  d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
-                />
-              </svg>
-            </div>
           </div>
         </div>
-        <input
-          name="SELECT"
-          type="hidden"
-          value="OPTION2"
-        />
+        <div
+          class=" css-1hb7zxy-IndicatorsContainer"
+        >
+          <span
+            class=" css-1okebmr-indicatorSeparator"
+          />
+          <div
+            aria-hidden="true"
+          >
+            <i
+              class="dynamic-search-icon icon"
+              data-testid="DATA-TEST-ID-magnifier"
+              icon="fal,magnifying-glass"
+            />
+          </div>
+        </div>
       </div>
+      <input
+        name="SELECT"
+        type="hidden"
+        value="OPTION2"
+      />
     </div>
-  </div>,
-  "debug": [Function],
-  "findAllByAltText": [Function],
-  "findAllByDisplayValue": [Function],
-  "findAllByLabelText": [Function],
-  "findAllByPlaceholderText": [Function],
-  "findAllByRole": [Function],
-  "findAllByTestId": [Function],
-  "findAllByText": [Function],
-  "findAllByTitle": [Function],
-  "findByAltText": [Function],
-  "findByDisplayValue": [Function],
-  "findByLabelText": [Function],
-  "findByPlaceholderText": [Function],
-  "findByRole": [Function],
-  "findByTestId": [Function],
-  "findByText": [Function],
-  "findByTitle": [Function],
-  "getAllByAltText": [Function],
-  "getAllByDisplayValue": [Function],
-  "getAllByLabelText": [Function],
-  "getAllByPlaceholderText": [Function],
-  "getAllByRole": [Function],
-  "getAllByTestId": [Function],
-  "getAllByText": [Function],
-  "getAllByTitle": [Function],
-  "getByAltText": [Function],
-  "getByDisplayValue": [Function],
-  "getByLabelText": [Function],
-  "getByPlaceholderText": [Function],
-  "getByRole": [Function],
-  "getByTestId": [Function],
-  "getByText": [Function],
-  "getByTitle": [Function],
-  "queryAllByAltText": [Function],
-  "queryAllByDisplayValue": [Function],
-  "queryAllByLabelText": [Function],
-  "queryAllByPlaceholderText": [Function],
-  "queryAllByRole": [Function],
-  "queryAllByTestId": [Function],
-  "queryAllByText": [Function],
-  "queryAllByTitle": [Function],
-  "queryByAltText": [Function],
-  "queryByDisplayValue": [Function],
-  "queryByLabelText": [Function],
-  "queryByPlaceholderText": [Function],
-  "queryByRole": [Function],
-  "queryByTestId": [Function],
-  "queryByText": [Function],
-  "queryByTitle": [Function],
-  "rerender": [Function],
-  "unmount": [Function],
-}
+  </div>
+</div>
 `;
 
 exports[`DynamicSearchInput Component DynamicSearchInput handles inputValue change 1`] = `
-Object {
-  "asFragment": [Function],
-  "baseElement": <body>
-    <div>
-      <div
-        class="gds-select-container input-select-field"
-      >
-        <div
-          class=" css-1959ul7-container"
-        >
-          <span
-            class="css-1f43avz-a11yText-A11yText"
-            id="react-select-10-live-region"
-          />
-          <span
-            aria-atomic="false"
-            aria-live="polite"
-            aria-relevant="additions text"
-            class="css-1f43avz-a11yText-A11yText"
-          />
-          <div
-            class=" css-154lpzf-control"
-          >
-            <div
-              class=" css-9plg90-ValueContainer"
-            >
-              <div
-                class=" css-qc6sy-singleValue"
-              >
-                option 1
-              </div>
-              <div
-                class=" css-6j8wv5-Input"
-                data-value=""
-              >
-                <input
-                  aria-autocomplete="list"
-                  aria-controls="react-select-10-listbox"
-                  aria-expanded="false"
-                  aria-haspopup="true"
-                  aria-owns="react-select-10-listbox"
-                  autocapitalize="none"
-                  autocomplete="off"
-                  autocorrect="off"
-                  class=""
-                  id="DATA-TEST-ID"
-                  role="combobox"
-                  spellcheck="false"
-                  style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
-                  tabindex="0"
-                  type="text"
-                  value=""
-                />
-              </div>
-            </div>
-            <div
-              class=" css-1hb7zxy-IndicatorsContainer"
-            >
-              <span
-                class=" css-1okebmr-indicatorSeparator"
-              />
-              <div
-                aria-hidden="true"
-                class=" css-yuu8po-indicatorContainer"
-              >
-                <svg
-                  aria-hidden="true"
-                  class="css-tj5bde-Svg"
-                  focusable="false"
-                  height="20"
-                  viewBox="0 0 20 20"
-                  width="20"
-                >
-                  <path
-                    d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
-                  />
-                </svg>
-              </div>
-            </div>
-          </div>
-          <input
-            name="SELECT"
-            type="hidden"
-            value="OPTION1"
-          />
-        </div>
-      </div>
-    </div>
-  </body>,
-  "container": <div>
+<div>
+  <div
+    class="gds-select-container input-select-field"
+  >
     <div
-      class="gds-select-container input-select-field"
+      class=" css-1959ul7-container"
     >
+      <span
+        class="css-1f43avz-a11yText-A11yText"
+        id="react-select-10-live-region"
+      />
+      <span
+        aria-atomic="false"
+        aria-live="polite"
+        aria-relevant="additions text"
+        class="css-1f43avz-a11yText-A11yText"
+      />
       <div
-        class=" css-1959ul7-container"
+        class=" css-154lpzf-control"
       >
-        <span
-          class="css-1f43avz-a11yText-A11yText"
-          id="react-select-10-live-region"
-        />
-        <span
-          aria-atomic="false"
-          aria-live="polite"
-          aria-relevant="additions text"
-          class="css-1f43avz-a11yText-A11yText"
-        />
         <div
-          class=" css-154lpzf-control"
+          class=" css-9plg90-ValueContainer"
         >
           <div
-            class=" css-9plg90-ValueContainer"
+            class=" css-qc6sy-singleValue"
           >
-            <div
-              class=" css-qc6sy-singleValue"
-            >
-              option 1
-            </div>
-            <div
-              class=" css-6j8wv5-Input"
-              data-value=""
-            >
-              <input
-                aria-autocomplete="list"
-                aria-controls="react-select-10-listbox"
-                aria-expanded="false"
-                aria-haspopup="true"
-                aria-owns="react-select-10-listbox"
-                autocapitalize="none"
-                autocomplete="off"
-                autocorrect="off"
-                class=""
-                id="DATA-TEST-ID"
-                role="combobox"
-                spellcheck="false"
-                style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
-                tabindex="0"
-                type="text"
-                value=""
-              />
-            </div>
+            option 1
           </div>
           <div
-            class=" css-1hb7zxy-IndicatorsContainer"
+            class=" css-6j8wv5-Input"
+            data-value=""
           >
-            <span
-              class=" css-1okebmr-indicatorSeparator"
+            <input
+              aria-autocomplete="list"
+              aria-controls="react-select-10-listbox"
+              aria-expanded="false"
+              aria-haspopup="true"
+              aria-owns="react-select-10-listbox"
+              autocapitalize="none"
+              autocomplete="off"
+              autocorrect="off"
+              class=""
+              id="DATA-TEST-ID"
+              role="combobox"
+              spellcheck="false"
+              style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+              tabindex="0"
+              type="text"
+              value=""
             />
-            <div
-              aria-hidden="true"
-              class=" css-yuu8po-indicatorContainer"
-            >
-              <svg
-                aria-hidden="true"
-                class="css-tj5bde-Svg"
-                focusable="false"
-                height="20"
-                viewBox="0 0 20 20"
-                width="20"
-              >
-                <path
-                  d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
-                />
-              </svg>
-            </div>
           </div>
         </div>
-        <input
-          name="SELECT"
-          type="hidden"
-          value="OPTION1"
-        />
+        <div
+          class=" css-1hb7zxy-IndicatorsContainer"
+        >
+          <span
+            class=" css-1okebmr-indicatorSeparator"
+          />
+          <div
+            aria-hidden="true"
+          >
+            <i
+              class="dynamic-search-icon icon"
+              data-testid="DATA-TEST-ID-magnifier"
+              icon="fal,magnifying-glass"
+            />
+          </div>
+        </div>
       </div>
+      <input
+        name="SELECT"
+        type="hidden"
+        value="OPTION1"
+      />
     </div>
-  </div>,
-  "debug": [Function],
-  "findAllByAltText": [Function],
-  "findAllByDisplayValue": [Function],
-  "findAllByLabelText": [Function],
-  "findAllByPlaceholderText": [Function],
-  "findAllByRole": [Function],
-  "findAllByTestId": [Function],
-  "findAllByText": [Function],
-  "findAllByTitle": [Function],
-  "findByAltText": [Function],
-  "findByDisplayValue": [Function],
-  "findByLabelText": [Function],
-  "findByPlaceholderText": [Function],
-  "findByRole": [Function],
-  "findByTestId": [Function],
-  "findByText": [Function],
-  "findByTitle": [Function],
-  "getAllByAltText": [Function],
-  "getAllByDisplayValue": [Function],
-  "getAllByLabelText": [Function],
-  "getAllByPlaceholderText": [Function],
-  "getAllByRole": [Function],
-  "getAllByTestId": [Function],
-  "getAllByText": [Function],
-  "getAllByTitle": [Function],
-  "getByAltText": [Function],
-  "getByDisplayValue": [Function],
-  "getByLabelText": [Function],
-  "getByPlaceholderText": [Function],
-  "getByRole": [Function],
-  "getByTestId": [Function],
-  "getByText": [Function],
-  "getByTitle": [Function],
-  "queryAllByAltText": [Function],
-  "queryAllByDisplayValue": [Function],
-  "queryAllByLabelText": [Function],
-  "queryAllByPlaceholderText": [Function],
-  "queryAllByRole": [Function],
-  "queryAllByTestId": [Function],
-  "queryAllByText": [Function],
-  "queryAllByTitle": [Function],
-  "queryByAltText": [Function],
-  "queryByDisplayValue": [Function],
-  "queryByLabelText": [Function],
-  "queryByPlaceholderText": [Function],
-  "queryByRole": [Function],
-  "queryByTestId": [Function],
-  "queryByText": [Function],
-  "queryByTitle": [Function],
-  "rerender": [Function],
-  "unmount": [Function],
-}
+  </div>
+</div>
 `;
 
 exports[`DynamicSearchInput Component DynamicSearchInput handles inputValue change 2`] = `
-Object {
-  "asFragment": [Function],
-  "baseElement": <body>
-    <div>
-      <div
-        class="gds-select-container input-select-field"
-      >
-        <div
-          class=" css-1959ul7-container"
-        >
-          <span
-            class="css-1f43avz-a11yText-A11yText"
-            id="react-select-10-live-region"
-          />
-          <span
-            aria-atomic="false"
-            aria-live="polite"
-            aria-relevant="additions text"
-            class="css-1f43avz-a11yText-A11yText"
-          />
-          <div
-            class=" css-154lpzf-control"
-          >
-            <div
-              class=" css-9plg90-ValueContainer"
-            >
-              <div
-                class=" css-qc6sy-singleValue"
-              >
-                option 2
-              </div>
-              <div
-                class=" css-6j8wv5-Input"
-                data-value=""
-              >
-                <input
-                  aria-autocomplete="list"
-                  aria-controls="react-select-10-listbox"
-                  aria-expanded="false"
-                  aria-haspopup="true"
-                  aria-owns="react-select-10-listbox"
-                  autocapitalize="none"
-                  autocomplete="off"
-                  autocorrect="off"
-                  class=""
-                  id="DATA-TEST-ID"
-                  role="combobox"
-                  spellcheck="false"
-                  style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
-                  tabindex="0"
-                  type="text"
-                  value=""
-                />
-              </div>
-            </div>
-            <div
-              class=" css-1hb7zxy-IndicatorsContainer"
-            >
-              <span
-                class=" css-1okebmr-indicatorSeparator"
-              />
-              <div
-                aria-hidden="true"
-                class=" css-yuu8po-indicatorContainer"
-              >
-                <svg
-                  aria-hidden="true"
-                  class="css-tj5bde-Svg"
-                  focusable="false"
-                  height="20"
-                  viewBox="0 0 20 20"
-                  width="20"
-                >
-                  <path
-                    d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
-                  />
-                </svg>
-              </div>
-            </div>
-          </div>
-          <input
-            name="SELECT"
-            type="hidden"
-            value="OPTION2"
-          />
-        </div>
-      </div>
-    </div>
-  </body>,
-  "container": <div>
+<div>
+  <div
+    class="gds-select-container input-select-field"
+  >
     <div
-      class="gds-select-container input-select-field"
+      class=" css-1959ul7-container"
     >
+      <span
+        class="css-1f43avz-a11yText-A11yText"
+        id="react-select-10-live-region"
+      />
+      <span
+        aria-atomic="false"
+        aria-live="polite"
+        aria-relevant="additions text"
+        class="css-1f43avz-a11yText-A11yText"
+      />
       <div
-        class=" css-1959ul7-container"
+        class=" css-154lpzf-control"
       >
-        <span
-          class="css-1f43avz-a11yText-A11yText"
-          id="react-select-10-live-region"
-        />
-        <span
-          aria-atomic="false"
-          aria-live="polite"
-          aria-relevant="additions text"
-          class="css-1f43avz-a11yText-A11yText"
-        />
         <div
-          class=" css-154lpzf-control"
+          class=" css-9plg90-ValueContainer"
         >
           <div
-            class=" css-9plg90-ValueContainer"
+            class=" css-qc6sy-singleValue"
           >
-            <div
-              class=" css-qc6sy-singleValue"
-            >
-              option 2
-            </div>
-            <div
-              class=" css-6j8wv5-Input"
-              data-value=""
-            >
-              <input
-                aria-autocomplete="list"
-                aria-controls="react-select-10-listbox"
-                aria-expanded="false"
-                aria-haspopup="true"
-                aria-owns="react-select-10-listbox"
-                autocapitalize="none"
-                autocomplete="off"
-                autocorrect="off"
-                class=""
-                id="DATA-TEST-ID"
-                role="combobox"
-                spellcheck="false"
-                style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
-                tabindex="0"
-                type="text"
-                value=""
-              />
-            </div>
+            option 2
           </div>
           <div
-            class=" css-1hb7zxy-IndicatorsContainer"
+            class=" css-6j8wv5-Input"
+            data-value=""
           >
-            <span
-              class=" css-1okebmr-indicatorSeparator"
+            <input
+              aria-autocomplete="list"
+              aria-controls="react-select-10-listbox"
+              aria-expanded="false"
+              aria-haspopup="true"
+              aria-owns="react-select-10-listbox"
+              autocapitalize="none"
+              autocomplete="off"
+              autocorrect="off"
+              class=""
+              id="DATA-TEST-ID"
+              role="combobox"
+              spellcheck="false"
+              style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+              tabindex="0"
+              type="text"
+              value=""
             />
-            <div
-              aria-hidden="true"
-              class=" css-yuu8po-indicatorContainer"
-            >
-              <svg
-                aria-hidden="true"
-                class="css-tj5bde-Svg"
-                focusable="false"
-                height="20"
-                viewBox="0 0 20 20"
-                width="20"
-              >
-                <path
-                  d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
-                />
-              </svg>
-            </div>
           </div>
         </div>
-        <input
-          name="SELECT"
-          type="hidden"
-          value="OPTION2"
-        />
+        <div
+          class=" css-1hb7zxy-IndicatorsContainer"
+        >
+          <span
+            class=" css-1okebmr-indicatorSeparator"
+          />
+          <div
+            aria-hidden="true"
+          >
+            <i
+              class="dynamic-search-icon icon"
+              data-testid="DATA-TEST-ID-magnifier"
+              icon="fal,magnifying-glass"
+            />
+          </div>
+        </div>
       </div>
+      <input
+        name="SELECT"
+        type="hidden"
+        value="OPTION2"
+      />
     </div>
-  </div>,
-  "debug": [Function],
-  "findAllByAltText": [Function],
-  "findAllByDisplayValue": [Function],
-  "findAllByLabelText": [Function],
-  "findAllByPlaceholderText": [Function],
-  "findAllByRole": [Function],
-  "findAllByTestId": [Function],
-  "findAllByText": [Function],
-  "findAllByTitle": [Function],
-  "findByAltText": [Function],
-  "findByDisplayValue": [Function],
-  "findByLabelText": [Function],
-  "findByPlaceholderText": [Function],
-  "findByRole": [Function],
-  "findByTestId": [Function],
-  "findByText": [Function],
-  "findByTitle": [Function],
-  "getAllByAltText": [Function],
-  "getAllByDisplayValue": [Function],
-  "getAllByLabelText": [Function],
-  "getAllByPlaceholderText": [Function],
-  "getAllByRole": [Function],
-  "getAllByTestId": [Function],
-  "getAllByText": [Function],
-  "getAllByTitle": [Function],
-  "getByAltText": [Function],
-  "getByDisplayValue": [Function],
-  "getByLabelText": [Function],
-  "getByPlaceholderText": [Function],
-  "getByRole": [Function],
-  "getByTestId": [Function],
-  "getByText": [Function],
-  "getByTitle": [Function],
-  "queryAllByAltText": [Function],
-  "queryAllByDisplayValue": [Function],
-  "queryAllByLabelText": [Function],
-  "queryAllByPlaceholderText": [Function],
-  "queryAllByRole": [Function],
-  "queryAllByTestId": [Function],
-  "queryAllByText": [Function],
-  "queryAllByTitle": [Function],
-  "queryByAltText": [Function],
-  "queryByDisplayValue": [Function],
-  "queryByLabelText": [Function],
-  "queryByPlaceholderText": [Function],
-  "queryByRole": [Function],
-  "queryByTestId": [Function],
-  "queryByText": [Function],
-  "queryByTitle": [Function],
-  "rerender": [Function],
-  "unmount": [Function],
-}
+  </div>
+</div>
 `;
 
 exports[`DynamicSearchInput Component DynamicSearchInput renders 1`] = `
-Object {
-  "asFragment": [Function],
-  "baseElement": <body>
-    <div>
-      <div
-        class="gds-select-container input-select-field"
-      >
-        <div
-          class=" css-1959ul7-container"
-        >
-          <span
-            class="css-1f43avz-a11yText-A11yText"
-            id="react-select-2-live-region"
-          />
-          <span
-            aria-atomic="false"
-            aria-live="polite"
-            aria-relevant="additions text"
-            class="css-1f43avz-a11yText-A11yText"
-          />
-          <div
-            class=" css-154lpzf-control"
-          >
-            <div
-              class=" css-9plg90-ValueContainer"
-            >
-              <div
-                class=" css-qc6sy-singleValue"
-              >
-                option 1
-              </div>
-              <div
-                class=" css-6j8wv5-Input"
-                data-value=""
-              >
-                <input
-                  aria-autocomplete="list"
-                  aria-controls="react-select-2-listbox"
-                  aria-expanded="false"
-                  aria-haspopup="true"
-                  aria-owns="react-select-2-listbox"
-                  autocapitalize="none"
-                  autocomplete="off"
-                  autocorrect="off"
-                  class=""
-                  id="DATA-TEST-ID"
-                  role="combobox"
-                  spellcheck="false"
-                  style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
-                  tabindex="0"
-                  type="text"
-                  value=""
-                />
-              </div>
-            </div>
-            <div
-              class=" css-1hb7zxy-IndicatorsContainer"
-            >
-              <span
-                class=" css-1okebmr-indicatorSeparator"
-              />
-              <div
-                aria-hidden="true"
-                class=" css-yuu8po-indicatorContainer"
-              >
-                <svg
-                  aria-hidden="true"
-                  class="css-tj5bde-Svg"
-                  focusable="false"
-                  height="20"
-                  viewBox="0 0 20 20"
-                  width="20"
-                >
-                  <path
-                    d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
-                  />
-                </svg>
-              </div>
-            </div>
-          </div>
-          <input
-            name="SELECT"
-            type="hidden"
-            value="OPTION1"
-          />
-        </div>
-      </div>
-    </div>
-  </body>,
-  "container": <div>
+<div>
+  <div
+    class="gds-select-container input-select-field"
+  >
     <div
-      class="gds-select-container input-select-field"
+      class=" css-1959ul7-container"
     >
+      <span
+        class="css-1f43avz-a11yText-A11yText"
+        id="react-select-2-live-region"
+      />
+      <span
+        aria-atomic="false"
+        aria-live="polite"
+        aria-relevant="additions text"
+        class="css-1f43avz-a11yText-A11yText"
+      />
       <div
-        class=" css-1959ul7-container"
+        class=" css-154lpzf-control"
       >
-        <span
-          class="css-1f43avz-a11yText-A11yText"
-          id="react-select-2-live-region"
-        />
-        <span
-          aria-atomic="false"
-          aria-live="polite"
-          aria-relevant="additions text"
-          class="css-1f43avz-a11yText-A11yText"
-        />
         <div
-          class=" css-154lpzf-control"
+          class=" css-9plg90-ValueContainer"
         >
           <div
-            class=" css-9plg90-ValueContainer"
+            class=" css-qc6sy-singleValue"
           >
-            <div
-              class=" css-qc6sy-singleValue"
-            >
-              option 1
-            </div>
-            <div
-              class=" css-6j8wv5-Input"
-              data-value=""
-            >
-              <input
-                aria-autocomplete="list"
-                aria-controls="react-select-2-listbox"
-                aria-expanded="false"
-                aria-haspopup="true"
-                aria-owns="react-select-2-listbox"
-                autocapitalize="none"
-                autocomplete="off"
-                autocorrect="off"
-                class=""
-                id="DATA-TEST-ID"
-                role="combobox"
-                spellcheck="false"
-                style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
-                tabindex="0"
-                type="text"
-                value=""
-              />
-            </div>
+            option 1
           </div>
           <div
-            class=" css-1hb7zxy-IndicatorsContainer"
+            class=" css-6j8wv5-Input"
+            data-value=""
           >
-            <span
-              class=" css-1okebmr-indicatorSeparator"
+            <input
+              aria-autocomplete="list"
+              aria-controls="react-select-2-listbox"
+              aria-expanded="false"
+              aria-haspopup="true"
+              aria-owns="react-select-2-listbox"
+              autocapitalize="none"
+              autocomplete="off"
+              autocorrect="off"
+              class=""
+              id="DATA-TEST-ID"
+              role="combobox"
+              spellcheck="false"
+              style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+              tabindex="0"
+              type="text"
+              value=""
             />
-            <div
-              aria-hidden="true"
-              class=" css-yuu8po-indicatorContainer"
-            >
-              <svg
-                aria-hidden="true"
-                class="css-tj5bde-Svg"
-                focusable="false"
-                height="20"
-                viewBox="0 0 20 20"
-                width="20"
-              >
-                <path
-                  d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
-                />
-              </svg>
-            </div>
           </div>
         </div>
-        <input
-          name="SELECT"
-          type="hidden"
-          value="OPTION1"
-        />
+        <div
+          class=" css-1hb7zxy-IndicatorsContainer"
+        >
+          <span
+            class=" css-1okebmr-indicatorSeparator"
+          />
+          <div
+            aria-hidden="true"
+          >
+            <i
+              class="dynamic-search-icon icon"
+              data-testid="DATA-TEST-ID-magnifier"
+              icon="fal,magnifying-glass"
+            />
+          </div>
+        </div>
       </div>
+      <input
+        name="SELECT"
+        type="hidden"
+        value="OPTION1"
+      />
     </div>
-  </div>,
-  "debug": [Function],
-  "findAllByAltText": [Function],
-  "findAllByDisplayValue": [Function],
-  "findAllByLabelText": [Function],
-  "findAllByPlaceholderText": [Function],
-  "findAllByRole": [Function],
-  "findAllByTestId": [Function],
-  "findAllByText": [Function],
-  "findAllByTitle": [Function],
-  "findByAltText": [Function],
-  "findByDisplayValue": [Function],
-  "findByLabelText": [Function],
-  "findByPlaceholderText": [Function],
-  "findByRole": [Function],
-  "findByTestId": [Function],
-  "findByText": [Function],
-  "findByTitle": [Function],
-  "getAllByAltText": [Function],
-  "getAllByDisplayValue": [Function],
-  "getAllByLabelText": [Function],
-  "getAllByPlaceholderText": [Function],
-  "getAllByRole": [Function],
-  "getAllByTestId": [Function],
-  "getAllByText": [Function],
-  "getAllByTitle": [Function],
-  "getByAltText": [Function],
-  "getByDisplayValue": [Function],
-  "getByLabelText": [Function],
-  "getByPlaceholderText": [Function],
-  "getByRole": [Function],
-  "getByTestId": [Function],
-  "getByText": [Function],
-  "getByTitle": [Function],
-  "queryAllByAltText": [Function],
-  "queryAllByDisplayValue": [Function],
-  "queryAllByLabelText": [Function],
-  "queryAllByPlaceholderText": [Function],
-  "queryAllByRole": [Function],
-  "queryAllByTestId": [Function],
-  "queryAllByText": [Function],
-  "queryAllByTitle": [Function],
-  "queryByAltText": [Function],
-  "queryByDisplayValue": [Function],
-  "queryByLabelText": [Function],
-  "queryByPlaceholderText": [Function],
-  "queryByRole": [Function],
-  "queryByTestId": [Function],
-  "queryByText": [Function],
-  "queryByTitle": [Function],
-  "rerender": [Function],
-  "unmount": [Function],
-}
+  </div>
+</div>
 `;
 
 exports[`DynamicSearchInput Component DynamicSearchInput renders in error and disabled 1`] = `
-Object {
-  "asFragment": [Function],
-  "baseElement": <body>
-    <div>
-      <div
-        class="gds-select-container input-select-field field-input-size-4"
-      >
-        <div
-          class=" css-j5ssuk-container"
-        >
-          <span
-            class="css-1f43avz-a11yText-A11yText"
-            id="react-select-8-live-region"
-          />
-          <span
-            aria-atomic="false"
-            aria-live="polite"
-            aria-relevant="additions text"
-            class="css-1f43avz-a11yText-A11yText"
-          />
-          <div
-            class=" css-6gods9-control"
-          >
-            <div
-              class=" css-9plg90-ValueContainer"
-            >
-              <div
-                class=" css-lr9fot-singleValue"
-              >
-                option 1
-              </div>
-              <div
-                class=" css-jzldcf-Input"
-                data-value=""
-              >
-                <input
-                  aria-autocomplete="list"
-                  aria-controls="react-select-8-listbox"
-                  aria-expanded="false"
-                  aria-haspopup="true"
-                  aria-owns="react-select-8-listbox"
-                  autocapitalize="none"
-                  autocomplete="off"
-                  autocorrect="off"
-                  class=""
-                  disabled=""
-                  id="DATA-TEST-ID"
-                  role="combobox"
-                  spellcheck="false"
-                  style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
-                  tabindex="0"
-                  type="text"
-                  value=""
-                />
-              </div>
-            </div>
-            <div
-              class=" css-1hb7zxy-IndicatorsContainer"
-            >
-              <span
-                class=" css-109onse-indicatorSeparator"
-              />
-              <div
-                aria-hidden="true"
-                class=" css-yuu8po-indicatorContainer"
-              >
-                <svg
-                  aria-hidden="true"
-                  class="css-tj5bde-Svg"
-                  focusable="false"
-                  height="20"
-                  viewBox="0 0 20 20"
-                  width="20"
-                >
-                  <path
-                    d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
-                  />
-                </svg>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>,
-  "container": <div>
+<div>
+  <div
+    class="gds-select-container input-select-field field-input-size-4"
+  >
     <div
-      class="gds-select-container input-select-field field-input-size-4"
+      class=" css-j5ssuk-container"
     >
+      <span
+        class="css-1f43avz-a11yText-A11yText"
+        id="react-select-8-live-region"
+      />
+      <span
+        aria-atomic="false"
+        aria-live="polite"
+        aria-relevant="additions text"
+        class="css-1f43avz-a11yText-A11yText"
+      />
       <div
-        class=" css-j5ssuk-container"
+        class=" css-6gods9-control"
       >
-        <span
-          class="css-1f43avz-a11yText-A11yText"
-          id="react-select-8-live-region"
-        />
-        <span
-          aria-atomic="false"
-          aria-live="polite"
-          aria-relevant="additions text"
-          class="css-1f43avz-a11yText-A11yText"
-        />
         <div
-          class=" css-6gods9-control"
+          class=" css-9plg90-ValueContainer"
         >
           <div
-            class=" css-9plg90-ValueContainer"
+            class=" css-lr9fot-singleValue"
           >
-            <div
-              class=" css-lr9fot-singleValue"
-            >
-              option 1
-            </div>
-            <div
-              class=" css-jzldcf-Input"
-              data-value=""
-            >
-              <input
-                aria-autocomplete="list"
-                aria-controls="react-select-8-listbox"
-                aria-expanded="false"
-                aria-haspopup="true"
-                aria-owns="react-select-8-listbox"
-                autocapitalize="none"
-                autocomplete="off"
-                autocorrect="off"
-                class=""
-                disabled=""
-                id="DATA-TEST-ID"
-                role="combobox"
-                spellcheck="false"
-                style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
-                tabindex="0"
-                type="text"
-                value=""
-              />
-            </div>
+            option 1
           </div>
           <div
-            class=" css-1hb7zxy-IndicatorsContainer"
+            class=" css-jzldcf-Input"
+            data-value=""
           >
-            <span
-              class=" css-109onse-indicatorSeparator"
+            <input
+              aria-autocomplete="list"
+              aria-controls="react-select-8-listbox"
+              aria-expanded="false"
+              aria-haspopup="true"
+              aria-owns="react-select-8-listbox"
+              autocapitalize="none"
+              autocomplete="off"
+              autocorrect="off"
+              class=""
+              disabled=""
+              id="DATA-TEST-ID"
+              role="combobox"
+              spellcheck="false"
+              style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+              tabindex="0"
+              type="text"
+              value=""
             />
-            <div
-              aria-hidden="true"
-              class=" css-yuu8po-indicatorContainer"
-            >
-              <svg
-                aria-hidden="true"
-                class="css-tj5bde-Svg"
-                focusable="false"
-                height="20"
-                viewBox="0 0 20 20"
-                width="20"
-              >
-                <path
-                  d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
-                />
-              </svg>
-            </div>
+          </div>
+        </div>
+        <div
+          class=" css-1hb7zxy-IndicatorsContainer"
+        >
+          <span
+            class=" css-109onse-indicatorSeparator"
+          />
+          <div
+            aria-hidden="true"
+          >
+            <i
+              class="dynamic-search-icon icon"
+              data-testid="DATA-TEST-ID-magnifier"
+              icon="fal,magnifying-glass"
+            />
           </div>
         </div>
       </div>
     </div>
-  </div>,
-  "debug": [Function],
-  "findAllByAltText": [Function],
-  "findAllByDisplayValue": [Function],
-  "findAllByLabelText": [Function],
-  "findAllByPlaceholderText": [Function],
-  "findAllByRole": [Function],
-  "findAllByTestId": [Function],
-  "findAllByText": [Function],
-  "findAllByTitle": [Function],
-  "findByAltText": [Function],
-  "findByDisplayValue": [Function],
-  "findByLabelText": [Function],
-  "findByPlaceholderText": [Function],
-  "findByRole": [Function],
-  "findByTestId": [Function],
-  "findByText": [Function],
-  "findByTitle": [Function],
-  "getAllByAltText": [Function],
-  "getAllByDisplayValue": [Function],
-  "getAllByLabelText": [Function],
-  "getAllByPlaceholderText": [Function],
-  "getAllByRole": [Function],
-  "getAllByTestId": [Function],
-  "getAllByText": [Function],
-  "getAllByTitle": [Function],
-  "getByAltText": [Function],
-  "getByDisplayValue": [Function],
-  "getByLabelText": [Function],
-  "getByPlaceholderText": [Function],
-  "getByRole": [Function],
-  "getByTestId": [Function],
-  "getByText": [Function],
-  "getByTitle": [Function],
-  "queryAllByAltText": [Function],
-  "queryAllByDisplayValue": [Function],
-  "queryAllByLabelText": [Function],
-  "queryAllByPlaceholderText": [Function],
-  "queryAllByRole": [Function],
-  "queryAllByTestId": [Function],
-  "queryAllByText": [Function],
-  "queryAllByTitle": [Function],
-  "queryByAltText": [Function],
-  "queryByDisplayValue": [Function],
-  "queryByLabelText": [Function],
-  "queryByPlaceholderText": [Function],
-  "queryByRole": [Function],
-  "queryByTestId": [Function],
-  "queryByText": [Function],
-  "queryByTitle": [Function],
-  "rerender": [Function],
-  "unmount": [Function],
-}
+  </div>
+</div>
 `;
 
 exports[`DynamicSearchInput Component DynamicSearchInput renders in error without portal 1`] = `
-Object {
-  "asFragment": [Function],
-  "baseElement": <body>
-    <div>
-      <div
-        class="gds-select-container input-select-field field-input-size-4 input-error"
-      >
-        <div
-          class=" css-1959ul7-container"
-        >
-          <span
-            class="css-1f43avz-a11yText-A11yText"
-            id="react-select-9-live-region"
-          />
-          <span
-            aria-atomic="false"
-            aria-live="polite"
-            aria-relevant="additions text"
-            class="css-1f43avz-a11yText-A11yText"
-          />
-          <div
-            class=" css-ocyqvw-control"
-          >
-            <div
-              class=" css-9plg90-ValueContainer"
-            >
-              <div
-                class=" css-14el2xx-placeholder"
-                id="react-select-9-placeholder"
-              >
-                Select...
-              </div>
-              <div
-                class=" css-6j8wv5-Input"
-                data-value=""
-              >
-                <input
-                  aria-autocomplete="list"
-                  aria-controls="react-select-9-listbox"
-                  aria-describedby="react-select-9-placeholder"
-                  aria-expanded="false"
-                  aria-haspopup="true"
-                  aria-owns="react-select-9-listbox"
-                  autocapitalize="none"
-                  autocomplete="off"
-                  autocorrect="off"
-                  class=""
-                  id="DATA-TEST-ID"
-                  role="combobox"
-                  spellcheck="false"
-                  style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
-                  tabindex="0"
-                  type="text"
-                  value=""
-                />
-              </div>
-            </div>
-            <div
-              class=" css-1hb7zxy-IndicatorsContainer"
-            >
-              <span
-                class=" css-1okebmr-indicatorSeparator"
-              />
-              <div
-                aria-hidden="true"
-                class=" css-yuu8po-indicatorContainer"
-              >
-                <svg
-                  aria-hidden="true"
-                  class="css-tj5bde-Svg"
-                  focusable="false"
-                  height="20"
-                  viewBox="0 0 20 20"
-                  width="20"
-                >
-                  <path
-                    d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
-                  />
-                </svg>
-              </div>
-            </div>
-          </div>
-          <input
-            name="SELECT"
-            type="hidden"
-            value=""
-          />
-        </div>
-      </div>
-    </div>
-  </body>,
-  "container": <div>
+<div>
+  <div
+    class="gds-select-container input-select-field field-input-size-4 input-error"
+  >
     <div
-      class="gds-select-container input-select-field field-input-size-4 input-error"
+      class=" css-1959ul7-container"
     >
+      <span
+        class="css-1f43avz-a11yText-A11yText"
+        id="react-select-9-live-region"
+      />
+      <span
+        aria-atomic="false"
+        aria-live="polite"
+        aria-relevant="additions text"
+        class="css-1f43avz-a11yText-A11yText"
+      />
       <div
-        class=" css-1959ul7-container"
+        class=" css-ocyqvw-control"
       >
-        <span
-          class="css-1f43avz-a11yText-A11yText"
-          id="react-select-9-live-region"
-        />
-        <span
-          aria-atomic="false"
-          aria-live="polite"
-          aria-relevant="additions text"
-          class="css-1f43avz-a11yText-A11yText"
-        />
         <div
-          class=" css-ocyqvw-control"
+          class=" css-9plg90-ValueContainer"
         >
           <div
-            class=" css-9plg90-ValueContainer"
+            class=" css-14el2xx-placeholder"
+            id="react-select-9-placeholder"
           >
-            <div
-              class=" css-14el2xx-placeholder"
-              id="react-select-9-placeholder"
-            >
-              Select...
-            </div>
-            <div
-              class=" css-6j8wv5-Input"
-              data-value=""
-            >
-              <input
-                aria-autocomplete="list"
-                aria-controls="react-select-9-listbox"
-                aria-describedby="react-select-9-placeholder"
-                aria-expanded="false"
-                aria-haspopup="true"
-                aria-owns="react-select-9-listbox"
-                autocapitalize="none"
-                autocomplete="off"
-                autocorrect="off"
-                class=""
-                id="DATA-TEST-ID"
-                role="combobox"
-                spellcheck="false"
-                style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
-                tabindex="0"
-                type="text"
-                value=""
-              />
-            </div>
+            Select...
           </div>
           <div
-            class=" css-1hb7zxy-IndicatorsContainer"
+            class=" css-6j8wv5-Input"
+            data-value=""
           >
-            <span
-              class=" css-1okebmr-indicatorSeparator"
+            <input
+              aria-autocomplete="list"
+              aria-controls="react-select-9-listbox"
+              aria-describedby="react-select-9-placeholder"
+              aria-expanded="false"
+              aria-haspopup="true"
+              aria-owns="react-select-9-listbox"
+              autocapitalize="none"
+              autocomplete="off"
+              autocorrect="off"
+              class=""
+              id="DATA-TEST-ID"
+              role="combobox"
+              spellcheck="false"
+              style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+              tabindex="0"
+              type="text"
+              value=""
             />
-            <div
-              aria-hidden="true"
-              class=" css-yuu8po-indicatorContainer"
-            >
-              <svg
-                aria-hidden="true"
-                class="css-tj5bde-Svg"
-                focusable="false"
-                height="20"
-                viewBox="0 0 20 20"
-                width="20"
-              >
-                <path
-                  d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
-                />
-              </svg>
-            </div>
           </div>
         </div>
-        <input
-          name="SELECT"
-          type="hidden"
-          value=""
-        />
+        <div
+          class=" css-1hb7zxy-IndicatorsContainer"
+        >
+          <span
+            class=" css-1okebmr-indicatorSeparator"
+          />
+          <div
+            aria-hidden="true"
+          >
+            <i
+              class="dynamic-search-icon icon"
+              data-testid="DATA-TEST-ID-magnifier"
+              icon="fal,magnifying-glass"
+            />
+          </div>
+        </div>
       </div>
+      <input
+        name="SELECT"
+        type="hidden"
+        value=""
+      />
     </div>
-  </div>,
-  "debug": [Function],
-  "findAllByAltText": [Function],
-  "findAllByDisplayValue": [Function],
-  "findAllByLabelText": [Function],
-  "findAllByPlaceholderText": [Function],
-  "findAllByRole": [Function],
-  "findAllByTestId": [Function],
-  "findAllByText": [Function],
-  "findAllByTitle": [Function],
-  "findByAltText": [Function],
-  "findByDisplayValue": [Function],
-  "findByLabelText": [Function],
-  "findByPlaceholderText": [Function],
-  "findByRole": [Function],
-  "findByTestId": [Function],
-  "findByText": [Function],
-  "findByTitle": [Function],
-  "getAllByAltText": [Function],
-  "getAllByDisplayValue": [Function],
-  "getAllByLabelText": [Function],
-  "getAllByPlaceholderText": [Function],
-  "getAllByRole": [Function],
-  "getAllByTestId": [Function],
-  "getAllByText": [Function],
-  "getAllByTitle": [Function],
-  "getByAltText": [Function],
-  "getByDisplayValue": [Function],
-  "getByLabelText": [Function],
-  "getByPlaceholderText": [Function],
-  "getByRole": [Function],
-  "getByTestId": [Function],
-  "getByText": [Function],
-  "getByTitle": [Function],
-  "queryAllByAltText": [Function],
-  "queryAllByDisplayValue": [Function],
-  "queryAllByLabelText": [Function],
-  "queryAllByPlaceholderText": [Function],
-  "queryAllByRole": [Function],
-  "queryAllByTestId": [Function],
-  "queryAllByText": [Function],
-  "queryAllByTitle": [Function],
-  "queryByAltText": [Function],
-  "queryByDisplayValue": [Function],
-  "queryByLabelText": [Function],
-  "queryByPlaceholderText": [Function],
-  "queryByRole": [Function],
-  "queryByTestId": [Function],
-  "queryByText": [Function],
-  "queryByTitle": [Function],
-  "rerender": [Function],
-  "unmount": [Function],
-}
+  </div>
+</div>
 `;
 
 exports[`DynamicSearchInput Component DynamicSearchInput renders in readOnly 1`] = `
-Object {
-  "asFragment": [Function],
-  "baseElement": <body>
-    <div>
-      <div
-        class="gds-select-container input-select-field-read-only field-input-size-4 field-highlighted"
-        data-testid="DATA-TEST-ID"
-      >
-        option 1
-      </div>
-    </div>
-  </body>,
-  "container": <div>
-    <div
-      class="gds-select-container input-select-field-read-only field-input-size-4 field-highlighted"
-      data-testid="DATA-TEST-ID"
+<div>
+  <div
+    class="gds-select-container input-select-field-read-only field-input-size-4 field-highlighted"
+    data-testid="DATA-TEST-ID"
+  >
+    <span
+      class="gds-typography"
     >
       option 1
-    </div>
-  </div>,
-  "debug": [Function],
-  "findAllByAltText": [Function],
-  "findAllByDisplayValue": [Function],
-  "findAllByLabelText": [Function],
-  "findAllByPlaceholderText": [Function],
-  "findAllByRole": [Function],
-  "findAllByTestId": [Function],
-  "findAllByText": [Function],
-  "findAllByTitle": [Function],
-  "findByAltText": [Function],
-  "findByDisplayValue": [Function],
-  "findByLabelText": [Function],
-  "findByPlaceholderText": [Function],
-  "findByRole": [Function],
-  "findByTestId": [Function],
-  "findByText": [Function],
-  "findByTitle": [Function],
-  "getAllByAltText": [Function],
-  "getAllByDisplayValue": [Function],
-  "getAllByLabelText": [Function],
-  "getAllByPlaceholderText": [Function],
-  "getAllByRole": [Function],
-  "getAllByTestId": [Function],
-  "getAllByText": [Function],
-  "getAllByTitle": [Function],
-  "getByAltText": [Function],
-  "getByDisplayValue": [Function],
-  "getByLabelText": [Function],
-  "getByPlaceholderText": [Function],
-  "getByRole": [Function],
-  "getByTestId": [Function],
-  "getByText": [Function],
-  "getByTitle": [Function],
-  "queryAllByAltText": [Function],
-  "queryAllByDisplayValue": [Function],
-  "queryAllByLabelText": [Function],
-  "queryAllByPlaceholderText": [Function],
-  "queryAllByRole": [Function],
-  "queryAllByTestId": [Function],
-  "queryAllByText": [Function],
-  "queryAllByTitle": [Function],
-  "queryByAltText": [Function],
-  "queryByDisplayValue": [Function],
-  "queryByLabelText": [Function],
-  "queryByPlaceholderText": [Function],
-  "queryByRole": [Function],
-  "queryByTestId": [Function],
-  "queryByText": [Function],
-  "queryByTitle": [Function],
-  "rerender": [Function],
-  "unmount": [Function],
-}
+    </span>
+  </div>
+</div>
 `;
 
 exports[`DynamicSearchInput Component DynamicSearchInput renders in readOnly without datatestid 1`] = `
-Object {
-  "asFragment": [Function],
-  "baseElement": <body>
-    <div>
-      <div
-        class="gds-select-container input-select-field-read-only field-input-size-4 field-highlighted"
-      >
-        option 1
-      </div>
-    </div>
-  </body>,
-  "container": <div>
-    <div
-      class="gds-select-container input-select-field-read-only field-input-size-4 field-highlighted"
+<div>
+  <div
+    class="gds-select-container input-select-field-read-only field-input-size-4 field-highlighted"
+  >
+    <span
+      class="gds-typography"
     >
       option 1
-    </div>
-  </div>,
-  "debug": [Function],
-  "findAllByAltText": [Function],
-  "findAllByDisplayValue": [Function],
-  "findAllByLabelText": [Function],
-  "findAllByPlaceholderText": [Function],
-  "findAllByRole": [Function],
-  "findAllByTestId": [Function],
-  "findAllByText": [Function],
-  "findAllByTitle": [Function],
-  "findByAltText": [Function],
-  "findByDisplayValue": [Function],
-  "findByLabelText": [Function],
-  "findByPlaceholderText": [Function],
-  "findByRole": [Function],
-  "findByTestId": [Function],
-  "findByText": [Function],
-  "findByTitle": [Function],
-  "getAllByAltText": [Function],
-  "getAllByDisplayValue": [Function],
-  "getAllByLabelText": [Function],
-  "getAllByPlaceholderText": [Function],
-  "getAllByRole": [Function],
-  "getAllByTestId": [Function],
-  "getAllByText": [Function],
-  "getAllByTitle": [Function],
-  "getByAltText": [Function],
-  "getByDisplayValue": [Function],
-  "getByLabelText": [Function],
-  "getByPlaceholderText": [Function],
-  "getByRole": [Function],
-  "getByTestId": [Function],
-  "getByText": [Function],
-  "getByTitle": [Function],
-  "queryAllByAltText": [Function],
-  "queryAllByDisplayValue": [Function],
-  "queryAllByLabelText": [Function],
-  "queryAllByPlaceholderText": [Function],
-  "queryAllByRole": [Function],
-  "queryAllByTestId": [Function],
-  "queryAllByText": [Function],
-  "queryAllByTitle": [Function],
-  "queryByAltText": [Function],
-  "queryByDisplayValue": [Function],
-  "queryByLabelText": [Function],
-  "queryByPlaceholderText": [Function],
-  "queryByRole": [Function],
-  "queryByTestId": [Function],
-  "queryByText": [Function],
-  "queryByTitle": [Function],
-  "rerender": [Function],
-  "unmount": [Function],
-}
+    </span>
+  </div>
+</div>
 `;
 
 exports[`DynamicSearchInput Component DynamicSearchInput renders when resolveValue rejects 1`] = `
-Object {
-  "asFragment": [Function],
-  "baseElement": <body>
-    <div>
-      <div
-        class="gds-select-container input-select-field"
-      >
-        <div
-          class=" css-1959ul7-container"
-        >
-          <span
-            class="css-1f43avz-a11yText-A11yText"
-            id="react-select-4-live-region"
-          />
-          <span
-            aria-atomic="false"
-            aria-live="polite"
-            aria-relevant="additions text"
-            class="css-1f43avz-a11yText-A11yText"
-          />
-          <div
-            class=" css-154lpzf-control"
-          >
-            <div
-              class=" css-9plg90-ValueContainer"
-            >
-              <div
-                class=" css-14el2xx-placeholder"
-                id="react-select-4-placeholder"
-              >
-                Select...
-              </div>
-              <div
-                class=" css-6j8wv5-Input"
-                data-value=""
-              >
-                <input
-                  aria-autocomplete="list"
-                  aria-controls="react-select-4-listbox"
-                  aria-describedby="react-select-4-placeholder"
-                  aria-expanded="false"
-                  aria-haspopup="true"
-                  aria-owns="react-select-4-listbox"
-                  autocapitalize="none"
-                  autocomplete="off"
-                  autocorrect="off"
-                  class=""
-                  id="DATA-TEST-ID"
-                  role="combobox"
-                  spellcheck="false"
-                  style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
-                  tabindex="0"
-                  type="text"
-                  value=""
-                />
-              </div>
-            </div>
-            <div
-              class=" css-1hb7zxy-IndicatorsContainer"
-            >
-              <span
-                class=" css-1okebmr-indicatorSeparator"
-              />
-              <div
-                aria-hidden="true"
-                class=" css-yuu8po-indicatorContainer"
-              >
-                <svg
-                  aria-hidden="true"
-                  class="css-tj5bde-Svg"
-                  focusable="false"
-                  height="20"
-                  viewBox="0 0 20 20"
-                  width="20"
-                >
-                  <path
-                    d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
-                  />
-                </svg>
-              </div>
-            </div>
-          </div>
-          <input
-            name="SELECT"
-            type="hidden"
-            value=""
-          />
-        </div>
-      </div>
-    </div>
-  </body>,
-  "container": <div>
+<div>
+  <div
+    class="gds-select-container input-select-field"
+  >
     <div
-      class="gds-select-container input-select-field"
+      class=" css-1959ul7-container"
     >
+      <span
+        class="css-1f43avz-a11yText-A11yText"
+        id="react-select-4-live-region"
+      />
+      <span
+        aria-atomic="false"
+        aria-live="polite"
+        aria-relevant="additions text"
+        class="css-1f43avz-a11yText-A11yText"
+      />
       <div
-        class=" css-1959ul7-container"
+        class=" css-154lpzf-control"
       >
-        <span
-          class="css-1f43avz-a11yText-A11yText"
-          id="react-select-4-live-region"
-        />
-        <span
-          aria-atomic="false"
-          aria-live="polite"
-          aria-relevant="additions text"
-          class="css-1f43avz-a11yText-A11yText"
-        />
         <div
-          class=" css-154lpzf-control"
+          class=" css-9plg90-ValueContainer"
         >
           <div
-            class=" css-9plg90-ValueContainer"
+            class=" css-14el2xx-placeholder"
+            id="react-select-4-placeholder"
           >
-            <div
-              class=" css-14el2xx-placeholder"
-              id="react-select-4-placeholder"
-            >
-              Select...
-            </div>
-            <div
-              class=" css-6j8wv5-Input"
-              data-value=""
-            >
-              <input
-                aria-autocomplete="list"
-                aria-controls="react-select-4-listbox"
-                aria-describedby="react-select-4-placeholder"
-                aria-expanded="false"
-                aria-haspopup="true"
-                aria-owns="react-select-4-listbox"
-                autocapitalize="none"
-                autocomplete="off"
-                autocorrect="off"
-                class=""
-                id="DATA-TEST-ID"
-                role="combobox"
-                spellcheck="false"
-                style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
-                tabindex="0"
-                type="text"
-                value=""
-              />
-            </div>
+            Select...
           </div>
           <div
-            class=" css-1hb7zxy-IndicatorsContainer"
+            class=" css-6j8wv5-Input"
+            data-value=""
           >
-            <span
-              class=" css-1okebmr-indicatorSeparator"
+            <input
+              aria-autocomplete="list"
+              aria-controls="react-select-4-listbox"
+              aria-describedby="react-select-4-placeholder"
+              aria-expanded="false"
+              aria-haspopup="true"
+              aria-owns="react-select-4-listbox"
+              autocapitalize="none"
+              autocomplete="off"
+              autocorrect="off"
+              class=""
+              id="DATA-TEST-ID"
+              role="combobox"
+              spellcheck="false"
+              style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+              tabindex="0"
+              type="text"
+              value=""
             />
-            <div
-              aria-hidden="true"
-              class=" css-yuu8po-indicatorContainer"
-            >
-              <svg
-                aria-hidden="true"
-                class="css-tj5bde-Svg"
-                focusable="false"
-                height="20"
-                viewBox="0 0 20 20"
-                width="20"
-              >
-                <path
-                  d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
-                />
-              </svg>
-            </div>
           </div>
         </div>
-        <input
-          name="SELECT"
-          type="hidden"
-          value=""
-        />
+        <div
+          class=" css-1hb7zxy-IndicatorsContainer"
+        >
+          <span
+            class=" css-1okebmr-indicatorSeparator"
+          />
+          <div
+            aria-hidden="true"
+          >
+            <i
+              class="dynamic-search-icon icon"
+              data-testid="DATA-TEST-ID-magnifier"
+              icon="fal,magnifying-glass"
+            />
+          </div>
+        </div>
       </div>
+      <input
+        name="SELECT"
+        type="hidden"
+        value=""
+      />
     </div>
-  </div>,
-  "debug": [Function],
-  "findAllByAltText": [Function],
-  "findAllByDisplayValue": [Function],
-  "findAllByLabelText": [Function],
-  "findAllByPlaceholderText": [Function],
-  "findAllByRole": [Function],
-  "findAllByTestId": [Function],
-  "findAllByText": [Function],
-  "findAllByTitle": [Function],
-  "findByAltText": [Function],
-  "findByDisplayValue": [Function],
-  "findByLabelText": [Function],
-  "findByPlaceholderText": [Function],
-  "findByRole": [Function],
-  "findByTestId": [Function],
-  "findByText": [Function],
-  "findByTitle": [Function],
-  "getAllByAltText": [Function],
-  "getAllByDisplayValue": [Function],
-  "getAllByLabelText": [Function],
-  "getAllByPlaceholderText": [Function],
-  "getAllByRole": [Function],
-  "getAllByTestId": [Function],
-  "getAllByText": [Function],
-  "getAllByTitle": [Function],
-  "getByAltText": [Function],
-  "getByDisplayValue": [Function],
-  "getByLabelText": [Function],
-  "getByPlaceholderText": [Function],
-  "getByRole": [Function],
-  "getByTestId": [Function],
-  "getByText": [Function],
-  "getByTitle": [Function],
-  "queryAllByAltText": [Function],
-  "queryAllByDisplayValue": [Function],
-  "queryAllByLabelText": [Function],
-  "queryAllByPlaceholderText": [Function],
-  "queryAllByRole": [Function],
-  "queryAllByTestId": [Function],
-  "queryAllByText": [Function],
-  "queryAllByTitle": [Function],
-  "queryByAltText": [Function],
-  "queryByDisplayValue": [Function],
-  "queryByLabelText": [Function],
-  "queryByPlaceholderText": [Function],
-  "queryByRole": [Function],
-  "queryByTestId": [Function],
-  "queryByText": [Function],
-  "queryByTitle": [Function],
-  "rerender": [Function],
-  "unmount": [Function],
-}
+  </div>
+</div>
 `;
 
 exports[`DynamicSearchInput Component DynamicSearchInput renders with invalid input value 1`] = `
-Object {
-  "asFragment": [Function],
-  "baseElement": <body>
-    <div>
-      <div
-        class="gds-select-container input-select-field"
-      >
-        <div
-          class=" css-1959ul7-container"
-        >
-          <span
-            class="css-1f43avz-a11yText-A11yText"
-            id="react-select-3-live-region"
-          />
-          <span
-            aria-atomic="false"
-            aria-live="polite"
-            aria-relevant="additions text"
-            class="css-1f43avz-a11yText-A11yText"
-          />
-          <div
-            class=" css-154lpzf-control"
-          >
-            <div
-              class=" css-9plg90-ValueContainer"
-            >
-              <div
-                class=" css-14el2xx-placeholder"
-                id="react-select-3-placeholder"
-              >
-                Select...
-              </div>
-              <div
-                class=" css-6j8wv5-Input"
-                data-value=""
-              >
-                <input
-                  aria-autocomplete="list"
-                  aria-controls="react-select-3-listbox"
-                  aria-describedby="react-select-3-placeholder"
-                  aria-expanded="false"
-                  aria-haspopup="true"
-                  aria-owns="react-select-3-listbox"
-                  autocapitalize="none"
-                  autocomplete="off"
-                  autocorrect="off"
-                  class=""
-                  id="DATA-TEST-ID"
-                  role="combobox"
-                  spellcheck="false"
-                  style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
-                  tabindex="0"
-                  type="text"
-                  value=""
-                />
-              </div>
-            </div>
-            <div
-              class=" css-1hb7zxy-IndicatorsContainer"
-            >
-              <span
-                class=" css-1okebmr-indicatorSeparator"
-              />
-              <div
-                aria-hidden="true"
-                class=" css-yuu8po-indicatorContainer"
-              >
-                <svg
-                  aria-hidden="true"
-                  class="css-tj5bde-Svg"
-                  focusable="false"
-                  height="20"
-                  viewBox="0 0 20 20"
-                  width="20"
-                >
-                  <path
-                    d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
-                  />
-                </svg>
-              </div>
-            </div>
-          </div>
-          <input
-            name="SELECT"
-            type="hidden"
-            value=""
-          />
-        </div>
-      </div>
-    </div>
-  </body>,
-  "container": <div>
+<div>
+  <div
+    class="gds-select-container input-select-field"
+  >
     <div
-      class="gds-select-container input-select-field"
+      class=" css-1959ul7-container"
     >
+      <span
+        class="css-1f43avz-a11yText-A11yText"
+        id="react-select-3-live-region"
+      />
+      <span
+        aria-atomic="false"
+        aria-live="polite"
+        aria-relevant="additions text"
+        class="css-1f43avz-a11yText-A11yText"
+      />
       <div
-        class=" css-1959ul7-container"
+        class=" css-154lpzf-control"
       >
-        <span
-          class="css-1f43avz-a11yText-A11yText"
-          id="react-select-3-live-region"
-        />
-        <span
-          aria-atomic="false"
-          aria-live="polite"
-          aria-relevant="additions text"
-          class="css-1f43avz-a11yText-A11yText"
-        />
         <div
-          class=" css-154lpzf-control"
+          class=" css-9plg90-ValueContainer"
         >
           <div
-            class=" css-9plg90-ValueContainer"
+            class=" css-14el2xx-placeholder"
+            id="react-select-3-placeholder"
           >
-            <div
-              class=" css-14el2xx-placeholder"
-              id="react-select-3-placeholder"
-            >
-              Select...
-            </div>
-            <div
-              class=" css-6j8wv5-Input"
-              data-value=""
-            >
-              <input
-                aria-autocomplete="list"
-                aria-controls="react-select-3-listbox"
-                aria-describedby="react-select-3-placeholder"
-                aria-expanded="false"
-                aria-haspopup="true"
-                aria-owns="react-select-3-listbox"
-                autocapitalize="none"
-                autocomplete="off"
-                autocorrect="off"
-                class=""
-                id="DATA-TEST-ID"
-                role="combobox"
-                spellcheck="false"
-                style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
-                tabindex="0"
-                type="text"
-                value=""
-              />
-            </div>
+            Select...
           </div>
           <div
-            class=" css-1hb7zxy-IndicatorsContainer"
+            class=" css-6j8wv5-Input"
+            data-value=""
           >
-            <span
-              class=" css-1okebmr-indicatorSeparator"
+            <input
+              aria-autocomplete="list"
+              aria-controls="react-select-3-listbox"
+              aria-describedby="react-select-3-placeholder"
+              aria-expanded="false"
+              aria-haspopup="true"
+              aria-owns="react-select-3-listbox"
+              autocapitalize="none"
+              autocomplete="off"
+              autocorrect="off"
+              class=""
+              id="DATA-TEST-ID"
+              role="combobox"
+              spellcheck="false"
+              style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+              tabindex="0"
+              type="text"
+              value=""
             />
-            <div
-              aria-hidden="true"
-              class=" css-yuu8po-indicatorContainer"
-            >
-              <svg
-                aria-hidden="true"
-                class="css-tj5bde-Svg"
-                focusable="false"
-                height="20"
-                viewBox="0 0 20 20"
-                width="20"
-              >
-                <path
-                  d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
-                />
-              </svg>
-            </div>
           </div>
         </div>
-        <input
-          name="SELECT"
-          type="hidden"
-          value=""
-        />
+        <div
+          class=" css-1hb7zxy-IndicatorsContainer"
+        >
+          <span
+            class=" css-1okebmr-indicatorSeparator"
+          />
+          <div
+            aria-hidden="true"
+          >
+            <i
+              class="dynamic-search-icon icon"
+              data-testid="DATA-TEST-ID-magnifier"
+              icon="fal,magnifying-glass"
+            />
+          </div>
+        </div>
       </div>
+      <input
+        name="SELECT"
+        type="hidden"
+        value=""
+      />
     </div>
-  </div>,
-  "debug": [Function],
-  "findAllByAltText": [Function],
-  "findAllByDisplayValue": [Function],
-  "findAllByLabelText": [Function],
-  "findAllByPlaceholderText": [Function],
-  "findAllByRole": [Function],
-  "findAllByTestId": [Function],
-  "findAllByText": [Function],
-  "findAllByTitle": [Function],
-  "findByAltText": [Function],
-  "findByDisplayValue": [Function],
-  "findByLabelText": [Function],
-  "findByPlaceholderText": [Function],
-  "findByRole": [Function],
-  "findByTestId": [Function],
-  "findByText": [Function],
-  "findByTitle": [Function],
-  "getAllByAltText": [Function],
-  "getAllByDisplayValue": [Function],
-  "getAllByLabelText": [Function],
-  "getAllByPlaceholderText": [Function],
-  "getAllByRole": [Function],
-  "getAllByTestId": [Function],
-  "getAllByText": [Function],
-  "getAllByTitle": [Function],
-  "getByAltText": [Function],
-  "getByDisplayValue": [Function],
-  "getByLabelText": [Function],
-  "getByPlaceholderText": [Function],
-  "getByRole": [Function],
-  "getByTestId": [Function],
-  "getByText": [Function],
-  "getByTitle": [Function],
-  "queryAllByAltText": [Function],
-  "queryAllByDisplayValue": [Function],
-  "queryAllByLabelText": [Function],
-  "queryAllByPlaceholderText": [Function],
-  "queryAllByRole": [Function],
-  "queryAllByTestId": [Function],
-  "queryAllByText": [Function],
-  "queryAllByTitle": [Function],
-  "queryByAltText": [Function],
-  "queryByDisplayValue": [Function],
-  "queryByLabelText": [Function],
-  "queryByPlaceholderText": [Function],
-  "queryByRole": [Function],
-  "queryByTestId": [Function],
-  "queryByText": [Function],
-  "queryByTitle": [Function],
-  "rerender": [Function],
-  "unmount": [Function],
-}
+  </div>
+</div>
 `;
 
 exports[`DynamicSearchInput Component DynamicSearchInput renders without input value 1`] = `
-Object {
-  "asFragment": [Function],
-  "baseElement": <body>
-    <div>
-      <div
-        class="gds-select-container input-select-field"
-      >
-        <div
-          class=" css-1959ul7-container"
-        >
-          <span
-            class="css-1f43avz-a11yText-A11yText"
-            id="react-select-5-live-region"
-          />
-          <span
-            aria-atomic="false"
-            aria-live="polite"
-            aria-relevant="additions text"
-            class="css-1f43avz-a11yText-A11yText"
-          />
-          <div
-            class=" css-154lpzf-control"
-          >
-            <div
-              class=" css-9plg90-ValueContainer"
-            >
-              <div
-                class=" css-14el2xx-placeholder"
-                id="react-select-5-placeholder"
-              >
-                Select...
-              </div>
-              <div
-                class=" css-6j8wv5-Input"
-                data-value=""
-              >
-                <input
-                  aria-autocomplete="list"
-                  aria-controls="react-select-5-listbox"
-                  aria-describedby="react-select-5-placeholder"
-                  aria-expanded="false"
-                  aria-haspopup="true"
-                  aria-owns="react-select-5-listbox"
-                  autocapitalize="none"
-                  autocomplete="off"
-                  autocorrect="off"
-                  class=""
-                  id="DATA-TEST-ID"
-                  role="combobox"
-                  spellcheck="false"
-                  style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
-                  tabindex="0"
-                  type="text"
-                  value=""
-                />
-              </div>
-            </div>
-            <div
-              class=" css-1hb7zxy-IndicatorsContainer"
-            >
-              <span
-                class=" css-1okebmr-indicatorSeparator"
-              />
-              <div
-                aria-hidden="true"
-                class=" css-yuu8po-indicatorContainer"
-              >
-                <svg
-                  aria-hidden="true"
-                  class="css-tj5bde-Svg"
-                  focusable="false"
-                  height="20"
-                  viewBox="0 0 20 20"
-                  width="20"
-                >
-                  <path
-                    d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
-                  />
-                </svg>
-              </div>
-            </div>
-          </div>
-          <input
-            name="SELECT"
-            type="hidden"
-            value=""
-          />
-        </div>
-      </div>
-    </div>
-  </body>,
-  "container": <div>
+<div>
+  <div
+    class="gds-select-container input-select-field"
+  >
     <div
-      class="gds-select-container input-select-field"
+      class=" css-1959ul7-container"
     >
+      <span
+        class="css-1f43avz-a11yText-A11yText"
+        id="react-select-5-live-region"
+      />
+      <span
+        aria-atomic="false"
+        aria-live="polite"
+        aria-relevant="additions text"
+        class="css-1f43avz-a11yText-A11yText"
+      />
       <div
-        class=" css-1959ul7-container"
+        class=" css-154lpzf-control"
       >
-        <span
-          class="css-1f43avz-a11yText-A11yText"
-          id="react-select-5-live-region"
-        />
-        <span
-          aria-atomic="false"
-          aria-live="polite"
-          aria-relevant="additions text"
-          class="css-1f43avz-a11yText-A11yText"
-        />
         <div
-          class=" css-154lpzf-control"
+          class=" css-9plg90-ValueContainer"
         >
           <div
-            class=" css-9plg90-ValueContainer"
+            class=" css-14el2xx-placeholder"
+            id="react-select-5-placeholder"
           >
-            <div
-              class=" css-14el2xx-placeholder"
-              id="react-select-5-placeholder"
-            >
-              Select...
-            </div>
-            <div
-              class=" css-6j8wv5-Input"
-              data-value=""
-            >
-              <input
-                aria-autocomplete="list"
-                aria-controls="react-select-5-listbox"
-                aria-describedby="react-select-5-placeholder"
-                aria-expanded="false"
-                aria-haspopup="true"
-                aria-owns="react-select-5-listbox"
-                autocapitalize="none"
-                autocomplete="off"
-                autocorrect="off"
-                class=""
-                id="DATA-TEST-ID"
-                role="combobox"
-                spellcheck="false"
-                style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
-                tabindex="0"
-                type="text"
-                value=""
-              />
-            </div>
+            Select...
           </div>
           <div
-            class=" css-1hb7zxy-IndicatorsContainer"
+            class=" css-6j8wv5-Input"
+            data-value=""
           >
-            <span
-              class=" css-1okebmr-indicatorSeparator"
+            <input
+              aria-autocomplete="list"
+              aria-controls="react-select-5-listbox"
+              aria-describedby="react-select-5-placeholder"
+              aria-expanded="false"
+              aria-haspopup="true"
+              aria-owns="react-select-5-listbox"
+              autocapitalize="none"
+              autocomplete="off"
+              autocorrect="off"
+              class=""
+              id="DATA-TEST-ID"
+              role="combobox"
+              spellcheck="false"
+              style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+              tabindex="0"
+              type="text"
+              value=""
             />
-            <div
-              aria-hidden="true"
-              class=" css-yuu8po-indicatorContainer"
-            >
-              <svg
-                aria-hidden="true"
-                class="css-tj5bde-Svg"
-                focusable="false"
-                height="20"
-                viewBox="0 0 20 20"
-                width="20"
-              >
-                <path
-                  d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
-                />
-              </svg>
-            </div>
           </div>
         </div>
-        <input
-          name="SELECT"
-          type="hidden"
-          value=""
-        />
+        <div
+          class=" css-1hb7zxy-IndicatorsContainer"
+        >
+          <span
+            class=" css-1okebmr-indicatorSeparator"
+          />
+          <div
+            aria-hidden="true"
+          >
+            <i
+              class="dynamic-search-icon icon"
+              data-testid="DATA-TEST-ID-magnifier"
+              icon="fal,magnifying-glass"
+            />
+          </div>
+        </div>
       </div>
+      <input
+        name="SELECT"
+        type="hidden"
+        value=""
+      />
     </div>
-  </div>,
-  "debug": [Function],
-  "findAllByAltText": [Function],
-  "findAllByDisplayValue": [Function],
-  "findAllByLabelText": [Function],
-  "findAllByPlaceholderText": [Function],
-  "findAllByRole": [Function],
-  "findAllByTestId": [Function],
-  "findAllByText": [Function],
-  "findAllByTitle": [Function],
-  "findByAltText": [Function],
-  "findByDisplayValue": [Function],
-  "findByLabelText": [Function],
-  "findByPlaceholderText": [Function],
-  "findByRole": [Function],
-  "findByTestId": [Function],
-  "findByText": [Function],
-  "findByTitle": [Function],
-  "getAllByAltText": [Function],
-  "getAllByDisplayValue": [Function],
-  "getAllByLabelText": [Function],
-  "getAllByPlaceholderText": [Function],
-  "getAllByRole": [Function],
-  "getAllByTestId": [Function],
-  "getAllByText": [Function],
-  "getAllByTitle": [Function],
-  "getByAltText": [Function],
-  "getByDisplayValue": [Function],
-  "getByLabelText": [Function],
-  "getByPlaceholderText": [Function],
-  "getByRole": [Function],
-  "getByTestId": [Function],
-  "getByText": [Function],
-  "getByTitle": [Function],
-  "queryAllByAltText": [Function],
-  "queryAllByDisplayValue": [Function],
-  "queryAllByLabelText": [Function],
-  "queryAllByPlaceholderText": [Function],
-  "queryAllByRole": [Function],
-  "queryAllByTestId": [Function],
-  "queryAllByText": [Function],
-  "queryAllByTitle": [Function],
-  "queryByAltText": [Function],
-  "queryByDisplayValue": [Function],
-  "queryByLabelText": [Function],
-  "queryByPlaceholderText": [Function],
-  "queryByRole": [Function],
-  "queryByTestId": [Function],
-  "queryByText": [Function],
-  "queryByTitle": [Function],
-  "rerender": [Function],
-  "unmount": [Function],
-}
+  </div>
+</div>
 `;

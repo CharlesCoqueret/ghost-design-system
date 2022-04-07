@@ -1,12 +1,12 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import MultiSelectInput from '../MultiSelectInput';
 
 describe('MultiSelectInput Component', () => {
   it('MultiSelectInput renders', async () => {
-    const container = render(
+    const { container } = render(
       <MultiSelectInput
         name='SELECT'
         inputValue={['OPTION1']}
@@ -23,10 +23,11 @@ describe('MultiSelectInput Component', () => {
   });
 
   it('MultiSelectInput renders with multiple input values', async () => {
-    const container = render(
+    const { container } = render(
       <MultiSelectInput
-        name='SELECT'
+        dataTestId='DATA-TEST-ID'
         inputValue={['OPTION1', 'OPTION2']}
+        name='SELECT'
         numberOfItemLabel='{} item selected'
         numberOfItemsLabel='{} items selected'
         options={[
@@ -40,7 +41,7 @@ describe('MultiSelectInput Component', () => {
   });
 
   it('MultiSelectInput renders without input value', async () => {
-    const container = render(
+    const { container } = render(
       <MultiSelectInput
         name='SELECT'
         numberOfItemLabel='{} item selected'
@@ -56,7 +57,7 @@ describe('MultiSelectInput Component', () => {
   });
 
   it('MultiSelectInput renders with invalid input value', async () => {
-    const container = render(
+    const { container } = render(
       <MultiSelectInput
         name='SELECT'
         inputValue={['OPTION-VALUE-NOT-AVAILABLE']}
@@ -75,7 +76,7 @@ describe('MultiSelectInput Component', () => {
   it('MultiSelectInput handles change', async () => {
     const onChangeMock = jest.fn();
 
-    const container = render(
+    const { container } = render(
       <MultiSelectInput
         name='SELECT'
         onChange={onChangeMock}
@@ -89,7 +90,7 @@ describe('MultiSelectInput Component', () => {
     );
     expect(container).toMatchSnapshot();
 
-    const select = await container.findByRole('combobox');
+    const select = await screen.findByRole('combobox');
 
     userEvent.type(select, 'option 2{enter}');
 
@@ -100,7 +101,7 @@ describe('MultiSelectInput Component', () => {
   it('MultiSelectInput handles change with empty value when clearable', async () => {
     const onChangeMock = jest.fn();
 
-    const container = render(
+    const { container } = render(
       <MultiSelectInput
         isClearable
         name='SELECT'
@@ -115,7 +116,7 @@ describe('MultiSelectInput Component', () => {
     );
     expect(container).toMatchSnapshot();
 
-    const select = await container.findByRole('combobox');
+    const select = await screen.findByRole('combobox');
 
     userEvent.type(select, '{enter}');
 
@@ -126,7 +127,7 @@ describe('MultiSelectInput Component', () => {
   });
 
   it('MultiSelectInput renders in readOnly', async () => {
-    const container = render(
+    const { container } = render(
       <MultiSelectInput
         name='SELECT'
         inputValue={['OPTION2']}
@@ -142,8 +143,43 @@ describe('MultiSelectInput Component', () => {
     expect(container).toMatchSnapshot();
   });
 
+  it('MultiSelectInput renders with valid value and clearable', async () => {
+    const { container } = render(
+      <MultiSelectInput
+        dataTestId='DATA-TEST-ID'
+        name='SELECT'
+        inputValue={['OPTION1']}
+        isClearable
+        numberOfItemLabel='{} item selected'
+        numberOfItemsLabel='{} items selected'
+        options={[
+          { value: 'OPTION1', label: 'option 1' },
+          { value: 'OPTION2', label: 'option 2' },
+        ]}
+      />,
+    );
+    expect(container).toMatchSnapshot();
+  });
+
+  it('MultiSelectInput renders with valid value and clearable without data-test-id', async () => {
+    const { container } = render(
+      <MultiSelectInput
+        name='SELECT'
+        inputValue={['OPTION1']}
+        isClearable
+        numberOfItemLabel='{} item selected'
+        numberOfItemsLabel='{} items selected'
+        options={[
+          { value: 'OPTION1', label: 'option 1' },
+          { value: 'OPTION2', label: 'option 2' },
+        ]}
+      />,
+    );
+    expect(container).toMatchSnapshot();
+  });
+
   it('MultiSelectInput renders in readOnly with invalid value', async () => {
-    const container = render(
+    const { container } = render(
       <MultiSelectInput
         name='SELECT'
         inputValue={['OPTION-VALUE-NOT-AVAILABLE']}
@@ -160,7 +196,7 @@ describe('MultiSelectInput Component', () => {
   });
 
   it('MultiSelectInput renders in readOnly without input value', async () => {
-    const container = render(
+    const { container } = render(
       <MultiSelectInput
         name='SELECT'
         numberOfItemLabel='{} item selected'
@@ -176,7 +212,7 @@ describe('MultiSelectInput Component', () => {
   });
 
   it('MultiSelectInput renders without portal', async () => {
-    const container = render(
+    const { container } = render(
       <MultiSelectInput
         name='SELECT'
         inputValue={['OPTION-VALUE-NOT-AVAILABLE']}
@@ -193,7 +229,7 @@ describe('MultiSelectInput Component', () => {
   });
 
   it('MultiSelectInput renders with fieldsize, highlight in readOnly', async () => {
-    const container = render(
+    const { container } = render(
       <MultiSelectInput
         fieldSize={5}
         highlighted
@@ -211,7 +247,7 @@ describe('MultiSelectInput Component', () => {
     expect(container).toMatchSnapshot();
   });
   it('MultiSelectInput renders with fieldsize, inError', async () => {
-    const container = render(
+    const { container } = render(
       <MultiSelectInput
         fieldSize={8}
         inputValue={['OPTION-VALUE-NOT-AVAILABLE']}
@@ -229,7 +265,7 @@ describe('MultiSelectInput Component', () => {
   });
 
   it('MultiSelectInput renders disabled', async () => {
-    const container = render(
+    const { container } = render(
       <MultiSelectInput
         disabled
         inputValue={['OPTION-VALUE-NOT-AVAILABLE']}

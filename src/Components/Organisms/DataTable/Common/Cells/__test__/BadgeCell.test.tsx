@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import BadgeCell from '../BadgeCell';
@@ -7,7 +7,7 @@ import { ColumnType } from '../../types';
 
 describe('BadgeCell component', () => {
   it('BadgeCell renders', async () => {
-    const container = render(
+    const { container } = render(
       <table>
         <tbody>
           <tr>
@@ -32,7 +32,7 @@ describe('BadgeCell component', () => {
   });
 
   it('BadgeCell renders row editing with no row input', async () => {
-    const container = render(
+    const { container } = render(
       <table>
         <tbody>
           <tr>
@@ -57,7 +57,7 @@ describe('BadgeCell component', () => {
   });
 
   it('BadgeCell renders cell editing with no row input', async () => {
-    const container = render(
+    const { container } = render(
       <table>
         <tbody>
           <tr>
@@ -82,7 +82,7 @@ describe('BadgeCell component', () => {
   });
 
   it('BadgeCell renders hidden', async () => {
-    const container = render(
+    const { container } = render(
       <table>
         <tbody>
           <tr>
@@ -108,7 +108,7 @@ describe('BadgeCell component', () => {
   });
 
   it('BadgeCell renders with forced value', async () => {
-    const container = render(
+    const { container } = render(
       <table>
         <tbody>
           <tr>
@@ -136,7 +136,7 @@ describe('BadgeCell component', () => {
   it('BadgeCell renders with erase value when not in options', async () => {
     const onChangeMock = jest.fn();
 
-    const container = render(
+    const { container } = render(
       <table>
         <tbody>
           <tr>
@@ -170,7 +170,7 @@ describe('BadgeCell component', () => {
   it('BadgeCell handles changes', async () => {
     const onChangeMock = jest.fn();
 
-    const container = render(
+    const { container } = render(
       <table>
         <tbody>
           <tr>
@@ -195,7 +195,7 @@ describe('BadgeCell component', () => {
     );
     expect(container).toMatchSnapshot();
 
-    const badge = await container.findByRole('combobox');
+    const badge = await screen.findByRole('combobox');
     userEvent.type(badge, 'label 2{enter}');
 
     expect(container).toMatchSnapshot();

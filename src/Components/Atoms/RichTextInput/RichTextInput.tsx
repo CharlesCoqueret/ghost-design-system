@@ -1,8 +1,6 @@
 import React, { CSSProperties, ReactElement } from 'react';
 import SunEditor from 'suneditor-react';
 import lang from 'suneditor-react/dist/types/lang';
-import align from 'suneditor/src/plugins/submenu/align';
-import blockquote from 'suneditor/src/plugins/command/blockquote';
 import fontColor from 'suneditor/src/plugins/submenu/fontColor';
 import fontSize from 'suneditor/src/plugins/submenu/fontSize';
 import formatBlock from 'suneditor/src/plugins/submenu/formatBlock';
@@ -10,9 +8,7 @@ import hiliteColor from 'suneditor/src/plugins/submenu/hiliteColor';
 import horizontalRule from 'suneditor/src/plugins/submenu/horizontalRule';
 import image from 'suneditor/src/plugins/dialog/image';
 import link from 'suneditor/src/plugins/dialog/link';
-import lineHeight from 'suneditor/src/plugins/submenu/lineHeight';
 import list from 'suneditor/src/plugins/submenu/list';
-import paragraphStyle from 'suneditor/src/plugins/submenu/paragraphStyle';
 import table from 'suneditor/src/plugins/submenu/table';
 import { SunEditorOptions } from 'suneditor/src/options';
 import classnames from 'classnames';
@@ -69,26 +65,11 @@ const RichTextInput = (props: IRichTextInputProps): ReactElement => {
   } = props;
 
   const editorOptions: SunEditorOptions = {
-    plugins: [
-      align,
-      blockquote,
-      fontColor,
-      fontSize,
-      formatBlock,
-      hiliteColor,
-      horizontalRule,
-      image,
-      lineHeight,
-      link,
-      list,
-      paragraphStyle,
-      table,
-    ],
+    plugins: [fontColor, fontSize, formatBlock, hiliteColor, horizontalRule, image, link, list, table],
     buttonList: [
       ['bold', 'italic', 'underline', 'strike'],
-      ['list', 'indent', 'outdent'],
-      ['fontSize', 'fontColor', 'hiliteColor'],
-      ['horizontalRule', 'table'],
+      ['formatBlock', 'list', 'indent', 'outdent'],
+      ['fontSize', 'fontColor', 'hiliteColor', 'horizontalRule', 'table'],
       enableLink && enableImage ? ['link', 'image'] : enableImage ? ['image'] : enableLink ? ['link'] : [],
     ],
     // Do not replace <i></i> by <i /> as it breaks ol ul alignment
@@ -112,6 +93,7 @@ const RichTextInput = (props: IRichTextInputProps): ReactElement => {
     },
     showPathLabel: false,
     height: 'auto',
+    formats: ['p', 'div', 'blockquote', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'],
     imageUploadUrl: undefined,
     imageUrlInput: false,
     videoFileInput: false,

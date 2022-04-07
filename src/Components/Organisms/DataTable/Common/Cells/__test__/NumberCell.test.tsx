@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import NumberCell from '../NumberCell';
@@ -7,7 +7,7 @@ import { ColumnType } from '../../types';
 
 describe('NumberCell component', () => {
   it('NumberCell renders', async () => {
-    const container = render(
+    const { container } = render(
       <table>
         <tbody>
           <tr>
@@ -24,7 +24,7 @@ describe('NumberCell component', () => {
   });
 
   it('NumberCell renders row editing with no row input', async () => {
-    const container = render(
+    const { container } = render(
       <table>
         <tbody>
           <tr>
@@ -41,7 +41,7 @@ describe('NumberCell component', () => {
   });
 
   it('NumberCell renders cell editing with no row input', async () => {
-    const container = render(
+    const { container } = render(
       <table>
         <tbody>
           <tr>
@@ -63,7 +63,7 @@ describe('NumberCell component', () => {
   });
 
   it('NumberCell renders hidden', async () => {
-    const container = render(
+    const { container } = render(
       <table>
         <tbody>
           <tr>
@@ -80,7 +80,7 @@ describe('NumberCell component', () => {
   });
 
   it('NumberCell renders with forced value', async () => {
-    const container = render(
+    const { container } = render(
       <table>
         <tbody>
           <tr>
@@ -100,7 +100,7 @@ describe('NumberCell component', () => {
   it('NumberCell handles changes', async () => {
     const onChangeMock = jest.fn();
 
-    const container = render(
+    const { container } = render(
       <table>
         <tbody>
           <tr>
@@ -117,7 +117,7 @@ describe('NumberCell component', () => {
     );
     expect(container).toMatchSnapshot();
 
-    const NUMBER = await container.findByDisplayValue('12.34');
+    const NUMBER = await screen.findByDisplayValue('12.34');
 
     userEvent.clear(NUMBER);
 

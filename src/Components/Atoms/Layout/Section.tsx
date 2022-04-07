@@ -2,6 +2,7 @@ import React, { PropsWithChildren, ReactElement, useEffect, useRef, useState } f
 import classnames from 'classnames';
 
 import { Icon } from '../Icon';
+import { useRunAfterUpdate } from '../../../hooks';
 
 export interface ISectionProps {
   /** When set the section gets collapsable ability (optional, default true) */
@@ -17,6 +18,7 @@ export interface ISectionProps {
 const Section = (props: PropsWithChildren<ISectionProps>): ReactElement => {
   const { children, collapsable, dataTestId, openInitially, title } = props;
 
+  const runAfterUpdate = useRunAfterUpdate();
   const [open, setOpen] = useState<boolean>(collapsable ? openInitially === true : true);
   const contentRef = useRef<HTMLDivElement>(null);
 
@@ -25,9 +27,19 @@ const Section = (props: PropsWithChildren<ISectionProps>): ReactElement => {
       return;
     }
 
+    if (contentRef.current.style.height === undefined || contentRef.current.style.height === '') {
+      contentRef.current.style.height = open ? 'auto' : '0px';
+      if (open) {
+        runAfterUpdate(() => {
+          if (!contentRef.current) return;
+          contentRef.current.style.height = getComputedStyle(contentRef.current).height;
+        });
+      }
+      return;
+    }
+
     // From height auto to 0px
     if (!open) {
-      contentRef.current.style.transition = 'height 500ms linear';
       contentRef.current.offsetHeight;
       contentRef.current.style.height = '0px';
     }
@@ -38,7 +50,6 @@ const Section = (props: PropsWithChildren<ISectionProps>): ReactElement => {
       const endHeight = getComputedStyle(contentRef.current).height;
       contentRef.current.style.height = prevHeight;
       contentRef.current.offsetHeight;
-      contentRef.current.style.transition = 'height 500ms linear';
       contentRef.current.style.height = endHeight;
     }
   }, [open]);
@@ -60,7 +71,12 @@ const Section = (props: PropsWithChildren<ISectionProps>): ReactElement => {
           <Icon icon={['fal', 'chevron-left']} size='lg' className={classnames('icon', { open: open })} />
         )}
       </div>
-      <div className='section-body' ref={contentRef}>
+      <div
+        className='section-body'
+        ref={contentRef}
+        style={{
+          transition: 'height 500ms linear',
+        }}>
         {children}
       </div>
       <div className='section-footer' />

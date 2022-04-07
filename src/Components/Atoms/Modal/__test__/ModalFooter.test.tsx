@@ -5,7 +5,7 @@ import ModalFooter from '../ModalFooter';
 
 describe('ModalFooter Component', () => {
   it('ModalFooter renders', async () => {
-    const container = render(
+    const { container } = render(
       <ModalFooter>
         <div id='CHILD1' />
       </ModalFooter>,

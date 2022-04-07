@@ -1,396 +1,223 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`FileInput Component FileInput handle add file successfully through input 1`] = `
-Object {
-  "asFragment": [Function],
-  "baseElement": <body>
-    <div>
-      <div
-        class="gds-file-input-container"
-      >
-        <div
-          class="droparea"
-        >
-          <label
-            class="label"
-          >
-            Click or drag file to upload
-            <input
-              class="input"
-              data-testid="TEST-ID"
-              multiple=""
-              type="file"
-              value=""
-            />
-          </label>
-        </div>
-        <div
-          class="gallery"
-        />
-      </div>
-    </div>
-  </body>,
-  "container": <div>
+<div>
+  <div
+    class="gds-file-input-container"
+  >
     <div
-      class="gds-file-input-container"
+      class="droparea"
     >
-      <div
-        class="droparea"
+      <label
+        class="label"
       >
-        <label
-          class="label"
-        >
-          Click or drag file to upload
-          <input
-            class="input"
-            data-testid="TEST-ID"
-            multiple=""
-            type="file"
-            value=""
-          />
-        </label>
-      </div>
-      <div
-        class="gallery"
-      />
+        Click or drag file to upload
+        <input
+          class="input"
+          data-testid="TEST-ID"
+          multiple=""
+          type="file"
+          value=""
+        />
+      </label>
     </div>
-  </div>,
-  "debug": [Function],
-  "findAllByAltText": [Function],
-  "findAllByDisplayValue": [Function],
-  "findAllByLabelText": [Function],
-  "findAllByPlaceholderText": [Function],
-  "findAllByRole": [Function],
-  "findAllByTestId": [Function],
-  "findAllByText": [Function],
-  "findAllByTitle": [Function],
-  "findByAltText": [Function],
-  "findByDisplayValue": [Function],
-  "findByLabelText": [Function],
-  "findByPlaceholderText": [Function],
-  "findByRole": [Function],
-  "findByTestId": [Function],
-  "findByText": [Function],
-  "findByTitle": [Function],
-  "getAllByAltText": [Function],
-  "getAllByDisplayValue": [Function],
-  "getAllByLabelText": [Function],
-  "getAllByPlaceholderText": [Function],
-  "getAllByRole": [Function],
-  "getAllByTestId": [Function],
-  "getAllByText": [Function],
-  "getAllByTitle": [Function],
-  "getByAltText": [Function],
-  "getByDisplayValue": [Function],
-  "getByLabelText": [Function],
-  "getByPlaceholderText": [Function],
-  "getByRole": [Function],
-  "getByTestId": [Function],
-  "getByText": [Function],
-  "getByTitle": [Function],
-  "queryAllByAltText": [Function],
-  "queryAllByDisplayValue": [Function],
-  "queryAllByLabelText": [Function],
-  "queryAllByPlaceholderText": [Function],
-  "queryAllByRole": [Function],
-  "queryAllByTestId": [Function],
-  "queryAllByText": [Function],
-  "queryAllByTitle": [Function],
-  "queryByAltText": [Function],
-  "queryByDisplayValue": [Function],
-  "queryByLabelText": [Function],
-  "queryByPlaceholderText": [Function],
-  "queryByRole": [Function],
-  "queryByTestId": [Function],
-  "queryByText": [Function],
-  "queryByTitle": [Function],
-  "rerender": [Function],
-  "unmount": [Function],
-}
+    <div
+      class="gallery"
+    />
+  </div>
+</div>
 `;
 
 exports[`FileInput Component FileInput handle add file successfully through input 2`] = `
-Object {
-  "asFragment": [Function],
-  "baseElement": <body>
-    <div>
-      <div
-        class="gds-file-input-container"
-      >
-        <div
-          class="droparea"
-        >
-          <label
-            class="label"
-          >
-            Click or drag file to upload
-            <input
-              class="input"
-              data-testid="TEST-ID"
-              multiple=""
-              type="file"
-              value=""
-            />
-          </label>
-        </div>
-        <div
-          class="gallery"
-        >
-          <div
-            class="item-container"
-          >
-            <div
-              class="left"
-            >
-              <div
-                class="paperclip-icon"
-              >
-                <i
-                  class="icon"
-                  icon="fal,paperclip"
-                />
-              </div>
-              <div
-                class="name downloadable"
-                data-testid="TEST-ID-download"
-              >
-                hello.png
-              </div>
-            </div>
-            <div
-              class="right"
-            >
-              <progress
-                class="progress"
-                max="100"
-                value="50"
-              />
-              <div
-                class="delete-icon"
-              >
-                <i
-                  class="icon"
-                  icon="fal,spinner"
-                  spin="true"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>,
-  "container": <div>
+<div>
+  <div
+    class="gds-file-input-container"
+  >
     <div
-      class="gds-file-input-container"
+      class="droparea"
+    >
+      <label
+        class="label"
+      >
+        Click or drag file to upload
+        <input
+          class="input"
+          data-testid="TEST-ID"
+          multiple=""
+          type="file"
+          value=""
+        />
+      </label>
+    </div>
+    <div
+      class="gallery"
     >
       <div
-        class="droparea"
-      >
-        <label
-          class="label"
-        >
-          Click or drag file to upload
-          <input
-            class="input"
-            data-testid="TEST-ID"
-            multiple=""
-            type="file"
-            value=""
-          />
-        </label>
-      </div>
-      <div
-        class="gallery"
+        class="item-container"
       >
         <div
-          class="item-container"
+          class="left"
         >
           <div
-            class="left"
+            class="paperclip-icon"
           >
-            <div
-              class="paperclip-icon"
-            >
-              <i
-                class="icon"
-                icon="fal,paperclip"
-              />
-            </div>
-            <div
-              class="name downloadable"
-              data-testid="TEST-ID-download"
-            >
-              hello.png
-            </div>
+            <i
+              class="icon"
+              icon="fal,paperclip"
+            />
           </div>
           <div
-            class="right"
+            class="name downloadable"
+            data-testid="TEST-ID-download"
           >
-            <progress
-              class="progress"
-              max="100"
-              value="50"
+            hello.png
+          </div>
+        </div>
+        <div
+          class="right"
+        >
+          <progress
+            class="progress"
+            max="100"
+            value="50"
+          />
+          <div
+            class="delete-icon"
+          >
+            <i
+              class="icon"
+              icon="fal,spinner"
+              spin="true"
             />
-            <div
-              class="delete-icon"
-            >
-              <i
-                class="icon"
-                icon="fal,spinner"
-                spin="true"
-              />
-            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>,
-  "debug": [Function],
-  "findAllByAltText": [Function],
-  "findAllByDisplayValue": [Function],
-  "findAllByLabelText": [Function],
-  "findAllByPlaceholderText": [Function],
-  "findAllByRole": [Function],
-  "findAllByTestId": [Function],
-  "findAllByText": [Function],
-  "findAllByTitle": [Function],
-  "findByAltText": [Function],
-  "findByDisplayValue": [Function],
-  "findByLabelText": [Function],
-  "findByPlaceholderText": [Function],
-  "findByRole": [Function],
-  "findByTestId": [Function],
-  "findByText": [Function],
-  "findByTitle": [Function],
-  "getAllByAltText": [Function],
-  "getAllByDisplayValue": [Function],
-  "getAllByLabelText": [Function],
-  "getAllByPlaceholderText": [Function],
-  "getAllByRole": [Function],
-  "getAllByTestId": [Function],
-  "getAllByText": [Function],
-  "getAllByTitle": [Function],
-  "getByAltText": [Function],
-  "getByDisplayValue": [Function],
-  "getByLabelText": [Function],
-  "getByPlaceholderText": [Function],
-  "getByRole": [Function],
-  "getByTestId": [Function],
-  "getByText": [Function],
-  "getByTitle": [Function],
-  "queryAllByAltText": [Function],
-  "queryAllByDisplayValue": [Function],
-  "queryAllByLabelText": [Function],
-  "queryAllByPlaceholderText": [Function],
-  "queryAllByRole": [Function],
-  "queryAllByTestId": [Function],
-  "queryAllByText": [Function],
-  "queryAllByTitle": [Function],
-  "queryByAltText": [Function],
-  "queryByDisplayValue": [Function],
-  "queryByLabelText": [Function],
-  "queryByPlaceholderText": [Function],
-  "queryByRole": [Function],
-  "queryByTestId": [Function],
-  "queryByText": [Function],
-  "queryByTitle": [Function],
-  "rerender": [Function],
-  "unmount": [Function],
-}
+  </div>
+</div>
 `;
 
 exports[`FileInput Component FileInput handle add file successfully through input 3`] = `
-Object {
-  "asFragment": [Function],
-  "baseElement": <body>
-    <div>
+<div>
+  <div
+    class="gds-file-input-container"
+  >
+    <div
+      class="droparea"
+    >
+      <label
+        class="label"
+      >
+        Click or drag file to upload
+        <input
+          class="input"
+          data-testid="TEST-ID"
+          multiple=""
+          type="file"
+          value=""
+        />
+      </label>
+    </div>
+    <div
+      class="gallery"
+    >
       <div
-        class="gds-file-input-container"
+        class="item-container"
       >
         <div
-          class="droparea"
-        >
-          <label
-            class="label"
-          >
-            Click or drag file to upload
-            <input
-              class="input"
-              data-testid="TEST-ID"
-              multiple=""
-              type="file"
-              value=""
-            />
-          </label>
-        </div>
-        <div
-          class="gallery"
+          class="left"
         >
           <div
-            class="item-container"
+            class="paperclip-icon"
           >
-            <div
-              class="left"
-            >
-              <div
-                class="paperclip-icon"
-              >
-                <i
-                  class="icon"
-                  icon="fal,paperclip"
-                />
-              </div>
-              <div
-                class="name downloadable"
-                data-testid="TEST-ID-download"
-              >
-                hello.png
-              </div>
-            </div>
-            <div
-              class="right"
-            >
-              <div
-                class="delete-icon"
-                data-testid="TEST-ID-delete"
-              >
-                <i
-                  class="icon"
-                  icon="fal,trash-alt"
-                />
-              </div>
-            </div>
+            <i
+              class="icon"
+              icon="fal,paperclip"
+            />
+          </div>
+          <div
+            class="name downloadable"
+            data-testid="TEST-ID-download"
+          >
+            hello.png
+          </div>
+        </div>
+        <div
+          class="right"
+        >
+          <div
+            class="delete-icon"
+            data-testid="TEST-ID-delete"
+          >
+            <i
+              class="icon"
+              icon="fal,trash-alt"
+            />
           </div>
         </div>
       </div>
     </div>
-  </body>,
-  "container": <div>
+  </div>
+</div>
+`;
+
+exports[`FileInput Component FileInput handle add file unsucessfully through input 1`] = `
+<div>
+  <div
+    class="gds-file-input-container"
+  >
     <div
-      class="gds-file-input-container"
+      class="droparea"
     >
-      <div
-        class="droparea"
+      <label
+        class="label"
       >
-        <label
-          class="label"
-        >
-          Click or drag file to upload
-          <input
-            class="input"
-            data-testid="TEST-ID"
-            multiple=""
-            type="file"
-            value=""
-          />
-        </label>
-      </div>
-      <div
-        class="gallery"
+        Click or drag file to upload
+        <input
+          class="input"
+          data-testid="TEST-ID"
+          multiple=""
+          type="file"
+          value=""
+        />
+      </label>
+    </div>
+    <div
+      class="gallery"
+    />
+  </div>
+</div>
+`;
+
+exports[`FileInput Component FileInput handle add file unsucessfully through input 2`] = `
+<div>
+  <div
+    class="gds-file-input-container"
+  >
+    <div
+      class="droparea"
+    >
+      <label
+        class="label"
+      >
+        Click or drag file to upload
+        <input
+          class="input"
+          data-testid="TEST-ID"
+          multiple=""
+          type="file"
+          value=""
+        />
+      </label>
+    </div>
+    <div
+      class="gallery"
+    >
+      <span
+        style="display: inline-block; width: 100%; overflow: hidden;"
       >
         <div
-          class="item-container"
+          class="item-container error"
         >
           <div
             class="left"
@@ -400,11 +227,11 @@ Object {
             >
               <i
                 class="icon"
-                icon="fal,paperclip"
+                icon="fal,exclamation-triangle"
               />
             </div>
             <div
-              class="name downloadable"
+              class="name"
               data-testid="TEST-ID-download"
             >
               hello.png
@@ -424,1673 +251,440 @@ Object {
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>,
-  "debug": [Function],
-  "findAllByAltText": [Function],
-  "findAllByDisplayValue": [Function],
-  "findAllByLabelText": [Function],
-  "findAllByPlaceholderText": [Function],
-  "findAllByRole": [Function],
-  "findAllByTestId": [Function],
-  "findAllByText": [Function],
-  "findAllByTitle": [Function],
-  "findByAltText": [Function],
-  "findByDisplayValue": [Function],
-  "findByLabelText": [Function],
-  "findByPlaceholderText": [Function],
-  "findByRole": [Function],
-  "findByTestId": [Function],
-  "findByText": [Function],
-  "findByTitle": [Function],
-  "getAllByAltText": [Function],
-  "getAllByDisplayValue": [Function],
-  "getAllByLabelText": [Function],
-  "getAllByPlaceholderText": [Function],
-  "getAllByRole": [Function],
-  "getAllByTestId": [Function],
-  "getAllByText": [Function],
-  "getAllByTitle": [Function],
-  "getByAltText": [Function],
-  "getByDisplayValue": [Function],
-  "getByLabelText": [Function],
-  "getByPlaceholderText": [Function],
-  "getByRole": [Function],
-  "getByTestId": [Function],
-  "getByText": [Function],
-  "getByTitle": [Function],
-  "queryAllByAltText": [Function],
-  "queryAllByDisplayValue": [Function],
-  "queryAllByLabelText": [Function],
-  "queryAllByPlaceholderText": [Function],
-  "queryAllByRole": [Function],
-  "queryAllByTestId": [Function],
-  "queryAllByText": [Function],
-  "queryAllByTitle": [Function],
-  "queryByAltText": [Function],
-  "queryByDisplayValue": [Function],
-  "queryByLabelText": [Function],
-  "queryByPlaceholderText": [Function],
-  "queryByRole": [Function],
-  "queryByTestId": [Function],
-  "queryByText": [Function],
-  "queryByTitle": [Function],
-  "rerender": [Function],
-  "unmount": [Function],
-}
-`;
-
-exports[`FileInput Component FileInput handle add file unsucessfully through input 1`] = `
-Object {
-  "asFragment": [Function],
-  "baseElement": <body>
-    <div>
-      <div
-        class="gds-file-input-container"
-      >
+      </span>
+      <div>
         <div
-          class="droparea"
-        >
-          <label
-            class="label"
-          >
-            Click or drag file to upload
-            <input
-              class="input"
-              data-testid="TEST-ID"
-              multiple=""
-              type="file"
-              value=""
-            />
-          </label>
-        </div>
-        <div
-          class="gallery"
-        />
-      </div>
-    </div>
-  </body>,
-  "container": <div>
-    <div
-      class="gds-file-input-container"
-    >
-      <div
-        class="droparea"
-      >
-        <label
-          class="label"
-        >
-          Click or drag file to upload
-          <input
-            class="input"
-            data-testid="TEST-ID"
-            multiple=""
-            type="file"
-            value=""
-          />
-        </label>
-      </div>
-      <div
-        class="gallery"
-      />
-    </div>
-  </div>,
-  "debug": [Function],
-  "findAllByAltText": [Function],
-  "findAllByDisplayValue": [Function],
-  "findAllByLabelText": [Function],
-  "findAllByPlaceholderText": [Function],
-  "findAllByRole": [Function],
-  "findAllByTestId": [Function],
-  "findAllByText": [Function],
-  "findAllByTitle": [Function],
-  "findByAltText": [Function],
-  "findByDisplayValue": [Function],
-  "findByLabelText": [Function],
-  "findByPlaceholderText": [Function],
-  "findByRole": [Function],
-  "findByTestId": [Function],
-  "findByText": [Function],
-  "findByTitle": [Function],
-  "getAllByAltText": [Function],
-  "getAllByDisplayValue": [Function],
-  "getAllByLabelText": [Function],
-  "getAllByPlaceholderText": [Function],
-  "getAllByRole": [Function],
-  "getAllByTestId": [Function],
-  "getAllByText": [Function],
-  "getAllByTitle": [Function],
-  "getByAltText": [Function],
-  "getByDisplayValue": [Function],
-  "getByLabelText": [Function],
-  "getByPlaceholderText": [Function],
-  "getByRole": [Function],
-  "getByTestId": [Function],
-  "getByText": [Function],
-  "getByTitle": [Function],
-  "queryAllByAltText": [Function],
-  "queryAllByDisplayValue": [Function],
-  "queryAllByLabelText": [Function],
-  "queryAllByPlaceholderText": [Function],
-  "queryAllByRole": [Function],
-  "queryAllByTestId": [Function],
-  "queryAllByText": [Function],
-  "queryAllByTitle": [Function],
-  "queryByAltText": [Function],
-  "queryByDisplayValue": [Function],
-  "queryByLabelText": [Function],
-  "queryByPlaceholderText": [Function],
-  "queryByRole": [Function],
-  "queryByTestId": [Function],
-  "queryByText": [Function],
-  "queryByTitle": [Function],
-  "rerender": [Function],
-  "unmount": [Function],
-}
-`;
-
-exports[`FileInput Component FileInput handle add file unsucessfully through input 2`] = `
-Object {
-  "asFragment": [Function],
-  "baseElement": <body>
-    <div>
-      <div
-        class="gds-file-input-container"
-      >
-        <div
-          class="droparea"
-        >
-          <label
-            class="label"
-          >
-            Click or drag file to upload
-            <input
-              class="input"
-              data-testid="TEST-ID"
-              multiple=""
-              type="file"
-              value=""
-            />
-          </label>
-        </div>
-        <div
-          class="gallery"
-        >
-          <span
-            style="display: inline-block; width: 100%; overflow: hidden;"
-          >
-            <div
-              class="item-container error"
-            >
-              <div
-                class="left"
-              >
-                <div
-                  class="paperclip-icon"
-                >
-                  <i
-                    class="icon"
-                    icon="fal,exclamation-triangle"
-                  />
-                </div>
-                <div
-                  class="name"
-                  data-testid="TEST-ID-download"
-                >
-                  hello.png
-                </div>
-              </div>
-              <div
-                class="right"
-              >
-                <div
-                  class="delete-icon"
-                  data-testid="TEST-ID-delete"
-                >
-                  <i
-                    class="icon"
-                    icon="fal,trash-alt"
-                  />
-                </div>
-              </div>
-            </div>
-          </span>
-          <div>
-            <div
-              class="gds-tooltip top"
-              style="left: -99999px; top: -99999px; opacity: 0;"
-            >
-              <div
-                class="tooltip-arrow"
-              />
-              <div
-                class="tooltip-label"
-              >
-                Internal Error
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      id="root-portal-id"
-    >
-      <div />
-    </div>
-  </body>,
-  "container": <div>
-    <div
-      class="gds-file-input-container"
-    >
-      <div
-        class="droparea"
-      >
-        <label
-          class="label"
-        >
-          Click or drag file to upload
-          <input
-            class="input"
-            data-testid="TEST-ID"
-            multiple=""
-            type="file"
-            value=""
-          />
-        </label>
-      </div>
-      <div
-        class="gallery"
-      >
-        <span
-          style="display: inline-block; width: 100%; overflow: hidden;"
+          class="gds-tooltip top"
+          style="left: -99999px; top: -99999px; opacity: 0;"
         >
           <div
-            class="item-container error"
-          >
-            <div
-              class="left"
-            >
-              <div
-                class="paperclip-icon"
-              >
-                <i
-                  class="icon"
-                  icon="fal,exclamation-triangle"
-                />
-              </div>
-              <div
-                class="name"
-                data-testid="TEST-ID-download"
-              >
-                hello.png
-              </div>
-            </div>
-            <div
-              class="right"
-            >
-              <div
-                class="delete-icon"
-                data-testid="TEST-ID-delete"
-              >
-                <i
-                  class="icon"
-                  icon="fal,trash-alt"
-                />
-              </div>
-            </div>
-          </div>
-        </span>
-        <div>
+            class="tooltip-arrow"
+          />
           <div
-            class="gds-tooltip top"
-            style="left: -99999px; top: -99999px; opacity: 0;"
+            class="tooltip-label"
           >
-            <div
-              class="tooltip-arrow"
-            />
-            <div
-              class="tooltip-label"
-            >
-              Internal Error
-            </div>
+            Internal Error
           </div>
         </div>
       </div>
     </div>
-  </div>,
-  "debug": [Function],
-  "findAllByAltText": [Function],
-  "findAllByDisplayValue": [Function],
-  "findAllByLabelText": [Function],
-  "findAllByPlaceholderText": [Function],
-  "findAllByRole": [Function],
-  "findAllByTestId": [Function],
-  "findAllByText": [Function],
-  "findAllByTitle": [Function],
-  "findByAltText": [Function],
-  "findByDisplayValue": [Function],
-  "findByLabelText": [Function],
-  "findByPlaceholderText": [Function],
-  "findByRole": [Function],
-  "findByTestId": [Function],
-  "findByText": [Function],
-  "findByTitle": [Function],
-  "getAllByAltText": [Function],
-  "getAllByDisplayValue": [Function],
-  "getAllByLabelText": [Function],
-  "getAllByPlaceholderText": [Function],
-  "getAllByRole": [Function],
-  "getAllByTestId": [Function],
-  "getAllByText": [Function],
-  "getAllByTitle": [Function],
-  "getByAltText": [Function],
-  "getByDisplayValue": [Function],
-  "getByLabelText": [Function],
-  "getByPlaceholderText": [Function],
-  "getByRole": [Function],
-  "getByTestId": [Function],
-  "getByText": [Function],
-  "getByTitle": [Function],
-  "queryAllByAltText": [Function],
-  "queryAllByDisplayValue": [Function],
-  "queryAllByLabelText": [Function],
-  "queryAllByPlaceholderText": [Function],
-  "queryAllByRole": [Function],
-  "queryAllByTestId": [Function],
-  "queryAllByText": [Function],
-  "queryAllByTitle": [Function],
-  "queryByAltText": [Function],
-  "queryByDisplayValue": [Function],
-  "queryByLabelText": [Function],
-  "queryByPlaceholderText": [Function],
-  "queryByRole": [Function],
-  "queryByTestId": [Function],
-  "queryByText": [Function],
-  "queryByTitle": [Function],
-  "rerender": [Function],
-  "unmount": [Function],
-}
+  </div>
+</div>
 `;
 
 exports[`FileInput Component FileInput handle add file with timeout through input 1`] = `
-Object {
-  "asFragment": [Function],
-  "baseElement": <body>
-    <div>
-      <div
-        class="gds-file-input-container"
-      >
-        <div
-          class="droparea"
-        >
-          <label
-            class="label"
-          >
-            Click or drag file to upload
-            <input
-              class="input"
-              data-testid="TEST-ID"
-              multiple=""
-              type="file"
-              value=""
-            />
-          </label>
-        </div>
-        <div
-          class="gallery"
-        />
-      </div>
-    </div>
-  </body>,
-  "container": <div>
+<div>
+  <div
+    class="gds-file-input-container"
+  >
     <div
-      class="gds-file-input-container"
+      class="droparea"
     >
-      <div
-        class="droparea"
+      <label
+        class="label"
       >
-        <label
-          class="label"
-        >
-          Click or drag file to upload
-          <input
-            class="input"
-            data-testid="TEST-ID"
-            multiple=""
-            type="file"
-            value=""
-          />
-        </label>
-      </div>
-      <div
-        class="gallery"
-      />
+        Click or drag file to upload
+        <input
+          class="input"
+          data-testid="TEST-ID"
+          multiple=""
+          type="file"
+          value=""
+        />
+      </label>
     </div>
-  </div>,
-  "debug": [Function],
-  "findAllByAltText": [Function],
-  "findAllByDisplayValue": [Function],
-  "findAllByLabelText": [Function],
-  "findAllByPlaceholderText": [Function],
-  "findAllByRole": [Function],
-  "findAllByTestId": [Function],
-  "findAllByText": [Function],
-  "findAllByTitle": [Function],
-  "findByAltText": [Function],
-  "findByDisplayValue": [Function],
-  "findByLabelText": [Function],
-  "findByPlaceholderText": [Function],
-  "findByRole": [Function],
-  "findByTestId": [Function],
-  "findByText": [Function],
-  "findByTitle": [Function],
-  "getAllByAltText": [Function],
-  "getAllByDisplayValue": [Function],
-  "getAllByLabelText": [Function],
-  "getAllByPlaceholderText": [Function],
-  "getAllByRole": [Function],
-  "getAllByTestId": [Function],
-  "getAllByText": [Function],
-  "getAllByTitle": [Function],
-  "getByAltText": [Function],
-  "getByDisplayValue": [Function],
-  "getByLabelText": [Function],
-  "getByPlaceholderText": [Function],
-  "getByRole": [Function],
-  "getByTestId": [Function],
-  "getByText": [Function],
-  "getByTitle": [Function],
-  "queryAllByAltText": [Function],
-  "queryAllByDisplayValue": [Function],
-  "queryAllByLabelText": [Function],
-  "queryAllByPlaceholderText": [Function],
-  "queryAllByRole": [Function],
-  "queryAllByTestId": [Function],
-  "queryAllByText": [Function],
-  "queryAllByTitle": [Function],
-  "queryByAltText": [Function],
-  "queryByDisplayValue": [Function],
-  "queryByLabelText": [Function],
-  "queryByPlaceholderText": [Function],
-  "queryByRole": [Function],
-  "queryByTestId": [Function],
-  "queryByText": [Function],
-  "queryByTitle": [Function],
-  "rerender": [Function],
-  "unmount": [Function],
-}
+    <div
+      class="gallery"
+    />
+  </div>
+</div>
 `;
 
 exports[`FileInput Component FileInput handle add file with timeout through input 2`] = `
-Object {
-  "asFragment": [Function],
-  "baseElement": <body>
-    <div>
-      <div
-        class="gds-file-input-container"
+<div>
+  <div
+    class="gds-file-input-container"
+  >
+    <div
+      class="droparea"
+    >
+      <label
+        class="label"
+      >
+        Click or drag file to upload
+        <input
+          class="input"
+          data-testid="TEST-ID"
+          multiple=""
+          type="file"
+          value=""
+        />
+      </label>
+    </div>
+    <div
+      class="gallery"
+    >
+      <span
+        style="display: inline-block; width: 100%; overflow: hidden;"
       >
         <div
-          class="droparea"
+          class="item-container error"
         >
-          <label
-            class="label"
-          >
-            Click or drag file to upload
-            <input
-              class="input"
-              data-testid="TEST-ID"
-              multiple=""
-              type="file"
-              value=""
-            />
-          </label>
-        </div>
-        <div
-          class="gallery"
-        >
-          <span
-            style="display: inline-block; width: 100%; overflow: hidden;"
+          <div
+            class="left"
           >
             <div
-              class="item-container error"
+              class="paperclip-icon"
             >
-              <div
-                class="left"
-              >
-                <div
-                  class="paperclip-icon"
-                >
-                  <i
-                    class="icon"
-                    icon="fal,exclamation-triangle"
-                  />
-                </div>
-                <div
-                  class="name"
-                  data-testid="TEST-ID-download"
-                >
-                  hello.png
-                </div>
-              </div>
-              <div
-                class="right"
-              >
-                <div
-                  class="delete-icon"
-                  data-testid="TEST-ID-delete"
-                >
-                  <i
-                    class="icon"
-                    icon="fal,trash-alt"
-                  />
-                </div>
-              </div>
-            </div>
-          </span>
-          <div>
-            <div
-              class="gds-tooltip top"
-              style="left: -99999px; top: -99999px; opacity: 0;"
-            >
-              <div
-                class="tooltip-arrow"
+              <i
+                class="icon"
+                icon="fal,exclamation-triangle"
               />
-              <div
-                class="tooltip-label"
-              >
-                Timeout
-              </div>
+            </div>
+            <div
+              class="name"
+              data-testid="TEST-ID-download"
+            >
+              hello.png
+            </div>
+          </div>
+          <div
+            class="right"
+          >
+            <div
+              class="delete-icon"
+              data-testid="TEST-ID-delete"
+            >
+              <i
+                class="icon"
+                icon="fal,trash-alt"
+              />
             </div>
           </div>
         </div>
-      </div>
-    </div>
-    <div
-      id="root-portal-id"
-    >
-      <div />
-    </div>
-  </body>,
-  "container": <div>
-    <div
-      class="gds-file-input-container"
-    >
-      <div
-        class="droparea"
-      >
-        <label
-          class="label"
+      </span>
+      <div>
+        <div
+          class="gds-tooltip top"
+          style="left: -99999px; top: -99999px; opacity: 0;"
         >
-          Click or drag file to upload
-          <input
-            class="input"
-            data-testid="TEST-ID"
-            multiple=""
-            type="file"
-            value=""
+          <div
+            class="tooltip-arrow"
           />
-        </label>
-      </div>
-      <div
-        class="gallery"
-      >
-        <span
-          style="display: inline-block; width: 100%; overflow: hidden;"
-        >
           <div
-            class="item-container error"
+            class="tooltip-label"
           >
-            <div
-              class="left"
-            >
-              <div
-                class="paperclip-icon"
-              >
-                <i
-                  class="icon"
-                  icon="fal,exclamation-triangle"
-                />
-              </div>
-              <div
-                class="name"
-                data-testid="TEST-ID-download"
-              >
-                hello.png
-              </div>
-            </div>
-            <div
-              class="right"
-            >
-              <div
-                class="delete-icon"
-                data-testid="TEST-ID-delete"
-              >
-                <i
-                  class="icon"
-                  icon="fal,trash-alt"
-                />
-              </div>
-            </div>
-          </div>
-        </span>
-        <div>
-          <div
-            class="gds-tooltip top"
-            style="left: -99999px; top: -99999px; opacity: 0;"
-          >
-            <div
-              class="tooltip-arrow"
-            />
-            <div
-              class="tooltip-label"
-            >
-              Timeout
-            </div>
+            Timeout
           </div>
         </div>
       </div>
     </div>
-  </div>,
-  "debug": [Function],
-  "findAllByAltText": [Function],
-  "findAllByDisplayValue": [Function],
-  "findAllByLabelText": [Function],
-  "findAllByPlaceholderText": [Function],
-  "findAllByRole": [Function],
-  "findAllByTestId": [Function],
-  "findAllByText": [Function],
-  "findAllByTitle": [Function],
-  "findByAltText": [Function],
-  "findByDisplayValue": [Function],
-  "findByLabelText": [Function],
-  "findByPlaceholderText": [Function],
-  "findByRole": [Function],
-  "findByTestId": [Function],
-  "findByText": [Function],
-  "findByTitle": [Function],
-  "getAllByAltText": [Function],
-  "getAllByDisplayValue": [Function],
-  "getAllByLabelText": [Function],
-  "getAllByPlaceholderText": [Function],
-  "getAllByRole": [Function],
-  "getAllByTestId": [Function],
-  "getAllByText": [Function],
-  "getAllByTitle": [Function],
-  "getByAltText": [Function],
-  "getByDisplayValue": [Function],
-  "getByLabelText": [Function],
-  "getByPlaceholderText": [Function],
-  "getByRole": [Function],
-  "getByTestId": [Function],
-  "getByText": [Function],
-  "getByTitle": [Function],
-  "queryAllByAltText": [Function],
-  "queryAllByDisplayValue": [Function],
-  "queryAllByLabelText": [Function],
-  "queryAllByPlaceholderText": [Function],
-  "queryAllByRole": [Function],
-  "queryAllByTestId": [Function],
-  "queryAllByText": [Function],
-  "queryAllByTitle": [Function],
-  "queryByAltText": [Function],
-  "queryByDisplayValue": [Function],
-  "queryByLabelText": [Function],
-  "queryByPlaceholderText": [Function],
-  "queryByRole": [Function],
-  "queryByTestId": [Function],
-  "queryByText": [Function],
-  "queryByTitle": [Function],
-  "rerender": [Function],
-  "unmount": [Function],
-}
+  </div>
+</div>
 `;
 
 exports[`FileInput Component FileInput handle drag event for highlight 1`] = `
-Object {
-  "asFragment": [Function],
-  "baseElement": <body>
-    <div>
-      <div
-        class="gds-file-input-container"
-      >
-        <div
-          class="droparea"
-        >
-          <label
-            class="label"
-          >
-            Click or drag file to upload
-            <input
-              class="input"
-              data-testid="TEST-ID"
-              multiple=""
-              type="file"
-              value=""
-            />
-          </label>
-        </div>
-        <div
-          class="gallery"
-        />
-      </div>
-    </div>
-  </body>,
-  "container": <div>
+<div>
+  <div
+    class="gds-file-input-container"
+  >
     <div
-      class="gds-file-input-container"
+      class="droparea"
     >
-      <div
-        class="droparea"
+      <label
+        class="label"
       >
-        <label
-          class="label"
-        >
-          Click or drag file to upload
-          <input
-            class="input"
-            data-testid="TEST-ID"
-            multiple=""
-            type="file"
-            value=""
-          />
-        </label>
-      </div>
-      <div
-        class="gallery"
-      />
+        Click or drag file to upload
+        <input
+          class="input"
+          data-testid="TEST-ID"
+          multiple=""
+          type="file"
+          value=""
+        />
+      </label>
     </div>
-  </div>,
-  "debug": [Function],
-  "findAllByAltText": [Function],
-  "findAllByDisplayValue": [Function],
-  "findAllByLabelText": [Function],
-  "findAllByPlaceholderText": [Function],
-  "findAllByRole": [Function],
-  "findAllByTestId": [Function],
-  "findAllByText": [Function],
-  "findAllByTitle": [Function],
-  "findByAltText": [Function],
-  "findByDisplayValue": [Function],
-  "findByLabelText": [Function],
-  "findByPlaceholderText": [Function],
-  "findByRole": [Function],
-  "findByTestId": [Function],
-  "findByText": [Function],
-  "findByTitle": [Function],
-  "getAllByAltText": [Function],
-  "getAllByDisplayValue": [Function],
-  "getAllByLabelText": [Function],
-  "getAllByPlaceholderText": [Function],
-  "getAllByRole": [Function],
-  "getAllByTestId": [Function],
-  "getAllByText": [Function],
-  "getAllByTitle": [Function],
-  "getByAltText": [Function],
-  "getByDisplayValue": [Function],
-  "getByLabelText": [Function],
-  "getByPlaceholderText": [Function],
-  "getByRole": [Function],
-  "getByTestId": [Function],
-  "getByText": [Function],
-  "getByTitle": [Function],
-  "queryAllByAltText": [Function],
-  "queryAllByDisplayValue": [Function],
-  "queryAllByLabelText": [Function],
-  "queryAllByPlaceholderText": [Function],
-  "queryAllByRole": [Function],
-  "queryAllByTestId": [Function],
-  "queryAllByText": [Function],
-  "queryAllByTitle": [Function],
-  "queryByAltText": [Function],
-  "queryByDisplayValue": [Function],
-  "queryByLabelText": [Function],
-  "queryByPlaceholderText": [Function],
-  "queryByRole": [Function],
-  "queryByTestId": [Function],
-  "queryByText": [Function],
-  "queryByTitle": [Function],
-  "rerender": [Function],
-  "unmount": [Function],
-}
+    <div
+      class="gallery"
+    />
+  </div>
+</div>
 `;
 
 exports[`FileInput Component FileInput handle drag event for highlight 2`] = `
-Object {
-  "asFragment": [Function],
-  "baseElement": <body>
-    <div>
-      <div
-        class="gds-file-input-container"
-      >
-        <div
-          class="droparea"
-        >
-          <label
-            class="label"
-          >
-            Click or drag file to upload
-            <input
-              class="input highlight"
-              data-testid="TEST-ID"
-              multiple=""
-              type="file"
-              value=""
-            />
-          </label>
-        </div>
-        <div
-          class="gallery"
-        />
-      </div>
-    </div>
-  </body>,
-  "container": <div>
+<div>
+  <div
+    class="gds-file-input-container"
+  >
     <div
-      class="gds-file-input-container"
+      class="droparea"
     >
-      <div
-        class="droparea"
+      <label
+        class="label"
       >
-        <label
-          class="label"
-        >
-          Click or drag file to upload
-          <input
-            class="input highlight"
-            data-testid="TEST-ID"
-            multiple=""
-            type="file"
-            value=""
-          />
-        </label>
-      </div>
-      <div
-        class="gallery"
-      />
+        Click or drag file to upload
+        <input
+          class="input highlight"
+          data-testid="TEST-ID"
+          multiple=""
+          type="file"
+          value=""
+        />
+      </label>
     </div>
-  </div>,
-  "debug": [Function],
-  "findAllByAltText": [Function],
-  "findAllByDisplayValue": [Function],
-  "findAllByLabelText": [Function],
-  "findAllByPlaceholderText": [Function],
-  "findAllByRole": [Function],
-  "findAllByTestId": [Function],
-  "findAllByText": [Function],
-  "findAllByTitle": [Function],
-  "findByAltText": [Function],
-  "findByDisplayValue": [Function],
-  "findByLabelText": [Function],
-  "findByPlaceholderText": [Function],
-  "findByRole": [Function],
-  "findByTestId": [Function],
-  "findByText": [Function],
-  "findByTitle": [Function],
-  "getAllByAltText": [Function],
-  "getAllByDisplayValue": [Function],
-  "getAllByLabelText": [Function],
-  "getAllByPlaceholderText": [Function],
-  "getAllByRole": [Function],
-  "getAllByTestId": [Function],
-  "getAllByText": [Function],
-  "getAllByTitle": [Function],
-  "getByAltText": [Function],
-  "getByDisplayValue": [Function],
-  "getByLabelText": [Function],
-  "getByPlaceholderText": [Function],
-  "getByRole": [Function],
-  "getByTestId": [Function],
-  "getByText": [Function],
-  "getByTitle": [Function],
-  "queryAllByAltText": [Function],
-  "queryAllByDisplayValue": [Function],
-  "queryAllByLabelText": [Function],
-  "queryAllByPlaceholderText": [Function],
-  "queryAllByRole": [Function],
-  "queryAllByTestId": [Function],
-  "queryAllByText": [Function],
-  "queryAllByTitle": [Function],
-  "queryByAltText": [Function],
-  "queryByDisplayValue": [Function],
-  "queryByLabelText": [Function],
-  "queryByPlaceholderText": [Function],
-  "queryByRole": [Function],
-  "queryByTestId": [Function],
-  "queryByText": [Function],
-  "queryByTitle": [Function],
-  "rerender": [Function],
-  "unmount": [Function],
-}
+    <div
+      class="gallery"
+    />
+  </div>
+</div>
 `;
 
 exports[`FileInput Component FileInput handle drag event for highlight 3`] = `
-Object {
-  "asFragment": [Function],
-  "baseElement": <body>
-    <div>
-      <div
-        class="gds-file-input-container"
-      >
-        <div
-          class="droparea"
-        >
-          <label
-            class="label"
-          >
-            Click or drag file to upload
-            <input
-              class="input"
-              data-testid="TEST-ID"
-              multiple=""
-              type="file"
-              value=""
-            />
-          </label>
-        </div>
-        <div
-          class="gallery"
-        />
-      </div>
-    </div>
-  </body>,
-  "container": <div>
+<div>
+  <div
+    class="gds-file-input-container"
+  >
     <div
-      class="gds-file-input-container"
+      class="droparea"
     >
-      <div
-        class="droparea"
+      <label
+        class="label"
       >
-        <label
-          class="label"
-        >
-          Click or drag file to upload
-          <input
-            class="input"
-            data-testid="TEST-ID"
-            multiple=""
-            type="file"
-            value=""
-          />
-        </label>
-      </div>
-      <div
-        class="gallery"
-      />
+        Click or drag file to upload
+        <input
+          class="input"
+          data-testid="TEST-ID"
+          multiple=""
+          type="file"
+          value=""
+        />
+      </label>
     </div>
-  </div>,
-  "debug": [Function],
-  "findAllByAltText": [Function],
-  "findAllByDisplayValue": [Function],
-  "findAllByLabelText": [Function],
-  "findAllByPlaceholderText": [Function],
-  "findAllByRole": [Function],
-  "findAllByTestId": [Function],
-  "findAllByText": [Function],
-  "findAllByTitle": [Function],
-  "findByAltText": [Function],
-  "findByDisplayValue": [Function],
-  "findByLabelText": [Function],
-  "findByPlaceholderText": [Function],
-  "findByRole": [Function],
-  "findByTestId": [Function],
-  "findByText": [Function],
-  "findByTitle": [Function],
-  "getAllByAltText": [Function],
-  "getAllByDisplayValue": [Function],
-  "getAllByLabelText": [Function],
-  "getAllByPlaceholderText": [Function],
-  "getAllByRole": [Function],
-  "getAllByTestId": [Function],
-  "getAllByText": [Function],
-  "getAllByTitle": [Function],
-  "getByAltText": [Function],
-  "getByDisplayValue": [Function],
-  "getByLabelText": [Function],
-  "getByPlaceholderText": [Function],
-  "getByRole": [Function],
-  "getByTestId": [Function],
-  "getByText": [Function],
-  "getByTitle": [Function],
-  "queryAllByAltText": [Function],
-  "queryAllByDisplayValue": [Function],
-  "queryAllByLabelText": [Function],
-  "queryAllByPlaceholderText": [Function],
-  "queryAllByRole": [Function],
-  "queryAllByTestId": [Function],
-  "queryAllByText": [Function],
-  "queryAllByTitle": [Function],
-  "queryByAltText": [Function],
-  "queryByDisplayValue": [Function],
-  "queryByLabelText": [Function],
-  "queryByPlaceholderText": [Function],
-  "queryByRole": [Function],
-  "queryByTestId": [Function],
-  "queryByText": [Function],
-  "queryByTitle": [Function],
-  "rerender": [Function],
-  "unmount": [Function],
-}
+    <div
+      class="gallery"
+    />
+  </div>
+</div>
 `;
 
 exports[`FileInput Component FileInput handle drop of file 1`] = `
-Object {
-  "asFragment": [Function],
-  "baseElement": <body>
-    <div>
-      <div
-        class="gds-file-input-container"
-      >
-        <div
-          class="droparea"
-        >
-          <label
-            class="label"
-          >
-            Click or drag file to upload
-            <input
-              class="input"
-              data-testid="TEST-ID"
-              multiple=""
-              type="file"
-              value=""
-            />
-          </label>
-        </div>
-        <div
-          class="gallery"
-        />
-      </div>
-    </div>
-  </body>,
-  "container": <div>
+<div>
+  <div
+    class="gds-file-input-container"
+  >
     <div
-      class="gds-file-input-container"
+      class="droparea"
     >
-      <div
-        class="droparea"
+      <label
+        class="label"
       >
-        <label
-          class="label"
-        >
-          Click or drag file to upload
-          <input
-            class="input"
-            data-testid="TEST-ID"
-            multiple=""
-            type="file"
-            value=""
-          />
-        </label>
-      </div>
-      <div
-        class="gallery"
-      />
+        Click or drag file to upload
+        <input
+          class="input"
+          data-testid="TEST-ID"
+          multiple=""
+          type="file"
+          value=""
+        />
+      </label>
     </div>
-  </div>,
-  "debug": [Function],
-  "findAllByAltText": [Function],
-  "findAllByDisplayValue": [Function],
-  "findAllByLabelText": [Function],
-  "findAllByPlaceholderText": [Function],
-  "findAllByRole": [Function],
-  "findAllByTestId": [Function],
-  "findAllByText": [Function],
-  "findAllByTitle": [Function],
-  "findByAltText": [Function],
-  "findByDisplayValue": [Function],
-  "findByLabelText": [Function],
-  "findByPlaceholderText": [Function],
-  "findByRole": [Function],
-  "findByTestId": [Function],
-  "findByText": [Function],
-  "findByTitle": [Function],
-  "getAllByAltText": [Function],
-  "getAllByDisplayValue": [Function],
-  "getAllByLabelText": [Function],
-  "getAllByPlaceholderText": [Function],
-  "getAllByRole": [Function],
-  "getAllByTestId": [Function],
-  "getAllByText": [Function],
-  "getAllByTitle": [Function],
-  "getByAltText": [Function],
-  "getByDisplayValue": [Function],
-  "getByLabelText": [Function],
-  "getByPlaceholderText": [Function],
-  "getByRole": [Function],
-  "getByTestId": [Function],
-  "getByText": [Function],
-  "getByTitle": [Function],
-  "queryAllByAltText": [Function],
-  "queryAllByDisplayValue": [Function],
-  "queryAllByLabelText": [Function],
-  "queryAllByPlaceholderText": [Function],
-  "queryAllByRole": [Function],
-  "queryAllByTestId": [Function],
-  "queryAllByText": [Function],
-  "queryAllByTitle": [Function],
-  "queryByAltText": [Function],
-  "queryByDisplayValue": [Function],
-  "queryByLabelText": [Function],
-  "queryByPlaceholderText": [Function],
-  "queryByRole": [Function],
-  "queryByTestId": [Function],
-  "queryByText": [Function],
-  "queryByTitle": [Function],
-  "rerender": [Function],
-  "unmount": [Function],
-}
+    <div
+      class="gallery"
+    />
+  </div>
+</div>
 `;
 
 exports[`FileInput Component FileInput handle drop of file 2`] = `
-Object {
-  "asFragment": [Function],
-  "baseElement": <body>
-    <div>
-      <div
-        class="gds-file-input-container"
-      >
-        <div
-          class="droparea"
-        >
-          <label
-            class="label"
-          >
-            Click or drag file to upload
-            <input
-              class="input"
-              data-testid="TEST-ID"
-              multiple=""
-              type="file"
-              value=""
-            />
-          </label>
-        </div>
-        <div
-          class="gallery"
-        >
-          <div
-            class="item-container"
-          >
-            <div
-              class="left"
-            >
-              <div
-                class="paperclip-icon"
-              >
-                <i
-                  class="icon"
-                  icon="fal,paperclip"
-                />
-              </div>
-              <div
-                class="name downloadable"
-                data-testid="TEST-ID-download"
-              >
-                file1.pdf
-              </div>
-            </div>
-            <div
-              class="right"
-            >
-              <div
-                class="delete-icon"
-              >
-                <i
-                  class="icon"
-                  icon="fal,spinner"
-                  spin="true"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>,
-  "container": <div>
+<div>
+  <div
+    class="gds-file-input-container"
+  >
     <div
-      class="gds-file-input-container"
+      class="droparea"
+    >
+      <label
+        class="label"
+      >
+        Click or drag file to upload
+        <input
+          class="input"
+          data-testid="TEST-ID"
+          multiple=""
+          type="file"
+          value=""
+        />
+      </label>
+    </div>
+    <div
+      class="gallery"
     >
       <div
-        class="droparea"
-      >
-        <label
-          class="label"
-        >
-          Click or drag file to upload
-          <input
-            class="input"
-            data-testid="TEST-ID"
-            multiple=""
-            type="file"
-            value=""
-          />
-        </label>
-      </div>
-      <div
-        class="gallery"
+        class="item-container"
       >
         <div
-          class="item-container"
+          class="left"
         >
           <div
-            class="left"
+            class="paperclip-icon"
           >
-            <div
-              class="paperclip-icon"
-            >
-              <i
-                class="icon"
-                icon="fal,paperclip"
-              />
-            </div>
-            <div
-              class="name downloadable"
-              data-testid="TEST-ID-download"
-            >
-              file1.pdf
-            </div>
+            <i
+              class="icon"
+              icon="fal,paperclip"
+            />
           </div>
           <div
-            class="right"
+            class="name downloadable"
+            data-testid="TEST-ID-download"
           >
-            <div
-              class="delete-icon"
-            >
-              <i
-                class="icon"
-                icon="fal,spinner"
-                spin="true"
-              />
-            </div>
+            file1.pdf
+          </div>
+        </div>
+        <div
+          class="right"
+        >
+          <div
+            class="delete-icon"
+          >
+            <i
+              class="icon"
+              icon="fal,spinner"
+              spin="true"
+            />
           </div>
         </div>
       </div>
     </div>
-  </div>,
-  "debug": [Function],
-  "findAllByAltText": [Function],
-  "findAllByDisplayValue": [Function],
-  "findAllByLabelText": [Function],
-  "findAllByPlaceholderText": [Function],
-  "findAllByRole": [Function],
-  "findAllByTestId": [Function],
-  "findAllByText": [Function],
-  "findAllByTitle": [Function],
-  "findByAltText": [Function],
-  "findByDisplayValue": [Function],
-  "findByLabelText": [Function],
-  "findByPlaceholderText": [Function],
-  "findByRole": [Function],
-  "findByTestId": [Function],
-  "findByText": [Function],
-  "findByTitle": [Function],
-  "getAllByAltText": [Function],
-  "getAllByDisplayValue": [Function],
-  "getAllByLabelText": [Function],
-  "getAllByPlaceholderText": [Function],
-  "getAllByRole": [Function],
-  "getAllByTestId": [Function],
-  "getAllByText": [Function],
-  "getAllByTitle": [Function],
-  "getByAltText": [Function],
-  "getByDisplayValue": [Function],
-  "getByLabelText": [Function],
-  "getByPlaceholderText": [Function],
-  "getByRole": [Function],
-  "getByTestId": [Function],
-  "getByText": [Function],
-  "getByTitle": [Function],
-  "queryAllByAltText": [Function],
-  "queryAllByDisplayValue": [Function],
-  "queryAllByLabelText": [Function],
-  "queryAllByPlaceholderText": [Function],
-  "queryAllByRole": [Function],
-  "queryAllByTestId": [Function],
-  "queryAllByText": [Function],
-  "queryAllByTitle": [Function],
-  "queryByAltText": [Function],
-  "queryByDisplayValue": [Function],
-  "queryByLabelText": [Function],
-  "queryByPlaceholderText": [Function],
-  "queryByRole": [Function],
-  "queryByTestId": [Function],
-  "queryByText": [Function],
-  "queryByTitle": [Function],
-  "rerender": [Function],
-  "unmount": [Function],
-}
+  </div>
+</div>
 `;
 
 exports[`FileInput Component FileInput handle unsuccessfull add file when quota reached 1`] = `
-Object {
-  "asFragment": [Function],
-  "baseElement": <body>
-    <div>
-      <div
-        class="gds-file-input-container"
-      >
-        <div
-          class="droparea"
-        >
-          <label
-            class="label"
-          >
-            Click or drag file to upload
-            <input
-              class="input"
-              data-testid="TEST-ID"
-              type="file"
-              value=""
-            />
-          </label>
-        </div>
-        <div
-          class="gallery"
-        >
-          <div
-            class="item-container"
-          >
-            <div
-              class="left"
-            >
-              <div
-                class="paperclip-icon"
-              >
-                <i
-                  class="icon"
-                  icon="fal,paperclip"
-                />
-              </div>
-              <div
-                class="name downloadable"
-                data-testid="TEST-ID-download"
-              >
-                AME
-              </div>
-            </div>
-            <div
-              class="right"
-            >
-              <div
-                class="delete-icon"
-                data-testid="TEST-ID-delete"
-              >
-                <i
-                  class="icon"
-                  icon="fal,trash-alt"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>,
-  "container": <div>
+<div>
+  <div
+    class="gds-file-input-container"
+  >
     <div
-      class="gds-file-input-container"
+      class="droparea"
+    >
+      <label
+        class="label"
+      >
+        Click or drag file to upload
+        <input
+          class="input"
+          data-testid="TEST-ID"
+          type="file"
+          value=""
+        />
+      </label>
+    </div>
+    <div
+      class="gallery"
     >
       <div
-        class="droparea"
-      >
-        <label
-          class="label"
-        >
-          Click or drag file to upload
-          <input
-            class="input"
-            data-testid="TEST-ID"
-            type="file"
-            value=""
-          />
-        </label>
-      </div>
-      <div
-        class="gallery"
+        class="item-container"
       >
         <div
-          class="item-container"
+          class="left"
         >
           <div
-            class="left"
+            class="paperclip-icon"
           >
-            <div
-              class="paperclip-icon"
-            >
-              <i
-                class="icon"
-                icon="fal,paperclip"
-              />
-            </div>
-            <div
-              class="name downloadable"
-              data-testid="TEST-ID-download"
-            >
-              AME
-            </div>
+            <i
+              class="icon"
+              icon="fal,paperclip"
+            />
           </div>
           <div
-            class="right"
+            class="name downloadable"
+            data-testid="TEST-ID-download"
           >
-            <div
-              class="delete-icon"
-              data-testid="TEST-ID-delete"
-            >
-              <i
-                class="icon"
-                icon="fal,trash-alt"
-              />
-            </div>
+            AME
+          </div>
+        </div>
+        <div
+          class="right"
+        >
+          <div
+            class="delete-icon"
+            data-testid="TEST-ID-delete"
+          >
+            <i
+              class="icon"
+              icon="fal,trash-alt"
+            />
           </div>
         </div>
       </div>
     </div>
-  </div>,
-  "debug": [Function],
-  "findAllByAltText": [Function],
-  "findAllByDisplayValue": [Function],
-  "findAllByLabelText": [Function],
-  "findAllByPlaceholderText": [Function],
-  "findAllByRole": [Function],
-  "findAllByTestId": [Function],
-  "findAllByText": [Function],
-  "findAllByTitle": [Function],
-  "findByAltText": [Function],
-  "findByDisplayValue": [Function],
-  "findByLabelText": [Function],
-  "findByPlaceholderText": [Function],
-  "findByRole": [Function],
-  "findByTestId": [Function],
-  "findByText": [Function],
-  "findByTitle": [Function],
-  "getAllByAltText": [Function],
-  "getAllByDisplayValue": [Function],
-  "getAllByLabelText": [Function],
-  "getAllByPlaceholderText": [Function],
-  "getAllByRole": [Function],
-  "getAllByTestId": [Function],
-  "getAllByText": [Function],
-  "getAllByTitle": [Function],
-  "getByAltText": [Function],
-  "getByDisplayValue": [Function],
-  "getByLabelText": [Function],
-  "getByPlaceholderText": [Function],
-  "getByRole": [Function],
-  "getByTestId": [Function],
-  "getByText": [Function],
-  "getByTitle": [Function],
-  "queryAllByAltText": [Function],
-  "queryAllByDisplayValue": [Function],
-  "queryAllByLabelText": [Function],
-  "queryAllByPlaceholderText": [Function],
-  "queryAllByRole": [Function],
-  "queryAllByTestId": [Function],
-  "queryAllByText": [Function],
-  "queryAllByTitle": [Function],
-  "queryByAltText": [Function],
-  "queryByDisplayValue": [Function],
-  "queryByLabelText": [Function],
-  "queryByPlaceholderText": [Function],
-  "queryByRole": [Function],
-  "queryByTestId": [Function],
-  "queryByText": [Function],
-  "queryByTitle": [Function],
-  "rerender": [Function],
-  "unmount": [Function],
-}
+  </div>
+</div>
 `;
 
 exports[`FileInput Component FileInput handle unsuccessfull add file when quota reached 2`] = `
-Object {
-  "asFragment": [Function],
-  "baseElement": <body>
-    <div>
+<div>
+  <div
+    class="gds-file-input-container"
+  >
+    <div
+      class="droparea"
+    >
+      <label
+        class="label"
+      >
+        Click or drag file to upload
+        <input
+          class="input"
+          data-testid="TEST-ID"
+          type="file"
+          value=""
+        />
+      </label>
+    </div>
+    <div
+      class="gallery"
+    >
       <div
-        class="gds-file-input-container"
+        class="item-container"
       >
         <div
-          class="droparea"
-        >
-          <label
-            class="label"
-          >
-            Click or drag file to upload
-            <input
-              class="input"
-              data-testid="TEST-ID"
-              type="file"
-              value=""
-            />
-          </label>
-        </div>
-        <div
-          class="gallery"
+          class="left"
         >
           <div
-            class="item-container"
+            class="paperclip-icon"
           >
-            <div
-              class="left"
-            >
-              <div
-                class="paperclip-icon"
-              >
-                <i
-                  class="icon"
-                  icon="fal,paperclip"
-                />
-              </div>
-              <div
-                class="name downloadable"
-                data-testid="TEST-ID-download"
-              >
-                AME
-              </div>
-            </div>
-            <div
-              class="right"
-            >
-              <div
-                class="delete-icon"
-                data-testid="TEST-ID-delete"
-              >
-                <i
-                  class="icon"
-                  icon="fal,trash-alt"
-                />
-              </div>
-            </div>
+            <i
+              class="icon"
+              icon="fal,paperclip"
+            />
           </div>
-          <span
-            style="display: inline-block; width: 100%; overflow: hidden;"
+          <div
+            class="name downloadable"
+            data-testid="TEST-ID-download"
           >
-            <div
-              class="item-container error"
-            >
-              <div
-                class="left"
-              >
-                <div
-                  class="paperclip-icon"
-                >
-                  <i
-                    class="icon"
-                    icon="fal,exclamation-triangle"
-                  />
-                </div>
-                <div
-                  class="name"
-                  data-testid="TEST-ID-download"
-                >
-                  hello.png
-                </div>
-              </div>
-              <div
-                class="right"
-              >
-                <div
-                  class="delete-icon"
-                  data-testid="TEST-ID-delete"
-                >
-                  <i
-                    class="icon"
-                    icon="fal,trash-alt"
-                  />
-                </div>
-              </div>
-            </div>
-          </span>
-          <div>
-            <div
-              class="gds-tooltip top"
-              style="left: -99999px; top: -99999px; opacity: 0;"
-            >
-              <div
-                class="tooltip-arrow"
-              />
-              <div
-                class="tooltip-label"
-              >
-                Quota exceeded: Maximum number of files reached
-              </div>
-            </div>
+            AME
+          </div>
+        </div>
+        <div
+          class="right"
+        >
+          <div
+            class="delete-icon"
+            data-testid="TEST-ID-delete"
+          >
+            <i
+              class="icon"
+              icon="fal,trash-alt"
+            />
           </div>
         </div>
       </div>
-    </div>
-    <div
-      id="root-portal-id"
-    >
-      <div />
-    </div>
-  </body>,
-  "container": <div>
-    <div
-      class="gds-file-input-container"
-    >
-      <div
-        class="droparea"
-      >
-        <label
-          class="label"
-        >
-          Click or drag file to upload
-          <input
-            class="input"
-            data-testid="TEST-ID"
-            type="file"
-            value=""
-          />
-        </label>
-      </div>
-      <div
-        class="gallery"
+      <span
+        style="display: inline-block; width: 100%; overflow: hidden;"
       >
         <div
-          class="item-container"
+          class="item-container error"
         >
           <div
             class="left"
@@ -2100,14 +694,14 @@ Object {
             >
               <i
                 class="icon"
-                icon="fal,paperclip"
+                icon="fal,exclamation-triangle"
               />
             </div>
             <div
-              class="name downloadable"
+              class="name"
               data-testid="TEST-ID-download"
             >
-              AME
+              hello.png
             </div>
           </div>
           <div
@@ -2124,1148 +718,355 @@ Object {
             </div>
           </div>
         </div>
-        <span
-          style="display: inline-block; width: 100%; overflow: hidden;"
+      </span>
+      <div>
+        <div
+          class="gds-tooltip top"
+          style="left: -99999px; top: -99999px; opacity: 0;"
         >
           <div
-            class="item-container error"
-          >
-            <div
-              class="left"
-            >
-              <div
-                class="paperclip-icon"
-              >
-                <i
-                  class="icon"
-                  icon="fal,exclamation-triangle"
-                />
-              </div>
-              <div
-                class="name"
-                data-testid="TEST-ID-download"
-              >
-                hello.png
-              </div>
-            </div>
-            <div
-              class="right"
-            >
-              <div
-                class="delete-icon"
-                data-testid="TEST-ID-delete"
-              >
-                <i
-                  class="icon"
-                  icon="fal,trash-alt"
-                />
-              </div>
-            </div>
-          </div>
-        </span>
-        <div>
+            class="tooltip-arrow"
+          />
           <div
-            class="gds-tooltip top"
-            style="left: -99999px; top: -99999px; opacity: 0;"
+            class="tooltip-label"
           >
-            <div
-              class="tooltip-arrow"
-            />
-            <div
-              class="tooltip-label"
-            >
-              Quota exceeded: Maximum number of files reached
-            </div>
+            Quota exceeded: Maximum number of files reached
           </div>
         </div>
       </div>
     </div>
-  </div>,
-  "debug": [Function],
-  "findAllByAltText": [Function],
-  "findAllByDisplayValue": [Function],
-  "findAllByLabelText": [Function],
-  "findAllByPlaceholderText": [Function],
-  "findAllByRole": [Function],
-  "findAllByTestId": [Function],
-  "findAllByText": [Function],
-  "findAllByTitle": [Function],
-  "findByAltText": [Function],
-  "findByDisplayValue": [Function],
-  "findByLabelText": [Function],
-  "findByPlaceholderText": [Function],
-  "findByRole": [Function],
-  "findByTestId": [Function],
-  "findByText": [Function],
-  "findByTitle": [Function],
-  "getAllByAltText": [Function],
-  "getAllByDisplayValue": [Function],
-  "getAllByLabelText": [Function],
-  "getAllByPlaceholderText": [Function],
-  "getAllByRole": [Function],
-  "getAllByTestId": [Function],
-  "getAllByText": [Function],
-  "getAllByTitle": [Function],
-  "getByAltText": [Function],
-  "getByDisplayValue": [Function],
-  "getByLabelText": [Function],
-  "getByPlaceholderText": [Function],
-  "getByRole": [Function],
-  "getByTestId": [Function],
-  "getByText": [Function],
-  "getByTitle": [Function],
-  "queryAllByAltText": [Function],
-  "queryAllByDisplayValue": [Function],
-  "queryAllByLabelText": [Function],
-  "queryAllByPlaceholderText": [Function],
-  "queryAllByRole": [Function],
-  "queryAllByTestId": [Function],
-  "queryAllByText": [Function],
-  "queryAllByTitle": [Function],
-  "queryByAltText": [Function],
-  "queryByDisplayValue": [Function],
-  "queryByLabelText": [Function],
-  "queryByPlaceholderText": [Function],
-  "queryByRole": [Function],
-  "queryByTestId": [Function],
-  "queryByText": [Function],
-  "queryByTitle": [Function],
-  "rerender": [Function],
-  "unmount": [Function],
-}
+  </div>
+</div>
 `;
 
 exports[`FileInput Component FileInput handles delete rejections of a file 1`] = `
-Object {
-  "asFragment": [Function],
-  "baseElement": <body>
-    <div>
-      <div
-        class="gds-file-input-container"
-      >
-        <div
-          class="droparea"
-        >
-          <label
-            class="label"
-          >
-            Click or drag file to upload
-            <input
-              class="input"
-              data-testid="TEST-ID"
-              type="file"
-              value=""
-            />
-          </label>
-        </div>
-        <div
-          class="gallery"
-        >
-          <div
-            class="item-container"
-          >
-            <div
-              class="left"
-            >
-              <div
-                class="paperclip-icon"
-              >
-                <i
-                  class="icon"
-                  icon="fal,paperclip"
-                />
-              </div>
-              <div
-                class="name downloadable"
-                data-testid="TEST-ID-download"
-              >
-                AME
-              </div>
-            </div>
-            <div
-              class="right"
-            >
-              <div
-                class="delete-icon"
-                data-testid="TEST-ID-delete"
-              >
-                <i
-                  class="icon"
-                  icon="fal,trash-alt"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>,
-  "container": <div>
+<div>
+  <div
+    class="gds-file-input-container"
+  >
     <div
-      class="gds-file-input-container"
+      class="droparea"
+    >
+      <label
+        class="label"
+      >
+        Click or drag file to upload
+        <input
+          class="input"
+          data-testid="TEST-ID"
+          type="file"
+          value=""
+        />
+      </label>
+    </div>
+    <div
+      class="gallery"
     >
       <div
-        class="droparea"
-      >
-        <label
-          class="label"
-        >
-          Click or drag file to upload
-          <input
-            class="input"
-            data-testid="TEST-ID"
-            type="file"
-            value=""
-          />
-        </label>
-      </div>
-      <div
-        class="gallery"
+        class="item-container"
       >
         <div
-          class="item-container"
+          class="left"
         >
           <div
-            class="left"
+            class="paperclip-icon"
           >
-            <div
-              class="paperclip-icon"
-            >
-              <i
-                class="icon"
-                icon="fal,paperclip"
-              />
-            </div>
-            <div
-              class="name downloadable"
-              data-testid="TEST-ID-download"
-            >
-              AME
-            </div>
+            <i
+              class="icon"
+              icon="fal,paperclip"
+            />
           </div>
           <div
-            class="right"
+            class="name downloadable"
+            data-testid="TEST-ID-download"
           >
-            <div
-              class="delete-icon"
-              data-testid="TEST-ID-delete"
-            >
-              <i
-                class="icon"
-                icon="fal,trash-alt"
-              />
-            </div>
+            AME
+          </div>
+        </div>
+        <div
+          class="right"
+        >
+          <div
+            class="delete-icon"
+            data-testid="TEST-ID-delete"
+          >
+            <i
+              class="icon"
+              icon="fal,trash-alt"
+            />
           </div>
         </div>
       </div>
     </div>
-  </div>,
-  "debug": [Function],
-  "findAllByAltText": [Function],
-  "findAllByDisplayValue": [Function],
-  "findAllByLabelText": [Function],
-  "findAllByPlaceholderText": [Function],
-  "findAllByRole": [Function],
-  "findAllByTestId": [Function],
-  "findAllByText": [Function],
-  "findAllByTitle": [Function],
-  "findByAltText": [Function],
-  "findByDisplayValue": [Function],
-  "findByLabelText": [Function],
-  "findByPlaceholderText": [Function],
-  "findByRole": [Function],
-  "findByTestId": [Function],
-  "findByText": [Function],
-  "findByTitle": [Function],
-  "getAllByAltText": [Function],
-  "getAllByDisplayValue": [Function],
-  "getAllByLabelText": [Function],
-  "getAllByPlaceholderText": [Function],
-  "getAllByRole": [Function],
-  "getAllByTestId": [Function],
-  "getAllByText": [Function],
-  "getAllByTitle": [Function],
-  "getByAltText": [Function],
-  "getByDisplayValue": [Function],
-  "getByLabelText": [Function],
-  "getByPlaceholderText": [Function],
-  "getByRole": [Function],
-  "getByTestId": [Function],
-  "getByText": [Function],
-  "getByTitle": [Function],
-  "queryAllByAltText": [Function],
-  "queryAllByDisplayValue": [Function],
-  "queryAllByLabelText": [Function],
-  "queryAllByPlaceholderText": [Function],
-  "queryAllByRole": [Function],
-  "queryAllByTestId": [Function],
-  "queryAllByText": [Function],
-  "queryAllByTitle": [Function],
-  "queryByAltText": [Function],
-  "queryByDisplayValue": [Function],
-  "queryByLabelText": [Function],
-  "queryByPlaceholderText": [Function],
-  "queryByRole": [Function],
-  "queryByTestId": [Function],
-  "queryByText": [Function],
-  "queryByTitle": [Function],
-  "rerender": [Function],
-  "unmount": [Function],
-}
+  </div>
+</div>
 `;
 
 exports[`FileInput Component FileInput handles delete rejections of a file 2`] = `
-Object {
-  "asFragment": [Function],
-  "baseElement": <body>
-    <div>
-      <div
-        class="gds-file-input-container"
-      >
-        <div
-          class="droparea"
-        >
-          <label
-            class="label"
-          >
-            Click or drag file to upload
-            <input
-              class="input"
-              data-testid="TEST-ID"
-              type="file"
-              value=""
-            />
-          </label>
-        </div>
-        <div
-          class="gallery"
-        >
-          <div
-            class="item-container"
-          >
-            <div
-              class="left"
-            >
-              <div
-                class="paperclip-icon"
-              >
-                <i
-                  class="icon"
-                  icon="fal,paperclip"
-                />
-              </div>
-              <div
-                class="name downloadable"
-                data-testid="TEST-ID-download"
-              >
-                AME
-              </div>
-            </div>
-            <div
-              class="right"
-            >
-              <div
-                class="delete-icon"
-                data-testid="TEST-ID-delete"
-              >
-                <i
-                  class="icon"
-                  icon="fal,trash-alt"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>,
-  "container": <div>
+<div>
+  <div
+    class="gds-file-input-container"
+  >
     <div
-      class="gds-file-input-container"
+      class="droparea"
+    >
+      <label
+        class="label"
+      >
+        Click or drag file to upload
+        <input
+          class="input"
+          data-testid="TEST-ID"
+          type="file"
+          value=""
+        />
+      </label>
+    </div>
+    <div
+      class="gallery"
     >
       <div
-        class="droparea"
-      >
-        <label
-          class="label"
-        >
-          Click or drag file to upload
-          <input
-            class="input"
-            data-testid="TEST-ID"
-            type="file"
-            value=""
-          />
-        </label>
-      </div>
-      <div
-        class="gallery"
+        class="item-container"
       >
         <div
-          class="item-container"
+          class="left"
         >
           <div
-            class="left"
+            class="paperclip-icon"
           >
-            <div
-              class="paperclip-icon"
-            >
-              <i
-                class="icon"
-                icon="fal,paperclip"
-              />
-            </div>
-            <div
-              class="name downloadable"
-              data-testid="TEST-ID-download"
-            >
-              AME
-            </div>
+            <i
+              class="icon"
+              icon="fal,paperclip"
+            />
           </div>
           <div
-            class="right"
+            class="name downloadable"
+            data-testid="TEST-ID-download"
           >
-            <div
-              class="delete-icon"
-              data-testid="TEST-ID-delete"
-            >
-              <i
-                class="icon"
-                icon="fal,trash-alt"
-              />
-            </div>
+            AME
+          </div>
+        </div>
+        <div
+          class="right"
+        >
+          <div
+            class="delete-icon"
+            data-testid="TEST-ID-delete"
+          >
+            <i
+              class="icon"
+              icon="fal,trash-alt"
+            />
           </div>
         </div>
       </div>
     </div>
-  </div>,
-  "debug": [Function],
-  "findAllByAltText": [Function],
-  "findAllByDisplayValue": [Function],
-  "findAllByLabelText": [Function],
-  "findAllByPlaceholderText": [Function],
-  "findAllByRole": [Function],
-  "findAllByTestId": [Function],
-  "findAllByText": [Function],
-  "findAllByTitle": [Function],
-  "findByAltText": [Function],
-  "findByDisplayValue": [Function],
-  "findByLabelText": [Function],
-  "findByPlaceholderText": [Function],
-  "findByRole": [Function],
-  "findByTestId": [Function],
-  "findByText": [Function],
-  "findByTitle": [Function],
-  "getAllByAltText": [Function],
-  "getAllByDisplayValue": [Function],
-  "getAllByLabelText": [Function],
-  "getAllByPlaceholderText": [Function],
-  "getAllByRole": [Function],
-  "getAllByTestId": [Function],
-  "getAllByText": [Function],
-  "getAllByTitle": [Function],
-  "getByAltText": [Function],
-  "getByDisplayValue": [Function],
-  "getByLabelText": [Function],
-  "getByPlaceholderText": [Function],
-  "getByRole": [Function],
-  "getByTestId": [Function],
-  "getByText": [Function],
-  "getByTitle": [Function],
-  "queryAllByAltText": [Function],
-  "queryAllByDisplayValue": [Function],
-  "queryAllByLabelText": [Function],
-  "queryAllByPlaceholderText": [Function],
-  "queryAllByRole": [Function],
-  "queryAllByTestId": [Function],
-  "queryAllByText": [Function],
-  "queryAllByTitle": [Function],
-  "queryByAltText": [Function],
-  "queryByDisplayValue": [Function],
-  "queryByLabelText": [Function],
-  "queryByPlaceholderText": [Function],
-  "queryByRole": [Function],
-  "queryByTestId": [Function],
-  "queryByText": [Function],
-  "queryByTitle": [Function],
-  "rerender": [Function],
-  "unmount": [Function],
-}
+  </div>
+</div>
 `;
 
 exports[`FileInput Component FileInput handles download and delete of a file 1`] = `
-Object {
-  "asFragment": [Function],
-  "baseElement": <body>
-    <div>
-      <div
-        class="gds-file-input-container"
-      >
-        <div
-          class="droparea"
-        >
-          <label
-            class="label"
-          >
-            Click or drag file to upload
-            <input
-              class="input"
-              data-testid="TEST-ID"
-              type="file"
-              value=""
-            />
-          </label>
-        </div>
-        <div
-          class="gallery"
-        >
-          <div
-            class="item-container"
-          >
-            <div
-              class="left"
-            >
-              <div
-                class="paperclip-icon"
-              >
-                <i
-                  class="icon"
-                  icon="fal,paperclip"
-                />
-              </div>
-              <div
-                class="name downloadable"
-                data-testid="TEST-ID-download"
-              >
-                AME
-              </div>
-            </div>
-            <div
-              class="right"
-            >
-              <div
-                class="delete-icon"
-                data-testid="TEST-ID-delete"
-              >
-                <i
-                  class="icon"
-                  icon="fal,trash-alt"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>,
-  "container": <div>
+<div>
+  <div
+    class="gds-file-input-container"
+  >
     <div
-      class="gds-file-input-container"
+      class="droparea"
+    >
+      <label
+        class="label"
+      >
+        Click or drag file to upload
+        <input
+          class="input"
+          data-testid="TEST-ID"
+          type="file"
+          value=""
+        />
+      </label>
+    </div>
+    <div
+      class="gallery"
     >
       <div
-        class="droparea"
-      >
-        <label
-          class="label"
-        >
-          Click or drag file to upload
-          <input
-            class="input"
-            data-testid="TEST-ID"
-            type="file"
-            value=""
-          />
-        </label>
-      </div>
-      <div
-        class="gallery"
+        class="item-container"
       >
         <div
-          class="item-container"
+          class="left"
         >
           <div
-            class="left"
+            class="paperclip-icon"
           >
-            <div
-              class="paperclip-icon"
-            >
-              <i
-                class="icon"
-                icon="fal,paperclip"
-              />
-            </div>
-            <div
-              class="name downloadable"
-              data-testid="TEST-ID-download"
-            >
-              AME
-            </div>
+            <i
+              class="icon"
+              icon="fal,paperclip"
+            />
           </div>
           <div
-            class="right"
+            class="name downloadable"
+            data-testid="TEST-ID-download"
           >
-            <div
-              class="delete-icon"
-              data-testid="TEST-ID-delete"
-            >
-              <i
-                class="icon"
-                icon="fal,trash-alt"
-              />
-            </div>
+            AME
+          </div>
+        </div>
+        <div
+          class="right"
+        >
+          <div
+            class="delete-icon"
+            data-testid="TEST-ID-delete"
+          >
+            <i
+              class="icon"
+              icon="fal,trash-alt"
+            />
           </div>
         </div>
       </div>
     </div>
-  </div>,
-  "debug": [Function],
-  "findAllByAltText": [Function],
-  "findAllByDisplayValue": [Function],
-  "findAllByLabelText": [Function],
-  "findAllByPlaceholderText": [Function],
-  "findAllByRole": [Function],
-  "findAllByTestId": [Function],
-  "findAllByText": [Function],
-  "findAllByTitle": [Function],
-  "findByAltText": [Function],
-  "findByDisplayValue": [Function],
-  "findByLabelText": [Function],
-  "findByPlaceholderText": [Function],
-  "findByRole": [Function],
-  "findByTestId": [Function],
-  "findByText": [Function],
-  "findByTitle": [Function],
-  "getAllByAltText": [Function],
-  "getAllByDisplayValue": [Function],
-  "getAllByLabelText": [Function],
-  "getAllByPlaceholderText": [Function],
-  "getAllByRole": [Function],
-  "getAllByTestId": [Function],
-  "getAllByText": [Function],
-  "getAllByTitle": [Function],
-  "getByAltText": [Function],
-  "getByDisplayValue": [Function],
-  "getByLabelText": [Function],
-  "getByPlaceholderText": [Function],
-  "getByRole": [Function],
-  "getByTestId": [Function],
-  "getByText": [Function],
-  "getByTitle": [Function],
-  "queryAllByAltText": [Function],
-  "queryAllByDisplayValue": [Function],
-  "queryAllByLabelText": [Function],
-  "queryAllByPlaceholderText": [Function],
-  "queryAllByRole": [Function],
-  "queryAllByTestId": [Function],
-  "queryAllByText": [Function],
-  "queryAllByTitle": [Function],
-  "queryByAltText": [Function],
-  "queryByDisplayValue": [Function],
-  "queryByLabelText": [Function],
-  "queryByPlaceholderText": [Function],
-  "queryByRole": [Function],
-  "queryByTestId": [Function],
-  "queryByText": [Function],
-  "queryByTitle": [Function],
-  "rerender": [Function],
-  "unmount": [Function],
-}
+  </div>
+</div>
 `;
 
 exports[`FileInput Component FileInput handles download and delete of a file 2`] = `
-Object {
-  "asFragment": [Function],
-  "baseElement": <body>
-    <div>
-      <div
-        class="gds-file-input-container"
-      >
-        <div
-          class="droparea"
-        >
-          <label
-            class="label"
-          >
-            Click or drag file to upload
-            <input
-              class="input"
-              data-testid="TEST-ID"
-              multiple=""
-              type="file"
-              value=""
-            />
-          </label>
-        </div>
-        <div
-          class="gallery"
-        />
-      </div>
-    </div>
-  </body>,
-  "container": <div>
+<div>
+  <div
+    class="gds-file-input-container"
+  >
     <div
-      class="gds-file-input-container"
+      class="droparea"
     >
-      <div
-        class="droparea"
+      <label
+        class="label"
       >
-        <label
-          class="label"
-        >
-          Click or drag file to upload
-          <input
-            class="input"
-            data-testid="TEST-ID"
-            multiple=""
-            type="file"
-            value=""
-          />
-        </label>
-      </div>
-      <div
-        class="gallery"
-      />
+        Click or drag file to upload
+        <input
+          class="input"
+          data-testid="TEST-ID"
+          multiple=""
+          type="file"
+          value=""
+        />
+      </label>
     </div>
-  </div>,
-  "debug": [Function],
-  "findAllByAltText": [Function],
-  "findAllByDisplayValue": [Function],
-  "findAllByLabelText": [Function],
-  "findAllByPlaceholderText": [Function],
-  "findAllByRole": [Function],
-  "findAllByTestId": [Function],
-  "findAllByText": [Function],
-  "findAllByTitle": [Function],
-  "findByAltText": [Function],
-  "findByDisplayValue": [Function],
-  "findByLabelText": [Function],
-  "findByPlaceholderText": [Function],
-  "findByRole": [Function],
-  "findByTestId": [Function],
-  "findByText": [Function],
-  "findByTitle": [Function],
-  "getAllByAltText": [Function],
-  "getAllByDisplayValue": [Function],
-  "getAllByLabelText": [Function],
-  "getAllByPlaceholderText": [Function],
-  "getAllByRole": [Function],
-  "getAllByTestId": [Function],
-  "getAllByText": [Function],
-  "getAllByTitle": [Function],
-  "getByAltText": [Function],
-  "getByDisplayValue": [Function],
-  "getByLabelText": [Function],
-  "getByPlaceholderText": [Function],
-  "getByRole": [Function],
-  "getByTestId": [Function],
-  "getByText": [Function],
-  "getByTitle": [Function],
-  "queryAllByAltText": [Function],
-  "queryAllByDisplayValue": [Function],
-  "queryAllByLabelText": [Function],
-  "queryAllByPlaceholderText": [Function],
-  "queryAllByRole": [Function],
-  "queryAllByTestId": [Function],
-  "queryAllByText": [Function],
-  "queryAllByTitle": [Function],
-  "queryByAltText": [Function],
-  "queryByDisplayValue": [Function],
-  "queryByLabelText": [Function],
-  "queryByPlaceholderText": [Function],
-  "queryByRole": [Function],
-  "queryByTestId": [Function],
-  "queryByText": [Function],
-  "queryByTitle": [Function],
-  "rerender": [Function],
-  "unmount": [Function],
-}
+    <div
+      class="gallery"
+    />
+  </div>
+</div>
 `;
 
 exports[`FileInput Component FileInput renders 1`] = `
-Object {
-  "asFragment": [Function],
-  "baseElement": <body>
-    <div>
-      <div
-        class="gds-file-input-container"
-      >
-        <div
-          class="droparea"
-        >
-          <label
-            class="label"
-          >
-            Click or drag file to upload
-            <input
-              class="input"
-              multiple=""
-              type="file"
-              value=""
-            />
-          </label>
-        </div>
-        <div
-          class="gallery"
-        >
-          <div
-            class="item-container"
-          >
-            <div
-              class="left"
-            >
-              <div
-                class="paperclip-icon"
-              >
-                <i
-                  class="icon"
-                  icon="fal,paperclip"
-                />
-              </div>
-              <div
-                class="name downloadable"
-              >
-                NAME
-              </div>
-            </div>
-            <div
-              class="right"
-            >
-              <div
-                class="delete-icon"
-              >
-                <i
-                  class="icon"
-                  icon="fal,trash-alt"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>,
-  "container": <div>
+<div>
+  <div
+    class="gds-file-input-container"
+  >
     <div
-      class="gds-file-input-container"
+      class="droparea"
+    >
+      <label
+        class="label"
+      >
+        Click or drag file to upload
+        <input
+          class="input"
+          multiple=""
+          type="file"
+          value=""
+        />
+      </label>
+    </div>
+    <div
+      class="gallery"
     >
       <div
-        class="droparea"
-      >
-        <label
-          class="label"
-        >
-          Click or drag file to upload
-          <input
-            class="input"
-            multiple=""
-            type="file"
-            value=""
-          />
-        </label>
-      </div>
-      <div
-        class="gallery"
+        class="item-container"
       >
         <div
-          class="item-container"
+          class="left"
         >
           <div
-            class="left"
+            class="paperclip-icon"
           >
-            <div
-              class="paperclip-icon"
-            >
-              <i
-                class="icon"
-                icon="fal,paperclip"
-              />
-            </div>
-            <div
-              class="name downloadable"
-            >
-              NAME
-            </div>
+            <i
+              class="icon"
+              icon="fal,paperclip"
+            />
           </div>
           <div
-            class="right"
+            class="name downloadable"
           >
-            <div
-              class="delete-icon"
-            >
-              <i
-                class="icon"
-                icon="fal,trash-alt"
-              />
-            </div>
+            NAME
+          </div>
+        </div>
+        <div
+          class="right"
+        >
+          <div
+            class="delete-icon"
+          >
+            <i
+              class="icon"
+              icon="fal,trash-alt"
+            />
           </div>
         </div>
       </div>
     </div>
-  </div>,
-  "debug": [Function],
-  "findAllByAltText": [Function],
-  "findAllByDisplayValue": [Function],
-  "findAllByLabelText": [Function],
-  "findAllByPlaceholderText": [Function],
-  "findAllByRole": [Function],
-  "findAllByTestId": [Function],
-  "findAllByText": [Function],
-  "findAllByTitle": [Function],
-  "findByAltText": [Function],
-  "findByDisplayValue": [Function],
-  "findByLabelText": [Function],
-  "findByPlaceholderText": [Function],
-  "findByRole": [Function],
-  "findByTestId": [Function],
-  "findByText": [Function],
-  "findByTitle": [Function],
-  "getAllByAltText": [Function],
-  "getAllByDisplayValue": [Function],
-  "getAllByLabelText": [Function],
-  "getAllByPlaceholderText": [Function],
-  "getAllByRole": [Function],
-  "getAllByTestId": [Function],
-  "getAllByText": [Function],
-  "getAllByTitle": [Function],
-  "getByAltText": [Function],
-  "getByDisplayValue": [Function],
-  "getByLabelText": [Function],
-  "getByPlaceholderText": [Function],
-  "getByRole": [Function],
-  "getByTestId": [Function],
-  "getByText": [Function],
-  "getByTitle": [Function],
-  "queryAllByAltText": [Function],
-  "queryAllByDisplayValue": [Function],
-  "queryAllByLabelText": [Function],
-  "queryAllByPlaceholderText": [Function],
-  "queryAllByRole": [Function],
-  "queryAllByTestId": [Function],
-  "queryAllByText": [Function],
-  "queryAllByTitle": [Function],
-  "queryByAltText": [Function],
-  "queryByDisplayValue": [Function],
-  "queryByLabelText": [Function],
-  "queryByPlaceholderText": [Function],
-  "queryByRole": [Function],
-  "queryByTestId": [Function],
-  "queryByText": [Function],
-  "queryByTitle": [Function],
-  "rerender": [Function],
-  "unmount": [Function],
-}
+  </div>
+</div>
 `;
 
 exports[`FileInput Component FileInput renders without input value 1`] = `
-Object {
-  "asFragment": [Function],
-  "baseElement": <body>
-    <div>
-      <div
-        class="gds-file-input-container field-input-size-4"
-      >
-        <div
-          class="droparea"
-        >
-          <label
-            class="label"
-          >
-            Click or drag file to upload
-            <input
-              class="input"
-              multiple=""
-              type="file"
-              value=""
-            />
-          </label>
-        </div>
-        <div
-          class="gallery"
-        />
-      </div>
-    </div>
-  </body>,
-  "container": <div>
+<div>
+  <div
+    class="gds-file-input-container field-input-size-4"
+  >
     <div
-      class="gds-file-input-container field-input-size-4"
+      class="droparea"
     >
-      <div
-        class="droparea"
+      <label
+        class="label"
       >
-        <label
-          class="label"
-        >
-          Click or drag file to upload
-          <input
-            class="input"
-            multiple=""
-            type="file"
-            value=""
-          />
-        </label>
-      </div>
-      <div
-        class="gallery"
-      />
+        Click or drag file to upload
+        <input
+          class="input"
+          multiple=""
+          type="file"
+          value=""
+        />
+      </label>
     </div>
-  </div>,
-  "debug": [Function],
-  "findAllByAltText": [Function],
-  "findAllByDisplayValue": [Function],
-  "findAllByLabelText": [Function],
-  "findAllByPlaceholderText": [Function],
-  "findAllByRole": [Function],
-  "findAllByTestId": [Function],
-  "findAllByText": [Function],
-  "findAllByTitle": [Function],
-  "findByAltText": [Function],
-  "findByDisplayValue": [Function],
-  "findByLabelText": [Function],
-  "findByPlaceholderText": [Function],
-  "findByRole": [Function],
-  "findByTestId": [Function],
-  "findByText": [Function],
-  "findByTitle": [Function],
-  "getAllByAltText": [Function],
-  "getAllByDisplayValue": [Function],
-  "getAllByLabelText": [Function],
-  "getAllByPlaceholderText": [Function],
-  "getAllByRole": [Function],
-  "getAllByTestId": [Function],
-  "getAllByText": [Function],
-  "getAllByTitle": [Function],
-  "getByAltText": [Function],
-  "getByDisplayValue": [Function],
-  "getByLabelText": [Function],
-  "getByPlaceholderText": [Function],
-  "getByRole": [Function],
-  "getByTestId": [Function],
-  "getByText": [Function],
-  "getByTitle": [Function],
-  "queryAllByAltText": [Function],
-  "queryAllByDisplayValue": [Function],
-  "queryAllByLabelText": [Function],
-  "queryAllByPlaceholderText": [Function],
-  "queryAllByRole": [Function],
-  "queryAllByTestId": [Function],
-  "queryAllByText": [Function],
-  "queryAllByTitle": [Function],
-  "queryByAltText": [Function],
-  "queryByDisplayValue": [Function],
-  "queryByLabelText": [Function],
-  "queryByPlaceholderText": [Function],
-  "queryByRole": [Function],
-  "queryByTestId": [Function],
-  "queryByText": [Function],
-  "queryByTitle": [Function],
-  "rerender": [Function],
-  "unmount": [Function],
-}
+    <div
+      class="gallery"
+    />
+  </div>
+</div>
 `;
 
 exports[`FileInput Component FileInput renders without input value 2`] = `
-Object {
-  "asFragment": [Function],
-  "baseElement": <body>
-    <div>
-      <div
-        class="gds-file-input-container"
-      >
-        <div
-          class="droparea"
-        >
-          <label
-            class="label"
-          >
-            Click or drag file to upload
-            <input
-              class="input"
-              multiple=""
-              type="file"
-              value=""
-            />
-          </label>
-        </div>
-        <div
-          class="gallery"
-        />
-      </div>
-    </div>
-  </body>,
-  "container": <div>
+<div>
+  <div
+    class="gds-file-input-container"
+  >
     <div
-      class="gds-file-input-container"
+      class="droparea"
     >
-      <div
-        class="droparea"
+      <label
+        class="label"
       >
-        <label
-          class="label"
-        >
-          Click or drag file to upload
-          <input
-            class="input"
-            multiple=""
-            type="file"
-            value=""
-          />
-        </label>
-      </div>
-      <div
-        class="gallery"
-      />
+        Click or drag file to upload
+        <input
+          class="input"
+          multiple=""
+          type="file"
+          value=""
+        />
+      </label>
     </div>
-  </div>,
-  "debug": [Function],
-  "findAllByAltText": [Function],
-  "findAllByDisplayValue": [Function],
-  "findAllByLabelText": [Function],
-  "findAllByPlaceholderText": [Function],
-  "findAllByRole": [Function],
-  "findAllByTestId": [Function],
-  "findAllByText": [Function],
-  "findAllByTitle": [Function],
-  "findByAltText": [Function],
-  "findByDisplayValue": [Function],
-  "findByLabelText": [Function],
-  "findByPlaceholderText": [Function],
-  "findByRole": [Function],
-  "findByTestId": [Function],
-  "findByText": [Function],
-  "findByTitle": [Function],
-  "getAllByAltText": [Function],
-  "getAllByDisplayValue": [Function],
-  "getAllByLabelText": [Function],
-  "getAllByPlaceholderText": [Function],
-  "getAllByRole": [Function],
-  "getAllByTestId": [Function],
-  "getAllByText": [Function],
-  "getAllByTitle": [Function],
-  "getByAltText": [Function],
-  "getByDisplayValue": [Function],
-  "getByLabelText": [Function],
-  "getByPlaceholderText": [Function],
-  "getByRole": [Function],
-  "getByTestId": [Function],
-  "getByText": [Function],
-  "getByTitle": [Function],
-  "queryAllByAltText": [Function],
-  "queryAllByDisplayValue": [Function],
-  "queryAllByLabelText": [Function],
-  "queryAllByPlaceholderText": [Function],
-  "queryAllByRole": [Function],
-  "queryAllByTestId": [Function],
-  "queryAllByText": [Function],
-  "queryAllByTitle": [Function],
-  "queryByAltText": [Function],
-  "queryByDisplayValue": [Function],
-  "queryByLabelText": [Function],
-  "queryByPlaceholderText": [Function],
-  "queryByRole": [Function],
-  "queryByTestId": [Function],
-  "queryByText": [Function],
-  "queryByTitle": [Function],
-  "rerender": [Function],
-  "unmount": [Function],
-}
+    <div
+      class="gallery"
+    />
+  </div>
+</div>
 `;

@@ -8,7 +8,7 @@ describe('Title Component', () => {
   it('Title renders', async () => {
     const onTitleEditMock = jest.fn();
 
-    const container = render(
+    const { container } = render(
       <Title
         entityId='ENTITYID'
         onTitleEdit={onTitleEditMock}
@@ -27,7 +27,7 @@ describe('Title Component', () => {
   it('Title renders and handles changes', async () => {
     const onTitleEditMock = jest.fn();
 
-    const container = render(<Title dataTestId='DATA-TEST-ID' onTitleEdit={onTitleEditMock} />);
+    const { container } = render(<Title dataTestId='DATA-TEST-ID' onTitleEdit={onTitleEditMock} />);
     const input = screen.getByTestId('DATA-TEST-ID');
 
     userEvent.type(input, 'ABCDE');
@@ -43,7 +43,7 @@ describe('Title Component', () => {
   it('Title renders and blurs on tab', async () => {
     const onTitleEditMock = jest.fn();
 
-    const container = render(<Title dataTestId='DATA-TEST-ID' onTitleEdit={onTitleEditMock} />);
+    const { container } = render(<Title dataTestId='DATA-TEST-ID' onTitleEdit={onTitleEditMock} />);
     const input = screen.getByTestId('DATA-TEST-ID');
 
     userEvent.type(input, 'ABCDE');
@@ -59,7 +59,7 @@ describe('Title Component', () => {
   it('Title renders and blurs on enter', async () => {
     const onTitleEditMock = jest.fn();
 
-    const container = render(<Title dataTestId='DATA-TEST-ID' onTitleEdit={onTitleEditMock} />);
+    const { container } = render(<Title dataTestId='DATA-TEST-ID' onTitleEdit={onTitleEditMock} />);
     const input = screen.getByTestId('DATA-TEST-ID');
 
     userEvent.type(input, 'ABCDE{enter}');
@@ -74,7 +74,7 @@ describe('Title Component', () => {
   it('Title renders restores title when too short', async () => {
     const onTitleEditMock = jest.fn();
 
-    const container = render(<Title dataTestId='DATA-TEST-ID' title='TITLE' onTitleEdit={onTitleEditMock} />);
+    const { container } = render(<Title dataTestId='DATA-TEST-ID' title='TITLE' onTitleEdit={onTitleEditMock} />);
     const input = screen.getByTestId('DATA-TEST-ID');
 
     userEvent.type(input, '{backspace}'.repeat(5) + '{delete}'.repeat(5) + '{enter}');
@@ -86,7 +86,7 @@ describe('Title Component', () => {
   });
 
   it('Title renders not editable', async () => {
-    const container = render(<Title dataTestId='DATA-TEST-ID' title='TITLE' />);
+    const { container } = render(<Title dataTestId='DATA-TEST-ID' title='TITLE' />);
     const input = screen.getByTestId('DATA-TEST-ID');
 
     userEvent.type(input, 'ABCDE{enter}');

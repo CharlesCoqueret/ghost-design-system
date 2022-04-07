@@ -20,6 +20,7 @@ const AmountCell = <T,>(props: ICellProps<T, IColumnAmount<T>>): ReactElement =>
         allowNegative={column.allowNegative}
         decimalScale={column.decimalScale}
         decimalSeparator={column.decimalSeparator}
+        ellipsis={column.ellipsis}
         inputClassName={classnames(
           { 'table--cell-value--negative': isNegative && !isCurrentlyEditedRow },
           { 'table--cell-value--amount-readonly': !isCurrentlyEditedRow },

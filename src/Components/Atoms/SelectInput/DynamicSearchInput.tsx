@@ -1,10 +1,12 @@
 import React, { ReactElement, useCallback, useEffect, useState } from 'react';
 import { default as ReactSelectAsync } from 'react-select/async';
+import { ClearIndicatorProps, DropdownIndicatorProps, LoadingIndicatorProps } from 'react-select';
 import classnames from 'classnames';
 
 import { customStyles } from './selectStyles';
 import { IOption } from './types';
 import { Icon } from '../Icon';
+import { Typography } from '../Typography';
 
 export interface IDynamicSearchInputProps {
   /** Class for the input (optional, default: undefined) */
@@ -21,6 +23,8 @@ export interface IDynamicSearchInputProps {
   dataTestId?: string;
   /** Disabled field (optional, default: false) */
   disabled?: boolean;
+  /** Ellipsis in readonly (optional, default: false) */
+  ellipsis?: boolean;
   /** Size of the field in a 12 column grid (optional, default: undefined) */
   fieldSize?: number;
   /** Highlight value in readonly mode (optional, default: false) */
@@ -57,6 +61,7 @@ const DynamicSearchInput = (props: IDynamicSearchInputProps): ReactElement => {
     colors,
     dataTestId,
     disabled,
+    ellipsis,
     fieldSize,
     highlighted,
     inputValue,
@@ -127,7 +132,7 @@ const DynamicSearchInput = (props: IDynamicSearchInputProps): ReactElement => {
         {isLoading ? (
           <Icon icon={['fal', 'spinner']} spin data-testid={dataTestId ? `${dataTestId}-spinner` : undefined} />
         ) : currentOption ? (
-          currentOption.label
+          <Typography.Text ellipsis={ellipsis}>{currentOption.label}</Typography.Text>
         ) : (
           '-'
         )}
@@ -147,16 +152,45 @@ const DynamicSearchInput = (props: IDynamicSearchInputProps): ReactElement => {
         className,
       )}>
       <ReactSelectAsync<IOption, false>
-        closeMenuOnSelect={false}
+        closeMenuOnSelect={true}
         components={{
-          LoadingIndicator: () => (
-            <Icon
-              icon={['fal', 'spinner']}
-              spin
-              className='dynamic-search-spinner'
-              data-testid={dataTestId ? `${dataTestId}-spinner` : undefined}
-            />
-          ),
+          LoadingIndicator: (props: LoadingIndicatorProps<IOption, false>) => {
+            const { innerProps } = props;
+            return (
+              <div {...innerProps}>
+                <Icon
+                  icon={['fal', 'spinner']}
+                  spin
+                  className='dynamic-search-icon'
+                  data-testid={dataTestId ? `${dataTestId}-spinner` : undefined}
+                />
+              </div>
+            );
+          },
+          DropdownIndicator: (props: DropdownIndicatorProps<IOption, false>) => {
+            const { innerProps } = props;
+            return (
+              <div {...innerProps}>
+                <Icon
+                  icon={['fal', 'magnifying-glass']}
+                  className='dynamic-search-icon'
+                  data-testid={dataTestId ? `${dataTestId}-magnifier` : undefined}
+                />
+              </div>
+            );
+          },
+          ClearIndicator: (props: ClearIndicatorProps<IOption, false>) => {
+            const { innerProps } = props;
+            return (
+              <div {...innerProps}>
+                <Icon
+                  icon={['fal', 'xmark']}
+                  className='dynamic-search-icon'
+                  data-testid={dataTestId ? `${dataTestId}-clear` : undefined}
+                />
+              </div>
+            );
+          },
         }}
         data-testid={dataTestId}
         hideSelectedOptions={false}
@@ -170,6 +204,7 @@ const DynamicSearchInput = (props: IDynamicSearchInputProps): ReactElement => {
         maxMenuHeight={maxMenuHeight}
         menuPlacement='auto'
         menuPortalTarget={usePortal ? document.querySelector('body') : undefined}
+        menuShouldBlockScroll={true}
         noOptionsMessage={localNoOptionMessage}
         onChange={(option) => {
           if (onChange) {
@@ -196,6 +231,7 @@ DynamicSearchInput.defaultProps = {
     optionSelectedColor: 'rgb(38, 186, 212)',
   },
   disabled: false,
+  ellipsis: false,
   fieldSize: undefined,
   highlighted: false,
   inputValue: undefined,

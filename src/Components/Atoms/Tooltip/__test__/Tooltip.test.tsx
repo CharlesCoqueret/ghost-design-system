@@ -1,19 +1,18 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { act, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import Tooltip from '../Tooltip';
 import { MenuDirectionEnum } from '../tooltipUtils';
-import { act } from 'react-test-renderer';
 
 describe('Tooltip Component', () => {
   it('Tooltip renders', async () => {
-    const container = render(<Tooltip tooltip='TOOLTIP'>CHILDREN</Tooltip>);
+    const { container } = render(<Tooltip tooltip='TOOLTIP'>CHILDREN</Tooltip>);
     expect(container).toMatchSnapshot();
   });
 
   it('Tooltip renders with non default props', async () => {
-    const container = render(
+    const { container } = render(
       <Tooltip
         arrow={false}
         className={'CLASSNAME'}
@@ -30,10 +29,10 @@ describe('Tooltip Component', () => {
   });
 
   it('Tooltip renders shows and closes', async () => {
-    const container = render(<Tooltip tooltip='TOOLTIP'>CHILDREN</Tooltip>);
+    const { container } = render(<Tooltip tooltip='TOOLTIP'>CHILDREN</Tooltip>);
     expect(container).toMatchSnapshot();
 
-    const tooltip = await container.findByText('CHILDREN');
+    const tooltip = await screen.findByText('CHILDREN');
 
     act(() => {
       userEvent.hover(tooltip);

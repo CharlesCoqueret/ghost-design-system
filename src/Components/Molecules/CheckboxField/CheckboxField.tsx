@@ -33,7 +33,6 @@ export interface ICheckboxFieldProps {
   labelSize?: number;
   /** Mandatory field (optional, default: false) */
   mandatory?: boolean;
-  // TODO add name
   /** Handler of value changes (optional, default: undefined) */
   onChange?: (values: Array<IToggleEntry>) => void;
   /** Read only field (optional, default: false) */

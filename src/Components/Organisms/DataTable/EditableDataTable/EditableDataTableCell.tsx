@@ -4,9 +4,11 @@ import {
   AmountCell,
   BadgeCell,
   ButtonCell,
+  CheckboxCell,
   CodeCell,
   CustomCell,
   DateCell,
+  DynamicSearchCell,
   NumberCell,
   PercentageCell,
   TextCell,
@@ -38,7 +40,7 @@ const EditableDataTableCell = <T,>(props: IEditableDataTableCellProps<T>): React
           onChange={(newValue) => {
             handleUpdateDataChange(rowIndex, column.dataIndex, newValue);
           }}
-          editing={editable}
+          editing={column.editable && editable}
         />
       );
     }
@@ -53,7 +55,7 @@ const EditableDataTableCell = <T,>(props: IEditableDataTableCellProps<T>): React
           onChange={(newValue) => {
             handleUpdateDataChange(rowIndex, column.dataIndex, newValue);
           }}
-          editing={editable}
+          editing={column.editable && editable}
         />
       );
     }
@@ -79,6 +81,21 @@ const EditableDataTableCell = <T,>(props: IEditableDataTableCellProps<T>): React
         />
       );
     }
+    case ColumnType.CHECKBOX: {
+      return (
+        <CheckboxCell<T>
+          column={column}
+          dataTestId={dataTestId ? `${dataTestId}-${column.title}-${rowIndex}` : undefined}
+          row={row}
+          extra={extra}
+          rowIndex={rowIndex}
+          onChange={(newValue) => {
+            handleUpdateDataChange(rowIndex, column.dataIndex, newValue);
+          }}
+          editing={column.editable && editable}
+        />
+      );
+    }
     case ColumnType.CUSTOM: {
       return (
         <CustomCell<T>
@@ -90,7 +107,7 @@ const EditableDataTableCell = <T,>(props: IEditableDataTableCellProps<T>): React
           onChange={(newValue) => {
             handleUpdateDataChange(rowIndex, column.dataIndex, newValue);
           }}
-          editing={editable}
+          editing={column.editable && editable}
         />
       );
     }
@@ -105,7 +122,22 @@ const EditableDataTableCell = <T,>(props: IEditableDataTableCellProps<T>): React
           onChange={(newValue) => {
             handleUpdateDataChange(rowIndex, column.dataIndex, newValue);
           }}
-          editing={editable}
+          editing={column.editable && editable}
+        />
+      );
+    }
+    case ColumnType.DYNAMICSEARCH: {
+      return (
+        <DynamicSearchCell<T>
+          column={column}
+          dataTestId={dataTestId ? `${dataTestId}-${column.title}-${rowIndex}` : undefined}
+          row={row}
+          extra={extra}
+          rowIndex={rowIndex}
+          onChange={(newValue) => {
+            handleUpdateDataChange(rowIndex, column.dataIndex, newValue);
+          }}
+          editing={column.editable && editable}
         />
       );
     }
@@ -120,7 +152,7 @@ const EditableDataTableCell = <T,>(props: IEditableDataTableCellProps<T>): React
           onChange={(newValue) => {
             handleUpdateDataChange(rowIndex, column.dataIndex, newValue);
           }}
-          editing={editable}
+          editing={column.editable && editable}
         />
       );
     }
@@ -135,7 +167,7 @@ const EditableDataTableCell = <T,>(props: IEditableDataTableCellProps<T>): React
           onChange={(newValue) => {
             handleUpdateDataChange(rowIndex, column.dataIndex, newValue);
           }}
-          editing={editable}
+          editing={column.editable && editable}
         />
       );
     }
@@ -150,7 +182,7 @@ const EditableDataTableCell = <T,>(props: IEditableDataTableCellProps<T>): React
           onChange={(newValue) => {
             handleUpdateDataChange(rowIndex, column.dataIndex, newValue);
           }}
-          editing={editable}
+          editing={column.editable && editable}
         />
       );
     }

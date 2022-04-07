@@ -6,7 +6,7 @@ import { ColumnType } from '../../types';
 
 describe('CodeCell component', () => {
   it('CodeCell renders', async () => {
-    const container = render(
+    const { container } = render(
       <table>
         <tbody>
           <tr>
@@ -28,7 +28,7 @@ describe('CodeCell component', () => {
   });
 
   it('CodeCell renders with forced value', async () => {
-    const container = render(
+    const { container } = render(
       <table>
         <tbody>
           <tr>
@@ -52,7 +52,7 @@ describe('CodeCell component', () => {
   });
 
   it('CodeCell renders when hidden', async () => {
-    const container = render(
+    const { container } = render(
       <table>
         <tbody>
           <tr>

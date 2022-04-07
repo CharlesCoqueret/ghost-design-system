@@ -1,5 +1,5 @@
 import React from 'react';
-import { act, fireEvent, render } from '@testing-library/react';
+import { act, fireEvent, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import FileInput from '../FileInput';
@@ -11,7 +11,7 @@ describe('FileInput Component', () => {
     const onDeleteMock = jest.fn();
     const onDownloadMock = jest.fn();
 
-    const container = render(
+    const { container } = render(
       <FileInput
         inputValue={[{ uid: '1', name: 'NAME', size: 1234, type: 'image/png' }]}
         onChange={onChangeMock}
@@ -29,7 +29,7 @@ describe('FileInput Component', () => {
     const onDeleteMock = jest.fn();
     const onDownloadMock = jest.fn();
 
-    const container = render(
+    const { container, rerender } = render(
       <FileInput
         fieldSize={4}
         onChange={onChangeMock}
@@ -41,7 +41,7 @@ describe('FileInput Component', () => {
     );
     expect(container).toMatchSnapshot();
 
-    container.rerender(
+    rerender(
       <FileInput
         inputValue={[{ uid: '1', name: 'NAME', size: 1234, type: 'image/png' }]}
         onChange={onChangeMock}
@@ -90,7 +90,7 @@ describe('FileInput Component', () => {
     const onDeleteMock = jest.fn();
     const onDownloadMock = jest.fn();
 
-    const container = render(
+    const { container } = render(
       <FileInput
         dataTestId='TEST-ID'
         inputValue={[]}
@@ -108,7 +108,7 @@ describe('FileInput Component', () => {
 
     const file = new File(['hello'], 'hello.png', { type: 'image/png' });
 
-    const input = container.getByTestId('TEST-ID');
+    const input = screen.getByTestId('TEST-ID');
     userEvent.upload(input, file);
 
     expect(onChangeMock).toBeCalledTimes(1);
@@ -165,7 +165,7 @@ describe('FileInput Component', () => {
     const onDeleteMock = jest.fn();
     const onDownloadMock = jest.fn();
 
-    const container = render(
+    const { container } = render(
       <FileInput
         dataTestId='TEST-ID'
         inputValue={[{ uid: '1', name: 'AME', size: 1234, type: 'image/png' }]}
@@ -181,7 +181,7 @@ describe('FileInput Component', () => {
 
     const file = new File(['hello'], 'hello.png', { type: 'image/png' });
 
-    const input = container.getByTestId('TEST-ID');
+    const input = screen.getByTestId('TEST-ID');
     userEvent.upload(input, file);
 
     expect(onChangeMock).toBeCalledTimes(1);
@@ -243,7 +243,7 @@ describe('FileInput Component', () => {
     const onDeleteMock = jest.fn();
     const onDownloadMock = jest.fn();
 
-    const container = render(
+    const { container } = render(
       <FileInput
         dataTestId='TEST-ID'
         inputValue={[]}
@@ -258,7 +258,7 @@ describe('FileInput Component', () => {
 
     const file = new File(['hello'], 'hello.png', { type: 'image/png' });
 
-    const input = container.getByTestId('TEST-ID');
+    const input = screen.getByTestId('TEST-ID');
     userEvent.upload(input, file);
 
     expect(onChangeMock).toBeCalledTimes(1);
@@ -333,7 +333,7 @@ describe('FileInput Component', () => {
     const onDeleteMock = jest.fn();
     const onDownloadMock = jest.fn();
 
-    const container = render(
+    const { container } = render(
       <FileInput
         dataTestId='TEST-ID'
         inputValue={[]}
@@ -348,7 +348,7 @@ describe('FileInput Component', () => {
 
     const file = new File(['hello'], 'hello.png', { type: 'image/png' });
 
-    const input = container.getByTestId('TEST-ID');
+    const input = screen.getByTestId('TEST-ID');
     userEvent.upload(input, file);
 
     expect(onChangeMock).toBeCalledTimes(1);
@@ -392,7 +392,7 @@ describe('FileInput Component', () => {
     const onDeleteMock = jest.fn();
     const onDownloadMock = jest.fn();
 
-    const container = render(
+    const { container } = render(
       <FileInput
         dataTestId='TEST-ID'
         inputValue={[]}
@@ -405,7 +405,7 @@ describe('FileInput Component', () => {
     );
     expect(container).toMatchSnapshot();
 
-    const input = container.getByTestId('TEST-ID');
+    const input = screen.getByTestId('TEST-ID');
 
     act(() => {
       fireEvent.dragEnter(input, {});
@@ -440,7 +440,7 @@ describe('FileInput Component', () => {
     const onDeleteMock = jest.fn();
     const onDownloadMock = jest.fn();
 
-    const container = render(
+    const { container } = render(
       <FileInput
         dataTestId='TEST-ID'
         inputValue={[]}
@@ -453,7 +453,7 @@ describe('FileInput Component', () => {
     );
     expect(container).toMatchSnapshot();
 
-    const input = container.getByTestId('TEST-ID');
+    const input = screen.getByTestId('TEST-ID');
 
     await act(async () => {
       fireEvent.drop(input, {
@@ -473,7 +473,7 @@ describe('FileInput Component', () => {
           },
         },
       });
-      await container.findAllByText('file1.pdf');
+      await screen.findAllByText('file1.pdf');
     });
 
     expect(container).toMatchSnapshot();
@@ -500,7 +500,7 @@ describe('FileInput Component', () => {
       return Promise.resolve();
     });
 
-    const container = render(
+    const { container } = render(
       <FileInput
         dataTestId='TEST-ID'
         inputValue={[{ uid: '1', name: 'AME', size: 1234, type: 'image/png' }]}
@@ -514,7 +514,7 @@ describe('FileInput Component', () => {
     );
     expect(container).toMatchSnapshot();
 
-    const downloadButton = container.getByTestId('TEST-ID-download');
+    const downloadButton = screen.getByTestId('TEST-ID-download');
 
     await act(async () => {
       userEvent.click(downloadButton);
@@ -523,7 +523,7 @@ describe('FileInput Component', () => {
     expect(onDownloadMock).toBeCalledTimes(1);
     expect(onDownloadMock).toBeCalledWith({ uid: '1', name: 'AME', size: 1234, type: 'image/png', status: 'done' });
 
-    const deleteButton = container.getByTestId('TEST-ID-delete');
+    const deleteButton = screen.getByTestId('TEST-ID-delete');
 
     await act(async () => {
       userEvent.click(deleteButton);
@@ -544,7 +544,7 @@ describe('FileInput Component', () => {
       return Promise.resolve();
     });
 
-    const container = render(
+    const { container } = render(
       <FileInput
         dataTestId='TEST-ID'
         inputValue={[{ uid: '1', name: 'AME', size: 1234, type: 'image/png' }]}
@@ -558,7 +558,7 @@ describe('FileInput Component', () => {
     );
     expect(container).toMatchSnapshot();
 
-    const deleteButton = container.getByTestId('TEST-ID-delete');
+    const deleteButton = screen.getByTestId('TEST-ID-delete');
 
     await act(async () => {
       userEvent.click(deleteButton);

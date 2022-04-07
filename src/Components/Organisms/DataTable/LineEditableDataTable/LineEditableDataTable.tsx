@@ -1,4 +1,4 @@
-import React, { ReactElement, useCallback, useEffect, useState } from 'react';
+import React, { ReactElement, useCallback, useState } from 'react';
 import { Button, ColorButtonEnum } from '../../../Molecules/Button';
 import StaticDataTableBody from '../StaticDataTable/StaticDataTableBody';
 
@@ -6,11 +6,12 @@ import StaticDataTableFooter from '../StaticDataTable/StaticDataTableFooter';
 import StaticDataTableHeader from '../StaticDataTable/StaticDataTableHeader';
 import { ColumnType, IColumnType, IExtraLineEditableDataTableProps, SortDirectionEnum } from '../Common/types';
 import LineEditableModal from './LineEditableModal';
+import usePropState from '../../../../hooks/use-prop-state';
 
 export interface ILineEditableDataTableProps<T> {
   columns: Array<IColumnType<T>>;
   data: Array<T>;
-  extra?: IExtraLineEditableDataTableProps<T>;
+  extra: IExtraLineEditableDataTableProps<T>;
   loading?: ReactElement;
   onSortChange?: (sortField?: keyof T, sortDirection?: SortDirectionEnum) => void;
 }
@@ -18,7 +19,7 @@ export interface ILineEditableDataTableProps<T> {
 const LineEditableDataTable = <T,>(props: ILineEditableDataTableProps<T>): ReactElement => {
   const { data, columns, extra, loading, onSortChange } = props;
 
-  const [currentData, setCurrentData] = useState<Array<T>>(data);
+  const [currentData, setCurrentData] = usePropState<Array<T>>(data);
   const [sortField, setSortField] = useState<keyof T | undefined>();
   const [sortDirection, setSortDirection] = useState<SortDirectionEnum | undefined>();
   const [editedRowIndex, setEditedRowIndex] = useState<number | undefined>(extra?.editedRowIndex);
@@ -103,11 +104,6 @@ const LineEditableDataTable = <T,>(props: ILineEditableDataTableProps<T>): React
           },
         ];
 
-  // Updating local copy of data whenever the provided data changes.
-  useEffect(() => {
-    setCurrentData(data);
-  }, [data]);
-
   const handleSortChange = useCallback((newSortField: keyof T, newSortDirection?: SortDirectionEnum) => {
     if (sortField !== newSortField || newSortDirection !== newSortDirection) {
       setSortField(newSortField);
@@ -158,9 +154,18 @@ const LineEditableDataTable = <T,>(props: ILineEditableDataTableProps<T>): React
       )}
       {editedRowIndex !== undefined && (
         <LineEditableModal<T>
-          title={extra?.localization?.modalTitle ?? 'Edit row'}
+          title={
+            extra?.localization?.modalTitle === undefined
+              ? 'Edit row'
+              : typeof extra.localization.modalTitle === 'function'
+              ? extra.localization.modalTitle(currentData[editedRowIndex], editedRowIndex)
+              : extra.localization.modalTitle
+          }
           showChanges={extra?.showChanges || false}
           onSubmit={(newRow) => {
+            if (extra.onRowSubmit) {
+              extra.onRowSubmit(newRow, editedRowIndex);
+            }
             setCurrentData((prev) => {
               prev[editedRowIndex] = newRow;
               return [...prev];
@@ -170,7 +175,10 @@ const LineEditableDataTable = <T,>(props: ILineEditableDataTableProps<T>): React
           }}
           row={currentData[editedRowIndex]}
           rowIndex={editedRowIndex}
-          onCancel={() => {
+          onCancel={(cancelledRow) => {
+            if (extra.onRowCancelEdit) {
+              extra.onRowCancelEdit(cancelledRow, editedRowIndex);
+            }
             if (isNewLine) {
               setCurrentData((prev) => {
                 return [...prev.slice(0, prev.length - 1)];

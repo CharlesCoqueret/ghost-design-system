@@ -9,7 +9,7 @@ describe('YearPickerHeader Component', () => {
     const decreaseYearMock = jest.fn();
     const increaseYearMock = jest.fn();
 
-    const container = render(
+    const { container } = render(
       <YearPickerHeader
         changeMonth={() => {
           return;
@@ -48,7 +48,7 @@ describe('YearPickerHeader Component', () => {
   });
 
   it('YearPickerHeader renders without data-testid', async () => {
-    const container = render(
+    const { container } = render(
       <YearPickerHeader
         changeMonth={() => {
           return;

@@ -20,6 +20,7 @@ const NumberCell = <T,>(props: ICellProps<T, IColumnNumber<T>>): ReactElement =>
         dataTestId={dataTestId}
         decimalScale={column.decimalScale}
         decimalSeparator={column.decimalSeparator}
+        ellipsis={column.ellipsis}
         inputClassName={classnames(
           { 'table--cell-value--negative': isNegative && !isCurrentlyEditedRow },
           { 'table--cell-value--number-readonly': !isCurrentlyEditedRow },

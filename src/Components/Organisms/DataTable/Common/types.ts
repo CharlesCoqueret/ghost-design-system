@@ -12,14 +12,21 @@ export enum ColumnType {
   AMOUNT = 'amount',
   BADGE = 'badge',
   BUTTON = 'button',
+  CHECKBOX = 'checkbox',
   CODE = 'code',
   CUSTOM = 'custom',
   DATE = 'date',
+  DESCRIPTION = 'description', // TODO Add description to table columns (for hidden use case)
   DYNAMICSEARCH = 'dynamicsearch',
+  FILE = 'file', // TODO Add file to table columns
   NUMBER = 'number',
   PERCENTAGE = 'percentage',
+  RICHTEXT = 'richtext', // TODO Add rich text to table columns (for hidden use case)
+  SWITCH = 'switch', // TODO Add switch to table columns
+  TABLE = 'table', // TODO Add Table to table columns (for hidden use case)
   TEXT = 'text',
   TEXTAREA = 'textarea',
+  YEAR = 'year', // TODO Add Year to table columns
 }
 
 export enum SortDirectionEnum {
@@ -55,6 +62,8 @@ interface IColumn {
   dataTestId?: string;
   /** Enables ellipsis on the colum when it overflows (optional, default: undefined) */
   ellipsis?: boolean;
+  /** Make the field when in edition (for lineeditabledatatable (optional, default: false) */
+  hiddenInForm?: boolean;
   /** Makes the column invisible (optional, default: false) */
   hidden?: boolean;
   /** Enables sort on the colum (optional, default: undefined) */
@@ -97,6 +106,7 @@ export interface IColumnBadge<T> extends IColumn {
   };
   placeholder?: string;
   type: ColumnType.BADGE;
+  usePortal?: boolean;
 }
 
 export interface IColumnButton<T> extends IColumn {
@@ -109,6 +119,13 @@ export interface IColumnCode<T> extends IColumn {
   dataIndex: keyof T;
   type: ColumnType.CODE;
 }
+
+export interface IColumnCheckbox<T> extends IColumn {
+  dataIndex: keyof T;
+  editable?: boolean;
+  type: ColumnType.CHECKBOX;
+}
+
 export interface IColumnCustom<T> extends IColumn {
   customRender: (row: T, dataIndex: keyof T, rowIndex: number) => ReactElement;
   customRenderEdit: (
@@ -130,6 +147,7 @@ export interface IColumnDate<T> extends IColumn {
   isClearable?: boolean;
   locale?: string;
   type: ColumnType.DATE;
+  usePortal?: boolean;
 }
 
 export interface IColumnDynamicSearch<T> extends IColumn {
@@ -204,6 +222,7 @@ export type IColumnType<T> =
   | IColumnBadge<T>
   | IColumnButton<T>
   | IColumnCode<T>
+  | IColumnCheckbox<T>
   | IColumnCustom<T>
   | IColumnDate<T>
   | IColumnDynamicSearch<T>
@@ -216,7 +235,7 @@ export type TableType<T> = Record<keyof T, string | number | Date | undefined | 
 
 export interface IExtraStaticDataTableProps<T> {
   /** Method used to enable and compute the total for each column (optional, default: undefined) */
-  computeTotal?: (data: Array<T>, dataIndex: keyof T) => string | number | undefined;
+  computeTotal?: (data: Array<T>, dataIndex: keyof T) => T[keyof T] | undefined;
   /** Global currency, which can be override by the amount column setting (optional, default: undefined) */
   currency?: string;
   /** Global date format, which can be override by the date column setting (optional, default: undefined) */
@@ -310,7 +329,7 @@ export interface IExtraLineEditableDataTableProps<T> extends IExtraStaticDataTab
     deletePopoverCancel?: string;
     downloadButton?: string;
     editButton?: string;
-    modalTitle?: string;
+    modalTitle?: ((row: T, rowIndex: number) => string) | string;
     moreActionsMessage?: string;
     noData?: string;
     sortMessage?: string;

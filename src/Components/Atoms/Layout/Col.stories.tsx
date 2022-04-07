@@ -30,17 +30,17 @@ const Template: ComponentStory<typeof Col> = (args: IColProps) => {
   const [help, setHelp] = useState(false);
   return (
     <>
-      <Row style={help && { border: '2px dotted green' }}>
-        <Col {...args} style={help && { border: '3px dotted red' }}>
+      <Row style={help ? { border: '2px dotted green' } : { border: '2px dotted tranparent' }}>
+        <Col {...args} style={help ? { border: '3px dotted red' } : { border: '3px dotted transparents' }}>
           <AmountField inputValue={initialData.amount} label='Amount' suffix='$' name='amount' readOnly />
         </Col>
-        <Col {...args} style={help && { border: '3px dotted red' }}>
+        <Col {...args} style={help ? { border: '3px dotted red' } : { border: '3px dotted transparents' }}>
           <DatePickerField inputValue={initialData.date} label='Date' name='date' readOnly />
         </Col>
-        <Col {...args} style={help && { border: '3px dotted red' }}>
+        <Col {...args} style={help ? { border: '3px dotted red' } : { border: '3px dotted transparents' }}>
           <TextAreaField inputValue={initialData.textarea} label='Textarea' name='textarea' readOnly />
         </Col>
-        <Col {...args} style={help && { border: '3px dotted red' }}>
+        <Col {...args} style={help ? { border: '3px dotted red' } : { border: '3px dotted transparents' }}>
           <YearPickerField inputValue={initialData.year} label='Year' name='year' readOnly />
         </Col>
       </Row>

@@ -12,9 +12,9 @@ export default {
 };
 
 interface IDataType {
-  select1: string;
-  select2: string;
-  select3: string;
+  select1: string | number;
+  select2: string | number;
+  select3: string | number;
 }
 
 const Template = (args: IUseFormProps<IDataType>) => {
@@ -85,30 +85,30 @@ const initialData: IDataType = {
 
 const validationSchema = yup.object({
   select1: yup
-    .string()
+    .mixed()
     .oneOf(option1.map((option) => option.value))
     .required(),
   select2: yup
-    .string()
+    .mixed()
     .required()
-    .when('select1', (select1: string) => {
+    .when('select1', (select1: string | number) => {
       if (!select1) {
-        return yup.string().required();
+        return yup.mixed().required();
       }
       return yup
-        .string()
+        .mixed()
         .oneOf(option2[select1]?.map((option) => option.value))
         .required(`option2 must be on of ${option2[select1].map((option) => option.label)}`);
     }),
   select3: yup
-    .string()
+    .mixed()
     .required()
-    .when('select2', (select2: string) => {
+    .when('select2', (select2: string | number) => {
       if (!select2) {
-        return yup.string().required();
+        return yup.mixed().required();
       }
       return yup
-        .string()
+        .mixed()
         .oneOf(option3[select2]?.map((option) => option.value))
         .required(`option3 must be on of ${option3[select2].map((option) => option.label)}`);
     }),

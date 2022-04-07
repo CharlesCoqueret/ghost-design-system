@@ -1,5 +1,8 @@
+import React, { CSSProperties, PropsWithChildren, ReactElement, useLayoutEffect, useRef, useState } from 'react';
 import classNames from 'classnames';
-import React, { CSSProperties, PropsWithChildren, ReactElement } from 'react';
+
+import { useWindowSize } from '../../../hooks';
+import { Tooltip } from '../Tooltip';
 
 export interface ITitleProps {
   /** custom classname */
@@ -59,27 +62,38 @@ export interface ITextProps {
 
 const Text = (props: PropsWithChildren<ITextProps>): ReactElement => {
   const { children, className, ellipsis, onClick, style, type } = props;
+  const ref = useRef<HTMLSpanElement>(null);
+  const [overflows, setOverflows] = useState(false);
 
   const isLink = onClick !== undefined;
+  const { width } = useWindowSize();
+
+  useLayoutEffect(() => {
+    if (!ref.current || !ellipsis) return;
+    setOverflows(ref.current.scrollWidth > ref.current.clientWidth);
+  }, [ref, width]);
 
   return (
-    <span
-      className={classNames('gds-typography', className, {
-        ellipsis: ellipsis,
-        error: type === TextTypeEnum.ERROR || (Array.isArray(type) && type?.includes(TextTypeEnum.PLACEHOLDER)),
-        disabled: type === TextTypeEnum.DISABLED || (Array.isArray(type) && type?.includes(TextTypeEnum.DISABLED)),
-        helper: type === TextTypeEnum.HELPER || (Array.isArray(type) && type?.includes(TextTypeEnum.HELPER)),
-        highlighted:
-          type === TextTypeEnum.HIGHLIGHTED || (Array.isArray(type) && type?.includes(TextTypeEnum.HIGHLIGHTED)),
-        label: type === TextTypeEnum.LABEL || (Array.isArray(type) && type?.includes(TextTypeEnum.TINY)),
-        link: isLink,
-        placeholder:
-          type === TextTypeEnum.PLACEHOLDER || (Array.isArray(type) && type?.includes(TextTypeEnum.PLACEHOLDER)),
-        tiny: type === TextTypeEnum.TINY || (Array.isArray(type) && type?.includes(TextTypeEnum.TINY)),
-      })}
-      style={style}>
-      {children}
-    </span>
+    <Tooltip tooltip={children?.toString()} disabled={!(ellipsis && overflows)}>
+      <span
+        ref={ref}
+        className={classNames('gds-typography', className, {
+          ellipsis: ellipsis,
+          error: type === TextTypeEnum.ERROR || (Array.isArray(type) && type?.includes(TextTypeEnum.PLACEHOLDER)),
+          disabled: type === TextTypeEnum.DISABLED || (Array.isArray(type) && type?.includes(TextTypeEnum.DISABLED)),
+          helper: type === TextTypeEnum.HELPER || (Array.isArray(type) && type?.includes(TextTypeEnum.HELPER)),
+          highlighted:
+            type === TextTypeEnum.HIGHLIGHTED || (Array.isArray(type) && type?.includes(TextTypeEnum.HIGHLIGHTED)),
+          label: type === TextTypeEnum.LABEL || (Array.isArray(type) && type?.includes(TextTypeEnum.TINY)),
+          link: isLink,
+          placeholder:
+            type === TextTypeEnum.PLACEHOLDER || (Array.isArray(type) && type?.includes(TextTypeEnum.PLACEHOLDER)),
+          tiny: type === TextTypeEnum.TINY || (Array.isArray(type) && type?.includes(TextTypeEnum.TINY)),
+        })}
+        style={style}>
+        {children}
+      </span>
+    </Tooltip>
   );
 };
 

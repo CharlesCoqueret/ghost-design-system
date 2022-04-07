@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, act /*cleanup*/ } from '@testing-library/react';
+import { act, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import Modal from '../Modal';
@@ -10,7 +10,7 @@ afterEach(() => {
 
 describe('Modal Component', () => {
   it('Modal renders closed', async () => {
-    const container = render(
+    const { container } = render(
       <Modal show={false}>
         <div id='CHILD1' />
       </Modal>,
@@ -20,7 +20,7 @@ describe('Modal Component', () => {
   });
 
   it('Modal renders open', async () => {
-    const container = render(
+    const { container } = render(
       <Modal show title='MODALTITLE' size='sm'>
         <div id='CHILD1' />
       </Modal>,
@@ -32,14 +32,14 @@ describe('Modal Component', () => {
   it('Modal renders handles close icon', async () => {
     const onHideMock = jest.fn();
 
-    const container = render(
+    const { container } = render(
       <Modal show title='MODALTITLE' dataTestId={'TESTID'} size='lg' closeIcon onHide={onHideMock}>
         <div id='CHILD1' />
       </Modal>,
     );
     expect(container).toMatchSnapshot();
 
-    const closeButton = await container.findByTestId('TESTID');
+    const closeButton = await screen.findByTestId('TESTID');
 
     userEvent.click(closeButton);
     expect(onHideMock).toHaveBeenCalledTimes(1);
@@ -48,7 +48,7 @@ describe('Modal Component', () => {
   it('Modal renders handles click outside', async () => {
     const onHideMock = jest.fn();
 
-    const container = render(
+    const { container } = render(
       <Modal show closeOnClickOutside onHide={onHideMock}>
         <div id='CHILD1' />
       </Modal>,
@@ -62,7 +62,7 @@ describe('Modal Component', () => {
   it('Modal renders shakes when click outside when it is not allowed', async () => {
     const onHideMock = jest.fn();
 
-    const container = render(
+    const { container } = render(
       <Modal show onHide={onHideMock}>
         <div id='CHILD1' />
       </Modal>,
@@ -78,7 +78,7 @@ describe('Modal Component', () => {
   it('Modal renders handles press escape', async () => {
     const onHideMock = jest.fn();
 
-    const container = render(
+    const { container } = render(
       <Modal show closeOnPressEscape onHide={onHideMock}>
         <div id='CHILD1' />
       </Modal>,
@@ -94,7 +94,7 @@ describe('Modal Component', () => {
     const onHideMock = jest.fn();
     jest.useFakeTimers();
 
-    const container = render(
+    const { container } = render(
       <Modal show onHide={onHideMock}>
         <div id='CHILD1' />
       </Modal>,

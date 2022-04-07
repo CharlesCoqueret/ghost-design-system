@@ -3,6 +3,7 @@ import classnames from 'classnames';
 
 import { ICellProps } from './types';
 import { IColumnCustom } from '../types';
+import { Typography } from '../../../../Atoms/Typography';
 
 const CustomCell = <T,>(props: ICellProps<T, IColumnCustom<T>>): ReactElement => {
   const { column, editing, extra, forcedValue, onChange, row, rowIndex } = props;
@@ -20,7 +21,7 @@ const CustomCell = <T,>(props: ICellProps<T, IColumnCustom<T>>): ReactElement =>
 
   return (
     <td className={classnames({ ellipsis: column.ellipsis })} style={{ display: column.hidden ? 'none' : undefined }}>
-      {displayValue}
+      <Typography.Text ellipsis={column.ellipsis}>{displayValue}</Typography.Text>
     </td>
   );
 };

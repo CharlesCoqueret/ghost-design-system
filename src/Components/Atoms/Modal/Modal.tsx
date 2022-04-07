@@ -40,6 +40,10 @@ const Modal = (props: PropsWithChildren<IModalProps>): ReactElement => {
       document.body.style.overflowX = initialBodyStyle?.overflowX || '';
       document.body.style.overflowY = initialBodyStyle?.overflowY || '';
     }
+    return () => {
+      document.body.style.overflowX = initialBodyStyle?.overflowX || '';
+      document.body.style.overflowY = initialBodyStyle?.overflowY || '';
+    };
   }, [show]);
 
   const shake = () => {

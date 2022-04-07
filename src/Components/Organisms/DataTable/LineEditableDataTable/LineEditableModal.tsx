@@ -4,7 +4,8 @@ import cloneDeep from 'lodash/cloneDeep';
 
 import { Modal, ModalBody, ModalFooter } from '../../../Atoms/Modal';
 import { Button, ColorButtonEnum } from '../../../Molecules/Button';
-import { FieldTypeEnum, IFieldAndLayoutProps, useForm } from '../../Form';
+import { FieldTypeEnum, IFieldAndLayoutProps } from '../../Form/types';
+import useForm from '../../Form/useForm';
 import { ColumnType, IColumnType, IExtraLineEditableDataTableProps } from '../Common/types';
 
 export interface ILineEditableModalProps<T> {
@@ -22,6 +23,9 @@ export interface ILineEditableModalProps<T> {
 const columnToFieldMapper = <T,>(columns: Array<IColumnType<T>>): Array<IFieldAndLayoutProps<T>> => {
   return compact(
     columns.map((column) => {
+      // Manage the case of hidden field in form
+      if (column.hiddenInForm) return undefined;
+
       switch (column.type) {
         case ColumnType.AMOUNT: {
           return {
@@ -50,11 +54,13 @@ const columnToFieldMapper = <T,>(columns: Array<IColumnType<T>>): Array<IFieldAn
             options: column.options,
             placeholder: column.placeholder,
             readOnly: !column.editable,
+            usePortal: column.usePortal,
           };
         }
         case ColumnType.BUTTON: {
           return undefined;
         }
+        // TODO add checkbox mapping
         case ColumnType.CODE: {
           return {
             dataIndex: column.dataIndex,
@@ -63,9 +69,7 @@ const columnToFieldMapper = <T,>(columns: Array<IColumnType<T>>): Array<IFieldAn
             readOnly: true,
           };
         }
-        case ColumnType.CUSTOM: {
-          return undefined;
-        }
+        // TODO add custom mapping
         case ColumnType.DATE: {
           return {
             calendarStartDay: column.calendarStartDay,
@@ -76,8 +80,10 @@ const columnToFieldMapper = <T,>(columns: Array<IColumnType<T>>): Array<IFieldAn
             label: column.title,
             locale: column.locale,
             readOnly: !column.editable,
+            usePortal: column.usePortal,
           };
         }
+        // TODO add description mapping
         case ColumnType.DYNAMICSEARCH: {
           return {
             colors: column.selectColors,
@@ -92,6 +98,7 @@ const columnToFieldMapper = <T,>(columns: Array<IColumnType<T>>): Array<IFieldAn
             usePortal: column.usePortal,
           };
         }
+        // TODO add file mapping
         case ColumnType.NUMBER: {
           return {
             allowNegative: column.allowNegative,
@@ -126,6 +133,7 @@ const columnToFieldMapper = <T,>(columns: Array<IColumnType<T>>): Array<IFieldAn
             thousandsGroupStyle: column.thousandsGroupStyle,
           };
         }
+        // TODO add richtext mapping
         case ColumnType.TEXT: {
           return {
             maxLength: column.maxLength,
@@ -146,6 +154,7 @@ const columnToFieldMapper = <T,>(columns: Array<IColumnType<T>>): Array<IFieldAn
             readOnly: !column.editable,
           };
         }
+        // TODO add year mapping
         default: {
           throw new Error('Missing ColumnType');
         }
@@ -162,7 +171,6 @@ const LineEditableModal = <T,>(props: ILineEditableModalProps<T>): ReactElement 
     initialData: row,
     previousData: showChanges ? cloneDeep(row) : undefined,
     fields: columnToFieldMapper(columns),
-    usePortal: false,
     validationSchema: extra?.validationSchema,
   });
 
