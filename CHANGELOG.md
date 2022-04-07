@@ -1,5 +1,44 @@
 # Changelog
 
+## 1.3.0 (2022-04-07)
+
+### Features
+
+Atoms/AmountInput Adding ellipsis with tooltip feature in readonly for non format type
+Atoms/DynamicSearchCreatableInput Adding custom magnifier as dropdown indicator and clear indicator
+Atoms/DynamicSearchCreatableInput Adding ellipsis with tooltip feature in readonly mode
+Atoms/DynamicSearchInput Adding custom magnifier as dropdown indicator and clear indicator
+Atoms/DynamicSearchInput Adding ellipsis with tooltip feature in readonly mode
+Atoms/MultiSelectInput Adding custom dropdown indicator and clear indicator
+Atoms/MultiSelectInput Adding ellipsis with tooltip feature in readonly mode
+Atoms/SelectInput Adding custom dropdown indicator and clear indicator
+Atoms/SelectInput Adding ellipsis with tooltip feature in readonly mode
+Atoms/TextInput Adding ellipsis with tooltip feature in readonly
+Atoms/Tooltip Adding ability to disable the tooltip for the ellipsis use case
+Atoms/Typography Give the ability to show tooltip when the text is ellipsed
+Organisms/LineEditableDataTable Add console.error for errors of incorrect type.
+Organisms/LineEditableDataTable provide the ability to customize the title of the edition modal based on the row data
+Organisms/LineEditableDataTable provide the ability to hide a field in the form
+Organisms/useForm adding scroll into view of errors when submitting
+
+### Bug Fixes
+
+Atoms/DynamicSearchCreatableInput prevent scroll with the dropdown open
+Atoms/DynamicSearchInput prevent scroll with the dropdown open
+Atoms/MultiselectInput prevent scroll with the dropdown open
+Atoms/RichtextInput ensure the font is defined evrywhere
+Atoms/Section Fix initial height then collapsing and open initially
+Atoms/SelectInput prevent scroll with the dropdown open
+Atoms/TextArea forcing initial height to the maximum height reachable for the content
+Atoms/modal removing the zindex of the modal
+Fields reducing padding bottom to 4px
+Fix fields separations from 20px to 8px (4px on top and bottom)
+Organisms/CheckboxCell provide the ability to disable edition on that column
+Organisms/DataTable consider the hidden column for the no data element and the loading element
+Organisms/DataTable do not show "no data" while loading data
+Organisms/EditableDataTable ensure column and row are editable (and not only row)
+Organisms/LineEditableDataTable use portal in the modal for select
+
 ## 1.2.0 (2022-04-04)
 
 ### Features
