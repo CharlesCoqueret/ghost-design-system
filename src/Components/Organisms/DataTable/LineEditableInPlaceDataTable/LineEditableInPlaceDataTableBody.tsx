@@ -79,7 +79,7 @@ const LineEditableInPlaceDataTableBody = <T,>(props: ILineEditableInPlaceDataTab
           </tr>
         );
       })}
-      {(!data || data?.length === 0) && (
+      {!loading && (!data || data?.length === 0) && (
         <tr className='no-data'>
           <td colSpan={columns.filter((column) => !column.hidden).length + (isSelectable ? 1 : 0)}>
             <div className='no-data-container'>
