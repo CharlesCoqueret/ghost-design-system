@@ -1,4 +1,7 @@
 .gds-file-input-container {
+  display: flex;
+  flex-direction: column;
+
   .droparea {
     border: 2px dashed $chalk;
     border-radius: 4px;

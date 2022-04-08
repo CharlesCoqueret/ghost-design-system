@@ -177,6 +177,23 @@ SelectableRows.args = {
   },
 };
 
+export const SelectableAndClickableRows = Template.bind({});
+SelectableAndClickableRows.args = {
+  data: data,
+  columns: columns,
+  extra: {
+    onRowSelect: (rows: Array<IDemoType>, row: IDemoType) => {
+      console.log(`Number of rows selected: ${rows.length}, Clicked row: ${row.id}`);
+    },
+    isSelectable: (row: IDemoType) => {
+      return row.id !== 'UGA';
+    },
+    onRowClick: (row: IDemoType) => {
+      console.log(`clicked row: ${row.id}`);
+    },
+  },
+};
+
 export const ComputeTotal = Template.bind({});
 ComputeTotal.args = {
   data: data,
