@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { TextAreaField, ITextAreaFieldProps } from './TextAreaField';
@@ -10,7 +10,20 @@ export default {
 } as ComponentMeta<typeof TextAreaField>;
 
 const Template: ComponentStory<typeof TextAreaField> = (args: ITextAreaFieldProps) => {
-  return <TextAreaField {...args} />;
+  const [localValue, setLocalValue] = useState<string>(args.inputValue);
+
+  return (
+    <TextAreaField
+      {...args}
+      inputValue={localValue}
+      onChange={(value) => {
+        if (args.onChange) {
+          args.onChange(value);
+        }
+        setLocalValue(value);
+      }}
+    />
+  );
 };
 
 export const Default = Template.bind({});
