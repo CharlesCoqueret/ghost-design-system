@@ -12,6 +12,8 @@ interface IGenericFieldProps {
   errorMessage?: string;
   /** Class for the field surrounding the input (optional, default: undefined) */
   fieldClassName?: string;
+  /** Size of the field in a 12 column grid (optional, default: undefined) */
+  fieldSize?: number;
   /** Helper text (optional, default: undefined) */
   helperText?: string;
   /** Highlighted field (optional, default: false) */
@@ -24,7 +26,7 @@ interface IGenericFieldProps {
   invertInputDescription?: boolean;
   /** Label (optional, default: undefined) */
   label?: string;
-  /** Size of the field in a 12 column grid (optional, default: undefined) */
+  /** Size of the label in a 12 column grid (optional, default: undefined) */
   labelSize?: number;
   /** Mandatory field (optional, default: false) */
   mandatory?: boolean;
@@ -51,6 +53,7 @@ const GenericField = (props: PropsWithChildren<IGenericFieldProps>): ReactElemen
     disabled,
     errorMessage,
     fieldClassName,
+    fieldSize,
     helperText,
     highlighted,
     inline,
@@ -64,7 +67,11 @@ const GenericField = (props: PropsWithChildren<IGenericFieldProps>): ReactElemen
   } = props;
 
   return (
-    <div className={classnames('gds-field-group', fieldClassName, { 'field-inline': inline })} ref={containerRef}>
+    <div
+      className={classnames('gds-field-group', fieldSize && `field-size-${fieldSize}`, fieldClassName, {
+        'field-inline': inline,
+      })}
+      ref={containerRef}>
       <GenericFieldLabel
         className={classnames({ 'field-highlighted': highlighted && (readOnly || disabled) })}
         label={label}
@@ -90,6 +97,7 @@ const GenericField = (props: PropsWithChildren<IGenericFieldProps>): ReactElemen
 GenericField.defaultProps = {
   errorMessage: undefined,
   fieldClassName: undefined,
+  fieldSize: undefined,
   helperText: undefined,
   highlighted: false,
   inline: false,

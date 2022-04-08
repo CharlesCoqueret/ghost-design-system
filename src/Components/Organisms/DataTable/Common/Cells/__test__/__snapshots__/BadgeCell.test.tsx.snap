@@ -12,7 +12,7 @@ exports[`BadgeCell component BadgeCell handles changes 1`] = `
             class="gds-field-group"
           >
             <div
-              class="gds-select-container input-select-field field input-select-field"
+              class="field gds-select-container input-select-field input-select-field"
             >
               <div
                 class=" css-1959ul7-container"
@@ -105,7 +105,7 @@ exports[`BadgeCell component BadgeCell handles changes 2`] = `
             class="gds-field-group"
           >
             <div
-              class="gds-select-container input-select-field field input-select-field"
+              class="field gds-select-container input-select-field input-select-field"
             >
               <div
                 class=" css-1959ul7-container"
@@ -218,7 +218,7 @@ exports[`BadgeCell component BadgeCell renders cell editing with no row input 1`
             class="gds-field-group"
           >
             <div
-              class="gds-select-container input-select-field field input-select-field"
+              class="field gds-select-container input-select-field input-select-field"
             >
               <div
                 class=" css-1959ul7-container"
@@ -334,7 +334,7 @@ exports[`BadgeCell component BadgeCell renders row editing with no row input 1`]
             class="gds-field-group"
           >
             <div
-              class="gds-select-container input-select-field field input-select-field"
+              class="field gds-select-container input-select-field input-select-field"
             >
               <div
                 class=" css-1959ul7-container"

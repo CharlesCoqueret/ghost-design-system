@@ -162,7 +162,7 @@ exports[`EditableDataTable Component EditableDataTable renders and handles chang
             class="gds-field-group"
           >
             <div
-              class="gds-select-container input-select-field field input-select-field"
+              class="field gds-select-container input-select-field input-select-field"
             >
               <div
                 class=" css-1959ul7-container"
@@ -282,7 +282,7 @@ exports[`EditableDataTable Component EditableDataTable renders and handles chang
             class="gds-field-group"
           >
             <div
-              class="gds-select-container input-select-field field input-select-field"
+              class="field gds-select-container input-select-field input-select-field"
             >
               <div
                 class=" css-1959ul7-container"
@@ -527,7 +527,7 @@ exports[`EditableDataTable Component EditableDataTable renders and handles chang
             class="gds-field-group"
           >
             <div
-              class="gds-select-container input-select-field field input-select-field"
+              class="field gds-select-container input-select-field input-select-field"
             >
               <div
                 class=" css-1959ul7-container"
@@ -647,7 +647,7 @@ exports[`EditableDataTable Component EditableDataTable renders and handles chang
             class="gds-field-group"
           >
             <div
-              class="gds-select-container input-select-field field input-select-field"
+              class="field gds-select-container input-select-field input-select-field"
             >
               <div
                 class=" css-1959ul7-container"
@@ -901,7 +901,7 @@ exports[`EditableDataTable Component EditableDataTable renders and handles line 
             class="gds-field-group"
           >
             <div
-              class="gds-select-container input-select-field field input-select-field"
+              class="field gds-select-container input-select-field input-select-field"
             >
               <div
                 class=" css-1959ul7-container"
@@ -1135,7 +1135,7 @@ exports[`EditableDataTable Component EditableDataTable renders and handles line 
             class="gds-field-group"
           >
             <div
-              class="gds-select-container input-select-field field input-select-field"
+              class="field gds-select-container input-select-field input-select-field"
             >
               <div
                 class=" css-1959ul7-container"
@@ -1505,7 +1505,7 @@ exports[`EditableDataTable Component EditableDataTable renders and handles line 
             class="gds-field-group"
           >
             <div
-              class="gds-select-container input-select-field field input-select-field"
+              class="field gds-select-container input-select-field input-select-field"
             >
               <div
                 class=" css-1959ul7-container"
@@ -1739,7 +1739,7 @@ exports[`EditableDataTable Component EditableDataTable renders and handles line 
             class="gds-field-group"
           >
             <div
-              class="gds-select-container input-select-field field input-select-field"
+              class="field gds-select-container input-select-field input-select-field"
             >
               <div
                 class=" css-1959ul7-container"
@@ -2109,7 +2109,7 @@ exports[`EditableDataTable Component EditableDataTable renders and handles line 
             class="gds-field-group"
           >
             <div
-              class="gds-select-container input-select-field field input-select-field"
+              class="field gds-select-container input-select-field input-select-field"
             >
               <div
                 class=" css-1959ul7-container"
@@ -2468,7 +2468,7 @@ exports[`EditableDataTable Component EditableDataTable renders and handles sort 
             class="gds-field-group"
           >
             <div
-              class="gds-select-container input-select-field field input-select-field"
+              class="field gds-select-container input-select-field input-select-field"
             >
               <div
                 class=" css-1959ul7-container"
@@ -2586,7 +2586,7 @@ exports[`EditableDataTable Component EditableDataTable renders and handles sort 
             class="gds-field-group"
           >
             <div
-              class="gds-select-container input-select-field field input-select-field"
+              class="field gds-select-container input-select-field input-select-field"
             >
               <div
                 class=" css-1959ul7-container"
@@ -2840,7 +2840,7 @@ exports[`EditableDataTable Component EditableDataTable renders and new button cl
             class="gds-field-group"
           >
             <div
-              class="gds-select-container input-select-field field input-select-field"
+              class="field gds-select-container input-select-field input-select-field"
             >
               <div
                 class=" css-1959ul7-container"
@@ -3074,7 +3074,7 @@ exports[`EditableDataTable Component EditableDataTable renders and new button cl
             class="gds-field-group"
           >
             <div
-              class="gds-select-container input-select-field field input-select-field"
+              class="field gds-select-container input-select-field input-select-field"
             >
               <div
                 class=" css-1959ul7-container"
@@ -3455,7 +3455,7 @@ exports[`EditableDataTable Component EditableDataTable renders and warn when onN
             class="gds-field-group"
           >
             <div
-              class="gds-select-container input-select-field field input-select-field"
+              class="field gds-select-container input-select-field input-select-field"
             >
               <div
                 class=" css-1959ul7-container"
@@ -3689,7 +3689,7 @@ exports[`EditableDataTable Component EditableDataTable renders and warn when onN
             class="gds-field-group"
           >
             <div
-              class="gds-select-container input-select-field field input-select-field"
+              class="field gds-select-container input-select-field input-select-field"
             >
               <div
                 class=" css-1959ul7-container"
@@ -4070,7 +4070,7 @@ exports[`EditableDataTable Component EditableDataTable renders with all buttons 
             class="gds-field-group"
           >
             <div
-              class="gds-select-container input-select-field field input-select-field"
+              class="field gds-select-container input-select-field input-select-field"
             >
               <div
                 class=" css-1959ul7-container"
@@ -4427,6 +4427,7 @@ exports[`EditableDataTable Component EditableDataTable renders with all methods 
             >
               <span
                 class="gds-typography ellipsis"
+                title="name"
               >
                 name
               </span>
@@ -4604,6 +4605,7 @@ exports[`EditableDataTable Component EditableDataTable renders with no buttons 1
             >
               <span
                 class="gds-typography ellipsis"
+                title="name"
               >
                 name
               </span>

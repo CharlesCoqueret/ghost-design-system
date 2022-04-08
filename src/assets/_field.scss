@@ -9,14 +9,19 @@
   flex-direction: column;
 
   &.field-inline {
+    flex-grow: 1;
     display: flex;
     flex-direction: row;
     align-items: center;
 
+    .field {
+      flex-grow: 1;
+    }
     .field-label {
       display: inline-block;
       margin-right: 10px;
       margin-bottom: 0px;
+      padding-bottom: unset;
     }
   }
 
@@ -70,13 +75,13 @@
 
 .field {
   display: flex;
+  overflow: hidden;
   padding: 4px 0;
 }
 
-@for $size from 0 through 12 {
+@for $size from 1 through 12 {
   .field-size-#{$size},
-  .field-label-size-#{$size},
-  .field-input-size-#{$size} {
+  .field-label-size-#{$size} {
     width: percentage(math.div($size, 12));
   }
 }

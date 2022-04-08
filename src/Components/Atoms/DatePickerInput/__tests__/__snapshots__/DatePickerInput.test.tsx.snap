@@ -2,7 +2,9 @@
 
 exports[`DatePickerInput Component DatePickerInput renders highlighted in disabled 1`] = `
 <div>
-  <div>
+  <div
+    class="field"
+  >
     <div
       class="react-datepicker-wrapper"
     >
@@ -27,7 +29,9 @@ exports[`DatePickerInput Component DatePickerInput renders highlighted in disabl
 
 exports[`DatePickerInput Component DatePickerInput renders highlighted in readonly 1`] = `
 <div>
-  <div>
+  <div
+    class="field"
+  >
     <div
       class="react-datepicker-wrapper"
     >
@@ -52,7 +56,9 @@ exports[`DatePickerInput Component DatePickerInput renders highlighted in readon
 
 exports[`DatePickerInput Component DatePickerInput renders in error 1`] = `
 <div>
-  <div>
+  <div
+    class="field"
+  >
     <div
       class="react-datepicker-wrapper"
     >
@@ -76,7 +82,9 @@ exports[`DatePickerInput Component DatePickerInput renders in error 1`] = `
 
 exports[`DatePickerInput Component DatePickerInput renders in error in readonly 1`] = `
 <div>
-  <div>
+  <div
+    class="field"
+  >
     <div
       class="react-datepicker-wrapper"
     >
@@ -101,7 +109,9 @@ exports[`DatePickerInput Component DatePickerInput renders in error in readonly 
 
 exports[`DatePickerInput Component DatePickerInput renders with placeholder 1`] = `
 <div>
-  <div>
+  <div
+    class="field"
+  >
     <div
       class="react-datepicker-wrapper"
     >
@@ -125,7 +135,9 @@ exports[`DatePickerInput Component DatePickerInput renders with placeholder 1`] 
 
 exports[`DatePickerInput Component DatePickerInput renders without Portal 1`] = `
 <div>
-  <div>
+  <div
+    class="field"
+  >
     <div
       class="react-datepicker-wrapper"
     >

@@ -122,6 +122,7 @@ export const FileField = (props: IFileFieldProps): ReactElement => {
       containerRef={containerRef}
       errorMessage={errorMessage}
       fieldClassName={fieldClassName}
+      fieldSize={fieldSize}
       helperText={helperText}
       highlighted={highlighted}
       inline={inline}
@@ -143,7 +144,6 @@ export const FileField = (props: IFileFieldProps): ReactElement => {
         className={inputClassName}
         dataTestId={dataTestId}
         disabled={disabled}
-        fieldSize={fieldSize}
         inputValue={inputValue}
         isInError={errorMessage !== undefined}
         maxFiles={maxFiles}

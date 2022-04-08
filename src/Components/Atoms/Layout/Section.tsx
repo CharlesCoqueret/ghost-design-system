@@ -9,6 +9,8 @@ export interface ISectionProps {
   collapsable?: boolean;
   /** Open initially if collapsable (optional, default: true) */
   openInitially?: boolean;
+  /** Add separator at the end of the section (optional, default: true) */
+  separator?: boolean;
   /** Title of the section element */
   title: string;
   /** For test purpose only */
@@ -16,7 +18,7 @@ export interface ISectionProps {
 }
 
 const Section = (props: PropsWithChildren<ISectionProps>): ReactElement => {
-  const { children, collapsable, dataTestId, openInitially, title } = props;
+  const { children, collapsable, dataTestId, openInitially, separator, title } = props;
 
   const runAfterUpdate = useRunAfterUpdate();
   const [open, setOpen] = useState<boolean>(collapsable ? openInitially === true : true);
@@ -79,7 +81,7 @@ const Section = (props: PropsWithChildren<ISectionProps>): ReactElement => {
         }}>
         {children}
       </div>
-      <div className='section-footer' />
+      {separator && <div className='section-footer' />}
     </div>
   );
 };
@@ -87,6 +89,7 @@ const Section = (props: PropsWithChildren<ISectionProps>): ReactElement => {
 Section.defaultProps = {
   collapsable: true,
   openInitially: true,
+  separator: true,
 };
 
 export default Section;

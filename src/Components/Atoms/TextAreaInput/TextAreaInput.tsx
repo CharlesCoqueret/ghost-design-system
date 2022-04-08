@@ -8,8 +8,6 @@ export interface ITextAreaInputProps {
   dataTestId?: string;
   /** Disabled field (optional, default: false) */
   disabled?: boolean;
-  /** Size of the field in a 12 column grid (optional, default: undefined) */
-  fieldSize?: number;
   /** Highlighted field (optional, default: false) */
   highlighted?: boolean;
   /** Class for the input (optional, default: undefined) */
@@ -37,7 +35,6 @@ const TextAreaInput = (props: ITextAreaInputProps): ReactElement => {
     dataTestId,
     disabled,
     isInError,
-    fieldSize,
     highlighted,
     inputClassName,
     inputValue,
@@ -83,7 +80,7 @@ const TextAreaInput = (props: ITextAreaInputProps): ReactElement => {
   };
 
   return (
-    <div className={classnames('gds-input-textarea-parent', fieldSize && `field-input-size-${fieldSize}`)}>
+    <div className={classnames('field', 'gds-input-textarea-parent')}>
       <textarea
         className={classnames(
           { 'input-textarea-field': !readOnly },
@@ -118,7 +115,6 @@ const TextAreaInput = (props: ITextAreaInputProps): ReactElement => {
 
 TextAreaInput.defaultProps = {
   disabled: false,
-  fieldSize: undefined,
   highlighted: false,
   inputClassName: undefined,
   inputValue: '',

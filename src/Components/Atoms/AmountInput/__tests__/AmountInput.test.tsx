@@ -19,16 +19,7 @@ describe('AmountInput Component', () => {
     const onChangeMock = jest.fn();
 
     const { container } = render(
-      <AmountInput
-        fieldSize={5}
-        highlighted
-        name='name'
-        ellipsis
-        onChange={onChangeMock}
-        prefix='A'
-        readOnly
-        suffix='B'
-      />,
+      <AmountInput highlighted name='name' ellipsis onChange={onChangeMock} prefix='A' readOnly suffix='B' />,
     );
     expect(onChangeMock).toBeCalledTimes(0);
 
@@ -40,7 +31,6 @@ describe('AmountInput Component', () => {
 
     const { container } = render(
       <AmountInput
-        fieldSize={5}
         highlighted
         inputValue={1234567890.12}
         name='name'
@@ -61,7 +51,6 @@ describe('AmountInput Component', () => {
 
     const { container } = render(
       <AmountInput
-        fieldSize={5}
         highlighted
         inputValue={1234567890.12}
         name='name'
@@ -82,7 +71,6 @@ describe('AmountInput Component', () => {
 
     const { container } = render(
       <AmountInput
-        fieldSize={5}
         highlighted
         inputValue={1234567890.12}
         name='name'
@@ -103,7 +91,6 @@ describe('AmountInput Component', () => {
       <AmountInput
         name='name'
         dataTestId='name'
-        fieldSize={8}
         maxValue={9999999999}
         minValue={-10}
         onChange={onChangeMock}

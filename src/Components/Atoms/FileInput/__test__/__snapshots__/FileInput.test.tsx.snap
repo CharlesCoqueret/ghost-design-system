@@ -3,7 +3,7 @@
 exports[`FileInput Component FileInput handle add file successfully through input 1`] = `
 <div>
   <div
-    class="gds-file-input-container"
+    class="field gds-file-input-container"
   >
     <div
       class="droparea"
@@ -31,7 +31,7 @@ exports[`FileInput Component FileInput handle add file successfully through inpu
 exports[`FileInput Component FileInput handle add file successfully through input 2`] = `
 <div>
   <div
-    class="gds-file-input-container"
+    class="field gds-file-input-container"
   >
     <div
       class="droparea"
@@ -100,7 +100,7 @@ exports[`FileInput Component FileInput handle add file successfully through inpu
 exports[`FileInput Component FileInput handle add file successfully through input 3`] = `
 <div>
   <div
-    class="gds-file-input-container"
+    class="field gds-file-input-container"
   >
     <div
       class="droparea"
@@ -164,7 +164,7 @@ exports[`FileInput Component FileInput handle add file successfully through inpu
 exports[`FileInput Component FileInput handle add file unsucessfully through input 1`] = `
 <div>
   <div
-    class="gds-file-input-container"
+    class="field gds-file-input-container"
   >
     <div
       class="droparea"
@@ -192,7 +192,7 @@ exports[`FileInput Component FileInput handle add file unsucessfully through inp
 exports[`FileInput Component FileInput handle add file unsucessfully through input 2`] = `
 <div>
   <div
-    class="gds-file-input-container"
+    class="field gds-file-input-container"
   >
     <div
       class="droparea"
@@ -275,7 +275,7 @@ exports[`FileInput Component FileInput handle add file unsucessfully through inp
 exports[`FileInput Component FileInput handle add file with timeout through input 1`] = `
 <div>
   <div
-    class="gds-file-input-container"
+    class="field gds-file-input-container"
   >
     <div
       class="droparea"
@@ -303,7 +303,7 @@ exports[`FileInput Component FileInput handle add file with timeout through inpu
 exports[`FileInput Component FileInput handle add file with timeout through input 2`] = `
 <div>
   <div
-    class="gds-file-input-container"
+    class="field gds-file-input-container"
   >
     <div
       class="droparea"
@@ -386,7 +386,7 @@ exports[`FileInput Component FileInput handle add file with timeout through inpu
 exports[`FileInput Component FileInput handle drag event for highlight 1`] = `
 <div>
   <div
-    class="gds-file-input-container"
+    class="field gds-file-input-container"
   >
     <div
       class="droparea"
@@ -414,7 +414,7 @@ exports[`FileInput Component FileInput handle drag event for highlight 1`] = `
 exports[`FileInput Component FileInput handle drag event for highlight 2`] = `
 <div>
   <div
-    class="gds-file-input-container"
+    class="field gds-file-input-container"
   >
     <div
       class="droparea"
@@ -442,7 +442,7 @@ exports[`FileInput Component FileInput handle drag event for highlight 2`] = `
 exports[`FileInput Component FileInput handle drag event for highlight 3`] = `
 <div>
   <div
-    class="gds-file-input-container"
+    class="field gds-file-input-container"
   >
     <div
       class="droparea"
@@ -470,7 +470,7 @@ exports[`FileInput Component FileInput handle drag event for highlight 3`] = `
 exports[`FileInput Component FileInput handle drop of file 1`] = `
 <div>
   <div
-    class="gds-file-input-container"
+    class="field gds-file-input-container"
   >
     <div
       class="droparea"
@@ -498,7 +498,7 @@ exports[`FileInput Component FileInput handle drop of file 1`] = `
 exports[`FileInput Component FileInput handle drop of file 2`] = `
 <div>
   <div
-    class="gds-file-input-container"
+    class="field gds-file-input-container"
   >
     <div
       class="droparea"
@@ -562,7 +562,7 @@ exports[`FileInput Component FileInput handle drop of file 2`] = `
 exports[`FileInput Component FileInput handle unsuccessfull add file when quota reached 1`] = `
 <div>
   <div
-    class="gds-file-input-container"
+    class="field gds-file-input-container"
   >
     <div
       class="droparea"
@@ -625,7 +625,7 @@ exports[`FileInput Component FileInput handle unsuccessfull add file when quota 
 exports[`FileInput Component FileInput handle unsuccessfull add file when quota reached 2`] = `
 <div>
   <div
-    class="gds-file-input-container"
+    class="field gds-file-input-container"
   >
     <div
       class="droparea"
@@ -742,7 +742,7 @@ exports[`FileInput Component FileInput handle unsuccessfull add file when quota 
 exports[`FileInput Component FileInput handles delete rejections of a file 1`] = `
 <div>
   <div
-    class="gds-file-input-container"
+    class="field gds-file-input-container"
   >
     <div
       class="droparea"
@@ -805,7 +805,7 @@ exports[`FileInput Component FileInput handles delete rejections of a file 1`] =
 exports[`FileInput Component FileInput handles delete rejections of a file 2`] = `
 <div>
   <div
-    class="gds-file-input-container"
+    class="field gds-file-input-container"
   >
     <div
       class="droparea"
@@ -868,7 +868,7 @@ exports[`FileInput Component FileInput handles delete rejections of a file 2`] =
 exports[`FileInput Component FileInput handles download and delete of a file 1`] = `
 <div>
   <div
-    class="gds-file-input-container"
+    class="field gds-file-input-container"
   >
     <div
       class="droparea"
@@ -931,7 +931,7 @@ exports[`FileInput Component FileInput handles download and delete of a file 1`]
 exports[`FileInput Component FileInput handles download and delete of a file 2`] = `
 <div>
   <div
-    class="gds-file-input-container"
+    class="field gds-file-input-container"
   >
     <div
       class="droparea"
@@ -959,7 +959,7 @@ exports[`FileInput Component FileInput handles download and delete of a file 2`]
 exports[`FileInput Component FileInput renders 1`] = `
 <div>
   <div
-    class="gds-file-input-container"
+    class="field gds-file-input-container"
   >
     <div
       class="droparea"
@@ -1020,7 +1020,7 @@ exports[`FileInput Component FileInput renders 1`] = `
 exports[`FileInput Component FileInput renders without input value 1`] = `
 <div>
   <div
-    class="gds-file-input-container field-input-size-4"
+    class="field gds-file-input-container"
   >
     <div
       class="droparea"
@@ -1047,7 +1047,7 @@ exports[`FileInput Component FileInput renders without input value 1`] = `
 exports[`FileInput Component FileInput renders without input value 2`] = `
 <div>
   <div
-    class="gds-file-input-container"
+    class="field gds-file-input-container"
   >
     <div
       class="droparea"

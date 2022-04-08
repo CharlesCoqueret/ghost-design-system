@@ -87,6 +87,7 @@ export const RichTextField = (props: IRichTextFieldProps): ReactElement => {
       inputLength={inputValue?.length || undefined}
       errorMessage={errorMessage}
       fieldClassName={fieldClassName}
+      fieldSize={fieldSize}
       helperText={helperText}
       inline={inline}
       label={label}
@@ -100,7 +101,6 @@ export const RichTextField = (props: IRichTextFieldProps): ReactElement => {
         disabled={disabled}
         enableImage={enableImage}
         enableLink={enableLink}
-        fieldSize={fieldSize}
         inputValue={inputValue}
         isInError={errorMessage !== undefined}
         locale={locale}

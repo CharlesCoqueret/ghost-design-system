@@ -24,8 +24,6 @@ export interface IRichTextInputProps {
   enableImage?: boolean;
   /** Enable link  (optional, default: false) */
   enableLink?: boolean;
-  /** Size of the field in a 12 column grid (optional, default: undefined) */
-  fieldSize?: number;
   /** Initial values for the field (optional, default: undefined or '-' when disabled or readOnly) */
   inputValue?: string;
   /** Field is in error state (optional, default: false) */
@@ -124,7 +122,7 @@ const RichTextInput = (props: IRichTextInputProps): ReactElement => {
 
   return (
     <div
-      className={classnames('gds-rich-text-container', {
+      className={classnames('field', 'gds-rich-text-container', {
         disabled: disabled,
         readonly: readOnly,
         error: !disabled && !readOnly && isInError,
@@ -150,7 +148,6 @@ RichTextInput.defaultProps = {
   disabled: false,
   enableImage: false,
   enableLink: false,
-  fieldSize: undefined,
   inputValue: undefined,
   isInError: false,
   locale: undefined,

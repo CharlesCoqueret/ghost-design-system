@@ -260,7 +260,6 @@ describe('DynamicSearchCreatableInput Component', () => {
         <DynamicSearchCreatableInput
           dataTestId='DATA-TEST-ID'
           handleCreate={handleCreateMock}
-          fieldSize={4}
           highlighted
           inputValue={'OPTION1'}
           name='SELECT'
@@ -298,7 +297,6 @@ describe('DynamicSearchCreatableInput Component', () => {
     await act(async () => {
       container = render(
         <DynamicSearchCreatableInput
-          fieldSize={4}
           handleCreate={handleCreateMock}
           highlighted
           inputValue={'OPTION1'}
@@ -337,7 +335,6 @@ describe('DynamicSearchCreatableInput Component', () => {
         <DynamicSearchCreatableInput
           dataTestId='DATA-TEST-ID'
           disabled
-          fieldSize={4}
           handleCreate={handleCreateMock}
           isInError
           inputValue={'OPTION1'}
@@ -374,7 +371,6 @@ describe('DynamicSearchCreatableInput Component', () => {
       container = render(
         <DynamicSearchCreatableInput
           dataTestId='DATA-TEST-ID'
-          fieldSize={4}
           handleCreate={handleCreateMock}
           isInError
           name='SELECT'

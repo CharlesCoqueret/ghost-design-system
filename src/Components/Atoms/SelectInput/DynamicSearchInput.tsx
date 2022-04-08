@@ -25,8 +25,6 @@ export interface IDynamicSearchInputProps {
   disabled?: boolean;
   /** Ellipsis in readonly (optional, default: false) */
   ellipsis?: boolean;
-  /** Size of the field in a 12 column grid (optional, default: undefined) */
-  fieldSize?: number;
   /** Highlight value in readonly mode (optional, default: false) */
   highlighted?: boolean;
   /** Input string value (optional, default: undefined) */
@@ -62,7 +60,6 @@ const DynamicSearchInput = (props: IDynamicSearchInputProps): ReactElement => {
     dataTestId,
     disabled,
     ellipsis,
-    fieldSize,
     highlighted,
     inputValue,
     isClearable,
@@ -120,9 +117,9 @@ const DynamicSearchInput = (props: IDynamicSearchInputProps): ReactElement => {
     return (
       <div
         className={classnames(
+          'field',
           'gds-select-container',
           'input-select-field-read-only',
-          fieldSize && `field-input-size-${fieldSize}`,
           {
             'field-highlighted': highlighted,
           },
@@ -143,9 +140,9 @@ const DynamicSearchInput = (props: IDynamicSearchInputProps): ReactElement => {
   return (
     <div
       className={classnames(
+        'field',
         'gds-select-container',
         'input-select-field',
-        fieldSize && `field-input-size-${fieldSize}`,
         {
           'input-error': isInError && !disabled,
         },
@@ -232,12 +229,12 @@ DynamicSearchInput.defaultProps = {
   },
   disabled: false,
   ellipsis: false,
-  fieldSize: undefined,
   highlighted: false,
   inputValue: undefined,
   isClearable: false,
   isInError: false,
   maxMenuHeight: 300,
+  noOptionsMessage: 'No options',
   onChange: undefined,
   options: undefined,
   placeholder: undefined,

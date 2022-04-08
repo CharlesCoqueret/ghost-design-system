@@ -11,10 +11,10 @@ export interface ICheckboxInputProps {
   dataTestId?: string;
   /** Disabled field (optional, default: false) */
   disabled?: boolean;
-  /** Size of the field in a 12 column grid (optional, default: undefined) */
-  fieldSize?: number;
   /** Highlighted field (optional, default: false) */
   highlighted?: boolean;
+  /** Inline options (optional, default: false) */
+  inline?: boolean;
   /** Error indication should be present (optional, default: undefined) */
   isInError?: boolean;
   /** Input value */
@@ -26,7 +26,7 @@ export interface ICheckboxInputProps {
 }
 
 const CheckboxInput = (props: ICheckboxInputProps): ReactElement => {
-  const { className, dataTestId, disabled, fieldSize, highlighted, isInError, options, onChange, readOnly } = props;
+  const { className, dataTestId, disabled, highlighted, inline, isInError, options, onChange, readOnly } = props;
 
   /** flip the check status of the checkbox that was checked */
   const updateState = (optionValue: string) => {
@@ -48,27 +48,22 @@ const CheckboxInput = (props: ICheckboxInputProps): ReactElement => {
   };
 
   return (
-    <div
-      className={classnames(
-        'field',
-        'gds-checkbox-container',
-        fieldSize && `field-input-size-${fieldSize}`,
-        className,
-      )}>
+    <div className={classnames('field', 'gds-checkbox-container', { inline: inline }, className)}>
       {options.map((option, index) => {
         return (
           <label
-            key={option.value}
-            onClick={handleChange(option.value)}
             className={classnames({
               'input-checkbox-field-read-only': readOnly,
               'input-checkbox-field-disabled': disabled,
               'input-checkbox-field-error': !readOnly && !disabled && isInError,
               'field-highlighted': (readOnly || disabled) && highlighted && option.highlighted,
               'input-checkbox-field-checked': option.checked,
+              inline: inline,
             })}
-            data-testid={dataTestId ? `${dataTestId}-${index}` : undefined}>
-            <div className='checkbox-marker'>
+            data-testid={dataTestId ? `${dataTestId}-${index}` : undefined}
+            key={option.value}
+            onClick={handleChange(option.value)}>
+            <div className='checkbox-marker' role='checkbox'>
               <Icon
                 icon={[
                   option.checked || disabled || readOnly ? 'fas' : 'fal',
@@ -88,8 +83,8 @@ const CheckboxInput = (props: ICheckboxInputProps): ReactElement => {
 CheckboxInput.defaultProps = {
   classname: undefined,
   disabled: false,
-  fieldSize: undefined,
   highlighted: false,
+  inline: false,
   isInError: false,
   onChange: undefined,
   readOnly: false,

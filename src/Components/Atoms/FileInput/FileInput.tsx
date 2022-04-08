@@ -15,8 +15,6 @@ export interface IFileInputProps {
   dataTestId?: string;
   /** Disabled field (optional, default: false) */
   disabled?: boolean;
-  /** Size of the field in a 12 column grid (optional, default: undefined) */
-  fieldSize?: number;
   /** Initial values for the field (optional, default: []) */
   inputValue?: Array<IFile>;
   /** Field is in error state (optional, default: false) */
@@ -79,7 +77,6 @@ const FileInput = (props: IFileInputProps): ReactElement => {
     className,
     dataTestId,
     disabled,
-    fieldSize,
     inputValue,
     isInError,
     maxFiles,
@@ -357,9 +354,7 @@ const FileInput = (props: IFileInputProps): ReactElement => {
   }, [handleDrop]);
 
   return (
-    <div
-      className={classnames('gds-file-input-container', className, fieldSize && `field-input-size-${fieldSize}`)}
-      style={style}>
+    <div className={classnames('field', 'gds-file-input-container', className)} style={style}>
       <div
         key='droparea'
         ref={dropArea}

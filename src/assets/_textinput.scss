@@ -6,6 +6,8 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  box-sizing: border-box;
+  width: 100%;
 
   &:not(.input-error):not(:disabled):focus,
   &:not(.input-error):not(:disabled):active,

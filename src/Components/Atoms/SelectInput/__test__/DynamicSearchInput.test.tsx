@@ -240,7 +240,6 @@ describe('DynamicSearchInput Component', () => {
       container = render(
         <DynamicSearchInput
           dataTestId='DATA-TEST-ID'
-          fieldSize={4}
           highlighted
           inputValue={'OPTION1'}
           name='SELECT'
@@ -276,7 +275,6 @@ describe('DynamicSearchInput Component', () => {
     await act(async () => {
       container = render(
         <DynamicSearchInput
-          fieldSize={4}
           highlighted
           inputValue={'OPTION1'}
           name='SELECT'
@@ -312,7 +310,6 @@ describe('DynamicSearchInput Component', () => {
         <DynamicSearchInput
           dataTestId='DATA-TEST-ID'
           disabled
-          fieldSize={4}
           isInError
           inputValue={'OPTION1'}
           name='SELECT'
@@ -346,7 +343,6 @@ describe('DynamicSearchInput Component', () => {
       container = render(
         <DynamicSearchInput
           dataTestId='DATA-TEST-ID'
-          fieldSize={4}
           isInError
           name='SELECT'
           noOptionsMessage={noOptionsMessageMock}

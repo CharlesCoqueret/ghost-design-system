@@ -3,8 +3,8 @@
 exports[`Row Component Row renders 1`] = `
 <div>
   <div
-    class="CLASSNAME gds-row"
-    style="height: 30%; width: 300px;"
+    class="gds-row CLASSNAME"
+    style="width: 300px; height: 30%;"
   >
     <div>
       <div

@@ -2,6 +2,8 @@ import React, { ReactElement } from 'react';
 import Numeral from 'numeral';
 import NumberFormat, { NumberFormatValues } from 'react-number-format';
 import classnames from 'classnames';
+import compact from 'lodash/compact';
+
 import { Typography } from '../Typography';
 
 /**
@@ -35,8 +37,6 @@ export interface IAmountInputProps {
   disabled?: boolean;
   /** Ellipsis in readonly (optional, default: false) */
   ellipsis?: boolean;
-  /** Size of the field in a 12 column grid (optional, default: undefined) */
-  fieldSize?: number;
   /** Highlighted field (optional, default: false) */
   highlighted?: boolean;
   /** Input or number string value (optional, default: '') */
@@ -75,7 +75,6 @@ const AmountInput = (props: IAmountInputProps): ReactElement => {
     decimalSeparator,
     disabled,
     ellipsis,
-    fieldSize,
     highlighted,
     inputValue,
     isInError,
@@ -117,13 +116,10 @@ const AmountInput = (props: IAmountInputProps): ReactElement => {
             'gds-amount-field',
             'amount-field-read-only',
             { 'field-highlighted': readOnly && highlighted },
-            fieldSize && `field-input-size-${fieldSize}`,
             className,
           )}
           data-testid={dataTestId}>
-          <Typography.Text ellipsis={ellipsis}>
-            {prefix ? `${prefix} ` : ''}-{suffix ? ` ${suffix}` : ''}
-          </Typography.Text>
+          <Typography.Text ellipsis={ellipsis}>{compact([prefix, '-', suffix]).join(' ')}</Typography.Text>
         </div>
       );
     }
@@ -134,16 +130,17 @@ const AmountInput = (props: IAmountInputProps): ReactElement => {
             'gds-amount-field',
             'amount-field-read-only',
             { 'field-highlighted': readOnly && highlighted },
-            fieldSize && `field-input-size-${fieldSize}`,
             className,
           )}
           data-testid={dataTestId}>
           <Typography.Text ellipsis={ellipsis}>
-            {prefix ? ` ${prefix}` : undefined}
-            {Numeral(inputValue).format(
-              '0.' + '0'.repeat(decimalScale ?? AmountInput.defaultProps.decimalScale) + ' a',
-            )}
-            {suffix ? ` ${suffix}` : undefined}
+            {compact([
+              prefix,
+              Numeral(inputValue).format(
+                '0.' + '0'.repeat(decimalScale ?? AmountInput.defaultProps.decimalScale) + ' a',
+              ),
+              suffix,
+            ]).join(' ')}
           </Typography.Text>
         </div>
       );
@@ -162,7 +159,6 @@ const AmountInput = (props: IAmountInputProps): ReactElement => {
           'gds-amount-field',
           'amount-field-read-only',
           { 'field-highlighted': readOnly && highlighted },
-          fieldSize && `field-input-size-${fieldSize}`,
           className,
         )}
         format={placeholder}
@@ -190,7 +186,6 @@ const AmountInput = (props: IAmountInputProps): ReactElement => {
       className={classnames(
         'gds-amount-field',
         { 'amount-field-error': !readOnly && !disabled && isInError },
-        fieldSize && `field-input-size-${fieldSize}`,
         className,
       )}
       isAllowed={(newValue: NumberFormatValues): boolean => {
@@ -216,7 +211,6 @@ AmountInput.defaultProps = {
   decimalSeparator: '.',
   ellipsis: false,
   inputValue: '',
-  fieldSize: undefined,
   placeholder: undefined,
   prefix: undefined,
   suffix: undefined,

@@ -95,10 +95,10 @@ exports[`DatePickerField Component DatePickerField renders with values in readon
 exports[`DatePickerField Component DatePickerField renders with values with fieldSize and inline 1`] = `
 <div>
   <div
-    class="gds-field-group field-inline"
+    class="gds-field-group field-size-6 field-inline"
   >
     <div
-      class="field input-date-picker-field field-input-size-6"
+      class="field input-date-picker-field"
     >
       <div
         class="react-datepicker-wrapper"

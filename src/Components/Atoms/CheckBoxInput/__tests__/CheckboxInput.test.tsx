@@ -25,7 +25,7 @@ describe('CheckboxInput Component', () => {
   it('CheckboxInput renders triggers onChange', async () => {
     const onChangeMock = jest.fn();
 
-    render(<CheckboxInput dataTestId='DATA-TEST-ID' fieldSize={4} onChange={onChangeMock} options={options} />);
+    render(<CheckboxInput dataTestId='DATA-TEST-ID' onChange={onChangeMock} options={options} />);
 
     const firstCheckbox = screen.getByTestId('DATA-TEST-ID-0');
 

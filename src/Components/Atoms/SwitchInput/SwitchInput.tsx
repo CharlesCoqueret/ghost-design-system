@@ -9,11 +9,9 @@ export interface ISwitchInputProps {
   dataTestId?: string;
   /** Disabled field (optional, default: false) */
   disabled?: boolean;
-  /** Size of the field in a 12 column grid (optional, default: undefined) */
-  fieldSize?: number;
   /** Highlighted field (optional, default: false) */
   highlighted?: boolean;
-  /** Error indication should be present (optional, default: undefined) */
+  /** Error indication should be present (optional, default: false) */
   isInError?: boolean;
   /** Input value */
   options: Array<IToggleEntry>;
@@ -24,7 +22,7 @@ export interface ISwitchInputProps {
 }
 
 const SwitchInput = (props: ISwitchInputProps): ReactElement => {
-  const { className, dataTestId, disabled, fieldSize, highlighted, isInError, options, onChange, readOnly } = props;
+  const { className, dataTestId, disabled, highlighted, isInError, options, onChange, readOnly } = props;
 
   /** flip the check status of the switch that was checked */
   const updateState = (optionValue: string) => {
@@ -47,9 +45,7 @@ const SwitchInput = (props: ISwitchInputProps): ReactElement => {
   };
 
   return (
-    <div
-      className={classnames('field', 'gds-switch-container', fieldSize && `field-input-size-${fieldSize}`, className)}
-      data-testid={dataTestId}>
+    <div className={classnames('field', 'gds-switch-container', className)} data-testid={dataTestId}>
       {options?.map((option) => {
         return (
           <label
@@ -79,6 +75,16 @@ const SwitchInput = (props: ISwitchInputProps): ReactElement => {
       })}
     </div>
   );
+};
+
+SwitchInput.defaultProps = {
+  className: undefined,
+  dataTestId: undefined,
+  disabled: false,
+  highlighted: false,
+  isInError: false,
+  onChange: undefined,
+  readOnly: false,
 };
 
 export default SwitchInput;

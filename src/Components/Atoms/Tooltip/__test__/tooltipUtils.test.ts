@@ -1,8 +1,8 @@
 import { computePosition, MenuDirectionEnum } from '../tooltipUtils';
 
 beforeEach(() => {
-  jest.spyOn(screen, 'availHeight', 'get').mockReturnValue(1000);
-  jest.spyOn(screen, 'availWidth', 'get').mockReturnValue(1000);
+  jest.spyOn(document.body, 'clientHeight', 'get').mockReturnValue(1000);
+  jest.spyOn(document.body, 'clientWidth', 'get').mockReturnValue(1000);
 });
 
 describe('computePosition', () => {

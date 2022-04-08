@@ -228,10 +228,9 @@ describe('MultiSelectInput Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('MultiSelectInput renders with fieldsize, highlight in readOnly', async () => {
+  it('MultiSelectInput renders highlight in readOnly', async () => {
     const { container } = render(
       <MultiSelectInput
-        fieldSize={5}
         highlighted
         inputValue={['OPTION-VALUE-NOT-AVAILABLE']}
         name='SELECT'
@@ -246,10 +245,9 @@ describe('MultiSelectInput Component', () => {
     );
     expect(container).toMatchSnapshot();
   });
-  it('MultiSelectInput renders with fieldsize, inError', async () => {
+  it('MultiSelectInput renders inError', async () => {
     const { container } = render(
       <MultiSelectInput
-        fieldSize={8}
         inputValue={['OPTION-VALUE-NOT-AVAILABLE']}
         isInError
         name='SELECT'

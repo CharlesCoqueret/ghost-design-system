@@ -82,12 +82,12 @@ Helper.args = {
 export const InLine = Template.bind({});
 InLine.args = {
   name: 'name',
-  label: 'Date picker inline mandatory and field size = 1',
+  label: 'Date picker inline mandatory and field size = 4',
   inline: true,
   mandatory: true,
   dateFormat: DateFormatEnum.MDY,
   isClearable: true,
-  fieldSize: 1,
+  fieldSize: 4,
 };
 
 export const Highlighted = Template.bind({});

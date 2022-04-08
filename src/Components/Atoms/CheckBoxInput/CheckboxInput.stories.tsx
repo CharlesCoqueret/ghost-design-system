@@ -48,3 +48,14 @@ Default.args = {
   isInError: false,
   readOnly: false,
 };
+
+export const Inline = Template.bind({});
+Inline.args = {
+  options: [options[0], options[1]],
+  disabled: false,
+  fieldSize: undefined,
+  highlighted: false,
+  isInError: false,
+  readOnly: false,
+  inline: true,
+};
