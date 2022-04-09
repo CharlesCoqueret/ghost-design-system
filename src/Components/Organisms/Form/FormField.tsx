@@ -153,7 +153,6 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
             }}
             inputValue={(data && (data[field.dataIndex] as unknown as string | number | undefined)) || undefined}
             errorMessage={errorMessage}
-            usePortal={usePortal}
           />
         </Highlighter>
       );
@@ -224,7 +223,6 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
             }}
             inputValue={(data && (data[field.dataIndex] as unknown as Array<string> | undefined)) || undefined}
             errorMessage={errorMessage}
-            usePortal={usePortal}
           />
         </Highlighter>
       );
@@ -295,7 +293,6 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
             }}
             inputValue={(data && (data[field.dataIndex] as unknown as string | undefined)) || undefined}
             errorMessage={errorMessage}
-            usePortal={usePortal}
           />
         </Highlighter>
       );

@@ -13,6 +13,13 @@ $width: 270px;
   width: $width;
   border-right: $chalk 1px solid;
 
+  a,
+  a:hover,
+  a:focus,
+  a:visited {
+    color: unset;
+  }
+
   // Disable scrollbar
   -ms-overflow-style: none;
   scrollbar-width: none;

@@ -6,7 +6,7 @@ import Button, { ColorButtonEnum, IButtonProps } from './Button';
 export default {
   title: 'Molecule/Button',
   component: Button,
-  parameters: { actions: { argTypesRegex: '^on.*' }, controls: { sort: 'requiredFirst' } },
+  parameters: { actions: { argTypesRegex: '^on.*' }, controls: { sort: 'requiredFirst' }, layout: 'centered' },
 } as ComponentMeta<typeof Button>;
 
 const Template: ComponentStory<typeof Button> = (args: IButtonProps) => {

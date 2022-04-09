@@ -7,7 +7,7 @@ import Button, { ColorButtonEnum } from '../Button/Button';
 export default {
   title: 'Molecule/Popover',
   component: Popover,
-  parameters: { actions: { argTypesRegex: '^on.*' }, controls: { sort: 'requiredFirst' } },
+  parameters: { actions: { argTypesRegex: '^on.*' }, controls: { sort: 'requiredFirst' }, layout: 'centered' },
 } as ComponentMeta<typeof Popover>;
 
 const Template: ComponentStory<typeof Popover> = (args: IPopoverProps) => {
@@ -15,7 +15,7 @@ const Template: ComponentStory<typeof Popover> = (args: IPopoverProps) => {
   const ref = useRef<HTMLDivElement>(null);
 
   return (
-    <div style={{ display: 'flex', justifyContent: 'space-around' }} ref={ref}>
+    <div ref={ref}>
       <Button
         label='Click me to see the popover'
         icon={['fal', 'trash-alt']}
