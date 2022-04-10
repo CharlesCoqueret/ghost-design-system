@@ -2,7 +2,8 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { FileField, IFileFieldProps } from './FileField';
-import { FileStatusEnum, IFile } from '../../Atoms';
+import { Icon } from '../../Atoms/Icon';
+import { FileStatusEnum, IFile } from '../../Atoms/FileInput';
 
 export default {
   title: 'Molecule/FileField',
@@ -110,5 +111,20 @@ Disabled.args = {
   label: 'File field disabled',
   disabled: true,
   helperText: 'Helper text',
+  ...commonProps,
+};
+
+export const CustomUploadMessage = Template.bind({});
+CustomUploadMessage.args = {
+  label: 'File field disabled',
+  helperText: 'Helper text',
+  uploadMessage: (
+    <div>
+      <div>🤓 Customize your upload message 🤓</div>
+      <div style={{ textAlign: 'center', marginTop: '20px' }}>
+        <Icon icon={['fal', 'arrow-up-from-line']} size='3x' />
+      </div>
+    </div>
+  ),
   ...commonProps,
 };

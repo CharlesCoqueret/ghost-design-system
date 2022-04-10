@@ -3,7 +3,7 @@
 exports[`MultiSelectInput Component MultiSelectInput handles change 1`] = `
 <div>
   <div
-    class="gds-select-container input-select-field"
+    class="field gds-select-container input-select-field"
   >
     <div
       class=" css-1959ul7-container"
@@ -85,7 +85,7 @@ exports[`MultiSelectInput Component MultiSelectInput handles change 1`] = `
 exports[`MultiSelectInput Component MultiSelectInput handles change with empty value when clearable 1`] = `
 <div>
   <div
-    class="gds-select-container input-select-field"
+    class="field gds-select-container input-select-field"
   >
     <div
       class=" css-1959ul7-container"
@@ -167,7 +167,7 @@ exports[`MultiSelectInput Component MultiSelectInput handles change with empty v
 exports[`MultiSelectInput Component MultiSelectInput renders 1`] = `
 <div>
   <div
-    class="gds-select-container input-select-field"
+    class="field gds-select-container input-select-field"
   >
     <div
       class=" css-1959ul7-container"
@@ -244,7 +244,21 @@ exports[`MultiSelectInput Component MultiSelectInput renders 1`] = `
 exports[`MultiSelectInput Component MultiSelectInput renders disabled 1`] = `
 <div>
   <div
-    class="gds-select-container input-select-field-read-only"
+    class="field gds-select-container input-select-field-read-only"
+  >
+    <span
+      class="gds-typography"
+    >
+      -
+    </span>
+  </div>
+</div>
+`;
+
+exports[`MultiSelectInput Component MultiSelectInput renders highlight in readOnly 1`] = `
+<div>
+  <div
+    class="field gds-select-container input-select-field-read-only field-highlighted"
   >
     <span
       class="gds-typography"
@@ -258,7 +272,7 @@ exports[`MultiSelectInput Component MultiSelectInput renders disabled 1`] = `
 exports[`MultiSelectInput Component MultiSelectInput renders in readOnly 1`] = `
 <div>
   <div
-    class="gds-select-container input-select-field-read-only"
+    class="field gds-select-container input-select-field-read-only"
   >
     <span
       class="gds-typography"
@@ -272,7 +286,7 @@ exports[`MultiSelectInput Component MultiSelectInput renders in readOnly 1`] = `
 exports[`MultiSelectInput Component MultiSelectInput renders in readOnly with invalid value 1`] = `
 <div>
   <div
-    class="gds-select-container input-select-field-read-only"
+    class="field gds-select-container input-select-field-read-only"
   >
     <span
       class="gds-typography"
@@ -286,7 +300,7 @@ exports[`MultiSelectInput Component MultiSelectInput renders in readOnly with in
 exports[`MultiSelectInput Component MultiSelectInput renders in readOnly without input value 1`] = `
 <div>
   <div
-    class="gds-select-container input-select-field-read-only"
+    class="field gds-select-container input-select-field-read-only"
   >
     <span
       class="gds-typography"
@@ -297,24 +311,10 @@ exports[`MultiSelectInput Component MultiSelectInput renders in readOnly without
 </div>
 `;
 
-exports[`MultiSelectInput Component MultiSelectInput renders with fieldsize, highlight in readOnly 1`] = `
+exports[`MultiSelectInput Component MultiSelectInput renders inError 1`] = `
 <div>
   <div
-    class="gds-select-container input-select-field-read-only field-input-size-5 field-highlighted"
-  >
-    <span
-      class="gds-typography"
-    >
-      -
-    </span>
-  </div>
-</div>
-`;
-
-exports[`MultiSelectInput Component MultiSelectInput renders with fieldsize, inError 1`] = `
-<div>
-  <div
-    class="gds-select-container input-select-field field-input-size-8 input-error"
+    class="field gds-select-container input-select-field input-error"
   >
     <div
       class=" css-1959ul7-container"
@@ -396,7 +396,7 @@ exports[`MultiSelectInput Component MultiSelectInput renders with fieldsize, inE
 exports[`MultiSelectInput Component MultiSelectInput renders with invalid input value 1`] = `
 <div>
   <div
-    class="gds-select-container input-select-field"
+    class="field gds-select-container input-select-field"
   >
     <div
       class=" css-1959ul7-container"
@@ -478,7 +478,7 @@ exports[`MultiSelectInput Component MultiSelectInput renders with invalid input 
 exports[`MultiSelectInput Component MultiSelectInput renders with multiple input values 1`] = `
 <div>
   <div
-    class="gds-select-container input-select-field"
+    class="field gds-select-container input-select-field"
   >
     <div
       class=" css-1959ul7-container"
@@ -561,7 +561,7 @@ exports[`MultiSelectInput Component MultiSelectInput renders with multiple input
 exports[`MultiSelectInput Component MultiSelectInput renders with valid value and clearable 1`] = `
 <div>
   <div
-    class="gds-select-container input-select-field"
+    class="field gds-select-container input-select-field"
   >
     <div
       class=" css-1959ul7-container"
@@ -648,7 +648,7 @@ exports[`MultiSelectInput Component MultiSelectInput renders with valid value an
 exports[`MultiSelectInput Component MultiSelectInput renders with valid value and clearable without data-test-id 1`] = `
 <div>
   <div
-    class="gds-select-container input-select-field"
+    class="field gds-select-container input-select-field"
   >
     <div
       class=" css-1959ul7-container"
@@ -733,7 +733,7 @@ exports[`MultiSelectInput Component MultiSelectInput renders with valid value an
 exports[`MultiSelectInput Component MultiSelectInput renders without input value 1`] = `
 <div>
   <div
-    class="gds-select-container input-select-field"
+    class="field gds-select-container input-select-field"
   >
     <div
       class=" css-1959ul7-container"
@@ -815,7 +815,7 @@ exports[`MultiSelectInput Component MultiSelectInput renders without input value
 exports[`MultiSelectInput Component MultiSelectInput renders without portal 1`] = `
 <div>
   <div
-    class="gds-select-container input-select-field"
+    class="field gds-select-container input-select-field"
   >
     <div
       class=" css-1959ul7-container"

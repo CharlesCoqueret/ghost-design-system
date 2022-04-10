@@ -3,6 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import Row, { IRowProps } from './Row';
 import { AmountField, DatePickerField, TextAreaField, YearPickerField } from '../../Molecules';
+import Container from './Container';
 import Col from './Col';
 
 const initialData = {
@@ -28,22 +29,41 @@ export default {
 
 const Template: ComponentStory<typeof Row> = (args: IRowProps) => {
   const [help, setHelp] = useState(false);
+
   return (
     <>
-      <Col style={help ? { border: '2px dotted green' } : { border: '2px dotted transparent' }}>
-        <Row {...args} style={help ? { border: '3px dotted red' } : { border: '3px dotted transparent' }}>
-          <AmountField inputValue={initialData.amount} label='Amount' suffix='$' name='amount' readOnly />
-        </Row>
-        <Row {...args} style={help ? { border: '3px dotted red' } : { border: '3px dotted transparent' }}>
-          <DatePickerField inputValue={initialData.date} label='Date' name='date' readOnly />
-        </Row>
-        <Row {...args} style={help ? { border: '3px dotted red' } : { border: '3px dotted transparent' }}>
-          <TextAreaField inputValue={initialData.textarea} label='Textarea' name='textarea' readOnly />
-        </Row>
-        <Row {...args} style={help ? { border: '3px dotted red' } : { border: '3px dotted transparent' }}>
-          <YearPickerField inputValue={initialData.year} label='Year' name='year' readOnly />
-        </Row>
-      </Col>
+      <Container style={help ? { border: '2px dotted green' } : { border: '2px dotted transparent' }}>
+        <Col>
+          <Row
+            {...args}
+            style={
+              help ? { ...args.style, border: '3px dotted red' } : { ...args.style, border: '3px dotted transparent' }
+            }>
+            <AmountField inputValue={initialData.amount} label='Amount' suffix='$' name='amount' readOnly />
+          </Row>
+          <Row
+            {...args}
+            style={
+              help ? { ...args.style, border: '3px dotted red' } : { ...args.style, border: '3px dotted transparent' }
+            }>
+            <DatePickerField inputValue={initialData.date} label='Date' name='date' readOnly />
+          </Row>
+          <Row
+            {...args}
+            style={
+              help ? { ...args.style, border: '3px dotted red' } : { ...args.style, border: '3px dotted transparent' }
+            }>
+            <TextAreaField inputValue={initialData.textarea} label='Textarea' name='textarea' readOnly />
+          </Row>
+          <Row
+            {...args}
+            style={
+              help ? { ...args.style, border: '3px dotted red' } : { ...args.style, border: '3px dotted transparent' }
+            }>
+            <YearPickerField inputValue={initialData.year} label='Year' name='year' readOnly />
+          </Row>
+        </Col>
+      </Container>
 
       <label>
         <input
@@ -57,7 +77,7 @@ const Template: ComponentStory<typeof Row> = (args: IRowProps) => {
       </label>
       {help && (
         <>
-          <p>Col in green</p>
+          <p>Container in green</p>
           <p>Row in red</p>
         </>
       )}

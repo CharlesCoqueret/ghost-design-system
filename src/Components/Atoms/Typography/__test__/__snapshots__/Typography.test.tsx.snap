@@ -1,0 +1,157 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Typography.Text Component Typography.Text ellipsis with no text 1`] = `
+<div>
+  <span
+    class="gds-typography ellipsis"
+  >
+    <div />
+  </span>
+</div>
+`;
+
+exports[`Typography.Text Component Typography.Text handles click 1`] = `
+<div>
+  <span
+    class="gds-typography link"
+    data-testid="DATA-TEST-ID"
+  >
+    TEXT
+  </span>
+</div>
+`;
+
+exports[`Typography.Text Component Typography.Text renders with all types 1`] = `
+<div>
+  <span
+    class="gds-typography error disabled helper highlighted label placeholder tiny"
+  >
+    TEXT
+  </span>
+</div>
+`;
+
+exports[`Typography.Text Component Typography.Text renders with all types 2`] = `
+<div>
+  <span
+    class="gds-typography"
+  >
+    TEXT
+  </span>
+</div>
+`;
+
+exports[`Typography.Text Component Typography.Text renders with all types 3`] = `
+<div>
+  <span
+    class="gds-typography disabled"
+  >
+    TEXT
+  </span>
+</div>
+`;
+
+exports[`Typography.Text Component Typography.Text renders with all types 4`] = `
+<div>
+  <span
+    class="gds-typography error"
+  >
+    TEXT
+  </span>
+</div>
+`;
+
+exports[`Typography.Text Component Typography.Text renders with all types 5`] = `
+<div>
+  <span
+    class="gds-typography helper"
+  >
+    TEXT
+  </span>
+</div>
+`;
+
+exports[`Typography.Text Component Typography.Text renders with all types 6`] = `
+<div>
+  <span
+    class="gds-typography highlighted"
+  >
+    TEXT
+  </span>
+</div>
+`;
+
+exports[`Typography.Text Component Typography.Text renders with all types 7`] = `
+<div>
+  <span
+    class="gds-typography label"
+  >
+    TEXT
+  </span>
+</div>
+`;
+
+exports[`Typography.Text Component Typography.Text renders with all types 8`] = `
+<div>
+  <span
+    class="gds-typography placeholder"
+  >
+    TEXT
+  </span>
+</div>
+`;
+
+exports[`Typography.Text Component Typography.Text renders with all types 9`] = `
+<div>
+  <span
+    class="gds-typography tiny"
+  >
+    TEXT
+  </span>
+</div>
+`;
+
+exports[`Typography.Text Component Typography.Text renders with no types 1`] = `
+<div>
+  <span
+    class="gds-typography CLASSNAME ellipsis"
+    style="height: 200px;"
+    title="TEXT"
+  >
+    TEXT
+  </span>
+</div>
+`;
+
+exports[`Typography.Title Component Typography.Title ellipsis with no text 1`] = `
+<div>
+  <h3
+    class="gds-typography ellipsis"
+  >
+    <div />
+  </h3>
+</div>
+`;
+
+exports[`Typography.Title Component Typography.Title handles click 1`] = `
+<div>
+  <h1
+    class="gds-typography"
+    data-testid="DATA-TEST-ID"
+  >
+    TITLE
+  </h1>
+</div>
+`;
+
+exports[`Typography.Title Component Typography.Title renders 1`] = `
+<div>
+  <h2
+    class="gds-typography ellipsis CLASSNAME"
+    style="height: 200px;"
+    title="TITLE"
+  >
+    TITLE
+  </h2>
+</div>
+`;

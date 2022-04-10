@@ -31,7 +31,6 @@ describe('FileInput Component', () => {
 
     const { container, rerender } = render(
       <FileInput
-        fieldSize={4}
         onChange={onChangeMock}
         onDelete={onDeleteMock}
         onDownload={onDownloadMock}
@@ -448,6 +447,7 @@ describe('FileInput Component', () => {
         onDelete={onDeleteMock}
         onDownload={onDownloadMock}
         requestMethod='POST'
+        showFileSize={false}
         requestUrl='http://test.com'
       />,
     );

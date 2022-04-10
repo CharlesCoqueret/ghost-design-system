@@ -1,5 +1,4 @@
 import React, { ReactElement, Ref } from 'react';
-import classnames from 'classnames';
 
 import { GenericField } from '../../Atoms/GenericField';
 import { AmountInput, ThousandsGroupStyle } from '../../Atoms/AmountInput';
@@ -102,6 +101,7 @@ export const PercentageField = (props: IPercentageFieldProps): ReactElement => {
       containerRef={containerRef}
       errorMessage={errorMessage}
       fieldClassName={fieldClassName}
+      fieldSize={fieldSize}
       helperText={helperText}
       highlighted={highlighted}
       inline={inline}
@@ -111,13 +111,12 @@ export const PercentageField = (props: IPercentageFieldProps): ReactElement => {
       readOnly={readOnly}>
       <AmountInput
         allowNegative={allowNegative}
-        className={classnames(fieldSize && `field-input-size-${fieldSize}`, inputClassName)}
+        className={inputClassName}
         dataTestId={dataTestId}
         decimalScale={decimalScale}
         decimalSeparator={decimalSeparator}
         disabled={disabled}
         ellipsis={ellipsis}
-        fieldSize={fieldSize}
         highlighted={highlighted}
         inputValue={inputValue}
         isInError={errorMessage !== undefined}

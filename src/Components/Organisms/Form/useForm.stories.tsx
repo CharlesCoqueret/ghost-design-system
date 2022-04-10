@@ -41,7 +41,7 @@ interface IDataType {
 }
 
 const Template = (args: IUseFormProps<IDataType>) => {
-  const { formElement, submit, reset } = useForm<IDataType>(args);
+  const { formElement, getData, isModified, submit, reset } = useForm<IDataType>(args);
   return (
     <div>
       <div style={{ display: 'flex', justifyContent: 'space-around' }}>
@@ -61,6 +61,17 @@ const Template = (args: IUseFormProps<IDataType>) => {
         />
       </div>
       <div>{formElement}</div>
+      <div>
+        <pre>Has been modified: {isModified().toString()}</pre>
+      </div>
+      <div>
+        Current data:
+        <textarea
+          style={{ width: '100%', boxSizing: 'border-box', height: '300px' }}
+          value={JSON.stringify(getData(), null, 2)}
+          readOnly
+        />
+      </div>
     </div>
   );
 };
@@ -172,7 +183,7 @@ const fields: Array<IFieldAndLayoutProps<IDataType>> = [
     description: (
       <div>
         <Typography.Text>Any description</Typography.Text>
-        <Link link='http://google.com' text='external link' />
+        <Link link='https://hamster.dance/hamsterdance/' text='external link' />
         <Link link='#' text='internal link' />
       </div>
     ),

@@ -40,9 +40,9 @@ export const computePosition = (
   const fitMap = MenuDirectionOrder.filter((direction) => {
     return (
       results[direction].left > 0 &&
-      results[direction].left + tooltipDimensions.width <= screen.availWidth &&
+      results[direction].left + tooltipDimensions.width <= document.body.clientWidth &&
       results[direction].top > 0 &&
-      results[direction].top + tooltipDimensions.height <= screen.availHeight
+      results[direction].top + tooltipDimensions.height <= document.body.clientHeight
     );
   });
 

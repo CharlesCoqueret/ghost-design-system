@@ -1,11 +1,12 @@
 import React, { ReactElement, useCallback, useState } from 'react';
 
 import Button, { ColorButtonEnum } from '../../../Molecules/Button/Button';
+import usePropState from '../../../../hooks/use-prop-state';
+
 import StaticDataTableFooter from '../StaticDataTable/StaticDataTableFooter';
 import StaticDataTableHeader from '../StaticDataTable/StaticDataTableHeader';
 import { ColumnType, IColumnType, IExtraEditableDataTableProps, SortDirectionEnum } from '../Common/types';
 import EditableDataTableBody from './EditableDataTableBody';
-import usePropState from '../../../../hooks/use-prop-state';
 
 export interface IEditableDataTableProps<T> {
   columns: Array<IColumnType<T>>;
@@ -64,7 +65,7 @@ const EditableDataTable = <T,>(props: IEditableDataTableProps<T>): ReactElement 
                   }
                   return true;
                 },
-                icon: ['fal', 'arrow-to-bottom'],
+                icon: ['fal', 'arrow-down-to-line'],
                 label: extra?.localization?.downloadButton ?? 'Download',
                 onClick: (row, rowIndex) => {
                   if (extra?.onRowDownload) {
@@ -110,7 +111,7 @@ const EditableDataTable = <T,>(props: IEditableDataTableProps<T>): ReactElement 
   };
 
   return (
-    <>
+    <div>
       <table className='gds-table'>
         <StaticDataTableHeader<T>
           columns={currentColumns}
@@ -137,7 +138,7 @@ const EditableDataTable = <T,>(props: IEditableDataTableProps<T>): ReactElement 
           onClick={addNewLine}
         />
       )}
-    </>
+    </div>
   );
 };
 

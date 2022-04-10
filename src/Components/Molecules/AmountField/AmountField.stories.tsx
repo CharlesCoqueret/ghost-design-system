@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { AmountField, IAmountFieldProps } from './AmountField';
@@ -9,12 +9,14 @@ export default {
   parameters: { actions: { argTypesRegex: '^on.*' }, controls: { sort: 'requiredFirst' } },
 } as ComponentMeta<typeof AmountField>;
 
-const Template: ComponentStory<typeof AmountField> = (args: IAmountFieldProps) => {
-  return <AmountField {...args} />;
+const Template: ComponentStory<typeof AmountField> = ({ inputValue, ...args }: IAmountFieldProps) => {
+  const [localValue, setLocalValue] = useState<number | string | undefined>(inputValue);
+  return <AmountField {...args} inputValue={localValue} onChange={setLocalValue} />;
 };
 
 export const Default = Template.bind({});
 Default.args = {
+  inputValue: 1234567890,
   label: 'Amount field',
   name: 'name',
   placeholder: 'Placeholder amount',
@@ -45,6 +47,7 @@ Error.args = {
 export const HelperAndLimit = Template.bind({});
 HelperAndLimit.args = {
   helperText: 'Helper text',
+  inputValue: 12,
   label: 'Amount field with helper and maximum value: 100',
   mandatory: true,
   maxValue: 100,

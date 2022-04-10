@@ -12,7 +12,7 @@ exports[`TextAreaCell component TextAreaCell handles changes 1`] = `
             class="gds-field-group"
           >
             <div
-              class="gds-input-textarea-parent"
+              class="field gds-input-textarea-parent"
             >
               <textarea
                 class="input-textarea-field gds-typography"
@@ -45,7 +45,7 @@ exports[`TextAreaCell component TextAreaCell handles changes 2`] = `
             class="gds-field-group"
           >
             <div
-              class="gds-input-textarea-parent"
+              class="field gds-input-textarea-parent"
             >
               <textarea
                 class="input-textarea-field gds-typography"
@@ -78,7 +78,7 @@ exports[`TextAreaCell component TextAreaCell renders 1`] = `
             class="gds-field-group"
           >
             <div
-              class="gds-input-textarea-parent"
+              class="field gds-input-textarea-parent"
             >
               <textarea
                 class="input-textarea-field-read-only gds-typography"
@@ -111,7 +111,7 @@ exports[`TextAreaCell component TextAreaCell renders cell editing with no row in
             class="gds-field-group"
           >
             <div
-              class="gds-input-textarea-parent"
+              class="field gds-input-textarea-parent"
             >
               <textarea
                 class="input-textarea-field gds-typography"
@@ -142,7 +142,7 @@ exports[`TextAreaCell component TextAreaCell renders hidden 1`] = `
             class="gds-field-group"
           >
             <div
-              class="gds-input-textarea-parent"
+              class="field gds-input-textarea-parent"
             >
               <textarea
                 class="input-textarea-field-read-only gds-typography"
@@ -175,7 +175,7 @@ exports[`TextAreaCell component TextAreaCell renders row editing with no row inp
             class="gds-field-group"
           >
             <div
-              class="gds-input-textarea-parent"
+              class="field gds-input-textarea-parent"
             >
               <textarea
                 class="input-textarea-field gds-typography"
@@ -205,7 +205,7 @@ exports[`TextAreaCell component TextAreaCell renders with forced value 1`] = `
             class="gds-field-group"
           >
             <div
-              class="gds-input-textarea-parent"
+              class="field gds-input-textarea-parent"
             >
               <textarea
                 class="input-textarea-field-read-only gds-typography"

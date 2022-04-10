@@ -8,8 +8,6 @@ export interface ITextAreaInputProps {
   dataTestId?: string;
   /** Disabled field (optional, default: false) */
   disabled?: boolean;
-  /** Size of the field in a 12 column grid (optional, default: undefined) */
-  fieldSize?: number;
   /** Highlighted field (optional, default: false) */
   highlighted?: boolean;
   /** Class for the input (optional, default: undefined) */
@@ -37,7 +35,6 @@ const TextAreaInput = (props: ITextAreaInputProps): ReactElement => {
     dataTestId,
     disabled,
     isInError,
-    fieldSize,
     highlighted,
     inputClassName,
     inputValue,
@@ -54,7 +51,7 @@ const TextAreaInput = (props: ITextAreaInputProps): ReactElement => {
    */
   const runAfterUpdate = useRunAfterUpdate();
   const textAreaRef = useRef<HTMLTextAreaElement>(null);
-  const [textAreaHeight, setTextAreaHeight] = useState('auto');
+  const [textAreaHeight, setTextAreaHeight] = useState<string | undefined>('auto');
 
   const updateHeight = () => {
     setTextAreaHeight(`${textAreaRef.current?.scrollHeight}px`);
@@ -64,7 +61,7 @@ const TextAreaInput = (props: ITextAreaInputProps): ReactElement => {
    * Ensure the height is properly set when initial value requires a bigger height.
    */
   useEffect(() => {
-    updateHeight();
+    setTextAreaHeight(undefined);
     runAfterUpdate(updateHeight);
   }, []);
 
@@ -83,7 +80,7 @@ const TextAreaInput = (props: ITextAreaInputProps): ReactElement => {
   };
 
   return (
-    <div className={classnames('gds-input-textarea-parent', fieldSize && `field-input-size-${fieldSize}`)}>
+    <div className={classnames('field', 'gds-input-textarea-parent')}>
       <textarea
         className={classnames(
           { 'input-textarea-field': !readOnly },
@@ -118,7 +115,6 @@ const TextAreaInput = (props: ITextAreaInputProps): ReactElement => {
 
 TextAreaInput.defaultProps = {
   disabled: false,
-  fieldSize: undefined,
   highlighted: false,
   inputClassName: undefined,
   inputValue: '',

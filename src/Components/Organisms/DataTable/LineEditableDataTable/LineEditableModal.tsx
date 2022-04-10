@@ -172,6 +172,7 @@ const LineEditableModal = <T,>(props: ILineEditableModalProps<T>): ReactElement 
     previousData: showChanges ? cloneDeep(row) : undefined,
     fields: columnToFieldMapper(columns),
     validationSchema: extra?.validationSchema,
+    usePortal: false,
   });
 
   return (

@@ -52,10 +52,10 @@ exports[`AmountField Component AmountField renders with values in readonly 1`] =
 exports[`AmountField Component AmountField renders with values with fieldSize and inline 1`] = `
 <div>
   <div
-    class="gds-field-group field-inline"
+    class="gds-field-group field-size-6 field-inline"
   >
     <input
-      class="gds-amount-field field-input-size-6 field-input-size-6"
+      class="gds-amount-field"
       inputmode="numeric"
       name="name"
       type="text"

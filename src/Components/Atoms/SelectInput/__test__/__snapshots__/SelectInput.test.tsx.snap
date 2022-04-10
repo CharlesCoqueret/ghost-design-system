@@ -3,7 +3,7 @@
 exports[`SelectInput Component SelectInput handles change 1`] = `
 <div>
   <div
-    class="gds-select-container input-select-field"
+    class="field gds-select-container input-select-field"
   >
     <div
       class=" css-1959ul7-container"
@@ -90,7 +90,7 @@ exports[`SelectInput Component SelectInput handles change 1`] = `
 exports[`SelectInput Component SelectInput handles change with data-testid 1`] = `
 <div>
   <div
-    class="gds-select-container input-select-field"
+    class="field gds-select-container input-select-field"
   >
     <div
       class=" css-1959ul7-container"
@@ -179,7 +179,7 @@ exports[`SelectInput Component SelectInput handles change with data-testid 1`] =
 exports[`SelectInput Component SelectInput handles change with empty value when clearable 1`] = `
 <div>
   <div
-    class="gds-select-container input-select-field"
+    class="field gds-select-container input-select-field"
   >
     <div
       class=" css-1959ul7-container"
@@ -261,7 +261,7 @@ exports[`SelectInput Component SelectInput handles change with empty value when 
 exports[`SelectInput Component SelectInput renders 1`] = `
 <div>
   <div
-    class="gds-select-container input-select-field"
+    class="field gds-select-container input-select-field"
   >
     <div
       class=" css-1959ul7-container"
@@ -342,7 +342,7 @@ exports[`SelectInput Component SelectInput renders 1`] = `
 exports[`SelectInput Component SelectInput renders disabled 1`] = `
 <div>
   <div
-    class="gds-select-container input-select-field"
+    class="field gds-select-container input-select-field"
   >
     <div
       class=" css-j5ssuk-container"
@@ -416,10 +416,24 @@ exports[`SelectInput Component SelectInput renders disabled 1`] = `
 </div>
 `;
 
+exports[`SelectInput Component SelectInput renders highlight in readOnly 1`] = `
+<div>
+  <div
+    class="field gds-select-container input-select-field-read-only field-highlighted"
+  >
+    <span
+      class="gds-typography"
+    >
+      -
+    </span>
+  </div>
+</div>
+`;
+
 exports[`SelectInput Component SelectInput renders in readOnly 1`] = `
 <div>
   <div
-    class="gds-select-container input-select-field-read-only"
+    class="field gds-select-container input-select-field-read-only"
   >
     <span
       class="gds-typography"
@@ -433,21 +447,7 @@ exports[`SelectInput Component SelectInput renders in readOnly 1`] = `
 exports[`SelectInput Component SelectInput renders in readOnly with invalid value 1`] = `
 <div>
   <div
-    class="gds-select-container input-select-field-read-only"
-  >
-    <span
-      class="gds-typography"
-    >
-      -
-    </span>
-  </div>
-</div>
-`;
-
-exports[`SelectInput Component SelectInput renders with fieldsize, highlight in readOnly 1`] = `
-<div>
-  <div
-    class="gds-select-container input-select-field-read-only field-input-size-5 field-highlighted"
+    class="field gds-select-container input-select-field-read-only"
   >
     <span
       class="gds-typography"
@@ -461,7 +461,7 @@ exports[`SelectInput Component SelectInput renders with fieldsize, highlight in 
 exports[`SelectInput Component SelectInput renders with fieldsize, inError 1`] = `
 <div>
   <div
-    class="gds-select-container input-select-field field-input-size-8 input-error"
+    class="field gds-select-container input-select-field input-error"
   >
     <div
       class=" css-1959ul7-container"
@@ -542,7 +542,7 @@ exports[`SelectInput Component SelectInput renders with fieldsize, inError 1`] =
 exports[`SelectInput Component SelectInput renders without portal 1`] = `
 <div>
   <div
-    class="gds-select-container input-select-field"
+    class="field gds-select-container input-select-field"
   >
     <div
       class=" css-1959ul7-container"

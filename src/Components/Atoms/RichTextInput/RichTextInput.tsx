@@ -24,8 +24,6 @@ export interface IRichTextInputProps {
   enableImage?: boolean;
   /** Enable link  (optional, default: false) */
   enableLink?: boolean;
-  /** Size of the field in a 12 column grid (optional, default: undefined) */
-  fieldSize?: number;
   /** Initial values for the field (optional, default: undefined or '-' when disabled or readOnly) */
   inputValue?: string;
   /** Field is in error state (optional, default: false) */
@@ -93,14 +91,15 @@ const RichTextInput = (props: IRichTextInputProps): ReactElement => {
     },
     showPathLabel: false,
     height: 'auto',
-    formats: ['p', 'div', 'blockquote', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'],
+    formats: ['p', 'div', 'blockquote', 'h1', 'h2', 'h3'],
+    fontSize: [10, 12, 14, 18, 22],
     imageUploadUrl: undefined,
     imageUrlInput: false,
     videoFileInput: false,
-    resizingBar: false,
-    charCounter: maxLength ? true : false,
+    resizingBar: maxLength !== undefined ? true : false,
+    charCounter: maxLength !== undefined ? true : false,
     maxCharCount: maxLength,
-    minHeight: readOnly || disabled ? undefined : '200px',
+    minHeight: readOnly || disabled ? undefined : '250px',
     maxHeight: readOnly || disabled ? undefined : '600px',
     pasteTagsBlacklist: [
       ...forbiddenTags,
@@ -124,7 +123,7 @@ const RichTextInput = (props: IRichTextInputProps): ReactElement => {
 
   return (
     <div
-      className={classnames('gds-rich-text-container', {
+      className={classnames('field', 'gds-rich-text-container', {
         disabled: disabled,
         readonly: readOnly,
         error: !disabled && !readOnly && isInError,
@@ -150,7 +149,6 @@ RichTextInput.defaultProps = {
   disabled: false,
   enableImage: false,
   enableLink: false,
-  fieldSize: undefined,
   inputValue: undefined,
   isInError: false,
   locale: undefined,

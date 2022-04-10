@@ -6,7 +6,7 @@ import Link, { ILinkProps } from './Link';
 export default {
   title: 'Atom/Link',
   component: Link,
-  parameters: { actions: { argTypesRegex: '^on.*' }, controls: { sort: 'requiredFirst' } },
+  parameters: { actions: { argTypesRegex: '^on.*' }, controls: { sort: 'requiredFirst' }, layout: 'centered' },
 } as ComponentMeta<typeof Link>;
 
 const Template: ComponentStory<typeof Link> = (args: ILinkProps) => {
@@ -16,6 +16,6 @@ const Template: ComponentStory<typeof Link> = (args: ILinkProps) => {
 export const Default = Template.bind({});
 Default.args = {
   text: ' Link Text',
-  link: 'https://google.com',
+  link: 'https://hamster.dance/hamsterdance/',
   tooltip: 'Information about the link in a tooltip',
 };

@@ -1,10 +1,11 @@
 import React, { ReactElement, useCallback, useState } from 'react';
 
+import usePropState from '../../../../hooks/use-prop-state';
+
 import StaticDataTableBody from './StaticDataTableBody';
 import StaticDataTableFooter from './StaticDataTableFooter';
 import StaticDataTableHeader from './StaticDataTableHeader';
 import { IColumnType, IExtraStaticDataTableProps, SortDirectionEnum } from '../Common/types';
-import usePropState from '../../../../hooks/use-prop-state';
 
 export interface IStaticDataTableProps<T> {
   data: Array<T>;

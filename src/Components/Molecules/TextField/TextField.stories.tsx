@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { TextField, ITextFieldProps } from './TextField';
@@ -9,8 +9,20 @@ export default {
   parameters: { actions: { argTypesRegex: '^on.*' }, controls: { sort: 'requiredFirst' } },
 } as ComponentMeta<typeof TextField>;
 
-const Template: ComponentStory<typeof TextField> = (args: ITextFieldProps) => {
-  return <TextField {...args} />;
+const Template: ComponentStory<typeof TextField> = ({ inputValue, ...args }: ITextFieldProps) => {
+  const [localValue, setLocalValue] = useState<string>(inputValue);
+  return (
+    <TextField
+      {...args}
+      inputValue={localValue}
+      onChange={(value) => {
+        if (args.onChange) {
+          args.onChange(value);
+        }
+        setLocalValue(value);
+      }}
+    />
+  );
 };
 
 export const Default = Template.bind({});

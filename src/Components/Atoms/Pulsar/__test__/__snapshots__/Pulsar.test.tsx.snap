@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pulsar Component Pulsar renders 1`] = `
+<div>
+  <span
+    class="gds-pulsar"
+  />
+</div>
+`;

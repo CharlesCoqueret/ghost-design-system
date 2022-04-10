@@ -1,0 +1,17 @@
+.gds-pulsar {
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: red;
+  animation: pulsar 2s infinite;
+}
+
+@keyframes pulsar {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 52, 24, 0.4);
+  }
+  100% {
+    box-shadow: 0 0 0 10px rgba(255, 52, 24, 0);
+  }
+}

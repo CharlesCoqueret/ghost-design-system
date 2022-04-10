@@ -134,10 +134,9 @@ describe('SelectInput Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('SelectInput renders with fieldsize, highlight in readOnly', async () => {
+  it('SelectInput renders highlight in readOnly', async () => {
     const { container } = render(
       <SelectInput
-        fieldSize={5}
         highlighted
         inputValue='OPTION-VALUE-NOT-AVAILABLE'
         name='SELECT'
@@ -153,7 +152,6 @@ describe('SelectInput Component', () => {
   it('SelectInput renders with fieldsize, inError', async () => {
     const { container } = render(
       <SelectInput
-        fieldSize={8}
         inputValue='OPTION-VALUE-NOT-AVAILABLE'
         isInError
         name='SELECT'

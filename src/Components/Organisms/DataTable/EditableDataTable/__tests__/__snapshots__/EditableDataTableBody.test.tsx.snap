@@ -48,7 +48,7 @@ exports[`EditableDataTableBody Component EditableDataTableBody renders and handl
             class="gds-field-group"
           >
             <div
-              class="gds-select-container input-select-field field input-select-field"
+              class="field gds-select-container input-select-field input-select-field"
             >
               <div
                 class=" css-1959ul7-container"
@@ -248,7 +248,7 @@ exports[`EditableDataTableBody Component EditableDataTableBody renders and handl
             class="gds-field-group"
           >
             <div
-              class="gds-select-container input-select-field field input-select-field"
+              class="field gds-select-container input-select-field input-select-field"
             >
               <div
                 class=" css-1959ul7-container"

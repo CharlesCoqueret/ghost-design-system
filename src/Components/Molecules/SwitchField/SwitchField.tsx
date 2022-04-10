@@ -73,6 +73,7 @@ export const SwitchField = (props: ISwitchFieldProps): ReactElement => {
       containerRef={containerRef}
       errorMessage={errorMessage}
       fieldClassName={fieldClassName}
+      fieldSize={fieldSize}
       helperText={helperText}
       highlighted={highlighted}
       inline={inline}
@@ -82,12 +83,7 @@ export const SwitchField = (props: ISwitchFieldProps): ReactElement => {
       mandatory={mandatory}
       readOnly={readOnly}>
       <SwitchInput
-        className={classnames(
-          'field',
-          'input-switch-field',
-          fieldSize && `field-input-size-${fieldSize}`,
-          inputClassName,
-        )}
+        className={classnames('input-switch-field', inputClassName)}
         dataTestId={dataTestId}
         disabled={disabled}
         highlighted={highlighted}

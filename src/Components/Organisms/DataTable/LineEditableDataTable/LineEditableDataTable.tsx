@@ -1,12 +1,13 @@
 import React, { ReactElement, useCallback, useState } from 'react';
-import { Button, ColorButtonEnum } from '../../../Molecules/Button';
-import StaticDataTableBody from '../StaticDataTable/StaticDataTableBody';
 
+import { Button, ColorButtonEnum } from '../../../Molecules/Button';
+import usePropState from '../../../../hooks/use-prop-state';
+
+import StaticDataTableBody from '../StaticDataTable/StaticDataTableBody';
 import StaticDataTableFooter from '../StaticDataTable/StaticDataTableFooter';
 import StaticDataTableHeader from '../StaticDataTable/StaticDataTableHeader';
 import { ColumnType, IColumnType, IExtraLineEditableDataTableProps, SortDirectionEnum } from '../Common/types';
 import LineEditableModal from './LineEditableModal';
-import usePropState from '../../../../hooks/use-prop-state';
 
 export interface ILineEditableDataTableProps<T> {
   columns: Array<IColumnType<T>>;
@@ -92,7 +93,7 @@ const LineEditableDataTable = <T,>(props: ILineEditableDataTableProps<T>): React
                   }
                   return true;
                 },
-                icon: ['fal', 'arrow-to-bottom'],
+                icon: ['fal', 'arrow-down-to-line'],
                 label: extra?.localization?.downloadButton ?? 'Download',
                 onClick: (row, rowIndex) => {
                   if (extra?.onRowDownload) {
@@ -131,7 +132,7 @@ const LineEditableDataTable = <T,>(props: ILineEditableDataTableProps<T>): React
   };
 
   return (
-    <>
+    <div>
       <table className='gds-table'>
         <StaticDataTableHeader<T>
           columns={currentColumns}
@@ -143,6 +144,7 @@ const LineEditableDataTable = <T,>(props: ILineEditableDataTableProps<T>): React
         <StaticDataTableBody<T> columns={currentColumns} data={currentData} extra={extra} loading={loading} />
         <StaticDataTableFooter<T> columns={currentColumns} data={currentData} extra={extra} />
       </table>
+
       {extra?.canAddNewLine && extra?.canAddNewLine() && (
         <Button
           className='gds-table-new-line'
@@ -197,7 +199,7 @@ const LineEditableDataTable = <T,>(props: ILineEditableDataTableProps<T>): React
           extra={extra}
         />
       )}
-    </>
+    </div>
   );
 };
 

@@ -109,6 +109,7 @@
     }
     &.no-data {
       background-color: $white !important;
+      color: $silver;
       td {
         text-align: center;
         .no-data-container {
@@ -118,7 +119,7 @@
           .no-data-text {
             margin-top: 20px;
           }
-          .no-data-icon{
+          .no-data-icon {
             margin-top: 10px;
           }
         }

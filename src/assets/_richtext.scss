@@ -49,13 +49,18 @@
   .sun-editor .se-toolbar {
     outline: unset;
     border: none;
-    background-color: transparent;
+    background-color: $white;
     .se-btn-select.se-btn-tool-format {
       width: 100px;
     }
-    .se-btn-module-border{
+    .se-btn-module-border {
       border: none;
     }
+  }
+
+  // Hidding background color of the character counter
+  .sun-editor .se-resizing-bar {
+    background-color: transparent;
   }
 
   // Prevent usage of image via links

@@ -33,7 +33,18 @@ export default {
 
 const ManagedTemplate: ComponentStory<typeof SelectField> = (args: ISelectFieldProps) => {
   const [inputValue, setInputValue] = useState<string | number | null | undefined>(undefined);
-  return <SelectField {...args} inputValue={inputValue ? inputValue : undefined} onChange={setInputValue} />;
+  return (
+    <SelectField
+      {...args}
+      inputValue={inputValue ? inputValue : undefined}
+      onChange={(value) => {
+        if (args.onChange) {
+          args.onChange(value);
+        }
+        setInputValue(value);
+      }}
+    />
+  );
 };
 
 const Template: ComponentStory<typeof SelectField> = (args: ISelectFieldProps) => {

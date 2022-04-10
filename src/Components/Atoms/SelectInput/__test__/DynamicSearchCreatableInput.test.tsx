@@ -11,7 +11,9 @@ describe('DynamicSearchCreatableInput Component', () => {
     const resolveValueMock = jest.fn().mockImplementation(() => {
       return Promise.resolve({ value: 'OPTION1', label: 'option 1' });
     });
-    const searchOptionsMock = jest.fn();
+    const searchOptionsMock = jest.fn().mockImplementation(() => {
+      return Promise.resolve(undefined);
+    });
 
     let container: HTMLElement | undefined;
 
@@ -38,7 +40,8 @@ describe('DynamicSearchCreatableInput Component', () => {
     expect(noOptionsMessageMock).toBeCalledTimes(0);
     expect(resolveValueMock).toBeCalledTimes(1);
     expect(resolveValueMock).toBeCalledWith('OPTION1');
-    expect(searchOptionsMock).toBeCalledTimes(0);
+    expect(searchOptionsMock).toBeCalledTimes(1);
+    expect(searchOptionsMock).toBeCalledWith('', expect.any(Function));
   });
 
   it('DynamicSearchCreatableInput renders with invalid input value', async () => {
@@ -47,7 +50,9 @@ describe('DynamicSearchCreatableInput Component', () => {
     const resolveValueMock = jest.fn().mockImplementation(() => {
       return Promise.resolve(undefined);
     });
-    const searchOptionsMock = jest.fn();
+    const searchOptionsMock = jest.fn().mockImplementation(() => {
+      return Promise.resolve(undefined);
+    });
 
     let container: HTMLElement | undefined;
 
@@ -74,7 +79,8 @@ describe('DynamicSearchCreatableInput Component', () => {
     expect(noOptionsMessageMock).toBeCalledTimes(0);
     expect(resolveValueMock).toBeCalledTimes(1);
     expect(resolveValueMock).toBeCalledWith('OPTION-VALUE-NOT-AVAILABLE');
-    expect(searchOptionsMock).toBeCalledTimes(0);
+    expect(searchOptionsMock).toBeCalledTimes(1);
+    expect(searchOptionsMock).toBeCalledWith('', expect.any(Function));
   });
 
   it('DynamicSearchCreatableInput renders when resolveValue rejects', async () => {
@@ -83,7 +89,9 @@ describe('DynamicSearchCreatableInput Component', () => {
     const resolveValueMock = jest.fn().mockImplementation(() => {
       return Promise.reject();
     });
-    const searchOptionsMock = jest.fn();
+    const searchOptionsMock = jest.fn().mockImplementation(() => {
+      return Promise.resolve(undefined);
+    });
 
     let container: HTMLElement | undefined;
 
@@ -110,14 +118,17 @@ describe('DynamicSearchCreatableInput Component', () => {
     expect(resolveValueMock).toBeCalledTimes(1);
     expect(resolveValueMock).toBeCalledWith('OPTION1');
     expect(noOptionsMessageMock).toBeCalledTimes(0);
-    expect(searchOptionsMock).toBeCalledTimes(0);
+    expect(searchOptionsMock).toBeCalledTimes(1);
+    expect(searchOptionsMock).toBeCalledWith('', expect.any(Function));
   });
 
   it('DynamicSearchCreatableInput renders without input value', async () => {
     const handleCreateMock = jest.fn();
     const noOptionsMessageMock = jest.fn();
     const resolveValueMock = jest.fn();
-    const searchOptionsMock = jest.fn();
+    const searchOptionsMock = jest.fn().mockImplementation(() => {
+      return Promise.resolve(undefined);
+    });
 
     let container: HTMLElement | undefined;
 
@@ -133,14 +144,17 @@ describe('DynamicSearchCreatableInput Component', () => {
         />,
       ).container;
 
-      expect(screen.queryByTestId('DATA-TEST-ID-spinner')).toBeFalsy();
+      expect(await screen.findByTestId('DATA-TEST-ID-spinner')).toBeTruthy();
     });
+
+    expect(screen.queryByTestId('DATA-TEST-ID-spinner')).toBeFalsy();
 
     expect(container).toMatchSnapshot();
     expect(handleCreateMock).toBeCalledTimes(0);
     expect(resolveValueMock).toBeCalledTimes(0);
     expect(noOptionsMessageMock).toBeCalledTimes(0);
-    expect(searchOptionsMock).toBeCalledTimes(0);
+    expect(searchOptionsMock).toBeCalledTimes(1);
+    expect(searchOptionsMock).toBeCalledWith('', expect.any(Function));
   });
 
   it('DynamicSearchCreatableInput handles change', async () => {
@@ -181,7 +195,7 @@ describe('DynamicSearchCreatableInput Component', () => {
     expect(handleCreateMock).toBeCalledTimes(0);
     expect(resolveValueMock).toBeCalledTimes(0);
     expect(noOptionsMessageMock).toBeCalled();
-    expect(searchOptionsMock).toBeCalledTimes('option 2'.length);
+    expect(searchOptionsMock).toBeCalledTimes('option 2'.length + 1);
     expect(searchOptionsMock).toBeCalledWith('option 2', expect.any(Function));
   });
 
@@ -237,7 +251,7 @@ describe('DynamicSearchCreatableInput Component', () => {
     expect(container).toMatchSnapshot();
     expect(handleCreateMock).toBeCalledTimes(0);
     expect(resolveValueMock).toBeCalledTimes(1);
-    expect(searchOptionsMock).toBeCalledTimes('option 2'.length);
+    expect(searchOptionsMock).toBeCalledTimes('option 2'.length + 1);
     expect(searchOptionsMock).toBeCalledWith('option 2', expect.any(Function));
     expect(onChangeMock).toBeCalledTimes(1);
     expect(onChangeMock).toBeCalledWith('OPTION2');
@@ -260,7 +274,6 @@ describe('DynamicSearchCreatableInput Component', () => {
         <DynamicSearchCreatableInput
           dataTestId='DATA-TEST-ID'
           handleCreate={handleCreateMock}
-          fieldSize={4}
           highlighted
           inputValue={'OPTION1'}
           name='SELECT'
@@ -270,8 +283,6 @@ describe('DynamicSearchCreatableInput Component', () => {
           searchOptions={searchOptionsMock}
         />,
       ).container;
-
-      expect(await screen.findByTestId('DATA-TEST-ID-spinner')).toBeTruthy();
     });
 
     expect(screen.queryByTestId('DATA-TEST-ID-spinner')).toBeFalsy();
@@ -298,7 +309,6 @@ describe('DynamicSearchCreatableInput Component', () => {
     await act(async () => {
       container = render(
         <DynamicSearchCreatableInput
-          fieldSize={4}
           handleCreate={handleCreateMock}
           highlighted
           inputValue={'OPTION1'}
@@ -311,7 +321,7 @@ describe('DynamicSearchCreatableInput Component', () => {
       ).container;
     });
 
-    expect(screen.queryByTestId('-spinner')).toBeFalsy();
+    expect(screen.queryByTestId('DATA-TEST-ID-spinner')).toBeFalsy();
 
     expect(container).toMatchSnapshot();
     expect(handleCreateMock).toBeCalledTimes(0);
@@ -328,7 +338,9 @@ describe('DynamicSearchCreatableInput Component', () => {
     const resolveValueMock = jest.fn().mockImplementation(() => {
       return Promise.resolve({ value: 'OPTION1', label: 'option 1' });
     });
-    const searchOptionsMock = jest.fn();
+    const searchOptionsMock = jest.fn().mockImplementation(() => {
+      return Promise.resolve(undefined);
+    });
 
     let container: HTMLElement | undefined;
 
@@ -337,7 +349,6 @@ describe('DynamicSearchCreatableInput Component', () => {
         <DynamicSearchCreatableInput
           dataTestId='DATA-TEST-ID'
           disabled
-          fieldSize={4}
           handleCreate={handleCreateMock}
           isInError
           inputValue={'OPTION1'}
@@ -357,7 +368,8 @@ describe('DynamicSearchCreatableInput Component', () => {
     expect(handleCreateMock).toBeCalledTimes(0);
     expect(resolveValueMock).toBeCalledTimes(1);
     expect(noOptionsMessage).toBeCalledTimes(0);
-    expect(searchOptionsMock).toBeCalledTimes(0);
+    expect(searchOptionsMock).toBeCalledTimes(1);
+    expect(searchOptionsMock).toBeCalledWith('', expect.any(Function));
   });
 
   it('DynamicSearchCreatableInput renders in error without portal', async () => {
@@ -366,7 +378,9 @@ describe('DynamicSearchCreatableInput Component', () => {
       return 'No options';
     });
     const resolveValueMock = jest.fn();
-    const searchOptionsMock = jest.fn();
+    const searchOptionsMock = jest.fn().mockImplementation(() => {
+      return Promise.resolve(undefined);
+    });
 
     let container: HTMLElement | undefined;
 
@@ -374,7 +388,6 @@ describe('DynamicSearchCreatableInput Component', () => {
       container = render(
         <DynamicSearchCreatableInput
           dataTestId='DATA-TEST-ID'
-          fieldSize={4}
           handleCreate={handleCreateMock}
           isInError
           name='SELECT'
@@ -385,14 +398,17 @@ describe('DynamicSearchCreatableInput Component', () => {
         />,
       ).container;
 
-      expect(screen.queryByTestId('DATA-TEST-ID-spinner')).toBeFalsy();
+      expect(await screen.findByTestId('DATA-TEST-ID-spinner')).toBeTruthy();
     });
+
+    expect(screen.queryByTestId('DATA-TEST-ID-spinner')).toBeFalsy();
 
     expect(container).toMatchSnapshot();
     expect(handleCreateMock).toBeCalledTimes(0);
     expect(resolveValueMock).toBeCalledTimes(0);
     expect(noOptionsMessageMock).toBeCalledTimes(0);
-    expect(searchOptionsMock).toBeCalledTimes(0);
+    expect(searchOptionsMock).toBeCalledTimes(1);
+    expect(searchOptionsMock).toBeCalledWith('', expect.any(Function));
   });
 
   it('DynamicSearchCreatableInput handles inputValue change', async () => {
@@ -404,7 +420,9 @@ describe('DynamicSearchCreatableInput Component', () => {
       if (input === 'OPTION2') return Promise.resolve({ value: 'OPTION2', label: 'option 2' });
       return Promise.resolve(undefined);
     });
-    const searchOptionsMock = jest.fn();
+    const searchOptionsMock = jest.fn().mockImplementation(() => {
+      return Promise.resolve(undefined);
+    });
 
     let container: RenderResult | undefined;
 
@@ -432,7 +450,8 @@ describe('DynamicSearchCreatableInput Component', () => {
     expect(resolveValueMock).toBeCalledTimes(1);
     expect(resolveValueMock).toBeCalledWith('OPTION1');
     expect(noOptionsMessageMock).toBeCalledTimes(0);
-    expect(searchOptionsMock).toBeCalledTimes(0);
+    expect(searchOptionsMock).toBeCalledTimes(1);
+    expect(searchOptionsMock).toBeCalledWith('', expect.any(Function));
     expect(onChangeMock).toBeCalledTimes(0);
 
     await act(async () => {
@@ -459,7 +478,7 @@ describe('DynamicSearchCreatableInput Component', () => {
     expect(resolveValueMock).toBeCalledTimes(2);
     expect(resolveValueMock).toBeCalledWith('OPTION2');
     expect(noOptionsMessageMock).toBeCalledTimes(0);
-    expect(searchOptionsMock).toBeCalledTimes(0);
+    expect(searchOptionsMock).toBeCalledTimes(1);
     expect(onChangeMock).toBeCalledTimes(0);
   });
 
@@ -502,7 +521,8 @@ describe('DynamicSearchCreatableInput Component', () => {
     expect(resolveValueMock).toBeCalledTimes(1);
     expect(resolveValueMock).toBeCalledWith('OPTION1');
     expect(noOptionsMessageMock).toBeCalledTimes(0);
-    expect(searchOptionsMock).toBeCalledTimes(0);
+    expect(searchOptionsMock).toBeCalledTimes(1);
+    expect(searchOptionsMock).toBeCalledWith('', expect.any(Function));
     expect(onChangeMock).toBeCalledTimes(0);
 
     await act(async () => {
@@ -518,7 +538,7 @@ describe('DynamicSearchCreatableInput Component', () => {
     expect(resolveValueMock).toBeCalledTimes(1);
     expect(resolveValueMock).toBeCalledWith('OPTION1');
     expect(noOptionsMessageMock).toBeCalledTimes(2);
-    expect(searchOptionsMock).toBeCalledTimes(0);
+    expect(searchOptionsMock).toBeCalledTimes(1);
     expect(onChangeMock).toBeCalledTimes(1);
     expect(onChangeMock).toBeCalledWith(undefined);
   });
@@ -550,15 +570,18 @@ describe('DynamicSearchCreatableInput Component', () => {
         />,
       ).container;
 
-      expect(screen.queryByTestId('DATA-TEST-ID-spinner')).toBeFalsy();
+      expect(await screen.findByTestId('DATA-TEST-ID-spinner')).toBeTruthy();
     });
+
+    expect(screen.queryByTestId('DATA-TEST-ID-spinner')).toBeFalsy();
 
     expect(container).toMatchSnapshot();
     expect(handleCreateMock).toBeCalledTimes(0);
     expect(handleCreateMock).toBeCalledTimes(0);
     expect(resolveValueMock).toBeCalledTimes(0);
     expect(noOptionsMessageMock).toBeCalledTimes(0);
-    expect(searchOptionsMock).toBeCalledTimes(0);
+    expect(searchOptionsMock).toBeCalledTimes(1);
+    expect(searchOptionsMock).toBeCalledWith('', expect.any(Function));
     expect(onChangeMock).toBeCalledTimes(0);
 
     await act(async () => {
@@ -582,7 +605,7 @@ describe('DynamicSearchCreatableInput Component', () => {
     expect(handleCreateMock).toBeCalledWith('abc');
     expect(resolveValueMock).toBeCalledTimes(0);
     expect(noOptionsMessageMock).toBeCalledTimes(1);
-    expect(searchOptionsMock).toBeCalledTimes('abc'.length);
+    expect(searchOptionsMock).toBeCalledTimes('abc'.length + 1);
     expect(searchOptionsMock).toBeCalledWith('abc', expect.any(Function));
     expect(onChangeMock).toBeCalledTimes(1);
     expect(onChangeMock).toBeCalledWith('OPTION-CREATED');
@@ -615,15 +638,18 @@ describe('DynamicSearchCreatableInput Component', () => {
         />,
       ).container;
 
-      expect(screen.queryByTestId('DATA-TEST-ID-spinner')).toBeFalsy();
+      expect(await screen.findByTestId('DATA-TEST-ID-spinner')).toBeTruthy();
     });
+
+    expect(screen.queryByTestId('DATA-TEST-ID-spinner')).toBeFalsy();
 
     expect(container).toMatchSnapshot();
     expect(handleCreateMock).toBeCalledTimes(0);
     expect(handleCreateMock).toBeCalledTimes(0);
     expect(resolveValueMock).toBeCalledTimes(0);
     expect(noOptionsMessageMock).toBeCalledTimes(0);
-    expect(searchOptionsMock).toBeCalledTimes(0);
+    expect(searchOptionsMock).toBeCalledTimes(1);
+    expect(searchOptionsMock).toBeCalledWith('', expect.any(Function));
     expect(onChangeMock).toBeCalledTimes(0);
 
     await act(async () => {
@@ -647,7 +673,7 @@ describe('DynamicSearchCreatableInput Component', () => {
     expect(handleCreateMock).toBeCalledWith('abc');
     expect(resolveValueMock).toBeCalledTimes(0);
     expect(noOptionsMessageMock).toBeCalledTimes(1);
-    expect(searchOptionsMock).toBeCalledTimes('abc'.length);
+    expect(searchOptionsMock).toBeCalledTimes('abc'.length + 1);
     expect(searchOptionsMock).toBeCalledWith('abc', expect.any(Function));
     expect(onChangeMock).toBeCalledTimes(1);
     expect(onChangeMock).toBeCalledWith(undefined);

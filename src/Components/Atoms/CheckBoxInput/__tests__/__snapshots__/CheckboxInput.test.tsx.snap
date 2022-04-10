@@ -10,6 +10,7 @@ exports[`CheckboxInput Component CheckboxInput renders highlighted 1`] = `
     >
       <div
         class="checkbox-marker"
+        role="checkbox"
       >
         <i
           class="icon"
@@ -23,6 +24,7 @@ exports[`CheckboxInput Component CheckboxInput renders highlighted 1`] = `
     >
       <div
         class="checkbox-marker"
+        role="checkbox"
       >
         <i
           class="icon"
@@ -36,6 +38,7 @@ exports[`CheckboxInput Component CheckboxInput renders highlighted 1`] = `
     >
       <div
         class="checkbox-marker"
+        role="checkbox"
       >
         <i
           class="icon"
@@ -49,6 +52,7 @@ exports[`CheckboxInput Component CheckboxInput renders highlighted 1`] = `
     >
       <div
         class="checkbox-marker"
+        role="checkbox"
       >
         <i
           class="icon"
@@ -62,6 +66,7 @@ exports[`CheckboxInput Component CheckboxInput renders highlighted 1`] = `
     >
       <div
         class="checkbox-marker"
+        role="checkbox"
       >
         <i
           class="icon"
@@ -75,6 +80,7 @@ exports[`CheckboxInput Component CheckboxInput renders highlighted 1`] = `
     >
       <div
         class="checkbox-marker"
+        role="checkbox"
       >
         <i
           class="icon"
@@ -97,6 +103,7 @@ exports[`CheckboxInput Component CheckboxInput renders with input 1`] = `
     >
       <div
         class="checkbox-marker"
+        role="checkbox"
       >
         <i
           class="icon"
@@ -110,6 +117,7 @@ exports[`CheckboxInput Component CheckboxInput renders with input 1`] = `
     >
       <div
         class="checkbox-marker"
+        role="checkbox"
       >
         <i
           class="icon"
@@ -123,6 +131,7 @@ exports[`CheckboxInput Component CheckboxInput renders with input 1`] = `
     >
       <div
         class="checkbox-marker"
+        role="checkbox"
       >
         <i
           class="icon"
@@ -136,6 +145,7 @@ exports[`CheckboxInput Component CheckboxInput renders with input 1`] = `
     >
       <div
         class="checkbox-marker"
+        role="checkbox"
       >
         <i
           class="icon"
@@ -149,6 +159,7 @@ exports[`CheckboxInput Component CheckboxInput renders with input 1`] = `
     >
       <div
         class="checkbox-marker"
+        role="checkbox"
       >
         <i
           class="icon"
@@ -162,6 +173,7 @@ exports[`CheckboxInput Component CheckboxInput renders with input 1`] = `
     >
       <div
         class="checkbox-marker"
+        role="checkbox"
       >
         <i
           class="icon"

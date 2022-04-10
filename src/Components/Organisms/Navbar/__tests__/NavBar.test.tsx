@@ -30,4 +30,19 @@ describe('NavBar Component', () => {
     expect(container).toMatchSnapshot();
     expect(onSearchMock).not.toBeCalled();
   });
+
+  it('NavBar renders with variations', async () => {
+    const onSearchMock = jest.fn();
+
+    const { container } = render(
+      <NavBar
+        brand={{ logoSource: 'logosource' }}
+        navButtons={[{ label: 'button', icon: ['fal', 'icons'] }]}
+        navIcons={[{ label: 'button' }]}
+      />,
+    );
+
+    expect(container).toMatchSnapshot();
+    expect(onSearchMock).not.toBeCalled();
+  });
 });

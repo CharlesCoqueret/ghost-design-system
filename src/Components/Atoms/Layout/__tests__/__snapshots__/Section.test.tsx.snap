@@ -3,15 +3,19 @@
 exports[`Section Component Section renders 1`] = `
 <div>
   <div
-    class="gds-section-container"
+    class="gds-layout-section-container"
   >
     <div
       class="section-header collapsable"
       data-testid="DATA-TEST-ID"
     >
-      TITLE
+      <h2
+        class="gds-typography"
+      >
+        TITLE
+      </h2>
       <i
-        class="icon open icon"
+        class="collapse-icon open icon"
         icon="fal,chevron-left"
       />
     </div>
@@ -36,15 +40,19 @@ exports[`Section Component Section renders 1`] = `
 exports[`Section Component Section renders 2`] = `
 <div>
   <div
-    class="gds-section-container"
+    class="gds-layout-section-container"
   >
     <div
       class="section-header collapsable"
       data-testid="DATA-TEST-ID"
     >
-      TITLE
+      <h2
+        class="gds-typography"
+      >
+        TITLE
+      </h2>
       <i
-        class="icon icon"
+        class="collapse-icon icon"
         icon="fal,chevron-left"
       />
     </div>
@@ -69,15 +77,19 @@ exports[`Section Component Section renders 2`] = `
 exports[`Section Component Section renders 3`] = `
 <div>
   <div
-    class="gds-section-container"
+    class="gds-layout-section-container"
   >
     <div
       class="section-header collapsable"
       data-testid="DATA-TEST-ID"
     >
-      TITLE
+      <h2
+        class="gds-typography"
+      >
+        TITLE
+      </h2>
       <i
-        class="icon open icon"
+        class="collapse-icon open icon"
         icon="fal,chevron-left"
       />
     </div>
@@ -102,13 +114,17 @@ exports[`Section Component Section renders 3`] = `
 exports[`Section Component Section renders not collapsable 1`] = `
 <div>
   <div
-    class="gds-section-container"
+    class="gds-layout-section-container"
   >
     <div
       class="section-header"
       data-testid="DATA-TEST-ID"
     >
-      TITLE
+      <h2
+        class="gds-typography"
+      >
+        TITLE
+      </h2>
     </div>
     <div
       class="section-body"
@@ -131,13 +147,17 @@ exports[`Section Component Section renders not collapsable 1`] = `
 exports[`Section Component Section renders not collapsable 2`] = `
 <div>
   <div
-    class="gds-section-container"
+    class="gds-layout-section-container"
   >
     <div
       class="section-header"
       data-testid="DATA-TEST-ID"
     >
-      TITLE
+      <h2
+        class="gds-typography"
+      >
+        TITLE
+      </h2>
     </div>
     <div
       class="section-body"
@@ -160,13 +180,17 @@ exports[`Section Component Section renders not collapsable 2`] = `
 exports[`Section Component Section renders not collapsable 3`] = `
 <div>
   <div
-    class="gds-section-container"
+    class="gds-layout-section-container"
   >
     <div
       class="section-header"
       data-testid="DATA-TEST-ID"
     >
-      TITLE
+      <h2
+        class="gds-typography"
+      >
+        TITLE
+      </h2>
     </div>
     <div
       class="section-body"

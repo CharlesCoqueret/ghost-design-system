@@ -15,7 +15,11 @@
   - [Link](https://charlescoqueret.github.io/ghost-design-system/?path=/story/atom-link--default)
   - [Modal](https://charlescoqueret.github.io/ghost-design-system/?path=/story/atom-modal--default)
   - Portal
+  - [Pulsar](https://charlescoqueret.github.io/ghost-design-system/?path=/story/atom-pulsar--default)
   - [Tooltip](https://charlescoqueret.github.io/ghost-design-system/?path=/story/atom-tooltip--default)
+  - Typography
+    - [Text](https://charlescoqueret.github.io/ghost-design-system/?path=/story/atom-typography-text--default)
+    - [Title](https://charlescoqueret.github.io/ghost-design-system/?path=/story/atom-typography-title--default)
 - Molecules:
   - [Amount field](https://charlescoqueret.github.io/ghost-design-system/?path=/story/molecule-amountfield--default)
   - [Button](https://charlescoqueret.github.io/ghost-design-system/?path=/story/molecule-button--simple)
@@ -41,6 +45,7 @@
     - [Line editable Data Table (editon in popup form with data validation)](https://charlescoqueret.github.io/ghost-design-system/?path=/story/organism-datatable-lineeditabledatatable--default)
     - [Line editable in place data table (edition of a line in place)](https://charlescoqueret.github.io/ghost-design-system/?path=/story/organism-datatable-lineeditableinplacedatatable--default)
     - [Static data table](https://charlescoqueret.github.io/ghost-design-system/?path=/story/organism-datatable-staticdatatable--default)
+  - [Filter](https://charlescoqueret.github.io/ghost-design-system/?path=/story/organism-filter--default)
   - Form:
     - Form component
     - [useForm hook](https://charlescoqueret.github.io/ghost-design-system/?path=/story/organism-useform--default)

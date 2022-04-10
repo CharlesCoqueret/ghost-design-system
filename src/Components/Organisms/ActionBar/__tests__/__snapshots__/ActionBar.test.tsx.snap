@@ -47,7 +47,8 @@ exports[`ActionBar Component ActionBar renders 1`] = `
         class="title"
       >
         <h1
-          class="gds-typography align-edit ellipsis"
+          class="gds-typography ellipsis align-edit"
+          title="PREFIX"
         >
           PREFIX
         </h1>
@@ -84,13 +85,14 @@ exports[`ActionBar Component ActionBar renders 1`] = `
           </div>
         </div>
         <h1
-          class="gds-typography align-edit ellipsis"
+          class="gds-typography ellipsis align-edit"
         >
           - 
           ENTITYID
         </h1>
         <h1
-          class="gds-typography align-edit ellipsis"
+          class="gds-typography ellipsis align-edit"
+          title="SUFFIX"
         >
           SUFFIX
         </h1>
@@ -204,7 +206,8 @@ exports[`ActionBar Component ActionBar renders without action, basicactions, ico
         class="title"
       >
         <h1
-          class="gds-typography align-edit ellipsis"
+          class="gds-typography ellipsis align-edit"
+          title="PREFIX"
         >
           PREFIX
         </h1>
@@ -241,13 +244,14 @@ exports[`ActionBar Component ActionBar renders without action, basicactions, ico
           </div>
         </div>
         <h1
-          class="gds-typography align-edit ellipsis"
+          class="gds-typography ellipsis align-edit"
         >
           - 
           ENTITYID
         </h1>
         <h1
-          class="gds-typography align-edit ellipsis"
+          class="gds-typography ellipsis align-edit"
+          title="SUFFIX"
         >
           SUFFIX
         </h1>

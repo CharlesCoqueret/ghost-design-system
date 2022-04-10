@@ -60,7 +60,7 @@ const YearPickerInput = (props: IYearPickerProps): ReactElement => {
   const selected = inputValue ? today : undefined;
 
   return (
-    <div className={className}>
+    <div className={classnames(className, 'field')}>
       <DatePicker
         name={name}
         data-testid={dataTestId}

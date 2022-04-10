@@ -93,6 +93,7 @@ export const DatePickerField = (props: IDatePickerFieldProps): ReactElement => {
       containerRef={containerRef}
       errorMessage={errorMessage}
       fieldClassName={fieldClassName}
+      fieldSize={fieldSize}
       helperText={helperText}
       highlighted={highlighted}
       inline={inline}
@@ -102,12 +103,7 @@ export const DatePickerField = (props: IDatePickerFieldProps): ReactElement => {
       readOnly={readOnly}>
       <DatePickerInput
         calendarStartDay={calendarStartDay}
-        className={classnames(
-          'field',
-          'input-date-picker-field',
-          fieldSize && `field-input-size-${fieldSize}`,
-          inputClassName,
-        )}
+        className={classnames('input-date-picker-field', inputClassName)}
         dataTestId={dataTestId}
         dateFormat={dateFormat}
         disabled={disabled}

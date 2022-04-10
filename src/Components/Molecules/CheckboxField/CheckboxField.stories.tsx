@@ -80,3 +80,10 @@ Disabled.args = {
   label: 'Checkbox field disabled',
   inputValue: options,
 };
+
+export const Inline = Template.bind({});
+Inline.args = {
+  label: 'Checkbox field disabled',
+  inputValue: [options[0], options[1]],
+  inline: true,
+};

@@ -32,7 +32,7 @@ const Template: ComponentStory<typeof DatePickerField> = ({ inputValue, ...args 
   if (loading)
     return (
       <>
-        <Icon icon={['fal', 'spinner']} spin />
+        <Icon icon={['fal', 'spinner']} size='2x' />
         Loading locale
       </>
     );
@@ -82,12 +82,11 @@ Helper.args = {
 export const InLine = Template.bind({});
 InLine.args = {
   name: 'name',
-  label: 'Date picker inline mandatory and field size = 1',
+  label: 'Date picker inline mandatory',
   inline: true,
   mandatory: true,
   dateFormat: DateFormatEnum.MDY,
   isClearable: true,
-  fieldSize: 1,
 };
 
 export const Highlighted = Template.bind({});

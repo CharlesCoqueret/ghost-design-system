@@ -9,7 +9,9 @@ describe('DynamicSearchInput Component', () => {
     const resolveValueMock = jest.fn().mockImplementation(() => {
       return Promise.resolve({ value: 'OPTION1', label: 'option 1' });
     });
-    const searchOptionsMock = jest.fn();
+    const searchOptionsMock = jest.fn().mockImplementation(() => {
+      return Promise.resolve(undefined);
+    });
     const noOptionsMessageMock = jest.fn();
 
     let container: HTMLElement | undefined;
@@ -35,14 +37,17 @@ describe('DynamicSearchInput Component', () => {
     expect(resolveValueMock).toBeCalledTimes(1);
     expect(resolveValueMock).toBeCalledWith('OPTION1');
     expect(noOptionsMessageMock).toBeCalledTimes(0);
-    expect(searchOptionsMock).toBeCalledTimes(0);
+    expect(searchOptionsMock).toBeCalledTimes(1);
+    expect(searchOptionsMock).toBeCalledWith('', expect.any(Function));
   });
 
   it('DynamicSearchInput renders with invalid input value', async () => {
     const resolveValueMock = jest.fn().mockImplementation(() => {
       return Promise.resolve(undefined);
     });
-    const searchOptionsMock = jest.fn();
+    const searchOptionsMock = jest.fn().mockImplementation(() => {
+      return Promise.resolve(undefined);
+    });
     const noOptionsMessageMock = jest.fn();
 
     let container: HTMLElement | undefined;
@@ -68,14 +73,17 @@ describe('DynamicSearchInput Component', () => {
     expect(resolveValueMock).toBeCalledTimes(1);
     expect(resolveValueMock).toBeCalledWith('OPTION-VALUE-NOT-AVAILABLE');
     expect(noOptionsMessageMock).toBeCalledTimes(0);
-    expect(searchOptionsMock).toBeCalledTimes(0);
+    expect(searchOptionsMock).toBeCalledTimes(1);
+    expect(searchOptionsMock).toBeCalledWith('', expect.any(Function));
   });
 
   it('DynamicSearchInput renders when resolveValue rejects', async () => {
     const resolveValueMock = jest.fn().mockImplementation(() => {
       return Promise.reject();
     });
-    const searchOptionsMock = jest.fn();
+    const searchOptionsMock = jest.fn().mockImplementation(() => {
+      return Promise.resolve(undefined);
+    });
     const noOptionsMessageMock = jest.fn();
 
     let container: HTMLElement | undefined;
@@ -101,12 +109,15 @@ describe('DynamicSearchInput Component', () => {
     expect(resolveValueMock).toBeCalledTimes(1);
     expect(resolveValueMock).toBeCalledWith('OPTION1');
     expect(noOptionsMessageMock).toBeCalledTimes(0);
-    expect(searchOptionsMock).toBeCalledTimes(0);
+    expect(searchOptionsMock).toBeCalledTimes(1);
+    expect(searchOptionsMock).toBeCalledWith('', expect.any(Function));
   });
 
   it('DynamicSearchInput renders without input value', async () => {
     const resolveValueMock = jest.fn();
-    const searchOptionsMock = jest.fn();
+    const searchOptionsMock = jest.fn().mockImplementation(() => {
+      return Promise.resolve(undefined);
+    });
     const noOptionsMessageMock = jest.fn();
 
     let container: HTMLElement | undefined;
@@ -122,13 +133,16 @@ describe('DynamicSearchInput Component', () => {
         />,
       ).container;
 
-      expect(screen.queryByTestId('DATA-TEST-ID-spinner')).toBeFalsy();
+      expect(await screen.findByTestId('DATA-TEST-ID-spinner')).toBeTruthy();
     });
+
+    expect(screen.queryByTestId('DATA-TEST-ID-spinner')).toBeFalsy();
 
     expect(container).toMatchSnapshot();
     expect(resolveValueMock).toBeCalledTimes(0);
     expect(noOptionsMessageMock).toBeCalledTimes(0);
-    expect(searchOptionsMock).toBeCalledTimes(0);
+    expect(searchOptionsMock).toBeCalledTimes(1);
+    expect(searchOptionsMock).toBeCalledWith('', expect.any(Function));
   });
 
   it('DynamicSearchInput handles change', async () => {
@@ -166,7 +180,7 @@ describe('DynamicSearchInput Component', () => {
     expect(resolveValueMock).toBeCalledTimes(0);
     expect(noOptionsMessageMock).toBeCalled();
     expect(noOptionsMessageMock).toBeCalledWith({ inputValue: 'option 2' });
-    expect(searchOptionsMock).toBeCalledTimes('option 2'.length);
+    expect(searchOptionsMock).toBeCalledTimes('option 2'.length + 1);
     expect(searchOptionsMock).toBeCalledWith('option 2', expect.any(Function));
   });
 
@@ -219,7 +233,7 @@ describe('DynamicSearchInput Component', () => {
 
     expect(container).toMatchSnapshot();
     expect(resolveValueMock).toBeCalledTimes(1);
-    expect(searchOptionsMock).toBeCalledTimes('option 2'.length);
+    expect(searchOptionsMock).toBeCalledTimes('option 2'.length + 1);
     expect(searchOptionsMock).toBeCalledWith('option 2', expect.any(Function));
     expect(onChangeMock).toBeCalledTimes(1);
     expect(onChangeMock).toBeCalledWith('OPTION2');
@@ -240,7 +254,6 @@ describe('DynamicSearchInput Component', () => {
       container = render(
         <DynamicSearchInput
           dataTestId='DATA-TEST-ID'
-          fieldSize={4}
           highlighted
           inputValue={'OPTION1'}
           name='SELECT'
@@ -276,7 +289,6 @@ describe('DynamicSearchInput Component', () => {
     await act(async () => {
       container = render(
         <DynamicSearchInput
-          fieldSize={4}
           highlighted
           inputValue={'OPTION1'}
           name='SELECT'
@@ -300,7 +312,9 @@ describe('DynamicSearchInput Component', () => {
     const resolveValueMock = jest.fn().mockImplementation(() => {
       return Promise.resolve({ value: 'OPTION1', label: 'option 1' });
     });
-    const searchOptionsMock = jest.fn();
+    const searchOptionsMock = jest.fn().mockImplementation(() => {
+      return Promise.resolve(undefined);
+    });
     const noOptionsMessage = jest.fn().mockImplementation(() => {
       return 'No options';
     });
@@ -312,7 +326,6 @@ describe('DynamicSearchInput Component', () => {
         <DynamicSearchInput
           dataTestId='DATA-TEST-ID'
           disabled
-          fieldSize={4}
           isInError
           inputValue={'OPTION1'}
           name='SELECT'
@@ -330,12 +343,15 @@ describe('DynamicSearchInput Component', () => {
     expect(container).toMatchSnapshot();
     expect(resolveValueMock).toBeCalledTimes(1);
     expect(noOptionsMessage).toBeCalledTimes(0);
-    expect(searchOptionsMock).toBeCalledTimes(0);
+    expect(searchOptionsMock).toBeCalledTimes(1);
+    expect(searchOptionsMock).toBeCalledWith('', expect.any(Function));
   });
 
   it('DynamicSearchInput renders in error without portal', async () => {
     const resolveValueMock = jest.fn();
-    const searchOptionsMock = jest.fn();
+    const searchOptionsMock = jest.fn().mockImplementation(() => {
+      return Promise.resolve(undefined);
+    });
     const noOptionsMessageMock = jest.fn().mockImplementation(() => {
       return 'No options';
     });
@@ -346,7 +362,6 @@ describe('DynamicSearchInput Component', () => {
       container = render(
         <DynamicSearchInput
           dataTestId='DATA-TEST-ID'
-          fieldSize={4}
           isInError
           name='SELECT'
           noOptionsMessage={noOptionsMessageMock}
@@ -356,13 +371,16 @@ describe('DynamicSearchInput Component', () => {
         />,
       ).container;
 
-      expect(screen.queryByTestId('DATA-TEST-ID-spinner')).toBeFalsy();
+      expect(await screen.findByTestId('DATA-TEST-ID-spinner')).toBeTruthy();
     });
+
+    expect(screen.queryByTestId('DATA-TEST-ID-spinner')).toBeFalsy();
 
     expect(container).toMatchSnapshot();
     expect(resolveValueMock).toBeCalledTimes(0);
     expect(noOptionsMessageMock).toBeCalledTimes(0);
-    expect(searchOptionsMock).toBeCalledTimes(0);
+    expect(searchOptionsMock).toBeCalledTimes(1);
+    expect(searchOptionsMock).toBeCalledWith('', expect.any(Function));
   });
 
   it('DynamicSearchInput handles inputValue change', async () => {
@@ -371,7 +389,9 @@ describe('DynamicSearchInput Component', () => {
       if (input === 'OPTION2') return Promise.resolve({ value: 'OPTION2', label: 'option 2' });
       return Promise.resolve(undefined);
     });
-    const searchOptionsMock = jest.fn();
+    const searchOptionsMock = jest.fn().mockImplementation(() => {
+      return Promise.resolve(undefined);
+    });
     const noOptionsMessageMock = jest.fn();
     const onChangeMock = jest.fn();
 
@@ -399,7 +419,8 @@ describe('DynamicSearchInput Component', () => {
     expect(resolveValueMock).toBeCalledTimes(1);
     expect(resolveValueMock).toBeCalledWith('OPTION1');
     expect(noOptionsMessageMock).toBeCalledTimes(0);
-    expect(searchOptionsMock).toBeCalledTimes(0);
+    expect(searchOptionsMock).toBeCalledTimes(1);
+    expect(searchOptionsMock).toBeCalledWith('', expect.any(Function));
     expect(onChangeMock).toBeCalledTimes(0);
 
     await act(async () => {
@@ -424,7 +445,7 @@ describe('DynamicSearchInput Component', () => {
     expect(resolveValueMock).toBeCalledTimes(2);
     expect(resolveValueMock).toBeCalledWith('OPTION2');
     expect(noOptionsMessageMock).toBeCalledTimes(0);
-    expect(searchOptionsMock).toBeCalledTimes(0);
+    expect(searchOptionsMock).toBeCalledTimes(1);
     expect(onChangeMock).toBeCalledTimes(0);
   });
 
@@ -464,7 +485,8 @@ describe('DynamicSearchInput Component', () => {
     expect(resolveValueMock).toBeCalledTimes(1);
     expect(resolveValueMock).toBeCalledWith('OPTION1');
     expect(noOptionsMessageMock).toBeCalledTimes(0);
-    expect(searchOptionsMock).toBeCalledTimes(0);
+    expect(searchOptionsMock).toBeCalledTimes(1);
+    expect(searchOptionsMock).toBeCalledWith('', expect.any(Function));
     expect(onChangeMock).toBeCalledTimes(0);
 
     await act(async () => {
@@ -479,7 +501,8 @@ describe('DynamicSearchInput Component', () => {
     expect(resolveValueMock).toBeCalledTimes(1);
     expect(resolveValueMock).toBeCalledWith('OPTION1');
     expect(noOptionsMessageMock).toBeCalledTimes(2);
-    expect(searchOptionsMock).toBeCalledTimes(0);
+    expect(searchOptionsMock).toBeCalledTimes(1);
+    expect(searchOptionsMock).toBeCalledWith('', expect.any(Function));
     expect(onChangeMock).toBeCalledTimes(1);
     expect(onChangeMock).toBeCalledWith(undefined);
   });

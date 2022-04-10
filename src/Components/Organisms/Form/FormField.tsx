@@ -7,7 +7,6 @@ import sortBy from 'lodash/sortBy';
 import { AnyObject } from 'yup/lib/types';
 
 import { IToggleEntry } from '../../Atoms/CheckBoxInput';
-import { GenericField } from '../../Atoms/GenericField';
 import { FileStatusEnum, IFile } from '../../Atoms/FileInput';
 import { AmountField } from '../../Molecules/AmountField';
 import { CheckboxField } from '../../Molecules/CheckboxField';
@@ -153,7 +152,6 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
             }}
             inputValue={(data && (data[field.dataIndex] as unknown as string | number | undefined)) || undefined}
             errorMessage={errorMessage}
-            usePortal={usePortal}
           />
         </Highlighter>
       );
@@ -224,7 +222,6 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
             }}
             inputValue={(data && (data[field.dataIndex] as unknown as Array<string> | undefined)) || undefined}
             errorMessage={errorMessage}
-            usePortal={usePortal}
           />
         </Highlighter>
       );
@@ -295,7 +292,6 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
             }}
             inputValue={(data && (data[field.dataIndex] as unknown as string | undefined)) || undefined}
             errorMessage={errorMessage}
-            usePortal={usePortal}
           />
         </Highlighter>
       );
@@ -353,26 +349,23 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
     }
     case FieldTypeEnum.TABLE: {
       return (
-        <>
-          <Highlighter>
-            <LineEditableDataTable
-              {...field}
-              extra={{
-                ...field.extra,
-                onRowSubmit: (editedRow, submittedRowIndex: number) => {
-                  (data[field.dataIndex] as unknown as Array<unknown>)[submittedRowIndex] = editedRow;
-                  handleChange(field.dataIndex, data[field.dataIndex] as unknown as T[keyof T]);
-                },
-                onRowDelete: (_editedRow, submittedRowIndex: number) => {
-                  (data[field.dataIndex] as unknown as Array<unknown>).splice(submittedRowIndex, 1);
-                  handleChange(field.dataIndex, data[field.dataIndex] as unknown as T[keyof T]);
-                },
-              }}
-              data={data && (data[field.dataIndex] as unknown as Array<AnyObject>)}
-            />
-          </Highlighter>
-          <GenericField errorMessage={errorMessage} />
-        </>
+        <Highlighter>
+          <LineEditableDataTable
+            {...field}
+            extra={{
+              ...field.extra,
+              onRowSubmit: (editedRow, submittedRowIndex: number) => {
+                (data[field.dataIndex] as unknown as Array<unknown>)[submittedRowIndex] = editedRow;
+                handleChange(field.dataIndex, data[field.dataIndex] as unknown as T[keyof T]);
+              },
+              onRowDelete: (_editedRow, submittedRowIndex: number) => {
+                (data[field.dataIndex] as unknown as Array<unknown>).splice(submittedRowIndex, 1);
+                handleChange(field.dataIndex, data[field.dataIndex] as unknown as T[keyof T]);
+              },
+            }}
+            data={data && (data[field.dataIndex] as unknown as Array<AnyObject>)}
+          />
+        </Highlighter>
       );
     }
     case FieldTypeEnum.TEXT: {

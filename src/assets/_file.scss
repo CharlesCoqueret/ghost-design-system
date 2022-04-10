@@ -1,4 +1,9 @@
+@use 'sass:color';
+
 .gds-file-input-container {
+  display: flex;
+  flex-direction: column;
+
   .droparea {
     border: 2px dashed $chalk;
     border-radius: 4px;
@@ -31,7 +36,7 @@
       cursor: pointer;
     }
 
-    .input {
+    .input[type='file'] {
       display: none;
     }
   }
@@ -47,7 +52,7 @@
       padding: 4px 4px;
 
       &:hover {
-        background-color: $chalk;
+        background-color: color.change($chalk, $alpha: 0.33);
       }
 
       &.error {

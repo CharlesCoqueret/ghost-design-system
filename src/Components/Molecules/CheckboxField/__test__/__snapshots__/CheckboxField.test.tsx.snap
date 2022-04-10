@@ -6,7 +6,7 @@ exports[`CheckboxField Component CheckboxField renders and handles changes 1`] =
     class="gds-field-group"
   >
     <div
-      class="field gds-checkbox-container field input-checkbox-field"
+      class="field gds-checkbox-container input-checkbox-field"
     >
       <label
         class=""
@@ -14,6 +14,7 @@ exports[`CheckboxField Component CheckboxField renders and handles changes 1`] =
       >
         <div
           class="checkbox-marker"
+          role="checkbox"
         >
           <i
             class="icon"
@@ -33,7 +34,7 @@ exports[`CheckboxField Component CheckboxField renders and handles changes 2`] =
     class="gds-field-group"
   >
     <div
-      class="field gds-checkbox-container field input-checkbox-field"
+      class="field gds-checkbox-container input-checkbox-field"
     >
       <label
         class=""
@@ -41,6 +42,7 @@ exports[`CheckboxField Component CheckboxField renders and handles changes 2`] =
       >
         <div
           class="checkbox-marker"
+          role="checkbox"
         >
           <i
             class="icon"
@@ -60,13 +62,14 @@ exports[`CheckboxField Component CheckboxField renders with values in disabled h
     class="gds-field-group"
   >
     <div
-      class="field gds-checkbox-container field input-checkbox-field"
+      class="field gds-checkbox-container input-checkbox-field"
     >
       <label
         class="input-checkbox-field-disabled field-highlighted"
       >
         <div
           class="checkbox-marker"
+          role="checkbox"
         >
           <i
             class="icon"
@@ -80,6 +83,7 @@ exports[`CheckboxField Component CheckboxField renders with values in disabled h
       >
         <div
           class="checkbox-marker"
+          role="checkbox"
         >
           <i
             class="icon"
@@ -93,6 +97,7 @@ exports[`CheckboxField Component CheckboxField renders with values in disabled h
       >
         <div
           class="checkbox-marker"
+          role="checkbox"
         >
           <i
             class="icon"
@@ -112,13 +117,14 @@ exports[`CheckboxField Component CheckboxField renders with values in readonly 1
     class="gds-field-group"
   >
     <div
-      class="field gds-checkbox-container field input-checkbox-field"
+      class="field gds-checkbox-container input-checkbox-field"
     >
       <label
         class="input-checkbox-field-read-only"
       >
         <div
           class="checkbox-marker"
+          role="checkbox"
         >
           <i
             class="icon"
@@ -135,16 +141,17 @@ exports[`CheckboxField Component CheckboxField renders with values in readonly 1
 exports[`CheckboxField Component CheckboxField renders with values with fieldSize and inline 1`] = `
 <div>
   <div
-    class="gds-field-group field-inline"
+    class="gds-field-group field-size-6 field-inline"
   >
     <div
-      class="field gds-checkbox-container field input-checkbox-field field-input-size-6"
+      class="field gds-checkbox-container inline input-checkbox-field"
     >
       <label
-        class="input-checkbox-field-error"
+        class="input-checkbox-field-error inline"
       >
         <div
           class="checkbox-marker"
+          role="checkbox"
         >
           <i
             class="icon"

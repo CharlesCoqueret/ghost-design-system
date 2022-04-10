@@ -73,6 +73,7 @@ exports[`CodeCell component CodeCell renders with forced value 1`] = `
             >
               <span
                 class="gds-typography ellipsis"
+                title="FORCEDVALUE"
               >
                 FORCEDVALUE
               </span>

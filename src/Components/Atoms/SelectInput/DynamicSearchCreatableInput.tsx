@@ -25,8 +25,6 @@ export interface IDynamicSearchCreatableInputProps {
   disabled?: boolean;
   /** Ellipsis in readonly (optional, default: false) */
   ellipsis?: boolean;
-  /** Size of the field in a 12 column grid (optional, default: undefined) */
-  fieldSize?: number;
   /** New entry creation entry */
   handleCreate: (newLabel: string) => Promise<IOption | undefined>;
   /** Highlight value in readonly mode (optional, default: false) */
@@ -64,7 +62,6 @@ const DynamicSearchCreatableInput = (props: IDynamicSearchCreatableInputProps): 
     dataTestId,
     disabled,
     ellipsis,
-    fieldSize,
     handleCreate,
     highlighted,
     inputValue,
@@ -140,9 +137,9 @@ const DynamicSearchCreatableInput = (props: IDynamicSearchCreatableInputProps): 
     return (
       <div
         className={classnames(
+          'field',
           'gds-select-container',
           'input-select-field-read-only',
-          fieldSize && `field-input-size-${fieldSize}`,
           {
             'field-highlighted': highlighted,
           },
@@ -150,7 +147,7 @@ const DynamicSearchCreatableInput = (props: IDynamicSearchCreatableInputProps): 
         )}
         data-testid={dataTestId}>
         {isLoading ? (
-          <Icon icon={['fal', 'spinner']} spin data-testid={dataTestId ? `${dataTestId}-spinner` : undefined} />
+          <Icon icon={['fal', 'spinner']} size='2x' data-testid={dataTestId ? `${dataTestId}-spinner` : undefined} />
         ) : currentOption ? (
           <Typography.Text ellipsis={ellipsis}>{currentOption.label}</Typography.Text>
         ) : (
@@ -163,9 +160,9 @@ const DynamicSearchCreatableInput = (props: IDynamicSearchCreatableInputProps): 
   return (
     <div
       className={classnames(
+        'field',
         'gds-select-container',
         'input-select-field',
-        fieldSize && `field-input-size-${fieldSize}`,
         {
           'input-error': isInError && !disabled,
         },
@@ -181,8 +178,7 @@ const DynamicSearchCreatableInput = (props: IDynamicSearchCreatableInputProps): 
               <div {...innerProps}>
                 <Icon
                   icon={['fal', 'spinner']}
-                  spin
-                  className='dynamic-search-icon'
+                  className='dynamic-search-spinner'
                   data-testid={dataTestId ? `${dataTestId}-spinner` : undefined}
                 />
               </div>
@@ -214,6 +210,7 @@ const DynamicSearchCreatableInput = (props: IDynamicSearchCreatableInputProps): 
           },
         }}
         createOptionPosition='last'
+        defaultOptions
         hideSelectedOptions={false}
         inputId={dataTestId}
         isClearable={isClearable}
@@ -254,12 +251,12 @@ DynamicSearchCreatableInput.defaultProps = {
   },
   disabled: false,
   ellipsis: false,
-  fieldSize: undefined,
   highlighted: false,
   inputValue: undefined,
   isClearable: false,
   isInError: false,
   maxMenuHeight: 300,
+  noOptionsMessage: 'No options',
   onChange: undefined,
   options: undefined,
   placeholder: undefined,

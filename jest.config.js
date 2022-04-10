@@ -7,13 +7,13 @@ module.exports = {
   moduleNameMapper: {
     '\\.s?css$': 'identity-obj-proxy',
   },
-  // coverageThreshold: { // TODO enable back thresholds
-  //   global: {
-  //     branches: 90,
-  //     functions: 90,
-  //     lines: 90,
-  //     statements: 90,
-  //   },
-  // },
+  coverageThreshold: {
+    global: {
+      branches: 90,
+      functions: 90,
+      lines: 90,
+      statements: 90,
+    },
+  },
   testEnvironment: 'jest-environment-jsdom',
 };

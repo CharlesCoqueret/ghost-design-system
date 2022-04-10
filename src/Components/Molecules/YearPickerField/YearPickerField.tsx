@@ -83,6 +83,7 @@ export const YearPickerField = (props: IYearPickerFieldProps): ReactElement => {
       containerRef={containerRef}
       errorMessage={errorMessage}
       fieldClassName={fieldClassName}
+      fieldSize={fieldSize}
       helperText={helperText}
       highlighted={highlighted}
       inline={inline}
@@ -91,12 +92,7 @@ export const YearPickerField = (props: IYearPickerFieldProps): ReactElement => {
       mandatory={mandatory}
       readOnly={readOnly}>
       <YearPickerInput
-        className={classnames(
-          'field',
-          'input-year-picker-field',
-          fieldSize && `field-input-size-${fieldSize}`,
-          inputClassName,
-        )}
+        className={classnames('input-year-picker-field', inputClassName)}
         dataTestId={dataTestId}
         disabled={disabled}
         highlighted={highlighted}

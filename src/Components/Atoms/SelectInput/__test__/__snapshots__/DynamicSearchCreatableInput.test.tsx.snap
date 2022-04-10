@@ -3,7 +3,7 @@
 exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handles change 1`] = `
 <div>
   <div
-    class="gds-select-container input-select-field"
+    class="field gds-select-container input-select-field"
   >
     <div
       class=" css-1959ul7-container"
@@ -113,7 +113,7 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handl
 exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handles change to undefined 1`] = `
 <div>
   <div
-    class="gds-select-container input-select-field"
+    class="field gds-select-container input-select-field"
   >
     <div
       class=" css-1959ul7-container"
@@ -202,7 +202,7 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handl
 exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handles change to undefined 2`] = `
 <div>
   <div
-    class="gds-select-container input-select-field"
+    class="field gds-select-container input-select-field"
   >
     <div
       class=" css-1959ul7-container"
@@ -318,7 +318,7 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handl
 exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handles change with no option string 1`] = `
 <div>
   <div
-    class="gds-select-container input-select-field"
+    class="field gds-select-container input-select-field"
   >
     <div
       class=" css-1959ul7-container"
@@ -398,7 +398,7 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handl
 exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handles creation 1`] = `
 <div>
   <div
-    class="gds-select-container input-select-field"
+    class="field gds-select-container input-select-field"
   >
     <div
       class=" css-1959ul7-container"
@@ -480,7 +480,7 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handl
 exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handles creation 2`] = `
 <div>
   <div
-    class="gds-select-container input-select-field"
+    class="field gds-select-container input-select-field"
   >
     <div
       class=" css-1959ul7-container"
@@ -569,7 +569,7 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handl
 exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handles creation with undefined result 1`] = `
 <div>
   <div
-    class="gds-select-container input-select-field"
+    class="field gds-select-container input-select-field"
   >
     <div
       class=" css-1959ul7-container"
@@ -651,7 +651,7 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handl
 exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handles creation with undefined result 2`] = `
 <div>
   <div
-    class="gds-select-container input-select-field"
+    class="field gds-select-container input-select-field"
   >
     <div
       class=" css-1959ul7-container"
@@ -733,7 +733,7 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handl
 exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handles inputValue change 1`] = `
 <div>
   <div
-    class="gds-select-container input-select-field"
+    class="field gds-select-container input-select-field"
   >
     <div
       class=" css-1959ul7-container"
@@ -813,7 +813,7 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handl
 exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handles inputValue change 2`] = `
 <div>
   <div
-    class="gds-select-container input-select-field"
+    class="field gds-select-container input-select-field"
   >
     <div
       class=" css-1959ul7-container"
@@ -893,7 +893,7 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handl
 exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput renders 1`] = `
 <div>
   <div
-    class="gds-select-container input-select-field"
+    class="field gds-select-container input-select-field"
   >
     <div
       class=" css-1959ul7-container"
@@ -973,7 +973,7 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput rende
 exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput renders in error and disabled 1`] = `
 <div>
   <div
-    class="gds-select-container input-select-field field-input-size-4"
+    class="field gds-select-container input-select-field"
   >
     <div
       class=" css-j5ssuk-container"
@@ -1049,7 +1049,7 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput rende
 exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput renders in error without portal 1`] = `
 <div>
   <div
-    class="gds-select-container input-select-field field-input-size-4 input-error"
+    class="field gds-select-container input-select-field input-error"
   >
     <div
       class=" css-1959ul7-container"
@@ -1131,7 +1131,7 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput rende
 exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput renders in readOnly 1`] = `
 <div>
   <div
-    class="gds-select-container input-select-field-read-only field-input-size-4 field-highlighted"
+    class="field gds-select-container input-select-field-read-only field-highlighted"
     data-testid="DATA-TEST-ID"
   >
     <span
@@ -1146,7 +1146,7 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput rende
 exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput renders in readOnly without datatestid 1`] = `
 <div>
   <div
-    class="gds-select-container input-select-field-read-only field-input-size-4 field-highlighted"
+    class="field gds-select-container input-select-field-read-only field-highlighted"
   >
     <span
       class="gds-typography"
@@ -1160,7 +1160,7 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput rende
 exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput renders when resolveValue rejects 1`] = `
 <div>
   <div
-    class="gds-select-container input-select-field"
+    class="field gds-select-container input-select-field"
   >
     <div
       class=" css-1959ul7-container"
@@ -1242,7 +1242,7 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput rende
 exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput renders with invalid input value 1`] = `
 <div>
   <div
-    class="gds-select-container input-select-field"
+    class="field gds-select-container input-select-field"
   >
     <div
       class=" css-1959ul7-container"
@@ -1324,7 +1324,7 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput rende
 exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput renders without input value 1`] = `
 <div>
   <div
-    class="gds-select-container input-select-field"
+    class="field gds-select-container input-select-field"
   >
     <div
       class=" css-1959ul7-container"

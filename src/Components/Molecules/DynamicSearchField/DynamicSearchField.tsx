@@ -48,7 +48,7 @@ export interface IDynamicSearchFieldProps {
   /** Name of text field */
   name: string;
   /** No option message (dispayed when no results are available) */
-  noOptionsMessage: (obj: { inputValue: string }) => string;
+  noOptionsMessage: string | ((obj: { inputValue: string }) => string);
   /** Handler of value changes (optional, default: undefined) */
   onChange?: (newValue: string | number | null | undefined) => void;
   /** Placeholder value (optional, default: undefined) */
@@ -105,6 +105,7 @@ export const DynamicSearchField = (props: IDynamicSearchFieldProps): ReactElemen
       containerRef={containerRef}
       errorMessage={errorMessage}
       fieldClassName={fieldClassName}
+      fieldSize={fieldSize}
       helperText={helperText}
       highlighted={highlighted}
       inline={inline}
@@ -114,12 +115,7 @@ export const DynamicSearchField = (props: IDynamicSearchFieldProps): ReactElemen
       readOnly={readOnly}>
       <DynamicSearchInput
         colors={colors}
-        className={classnames(
-          inputClassName,
-          'field',
-          'input-select-field',
-          fieldSize && `field-input-size-${fieldSize}`,
-        )}
+        className={classnames(inputClassName, 'input-select-field')}
         dataTestId={dataTestId}
         ellipsis={ellipsis}
         highlighted={highlighted}
