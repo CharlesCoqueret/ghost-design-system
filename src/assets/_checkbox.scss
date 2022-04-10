@@ -31,6 +31,10 @@
     cursor: pointer;
     user-select: none;
 
+    &:last-child {
+      padding-bottom: 0px;
+    }
+
     .checkbox-marker {
       padding-right: 8px;
     }

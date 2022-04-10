@@ -3,6 +3,7 @@ import classnames from 'classnames';
 
 import { Icon } from '../Icon';
 import { useRunAfterUpdate } from '../../../hooks';
+import { Typography } from '../Typography';
 
 export interface ISectionProps {
   /** When set the section gets collapsable ability (optional, default true) */
@@ -13,12 +14,14 @@ export interface ISectionProps {
   separator?: boolean;
   /** Title of the section element */
   title: string;
+  /** Header level (optional default: 2) */
+  level?: 1 | 2 | 3;
   /** For test purpose only */
   dataTestId?: string;
 }
 
 const Section = (props: PropsWithChildren<ISectionProps>): ReactElement => {
-  const { children, collapsable, dataTestId, openInitially, separator, title } = props;
+  const { children, collapsable, dataTestId, level, openInitially, separator, title } = props;
 
   const runAfterUpdate = useRunAfterUpdate();
   const [open, setOpen] = useState<boolean>(collapsable ? openInitially === true : true);
@@ -63,14 +66,14 @@ const Section = (props: PropsWithChildren<ISectionProps>): ReactElement => {
   };
 
   return (
-    <div className='gds-section-container'>
+    <div className='gds-layout-section-container'>
       <div
         className={classnames('section-header', { collapsable: collapsable })}
         onClick={handleClick}
         data-testid={dataTestId}>
-        {title}
+        <Typography.Title level={level || 2}>{title}</Typography.Title>
         {collapsable && (
-          <Icon icon={['fal', 'chevron-left']} size='lg' className={classnames('icon', { open: open })} />
+          <Icon icon={['fal', 'chevron-left']} size='xs' className={classnames('collapse-icon', { open: open })} />
         )}
       </div>
       <div

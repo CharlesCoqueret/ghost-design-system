@@ -127,7 +127,7 @@ const DynamicSearchInput = (props: IDynamicSearchInputProps): ReactElement => {
         )}
         data-testid={dataTestId}>
         {isLoading ? (
-          <Icon icon={['fal', 'spinner']} spin data-testid={dataTestId ? `${dataTestId}-spinner` : undefined} />
+          <Icon icon={['fal', 'spinner']} size='2x' data-testid={dataTestId ? `${dataTestId}-spinner` : undefined} />
         ) : currentOption ? (
           <Typography.Text ellipsis={ellipsis}>{currentOption.label}</Typography.Text>
         ) : (
@@ -157,8 +157,7 @@ const DynamicSearchInput = (props: IDynamicSearchInputProps): ReactElement => {
               <div {...innerProps}>
                 <Icon
                   icon={['fal', 'spinner']}
-                  spin
-                  className='dynamic-search-icon'
+                  className='dynamic-search-spinner'
                   data-testid={dataTestId ? `${dataTestId}-spinner` : undefined}
                 />
               </div>
@@ -190,6 +189,7 @@ const DynamicSearchInput = (props: IDynamicSearchInputProps): ReactElement => {
           },
         }}
         data-testid={dataTestId}
+        defaultOptions
         hideSelectedOptions={false}
         inputId={dataTestId}
         isClearable={isClearable}

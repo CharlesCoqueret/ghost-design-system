@@ -1,22 +1,18 @@
 @use 'sass:math';
 
-.gds-field-group + .gds-field-group {
-  margin: 4px 0px;
-}
-
 .gds-field-group {
   display: flex;
   flex-direction: column;
   min-width: 50px;
 
   &.field-inline {
-    flex-grow: 1;
+    flex: 1;
     display: flex;
     flex-direction: row;
     align-items: center;
 
     .field {
-      flex-grow: 1;
+      flex: 1;
     }
     .field-label {
       display: inline-block;
@@ -77,12 +73,13 @@
 .field {
   display: flex;
   overflow: hidden;
-  padding: 4px 0;
 }
 
 @for $size from 1 through 12 {
   .field-size-#{$size},
   .field-label-size-#{$size} {
     width: percentage(math.div($size, 12));
+    flex: unset !important;
+    flex-grow: unset !important;
   }
 }

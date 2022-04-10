@@ -3,6 +3,9 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import Section, { ISectionProps } from './Section';
 import { AmountField, DatePickerField, TextAreaField, YearPickerField } from '../../Molecules';
+import Row from './Row';
+import Container from './Container';
+import Col from './Col';
 
 const initialData = {
   amount: 100000,
@@ -28,10 +31,22 @@ export default {
 const Template: ComponentStory<typeof Section> = (args: ISectionProps) => {
   return (
     <Section {...args}>
-      <AmountField inputValue={initialData.amount} label='Amount' suffix='$' name='amount' readOnly />
-      <DatePickerField inputValue={initialData.date} label='Date' name='date' readOnly />
-      <TextAreaField inputValue={initialData.textarea} label='Textarea' name='textarea' readOnly />
-      <YearPickerField inputValue={initialData.year} label='Year' name='year' readOnly />
+      <Container>
+        <Col>
+          <Row>
+            <AmountField inputValue={initialData.amount} label='Amount' suffix='$' name='amount' readOnly />
+          </Row>
+          <Row>
+            <DatePickerField inputValue={initialData.date} label='Date' name='date' readOnly />
+          </Row>
+          <Row>
+            <TextAreaField inputValue={initialData.textarea} label='Textarea' name='textarea' readOnly />
+          </Row>
+          <Row>
+            <YearPickerField inputValue={initialData.year} label='Year' name='year' readOnly />
+          </Row>
+        </Col>
+      </Container>
     </Section>
   );
 };

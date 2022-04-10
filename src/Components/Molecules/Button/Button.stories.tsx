@@ -87,14 +87,14 @@ ListReversed.args = {
 
 export const IconReversed = Template.bind({});
 IconReversed.args = {
-  icon: ['fal', 'arrow-to-bottom'],
+  icon: ['fal', 'arrow-down-to-line'],
   color: ColorButtonEnum.REVERSED,
   tooltip: 'Icon reversed',
 };
 
 export const IconReversedWithItemList = Template.bind({});
 IconReversedWithItemList.args = {
-  icon: ['fal', 'arrow-to-bottom'],
+  icon: ['fal', 'arrow-down-to-line'],
   color: ColorButtonEnum.REVERSED,
   tooltip: 'Icon reversed',
   itemList,

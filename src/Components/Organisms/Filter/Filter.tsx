@@ -4,7 +4,7 @@ import cloneDeep from 'lodash/cloneDeep';
 import { IFilterFieldsProps, IFilterLayoutAndFieldsProps } from './types';
 import FilterItem from './FilterItem';
 import { Button, ColorButtonEnum } from '../../Molecules';
-import { Row } from '../../Atoms/Layout';
+import { Container, Row } from '../../Atoms/Layout';
 import { Modal, ModalBody, ModalFooter } from '../../Atoms/Modal';
 
 export interface IFilterProps<T> {
@@ -100,16 +100,16 @@ const Filter = <T,>(props: IFilterProps<T>): React.ReactElement => {
             );
           })}
         </div>
-        {hasAdvancedSearch && (
-          <div className='search-actions'>
-            <Button label={localization.reset} onClick={handleReset} />
+        <div className='search-actions'>
+          <Button label={localization.reset} onClick={handleReset} />
+          {hasAdvancedSearch && (
             <Button
               label={localization.advancedSearch}
               color={ColorButtonEnum.PRIMARY}
               onClick={handleOpenAdvancedSearch}
             />
-          </div>
-        )}
+          )}
+        </div>
       </div>
       <Modal
         closeOnPressEscape
@@ -120,18 +120,20 @@ const Filter = <T,>(props: IFilterProps<T>): React.ReactElement => {
         title={localization.advancedSearchTitle}
         size={'lg'}>
         <ModalBody>
-          <Row>
-            {advancedSearchItems.map((item, index) => {
-              return (
-                <FilterItem<T>
-                  key={'dataIndex' in item ? item.dataIndex.toString() : `section-${index}`}
-                  inputValues={currentModalValues}
-                  item={item}
-                  onChange={onChangeAdvancedFilterValue}
-                />
-              );
-            })}
-          </Row>
+          <Container>
+            <Row>
+              {advancedSearchItems.map((item, index) => {
+                return (
+                  <FilterItem<T>
+                    key={'dataIndex' in item ? item.dataIndex.toString() : `section-${index}`}
+                    inputValues={currentModalValues}
+                    item={item}
+                    onChange={onChangeAdvancedFilterValue}
+                  />
+                );
+              })}
+            </Row>
+          </Container>
         </ModalBody>
         <ModalFooter>
           <Button label={localization.reset} onClick={handleAdvancedFilterReset} />

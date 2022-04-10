@@ -3,19 +3,15 @@
 exports[`Row Component Row renders 1`] = `
 <div>
   <div
-    class="gds-row CLASSNAME"
+    class="gds-layout-row CLASSNAME"
     style="width: 300px; height: 30%;"
   >
-    <div>
-      <div
-        id="CHILD1"
-      />
-    </div>
-    <div>
-      <div
-        id="CHILD2"
-      />
-    </div>
+    <div
+      id="CHILD1"
+    />
+    <div
+      id="CHILD2"
+    />
   </div>
 </div>
 `;

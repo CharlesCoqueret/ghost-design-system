@@ -147,7 +147,7 @@ const DynamicSearchCreatableInput = (props: IDynamicSearchCreatableInputProps): 
         )}
         data-testid={dataTestId}>
         {isLoading ? (
-          <Icon icon={['fal', 'spinner']} spin data-testid={dataTestId ? `${dataTestId}-spinner` : undefined} />
+          <Icon icon={['fal', 'spinner']} size='2x' data-testid={dataTestId ? `${dataTestId}-spinner` : undefined} />
         ) : currentOption ? (
           <Typography.Text ellipsis={ellipsis}>{currentOption.label}</Typography.Text>
         ) : (
@@ -178,8 +178,7 @@ const DynamicSearchCreatableInput = (props: IDynamicSearchCreatableInputProps): 
               <div {...innerProps}>
                 <Icon
                   icon={['fal', 'spinner']}
-                  spin
-                  className='dynamic-search-icon'
+                  className='dynamic-search-spinner'
                   data-testid={dataTestId ? `${dataTestId}-spinner` : undefined}
                 />
               </div>
@@ -211,6 +210,7 @@ const DynamicSearchCreatableInput = (props: IDynamicSearchCreatableInputProps): 
           },
         }}
         createOptionPosition='last'
+        defaultOptions
         hideSelectedOptions={false}
         inputId={dataTestId}
         isClearable={isClearable}

@@ -63,7 +63,7 @@ const columns: IColumnType<IDemoType>[] = [
     moreActionsMessage: 'Nore actions',
     buttons: [
       {
-        icon: ['fal', 'arrow-to-bottom'],
+        icon: ['fal', 'arrow-down-to-line'],
         label: 'Download',
         onClick: (row) => {
           console.log(`download icon clicked on row: ${row.id}`);
@@ -252,7 +252,7 @@ Loading.args = {
   columns: columns,
   loading: (
     <div style={{ display: 'flex', justifyContent: 'space-around' }}>
-      <Icon icon={['fal', 'spinner']} size='3x' spin />
+      <Icon icon={['fal', 'spinner']} size='3x' />
     </div>
   ),
   extra: {
@@ -279,7 +279,7 @@ NoDataLoading.args = {
   columns: columns,
   loading: (
     <div style={{ display: 'flex', justifyContent: 'space-around' }}>
-      <Icon icon={['fal', 'spinner']} size='3x' spin />
+      <Icon icon={['fal', 'spinner']} size='3x' />
     </div>
   ),
   extra: {

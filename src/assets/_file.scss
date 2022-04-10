@@ -1,3 +1,5 @@
+@use 'sass:color';
+
 .gds-file-input-container {
   display: flex;
   flex-direction: column;
@@ -50,7 +52,7 @@
       padding: 4px 4px;
 
       &:hover {
-        background-color: $chalk;
+        background-color: color.change($chalk, $alpha: 0.33);
       }
 
       &.error {

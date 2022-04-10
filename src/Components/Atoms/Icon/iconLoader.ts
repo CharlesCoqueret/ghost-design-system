@@ -1,8 +1,9 @@
 import { dom, library } from '@fortawesome/fontawesome-svg-core';
 
 import {
-  faArrowToBottom,
+  faArrowDownToLine,
   faArrowLeft,
+  faArrowUpFromLine,
   faBalanceScale,
   faBallotCheck,
   faBell,
@@ -42,7 +43,6 @@ import {
   faPlus,
   faQuestionCircle,
   faSave,
-  faSpinner,
   faSquare as faSquareLight,
   faTable,
   faTextSize,
@@ -50,7 +50,6 @@ import {
   faTimesCircle,
   faTrashAlt,
   faUndo,
-  faUpload,
   faUserCircle,
   faUserLock,
   faUserUnlock,
@@ -75,8 +74,9 @@ import { faCaretDown, faSquare, faSquareCheck, faSort, faSortDown, faSortUp } fr
 
 const loadIcons = (): void => {
   library.add(
-    faArrowToBottom,
+    faArrowDownToLine,
     faArrowLeft,
+    faArrowUpFromLine,
     faBalanceScale,
     faBallotCheck,
     faBell,
@@ -116,13 +116,11 @@ const loadIcons = (): void => {
     faSort,
     faSortDown,
     faSortUp,
-    faSpinner,
     faSquareLight,
     faTimes,
     faTimesCircle,
     faTrashAlt,
     faUndo,
-    faUpload,
     faUserCircle,
     faUserLock,
     faUserUnlock,

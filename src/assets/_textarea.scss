@@ -11,6 +11,7 @@
   textarea {
     flex: 1;
     resize: none;
+    box-sizing: border-box;
     min-height: 80px;
     max-height: 200px;
     border-radius: 4px;

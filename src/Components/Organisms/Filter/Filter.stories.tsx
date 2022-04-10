@@ -96,9 +96,12 @@ export const Default = Template.bind({});
 Default.args = {
   advancedSearchItems: [
     {
-      filterType: FilterTypeEnum.SECTION,
-      label: 'Section #1',
+      filterType: FilterTypeEnum.COLUMN,
       fields: [
+        {
+          filterType: FilterTypeEnum.TITLE,
+          label: 'Section #1',
+        },
         {
           dataIndex: 'number',
           filterType: FilterTypeEnum.NUMBER,
@@ -134,9 +137,12 @@ Default.args = {
       ],
     },
     {
-      filterType: FilterTypeEnum.SECTION,
-      label: 'Section #2',
+      filterType: FilterTypeEnum.COLUMN,
       fields: [
+        {
+          filterType: FilterTypeEnum.TITLE,
+          label: 'Section #2',
+        },
         {
           dataIndex: 'text',
           filterType: FilterTypeEnum.TEXT,
@@ -192,6 +198,198 @@ Default.args = {
       filterType: FilterTypeEnum.DATE,
       isClearable: true,
       label: 'To',
+    },
+    {
+      dataIndex: 'multiselect',
+      filterType: FilterTypeEnum.MULTISELECT,
+      // It is recommended to set the fieldSize of select, multiselect, dynamic search and dynamic search creatable when inline.
+      // If not set, the width of the select will adjust to its content.
+      fieldSize: 2,
+      isClearable: true,
+      numberOfItemLabel: '{} item selected',
+      numberOfItemsLabel: '{} items selected',
+      options: [
+        { value: 'SELECT1', label: 'Option #1' },
+        { value: 'SELECT2', label: 'Option #2' },
+      ],
+      placeholder: 'Select options',
+    },
+  ],
+  initialValues: {
+    checkbox: [
+      {
+        value: 'CHECKBOX1',
+        label: 'Checkbox #1',
+      },
+      {
+        value: 'CHECKBOX2',
+        label: 'Checkbox #2',
+      },
+    ],
+  },
+  localization: {
+    advancedSearch: 'Advanced search',
+    advancedSearchTitle: 'Advanced search',
+    search: 'Search',
+    reset: 'Reset',
+  },
+};
+
+export const SearchBar = Template.bind({});
+SearchBar.args = {
+  searchBarItems: [
+    {
+      dataIndex: 'text',
+      filterType: FilterTypeEnum.TEXT,
+      placeholder: 'Search text',
+    },
+    {
+      dataIndex: 'checkbox',
+      filterType: FilterTypeEnum.CHECKBOX,
+    },
+    {
+      dataIndex: 'dateFrom',
+      filterType: FilterTypeEnum.DATE,
+      isClearable: true,
+      label: 'From',
+    },
+    {
+      dataIndex: 'dateTo',
+      filterType: FilterTypeEnum.DATE,
+      isClearable: true,
+      label: 'To',
+    },
+    {
+      dataIndex: 'multiselect',
+      filterType: FilterTypeEnum.MULTISELECT,
+      // It is recommended to set the fieldSize of select, multiselect, dynamic search and dynamic search creatable when inline.
+      // If not set, the width of the select will adjust to its content.
+      fieldSize: 2,
+      isClearable: true,
+      numberOfItemLabel: '{} item selected',
+      numberOfItemsLabel: '{} items selected',
+      options: [
+        { value: 'SELECT1', label: 'Option #1' },
+        { value: 'SELECT2', label: 'Option #2' },
+      ],
+      placeholder: 'Select options',
+    },
+  ],
+  initialValues: {
+    checkbox: [
+      {
+        value: 'CHECKBOX1',
+        label: 'Checkbox #1',
+      },
+      {
+        value: 'CHECKBOX2',
+        label: 'Checkbox #2',
+      },
+    ],
+  },
+  localization: {
+    advancedSearch: 'Advanced search',
+    advancedSearchTitle: 'Advanced search',
+    search: 'Search',
+    reset: 'Reset',
+  },
+};
+
+export const AdvancedSearch = Template.bind({});
+AdvancedSearch.args = {
+  advancedSearchItems: [
+    {
+      filterType: FilterTypeEnum.COLUMN,
+      fields: [
+        {
+          filterType: FilterTypeEnum.TITLE,
+          label: 'Section #1',
+        },
+        {
+          dataIndex: 'number',
+          filterType: FilterTypeEnum.NUMBER,
+          label: 'Number',
+          placeholder: 'Search number',
+        },
+        {
+          dataIndex: 'checkbox',
+          filterType: FilterTypeEnum.CHECKBOX,
+          label: 'Checkbox',
+        },
+        {
+          filterType: FilterTypeEnum.TITLE,
+          label: 'Section #1 - 2',
+        },
+        {
+          dataIndex: 'select',
+          filterType: FilterTypeEnum.SELECT,
+          isClearable: true,
+          label: 'Select',
+          options: [
+            { value: 'SELECT1', label: 'Option #1' },
+            { value: 'SELECT2', label: 'Option #2' },
+          ],
+          placeholder: 'Select an option',
+        },
+        {
+          dataIndex: 'dynamicsearch',
+          filterType: FilterTypeEnum.DYNAMICSEARCH,
+          isClearable: true,
+          label: 'Dynamic search',
+          noOptionsMessage: 'No dynamic search options',
+          placeholder: 'Search an option',
+          resolveValue: resolveValue,
+          searchOptions: searchOptions,
+        },
+      ],
+    },
+    {
+      filterType: FilterTypeEnum.COLUMN,
+      fields: [
+        {
+          filterType: FilterTypeEnum.TITLE,
+          label: 'Section #2',
+        },
+        {
+          dataIndex: 'text',
+          filterType: FilterTypeEnum.TEXT,
+          label: 'Text',
+          placeholder: 'Search text',
+        },
+        {
+          dataIndex: 'dateFrom',
+          filterType: FilterTypeEnum.DATE,
+          isClearable: true,
+          label: 'From',
+        },
+        {
+          dataIndex: 'dateTo',
+          filterType: FilterTypeEnum.DATE,
+          isClearable: true,
+          label: 'To',
+        },
+        {
+          dataIndex: 'multiselect',
+          filterType: FilterTypeEnum.MULTISELECT,
+          isClearable: true,
+          label: 'Multiselect',
+          numberOfItemLabel: '{} item selected',
+          numberOfItemsLabel: '{} items selected',
+          options: [
+            { value: 'SELECT1', label: 'Option #1' },
+            { value: 'SELECT2', label: 'Option #2' },
+          ],
+          placeholder: 'Select options',
+        },
+      ],
+    },
+  ],
+  searchBarItems: [
+    {
+      dataIndex: 'text',
+      fieldSize: 2,
+      filterType: FilterTypeEnum.TEXT,
+      placeholder: 'Search text',
     },
     {
       dataIndex: 'multiselect',

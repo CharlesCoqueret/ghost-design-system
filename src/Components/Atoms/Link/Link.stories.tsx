@@ -16,6 +16,6 @@ const Template: ComponentStory<typeof Link> = (args: ILinkProps) => {
 export const Default = Template.bind({});
 Default.args = {
   text: ' Link Text',
-  link: 'https://google.com',
+  link: 'https://hamster.dance/hamsterdance/',
   tooltip: 'Information about the link in a tooltip',
 };

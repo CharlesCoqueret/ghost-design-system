@@ -8,12 +8,13 @@ export enum FilterTypeEnum {
   DYNAMICSEARCH = 'dynamicsearch',
   MULTISELECT = 'multiselect',
   NUMBER = 'number',
-  SECTION = 'section',
+  COLUMN = 'column',
   SELECT = 'select',
   TEXT = 'text',
+  TITLE = 'title',
 }
 
-export type IFilterLayoutAndFieldsProps<T> = IFilerSectionProps<T> | IFilterFieldsProps<T>;
+export type IFilterLayoutAndFieldsProps<T> = IFilerColProps<T> | IFilerTitleProps | IFilterFieldsProps<T>;
 
 export type IFilterFieldsProps<T> =
   | IFilterCheckboxProps<T>
@@ -96,8 +97,8 @@ export interface IFilterNumberProps<T> extends IFilterBaseProps<T> {
   thousandsGroupStyle?: ThousandsGroupStyle;
 }
 
-export interface IFilerSectionProps<T> {
-  filterType: FilterTypeEnum.SECTION;
+export interface IFilerColProps<T> {
+  filterType: FilterTypeEnum.COLUMN;
   fields: Array<IFilterLayoutAndFieldsProps<T>>;
   label: string;
 }
@@ -123,4 +124,9 @@ export interface IFilterTextProps<T> extends IFilterBaseProps<T> {
   minLength?: number;
   name?: string;
   placeholder?: string;
+}
+
+export interface IFilerTitleProps {
+  filterType: FilterTypeEnum.TITLE;
+  label: string;
 }

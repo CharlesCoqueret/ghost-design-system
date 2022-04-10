@@ -447,6 +447,7 @@ describe('FileInput Component', () => {
         onDelete={onDeleteMock}
         onDownload={onDownloadMock}
         requestMethod='POST'
+        showFileSize={false}
         requestUrl='http://test.com'
       />,
     );

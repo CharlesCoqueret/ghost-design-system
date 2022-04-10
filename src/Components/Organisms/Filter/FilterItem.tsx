@@ -1,7 +1,7 @@
 import React, { ReactElement } from 'react';
 import { IToggleEntry } from '../../Atoms/CheckBoxInput';
 
-import { Col, Row, Section } from '../../Atoms/Layout';
+import { Col, Section } from '../../Atoms/Layout';
 import { AmountField } from '../../Molecules/AmountField';
 import { CheckboxField } from '../../Molecules/CheckboxField';
 import { DatePickerField } from '../../Molecules/DatePickerField';
@@ -134,18 +134,19 @@ const FilterItem = <T,>(props: IFilterItemProps<T>): ReactElement => {
         />
       );
     }
-    case FilterTypeEnum.SECTION: {
+    case FilterTypeEnum.COLUMN: {
       return (
         <Col>
-          <Section title={item.label} collapsable={false} separator={false}>
-            {item.fields.map((subitem, index) => {
-              return (
-                <Row key={'dataIndex' in subitem ? subitem.dataIndex.toString() : `section-${index}`}>
-                  <FilterItem<T> inputValues={inputValues} item={subitem} onChange={onChange} />
-                </Row>
-              );
-            })}
-          </Section>
+          {item.fields.map((subitem, index) => {
+            return (
+              <FilterItem<T>
+                inputValues={inputValues}
+                item={subitem}
+                key={'dataIndex' in subitem ? subitem.dataIndex.toString() : `section-${index}`}
+                onChange={onChange}
+              />
+            );
+          })}
         </Col>
       );
     }
@@ -189,6 +190,9 @@ const FilterItem = <T,>(props: IFilterItemProps<T>): ReactElement => {
           inline={inline}
         />
       );
+    }
+    case FilterTypeEnum.TITLE: {
+      return <Section title={item.label} collapsable={false} separator={false} />;
     }
     default: {
       throw new Error('Missing ColumnType');

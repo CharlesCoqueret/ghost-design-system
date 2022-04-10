@@ -71,6 +71,7 @@ exports[`FileInput Component FileInput handle add file successfully through inpu
             data-testid="TEST-ID-download"
           >
             hello.png
+             (5 Bytes)
           </div>
         </div>
         <div
@@ -84,11 +85,45 @@ exports[`FileInput Component FileInput handle add file successfully through inpu
           <div
             class="delete-icon"
           >
-            <i
-              class="icon"
+            <svg
+              aria-hidden="true"
+              class="icon gds-loader size-1x"
+              focusable="false"
+              height="50"
               icon="fal,spinner"
-              spin="true"
-            />
+              preserveAspectRatio="xMidYMid"
+              role="img"
+              style="background: transparent;"
+              viewBox="0 0 100 100"
+              width="50"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="50"
+                cy="50"
+                fill="transparent"
+                r="30"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-width="10"
+              >
+                <animatetransform
+                  attributeName="transform"
+                  dur="2s"
+                  keyTimes="0;0.5;1"
+                  repeatCount="indefinite"
+                  type="rotate"
+                  values="0 50 50;180 50 50;720 50 50"
+                />
+                <animate
+                  attributeName="stroke-dasharray"
+                  dur="2s"
+                  keyTimes="0;0.5;1"
+                  repeatCount="indefinite"
+                  values="20 150; 150 20; 20 150"
+                />
+              </circle>
+            </svg>
           </div>
         </div>
       </div>
@@ -140,6 +175,7 @@ exports[`FileInput Component FileInput handle add file successfully through inpu
             data-testid="TEST-ID-download"
           >
             hello.png
+             (5 Bytes)
           </div>
         </div>
         <div
@@ -235,6 +271,7 @@ exports[`FileInput Component FileInput handle add file unsucessfully through inp
               data-testid="TEST-ID-download"
             >
               hello.png
+               (5 Bytes)
             </div>
           </div>
           <div
@@ -346,6 +383,7 @@ exports[`FileInput Component FileInput handle add file with timeout through inpu
               data-testid="TEST-ID-download"
             >
               hello.png
+               (5 Bytes)
             </div>
           </div>
           <div
@@ -546,11 +584,45 @@ exports[`FileInput Component FileInput handle drop of file 2`] = `
           <div
             class="delete-icon"
           >
-            <i
-              class="icon"
+            <svg
+              aria-hidden="true"
+              class="icon gds-loader size-1x"
+              focusable="false"
+              height="50"
               icon="fal,spinner"
-              spin="true"
-            />
+              preserveAspectRatio="xMidYMid"
+              role="img"
+              style="background: transparent;"
+              viewBox="0 0 100 100"
+              width="50"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="50"
+                cy="50"
+                fill="transparent"
+                r="30"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-width="10"
+              >
+                <animatetransform
+                  attributeName="transform"
+                  dur="2s"
+                  keyTimes="0;0.5;1"
+                  repeatCount="indefinite"
+                  type="rotate"
+                  values="0 50 50;180 50 50;720 50 50"
+                />
+                <animate
+                  attributeName="stroke-dasharray"
+                  dur="2s"
+                  keyTimes="0;0.5;1"
+                  repeatCount="indefinite"
+                  values="20 150; 150 20; 20 150"
+                />
+              </circle>
+            </svg>
           </div>
         </div>
       </div>
@@ -601,6 +673,7 @@ exports[`FileInput Component FileInput handle unsuccessfull add file when quota 
             data-testid="TEST-ID-download"
           >
             AME
+             (1.21 kB)
           </div>
         </div>
         <div
@@ -664,6 +737,7 @@ exports[`FileInput Component FileInput handle unsuccessfull add file when quota 
             data-testid="TEST-ID-download"
           >
             AME
+             (1.21 kB)
           </div>
         </div>
         <div
@@ -702,6 +776,7 @@ exports[`FileInput Component FileInput handle unsuccessfull add file when quota 
               data-testid="TEST-ID-download"
             >
               hello.png
+               (5 Bytes)
             </div>
           </div>
           <div
@@ -781,6 +856,7 @@ exports[`FileInput Component FileInput handles delete rejections of a file 1`] =
             data-testid="TEST-ID-download"
           >
             AME
+             (1.21 kB)
           </div>
         </div>
         <div
@@ -844,6 +920,7 @@ exports[`FileInput Component FileInput handles delete rejections of a file 2`] =
             data-testid="TEST-ID-download"
           >
             AME
+             (1.21 kB)
           </div>
         </div>
         <div
@@ -907,6 +984,7 @@ exports[`FileInput Component FileInput handles download and delete of a file 1`]
             data-testid="TEST-ID-download"
           >
             AME
+             (1.21 kB)
           </div>
         </div>
         <div
@@ -997,6 +1075,7 @@ exports[`FileInput Component FileInput renders 1`] = `
             class="name downloadable"
           >
             NAME
+             (1.21 kB)
           </div>
         </div>
         <div

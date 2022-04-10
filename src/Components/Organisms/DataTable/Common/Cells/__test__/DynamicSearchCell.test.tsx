@@ -170,6 +170,68 @@ describe('DynamicSearchCell component', () => {
     expect(onChangeMock).toBeCalledWith(undefined);
   });
 
+  it('DynamicSearchCell handles display of no message', async () => {
+    const onChangeMock = jest.fn();
+
+    const resolveValueMock = jest.fn().mockImplementation(() => {
+      return Promise.resolve({ value: 'value1', label: 'Label 1' });
+    });
+    const searchOptionsMock = jest.fn().mockImplementation(() => {
+      return Promise.resolve(undefined);
+    });
+    const noOptionsMessageMock = jest.fn().mockImplementation((obj: { inputValue: string }) => {
+      return `No result for ${obj.inputValue}`;
+    });
+
+    let container: HTMLElement | undefined;
+
+    await act(async () => {
+      container = render(
+        <table>
+          <tbody>
+            <tr>
+              <DynamicSearchCell
+                column={{
+                  dataIndex: 'data',
+                  isClearable: true,
+                  noOptionsMessage: noOptionsMessageMock,
+                  resolveValue: resolveValueMock,
+                  searchOptions: searchOptionsMock,
+                  title: 'DynamicSearchCell',
+                  type: ColumnType.DYNAMICSEARCH,
+                }}
+                dataTestId='DATA-TEST-ID'
+                editing
+                onChange={onChangeMock}
+                row={{ data: 'value1' }}
+                rowIndex={0}
+              />
+            </tr>
+          </tbody>
+        </table>,
+      ).container;
+
+      expect(await screen.findByTestId('DATA-TEST-ID-spinner')).toBeTruthy();
+    });
+
+    expect(screen.queryByTestId('DATA-TEST-ID-spinner')).toBeFalsy();
+
+    expect(container).toMatchSnapshot();
+
+    await act(async () => {
+      const select = await screen.findByRole('combobox');
+      expect(select).toBeDefined();
+      if (select) {
+        userEvent.type(select, '{backspace}');
+      }
+    });
+
+    expect(container).toMatchSnapshot();
+    expect(noOptionsMessageMock).toBeCalledTimes(2);
+    expect(onChangeMock).toBeCalledTimes(1);
+    expect(onChangeMock).toBeCalledWith(undefined);
+  });
+
   it('DynamicSearchCell renders in edit mode via extra', async () => {
     const resolveValueMock = jest.fn();
     const searchOptionsMock = jest.fn();

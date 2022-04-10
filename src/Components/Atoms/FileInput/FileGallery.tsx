@@ -85,7 +85,7 @@ const FileGallery = (props: IFileGallery): ReactElement => {
             <></>
           ) : file.status && [FileStatusEnum.UPLOADING, FileStatusEnum.DELETING].includes(file.status) ? (
             <div className='delete-icon'>
-              <Icon icon={['fal', 'spinner']} spin />
+              <Icon icon={['fal', 'spinner']} />
             </div>
           ) : (
             <div

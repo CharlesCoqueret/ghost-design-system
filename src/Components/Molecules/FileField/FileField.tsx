@@ -64,9 +64,9 @@ export interface IFileFieldProps {
   requestUrl: string;
   /** Enable withCredentials on the request (optional, default: undefined) */
   requestWithCredentials?: boolean;
-  /** Show file size in the gallery (optional, default: false) */
+  /** Show file size in the gallery (optional, default: true) */
   showFileSize?: boolean;
-  /** Show progress bar in file gallery (optional, default: false) */
+  /** Show progress bar in file gallery (optional, default: true) */
   showProgressBar?: boolean;
   /** Custom style (optional, default: undefined) */
   style?: CSSProperties;
@@ -189,8 +189,8 @@ FileField.defaultProps = {
   requestHeaders: undefined,
   requestMethod: 'POST',
   requestWithCredentials: undefined,
-  showFileSize: false,
-  showProgressBar: false,
+  showFileSize: true,
+  showProgressBar: true,
   style: undefined,
   uploadMessage: 'Click or drag file to upload',
 };

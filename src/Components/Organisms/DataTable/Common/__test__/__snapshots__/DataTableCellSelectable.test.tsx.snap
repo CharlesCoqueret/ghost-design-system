@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DataTableCellSelectable component DataTableCellSelectable renders not selectable 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class="table--value--selectable-disabled"
+        >
+          <div
+            class="checkbox-marker"
+          >
+            <i
+              class="icon"
+              icon="fas,square"
+            />
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`DataTableCellSelectable component DataTableCellSelectable renders not selected 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class="table--value--selectable"
+        >
+          <div
+            class="checkbox-marker"
+          >
+            <i
+              class="icon"
+              icon="fal,square"
+            />
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`DataTableCellSelectable component DataTableCellSelectable renders selected and handles click 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class="table--value--selectable"
+        >
+          <div
+            class="checkbox-marker selected"
+          >
+            <i
+              class="icon"
+              data-testid="DATA-TEST-ID"
+              icon="fas,square-check"
+            />
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`DataTableCellSelectable component DataTableCellSelectable renders without click handler 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class="table--value--selectable"
+        >
+          <div
+            class="checkbox-marker selected"
+          >
+            <i
+              class="icon"
+              data-testid="DATA-TEST-ID"
+              icon="fas,square-check"
+            />
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;

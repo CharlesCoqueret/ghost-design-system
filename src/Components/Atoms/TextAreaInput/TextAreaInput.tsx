@@ -51,7 +51,7 @@ const TextAreaInput = (props: ITextAreaInputProps): ReactElement => {
    */
   const runAfterUpdate = useRunAfterUpdate();
   const textAreaRef = useRef<HTMLTextAreaElement>(null);
-  const [textAreaHeight, setTextAreaHeight] = useState('auto');
+  const [textAreaHeight, setTextAreaHeight] = useState<string | undefined>('auto');
 
   const updateHeight = () => {
     setTextAreaHeight(`${textAreaRef.current?.scrollHeight}px`);
@@ -61,7 +61,7 @@ const TextAreaInput = (props: ITextAreaInputProps): ReactElement => {
    * Ensure the height is properly set when initial value requires a bigger height.
    */
   useEffect(() => {
-    updateHeight();
+    setTextAreaHeight(undefined);
     runAfterUpdate(updateHeight);
   }, []);
 

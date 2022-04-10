@@ -29,7 +29,18 @@ export default {
 
 const Template: ComponentStory<typeof SwitchField> = ({ inputValue, ...args }: ISwitchFieldProps) => {
   const [localValue, setLocalValue] = useState<Array<IToggleEntry>>(inputValue);
-  return <SwitchField {...args} inputValue={localValue} onChange={setLocalValue} />;
+  return (
+    <SwitchField
+      {...args}
+      inputValue={localValue}
+      onChange={(value) => {
+        if (args.onChange) {
+          args.onChange(value);
+        }
+        setLocalValue(value);
+      }}
+    />
+  );
 };
 
 export const Default = Template.bind({});

@@ -74,6 +74,7 @@ export const HelperAndLimit = Template.bind({});
 HelperAndLimit.args = {
   helperText: 'Helper text',
   mandatory: true,
+  maxChar: 1000,
   label: 'Rich text field with helper',
   inputValue:
     '<h1>Lorem ipsum</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin consectetur ' +
