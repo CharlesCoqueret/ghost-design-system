@@ -126,7 +126,7 @@ const FileInput = (props: IFileInputProps): ReactElement => {
 
       return newFile;
     },
-    [acceptTypes, localItems, maxFileSize, maxFiles],
+    [acceptTypes, maxFileSize, maxFiles],
   );
 
   /**
@@ -273,7 +273,7 @@ const FileInput = (props: IFileInputProps): ReactElement => {
 
       xhr.send(formData);
     },
-    [addFileLocalItems, requestHeaders, requestMethod, requestUrl, requestWithCredentials],
+    [requestHeaders, requestMethod, requestUrl, requestWithCredentials],
   );
 
   /**
@@ -300,7 +300,7 @@ const FileInput = (props: IFileInputProps): ReactElement => {
         });
       }
     },
-    [maxFolderDepth, uploadFile],
+    [maxFolderDepth],
   );
 
   /**
@@ -313,7 +313,7 @@ const FileInput = (props: IFileInputProps): ReactElement => {
     } else {
       initialLocalItemsDefinition.current = false;
     }
-  }, [localItems, onChange]);
+  }, [localItems]);
 
   /**
    * Sets up event listeners:
@@ -358,7 +358,7 @@ const FileInput = (props: IFileInputProps): ReactElement => {
       currentDropArea.removeEventListener('dragleave', unhighlight);
       currentDropArea.removeEventListener('drop', handleDrop);
     };
-  }, [handleDrop]);
+  }, []);
 
   return (
     <div className={classnames('field', 'gds-file-input-container', className)} style={style}>
