@@ -34,9 +34,9 @@
     "lint:fix": "eslint --ext .js,.ts,.jsx,.tsx,.json --fix --color ./",
     "nuke": "npm run clean && npm install",
     "storybook": "start-storybook -p 9001 -c .storybook",
-    "test": "jest --runInBand",
-    "test:coverage": "jest --runInBand --colors --coverage",
-    "test:watch": "jest --watch --runInBand"
+    "test": "jest",
+    "test:coverage": "jest --colors --coverage",
+    "test:watch": "jest --watch"
   },
   "main": "dist/index.js",
   "module": "dist/index.esm.js",

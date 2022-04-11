@@ -123,7 +123,7 @@ const MultiSelectInput = (props: IMultiSelectInputProps): ReactElement => {
         numberOfItemsLabel={numberOfItemsLabel}
       />
     ),
-    [],
+    [numberOfItemLabel, numberOfItemsLabel],
   );
 
   if (readOnly || disabled) {

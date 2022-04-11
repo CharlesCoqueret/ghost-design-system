@@ -23,7 +23,7 @@ describe('RichTextInput Component', () => {
     jest.resetModules();
   });
 
-  it('RichTextInput renders', async () => {
+  it('RichTextInput renders', () => {
     jest.mock('suneditor-react', () => ({
       __esModule: true,
       default: (props: unknown): ReactElement => {
@@ -38,7 +38,7 @@ describe('RichTextInput Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('RichTextInput renders with image', async () => {
+  it('RichTextInput renders with image', () => {
     jest.mock('suneditor-react', () => ({
       __esModule: true,
       default: (props: unknown): ReactElement => {
@@ -53,7 +53,7 @@ describe('RichTextInput Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('RichTextInput renders with image and link with maxLendth', async () => {
+  it('RichTextInput renders with image and link with maxLendth', () => {
     jest.mock('suneditor-react', () => ({
       __esModule: true,
       default: (props: unknown): ReactElement => {
@@ -70,7 +70,7 @@ describe('RichTextInput Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('RichTextInput renders with link in readOnly', async () => {
+  it('RichTextInput renders with link in readOnly', () => {
     jest.mock('suneditor-react', () => ({
       __esModule: true,
       default: (props: unknown): ReactElement => {
@@ -85,7 +85,7 @@ describe('RichTextInput Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('RichTextInput renders in readOnly with inputValue', async () => {
+  it('RichTextInput renders in readOnly with inputValue', () => {
     jest.mock('suneditor-react', () => ({
       __esModule: true,
       default: (props: unknown): ReactElement => {
@@ -100,7 +100,7 @@ describe('RichTextInput Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('RichTextInput handles changes', async () => {
+  it('RichTextInput handles changes', () => {
     let onBlurCallback: (event: FocusEvent, newValue: string) => void = () => {
       return;
     };

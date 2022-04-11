@@ -5,7 +5,7 @@ import SideBarSection from '../SideBarSection';
 import SideBar from '../SideBar';
 
 describe('SideBarSection Component', () => {
-  it('SideBarSection renders', async () => {
+  it('SideBarSection renders', () => {
     const { container } = render(
       <SideBar backToMenu={'Back to menu'} style={{ height: '600px' }}>
         <SideBarSection
@@ -30,7 +30,7 @@ describe('SideBarSection Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('SideBarSection renders hidden section', async () => {
+  it('SideBarSection renders hidden section', () => {
     const { container } = render(
       <SideBar backToMenu={'Back to menu'} style={{ height: '600px' }}>
         <SideBarSection

@@ -6,7 +6,7 @@ import CheckboxCell from '../CheckboxCell';
 import { ColumnType } from '../../types';
 
 describe('CheckboxCell component', () => {
-  it('CheckboxCell renders', async () => {
+  it('CheckboxCell renders', () => {
     const { container } = render(
       <table>
         <tbody>
@@ -46,7 +46,7 @@ describe('CheckboxCell component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('CheckboxCell renders with forced value', async () => {
+  it('CheckboxCell renders with forced value', () => {
     const { container } = render(
       <table>
         <tbody>
@@ -93,7 +93,7 @@ describe('CheckboxCell component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('CheckboxCell renders when hidden', async () => {
+  it('CheckboxCell renders when hidden', () => {
     const { container } = render(
       <table>
         <tbody>
@@ -205,7 +205,7 @@ describe('CheckboxCell component', () => {
     ]);
   });
 
-  it('CheckboxCell renders in edit mode via extra', async () => {
+  it('CheckboxCell renders in edit mode via extra', () => {
     const { container } = render(
       <table>
         <tbody>

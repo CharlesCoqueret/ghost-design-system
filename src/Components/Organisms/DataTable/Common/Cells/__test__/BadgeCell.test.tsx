@@ -6,7 +6,7 @@ import BadgeCell from '../BadgeCell';
 import { ColumnType } from '../../types';
 
 describe('BadgeCell component', () => {
-  it('BadgeCell renders', async () => {
+  it('BadgeCell renders', () => {
     const { container } = render(
       <table>
         <tbody>
@@ -31,7 +31,7 @@ describe('BadgeCell component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('BadgeCell renders row editing with no row input', async () => {
+  it('BadgeCell renders row editing with no row input', () => {
     const { container } = render(
       <table>
         <tbody>
@@ -56,7 +56,7 @@ describe('BadgeCell component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('BadgeCell renders cell editing with no row input', async () => {
+  it('BadgeCell renders cell editing with no row input', () => {
     const { container } = render(
       <table>
         <tbody>
@@ -81,7 +81,7 @@ describe('BadgeCell component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('BadgeCell renders hidden', async () => {
+  it('BadgeCell renders hidden', () => {
     const { container } = render(
       <table>
         <tbody>
@@ -107,7 +107,7 @@ describe('BadgeCell component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('BadgeCell renders with forced value', async () => {
+  it('BadgeCell renders with forced value', () => {
     const { container } = render(
       <table>
         <tbody>
@@ -133,7 +133,7 @@ describe('BadgeCell component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('BadgeCell renders with erase value when not in options', async () => {
+  it('BadgeCell renders with erase value when not in options', () => {
     const onChangeMock = jest.fn();
 
     const { container } = render(

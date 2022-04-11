@@ -8,7 +8,7 @@ afterEach(() => {
 });
 
 describe('Pulsar Component', () => {
-  it('Pulsar renders', async () => {
+  it('Pulsar renders', () => {
     const { container } = render(<Pulsar />);
 
     expect(container).toMatchSnapshot();

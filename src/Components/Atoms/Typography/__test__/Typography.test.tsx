@@ -5,7 +5,7 @@ import userEvent from '@testing-library/user-event';
 import Typography, { TextTypeEnum } from '../Typography';
 
 describe('Typography.Title Component', () => {
-  it('Typography.Title renders', async () => {
+  it('Typography.Title renders', () => {
     const { container } = render(
       <Typography.Title level={2} className='CLASSNAME' ellipsis style={{ height: '200px' }}>
         TITLE
@@ -14,7 +14,7 @@ describe('Typography.Title Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('Typography.Title ellipsis with no text', async () => {
+  it('Typography.Title ellipsis with no text', () => {
     const { container } = render(
       <Typography.Title ellipsis>
         <div />
@@ -42,7 +42,7 @@ describe('Typography.Title Component', () => {
 });
 
 describe('Typography.Text Component', () => {
-  it('Typography.Text renders with no types', async () => {
+  it('Typography.Text renders with no types', () => {
     const { container } = render(
       <Typography.Text className='CLASSNAME' ellipsis style={{ height: '200px' }}>
         TEXT
@@ -51,7 +51,7 @@ describe('Typography.Text Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('Typography.Text renders with all types', async () => {
+  it('Typography.Text renders with all types', () => {
     const { container } = render(
       <Typography.Text
         type={[
@@ -70,7 +70,7 @@ describe('Typography.Text Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('Typography.Text renders with all types', async () => {
+  it('Typography.Text renders with all types', () => {
     const { container: containerBody } = render(<Typography.Text type={TextTypeEnum.BODY}>TEXT</Typography.Text>);
     expect(containerBody).toMatchSnapshot();
 
@@ -102,7 +102,7 @@ describe('Typography.Text Component', () => {
     expect(containerTiny).toMatchSnapshot();
   });
 
-  it('Typography.Text ellipsis with no text', async () => {
+  it('Typography.Text ellipsis with no text', () => {
     const { container } = render(
       <Typography.Text ellipsis>
         <div />

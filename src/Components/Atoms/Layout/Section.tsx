@@ -28,9 +28,7 @@ const Section = (props: PropsWithChildren<ISectionProps>): ReactElement => {
   const contentRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (!contentRef.current) {
-      return;
-    }
+    if (!contentRef.current) return;
 
     if (contentRef.current.style.height === undefined || contentRef.current.style.height === '') {
       contentRef.current.style.height = open ? 'auto' : '0px';

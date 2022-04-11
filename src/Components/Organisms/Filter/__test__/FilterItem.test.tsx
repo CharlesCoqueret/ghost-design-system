@@ -87,7 +87,7 @@ describe('FilterItem Component', () => {
     onChangeHandlerTextField = undefined;
   });
 
-  it('FilterItem renders CheckboxField', async () => {
+  it('FilterItem renders CheckboxField', () => {
     const onChangeMock = jest.fn();
 
     const { container } = render(
@@ -108,7 +108,7 @@ describe('FilterItem Component', () => {
     expect(onChangeMock).toBeCalledWith('checkbox', [{ label: 'LABEL', value: 'VALUE', checked: true }]);
   });
 
-  it('FilterItem renders DatePickerField', async () => {
+  it('FilterItem renders DatePickerField', () => {
     const onChangeMock = jest.fn();
 
     const { container } = render(
@@ -129,7 +129,7 @@ describe('FilterItem Component', () => {
     expect(onChangeMock).toBeCalledWith('date', new Date('1990-01-01T00:00:00.000Z'));
   });
 
-  it('FilterItem renders DynamicSearchField', async () => {
+  it('FilterItem renders DynamicSearchField', () => {
     const onChangeMock = jest.fn();
 
     const { container } = render(
@@ -162,7 +162,7 @@ describe('FilterItem Component', () => {
     expect(onChangeMock).toBeCalledWith('dynamicsearch', 'value2');
   });
 
-  it('FilterItem renders MultiSelectField', async () => {
+  it('FilterItem renders MultiSelectField', () => {
     const onChangeMock = jest.fn();
 
     const { container } = render(
@@ -189,7 +189,7 @@ describe('FilterItem Component', () => {
     expect(onChangeMock).toBeCalledWith('multiselect', ['value1', 'value2']);
   });
 
-  it('FilterItem renders Number / AmountField', async () => {
+  it('FilterItem renders Number / AmountField', () => {
     const onChangeMock = jest.fn();
 
     const { container } = render(
@@ -213,7 +213,7 @@ describe('FilterItem Component', () => {
     expect(onChangeMock).toBeCalledWith('number', 9876.54);
   });
 
-  it('FilterItem renders SelectField', async () => {
+  it('FilterItem renders SelectField', () => {
     const onChangeMock = jest.fn();
 
     const { container } = render(
@@ -238,7 +238,7 @@ describe('FilterItem Component', () => {
     expect(onChangeMock).toBeCalledWith('select', 'VALUE2');
   });
 
-  it('FilterItem renders TextField', async () => {
+  it('FilterItem renders TextField', () => {
     const onChangeMock = jest.fn();
 
     const { container } = render(
@@ -262,7 +262,7 @@ describe('FilterItem Component', () => {
     expect(onChangeMock).toBeCalledWith('text', 'NEWTEXT');
   });
 
-  it('FilterItem renders Column and title', async () => {
+  it('FilterItem renders Column and title', () => {
     const onChangeMock = jest.fn();
 
     const { container } = render(

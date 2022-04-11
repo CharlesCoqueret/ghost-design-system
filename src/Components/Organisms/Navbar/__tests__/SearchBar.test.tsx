@@ -5,7 +5,7 @@ import userEvent from '@testing-library/user-event';
 import SearchBar from '../SearchBar';
 
 describe('SearchBar Component', () => {
-  it('SearchBar renders', async () => {
+  it('SearchBar renders', () => {
     const onSearchMock = jest.fn();
 
     const { container } = render(
@@ -20,7 +20,7 @@ describe('SearchBar Component', () => {
     expect(onSearchMock).not.toBeCalled();
   });
 
-  it('SearchBar handles search but no results', async () => {
+  it('SearchBar handles search but no results', () => {
     const onSearchMock = jest.fn().mockImplementation(async () => {
       return Promise.resolve([]);
     });
@@ -47,7 +47,7 @@ describe('SearchBar Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('SearchBar handles search with only spaces', async () => {
+  it('SearchBar handles search with only spaces', () => {
     const onSearchMock = jest.fn().mockImplementation(async () => {
       return Promise.resolve([]);
     });

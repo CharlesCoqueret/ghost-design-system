@@ -6,7 +6,7 @@ import DynamicSearchCell from '../DynamicSearchCell';
 import { ColumnType } from '../../types';
 
 describe('DynamicSearchCell component', () => {
-  it('DynamicSearchCell renders', async () => {
+  it('DynamicSearchCell renders', () => {
     const resolveValueMock = jest.fn();
     const searchOptionsMock = jest.fn();
     const noOptionsMessageMock = jest.fn();
@@ -75,7 +75,7 @@ describe('DynamicSearchCell component', () => {
     expect(searchOptionsMock).toBeCalledTimes(0);
   });
 
-  it('DynamicSearchCell renders when hidden', async () => {
+  it('DynamicSearchCell renders when hidden', () => {
     const resolveValueMock = jest.fn();
     const searchOptionsMock = jest.fn();
     const noOptionsMessageMock = jest.fn();
@@ -210,7 +210,7 @@ describe('DynamicSearchCell component', () => {
     expect(onChangeMock).toBeCalledWith(undefined);
   });
 
-  it('DynamicSearchCell renders in edit mode via extra', async () => {
+  it('DynamicSearchCell renders in edit mode via extra', () => {
     const resolveValueMock = jest.fn();
     const searchOptionsMock = jest.fn();
     const noOptionsMessageMock = jest.fn();

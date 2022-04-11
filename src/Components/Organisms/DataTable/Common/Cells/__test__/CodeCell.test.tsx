@@ -5,7 +5,7 @@ import CodeCell from '../CodeCell';
 import { ColumnType } from '../../types';
 
 describe('CodeCell component', () => {
-  it('CodeCell renders', async () => {
+  it('CodeCell renders', () => {
     const { container } = render(
       <table>
         <tbody>
@@ -27,7 +27,7 @@ describe('CodeCell component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('CodeCell renders with forced value', async () => {
+  it('CodeCell renders with forced value', () => {
     const { container } = render(
       <table>
         <tbody>
@@ -51,7 +51,7 @@ describe('CodeCell component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('CodeCell renders when hidden', async () => {
+  it('CodeCell renders when hidden', () => {
     const { container } = render(
       <table>
         <tbody>

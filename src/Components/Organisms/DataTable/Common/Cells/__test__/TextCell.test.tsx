@@ -6,7 +6,7 @@ import TextCell from '../TextCell';
 import { ColumnType } from '../../types';
 
 describe('TextCell component', () => {
-  it('TextCell renders', async () => {
+  it('TextCell renders', () => {
     const { container } = render(
       <table>
         <tbody>
@@ -27,7 +27,7 @@ describe('TextCell component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('TextCell renders row editing with no row input', async () => {
+  it('TextCell renders row editing with no row input', () => {
     const { container } = render(
       <table>
         <tbody>
@@ -48,7 +48,7 @@ describe('TextCell component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('TextCell renders cell editing with no row input', async () => {
+  it('TextCell renders cell editing with no row input', () => {
     const { container } = render(
       <table>
         <tbody>
@@ -69,7 +69,7 @@ describe('TextCell component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('TextCell renders hidden', async () => {
+  it('TextCell renders hidden', () => {
     const { container } = render(
       <table>
         <tbody>
@@ -91,7 +91,7 @@ describe('TextCell component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('TextCell renders with forced value', async () => {
+  it('TextCell renders with forced value', () => {
     const { container } = render(
       <table>
         <tbody>

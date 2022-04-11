@@ -10,7 +10,7 @@ jest.unmock('@szhsin/react-menu');
 jest.unmock('react-dom');
 
 describe('Button Component', () => {
-  it('Button renders without label and icon', async () => {
+  it('Button renders without label and icon', () => {
     const { baseElement } = render(<Button />);
 
     expect(baseElement).toMatchSnapshot();
@@ -123,7 +123,7 @@ describe('Button Component', () => {
     expect(mainButtonClickMock).toBeCalledTimes(1);
   });
 
-  it('Button renders with tooltip', async () => {
+  it('Button renders with tooltip', () => {
     const { baseElement } = render(
       <Button label='Tooltip button' tooltip='TOOLTIP' tooltipDirection={MenuDirectionEnum.TOP} />,
     );

@@ -6,7 +6,7 @@ import { SideBarItem } from '../SideBarSection';
 import SideBar from '../SideBar';
 
 describe('SideBarItem Component', () => {
-  it('SideBarItem renders', async () => {
+  it('SideBarItem renders', () => {
     const { container } = render(
       <SideBar backToMenu={'Back to menu'} style={{ height: '600px' }}>
         <SideBarItem
@@ -42,7 +42,7 @@ describe('SideBarItem Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('SideBarItem renders with only one subitem visible', async () => {
+  it('SideBarItem renders with only one subitem visible', () => {
     const { container } = render(
       <SideBar backToMenu={'Back to menu'} style={{ height: '600px' }}>
         <SideBarItem
@@ -108,7 +108,7 @@ describe('SideBarItem Component', () => {
     expect(console.info).toHaveBeenCalledWith('url pushed:', '/link/link1');
   });
 
-  it('SideBarItem renders with url as Location', async () => {
+  it('SideBarItem renders with url as Location', () => {
     const { container } = render(
       <SideBar backToMenu={'Back to menu'} style={{ height: '600px' }}>
         <SideBarItem
@@ -139,7 +139,7 @@ describe('SideBarItem Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('SideBarItem should generate an error when not in a SideBar component', async () => {
+  it('SideBarItem should generate an error when not in a SideBar component', () => {
     console.error = jest.fn();
 
     const { unmount, container } = render(

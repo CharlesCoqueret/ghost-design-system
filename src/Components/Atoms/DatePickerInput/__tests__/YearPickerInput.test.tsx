@@ -64,14 +64,14 @@ describe('YearPickerInput Component', () => {
     expect(onChangeMock).toHaveBeenLastCalledWith(undefined);
   });
 
-  it('YearPickerInput renders in readOnly, highlighted without portal', async () => {
+  it('YearPickerInput renders in readOnly, highlighted without portal', () => {
     const { container } = render(
       <YearPickerInput name='NAME' readOnly highlighted usePortal={false} inputValue={2022} />,
     );
     expect(container).toMatchSnapshot();
   });
 
-  it('YearPickerInput renders in Error', async () => {
+  it('YearPickerInput renders in Error', () => {
     const { container } = render(<YearPickerInput name='NAME' isInError inputValue={2022} />);
     expect(container).toMatchSnapshot();
   });
