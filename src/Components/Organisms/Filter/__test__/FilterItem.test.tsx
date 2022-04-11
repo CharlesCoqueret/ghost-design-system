@@ -113,7 +113,7 @@ describe('FilterItem Component', () => {
 
     const { container } = render(
       <FilterItem<{ date: Date | undefined | null }>
-        inputValues={{ date: new Date('04/10/2022') }}
+        inputValues={{ date: new Date('2022-04-10T00:00:00.000Z') }}
         item={{ dataIndex: 'date', filterType: FilterTypeEnum.DATE }}
         onChange={onChangeMock}
       />,
@@ -123,10 +123,10 @@ describe('FilterItem Component', () => {
 
     expect(onChangeHandlerDate).toBeDefined();
     if (onChangeHandlerDate) {
-      onChangeHandlerDate(new Date('01/01/1990'));
+      onChangeHandlerDate(new Date('1990-01-01T00:00:00.000Z'));
     }
     expect(onChangeMock).toBeCalledTimes(1);
-    expect(onChangeMock).toBeCalledWith('date', new Date('01/01/1990'));
+    expect(onChangeMock).toBeCalledWith('date', new Date('1990-01-01T00:00:00.000Z'));
   });
 
   it('FilterItem renders DynamicSearchField', async () => {

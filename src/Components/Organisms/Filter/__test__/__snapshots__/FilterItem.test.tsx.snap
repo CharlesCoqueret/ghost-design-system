@@ -43,7 +43,7 @@ exports[`FilterItem Component FilterItem renders DatePickerField 1`] = `
 <div>
   <div>
     Mocked DatePickerField props: 
-    {"name":"date","inputValue":"2022-04-09T22:00:00.000Z","inline":false,"usePortal":false}
+    {"name":"date","inputValue":"2022-04-10T00:00:00.000Z","inline":false,"usePortal":false}
   </div>
 </div>
 `;
