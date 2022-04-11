@@ -2,50 +2,44 @@
 
 exports[`Loader component Loader renders 1`] = `
 <div>
-  <table>
-    <tbody>
-      <tr>
-        <svg
-          aria-hidden="true"
-          class="icon gds-loader size-2x CLASSNAME"
-          data-testid="DATA-TEST-ID"
-          focusable="false"
-          height="50"
-          preserveAspectRatio="xMidYMid"
-          role="img"
-          style="background: transparent;"
-          viewBox="0 0 100 100"
-          width="50"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <circle
-            cx="50"
-            cy="50"
-            fill="transparent"
-            r="30"
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-width="10"
-          >
-            <animatetransform
-              attributeName="transform"
-              dur="2s"
-              keyTimes="0;0.5;1"
-              repeatCount="indefinite"
-              type="rotate"
-              values="0 50 50;180 50 50;720 50 50"
-            />
-            <animate
-              attributeName="stroke-dasharray"
-              dur="2s"
-              keyTimes="0;0.5;1"
-              repeatCount="indefinite"
-              values="20 150; 150 20; 20 150"
-            />
-          </circle>
-        </svg>
-      </tr>
-    </tbody>
-  </table>
+  <svg
+    aria-hidden="true"
+    class="icon gds-loader size-2x CLASSNAME"
+    data-testid="DATA-TEST-ID"
+    focusable="false"
+    height="50"
+    preserveAspectRatio="xMidYMid"
+    role="img"
+    style="background: transparent;"
+    viewBox="0 0 100 100"
+    width="50"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <circle
+      cx="50"
+      cy="50"
+      fill="transparent"
+      r="30"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-width="10"
+    >
+      <animatetransform
+        attributeName="transform"
+        dur="2s"
+        keyTimes="0;0.5;1"
+        repeatCount="indefinite"
+        type="rotate"
+        values="0 50 50;180 50 50;720 50 50"
+      />
+      <animate
+        attributeName="stroke-dasharray"
+        dur="2s"
+        keyTimes="0;0.5;1"
+        repeatCount="indefinite"
+        values="20 150; 150 20; 20 150"
+      />
+    </circle>
+  </svg>
 </div>
 `;

@@ -1,0 +1,353 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Filter Component Filter renders advanced filter and handles changes 1`] = `
+<body>
+  <div>
+    <div
+      class="filter-container"
+    >
+      <div
+        class="searchbar"
+      >
+        <div
+          class="search-field"
+        >
+          <div>
+            Mocked FilterItem props: 
+            {"inputValues":{"number":1},"item":{"dataIndex":"number","filterType":"number","label":"Number","placeholder":"Search number"},"inline":true}
+          </div>
+        </div>
+        <div
+          class="search-actions"
+        >
+          <button
+            class="gds-button-content"
+            color="secondary"
+            data-testid="DATA-TEST-ID-reset"
+            type="button"
+          >
+            <div
+              class="button-label-container"
+            >
+              reset
+            </div>
+          </button>
+          <button
+            class="gds-button-content"
+            color="primary"
+            data-testid="DATA-TEST-ID-open-advanced"
+            type="button"
+          >
+            <div
+              class="button-label-container"
+            >
+              advancedSearch
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Filter Component Filter renders advanced filter and handles changes 2`] = `
+<body
+  style="overflow-y: hidden; overflow-x: hidden;"
+>
+  <div>
+    <div
+      class="filter-container"
+    >
+      <div
+        class="searchbar"
+      >
+        <div
+          class="search-field"
+        >
+          <div>
+            Mocked FilterItem props: 
+            {"inputValues":{"number":1},"item":{"dataIndex":"number","filterType":"number","label":"Number","placeholder":"Search number"},"inline":true}
+          </div>
+        </div>
+        <div
+          class="search-actions"
+        >
+          <button
+            class="gds-button-content"
+            color="secondary"
+            data-testid="DATA-TEST-ID-reset"
+            type="button"
+          >
+            <div
+              class="button-label-container"
+            >
+              reset
+            </div>
+          </button>
+          <button
+            class="gds-button-content"
+            color="primary"
+            data-testid="DATA-TEST-ID-open-advanced"
+            type="button"
+          >
+            <div
+              class="button-label-container"
+            >
+              advancedSearch
+            </div>
+          </button>
+        </div>
+      </div>
+      <div>
+        <div
+          class="gds-modal-overlay"
+        >
+          <div
+            class="modal-content size-lg"
+          >
+            <div
+              class="modal-header"
+            >
+              <div
+                class="modal-title"
+              >
+                advancedSearchTitle
+              </div>
+              <div
+                class="modal-close-icon"
+              >
+                <i
+                  class="icon"
+                  icon="fal,times"
+                />
+              </div>
+            </div>
+            <div
+              class="modal-body"
+            >
+              <div
+                class="gds-layout-container"
+              >
+                <div
+                  class="gds-layout-row"
+                >
+                  <div>
+                    Mocked FilterItem props: 
+                    {"inputValues":{"number":1},"item":{"dataIndex":"number","filterType":"number","label":"Number","placeholder":"Search number","dataTestId":"NUMBER-ADVANCED-SEARCH"}}
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="modal-footer"
+            >
+              <button
+                class="gds-button-content"
+                color="secondary"
+                data-testid="DATA-TEST-ID-advanced-reset"
+                type="button"
+              >
+                <div
+                  class="button-label-container"
+                >
+                  reset
+                </div>
+              </button>
+              <button
+                class="gds-button-content"
+                color="primary"
+                data-testid="DATA-TEST-ID-advanced-submit"
+                type="button"
+              >
+                <div
+                  class="button-label-container"
+                >
+                  search
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    id="root-portal-id"
+  >
+    <div />
+  </div>
+</body>
+`;
+
+exports[`Filter Component Filter renders advanced filter and handles changes 3`] = `
+<body
+  style=""
+>
+  <div>
+    <div
+      class="filter-container"
+    >
+      <div
+        class="searchbar"
+      >
+        <div
+          class="search-field"
+        >
+          <div>
+            Mocked FilterItem props: 
+            {"inputValues":{"number":100},"item":{"dataIndex":"number","filterType":"number","label":"Number","placeholder":"Search number"},"inline":true}
+          </div>
+        </div>
+        <div
+          class="search-actions"
+        >
+          <button
+            class="gds-button-content"
+            color="secondary"
+            data-testid="DATA-TEST-ID-reset"
+            type="button"
+          >
+            <div
+              class="button-label-container"
+            >
+              reset
+            </div>
+          </button>
+          <button
+            class="gds-button-content"
+            color="primary"
+            data-testid="DATA-TEST-ID-open-advanced"
+            type="button"
+          >
+            <div
+              class="button-label-container"
+            >
+              advancedSearch
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Filter Component Filter renders filterbar and handles changes 1`] = `
+<div>
+  <div
+    class="filter-container"
+  >
+    <div
+      class="searchbar"
+    >
+      <div
+        class="search-field"
+      >
+        <div>
+          Mocked FilterItem props: 
+          {"item":{"dataIndex":"number","dataTestId":"NUMBER-FILTER-BAR","filterType":"number","label":"Number","placeholder":"Search number"},"inline":true}
+        </div>
+      </div>
+      <div
+        class="search-actions"
+      >
+        <button
+          class="gds-button-content"
+          color="secondary"
+          data-testid="DATA-TEST-ID-reset"
+          type="button"
+        >
+          <div
+            class="button-label-container"
+          >
+            reset
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Filter Component Filter renders with no item in the filter bar 1`] = `
+<div>
+  <div
+    class="filter-container"
+  >
+    <div
+      class="searchbar"
+    >
+      <div
+        class="search-field"
+      />
+      <div
+        class="search-actions"
+      >
+        <button
+          class="gds-button-content"
+          color="secondary"
+          type="button"
+        >
+          <div
+            class="button-label-container"
+          >
+            reset
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Filter Component Filter renders without data-testid 1`] = `
+<body
+  style=""
+>
+  <div>
+    <div
+      class="filter-container"
+    >
+      <div
+        class="searchbar"
+      >
+        <div
+          class="search-field"
+        >
+          <div>
+            Mocked FilterItem props: 
+            {"inputValues":{"number":1},"item":{"dataIndex":"number","filterType":"number","label":"Number","placeholder":"Search number"},"inline":true}
+          </div>
+        </div>
+        <div
+          class="search-actions"
+        >
+          <button
+            class="gds-button-content"
+            color="secondary"
+            type="button"
+          >
+            <div
+              class="button-label-container"
+            >
+              reset
+            </div>
+          </button>
+          <button
+            class="gds-button-content"
+            color="primary"
+            type="button"
+          >
+            <div
+              class="button-label-container"
+            >
+              advancedSearch
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;

@@ -25,6 +25,7 @@ const FilterItem = <T,>(props: IFilterItemProps<T>): ReactElement => {
     case FilterTypeEnum.CHECKBOX: {
       return (
         <CheckboxField
+          dataTestId={item.dataTestId}
           fieldClassName={item.fieldClassName}
           fieldSize={item.fieldSize}
           helperText={item.helperText}
@@ -41,6 +42,7 @@ const FilterItem = <T,>(props: IFilterItemProps<T>): ReactElement => {
     case FilterTypeEnum.DATE: {
       return (
         <DatePickerField
+          dataTestId={item.dataTestId}
           fieldClassName={item.fieldClassName}
           fieldSize={item.fieldSize}
           helperText={item.helperText}
@@ -64,6 +66,7 @@ const FilterItem = <T,>(props: IFilterItemProps<T>): ReactElement => {
     case FilterTypeEnum.DYNAMICSEARCH: {
       return (
         <DynamicSearchField
+          dataTestId={item.dataTestId}
           fieldClassName={item.fieldClassName}
           fieldSize={item.fieldSize}
           helperText={item.helperText}
@@ -87,6 +90,7 @@ const FilterItem = <T,>(props: IFilterItemProps<T>): ReactElement => {
     case FilterTypeEnum.MULTISELECT: {
       return (
         <MultiSelectField
+          dataTestId={item.dataTestId}
           fieldClassName={item.fieldClassName}
           fieldSize={item.fieldSize}
           helperText={item.helperText}
@@ -110,6 +114,7 @@ const FilterItem = <T,>(props: IFilterItemProps<T>): ReactElement => {
     case FilterTypeEnum.NUMBER: {
       return (
         <AmountField
+          dataTestId={item.dataTestId}
           fieldClassName={item.fieldClassName}
           fieldSize={item.fieldSize}
           helperText={item.helperText}
@@ -153,6 +158,7 @@ const FilterItem = <T,>(props: IFilterItemProps<T>): ReactElement => {
     case FilterTypeEnum.SELECT: {
       return (
         <SelectField
+          dataTestId={item.dataTestId}
           fieldClassName={item.fieldClassName}
           fieldSize={item.fieldSize}
           helperText={item.helperText}
@@ -174,6 +180,7 @@ const FilterItem = <T,>(props: IFilterItemProps<T>): ReactElement => {
     case FilterTypeEnum.TEXT: {
       return (
         <TextField
+          dataTestId={item.dataTestId}
           fieldClassName={item.fieldClassName}
           fieldSize={item.fieldSize}
           helperText={item.helperText}
@@ -194,11 +201,7 @@ const FilterItem = <T,>(props: IFilterItemProps<T>): ReactElement => {
     case FilterTypeEnum.TITLE: {
       return <Section title={item.label} collapsable={false} separator={false} />;
     }
-    default: {
-      throw new Error('Missing ColumnType');
-    }
   }
-  throw new Error('Should have returned by then');
 };
 
 FilterItem.defaultProps = {

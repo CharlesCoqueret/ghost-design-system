@@ -27,6 +27,7 @@ export type IFilterFieldsProps<T> =
 
 export interface IFilterBaseProps<T> {
   dataIndex: keyof T;
+  dataTestId?: string;
   fieldClassName?: string;
   fieldSize?: number;
   helperText?: string;
@@ -100,7 +101,6 @@ export interface IFilterNumberProps<T> extends IFilterBaseProps<T> {
 export interface IFilerColProps<T> {
   filterType: FilterTypeEnum.COLUMN;
   fields: Array<IFilterLayoutAndFieldsProps<T>>;
-  label: string;
 }
 
 export interface IFilterSelectProps<T> extends IFilterBaseProps<T> {
