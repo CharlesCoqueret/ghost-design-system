@@ -219,6 +219,32 @@ describe('DynamicSearchInput Component', () => {
     expect(onChangeMock).toBeCalledWith('OPTION2');
   });
 
+  it('DynamicSearchInput handles change clearable', async () => {
+    const resolveValueMock = jest.fn().mockImplementation(() => {
+      return Promise.resolve({ value: 'OPTION1', label: 'option 1' });
+    });
+    const searchOptionsMock = jest.fn().mockImplementation((inputValue: string) => {
+      if (inputValue === 'option 2') return Promise.resolve([{ value: 'OPTION2', label: 'option 2' }]);
+      return Promise.resolve([]);
+    });
+    const onChangeMock = jest.fn();
+
+    const { container } = render(
+      <DynamicSearchInput
+        inputValue={'OPTION1'}
+        isClearable
+        name='SELECT'
+        noOptionsMessage={'No option'}
+        onChange={onChangeMock}
+        resolveValue={resolveValueMock}
+        searchOptions={searchOptionsMock}
+      />,
+    );
+
+    expect(await screen.findByText('option 1'));
+
+    expect(container).toMatchSnapshot();
+  });
   it('DynamicSearchInput renders in readOnly', async () => {
     const resolveValueMock = jest.fn().mockImplementation(() => {
       return Promise.resolve({ value: 'OPTION1', label: 'option 1' });
