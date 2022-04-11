@@ -62,6 +62,7 @@ describe('SelectInput Component', () => {
     );
     expect(container).toMatchSnapshot();
   });
+
   it('SelectInput handles change with empty value when clearable', async () => {
     const onChangeMock = jest.fn();
 
@@ -149,6 +150,7 @@ describe('SelectInput Component', () => {
     );
     expect(container).toMatchSnapshot();
   });
+
   it('SelectInput renders with fieldsize, inError', async () => {
     const { container } = render(
       <SelectInput
