@@ -8,12 +8,13 @@ export interface IPortalProps {
 const Portal = (props: PropsWithChildren<IPortalProps>): ReactElement => {
   const { children, rootId } = props;
   const target = useRef<HTMLDivElement>();
+  const finalRootId = rootId || 'root-portal-id';
 
   useEffect(() => {
-    let container = document.getElementById(rootId || Portal.defaultProps.rootId);
+    let container = document.getElementById(finalRootId);
     if (!container) {
       container = document.createElement('div');
-      container.setAttribute('id', rootId || Portal.defaultProps.rootId);
+      container.setAttribute('id', finalRootId);
       document.body.appendChild(container);
     }
 
@@ -36,10 +37,6 @@ const Portal = (props: PropsWithChildren<IPortalProps>): ReactElement => {
   }
 
   return createPortal(children, target.current);
-};
-
-Portal.defaultProps = {
-  rootId: 'root-portal-id',
 };
 
 export default Portal;

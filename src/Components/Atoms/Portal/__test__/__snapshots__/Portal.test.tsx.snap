@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Portal Component Portal renders 1`] = `
+<div>
+  <div>
+    <div />
+  </div>
+</div>
+`;
+
+exports[`Portal Component Portal renders 2`] = `
+<div>
+  <div />
+</div>
+`;
+
+exports[`Portal Component Portal renders 3`] = `<div />`;
+
+exports[`Portal Component Portal renders without rootId 1`] = `
+<div>
+  <div>
+    <div />
+  </div>
+</div>
+`;
+
+exports[`Portal Component Portal renders without rootId 2`] = `
+<div>
+  <div />
+</div>
+`;
+
+exports[`Portal Component Portal renders without rootId 3`] = `<div />`;
