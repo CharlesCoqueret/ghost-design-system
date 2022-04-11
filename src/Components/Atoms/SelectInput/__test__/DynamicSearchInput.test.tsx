@@ -160,6 +160,8 @@ describe('DynamicSearchInput Component', () => {
     const select = await screen.findByRole('combobox');
     userEvent.type(select, 'option 2');
 
+    expect(container).toMatchSnapshot();
+
     expect(await screen.findByTestId('DATA-TEST-ID-spinner')).toBeTruthy();
     expect(screen.queryByTestId('DATA-TEST-ID-spinner')).toBeFalsy();
 
@@ -205,6 +207,8 @@ describe('DynamicSearchInput Component', () => {
 
     const select = await screen.findByRole('combobox');
     userEvent.type(select, 'option 2');
+
+    expect(container).toMatchSnapshot();
 
     expect(await screen.findByTestId('DATA-TEST-ID-spinner')).toBeTruthy();
     expect(screen.queryByTestId('DATA-TEST-ID-spinner')).toBeFalsy();
