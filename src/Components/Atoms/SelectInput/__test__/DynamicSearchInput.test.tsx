@@ -10,7 +10,7 @@ describe('DynamicSearchInput Component', () => {
       return Promise.resolve({ value: 'OPTION1', label: 'option 1' });
     });
     const searchOptionsMock = jest.fn().mockImplementation(() => {
-      return Promise.resolve(undefined);
+      return Promise.resolve([]);
     });
     const noOptionsMessageMock = jest.fn();
 
@@ -42,7 +42,7 @@ describe('DynamicSearchInput Component', () => {
       return Promise.resolve(undefined);
     });
     const searchOptionsMock = jest.fn().mockImplementation(() => {
-      return Promise.resolve(undefined);
+      return Promise.resolve([]);
     });
     const noOptionsMessageMock = jest.fn();
 
@@ -74,7 +74,7 @@ describe('DynamicSearchInput Component', () => {
       return Promise.reject();
     });
     const searchOptionsMock = jest.fn().mockImplementation(() => {
-      return Promise.resolve(undefined);
+      return Promise.resolve([]);
     });
     const noOptionsMessageMock = jest.fn();
 
@@ -104,7 +104,7 @@ describe('DynamicSearchInput Component', () => {
   it('DynamicSearchInput renders without input value', async () => {
     const resolveValueMock = jest.fn();
     const searchOptionsMock = jest.fn().mockImplementation(() => {
-      return Promise.resolve(undefined);
+      return Promise.resolve([]);
     });
     const noOptionsMessageMock = jest.fn();
 
@@ -318,7 +318,7 @@ describe('DynamicSearchInput Component', () => {
       return Promise.resolve({ value: 'OPTION1', label: 'option 1' });
     });
     const searchOptionsMock = jest.fn().mockImplementation(() => {
-      return Promise.resolve(undefined);
+      return Promise.resolve([]);
     });
     const noOptionsMessage = jest.fn().mockImplementation(() => {
       return 'No options';
@@ -351,7 +351,7 @@ describe('DynamicSearchInput Component', () => {
   it('DynamicSearchInput renders in error without portal', async () => {
     const resolveValueMock = jest.fn();
     const searchOptionsMock = jest.fn().mockImplementation(() => {
-      return Promise.resolve(undefined);
+      return Promise.resolve([]);
     });
     const noOptionsMessageMock = jest.fn().mockImplementation(() => {
       return 'No options';
@@ -387,7 +387,7 @@ describe('DynamicSearchInput Component', () => {
       return Promise.resolve(undefined);
     });
     const searchOptionsMock = jest.fn().mockImplementation(() => {
-      return Promise.resolve(undefined);
+      return Promise.resolve([]);
     });
     const noOptionsMessageMock = jest.fn();
     const onChangeMock = jest.fn();
@@ -446,7 +446,7 @@ describe('DynamicSearchInput Component', () => {
       return Promise.resolve(undefined);
     });
     const searchOptionsMock = jest.fn().mockImplementation(() => {
-      return Promise.resolve(undefined);
+      return Promise.resolve([]);
     });
     const noOptionsMessageMock = jest.fn();
     const onChangeMock = jest.fn();

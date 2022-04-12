@@ -34,8 +34,8 @@ export interface IRichTextInputProps {
   maxLength?: number;
   /** Name of the field (optional, default: undefined) */
   name?: string;
-  /** handler of changes notifying only on blur of the input for performance reason */
-  onChange: (newValue: string) => void;
+  /** handler of changes notifying only on blur of the input for performance reason (options, default: undefined) */
+  onChange?: (newValue: string) => void;
   /** Read only field (optional, default: false) */
   readOnly?: boolean;
   /** Custom style (optional, default: undefined) */

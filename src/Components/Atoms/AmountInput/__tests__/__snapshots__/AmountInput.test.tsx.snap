@@ -78,6 +78,20 @@ exports[`AmountInput Component AmountInput renders in readonly with value shoter
 </div>
 `;
 
+exports[`AmountInput Component AmountInput renders in readonly with value shotern 2`] = `
+<div>
+  <div
+    class="gds-amount-field amount-field-read-only field-highlighted"
+  >
+    <span
+      class="gds-typography"
+    >
+      A 1.23 b B
+    </span>
+  </div>
+</div>
+`;
+
 exports[`AmountInput Component AmountInput renders triggers onChange 1`] = `
 <div>
   <input

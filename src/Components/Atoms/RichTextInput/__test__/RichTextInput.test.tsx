@@ -18,18 +18,15 @@ jest.mock('suneditor/src/plugins/submenu/list', () => ({ name: 'list' }));
 jest.mock('suneditor/src/plugins/submenu/paragraphStyle', () => ({ name: 'paragraphStyle' }));
 jest.mock('suneditor/src/plugins/submenu/table', () => ({ name: 'table' }));
 
-describe('RichTextInput Component', () => {
-  beforeEach(() => {
-    jest.resetModules();
-  });
+jest.mock('suneditor-react', () => ({
+  __esModule: true,
+  default: (props: unknown): ReactElement => {
+    return <div>{JSON.stringify(props)}</div>;
+  },
+}));
 
+describe('RichTextInput Component', () => {
   it('RichTextInput renders', () => {
-    jest.mock('suneditor-react', () => ({
-      __esModule: true,
-      default: (props: unknown): ReactElement => {
-        return <div>{JSON.stringify(props)}</div>;
-      },
-    }));
     const RichTextInput = require('../RichTextInput').default;
     const onChangeMock = jest.fn();
 
@@ -39,12 +36,6 @@ describe('RichTextInput Component', () => {
   });
 
   it('RichTextInput renders with image', () => {
-    jest.mock('suneditor-react', () => ({
-      __esModule: true,
-      default: (props: unknown): ReactElement => {
-        return <div>{JSON.stringify(props)}</div>;
-      },
-    }));
     const RichTextInput = require('../RichTextInput').default;
     const onChangeMock = jest.fn();
 
@@ -54,12 +45,6 @@ describe('RichTextInput Component', () => {
   });
 
   it('RichTextInput renders with image and link with maxLendth', () => {
-    jest.mock('suneditor-react', () => ({
-      __esModule: true,
-      default: (props: unknown): ReactElement => {
-        return <div>{JSON.stringify(props)}</div>;
-      },
-    }));
     const RichTextInput = require('../RichTextInput').default;
     const onChangeMock = jest.fn();
 
@@ -71,12 +56,6 @@ describe('RichTextInput Component', () => {
   });
 
   it('RichTextInput renders with link in readOnly', () => {
-    jest.mock('suneditor-react', () => ({
-      __esModule: true,
-      default: (props: unknown): ReactElement => {
-        return <div>{JSON.stringify(props)}</div>;
-      },
-    }));
     const RichTextInput = require('../RichTextInput').default;
     const onChangeMock = jest.fn();
 
@@ -86,12 +65,6 @@ describe('RichTextInput Component', () => {
   });
 
   it('RichTextInput renders in readOnly with inputValue', () => {
-    jest.mock('suneditor-react', () => ({
-      __esModule: true,
-      default: (props: unknown): ReactElement => {
-        return <div>{JSON.stringify(props)}</div>;
-      },
-    }));
     const RichTextInput = require('../RichTextInput').default;
     const onChangeMock = jest.fn();
 
@@ -101,6 +74,7 @@ describe('RichTextInput Component', () => {
   });
 
   it('RichTextInput handles changes', () => {
+    jest.resetModules();
     let onBlurCallback: (event: FocusEvent, newValue: string) => void = () => {
       return;
     };

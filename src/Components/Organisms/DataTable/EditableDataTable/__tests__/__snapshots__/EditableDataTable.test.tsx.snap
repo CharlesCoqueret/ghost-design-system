@@ -195,10 +195,8 @@ exports[`EditableDataTable Component EditableDataTable renders and handles chang
                       >
                         <input
                           aria-autocomplete="list"
-                          aria-controls="react-select-11-listbox"
                           aria-expanded="false"
                           aria-haspopup="true"
-                          aria-owns="react-select-11-listbox"
                           autocapitalize="none"
                           autocomplete="off"
                           autocorrect="off"
@@ -316,11 +314,9 @@ exports[`EditableDataTable Component EditableDataTable renders and handles chang
                       >
                         <input
                           aria-autocomplete="list"
-                          aria-controls="react-select-12-listbox"
                           aria-describedby="react-select-12-placeholder"
                           aria-expanded="false"
                           aria-haspopup="true"
-                          aria-owns="react-select-12-listbox"
                           autocapitalize="none"
                           autocomplete="off"
                           autocorrect="off"
@@ -562,10 +558,8 @@ exports[`EditableDataTable Component EditableDataTable renders and handles chang
                       >
                         <input
                           aria-autocomplete="list"
-                          aria-controls="react-select-11-listbox"
                           aria-expanded="false"
                           aria-haspopup="true"
-                          aria-owns="react-select-11-listbox"
                           autocapitalize="none"
                           autocomplete="off"
                           autocorrect="off"
@@ -683,11 +677,9 @@ exports[`EditableDataTable Component EditableDataTable renders and handles chang
                       >
                         <input
                           aria-autocomplete="list"
-                          aria-controls="react-select-12-listbox"
                           aria-describedby="react-select-12-placeholder"
                           aria-expanded="false"
                           aria-haspopup="true"
-                          aria-owns="react-select-12-listbox"
                           autocapitalize="none"
                           autocomplete="off"
                           autocorrect="off"
@@ -938,10 +930,8 @@ exports[`EditableDataTable Component EditableDataTable renders and handles line 
                       >
                         <input
                           aria-autocomplete="list"
-                          aria-controls="react-select-9-listbox"
                           aria-expanded="false"
                           aria-haspopup="true"
-                          aria-owns="react-select-9-listbox"
                           autocapitalize="none"
                           autocomplete="off"
                           autocorrect="off"
@@ -1173,11 +1163,9 @@ exports[`EditableDataTable Component EditableDataTable renders and handles line 
                       >
                         <input
                           aria-autocomplete="list"
-                          aria-controls="react-select-10-listbox"
                           aria-describedby="react-select-10-placeholder"
                           aria-expanded="false"
                           aria-haspopup="true"
-                          aria-owns="react-select-10-listbox"
                           autocapitalize="none"
                           autocomplete="off"
                           autocorrect="off"
@@ -1544,10 +1532,8 @@ exports[`EditableDataTable Component EditableDataTable renders and handles line 
                       >
                         <input
                           aria-autocomplete="list"
-                          aria-controls="react-select-9-listbox"
                           aria-expanded="false"
                           aria-haspopup="true"
-                          aria-owns="react-select-9-listbox"
                           autocapitalize="none"
                           autocomplete="off"
                           autocorrect="off"
@@ -1779,11 +1765,9 @@ exports[`EditableDataTable Component EditableDataTable renders and handles line 
                       >
                         <input
                           aria-autocomplete="list"
-                          aria-controls="react-select-10-listbox"
                           aria-describedby="react-select-10-placeholder"
                           aria-expanded="false"
                           aria-haspopup="true"
-                          aria-owns="react-select-10-listbox"
                           autocapitalize="none"
                           autocomplete="off"
                           autocorrect="off"
@@ -2151,11 +2135,9 @@ exports[`EditableDataTable Component EditableDataTable renders and handles line 
                       >
                         <input
                           aria-autocomplete="list"
-                          aria-controls="react-select-9-listbox"
                           aria-describedby="react-select-9-placeholder"
                           aria-expanded="false"
                           aria-haspopup="true"
-                          aria-owns="react-select-9-listbox"
                           autocapitalize="none"
                           autocomplete="off"
                           autocorrect="off"
@@ -2511,10 +2493,8 @@ exports[`EditableDataTable Component EditableDataTable renders and handles sort 
                       >
                         <input
                           aria-autocomplete="list"
-                          aria-controls="react-select-7-listbox"
                           aria-expanded="false"
                           aria-haspopup="true"
-                          aria-owns="react-select-7-listbox"
                           autocapitalize="none"
                           autocomplete="off"
                           autocorrect="off"
@@ -2630,11 +2610,9 @@ exports[`EditableDataTable Component EditableDataTable renders and handles sort 
                       >
                         <input
                           aria-autocomplete="list"
-                          aria-controls="react-select-8-listbox"
                           aria-describedby="react-select-8-placeholder"
                           aria-expanded="false"
                           aria-haspopup="true"
-                          aria-owns="react-select-8-listbox"
                           autocapitalize="none"
                           autocomplete="off"
                           autocorrect="off"
@@ -2885,10 +2863,8 @@ exports[`EditableDataTable Component EditableDataTable renders and new button cl
                       >
                         <input
                           aria-autocomplete="list"
-                          aria-controls="react-select-3-listbox"
                           aria-expanded="false"
                           aria-haspopup="true"
-                          aria-owns="react-select-3-listbox"
                           autocapitalize="none"
                           autocomplete="off"
                           autocorrect="off"
@@ -3120,11 +3096,9 @@ exports[`EditableDataTable Component EditableDataTable renders and new button cl
                       >
                         <input
                           aria-autocomplete="list"
-                          aria-controls="react-select-4-listbox"
                           aria-describedby="react-select-4-placeholder"
                           aria-expanded="false"
                           aria-haspopup="true"
-                          aria-owns="react-select-4-listbox"
                           autocapitalize="none"
                           autocomplete="off"
                           autocorrect="off"
@@ -3502,10 +3476,8 @@ exports[`EditableDataTable Component EditableDataTable renders and warn when onN
                       >
                         <input
                           aria-autocomplete="list"
-                          aria-controls="react-select-5-listbox"
                           aria-expanded="false"
                           aria-haspopup="true"
-                          aria-owns="react-select-5-listbox"
                           autocapitalize="none"
                           autocomplete="off"
                           autocorrect="off"
@@ -3737,11 +3709,9 @@ exports[`EditableDataTable Component EditableDataTable renders and warn when onN
                       >
                         <input
                           aria-autocomplete="list"
-                          aria-controls="react-select-6-listbox"
                           aria-describedby="react-select-6-placeholder"
                           aria-expanded="false"
                           aria-haspopup="true"
-                          aria-owns="react-select-6-listbox"
                           autocapitalize="none"
                           autocomplete="off"
                           autocorrect="off"
@@ -4119,10 +4089,8 @@ exports[`EditableDataTable Component EditableDataTable renders with all buttons 
                       >
                         <input
                           aria-autocomplete="list"
-                          aria-controls="react-select-2-listbox"
                           aria-expanded="false"
                           aria-haspopup="true"
-                          aria-owns="react-select-2-listbox"
                           autocapitalize="none"
                           autocomplete="off"
                           autocorrect="off"

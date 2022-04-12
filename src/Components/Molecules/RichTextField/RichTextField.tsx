@@ -41,7 +41,7 @@ export interface IRichTextFieldProps {
   /** Name of text field */
   name: string;
   /** handler of changes notifying only on blur of the input for performance reason */
-  onChange: (newValue: string) => void;
+  onChange?: (newValue: string) => void;
   /** Read only field (optional, default: false) */
   readOnly?: boolean;
   /** Custom style (optional, default: undefined) */

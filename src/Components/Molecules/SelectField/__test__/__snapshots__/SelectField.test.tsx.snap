@@ -1,0 +1,260 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SelectField Component SelectField renders 1`] = `
+<div>
+  <div
+    class="gds-field-group"
+  >
+    <div
+      class="field gds-select-container input-select-field input-select-field"
+    >
+      <div
+        class=" css-1959ul7-container"
+      >
+        <span
+          class="css-1f43avz-a11yText-A11yText"
+          id="react-select-2-live-region"
+        />
+        <span
+          aria-atomic="false"
+          aria-live="polite"
+          aria-relevant="additions text"
+          class="css-1f43avz-a11yText-A11yText"
+        />
+        <div
+          class=" css-154lpzf-control"
+        >
+          <div
+            class=" css-9plg90-ValueContainer"
+          >
+            <div
+              class=" css-14el2xx-placeholder"
+              id="react-select-2-placeholder"
+            >
+              Select...
+            </div>
+            <div
+              class=" css-6j8wv5-Input"
+              data-value=""
+            >
+              <input
+                aria-autocomplete="list"
+                aria-describedby="react-select-2-placeholder"
+                aria-expanded="false"
+                aria-haspopup="true"
+                autocapitalize="none"
+                autocomplete="off"
+                autocorrect="off"
+                class=""
+                id="react-select-2-input"
+                role="combobox"
+                spellcheck="false"
+                style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+                tabindex="0"
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+          <div
+            class=" css-1hb7zxy-IndicatorsContainer"
+          >
+            <span
+              class=" css-1okebmr-indicatorSeparator"
+            />
+            <div
+              aria-hidden="true"
+            >
+              <i
+                class="dynamic-search-icon icon"
+                icon="fal,chevron-down"
+              />
+            </div>
+          </div>
+        </div>
+        <input
+          name="name"
+          type="hidden"
+          value=""
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`SelectField Component SelectField renders with values in disabled highligted 1`] = `
+<div>
+  <div
+    class="gds-field-group"
+  >
+    <div
+      class="field gds-select-container input-select-field input-select-field"
+    >
+      <div
+        class=" css-j5ssuk-container"
+      >
+        <span
+          class="css-1f43avz-a11yText-A11yText"
+          id="react-select-3-live-region"
+        />
+        <span
+          aria-atomic="false"
+          aria-live="polite"
+          aria-relevant="additions text"
+          class="css-1f43avz-a11yText-A11yText"
+        />
+        <div
+          class=" css-1pq4mj-control"
+        >
+          <div
+            class=" css-9plg90-ValueContainer"
+          >
+            <div
+              class=" css-lr9fot-singleValue"
+            >
+              Label
+            </div>
+            <div
+              class=" css-jzldcf-Input"
+              data-value=""
+            >
+              <input
+                aria-autocomplete="list"
+                aria-expanded="false"
+                aria-haspopup="true"
+                autocapitalize="none"
+                autocomplete="off"
+                autocorrect="off"
+                class=""
+                disabled=""
+                id="react-select-3-input"
+                role="combobox"
+                spellcheck="false"
+                style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+                tabindex="0"
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+          <div
+            class=" css-1hb7zxy-IndicatorsContainer"
+          >
+            <span
+              class=" css-109onse-indicatorSeparator"
+            />
+            <div
+              aria-hidden="true"
+            >
+              <i
+                class="dynamic-search-icon icon"
+                icon="fal,chevron-down"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`SelectField Component SelectField renders with values in readonly 1`] = `
+<div>
+  <div
+    class="gds-field-group"
+  >
+    <div
+      class="field gds-select-container input-select-field-read-only input-select-field"
+    >
+      <span
+        class="gds-typography"
+      >
+        Label
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`SelectField Component SelectField renders with values with fieldSize and inline 1`] = `
+<div>
+  <div
+    class="gds-field-group field-size-6 field-inline"
+  >
+    <div
+      class="field gds-select-container input-select-field input-select-field"
+    >
+      <div
+        class=" css-1959ul7-container"
+      >
+        <span
+          class="css-1f43avz-a11yText-A11yText"
+          id="react-select-4-live-region"
+        />
+        <span
+          aria-atomic="false"
+          aria-live="polite"
+          aria-relevant="additions text"
+          class="css-1f43avz-a11yText-A11yText"
+        />
+        <div
+          class=" css-154lpzf-control"
+        >
+          <div
+            class=" css-9plg90-ValueContainer"
+          >
+            <div
+              class=" css-qc6sy-singleValue"
+            >
+              Label
+            </div>
+            <div
+              class=" css-6j8wv5-Input"
+              data-value=""
+            >
+              <input
+                aria-autocomplete="list"
+                aria-expanded="false"
+                aria-haspopup="true"
+                autocapitalize="none"
+                autocomplete="off"
+                autocorrect="off"
+                class=""
+                id="react-select-4-input"
+                role="combobox"
+                spellcheck="false"
+                style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+                tabindex="0"
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+          <div
+            class=" css-1hb7zxy-IndicatorsContainer"
+          >
+            <span
+              class=" css-1okebmr-indicatorSeparator"
+            />
+            <div
+              aria-hidden="true"
+            >
+              <i
+                class="dynamic-search-icon icon"
+                icon="fal,chevron-down"
+              />
+            </div>
+          </div>
+        </div>
+        <input
+          name="name"
+          type="hidden"
+          value="VALUE"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
