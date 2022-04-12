@@ -24,7 +24,7 @@ export interface ISwitchInputProps {
 
 const SwitchInput = (props: ISwitchInputProps): ReactElement => {
   const { className, dataTestId, disabled, highlighted, isInError, options, onChange, readOnly } = props;
-  const [ids] = useState(() => options.map(() => uniqueId('checkbox-')));
+  const [ids] = useState(() => options.map(() => uniqueId('switch-')));
 
   /** flip the check status of the switch that was checked */
   const updateState = (optionValue: string) => {

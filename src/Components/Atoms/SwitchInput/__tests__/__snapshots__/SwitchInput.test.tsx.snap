@@ -8,7 +8,7 @@ exports[`SwitchInput Component SwitchInput renders highlighted 1`] = `
     <label
       class="input-switch-field-read-only"
       data-testid="KEY_0"
-      for="checkbox-31"
+      for="switch-31"
       tabindex="0"
     >
       <div
@@ -23,7 +23,7 @@ exports[`SwitchInput Component SwitchInput renders highlighted 1`] = `
           aria-checked="false"
           aria-label="Switch label 0"
           class="silver"
-          id="checkbox-31"
+          id="switch-31"
           role="checkbox"
         />
       </div>
@@ -32,7 +32,7 @@ exports[`SwitchInput Component SwitchInput renders highlighted 1`] = `
     <label
       class="input-switch-field-read-only input-switch-field-checked"
       data-testid="KEY_1"
-      for="checkbox-32"
+      for="switch-32"
       tabindex="0"
     >
       <div
@@ -48,7 +48,7 @@ exports[`SwitchInput Component SwitchInput renders highlighted 1`] = `
           aria-checked="true"
           aria-label="Switch label 1"
           class="silver"
-          id="checkbox-32"
+          id="switch-32"
           role="checkbox"
         />
       </div>
@@ -57,7 +57,7 @@ exports[`SwitchInput Component SwitchInput renders highlighted 1`] = `
     <label
       class="input-switch-field-read-only"
       data-testid="KEY_2"
-      for="checkbox-33"
+      for="switch-33"
       tabindex="0"
     >
       <div
@@ -72,7 +72,7 @@ exports[`SwitchInput Component SwitchInput renders highlighted 1`] = `
           aria-checked="false"
           aria-label="Switch label 2"
           class="silver"
-          id="checkbox-33"
+          id="switch-33"
           role="checkbox"
         />
       </div>
@@ -81,7 +81,7 @@ exports[`SwitchInput Component SwitchInput renders highlighted 1`] = `
     <label
       class="input-switch-field-read-only"
       data-testid="KEY_3"
-      for="checkbox-34"
+      for="switch-34"
       tabindex="0"
     >
       <div
@@ -95,7 +95,7 @@ exports[`SwitchInput Component SwitchInput renders highlighted 1`] = `
         <span
           aria-label="Switch label 3"
           class="silver"
-          id="checkbox-34"
+          id="switch-34"
           role="checkbox"
         />
       </div>
@@ -104,7 +104,7 @@ exports[`SwitchInput Component SwitchInput renders highlighted 1`] = `
     <label
       class="input-switch-field-read-only field-highlighted"
       data-testid="KEY_4"
-      for="checkbox-35"
+      for="switch-35"
       tabindex="0"
     >
       <div
@@ -118,7 +118,7 @@ exports[`SwitchInput Component SwitchInput renders highlighted 1`] = `
         <span
           aria-label="Switch label 4"
           class="silver"
-          id="checkbox-35"
+          id="switch-35"
           role="checkbox"
         />
       </div>
@@ -127,7 +127,7 @@ exports[`SwitchInput Component SwitchInput renders highlighted 1`] = `
     <label
       class="input-switch-field-read-only"
       data-testid="KEY_5"
-      for="checkbox-36"
+      for="switch-36"
       tabindex="0"
     >
       <div
@@ -141,7 +141,7 @@ exports[`SwitchInput Component SwitchInput renders highlighted 1`] = `
         <span
           aria-label="Switch label 5"
           class="silver"
-          id="checkbox-36"
+          id="switch-36"
           role="checkbox"
         />
       </div>
@@ -159,7 +159,7 @@ exports[`SwitchInput Component SwitchInput renders with input 1`] = `
     <label
       class=""
       data-testid="KEY_0"
-      for="checkbox-1"
+      for="switch-1"
       tabindex="0"
     >
       <div
@@ -173,7 +173,7 @@ exports[`SwitchInput Component SwitchInput renders with input 1`] = `
         <span
           aria-label="Switch label 0"
           class="pebble"
-          id="checkbox-1"
+          id="switch-1"
           role="checkbox"
         />
       </div>
@@ -182,7 +182,7 @@ exports[`SwitchInput Component SwitchInput renders with input 1`] = `
     <label
       class="input-switch-field-checked"
       data-testid="KEY_1"
-      for="checkbox-2"
+      for="switch-2"
       tabindex="0"
     >
       <div
@@ -198,7 +198,7 @@ exports[`SwitchInput Component SwitchInput renders with input 1`] = `
           aria-checked="true"
           aria-label="Switch label 1"
           class="primary"
-          id="checkbox-2"
+          id="switch-2"
           role="checkbox"
         />
       </div>
@@ -207,7 +207,7 @@ exports[`SwitchInput Component SwitchInput renders with input 1`] = `
     <label
       class=""
       data-testid="KEY_2"
-      for="checkbox-3"
+      for="switch-3"
       tabindex="0"
     >
       <div
@@ -222,7 +222,7 @@ exports[`SwitchInput Component SwitchInput renders with input 1`] = `
           aria-checked="false"
           aria-label="Switch label 2"
           class="pebble"
-          id="checkbox-3"
+          id="switch-3"
           role="checkbox"
         />
       </div>
@@ -231,7 +231,7 @@ exports[`SwitchInput Component SwitchInput renders with input 1`] = `
     <label
       class=""
       data-testid="KEY_3"
-      for="checkbox-4"
+      for="switch-4"
       tabindex="0"
     >
       <div
@@ -245,7 +245,7 @@ exports[`SwitchInput Component SwitchInput renders with input 1`] = `
         <span
           aria-label="Switch label 3"
           class="pebble"
-          id="checkbox-4"
+          id="switch-4"
           role="checkbox"
         />
       </div>
@@ -254,7 +254,7 @@ exports[`SwitchInput Component SwitchInput renders with input 1`] = `
     <label
       class=""
       data-testid="KEY_4"
-      for="checkbox-5"
+      for="switch-5"
       tabindex="0"
     >
       <div
@@ -268,7 +268,7 @@ exports[`SwitchInput Component SwitchInput renders with input 1`] = `
         <span
           aria-label="Switch label 4"
           class="pebble"
-          id="checkbox-5"
+          id="switch-5"
           role="checkbox"
         />
       </div>
@@ -277,7 +277,7 @@ exports[`SwitchInput Component SwitchInput renders with input 1`] = `
     <label
       class=""
       data-testid="KEY_5"
-      for="checkbox-6"
+      for="switch-6"
       tabindex="0"
     >
       <div
@@ -291,7 +291,7 @@ exports[`SwitchInput Component SwitchInput renders with input 1`] = `
         <span
           aria-label="Switch label 5"
           class="pebble"
-          id="checkbox-6"
+          id="switch-6"
           role="checkbox"
         />
       </div>
