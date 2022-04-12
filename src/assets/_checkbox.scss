@@ -15,6 +15,7 @@
       white-space: nowrap;
       text-overflow: ellipsis;
       padding-bottom: 0px;
+      margin: auto 0px;
 
       .checkbox-marker {
         display: inline;
@@ -26,13 +27,13 @@
 
   label {
     display: inline-flex;
-    padding-bottom: 8px;
+    margin-bottom: 8px;
     width: fit-content;
     cursor: pointer;
     user-select: none;
 
     &:last-child {
-      padding-bottom: 0px;
+      margin-bottom: 0px;
     }
 
     .checkbox-marker {

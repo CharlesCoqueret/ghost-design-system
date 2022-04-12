@@ -108,7 +108,7 @@ export interface IFieldCustomProps<T, U = unknown> extends IFieldBaseProps<T> {
   fieldType: FieldTypeEnum.CUSTOM;
   isEqual?: (previousValue: T[keyof T], currentValue: T[keyof T]) => boolean;
   data?: U;
-  customField: (props: U & { onChange: (value: T[keyof T]) => void }) => ReactElement;
+  customField: (props: U & { data: T; onChange: (value: T[keyof T]) => void }) => ReactElement;
 }
 
 export interface IFieldDateProps<T> extends IFieldBaseProps<T> {

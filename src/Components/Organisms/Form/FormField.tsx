@@ -33,7 +33,7 @@ export interface IFormFieldProps<T> {
   handleChange: (dataIndex: keyof T, newValue: T[keyof T]) => void;
   previousData?: T;
   requiredFromValidation?: boolean;
-  validationError?: Record<keyof T, FieldError>;
+  validationError?: Partial<Record<keyof T, FieldError>>;
   usePortal?: boolean;
 }
 
@@ -104,12 +104,12 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
           highlight={previousData !== undefined}
           oldData={previousData && previousData[field.dataIndex]}
           shouldHighlight={shouldHighlight}>
-          {field.customField({
-            ...data,
-            onChange: (newValue: T[keyof T]) => {
+          <field.customField
+            data={data}
+            onChange={(newValue: T[keyof T]) => {
               handleChange(field.dataIndex, newValue);
-            },
-          })}
+            }}
+          />
         </Highlighter>
       );
     }
@@ -266,6 +266,26 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
         </Highlighter>
       );
     }
+    case FieldTypeEnum.RICHTEXT: {
+      const shouldHighlight = previousData && previousData[field.dataIndex] !== data[field.dataIndex];
+      return (
+        <Highlighter
+          highlight={previousData !== undefined}
+          oldData={previousData && previousData[field.dataIndex]}
+          shouldHighlight={shouldHighlight}>
+          <RichTextField
+            {...field}
+            mandatory={requiredFromValidation || field.mandatory}
+            name={field.dataIndex.toString()}
+            onChange={(newValue: string) => {
+              handleChange(field.dataIndex, newValue as unknown as T[keyof T]);
+            }}
+            inputValue={(data && (data[field.dataIndex] as unknown as string)) || undefined}
+            errorMessage={errorMessage}
+          />
+        </Highlighter>
+      );
+    }
     case FieldTypeEnum.SELECT: {
       const { options, ...rest } = field;
       const localOptions = typeof options === 'function' ? options(data) : options;
@@ -291,26 +311,6 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
               handleChange(field.dataIndex, newValue as unknown as T[keyof T]);
             }}
             inputValue={(data && (data[field.dataIndex] as unknown as string | undefined)) || undefined}
-            errorMessage={errorMessage}
-          />
-        </Highlighter>
-      );
-    }
-    case FieldTypeEnum.RICHTEXT: {
-      const shouldHighlight = previousData && previousData[field.dataIndex] !== data[field.dataIndex];
-      return (
-        <Highlighter
-          highlight={previousData !== undefined}
-          oldData={previousData && previousData[field.dataIndex]}
-          shouldHighlight={shouldHighlight}>
-          <RichTextField
-            {...field}
-            mandatory={requiredFromValidation || field.mandatory}
-            name={field.dataIndex.toString()}
-            onChange={(newValue: string) => {
-              handleChange(field.dataIndex, newValue as unknown as T[keyof T]);
-            }}
-            inputValue={(data && (data[field.dataIndex] as unknown as string)) || undefined}
             errorMessage={errorMessage}
           />
         </Highlighter>
@@ -429,13 +429,7 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
         </Highlighter>
       );
     }
-
-    default: {
-      throw new Error('Missing FieldTypeEnum');
-    }
   }
-
-  throw new Error('Should have returned by then');
 };
 
 FormField.defaultProps = {

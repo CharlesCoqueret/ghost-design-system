@@ -7,6 +7,7 @@ exports[`FileInput Component FileInput handle add file successfully through inpu
   >
     <div
       class="droparea"
+      tabindex="0"
     >
       <label
         class="label"
@@ -35,6 +36,7 @@ exports[`FileInput Component FileInput handle add file successfully through inpu
   >
     <div
       class="droparea"
+      tabindex="0"
     >
       <label
         class="label"
@@ -136,6 +138,7 @@ exports[`FileInput Component FileInput handle add file successfully through inpu
   >
     <div
       class="droparea"
+      tabindex="0"
     >
       <label
         class="label"
@@ -201,6 +204,7 @@ exports[`FileInput Component FileInput handle add file unsucessfully through inp
   >
     <div
       class="droparea"
+      tabindex="0"
     >
       <label
         class="label"
@@ -229,6 +233,7 @@ exports[`FileInput Component FileInput handle add file unsucessfully through inp
   >
     <div
       class="droparea"
+      tabindex="0"
     >
       <label
         class="label"
@@ -313,6 +318,7 @@ exports[`FileInput Component FileInput handle add file with timeout through inpu
   >
     <div
       class="droparea"
+      tabindex="0"
     >
       <label
         class="label"
@@ -341,6 +347,7 @@ exports[`FileInput Component FileInput handle add file with timeout through inpu
   >
     <div
       class="droparea"
+      tabindex="0"
     >
       <label
         class="label"
@@ -425,6 +432,7 @@ exports[`FileInput Component FileInput handle drag event for highlight 1`] = `
   >
     <div
       class="droparea"
+      tabindex="0"
     >
       <label
         class="label"
@@ -453,6 +461,7 @@ exports[`FileInput Component FileInput handle drag event for highlight 2`] = `
   >
     <div
       class="droparea"
+      tabindex="0"
     >
       <label
         class="label"
@@ -481,6 +490,7 @@ exports[`FileInput Component FileInput handle drag event for highlight 3`] = `
   >
     <div
       class="droparea"
+      tabindex="0"
     >
       <label
         class="label"
@@ -509,6 +519,7 @@ exports[`FileInput Component FileInput handle drop of file 1`] = `
   >
     <div
       class="droparea"
+      tabindex="0"
     >
       <label
         class="label"
@@ -537,6 +548,7 @@ exports[`FileInput Component FileInput handle drop of file 2`] = `
   >
     <div
       class="droparea"
+      tabindex="0"
     >
       <label
         class="label"
@@ -632,6 +644,7 @@ exports[`FileInput Component FileInput handle drop without dataTransfer 1`] = `
   >
     <div
       class="droparea"
+      tabindex="0"
     >
       <label
         class="label"
@@ -660,6 +673,7 @@ exports[`FileInput Component FileInput handle drop without dataTransfer 2`] = `
   >
     <div
       class="droparea"
+      tabindex="0"
     >
       <label
         class="label"
@@ -688,6 +702,7 @@ exports[`FileInput Component FileInput handle unsuccessfull add file when quota 
   >
     <div
       class="droparea"
+      tabindex="0"
     >
       <label
         class="label"
@@ -752,6 +767,7 @@ exports[`FileInput Component FileInput handle unsuccessfull add file when quota 
   >
     <div
       class="droparea"
+      tabindex="0"
     >
       <label
         class="label"
@@ -871,6 +887,7 @@ exports[`FileInput Component FileInput handles delete rejections of a file 1`] =
   >
     <div
       class="droparea"
+      tabindex="0"
     >
       <label
         class="label"
@@ -935,6 +952,7 @@ exports[`FileInput Component FileInput handles delete rejections of a file 2`] =
   >
     <div
       class="droparea"
+      tabindex="0"
     >
       <label
         class="label"
@@ -999,6 +1017,7 @@ exports[`FileInput Component FileInput handles download and delete of a file 1`]
   >
     <div
       class="droparea"
+      tabindex="0"
     >
       <label
         class="label"
@@ -1063,6 +1082,7 @@ exports[`FileInput Component FileInput handles download and delete of a file 2`]
   >
     <div
       class="droparea"
+      tabindex="0"
     >
       <label
         class="label"
@@ -1127,6 +1147,7 @@ exports[`FileInput Component FileInput handles download and delete of a file 3`]
   >
     <div
       class="droparea"
+      tabindex="0"
     >
       <label
         class="label"
@@ -1155,6 +1176,7 @@ exports[`FileInput Component FileInput handles download without download callbac
   >
     <div
       class="droparea"
+      tabindex="0"
     >
       <label
         class="label"
@@ -1219,6 +1241,7 @@ exports[`FileInput Component FileInput handles download without download callbac
   >
     <div
       class="droparea"
+      tabindex="0"
     >
       <label
         class="label"
@@ -1283,6 +1306,7 @@ exports[`FileInput Component FileInput renders 1`] = `
   >
     <div
       class="droparea"
+      tabindex="0"
     >
       <label
         class="label"
@@ -1345,6 +1369,7 @@ exports[`FileInput Component FileInput renders without input value 1`] = `
   >
     <div
       class="droparea"
+      tabindex="0"
     >
       <label
         class="label"
@@ -1372,6 +1397,7 @@ exports[`FileInput Component FileInput renders without input value 2`] = `
   >
     <div
       class="droparea"
+      tabindex="0"
     >
       <label
         class="label"

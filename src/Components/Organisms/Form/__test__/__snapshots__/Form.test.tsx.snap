@@ -1,0 +1,114 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Form Component Form renders with description and sections 1`] = `
+<div>
+  <div
+    class="gds-layout-container"
+  >
+    <div
+      class="gds-layout-col"
+    >
+      <div
+        class="gds-layout-section-container"
+      >
+        <div
+          class="section-header collapsable"
+        >
+          <h2
+            class="gds-typography"
+          >
+            Title
+          </h2>
+          <i
+            class="collapse-icon open icon"
+            icon="fal,chevron-left"
+          />
+        </div>
+        <div
+          class="section-body"
+          style="transition: height 500ms linear; height: auto;"
+        >
+          <div
+            class="gds-layout-container"
+          >
+            <div
+              class="gds-layout-col"
+            />
+          </div>
+        </div>
+        <div
+          class="section-footer"
+        />
+      </div>
+      <div
+        class="gds-layout-row"
+      >
+        Description
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Form Component Form renders with mandatory field 1`] = `
+<div>
+  <div
+    class="gds-layout-container"
+  >
+    <div
+      class="gds-layout-col"
+    >
+      <div
+        class="gds-field-group"
+      >
+        <label
+          class="field-label"
+        >
+          Number
+          <span
+            class="field-label-mandatory"
+          >
+            *
+          </span>
+        </label>
+        <input
+          class="gds-amount-field"
+          inputmode="numeric"
+          name="number"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Form Component Form renders without validation schema 1`] = `
+<div>
+  <div
+    class="gds-layout-container"
+  >
+    <div
+      class="gds-layout-col"
+    >
+      <div
+        class="gds-field-group"
+      >
+        <label
+          class="field-label"
+        >
+          Number
+        </label>
+        <input
+          class="gds-amount-field"
+          inputmode="numeric"
+          name="number"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;

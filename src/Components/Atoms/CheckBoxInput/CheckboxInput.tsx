@@ -62,7 +62,8 @@ const CheckboxInput = (props: ICheckboxInputProps): ReactElement => {
             })}
             data-testid={dataTestId ? `${dataTestId}-${index}` : undefined}
             key={option.value}
-            onClick={handleChange(option.value)}>
+            onClick={handleChange(option.value)}
+            tabIndex={0}>
             <div className='checkbox-marker' role='checkbox'>
               <Icon
                 icon={[

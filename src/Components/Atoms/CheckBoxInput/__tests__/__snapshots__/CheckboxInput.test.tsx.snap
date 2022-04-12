@@ -7,6 +7,7 @@ exports[`CheckboxInput Component CheckboxInput renders highlighted 1`] = `
   >
     <label
       class="input-checkbox-field-read-only"
+      tabindex="0"
     >
       <div
         class="checkbox-marker"
@@ -21,6 +22,7 @@ exports[`CheckboxInput Component CheckboxInput renders highlighted 1`] = `
     </label>
     <label
       class="input-checkbox-field-read-only input-checkbox-field-checked"
+      tabindex="0"
     >
       <div
         class="checkbox-marker"
@@ -35,6 +37,7 @@ exports[`CheckboxInput Component CheckboxInput renders highlighted 1`] = `
     </label>
     <label
       class="input-checkbox-field-read-only"
+      tabindex="0"
     >
       <div
         class="checkbox-marker"
@@ -49,6 +52,7 @@ exports[`CheckboxInput Component CheckboxInput renders highlighted 1`] = `
     </label>
     <label
       class="input-checkbox-field-read-only"
+      tabindex="0"
     >
       <div
         class="checkbox-marker"
@@ -63,6 +67,7 @@ exports[`CheckboxInput Component CheckboxInput renders highlighted 1`] = `
     </label>
     <label
       class="input-checkbox-field-read-only field-highlighted"
+      tabindex="0"
     >
       <div
         class="checkbox-marker"
@@ -77,6 +82,7 @@ exports[`CheckboxInput Component CheckboxInput renders highlighted 1`] = `
     </label>
     <label
       class="input-checkbox-field-read-only"
+      tabindex="0"
     >
       <div
         class="checkbox-marker"
@@ -100,6 +106,7 @@ exports[`CheckboxInput Component CheckboxInput renders with input 1`] = `
   >
     <label
       class=""
+      tabindex="0"
     >
       <div
         class="checkbox-marker"
@@ -114,6 +121,7 @@ exports[`CheckboxInput Component CheckboxInput renders with input 1`] = `
     </label>
     <label
       class="input-checkbox-field-checked"
+      tabindex="0"
     >
       <div
         class="checkbox-marker"
@@ -128,6 +136,7 @@ exports[`CheckboxInput Component CheckboxInput renders with input 1`] = `
     </label>
     <label
       class=""
+      tabindex="0"
     >
       <div
         class="checkbox-marker"
@@ -142,6 +151,7 @@ exports[`CheckboxInput Component CheckboxInput renders with input 1`] = `
     </label>
     <label
       class=""
+      tabindex="0"
     >
       <div
         class="checkbox-marker"
@@ -156,6 +166,7 @@ exports[`CheckboxInput Component CheckboxInput renders with input 1`] = `
     </label>
     <label
       class=""
+      tabindex="0"
     >
       <div
         class="checkbox-marker"
@@ -170,6 +181,7 @@ exports[`CheckboxInput Component CheckboxInput renders with input 1`] = `
     </label>
     <label
       class=""
+      tabindex="0"
     >
       <div
         class="checkbox-marker"

@@ -16,6 +16,7 @@ exports[`CheckboxCell component CheckboxCell renders 1`] = `
             >
               <label
                 class="input-checkbox-field-read-only input-checkbox-field-checked"
+                tabindex="0"
               >
                 <div
                   class="checkbox-marker"
@@ -30,6 +31,7 @@ exports[`CheckboxCell component CheckboxCell renders 1`] = `
               </label>
               <label
                 class="input-checkbox-field-read-only"
+                tabindex="0"
               >
                 <div
                   class="checkbox-marker"
@@ -44,6 +46,7 @@ exports[`CheckboxCell component CheckboxCell renders 1`] = `
               </label>
               <label
                 class="input-checkbox-field-read-only"
+                tabindex="0"
               >
                 <div
                   class="checkbox-marker"
@@ -82,6 +85,7 @@ exports[`CheckboxCell component CheckboxCell renders in edit mode and handles ch
               <label
                 class="input-checkbox-field-checked"
                 data-testid="DATA-TEST-ID-0"
+                tabindex="0"
               >
                 <div
                   class="checkbox-marker"
@@ -97,6 +101,7 @@ exports[`CheckboxCell component CheckboxCell renders in edit mode and handles ch
               <label
                 class=""
                 data-testid="DATA-TEST-ID-1"
+                tabindex="0"
               >
                 <div
                   class="checkbox-marker"
@@ -112,6 +117,7 @@ exports[`CheckboxCell component CheckboxCell renders in edit mode and handles ch
               <label
                 class=""
                 data-testid="DATA-TEST-ID-2"
+                tabindex="0"
               >
                 <div
                   class="checkbox-marker"
@@ -149,6 +155,7 @@ exports[`CheckboxCell component CheckboxCell renders in edit mode via extra 1`] 
             >
               <label
                 class="input-checkbox-field-checked"
+                tabindex="0"
               >
                 <div
                   class="checkbox-marker"
@@ -163,6 +170,7 @@ exports[`CheckboxCell component CheckboxCell renders in edit mode via extra 1`] 
               </label>
               <label
                 class=""
+                tabindex="0"
               >
                 <div
                   class="checkbox-marker"
@@ -177,6 +185,7 @@ exports[`CheckboxCell component CheckboxCell renders in edit mode via extra 1`] 
               </label>
               <label
                 class=""
+                tabindex="0"
               >
                 <div
                   class="checkbox-marker"
@@ -215,6 +224,7 @@ exports[`CheckboxCell component CheckboxCell renders when hidden 1`] = `
             >
               <label
                 class="input-checkbox-field-read-only input-checkbox-field-checked"
+                tabindex="0"
               >
                 <div
                   class="checkbox-marker"
@@ -229,6 +239,7 @@ exports[`CheckboxCell component CheckboxCell renders when hidden 1`] = `
               </label>
               <label
                 class="input-checkbox-field-read-only"
+                tabindex="0"
               >
                 <div
                   class="checkbox-marker"
@@ -243,6 +254,7 @@ exports[`CheckboxCell component CheckboxCell renders when hidden 1`] = `
               </label>
               <label
                 class="input-checkbox-field-read-only"
+                tabindex="0"
               >
                 <div
                   class="checkbox-marker"
@@ -280,6 +292,7 @@ exports[`CheckboxCell component CheckboxCell renders with forced value 1`] = `
             >
               <label
                 class="input-checkbox-field-read-only input-checkbox-field-checked"
+                tabindex="0"
               >
                 <div
                   class="checkbox-marker"

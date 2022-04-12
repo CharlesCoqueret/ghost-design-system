@@ -76,17 +76,17 @@ jest.mock('../../../Molecules/TextField', () => {
   };
 });
 
-describe('FilterItem Component', () => {
-  afterAll(() => {
-    onChangeHandlerCheckbox = undefined;
-    onChangeHandlerDate = undefined;
-    onChangeHandlerDynamicSearch = undefined;
-    onChangeHandlerMultiSelectField = undefined;
-    onChangeHandlerAmountField = undefined;
-    onChangeHandlerSelectField = undefined;
-    onChangeHandlerTextField = undefined;
-  });
+afterEach(() => {
+  onChangeHandlerCheckbox = undefined;
+  onChangeHandlerDate = undefined;
+  onChangeHandlerDynamicSearch = undefined;
+  onChangeHandlerMultiSelectField = undefined;
+  onChangeHandlerAmountField = undefined;
+  onChangeHandlerSelectField = undefined;
+  onChangeHandlerTextField = undefined;
+});
 
+describe('FilterItem Component', () => {
   it('FilterItem renders CheckboxField', () => {
     const onChangeMock = jest.fn();
 
