@@ -1,5 +1,6 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, useState } from 'react';
 import classnames from 'classnames';
+import uniqueId from 'lodash/uniqueId';
 
 import { IToggleEntry } from './types';
 import { Icon } from '../Icon';
@@ -27,6 +28,7 @@ export interface ICheckboxInputProps {
 
 const CheckboxInput = (props: ICheckboxInputProps): ReactElement => {
   const { className, dataTestId, disabled, highlighted, inline, isInError, options, onChange, readOnly } = props;
+  const [ids] = useState(() => options.map(() => uniqueId('checkbox-')));
 
   /** flip the check status of the checkbox that was checked */
   const updateState = (optionValue: string) => {
@@ -42,10 +44,16 @@ const CheckboxInput = (props: ICheckboxInputProps): ReactElement => {
     }
   };
 
-  const handleChange = (optionValue: string) => () => {
-    if (readOnly || disabled) return;
-    updateState(optionValue);
-  };
+  const handleChange =
+    (optionValue: string) => (event: React.KeyboardEvent<HTMLLabelElement> | React.MouseEvent<HTMLLabelElement>) => {
+      if (event.type === 'keyup') {
+        if ((event as React.KeyboardEvent<HTMLLabelElement>).key !== ' ') {
+          return;
+        }
+      }
+      if (readOnly || disabled) return;
+      updateState(optionValue);
+    };
 
   return (
     <div className={classnames('field', 'gds-checkbox-container', { inline: inline }, className)}>
@@ -61,10 +69,17 @@ const CheckboxInput = (props: ICheckboxInputProps): ReactElement => {
               inline: inline,
             })}
             data-testid={dataTestId ? `${dataTestId}-${index}` : undefined}
+            htmlFor={ids[index]}
             key={option.value}
             onClick={handleChange(option.value)}
+            onKeyUp={handleChange(option.value)}
             tabIndex={0}>
-            <div className='checkbox-marker' role='checkbox'>
+            <div
+              aria-checked={option.checked}
+              aria-label={option.label.toString()}
+              className='checkbox-marker'
+              id={ids[index]}
+              role='checkbox'>
               <Icon
                 icon={[
                   option.checked || disabled || readOnly ? 'fas' : 'fal',

@@ -1,5 +1,6 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, useState } from 'react';
 import classnames from 'classnames';
+import uniqueId from 'lodash/uniqueId';
 
 import { IToggleEntry } from '../CheckBoxInput/types';
 
@@ -23,6 +24,7 @@ export interface ISwitchInputProps {
 
 const SwitchInput = (props: ISwitchInputProps): ReactElement => {
   const { className, dataTestId, disabled, highlighted, isInError, options, onChange, readOnly } = props;
+  const [ids] = useState(() => options.map(() => uniqueId('switch-')));
 
   /** flip the check status of the switch that was checked */
   const updateState = (optionValue: string) => {
@@ -38,15 +40,21 @@ const SwitchInput = (props: ISwitchInputProps): ReactElement => {
     }
   };
 
-  const handleChange = (optionValue: string) => (event: React.MouseEvent<HTMLLabelElement>) => {
-    event.preventDefault();
-    if (readOnly || disabled) return;
-    updateState(optionValue);
-  };
+  const handleChange =
+    (optionValue: string) => (event: React.KeyboardEvent<HTMLLabelElement> | React.MouseEvent<HTMLLabelElement>) => {
+      if (event.type === 'keyup') {
+        if ((event as React.KeyboardEvent<HTMLLabelElement>).key !== ' ') {
+          return;
+        }
+      }
+      event.preventDefault();
+      if (readOnly || disabled) return;
+      updateState(optionValue);
+    };
 
   return (
     <div className={classnames('field', 'gds-switch-container', className)} data-testid={dataTestId}>
-      {options?.map((option) => {
+      {options?.map((option, index) => {
         return (
           <label
             className={classnames({
@@ -57,17 +65,29 @@ const SwitchInput = (props: ISwitchInputProps): ReactElement => {
               'input-switch-field-checked': option.checked,
             })}
             data-testid={option.value}
+            htmlFor={ids[index]}
             key={option.value}
             onClick={handleChange(option.value)}
+            onKeyUp={handleChange(option.value)}
             tabIndex={0}>
             <div className='switch-marker'>
-              <input type='checkbox' checked={option.checked || false} disabled={disabled} readOnly />
+              <input
+                type='checkbox'
+                aria-hidden
+                checked={option.checked === undefined ? false : option.checked}
+                disabled={disabled}
+                readOnly
+              />
               <span
+                aria-checked={option.checked}
+                aria-label={option.label.toString()}
                 className={classnames({
                   primary: option.checked && !readOnly && !disabled,
                   pebble: !option.checked && !readOnly && !disabled,
                   silver: readOnly || disabled,
                 })}
+                id={ids[index]}
+                role='checkbox'
               />
             </div>
             {option.label}
