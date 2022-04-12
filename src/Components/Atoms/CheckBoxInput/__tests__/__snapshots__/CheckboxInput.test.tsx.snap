@@ -7,10 +7,14 @@ exports[`CheckboxInput Component CheckboxInput renders highlighted 1`] = `
   >
     <label
       class="input-checkbox-field-read-only"
+      for="checkbox-31"
       tabindex="0"
     >
       <div
+        aria-checked="false"
+        aria-label="checkbox label 0"
         class="checkbox-marker"
+        id="checkbox-31"
         role="checkbox"
       >
         <i
@@ -22,10 +26,14 @@ exports[`CheckboxInput Component CheckboxInput renders highlighted 1`] = `
     </label>
     <label
       class="input-checkbox-field-read-only input-checkbox-field-checked"
+      for="checkbox-32"
       tabindex="0"
     >
       <div
+        aria-checked="true"
+        aria-label="checkbox label 1"
         class="checkbox-marker"
+        id="checkbox-32"
         role="checkbox"
       >
         <i
@@ -37,10 +45,14 @@ exports[`CheckboxInput Component CheckboxInput renders highlighted 1`] = `
     </label>
     <label
       class="input-checkbox-field-read-only"
+      for="checkbox-33"
       tabindex="0"
     >
       <div
+        aria-checked="false"
+        aria-label="checkbox label 2"
         class="checkbox-marker"
+        id="checkbox-33"
         role="checkbox"
       >
         <i
@@ -52,10 +64,13 @@ exports[`CheckboxInput Component CheckboxInput renders highlighted 1`] = `
     </label>
     <label
       class="input-checkbox-field-read-only"
+      for="checkbox-34"
       tabindex="0"
     >
       <div
+        aria-label="checkbox label 3"
         class="checkbox-marker"
+        id="checkbox-34"
         role="checkbox"
       >
         <i
@@ -67,10 +82,13 @@ exports[`CheckboxInput Component CheckboxInput renders highlighted 1`] = `
     </label>
     <label
       class="input-checkbox-field-read-only field-highlighted"
+      for="checkbox-35"
       tabindex="0"
     >
       <div
+        aria-label="checkbox label 4"
         class="checkbox-marker"
+        id="checkbox-35"
         role="checkbox"
       >
         <i
@@ -82,10 +100,13 @@ exports[`CheckboxInput Component CheckboxInput renders highlighted 1`] = `
     </label>
     <label
       class="input-checkbox-field-read-only"
+      for="checkbox-36"
       tabindex="0"
     >
       <div
+        aria-label="checkbox label 5"
         class="checkbox-marker"
+        id="checkbox-36"
         role="checkbox"
       >
         <i
@@ -106,10 +127,13 @@ exports[`CheckboxInput Component CheckboxInput renders with input 1`] = `
   >
     <label
       class=""
+      for="checkbox-1"
       tabindex="0"
     >
       <div
+        aria-label="checkbox label 0"
         class="checkbox-marker"
+        id="checkbox-1"
         role="checkbox"
       >
         <i
@@ -121,10 +145,14 @@ exports[`CheckboxInput Component CheckboxInput renders with input 1`] = `
     </label>
     <label
       class="input-checkbox-field-checked"
+      for="checkbox-2"
       tabindex="0"
     >
       <div
+        aria-checked="true"
+        aria-label="checkbox label 1"
         class="checkbox-marker"
+        id="checkbox-2"
         role="checkbox"
       >
         <i
@@ -136,10 +164,14 @@ exports[`CheckboxInput Component CheckboxInput renders with input 1`] = `
     </label>
     <label
       class=""
+      for="checkbox-3"
       tabindex="0"
     >
       <div
+        aria-checked="false"
+        aria-label="checkbox label 2"
         class="checkbox-marker"
+        id="checkbox-3"
         role="checkbox"
       >
         <i
@@ -151,10 +183,13 @@ exports[`CheckboxInput Component CheckboxInput renders with input 1`] = `
     </label>
     <label
       class=""
+      for="checkbox-4"
       tabindex="0"
     >
       <div
+        aria-label="checkbox label 3"
         class="checkbox-marker"
+        id="checkbox-4"
         role="checkbox"
       >
         <i
@@ -166,10 +201,13 @@ exports[`CheckboxInput Component CheckboxInput renders with input 1`] = `
     </label>
     <label
       class=""
+      for="checkbox-5"
       tabindex="0"
     >
       <div
+        aria-label="checkbox label 4"
         class="checkbox-marker"
+        id="checkbox-5"
         role="checkbox"
       >
         <i
@@ -181,10 +219,13 @@ exports[`CheckboxInput Component CheckboxInput renders with input 1`] = `
     </label>
     <label
       class=""
+      for="checkbox-6"
       tabindex="0"
     >
       <div
+        aria-label="checkbox label 5"
         class="checkbox-marker"
+        id="checkbox-6"
         role="checkbox"
       >
         <i

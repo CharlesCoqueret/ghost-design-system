@@ -45,6 +45,31 @@ describe('SwitchInput Component', () => {
     ]);
   });
 
+  it('SwitchInput renders triggers onChange via keyboard', () => {
+    const onChangeMock = jest.fn();
+
+    render(<SwitchInput onChange={onChangeMock} options={options} />);
+
+    userEvent.tab();
+
+    userEvent.keyboard('a');
+    expect(onChangeMock).toBeCalledTimes(0);
+
+    userEvent.keyboard(' ');
+    expect(onChangeMock).toBeCalledTimes(1);
+    expect(onChangeMock).toHaveBeenLastCalledWith([
+      { label: 'Switch label 0', value: 'KEY_0', checked: true },
+      ...options.slice(1),
+    ]);
+
+    userEvent.keyboard(' ');
+    expect(onChangeMock).toBeCalledTimes(2);
+    expect(onChangeMock).toHaveBeenLastCalledWith([
+      { label: 'Switch label 0', value: 'KEY_0', checked: false },
+      ...options.slice(1),
+    ]);
+  });
+
   it('SwitchInput renders does not trigger onChange when disabled', () => {
     const onChangeMock = jest.fn();
 

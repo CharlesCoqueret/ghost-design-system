@@ -16,10 +16,14 @@ exports[`CheckboxCell component CheckboxCell renders 1`] = `
             >
               <label
                 class="input-checkbox-field-read-only input-checkbox-field-checked"
+                for="checkbox-1"
                 tabindex="0"
               >
                 <div
+                  aria-checked="true"
+                  aria-label="Label 1"
                   class="checkbox-marker"
+                  id="checkbox-1"
                   role="checkbox"
                 >
                   <i
@@ -31,10 +35,14 @@ exports[`CheckboxCell component CheckboxCell renders 1`] = `
               </label>
               <label
                 class="input-checkbox-field-read-only"
+                for="checkbox-2"
                 tabindex="0"
               >
                 <div
+                  aria-checked="false"
+                  aria-label="Label 2"
                   class="checkbox-marker"
+                  id="checkbox-2"
                   role="checkbox"
                 >
                   <i
@@ -46,10 +54,13 @@ exports[`CheckboxCell component CheckboxCell renders 1`] = `
               </label>
               <label
                 class="input-checkbox-field-read-only"
+                for="checkbox-3"
                 tabindex="0"
               >
                 <div
+                  aria-label="Label 3"
                   class="checkbox-marker"
+                  id="checkbox-3"
                   role="checkbox"
                 >
                   <i
@@ -85,10 +96,14 @@ exports[`CheckboxCell component CheckboxCell renders in edit mode and handles ch
               <label
                 class="input-checkbox-field-checked"
                 data-testid="DATA-TEST-ID-0"
+                for="checkbox-8"
                 tabindex="0"
               >
                 <div
+                  aria-checked="true"
+                  aria-label="Label 1"
                   class="checkbox-marker"
+                  id="checkbox-8"
                   role="checkbox"
                 >
                   <i
@@ -101,10 +116,14 @@ exports[`CheckboxCell component CheckboxCell renders in edit mode and handles ch
               <label
                 class=""
                 data-testid="DATA-TEST-ID-1"
+                for="checkbox-9"
                 tabindex="0"
               >
                 <div
+                  aria-checked="false"
+                  aria-label="Label 2"
                   class="checkbox-marker"
+                  id="checkbox-9"
                   role="checkbox"
                 >
                   <i
@@ -117,10 +136,13 @@ exports[`CheckboxCell component CheckboxCell renders in edit mode and handles ch
               <label
                 class=""
                 data-testid="DATA-TEST-ID-2"
+                for="checkbox-10"
                 tabindex="0"
               >
                 <div
+                  aria-label="Label 3"
                   class="checkbox-marker"
+                  id="checkbox-10"
                   role="checkbox"
                 >
                   <i
@@ -155,10 +177,14 @@ exports[`CheckboxCell component CheckboxCell renders in edit mode via extra 1`] 
             >
               <label
                 class="input-checkbox-field-checked"
+                for="checkbox-11"
                 tabindex="0"
               >
                 <div
+                  aria-checked="true"
+                  aria-label="Label 1"
                   class="checkbox-marker"
+                  id="checkbox-11"
                   role="checkbox"
                 >
                   <i
@@ -170,10 +196,14 @@ exports[`CheckboxCell component CheckboxCell renders in edit mode via extra 1`] 
               </label>
               <label
                 class=""
+                for="checkbox-12"
                 tabindex="0"
               >
                 <div
+                  aria-checked="false"
+                  aria-label="Label 2"
                   class="checkbox-marker"
+                  id="checkbox-12"
                   role="checkbox"
                 >
                   <i
@@ -185,10 +215,13 @@ exports[`CheckboxCell component CheckboxCell renders in edit mode via extra 1`] 
               </label>
               <label
                 class=""
+                for="checkbox-13"
                 tabindex="0"
               >
                 <div
+                  aria-label="Label 3"
                   class="checkbox-marker"
+                  id="checkbox-13"
                   role="checkbox"
                 >
                   <i
@@ -224,10 +257,14 @@ exports[`CheckboxCell component CheckboxCell renders when hidden 1`] = `
             >
               <label
                 class="input-checkbox-field-read-only input-checkbox-field-checked"
+                for="checkbox-5"
                 tabindex="0"
               >
                 <div
+                  aria-checked="true"
+                  aria-label="Label 1"
                   class="checkbox-marker"
+                  id="checkbox-5"
                   role="checkbox"
                 >
                   <i
@@ -239,10 +276,14 @@ exports[`CheckboxCell component CheckboxCell renders when hidden 1`] = `
               </label>
               <label
                 class="input-checkbox-field-read-only"
+                for="checkbox-6"
                 tabindex="0"
               >
                 <div
+                  aria-checked="false"
+                  aria-label="Label 2"
                   class="checkbox-marker"
+                  id="checkbox-6"
                   role="checkbox"
                 >
                   <i
@@ -254,10 +295,13 @@ exports[`CheckboxCell component CheckboxCell renders when hidden 1`] = `
               </label>
               <label
                 class="input-checkbox-field-read-only"
+                for="checkbox-7"
                 tabindex="0"
               >
                 <div
+                  aria-label="Label 3"
                   class="checkbox-marker"
+                  id="checkbox-7"
                   role="checkbox"
                 >
                   <i
@@ -292,10 +336,14 @@ exports[`CheckboxCell component CheckboxCell renders with forced value 1`] = `
             >
               <label
                 class="input-checkbox-field-read-only input-checkbox-field-checked"
+                for="checkbox-4"
                 tabindex="0"
               >
                 <div
+                  aria-checked="true"
+                  aria-label="Label 4"
                   class="checkbox-marker"
+                  id="checkbox-4"
                   role="checkbox"
                 >
                   <i
