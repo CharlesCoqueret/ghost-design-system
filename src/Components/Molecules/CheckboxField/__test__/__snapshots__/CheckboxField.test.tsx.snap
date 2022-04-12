@@ -6,14 +6,19 @@ exports[`CheckboxField Component CheckboxField renders and handles changes 1`] =
     class="gds-field-group"
   >
     <div
-      class="field gds-checkbox-container field input-checkbox-field"
+      class="field gds-checkbox-container input-checkbox-field"
     >
       <label
         class=""
         data-testid="DATA-TEST-ID-0"
+        for="checkbox-1"
+        tabindex="0"
       >
         <div
+          aria-label="Label 1"
           class="checkbox-marker"
+          id="checkbox-1"
+          role="checkbox"
         >
           <i
             class="icon"
@@ -33,14 +38,19 @@ exports[`CheckboxField Component CheckboxField renders and handles changes 2`] =
     class="gds-field-group"
   >
     <div
-      class="field gds-checkbox-container field input-checkbox-field"
+      class="field gds-checkbox-container input-checkbox-field"
     >
       <label
         class=""
         data-testid="DATA-TEST-ID-0"
+        for="checkbox-1"
+        tabindex="0"
       >
         <div
+          aria-label="Label 1"
           class="checkbox-marker"
+          id="checkbox-1"
+          role="checkbox"
         >
           <i
             class="icon"
@@ -60,13 +70,18 @@ exports[`CheckboxField Component CheckboxField renders with values in disabled h
     class="gds-field-group"
   >
     <div
-      class="field gds-checkbox-container field input-checkbox-field"
+      class="field gds-checkbox-container input-checkbox-field"
     >
       <label
         class="input-checkbox-field-disabled field-highlighted"
+        for="checkbox-3"
+        tabindex="0"
       >
         <div
+          aria-label="Label 1"
           class="checkbox-marker"
+          id="checkbox-3"
+          role="checkbox"
         >
           <i
             class="icon"
@@ -77,9 +92,14 @@ exports[`CheckboxField Component CheckboxField renders with values in disabled h
       </label>
       <label
         class="input-checkbox-field-disabled"
+        for="checkbox-4"
+        tabindex="0"
       >
         <div
+          aria-label="Label 2"
           class="checkbox-marker"
+          id="checkbox-4"
+          role="checkbox"
         >
           <i
             class="icon"
@@ -90,9 +110,14 @@ exports[`CheckboxField Component CheckboxField renders with values in disabled h
       </label>
       <label
         class="input-checkbox-field-disabled"
+        for="checkbox-5"
+        tabindex="0"
       >
         <div
+          aria-label="Label 3"
           class="checkbox-marker"
+          id="checkbox-5"
+          role="checkbox"
         >
           <i
             class="icon"
@@ -112,13 +137,18 @@ exports[`CheckboxField Component CheckboxField renders with values in readonly 1
     class="gds-field-group"
   >
     <div
-      class="field gds-checkbox-container field input-checkbox-field"
+      class="field gds-checkbox-container input-checkbox-field"
     >
       <label
         class="input-checkbox-field-read-only"
+        for="checkbox-2"
+        tabindex="0"
       >
         <div
+          aria-label="Label 1"
           class="checkbox-marker"
+          id="checkbox-2"
+          role="checkbox"
         >
           <i
             class="icon"
@@ -135,16 +165,21 @@ exports[`CheckboxField Component CheckboxField renders with values in readonly 1
 exports[`CheckboxField Component CheckboxField renders with values with fieldSize and inline 1`] = `
 <div>
   <div
-    class="gds-field-group field-inline"
+    class="gds-field-group field-size-6 field-inline"
   >
     <div
-      class="field gds-checkbox-container field input-checkbox-field field-input-size-6"
+      class="field gds-checkbox-container inline input-checkbox-field"
     >
       <label
-        class="input-checkbox-field-error"
+        class="input-checkbox-field-error inline"
+        for="checkbox-6"
+        tabindex="0"
       >
         <div
+          aria-label="Label 1"
           class="checkbox-marker"
+          id="checkbox-6"
+          role="checkbox"
         >
           <i
             class="icon"

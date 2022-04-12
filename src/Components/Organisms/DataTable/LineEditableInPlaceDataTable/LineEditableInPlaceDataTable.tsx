@@ -127,7 +127,7 @@ const LineEditableInPlaceDataTable = <T,>(props: ILineEditableInPlaceDataTablePr
                   }
                   return true;
                 },
-                icon: ['fal', 'arrow-to-bottom'],
+                icon: ['fal', 'arrow-down-to-line'],
                 label: extra?.localization?.downloadButton ?? 'Download',
                 onClick: (row, rowIndex) => {
                   if (extra?.onRowDownload) {
@@ -172,7 +172,7 @@ const LineEditableInPlaceDataTable = <T,>(props: ILineEditableInPlaceDataTablePr
   };
 
   return (
-    <>
+    <div>
       <table className='gds-table'>
         <StaticDataTableHeader<T>
           columns={currentColumns}
@@ -199,7 +199,7 @@ const LineEditableInPlaceDataTable = <T,>(props: ILineEditableInPlaceDataTablePr
           disabled={editedRowIndex !== undefined}
         />
       )}
-    </>
+    </div>
   );
 };
 

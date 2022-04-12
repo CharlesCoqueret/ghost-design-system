@@ -3,10 +3,10 @@
 exports[`TextField Component TextField renders 1`] = `
 <div>
   <div
-    class="gds-field-group"
+    class="gds-field-group field-size-2"
   >
     <input
-      class="field gds-input-text-field field-input-size-2"
+      class="field gds-input-text-field"
       id="NAME"
       name="NAME"
       type="text"
@@ -36,10 +36,10 @@ exports[`TextField Component TextField renders handles changes 1`] = `
 exports[`TextField Component TextField renders in readonly 1`] = `
 <div>
   <div
-    class="gds-field-group"
+    class="gds-field-group field-size-6"
   >
     <div
-      class="field input-text-field-read-only field-input-size-6"
+      class="field input-text-field-read-only"
     >
       <span
         class="gds-typography"

@@ -21,7 +21,7 @@ const useForm = <T extends AnyObject>(props: IUseFormProps<T>): IUseFormReturned
 
   const [currentData, setCurrentData] = useState<T>(cloneDeep(initialData));
   const [isModified, setIsModified] = useState<boolean>(false);
-  const [validationError, setValidationError] = useState<Record<keyof T, FieldError>>();
+  const [validationError, setValidationError] = useState<Partial<Record<keyof T, FieldError>>>();
   const runAfterUpdate = useRunAfterUpdate();
 
   const handleDataChange = (dataIndex: keyof T, newValue: T[keyof T]): void => {
@@ -49,8 +49,9 @@ const useForm = <T extends AnyObject>(props: IUseFormProps<T>): IUseFormReturned
   };
 
   const scrollToError = () => {
-    const errors = document.getElementsByClassName('field-error-message');
-    errors.item(0)?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    const error = document.body.getElementsByClassName('field-error-message').item(0);
+    if (!error) return;
+    error.scrollIntoView({ behavior: 'smooth', block: 'center' });
   };
 
   const submit = (): IFormSubmitReturnedType<T> => {

@@ -99,7 +99,7 @@ describe('ButtonCell component', () => {
     expect(button1ClickMock).toBeCalledWith({ data: 'DATA' }, 0);
   });
 
-  it('ButtonCell renders hidden', async () => {
+  it('ButtonCell renders hidden', () => {
     const { container } = render(
       <table>
         <tbody>
@@ -127,7 +127,7 @@ describe('ButtonCell component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('ButtonCell renders hidden conditionnally', async () => {
+  it('ButtonCell renders hidden conditionnally', () => {
     const { container } = render(
       <table>
         <tbody>
@@ -155,7 +155,7 @@ describe('ButtonCell component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('ButtonCell runs an error when row is empty', async () => {
+  it('ButtonCell runs an error when row is empty', () => {
     console.error = jest.fn();
 
     const { container } = render(

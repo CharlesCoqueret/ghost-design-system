@@ -3,19 +3,15 @@
 exports[`Col Component Col renders 1`] = `
 <div>
   <div
-    class="CLASSNAME gds-col"
-    style="width: 30%; height: 300px;"
+    class="CLASSNAME gds-layout-col"
+    style="height: 300px; width: 30%;"
   >
-    <div>
-      <div
-        id="CHILD1"
-      />
-    </div>
-    <div>
-      <div
-        id="CHILD2"
-      />
-    </div>
+    <div
+      id="CHILD1"
+    />
+    <div
+      id="CHILD2"
+    />
   </div>
 </div>
 `;

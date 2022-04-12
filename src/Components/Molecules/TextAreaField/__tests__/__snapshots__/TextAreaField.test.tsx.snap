@@ -1,0 +1,136 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextAreaField Component TextAreaField renders 1`] = `
+<div>
+  <div
+    class="gds-field-group field-size-2"
+  >
+    <div
+      class="field gds-input-textarea-parent"
+    >
+      <textarea
+        class="input-textarea-field"
+        id="NAME"
+        name="NAME"
+        rows="1"
+        style="height: 0px;"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`TextAreaField Component TextAreaField renders handles changes 1`] = `
+<div>
+  <div
+    class="gds-field-group"
+  >
+    <div
+      class="field gds-input-textarea-parent"
+    >
+      <textarea
+        class="input-textarea-field"
+        id="NAME"
+        name="NAME"
+        rows="1"
+        style="height: 0px;"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`TextAreaField Component TextAreaField renders handles changes 2`] = `
+<div>
+  <div
+    class="gds-field-group"
+  >
+    <div
+      class="field gds-input-textarea-parent"
+    >
+      <textarea
+        class="input-textarea-field"
+        id="NAME"
+        name="NAME"
+        rows="1"
+        style="height: 0px;"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`TextAreaField Component TextAreaField renders in readonly 1`] = `
+<div>
+  <div
+    class="gds-field-group field-size-6"
+  >
+    <div
+      class="field gds-input-textarea-parent"
+    >
+      <textarea
+        class="input-textarea-field-read-only"
+        id="NAME"
+        name="NAME"
+        readonly=""
+        rows="1"
+        style="height: 0px;"
+      >
+        INPUT-VALUE
+      </textarea>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`TextAreaField Component TextAreaField renders in readonly highlighted 1`] = `
+<div>
+  <div
+    class="gds-field-group"
+  >
+    <div
+      class="field gds-input-textarea-parent"
+    >
+      <textarea
+        class="input-textarea-field-read-only field-highlighted"
+        id="NAME"
+        name="NAME"
+        readonly=""
+        rows="1"
+        style="height: 0px;"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`TextAreaField Component TextAreaField renders with error 1`] = `
+<div>
+  <div
+    class="gds-field-group"
+  >
+    <div
+      class="field gds-input-textarea-parent"
+    >
+      <textarea
+        class="input-textarea-field input-error"
+        id="NAME"
+        name="NAME"
+        rows="1"
+        style="height: 0px;"
+      >
+        INPUT-VALUE
+      </textarea>
+    </div>
+    <div
+      class="field-message"
+    >
+      <div
+        class="field-error-message"
+      >
+        ERROR-MESSAGE
+      </div>
+    </div>
+  </div>
+</div>
+`;

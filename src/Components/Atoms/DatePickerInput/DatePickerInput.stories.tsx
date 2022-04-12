@@ -34,7 +34,7 @@ const Template: ComponentStory<typeof DatePickerInput> = ({ inputValue, ...args 
   if (loading)
     return (
       <>
-        <Icon icon={['fal', 'spinner']} spin />
+        <Icon icon={['fal', 'spinner']} size='1x' />
         Loading locale
       </>
     );

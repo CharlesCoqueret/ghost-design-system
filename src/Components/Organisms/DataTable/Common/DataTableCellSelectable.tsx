@@ -34,7 +34,7 @@ class DataTableCellSelectable extends React.Component<IDataTableCellSelectablePr
     if (this.props.handleSelectClick) {
       this.props.handleSelectClick(event, selected);
     } else {
-      throw new Error('Missing handleSelectClick');
+      console.error('Missing handleSelectClick');
     }
   }
 

@@ -6,7 +6,7 @@ import TextAreaCell from '../TextAreaCell';
 import { ColumnType } from '../../types';
 
 describe('TextAreaCell component', () => {
-  it('TextAreaCell renders', async () => {
+  it('TextAreaCell renders', () => {
     const { container } = render(
       <table>
         <tbody>
@@ -27,7 +27,7 @@ describe('TextAreaCell component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('TextAreaCell renders row editing with no row input', async () => {
+  it('TextAreaCell renders row editing with no row input', () => {
     const { container } = render(
       <table>
         <tbody>
@@ -48,7 +48,7 @@ describe('TextAreaCell component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('TextAreaCell renders cell editing with no row input', async () => {
+  it('TextAreaCell renders cell editing with no row input', () => {
     const { container } = render(
       <table>
         <tbody>
@@ -69,7 +69,7 @@ describe('TextAreaCell component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('TextAreaCell renders hidden', async () => {
+  it('TextAreaCell renders hidden', () => {
     const { container } = render(
       <table>
         <tbody>
@@ -91,7 +91,7 @@ describe('TextAreaCell component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('TextAreaCell renders with forced value', async () => {
+  it('TextAreaCell renders with forced value', () => {
     const { container } = render(
       <table>
         <tbody>

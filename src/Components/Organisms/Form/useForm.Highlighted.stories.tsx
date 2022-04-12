@@ -49,7 +49,11 @@ const Template = (args: IUseFormProps<IDataType>) => {
       </div>
       <div>
         Current data:
-        <textarea style={{ width: '100%', height: '300px' }} value={JSON.stringify(getData(), null, 2)} readOnly />
+        <textarea
+          style={{ width: '100%', boxSizing: 'border-box', height: '300px' }}
+          value={JSON.stringify(getData(), null, 2)}
+          readOnly
+        />
       </div>
     </>
   );
@@ -81,7 +85,7 @@ const fields: Array<IFieldAndLayoutProps<IDataType>> = [
     description: (
       <div>
         <Typography.Text>Any description</Typography.Text>
-        <Link link='http://google.com' text='external link' />
+        <Link link='https://hamster.dance/hamsterdance/' text='external link' />
         <Link link='#' text='internal link' />
       </div>
     ),

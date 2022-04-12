@@ -6,7 +6,7 @@ import DateCell from '../DateCell';
 import { ColumnType } from '../../types';
 
 describe('DateCell component', () => {
-  it('DateCell renders', async () => {
+  it('DateCell renders', () => {
     const { container } = render(
       <table>
         <tbody>
@@ -28,7 +28,7 @@ describe('DateCell component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('DateCell renders with forced value', async () => {
+  it('DateCell renders with forced value', () => {
     const { container } = render(
       <table>
         <tbody>
@@ -51,7 +51,7 @@ describe('DateCell component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('DateCell renders when hidden', async () => {
+  it('DateCell renders when hidden', () => {
     const { container } = render(
       <table>
         <tbody>
@@ -117,7 +117,7 @@ describe('DateCell component', () => {
     expect(onChangeMock).toBeCalledWith(new Date('01/01/2000'));
   });
 
-  it('DateCell renders in edit mode via extra', async () => {
+  it('DateCell renders in edit mode via extra', () => {
     const { container } = render(
       <table>
         <tbody>

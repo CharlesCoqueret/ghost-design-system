@@ -5,7 +5,7 @@ import userEvent from '@testing-library/user-event';
 import Title from '../Title';
 
 describe('Title Component', () => {
-  it('Title renders', async () => {
+  it('Title renders', () => {
     const onTitleEditMock = jest.fn();
 
     const { container } = render(
@@ -24,7 +24,7 @@ describe('Title Component', () => {
     expect(onTitleEditMock).not.toBeCalled();
   });
 
-  it('Title renders and handles changes', async () => {
+  it('Title renders and handles changes', () => {
     const onTitleEditMock = jest.fn();
 
     const { container } = render(<Title dataTestId='DATA-TEST-ID' onTitleEdit={onTitleEditMock} />);
@@ -40,7 +40,7 @@ describe('Title Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('Title renders and blurs on tab', async () => {
+  it('Title renders and blurs on tab', () => {
     const onTitleEditMock = jest.fn();
 
     const { container } = render(<Title dataTestId='DATA-TEST-ID' onTitleEdit={onTitleEditMock} />);
@@ -56,7 +56,7 @@ describe('Title Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('Title renders and blurs on enter', async () => {
+  it('Title renders and blurs on enter', () => {
     const onTitleEditMock = jest.fn();
 
     const { container } = render(<Title dataTestId='DATA-TEST-ID' onTitleEdit={onTitleEditMock} />);
@@ -71,7 +71,7 @@ describe('Title Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('Title renders restores title when too short', async () => {
+  it('Title renders restores title when too short', () => {
     const onTitleEditMock = jest.fn();
 
     const { container } = render(<Title dataTestId='DATA-TEST-ID' title='TITLE' onTitleEdit={onTitleEditMock} />);
@@ -85,7 +85,7 @@ describe('Title Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('Title renders not editable', async () => {
+  it('Title renders not editable', () => {
     const { container } = render(<Title dataTestId='DATA-TEST-ID' title='TITLE' />);
     const input = screen.getByTestId('DATA-TEST-ID');
 

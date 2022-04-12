@@ -1,6 +1,12 @@
 .gds-link-container {
   margin: auto;
   color: $charcoal;
+  a,
+  a:hover,
+  a:focus,
+  a:visited {
+    color: unset;
+  }
 
   &:hover,
   &:focus {

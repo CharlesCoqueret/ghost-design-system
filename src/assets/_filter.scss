@@ -1,0 +1,23 @@
+.filter-container {
+  .searchbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 8px;
+
+    .search-field {
+      display: flex;
+      flex-direction: row;
+      gap: 8px;
+      flex-grow: 1;
+    }
+
+    .search-actions {
+      display: flex;
+      flex-direction: row;
+      gap: 8px;
+      margin-left: 16px;
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+  }
+}

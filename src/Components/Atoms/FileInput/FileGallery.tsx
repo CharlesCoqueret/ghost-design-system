@@ -75,6 +75,13 @@ const FileGallery = (props: IFileGallery): ReactElement => {
             {file.name}
             {showFileSize && ` (${formatBytes(file.size)})`}
           </div>
+          {downloading && (
+            <Icon
+              className='spinner-icon'
+              data-testid={dataTestId ? `${dataTestId}-spinner` : undefined}
+              icon={['fal', 'spinner']}
+            />
+          )}
         </div>
         <div className='right'>
           {showProgressBar && file.uid && progress && progress[file.uid] && (
@@ -84,9 +91,11 @@ const FileGallery = (props: IFileGallery): ReactElement => {
           {readOnly || disabled ? (
             <></>
           ) : file.status && [FileStatusEnum.UPLOADING, FileStatusEnum.DELETING].includes(file.status) ? (
-            <div className='delete-icon'>
-              <Icon icon={['fal', 'spinner']} spin />
-            </div>
+            <Icon
+              className='spinner-icon'
+              data-testid={dataTestId ? `${dataTestId}-spinner` : undefined}
+              icon={['fal', 'spinner']}
+            />
           ) : (
             <div
               className='delete-icon'

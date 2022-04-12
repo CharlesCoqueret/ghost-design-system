@@ -1,5 +1,6 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, useState } from 'react';
 import classnames from 'classnames';
+import uniqueId from 'lodash/uniqueId';
 
 import { IToggleEntry } from './types';
 import { Icon } from '../Icon';
@@ -11,10 +12,10 @@ export interface ICheckboxInputProps {
   dataTestId?: string;
   /** Disabled field (optional, default: false) */
   disabled?: boolean;
-  /** Size of the field in a 12 column grid (optional, default: undefined) */
-  fieldSize?: number;
   /** Highlighted field (optional, default: false) */
   highlighted?: boolean;
+  /** Inline options (optional, default: false) */
+  inline?: boolean;
   /** Error indication should be present (optional, default: undefined) */
   isInError?: boolean;
   /** Input value */
@@ -26,7 +27,8 @@ export interface ICheckboxInputProps {
 }
 
 const CheckboxInput = (props: ICheckboxInputProps): ReactElement => {
-  const { className, dataTestId, disabled, fieldSize, highlighted, isInError, options, onChange, readOnly } = props;
+  const { className, dataTestId, disabled, highlighted, inline, isInError, options, onChange, readOnly } = props;
+  const [ids] = useState(() => options.map(() => uniqueId('checkbox-')));
 
   /** flip the check status of the checkbox that was checked */
   const updateState = (optionValue: string) => {
@@ -42,33 +44,42 @@ const CheckboxInput = (props: ICheckboxInputProps): ReactElement => {
     }
   };
 
-  const handleChange = (optionValue: string) => () => {
-    if (readOnly || disabled) return;
-    updateState(optionValue);
-  };
+  const handleChange =
+    (optionValue: string) => (event: React.KeyboardEvent<HTMLLabelElement> | React.MouseEvent<HTMLLabelElement>) => {
+      if (event.type === 'keyup') {
+        if ((event as React.KeyboardEvent<HTMLLabelElement>).key !== ' ') {
+          return;
+        }
+      }
+      if (readOnly || disabled) return;
+      updateState(optionValue);
+    };
 
   return (
-    <div
-      className={classnames(
-        'field',
-        'gds-checkbox-container',
-        fieldSize && `field-input-size-${fieldSize}`,
-        className,
-      )}>
+    <div className={classnames('field', 'gds-checkbox-container', { inline: inline }, className)}>
       {options.map((option, index) => {
         return (
           <label
-            key={option.value}
-            onClick={handleChange(option.value)}
             className={classnames({
               'input-checkbox-field-read-only': readOnly,
               'input-checkbox-field-disabled': disabled,
               'input-checkbox-field-error': !readOnly && !disabled && isInError,
               'field-highlighted': (readOnly || disabled) && highlighted && option.highlighted,
               'input-checkbox-field-checked': option.checked,
+              inline: inline,
             })}
-            data-testid={dataTestId ? `${dataTestId}-${index}` : undefined}>
-            <div className='checkbox-marker'>
+            data-testid={dataTestId ? `${dataTestId}-${index}` : undefined}
+            htmlFor={ids[index]}
+            key={option.value}
+            onClick={handleChange(option.value)}
+            onKeyUp={handleChange(option.value)}
+            tabIndex={0}>
+            <div
+              aria-checked={option.checked}
+              aria-label={option.label.toString()}
+              className='checkbox-marker'
+              id={ids[index]}
+              role='checkbox'>
               <Icon
                 icon={[
                   option.checked || disabled || readOnly ? 'fas' : 'fal',
@@ -88,8 +99,8 @@ const CheckboxInput = (props: ICheckboxInputProps): ReactElement => {
 CheckboxInput.defaultProps = {
   classname: undefined,
   disabled: false,
-  fieldSize: undefined,
   highlighted: false,
+  inline: false,
   isInError: false,
   onChange: undefined,
   readOnly: false,

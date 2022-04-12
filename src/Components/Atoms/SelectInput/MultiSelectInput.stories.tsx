@@ -54,7 +54,6 @@ export const Default = Template.bind({});
 Default.args = {
   options: options,
   disabled: false,
-  fieldSize: undefined,
   highlighted: false,
   inputValue: [options[0].value, options[1].value],
   isClearable: true,

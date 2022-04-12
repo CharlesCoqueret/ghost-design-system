@@ -25,8 +25,6 @@ export interface IDynamicSearchInputProps {
   disabled?: boolean;
   /** Ellipsis in readonly (optional, default: false) */
   ellipsis?: boolean;
-  /** Size of the field in a 12 column grid (optional, default: undefined) */
-  fieldSize?: number;
   /** Highlight value in readonly mode (optional, default: false) */
   highlighted?: boolean;
   /** Input string value (optional, default: undefined) */
@@ -50,7 +48,7 @@ export interface IDynamicSearchInputProps {
   /** Resolved the value from the provided input (value of the {value, label} object) */
   resolveValue: (value: string | number) => Promise<IOption | undefined>;
   /** Search for different options based on the term provided by the user */
-  searchOptions: (searchTerm: string) => Promise<Array<IOption> | undefined>;
+  searchOptions: (searchTerm: string) => Promise<Array<IOption>>;
   /** Use portal, it is remmended to set it to false for modal (optional, default true) */
   usePortal?: boolean;
 }
@@ -62,7 +60,6 @@ const DynamicSearchInput = (props: IDynamicSearchInputProps): ReactElement => {
     dataTestId,
     disabled,
     ellipsis,
-    fieldSize,
     highlighted,
     inputValue,
     isClearable,
@@ -91,7 +88,7 @@ const DynamicSearchInput = (props: IDynamicSearchInputProps): ReactElement => {
     [noOptionsMessage],
   );
 
-  const resolveIncomingValue = () => {
+  const resolveIncomingValue = useCallback(() => {
     if (inputValue && inputValue !== currentOption?.value) {
       setIsLoading(true);
       resolveValue(inputValue)
@@ -108,21 +105,21 @@ const DynamicSearchInput = (props: IDynamicSearchInputProps): ReactElement => {
       setIsLoading(false);
       setCurrentOption(undefined);
     }
-  };
+  }, [inputValue, resolveValue]);
 
   useEffect(() => {
     setIsLoading(true);
     setCurrentOption(undefined);
     resolveIncomingValue();
-  }, [inputValue]);
+  }, [inputValue, resolveIncomingValue]);
 
   if (readOnly) {
     return (
       <div
         className={classnames(
+          'field',
           'gds-select-container',
           'input-select-field-read-only',
-          fieldSize && `field-input-size-${fieldSize}`,
           {
             'field-highlighted': highlighted,
           },
@@ -130,7 +127,7 @@ const DynamicSearchInput = (props: IDynamicSearchInputProps): ReactElement => {
         )}
         data-testid={dataTestId}>
         {isLoading ? (
-          <Icon icon={['fal', 'spinner']} spin data-testid={dataTestId ? `${dataTestId}-spinner` : undefined} />
+          <Icon icon={['fal', 'spinner']} size='2x' data-testid={dataTestId ? `${dataTestId}-spinner` : undefined} />
         ) : currentOption ? (
           <Typography.Text ellipsis={ellipsis}>{currentOption.label}</Typography.Text>
         ) : (
@@ -143,9 +140,9 @@ const DynamicSearchInput = (props: IDynamicSearchInputProps): ReactElement => {
   return (
     <div
       className={classnames(
+        'field',
         'gds-select-container',
         'input-select-field',
-        fieldSize && `field-input-size-${fieldSize}`,
         {
           'input-error': isInError && !disabled,
         },
@@ -160,8 +157,7 @@ const DynamicSearchInput = (props: IDynamicSearchInputProps): ReactElement => {
               <div {...innerProps}>
                 <Icon
                   icon={['fal', 'spinner']}
-                  spin
-                  className='dynamic-search-icon'
+                  className='dynamic-search-spinner'
                   data-testid={dataTestId ? `${dataTestId}-spinner` : undefined}
                 />
               </div>
@@ -193,6 +189,7 @@ const DynamicSearchInput = (props: IDynamicSearchInputProps): ReactElement => {
           },
         }}
         data-testid={dataTestId}
+        defaultOptions
         hideSelectedOptions={false}
         inputId={dataTestId}
         isClearable={isClearable}
@@ -232,12 +229,12 @@ DynamicSearchInput.defaultProps = {
   },
   disabled: false,
   ellipsis: false,
-  fieldSize: undefined,
   highlighted: false,
   inputValue: undefined,
   isClearable: false,
   isInError: false,
   maxMenuHeight: 300,
+  noOptionsMessage: 'No options',
   onChange: undefined,
   options: undefined,
   placeholder: undefined,

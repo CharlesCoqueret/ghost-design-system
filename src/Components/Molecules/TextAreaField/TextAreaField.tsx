@@ -94,6 +94,7 @@ export const TextAreaField = (props: ITextAreaFieldProps): ReactElement => {
       containerRef={containerRef}
       errorMessage={errorMessage}
       fieldClassName={fieldClassName}
+      fieldSize={fieldSize}
       helperText={helperText}
       highlighted={highlighted}
       label={label}
@@ -105,7 +106,6 @@ export const TextAreaField = (props: ITextAreaFieldProps): ReactElement => {
       <TextAreaInput
         dataTestId={dataTestId}
         disabled={disabled}
-        fieldSize={fieldSize}
         highlighted={highlighted}
         inputClassName={inputClassName}
         inputValue={inputValue}

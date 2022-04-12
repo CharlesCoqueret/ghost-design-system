@@ -18,18 +18,15 @@ jest.mock('suneditor/src/plugins/submenu/list', () => ({ name: 'list' }));
 jest.mock('suneditor/src/plugins/submenu/paragraphStyle', () => ({ name: 'paragraphStyle' }));
 jest.mock('suneditor/src/plugins/submenu/table', () => ({ name: 'table' }));
 
-describe('RichTextInput Component', () => {
-  beforeEach(() => {
-    jest.resetModules();
-  });
+jest.mock('suneditor-react', () => ({
+  __esModule: true,
+  default: (props: unknown): ReactElement => {
+    return <div>{JSON.stringify(props)}</div>;
+  },
+}));
 
-  it('RichTextInput renders', async () => {
-    jest.mock('suneditor-react', () => ({
-      __esModule: true,
-      default: (props: unknown): ReactElement => {
-        return <div>{JSON.stringify(props)}</div>;
-      },
-    }));
+describe('RichTextInput Component', () => {
+  it('RichTextInput renders', () => {
     const RichTextInput = require('../RichTextInput').default;
     const onChangeMock = jest.fn();
 
@@ -38,13 +35,7 @@ describe('RichTextInput Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('RichTextInput renders with image', async () => {
-    jest.mock('suneditor-react', () => ({
-      __esModule: true,
-      default: (props: unknown): ReactElement => {
-        return <div>{JSON.stringify(props)}</div>;
-      },
-    }));
+  it('RichTextInput renders with image', () => {
     const RichTextInput = require('../RichTextInput').default;
     const onChangeMock = jest.fn();
 
@@ -53,13 +44,7 @@ describe('RichTextInput Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('RichTextInput renders with image and link with maxLendth', async () => {
-    jest.mock('suneditor-react', () => ({
-      __esModule: true,
-      default: (props: unknown): ReactElement => {
-        return <div>{JSON.stringify(props)}</div>;
-      },
-    }));
+  it('RichTextInput renders with image and link with maxLendth', () => {
     const RichTextInput = require('../RichTextInput').default;
     const onChangeMock = jest.fn();
 
@@ -70,13 +55,7 @@ describe('RichTextInput Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('RichTextInput renders with link in readOnly', async () => {
-    jest.mock('suneditor-react', () => ({
-      __esModule: true,
-      default: (props: unknown): ReactElement => {
-        return <div>{JSON.stringify(props)}</div>;
-      },
-    }));
+  it('RichTextInput renders with link in readOnly', () => {
     const RichTextInput = require('../RichTextInput').default;
     const onChangeMock = jest.fn();
 
@@ -85,13 +64,7 @@ describe('RichTextInput Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('RichTextInput renders in readOnly with inputValue', async () => {
-    jest.mock('suneditor-react', () => ({
-      __esModule: true,
-      default: (props: unknown): ReactElement => {
-        return <div>{JSON.stringify(props)}</div>;
-      },
-    }));
+  it('RichTextInput renders in readOnly with inputValue', () => {
     const RichTextInput = require('../RichTextInput').default;
     const onChangeMock = jest.fn();
 
@@ -100,7 +73,8 @@ describe('RichTextInput Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('RichTextInput handles changes', async () => {
+  it('RichTextInput handles changes', () => {
+    jest.resetModules();
     let onBlurCallback: (event: FocusEvent, newValue: string) => void = () => {
       return;
     };

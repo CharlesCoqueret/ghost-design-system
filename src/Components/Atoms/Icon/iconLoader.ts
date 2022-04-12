@@ -1,8 +1,11 @@
 import { dom, library } from '@fortawesome/fontawesome-svg-core';
 
 import {
-  faArrowToBottom,
+  faArrowDownToLine,
   faArrowLeft,
+  faArrowsToLine,
+  faArrowUpFromLine,
+  faArrowsLeftRightToLine,
   faBalanceScale,
   faBallotCheck,
   faBell,
@@ -13,6 +16,7 @@ import {
   faChevronLeft,
   faChevronRight,
   faCog,
+  faColumns3,
   faCommentAltExclamation,
   faEdit,
   faEllipsisH,
@@ -42,7 +46,6 @@ import {
   faPlus,
   faQuestionCircle,
   faSave,
-  faSpinner,
   faSquare as faSquareLight,
   faTable,
   faTextSize,
@@ -50,10 +53,10 @@ import {
   faTimesCircle,
   faTrashAlt,
   faUndo,
-  faUpload,
   faUserCircle,
   faUserLock,
   faUserUnlock,
+  faWindowMaximize,
 } from '@fortawesome/pro-light-svg-icons';
 
 import {
@@ -75,8 +78,11 @@ import { faCaretDown, faSquare, faSquareCheck, faSort, faSortDown, faSortUp } fr
 
 const loadIcons = (): void => {
   library.add(
-    faArrowToBottom,
+    faArrowDownToLine,
     faArrowLeft,
+    faArrowsLeftRightToLine,
+    faArrowsToLine,
+    faArrowUpFromLine,
     faBalanceScale,
     faBallotCheck,
     faBell,
@@ -87,6 +93,7 @@ const loadIcons = (): void => {
     faChevronLeft,
     faChevronRight,
     faCog,
+    faColumns3,
     faCommentAltExclamation,
     faEdit,
     faEllipsisH,
@@ -116,16 +123,15 @@ const loadIcons = (): void => {
     faSort,
     faSortDown,
     faSortUp,
-    faSpinner,
     faSquareLight,
     faTimes,
     faTimesCircle,
     faTrashAlt,
     faUndo,
-    faUpload,
     faUserCircle,
     faUserLock,
     faUserUnlock,
+    faWindowMaximize,
 
     // text editor
     faBold,

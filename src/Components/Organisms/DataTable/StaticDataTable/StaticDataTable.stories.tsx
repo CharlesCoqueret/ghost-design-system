@@ -63,7 +63,7 @@ const columns: IColumnType<IDemoType>[] = [
     moreActionsMessage: 'Nore actions',
     buttons: [
       {
-        icon: ['fal', 'arrow-to-bottom'],
+        icon: ['fal', 'arrow-down-to-line'],
         label: 'Download',
         onClick: (row) => {
           console.log(`download icon clicked on row: ${row.id}`);
@@ -177,6 +177,23 @@ SelectableRows.args = {
   },
 };
 
+export const SelectableAndClickableRows = Template.bind({});
+SelectableAndClickableRows.args = {
+  data: data,
+  columns: columns,
+  extra: {
+    onRowSelect: (rows: Array<IDemoType>, row: IDemoType) => {
+      console.log(`Number of rows selected: ${rows.length}, Clicked row: ${row.id}`);
+    },
+    isSelectable: (row: IDemoType) => {
+      return row.id !== 'UGA';
+    },
+    onRowClick: (row: IDemoType) => {
+      console.log(`clicked row: ${row.id}`);
+    },
+  },
+};
+
 export const ComputeTotal = Template.bind({});
 ComputeTotal.args = {
   data: data,
@@ -235,7 +252,7 @@ Loading.args = {
   columns: columns,
   loading: (
     <div style={{ display: 'flex', justifyContent: 'space-around' }}>
-      <Icon icon={['fal', 'spinner']} size='3x' spin />
+      <Icon icon={['fal', 'spinner']} size='3x' />
     </div>
   ),
   extra: {
@@ -262,7 +279,7 @@ NoDataLoading.args = {
   columns: columns,
   loading: (
     <div style={{ display: 'flex', justifyContent: 'space-around' }}>
-      <Icon icon={['fal', 'spinner']} size='3x' spin />
+      <Icon icon={['fal', 'spinner']} size='3x' />
     </div>
   ),
   extra: {

@@ -45,7 +45,7 @@ const initialData = [
 ];
 
 describe('EditableDataTable Component', () => {
-  it('EditableDataTable renders with all buttons', async () => {
+  it('EditableDataTable renders with all buttons', () => {
     const onEditMock = jest.fn();
     const isEditableMock = jest.fn().mockImplementation(() => true);
     const onRowDeleteMock = jest.fn();
@@ -79,7 +79,7 @@ describe('EditableDataTable Component', () => {
     expect(canAddNewLineMock).toBeCalledTimes(1);
   });
 
-  it('EditableDataTable renders with no buttons', async () => {
+  it('EditableDataTable renders with no buttons', () => {
     const onEditMock = jest.fn();
     const isEditableMock = jest.fn().mockImplementation(() => false);
 
@@ -95,7 +95,7 @@ describe('EditableDataTable Component', () => {
     expect(isEditableMock).toBeCalledTimes(initialData.length);
   });
 
-  it('EditableDataTable renders with all methods saying false', async () => {
+  it('EditableDataTable renders with all methods saying false', () => {
     const onEditMock = jest.fn();
     const isEditableMock = () => {
       return false;

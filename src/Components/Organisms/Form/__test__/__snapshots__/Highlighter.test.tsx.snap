@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Highlighter Component Highlighter renders 1`] = `
+<div>
+  <div />
+</div>
+`;
+
+exports[`Highlighter Component Highlighter renders with highlight 1`] = `
+<div>
+  <div
+    class="gds-layout-row"
+  >
+    <div
+      class="gds-layout-col"
+    >
+      {}
+    </div>
+    <div
+      class="gds-layout-col"
+    >
+      {"readOnly":true,"inputValue":"OLDDATA","highlighted":true}
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Highlighter Component Highlighter renders with highlight and inValidElement 1`] = `
+<div>
+  
+</div>
+`;

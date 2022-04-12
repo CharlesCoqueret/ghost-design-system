@@ -24,8 +24,6 @@ export interface IRichTextInputProps {
   enableImage?: boolean;
   /** Enable link  (optional, default: false) */
   enableLink?: boolean;
-  /** Size of the field in a 12 column grid (optional, default: undefined) */
-  fieldSize?: number;
   /** Initial values for the field (optional, default: undefined or '-' when disabled or readOnly) */
   inputValue?: string;
   /** Field is in error state (optional, default: false) */
@@ -36,8 +34,8 @@ export interface IRichTextInputProps {
   maxLength?: number;
   /** Name of the field (optional, default: undefined) */
   name?: string;
-  /** handler of changes notifying only on blur of the input for performance reason */
-  onChange: (newValue: string) => void;
+  /** handler of changes notifying only on blur of the input for performance reason (options, default: undefined) */
+  onChange?: (newValue: string) => void;
   /** Read only field (optional, default: false) */
   readOnly?: boolean;
   /** Custom style (optional, default: undefined) */
@@ -75,6 +73,9 @@ const RichTextInput = (props: IRichTextInputProps): ReactElement => {
     // Do not replace <i></i> by <i /> as it breaks ol ul alignment
     icons: {
       bold: '<i class="far fa-bold"></i>',
+      delete: '<i class="fal fa-trash-alt"></i>',
+      expansion: '<i class="fa-light fa-arrows-left-right-to-line"></i>',
+      fixed_column_width: '<i class="fa-light fa-columns-3"></i>',
       font_color: '<i class="far fa-palette"></i>',
       highlight_color: '<i class="fal fa-highlighter"></i>',
       horizontal_rule: '<i class="far fa-horizontal-rule"></i>',
@@ -87,21 +88,25 @@ const RichTextInput = (props: IRichTextInputProps): ReactElement => {
       list_number: '<i class="fal fa-list-ol"></i>',
       // indent/outdent might need to be swapped when https://github.com/JiHong88/SunEditor/issues/884 gets fixed
       outdent: '<i class="far fa-indent"></i>',
+      reduction: '<i class="fa-light fa-arrows-to-line fa-rotate-90"></i>',
       strike: '<i class="far fa-strikethrough"></i>',
       table: '<i class="fal fa-table"></i>',
+      table_header: '<i class="fa-light fa-window-maximize"></i>',
       underline: '<i class="far fa-underline"></i>',
     },
     showPathLabel: false,
     height: 'auto',
-    formats: ['p', 'div', 'blockquote', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'],
+    formats: ['p', 'div', 'blockquote', 'h1', 'h2', 'h3'],
+    fontSize: [10, 12, 14, 18, 22],
     imageUploadUrl: undefined,
     imageUrlInput: false,
     videoFileInput: false,
-    resizingBar: false,
-    charCounter: maxLength ? true : false,
+    resizingBar: maxLength !== undefined ? true : false,
+    charCounter: maxLength !== undefined ? true : false,
     maxCharCount: maxLength,
-    minHeight: readOnly || disabled ? undefined : '200px',
+    minHeight: readOnly || disabled ? undefined : '250px',
     maxHeight: readOnly || disabled ? undefined : '600px',
+    tabDisable: true,
     pasteTagsBlacklist: [
       ...forbiddenTags,
       ...[enableImage ? imageTags : undefined],
@@ -124,7 +129,7 @@ const RichTextInput = (props: IRichTextInputProps): ReactElement => {
 
   return (
     <div
-      className={classnames('gds-rich-text-container', {
+      className={classnames('field', 'gds-rich-text-container', {
         disabled: disabled,
         readonly: readOnly,
         error: !disabled && !readOnly && isInError,
@@ -150,7 +155,6 @@ RichTextInput.defaultProps = {
   disabled: false,
   enableImage: false,
   enableLink: false,
-  fieldSize: undefined,
   inputValue: undefined,
   isInError: false,
   locale: undefined,

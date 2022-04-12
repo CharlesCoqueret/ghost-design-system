@@ -1,5 +1,58 @@
 # Changelog
 
+## 1.4.0 (2022-04-12)
+
+### Features
+
+Atoms/CheckboxInput adds ability to check checkbox with space
+Atoms/CheckboxInput adds accessibility element
+Atoms/CheckboxInput give tabing access to the checkbox
+Atoms/CheckboxInput introducing inline checkbox
+Atoms/DynamicSearchCreatableInput enable initial search with no value typed
+Atoms/DynamicSearchInput enable initial search with no value typed
+Atoms/FileField set progress bar and file size as enabled by default
+Atoms/FileInput Add spinner while downloading a file
+Atoms/FileInput give tabing access to the file upload
+Atoms/FileInput set progress bar and file size as enabled by default
+Atoms/Icon Replacing spinner with custom spinner icon
+Atoms/Layout revamp row, col to manage spacing and section management
+Atoms/Pulsar component creation
+Atoms/RichTextInput disable tab inside the rich text box
+Atoms/RichTextInput updating table icons: delete, expended columns, reduce columns, fixed width and table header
+Atoms/Section making the separator optional, so it can be disabled for filter modal
+Atoms/SwitchInput adds ability to flip switch with space
+Atoms/SwitchInput adds accessibility element
+Atoms/SwitchInput give tabing access to the switch
+Organisms/Filter component creation
+Organisms/Filter introduce the title and column to replace the section filtertype to get more flexibility
+
+### Bug Fixes
+
+Atoms/AmountInput Avoid overflow of text with ellipsis
+Atoms/AmountInput Avoid word wrapping
+Atoms/AmountInput using single string in readonly mode instead of concatenated strings
+Atoms/Badge remove font-weight
+Atoms/Checkbox centering the checkboxes when inline
+Atoms/Checkbox remove padding bottom on the last label o the list
+Atoms/CheckboxInput Use padding instead of margin
+Atoms/FileInput managing new field classname
+Atoms/FileInput update gallery hover color
+Atoms/GenericField fixing inline mode
+Atoms/Inputs Removing all field size
+Atoms/RichText adding white background to the sticky toolbar in case of small screen
+Atoms/RichTextInput enabling the character counter box with transparent background
+Atoms/RichTextInput remove h4 h5 h6, adjust font sizes from 10px to 22px, adjust the min height to 250px
+Atoms/RichTextInput removing the incorrect character counter from the generic field
+Atoms/RichTextInput removing zindex for the wrapper and toolbar, and hiding the sticky toolbar
+Atoms/TextAreaInput remove initial size which was varying at the first key stroke
+Atoms/Tooltip Remove use of screen availwidth/availheight to the benefit of document.body.clientwidth/clientheight in case of iframe (such as in storybook)
+Atoms/Typography use title attribute instead of tooltip (for performance reason)
+Organisms/Fields removing overflow
+Organisms/Fields set a minimum width of 50px
+Organisms/Form disabling portal for select, multiselect, dynamic search and dynamic search creatable (keeping it only for datepicker and year picker)
+Organisms/LineEditableDatable disabling portal for forms (only date picker and year picker)
+Setting h1 font weight to 400
+
 ## 1.3.0 (2022-04-07)
 
 ### Features

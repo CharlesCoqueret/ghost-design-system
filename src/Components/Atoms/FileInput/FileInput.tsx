@@ -1,6 +1,7 @@
 import React, { ChangeEvent, CSSProperties, ReactElement, useCallback, useEffect, useRef, useState } from 'react';
 import classnames from 'classnames';
 import sortBy from 'lodash/sortBy';
+import compact from 'lodash/compact';
 
 import { FileStatusEnum, IFile } from './types';
 import { getFilesWebkitDataTransferItems, initializeIFile, injectDoneStatus, injectUid } from './fileUtils';
@@ -15,8 +16,6 @@ export interface IFileInputProps {
   dataTestId?: string;
   /** Disabled field (optional, default: false) */
   disabled?: boolean;
-  /** Size of the field in a 12 column grid (optional, default: undefined) */
-  fieldSize?: number;
   /** Initial values for the field (optional, default: []) */
   inputValue?: Array<IFile>;
   /** Field is in error state (optional, default: false) */
@@ -29,10 +28,10 @@ export interface IFileInputProps {
   maxFolderDepth?: number;
   /** handler of changes, notifying any files changes (including new files, states changes, deleted files...)
    * To retrieve the up to date files, simply filter the files on the status FileStatusEnum.DONE */
-  onChange: (files: Array<IFile>) => void;
+  onChange?: (files: Array<IFile>) => void;
   /** Handler of the download request
    * The promise should reject if the deletion fails. */
-  onDelete: (file: IFile) => Promise<void>;
+  onDelete?: (file: IFile) => Promise<void>;
   /** Handler of download request
    * The client should let the user know if the download fails.
    * Promise resolution or rejection will only prevent multiple downloads of the same file. */
@@ -47,9 +46,9 @@ export interface IFileInputProps {
   requestUrl: string;
   /** Enable withCredentials on the request (optional, default: undefined) */
   requestWithCredentials?: boolean;
-  /** Show file size in the gallery (optional, default: false) */
+  /** Show file size in the gallery (optional, default: true) */
   showFileSize?: boolean;
-  /** Show progress bar in file gallery (optional, default: false) */
+  /** Show progress bar in file gallery (optional, default: true) */
   showProgressBar?: boolean;
   /** Custom style (optional, default: undefined) */
   style?: CSSProperties;
@@ -79,7 +78,6 @@ const FileInput = (props: IFileInputProps): ReactElement => {
     className,
     dataTestId,
     disabled,
-    fieldSize,
     inputValue,
     isInError,
     maxFiles,
@@ -113,19 +111,23 @@ const FileInput = (props: IFileInputProps): ReactElement => {
    * @param file new file
    * @returns IFile with status, and eventually error if one of the requirement is not met
    */
-  const addFileLocalItems = (file: File): IFile => {
-    const quotaExceeded =
-      maxFiles !== undefined &&
-      localItems.filter((item) => item.status && [FileStatusEnum.DONE, FileStatusEnum.UPLOADING].includes(item.status))
-        .length >= maxFiles;
-    const newFile = initializeIFile(file, quotaExceeded, acceptTypes, maxFileSize);
+  const addFileLocalItems = useCallback(
+    (file: File): IFile => {
+      const quotaExceeded =
+        maxFiles !== undefined &&
+        localItems.filter(
+          (item) => item.status && [FileStatusEnum.DONE, FileStatusEnum.UPLOADING].includes(item.status),
+        ).length >= maxFiles;
+      const newFile = initializeIFile(file, quotaExceeded, acceptTypes, maxFileSize);
 
-    setLocalItems((prev) => {
-      return [...prev, newFile];
-    });
+      setLocalItems((prev) => {
+        return [...prev, newFile];
+      });
 
-    return newFile;
-  };
+      return newFile;
+    },
+    [acceptTypes, maxFileSize, maxFiles],
+  );
 
   /**
    * Updates the progress for the file
@@ -148,11 +150,10 @@ const FileInput = (props: IFileInputProps): ReactElement => {
   const updateFileError = (file: IFile, error: string): void => {
     setLocalItems((prev) => {
       const fileToUpdate = prev.find((f) => f.uid === file.uid);
-      if (!fileToUpdate) return prev;
-      return [
+      return compact([
         ...prev.filter((f) => f.uid !== file.uid),
-        { ...fileToUpdate, status: FileStatusEnum.ERROR, error: error },
-      ];
+        fileToUpdate && { ...fileToUpdate, status: FileStatusEnum.ERROR, error: error },
+      ]);
     });
 
     setProgress((prev) => {
@@ -172,17 +173,16 @@ const FileInput = (props: IFileInputProps): ReactElement => {
   const updateFileUploaded = (file: IFile, serverResponse: unknown): void => {
     setLocalItems((prev) => {
       const fileToUpdate = prev.find((f) => f.uid === file.uid);
-      if (!fileToUpdate) return prev;
 
-      return [
+      return compact([
         ...prev.filter((f) => f.uid !== file.uid),
-        {
+        fileToUpdate && {
           ...fileToUpdate,
           status: FileStatusEnum.DONE,
           error: undefined,
           serverResponse: serverResponse,
         },
-      ];
+      ]);
     });
 
     setProgress((prev) => {
@@ -212,6 +212,8 @@ const FileInput = (props: IFileInputProps): ReactElement => {
    * @returns Promise
    */
   const updateFileDelete = async (file: IFile): Promise<void> => {
+    if (!onDelete) return;
+
     setLocalItems((prev) => [...prev.filter((f) => f.uid !== file.uid), { ...file, status: FileStatusEnum.DELETING }]);
     return onDelete(file)
       .then(() => {
@@ -231,47 +233,50 @@ const FileInput = (props: IFileInputProps): ReactElement => {
    * Sets the progress of the corresponding file to 0.
    * @param file file to upload
    */
-  const uploadFile = useCallback((file: File): void => {
-    const newFile = addFileLocalItems(file);
+  const uploadFile = useCallback(
+    (file: File): void => {
+      const newFile = addFileLocalItems(file);
 
-    if (newFile.status !== FileStatusEnum.UPLOADING) return;
+      if (newFile.status !== FileStatusEnum.UPLOADING) return;
 
-    const xhr = new XMLHttpRequest();
-    if (requestWithCredentials !== undefined) {
-      xhr.withCredentials = requestWithCredentials;
-    }
-
-    xhr.open(requestMethod, requestUrl, true);
-
-    if (requestHeaders) {
-      for (const headerKey in requestHeaders) {
-        xhr.setRequestHeader(headerKey, requestHeaders[headerKey]);
+      const xhr = new XMLHttpRequest();
+      if (requestWithCredentials !== undefined) {
+        xhr.withCredentials = requestWithCredentials;
       }
-    }
 
-    xhr.upload.addEventListener('progress', (event: ProgressEvent<XMLHttpRequestEventTarget>) => {
-      updateFileProgress(newFile, (event.loaded * 100.0) / event.total || 100);
-    });
+      xhr.open(requestMethod, requestUrl, true);
 
-    xhr.addEventListener('readystatechange', () => {
-      if (xhr.readyState === 4 && xhr.status === 200) {
-        updateFileUploaded(newFile, xhr.response);
-      } else if (xhr.readyState === 4 && xhr.status !== 200) {
-        updateFileError(newFile, xhr.statusText);
+      if (requestHeaders) {
+        for (const headerKey in requestHeaders) {
+          xhr.setRequestHeader(headerKey, requestHeaders[headerKey]);
+        }
       }
-    });
 
-    xhr.addEventListener('timeout', () => {
-      updateFileError(newFile, 'Timeout');
-    });
+      xhr.upload.addEventListener('progress', (event: ProgressEvent<XMLHttpRequestEventTarget>) => {
+        updateFileProgress(newFile, (event.loaded * 100.0) / event.total);
+      });
 
-    updateFileProgress(file, 0);
+      xhr.addEventListener('readystatechange', () => {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          updateFileUploaded(newFile, xhr.response);
+        } else if (xhr.readyState === 4 && xhr.status !== 200) {
+          updateFileError(newFile, xhr.statusText);
+        }
+      });
 
-    const formData = new FormData();
-    formData.append('file', file);
+      xhr.addEventListener('timeout', () => {
+        updateFileError(newFile, 'Timeout');
+      });
 
-    xhr.send(formData);
-  }, []);
+      updateFileProgress(file, 0);
+
+      const formData = new FormData();
+      formData.append('file', file);
+
+      xhr.send(formData);
+    },
+    [requestHeaders, requestMethod, requestUrl, requestWithCredentials],
+  );
 
   /**
    * Handles change event for the input
@@ -297,7 +302,7 @@ const FileInput = (props: IFileInputProps): ReactElement => {
         });
       }
     },
-    [uploadFile],
+    [maxFolderDepth],
   );
 
   /**
@@ -320,23 +325,24 @@ const FileInput = (props: IFileInputProps): ReactElement => {
    */
   useEffect(() => {
     const currentDropArea = dropArea.current;
+    if (!currentDropArea) return;
 
     // Prevent default drag behaviors
     document.body.addEventListener('dragenter', preventDefaults, false);
     document.body.addEventListener('dragover', preventDefaults, false);
     document.body.addEventListener('dragleave', preventDefaults, false);
     document.body.addEventListener('drop', preventDefaults, false);
-    currentDropArea?.addEventListener('dragenter', preventDefaults, false);
-    currentDropArea?.addEventListener('dragover', preventDefaults, false);
-    currentDropArea?.addEventListener('dragleave', preventDefaults, false);
-    currentDropArea?.addEventListener('drop', preventDefaults, false);
+    currentDropArea.addEventListener('dragenter', preventDefaults, false);
+    currentDropArea.addEventListener('dragover', preventDefaults, false);
+    currentDropArea.addEventListener('dragleave', preventDefaults, false);
+    currentDropArea.addEventListener('drop', preventDefaults, false);
     // Highlight drop area when item is dragged over it
-    currentDropArea?.addEventListener('dragenter', highlight, false);
-    currentDropArea?.addEventListener('dragover', highlight, false);
-    currentDropArea?.addEventListener('drop', unhighlight, false);
-    currentDropArea?.addEventListener('dragleave', unhighlight, false);
+    currentDropArea.addEventListener('dragenter', highlight, false);
+    currentDropArea.addEventListener('dragover', highlight, false);
+    currentDropArea.addEventListener('drop', unhighlight, false);
+    currentDropArea.addEventListener('dragleave', unhighlight, false);
     // Handle dropped files
-    currentDropArea?.addEventListener('drop', handleDrop, false);
+    currentDropArea.addEventListener('drop', handleDrop, false);
 
     // Cleanup
     return () => {
@@ -344,26 +350,25 @@ const FileInput = (props: IFileInputProps): ReactElement => {
       document.body.removeEventListener('dragover', preventDefaults);
       document.body.removeEventListener('dragleave', preventDefaults);
       document.body.removeEventListener('drop', preventDefaults);
-      currentDropArea?.removeEventListener('dragenter', preventDefaults);
-      currentDropArea?.removeEventListener('dragover', preventDefaults);
-      currentDropArea?.removeEventListener('dragleave', preventDefaults);
-      currentDropArea?.removeEventListener('drop', preventDefaults);
-      currentDropArea?.removeEventListener('dragenter', highlight);
-      currentDropArea?.removeEventListener('dragover', highlight);
-      currentDropArea?.removeEventListener('drop', unhighlight);
-      currentDropArea?.removeEventListener('dragleave', unhighlight);
-      currentDropArea?.removeEventListener('drop', handleDrop);
+      currentDropArea.removeEventListener('dragenter', preventDefaults);
+      currentDropArea.removeEventListener('dragover', preventDefaults);
+      currentDropArea.removeEventListener('dragleave', preventDefaults);
+      currentDropArea.removeEventListener('drop', preventDefaults);
+      currentDropArea.removeEventListener('dragenter', highlight);
+      currentDropArea.removeEventListener('dragover', highlight);
+      currentDropArea.removeEventListener('drop', unhighlight);
+      currentDropArea.removeEventListener('dragleave', unhighlight);
+      currentDropArea.removeEventListener('drop', handleDrop);
     };
-  }, [handleDrop]);
+  }, []);
 
   return (
-    <div
-      className={classnames('gds-file-input-container', className, fieldSize && `field-input-size-${fieldSize}`)}
-      style={style}>
+    <div className={classnames('field', 'gds-file-input-container', className)} style={style}>
       <div
         key='droparea'
         ref={dropArea}
-        className={classnames('droparea', { disabled: disabled, readonly: readOnly, error: isInError })}>
+        className={classnames('droparea', { disabled: disabled, readonly: readOnly, error: isInError })}
+        tabIndex={0}>
         <label className='label'>
           {uploadMessage}
           <input
@@ -414,8 +419,8 @@ FileInput.defaultProps = {
   requestHeaders: undefined,
   requestMethod: 'POST',
   requestWithCredentials: undefined,
-  showFileSize: false,
-  showProgressBar: false,
+  showFileSize: true,
+  showProgressBar: true,
   style: undefined,
   uploadMessage: 'Click or drag file to upload',
 };

@@ -1,0 +1,222 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FileField Component FileField renders 1`] = `
+<div>
+  <div
+    class="gds-field-group"
+  >
+    <div
+      class="field gds-file-input-container"
+    >
+      <div
+        class="droparea"
+        tabindex="0"
+      >
+        <label
+          class="label"
+        >
+          Click or drag file to upload
+          <input
+            accept="*/*"
+            class="input"
+            multiple=""
+            type="file"
+            value=""
+          />
+        </label>
+      </div>
+      <div
+        class="gallery"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`FileField Component FileField renders with values in disabled highligted 1`] = `
+<div>
+  <div
+    class="gds-field-group"
+  >
+    <div
+      class="field gds-file-input-container"
+    >
+      <div
+        class="droparea disabled"
+        tabindex="0"
+      >
+        <label
+          class="label"
+        >
+          Click or drag file to upload
+          <input
+            accept="*/*"
+            class="input"
+            disabled=""
+            multiple=""
+            type="file"
+            value=""
+          />
+        </label>
+      </div>
+      <div
+        class="gallery"
+      >
+        <div
+          class="item-container"
+        >
+          <div
+            class="left"
+          >
+            <div
+              class="paperclip-icon"
+            >
+              <i
+                class="icon"
+                icon="fal,paperclip"
+              />
+            </div>
+            <div
+              class="name"
+            >
+              file.pdf
+               (1.21 kB)
+            </div>
+          </div>
+          <div
+            class="right"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`FileField Component FileField renders with values in readonly 1`] = `
+<div>
+  <div
+    class="gds-field-group"
+  >
+    <div
+      class="field gds-file-input-container"
+    >
+      <div
+        class="droparea readonly"
+        tabindex="0"
+      >
+        <label
+          class="label"
+        >
+          Click or drag file to upload
+          <input
+            accept="*/*"
+            class="input"
+            multiple=""
+            readonly=""
+            type="file"
+            value=""
+          />
+        </label>
+      </div>
+      <div
+        class="gallery"
+      >
+        <div
+          class="item-container"
+        >
+          <div
+            class="left"
+          >
+            <div
+              class="paperclip-icon"
+            >
+              <i
+                class="icon"
+                icon="fal,paperclip"
+              />
+            </div>
+            <div
+              class="name downloadable"
+            >
+              file.pdf
+               (1.21 kB)
+            </div>
+          </div>
+          <div
+            class="right"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`FileField Component FileField renders with values with fieldSize and inline 1`] = `
+<div>
+  <div
+    class="gds-field-group field-size-6 field-inline"
+  >
+    <div
+      class="field gds-file-input-container"
+    >
+      <div
+        class="droparea"
+        tabindex="0"
+      >
+        <label
+          class="label"
+        >
+          Click or drag file to upload
+          <input
+            accept="*/*"
+            class="input"
+            multiple=""
+            type="file"
+            value=""
+          />
+        </label>
+      </div>
+      <div
+        class="gallery"
+      >
+        <div
+          class="item-container"
+        >
+          <div
+            class="left"
+          >
+            <div
+              class="paperclip-icon"
+            >
+              <i
+                class="icon"
+                icon="fal,paperclip"
+              />
+            </div>
+            <div
+              class="name downloadable"
+            >
+              file.pdf
+               (1.21 kB)
+            </div>
+          </div>
+          <div
+            class="right"
+          >
+            <div
+              class="delete-icon"
+            >
+              <i
+                class="icon"
+                icon="fal,trash-alt"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

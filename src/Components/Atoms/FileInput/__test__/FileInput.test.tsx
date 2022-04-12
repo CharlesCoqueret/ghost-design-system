@@ -6,7 +6,7 @@ import FileInput from '../FileInput';
 import { FileStatusEnum } from '../types';
 
 describe('FileInput Component', () => {
-  it('FileInput renders', async () => {
+  it('FileInput renders', () => {
     const onChangeMock = jest.fn();
     const onDeleteMock = jest.fn();
     const onDownloadMock = jest.fn();
@@ -24,14 +24,13 @@ describe('FileInput Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('FileInput renders without input value', async () => {
+  it('FileInput renders without input value', () => {
     const onChangeMock = jest.fn();
     const onDeleteMock = jest.fn();
     const onDownloadMock = jest.fn();
 
     const { container, rerender } = render(
       <FileInput
-        fieldSize={4}
         onChange={onChangeMock}
         onDelete={onDeleteMock}
         onDownload={onDownloadMock}
@@ -55,7 +54,7 @@ describe('FileInput Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('FileInput handle add file successfully through input', async () => {
+  it('FileInput handle add file successfully through input', () => {
     let timeoutCallback: (() => void) | undefined = undefined;
     let progressCallback: ((event: ProgressEvent<XMLHttpRequestEventTarget>) => void) | undefined = undefined;
     let readystatechangeCallback: ((event: ProgressEvent<XMLHttpRequestEventTarget>) => void) | undefined = undefined;
@@ -160,7 +159,7 @@ describe('FileInput Component', () => {
     ]);
   });
 
-  it('FileInput handle unsuccessfull add file when quota reached', async () => {
+  it('FileInput handle unsuccessfull add file when quota reached', () => {
     const onChangeMock = jest.fn();
     const onDeleteMock = jest.fn();
     const onDownloadMock = jest.fn();
@@ -297,7 +296,7 @@ describe('FileInput Component', () => {
     ]);
   });
 
-  it('FileInput handle add file with timeout through input', async () => {
+  it('FileInput handle add file with timeout through input', () => {
     let timeoutCallback: (() => void) | undefined = undefined;
     let progressCallback: ((event: ProgressEvent<XMLHttpRequestEventTarget>) => void) | undefined = undefined;
     let readystatechangeCallback: ((event: ProgressEvent<XMLHttpRequestEventTarget>) => void) | undefined = undefined;
@@ -387,7 +386,7 @@ describe('FileInput Component', () => {
     ]);
   });
 
-  it('FileInput handle drag event for highlight', async () => {
+  it('FileInput handle drag event for highlight', () => {
     const onChangeMock = jest.fn();
     const onDeleteMock = jest.fn();
     const onDownloadMock = jest.fn();
@@ -448,6 +447,7 @@ describe('FileInput Component', () => {
         onDelete={onDeleteMock}
         onDownload={onDownloadMock}
         requestMethod='POST'
+        showFileSize={false}
         requestUrl='http://test.com'
       />,
     );
@@ -455,26 +455,25 @@ describe('FileInput Component', () => {
 
     const input = screen.getByTestId('TEST-ID');
 
-    await act(async () => {
-      fireEvent.drop(input, {
-        dataTransfer: {
-          items: {
-            length: 1,
-            0: {
-              webkitGetAsEntry: () => {
-                return {
-                  isFile: true,
-                  file: (callback: (v: any) => void) => {
-                    callback({ name: 'file1.pdf', type: 'application/pdf', size: 1234 });
-                  },
-                };
-              },
+    fireEvent.drop(input, {
+      dataTransfer: {
+        items: {
+          length: 1,
+          0: {
+            webkitGetAsEntry: () => {
+              return {
+                isFile: true,
+                file: (callback: (v: any) => void) => {
+                  callback({ name: 'file1.pdf', type: 'application/pdf', size: 1234 });
+                },
+              };
             },
           },
         },
-      });
-      await screen.findAllByText('file1.pdf');
+      },
     });
+
+    await screen.findAllByText('file1.pdf');
 
     expect(container).toMatchSnapshot();
 
@@ -489,6 +488,34 @@ describe('FileInput Component', () => {
         uid: expect.anything(),
       },
     ]);
+  });
+
+  it('FileInput handle drop without dataTransfer', () => {
+    const onChangeMock = jest.fn();
+    const onDeleteMock = jest.fn();
+    const onDownloadMock = jest.fn();
+
+    const { container } = render(
+      <FileInput
+        dataTestId='TEST-ID'
+        inputValue={[]}
+        onChange={onChangeMock}
+        onDelete={onDeleteMock}
+        onDownload={onDownloadMock}
+        requestMethod='POST'
+        showFileSize={false}
+        requestUrl='http://test.com'
+      />,
+    );
+    expect(container).toMatchSnapshot();
+
+    const input = screen.getByTestId('TEST-ID');
+
+    fireEvent.drop(input, {});
+
+    expect(container).toMatchSnapshot();
+
+    expect(onChangeMock).toBeCalledTimes(0);
   });
 
   it('FileInput handles download and delete of a file', async () => {
@@ -512,26 +539,56 @@ describe('FileInput Component', () => {
         requestUrl='http://test.com'
       />,
     );
+
     expect(container).toMatchSnapshot();
 
-    const downloadButton = screen.getByTestId('TEST-ID-download');
+    const downloadButton = await screen.findByTestId('TEST-ID-download');
+    userEvent.click(downloadButton);
 
-    await act(async () => {
-      userEvent.click(downloadButton);
-    });
+    expect(await screen.findByTestId('TEST-ID-spinner')).toBeTruthy();
+    expect(screen.queryByTestId('TEST-ID-spinner')).toBeFalsy();
 
+    expect(container).toMatchSnapshot();
     expect(onDownloadMock).toBeCalledTimes(1);
     expect(onDownloadMock).toBeCalledWith({ uid: '1', name: 'AME', size: 1234, type: 'image/png', status: 'done' });
 
-    const deleteButton = screen.getByTestId('TEST-ID-delete');
+    const deleteButton = await screen.findByTestId('TEST-ID-delete');
 
-    await act(async () => {
-      userEvent.click(deleteButton);
-    });
+    userEvent.click(deleteButton);
 
+    expect(await screen.findByTestId('TEST-ID-spinner')).toBeTruthy();
+    expect(screen.queryByTestId('TEST-ID-spinner')).toBeFalsy();
+
+    expect(container).toMatchSnapshot();
     expect(onDeleteMock).toBeCalledTimes(1);
     expect(onDeleteMock).toBeCalledWith({ uid: '1', name: 'AME', size: 1234, type: 'image/png', status: 'done' });
+  });
 
+  it('FileInput handles correctly deletion when no handler defined', async () => {
+    const onChangeMock = jest.fn();
+    const onDownloadMock = jest.fn().mockImplementation(() => {
+      return Promise.resolve();
+    });
+
+    const { container } = render(
+      <FileInput
+        dataTestId='TEST-ID'
+        inputValue={[{ uid: '1', name: 'AME', size: 1234, type: 'image/png' }]}
+        maxFiles={1}
+        onChange={onChangeMock}
+        onDownload={onDownloadMock}
+        requestMethod='POST'
+        requestUrl='http://test.com'
+      />,
+    );
+
+    expect(container).toMatchSnapshot();
+
+    const deleteButton = await screen.findByTestId('TEST-ID-delete');
+
+    userEvent.click(deleteButton);
+
+    expect(onChangeMock).toBeCalledTimes(0);
     expect(container).toMatchSnapshot();
   });
 
@@ -560,12 +617,40 @@ describe('FileInput Component', () => {
 
     const deleteButton = screen.getByTestId('TEST-ID-delete');
 
-    await act(async () => {
-      userEvent.click(deleteButton);
-    });
+    userEvent.click(deleteButton);
+
+    expect(await screen.findByTestId('TEST-ID-spinner')).toBeTruthy();
+    expect(screen.queryByTestId('TEST-ID-spinner')).toBeFalsy();
 
     expect(onDeleteMock).toBeCalledTimes(1);
     expect(onDeleteMock).toBeCalledWith({ uid: '1', name: 'AME', size: 1234, type: 'image/png', status: 'done' });
+
+    expect(container).toMatchSnapshot();
+  });
+
+  it('FileInput handles download without download callback', async () => {
+    const onChangeMock = jest.fn();
+    const onDeleteMock = jest.fn();
+
+    const { container } = render(
+      <FileInput
+        dataTestId='TEST-ID'
+        inputValue={[{ uid: '1', name: 'AME', size: 1234, type: 'image/png' }]}
+        maxFiles={1}
+        onChange={onChangeMock}
+        onDelete={onDeleteMock}
+        requestMethod='POST'
+        requestUrl='http://test.com'
+      />,
+    );
+
+    expect(container).toMatchSnapshot();
+
+    const downloadButton = await screen.findByTestId('TEST-ID-download');
+    userEvent.click(downloadButton);
+
+    expect(await screen.findByTestId('TEST-ID-spinner')).toBeTruthy();
+    expect(screen.queryByTestId('TEST-ID-spinner')).toBeFalsy();
 
     expect(container).toMatchSnapshot();
   });

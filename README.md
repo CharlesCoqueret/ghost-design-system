@@ -15,7 +15,11 @@
   - [Link](https://charlescoqueret.github.io/ghost-design-system/?path=/story/atom-link--default)
   - [Modal](https://charlescoqueret.github.io/ghost-design-system/?path=/story/atom-modal--default)
   - Portal
+  - [Pulsar](https://charlescoqueret.github.io/ghost-design-system/?path=/story/atom-pulsar--default)
   - [Tooltip](https://charlescoqueret.github.io/ghost-design-system/?path=/story/atom-tooltip--default)
+  - Typography
+    - [Text](https://charlescoqueret.github.io/ghost-design-system/?path=/story/atom-typography-text--default)
+    - [Title](https://charlescoqueret.github.io/ghost-design-system/?path=/story/atom-typography-title--default)
 - Molecules:
   - [Amount field](https://charlescoqueret.github.io/ghost-design-system/?path=/story/molecule-amountfield--default)
   - [Button](https://charlescoqueret.github.io/ghost-design-system/?path=/story/molecule-button--simple)
@@ -41,6 +45,7 @@
     - [Line editable Data Table (editon in popup form with data validation)](https://charlescoqueret.github.io/ghost-design-system/?path=/story/organism-datatable-lineeditabledatatable--default)
     - [Line editable in place data table (edition of a line in place)](https://charlescoqueret.github.io/ghost-design-system/?path=/story/organism-datatable-lineeditableinplacedatatable--default)
     - [Static data table](https://charlescoqueret.github.io/ghost-design-system/?path=/story/organism-datatable-staticdatatable--default)
+  - [Filter](https://charlescoqueret.github.io/ghost-design-system/?path=/story/organism-filter--default)
   - Form:
     - Form component
     - [useForm hook](https://charlescoqueret.github.io/ghost-design-system/?path=/story/organism-useform--default)
@@ -101,6 +106,7 @@ $tertiary: $charcoal;
 This react components library uses the following:
 
 - [@fortawesome](https://fontawesome.com/)
+- [@szhsin/react-menu](https://szhsin.github.io/react-menu/)
 - [classnames](https://github.com/JedWatson/classnames#readme)
 - [color-alpha](https://github.com/colorjs/color-alpha)
 - [color-rgba](https://github.com/colorjs/color-rgba)
@@ -111,6 +117,7 @@ This react components library uses the following:
 - [react-number-format](https://github.com/s-yadav/react-number-format#readme)
 - [react-select](https://react-select.com/)
 - [suneditor](http://suneditor.com/)
+- [yup](https://github.com/jquense/yup)
 
 Peer dependencies:
 
@@ -118,12 +125,14 @@ Peer dependencies:
 - [react](https://fr.reactjs.org/)
 - [react-dom](https://fr.reactjs.org/docs/react-dom.html)
 - [react-router-dom](https://reactrouter.com/)
+- [suneditor](http://suneditor.com/)
 
 Dev dependencies:
 
 - [ESLint](https://eslint.org/)
 - [Jest](https://jestjs.io/)
 - [Prettier](https://prettier.io/)
+- [Rollup](https://rollupjs.org/)
 - [SCSS](https://sass-lang.com/)
 - [Storybook](https://storybook.js.org/)
 - [Testing-library](https://testing-library.com/)
@@ -138,12 +147,14 @@ Dev dependencies:
 ```
 ├── .storybook
 ├── src
-│   ├── components
-|   |   ├── Example
-|   |   |   ├── __tests__
-|   |   |   |   ├── Example.test.tsx
-|   |   |   ├── Example.stories.tsx
-|   |   |   ├── Example.tsx
+│   ├── Components
+|   |   ├── Atoms
+|   |   |   ├── Example
+|   |   |   |   ├── __tests__
+|   |   |   |   |   ├── Example.test.tsx
+|   |   |   |   ├── Example.stories.tsx
+|   |   |   |   ├── Example.tsx
+|   |   |   |   ├── index.ts
 |   |   |   ├── index.ts
 |   |   ├── index.ts
 |   ├── index.ts

@@ -4,7 +4,7 @@ import { render } from '@testing-library/react';
 import SideBar from '../SideBar';
 
 describe('SideBar Component', () => {
-  it('SideBar renders', async () => {
+  it('SideBar renders', () => {
     const { container } = render(
       <SideBar
         backToMenu={'Back to menu'}
@@ -41,7 +41,7 @@ describe('SideBar Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('SideBar renders without sections', async () => {
+  it('SideBar renders without sections', () => {
     const { container } = render(<SideBar backToMenu={'Back to menu'} style={{ height: '600px' }} />);
 
     expect(container).toMatchSnapshot();

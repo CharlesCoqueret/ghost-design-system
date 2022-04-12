@@ -48,7 +48,7 @@ exports[`EditableDataTableBody Component EditableDataTableBody renders and handl
             class="gds-field-group"
           >
             <div
-              class="gds-select-container input-select-field field input-select-field"
+              class="field gds-select-container input-select-field input-select-field"
             >
               <div
                 class=" css-1959ul7-container"
@@ -80,10 +80,8 @@ exports[`EditableDataTableBody Component EditableDataTableBody renders and handl
                     >
                       <input
                         aria-autocomplete="list"
-                        aria-controls="react-select-2-listbox"
                         aria-expanded="false"
                         aria-haspopup="true"
-                        aria-owns="react-select-2-listbox"
                         autocapitalize="none"
                         autocomplete="off"
                         autocorrect="off"
@@ -248,7 +246,7 @@ exports[`EditableDataTableBody Component EditableDataTableBody renders and handl
             class="gds-field-group"
           >
             <div
-              class="gds-select-container input-select-field field input-select-field"
+              class="field gds-select-container input-select-field input-select-field"
             >
               <div
                 class=" css-1959ul7-container"
@@ -280,10 +278,8 @@ exports[`EditableDataTableBody Component EditableDataTableBody renders and handl
                     >
                       <input
                         aria-autocomplete="list"
-                        aria-controls="react-select-3-listbox"
                         aria-expanded="false"
                         aria-haspopup="true"
-                        aria-owns="react-select-3-listbox"
                         autocapitalize="none"
                         autocomplete="off"
                         autocorrect="off"

@@ -72,6 +72,7 @@ export const CheckboxField = (props: ICheckboxFieldProps): ReactElement => {
       containerRef={containerRef}
       errorMessage={errorMessage}
       fieldClassName={fieldClassName}
+      fieldSize={fieldSize}
       helperText={helperText}
       highlighted={highlighted}
       inline={inline}
@@ -81,15 +82,11 @@ export const CheckboxField = (props: ICheckboxFieldProps): ReactElement => {
       mandatory={mandatory}
       readOnly={readOnly}>
       <CheckboxInput
-        className={classnames(
-          'field',
-          'input-checkbox-field',
-          fieldSize && `field-input-size-${fieldSize}`,
-          inputClassName,
-        )}
+        className={classnames('input-checkbox-field', inputClassName)}
         dataTestId={dataTestId}
         disabled={disabled}
         highlighted={highlighted}
+        inline={inline}
         isInError={errorMessage !== undefined}
         options={inputValue}
         onChange={onChange}

@@ -59,7 +59,7 @@ const DatePickerInput = (props: IDatePickerProps): ReactElement => {
   } = props;
 
   return (
-    <div className={className}>
+    <div className={classnames('field', className)}>
       <DatePicker
         name={name}
         selected={inputValue}

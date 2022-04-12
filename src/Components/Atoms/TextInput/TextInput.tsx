@@ -9,8 +9,6 @@ export interface ITextInputProps {
   disabled?: boolean;
   /** Ellipsis in readonly (optional, default: false) */
   ellipsis?: boolean;
-  /** Size of the field in a 12 column grid (optional, default: undefined) */
-  fieldSize?: number;
   /** Highlight value in readonly mode (optional, default: false) */
   highlighted?: boolean;
   /** Class for the input (optional, default: undefined) */
@@ -38,7 +36,6 @@ const TextInput = (props: ITextInputProps): ReactElement => {
     dataTestId,
     disabled,
     ellipsis,
-    fieldSize,
     highlighted,
     inputClassName,
     isInError,
@@ -57,7 +54,6 @@ const TextInput = (props: ITextInputProps): ReactElement => {
         className={classnames(
           'field',
           'input-text-field-read-only',
-          fieldSize && `field-input-size-${fieldSize}`,
           {
             'field-highlighted': highlighted,
           },
@@ -73,7 +69,6 @@ const TextInput = (props: ITextInputProps): ReactElement => {
       className={classnames(
         'field',
         'gds-input-text-field',
-        fieldSize && `field-input-size-${fieldSize}`,
         {
           'input-error': isInError && !disabled,
         },
@@ -97,7 +92,6 @@ const TextInput = (props: ITextInputProps): ReactElement => {
 TextInput.defaultProps = {
   disabled: false,
   ellipsis: false,
-  fieldSize: undefined,
   highlighted: false,
   inputClassName: undefined,
   inputValue: '',

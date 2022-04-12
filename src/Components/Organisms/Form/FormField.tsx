@@ -7,7 +7,6 @@ import sortBy from 'lodash/sortBy';
 import { AnyObject } from 'yup/lib/types';
 
 import { IToggleEntry } from '../../Atoms/CheckBoxInput';
-import { GenericField } from '../../Atoms/GenericField';
 import { FileStatusEnum, IFile } from '../../Atoms/FileInput';
 import { AmountField } from '../../Molecules/AmountField';
 import { CheckboxField } from '../../Molecules/CheckboxField';
@@ -34,7 +33,7 @@ export interface IFormFieldProps<T> {
   handleChange: (dataIndex: keyof T, newValue: T[keyof T]) => void;
   previousData?: T;
   requiredFromValidation?: boolean;
-  validationError?: Record<keyof T, FieldError>;
+  validationError?: Partial<Record<keyof T, FieldError>>;
   usePortal?: boolean;
 }
 
@@ -105,12 +104,12 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
           highlight={previousData !== undefined}
           oldData={previousData && previousData[field.dataIndex]}
           shouldHighlight={shouldHighlight}>
-          {field.customField({
-            ...data,
-            onChange: (newValue: T[keyof T]) => {
+          <field.customField
+            data={data}
+            onChange={(newValue: T[keyof T]) => {
               handleChange(field.dataIndex, newValue);
-            },
-          })}
+            }}
+          />
         </Highlighter>
       );
     }
@@ -153,7 +152,6 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
             }}
             inputValue={(data && (data[field.dataIndex] as unknown as string | number | undefined)) || undefined}
             errorMessage={errorMessage}
-            usePortal={usePortal}
           />
         </Highlighter>
       );
@@ -224,7 +222,6 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
             }}
             inputValue={(data && (data[field.dataIndex] as unknown as Array<string> | undefined)) || undefined}
             errorMessage={errorMessage}
-            usePortal={usePortal}
           />
         </Highlighter>
       );
@@ -269,6 +266,26 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
         </Highlighter>
       );
     }
+    case FieldTypeEnum.RICHTEXT: {
+      const shouldHighlight = previousData && previousData[field.dataIndex] !== data[field.dataIndex];
+      return (
+        <Highlighter
+          highlight={previousData !== undefined}
+          oldData={previousData && previousData[field.dataIndex]}
+          shouldHighlight={shouldHighlight}>
+          <RichTextField
+            {...field}
+            mandatory={requiredFromValidation || field.mandatory}
+            name={field.dataIndex.toString()}
+            onChange={(newValue: string) => {
+              handleChange(field.dataIndex, newValue as unknown as T[keyof T]);
+            }}
+            inputValue={(data && (data[field.dataIndex] as unknown as string)) || undefined}
+            errorMessage={errorMessage}
+          />
+        </Highlighter>
+      );
+    }
     case FieldTypeEnum.SELECT: {
       const { options, ...rest } = field;
       const localOptions = typeof options === 'function' ? options(data) : options;
@@ -294,27 +311,6 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
               handleChange(field.dataIndex, newValue as unknown as T[keyof T]);
             }}
             inputValue={(data && (data[field.dataIndex] as unknown as string | undefined)) || undefined}
-            errorMessage={errorMessage}
-            usePortal={usePortal}
-          />
-        </Highlighter>
-      );
-    }
-    case FieldTypeEnum.RICHTEXT: {
-      const shouldHighlight = previousData && previousData[field.dataIndex] !== data[field.dataIndex];
-      return (
-        <Highlighter
-          highlight={previousData !== undefined}
-          oldData={previousData && previousData[field.dataIndex]}
-          shouldHighlight={shouldHighlight}>
-          <RichTextField
-            {...field}
-            mandatory={requiredFromValidation || field.mandatory}
-            name={field.dataIndex.toString()}
-            onChange={(newValue: string) => {
-              handleChange(field.dataIndex, newValue as unknown as T[keyof T]);
-            }}
-            inputValue={(data && (data[field.dataIndex] as unknown as string)) || undefined}
             errorMessage={errorMessage}
           />
         </Highlighter>
@@ -353,26 +349,23 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
     }
     case FieldTypeEnum.TABLE: {
       return (
-        <>
-          <Highlighter>
-            <LineEditableDataTable
-              {...field}
-              extra={{
-                ...field.extra,
-                onRowSubmit: (editedRow, submittedRowIndex: number) => {
-                  (data[field.dataIndex] as unknown as Array<unknown>)[submittedRowIndex] = editedRow;
-                  handleChange(field.dataIndex, data[field.dataIndex] as unknown as T[keyof T]);
-                },
-                onRowDelete: (_editedRow, submittedRowIndex: number) => {
-                  (data[field.dataIndex] as unknown as Array<unknown>).splice(submittedRowIndex, 1);
-                  handleChange(field.dataIndex, data[field.dataIndex] as unknown as T[keyof T]);
-                },
-              }}
-              data={data && (data[field.dataIndex] as unknown as Array<AnyObject>)}
-            />
-          </Highlighter>
-          <GenericField errorMessage={errorMessage} />
-        </>
+        <Highlighter>
+          <LineEditableDataTable
+            {...field}
+            extra={{
+              ...field.extra,
+              onRowSubmit: (editedRow, submittedRowIndex: number) => {
+                (data[field.dataIndex] as unknown as Array<unknown>)[submittedRowIndex] = editedRow;
+                handleChange(field.dataIndex, data[field.dataIndex] as unknown as T[keyof T]);
+              },
+              onRowDelete: (_editedRow, submittedRowIndex: number) => {
+                (data[field.dataIndex] as unknown as Array<unknown>).splice(submittedRowIndex, 1);
+                handleChange(field.dataIndex, data[field.dataIndex] as unknown as T[keyof T]);
+              },
+            }}
+            data={data && (data[field.dataIndex] as unknown as Array<AnyObject>)}
+          />
+        </Highlighter>
       );
     }
     case FieldTypeEnum.TEXT: {
@@ -436,13 +429,7 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
         </Highlighter>
       );
     }
-
-    default: {
-      throw new Error('Missing FieldTypeEnum');
-    }
   }
-
-  throw new Error('Should have returned by then');
 };
 
 FormField.defaultProps = {

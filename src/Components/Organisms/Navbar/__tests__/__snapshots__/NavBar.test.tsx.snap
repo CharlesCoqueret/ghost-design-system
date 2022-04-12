@@ -72,6 +72,61 @@ exports[`NavBar Component NavBar renders 1`] = `
 </div>
 `;
 
+exports[`NavBar Component NavBar renders with variations 1`] = `
+<div>
+  <nav
+    class="gds-nav-bar-container noselect"
+  >
+    <div
+      class="nav-bar-brand"
+    >
+      <a
+        href="/"
+      >
+        <img
+          alt="logo"
+          src="logosource"
+        />
+      </a>
+    </div>
+    <div
+      class="nav-bar-items-container"
+    >
+      <div
+        class="nav-bar-items-group"
+      >
+        <div
+          class="nav-bar-menu-item"
+        >
+          <i
+            class="icon"
+            icon="fal,icons"
+          />
+          <div
+            class="nav-bar-menu-label"
+          >
+            button
+          </div>
+        </div>
+      </div>
+      <div
+        class="nav-bar-items-group"
+      >
+        <div
+          class="nav-bar-menu-item"
+        >
+          <div
+            class="nav-bar-menu-label"
+          >
+            button
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</div>
+`;
+
 exports[`NavBar Component NavBar renders without buttons or icons 1`] = `
 <div>
   <nav

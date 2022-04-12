@@ -3,7 +3,7 @@
 exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handles change 1`] = `
 <div>
   <div
-    class="gds-select-container input-select-field"
+    class="field gds-select-container input-select-field"
   >
     <div
       class=" css-1959ul7-container"
@@ -24,7 +24,7 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handl
         <span
           id="aria-context"
         >
-          option option 2 focused, 1 of 1. 1 result available for search term option 2. Use Up and Down to choose options, press Enter to select the currently focused option, press Escape to exit the menu, press Tab to select the option and exit the menu.
+            Use Up and Down to choose options, press Enter to select the currently focused option, press Escape to exit the menu, press Tab to select the option and exit the menu.
         </span>
       </span>
       <div
@@ -48,7 +48,7 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handl
               autocomplete="off"
               autocorrect="off"
               class=""
-              id="react-select-6-input"
+              id="DATA-TEST-ID"
               role="combobox"
               spellcheck="false"
               style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
@@ -61,6 +61,50 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handl
         <div
           class=" css-1hb7zxy-IndicatorsContainer"
         >
+          <div
+            aria-hidden="true"
+          >
+            <svg
+              aria-hidden="true"
+              class="icon gds-loader size-1x dynamic-search-spinner"
+              data-testid="DATA-TEST-ID-spinner"
+              focusable="false"
+              height="50"
+              icon="fal,spinner"
+              preserveAspectRatio="xMidYMid"
+              role="img"
+              style="background: transparent;"
+              viewBox="0 0 100 100"
+              width="50"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="50"
+                cy="50"
+                fill="transparent"
+                r="30"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-width="10"
+              >
+                <animatetransform
+                  attributeName="transform"
+                  dur="2s"
+                  keyTimes="0;0.5;1"
+                  repeatCount="indefinite"
+                  type="rotate"
+                  values="0 50 50;180 50 50;720 50 50"
+                />
+                <animate
+                  attributeName="stroke-dasharray"
+                  dur="2s"
+                  keyTimes="0;0.5;1"
+                  repeatCount="indefinite"
+                  values="20 150; 150 20; 20 150"
+                />
+              </circle>
+            </svg>
+          </div>
           <span
             class=" css-1okebmr-indicatorSeparator"
           />
@@ -69,6 +113,7 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handl
           >
             <i
               class="dynamic-search-icon icon"
+              data-testid="DATA-TEST-ID-magnifier"
               icon="fal,magnifying-glass"
             />
           </div>
@@ -89,12 +134,9 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handl
               class=" css-4ljt47-MenuList"
             >
               <div
-                aria-disabled="false"
-                class=" css-cfsx9x-option"
-                id="react-select-6-option-0"
-                tabindex="-1"
+                class=" css-1tfbn7p-LoadingMessage"
               >
-                option 2
+                Loading...
               </div>
             </div>
           </div>
@@ -110,10 +152,97 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handl
 </div>
 `;
 
+exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handles change 2`] = `
+<div>
+  <div
+    class="field gds-select-container input-select-field"
+  >
+    <div
+      class=" css-1959ul7-container"
+    >
+      <span
+        class="css-1f43avz-a11yText-A11yText"
+        id="react-select-6-live-region"
+      />
+      <span
+        aria-atomic="false"
+        aria-live="polite"
+        aria-relevant="additions text"
+        class="css-1f43avz-a11yText-A11yText"
+      />
+      <div
+        class=" css-154lpzf-control"
+      >
+        <div
+          class=" css-9plg90-ValueContainer"
+        >
+          <div
+            class=" css-qc6sy-singleValue"
+          >
+            option 2
+          </div>
+          <div
+            class=" css-6j8wv5-Input"
+            data-value=""
+          >
+            <input
+              aria-autocomplete="list"
+              aria-expanded="false"
+              aria-haspopup="true"
+              autocapitalize="none"
+              autocomplete="off"
+              autocorrect="off"
+              class=""
+              id="DATA-TEST-ID"
+              role="combobox"
+              spellcheck="false"
+              style="opacity: 0; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+              tabindex="0"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          class=" css-1hb7zxy-IndicatorsContainer"
+        >
+          <div
+            aria-hidden="true"
+          >
+            <i
+              class="dynamic-search-icon icon"
+              data-testid="DATA-TEST-ID-clear"
+              icon="fal,xmark"
+            />
+          </div>
+          <span
+            class=" css-1okebmr-indicatorSeparator"
+          />
+          <div
+            aria-hidden="true"
+          >
+            <i
+              class="dynamic-search-icon icon"
+              data-testid="DATA-TEST-ID-magnifier"
+              icon="fal,magnifying-glass"
+            />
+          </div>
+        </div>
+      </div>
+      <input
+        name="SELECT"
+        type="hidden"
+        value="OPTION2"
+      />
+    </div>
+  </div>
+</div>
+`;
+
 exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handles change to undefined 1`] = `
 <div>
   <div
-    class="gds-select-container input-select-field"
+    class="field gds-select-container input-select-field"
   >
     <div
       class=" css-1959ul7-container"
@@ -145,10 +274,8 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handl
           >
             <input
               aria-autocomplete="list"
-              aria-controls="react-select-11-listbox"
               aria-expanded="false"
               aria-haspopup="true"
-              aria-owns="react-select-11-listbox"
               autocapitalize="none"
               autocomplete="off"
               autocorrect="off"
@@ -202,7 +329,7 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handl
 exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handles change to undefined 2`] = `
 <div>
   <div
-    class="gds-select-container input-select-field"
+    class="field gds-select-container input-select-field"
   >
     <div
       class=" css-1959ul7-container"
@@ -318,7 +445,158 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handl
 exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handles change with no option string 1`] = `
 <div>
   <div
-    class="gds-select-container input-select-field"
+    class="field gds-select-container input-select-field"
+  >
+    <div
+      class=" css-1959ul7-container"
+    >
+      <span
+        class="css-1f43avz-a11yText-A11yText"
+        id="react-select-7-live-region"
+      />
+      <span
+        aria-atomic="false"
+        aria-live="polite"
+        aria-relevant="additions text"
+        class="css-1f43avz-a11yText-A11yText"
+      >
+        <span
+          id="aria-selection"
+        />
+        <span
+          id="aria-context"
+        >
+            Use Up and Down to choose options, press Enter to select the currently focused option, press Escape to exit the menu, press Tab to select the option and exit the menu.
+        </span>
+      </span>
+      <div
+        class=" css-1tkmbhg-control"
+      >
+        <div
+          class=" css-9plg90-ValueContainer"
+        >
+          <div
+            class=" css-1pndypt-Input"
+            data-value="option 2"
+          >
+            <input
+              aria-autocomplete="list"
+              aria-controls="react-select-7-listbox"
+              aria-expanded="true"
+              aria-haspopup="true"
+              aria-owns="react-select-7-listbox"
+              autocapitalize="none"
+              autocomplete="off"
+              autocorrect="off"
+              class=""
+              id="DATA-TEST-ID"
+              role="combobox"
+              spellcheck="false"
+              style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+              tabindex="0"
+              type="text"
+              value="option 2"
+            />
+          </div>
+        </div>
+        <div
+          class=" css-1hb7zxy-IndicatorsContainer"
+        >
+          <div
+            aria-hidden="true"
+          >
+            <svg
+              aria-hidden="true"
+              class="icon gds-loader size-1x dynamic-search-spinner"
+              data-testid="DATA-TEST-ID-spinner"
+              focusable="false"
+              height="50"
+              icon="fal,spinner"
+              preserveAspectRatio="xMidYMid"
+              role="img"
+              style="background: transparent;"
+              viewBox="0 0 100 100"
+              width="50"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="50"
+                cy="50"
+                fill="transparent"
+                r="30"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-width="10"
+              >
+                <animatetransform
+                  attributeName="transform"
+                  dur="2s"
+                  keyTimes="0;0.5;1"
+                  repeatCount="indefinite"
+                  type="rotate"
+                  values="0 50 50;180 50 50;720 50 50"
+                />
+                <animate
+                  attributeName="stroke-dasharray"
+                  dur="2s"
+                  keyTimes="0;0.5;1"
+                  repeatCount="indefinite"
+                  values="20 150; 150 20; 20 150"
+                />
+              </circle>
+            </svg>
+          </div>
+          <span
+            class=" css-1okebmr-indicatorSeparator"
+          />
+          <div
+            aria-hidden="true"
+          >
+            <i
+              class="dynamic-search-icon icon"
+              data-testid="DATA-TEST-ID-magnifier"
+              icon="fal,magnifying-glass"
+            />
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          class=" css-omztxt"
+        >
+          <div
+            class=" css-26l3qy-menu"
+            id="react-select-7-listbox"
+          >
+            <div
+              class="css-bp8cua-ScrollManager"
+            />
+            <div
+              class=" css-4ljt47-MenuList"
+            >
+              <div
+                class=" css-1tfbn7p-LoadingMessage"
+              >
+                Loading...
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <input
+        name="SELECT"
+        type="hidden"
+        value="OPTION1"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handles change with no option string 2`] = `
+<div>
+  <div
+    class="field gds-select-container input-select-field"
   >
     <div
       class=" css-1959ul7-container"
@@ -350,10 +628,8 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handl
           >
             <input
               aria-autocomplete="list"
-              aria-controls="react-select-7-listbox"
               aria-expanded="false"
               aria-haspopup="true"
-              aria-owns="react-select-7-listbox"
               autocapitalize="none"
               autocomplete="off"
               autocorrect="off"
@@ -398,14 +674,14 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handl
 exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handles creation 1`] = `
 <div>
   <div
-    class="gds-select-container input-select-field"
+    class="field gds-select-container input-select-field"
   >
     <div
       class=" css-1959ul7-container"
     >
       <span
         class="css-1f43avz-a11yText-A11yText"
-        id="react-select-12-live-region"
+        id="react-select-13-live-region"
       />
       <span
         aria-atomic="false"
@@ -421,7 +697,7 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handl
         >
           <div
             class=" css-14el2xx-placeholder"
-            id="react-select-12-placeholder"
+            id="react-select-13-placeholder"
           >
             Select...
           </div>
@@ -431,11 +707,9 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handl
           >
             <input
               aria-autocomplete="list"
-              aria-controls="react-select-12-listbox"
-              aria-describedby="react-select-12-placeholder"
+              aria-describedby="react-select-13-placeholder"
               aria-expanded="false"
               aria-haspopup="true"
-              aria-owns="react-select-12-listbox"
               autocapitalize="none"
               autocomplete="off"
               autocorrect="off"
@@ -480,14 +754,286 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handl
 exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handles creation 2`] = `
 <div>
   <div
-    class="gds-select-container input-select-field"
+    class="field gds-select-container input-select-field"
   >
     <div
       class=" css-1959ul7-container"
     >
       <span
         class="css-1f43avz-a11yText-A11yText"
-        id="react-select-12-live-region"
+        id="react-select-13-live-region"
+      />
+      <span
+        aria-atomic="false"
+        aria-live="polite"
+        aria-relevant="additions text"
+        class="css-1f43avz-a11yText-A11yText"
+      >
+        <span
+          id="aria-selection"
+        />
+        <span
+          id="aria-context"
+        >
+            Use Up and Down to choose options, press Enter to select the currently focused option, press Escape to exit the menu, press Tab to select the option and exit the menu.
+        </span>
+      </span>
+      <div
+        class=" css-1tkmbhg-control"
+      >
+        <div
+          class=" css-9plg90-ValueContainer"
+        >
+          <div
+            class=" css-1pndypt-Input"
+            data-value="abc"
+          >
+            <input
+              aria-autocomplete="list"
+              aria-controls="react-select-13-listbox"
+              aria-describedby="react-select-13-placeholder"
+              aria-expanded="true"
+              aria-haspopup="true"
+              aria-owns="react-select-13-listbox"
+              autocapitalize="none"
+              autocomplete="off"
+              autocorrect="off"
+              class=""
+              id="DATA-TEST-ID"
+              role="combobox"
+              spellcheck="false"
+              style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+              tabindex="0"
+              type="text"
+              value="abc"
+            />
+          </div>
+        </div>
+        <div
+          class=" css-1hb7zxy-IndicatorsContainer"
+        >
+          <div
+            aria-hidden="true"
+          >
+            <svg
+              aria-hidden="true"
+              class="icon gds-loader size-1x dynamic-search-spinner"
+              data-testid="DATA-TEST-ID-spinner"
+              focusable="false"
+              height="50"
+              icon="fal,spinner"
+              preserveAspectRatio="xMidYMid"
+              role="img"
+              style="background: transparent;"
+              viewBox="0 0 100 100"
+              width="50"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="50"
+                cy="50"
+                fill="transparent"
+                r="30"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-width="10"
+              >
+                <animatetransform
+                  attributeName="transform"
+                  dur="2s"
+                  keyTimes="0;0.5;1"
+                  repeatCount="indefinite"
+                  type="rotate"
+                  values="0 50 50;180 50 50;720 50 50"
+                />
+                <animate
+                  attributeName="stroke-dasharray"
+                  dur="2s"
+                  keyTimes="0;0.5;1"
+                  repeatCount="indefinite"
+                  values="20 150; 150 20; 20 150"
+                />
+              </circle>
+            </svg>
+          </div>
+          <span
+            class=" css-1okebmr-indicatorSeparator"
+          />
+          <div
+            aria-hidden="true"
+          >
+            <i
+              class="dynamic-search-icon icon"
+              data-testid="DATA-TEST-ID-magnifier"
+              icon="fal,magnifying-glass"
+            />
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          class=" css-omztxt"
+        >
+          <div
+            class=" css-26l3qy-menu"
+            id="react-select-13-listbox"
+          >
+            <div
+              class="css-bp8cua-ScrollManager"
+            />
+            <div
+              class=" css-4ljt47-MenuList"
+            >
+              <div
+                class=" css-1tfbn7p-LoadingMessage"
+              >
+                Loading...
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <input
+        name="SELECT"
+        type="hidden"
+        value=""
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handles creation 3`] = `
+<div>
+  <div
+    class="field gds-select-container input-select-field"
+  >
+    <div
+      class=" css-j5ssuk-container"
+    >
+      <span
+        class="css-1f43avz-a11yText-A11yText"
+        id="react-select-13-live-region"
+      />
+      <span
+        aria-atomic="false"
+        aria-live="polite"
+        aria-relevant="additions text"
+        class="css-1f43avz-a11yText-A11yText"
+      />
+      <div
+        class=" css-1pq4mj-control"
+      >
+        <div
+          class=" css-9plg90-ValueContainer"
+        >
+          <div
+            class=" css-14el2xx-placeholder"
+            id="react-select-13-placeholder"
+          >
+            Select...
+          </div>
+          <div
+            class=" css-jzldcf-Input"
+            data-value=""
+          >
+            <input
+              aria-autocomplete="list"
+              aria-describedby="react-select-13-placeholder"
+              aria-expanded="false"
+              aria-haspopup="true"
+              autocapitalize="none"
+              autocomplete="off"
+              autocorrect="off"
+              class=""
+              disabled=""
+              id="DATA-TEST-ID"
+              role="combobox"
+              spellcheck="false"
+              style="opacity: 0; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+              tabindex="0"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          class=" css-1hb7zxy-IndicatorsContainer"
+        >
+          <div
+            aria-hidden="true"
+          >
+            <svg
+              aria-hidden="true"
+              class="icon gds-loader size-1x dynamic-search-spinner"
+              data-testid="DATA-TEST-ID-spinner"
+              focusable="false"
+              height="50"
+              icon="fal,spinner"
+              preserveAspectRatio="xMidYMid"
+              role="img"
+              style="background: transparent;"
+              viewBox="0 0 100 100"
+              width="50"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="50"
+                cy="50"
+                fill="transparent"
+                r="30"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-width="10"
+              >
+                <animatetransform
+                  attributeName="transform"
+                  dur="2s"
+                  keyTimes="0;0.5;1"
+                  repeatCount="indefinite"
+                  type="rotate"
+                  values="0 50 50;180 50 50;720 50 50"
+                />
+                <animate
+                  attributeName="stroke-dasharray"
+                  dur="2s"
+                  keyTimes="0;0.5;1"
+                  repeatCount="indefinite"
+                  values="20 150; 150 20; 20 150"
+                />
+              </circle>
+            </svg>
+          </div>
+          <span
+            class=" css-109onse-indicatorSeparator"
+          />
+          <div
+            aria-hidden="true"
+          >
+            <i
+              class="dynamic-search-icon icon"
+              data-testid="DATA-TEST-ID-magnifier"
+              icon="fal,magnifying-glass"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handles creation 4`] = `
+<div>
+  <div
+    class="field gds-select-container input-select-field"
+  >
+    <div
+      class=" css-1959ul7-container"
+    >
+      <span
+        class="css-1f43avz-a11yText-A11yText"
+        id="react-select-13-live-region"
       />
       <span
         aria-atomic="false"
@@ -512,10 +1058,8 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handl
           >
             <input
               aria-autocomplete="list"
-              aria-controls="react-select-12-listbox"
               aria-expanded="false"
               aria-haspopup="true"
-              aria-owns="react-select-12-listbox"
               autocapitalize="none"
               autocomplete="off"
               autocorrect="off"
@@ -569,14 +1113,14 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handl
 exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handles creation with undefined result 1`] = `
 <div>
   <div
-    class="gds-select-container input-select-field"
+    class="field gds-select-container input-select-field"
   >
     <div
       class=" css-1959ul7-container"
     >
       <span
         class="css-1f43avz-a11yText-A11yText"
-        id="react-select-13-live-region"
+        id="react-select-14-live-region"
       />
       <span
         aria-atomic="false"
@@ -592,7 +1136,7 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handl
         >
           <div
             class=" css-14el2xx-placeholder"
-            id="react-select-13-placeholder"
+            id="react-select-14-placeholder"
           >
             Select...
           </div>
@@ -602,11 +1146,9 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handl
           >
             <input
               aria-autocomplete="list"
-              aria-controls="react-select-13-listbox"
-              aria-describedby="react-select-13-placeholder"
+              aria-describedby="react-select-14-placeholder"
               aria-expanded="false"
               aria-haspopup="true"
-              aria-owns="react-select-13-listbox"
               autocapitalize="none"
               autocomplete="off"
               autocorrect="off"
@@ -651,14 +1193,286 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handl
 exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handles creation with undefined result 2`] = `
 <div>
   <div
-    class="gds-select-container input-select-field"
+    class="field gds-select-container input-select-field"
   >
     <div
       class=" css-1959ul7-container"
     >
       <span
         class="css-1f43avz-a11yText-A11yText"
-        id="react-select-13-live-region"
+        id="react-select-14-live-region"
+      />
+      <span
+        aria-atomic="false"
+        aria-live="polite"
+        aria-relevant="additions text"
+        class="css-1f43avz-a11yText-A11yText"
+      >
+        <span
+          id="aria-selection"
+        />
+        <span
+          id="aria-context"
+        >
+            Use Up and Down to choose options, press Enter to select the currently focused option, press Escape to exit the menu, press Tab to select the option and exit the menu.
+        </span>
+      </span>
+      <div
+        class=" css-1tkmbhg-control"
+      >
+        <div
+          class=" css-9plg90-ValueContainer"
+        >
+          <div
+            class=" css-1pndypt-Input"
+            data-value="abc"
+          >
+            <input
+              aria-autocomplete="list"
+              aria-controls="react-select-14-listbox"
+              aria-describedby="react-select-14-placeholder"
+              aria-expanded="true"
+              aria-haspopup="true"
+              aria-owns="react-select-14-listbox"
+              autocapitalize="none"
+              autocomplete="off"
+              autocorrect="off"
+              class=""
+              id="DATA-TEST-ID"
+              role="combobox"
+              spellcheck="false"
+              style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+              tabindex="0"
+              type="text"
+              value="abc"
+            />
+          </div>
+        </div>
+        <div
+          class=" css-1hb7zxy-IndicatorsContainer"
+        >
+          <div
+            aria-hidden="true"
+          >
+            <svg
+              aria-hidden="true"
+              class="icon gds-loader size-1x dynamic-search-spinner"
+              data-testid="DATA-TEST-ID-spinner"
+              focusable="false"
+              height="50"
+              icon="fal,spinner"
+              preserveAspectRatio="xMidYMid"
+              role="img"
+              style="background: transparent;"
+              viewBox="0 0 100 100"
+              width="50"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="50"
+                cy="50"
+                fill="transparent"
+                r="30"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-width="10"
+              >
+                <animatetransform
+                  attributeName="transform"
+                  dur="2s"
+                  keyTimes="0;0.5;1"
+                  repeatCount="indefinite"
+                  type="rotate"
+                  values="0 50 50;180 50 50;720 50 50"
+                />
+                <animate
+                  attributeName="stroke-dasharray"
+                  dur="2s"
+                  keyTimes="0;0.5;1"
+                  repeatCount="indefinite"
+                  values="20 150; 150 20; 20 150"
+                />
+              </circle>
+            </svg>
+          </div>
+          <span
+            class=" css-1okebmr-indicatorSeparator"
+          />
+          <div
+            aria-hidden="true"
+          >
+            <i
+              class="dynamic-search-icon icon"
+              data-testid="DATA-TEST-ID-magnifier"
+              icon="fal,magnifying-glass"
+            />
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          class=" css-omztxt"
+        >
+          <div
+            class=" css-26l3qy-menu"
+            id="react-select-14-listbox"
+          >
+            <div
+              class="css-bp8cua-ScrollManager"
+            />
+            <div
+              class=" css-4ljt47-MenuList"
+            >
+              <div
+                class=" css-1tfbn7p-LoadingMessage"
+              >
+                Loading...
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <input
+        name="SELECT"
+        type="hidden"
+        value=""
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handles creation with undefined result 3`] = `
+<div>
+  <div
+    class="field gds-select-container input-select-field"
+  >
+    <div
+      class=" css-j5ssuk-container"
+    >
+      <span
+        class="css-1f43avz-a11yText-A11yText"
+        id="react-select-14-live-region"
+      />
+      <span
+        aria-atomic="false"
+        aria-live="polite"
+        aria-relevant="additions text"
+        class="css-1f43avz-a11yText-A11yText"
+      />
+      <div
+        class=" css-1pq4mj-control"
+      >
+        <div
+          class=" css-9plg90-ValueContainer"
+        >
+          <div
+            class=" css-14el2xx-placeholder"
+            id="react-select-14-placeholder"
+          >
+            Select...
+          </div>
+          <div
+            class=" css-jzldcf-Input"
+            data-value=""
+          >
+            <input
+              aria-autocomplete="list"
+              aria-describedby="react-select-14-placeholder"
+              aria-expanded="false"
+              aria-haspopup="true"
+              autocapitalize="none"
+              autocomplete="off"
+              autocorrect="off"
+              class=""
+              disabled=""
+              id="DATA-TEST-ID"
+              role="combobox"
+              spellcheck="false"
+              style="opacity: 0; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+              tabindex="0"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          class=" css-1hb7zxy-IndicatorsContainer"
+        >
+          <div
+            aria-hidden="true"
+          >
+            <svg
+              aria-hidden="true"
+              class="icon gds-loader size-1x dynamic-search-spinner"
+              data-testid="DATA-TEST-ID-spinner"
+              focusable="false"
+              height="50"
+              icon="fal,spinner"
+              preserveAspectRatio="xMidYMid"
+              role="img"
+              style="background: transparent;"
+              viewBox="0 0 100 100"
+              width="50"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="50"
+                cy="50"
+                fill="transparent"
+                r="30"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-width="10"
+              >
+                <animatetransform
+                  attributeName="transform"
+                  dur="2s"
+                  keyTimes="0;0.5;1"
+                  repeatCount="indefinite"
+                  type="rotate"
+                  values="0 50 50;180 50 50;720 50 50"
+                />
+                <animate
+                  attributeName="stroke-dasharray"
+                  dur="2s"
+                  keyTimes="0;0.5;1"
+                  repeatCount="indefinite"
+                  values="20 150; 150 20; 20 150"
+                />
+              </circle>
+            </svg>
+          </div>
+          <span
+            class=" css-109onse-indicatorSeparator"
+          />
+          <div
+            aria-hidden="true"
+          >
+            <i
+              class="dynamic-search-icon icon"
+              data-testid="DATA-TEST-ID-magnifier"
+              icon="fal,magnifying-glass"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handles creation with undefined result 4`] = `
+<div>
+  <div
+    class="field gds-select-container input-select-field"
+  >
+    <div
+      class=" css-1959ul7-container"
+    >
+      <span
+        class="css-1f43avz-a11yText-A11yText"
+        id="react-select-14-live-region"
       />
       <span
         aria-atomic="false"
@@ -674,7 +1488,7 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handl
         >
           <div
             class=" css-14el2xx-placeholder"
-            id="react-select-13-placeholder"
+            id="react-select-14-placeholder"
           >
             Select...
           </div>
@@ -684,11 +1498,9 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handl
           >
             <input
               aria-autocomplete="list"
-              aria-controls="react-select-13-listbox"
-              aria-describedby="react-select-13-placeholder"
+              aria-describedby="react-select-14-placeholder"
               aria-expanded="false"
               aria-haspopup="true"
-              aria-owns="react-select-13-listbox"
               autocapitalize="none"
               autocomplete="off"
               autocorrect="off"
@@ -733,7 +1545,7 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handl
 exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handles inputValue change 1`] = `
 <div>
   <div
-    class="gds-select-container input-select-field"
+    class="field gds-select-container input-select-field"
   >
     <div
       class=" css-1959ul7-container"
@@ -765,10 +1577,8 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handl
           >
             <input
               aria-autocomplete="list"
-              aria-controls="react-select-10-listbox"
               aria-expanded="false"
               aria-haspopup="true"
-              aria-owns="react-select-10-listbox"
               autocapitalize="none"
               autocomplete="off"
               autocorrect="off"
@@ -813,7 +1623,7 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handl
 exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handles inputValue change 2`] = `
 <div>
   <div
-    class="gds-select-container input-select-field"
+    class="field gds-select-container input-select-field"
   >
     <div
       class=" css-1959ul7-container"
@@ -845,10 +1655,8 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handl
           >
             <input
               aria-autocomplete="list"
-              aria-controls="react-select-10-listbox"
               aria-expanded="false"
               aria-haspopup="true"
-              aria-owns="react-select-10-listbox"
               autocapitalize="none"
               autocomplete="off"
               autocorrect="off"
@@ -890,10 +1698,95 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handl
 </div>
 `;
 
+exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handles without dataTestId 1`] = `
+<div>
+  <div
+    class="field gds-select-container input-select-field"
+  >
+    <div
+      class=" css-1959ul7-container"
+    >
+      <span
+        class="css-1f43avz-a11yText-A11yText"
+        id="react-select-12-live-region"
+      />
+      <span
+        aria-atomic="false"
+        aria-live="polite"
+        aria-relevant="additions text"
+        class="css-1f43avz-a11yText-A11yText"
+      />
+      <div
+        class=" css-154lpzf-control"
+      >
+        <div
+          class=" css-9plg90-ValueContainer"
+        >
+          <div
+            class=" css-qc6sy-singleValue"
+          >
+            option 1
+          </div>
+          <div
+            class=" css-6j8wv5-Input"
+            data-value=""
+          >
+            <input
+              aria-autocomplete="list"
+              aria-expanded="false"
+              aria-haspopup="true"
+              autocapitalize="none"
+              autocomplete="off"
+              autocorrect="off"
+              class=""
+              id="react-select-12-input"
+              role="combobox"
+              spellcheck="false"
+              style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+              tabindex="0"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          class=" css-1hb7zxy-IndicatorsContainer"
+        >
+          <div
+            aria-hidden="true"
+          >
+            <i
+              class="dynamic-search-icon icon"
+              icon="fal,xmark"
+            />
+          </div>
+          <span
+            class=" css-1okebmr-indicatorSeparator"
+          />
+          <div
+            aria-hidden="true"
+          >
+            <i
+              class="dynamic-search-icon icon"
+              icon="fal,magnifying-glass"
+            />
+          </div>
+        </div>
+      </div>
+      <input
+        name="SELECT"
+        type="hidden"
+        value="OPTION1"
+      />
+    </div>
+  </div>
+</div>
+`;
+
 exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput renders 1`] = `
 <div>
   <div
-    class="gds-select-container input-select-field"
+    class="field gds-select-container input-select-field"
   >
     <div
       class=" css-1959ul7-container"
@@ -925,10 +1818,8 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput rende
           >
             <input
               aria-autocomplete="list"
-              aria-controls="react-select-2-listbox"
               aria-expanded="false"
               aria-haspopup="true"
-              aria-owns="react-select-2-listbox"
               autocapitalize="none"
               autocomplete="off"
               autocorrect="off"
@@ -973,7 +1864,7 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput rende
 exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput renders in error and disabled 1`] = `
 <div>
   <div
-    class="gds-select-container input-select-field field-input-size-4"
+    class="field gds-select-container input-select-field"
   >
     <div
       class=" css-j5ssuk-container"
@@ -1005,10 +1896,8 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput rende
           >
             <input
               aria-autocomplete="list"
-              aria-controls="react-select-8-listbox"
               aria-expanded="false"
               aria-haspopup="true"
-              aria-owns="react-select-8-listbox"
               autocapitalize="none"
               autocomplete="off"
               autocorrect="off"
@@ -1049,7 +1938,7 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput rende
 exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput renders in error without portal 1`] = `
 <div>
   <div
-    class="gds-select-container input-select-field field-input-size-4 input-error"
+    class="field gds-select-container input-select-field input-error"
   >
     <div
       class=" css-1959ul7-container"
@@ -1082,11 +1971,9 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput rende
           >
             <input
               aria-autocomplete="list"
-              aria-controls="react-select-9-listbox"
               aria-describedby="react-select-9-placeholder"
               aria-expanded="false"
               aria-haspopup="true"
-              aria-owns="react-select-9-listbox"
               autocapitalize="none"
               autocomplete="off"
               autocorrect="off"
@@ -1131,7 +2018,7 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput rende
 exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput renders in readOnly 1`] = `
 <div>
   <div
-    class="gds-select-container input-select-field-read-only field-input-size-4 field-highlighted"
+    class="field gds-select-container input-select-field-read-only field-highlighted"
     data-testid="DATA-TEST-ID"
   >
     <span
@@ -1146,7 +2033,7 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput rende
 exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput renders in readOnly without datatestid 1`] = `
 <div>
   <div
-    class="gds-select-container input-select-field-read-only field-input-size-4 field-highlighted"
+    class="field gds-select-container input-select-field-read-only field-highlighted"
   >
     <span
       class="gds-typography"
@@ -1160,7 +2047,7 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput rende
 exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput renders when resolveValue rejects 1`] = `
 <div>
   <div
-    class="gds-select-container input-select-field"
+    class="field gds-select-container input-select-field"
   >
     <div
       class=" css-1959ul7-container"
@@ -1193,11 +2080,9 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput rende
           >
             <input
               aria-autocomplete="list"
-              aria-controls="react-select-4-listbox"
               aria-describedby="react-select-4-placeholder"
               aria-expanded="false"
               aria-haspopup="true"
-              aria-owns="react-select-4-listbox"
               autocapitalize="none"
               autocomplete="off"
               autocorrect="off"
@@ -1242,7 +2127,7 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput rende
 exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput renders with invalid input value 1`] = `
 <div>
   <div
-    class="gds-select-container input-select-field"
+    class="field gds-select-container input-select-field"
   >
     <div
       class=" css-1959ul7-container"
@@ -1275,11 +2160,9 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput rende
           >
             <input
               aria-autocomplete="list"
-              aria-controls="react-select-3-listbox"
               aria-describedby="react-select-3-placeholder"
               aria-expanded="false"
               aria-haspopup="true"
-              aria-owns="react-select-3-listbox"
               autocapitalize="none"
               autocomplete="off"
               autocorrect="off"
@@ -1324,7 +2207,7 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput rende
 exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput renders without input value 1`] = `
 <div>
   <div
-    class="gds-select-container input-select-field"
+    class="field gds-select-container input-select-field"
   >
     <div
       class=" css-1959ul7-container"
@@ -1357,11 +2240,9 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput rende
           >
             <input
               aria-autocomplete="list"
-              aria-controls="react-select-5-listbox"
               aria-describedby="react-select-5-placeholder"
               aria-expanded="false"
               aria-haspopup="true"
-              aria-owns="react-select-5-listbox"
               autocapitalize="none"
               autocomplete="off"
               autocorrect="off"

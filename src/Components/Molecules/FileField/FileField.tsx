@@ -46,10 +46,10 @@ export interface IFileFieldProps {
   name: string;
   /** handler of changes, notifying any files changes (including new files, states changes, deleted files...)
    * To retrieve the up to date files, simply filter the files on the status FileStatusEnum.DONE */
-  onChange: (files: Array<IFile>) => void;
+  onChange?: (files: Array<IFile>) => void;
   /** Handler of the download request
    * The promise should reject if the deletion fails. */
-  onDelete: (file: IFile) => Promise<void>;
+  onDelete?: (file: IFile) => Promise<void>;
   /** Handler of download request
    * The client should let the user know if the download fails.
    * Promise resolution or rejection will only prevent multiple downloads of the same file. */
@@ -64,9 +64,9 @@ export interface IFileFieldProps {
   requestUrl: string;
   /** Enable withCredentials on the request (optional, default: undefined) */
   requestWithCredentials?: boolean;
-  /** Show file size in the gallery (optional, default: false) */
+  /** Show file size in the gallery (optional, default: true) */
   showFileSize?: boolean;
-  /** Show progress bar in file gallery (optional, default: false) */
+  /** Show progress bar in file gallery (optional, default: true) */
   showProgressBar?: boolean;
   /** Custom style (optional, default: undefined) */
   style?: CSSProperties;
@@ -122,6 +122,7 @@ export const FileField = (props: IFileFieldProps): ReactElement => {
       containerRef={containerRef}
       errorMessage={errorMessage}
       fieldClassName={fieldClassName}
+      fieldSize={fieldSize}
       helperText={helperText}
       highlighted={highlighted}
       inline={inline}
@@ -143,7 +144,6 @@ export const FileField = (props: IFileFieldProps): ReactElement => {
         className={inputClassName}
         dataTestId={dataTestId}
         disabled={disabled}
-        fieldSize={fieldSize}
         inputValue={inputValue}
         isInError={errorMessage !== undefined}
         maxFiles={maxFiles}
@@ -189,8 +189,8 @@ FileField.defaultProps = {
   requestHeaders: undefined,
   requestMethod: 'POST',
   requestWithCredentials: undefined,
-  showFileSize: false,
-  showProgressBar: false,
+  showFileSize: true,
+  showProgressBar: true,
   style: undefined,
   uploadMessage: 'Click or drag file to upload',
 };

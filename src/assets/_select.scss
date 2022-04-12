@@ -1,5 +1,5 @@
 .gds-select-container {
-  max-width: 100%;
+  width: 100%;
 
   .visible {
     order: 1;
@@ -28,12 +28,13 @@
     margin: 0px 4px;
   }
   .dynamic-search-spinner {
-    margin-right: 20px;
-    color: $charcoal;
+    margin: auto 8px auto 0px;
+    color: $silver;
   }
   .dynamic-search-icon {
     margin: 8px;
     color: $silver;
+
     &:hover {
       color: $charcoal;
     }

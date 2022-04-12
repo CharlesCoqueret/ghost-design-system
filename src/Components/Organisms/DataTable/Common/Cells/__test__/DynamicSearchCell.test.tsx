@@ -1,12 +1,12 @@
 import React from 'react';
-import { act, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import DynamicSearchCell from '../DynamicSearchCell';
 import { ColumnType } from '../../types';
 
 describe('DynamicSearchCell component', () => {
-  it('DynamicSearchCell renders', async () => {
+  it('DynamicSearchCell renders', () => {
     const resolveValueMock = jest.fn();
     const searchOptionsMock = jest.fn();
     const noOptionsMessageMock = jest.fn();
@@ -43,33 +43,29 @@ describe('DynamicSearchCell component', () => {
     const searchOptionsMock = jest.fn();
     const noOptionsMessageMock = jest.fn();
 
-    let container: HTMLElement | undefined;
+    const { container } = render(
+      <table>
+        <tbody>
+          <tr>
+            <DynamicSearchCell
+              column={{
+                dataIndex: 'data',
+                noOptionsMessage: noOptionsMessageMock,
+                resolveValue: resolveValueMock,
+                searchOptions: searchOptionsMock,
+                title: 'DynamicSearchCell',
+                type: ColumnType.DYNAMICSEARCH,
+              }}
+              dataTestId='DATA-TEST-ID'
+              forcedValue='value2'
+              rowIndex={0}
+            />
+          </tr>
+        </tbody>
+      </table>,
+    );
 
-    await act(async () => {
-      container = render(
-        <table>
-          <tbody>
-            <tr>
-              <DynamicSearchCell
-                column={{
-                  dataIndex: 'data',
-                  noOptionsMessage: noOptionsMessageMock,
-                  resolveValue: resolveValueMock,
-                  searchOptions: searchOptionsMock,
-                  title: 'DynamicSearchCell',
-                  type: ColumnType.DYNAMICSEARCH,
-                }}
-                dataTestId='DATA-TEST-ID'
-                forcedValue='value2'
-                rowIndex={0}
-              />
-            </tr>
-          </tbody>
-        </table>,
-      ).container;
-
-      expect(await screen.findByTestId('DATA-TEST-ID-spinner')).toBeTruthy();
-    });
+    expect(await screen.findByTestId('DATA-TEST-ID-spinner')).toBeTruthy();
 
     expect(screen.queryByTestId('DATA-TEST-ID-spinner')).toBeFalsy();
 
@@ -79,7 +75,7 @@ describe('DynamicSearchCell component', () => {
     expect(searchOptionsMock).toBeCalledTimes(0);
   });
 
-  it('DynamicSearchCell renders when hidden', async () => {
+  it('DynamicSearchCell renders when hidden', () => {
     const resolveValueMock = jest.fn();
     const searchOptionsMock = jest.fn();
     const noOptionsMessageMock = jest.fn();
@@ -122,55 +118,99 @@ describe('DynamicSearchCell component', () => {
     });
     const noOptionsMessageMock = jest.fn();
 
-    let container: HTMLElement | undefined;
+    const { container } = render(
+      <table>
+        <tbody>
+          <tr>
+            <DynamicSearchCell
+              column={{
+                dataIndex: 'data',
+                isClearable: true,
+                noOptionsMessage: noOptionsMessageMock,
+                resolveValue: resolveValueMock,
+                searchOptions: searchOptionsMock,
+                title: 'DynamicSearchCell',
+                type: ColumnType.DYNAMICSEARCH,
+              }}
+              dataTestId='DATA-TEST-ID'
+              editing
+              onChange={onChangeMock}
+              row={{ data: 'value1' }}
+              rowIndex={0}
+            />
+          </tr>
+        </tbody>
+      </table>,
+    );
 
-    await act(async () => {
-      container = render(
-        <table>
-          <tbody>
-            <tr>
-              <DynamicSearchCell
-                column={{
-                  dataIndex: 'data',
-                  isClearable: true,
-                  noOptionsMessage: noOptionsMessageMock,
-                  resolveValue: resolveValueMock,
-                  searchOptions: searchOptionsMock,
-                  title: 'DynamicSearchCell',
-                  type: ColumnType.DYNAMICSEARCH,
-                }}
-                dataTestId='DATA-TEST-ID'
-                editing
-                onChange={onChangeMock}
-                row={{ data: 'value1' }}
-                rowIndex={0}
-              />
-            </tr>
-          </tbody>
-        </table>,
-      ).container;
-
-      expect(await screen.findByTestId('DATA-TEST-ID-spinner')).toBeTruthy();
-    });
+    expect(await screen.findByTestId('DATA-TEST-ID-spinner')).toBeTruthy();
 
     expect(screen.queryByTestId('DATA-TEST-ID-spinner')).toBeFalsy();
 
     expect(container).toMatchSnapshot();
 
-    await act(async () => {
-      const select = await screen.findByRole('combobox');
-      expect(select).toBeDefined();
-      if (select) {
-        userEvent.type(select, '{backspace}');
-      }
-    });
+    const select = await screen.findByRole('combobox');
+    userEvent.type(select, '{backspace}');
 
     expect(container).toMatchSnapshot();
     expect(onChangeMock).toBeCalledTimes(1);
     expect(onChangeMock).toBeCalledWith(undefined);
   });
 
-  it('DynamicSearchCell renders in edit mode via extra', async () => {
+  it('DynamicSearchCell handles display of no message', async () => {
+    const onChangeMock = jest.fn();
+
+    const resolveValueMock = jest.fn().mockImplementation(() => {
+      return Promise.resolve({ value: 'value1', label: 'Label 1' });
+    });
+    const searchOptionsMock = jest.fn().mockImplementation(() => {
+      return Promise.resolve([]);
+    });
+    const noOptionsMessageMock = jest.fn().mockImplementation((obj: { inputValue: string }) => {
+      return `No result for ${obj.inputValue}`;
+    });
+
+    const { container } = render(
+      <table>
+        <tbody>
+          <tr>
+            <DynamicSearchCell
+              column={{
+                dataIndex: 'data',
+                isClearable: true,
+                noOptionsMessage: noOptionsMessageMock,
+                resolveValue: resolveValueMock,
+                searchOptions: searchOptionsMock,
+                title: 'DynamicSearchCell',
+                type: ColumnType.DYNAMICSEARCH,
+              }}
+              dataTestId='DATA-TEST-ID'
+              editing
+              onChange={onChangeMock}
+              row={{ data: 'value1' }}
+              rowIndex={0}
+            />
+          </tr>
+        </tbody>
+      </table>,
+    );
+
+    expect(await screen.findByTestId('DATA-TEST-ID-spinner')).toBeTruthy();
+
+    expect(screen.queryByTestId('DATA-TEST-ID-spinner')).toBeFalsy();
+
+    expect(container).toMatchSnapshot();
+
+    const select = await screen.findByRole('combobox');
+    userEvent.type(select, '{backspace}');
+
+    expect(container).toMatchSnapshot();
+    expect(noOptionsMessageMock).toBeCalledTimes(2);
+    expect(onChangeMock).toBeCalledTimes(1);
+    expect(onChangeMock).toBeCalledWith(undefined);
+  });
+
+  it('DynamicSearchCell renders in edit mode via extra', () => {
     const resolveValueMock = jest.fn();
     const searchOptionsMock = jest.fn();
     const noOptionsMessageMock = jest.fn();

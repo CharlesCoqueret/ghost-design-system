@@ -105,7 +105,6 @@ const Template: ComponentStory<typeof DynamicSearchInput> = ({ inputValue, ...ar
 export const Default = Template.bind({});
 Default.args = {
   disabled: false,
-  fieldSize: undefined,
   highlighted: false,
   inputValue: '3d9265a6ddc5ed3e2550778bb3b53229b02954a9',
   isClearable: true,

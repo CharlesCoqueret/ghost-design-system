@@ -6,7 +6,7 @@ import { BadgeColorsEnum } from '../Badge';
 import { MenuDirectionEnum } from '../../Tooltip';
 
 describe('Badge Component', () => {
-  it('Badge renders notification', async () => {
+  it('Badge renders notification', () => {
     const { container } = render(
       <Badge
         type='notification'
@@ -20,7 +20,7 @@ describe('Badge Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('Badge renders notification', async () => {
+  it('Badge renders notification', () => {
     const { container } = render(
       <Badge
         type='notification'
@@ -34,7 +34,7 @@ describe('Badge Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('Badge without children', async () => {
+  it('Badge without children', () => {
     const { container } = render(<Badge />);
     expect(container).toMatchSnapshot();
   });

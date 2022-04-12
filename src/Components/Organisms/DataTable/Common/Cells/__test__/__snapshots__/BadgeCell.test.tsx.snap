@@ -12,7 +12,7 @@ exports[`BadgeCell component BadgeCell handles changes 1`] = `
             class="gds-field-group"
           >
             <div
-              class="gds-select-container input-select-field field input-select-field"
+              class="field gds-select-container input-select-field input-select-field"
             >
               <div
                 class=" css-1959ul7-container"
@@ -44,10 +44,8 @@ exports[`BadgeCell component BadgeCell handles changes 1`] = `
                     >
                       <input
                         aria-autocomplete="list"
-                        aria-controls="react-select-4-listbox"
                         aria-expanded="false"
                         aria-haspopup="true"
-                        aria-owns="react-select-4-listbox"
                         autocapitalize="none"
                         autocomplete="off"
                         autocorrect="off"
@@ -105,7 +103,7 @@ exports[`BadgeCell component BadgeCell handles changes 2`] = `
             class="gds-field-group"
           >
             <div
-              class="gds-select-container input-select-field field input-select-field"
+              class="field gds-select-container input-select-field input-select-field"
             >
               <div
                 class=" css-1959ul7-container"
@@ -137,10 +135,8 @@ exports[`BadgeCell component BadgeCell handles changes 2`] = `
                     >
                       <input
                         aria-autocomplete="list"
-                        aria-controls="react-select-4-listbox"
                         aria-expanded="false"
                         aria-haspopup="true"
-                        aria-owns="react-select-4-listbox"
                         autocapitalize="none"
                         autocomplete="off"
                         autocorrect="off"
@@ -218,7 +214,7 @@ exports[`BadgeCell component BadgeCell renders cell editing with no row input 1`
             class="gds-field-group"
           >
             <div
-              class="gds-select-container input-select-field field input-select-field"
+              class="field gds-select-container input-select-field input-select-field"
             >
               <div
                 class=" css-1959ul7-container"
@@ -251,11 +247,9 @@ exports[`BadgeCell component BadgeCell renders cell editing with no row input 1`
                     >
                       <input
                         aria-autocomplete="list"
-                        aria-controls="react-select-3-listbox"
                         aria-describedby="react-select-3-placeholder"
                         aria-expanded="false"
                         aria-haspopup="true"
-                        aria-owns="react-select-3-listbox"
                         autocapitalize="none"
                         autocomplete="off"
                         autocorrect="off"
@@ -334,7 +328,7 @@ exports[`BadgeCell component BadgeCell renders row editing with no row input 1`]
             class="gds-field-group"
           >
             <div
-              class="gds-select-container input-select-field field input-select-field"
+              class="field gds-select-container input-select-field input-select-field"
             >
               <div
                 class=" css-1959ul7-container"
@@ -367,11 +361,9 @@ exports[`BadgeCell component BadgeCell renders row editing with no row input 1`]
                     >
                       <input
                         aria-autocomplete="list"
-                        aria-controls="react-select-2-listbox"
                         aria-describedby="react-select-2-placeholder"
                         aria-expanded="false"
                         aria-haspopup="true"
-                        aria-owns="react-select-2-listbox"
                         autocapitalize="none"
                         autocomplete="off"
                         autocorrect="off"

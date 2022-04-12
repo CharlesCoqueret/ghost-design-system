@@ -53,7 +53,6 @@ const Template: ComponentStory<typeof SelectInput> = ({ inputValue, ...args }: I
 export const Default = Template.bind({});
 Default.args = {
   disabled: false,
-  fieldSize: undefined,
   highlighted: false,
   inputValue: options[0],
   isClearable: true,

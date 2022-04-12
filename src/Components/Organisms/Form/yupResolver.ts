@@ -6,10 +6,10 @@ export type FieldError = {
   message: string;
 };
 
-const parseErrorSchema = (error: yup.ValidationError) => {
-  return (error.inner || []).reduce<Record<string, FieldError | undefined>>((previous, error) => {
-    if (error.path && !previous[error.path]) {
-      previous[error.path] = { type: error.type, message: error.message };
+const parseErrorSchema = <T>(error: yup.ValidationError) => {
+  return (error.inner || []).reduce<Partial<Record<keyof T, FieldError | undefined>>>((previous, error) => {
+    if (error.path && !previous[error.path as keyof T]) {
+      previous[error.path as keyof T] = { type: error.type, message: error.message };
     }
 
     return previous;
@@ -20,13 +20,13 @@ export const yupResolver = <T extends AnyObject>(
   schema: yup.SchemaOf<T>,
   schemaOptions = {},
   values: T,
-): Record<keyof T, FieldError> | undefined => {
+): Partial<Record<keyof T, FieldError | undefined>> | undefined => {
   try {
     schema.validateSync(values, schemaOptions);
   } catch (error) {
-    // IF error if of yup.ValidationError type
+    // If error if of yup.ValidationError type
     if (error instanceof yup.ValidationError) {
-      return parseErrorSchema(error) as Record<keyof T, FieldError>;
+      return parseErrorSchema(error);
     }
     // Else, we will try to resolve it and logging it.
     else {

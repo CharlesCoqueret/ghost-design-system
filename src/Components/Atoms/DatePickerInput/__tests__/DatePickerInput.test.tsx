@@ -35,32 +35,32 @@ describe('DatePickerInput Component', () => {
     });
   });
 
-  it('DatePickerInput renders highlighted in readonly', async () => {
+  it('DatePickerInput renders highlighted in readonly', () => {
     const { container } = render(<DatePickerInput name='NAME' highlighted readOnly dateFormat={''} />);
     expect(container).toMatchSnapshot();
   });
 
-  it('DatePickerInput renders with placeholder', async () => {
+  it('DatePickerInput renders with placeholder', () => {
     const { container } = render(<DatePickerInput name='NAME' placeholder='TESTPLACEHOLDER' />);
     expect(container).toMatchSnapshot();
   });
 
-  it('DatePickerInput renders without Portal', async () => {
+  it('DatePickerInput renders without Portal', () => {
     const { container } = render(<DatePickerInput usePortal={false} name='NAME' />);
     expect(container).toMatchSnapshot();
   });
 
-  it('DatePickerInput renders highlighted in disabled', async () => {
+  it('DatePickerInput renders highlighted in disabled', () => {
     const { container } = render(<DatePickerInput name='NAME' highlighted disabled />);
     expect(container).toMatchSnapshot();
   });
 
-  it('DatePickerInput renders in error in readonly', async () => {
+  it('DatePickerInput renders in error in readonly', () => {
     const { container } = render(<DatePickerInput name='NAME' readOnly isInError />);
     expect(container).toMatchSnapshot();
   });
 
-  it('DatePickerInput renders in error', async () => {
+  it('DatePickerInput renders in error', () => {
     const { container } = render(<DatePickerInput name='NAME' isInError />);
     expect(container).toMatchSnapshot();
   });

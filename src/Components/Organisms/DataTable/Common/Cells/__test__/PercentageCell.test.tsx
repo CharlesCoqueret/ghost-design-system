@@ -6,7 +6,7 @@ import PercentageCell from '../PercentageCell';
 import { ColumnType } from '../../types';
 
 describe('PercentageCell component', () => {
-  it('PercentageCell renders', async () => {
+  it('PercentageCell renders', () => {
     const { container } = render(
       <table>
         <tbody>
@@ -23,7 +23,7 @@ describe('PercentageCell component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('PercentageCell renders row editing with no row input', async () => {
+  it('PercentageCell renders row editing with no row input', () => {
     const { container } = render(
       <table>
         <tbody>
@@ -40,7 +40,7 @@ describe('PercentageCell component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('PercentageCell renders cell editing with no row input', async () => {
+  it('PercentageCell renders cell editing with no row input', () => {
     const { container } = render(
       <table>
         <tbody>
@@ -62,7 +62,7 @@ describe('PercentageCell component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('PercentageCell renders hidden', async () => {
+  it('PercentageCell renders hidden', () => {
     const { container } = render(
       <table>
         <tbody>
@@ -79,7 +79,7 @@ describe('PercentageCell component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('PercentageCell renders with forced value', async () => {
+  it('PercentageCell renders with forced value', () => {
     const { container } = render(
       <table>
         <tbody>

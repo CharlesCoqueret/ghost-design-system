@@ -157,7 +157,7 @@ export interface IColumnDynamicSearch<T> extends IColumn {
   noOptionsMessage: (obj: { inputValue: string }) => string;
   placeholder?: string;
   resolveValue: (value: string | number) => Promise<IOption | undefined>;
-  searchOptions: (searchTerm: string) => Promise<Array<IOption> | undefined>;
+  searchOptions: (searchTerm: string) => Promise<Array<IOption>>;
   selectColors?: {
     controlErrorColor: string; // colors.error,
     controlFocusColor: string; // colors.primary,

@@ -50,7 +50,11 @@ const Template = (args: IUseFormProps<IDataType>) => {
       </div>
       <div>
         Current data:
-        <textarea style={{ width: '100%', height: '300px' }} value={JSON.stringify(getData(), null, 2)} readOnly />
+        <textarea
+          style={{ width: '100%', boxSizing: 'border-box', height: '300px' }}
+          value={JSON.stringify(getData(), null, 2)}
+          readOnly
+        />
       </div>
     </>
   );

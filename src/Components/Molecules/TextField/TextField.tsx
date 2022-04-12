@@ -101,6 +101,7 @@ export const TextField = (props: ITextFieldProps): ReactElement => {
       containerRef={containerRef}
       errorMessage={errorMessage}
       fieldClassName={fieldClassName}
+      fieldSize={fieldSize}
       helperText={helperText}
       highlighted={highlighted}
       inline={inline}
@@ -114,7 +115,6 @@ export const TextField = (props: ITextFieldProps): ReactElement => {
         dataTestId={dataTestId}
         disabled={disabled}
         ellipsis={ellipsis}
-        fieldSize={fieldSize}
         highlighted={highlighted}
         inputClassName={inputClassName}
         inputValue={inputValue}

@@ -1,0 +1,61 @@
+.icon {
+  // Disable font smoothing for performance reason
+  -webkit-font-smoothing: unset;
+
+  &.size-xs {
+    height: 0.75rem;
+    width: 0.75rem;
+  }
+  &.size-sm {
+    height: 0.875rem;
+    width: 0.875rem;
+  }
+  &.size-1x {
+    height: 1rem;
+    width: 1rem;
+  }
+  &.size-lg {
+    height: 1.25rem;
+    width: 1.25rem;
+  }
+  &.size-2x {
+    height: 2rem;
+    width: 2rem;
+  }
+  &.size-3x {
+    height: 3rem;
+    width: 3rem;
+  }
+  &.size-3x {
+    height: 3rem;
+    width: 3rem;
+  }
+  &.size-4x {
+    height: 4rem;
+    width: 4rem;
+  }
+  &.size-5x {
+    height: 5rem;
+    width: 5rem;
+  }
+  &.size-6x {
+    height: 6rem;
+    width: 6rem;
+  }
+  &.size-7x {
+    height: 7rem;
+    width: 7rem;
+  }
+  &.size-8x {
+    height: 8rem;
+    width: 8rem;
+  }
+  &.size-9x {
+    height: 9rem;
+    width: 9rem;
+  }
+  &.size-10x {
+    height: 10rem;
+    width: 10rem;
+  }
+}

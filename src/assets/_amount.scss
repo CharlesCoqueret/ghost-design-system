@@ -5,6 +5,10 @@
   border-radius: 4px;
   padding: 6px 8px;
   white-space: nowrap;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  box-sizing: border-box;
+  width: 100%;
 
   &:hover:not(:disabled):not(:read-only):not(.amount-field-error),
   &:focus:not(:disabled):not(:read-only):not(.amount-field-error) {

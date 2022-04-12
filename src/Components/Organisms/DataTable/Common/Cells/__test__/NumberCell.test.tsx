@@ -6,7 +6,7 @@ import NumberCell from '../NumberCell';
 import { ColumnType } from '../../types';
 
 describe('NumberCell component', () => {
-  it('NumberCell renders', async () => {
+  it('NumberCell renders', () => {
     const { container } = render(
       <table>
         <tbody>
@@ -23,7 +23,7 @@ describe('NumberCell component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('NumberCell renders row editing with no row input', async () => {
+  it('NumberCell renders row editing with no row input', () => {
     const { container } = render(
       <table>
         <tbody>
@@ -40,7 +40,7 @@ describe('NumberCell component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('NumberCell renders cell editing with no row input', async () => {
+  it('NumberCell renders cell editing with no row input', () => {
     const { container } = render(
       <table>
         <tbody>
@@ -62,7 +62,7 @@ describe('NumberCell component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('NumberCell renders hidden', async () => {
+  it('NumberCell renders hidden', () => {
     const { container } = render(
       <table>
         <tbody>
@@ -79,7 +79,7 @@ describe('NumberCell component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('NumberCell renders with forced value', async () => {
+  it('NumberCell renders with forced value', () => {
     const { container } = render(
       <table>
         <tbody>

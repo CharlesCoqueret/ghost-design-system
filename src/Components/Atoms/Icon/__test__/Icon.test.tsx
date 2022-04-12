@@ -4,7 +4,7 @@ import { render } from '@testing-library/react';
 import Icon from '../Icon';
 
 describe('Icon component', () => {
-  it('Icon renders', async () => {
+  it('Icon renders', () => {
     const { container } = render(<Icon icon={['fal', 'cog']} className={'CLASSNAME'} />);
     expect(container).toMatchSnapshot();
   });

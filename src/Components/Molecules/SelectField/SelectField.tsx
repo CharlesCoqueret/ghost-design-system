@@ -99,6 +99,7 @@ export const SelectField = (props: ISelectFieldProps): ReactElement => {
       containerRef={containerRef}
       errorMessage={errorMessage}
       fieldClassName={fieldClassName}
+      fieldSize={fieldSize}
       helperText={helperText}
       highlighted={highlighted}
       inline={inline}
@@ -108,12 +109,7 @@ export const SelectField = (props: ISelectFieldProps): ReactElement => {
       readOnly={readOnly}>
       <SelectInput
         colors={colors}
-        className={classnames(
-          inputClassName,
-          'field',
-          'input-select-field',
-          fieldSize && `field-input-size-${fieldSize}`,
-        )}
+        className={classnames(inputClassName, 'input-select-field')}
         dataTestId={dataTestId}
         ellipsis={ellipsis}
         highlighted={highlighted}

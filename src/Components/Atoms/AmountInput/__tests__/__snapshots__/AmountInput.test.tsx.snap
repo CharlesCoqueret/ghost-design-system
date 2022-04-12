@@ -28,14 +28,13 @@ exports[`AmountInput Component AmountInput renders groupint style NONE 1`] = `
 exports[`AmountInput Component AmountInput renders in readonly with no value, highlighted 1`] = `
 <div>
   <div
-    class="gds-amount-field amount-field-read-only field-highlighted field-input-size-5"
+    class="gds-amount-field amount-field-read-only field-highlighted"
   >
     <span
       class="gds-typography ellipsis"
+      title="A - B"
     >
-      A 
-      -
-       B
+      A - B
     </span>
   </div>
 </div>
@@ -44,7 +43,7 @@ exports[`AmountInput Component AmountInput renders in readonly with no value, hi
 exports[`AmountInput Component AmountInput renders in readonly with value LAKH fornat 1`] = `
 <div>
   <span
-    class="gds-amount-field amount-field-read-only field-highlighted field-input-size-5"
+    class="gds-amount-field amount-field-read-only field-highlighted"
     id="name"
     name="name"
   >
@@ -56,7 +55,7 @@ exports[`AmountInput Component AmountInput renders in readonly with value LAKH f
 exports[`AmountInput Component AmountInput renders in readonly with value LAKH fornat without prefix and suffix 1`] = `
 <div>
   <span
-    class="gds-amount-field amount-field-read-only field-highlighted field-input-size-5"
+    class="gds-amount-field amount-field-read-only field-highlighted"
     id="name"
     name="name"
   >
@@ -68,14 +67,26 @@ exports[`AmountInput Component AmountInput renders in readonly with value LAKH f
 exports[`AmountInput Component AmountInput renders in readonly with value shotern 1`] = `
 <div>
   <div
-    class="gds-amount-field amount-field-read-only field-highlighted field-input-size-5"
+    class="gds-amount-field amount-field-read-only field-highlighted"
   >
     <span
       class="gds-typography"
     >
-       A
-      1.23 b
-       B
+      A 1.23 b B
+    </span>
+  </div>
+</div>
+`;
+
+exports[`AmountInput Component AmountInput renders in readonly with value shotern 2`] = `
+<div>
+  <div
+    class="gds-amount-field amount-field-read-only field-highlighted"
+  >
+    <span
+      class="gds-typography"
+    >
+      A 1.23 b B
     </span>
   </div>
 </div>
@@ -84,7 +95,7 @@ exports[`AmountInput Component AmountInput renders in readonly with value shoter
 exports[`AmountInput Component AmountInput renders triggers onChange 1`] = `
 <div>
   <input
-    class="gds-amount-field field-input-size-8"
+    class="gds-amount-field"
     data-testid="name"
     inputmode="numeric"
     name="name"
@@ -129,9 +140,7 @@ exports[`AmountInput Component AmountInput renders with empty input in read only
     <span
       class="gds-typography"
     >
-      
       -
-      
     </span>
   </div>
 </div>
@@ -146,9 +155,7 @@ exports[`AmountInput Component AmountInput renders with empty input in read only
     <span
       class="gds-typography"
     >
-      A 
-      -
-       B
+      A - B
     </span>
   </div>
 </div>
@@ -189,9 +196,7 @@ exports[`AmountInput Component AmountInput renders with in read only shorten hig
     <span
       class="gds-typography"
     >
-       A
-      1.23 b
-       B
+      A 1.23 b B
     </span>
   </div>
 </div>

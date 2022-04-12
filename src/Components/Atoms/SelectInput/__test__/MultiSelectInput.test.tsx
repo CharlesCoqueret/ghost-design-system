@@ -5,7 +5,7 @@ import userEvent from '@testing-library/user-event';
 import MultiSelectInput from '../MultiSelectInput';
 
 describe('MultiSelectInput Component', () => {
-  it('MultiSelectInput renders', async () => {
+  it('MultiSelectInput renders', () => {
     const { container } = render(
       <MultiSelectInput
         name='SELECT'
@@ -22,7 +22,7 @@ describe('MultiSelectInput Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('MultiSelectInput renders with multiple input values', async () => {
+  it('MultiSelectInput renders with multiple input values', () => {
     const { container } = render(
       <MultiSelectInput
         dataTestId='DATA-TEST-ID'
@@ -40,7 +40,7 @@ describe('MultiSelectInput Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('MultiSelectInput renders without input value', async () => {
+  it('MultiSelectInput renders without input value', () => {
     const { container } = render(
       <MultiSelectInput
         name='SELECT'
@@ -56,7 +56,7 @@ describe('MultiSelectInput Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('MultiSelectInput renders with invalid input value', async () => {
+  it('MultiSelectInput renders with invalid input value', () => {
     const { container } = render(
       <MultiSelectInput
         name='SELECT'
@@ -126,7 +126,7 @@ describe('MultiSelectInput Component', () => {
     expect(onChangeMock).toBeCalledWith([]);
   });
 
-  it('MultiSelectInput renders in readOnly', async () => {
+  it('MultiSelectInput renders in readOnly', () => {
     const { container } = render(
       <MultiSelectInput
         name='SELECT'
@@ -143,7 +143,7 @@ describe('MultiSelectInput Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('MultiSelectInput renders with valid value and clearable', async () => {
+  it('MultiSelectInput renders with valid value and clearable', () => {
     const { container } = render(
       <MultiSelectInput
         dataTestId='DATA-TEST-ID'
@@ -161,7 +161,7 @@ describe('MultiSelectInput Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('MultiSelectInput renders with valid value and clearable without data-test-id', async () => {
+  it('MultiSelectInput renders with valid value and clearable without data-test-id', () => {
     const { container } = render(
       <MultiSelectInput
         name='SELECT'
@@ -178,7 +178,7 @@ describe('MultiSelectInput Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('MultiSelectInput renders in readOnly with invalid value', async () => {
+  it('MultiSelectInput renders in readOnly with invalid value', () => {
     const { container } = render(
       <MultiSelectInput
         name='SELECT'
@@ -195,7 +195,7 @@ describe('MultiSelectInput Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('MultiSelectInput renders in readOnly without input value', async () => {
+  it('MultiSelectInput renders in readOnly without input value', () => {
     const { container } = render(
       <MultiSelectInput
         name='SELECT'
@@ -211,7 +211,7 @@ describe('MultiSelectInput Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('MultiSelectInput renders without portal', async () => {
+  it('MultiSelectInput renders without portal', () => {
     const { container } = render(
       <MultiSelectInput
         name='SELECT'
@@ -228,10 +228,9 @@ describe('MultiSelectInput Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('MultiSelectInput renders with fieldsize, highlight in readOnly', async () => {
+  it('MultiSelectInput renders highlight in readOnly', () => {
     const { container } = render(
       <MultiSelectInput
-        fieldSize={5}
         highlighted
         inputValue={['OPTION-VALUE-NOT-AVAILABLE']}
         name='SELECT'
@@ -246,10 +245,9 @@ describe('MultiSelectInput Component', () => {
     );
     expect(container).toMatchSnapshot();
   });
-  it('MultiSelectInput renders with fieldsize, inError', async () => {
+  it('MultiSelectInput renders inError', () => {
     const { container } = render(
       <MultiSelectInput
-        fieldSize={8}
         inputValue={['OPTION-VALUE-NOT-AVAILABLE']}
         isInError
         name='SELECT'
@@ -264,7 +262,7 @@ describe('MultiSelectInput Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('MultiSelectInput renders disabled', async () => {
+  it('MultiSelectInput renders disabled', () => {
     const { container } = render(
       <MultiSelectInput
         disabled

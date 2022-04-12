@@ -6,7 +6,7 @@ import { AmountInput } from '..';
 import { ThousandsGroupStyle } from '../AmountInput';
 
 describe('AmountInput Component', () => {
-  it('AmountInput renders', async () => {
+  it('AmountInput renders', () => {
     const onChangeMock = jest.fn();
 
     const { container } = render(<AmountInput name='name' dataTestId='name' onChange={onChangeMock} />);
@@ -15,32 +15,22 @@ describe('AmountInput Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('AmountInput renders in readonly with no value, highlighted', async () => {
+  it('AmountInput renders in readonly with no value, highlighted', () => {
     const onChangeMock = jest.fn();
 
     const { container } = render(
-      <AmountInput
-        fieldSize={5}
-        highlighted
-        name='name'
-        ellipsis
-        onChange={onChangeMock}
-        prefix='A'
-        readOnly
-        suffix='B'
-      />,
+      <AmountInput highlighted name='name' ellipsis onChange={onChangeMock} prefix='A' readOnly suffix='B' />,
     );
     expect(onChangeMock).toBeCalledTimes(0);
 
     expect(container).toMatchSnapshot();
   });
 
-  it('AmountInput renders in readonly with value shotern', async () => {
+  it('AmountInput renders in readonly with value shotern', () => {
     const onChangeMock = jest.fn();
 
-    const { container } = render(
+    const { container, rerender } = render(
       <AmountInput
-        fieldSize={5}
         highlighted
         inputValue={1234567890.12}
         name='name'
@@ -54,14 +44,29 @@ describe('AmountInput Component', () => {
     expect(onChangeMock).toBeCalledTimes(0);
 
     expect(container).toMatchSnapshot();
+
+    rerender(
+      <AmountInput
+        decimalScale={2}
+        highlighted
+        inputValue={1234567890.12}
+        name='name'
+        onChange={onChangeMock}
+        prefix='A'
+        readOnly
+        suffix='B'
+        thousandsGroupStyle={ThousandsGroupStyle.SHORTEN}
+      />,
+    );
+
+    expect(container).toMatchSnapshot();
   });
 
-  it('AmountInput renders in readonly with value LAKH fornat', async () => {
+  it('AmountInput renders in readonly with value LAKH fornat', () => {
     const onChangeMock = jest.fn();
 
     const { container } = render(
       <AmountInput
-        fieldSize={5}
         highlighted
         inputValue={1234567890.12}
         name='name'
@@ -77,12 +82,11 @@ describe('AmountInput Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('AmountInput renders in readonly with value LAKH fornat without prefix and suffix', async () => {
+  it('AmountInput renders in readonly with value LAKH fornat without prefix and suffix', () => {
     const onChangeMock = jest.fn();
 
     const { container } = render(
       <AmountInput
-        fieldSize={5}
         highlighted
         inputValue={1234567890.12}
         name='name'
@@ -96,14 +100,13 @@ describe('AmountInput Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('AmountInput renders triggers onChange', async () => {
+  it('AmountInput renders triggers onChange', () => {
     const onChangeMock = jest.fn();
 
     const { container } = render(
       <AmountInput
         name='name'
         dataTestId='name'
-        fieldSize={8}
         maxValue={9999999999}
         minValue={-10}
         onChange={onChangeMock}
@@ -121,7 +124,7 @@ describe('AmountInput Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('AmountInput renders triggers onChange with min and max', async () => {
+  it('AmountInput renders triggers onChange with min and max', () => {
     const onChangeMock = jest.fn();
 
     const { container } = render(
@@ -143,7 +146,7 @@ describe('AmountInput Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('AmountInput renders with empty input in read only', async () => {
+  it('AmountInput renders with empty input in read only', () => {
     const onChangeMock = jest.fn();
 
     const { container } = render(<AmountInput name='name' dataTestId='name' onChange={onChangeMock} readOnly />);
@@ -154,7 +157,7 @@ describe('AmountInput Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('AmountInput renders groupint style NONE', async () => {
+  it('AmountInput renders groupint style NONE', () => {
     const onChangeMock = jest.fn();
 
     const { container } = render(
@@ -164,7 +167,7 @@ describe('AmountInput Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('AmountInput renders with empty input in read only prefix and suffix', async () => {
+  it('AmountInput renders with empty input in read only prefix and suffix', () => {
     const onChangeMock = jest.fn();
 
     const { container } = render(
@@ -177,7 +180,7 @@ describe('AmountInput Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('AmountInput renders with empty input in read only prefix and suffix shorten', async () => {
+  it('AmountInput renders with empty input in read only prefix and suffix shorten', () => {
     const onChangeMock = jest.fn();
 
     const { container } = render(
@@ -198,7 +201,7 @@ describe('AmountInput Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('AmountInput renders with empty input in read only prefix and suffix shorten', async () => {
+  it('AmountInput renders with empty input in read only prefix and suffix shorten', () => {
     const onChangeMock = jest.fn();
 
     const { container } = render(
@@ -219,7 +222,7 @@ describe('AmountInput Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('AmountInput renders with in read only shorten highlighted prefix and suffix shorten', async () => {
+  it('AmountInput renders with in read only shorten highlighted prefix and suffix shorten', () => {
     const onChangeMock = jest.fn();
 
     const { container } = render(
@@ -242,7 +245,7 @@ describe('AmountInput Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('AmountInput renders with input in readonly highlighted shorten', async () => {
+  it('AmountInput renders with input in readonly highlighted shorten', () => {
     const onChangeMock = jest.fn();
 
     const { container } = render(

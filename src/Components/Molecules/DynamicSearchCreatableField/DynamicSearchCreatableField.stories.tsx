@@ -88,7 +88,7 @@ const Template: ComponentStory<typeof DynamicSearchCreatableField> = ({
 
 export const Default = Template.bind({});
 Default.args = {
-  label: 'Dynamix Search',
+  label: 'Dynamic Search',
   disabled: false,
   fieldSize: undefined,
   highlighted: false,

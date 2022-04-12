@@ -1,5 +1,6 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, useState } from 'react';
 import classnames from 'classnames';
+import uniqueId from 'lodash/uniqueId';
 
 import { IToggleEntry } from '../CheckBoxInput/types';
 
@@ -9,11 +10,9 @@ export interface ISwitchInputProps {
   dataTestId?: string;
   /** Disabled field (optional, default: false) */
   disabled?: boolean;
-  /** Size of the field in a 12 column grid (optional, default: undefined) */
-  fieldSize?: number;
   /** Highlighted field (optional, default: false) */
   highlighted?: boolean;
-  /** Error indication should be present (optional, default: undefined) */
+  /** Error indication should be present (optional, default: false) */
   isInError?: boolean;
   /** Input value */
   options: Array<IToggleEntry>;
@@ -24,7 +23,8 @@ export interface ISwitchInputProps {
 }
 
 const SwitchInput = (props: ISwitchInputProps): ReactElement => {
-  const { className, dataTestId, disabled, fieldSize, highlighted, isInError, options, onChange, readOnly } = props;
+  const { className, dataTestId, disabled, highlighted, isInError, options, onChange, readOnly } = props;
+  const [ids] = useState(() => options.map(() => uniqueId('switch-')));
 
   /** flip the check status of the switch that was checked */
   const updateState = (optionValue: string) => {
@@ -40,21 +40,23 @@ const SwitchInput = (props: ISwitchInputProps): ReactElement => {
     }
   };
 
-  const handleChange = (optionValue: string) => (event: React.MouseEvent<HTMLLabelElement>) => {
-    event.preventDefault();
-    if (readOnly || disabled) return;
-    updateState(optionValue);
-  };
+  const handleChange =
+    (optionValue: string) => (event: React.KeyboardEvent<HTMLLabelElement> | React.MouseEvent<HTMLLabelElement>) => {
+      if (event.type === 'keyup') {
+        if ((event as React.KeyboardEvent<HTMLLabelElement>).key !== ' ') {
+          return;
+        }
+      }
+      event.preventDefault();
+      if (readOnly || disabled) return;
+      updateState(optionValue);
+    };
 
   return (
-    <div
-      className={classnames('field', 'gds-switch-container', fieldSize && `field-input-size-${fieldSize}`, className)}
-      data-testid={dataTestId}>
-      {options?.map((option) => {
+    <div className={classnames('field', 'gds-switch-container', className)} data-testid={dataTestId}>
+      {options.map((option, index) => {
         return (
           <label
-            key={option.value}
-            onClick={handleChange(option.value)}
             className={classnames({
               'input-switch-field-read-only': readOnly,
               'input-switch-field-disabled': disabled,
@@ -62,15 +64,30 @@ const SwitchInput = (props: ISwitchInputProps): ReactElement => {
               'field-highlighted': (readOnly || disabled) && highlighted && option.highlighted,
               'input-switch-field-checked': option.checked,
             })}
-            data-testid={option.value}>
+            data-testid={option.value}
+            htmlFor={ids[index]}
+            key={option.value}
+            onClick={handleChange(option.value)}
+            onKeyUp={handleChange(option.value)}
+            tabIndex={0}>
             <div className='switch-marker'>
-              <input type='checkbox' checked={option.checked || false} disabled={disabled} readOnly />
+              <input
+                type='checkbox'
+                aria-hidden
+                checked={option.checked === undefined ? false : option.checked}
+                disabled={disabled}
+                readOnly
+              />
               <span
+                aria-checked={option.checked}
+                aria-label={option.label.toString()}
                 className={classnames({
                   primary: option.checked && !readOnly && !disabled,
                   pebble: !option.checked && !readOnly && !disabled,
                   silver: readOnly || disabled,
                 })}
+                id={ids[index]}
+                role='checkbox'
               />
             </div>
             {option.label}
@@ -79,6 +96,17 @@ const SwitchInput = (props: ISwitchInputProps): ReactElement => {
       })}
     </div>
   );
+};
+
+SwitchInput.defaultProps = {
+  className: undefined,
+  dataTestId: undefined,
+  disabled: false,
+  highlighted: false,
+  isInError: false,
+  onChange: undefined,
+  options: [],
+  readOnly: false,
 };
 
 export default SwitchInput;

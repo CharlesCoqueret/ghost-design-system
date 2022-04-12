@@ -1,5 +1,5 @@
 import React from 'react';
-import { IconProp } from '@fortawesome/fontawesome-svg-core';
+import { IconProp, SizeProp } from '@fortawesome/fontawesome-svg-core';
 import Icon from './Icon';
 
 export default {
@@ -30,11 +30,32 @@ const Template = (args: { icons: Array<IconProp> }) => {
   );
 };
 
+const LoadingTemplate = () => {
+  const sizes: Array<SizeProp> = ['xs', 'sm', '1x', 'lg', '2x', '3x', '4x', '5x', '6x', '7x', '8x', '9x', '10x'];
+  return (
+    <div>
+      {sizes.map((size) => {
+        return (
+          <div key={size}>
+            <div style={{ display: 'inline-flex', alignItems: 'center' }}>
+              <Icon icon={['fal', 'spinner']} size={size} />
+              {`Size: ${size}`}
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
+};
+
 export const List = Template.bind({});
 List.args = {
   icons: [
-    ['fal', 'arrow-to-bottom'],
+    ['fal', 'arrow-down-to-line'],
     ['fal', 'arrow-left'],
+    ['fal', 'arrow-up-from-line'],
+    ['fal', 'arrows-left-right-to-line'],
+    ['fal', 'arrows-to-line'],
     ['fal', 'balance-scale'],
     ['fal', 'ballot-check'],
     ['fal', 'bell'],
@@ -45,6 +66,7 @@ List.args = {
     ['fal', 'chevron-left'],
     ['fal', 'chevron-right'],
     ['fal', 'cog'],
+    ['fal', 'columns-3'],
     ['fal', 'comment-alt-exclamation'],
     ['fal', 'edit'],
     ['fal', 'ellipsis-h'],
@@ -82,10 +104,11 @@ List.args = {
     ['fal', 'times-circle'],
     ['fal', 'trash-alt'],
     ['fal', 'undo'],
-    ['fal', 'upload'],
     ['fal', 'user-circle'],
     ['fal', 'user-lock'],
     ['fal', 'user-unlock'],
+    ['fal', 'window-maximize'],
+
     ['far', 'bold'],
     ['far', 'horizontal-rule'],
     ['far', 'image'],
@@ -104,3 +127,5 @@ List.args = {
     ['fas', 'square-check'],
   ],
 };
+
+export const Spinner = LoadingTemplate.bind({});
