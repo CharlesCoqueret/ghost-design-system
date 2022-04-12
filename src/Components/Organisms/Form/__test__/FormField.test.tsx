@@ -354,14 +354,14 @@ describe('FormField Component', () => {
 
     const container = render(
       <FormField
-        data={{ date: new Date('04/12/2022') }}
+        data={{ date: new Date('2022-04-12T00:00:00.000Z') }}
         field={{
           dataIndex: 'date',
           fieldType: FieldTypeEnum.DATE,
           label: 'date',
         }}
         handleChange={handleChangeMock}
-        previousData={{ date: new Date('09/24/1984') }}
+        previousData={{ date: new Date('1984-09-24T00:00:00.000Z') }}
         validationError={{ date: { message: 'ERROR' } }}
       />,
     );
