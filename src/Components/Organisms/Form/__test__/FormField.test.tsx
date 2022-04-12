@@ -369,11 +369,11 @@ describe('FormField Component', () => {
     expect(container.container).toMatchSnapshot();
 
     if (onChangeHandlerDateField) {
-      onChangeHandlerDateField(new Date('Mon Apr 12 2022 23:53:57 GMT+0100 (CET)'));
+      onChangeHandlerDateField(new Date('2022-04-10T00:00:00.000Z'));
     }
 
     expect(handleChangeMock).toBeCalledTimes(1);
-    expect(handleChangeMock).toBeCalledWith('date', new Date('Mon Apr 12 2022 23:53:57 GMT+0100 (CET)'));
+    expect(handleChangeMock).toBeCalledWith('date', new Date('2022-04-10T00:00:00.000Z'));
 
     container.rerender(
       <FormField
