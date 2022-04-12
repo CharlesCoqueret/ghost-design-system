@@ -1,11 +1,15 @@
 import { computePosition, MenuDirectionEnum } from '../tooltipUtils';
 
-beforeEach(() => {
-  jest.spyOn(document.body, 'clientHeight', 'get').mockReturnValue(1000);
-  jest.spyOn(document.body, 'clientWidth', 'get').mockReturnValue(1000);
-});
-
 describe('computePosition', () => {
+  beforeAll(() => {
+    jest.spyOn(document.body, 'clientHeight', 'get').mockReturnValue(1000);
+    jest.spyOn(document.body, 'clientWidth', 'get').mockReturnValue(1000);
+  });
+
+  afterAll(() => {
+    jest.clearAllMocks();
+  });
+
   it('computePosition Left and can go left', async () => {
     expect(
       computePosition(

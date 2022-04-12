@@ -136,9 +136,7 @@ const AmountInput = (props: IAmountInputProps): ReactElement => {
           <Typography.Text ellipsis={ellipsis}>
             {compact([
               prefix,
-              Numeral(inputValue).format(
-                '0.' + '0'.repeat(decimalScale ?? AmountInput.defaultProps.decimalScale) + ' a',
-              ),
+              Numeral(inputValue).format('0.' + '0'.repeat(Math.abs(decimalScale ?? 2)) + ' a'),
               suffix,
             ]).join(' ')}
           </Typography.Text>
@@ -207,7 +205,6 @@ const AmountInput = (props: IAmountInputProps): ReactElement => {
 
 AmountInput.defaultProps = {
   allowNegative: true,
-  decimalScale: 2,
   decimalSeparator: '.',
   ellipsis: false,
   inputValue: '',

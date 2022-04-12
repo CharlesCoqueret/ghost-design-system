@@ -1,0 +1,146 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SwitchField Component SwitchField renders 1`] = `
+<div>
+  <div
+    class="gds-field-group"
+  >
+    <div
+      class="field gds-switch-container input-switch-field"
+    >
+      <label
+        class=""
+        data-testid="VALUE"
+        for="switch-1"
+        tabindex="0"
+      >
+        <div
+          class="switch-marker"
+        >
+          <input
+            aria-hidden="true"
+            readonly=""
+            type="checkbox"
+          />
+          <span
+            aria-label="Label"
+            class="pebble"
+            id="switch-1"
+            role="checkbox"
+          />
+        </div>
+        Label
+      </label>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`SwitchField Component SwitchField renders with values in disabled highligted 1`] = `
+<div>
+  <div
+    class="gds-field-group"
+  >
+    <div
+      class="field gds-switch-container input-switch-field"
+    >
+      <label
+        class="input-switch-field-disabled"
+        data-testid="VALUE"
+        for="switch-3"
+        tabindex="0"
+      >
+        <div
+          class="switch-marker"
+        >
+          <input
+            aria-hidden="true"
+            disabled=""
+            readonly=""
+            type="checkbox"
+          />
+          <span
+            aria-label="Label"
+            class="silver"
+            id="switch-3"
+            role="checkbox"
+          />
+        </div>
+        Label
+      </label>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`SwitchField Component SwitchField renders with values in readonly 1`] = `
+<div>
+  <div
+    class="gds-field-group"
+  >
+    <div
+      class="field gds-switch-container input-switch-field"
+    >
+      <label
+        class="input-switch-field-read-only"
+        data-testid="VALUE"
+        for="switch-2"
+        tabindex="0"
+      >
+        <div
+          class="switch-marker"
+        >
+          <input
+            aria-hidden="true"
+            readonly=""
+            type="checkbox"
+          />
+          <span
+            aria-label="Label"
+            class="silver"
+            id="switch-2"
+            role="checkbox"
+          />
+        </div>
+        Label
+      </label>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`SwitchField Component SwitchField renders with values with fieldSize and inline 1`] = `
+<div>
+  <div
+    class="gds-field-group field-size-6 field-inline"
+  >
+    <div
+      class="field gds-switch-container input-switch-field"
+    >
+      <label
+        class=""
+        data-testid="VALUE"
+        for="switch-4"
+        tabindex="0"
+      >
+        <div
+          class="switch-marker"
+        >
+          <input
+            aria-hidden="true"
+            readonly=""
+            type="checkbox"
+          />
+          <span
+            aria-label="Label"
+            class="pebble"
+            id="switch-4"
+            role="checkbox"
+          />
+        </div>
+        Label
+      </label>
+    </div>
+  </div>
+</div>
+`;

@@ -46,10 +46,10 @@ export interface IFileFieldProps {
   name: string;
   /** handler of changes, notifying any files changes (including new files, states changes, deleted files...)
    * To retrieve the up to date files, simply filter the files on the status FileStatusEnum.DONE */
-  onChange: (files: Array<IFile>) => void;
+  onChange?: (files: Array<IFile>) => void;
   /** Handler of the download request
    * The promise should reject if the deletion fails. */
-  onDelete: (file: IFile) => Promise<void>;
+  onDelete?: (file: IFile) => Promise<void>;
   /** Handler of download request
    * The client should let the user know if the download fails.
    * Promise resolution or rejection will only prevent multiple downloads of the same file. */

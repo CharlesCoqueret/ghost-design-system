@@ -145,7 +145,7 @@ describe('FilterItem Component', () => {
             return Promise.resolve(undefined);
           },
           searchOptions: () => {
-            return Promise.resolve(undefined);
+            return Promise.resolve([]);
           },
         }}
         onChange={onChangeMock}

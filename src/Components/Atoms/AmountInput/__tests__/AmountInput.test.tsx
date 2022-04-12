@@ -29,7 +29,7 @@ describe('AmountInput Component', () => {
   it('AmountInput renders in readonly with value shotern', () => {
     const onChangeMock = jest.fn();
 
-    const { container } = render(
+    const { container, rerender } = render(
       <AmountInput
         highlighted
         inputValue={1234567890.12}
@@ -42,6 +42,22 @@ describe('AmountInput Component', () => {
       />,
     );
     expect(onChangeMock).toBeCalledTimes(0);
+
+    expect(container).toMatchSnapshot();
+
+    rerender(
+      <AmountInput
+        decimalScale={2}
+        highlighted
+        inputValue={1234567890.12}
+        name='name'
+        onChange={onChangeMock}
+        prefix='A'
+        readOnly
+        suffix='B'
+        thousandsGroupStyle={ThousandsGroupStyle.SHORTEN}
+      />,
+    );
 
     expect(container).toMatchSnapshot();
   });

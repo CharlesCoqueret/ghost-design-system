@@ -880,6 +880,136 @@ exports[`FileInput Component FileInput handle unsuccessfull add file when quota 
 </div>
 `;
 
+exports[`FileInput Component FileInput handles correctly deletion when no handler defined 1`] = `
+<div>
+  <div
+    class="field gds-file-input-container"
+  >
+    <div
+      class="droparea"
+      tabindex="0"
+    >
+      <label
+        class="label"
+      >
+        Click or drag file to upload
+        <input
+          class="input"
+          data-testid="TEST-ID"
+          type="file"
+          value=""
+        />
+      </label>
+    </div>
+    <div
+      class="gallery"
+    >
+      <div
+        class="item-container"
+      >
+        <div
+          class="left"
+        >
+          <div
+            class="paperclip-icon"
+          >
+            <i
+              class="icon"
+              icon="fal,paperclip"
+            />
+          </div>
+          <div
+            class="name downloadable"
+            data-testid="TEST-ID-download"
+          >
+            AME
+             (1.21 kB)
+          </div>
+        </div>
+        <div
+          class="right"
+        >
+          <div
+            class="delete-icon"
+            data-testid="TEST-ID-delete"
+          >
+            <i
+              class="icon"
+              icon="fal,trash-alt"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`FileInput Component FileInput handles correctly deletion when no handler defined 2`] = `
+<div>
+  <div
+    class="field gds-file-input-container"
+  >
+    <div
+      class="droparea"
+      tabindex="0"
+    >
+      <label
+        class="label"
+      >
+        Click or drag file to upload
+        <input
+          class="input"
+          data-testid="TEST-ID"
+          type="file"
+          value=""
+        />
+      </label>
+    </div>
+    <div
+      class="gallery"
+    >
+      <div
+        class="item-container"
+      >
+        <div
+          class="left"
+        >
+          <div
+            class="paperclip-icon"
+          >
+            <i
+              class="icon"
+              icon="fal,paperclip"
+            />
+          </div>
+          <div
+            class="name downloadable"
+            data-testid="TEST-ID-download"
+          >
+            AME
+             (1.21 kB)
+          </div>
+        </div>
+        <div
+          class="right"
+        >
+          <div
+            class="delete-icon"
+            data-testid="TEST-ID-delete"
+          >
+            <i
+              class="icon"
+              icon="fal,trash-alt"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`FileInput Component FileInput handles delete rejections of a file 1`] = `
 <div>
   <div

@@ -35,10 +35,8 @@ exports[`SelectInput Component SelectInput handles change 1`] = `
           >
             <input
               aria-autocomplete="list"
-              aria-controls="react-select-3-listbox"
               aria-expanded="false"
               aria-haspopup="true"
-              aria-owns="react-select-3-listbox"
               autocapitalize="none"
               autocomplete="off"
               autocorrect="off"
@@ -122,10 +120,8 @@ exports[`SelectInput Component SelectInput handles change with data-testid 1`] =
           >
             <input
               aria-autocomplete="list"
-              aria-controls="react-select-4-listbox"
               aria-expanded="false"
               aria-haspopup="true"
-              aria-owns="react-select-4-listbox"
               autocapitalize="none"
               autocomplete="off"
               autocorrect="off"
@@ -212,11 +208,9 @@ exports[`SelectInput Component SelectInput handles change with empty value when 
           >
             <input
               aria-autocomplete="list"
-              aria-controls="react-select-5-listbox"
               aria-describedby="react-select-5-placeholder"
               aria-expanded="false"
               aria-haspopup="true"
-              aria-owns="react-select-5-listbox"
               autocapitalize="none"
               autocomplete="off"
               autocorrect="off"
@@ -294,11 +288,9 @@ exports[`SelectInput Component SelectInput renders 1`] = `
           >
             <input
               aria-autocomplete="list"
-              aria-controls="react-select-2-listbox"
               aria-describedby="react-select-2-placeholder"
               aria-expanded="false"
               aria-haspopup="true"
-              aria-owns="react-select-2-listbox"
               autocapitalize="none"
               autocomplete="off"
               autocorrect="off"
@@ -375,11 +367,9 @@ exports[`SelectInput Component SelectInput renders disabled 1`] = `
           >
             <input
               aria-autocomplete="list"
-              aria-controls="react-select-8-listbox"
               aria-describedby="react-select-8-placeholder"
               aria-expanded="false"
               aria-haspopup="true"
-              aria-owns="react-select-8-listbox"
               autocapitalize="none"
               autocomplete="off"
               autocorrect="off"
@@ -494,11 +484,9 @@ exports[`SelectInput Component SelectInput renders with fieldsize, inError 1`] =
           >
             <input
               aria-autocomplete="list"
-              aria-controls="react-select-7-listbox"
               aria-describedby="react-select-7-placeholder"
               aria-expanded="false"
               aria-haspopup="true"
-              aria-owns="react-select-7-listbox"
               autocapitalize="none"
               autocomplete="off"
               autocorrect="off"
@@ -575,11 +563,9 @@ exports[`SelectInput Component SelectInput renders without portal 1`] = `
           >
             <input
               aria-autocomplete="list"
-              aria-controls="react-select-6-listbox"
               aria-describedby="react-select-6-placeholder"
               aria-expanded="false"
               aria-haspopup="true"
-              aria-owns="react-select-6-listbox"
               autocapitalize="none"
               autocomplete="off"
               autocorrect="off"

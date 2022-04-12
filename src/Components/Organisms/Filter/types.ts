@@ -63,7 +63,7 @@ export interface IFilterDynamicSearchProps<T> extends IFilterBaseProps<T> {
   noOptionsMessage: (obj: { inputValue: string }) => string;
   placeholder?: string;
   resolveValue: (value: string | number) => Promise<IOption | undefined>;
-  searchOptions: (searchTerm: string) => Promise<Array<IOption> | undefined>;
+  searchOptions: (searchTerm: string) => Promise<Array<IOption>>;
 }
 
 export interface IFilterMultiSelectProps<T> extends IFilterBaseProps<T> {

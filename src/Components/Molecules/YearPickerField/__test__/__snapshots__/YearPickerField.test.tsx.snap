@@ -1,0 +1,123 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`YearPickerField Component YearPickerField renders 1`] = `
+<div>
+  <div
+    class="gds-field-group"
+  >
+    <div
+      class="input-year-picker-field field"
+    >
+      <div
+        class="react-datepicker-wrapper"
+      >
+        <div
+          class="react-datepicker__input-container"
+        >
+          <input
+            autocomplete="off"
+            class="field input-year-picker-input"
+            name="name"
+            placeholder="YYYY"
+            type="text"
+            value=""
+          />
+        </div>
+      </div>
+      <div />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`YearPickerField Component YearPickerField renders with values in disabled highligted 1`] = `
+<div>
+  <div
+    class="gds-field-group"
+  >
+    <div
+      class="input-year-picker-field field"
+    >
+      <div
+        class="react-datepicker-wrapper"
+      >
+        <div
+          class="react-datepicker__input-container"
+        >
+          <input
+            autocomplete="off"
+            class="field input-year-picker-input"
+            disabled=""
+            name="name"
+            placeholder="YYYY"
+            type="text"
+            value="12345"
+          />
+        </div>
+      </div>
+      <div />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`YearPickerField Component YearPickerField renders with values in readonly 1`] = `
+<div>
+  <div
+    class="gds-field-group"
+  >
+    <div
+      class="input-year-picker-field field"
+    >
+      <div
+        class="react-datepicker-wrapper"
+      >
+        <div
+          class="react-datepicker__input-container"
+        >
+          <input
+            autocomplete="off"
+            class="field input-year-picker-input-read-only"
+            name="name"
+            placeholder="-"
+            readonly=""
+            type="text"
+            value="0012"
+          />
+        </div>
+      </div>
+      <div />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`YearPickerField Component YearPickerField renders with values with fieldSize and inline 1`] = `
+<div>
+  <div
+    class="gds-field-group field-size-6 field-inline"
+  >
+    <div
+      class="input-year-picker-field field"
+    >
+      <div
+        class="react-datepicker-wrapper"
+      >
+        <div
+          class="react-datepicker__input-container"
+        >
+          <input
+            autocomplete="off"
+            class="field input-year-picker-input"
+            name="name"
+            placeholder="YYYY"
+            type="text"
+            value="0001"
+          />
+        </div>
+      </div>
+      <div />
+    </div>
+  </div>
+</div>
+`;

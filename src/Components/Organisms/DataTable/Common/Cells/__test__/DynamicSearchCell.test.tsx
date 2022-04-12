@@ -164,7 +164,7 @@ describe('DynamicSearchCell component', () => {
       return Promise.resolve({ value: 'value1', label: 'Label 1' });
     });
     const searchOptionsMock = jest.fn().mockImplementation(() => {
-      return Promise.resolve(undefined);
+      return Promise.resolve([]);
     });
     const noOptionsMessageMock = jest.fn().mockImplementation((obj: { inputValue: string }) => {
       return `No result for ${obj.inputValue}`;

@@ -187,10 +187,8 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handl
           >
             <input
               aria-autocomplete="list"
-              aria-controls="react-select-6-listbox"
               aria-expanded="false"
               aria-haspopup="true"
-              aria-owns="react-select-6-listbox"
               autocapitalize="none"
               autocomplete="off"
               autocorrect="off"
@@ -276,10 +274,8 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handl
           >
             <input
               aria-autocomplete="list"
-              aria-controls="react-select-11-listbox"
               aria-expanded="false"
               aria-haspopup="true"
-              aria-owns="react-select-11-listbox"
               autocapitalize="none"
               autocomplete="off"
               autocorrect="off"
@@ -632,10 +628,8 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handl
           >
             <input
               aria-autocomplete="list"
-              aria-controls="react-select-7-listbox"
               aria-expanded="false"
               aria-haspopup="true"
-              aria-owns="react-select-7-listbox"
               autocapitalize="none"
               autocomplete="off"
               autocorrect="off"
@@ -713,11 +707,9 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handl
           >
             <input
               aria-autocomplete="list"
-              aria-controls="react-select-13-listbox"
               aria-describedby="react-select-13-placeholder"
               aria-expanded="false"
               aria-haspopup="true"
-              aria-owns="react-select-13-listbox"
               autocapitalize="none"
               autocomplete="off"
               autocorrect="off"
@@ -947,11 +939,9 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handl
           >
             <input
               aria-autocomplete="list"
-              aria-controls="react-select-13-listbox"
               aria-describedby="react-select-13-placeholder"
               aria-expanded="false"
               aria-haspopup="true"
-              aria-owns="react-select-13-listbox"
               autocapitalize="none"
               autocomplete="off"
               autocorrect="off"
@@ -1068,10 +1058,8 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handl
           >
             <input
               aria-autocomplete="list"
-              aria-controls="react-select-13-listbox"
               aria-expanded="false"
               aria-haspopup="true"
-              aria-owns="react-select-13-listbox"
               autocapitalize="none"
               autocomplete="off"
               autocorrect="off"
@@ -1158,11 +1146,9 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handl
           >
             <input
               aria-autocomplete="list"
-              aria-controls="react-select-14-listbox"
               aria-describedby="react-select-14-placeholder"
               aria-expanded="false"
               aria-haspopup="true"
-              aria-owns="react-select-14-listbox"
               autocapitalize="none"
               autocomplete="off"
               autocorrect="off"
@@ -1392,11 +1378,9 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handl
           >
             <input
               aria-autocomplete="list"
-              aria-controls="react-select-14-listbox"
               aria-describedby="react-select-14-placeholder"
               aria-expanded="false"
               aria-haspopup="true"
-              aria-owns="react-select-14-listbox"
               autocapitalize="none"
               autocomplete="off"
               autocorrect="off"
@@ -1514,11 +1498,9 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handl
           >
             <input
               aria-autocomplete="list"
-              aria-controls="react-select-14-listbox"
               aria-describedby="react-select-14-placeholder"
               aria-expanded="false"
               aria-haspopup="true"
-              aria-owns="react-select-14-listbox"
               autocapitalize="none"
               autocomplete="off"
               autocorrect="off"
@@ -1595,10 +1577,8 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handl
           >
             <input
               aria-autocomplete="list"
-              aria-controls="react-select-10-listbox"
               aria-expanded="false"
               aria-haspopup="true"
-              aria-owns="react-select-10-listbox"
               autocapitalize="none"
               autocomplete="off"
               autocorrect="off"
@@ -1675,10 +1655,8 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handl
           >
             <input
               aria-autocomplete="list"
-              aria-controls="react-select-10-listbox"
               aria-expanded="false"
               aria-haspopup="true"
-              aria-owns="react-select-10-listbox"
               autocapitalize="none"
               autocomplete="off"
               autocorrect="off"
@@ -1755,10 +1733,8 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handl
           >
             <input
               aria-autocomplete="list"
-              aria-controls="react-select-12-listbox"
               aria-expanded="false"
               aria-haspopup="true"
-              aria-owns="react-select-12-listbox"
               autocapitalize="none"
               autocomplete="off"
               autocorrect="off"
@@ -1842,10 +1818,8 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput rende
           >
             <input
               aria-autocomplete="list"
-              aria-controls="react-select-2-listbox"
               aria-expanded="false"
               aria-haspopup="true"
-              aria-owns="react-select-2-listbox"
               autocapitalize="none"
               autocomplete="off"
               autocorrect="off"
@@ -1922,10 +1896,8 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput rende
           >
             <input
               aria-autocomplete="list"
-              aria-controls="react-select-8-listbox"
               aria-expanded="false"
               aria-haspopup="true"
-              aria-owns="react-select-8-listbox"
               autocapitalize="none"
               autocomplete="off"
               autocorrect="off"
@@ -1999,11 +1971,9 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput rende
           >
             <input
               aria-autocomplete="list"
-              aria-controls="react-select-9-listbox"
               aria-describedby="react-select-9-placeholder"
               aria-expanded="false"
               aria-haspopup="true"
-              aria-owns="react-select-9-listbox"
               autocapitalize="none"
               autocomplete="off"
               autocorrect="off"
@@ -2110,11 +2080,9 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput rende
           >
             <input
               aria-autocomplete="list"
-              aria-controls="react-select-4-listbox"
               aria-describedby="react-select-4-placeholder"
               aria-expanded="false"
               aria-haspopup="true"
-              aria-owns="react-select-4-listbox"
               autocapitalize="none"
               autocomplete="off"
               autocorrect="off"
@@ -2192,11 +2160,9 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput rende
           >
             <input
               aria-autocomplete="list"
-              aria-controls="react-select-3-listbox"
               aria-describedby="react-select-3-placeholder"
               aria-expanded="false"
               aria-haspopup="true"
-              aria-owns="react-select-3-listbox"
               autocapitalize="none"
               autocomplete="off"
               autocorrect="off"
@@ -2274,11 +2240,9 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput rende
           >
             <input
               aria-autocomplete="list"
-              aria-controls="react-select-5-listbox"
               aria-describedby="react-select-5-placeholder"
               aria-expanded="false"
               aria-haspopup="true"
-              aria-owns="react-select-5-listbox"
               autocapitalize="none"
               autocomplete="off"
               autocorrect="off"

@@ -12,7 +12,7 @@ describe('DynamicSearchCreatableInput Component', () => {
       return Promise.resolve({ value: 'OPTION1', label: 'option 1' });
     });
     const searchOptionsMock = jest.fn().mockImplementation(() => {
-      return Promise.resolve(undefined);
+      return Promise.resolve([]);
     });
 
     const { container } = render(
@@ -47,7 +47,7 @@ describe('DynamicSearchCreatableInput Component', () => {
       return Promise.resolve(undefined);
     });
     const searchOptionsMock = jest.fn().mockImplementation(() => {
-      return Promise.resolve(undefined);
+      return Promise.resolve([]);
     });
 
     const { container } = render(
@@ -82,7 +82,7 @@ describe('DynamicSearchCreatableInput Component', () => {
       return Promise.reject();
     });
     const searchOptionsMock = jest.fn().mockImplementation(() => {
-      return Promise.resolve(undefined);
+      return Promise.resolve([]);
     });
 
     const { container } = render(
@@ -115,7 +115,7 @@ describe('DynamicSearchCreatableInput Component', () => {
     const noOptionsMessageMock = jest.fn();
     const resolveValueMock = jest.fn();
     const searchOptionsMock = jest.fn().mockImplementation(() => {
-      return Promise.resolve(undefined);
+      return Promise.resolve([]);
     });
 
     const { container } = render(
@@ -308,7 +308,7 @@ describe('DynamicSearchCreatableInput Component', () => {
       return Promise.resolve({ value: 'OPTION1', label: 'option 1' });
     });
     const searchOptionsMock = jest.fn().mockImplementation(() => {
-      return Promise.resolve(undefined);
+      return Promise.resolve([]);
     });
 
     const { container } = render(
@@ -344,7 +344,7 @@ describe('DynamicSearchCreatableInput Component', () => {
     });
     const resolveValueMock = jest.fn();
     const searchOptionsMock = jest.fn().mockImplementation(() => {
-      return Promise.resolve(undefined);
+      return Promise.resolve([]);
     });
 
     const { container } = render(
@@ -382,7 +382,7 @@ describe('DynamicSearchCreatableInput Component', () => {
       return Promise.resolve(undefined);
     });
     const searchOptionsMock = jest.fn().mockImplementation(() => {
-      return Promise.resolve(undefined);
+      return Promise.resolve([]);
     });
 
     const container = render(
@@ -446,7 +446,7 @@ describe('DynamicSearchCreatableInput Component', () => {
       return Promise.resolve(undefined);
     });
     const searchOptionsMock = jest.fn().mockImplementation(() => {
-      return Promise.resolve(undefined);
+      return Promise.resolve([]);
     });
 
     const { container } = render(
@@ -497,7 +497,7 @@ describe('DynamicSearchCreatableInput Component', () => {
       return Promise.resolve({ value: 'OPTION1', label: 'option 1' });
     });
     const searchOptionsMock = jest.fn().mockImplementation(() => {
-      return Promise.resolve(undefined);
+      return Promise.resolve([]);
     });
 
     const { container } = render(
@@ -526,7 +526,7 @@ describe('DynamicSearchCreatableInput Component', () => {
     const onChangeMock = jest.fn();
     const resolveValueMock = jest.fn();
     const searchOptionsMock = jest.fn().mockImplementation(() => {
-      return Promise.resolve(undefined);
+      return Promise.resolve([]);
     });
 
     const { container } = render(
@@ -591,7 +591,7 @@ describe('DynamicSearchCreatableInput Component', () => {
     const onChangeMock = jest.fn();
     const resolveValueMock = jest.fn();
     const searchOptionsMock = jest.fn().mockImplementation(() => {
-      return Promise.resolve(undefined);
+      return Promise.resolve([]);
     });
 
     const { container } = render(
