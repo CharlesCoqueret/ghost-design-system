@@ -106,6 +106,7 @@ const RichTextInput = (props: IRichTextInputProps): ReactElement => {
     maxCharCount: maxLength,
     minHeight: readOnly || disabled ? undefined : '250px',
     maxHeight: readOnly || disabled ? undefined : '600px',
+    tabDisable: true,
     pasteTagsBlacklist: [
       ...forbiddenTags,
       ...[enableImage ? imageTags : undefined],

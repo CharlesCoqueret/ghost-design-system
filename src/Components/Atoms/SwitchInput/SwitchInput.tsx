@@ -54,7 +54,7 @@ const SwitchInput = (props: ISwitchInputProps): ReactElement => {
 
   return (
     <div className={classnames('field', 'gds-switch-container', className)} data-testid={dataTestId}>
-      {options?.map((option, index) => {
+      {options.map((option, index) => {
         return (
           <label
             className={classnames({
@@ -105,6 +105,7 @@ SwitchInput.defaultProps = {
   highlighted: false,
   isInError: false,
   onChange: undefined,
+  options: [],
   readOnly: false,
 };
 

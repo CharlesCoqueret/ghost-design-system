@@ -209,6 +209,7 @@ const DynamicSearchCreatableInput = (props: IDynamicSearchCreatableInputProps): 
             );
           },
         }}
+        data-testid={dataTestId}
         createOptionPosition='last'
         defaultOptions
         hideSelectedOptions={false}

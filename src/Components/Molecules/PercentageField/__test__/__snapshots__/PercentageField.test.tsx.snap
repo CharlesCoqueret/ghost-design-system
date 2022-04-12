@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PercentageField Component PercentageField renders 1`] = `
+<div>
+  <div
+    class="gds-field-group"
+  >
+    <input
+      class="gds-amount-field"
+      inputmode="numeric"
+      name="name"
+      type="text"
+      value=" %"
+    />
+  </div>
+</div>
+`;
+
+exports[`PercentageField Component PercentageField renders with values in disabled highligted 1`] = `
+<div>
+  <div
+    class="gds-field-group"
+  >
+    <input
+      class="gds-amount-field"
+      disabled=""
+      inputmode="numeric"
+      name="name"
+      type="text"
+      value="12,345.57 %"
+    />
+  </div>
+</div>
+`;
+
+exports[`PercentageField Component PercentageField renders with values in readonly 1`] = `
+<div>
+  <div
+    class="gds-field-group"
+  >
+    <span
+      class="gds-amount-field amount-field-read-only"
+      id="name"
+      name="name"
+    >
+      12.34 %
+    </span>
+  </div>
+</div>
+`;
+
+exports[`PercentageField Component PercentageField renders with values with fieldSize and inline 1`] = `
+<div>
+  <div
+    class="gds-field-group field-size-6 field-inline"
+  >
+    <input
+      class="gds-amount-field"
+      inputmode="numeric"
+      name="name"
+      type="text"
+      value="1.23 %"
+    />
+  </div>
+</div>
+`;

@@ -50,7 +50,7 @@ export interface IDynamicSearchCreatableFieldProps {
   /** Name of text field */
   name: string;
   /** No option message (dispayed when no results are available) */
-  noOptionsMessage: (obj: { inputValue: string }) => string;
+  noOptionsMessage: string | ((obj: { inputValue: string }) => string);
   /** Handler of value changes (optional, default: undefined) */
   onChange?: (newValue: string | number | null | undefined) => void;
   /** Placeholder value (optional, default: undefined) */

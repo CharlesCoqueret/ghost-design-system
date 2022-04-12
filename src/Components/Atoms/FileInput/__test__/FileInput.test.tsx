@@ -564,6 +564,34 @@ describe('FileInput Component', () => {
     expect(onDeleteMock).toBeCalledWith({ uid: '1', name: 'AME', size: 1234, type: 'image/png', status: 'done' });
   });
 
+  it('FileInput handles correctly deletion when no handler defined', async () => {
+    const onChangeMock = jest.fn();
+    const onDownloadMock = jest.fn().mockImplementation(() => {
+      return Promise.resolve();
+    });
+
+    const { container } = render(
+      <FileInput
+        dataTestId='TEST-ID'
+        inputValue={[{ uid: '1', name: 'AME', size: 1234, type: 'image/png' }]}
+        maxFiles={1}
+        onChange={onChangeMock}
+        onDownload={onDownloadMock}
+        requestMethod='POST'
+        requestUrl='http://test.com'
+      />,
+    );
+
+    expect(container).toMatchSnapshot();
+
+    const deleteButton = await screen.findByTestId('TEST-ID-delete');
+
+    userEvent.click(deleteButton);
+
+    expect(onChangeMock).toBeCalledTimes(0);
+    expect(container).toMatchSnapshot();
+  });
+
   it('FileInput handles delete rejections of a file', async () => {
     const onChangeMock = jest.fn();
     const onDeleteMock = jest.fn().mockImplementation(() => {
