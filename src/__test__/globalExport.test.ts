@@ -58,6 +58,8 @@ describe('Global export test', () => {
 
     expect(Global.Portal).toBeDefined();
 
+    expect(Global.Pulsar).toBeDefined();
+
     expect(Global.RichTextInput).toBeDefined();
 
     expect(Global.DynamicSearchCreatableInput).toBeDefined();
@@ -130,6 +132,10 @@ describe('Global export test', () => {
     expect(Global.Form).toBeDefined();
     expect(Global.Highlighter).toBeDefined();
     expect(Global.useForm).toBeDefined();
+
+    expect(Global.FilterTypeEnum).toBeDefined();
+    expect(Global.Filter).toBeDefined();
+    expect(Global.FilterItem).toBeDefined();
 
     expect(Global.Navbar).toBeDefined();
     expect(Global.NavItem).toBeDefined();

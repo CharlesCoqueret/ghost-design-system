@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 
-const Pulsar = () => {
+const Pulsar = (): ReactElement => {
   return <span className='gds-pulsar' />;
 };
 

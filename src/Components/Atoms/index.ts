@@ -9,6 +9,7 @@ export * from './Layout';
 export * from './Link';
 export * from './Modal';
 export * from './Portal';
+export * from './Pulsar';
 export * from './RichTextInput';
 export * from './SelectInput';
 export * from './SwitchInput';

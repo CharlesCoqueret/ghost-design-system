@@ -159,6 +159,43 @@ exports[`ActionBar Component ActionBar renders 1`] = `
 </div>
 `;
 
+exports[`ActionBar Component ActionBar renders with actions without label, empty basicactions 1`] = `
+<div>
+  <div
+    class="gds-action-bar"
+  >
+    <div
+      class="left-side"
+    >
+      <div
+        class="title"
+      >
+        <span
+          class="title-edit-hidden"
+        >
+          TITLE
+        </span>
+        <input
+          autocomplete="off"
+          class="title-edit"
+          readonly=""
+          style="display: flex; width: 0px; margin: auto;"
+          type="text"
+          value="TITLE"
+        />
+      </div>
+    </div>
+    <div
+      class="right-side"
+    >
+      <div
+        class="actions"
+      />
+    </div>
+  </div>
+</div>
+`;
+
 exports[`ActionBar Component ActionBar renders without action, basicactions, icon, indicator or status 1`] = `
 <div>
   <div

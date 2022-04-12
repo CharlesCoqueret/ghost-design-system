@@ -111,6 +111,43 @@ exports[`Section Component Section renders 3`] = `
 </div>
 `;
 
+exports[`Section Component Section renders collapsable closed by default 1`] = `
+<div>
+  <div
+    class="gds-layout-section-container"
+  >
+    <div
+      class="section-header collapsable"
+      data-testid="DATA-TEST-ID"
+    >
+      <h2
+        class="gds-typography"
+      >
+        TITLE
+      </h2>
+      <i
+        class="collapse-icon icon"
+        icon="fal,chevron-left"
+      />
+    </div>
+    <div
+      class="section-body"
+      style="transition: height 500ms linear; height: 0px;"
+    >
+      <div
+        id="CHILD1"
+      />
+      <div
+        id="CHILD2"
+      />
+    </div>
+    <div
+      class="section-footer"
+    />
+  </div>
+</div>
+`;
+
 exports[`Section Component Section renders not collapsable 1`] = `
 <div>
   <div

@@ -106,6 +106,7 @@ $tertiary: $charcoal;
 This react components library uses the following:
 
 - [@fortawesome](https://fontawesome.com/)
+- [@szhsin/react-menu](https://szhsin.github.io/react-menu/)
 - [classnames](https://github.com/JedWatson/classnames#readme)
 - [color-alpha](https://github.com/colorjs/color-alpha)
 - [color-rgba](https://github.com/colorjs/color-rgba)
@@ -116,6 +117,7 @@ This react components library uses the following:
 - [react-number-format](https://github.com/s-yadav/react-number-format#readme)
 - [react-select](https://react-select.com/)
 - [suneditor](http://suneditor.com/)
+- [yup](https://github.com/jquense/yup)
 
 Peer dependencies:
 
@@ -123,12 +125,14 @@ Peer dependencies:
 - [react](https://fr.reactjs.org/)
 - [react-dom](https://fr.reactjs.org/docs/react-dom.html)
 - [react-router-dom](https://reactrouter.com/)
+- [suneditor](http://suneditor.com/)
 
 Dev dependencies:
 
 - [ESLint](https://eslint.org/)
 - [Jest](https://jestjs.io/)
 - [Prettier](https://prettier.io/)
+- [Rollup](https://rollupjs.org/)
 - [SCSS](https://sass-lang.com/)
 - [Storybook](https://storybook.js.org/)
 - [Testing-library](https://testing-library.com/)
@@ -143,12 +147,14 @@ Dev dependencies:
 ```
 ├── .storybook
 ├── src
-│   ├── components
-|   |   ├── Example
-|   |   |   ├── __tests__
-|   |   |   |   ├── Example.test.tsx
-|   |   |   ├── Example.stories.tsx
-|   |   |   ├── Example.tsx
+│   ├── Components
+|   |   ├── Atoms
+|   |   |   ├── Example
+|   |   |   |   ├── __tests__
+|   |   |   |   |   ├── Example.test.tsx
+|   |   |   |   ├── Example.stories.tsx
+|   |   |   |   ├── Example.tsx
+|   |   |   |   ├── index.ts
 |   |   |   ├── index.ts
 |   |   ├── index.ts
 |   ├── index.ts

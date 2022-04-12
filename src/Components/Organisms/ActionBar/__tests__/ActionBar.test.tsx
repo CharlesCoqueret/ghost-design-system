@@ -58,4 +58,20 @@ describe('ActionBar Component', () => {
     expect(container).toMatchSnapshot();
     expect(onTitleEditMock).not.toBeCalled();
   });
+
+  it('ActionBar renders with actions without label, empty basicactions', () => {
+    const onTitleEditMock = jest.fn();
+
+    const { container } = render(
+      <ActionBar
+        actions={[{ icon: ['fal', 'cog'], tooltip: 'TOOLTIP' }]}
+        backTooltip='BACKTOOLTIP'
+        basicActions={[]}
+        title='TITLE'
+      />,
+    );
+
+    expect(container).toMatchSnapshot();
+    expect(onTitleEditMock).not.toBeCalled();
+  });
 });
