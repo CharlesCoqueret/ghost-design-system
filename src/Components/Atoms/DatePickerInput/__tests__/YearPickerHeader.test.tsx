@@ -47,7 +47,7 @@ describe('YearPickerHeader Component', () => {
     expect(decreaseYearMock).toBeCalledTimes(1);
   });
 
-  it('YearPickerHeader renders without data-testid', async () => {
+  it('YearPickerHeader renders without data-testid', () => {
     const { container } = render(
       <YearPickerHeader
         changeMonth={() => {

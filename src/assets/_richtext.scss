@@ -1,6 +1,17 @@
 @import '~suneditor/dist/css/suneditor.min.css';
 
 .gds-rich-text-container {
+  // Removing z-index to get the model over the rich text
+  .sun-editor .se-wrapper,
+  .sun-editor .se-toolbar {
+    z-index: unset;
+  }
+
+  // Removing the sticky toolbar
+  .sun-editor .se-toolbar-sticky-dummy {
+    visibility: hidden;
+  }
+
   .se-wrapper-inner {
     border: 1px solid transparent;
     &:focus,

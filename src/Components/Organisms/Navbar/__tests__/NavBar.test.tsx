@@ -4,7 +4,7 @@ import { render } from '@testing-library/react';
 import NavBar from '../Navbar';
 
 describe('NavBar Component', () => {
-  it('NavBar renders', async () => {
+  it('NavBar renders', () => {
     const onSearchMock = jest.fn();
 
     const { container } = render(
@@ -20,7 +20,7 @@ describe('NavBar Component', () => {
     expect(onSearchMock).not.toBeCalled();
   });
 
-  it('NavBar renders without buttons or icons', async () => {
+  it('NavBar renders without buttons or icons', () => {
     const onSearchMock = jest.fn();
 
     const { container } = render(
@@ -31,7 +31,7 @@ describe('NavBar Component', () => {
     expect(onSearchMock).not.toBeCalled();
   });
 
-  it('NavBar renders with variations', async () => {
+  it('NavBar renders with variations', () => {
     const onSearchMock = jest.fn();
 
     const { container } = render(

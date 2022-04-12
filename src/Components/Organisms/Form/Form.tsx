@@ -13,7 +13,7 @@ export interface IFormProps<T extends AnyObject> {
   handleDataChange: (dataIndex: keyof T, newValue: T[keyof T]) => void;
   initialData: T;
   previousData?: T;
-  validationError?: Record<keyof T, FieldError>;
+  validationError?: Partial<Record<keyof T, FieldError>>;
   validationSchema?: yup.SchemaOf<T>;
   usePortal?: boolean;
 }
@@ -59,9 +59,9 @@ const Form = <T,>(props: IFormProps<T>): ReactElement => {
           let isRequired = false;
 
           try {
-            const objectDescription = validationSchema?.describe() as SchemaObjectDescription;
+            const objectDescription = validationSchema?.describe() as SchemaObjectDescription | undefined;
             const schemaDescription = objectDescription?.fields[field.dataIndex as string] as SchemaDescription;
-            isRequired = schemaDescription.tests.some((test) => test?.name === 'required');
+            isRequired = schemaDescription.tests.some((test) => test.name === 'required');
           } catch {}
 
           return (

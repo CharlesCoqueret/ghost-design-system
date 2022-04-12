@@ -5,7 +5,7 @@ import CustomCell from '../CustomCell';
 import { ColumnType } from '../../types';
 
 describe('CustomCell component', () => {
-  it('CustomCell renders', async () => {
+  it('CustomCell renders', () => {
     const customRenderMock = jest.fn().mockImplementation(() => {
       return 'customRender';
     });
@@ -39,7 +39,7 @@ describe('CustomCell component', () => {
     expect(customRenderEditMock).toBeCalledTimes(0);
   });
 
-  it('CustomCell renders with forced value', async () => {
+  it('CustomCell renders with forced value', () => {
     const customRenderMock = jest.fn().mockImplementation(() => {
       return 'customRender';
     });
@@ -73,7 +73,7 @@ describe('CustomCell component', () => {
     expect(customRenderEditMock).toBeCalledTimes(0);
   });
 
-  it('CustomCell renders when hidden', async () => {
+  it('CustomCell renders when hidden', () => {
     const customRenderMock = jest.fn().mockImplementation(() => {
       return 'customRender';
     });
@@ -107,7 +107,7 @@ describe('CustomCell component', () => {
     expect(customRenderEditMock).toBeCalledTimes(0);
   });
 
-  it('CustomCell renders in edit mode and handles change', async () => {
+  it('CustomCell renders in edit mode and handles change', () => {
     let customOnChangeCallback: (newValue: string) => void = () => {
       return;
     };
@@ -159,7 +159,7 @@ describe('CustomCell component', () => {
     expect(onChangeMock).toBeCalledWith('NEWVALUE');
   });
 
-  it('CustomCell renders in edit mode via extra', async () => {
+  it('CustomCell renders in edit mode via extra', () => {
     const onChangeMock = jest.fn();
     const customRenderMock = jest.fn().mockImplementation(() => {
       return 'customRender';
@@ -196,7 +196,7 @@ describe('CustomCell component', () => {
     expect(customRenderEditMock).toBeCalledWith({ data: 'DATA' }, 'data', expect.any(Function), 0);
   });
 
-  it('CustomCell renders without forced value and without row', async () => {
+  it('CustomCell renders without forced value and without row', () => {
     const customRenderMock = jest.fn().mockImplementation(() => {
       return 'customRender';
     });

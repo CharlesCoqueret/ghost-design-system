@@ -14,7 +14,7 @@ const options: Array<IToggleEntry> = [
 ];
 
 describe('CheckboxInput Component', () => {
-  it('CheckboxInput renders with input', async () => {
+  it('CheckboxInput renders with input', () => {
     const onChangeMock = jest.fn();
 
     const { container } = render(<CheckboxInput onChange={onChangeMock} options={options} />);
@@ -22,7 +22,7 @@ describe('CheckboxInput Component', () => {
     expect(onChangeMock).toBeCalledTimes(0);
   });
 
-  it('CheckboxInput renders triggers onChange', async () => {
+  it('CheckboxInput renders triggers onChange', () => {
     const onChangeMock = jest.fn();
 
     render(<CheckboxInput dataTestId='DATA-TEST-ID' onChange={onChangeMock} options={options} />);
@@ -44,7 +44,7 @@ describe('CheckboxInput Component', () => {
     ]);
   });
 
-  it('CheckboxInput renders does not trigger onChange when disabled', async () => {
+  it('CheckboxInput renders does not trigger onChange when disabled', () => {
     const onChangeMock = jest.fn();
 
     render(<CheckboxInput dataTestId='DATA-TEST-ID' disabled onChange={onChangeMock} options={options} />);
@@ -58,7 +58,7 @@ describe('CheckboxInput Component', () => {
     expect(onChangeMock).toBeCalledTimes(0);
   });
 
-  it('CheckboxInput renders does not trigger onChange when readOnly', async () => {
+  it('CheckboxInput renders does not trigger onChange when readOnly', () => {
     const onChangeMock = jest.fn();
 
     render(<CheckboxInput dataTestId='DATA-TEST-ID' onChange={onChangeMock} options={options} readOnly />);
@@ -72,7 +72,7 @@ describe('CheckboxInput Component', () => {
     expect(onChangeMock).toBeCalledTimes(0);
   });
 
-  it('CheckboxInput renders highlighted', async () => {
+  it('CheckboxInput renders highlighted', () => {
     const onChangeMock = jest.fn();
 
     const { container } = render(<CheckboxInput onChange={onChangeMock} readOnly highlighted options={options} />);
@@ -80,7 +80,7 @@ describe('CheckboxInput Component', () => {
     expect(onChangeMock).toBeCalledTimes(0);
   });
 
-  it('CheckboxInput renders with no options', async () => {
+  it('CheckboxInput renders with no options', () => {
     const onChangeMock = jest.fn();
 
     const { container } = render(<CheckboxInput onChange={onChangeMock} readOnly highlighted options={[]} />);

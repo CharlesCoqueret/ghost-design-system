@@ -88,7 +88,7 @@ const DynamicSearchInput = (props: IDynamicSearchInputProps): ReactElement => {
     [noOptionsMessage],
   );
 
-  const resolveIncomingValue = () => {
+  const resolveIncomingValue = useCallback(() => {
     if (inputValue && inputValue !== currentOption?.value) {
       setIsLoading(true);
       resolveValue(inputValue)
@@ -105,13 +105,13 @@ const DynamicSearchInput = (props: IDynamicSearchInputProps): ReactElement => {
       setIsLoading(false);
       setCurrentOption(undefined);
     }
-  };
+  }, [inputValue, resolveValue]);
 
   useEffect(() => {
     setIsLoading(true);
     setCurrentOption(undefined);
     resolveIncomingValue();
-  }, [inputValue]);
+  }, [inputValue, resolveIncomingValue]);
 
   if (readOnly) {
     return (

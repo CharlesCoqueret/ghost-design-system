@@ -9,7 +9,7 @@ afterEach(() => {
 });
 
 describe('Modal Component', () => {
-  it('Modal renders closed', async () => {
+  it('Modal renders closed', () => {
     const { container } = render(
       <Modal show={false}>
         <div id='CHILD1' />
@@ -19,7 +19,7 @@ describe('Modal Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('Modal renders open', async () => {
+  it('Modal renders open', () => {
     const { container } = render(
       <Modal show title='MODALTITLE' size='sm'>
         <div id='CHILD1' />
@@ -45,7 +45,7 @@ describe('Modal Component', () => {
     expect(onHideMock).toHaveBeenCalledTimes(1);
   });
 
-  it('Modal renders handles click outside', async () => {
+  it('Modal renders handles click outside', () => {
     const onHideMock = jest.fn();
 
     const { container } = render(
@@ -59,7 +59,7 @@ describe('Modal Component', () => {
     expect(onHideMock).toHaveBeenCalledTimes(1);
   });
 
-  it('Modal renders shakes when click outside when it is not allowed', async () => {
+  it('Modal renders shakes when click outside when it is not allowed', () => {
     const onHideMock = jest.fn();
 
     const { container } = render(
@@ -75,7 +75,7 @@ describe('Modal Component', () => {
     expect(onHideMock).toHaveBeenCalledTimes(0);
   });
 
-  it('Modal renders handles press escape', async () => {
+  it('Modal renders handles press escape', () => {
     const onHideMock = jest.fn();
 
     const { container } = render(
@@ -90,7 +90,7 @@ describe('Modal Component', () => {
     expect(onHideMock).toHaveBeenCalledTimes(1);
   });
 
-  it('Modal renders shakes when press escape when it is not allowed', async () => {
+  it('Modal renders shakes when press escape when it is not allowed', () => {
     const onHideMock = jest.fn();
     jest.useFakeTimers();
 
@@ -112,7 +112,7 @@ describe('Modal Component', () => {
     expect(onHideMock).toHaveBeenCalledTimes(0);
   });
 
-  it('Modal renders transition from open to close', async () => {
+  it('Modal renders transition from open to close', () => {
     const onHideMock = jest.fn();
 
     const { container, rerender } = render(

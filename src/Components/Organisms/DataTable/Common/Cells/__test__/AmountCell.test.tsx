@@ -6,7 +6,7 @@ import AmountCell from '../AmountCell';
 import { ColumnType } from '../../types';
 
 describe('AmountCell component', () => {
-  it('AmountCell renders', async () => {
+  it('AmountCell renders', () => {
     const { container } = render(
       <table>
         <tbody>
@@ -23,7 +23,7 @@ describe('AmountCell component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('AmountCell renders row editing with no row input', async () => {
+  it('AmountCell renders row editing with no row input', () => {
     const { container } = render(
       <table>
         <tbody>
@@ -40,7 +40,7 @@ describe('AmountCell component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('AmountCell renders cell editing with no row input', async () => {
+  it('AmountCell renders cell editing with no row input', () => {
     const { container } = render(
       <table>
         <tbody>
@@ -62,7 +62,7 @@ describe('AmountCell component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('AmountCell renders hidden', async () => {
+  it('AmountCell renders hidden', () => {
     const { container } = render(
       <table>
         <tbody>
@@ -79,7 +79,7 @@ describe('AmountCell component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('AmountCell renders with forced value', async () => {
+  it('AmountCell renders with forced value', () => {
     const { container } = render(
       <table>
         <tbody>

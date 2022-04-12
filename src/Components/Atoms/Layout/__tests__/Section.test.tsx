@@ -5,7 +5,7 @@ import userEvent from '@testing-library/user-event';
 import Section from '../Section';
 
 describe('Section Component', () => {
-  it('Section renders', async () => {
+  it('Section renders', () => {
     const { container } = render(
       <Section collapsable={true} openInitially={true} title='TITLE' dataTestId='DATA-TEST-ID'>
         <div id='CHILD1' />
@@ -26,7 +26,7 @@ describe('Section Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('Section renders not collapsable', async () => {
+  it('Section renders not collapsable', () => {
     const { container } = render(
       <Section collapsable={false} openInitially={true} title='TITLE' dataTestId='DATA-TEST-ID'>
         <div id='CHILD1' />
@@ -43,7 +43,7 @@ describe('Section Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('Section renders not collapsable', async () => {
+  it('Section renders not collapsable', () => {
     const { container } = render(
       <Section collapsable={false} openInitially={false} title='TITLE' dataTestId='DATA-TEST-ID'>
         <div id='CHILD1' />

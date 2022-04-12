@@ -108,7 +108,7 @@ describe('FileGallery Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('FileGallery renders readonly of uploading file', async () => {
+  it('FileGallery renders readonly of uploading file', () => {
     const updateFileDeleteMock = jest.fn();
     const updateFileDownloadMock = jest.fn();
 
@@ -134,7 +134,7 @@ describe('FileGallery Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('FileGallery renders disabled deleting file', async () => {
+  it('FileGallery renders disabled deleting file', () => {
     const updateFileDeleteMock = jest.fn();
     const updateFileDownloadMock = jest.fn();
 
@@ -158,7 +158,7 @@ describe('FileGallery Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('FileGallery renders without datatestid', async () => {
+  it('FileGallery renders without datatestid', () => {
     const updateFileDeleteMock = jest.fn();
     const updateFileDownloadMock = jest.fn();
 

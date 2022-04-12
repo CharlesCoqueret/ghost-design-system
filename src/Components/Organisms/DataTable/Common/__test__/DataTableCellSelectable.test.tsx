@@ -5,7 +5,7 @@ import userEvent from '@testing-library/user-event';
 import DataTableCellSelectable from '../DataTableCellSelectable';
 
 describe('DataTableCellSelectable component', () => {
-  it('DataTableCellSelectable renders not selected', async () => {
+  it('DataTableCellSelectable renders not selected', () => {
     const handleSelectClickMock = jest.fn();
 
     const { container } = render(
@@ -21,7 +21,7 @@ describe('DataTableCellSelectable component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('DataTableCellSelectable renders not selectable', async () => {
+  it('DataTableCellSelectable renders not selectable', () => {
     const { container } = render(
       <table>
         <tbody>

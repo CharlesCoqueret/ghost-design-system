@@ -1,5 +1,5 @@
 import React from 'react';
-import { act, render, RenderResult, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import DynamicSearchCreatableInput from '../DynamicSearchCreatableInput';
@@ -15,23 +15,19 @@ describe('DynamicSearchCreatableInput Component', () => {
       return Promise.resolve(undefined);
     });
 
-    let container: HTMLElement | undefined;
+    const { container } = render(
+      <DynamicSearchCreatableInput
+        dataTestId='DATA-TEST-ID'
+        handleCreate={handleCreateMock}
+        inputValue={'OPTION1'}
+        name='SELECT'
+        noOptionsMessage={noOptionsMessageMock}
+        resolveValue={resolveValueMock}
+        searchOptions={searchOptionsMock}
+      />,
+    );
 
-    await act(async () => {
-      container = render(
-        <DynamicSearchCreatableInput
-          dataTestId='DATA-TEST-ID'
-          handleCreate={handleCreateMock}
-          inputValue={'OPTION1'}
-          name='SELECT'
-          noOptionsMessage={noOptionsMessageMock}
-          resolveValue={resolveValueMock}
-          searchOptions={searchOptionsMock}
-        />,
-      ).container;
-
-      expect(await screen.findByTestId('DATA-TEST-ID-spinner')).toBeTruthy();
-    });
+    expect(await screen.findByTestId('DATA-TEST-ID-spinner')).toBeTruthy();
 
     expect(screen.queryByTestId('DATA-TEST-ID-spinner')).toBeFalsy();
 
@@ -54,23 +50,19 @@ describe('DynamicSearchCreatableInput Component', () => {
       return Promise.resolve(undefined);
     });
 
-    let container: HTMLElement | undefined;
+    const { container } = render(
+      <DynamicSearchCreatableInput
+        dataTestId='DATA-TEST-ID'
+        handleCreate={handleCreateMock}
+        inputValue={'OPTION-VALUE-NOT-AVAILABLE'}
+        name='SELECT'
+        noOptionsMessage={noOptionsMessageMock}
+        resolveValue={resolveValueMock}
+        searchOptions={searchOptionsMock}
+      />,
+    );
 
-    await act(async () => {
-      container = render(
-        <DynamicSearchCreatableInput
-          dataTestId='DATA-TEST-ID'
-          handleCreate={handleCreateMock}
-          inputValue={'OPTION-VALUE-NOT-AVAILABLE'}
-          name='SELECT'
-          noOptionsMessage={noOptionsMessageMock}
-          resolveValue={resolveValueMock}
-          searchOptions={searchOptionsMock}
-        />,
-      ).container;
-
-      expect(await screen.findByTestId('DATA-TEST-ID-spinner')).toBeTruthy();
-    });
+    expect(await screen.findByTestId('DATA-TEST-ID-spinner')).toBeTruthy();
 
     expect(screen.queryByTestId('DATA-TEST-ID-spinner')).toBeFalsy();
 
@@ -93,23 +85,19 @@ describe('DynamicSearchCreatableInput Component', () => {
       return Promise.resolve(undefined);
     });
 
-    let container: HTMLElement | undefined;
+    const { container } = render(
+      <DynamicSearchCreatableInput
+        dataTestId='DATA-TEST-ID'
+        handleCreate={handleCreateMock}
+        inputValue={'OPTION1'}
+        name='SELECT'
+        noOptionsMessage={noOptionsMessageMock}
+        resolveValue={resolveValueMock}
+        searchOptions={searchOptionsMock}
+      />,
+    );
 
-    await act(async () => {
-      container = render(
-        <DynamicSearchCreatableInput
-          dataTestId='DATA-TEST-ID'
-          handleCreate={handleCreateMock}
-          inputValue={'OPTION1'}
-          name='SELECT'
-          noOptionsMessage={noOptionsMessageMock}
-          resolveValue={resolveValueMock}
-          searchOptions={searchOptionsMock}
-        />,
-      ).container;
-
-      expect(await screen.findByTestId('DATA-TEST-ID-spinner')).toBeTruthy();
-    });
+    expect(await screen.findByTestId('DATA-TEST-ID-spinner')).toBeTruthy();
 
     expect(screen.queryByTestId('DATA-TEST-ID-spinner')).toBeFalsy();
 
@@ -130,22 +118,18 @@ describe('DynamicSearchCreatableInput Component', () => {
       return Promise.resolve(undefined);
     });
 
-    let container: HTMLElement | undefined;
+    const { container } = render(
+      <DynamicSearchCreatableInput
+        dataTestId='DATA-TEST-ID'
+        handleCreate={handleCreateMock}
+        name='SELECT'
+        noOptionsMessage={noOptionsMessageMock}
+        resolveValue={resolveValueMock}
+        searchOptions={searchOptionsMock}
+      />,
+    );
 
-    await act(async () => {
-      container = render(
-        <DynamicSearchCreatableInput
-          dataTestId='DATA-TEST-ID'
-          handleCreate={handleCreateMock}
-          name='SELECT'
-          noOptionsMessage={noOptionsMessageMock}
-          resolveValue={resolveValueMock}
-          searchOptions={searchOptionsMock}
-        />,
-      ).container;
-
-      expect(await screen.findByTestId('DATA-TEST-ID-spinner')).toBeTruthy();
-    });
+    expect(await screen.findByTestId('DATA-TEST-ID-spinner')).toBeTruthy();
 
     expect(screen.queryByTestId('DATA-TEST-ID-spinner')).toBeFalsy();
 
@@ -168,28 +152,31 @@ describe('DynamicSearchCreatableInput Component', () => {
       return Promise.resolve([]);
     });
 
-    let container: HTMLElement | undefined;
+    const { container } = render(
+      <DynamicSearchCreatableInput
+        dataTestId='DATA-TEST-ID'
+        handleCreate={handleCreateMock}
+        isClearable
+        name='SELECT'
+        noOptionsMessage={noOptionsMessageMock}
+        resolveValue={resolveValueMock}
+        searchOptions={searchOptionsMock}
+      />,
+    );
 
-    act(() => {
-      container = render(
-        <DynamicSearchCreatableInput
-          name='SELECT'
-          handleCreate={handleCreateMock}
-          isClearable
-          noOptionsMessage={noOptionsMessageMock}
-          resolveValue={resolveValueMock}
-          searchOptions={searchOptionsMock}
-        />,
-      ).container;
-    });
+    expect(await screen.findByTestId('DATA-TEST-ID-spinner')).toBeTruthy();
 
-    await act(async () => {
-      const select = await screen.findByRole('combobox');
-      expect(select).not.toBeUndefined();
-      if (select) {
-        userEvent.type(select, 'option 2{enter}');
-      }
-    });
+    expect(screen.queryByTestId('DATA-TEST-ID-spinner')).toBeFalsy();
+
+    const select = await screen.findByRole('combobox');
+    userEvent.type(select, 'option 2');
+
+    expect(container).toMatchSnapshot();
+
+    expect(await screen.findByTestId('DATA-TEST-ID-spinner')).toBeTruthy();
+    expect(screen.queryByTestId('DATA-TEST-ID-spinner')).toBeFalsy();
+
+    userEvent.type(select, '{enter}');
 
     expect(container).toMatchSnapshot();
     expect(handleCreateMock).toBeCalledTimes(0);
@@ -210,43 +197,32 @@ describe('DynamicSearchCreatableInput Component', () => {
       return Promise.resolve([]);
     });
 
-    let container: HTMLElement | undefined;
+    const { container } = render(
+      <DynamicSearchCreatableInput
+        dataTestId='DATA-TEST-ID'
+        handleCreate={handleCreateMock}
+        inputValue={'OPTION1'}
+        name='SELECT'
+        noOptionsMessage={'No option'}
+        onChange={onChangeMock}
+        resolveValue={resolveValueMock}
+        searchOptions={searchOptionsMock}
+      />,
+    );
 
-    await act(async () => {
-      container = render(
-        <DynamicSearchCreatableInput
-          dataTestId='DATA-TEST-ID'
-          handleCreate={handleCreateMock}
-          inputValue={'OPTION1'}
-          name='SELECT'
-          noOptionsMessage={'No option'}
-          onChange={onChangeMock}
-          resolveValue={resolveValueMock}
-          searchOptions={searchOptionsMock}
-        />,
-      ).container;
-
-      expect(await screen.findByTestId('DATA-TEST-ID-spinner')).toBeTruthy();
-    });
+    expect(await screen.findByTestId('DATA-TEST-ID-spinner')).toBeTruthy();
 
     expect(screen.queryByTestId('DATA-TEST-ID-spinner')).toBeFalsy();
 
-    await act(async () => {
-      const select = await screen.findByRole('combobox');
-      expect(select).not.toBeUndefined();
-      if (select) {
-        userEvent.type(select, 'option 2');
-      }
-    });
+    const select = await screen.findByRole('combobox');
+    userEvent.type(select, 'option 2');
+
+    expect(container).toMatchSnapshot();
+    expect(await screen.findByTestId('DATA-TEST-ID-spinner')).toBeTruthy();
+    expect(screen.queryByTestId('DATA-TEST-ID-spinner')).toBeFalsy();
 
     // Let the underlaying select component update its internal state
-    await act(async () => {
-      const select = await screen.findByRole('combobox');
-      expect(select).not.toBeUndefined();
-      if (select) {
-        userEvent.type(select, '{enter}');
-      }
-    });
+    userEvent.type(select, '{enter}');
 
     expect(container).toMatchSnapshot();
     expect(handleCreateMock).toBeCalledTimes(0);
@@ -267,24 +243,21 @@ describe('DynamicSearchCreatableInput Component', () => {
     });
     const searchOptionsMock = jest.fn();
 
-    let container: HTMLElement | undefined;
+    const { container } = render(
+      <DynamicSearchCreatableInput
+        dataTestId='DATA-TEST-ID'
+        handleCreate={handleCreateMock}
+        highlighted
+        inputValue={'OPTION1'}
+        name='SELECT'
+        noOptionsMessage={noOptionsMessageMock}
+        readOnly
+        resolveValue={resolveValueMock}
+        searchOptions={searchOptionsMock}
+      />,
+    );
 
-    await act(async () => {
-      container = render(
-        <DynamicSearchCreatableInput
-          dataTestId='DATA-TEST-ID'
-          handleCreate={handleCreateMock}
-          highlighted
-          inputValue={'OPTION1'}
-          name='SELECT'
-          noOptionsMessage={noOptionsMessageMock}
-          readOnly
-          resolveValue={resolveValueMock}
-          searchOptions={searchOptionsMock}
-        />,
-      ).container;
-    });
-
+    expect(await screen.findByTestId('DATA-TEST-ID-spinner')).toBeTruthy();
     expect(screen.queryByTestId('DATA-TEST-ID-spinner')).toBeFalsy();
 
     expect(container).toMatchSnapshot();
@@ -304,24 +277,20 @@ describe('DynamicSearchCreatableInput Component', () => {
     });
     const searchOptionsMock = jest.fn();
 
-    let container: HTMLElement | undefined;
+    const { container } = render(
+      <DynamicSearchCreatableInput
+        handleCreate={handleCreateMock}
+        highlighted
+        inputValue={'OPTION1'}
+        name='SELECT'
+        noOptionsMessage={noOptionsMessageMock}
+        readOnly
+        resolveValue={resolveValueMock}
+        searchOptions={searchOptionsMock}
+      />,
+    );
 
-    await act(async () => {
-      container = render(
-        <DynamicSearchCreatableInput
-          handleCreate={handleCreateMock}
-          highlighted
-          inputValue={'OPTION1'}
-          name='SELECT'
-          noOptionsMessage={noOptionsMessageMock}
-          readOnly
-          resolveValue={resolveValueMock}
-          searchOptions={searchOptionsMock}
-        />,
-      ).container;
-    });
-
-    expect(screen.queryByTestId('DATA-TEST-ID-spinner')).toBeFalsy();
+    expect(await screen.findByText('option 1'));
 
     expect(container).toMatchSnapshot();
     expect(handleCreateMock).toBeCalledTimes(0);
@@ -342,25 +311,21 @@ describe('DynamicSearchCreatableInput Component', () => {
       return Promise.resolve(undefined);
     });
 
-    let container: HTMLElement | undefined;
+    const { container } = render(
+      <DynamicSearchCreatableInput
+        dataTestId='DATA-TEST-ID'
+        disabled
+        handleCreate={handleCreateMock}
+        isInError
+        inputValue={'OPTION1'}
+        name='SELECT'
+        noOptionsMessage={noOptionsMessage}
+        resolveValue={resolveValueMock}
+        searchOptions={searchOptionsMock}
+      />,
+    );
 
-    await act(async () => {
-      container = render(
-        <DynamicSearchCreatableInput
-          dataTestId='DATA-TEST-ID'
-          disabled
-          handleCreate={handleCreateMock}
-          isInError
-          inputValue={'OPTION1'}
-          name='SELECT'
-          noOptionsMessage={noOptionsMessage}
-          resolveValue={resolveValueMock}
-          searchOptions={searchOptionsMock}
-        />,
-      ).container;
-
-      expect(await screen.findByTestId('DATA-TEST-ID-spinner')).toBeTruthy();
-    });
+    expect(await screen.findByTestId('DATA-TEST-ID-spinner')).toBeTruthy();
 
     expect(screen.queryByTestId('DATA-TEST-ID-spinner')).toBeFalsy();
 
@@ -382,24 +347,20 @@ describe('DynamicSearchCreatableInput Component', () => {
       return Promise.resolve(undefined);
     });
 
-    let container: HTMLElement | undefined;
+    const { container } = render(
+      <DynamicSearchCreatableInput
+        dataTestId='DATA-TEST-ID'
+        handleCreate={handleCreateMock}
+        isInError
+        name='SELECT'
+        noOptionsMessage={noOptionsMessageMock}
+        resolveValue={resolveValueMock}
+        searchOptions={searchOptionsMock}
+        usePortal={false}
+      />,
+    );
 
-    await act(async () => {
-      container = render(
-        <DynamicSearchCreatableInput
-          dataTestId='DATA-TEST-ID'
-          handleCreate={handleCreateMock}
-          isInError
-          name='SELECT'
-          noOptionsMessage={noOptionsMessageMock}
-          resolveValue={resolveValueMock}
-          searchOptions={searchOptionsMock}
-          usePortal={false}
-        />,
-      ).container;
-
-      expect(await screen.findByTestId('DATA-TEST-ID-spinner')).toBeTruthy();
-    });
+    expect(await screen.findByTestId('DATA-TEST-ID-spinner')).toBeTruthy();
 
     expect(screen.queryByTestId('DATA-TEST-ID-spinner')).toBeFalsy();
 
@@ -424,24 +385,20 @@ describe('DynamicSearchCreatableInput Component', () => {
       return Promise.resolve(undefined);
     });
 
-    let container: RenderResult | undefined;
+    const container = render(
+      <DynamicSearchCreatableInput
+        dataTestId='DATA-TEST-ID'
+        handleCreate={handleCreateMock}
+        inputValue={'OPTION1'}
+        name='SELECT'
+        noOptionsMessage={noOptionsMessageMock}
+        onChange={onChangeMock}
+        resolveValue={resolveValueMock}
+        searchOptions={searchOptionsMock}
+      />,
+    );
 
-    await act(async () => {
-      container = render(
-        <DynamicSearchCreatableInput
-          dataTestId='DATA-TEST-ID'
-          handleCreate={handleCreateMock}
-          inputValue={'OPTION1'}
-          name='SELECT'
-          noOptionsMessage={noOptionsMessageMock}
-          onChange={onChangeMock}
-          resolveValue={resolveValueMock}
-          searchOptions={searchOptionsMock}
-        />,
-      );
-
-      expect(await screen.findByTestId('DATA-TEST-ID-spinner')).toBeTruthy();
-    });
+    expect(await screen.findByTestId('DATA-TEST-ID-spinner')).toBeTruthy();
 
     expect(screen.queryByTestId('DATA-TEST-ID-spinner')).toBeFalsy();
 
@@ -454,22 +411,20 @@ describe('DynamicSearchCreatableInput Component', () => {
     expect(searchOptionsMock).toBeCalledWith('', expect.any(Function));
     expect(onChangeMock).toBeCalledTimes(0);
 
-    await act(async () => {
-      container?.rerender(
-        <DynamicSearchCreatableInput
-          dataTestId='DATA-TEST-ID'
-          handleCreate={handleCreateMock}
-          inputValue={'OPTION2'}
-          name='SELECT'
-          noOptionsMessage={noOptionsMessageMock}
-          onChange={onChangeMock}
-          resolveValue={resolveValueMock}
-          searchOptions={searchOptionsMock}
-        />,
-      );
+    container.rerender(
+      <DynamicSearchCreatableInput
+        dataTestId='DATA-TEST-ID'
+        handleCreate={handleCreateMock}
+        inputValue={'OPTION2'}
+        name='SELECT'
+        noOptionsMessage={noOptionsMessageMock}
+        onChange={onChangeMock}
+        resolveValue={resolveValueMock}
+        searchOptions={searchOptionsMock}
+      />,
+    );
 
-      expect(await screen.findByTestId('DATA-TEST-ID-spinner')).toBeTruthy();
-    });
+    expect(await screen.findByTestId('DATA-TEST-ID-spinner')).toBeTruthy();
 
     expect(screen.queryByTestId('DATA-TEST-ID-spinner')).toBeFalsy();
 
@@ -494,25 +449,21 @@ describe('DynamicSearchCreatableInput Component', () => {
       return Promise.resolve(undefined);
     });
 
-    let container: HTMLElement | undefined;
+    const { container } = render(
+      <DynamicSearchCreatableInput
+        dataTestId='DATA-TEST-ID'
+        handleCreate={handleCreateMock}
+        inputValue={'OPTION1'}
+        isClearable
+        name='SELECT'
+        noOptionsMessage={noOptionsMessageMock}
+        onChange={onChangeMock}
+        resolveValue={resolveValueMock}
+        searchOptions={searchOptionsMock}
+      />,
+    );
 
-    await act(async () => {
-      container = render(
-        <DynamicSearchCreatableInput
-          dataTestId='DATA-TEST-ID'
-          handleCreate={handleCreateMock}
-          inputValue={'OPTION1'}
-          isClearable
-          name='SELECT'
-          noOptionsMessage={noOptionsMessageMock}
-          onChange={onChangeMock}
-          resolveValue={resolveValueMock}
-          searchOptions={searchOptionsMock}
-        />,
-      ).container;
-
-      expect(await screen.findByTestId('DATA-TEST-ID-spinner')).toBeTruthy();
-    });
+    expect(await screen.findByTestId('DATA-TEST-ID-spinner')).toBeTruthy();
 
     expect(screen.queryByTestId('DATA-TEST-ID-spinner')).toBeFalsy();
 
@@ -525,13 +476,8 @@ describe('DynamicSearchCreatableInput Component', () => {
     expect(searchOptionsMock).toBeCalledWith('', expect.any(Function));
     expect(onChangeMock).toBeCalledTimes(0);
 
-    await act(async () => {
-      const select = await screen.findByRole('combobox');
-      expect(select).not.toBeUndefined();
-      if (select) {
-        userEvent.type(select, '{backspace}');
-      }
-    });
+    const select = await screen.findByRole('combobox');
+    userEvent.type(select, '{backspace}');
 
     expect(container).toMatchSnapshot();
     expect(handleCreateMock).toBeCalledTimes(0);
@@ -541,6 +487,35 @@ describe('DynamicSearchCreatableInput Component', () => {
     expect(searchOptionsMock).toBeCalledTimes(1);
     expect(onChangeMock).toBeCalledTimes(1);
     expect(onChangeMock).toBeCalledWith(undefined);
+  });
+
+  it('DynamicSearchCreatableInput handles without dataTestId', async () => {
+    const handleCreateMock = jest.fn();
+    const noOptionsMessageMock = jest.fn();
+    const onChangeMock = jest.fn();
+    const resolveValueMock = jest.fn().mockImplementation(() => {
+      return Promise.resolve({ value: 'OPTION1', label: 'option 1' });
+    });
+    const searchOptionsMock = jest.fn().mockImplementation(() => {
+      return Promise.resolve(undefined);
+    });
+
+    const { container } = render(
+      <DynamicSearchCreatableInput
+        handleCreate={handleCreateMock}
+        inputValue={'OPTION1'}
+        isClearable
+        name='SELECT'
+        noOptionsMessage={noOptionsMessageMock}
+        onChange={onChangeMock}
+        resolveValue={resolveValueMock}
+        searchOptions={searchOptionsMock}
+      />,
+    );
+
+    expect(await screen.findByText('option 1'));
+
+    expect(container).toMatchSnapshot();
   });
 
   it('DynamicSearchCreatableInput handles creation', async () => {
@@ -554,24 +529,20 @@ describe('DynamicSearchCreatableInput Component', () => {
       return Promise.resolve(undefined);
     });
 
-    let container: HTMLElement | undefined;
+    const { container } = render(
+      <DynamicSearchCreatableInput
+        dataTestId='DATA-TEST-ID'
+        handleCreate={handleCreateMock}
+        isClearable
+        name='SELECT'
+        noOptionsMessage={noOptionsMessageMock}
+        onChange={onChangeMock}
+        resolveValue={resolveValueMock}
+        searchOptions={searchOptionsMock}
+      />,
+    );
 
-    await act(async () => {
-      container = render(
-        <DynamicSearchCreatableInput
-          dataTestId='DATA-TEST-ID'
-          handleCreate={handleCreateMock}
-          isClearable
-          name='SELECT'
-          noOptionsMessage={noOptionsMessageMock}
-          onChange={onChangeMock}
-          resolveValue={resolveValueMock}
-          searchOptions={searchOptionsMock}
-        />,
-      ).container;
-
-      expect(await screen.findByTestId('DATA-TEST-ID-spinner')).toBeTruthy();
-    });
+    expect(await screen.findByTestId('DATA-TEST-ID-spinner')).toBeTruthy();
 
     expect(screen.queryByTestId('DATA-TEST-ID-spinner')).toBeFalsy();
 
@@ -584,21 +555,15 @@ describe('DynamicSearchCreatableInput Component', () => {
     expect(searchOptionsMock).toBeCalledWith('', expect.any(Function));
     expect(onChangeMock).toBeCalledTimes(0);
 
-    await act(async () => {
-      const select = await screen.findByRole('combobox');
-      expect(select).not.toBeUndefined();
-      if (select) {
-        userEvent.type(select, 'abc');
-      }
-    });
+    const select = await screen.findByRole('combobox');
+    userEvent.type(select, 'abc');
 
-    await act(async () => {
-      const select = await screen.findByRole('combobox');
-      expect(select).not.toBeUndefined();
-      if (select) {
-        userEvent.type(select, '{arrowdown}{enter}');
-      }
-    });
+    expect(container).toMatchSnapshot();
+    expect(await screen.findByTestId('DATA-TEST-ID-spinner')).toBeTruthy();
+
+    expect(screen.queryByTestId('DATA-TEST-ID-spinner')).toBeFalsy();
+
+    userEvent.type(select, '{arrowdown}{enter}');
 
     expect(container).toMatchSnapshot();
     expect(handleCreateMock).toBeCalledTimes(1);
@@ -607,6 +572,13 @@ describe('DynamicSearchCreatableInput Component', () => {
     expect(noOptionsMessageMock).toBeCalledTimes(1);
     expect(searchOptionsMock).toBeCalledTimes('abc'.length + 1);
     expect(searchOptionsMock).toBeCalledWith('abc', expect.any(Function));
+    expect(onChangeMock).toBeCalledTimes(0);
+
+    expect(await screen.findByTestId('DATA-TEST-ID-spinner')).toBeTruthy();
+
+    expect(screen.queryByTestId('DATA-TEST-ID-spinner')).toBeFalsy();
+
+    expect(container).toMatchSnapshot();
     expect(onChangeMock).toBeCalledTimes(1);
     expect(onChangeMock).toBeCalledWith('OPTION-CREATED');
   });
@@ -622,24 +594,20 @@ describe('DynamicSearchCreatableInput Component', () => {
       return Promise.resolve(undefined);
     });
 
-    let container: HTMLElement | undefined;
+    const { container } = render(
+      <DynamicSearchCreatableInput
+        dataTestId='DATA-TEST-ID'
+        handleCreate={handleCreateMock}
+        isClearable
+        name='SELECT'
+        noOptionsMessage={noOptionsMessageMock}
+        onChange={onChangeMock}
+        resolveValue={resolveValueMock}
+        searchOptions={searchOptionsMock}
+      />,
+    );
 
-    await act(async () => {
-      container = render(
-        <DynamicSearchCreatableInput
-          dataTestId='DATA-TEST-ID'
-          handleCreate={handleCreateMock}
-          isClearable
-          name='SELECT'
-          noOptionsMessage={noOptionsMessageMock}
-          onChange={onChangeMock}
-          resolveValue={resolveValueMock}
-          searchOptions={searchOptionsMock}
-        />,
-      ).container;
-
-      expect(await screen.findByTestId('DATA-TEST-ID-spinner')).toBeTruthy();
-    });
+    expect(await screen.findByTestId('DATA-TEST-ID-spinner')).toBeTruthy();
 
     expect(screen.queryByTestId('DATA-TEST-ID-spinner')).toBeFalsy();
 
@@ -652,21 +620,20 @@ describe('DynamicSearchCreatableInput Component', () => {
     expect(searchOptionsMock).toBeCalledWith('', expect.any(Function));
     expect(onChangeMock).toBeCalledTimes(0);
 
-    await act(async () => {
-      const select = await screen.findByRole('combobox');
-      expect(select).not.toBeUndefined();
-      if (select) {
-        userEvent.type(select, 'abc');
-      }
-    });
+    const select = await screen.findByRole('combobox');
+    userEvent.type(select, 'abc');
 
-    await act(async () => {
-      const select = await screen.findByRole('combobox');
-      expect(select).not.toBeUndefined();
-      if (select) {
-        userEvent.type(select, '{arrowdown}{enter}');
-      }
-    });
+    expect(container).toMatchSnapshot();
+    expect(await screen.findByTestId('DATA-TEST-ID-spinner')).toBeTruthy();
+
+    expect(screen.queryByTestId('DATA-TEST-ID-spinner')).toBeFalsy();
+
+    userEvent.type(select, '{arrowdown}{enter}');
+
+    expect(container).toMatchSnapshot();
+    expect(await screen.findByTestId('DATA-TEST-ID-spinner')).toBeTruthy();
+
+    expect(screen.queryByTestId('DATA-TEST-ID-spinner')).toBeFalsy();
 
     expect(container).toMatchSnapshot();
     expect(handleCreateMock).toBeCalledTimes(1);

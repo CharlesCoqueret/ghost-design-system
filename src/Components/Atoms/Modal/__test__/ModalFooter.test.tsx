@@ -4,7 +4,7 @@ import { render } from '@testing-library/react';
 import ModalFooter from '../ModalFooter';
 
 describe('ModalFooter Component', () => {
-  it('ModalFooter renders', async () => {
+  it('ModalFooter renders', () => {
     const { container } = render(
       <ModalFooter>
         <div id='CHILD1' />

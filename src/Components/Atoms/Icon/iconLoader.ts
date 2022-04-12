@@ -3,7 +3,9 @@ import { dom, library } from '@fortawesome/fontawesome-svg-core';
 import {
   faArrowDownToLine,
   faArrowLeft,
+  faArrowsToLine,
   faArrowUpFromLine,
+  faArrowsLeftRightToLine,
   faBalanceScale,
   faBallotCheck,
   faBell,
@@ -14,6 +16,7 @@ import {
   faChevronLeft,
   faChevronRight,
   faCog,
+  faColumns3,
   faCommentAltExclamation,
   faEdit,
   faEllipsisH,
@@ -53,6 +56,7 @@ import {
   faUserCircle,
   faUserLock,
   faUserUnlock,
+  faWindowMaximize,
 } from '@fortawesome/pro-light-svg-icons';
 
 import {
@@ -76,6 +80,8 @@ const loadIcons = (): void => {
   library.add(
     faArrowDownToLine,
     faArrowLeft,
+    faArrowsLeftRightToLine,
+    faArrowsToLine,
     faArrowUpFromLine,
     faBalanceScale,
     faBallotCheck,
@@ -87,6 +93,7 @@ const loadIcons = (): void => {
     faChevronLeft,
     faChevronRight,
     faCog,
+    faColumns3,
     faCommentAltExclamation,
     faEdit,
     faEllipsisH,
@@ -124,6 +131,7 @@ const loadIcons = (): void => {
     faUserCircle,
     faUserLock,
     faUserUnlock,
+    faWindowMaximize,
 
     // text editor
     faBold,

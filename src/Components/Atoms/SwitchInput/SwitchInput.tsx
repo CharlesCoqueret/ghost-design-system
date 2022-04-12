@@ -49,8 +49,6 @@ const SwitchInput = (props: ISwitchInputProps): ReactElement => {
       {options?.map((option) => {
         return (
           <label
-            key={option.value}
-            onClick={handleChange(option.value)}
             className={classnames({
               'input-switch-field-read-only': readOnly,
               'input-switch-field-disabled': disabled,
@@ -58,7 +56,10 @@ const SwitchInput = (props: ISwitchInputProps): ReactElement => {
               'field-highlighted': (readOnly || disabled) && highlighted && option.highlighted,
               'input-switch-field-checked': option.checked,
             })}
-            data-testid={option.value}>
+            data-testid={option.value}
+            key={option.value}
+            onClick={handleChange(option.value)}
+            tabIndex={0}>
             <div className='switch-marker'>
               <input type='checkbox' checked={option.checked || false} disabled={disabled} readOnly />
               <span

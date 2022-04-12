@@ -73,6 +73,9 @@ const RichTextInput = (props: IRichTextInputProps): ReactElement => {
     // Do not replace <i></i> by <i /> as it breaks ol ul alignment
     icons: {
       bold: '<i class="far fa-bold"></i>',
+      delete: '<i class="fal fa-trash-alt"></i>',
+      expansion: '<i class="fa-light fa-arrows-left-right-to-line"></i>',
+      fixed_column_width: '<i class="fa-light fa-columns-3"></i>',
       font_color: '<i class="far fa-palette"></i>',
       highlight_color: '<i class="fal fa-highlighter"></i>',
       horizontal_rule: '<i class="far fa-horizontal-rule"></i>',
@@ -85,8 +88,10 @@ const RichTextInput = (props: IRichTextInputProps): ReactElement => {
       list_number: '<i class="fal fa-list-ol"></i>',
       // indent/outdent might need to be swapped when https://github.com/JiHong88/SunEditor/issues/884 gets fixed
       outdent: '<i class="far fa-indent"></i>',
+      reduction: '<i class="fa-light fa-arrows-to-line fa-rotate-90"></i>',
       strike: '<i class="far fa-strikethrough"></i>',
       table: '<i class="fal fa-table"></i>',
+      table_header: '<i class="fa-light fa-window-maximize"></i>',
       underline: '<i class="far fa-underline"></i>',
     },
     showPathLabel: false,

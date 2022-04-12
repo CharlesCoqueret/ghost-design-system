@@ -15,7 +15,7 @@ const options: Array<IToggleEntry> = [
 ];
 
 describe('SwitchInput Component', () => {
-  it('SwitchInput renders with input', async () => {
+  it('SwitchInput renders with input', () => {
     const onChangeMock = jest.fn();
 
     const { container } = render(<SwitchInput onChange={onChangeMock} options={options} />);
@@ -23,7 +23,7 @@ describe('SwitchInput Component', () => {
     expect(onChangeMock).toBeCalledTimes(0);
   });
 
-  it('SwitchInput renders triggers onChange', async () => {
+  it('SwitchInput renders triggers onChange', () => {
     const onChangeMock = jest.fn();
 
     render(<SwitchInput onChange={onChangeMock} options={options} />);
@@ -45,7 +45,7 @@ describe('SwitchInput Component', () => {
     ]);
   });
 
-  it('SwitchInput renders does not trigger onChange when disabled', async () => {
+  it('SwitchInput renders does not trigger onChange when disabled', () => {
     const onChangeMock = jest.fn();
 
     render(<SwitchInput onChange={onChangeMock} disabled options={options} />);
@@ -59,7 +59,7 @@ describe('SwitchInput Component', () => {
     expect(onChangeMock).toBeCalledTimes(0);
   });
 
-  it('SwitchInput renders does not trigger onChange when readOnly', async () => {
+  it('SwitchInput renders does not trigger onChange when readOnly', () => {
     const onChangeMock = jest.fn();
 
     render(<SwitchInput onChange={onChangeMock} readOnly options={options} />);
@@ -73,7 +73,7 @@ describe('SwitchInput Component', () => {
     expect(onChangeMock).toBeCalledTimes(0);
   });
 
-  it('SwitchInput renders highlighted', async () => {
+  it('SwitchInput renders highlighted', () => {
     const onChangeMock = jest.fn();
 
     const { container } = render(<SwitchInput onChange={onChangeMock} readOnly highlighted options={options} />);
@@ -81,7 +81,7 @@ describe('SwitchInput Component', () => {
     expect(onChangeMock).toBeCalledTimes(0);
   });
 
-  it('SwitchInput renders with no options', async () => {
+  it('SwitchInput renders with no options', () => {
     const onChangeMock = jest.fn();
 
     const { container } = render(<SwitchInput onChange={onChangeMock} readOnly highlighted options={[]} />);

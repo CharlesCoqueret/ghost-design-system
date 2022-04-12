@@ -154,7 +154,7 @@ describe('Filter Component', () => {
     expect(onChangeMock).toBeCalledWith({ number: 100 });
   });
 
-  it('Filter renders without data-testid', async () => {
+  it('Filter renders without data-testid', () => {
     const onChangeMock = jest.fn();
 
     const { baseElement } = render(

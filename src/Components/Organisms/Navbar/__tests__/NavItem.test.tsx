@@ -5,7 +5,7 @@ import userEvent from '@testing-library/user-event';
 import NavItem from '../NavItem';
 
 describe('NavItem Component', () => {
-  it('NavItem renders', async () => {
+  it('NavItem renders', () => {
     const onClickMock = jest.fn();
 
     const { container } = render(
@@ -40,7 +40,7 @@ describe('NavItem Component', () => {
     expect(onClickMock).toBeCalledTimes(2);
   });
 
-  it('NavItem renders with subitems', async () => {
+  it('NavItem renders with subitems', () => {
     const onClickMock = jest.fn();
 
     const { container } = render(

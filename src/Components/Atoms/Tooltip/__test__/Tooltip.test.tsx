@@ -6,12 +6,12 @@ import Tooltip from '../Tooltip';
 import { MenuDirectionEnum } from '../tooltipUtils';
 
 describe('Tooltip Component', () => {
-  it('Tooltip renders', async () => {
+  it('Tooltip renders', () => {
     const { container } = render(<Tooltip tooltip='TOOLTIP'>CHILDREN</Tooltip>);
     expect(container).toMatchSnapshot();
   });
 
-  it('Tooltip renders with non default props', async () => {
+  it('Tooltip renders with non default props', () => {
     const { container } = render(
       <Tooltip
         arrow={false}

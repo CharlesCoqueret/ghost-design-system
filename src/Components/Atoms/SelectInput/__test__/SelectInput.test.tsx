@@ -5,7 +5,7 @@ import userEvent from '@testing-library/user-event';
 import SelectInput from '../SelectInput';
 
 describe('SelectInput Component', () => {
-  it('SelectInput renders', async () => {
+  it('SelectInput renders', () => {
     const { container } = render(
       <SelectInput
         name='SELECT'
@@ -44,7 +44,7 @@ describe('SelectInput Component', () => {
     expect(onChangeMock).toBeCalledWith('OPTION2');
   });
 
-  it('SelectInput handles change with data-testid', async () => {
+  it('SelectInput handles change with data-testid', () => {
     const onChangeMock = jest.fn();
 
     const { container } = render(
@@ -62,6 +62,7 @@ describe('SelectInput Component', () => {
     );
     expect(container).toMatchSnapshot();
   });
+
   it('SelectInput handles change with empty value when clearable', async () => {
     const onChangeMock = jest.fn();
 
@@ -89,7 +90,7 @@ describe('SelectInput Component', () => {
     expect(onChangeMock).toBeCalledWith(undefined);
   });
 
-  it('SelectInput renders in readOnly', async () => {
+  it('SelectInput renders in readOnly', () => {
     const { container } = render(
       <SelectInput
         name='SELECT'
@@ -104,7 +105,7 @@ describe('SelectInput Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('SelectInput renders in readOnly with invalid value', async () => {
+  it('SelectInput renders in readOnly with invalid value', () => {
     const { container } = render(
       <SelectInput
         name='SELECT'
@@ -119,7 +120,7 @@ describe('SelectInput Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('SelectInput renders without portal', async () => {
+  it('SelectInput renders without portal', () => {
     const { container } = render(
       <SelectInput
         name='SELECT'
@@ -134,7 +135,7 @@ describe('SelectInput Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('SelectInput renders highlight in readOnly', async () => {
+  it('SelectInput renders highlight in readOnly', () => {
     const { container } = render(
       <SelectInput
         highlighted
@@ -149,7 +150,8 @@ describe('SelectInput Component', () => {
     );
     expect(container).toMatchSnapshot();
   });
-  it('SelectInput renders with fieldsize, inError', async () => {
+
+  it('SelectInput renders with fieldsize, inError', () => {
     const { container } = render(
       <SelectInput
         inputValue='OPTION-VALUE-NOT-AVAILABLE'
@@ -164,7 +166,7 @@ describe('SelectInput Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('SelectInput renders disabled', async () => {
+  it('SelectInput renders disabled', () => {
     const { container } = render(
       <SelectInput
         disabled

@@ -7,6 +7,7 @@ exports[`FileInput Component FileInput handle add file successfully through inpu
   >
     <div
       class="droparea"
+      tabindex="0"
     >
       <label
         class="label"
@@ -35,6 +36,7 @@ exports[`FileInput Component FileInput handle add file successfully through inpu
   >
     <div
       class="droparea"
+      tabindex="0"
     >
       <label
         class="label"
@@ -82,49 +84,46 @@ exports[`FileInput Component FileInput handle add file successfully through inpu
             max="100"
             value="50"
           />
-          <div
-            class="delete-icon"
+          <svg
+            aria-hidden="true"
+            class="icon gds-loader size-1x spinner-icon"
+            data-testid="TEST-ID-spinner"
+            focusable="false"
+            height="50"
+            icon="fal,spinner"
+            preserveAspectRatio="xMidYMid"
+            role="img"
+            style="background: transparent;"
+            viewBox="0 0 100 100"
+            width="50"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            <svg
-              aria-hidden="true"
-              class="icon gds-loader size-1x"
-              focusable="false"
-              height="50"
-              icon="fal,spinner"
-              preserveAspectRatio="xMidYMid"
-              role="img"
-              style="background: transparent;"
-              viewBox="0 0 100 100"
-              width="50"
-              xmlns="http://www.w3.org/2000/svg"
+            <circle
+              cx="50"
+              cy="50"
+              fill="transparent"
+              r="30"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-width="10"
             >
-              <circle
-                cx="50"
-                cy="50"
-                fill="transparent"
-                r="30"
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-width="10"
-              >
-                <animatetransform
-                  attributeName="transform"
-                  dur="2s"
-                  keyTimes="0;0.5;1"
-                  repeatCount="indefinite"
-                  type="rotate"
-                  values="0 50 50;180 50 50;720 50 50"
-                />
-                <animate
-                  attributeName="stroke-dasharray"
-                  dur="2s"
-                  keyTimes="0;0.5;1"
-                  repeatCount="indefinite"
-                  values="20 150; 150 20; 20 150"
-                />
-              </circle>
-            </svg>
-          </div>
+              <animatetransform
+                attributeName="transform"
+                dur="2s"
+                keyTimes="0;0.5;1"
+                repeatCount="indefinite"
+                type="rotate"
+                values="0 50 50;180 50 50;720 50 50"
+              />
+              <animate
+                attributeName="stroke-dasharray"
+                dur="2s"
+                keyTimes="0;0.5;1"
+                repeatCount="indefinite"
+                values="20 150; 150 20; 20 150"
+              />
+            </circle>
+          </svg>
         </div>
       </div>
     </div>
@@ -139,6 +138,7 @@ exports[`FileInput Component FileInput handle add file successfully through inpu
   >
     <div
       class="droparea"
+      tabindex="0"
     >
       <label
         class="label"
@@ -204,6 +204,7 @@ exports[`FileInput Component FileInput handle add file unsucessfully through inp
   >
     <div
       class="droparea"
+      tabindex="0"
     >
       <label
         class="label"
@@ -232,6 +233,7 @@ exports[`FileInput Component FileInput handle add file unsucessfully through inp
   >
     <div
       class="droparea"
+      tabindex="0"
     >
       <label
         class="label"
@@ -316,6 +318,7 @@ exports[`FileInput Component FileInput handle add file with timeout through inpu
   >
     <div
       class="droparea"
+      tabindex="0"
     >
       <label
         class="label"
@@ -344,6 +347,7 @@ exports[`FileInput Component FileInput handle add file with timeout through inpu
   >
     <div
       class="droparea"
+      tabindex="0"
     >
       <label
         class="label"
@@ -428,6 +432,7 @@ exports[`FileInput Component FileInput handle drag event for highlight 1`] = `
   >
     <div
       class="droparea"
+      tabindex="0"
     >
       <label
         class="label"
@@ -456,6 +461,7 @@ exports[`FileInput Component FileInput handle drag event for highlight 2`] = `
   >
     <div
       class="droparea"
+      tabindex="0"
     >
       <label
         class="label"
@@ -484,6 +490,7 @@ exports[`FileInput Component FileInput handle drag event for highlight 3`] = `
   >
     <div
       class="droparea"
+      tabindex="0"
     >
       <label
         class="label"
@@ -512,6 +519,7 @@ exports[`FileInput Component FileInput handle drop of file 1`] = `
   >
     <div
       class="droparea"
+      tabindex="0"
     >
       <label
         class="label"
@@ -540,6 +548,7 @@ exports[`FileInput Component FileInput handle drop of file 2`] = `
   >
     <div
       class="droparea"
+      tabindex="0"
     >
       <label
         class="label"
@@ -581,52 +590,107 @@ exports[`FileInput Component FileInput handle drop of file 2`] = `
         <div
           class="right"
         >
-          <div
-            class="delete-icon"
+          <svg
+            aria-hidden="true"
+            class="icon gds-loader size-1x spinner-icon"
+            data-testid="TEST-ID-spinner"
+            focusable="false"
+            height="50"
+            icon="fal,spinner"
+            preserveAspectRatio="xMidYMid"
+            role="img"
+            style="background: transparent;"
+            viewBox="0 0 100 100"
+            width="50"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            <svg
-              aria-hidden="true"
-              class="icon gds-loader size-1x"
-              focusable="false"
-              height="50"
-              icon="fal,spinner"
-              preserveAspectRatio="xMidYMid"
-              role="img"
-              style="background: transparent;"
-              viewBox="0 0 100 100"
-              width="50"
-              xmlns="http://www.w3.org/2000/svg"
+            <circle
+              cx="50"
+              cy="50"
+              fill="transparent"
+              r="30"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-width="10"
             >
-              <circle
-                cx="50"
-                cy="50"
-                fill="transparent"
-                r="30"
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-width="10"
-              >
-                <animatetransform
-                  attributeName="transform"
-                  dur="2s"
-                  keyTimes="0;0.5;1"
-                  repeatCount="indefinite"
-                  type="rotate"
-                  values="0 50 50;180 50 50;720 50 50"
-                />
-                <animate
-                  attributeName="stroke-dasharray"
-                  dur="2s"
-                  keyTimes="0;0.5;1"
-                  repeatCount="indefinite"
-                  values="20 150; 150 20; 20 150"
-                />
-              </circle>
-            </svg>
-          </div>
+              <animatetransform
+                attributeName="transform"
+                dur="2s"
+                keyTimes="0;0.5;1"
+                repeatCount="indefinite"
+                type="rotate"
+                values="0 50 50;180 50 50;720 50 50"
+              />
+              <animate
+                attributeName="stroke-dasharray"
+                dur="2s"
+                keyTimes="0;0.5;1"
+                repeatCount="indefinite"
+                values="20 150; 150 20; 20 150"
+              />
+            </circle>
+          </svg>
         </div>
       </div>
     </div>
+  </div>
+</div>
+`;
+
+exports[`FileInput Component FileInput handle drop without dataTransfer 1`] = `
+<div>
+  <div
+    class="field gds-file-input-container"
+  >
+    <div
+      class="droparea"
+      tabindex="0"
+    >
+      <label
+        class="label"
+      >
+        Click or drag file to upload
+        <input
+          class="input"
+          data-testid="TEST-ID"
+          multiple=""
+          type="file"
+          value=""
+        />
+      </label>
+    </div>
+    <div
+      class="gallery"
+    />
+  </div>
+</div>
+`;
+
+exports[`FileInput Component FileInput handle drop without dataTransfer 2`] = `
+<div>
+  <div
+    class="field gds-file-input-container"
+  >
+    <div
+      class="droparea"
+      tabindex="0"
+    >
+      <label
+        class="label"
+      >
+        Click or drag file to upload
+        <input
+          class="input"
+          data-testid="TEST-ID"
+          multiple=""
+          type="file"
+          value=""
+        />
+      </label>
+    </div>
+    <div
+      class="gallery"
+    />
   </div>
 </div>
 `;
@@ -638,6 +702,7 @@ exports[`FileInput Component FileInput handle unsuccessfull add file when quota 
   >
     <div
       class="droparea"
+      tabindex="0"
     >
       <label
         class="label"
@@ -702,6 +767,7 @@ exports[`FileInput Component FileInput handle unsuccessfull add file when quota 
   >
     <div
       class="droparea"
+      tabindex="0"
     >
       <label
         class="label"
@@ -821,6 +887,7 @@ exports[`FileInput Component FileInput handles delete rejections of a file 1`] =
   >
     <div
       class="droparea"
+      tabindex="0"
     >
       <label
         class="label"
@@ -885,6 +952,7 @@ exports[`FileInput Component FileInput handles delete rejections of a file 2`] =
   >
     <div
       class="droparea"
+      tabindex="0"
     >
       <label
         class="label"
@@ -949,6 +1017,7 @@ exports[`FileInput Component FileInput handles download and delete of a file 1`]
   >
     <div
       class="droparea"
+      tabindex="0"
     >
       <label
         class="label"
@@ -1013,6 +1082,72 @@ exports[`FileInput Component FileInput handles download and delete of a file 2`]
   >
     <div
       class="droparea"
+      tabindex="0"
+    >
+      <label
+        class="label"
+      >
+        Click or drag file to upload
+        <input
+          class="input"
+          data-testid="TEST-ID"
+          type="file"
+          value=""
+        />
+      </label>
+    </div>
+    <div
+      class="gallery"
+    >
+      <div
+        class="item-container"
+      >
+        <div
+          class="left"
+        >
+          <div
+            class="paperclip-icon"
+          >
+            <i
+              class="icon"
+              icon="fal,paperclip"
+            />
+          </div>
+          <div
+            class="name downloadable"
+            data-testid="TEST-ID-download"
+          >
+            AME
+             (1.21 kB)
+          </div>
+        </div>
+        <div
+          class="right"
+        >
+          <div
+            class="delete-icon"
+            data-testid="TEST-ID-delete"
+          >
+            <i
+              class="icon"
+              icon="fal,trash-alt"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`FileInput Component FileInput handles download and delete of a file 3`] = `
+<div>
+  <div
+    class="field gds-file-input-container"
+  >
+    <div
+      class="droparea"
+      tabindex="0"
     >
       <label
         class="label"
@@ -1034,6 +1169,136 @@ exports[`FileInput Component FileInput handles download and delete of a file 2`]
 </div>
 `;
 
+exports[`FileInput Component FileInput handles download without download callback 1`] = `
+<div>
+  <div
+    class="field gds-file-input-container"
+  >
+    <div
+      class="droparea"
+      tabindex="0"
+    >
+      <label
+        class="label"
+      >
+        Click or drag file to upload
+        <input
+          class="input"
+          data-testid="TEST-ID"
+          type="file"
+          value=""
+        />
+      </label>
+    </div>
+    <div
+      class="gallery"
+    >
+      <div
+        class="item-container"
+      >
+        <div
+          class="left"
+        >
+          <div
+            class="paperclip-icon"
+          >
+            <i
+              class="icon"
+              icon="fal,paperclip"
+            />
+          </div>
+          <div
+            class="name downloadable"
+            data-testid="TEST-ID-download"
+          >
+            AME
+             (1.21 kB)
+          </div>
+        </div>
+        <div
+          class="right"
+        >
+          <div
+            class="delete-icon"
+            data-testid="TEST-ID-delete"
+          >
+            <i
+              class="icon"
+              icon="fal,trash-alt"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`FileInput Component FileInput handles download without download callback 2`] = `
+<div>
+  <div
+    class="field gds-file-input-container"
+  >
+    <div
+      class="droparea"
+      tabindex="0"
+    >
+      <label
+        class="label"
+      >
+        Click or drag file to upload
+        <input
+          class="input"
+          data-testid="TEST-ID"
+          type="file"
+          value=""
+        />
+      </label>
+    </div>
+    <div
+      class="gallery"
+    >
+      <div
+        class="item-container"
+      >
+        <div
+          class="left"
+        >
+          <div
+            class="paperclip-icon"
+          >
+            <i
+              class="icon"
+              icon="fal,paperclip"
+            />
+          </div>
+          <div
+            class="name downloadable"
+            data-testid="TEST-ID-download"
+          >
+            AME
+             (1.21 kB)
+          </div>
+        </div>
+        <div
+          class="right"
+        >
+          <div
+            class="delete-icon"
+            data-testid="TEST-ID-delete"
+          >
+            <i
+              class="icon"
+              icon="fal,trash-alt"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`FileInput Component FileInput renders 1`] = `
 <div>
   <div
@@ -1041,6 +1306,7 @@ exports[`FileInput Component FileInput renders 1`] = `
   >
     <div
       class="droparea"
+      tabindex="0"
     >
       <label
         class="label"
@@ -1103,6 +1369,7 @@ exports[`FileInput Component FileInput renders without input value 1`] = `
   >
     <div
       class="droparea"
+      tabindex="0"
     >
       <label
         class="label"
@@ -1130,6 +1397,7 @@ exports[`FileInput Component FileInput renders without input value 2`] = `
   >
     <div
       class="droparea"
+      tabindex="0"
     >
       <label
         class="label"

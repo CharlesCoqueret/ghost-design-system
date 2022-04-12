@@ -92,7 +92,7 @@ const DynamicSearchCreatableInput = (props: IDynamicSearchCreatableInputProps): 
     [noOptionsMessage],
   );
 
-  const resolveIncomingValue = () => {
+  const resolveIncomingValue = useCallback(() => {
     if (inputValue && inputValue !== currentOption?.value) {
       setIsLoading(true);
       resolveValue(inputValue)
@@ -109,7 +109,7 @@ const DynamicSearchCreatableInput = (props: IDynamicSearchCreatableInputProps): 
       setIsLoading(false);
       setCurrentOption(undefined);
     }
-  };
+  }, [inputValue, resolveValue]);
 
   const localHandleCreate = (newLabel: string) => {
     setIsLoading(true);
@@ -131,7 +131,7 @@ const DynamicSearchCreatableInput = (props: IDynamicSearchCreatableInputProps): 
     setIsLoading(true);
     setCurrentOption(undefined);
     resolveIncomingValue();
-  }, [inputValue]);
+  }, [inputValue, resolveIncomingValue]);
 
   if (readOnly) {
     return (

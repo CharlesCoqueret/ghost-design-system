@@ -21,7 +21,7 @@ const useForm = <T extends AnyObject>(props: IUseFormProps<T>): IUseFormReturned
 
   const [currentData, setCurrentData] = useState<T>(cloneDeep(initialData));
   const [isModified, setIsModified] = useState<boolean>(false);
-  const [validationError, setValidationError] = useState<Record<keyof T, FieldError>>();
+  const [validationError, setValidationError] = useState<Partial<Record<keyof T, FieldError>>>();
   const runAfterUpdate = useRunAfterUpdate();
 
   const handleDataChange = (dataIndex: keyof T, newValue: T[keyof T]): void => {

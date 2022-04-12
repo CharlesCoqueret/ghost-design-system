@@ -4,7 +4,7 @@ import { render } from '@testing-library/react';
 import ActionBar from '../ActionBar';
 
 describe('ActionBar Component', () => {
-  it('ActionBar renders', async () => {
+  it('ActionBar renders', () => {
     const onTitleEditMock = jest.fn();
 
     const { container } = render(
@@ -34,7 +34,7 @@ describe('ActionBar Component', () => {
     expect(onTitleEditMock).not.toBeCalled();
   });
 
-  it('ActionBar renders without action, basicactions, icon, indicator or status', async () => {
+  it('ActionBar renders without action, basicactions, icon, indicator or status', () => {
     const onTitleEditMock = jest.fn();
 
     const { container } = render(
