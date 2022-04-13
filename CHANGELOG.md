@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.4.1 (2022-04-13)
+
+### Bug Fixes
+
+Atoms/DatePickerInput stop propagation onClickoutside
+Atoms/DynamicSearchCreatableInput supporting controlled method (reset from the input, set from the input, ...)
+Atoms/DynamicSearchInput supporting controlled method (reset from the input, set from the input, ...)
+Atoms/YearPickerInput stop propagation onClickoutside
+Molecules/Field add overflow hidden for filter
+Organisms/Filter set search field of the bar flex grow 1 and flex shrink 1
+Organisms/FilterItem enable portal for date picker
+hooks/useOnClickOutside now check if the dom target is in the ref and if the x y coordinates are inside the area of the object
+
 ## 1.4.0 (2022-04-12)
 
 ### Features
