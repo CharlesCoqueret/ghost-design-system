@@ -1,4 +1,4 @@
-import React, { ReactElement, useCallback, useEffect, useState } from 'react';
+import React, { ReactElement, useEffect, useState } from 'react';
 import { default as ReactSelectAsync } from 'react-select/async';
 import { ClearIndicatorProps, DropdownIndicatorProps, LoadingIndicatorProps } from 'react-select';
 import classnames from 'classnames';
@@ -78,17 +78,14 @@ const DynamicSearchInput = (props: IDynamicSearchInputProps): ReactElement => {
   const [isLoading, setIsLoading] = useState(false);
   const [currentOption, setCurrentOption] = useState<IOption>();
 
-  const localNoOptionMessage = useCallback(
-    (inputObject: { inputValue: string }): string => {
-      if (typeof noOptionsMessage === 'string') {
-        return noOptionsMessage;
-      }
-      return noOptionsMessage(inputObject);
-    },
-    [noOptionsMessage],
-  );
+  const localNoOptionMessage = (inputObject: { inputValue: string }): string => {
+    if (typeof noOptionsMessage === 'string') {
+      return noOptionsMessage;
+    }
+    return noOptionsMessage(inputObject);
+  };
 
-  const resolveIncomingValue = useCallback(() => {
+  const resolveIncomingValue = () => {
     if (inputValue && inputValue !== currentOption?.value) {
       setIsLoading(true);
       resolveValue(inputValue)
@@ -101,17 +98,14 @@ const DynamicSearchInput = (props: IDynamicSearchInputProps): ReactElement => {
         .finally(() => {
           setIsLoading(false);
         });
-    } else {
-      setIsLoading(false);
+    } else if (currentOption) {
       setCurrentOption(undefined);
     }
-  }, [inputValue, resolveValue]);
+  };
 
   useEffect(() => {
-    setIsLoading(true);
-    setCurrentOption(undefined);
-    resolveIncomingValue();
-  }, [inputValue, resolveIncomingValue]);
+    if (inputValue !== currentOption?.value) resolveIncomingValue();
+  }, [inputValue]);
 
   if (readOnly) {
     return (
@@ -149,6 +143,7 @@ const DynamicSearchInput = (props: IDynamicSearchInputProps): ReactElement => {
         className,
       )}>
       <ReactSelectAsync<IOption, false>
+        backspaceRemovesValue={isClearable}
         closeMenuOnSelect={true}
         components={{
           LoadingIndicator: (props: LoadingIndicatorProps<IOption, false>) => {
@@ -190,6 +185,7 @@ const DynamicSearchInput = (props: IDynamicSearchInputProps): ReactElement => {
         }}
         data-testid={dataTestId}
         defaultOptions
+        defaultValue={null}
         hideSelectedOptions={false}
         inputId={dataTestId}
         isClearable={isClearable}
@@ -208,11 +204,12 @@ const DynamicSearchInput = (props: IDynamicSearchInputProps): ReactElement => {
             onChange(option?.value);
           }
           setCurrentOption(option || undefined);
+
           setIsLoading(false);
         }}
         placeholder={placeholder}
         styles={customStyles({ ...colors, isInError })}
-        value={currentOption}
+        value={currentOption === undefined ? null : currentOption}
       />
     </div>
   );

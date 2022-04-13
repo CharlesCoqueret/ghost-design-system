@@ -91,6 +91,9 @@ const DatePickerInput = (props: IDatePickerProps): ReactElement => {
         popperContainer={usePortal ? Portal : undefined}
         renderCustomHeader={DatePickerHeader(locale)}
         autoComplete='off'
+        onClickOutside={(event) => {
+          event.stopPropagation();
+        }}
       />
     </div>
   );

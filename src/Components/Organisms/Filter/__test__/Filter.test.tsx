@@ -134,10 +134,14 @@ describe('Filter Component', () => {
     });
     expect(onChangeMock).toBeCalledTimes(1);
 
+    expect(baseElement).toMatchSnapshot();
+
     // Resetting the value in the modal
     const resetAdvanceSearchButton = await screen.findByTestId('DATA-TEST-ID-advanced-reset');
     userEvent.click(resetAdvanceSearchButton);
     expect(onChangeMock).toBeCalledTimes(1);
+
+    expect(baseElement).toMatchSnapshot();
 
     // Submitting the value and closing the modal
     act(() => {
@@ -145,6 +149,8 @@ describe('Filter Component', () => {
         onChangeHandlerFilterItemAdvancedSearch('number', 100);
       }
     });
+
+    expect(baseElement).toMatchSnapshot();
 
     const submitAdvanceSearchButton = await screen.findByTestId('DATA-TEST-ID-advanced-submit');
     userEvent.click(submitAdvanceSearchButton);

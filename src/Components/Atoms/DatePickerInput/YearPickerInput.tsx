@@ -85,6 +85,9 @@ const YearPickerInput = (props: IYearPickerProps): ReactElement => {
         autoComplete='off'
         popperContainer={usePortal ? Portal : undefined}
         showYearPicker
+        onClickOutside={(event) => {
+          event.stopPropagation();
+        }}
       />
     </div>
   );

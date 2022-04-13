@@ -1,4 +1,4 @@
-import React, { ReactElement, useCallback, useEffect, useState } from 'react';
+import React, { ReactElement, useEffect, useState } from 'react';
 import { default as ReactSelectAsyncCreatable } from 'react-select/async-creatable';
 import { ClearIndicatorProps, DropdownIndicatorProps, LoadingIndicatorProps } from 'react-select';
 import classnames from 'classnames';
@@ -82,17 +82,14 @@ const DynamicSearchCreatableInput = (props: IDynamicSearchCreatableInputProps): 
   const [isCreating, setIsCreating] = useState(false);
   const [currentOption, setCurrentOption] = useState<IOption>();
 
-  const localNoOptionMessage = useCallback(
-    (inputObject: { inputValue: string }): string => {
-      if (typeof noOptionsMessage === 'string') {
-        return noOptionsMessage;
-      }
-      return noOptionsMessage(inputObject);
-    },
-    [noOptionsMessage],
-  );
+  const localNoOptionMessage = (inputObject: { inputValue: string }): string => {
+    if (typeof noOptionsMessage === 'string') {
+      return noOptionsMessage;
+    }
+    return noOptionsMessage(inputObject);
+  };
 
-  const resolveIncomingValue = useCallback(() => {
+  const resolveIncomingValue = () => {
     if (inputValue && inputValue !== currentOption?.value) {
       setIsLoading(true);
       resolveValue(inputValue)
@@ -106,10 +103,9 @@ const DynamicSearchCreatableInput = (props: IDynamicSearchCreatableInputProps): 
           setIsLoading(false);
         });
     } else {
-      setIsLoading(false);
       setCurrentOption(undefined);
     }
-  }, [inputValue, resolveValue]);
+  };
 
   const localHandleCreate = (newLabel: string) => {
     setIsLoading(true);
@@ -128,10 +124,8 @@ const DynamicSearchCreatableInput = (props: IDynamicSearchCreatableInputProps): 
   };
 
   useEffect(() => {
-    setIsLoading(true);
-    setCurrentOption(undefined);
-    resolveIncomingValue();
-  }, [inputValue, resolveIncomingValue]);
+    if (inputValue !== currentOption?.value) resolveIncomingValue();
+  }, [inputValue]);
 
   if (readOnly) {
     return (
