@@ -59,7 +59,6 @@ const FilterItem = <T,>(props: IFilterItemProps<T>): ReactElement => {
             onChange(item.dataIndex, newValue as unknown as T[keyof T]);
           }}
           inline={inline}
-          usePortal={inline}
         />
       );
     }
