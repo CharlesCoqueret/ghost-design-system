@@ -1,7 +1,7 @@
 {
   "name": "ghost-design-system",
   "license": "MIT",
-  "version": "1.4.3",
+  "version": "1.4.4-next.0",
   "description": "Ghost design system - React Component Library",
   "author": {
     "name": "Charles Coqueret",
@@ -24,8 +24,8 @@
   "scripts": {
     "build": "rollup -c && npm run build:css && npm run build:css-min",
     "build-storybook": "build-storybook -o docs-build",
-    "build:css": "sass src/assets/index.scss dist/index.css --error-css --stop-on-error",
-    "build:css-min": "sass src/assets/index.scss dist/index.min.css --error-css --stop-on-error --style=compressed",
+    "build:css": "sass src/assets/index.scss dist/ghost-design-system.css --error-css --stop-on-error",
+    "build:css-min": "sass src/assets/index.scss dist/ghost-design-system.min.css --error-css --stop-on-error --style=compressed",
     "clean": "rm -rf npm-*.log package-lock.json node_modules coverage dist docs-build && npm cache verify",
     "format": "prettier --write \"src/**/*.{ts,tsx,json,js,jsx}\"",
     "format:check": "prettier --list-different \"src/**/*.{ts,tsx,json,js,jsx}\"",
@@ -41,7 +41,7 @@
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
-  "style": "disc/style.min.css",
+  "style": "dist/ghost-design-system.min.css",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
     "@fortawesome/react-fontawesome": "^0.1.18",
