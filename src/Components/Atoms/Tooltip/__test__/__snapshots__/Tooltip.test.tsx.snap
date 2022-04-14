@@ -2,115 +2,21 @@
 
 exports[`Tooltip Component Tooltip renders 1`] = `
 <div>
-  <span>
-    CHILDREN
-  </span>
+  CHILDREN
   <div>
-    <div
-      class="gds-tooltip bottom"
-      style="left: -99999px; top: -99999px; opacity: 0;"
-    >
-      <div
-        class="tooltip-arrow"
-      />
-      <div
-        class="tooltip-label"
-      >
-        TOOLTIP
-      </div>
-    </div>
+    TOOLTIP
   </div>
 </div>
 `;
 
-exports[`Tooltip Component Tooltip renders shows and closes 1`] = `
+exports[`Tooltip Component Tooltip renders disabled 1`] = `
 <div>
-  <span>
-    CHILDREN
-  </span>
-  <div>
-    <div
-      class="gds-tooltip bottom"
-      style="left: -99999px; top: -99999px; opacity: 0;"
-    >
-      <div
-        class="tooltip-arrow"
-      />
-      <div
-        class="tooltip-label"
-      >
-        TOOLTIP
-      </div>
-    </div>
-  </div>
+  CHILDREN
 </div>
 `;
 
-exports[`Tooltip Component Tooltip renders shows and closes 2`] = `
+exports[`Tooltip Component Tooltip renders with empty tooltip 1`] = `
 <div>
-  <span>
-    CHILDREN
-  </span>
-  <div>
-    <div
-      class="gds-tooltip bottom"
-      style="left: 0px; top: 0px; opacity: 1; max-width: 256px;"
-    >
-      <div
-        class="tooltip-arrow"
-      />
-      <div
-        class="tooltip-label"
-      >
-        TOOLTIP
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Tooltip Component Tooltip renders shows and closes 3`] = `
-<div>
-  <span>
-    CHILDREN
-  </span>
-  <div>
-    <div
-      class="gds-tooltip bottom"
-      style="left: -99999px; top: -99999px; opacity: 0;"
-    >
-      <div
-        class="tooltip-arrow"
-      />
-      <div
-        class="tooltip-label"
-      >
-        TOOLTIP
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Tooltip Component Tooltip renders with non default props 1`] = `
-<div>
-  <span
-    class="CLASSNAME"
-    style="height: 50px;"
-  >
-    CHILDREN
-  </span>
-  <div>
-    <div
-      class="gds-tooltip right"
-      style="left: -99999px; top: -99999px; opacity: 0;"
-    >
-      <div
-        class="tooltip-label"
-      >
-        TOOLTIP
-      </div>
-    </div>
-  </div>
+  CHILDREN
 </div>
 `;

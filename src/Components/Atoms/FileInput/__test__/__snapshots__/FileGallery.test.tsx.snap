@@ -2,60 +2,44 @@
 
 exports[`FileGallery Component FileGallery renders and handles delete of error files 1`] = `
 <div>
-  <span
-    style="display: inline-block; width: 100%; overflow: hidden;"
+  <div
+    class="item-container error"
   >
     <div
-      class="item-container error"
+      class="left"
     >
       <div
-        class="left"
+        class="paperclip-icon"
       >
-        <div
-          class="paperclip-icon"
-        >
-          <i
-            class="icon"
-            icon="fal,exclamation-triangle"
-          />
-        </div>
-        <div
-          class="name"
-          data-testid="TEST-ID-download"
-        >
-          NAME
-           (1.21 kB)
-        </div>
+        <i
+          class="icon"
+          icon="fal,exclamation-triangle"
+        />
       </div>
       <div
-        class="right"
+        class="name"
+        data-testid="TEST-ID-download"
       >
-        <div
-          class="delete-icon"
-          data-testid="TEST-ID-delete"
-        >
-          <i
-            class="icon"
-            icon="fal,trash-alt"
-          />
-        </div>
+        NAME
+         (1.21 kB)
       </div>
     </div>
-  </span>
-  <div>
     <div
-      class="gds-tooltip top"
-      style="left: -99999px; top: -99999px; opacity: 0;"
+      class="right"
     >
       <div
-        class="tooltip-arrow"
-      />
-      <div
-        class="tooltip-label"
+        class="delete-icon"
+        data-testid="TEST-ID-delete"
       >
-        ERROR
+        <i
+          class="icon"
+          icon="fal,trash-alt"
+        />
       </div>
     </div>
+  </div>
+  <div>
+    ERROR
   </div>
 </div>
 `;

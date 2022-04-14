@@ -46,10 +46,7 @@ const FileGallery = (props: IFileGallery): ReactElement => {
     file.status && ![FileStatusEnum.DELETING, FileStatusEnum.ERROR].includes(file.status) && !downloading;
 
   return (
-    <Tooltip
-      tooltip={file.error}
-      direction={MenuDirectionEnum.TOP}
-      style={{ display: 'inline-block', width: '100%', overflow: 'hidden' }}>
+    <Tooltip tooltip={file.error} direction={MenuDirectionEnum.TOP}>
       <div className={classnames('item-container', { error: file.error !== undefined })}>
         <div className='left'>
           <div className='paperclip-icon'>

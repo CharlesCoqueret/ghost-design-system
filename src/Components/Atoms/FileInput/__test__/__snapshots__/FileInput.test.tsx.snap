@@ -251,60 +251,44 @@ exports[`FileInput Component FileInput handle add file unsucessfully through inp
     <div
       class="gallery"
     >
-      <span
-        style="display: inline-block; width: 100%; overflow: hidden;"
+      <div
+        class="item-container error"
       >
         <div
-          class="item-container error"
+          class="left"
         >
           <div
-            class="left"
+            class="paperclip-icon"
           >
-            <div
-              class="paperclip-icon"
-            >
-              <i
-                class="icon"
-                icon="fal,exclamation-triangle"
-              />
-            </div>
-            <div
-              class="name"
-              data-testid="TEST-ID-download"
-            >
-              hello.png
-               (5 Bytes)
-            </div>
+            <i
+              class="icon"
+              icon="fal,exclamation-triangle"
+            />
           </div>
           <div
-            class="right"
+            class="name"
+            data-testid="TEST-ID-download"
           >
-            <div
-              class="delete-icon"
-              data-testid="TEST-ID-delete"
-            >
-              <i
-                class="icon"
-                icon="fal,trash-alt"
-              />
-            </div>
+            hello.png
+             (5 Bytes)
           </div>
         </div>
-      </span>
-      <div>
         <div
-          class="gds-tooltip top"
-          style="left: -99999px; top: -99999px; opacity: 0;"
+          class="right"
         >
           <div
-            class="tooltip-arrow"
-          />
-          <div
-            class="tooltip-label"
+            class="delete-icon"
+            data-testid="TEST-ID-delete"
           >
-            Internal Error
+            <i
+              class="icon"
+              icon="fal,trash-alt"
+            />
           </div>
         </div>
+      </div>
+      <div>
+        Internal Error
       </div>
     </div>
   </div>
@@ -365,60 +349,44 @@ exports[`FileInput Component FileInput handle add file with timeout through inpu
     <div
       class="gallery"
     >
-      <span
-        style="display: inline-block; width: 100%; overflow: hidden;"
+      <div
+        class="item-container error"
       >
         <div
-          class="item-container error"
+          class="left"
         >
           <div
-            class="left"
+            class="paperclip-icon"
           >
-            <div
-              class="paperclip-icon"
-            >
-              <i
-                class="icon"
-                icon="fal,exclamation-triangle"
-              />
-            </div>
-            <div
-              class="name"
-              data-testid="TEST-ID-download"
-            >
-              hello.png
-               (5 Bytes)
-            </div>
+            <i
+              class="icon"
+              icon="fal,exclamation-triangle"
+            />
           </div>
           <div
-            class="right"
+            class="name"
+            data-testid="TEST-ID-download"
           >
-            <div
-              class="delete-icon"
-              data-testid="TEST-ID-delete"
-            >
-              <i
-                class="icon"
-                icon="fal,trash-alt"
-              />
-            </div>
+            hello.png
+             (5 Bytes)
           </div>
         </div>
-      </span>
-      <div>
         <div
-          class="gds-tooltip top"
-          style="left: -99999px; top: -99999px; opacity: 0;"
+          class="right"
         >
           <div
-            class="tooltip-arrow"
-          />
-          <div
-            class="tooltip-label"
+            class="delete-icon"
+            data-testid="TEST-ID-delete"
           >
-            Timeout
+            <i
+              class="icon"
+              icon="fal,trash-alt"
+            />
           </div>
         </div>
+      </div>
+      <div>
+        Timeout
       </div>
     </div>
   </div>
@@ -820,60 +788,44 @@ exports[`FileInput Component FileInput handle unsuccessfull add file when quota 
           </div>
         </div>
       </div>
-      <span
-        style="display: inline-block; width: 100%; overflow: hidden;"
+      <div
+        class="item-container error"
       >
         <div
-          class="item-container error"
+          class="left"
         >
           <div
-            class="left"
+            class="paperclip-icon"
           >
-            <div
-              class="paperclip-icon"
-            >
-              <i
-                class="icon"
-                icon="fal,exclamation-triangle"
-              />
-            </div>
-            <div
-              class="name"
-              data-testid="TEST-ID-download"
-            >
-              hello.png
-               (5 Bytes)
-            </div>
+            <i
+              class="icon"
+              icon="fal,exclamation-triangle"
+            />
           </div>
           <div
-            class="right"
+            class="name"
+            data-testid="TEST-ID-download"
           >
-            <div
-              class="delete-icon"
-              data-testid="TEST-ID-delete"
-            >
-              <i
-                class="icon"
-                icon="fal,trash-alt"
-              />
-            </div>
+            hello.png
+             (5 Bytes)
           </div>
         </div>
-      </span>
-      <div>
         <div
-          class="gds-tooltip top"
-          style="left: -99999px; top: -99999px; opacity: 0;"
+          class="right"
         >
           <div
-            class="tooltip-arrow"
-          />
-          <div
-            class="tooltip-label"
+            class="delete-icon"
+            data-testid="TEST-ID-delete"
           >
-            Quota exceeded: Maximum number of files reached
+            <i
+              class="icon"
+              icon="fal,trash-alt"
+            />
           </div>
         </div>
+      </div>
+      <div>
+        Quota exceeded: Maximum number of files reached
       </div>
     </div>
   </div>

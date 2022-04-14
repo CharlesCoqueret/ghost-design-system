@@ -32,13 +32,17 @@ const Link = (props: ILinkProps): ReactElement => {
       {externalLink ? (
         <>
           <a href={link} target='_blank' rel='noreferrer'>
-            <Tooltip tooltip={tooltip}>{text}</Tooltip>
+            <Tooltip tooltip={tooltip}>
+              <>{text}</>
+            </Tooltip>
           </a>
           <Icon icon={['fal', 'external-link']} size='1x' />
         </>
       ) : (
         <a href={link}>
-          <Tooltip tooltip={tooltip}>{text}</Tooltip>
+          <Tooltip tooltip={tooltip}>
+            <>{text}</>
+          </Tooltip>
         </a>
       )}
     </div>

@@ -2,7 +2,7 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import Tooltip, { ITooltipProps } from './Tooltip';
-import { MenuDirectionEnum } from './tooltipUtils';
+import { MenuDirectionEnum } from './types';
 
 export default {
   title: 'Atom/Tooltip',

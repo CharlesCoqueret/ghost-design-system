@@ -11,37 +11,23 @@ exports[`ButtonCell component ButtonCell renders and handles click 1`] = `
           <div
             class="table--cell--value--button"
           >
-            <span>
-              <button
-                class="gds-button-content"
-                color="reversed"
-                data-testid="BUTTON1"
-                type="button"
-              >
-                <div
-                  class="button-icon-container"
-                >
-                  <i
-                    class="button-icon icon"
-                    icon="fal,briefcase"
-                  />
-                </div>
-              </button>
-            </span>
-            <div>
+            <button
+              class="gds-button-content"
+              color="reversed"
+              data-testid="BUTTON1"
+              type="button"
+            >
               <div
-                class="gds-tooltip bottom"
-                style="left: -99999px; top: -99999px; opacity: 0;"
+                class="button-icon-container"
               >
-                <div
-                  class="tooltip-arrow"
+                <i
+                  class="button-icon icon"
+                  icon="fal,briefcase"
                 />
-                <div
-                  class="tooltip-label"
-                >
-                  Button 1
-                </div>
               </div>
+            </button>
+            <div>
+              Button 1
             </div>
           </div>
         </td>
@@ -63,36 +49,22 @@ exports[`ButtonCell component ButtonCell renders hidden 1`] = `
           <div
             class="table--cell--value--button"
           >
-            <span>
-              <button
-                class="gds-button-content"
-                color="reversed"
-                type="button"
-              >
-                <div
-                  class="button-icon-container"
-                >
-                  <i
-                    class="button-icon icon"
-                    icon="fal,briefcase"
-                  />
-                </div>
-              </button>
-            </span>
-            <div>
+            <button
+              class="gds-button-content"
+              color="reversed"
+              type="button"
+            >
               <div
-                class="gds-tooltip bottom"
-                style="left: -99999px; top: -99999px; opacity: 0;"
+                class="button-icon-container"
               >
-                <div
-                  class="tooltip-arrow"
+                <i
+                  class="button-icon icon"
+                  icon="fal,briefcase"
                 />
-                <div
-                  class="tooltip-label"
-                >
-                  Button 1
-                </div>
               </div>
+            </button>
+            <div>
+              Button 1
             </div>
           </div>
         </td>
@@ -131,37 +103,23 @@ exports[`ButtonCell component ButtonCell renders with more than 3 buttons and ha
           <div
             class="table--cell--value--button"
           >
-            <span>
-              <button
-                class="gds-button-content"
-                color="reversed"
-                data-testid="MORE"
-                type="button"
-              >
-                <div
-                  class="button-icon-container"
-                >
-                  <i
-                    class="button-icon icon"
-                    icon="fal,ellipsis-h"
-                  />
-                </div>
-              </button>
-            </span>
-            <div>
+            <button
+              class="gds-button-content"
+              color="reversed"
+              data-testid="MORE"
+              type="button"
+            >
               <div
-                class="gds-tooltip bottom"
-                style="left: -99999px; top: -99999px; opacity: 0;"
+                class="button-icon-container"
               >
-                <div
-                  class="tooltip-arrow"
+                <i
+                  class="button-icon icon"
+                  icon="fal,ellipsis-h"
                 />
-                <div
-                  class="tooltip-label"
-                >
-                  MOREACTION
-                </div>
               </div>
+            </button>
+            <div>
+              MOREACTION
             </div>
             <div>
               <div>
@@ -207,37 +165,23 @@ exports[`ButtonCell component ButtonCell renders with more than 3 buttons and ha
           <div
             class="table--cell--value--button"
           >
-            <span>
-              <button
-                class="gds-button-content"
-                color="reversed"
-                data-testid="MORE"
-                type="button"
-              >
-                <div
-                  class="button-icon-container"
-                >
-                  <i
-                    class="button-icon icon"
-                    icon="fal,ellipsis-h"
-                  />
-                </div>
-              </button>
-            </span>
-            <div>
+            <button
+              class="gds-button-content"
+              color="reversed"
+              data-testid="MORE"
+              type="button"
+            >
               <div
-                class="gds-tooltip bottom"
-                style="left: -99999px; top: -99999px; opacity: 0;"
+                class="button-icon-container"
               >
-                <div
-                  class="tooltip-arrow"
+                <i
+                  class="button-icon icon"
+                  icon="fal,ellipsis-h"
                 />
-                <div
-                  class="tooltip-label"
-                >
-                  MOREACTION
-                </div>
               </div>
+            </button>
+            <div>
+              MOREACTION
             </div>
             <div>
               <div>

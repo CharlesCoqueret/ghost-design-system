@@ -2,54 +2,26 @@
 
 exports[`Badge Component Badge renders notification 1`] = `
 <div>
-  <span>
-    <span
-      class="gds-badge pill danger CLASSNAME"
-    >
-      BADGE
-    </span>
+  <span
+    class="gds-badge pill danger CLASSNAME"
+  >
+    BADGE
   </span>
   <div>
-    <div
-      class="gds-tooltip bottom"
-      style="left: -99999px; top: -99999px; opacity: 0;"
-    >
-      <div
-        class="tooltip-arrow"
-      />
-      <div
-        class="tooltip-label"
-      >
-        TOOLTIP
-      </div>
-    </div>
+    TOOLTIP
   </div>
 </div>
 `;
 
 exports[`Badge Component Badge renders notification 2`] = `
 <div>
-  <span>
-    <span
-      class="gds-badge pill danger CLASSNAME"
-    >
-      <div />
-    </span>
+  <span
+    class="gds-badge pill danger CLASSNAME"
+  >
+    <div />
   </span>
   <div>
-    <div
-      class="gds-tooltip bottom"
-      style="left: -99999px; top: -99999px; opacity: 0;"
-    >
-      <div
-        class="tooltip-arrow"
-      />
-      <div
-        class="tooltip-label"
-      >
-        TOOLTIP
-      </div>
-    </div>
+    TOOLTIP
   </div>
 </div>
 `;

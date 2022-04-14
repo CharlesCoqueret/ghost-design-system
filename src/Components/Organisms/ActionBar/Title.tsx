@@ -80,12 +80,10 @@ const Title = (props: ITitleProps): ReactElement => {
           {prefix}
         </Typography.Title>
       )}
-      <Tooltip
-        tooltip={isEditable ? renameTooltip : undefined}
-        style={{ display: 'inline-flex', margin: 'auto', overflow: 'hidden' }}>
-        <span ref={spanRef} className={'title-edit-hidden'}>
-          {currentTitle || placeholder}
-        </span>
+      <span ref={spanRef} className={'title-edit-hidden'}>
+        {currentTitle || placeholder}
+      </span>
+      <Tooltip tooltip={isEditable ? renameTooltip : undefined}>
         <input
           autoComplete='off'
           autoFocus={false}

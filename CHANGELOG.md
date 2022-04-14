@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.4.2 (2022-04-14)
+
+### Features
+
+Atoms/Tooltip replace custom tooltip with tippyjs
+
+### Bug Fixes
+
+Atoms/Modal replacing overflow: scroll by overflow: auto (to avoid windows to show its scroll bar)
+Atoms/Typography removes display: inline=block (causing small margin at the bottom)
+Moving fortawesome to bundled dependencies
+
 ## 1.4.1 (2022-04-13)
 
 ### Bug Fixes
