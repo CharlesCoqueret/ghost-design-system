@@ -11,36 +11,22 @@ exports[`ActionBar Component ActionBar renders 1`] = `
       <div
         class="back-icon"
       >
-        <span>
-          <button
-            class="gds-button-content"
-            color="reversed"
-            type="button"
-          >
-            <div
-              class="button-icon-container"
-            >
-              <i
-                class="button-icon icon"
-                icon="fal,arrow-left"
-              />
-            </div>
-          </button>
-        </span>
-        <div>
+        <button
+          class="gds-button-content"
+          color="reversed"
+          type="button"
+        >
           <div
-            class="gds-tooltip bottom"
-            style="left: -99999px; top: -99999px; opacity: 0;"
+            class="button-icon-container"
           >
-            <div
-              class="tooltip-arrow"
+            <i
+              class="button-icon icon"
+              icon="fal,arrow-left"
             />
-            <div
-              class="tooltip-label"
-            >
-              BACKTOOLTIP
-            </div>
           </div>
+        </button>
+        <div>
+          BACKTOOLTIP
         </div>
       </div>
       <div
@@ -53,36 +39,20 @@ exports[`ActionBar Component ActionBar renders 1`] = `
           PREFIX
         </h1>
         <span
-          style="display: inline-flex; margin: auto; overflow: hidden;"
+          class="title-edit-hidden"
         >
-          <span
-            class="title-edit-hidden"
-          >
-            TITLE
-          </span>
-          <input
-            autocomplete="off"
-            class="title-edit"
-            placeholder="PLACEHOLDED"
-            style="display: flex; width: 0px; margin: auto;"
-            type="text"
-            value="TITLE"
-          />
+          TITLE
         </span>
+        <input
+          autocomplete="off"
+          class="title-edit"
+          placeholder="PLACEHOLDED"
+          style="display: flex; width: 0px; margin: auto;"
+          type="text"
+          value="TITLE"
+        />
         <div>
-          <div
-            class="gds-tooltip bottom"
-            style="left: -99999px; top: -99999px; opacity: 0;"
-          >
-            <div
-              class="tooltip-arrow"
-            />
-            <div
-              class="tooltip-label"
-            >
-              Rename
-            </div>
-          </div>
+          Rename
         </div>
         <h1
           class="gds-typography ellipsis align-edit"
@@ -207,36 +177,22 @@ exports[`ActionBar Component ActionBar renders without action, basicactions, ico
       <div
         class="back-icon"
       >
-        <span>
-          <button
-            class="gds-button-content"
-            color="reversed"
-            type="button"
-          >
-            <div
-              class="button-icon-container"
-            >
-              <i
-                class="button-icon icon"
-                icon="fal,arrow-left"
-              />
-            </div>
-          </button>
-        </span>
-        <div>
+        <button
+          class="gds-button-content"
+          color="reversed"
+          type="button"
+        >
           <div
-            class="gds-tooltip bottom"
-            style="left: -99999px; top: -99999px; opacity: 0;"
+            class="button-icon-container"
           >
-            <div
-              class="tooltip-arrow"
+            <i
+              class="button-icon icon"
+              icon="fal,arrow-left"
             />
-            <div
-              class="tooltip-label"
-            >
-              BACKTOOLTIP
-            </div>
           </div>
+        </button>
+        <div>
+          BACKTOOLTIP
         </div>
       </div>
       <div
@@ -249,36 +205,20 @@ exports[`ActionBar Component ActionBar renders without action, basicactions, ico
           PREFIX
         </h1>
         <span
-          style="display: inline-flex; margin: auto; overflow: hidden;"
+          class="title-edit-hidden"
         >
-          <span
-            class="title-edit-hidden"
-          >
-            TITLE
-          </span>
-          <input
-            autocomplete="off"
-            class="title-edit"
-            placeholder="PLACEHOLDED"
-            style="display: flex; width: 0px; margin: auto;"
-            type="text"
-            value="TITLE"
-          />
+          TITLE
         </span>
+        <input
+          autocomplete="off"
+          class="title-edit"
+          placeholder="PLACEHOLDED"
+          style="display: flex; width: 0px; margin: auto;"
+          type="text"
+          value="TITLE"
+        />
         <div>
-          <div
-            class="gds-tooltip bottom"
-            style="left: -99999px; top: -99999px; opacity: 0;"
-          >
-            <div
-              class="tooltip-arrow"
-            />
-            <div
-              class="tooltip-label"
-            >
-              Rename
-            </div>
-          </div>
+          Rename
         </div>
         <h1
           class="gds-typography ellipsis align-edit"

@@ -9,111 +9,69 @@ exports[`EditableDataTable Component EditableDataTable renders and handles chang
       <thead>
         <tr>
           <th>
-            <span>
-              <div
-                class="table--header-value table--header-value--sortable"
+            <div
+              class="table--header-value table--header-value--sortable"
+            >
+              <span
+                class="table--header-value--title center"
               >
-                <span
-                  class="table--header-value--title center"
-                >
-                  Code
-                </span>
-                <span
-                  class="table--header-value--sorter"
-                >
-                  <i
-                    class="icon"
-                    icon="fas,sort"
-                  />
-                </span>
-              </div>
-            </span>
-            <div>
-              <div
-                class="gds-tooltip top"
-                style="left: -99999px; top: -99999px; opacity: 0;"
+                Code
+              </span>
+              <span
+                class="table--header-value--sorter"
               >
-                <div
-                  class="tooltip-arrow"
+                <i
+                  class="icon"
+                  icon="fas,sort"
                 />
-                <div
-                  class="tooltip-label"
-                >
-                  Click to sort
-                </div>
-              </div>
+              </span>
+            </div>
+            <div>
+              Click to sort
             </div>
           </th>
           <th>
-            <span>
-              <div
-                class="table--header-value table--header-value--sortable"
+            <div
+              class="table--header-value table--header-value--sortable"
+            >
+              <span
+                class="table--header-value--title left"
               >
-                <span
-                  class="table--header-value--title left"
-                >
-                  Text
-                </span>
-                <span
-                  class="table--header-value--sorter"
-                >
-                  <i
-                    class="icon"
-                    icon="fas,sort"
-                  />
-                </span>
-              </div>
-            </span>
-            <div>
-              <div
-                class="gds-tooltip top"
-                style="left: -99999px; top: -99999px; opacity: 0;"
+                Text
+              </span>
+              <span
+                class="table--header-value--sorter"
               >
-                <div
-                  class="tooltip-arrow"
+                <i
+                  class="icon"
+                  icon="fas,sort"
                 />
-                <div
-                  class="tooltip-label"
-                >
-                  Click to sort
-                </div>
-              </div>
+              </span>
+            </div>
+            <div>
+              Click to sort
             </div>
           </th>
           <th>
-            <span>
-              <div
-                class="table--header-value table--header-value--sortable"
+            <div
+              class="table--header-value table--header-value--sortable"
+            >
+              <span
+                class="table--header-value--title left"
               >
-                <span
-                  class="table--header-value--title left"
-                >
-                  Badge
-                </span>
-                <span
-                  class="table--header-value--sorter"
-                >
-                  <i
-                    class="icon"
-                    icon="fas,sort"
-                  />
-                </span>
-              </div>
-            </span>
-            <div>
-              <div
-                class="gds-tooltip top"
-                style="left: -99999px; top: -99999px; opacity: 0;"
+                Badge
+              </span>
+              <span
+                class="table--header-value--sorter"
               >
-                <div
-                  class="tooltip-arrow"
+                <i
+                  class="icon"
+                  icon="fas,sort"
                 />
-                <div
-                  class="tooltip-label"
-                >
-                  Click to sort
-                </div>
-              </div>
+              </span>
+            </div>
+            <div>
+              Click to sort
             </div>
           </th>
         </tr>
@@ -372,111 +330,69 @@ exports[`EditableDataTable Component EditableDataTable renders and handles chang
       <thead>
         <tr>
           <th>
-            <span>
-              <div
-                class="table--header-value table--header-value--sortable"
+            <div
+              class="table--header-value table--header-value--sortable"
+            >
+              <span
+                class="table--header-value--title center"
               >
-                <span
-                  class="table--header-value--title center"
-                >
-                  Code
-                </span>
-                <span
-                  class="table--header-value--sorter"
-                >
-                  <i
-                    class="icon"
-                    icon="fas,sort"
-                  />
-                </span>
-              </div>
-            </span>
-            <div>
-              <div
-                class="gds-tooltip top"
-                style="left: -99999px; top: -99999px; opacity: 0;"
+                Code
+              </span>
+              <span
+                class="table--header-value--sorter"
               >
-                <div
-                  class="tooltip-arrow"
+                <i
+                  class="icon"
+                  icon="fas,sort"
                 />
-                <div
-                  class="tooltip-label"
-                >
-                  Click to sort
-                </div>
-              </div>
+              </span>
+            </div>
+            <div>
+              Click to sort
             </div>
           </th>
           <th>
-            <span>
-              <div
-                class="table--header-value table--header-value--sortable"
+            <div
+              class="table--header-value table--header-value--sortable"
+            >
+              <span
+                class="table--header-value--title left"
               >
-                <span
-                  class="table--header-value--title left"
-                >
-                  Text
-                </span>
-                <span
-                  class="table--header-value--sorter"
-                >
-                  <i
-                    class="icon"
-                    icon="fas,sort"
-                  />
-                </span>
-              </div>
-            </span>
-            <div>
-              <div
-                class="gds-tooltip top"
-                style="left: -99999px; top: -99999px; opacity: 0;"
+                Text
+              </span>
+              <span
+                class="table--header-value--sorter"
               >
-                <div
-                  class="tooltip-arrow"
+                <i
+                  class="icon"
+                  icon="fas,sort"
                 />
-                <div
-                  class="tooltip-label"
-                >
-                  Click to sort
-                </div>
-              </div>
+              </span>
+            </div>
+            <div>
+              Click to sort
             </div>
           </th>
           <th>
-            <span>
-              <div
-                class="table--header-value table--header-value--sortable"
+            <div
+              class="table--header-value table--header-value--sortable"
+            >
+              <span
+                class="table--header-value--title left"
               >
-                <span
-                  class="table--header-value--title left"
-                >
-                  Badge
-                </span>
-                <span
-                  class="table--header-value--sorter"
-                >
-                  <i
-                    class="icon"
-                    icon="fas,sort"
-                  />
-                </span>
-              </div>
-            </span>
-            <div>
-              <div
-                class="gds-tooltip top"
-                style="left: -99999px; top: -99999px; opacity: 0;"
+                Badge
+              </span>
+              <span
+                class="table--header-value--sorter"
               >
-                <div
-                  class="tooltip-arrow"
+                <i
+                  class="icon"
+                  icon="fas,sort"
                 />
-                <div
-                  class="tooltip-label"
-                >
-                  Click to sort
-                </div>
-              </div>
+              </span>
+            </div>
+            <div>
+              Click to sort
             </div>
           </th>
         </tr>
@@ -735,111 +651,69 @@ exports[`EditableDataTable Component EditableDataTable renders and handles line 
       <thead>
         <tr>
           <th>
-            <span>
-              <div
-                class="table--header-value table--header-value--sortable"
+            <div
+              class="table--header-value table--header-value--sortable"
+            >
+              <span
+                class="table--header-value--title center"
               >
-                <span
-                  class="table--header-value--title center"
-                >
-                  Code
-                </span>
-                <span
-                  class="table--header-value--sorter"
-                >
-                  <i
-                    class="icon"
-                    icon="fas,sort"
-                  />
-                </span>
-              </div>
-            </span>
-            <div>
-              <div
-                class="gds-tooltip top"
-                style="left: -99999px; top: -99999px; opacity: 0;"
+                Code
+              </span>
+              <span
+                class="table--header-value--sorter"
               >
-                <div
-                  class="tooltip-arrow"
+                <i
+                  class="icon"
+                  icon="fas,sort"
                 />
-                <div
-                  class="tooltip-label"
-                >
-                  Click to sort
-                </div>
-              </div>
+              </span>
+            </div>
+            <div>
+              Click to sort
             </div>
           </th>
           <th>
-            <span>
-              <div
-                class="table--header-value table--header-value--sortable"
+            <div
+              class="table--header-value table--header-value--sortable"
+            >
+              <span
+                class="table--header-value--title left"
               >
-                <span
-                  class="table--header-value--title left"
-                >
-                  Text
-                </span>
-                <span
-                  class="table--header-value--sorter"
-                >
-                  <i
-                    class="icon"
-                    icon="fas,sort"
-                  />
-                </span>
-              </div>
-            </span>
-            <div>
-              <div
-                class="gds-tooltip top"
-                style="left: -99999px; top: -99999px; opacity: 0;"
+                Text
+              </span>
+              <span
+                class="table--header-value--sorter"
               >
-                <div
-                  class="tooltip-arrow"
+                <i
+                  class="icon"
+                  icon="fas,sort"
                 />
-                <div
-                  class="tooltip-label"
-                >
-                  Click to sort
-                </div>
-              </div>
+              </span>
+            </div>
+            <div>
+              Click to sort
             </div>
           </th>
           <th>
-            <span>
-              <div
-                class="table--header-value table--header-value--sortable"
+            <div
+              class="table--header-value table--header-value--sortable"
+            >
+              <span
+                class="table--header-value--title left"
               >
-                <span
-                  class="table--header-value--title left"
-                >
-                  Badge
-                </span>
-                <span
-                  class="table--header-value--sorter"
-                >
-                  <i
-                    class="icon"
-                    icon="fas,sort"
-                  />
-                </span>
-              </div>
-            </span>
-            <div>
-              <div
-                class="gds-tooltip top"
-                style="left: -99999px; top: -99999px; opacity: 0;"
+                Badge
+              </span>
+              <span
+                class="table--header-value--sorter"
               >
-                <div
-                  class="tooltip-arrow"
+                <i
+                  class="icon"
+                  icon="fas,sort"
                 />
-                <div
-                  class="tooltip-label"
-                >
-                  Click to sort
-                </div>
-              </div>
+              </span>
+            </div>
+            <div>
+              Click to sort
             </div>
           </th>
           <th>
@@ -977,37 +851,23 @@ exports[`EditableDataTable Component EditableDataTable renders and handles line 
             <div
               class="table--cell--value--button"
             >
-              <span>
-                <button
-                  class="gds-button-content"
-                  color="reversed"
-                  data-testid="delete"
-                  type="button"
-                >
-                  <div
-                    class="button-icon-container"
-                  >
-                    <i
-                      class="button-icon icon"
-                      icon="fal,trash-alt"
-                    />
-                  </div>
-                </button>
-              </span>
-              <div>
+              <button
+                class="gds-button-content"
+                color="reversed"
+                data-testid="delete"
+                type="button"
+              >
                 <div
-                  class="gds-tooltip bottom"
-                  style="left: -99999px; top: -99999px; opacity: 0;"
+                  class="button-icon-container"
                 >
-                  <div
-                    class="tooltip-arrow"
+                  <i
+                    class="button-icon icon"
+                    icon="fal,trash-alt"
                   />
-                  <div
-                    class="tooltip-label"
-                  >
-                    Delete
-                  </div>
                 </div>
+              </button>
+              <div>
+                Delete
               </div>
               <div>
                 <div>
@@ -1053,37 +913,23 @@ exports[`EditableDataTable Component EditableDataTable renders and handles line 
                   has ref
                 </div>
               </div>
-              <span>
-                <button
-                  class="gds-button-content"
-                  color="reversed"
-                  data-testid="download"
-                  type="button"
-                >
-                  <div
-                    class="button-icon-container"
-                  >
-                    <i
-                      class="button-icon icon"
-                      icon="fal,arrow-down-to-line"
-                    />
-                  </div>
-                </button>
-              </span>
-              <div>
+              <button
+                class="gds-button-content"
+                color="reversed"
+                data-testid="download"
+                type="button"
+              >
                 <div
-                  class="gds-tooltip bottom"
-                  style="left: 0px; top: 0px; opacity: 1; max-width: 256px;"
+                  class="button-icon-container"
                 >
-                  <div
-                    class="tooltip-arrow"
+                  <i
+                    class="button-icon icon"
+                    icon="fal,arrow-down-to-line"
                   />
-                  <div
-                    class="tooltip-label"
-                  >
-                    Download
-                  </div>
                 </div>
+              </button>
+              <div>
+                Download
               </div>
             </div>
           </td>
@@ -1211,37 +1057,23 @@ exports[`EditableDataTable Component EditableDataTable renders and handles line 
             <div
               class="table--cell--value--button"
             >
-              <span>
-                <button
-                  class="gds-button-content"
-                  color="reversed"
-                  data-testid="delete"
-                  type="button"
-                >
-                  <div
-                    class="button-icon-container"
-                  >
-                    <i
-                      class="button-icon icon"
-                      icon="fal,trash-alt"
-                    />
-                  </div>
-                </button>
-              </span>
-              <div>
+              <button
+                class="gds-button-content"
+                color="reversed"
+                data-testid="delete"
+                type="button"
+              >
                 <div
-                  class="gds-tooltip bottom"
-                  style="left: -99999px; top: -99999px; opacity: 0;"
+                  class="button-icon-container"
                 >
-                  <div
-                    class="tooltip-arrow"
+                  <i
+                    class="button-icon icon"
+                    icon="fal,trash-alt"
                   />
-                  <div
-                    class="tooltip-label"
-                  >
-                    Delete
-                  </div>
                 </div>
+              </button>
+              <div>
+                Delete
               </div>
               <div>
                 <div>
@@ -1287,37 +1119,23 @@ exports[`EditableDataTable Component EditableDataTable renders and handles line 
                   has ref
                 </div>
               </div>
-              <span>
-                <button
-                  class="gds-button-content"
-                  color="reversed"
-                  data-testid="download"
-                  type="button"
-                >
-                  <div
-                    class="button-icon-container"
-                  >
-                    <i
-                      class="button-icon icon"
-                      icon="fal,arrow-down-to-line"
-                    />
-                  </div>
-                </button>
-              </span>
-              <div>
+              <button
+                class="gds-button-content"
+                color="reversed"
+                data-testid="download"
+                type="button"
+              >
                 <div
-                  class="gds-tooltip bottom"
-                  style="left: -99999px; top: -99999px; opacity: 0;"
+                  class="button-icon-container"
                 >
-                  <div
-                    class="tooltip-arrow"
+                  <i
+                    class="button-icon icon"
+                    icon="fal,arrow-down-to-line"
                   />
-                  <div
-                    class="tooltip-label"
-                  >
-                    Download
-                  </div>
                 </div>
+              </button>
+              <div>
+                Download
               </div>
             </div>
           </td>
@@ -1337,111 +1155,69 @@ exports[`EditableDataTable Component EditableDataTable renders and handles line 
       <thead>
         <tr>
           <th>
-            <span>
-              <div
-                class="table--header-value table--header-value--sortable"
+            <div
+              class="table--header-value table--header-value--sortable"
+            >
+              <span
+                class="table--header-value--title center"
               >
-                <span
-                  class="table--header-value--title center"
-                >
-                  Code
-                </span>
-                <span
-                  class="table--header-value--sorter"
-                >
-                  <i
-                    class="icon"
-                    icon="fas,sort"
-                  />
-                </span>
-              </div>
-            </span>
-            <div>
-              <div
-                class="gds-tooltip top"
-                style="left: -99999px; top: -99999px; opacity: 0;"
+                Code
+              </span>
+              <span
+                class="table--header-value--sorter"
               >
-                <div
-                  class="tooltip-arrow"
+                <i
+                  class="icon"
+                  icon="fas,sort"
                 />
-                <div
-                  class="tooltip-label"
-                >
-                  Click to sort
-                </div>
-              </div>
+              </span>
+            </div>
+            <div>
+              Click to sort
             </div>
           </th>
           <th>
-            <span>
-              <div
-                class="table--header-value table--header-value--sortable"
+            <div
+              class="table--header-value table--header-value--sortable"
+            >
+              <span
+                class="table--header-value--title left"
               >
-                <span
-                  class="table--header-value--title left"
-                >
-                  Text
-                </span>
-                <span
-                  class="table--header-value--sorter"
-                >
-                  <i
-                    class="icon"
-                    icon="fas,sort"
-                  />
-                </span>
-              </div>
-            </span>
-            <div>
-              <div
-                class="gds-tooltip top"
-                style="left: -99999px; top: -99999px; opacity: 0;"
+                Text
+              </span>
+              <span
+                class="table--header-value--sorter"
               >
-                <div
-                  class="tooltip-arrow"
+                <i
+                  class="icon"
+                  icon="fas,sort"
                 />
-                <div
-                  class="tooltip-label"
-                >
-                  Click to sort
-                </div>
-              </div>
+              </span>
+            </div>
+            <div>
+              Click to sort
             </div>
           </th>
           <th>
-            <span>
-              <div
-                class="table--header-value table--header-value--sortable"
+            <div
+              class="table--header-value table--header-value--sortable"
+            >
+              <span
+                class="table--header-value--title left"
               >
-                <span
-                  class="table--header-value--title left"
-                >
-                  Badge
-                </span>
-                <span
-                  class="table--header-value--sorter"
-                >
-                  <i
-                    class="icon"
-                    icon="fas,sort"
-                  />
-                </span>
-              </div>
-            </span>
-            <div>
-              <div
-                class="gds-tooltip top"
-                style="left: -99999px; top: -99999px; opacity: 0;"
+                Badge
+              </span>
+              <span
+                class="table--header-value--sorter"
               >
-                <div
-                  class="tooltip-arrow"
+                <i
+                  class="icon"
+                  icon="fas,sort"
                 />
-                <div
-                  class="tooltip-label"
-                >
-                  Click to sort
-                </div>
-              </div>
+              </span>
+            </div>
+            <div>
+              Click to sort
             </div>
           </th>
           <th>
@@ -1579,37 +1355,23 @@ exports[`EditableDataTable Component EditableDataTable renders and handles line 
             <div
               class="table--cell--value--button"
             >
-              <span>
-                <button
-                  class="gds-button-content"
-                  color="reversed"
-                  data-testid="delete"
-                  type="button"
-                >
-                  <div
-                    class="button-icon-container"
-                  >
-                    <i
-                      class="button-icon icon"
-                      icon="fal,trash-alt"
-                    />
-                  </div>
-                </button>
-              </span>
-              <div>
+              <button
+                class="gds-button-content"
+                color="reversed"
+                data-testid="delete"
+                type="button"
+              >
                 <div
-                  class="gds-tooltip bottom"
-                  style="left: 0px; top: 0px; opacity: 1; max-width: 256px;"
+                  class="button-icon-container"
                 >
-                  <div
-                    class="tooltip-arrow"
+                  <i
+                    class="button-icon icon"
+                    icon="fal,trash-alt"
                   />
-                  <div
-                    class="tooltip-label"
-                  >
-                    Delete
-                  </div>
                 </div>
+              </button>
+              <div>
+                Delete
               </div>
               <div>
                 <div>
@@ -1655,37 +1417,23 @@ exports[`EditableDataTable Component EditableDataTable renders and handles line 
                   has ref
                 </div>
               </div>
-              <span>
-                <button
-                  class="gds-button-content"
-                  color="reversed"
-                  data-testid="download"
-                  type="button"
-                >
-                  <div
-                    class="button-icon-container"
-                  >
-                    <i
-                      class="button-icon icon"
-                      icon="fal,arrow-down-to-line"
-                    />
-                  </div>
-                </button>
-              </span>
-              <div>
+              <button
+                class="gds-button-content"
+                color="reversed"
+                data-testid="download"
+                type="button"
+              >
                 <div
-                  class="gds-tooltip bottom"
-                  style="left: 0px; top: 0px; opacity: 1; max-width: 256px;"
+                  class="button-icon-container"
                 >
-                  <div
-                    class="tooltip-arrow"
+                  <i
+                    class="button-icon icon"
+                    icon="fal,arrow-down-to-line"
                   />
-                  <div
-                    class="tooltip-label"
-                  >
-                    Download
-                  </div>
                 </div>
+              </button>
+              <div>
+                Download
               </div>
             </div>
           </td>
@@ -1813,37 +1561,23 @@ exports[`EditableDataTable Component EditableDataTable renders and handles line 
             <div
               class="table--cell--value--button"
             >
-              <span>
-                <button
-                  class="gds-button-content"
-                  color="reversed"
-                  data-testid="delete"
-                  type="button"
-                >
-                  <div
-                    class="button-icon-container"
-                  >
-                    <i
-                      class="button-icon icon"
-                      icon="fal,trash-alt"
-                    />
-                  </div>
-                </button>
-              </span>
-              <div>
+              <button
+                class="gds-button-content"
+                color="reversed"
+                data-testid="delete"
+                type="button"
+              >
                 <div
-                  class="gds-tooltip bottom"
-                  style="left: -99999px; top: -99999px; opacity: 0;"
+                  class="button-icon-container"
                 >
-                  <div
-                    class="tooltip-arrow"
+                  <i
+                    class="button-icon icon"
+                    icon="fal,trash-alt"
                   />
-                  <div
-                    class="tooltip-label"
-                  >
-                    Delete
-                  </div>
                 </div>
+              </button>
+              <div>
+                Delete
               </div>
               <div>
                 <div>
@@ -1889,37 +1623,23 @@ exports[`EditableDataTable Component EditableDataTable renders and handles line 
                   has ref
                 </div>
               </div>
-              <span>
-                <button
-                  class="gds-button-content"
-                  color="reversed"
-                  data-testid="download"
-                  type="button"
-                >
-                  <div
-                    class="button-icon-container"
-                  >
-                    <i
-                      class="button-icon icon"
-                      icon="fal,arrow-down-to-line"
-                    />
-                  </div>
-                </button>
-              </span>
-              <div>
+              <button
+                class="gds-button-content"
+                color="reversed"
+                data-testid="download"
+                type="button"
+              >
                 <div
-                  class="gds-tooltip bottom"
-                  style="left: -99999px; top: -99999px; opacity: 0;"
+                  class="button-icon-container"
                 >
-                  <div
-                    class="tooltip-arrow"
+                  <i
+                    class="button-icon icon"
+                    icon="fal,arrow-down-to-line"
                   />
-                  <div
-                    class="tooltip-label"
-                  >
-                    Download
-                  </div>
                 </div>
+              </button>
+              <div>
+                Download
               </div>
             </div>
           </td>
@@ -1939,111 +1659,69 @@ exports[`EditableDataTable Component EditableDataTable renders and handles line 
       <thead>
         <tr>
           <th>
-            <span>
-              <div
-                class="table--header-value table--header-value--sortable"
+            <div
+              class="table--header-value table--header-value--sortable"
+            >
+              <span
+                class="table--header-value--title center"
               >
-                <span
-                  class="table--header-value--title center"
-                >
-                  Code
-                </span>
-                <span
-                  class="table--header-value--sorter"
-                >
-                  <i
-                    class="icon"
-                    icon="fas,sort"
-                  />
-                </span>
-              </div>
-            </span>
-            <div>
-              <div
-                class="gds-tooltip top"
-                style="left: -99999px; top: -99999px; opacity: 0;"
+                Code
+              </span>
+              <span
+                class="table--header-value--sorter"
               >
-                <div
-                  class="tooltip-arrow"
+                <i
+                  class="icon"
+                  icon="fas,sort"
                 />
-                <div
-                  class="tooltip-label"
-                >
-                  Click to sort
-                </div>
-              </div>
+              </span>
+            </div>
+            <div>
+              Click to sort
             </div>
           </th>
           <th>
-            <span>
-              <div
-                class="table--header-value table--header-value--sortable"
+            <div
+              class="table--header-value table--header-value--sortable"
+            >
+              <span
+                class="table--header-value--title left"
               >
-                <span
-                  class="table--header-value--title left"
-                >
-                  Text
-                </span>
-                <span
-                  class="table--header-value--sorter"
-                >
-                  <i
-                    class="icon"
-                    icon="fas,sort"
-                  />
-                </span>
-              </div>
-            </span>
-            <div>
-              <div
-                class="gds-tooltip top"
-                style="left: -99999px; top: -99999px; opacity: 0;"
+                Text
+              </span>
+              <span
+                class="table--header-value--sorter"
               >
-                <div
-                  class="tooltip-arrow"
+                <i
+                  class="icon"
+                  icon="fas,sort"
                 />
-                <div
-                  class="tooltip-label"
-                >
-                  Click to sort
-                </div>
-              </div>
+              </span>
+            </div>
+            <div>
+              Click to sort
             </div>
           </th>
           <th>
-            <span>
-              <div
-                class="table--header-value table--header-value--sortable"
+            <div
+              class="table--header-value table--header-value--sortable"
+            >
+              <span
+                class="table--header-value--title left"
               >
-                <span
-                  class="table--header-value--title left"
-                >
-                  Badge
-                </span>
-                <span
-                  class="table--header-value--sorter"
-                >
-                  <i
-                    class="icon"
-                    icon="fas,sort"
-                  />
-                </span>
-              </div>
-            </span>
-            <div>
-              <div
-                class="gds-tooltip top"
-                style="left: -99999px; top: -99999px; opacity: 0;"
+                Badge
+              </span>
+              <span
+                class="table--header-value--sorter"
               >
-                <div
-                  class="tooltip-arrow"
+                <i
+                  class="icon"
+                  icon="fas,sort"
                 />
-                <div
-                  class="tooltip-label"
-                >
-                  Click to sort
-                </div>
-              </div>
+              </span>
+            </div>
+            <div>
+              Click to sort
             </div>
           </th>
           <th>
@@ -2183,37 +1861,23 @@ exports[`EditableDataTable Component EditableDataTable renders and handles line 
             <div
               class="table--cell--value--button"
             >
-              <span>
-                <button
-                  class="gds-button-content"
-                  color="reversed"
-                  data-testid="delete"
-                  type="button"
-                >
-                  <div
-                    class="button-icon-container"
-                  >
-                    <i
-                      class="button-icon icon"
-                      icon="fal,trash-alt"
-                    />
-                  </div>
-                </button>
-              </span>
-              <div>
+              <button
+                class="gds-button-content"
+                color="reversed"
+                data-testid="delete"
+                type="button"
+              >
                 <div
-                  class="gds-tooltip bottom"
-                  style="left: 0px; top: 0px; opacity: 1; max-width: 256px;"
+                  class="button-icon-container"
                 >
-                  <div
-                    class="tooltip-arrow"
+                  <i
+                    class="button-icon icon"
+                    icon="fal,trash-alt"
                   />
-                  <div
-                    class="tooltip-label"
-                  >
-                    Delete
-                  </div>
                 </div>
+              </button>
+              <div>
+                Delete
               </div>
               <div>
                 <div>
@@ -2259,37 +1923,23 @@ exports[`EditableDataTable Component EditableDataTable renders and handles line 
                   has ref
                 </div>
               </div>
-              <span>
-                <button
-                  class="gds-button-content"
-                  color="reversed"
-                  data-testid="download"
-                  type="button"
-                >
-                  <div
-                    class="button-icon-container"
-                  >
-                    <i
-                      class="button-icon icon"
-                      icon="fal,arrow-down-to-line"
-                    />
-                  </div>
-                </button>
-              </span>
-              <div>
+              <button
+                class="gds-button-content"
+                color="reversed"
+                data-testid="download"
+                type="button"
+              >
                 <div
-                  class="gds-tooltip bottom"
-                  style="left: 0px; top: 0px; opacity: 1; max-width: 256px;"
+                  class="button-icon-container"
                 >
-                  <div
-                    class="tooltip-arrow"
+                  <i
+                    class="button-icon icon"
+                    icon="fal,arrow-down-to-line"
                   />
-                  <div
-                    class="tooltip-label"
-                  >
-                    Download
-                  </div>
                 </div>
+              </button>
+              <div>
+                Download
               </div>
             </div>
           </td>
@@ -2309,111 +1959,69 @@ exports[`EditableDataTable Component EditableDataTable renders and handles sort 
       <thead>
         <tr>
           <th>
-            <span>
-              <div
-                class="table--header-value table--header-value--sortable"
+            <div
+              class="table--header-value table--header-value--sortable"
+            >
+              <span
+                class="table--header-value--title center"
               >
-                <span
-                  class="table--header-value--title center"
-                >
-                  Code
-                </span>
-                <span
-                  class="table--header-value--sorter"
-                >
-                  <i
-                    class="icon"
-                    icon="fas,sort"
-                  />
-                </span>
-              </div>
-            </span>
-            <div>
-              <div
-                class="gds-tooltip top"
-                style="left: -99999px; top: -99999px; opacity: 0;"
+                Code
+              </span>
+              <span
+                class="table--header-value--sorter"
               >
-                <div
-                  class="tooltip-arrow"
+                <i
+                  class="icon"
+                  icon="fas,sort"
                 />
-                <div
-                  class="tooltip-label"
-                >
-                  Click to sort
-                </div>
-              </div>
+              </span>
+            </div>
+            <div>
+              Click to sort
             </div>
           </th>
           <th>
-            <span>
-              <div
-                class="table--header-value table--header-value--sortable"
+            <div
+              class="table--header-value table--header-value--sortable"
+            >
+              <span
+                class="table--header-value--title left"
               >
-                <span
-                  class="table--header-value--title left"
-                >
-                  Text
-                </span>
-                <span
-                  class="table--header-value--sorter"
-                >
-                  <i
-                    class="icon"
-                    icon="fas,sort"
-                  />
-                </span>
-              </div>
-            </span>
-            <div>
-              <div
-                class="gds-tooltip top"
-                style="left: -99999px; top: -99999px; opacity: 0;"
+                Text
+              </span>
+              <span
+                class="table--header-value--sorter"
               >
-                <div
-                  class="tooltip-arrow"
+                <i
+                  class="icon"
+                  icon="fas,sort"
                 />
-                <div
-                  class="tooltip-label"
-                >
-                  Click to sort
-                </div>
-              </div>
+              </span>
+            </div>
+            <div>
+              Click to sort
             </div>
           </th>
           <th>
-            <span>
-              <div
-                class="table--header-value table--header-value--sortable"
+            <div
+              class="table--header-value table--header-value--sortable"
+            >
+              <span
+                class="table--header-value--title left"
               >
-                <span
-                  class="table--header-value--title left"
-                >
-                  Badge
-                </span>
-                <span
-                  class="table--header-value--sorter"
-                >
-                  <i
-                    class="icon"
-                    icon="fas,sort-down"
-                  />
-                </span>
-              </div>
-            </span>
-            <div>
-              <div
-                class="gds-tooltip top"
-                style="left: -99999px; top: -99999px; opacity: 0;"
+                Badge
+              </span>
+              <span
+                class="table--header-value--sorter"
               >
-                <div
-                  class="tooltip-arrow"
+                <i
+                  class="icon"
+                  icon="fas,sort-down"
                 />
-                <div
-                  class="tooltip-label"
-                >
-                  Click to sort
-                </div>
-              </div>
+              </span>
+            </div>
+            <div>
+              Click to sort
             </div>
           </th>
         </tr>
@@ -2668,111 +2276,69 @@ exports[`EditableDataTable Component EditableDataTable renders and new button cl
       <thead>
         <tr>
           <th>
-            <span>
-              <div
-                class="table--header-value table--header-value--sortable"
+            <div
+              class="table--header-value table--header-value--sortable"
+            >
+              <span
+                class="table--header-value--title center"
               >
-                <span
-                  class="table--header-value--title center"
-                >
-                  Code
-                </span>
-                <span
-                  class="table--header-value--sorter"
-                >
-                  <i
-                    class="icon"
-                    icon="fas,sort"
-                  />
-                </span>
-              </div>
-            </span>
-            <div>
-              <div
-                class="gds-tooltip top"
-                style="left: -99999px; top: -99999px; opacity: 0;"
+                Code
+              </span>
+              <span
+                class="table--header-value--sorter"
               >
-                <div
-                  class="tooltip-arrow"
+                <i
+                  class="icon"
+                  icon="fas,sort"
                 />
-                <div
-                  class="tooltip-label"
-                >
-                  Click to sort
-                </div>
-              </div>
+              </span>
+            </div>
+            <div>
+              Click to sort
             </div>
           </th>
           <th>
-            <span>
-              <div
-                class="table--header-value table--header-value--sortable"
+            <div
+              class="table--header-value table--header-value--sortable"
+            >
+              <span
+                class="table--header-value--title left"
               >
-                <span
-                  class="table--header-value--title left"
-                >
-                  Text
-                </span>
-                <span
-                  class="table--header-value--sorter"
-                >
-                  <i
-                    class="icon"
-                    icon="fas,sort"
-                  />
-                </span>
-              </div>
-            </span>
-            <div>
-              <div
-                class="gds-tooltip top"
-                style="left: -99999px; top: -99999px; opacity: 0;"
+                Text
+              </span>
+              <span
+                class="table--header-value--sorter"
               >
-                <div
-                  class="tooltip-arrow"
+                <i
+                  class="icon"
+                  icon="fas,sort"
                 />
-                <div
-                  class="tooltip-label"
-                >
-                  Click to sort
-                </div>
-              </div>
+              </span>
+            </div>
+            <div>
+              Click to sort
             </div>
           </th>
           <th>
-            <span>
-              <div
-                class="table--header-value table--header-value--sortable"
+            <div
+              class="table--header-value table--header-value--sortable"
+            >
+              <span
+                class="table--header-value--title left"
               >
-                <span
-                  class="table--header-value--title left"
-                >
-                  Badge
-                </span>
-                <span
-                  class="table--header-value--sorter"
-                >
-                  <i
-                    class="icon"
-                    icon="fas,sort"
-                  />
-                </span>
-              </div>
-            </span>
-            <div>
-              <div
-                class="gds-tooltip top"
-                style="left: -99999px; top: -99999px; opacity: 0;"
+                Badge
+              </span>
+              <span
+                class="table--header-value--sorter"
               >
-                <div
-                  class="tooltip-arrow"
+                <i
+                  class="icon"
+                  icon="fas,sort"
                 />
-                <div
-                  class="tooltip-label"
-                >
-                  Click to sort
-                </div>
-              </div>
+              </span>
+            </div>
+            <div>
+              Click to sort
             </div>
           </th>
           <th>
@@ -2910,37 +2476,23 @@ exports[`EditableDataTable Component EditableDataTable renders and new button cl
             <div
               class="table--cell--value--button"
             >
-              <span>
-                <button
-                  class="gds-button-content"
-                  color="reversed"
-                  data-testid="delete"
-                  type="button"
-                >
-                  <div
-                    class="button-icon-container"
-                  >
-                    <i
-                      class="button-icon icon"
-                      icon="fal,trash-alt"
-                    />
-                  </div>
-                </button>
-              </span>
-              <div>
+              <button
+                class="gds-button-content"
+                color="reversed"
+                data-testid="delete"
+                type="button"
+              >
                 <div
-                  class="gds-tooltip bottom"
-                  style="left: -99999px; top: -99999px; opacity: 0;"
+                  class="button-icon-container"
                 >
-                  <div
-                    class="tooltip-arrow"
+                  <i
+                    class="button-icon icon"
+                    icon="fal,trash-alt"
                   />
-                  <div
-                    class="tooltip-label"
-                  >
-                    Delete
-                  </div>
                 </div>
+              </button>
+              <div>
+                Delete
               </div>
               <div>
                 <div>
@@ -2986,37 +2538,23 @@ exports[`EditableDataTable Component EditableDataTable renders and new button cl
                   has ref
                 </div>
               </div>
-              <span>
-                <button
-                  class="gds-button-content"
-                  color="reversed"
-                  data-testid="download"
-                  type="button"
-                >
-                  <div
-                    class="button-icon-container"
-                  >
-                    <i
-                      class="button-icon icon"
-                      icon="fal,arrow-down-to-line"
-                    />
-                  </div>
-                </button>
-              </span>
-              <div>
+              <button
+                class="gds-button-content"
+                color="reversed"
+                data-testid="download"
+                type="button"
+              >
                 <div
-                  class="gds-tooltip bottom"
-                  style="left: -99999px; top: -99999px; opacity: 0;"
+                  class="button-icon-container"
                 >
-                  <div
-                    class="tooltip-arrow"
+                  <i
+                    class="button-icon icon"
+                    icon="fal,arrow-down-to-line"
                   />
-                  <div
-                    class="tooltip-label"
-                  >
-                    Download
-                  </div>
                 </div>
+              </button>
+              <div>
+                Download
               </div>
             </div>
           </td>
@@ -3144,37 +2682,23 @@ exports[`EditableDataTable Component EditableDataTable renders and new button cl
             <div
               class="table--cell--value--button"
             >
-              <span>
-                <button
-                  class="gds-button-content"
-                  color="reversed"
-                  data-testid="delete"
-                  type="button"
-                >
-                  <div
-                    class="button-icon-container"
-                  >
-                    <i
-                      class="button-icon icon"
-                      icon="fal,trash-alt"
-                    />
-                  </div>
-                </button>
-              </span>
-              <div>
+              <button
+                class="gds-button-content"
+                color="reversed"
+                data-testid="delete"
+                type="button"
+              >
                 <div
-                  class="gds-tooltip bottom"
-                  style="left: -99999px; top: -99999px; opacity: 0;"
+                  class="button-icon-container"
                 >
-                  <div
-                    class="tooltip-arrow"
+                  <i
+                    class="button-icon icon"
+                    icon="fal,trash-alt"
                   />
-                  <div
-                    class="tooltip-label"
-                  >
-                    Delete
-                  </div>
                 </div>
+              </button>
+              <div>
+                Delete
               </div>
               <div>
                 <div>
@@ -3220,37 +2744,23 @@ exports[`EditableDataTable Component EditableDataTable renders and new button cl
                   has ref
                 </div>
               </div>
-              <span>
-                <button
-                  class="gds-button-content"
-                  color="reversed"
-                  data-testid="download"
-                  type="button"
-                >
-                  <div
-                    class="button-icon-container"
-                  >
-                    <i
-                      class="button-icon icon"
-                      icon="fal,arrow-down-to-line"
-                    />
-                  </div>
-                </button>
-              </span>
-              <div>
+              <button
+                class="gds-button-content"
+                color="reversed"
+                data-testid="download"
+                type="button"
+              >
                 <div
-                  class="gds-tooltip bottom"
-                  style="left: -99999px; top: -99999px; opacity: 0;"
+                  class="button-icon-container"
                 >
-                  <div
-                    class="tooltip-arrow"
+                  <i
+                    class="button-icon icon"
+                    icon="fal,arrow-down-to-line"
                   />
-                  <div
-                    class="tooltip-label"
-                  >
-                    Download
-                  </div>
                 </div>
+              </button>
+              <div>
+                Download
               </div>
             </div>
           </td>
@@ -3281,111 +2791,69 @@ exports[`EditableDataTable Component EditableDataTable renders and warn when onN
       <thead>
         <tr>
           <th>
-            <span>
-              <div
-                class="table--header-value table--header-value--sortable"
+            <div
+              class="table--header-value table--header-value--sortable"
+            >
+              <span
+                class="table--header-value--title center"
               >
-                <span
-                  class="table--header-value--title center"
-                >
-                  Code
-                </span>
-                <span
-                  class="table--header-value--sorter"
-                >
-                  <i
-                    class="icon"
-                    icon="fas,sort"
-                  />
-                </span>
-              </div>
-            </span>
-            <div>
-              <div
-                class="gds-tooltip top"
-                style="left: -99999px; top: -99999px; opacity: 0;"
+                Code
+              </span>
+              <span
+                class="table--header-value--sorter"
               >
-                <div
-                  class="tooltip-arrow"
+                <i
+                  class="icon"
+                  icon="fas,sort"
                 />
-                <div
-                  class="tooltip-label"
-                >
-                  Click to sort
-                </div>
-              </div>
+              </span>
+            </div>
+            <div>
+              Click to sort
             </div>
           </th>
           <th>
-            <span>
-              <div
-                class="table--header-value table--header-value--sortable"
+            <div
+              class="table--header-value table--header-value--sortable"
+            >
+              <span
+                class="table--header-value--title left"
               >
-                <span
-                  class="table--header-value--title left"
-                >
-                  Text
-                </span>
-                <span
-                  class="table--header-value--sorter"
-                >
-                  <i
-                    class="icon"
-                    icon="fas,sort"
-                  />
-                </span>
-              </div>
-            </span>
-            <div>
-              <div
-                class="gds-tooltip top"
-                style="left: -99999px; top: -99999px; opacity: 0;"
+                Text
+              </span>
+              <span
+                class="table--header-value--sorter"
               >
-                <div
-                  class="tooltip-arrow"
+                <i
+                  class="icon"
+                  icon="fas,sort"
                 />
-                <div
-                  class="tooltip-label"
-                >
-                  Click to sort
-                </div>
-              </div>
+              </span>
+            </div>
+            <div>
+              Click to sort
             </div>
           </th>
           <th>
-            <span>
-              <div
-                class="table--header-value table--header-value--sortable"
+            <div
+              class="table--header-value table--header-value--sortable"
+            >
+              <span
+                class="table--header-value--title left"
               >
-                <span
-                  class="table--header-value--title left"
-                >
-                  Badge
-                </span>
-                <span
-                  class="table--header-value--sorter"
-                >
-                  <i
-                    class="icon"
-                    icon="fas,sort"
-                  />
-                </span>
-              </div>
-            </span>
-            <div>
-              <div
-                class="gds-tooltip top"
-                style="left: -99999px; top: -99999px; opacity: 0;"
+                Badge
+              </span>
+              <span
+                class="table--header-value--sorter"
               >
-                <div
-                  class="tooltip-arrow"
+                <i
+                  class="icon"
+                  icon="fas,sort"
                 />
-                <div
-                  class="tooltip-label"
-                >
-                  Click to sort
-                </div>
-              </div>
+              </span>
+            </div>
+            <div>
+              Click to sort
             </div>
           </th>
           <th>
@@ -3523,37 +2991,23 @@ exports[`EditableDataTable Component EditableDataTable renders and warn when onN
             <div
               class="table--cell--value--button"
             >
-              <span>
-                <button
-                  class="gds-button-content"
-                  color="reversed"
-                  data-testid="delete"
-                  type="button"
-                >
-                  <div
-                    class="button-icon-container"
-                  >
-                    <i
-                      class="button-icon icon"
-                      icon="fal,trash-alt"
-                    />
-                  </div>
-                </button>
-              </span>
-              <div>
+              <button
+                class="gds-button-content"
+                color="reversed"
+                data-testid="delete"
+                type="button"
+              >
                 <div
-                  class="gds-tooltip bottom"
-                  style="left: -99999px; top: -99999px; opacity: 0;"
+                  class="button-icon-container"
                 >
-                  <div
-                    class="tooltip-arrow"
+                  <i
+                    class="button-icon icon"
+                    icon="fal,trash-alt"
                   />
-                  <div
-                    class="tooltip-label"
-                  >
-                    Delete
-                  </div>
                 </div>
+              </button>
+              <div>
+                Delete
               </div>
               <div>
                 <div>
@@ -3599,37 +3053,23 @@ exports[`EditableDataTable Component EditableDataTable renders and warn when onN
                   has ref
                 </div>
               </div>
-              <span>
-                <button
-                  class="gds-button-content"
-                  color="reversed"
-                  data-testid="download"
-                  type="button"
-                >
-                  <div
-                    class="button-icon-container"
-                  >
-                    <i
-                      class="button-icon icon"
-                      icon="fal,arrow-down-to-line"
-                    />
-                  </div>
-                </button>
-              </span>
-              <div>
+              <button
+                class="gds-button-content"
+                color="reversed"
+                data-testid="download"
+                type="button"
+              >
                 <div
-                  class="gds-tooltip bottom"
-                  style="left: -99999px; top: -99999px; opacity: 0;"
+                  class="button-icon-container"
                 >
-                  <div
-                    class="tooltip-arrow"
+                  <i
+                    class="button-icon icon"
+                    icon="fal,arrow-down-to-line"
                   />
-                  <div
-                    class="tooltip-label"
-                  >
-                    Download
-                  </div>
                 </div>
+              </button>
+              <div>
+                Download
               </div>
             </div>
           </td>
@@ -3757,37 +3197,23 @@ exports[`EditableDataTable Component EditableDataTable renders and warn when onN
             <div
               class="table--cell--value--button"
             >
-              <span>
-                <button
-                  class="gds-button-content"
-                  color="reversed"
-                  data-testid="delete"
-                  type="button"
-                >
-                  <div
-                    class="button-icon-container"
-                  >
-                    <i
-                      class="button-icon icon"
-                      icon="fal,trash-alt"
-                    />
-                  </div>
-                </button>
-              </span>
-              <div>
+              <button
+                class="gds-button-content"
+                color="reversed"
+                data-testid="delete"
+                type="button"
+              >
                 <div
-                  class="gds-tooltip bottom"
-                  style="left: -99999px; top: -99999px; opacity: 0;"
+                  class="button-icon-container"
                 >
-                  <div
-                    class="tooltip-arrow"
+                  <i
+                    class="button-icon icon"
+                    icon="fal,trash-alt"
                   />
-                  <div
-                    class="tooltip-label"
-                  >
-                    Delete
-                  </div>
                 </div>
+              </button>
+              <div>
+                Delete
               </div>
               <div>
                 <div>
@@ -3833,37 +3259,23 @@ exports[`EditableDataTable Component EditableDataTable renders and warn when onN
                   has ref
                 </div>
               </div>
-              <span>
-                <button
-                  class="gds-button-content"
-                  color="reversed"
-                  data-testid="download"
-                  type="button"
-                >
-                  <div
-                    class="button-icon-container"
-                  >
-                    <i
-                      class="button-icon icon"
-                      icon="fal,arrow-down-to-line"
-                    />
-                  </div>
-                </button>
-              </span>
-              <div>
+              <button
+                class="gds-button-content"
+                color="reversed"
+                data-testid="download"
+                type="button"
+              >
                 <div
-                  class="gds-tooltip bottom"
-                  style="left: -99999px; top: -99999px; opacity: 0;"
+                  class="button-icon-container"
                 >
-                  <div
-                    class="tooltip-arrow"
+                  <i
+                    class="button-icon icon"
+                    icon="fal,arrow-down-to-line"
                   />
-                  <div
-                    class="tooltip-label"
-                  >
-                    Download
-                  </div>
                 </div>
+              </button>
+              <div>
+                Download
               </div>
             </div>
           </td>
@@ -3894,111 +3306,69 @@ exports[`EditableDataTable Component EditableDataTable renders with all buttons 
       <thead>
         <tr>
           <th>
-            <span>
-              <div
-                class="table--header-value table--header-value--sortable"
+            <div
+              class="table--header-value table--header-value--sortable"
+            >
+              <span
+                class="table--header-value--title center"
               >
-                <span
-                  class="table--header-value--title center"
-                >
-                  Code
-                </span>
-                <span
-                  class="table--header-value--sorter"
-                >
-                  <i
-                    class="icon"
-                    icon="fas,sort"
-                  />
-                </span>
-              </div>
-            </span>
-            <div>
-              <div
-                class="gds-tooltip top"
-                style="left: -99999px; top: -99999px; opacity: 0;"
+                Code
+              </span>
+              <span
+                class="table--header-value--sorter"
               >
-                <div
-                  class="tooltip-arrow"
+                <i
+                  class="icon"
+                  icon="fas,sort"
                 />
-                <div
-                  class="tooltip-label"
-                >
-                  Click to sort
-                </div>
-              </div>
+              </span>
+            </div>
+            <div>
+              Click to sort
             </div>
           </th>
           <th>
-            <span>
-              <div
-                class="table--header-value table--header-value--sortable"
+            <div
+              class="table--header-value table--header-value--sortable"
+            >
+              <span
+                class="table--header-value--title left"
               >
-                <span
-                  class="table--header-value--title left"
-                >
-                  Text
-                </span>
-                <span
-                  class="table--header-value--sorter"
-                >
-                  <i
-                    class="icon"
-                    icon="fas,sort"
-                  />
-                </span>
-              </div>
-            </span>
-            <div>
-              <div
-                class="gds-tooltip top"
-                style="left: -99999px; top: -99999px; opacity: 0;"
+                Text
+              </span>
+              <span
+                class="table--header-value--sorter"
               >
-                <div
-                  class="tooltip-arrow"
+                <i
+                  class="icon"
+                  icon="fas,sort"
                 />
-                <div
-                  class="tooltip-label"
-                >
-                  Click to sort
-                </div>
-              </div>
+              </span>
+            </div>
+            <div>
+              Click to sort
             </div>
           </th>
           <th>
-            <span>
-              <div
-                class="table--header-value table--header-value--sortable"
+            <div
+              class="table--header-value table--header-value--sortable"
+            >
+              <span
+                class="table--header-value--title left"
               >
-                <span
-                  class="table--header-value--title left"
-                >
-                  Badge
-                </span>
-                <span
-                  class="table--header-value--sorter"
-                >
-                  <i
-                    class="icon"
-                    icon="fas,sort"
-                  />
-                </span>
-              </div>
-            </span>
-            <div>
-              <div
-                class="gds-tooltip top"
-                style="left: -99999px; top: -99999px; opacity: 0;"
+                Badge
+              </span>
+              <span
+                class="table--header-value--sorter"
               >
-                <div
-                  class="tooltip-arrow"
+                <i
+                  class="icon"
+                  icon="fas,sort"
                 />
-                <div
-                  class="tooltip-label"
-                >
-                  Click to sort
-                </div>
-              </div>
+              </span>
+            </div>
+            <div>
+              Click to sort
             </div>
           </th>
           <th>
@@ -4136,37 +3506,23 @@ exports[`EditableDataTable Component EditableDataTable renders with all buttons 
             <div
               class="table--cell--value--button"
             >
-              <span>
-                <button
-                  class="gds-button-content"
-                  color="reversed"
-                  data-testid="delete"
-                  type="button"
-                >
-                  <div
-                    class="button-icon-container"
-                  >
-                    <i
-                      class="button-icon icon"
-                      icon="fal,trash-alt"
-                    />
-                  </div>
-                </button>
-              </span>
-              <div>
+              <button
+                class="gds-button-content"
+                color="reversed"
+                data-testid="delete"
+                type="button"
+              >
                 <div
-                  class="gds-tooltip bottom"
-                  style="left: -99999px; top: -99999px; opacity: 0;"
+                  class="button-icon-container"
                 >
-                  <div
-                    class="tooltip-arrow"
+                  <i
+                    class="button-icon icon"
+                    icon="fal,trash-alt"
                   />
-                  <div
-                    class="tooltip-label"
-                  >
-                    Delete
-                  </div>
                 </div>
+              </button>
+              <div>
+                Delete
               </div>
               <div>
                 <div>
@@ -4212,37 +3568,23 @@ exports[`EditableDataTable Component EditableDataTable renders with all buttons 
                   has ref
                 </div>
               </div>
-              <span>
-                <button
-                  class="gds-button-content"
-                  color="reversed"
-                  data-testid="download"
-                  type="button"
-                >
-                  <div
-                    class="button-icon-container"
-                  >
-                    <i
-                      class="button-icon icon"
-                      icon="fal,arrow-down-to-line"
-                    />
-                  </div>
-                </button>
-              </span>
-              <div>
+              <button
+                class="gds-button-content"
+                color="reversed"
+                data-testid="download"
+                type="button"
+              >
                 <div
-                  class="gds-tooltip bottom"
-                  style="left: -99999px; top: -99999px; opacity: 0;"
+                  class="button-icon-container"
                 >
-                  <div
-                    class="tooltip-arrow"
+                  <i
+                    class="button-icon icon"
+                    icon="fal,arrow-down-to-line"
                   />
-                  <div
-                    class="tooltip-label"
-                  >
-                    Download
-                  </div>
                 </div>
+              </button>
+              <div>
+                Download
               </div>
             </div>
           </td>
@@ -4262,111 +3604,69 @@ exports[`EditableDataTable Component EditableDataTable renders with all methods 
       <thead>
         <tr>
           <th>
-            <span>
-              <div
-                class="table--header-value table--header-value--sortable"
+            <div
+              class="table--header-value table--header-value--sortable"
+            >
+              <span
+                class="table--header-value--title center"
               >
-                <span
-                  class="table--header-value--title center"
-                >
-                  Code
-                </span>
-                <span
-                  class="table--header-value--sorter"
-                >
-                  <i
-                    class="icon"
-                    icon="fas,sort"
-                  />
-                </span>
-              </div>
-            </span>
-            <div>
-              <div
-                class="gds-tooltip top"
-                style="left: -99999px; top: -99999px; opacity: 0;"
+                Code
+              </span>
+              <span
+                class="table--header-value--sorter"
               >
-                <div
-                  class="tooltip-arrow"
+                <i
+                  class="icon"
+                  icon="fas,sort"
                 />
-                <div
-                  class="tooltip-label"
-                >
-                  Click to sort
-                </div>
-              </div>
+              </span>
+            </div>
+            <div>
+              Click to sort
             </div>
           </th>
           <th>
-            <span>
-              <div
-                class="table--header-value table--header-value--sortable"
+            <div
+              class="table--header-value table--header-value--sortable"
+            >
+              <span
+                class="table--header-value--title left"
               >
-                <span
-                  class="table--header-value--title left"
-                >
-                  Text
-                </span>
-                <span
-                  class="table--header-value--sorter"
-                >
-                  <i
-                    class="icon"
-                    icon="fas,sort"
-                  />
-                </span>
-              </div>
-            </span>
-            <div>
-              <div
-                class="gds-tooltip top"
-                style="left: -99999px; top: -99999px; opacity: 0;"
+                Text
+              </span>
+              <span
+                class="table--header-value--sorter"
               >
-                <div
-                  class="tooltip-arrow"
+                <i
+                  class="icon"
+                  icon="fas,sort"
                 />
-                <div
-                  class="tooltip-label"
-                >
-                  Click to sort
-                </div>
-              </div>
+              </span>
+            </div>
+            <div>
+              Click to sort
             </div>
           </th>
           <th>
-            <span>
-              <div
-                class="table--header-value table--header-value--sortable"
+            <div
+              class="table--header-value table--header-value--sortable"
+            >
+              <span
+                class="table--header-value--title left"
               >
-                <span
-                  class="table--header-value--title left"
-                >
-                  Badge
-                </span>
-                <span
-                  class="table--header-value--sorter"
-                >
-                  <i
-                    class="icon"
-                    icon="fas,sort"
-                  />
-                </span>
-              </div>
-            </span>
-            <div>
-              <div
-                class="gds-tooltip top"
-                style="left: -99999px; top: -99999px; opacity: 0;"
+                Badge
+              </span>
+              <span
+                class="table--header-value--sorter"
               >
-                <div
-                  class="tooltip-arrow"
+                <i
+                  class="icon"
+                  icon="fas,sort"
                 />
-                <div
-                  class="tooltip-label"
-                >
-                  Click to sort
-                </div>
-              </div>
+              </span>
+            </div>
+            <div>
+              Click to sort
             </div>
           </th>
           <th>
@@ -4453,111 +3753,69 @@ exports[`EditableDataTable Component EditableDataTable renders with no buttons 1
       <thead>
         <tr>
           <th>
-            <span>
-              <div
-                class="table--header-value table--header-value--sortable"
+            <div
+              class="table--header-value table--header-value--sortable"
+            >
+              <span
+                class="table--header-value--title center"
               >
-                <span
-                  class="table--header-value--title center"
-                >
-                  Code
-                </span>
-                <span
-                  class="table--header-value--sorter"
-                >
-                  <i
-                    class="icon"
-                    icon="fas,sort"
-                  />
-                </span>
-              </div>
-            </span>
-            <div>
-              <div
-                class="gds-tooltip top"
-                style="left: -99999px; top: -99999px; opacity: 0;"
+                Code
+              </span>
+              <span
+                class="table--header-value--sorter"
               >
-                <div
-                  class="tooltip-arrow"
+                <i
+                  class="icon"
+                  icon="fas,sort"
                 />
-                <div
-                  class="tooltip-label"
-                >
-                  Click to sort
-                </div>
-              </div>
+              </span>
+            </div>
+            <div>
+              Click to sort
             </div>
           </th>
           <th>
-            <span>
-              <div
-                class="table--header-value table--header-value--sortable"
+            <div
+              class="table--header-value table--header-value--sortable"
+            >
+              <span
+                class="table--header-value--title left"
               >
-                <span
-                  class="table--header-value--title left"
-                >
-                  Text
-                </span>
-                <span
-                  class="table--header-value--sorter"
-                >
-                  <i
-                    class="icon"
-                    icon="fas,sort"
-                  />
-                </span>
-              </div>
-            </span>
-            <div>
-              <div
-                class="gds-tooltip top"
-                style="left: -99999px; top: -99999px; opacity: 0;"
+                Text
+              </span>
+              <span
+                class="table--header-value--sorter"
               >
-                <div
-                  class="tooltip-arrow"
+                <i
+                  class="icon"
+                  icon="fas,sort"
                 />
-                <div
-                  class="tooltip-label"
-                >
-                  Click to sort
-                </div>
-              </div>
+              </span>
+            </div>
+            <div>
+              Click to sort
             </div>
           </th>
           <th>
-            <span>
-              <div
-                class="table--header-value table--header-value--sortable"
+            <div
+              class="table--header-value table--header-value--sortable"
+            >
+              <span
+                class="table--header-value--title left"
               >
-                <span
-                  class="table--header-value--title left"
-                >
-                  Badge
-                </span>
-                <span
-                  class="table--header-value--sorter"
-                >
-                  <i
-                    class="icon"
-                    icon="fas,sort"
-                  />
-                </span>
-              </div>
-            </span>
-            <div>
-              <div
-                class="gds-tooltip top"
-                style="left: -99999px; top: -99999px; opacity: 0;"
+                Badge
+              </span>
+              <span
+                class="table--header-value--sorter"
               >
-                <div
-                  class="tooltip-arrow"
+                <i
+                  class="icon"
+                  icon="fas,sort"
                 />
-                <div
-                  class="tooltip-label"
-                >
-                  Click to sort
-                </div>
-              </div>
+              </span>
+            </div>
+            <div>
+              Click to sort
             </div>
           </th>
         </tr>

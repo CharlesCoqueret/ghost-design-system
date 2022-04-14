@@ -117,15 +117,16 @@ This react components library uses the following:
 - [react-number-format](https://github.com/s-yadav/react-number-format#readme)
 - [react-select](https://react-select.com/)
 - [suneditor](http://suneditor.com/)
+- [tippyjs](https://atomiks.github.io/tippyjs/)
 - [yup](https://github.com/jquense/yup)
 
 Peer dependencies:
 
-- [@fortawesome - pro](https://fontawesome.com/)
 - [react](https://fr.reactjs.org/)
 - [react-dom](https://fr.reactjs.org/docs/react-dom.html)
 - [react-router-dom](https://reactrouter.com/)
-- [suneditor](http://suneditor.com/)
+- [suneditor](http://suneditor.com/) (for CSS import)
+- [tippyjs](https://atomiks.github.io/tippyjs/) (for CSS import)
 
 Dev dependencies:
 
