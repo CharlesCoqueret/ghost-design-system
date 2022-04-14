@@ -54,14 +54,13 @@
 
 ## Usage
 
-1. In the root directory of your project, ensure you have a .npmrc file with your valid fontawesome license (you can skip this step if it is configured for your session)
-2. Run the command:
+1. Run the command:
 
 ```
 npm install ghost-design-system
 ```
 
-3. Define the set of colors by copying the file: ~ghost-design-system/dist/assets/\_colors.scss)
+2. Define the set of colors by copying the file: ~ghost-design-system/dist/assets/\_colors.scss)
 
 ```{scss}
 // Neutral pallet
@@ -86,6 +85,8 @@ $error: rgb(255, 52, 24);
 $primary: $scooter;
 $secondary: $pebble;
 $tertiary: $charcoal;
+
+$fontfamily: 'Montserrat', sans-serif;
 ```
 
 4. Create your `index.scss` file by starting it with:
@@ -93,7 +94,7 @@ $tertiary: $charcoal;
 ```{scss}
 @import 'colors.scss';
 @import '~ghost-design-system/dist/assets/_global.scss';
-@import '~ghost-design-system/dist/assets/_general.scss';
+@import '~ghost-design-system/dist/assets/_general.scss'; // Optional
 
 ```
 
