@@ -1,6 +1,6 @@
-import React, { MouseEvent, ReactElement, useContext, useEffect, useState } from 'react';
+import React, { ReactElement, useContext, useEffect, useState } from 'react';
 import classnames from 'classnames';
-import { NavLink, useNavigate, Location } from 'react-router-dom';
+import { NavLink, Location } from 'react-router-dom';
 
 import { Icon } from '../../Atoms/Icon';
 import { SideBarContext } from './SideBarContext';
@@ -94,7 +94,6 @@ export const SideBarItem = (props: ISideBarItemProps): ReactElement => {
   const { dataTestId, disabled, externalLink, hidden, label, subItems: subitems, to } = item;
   const { isInSubMenu, setIsInSubMenu, backToMenu } = useContext(SideBarContext);
   const [subMenuActive, setSubMenuActive] = useState(false);
-  const navigate = useNavigate();
 
   const targetType = isExternalLink(item.to) || externalLink ? '_blank' : undefined;
 
@@ -107,13 +106,6 @@ export const SideBarItem = (props: ISideBarItemProps): ReactElement => {
 
   const hasSubitems = subitems && subitems.filter((item) => !item.hidden).length > 0;
   const onClickHandler = !disabled && hasSubitems ? toggleSubMenu : undefined;
-
-  const handleClick = (event: MouseEvent<HTMLAnchorElement>): void => {
-    if (hasSubitems && !disabled) {
-      event.preventDefault();
-      navigate(locationString(subitems[0].to));
-    }
-  };
 
   useEffect(
     () => (): void => {
@@ -138,7 +130,6 @@ export const SideBarItem = (props: ISideBarItemProps): ReactElement => {
           className={classnames({ disabled: disabled })}
           data-testid={dataTestId}
           end={!subitems}
-          onClick={handleClick}
           target={targetType}
           to={to}>
           <div className='label'>{label}</div>
