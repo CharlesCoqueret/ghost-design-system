@@ -1,6 +1,7 @@
 import React, { ReactElement, useContext, useEffect, useState } from 'react';
 import classnames from 'classnames';
-import { NavLink, Location } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import { Location } from 'history';
 
 import { Icon } from '../../Atoms/Icon';
 import { SideBarContext } from './SideBarContext';
@@ -129,7 +130,7 @@ export const SideBarItem = (props: ISideBarItemProps): ReactElement => {
         <NavLink
           className={classnames({ disabled: disabled })}
           data-testid={dataTestId}
-          end={!subitems}
+          exact={!subitems}
           target={targetType}
           to={to}>
           <div className='label'>{label}</div>

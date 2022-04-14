@@ -24,7 +24,7 @@ exports[`SideBarSection Component SideBarSection renders 1`] = `
           class=""
           href="/link1"
         >
-          full url
+          partial url
           <div
             class="label"
           >
@@ -39,7 +39,7 @@ exports[`SideBarSection Component SideBarSection renders 1`] = `
           class=""
           href="/link2"
         >
-          full url
+          partial url
           <div
             class="label"
           >

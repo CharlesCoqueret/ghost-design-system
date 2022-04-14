@@ -22,7 +22,7 @@ exports[`SideBar Component SideBar renders 1`] = `
           href="/link"
           target="_blank"
         >
-          full url
+          partial url
           <div
             class="label"
           >
@@ -41,7 +41,7 @@ exports[`SideBar Component SideBar renders 1`] = `
           class="disabled"
           href="/link"
         >
-          full url
+          partial url
           <div
             class="label"
           >
@@ -56,7 +56,7 @@ exports[`SideBar Component SideBar renders 1`] = `
           class=""
           href="/link"
         >
-          full url
+          partial url
           <div
             class="label"
           >
