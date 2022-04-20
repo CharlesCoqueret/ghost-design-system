@@ -1,5 +1,21 @@
 # Changelog
 
+## 1.4.4 (2022-04-20)
+
+### Bug Fixes
+
+CSS height: fill-available => height: stretch
+CSS justify-content:end => justify-content:flex-end
+Organisms/ActionBar fixing box shadow to avoid spilling over header
+Organisms/Sidebar removing useNavigate
+Third party css import url
+
+## 1.4.3 (2022-04-14)
+
+### Bug Fixes
+
+Build fix
+
 ## 1.4.2 (2022-04-14)
 
 ### Features

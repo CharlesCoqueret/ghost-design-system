@@ -171,14 +171,10 @@ $width: 270px;
 // Special demo case
 .gds-sidebar-container.unfixed {
   position: relative;
-  height: -moz-available;
-  height: -webkit-fill-available;
-  height: fill-available;
+  height: stretch;
 
   .mainmenu,
   .submenu {
-    height: -moz-available;
-    height: -webkit-fill-available;
-    height: fill-available;
+    height: stretch;
   }
 }
