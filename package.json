@@ -1,7 +1,7 @@
 {
   "name": "ghost-design-system",
   "license": "MIT",
-  "version": "1.4.4-next.5",
+  "version": "1.4.4",
   "description": "Ghost design system - React Component Library",
   "author": {
     "name": "Charles Coqueret",
