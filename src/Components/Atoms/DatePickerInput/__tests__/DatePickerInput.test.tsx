@@ -11,7 +11,6 @@ describe('DatePickerInput Component', () => {
 
     const inputNode = await screen.findByPlaceholderText('TESTPLACEHOLDER');
 
-    userEvent.click(inputNode);
     userEvent.type(inputNode, '3/2/22{enter}');
 
     // Using dynamic date instead of static value to ensure local time is taken into consideration.
@@ -27,7 +26,6 @@ describe('DatePickerInput Component', () => {
 
     const inputNode = await screen.findByPlaceholderText('TESTPLACEHOLDER');
 
-    userEvent.click(inputNode);
     userEvent.type(inputNode, '3/2/22{enter}');
 
     await waitFor(() => {
