@@ -54,6 +54,27 @@ export interface IFileInputProps {
   style?: CSSProperties;
   /** Message present inside the drop zome (optional, default: 'Click or drag file to upload' ) */
   uploadMessage?: string | ReactElement;
+  /** Localization of related to deletion and errors */
+  localization?: {
+    // Delete tooltip (optional, default: 'Delete')
+    delete?: string;
+    // Delete popover title (optional, default: 'Confirm')
+    popoverConfirm?: string;
+    // Delete popover cancel button (optional, default: 'Cancel')
+    popoverCancel?: string;
+    // Delete popover confirm button (optional, default: 'Delete?')
+    popoverTitle?: string;
+    // Invalid type error (optional, default: 'Invalid type: {type}, expected {expectedType}',
+    // with {type} which will be automatically replaced by the current type,
+    // and {expectedtype} which will be automatically replaced by the expected type)
+    invalidType?: string;
+    // Quota exceeded error (optional, default: 'Quota exceeded: Maximum number of files reached')
+    quotaExceeded?: string;
+    // Size exceeded error (optional, default: 'Size exceeded: {size}, expected {maxSize}'
+    // with {size} which will be automatically replaced by the actual size of the file,
+    // and {maxSize} which will be automatically replaced by the expected size)
+    sizeExceeded?: string;
+  };
 }
 
 const preventDefaults = (event: DragEvent) => {
@@ -80,6 +101,7 @@ const FileInput = (props: IFileInputProps): ReactElement => {
     disabled,
     inputValue,
     isInError,
+    localization,
     maxFiles,
     maxFileSize,
     maxFolderDepth,
@@ -118,7 +140,11 @@ const FileInput = (props: IFileInputProps): ReactElement => {
         localItems.filter(
           (item) => item.status && [FileStatusEnum.DONE, FileStatusEnum.UPLOADING].includes(item.status),
         ).length >= maxFiles;
-      const newFile = initializeIFile(file, quotaExceeded, acceptTypes, maxFileSize);
+      const newFile = initializeIFile(file, quotaExceeded, acceptTypes, maxFileSize, {
+        invalidType: localization?.invalidType,
+        quotaExceeded: localization?.quotaExceeded,
+        sizeExceeded: localization?.sizeExceeded,
+      });
 
       setLocalItems((prev) => {
         return [...prev, newFile];
@@ -393,6 +419,12 @@ const FileInput = (props: IFileInputProps): ReactElement => {
               disabled={disabled}
               file={item}
               key={`${item.uid}`}
+              localization={{
+                delete: localization?.delete,
+                popoverCancel: localization?.popoverCancel,
+                popoverConfirm: localization?.popoverConfirm,
+                popoverTitle: localization?.popoverTitle,
+              }}
               progress={progress}
               readOnly={readOnly}
               showFileSize={showFileSize}

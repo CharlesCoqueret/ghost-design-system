@@ -1,6 +1,7 @@
 import React, { ReactElement, useState } from 'react';
 import classnames from 'classnames';
 
+import Button, { ColorButtonEnum } from '../../Molecules/Button/Button';
 import { Icon } from '../Icon';
 import { MenuDirectionEnum, Tooltip } from '../Tooltip';
 import { FileStatusEnum, IFile } from './types';
@@ -25,6 +26,17 @@ export interface IFileGallery {
   updateFileDelete: (file: IFile) => Promise<void>;
   /** Download handler */
   updateFileDownload: (file: IFile) => Promise<void>;
+  /** Localization of tooltip, and deletion action */
+  localization?: {
+    // Delete tooltip (optional, default: 'Delete')
+    delete?: string;
+    // Delete popover title (optional, default: 'Delete?')
+    popoverConfirm?: string;
+    // Delete popover cancel button (optional, default: 'Cancel')
+    popoverCancel?: string;
+    // Delete popover confirm button (optional, default: 'Confirm')
+    popoverTitle?: string;
+  };
 }
 
 const FileGallery = (props: IFileGallery): ReactElement => {
@@ -32,6 +44,7 @@ const FileGallery = (props: IFileGallery): ReactElement => {
     dataTestId,
     disabled,
     file,
+    localization,
     progress,
     readOnly,
     showFileSize,
@@ -94,14 +107,44 @@ const FileGallery = (props: IFileGallery): ReactElement => {
               icon={['fal', 'spinner']}
             />
           ) : (
-            <div
+            <Button
               className='delete-icon'
-              data-testid={dataTestId ? `${dataTestId}-delete` : undefined}
-              onClick={() => {
-                updateFileDelete(file);
-              }}>
-              <Icon icon={['fal', 'trash-alt']} />
-            </div>
+              icon={['fal', 'trash-alt']}
+              color={ColorButtonEnum.REVERSED}
+              dataTestId={dataTestId ? `${dataTestId}-delete` : undefined}
+              onClick={
+                // If the file is in error, we can delete without confirmation
+                file.error
+                  ? () => {
+                      updateFileDelete(file);
+                    }
+                  : undefined
+              }
+              popover={
+                // If the file is in error, we can delete without confirmation
+                file.error
+                  ? undefined
+                  : {
+                      title: localization?.popoverTitle ?? 'Delete?',
+                      buttons: [
+                        {
+                          color: ColorButtonEnum.SECONDARY,
+                          dataTestId: dataTestId ? `${dataTestId}-cancel` : undefined,
+                          label: localization?.popoverCancel ?? 'Cancel',
+                        },
+                        {
+                          color: ColorButtonEnum.PRIMARY,
+                          dataTestId: dataTestId ? `${dataTestId}-confirm` : undefined,
+                          label: localization?.popoverConfirm ?? 'Confirm',
+                          onClick: () => {
+                            updateFileDelete(file);
+                          },
+                        },
+                      ],
+                    }
+              }
+              tooltip={localization?.delete ?? 'Delete'}
+            />
           )}
         </div>
       </div>

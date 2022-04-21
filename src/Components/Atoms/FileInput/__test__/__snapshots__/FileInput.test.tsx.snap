@@ -181,14 +181,67 @@ exports[`FileInput Component FileInput handle add file successfully through inpu
         <div
           class="right"
         >
-          <div
-            class="delete-icon"
+          <button
+            class="gds-button-content delete-icon"
+            color="reversed"
             data-testid="TEST-ID-delete"
+            type="button"
           >
-            <i
-              class="icon"
-              icon="fal,trash-alt"
-            />
+            <div
+              class="button-icon-container"
+            >
+              <i
+                class="button-icon icon"
+                icon="fal,trash-alt"
+              />
+            </div>
+          </button>
+          <div>
+            Delete
+          </div>
+          <div>
+            <div>
+              ControlleMenu
+              closed
+              <div
+                class="gds-popover-container"
+              >
+                <div
+                  class="popover-title"
+                >
+                  Delete?
+                </div>
+                <div
+                  class="popover-buttons"
+                >
+                  <button
+                    class="gds-button-content"
+                    color="secondary"
+                    data-testid="TEST-ID-cancel"
+                    type="button"
+                  >
+                    <div
+                      class="button-label-container"
+                    >
+                      Cancel
+                    </div>
+                  </button>
+                  <button
+                    class="gds-button-content"
+                    color="primary"
+                    data-testid="TEST-ID-confirm"
+                    type="button"
+                  >
+                    <div
+                      class="button-label-container"
+                    >
+                      Confirm
+                    </div>
+                  </button>
+                </div>
+              </div>
+              has ref
+            </div>
           </div>
         </div>
       </div>
@@ -276,14 +329,23 @@ exports[`FileInput Component FileInput handle add file unsucessfully through inp
         <div
           class="right"
         >
-          <div
-            class="delete-icon"
+          <button
+            class="gds-button-content delete-icon"
+            color="reversed"
             data-testid="TEST-ID-delete"
+            type="button"
           >
-            <i
-              class="icon"
-              icon="fal,trash-alt"
-            />
+            <div
+              class="button-icon-container"
+            >
+              <i
+                class="button-icon icon"
+                icon="fal,trash-alt"
+              />
+            </div>
+          </button>
+          <div>
+            Delete
           </div>
         </div>
       </div>
@@ -374,14 +436,23 @@ exports[`FileInput Component FileInput handle add file with timeout through inpu
         <div
           class="right"
         >
-          <div
-            class="delete-icon"
+          <button
+            class="gds-button-content delete-icon"
+            color="reversed"
             data-testid="TEST-ID-delete"
+            type="button"
           >
-            <i
-              class="icon"
-              icon="fal,trash-alt"
-            />
+            <div
+              class="button-icon-container"
+            >
+              <i
+                class="button-icon icon"
+                icon="fal,trash-alt"
+              />
+            </div>
+          </button>
+          <div>
+            Delete
           </div>
         </div>
       </div>
@@ -712,14 +783,67 @@ exports[`FileInput Component FileInput handle unsuccessfull add file when quota 
         <div
           class="right"
         >
-          <div
-            class="delete-icon"
+          <button
+            class="gds-button-content delete-icon"
+            color="reversed"
             data-testid="TEST-ID-delete"
+            type="button"
           >
-            <i
-              class="icon"
-              icon="fal,trash-alt"
-            />
+            <div
+              class="button-icon-container"
+            >
+              <i
+                class="button-icon icon"
+                icon="fal,trash-alt"
+              />
+            </div>
+          </button>
+          <div>
+            Delete
+          </div>
+          <div>
+            <div>
+              ControlleMenu
+              closed
+              <div
+                class="gds-popover-container"
+              >
+                <div
+                  class="popover-title"
+                >
+                  Delete?
+                </div>
+                <div
+                  class="popover-buttons"
+                >
+                  <button
+                    class="gds-button-content"
+                    color="secondary"
+                    data-testid="TEST-ID-cancel"
+                    type="button"
+                  >
+                    <div
+                      class="button-label-container"
+                    >
+                      Cancel
+                    </div>
+                  </button>
+                  <button
+                    class="gds-button-content"
+                    color="primary"
+                    data-testid="TEST-ID-confirm"
+                    type="button"
+                  >
+                    <div
+                      class="button-label-container"
+                    >
+                      Confirm
+                    </div>
+                  </button>
+                </div>
+              </div>
+              has ref
+            </div>
           </div>
         </div>
       </div>
@@ -777,14 +901,67 @@ exports[`FileInput Component FileInput handle unsuccessfull add file when quota 
         <div
           class="right"
         >
-          <div
-            class="delete-icon"
+          <button
+            class="gds-button-content delete-icon"
+            color="reversed"
             data-testid="TEST-ID-delete"
+            type="button"
           >
-            <i
-              class="icon"
-              icon="fal,trash-alt"
-            />
+            <div
+              class="button-icon-container"
+            >
+              <i
+                class="button-icon icon"
+                icon="fal,trash-alt"
+              />
+            </div>
+          </button>
+          <div>
+            Delete
+          </div>
+          <div>
+            <div>
+              ControlleMenu
+              closed
+              <div
+                class="gds-popover-container"
+              >
+                <div
+                  class="popover-title"
+                >
+                  Delete?
+                </div>
+                <div
+                  class="popover-buttons"
+                >
+                  <button
+                    class="gds-button-content"
+                    color="secondary"
+                    data-testid="TEST-ID-cancel"
+                    type="button"
+                  >
+                    <div
+                      class="button-label-container"
+                    >
+                      Cancel
+                    </div>
+                  </button>
+                  <button
+                    class="gds-button-content"
+                    color="primary"
+                    data-testid="TEST-ID-confirm"
+                    type="button"
+                  >
+                    <div
+                      class="button-label-container"
+                    >
+                      Confirm
+                    </div>
+                  </button>
+                </div>
+              </div>
+              has ref
+            </div>
           </div>
         </div>
       </div>
@@ -813,14 +990,23 @@ exports[`FileInput Component FileInput handle unsuccessfull add file when quota 
         <div
           class="right"
         >
-          <div
-            class="delete-icon"
+          <button
+            class="gds-button-content delete-icon"
+            color="reversed"
             data-testid="TEST-ID-delete"
+            type="button"
           >
-            <i
-              class="icon"
-              icon="fal,trash-alt"
-            />
+            <div
+              class="button-icon-container"
+            >
+              <i
+                class="button-icon icon"
+                icon="fal,trash-alt"
+              />
+            </div>
+          </button>
+          <div>
+            Delete
           </div>
         </div>
       </div>
@@ -881,14 +1067,67 @@ exports[`FileInput Component FileInput handles correctly deletion when no handle
         <div
           class="right"
         >
-          <div
-            class="delete-icon"
+          <button
+            class="gds-button-content delete-icon"
+            color="reversed"
             data-testid="TEST-ID-delete"
+            type="button"
           >
-            <i
-              class="icon"
-              icon="fal,trash-alt"
-            />
+            <div
+              class="button-icon-container"
+            >
+              <i
+                class="button-icon icon"
+                icon="fal,trash-alt"
+              />
+            </div>
+          </button>
+          <div>
+            Delete
+          </div>
+          <div>
+            <div>
+              ControlleMenu
+              closed
+              <div
+                class="gds-popover-container"
+              >
+                <div
+                  class="popover-title"
+                >
+                  Delete?
+                </div>
+                <div
+                  class="popover-buttons"
+                >
+                  <button
+                    class="gds-button-content"
+                    color="secondary"
+                    data-testid="TEST-ID-cancel"
+                    type="button"
+                  >
+                    <div
+                      class="button-label-container"
+                    >
+                      Cancel
+                    </div>
+                  </button>
+                  <button
+                    class="gds-button-content"
+                    color="primary"
+                    data-testid="TEST-ID-confirm"
+                    type="button"
+                  >
+                    <div
+                      class="button-label-container"
+                    >
+                      Confirm
+                    </div>
+                  </button>
+                </div>
+              </div>
+              has ref
+            </div>
           </div>
         </div>
       </div>
@@ -946,14 +1185,67 @@ exports[`FileInput Component FileInput handles correctly deletion when no handle
         <div
           class="right"
         >
-          <div
-            class="delete-icon"
+          <button
+            class="gds-button-content delete-icon"
+            color="reversed"
             data-testid="TEST-ID-delete"
+            type="button"
           >
-            <i
-              class="icon"
-              icon="fal,trash-alt"
-            />
+            <div
+              class="button-icon-container"
+            >
+              <i
+                class="button-icon icon"
+                icon="fal,trash-alt"
+              />
+            </div>
+          </button>
+          <div>
+            Delete
+          </div>
+          <div>
+            <div>
+              ControlleMenu
+              closed
+              <div
+                class="gds-popover-container"
+              >
+                <div
+                  class="popover-title"
+                >
+                  Delete?
+                </div>
+                <div
+                  class="popover-buttons"
+                >
+                  <button
+                    class="gds-button-content"
+                    color="secondary"
+                    data-testid="TEST-ID-cancel"
+                    type="button"
+                  >
+                    <div
+                      class="button-label-container"
+                    >
+                      Cancel
+                    </div>
+                  </button>
+                  <button
+                    class="gds-button-content"
+                    color="primary"
+                    data-testid="TEST-ID-confirm"
+                    type="button"
+                  >
+                    <div
+                      class="button-label-container"
+                    >
+                      Confirm
+                    </div>
+                  </button>
+                </div>
+              </div>
+              has ref
+            </div>
           </div>
         </div>
       </div>
@@ -1011,14 +1303,67 @@ exports[`FileInput Component FileInput handles delete rejections of a file 1`] =
         <div
           class="right"
         >
-          <div
-            class="delete-icon"
+          <button
+            class="gds-button-content delete-icon"
+            color="reversed"
             data-testid="TEST-ID-delete"
+            type="button"
           >
-            <i
-              class="icon"
-              icon="fal,trash-alt"
-            />
+            <div
+              class="button-icon-container"
+            >
+              <i
+                class="button-icon icon"
+                icon="fal,trash-alt"
+              />
+            </div>
+          </button>
+          <div>
+            Delete
+          </div>
+          <div>
+            <div>
+              ControlleMenu
+              closed
+              <div
+                class="gds-popover-container"
+              >
+                <div
+                  class="popover-title"
+                >
+                  Delete?
+                </div>
+                <div
+                  class="popover-buttons"
+                >
+                  <button
+                    class="gds-button-content"
+                    color="secondary"
+                    data-testid="TEST-ID-cancel"
+                    type="button"
+                  >
+                    <div
+                      class="button-label-container"
+                    >
+                      Cancel
+                    </div>
+                  </button>
+                  <button
+                    class="gds-button-content"
+                    color="primary"
+                    data-testid="TEST-ID-confirm"
+                    type="button"
+                  >
+                    <div
+                      class="button-label-container"
+                    >
+                      Confirm
+                    </div>
+                  </button>
+                </div>
+              </div>
+              has ref
+            </div>
           </div>
         </div>
       </div>
@@ -1076,14 +1421,67 @@ exports[`FileInput Component FileInput handles delete rejections of a file 2`] =
         <div
           class="right"
         >
-          <div
-            class="delete-icon"
+          <button
+            class="gds-button-content delete-icon"
+            color="reversed"
             data-testid="TEST-ID-delete"
+            type="button"
           >
-            <i
-              class="icon"
-              icon="fal,trash-alt"
-            />
+            <div
+              class="button-icon-container"
+            >
+              <i
+                class="button-icon icon"
+                icon="fal,trash-alt"
+              />
+            </div>
+          </button>
+          <div>
+            Delete
+          </div>
+          <div>
+            <div>
+              ControlleMenu
+              closed
+              <div
+                class="gds-popover-container"
+              >
+                <div
+                  class="popover-title"
+                >
+                  Delete?
+                </div>
+                <div
+                  class="popover-buttons"
+                >
+                  <button
+                    class="gds-button-content"
+                    color="secondary"
+                    data-testid="TEST-ID-cancel"
+                    type="button"
+                  >
+                    <div
+                      class="button-label-container"
+                    >
+                      Cancel
+                    </div>
+                  </button>
+                  <button
+                    class="gds-button-content"
+                    color="primary"
+                    data-testid="TEST-ID-confirm"
+                    type="button"
+                  >
+                    <div
+                      class="button-label-container"
+                    >
+                      Confirm
+                    </div>
+                  </button>
+                </div>
+              </div>
+              has ref
+            </div>
           </div>
         </div>
       </div>
@@ -1141,14 +1539,67 @@ exports[`FileInput Component FileInput handles download and delete of a file 1`]
         <div
           class="right"
         >
-          <div
-            class="delete-icon"
+          <button
+            class="gds-button-content delete-icon"
+            color="reversed"
             data-testid="TEST-ID-delete"
+            type="button"
           >
-            <i
-              class="icon"
-              icon="fal,trash-alt"
-            />
+            <div
+              class="button-icon-container"
+            >
+              <i
+                class="button-icon icon"
+                icon="fal,trash-alt"
+              />
+            </div>
+          </button>
+          <div>
+            Delete
+          </div>
+          <div>
+            <div>
+              ControlleMenu
+              closed
+              <div
+                class="gds-popover-container"
+              >
+                <div
+                  class="popover-title"
+                >
+                  Delete?
+                </div>
+                <div
+                  class="popover-buttons"
+                >
+                  <button
+                    class="gds-button-content"
+                    color="secondary"
+                    data-testid="TEST-ID-cancel"
+                    type="button"
+                  >
+                    <div
+                      class="button-label-container"
+                    >
+                      Cancel
+                    </div>
+                  </button>
+                  <button
+                    class="gds-button-content"
+                    color="primary"
+                    data-testid="TEST-ID-confirm"
+                    type="button"
+                  >
+                    <div
+                      class="button-label-container"
+                    >
+                      Confirm
+                    </div>
+                  </button>
+                </div>
+              </div>
+              has ref
+            </div>
           </div>
         </div>
       </div>
@@ -1206,14 +1657,67 @@ exports[`FileInput Component FileInput handles download and delete of a file 2`]
         <div
           class="right"
         >
-          <div
-            class="delete-icon"
+          <button
+            class="gds-button-content delete-icon"
+            color="reversed"
             data-testid="TEST-ID-delete"
+            type="button"
           >
-            <i
-              class="icon"
-              icon="fal,trash-alt"
-            />
+            <div
+              class="button-icon-container"
+            >
+              <i
+                class="button-icon icon"
+                icon="fal,trash-alt"
+              />
+            </div>
+          </button>
+          <div>
+            Delete
+          </div>
+          <div>
+            <div>
+              ControlleMenu
+              closed
+              <div
+                class="gds-popover-container"
+              >
+                <div
+                  class="popover-title"
+                >
+                  Delete?
+                </div>
+                <div
+                  class="popover-buttons"
+                >
+                  <button
+                    class="gds-button-content"
+                    color="secondary"
+                    data-testid="TEST-ID-cancel"
+                    type="button"
+                  >
+                    <div
+                      class="button-label-container"
+                    >
+                      Cancel
+                    </div>
+                  </button>
+                  <button
+                    class="gds-button-content"
+                    color="primary"
+                    data-testid="TEST-ID-confirm"
+                    type="button"
+                  >
+                    <div
+                      class="button-label-container"
+                    >
+                      Confirm
+                    </div>
+                  </button>
+                </div>
+              </div>
+              has ref
+            </div>
           </div>
         </div>
       </div>
@@ -1300,14 +1804,67 @@ exports[`FileInput Component FileInput handles download without download callbac
         <div
           class="right"
         >
-          <div
-            class="delete-icon"
+          <button
+            class="gds-button-content delete-icon"
+            color="reversed"
             data-testid="TEST-ID-delete"
+            type="button"
           >
-            <i
-              class="icon"
-              icon="fal,trash-alt"
-            />
+            <div
+              class="button-icon-container"
+            >
+              <i
+                class="button-icon icon"
+                icon="fal,trash-alt"
+              />
+            </div>
+          </button>
+          <div>
+            Delete
+          </div>
+          <div>
+            <div>
+              ControlleMenu
+              closed
+              <div
+                class="gds-popover-container"
+              >
+                <div
+                  class="popover-title"
+                >
+                  Delete?
+                </div>
+                <div
+                  class="popover-buttons"
+                >
+                  <button
+                    class="gds-button-content"
+                    color="secondary"
+                    data-testid="TEST-ID-cancel"
+                    type="button"
+                  >
+                    <div
+                      class="button-label-container"
+                    >
+                      Cancel
+                    </div>
+                  </button>
+                  <button
+                    class="gds-button-content"
+                    color="primary"
+                    data-testid="TEST-ID-confirm"
+                    type="button"
+                  >
+                    <div
+                      class="button-label-container"
+                    >
+                      Confirm
+                    </div>
+                  </button>
+                </div>
+              </div>
+              has ref
+            </div>
           </div>
         </div>
       </div>
@@ -1365,14 +1922,67 @@ exports[`FileInput Component FileInput handles download without download callbac
         <div
           class="right"
         >
-          <div
-            class="delete-icon"
+          <button
+            class="gds-button-content delete-icon"
+            color="reversed"
             data-testid="TEST-ID-delete"
+            type="button"
           >
-            <i
-              class="icon"
-              icon="fal,trash-alt"
-            />
+            <div
+              class="button-icon-container"
+            >
+              <i
+                class="button-icon icon"
+                icon="fal,trash-alt"
+              />
+            </div>
+          </button>
+          <div>
+            Delete
+          </div>
+          <div>
+            <div>
+              ControlleMenu
+              closed
+              <div
+                class="gds-popover-container"
+              >
+                <div
+                  class="popover-title"
+                >
+                  Delete?
+                </div>
+                <div
+                  class="popover-buttons"
+                >
+                  <button
+                    class="gds-button-content"
+                    color="secondary"
+                    data-testid="TEST-ID-cancel"
+                    type="button"
+                  >
+                    <div
+                      class="button-label-container"
+                    >
+                      Cancel
+                    </div>
+                  </button>
+                  <button
+                    class="gds-button-content"
+                    color="primary"
+                    data-testid="TEST-ID-confirm"
+                    type="button"
+                  >
+                    <div
+                      class="button-label-container"
+                    >
+                      Confirm
+                    </div>
+                  </button>
+                </div>
+              </div>
+              has ref
+            </div>
           </div>
         </div>
       </div>
@@ -1429,13 +2039,64 @@ exports[`FileInput Component FileInput renders 1`] = `
         <div
           class="right"
         >
-          <div
-            class="delete-icon"
+          <button
+            class="gds-button-content delete-icon"
+            color="reversed"
+            type="button"
           >
-            <i
-              class="icon"
-              icon="fal,trash-alt"
-            />
+            <div
+              class="button-icon-container"
+            >
+              <i
+                class="button-icon icon"
+                icon="fal,trash-alt"
+              />
+            </div>
+          </button>
+          <div>
+            Delete
+          </div>
+          <div>
+            <div>
+              ControlleMenu
+              closed
+              <div
+                class="gds-popover-container"
+              >
+                <div
+                  class="popover-title"
+                >
+                  Delete?
+                </div>
+                <div
+                  class="popover-buttons"
+                >
+                  <button
+                    class="gds-button-content"
+                    color="secondary"
+                    type="button"
+                  >
+                    <div
+                      class="button-label-container"
+                    >
+                      Cancel
+                    </div>
+                  </button>
+                  <button
+                    class="gds-button-content"
+                    color="primary"
+                    type="button"
+                  >
+                    <div
+                      class="button-label-container"
+                    >
+                      Confirm
+                    </div>
+                  </button>
+                </div>
+              </div>
+              has ref
+            </div>
           </div>
         </div>
       </div>

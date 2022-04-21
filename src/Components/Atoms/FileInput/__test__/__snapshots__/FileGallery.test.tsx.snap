@@ -27,14 +27,23 @@ exports[`FileGallery Component FileGallery renders and handles delete of error f
     <div
       class="right"
     >
-      <div
-        class="delete-icon"
+      <button
+        class="gds-button-content delete-icon"
+        color="reversed"
         data-testid="TEST-ID-delete"
+        type="button"
       >
-        <i
-          class="icon"
-          icon="fal,trash-alt"
-        />
+        <div
+          class="button-icon-container"
+        >
+          <i
+            class="button-icon icon"
+            icon="fal,trash-alt"
+          />
+        </div>
+      </button>
+      <div>
+        Delete
       </div>
     </div>
   </div>
@@ -146,14 +155,67 @@ exports[`FileGallery Component FileGallery renders and handles download and dele
     <div
       class="right"
     >
-      <div
-        class="delete-icon"
+      <button
+        class="gds-button-content delete-icon"
+        color="reversed"
         data-testid="TEST-ID-delete"
+        type="button"
       >
-        <i
-          class="icon"
-          icon="fal,trash-alt"
-        />
+        <div
+          class="button-icon-container"
+        >
+          <i
+            class="button-icon icon"
+            icon="fal,trash-alt"
+          />
+        </div>
+      </button>
+      <div>
+        Delete
+      </div>
+      <div>
+        <div>
+          ControlleMenu
+          closed
+          <div
+            class="gds-popover-container"
+          >
+            <div
+              class="popover-title"
+            >
+              Delete?
+            </div>
+            <div
+              class="popover-buttons"
+            >
+              <button
+                class="gds-button-content"
+                color="secondary"
+                data-testid="TEST-ID-cancel"
+                type="button"
+              >
+                <div
+                  class="button-label-container"
+                >
+                  Cancel
+                </div>
+              </button>
+              <button
+                class="gds-button-content"
+                color="primary"
+                data-testid="TEST-ID-confirm"
+                type="button"
+              >
+                <div
+                  class="button-label-container"
+                >
+                  Confirm
+                </div>
+              </button>
+            </div>
+          </div>
+          has ref
+        </div>
       </div>
     </div>
   </div>
@@ -251,13 +313,64 @@ exports[`FileGallery Component FileGallery renders without datatestid 1`] = `
     <div
       class="right"
     >
-      <div
-        class="delete-icon"
+      <button
+        class="gds-button-content delete-icon"
+        color="reversed"
+        type="button"
       >
-        <i
-          class="icon"
-          icon="fal,trash-alt"
-        />
+        <div
+          class="button-icon-container"
+        >
+          <i
+            class="button-icon icon"
+            icon="fal,trash-alt"
+          />
+        </div>
+      </button>
+      <div>
+        Delete
+      </div>
+      <div>
+        <div>
+          ControlleMenu
+          closed
+          <div
+            class="gds-popover-container"
+          >
+            <div
+              class="popover-title"
+            >
+              Delete?
+            </div>
+            <div
+              class="popover-buttons"
+            >
+              <button
+                class="gds-button-content"
+                color="secondary"
+                type="button"
+              >
+                <div
+                  class="button-label-container"
+                >
+                  Cancel
+                </div>
+              </button>
+              <button
+                class="gds-button-content"
+                color="primary"
+                type="button"
+              >
+                <div
+                  class="button-label-container"
+                >
+                  Confirm
+                </div>
+              </button>
+            </div>
+          </div>
+          has ref
+        </div>
       </div>
     </div>
   </div>

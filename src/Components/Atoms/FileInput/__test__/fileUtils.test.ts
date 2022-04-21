@@ -60,6 +60,32 @@ describe('fileUtils', () => {
       error: 'Quota exceeded: Maximum number of files reached',
     });
 
+    // Quota error with custom message
+    expect(
+      initializeIFile(
+        {
+          name: 'NAME',
+          size: 1234,
+          type: 'TYPE',
+        } as File,
+        true,
+        '*/*',
+        2000,
+        {
+          invalidType: 'Invalid type: {type}, expected {expectedType}',
+          quotaExceeded: 'Quota exceeded: Maximum number of files reached',
+          sizeExceeded: 'Size exceeded: {size}, expected size under {maxSize}',
+        },
+      ),
+    ).toEqual({
+      uid: expect.anything(),
+      name: 'NAME',
+      size: 1234,
+      type: 'TYPE',
+      status: FileStatusEnum.ERROR,
+      error: 'Quota exceeded: Maximum number of files reached',
+    });
+
     // Invalid type
     expect(
       initializeIFile(
@@ -71,6 +97,32 @@ describe('fileUtils', () => {
         false,
         'image/jpeg',
         2000,
+      ),
+    ).toEqual({
+      uid: expect.anything(),
+      name: 'NAME',
+      size: 1234,
+      type: 'TYPE',
+      status: FileStatusEnum.ERROR,
+      error: 'Invalid type: TYPE, expected image/jpeg',
+    });
+
+    // Invalid type with custom message
+    expect(
+      initializeIFile(
+        {
+          name: 'NAME',
+          size: 1234,
+          type: 'TYPE',
+        } as File,
+        false,
+        'image/jpeg',
+        2000,
+        {
+          invalidType: 'Invalid type: {type}, expected {expectedType}',
+          quotaExceeded: 'Quota exceeded: Maximum number of files reached',
+          sizeExceeded: 'Size exceeded: {size}, expected size under {maxSize}',
+        },
       ),
     ).toEqual({
       uid: expect.anything(),
@@ -120,7 +172,33 @@ describe('fileUtils', () => {
       size: 1234,
       type: 'TYPE',
       status: FileStatusEnum.ERROR,
-      error: 'Size exceeded: 1.21 kB, expected under 1 kB',
+      error: 'Size exceeded: 1.21 kB, expected size under 1 kB',
+    });
+
+    // Exceeded size with custom message
+    expect(
+      initializeIFile(
+        {
+          name: 'NAME',
+          size: 1234,
+          type: 'TYPE',
+        } as File,
+        false,
+        '*/*',
+        1024,
+        {
+          invalidType: 'Invalid type: {type}, expected {expectedType}',
+          quotaExceeded: 'Quota exceeded: Maximum number of files reached',
+          sizeExceeded: 'Size exceeded: {size}, expected size under {maxSize}',
+        },
+      ),
+    ).toEqual({
+      uid: expect.anything(),
+      name: 'NAME',
+      size: 1234,
+      type: 'TYPE',
+      status: FileStatusEnum.ERROR,
+      error: 'Size exceeded: 1.21 kB, expected size under 1 kB',
     });
   });
 

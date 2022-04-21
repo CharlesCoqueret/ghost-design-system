@@ -141,6 +141,15 @@ export interface IFieldFileProps<T> extends IFieldBaseProps<T> {
   showFileSize?: boolean;
   showProgressBar?: boolean;
   uploadMessage?: string | ReactElement;
+  localization?: {
+    delete?: string;
+    popoverConfirm?: string;
+    popoverCancel?: string;
+    popoverTitle?: string;
+    invalidType?: string;
+    quotaExceeded?: string;
+    sizeExceeded?: string;
+  };
 }
 
 export interface IFieldDynamicSearchProps<T> extends IFieldBaseProps<T> {

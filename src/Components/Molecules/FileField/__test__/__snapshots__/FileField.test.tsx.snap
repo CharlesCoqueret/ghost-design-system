@@ -205,13 +205,64 @@ exports[`FileField Component FileField renders with values with fieldSize and in
           <div
             class="right"
           >
-            <div
-              class="delete-icon"
+            <button
+              class="gds-button-content delete-icon"
+              color="reversed"
+              type="button"
             >
-              <i
-                class="icon"
-                icon="fal,trash-alt"
-              />
+              <div
+                class="button-icon-container"
+              >
+                <i
+                  class="button-icon icon"
+                  icon="fal,trash-alt"
+                />
+              </div>
+            </button>
+            <div>
+              Delete
+            </div>
+            <div>
+              <div>
+                ControlleMenu
+                closed
+                <div
+                  class="gds-popover-container"
+                >
+                  <div
+                    class="popover-title"
+                  >
+                    Delete?
+                  </div>
+                  <div
+                    class="popover-buttons"
+                  >
+                    <button
+                      class="gds-button-content"
+                      color="secondary"
+                      type="button"
+                    >
+                      <div
+                        class="button-label-container"
+                      >
+                        Cancel
+                      </div>
+                    </button>
+                    <button
+                      class="gds-button-content"
+                      color="primary"
+                      type="button"
+                    >
+                      <div
+                        class="button-label-container"
+                      >
+                        Confirm
+                      </div>
+                    </button>
+                  </div>
+                </div>
+                has ref
+              </div>
             </div>
           </div>
         </div>

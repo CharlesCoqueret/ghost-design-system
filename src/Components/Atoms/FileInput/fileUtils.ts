@@ -19,6 +19,14 @@ export const uid = (): string => {
  * @param quotaExceeded quota exceeded
  * @param acceptTypes accept types
  * @param maxFileSize size limit
+ * @param localization localization object containing
+ *    - invalidTtype (Invalid type error (optional, default: 'Invalid type: {type}, expected {expectedType}',
+ *          with {type} which will be automatically replaced by the current type,
+ *          and {expectedtype} which will be automatically replaced by the expected type))
+ *    - quotaExceeded (Quota exceeded error (optional, default: 'Quota exceeded: Maximum number of files reached'))
+ *    - sizeExceeded (Size exceeded error (optional, default: 'Size exceeded: {size}, expected size under {maxSize}'
+ *          with {size} which will be automatically replaced by the actual size of the file,
+ *          and {maxSize} which will be automatically replaced by the expected size))
  * @returns Initialized IFile
  */
 export const initializeIFile = (
@@ -26,17 +34,26 @@ export const initializeIFile = (
   quotaExceeded: boolean,
   acceptTypes: string | undefined,
   maxFileSize: number | undefined,
+  localization?: {
+    invalidType?: string;
+    quotaExceeded?: string;
+    sizeExceeded?: string;
+  },
 ): IFile => {
   const rejectedType = acceptTypes ? !isValidType(file, acceptTypes) : false;
   const sizeExceeded = maxFileSize ? file.size > maxFileSize : false;
 
   const status = quotaExceeded || rejectedType || sizeExceeded ? FileStatusEnum.ERROR : FileStatusEnum.UPLOADING;
   const error = quotaExceeded
-    ? 'Quota exceeded: Maximum number of files reached'
-    : rejectedType
-    ? `Invalid type: ${file.type !== '' ? file.type : file.name.split('.').pop()}, expected ${acceptTypes}`
+    ? localization?.quotaExceeded || 'Quota exceeded: Maximum number of files reached'
+    : acceptTypes && rejectedType
+    ? (localization?.invalidType || 'Invalid type: {type}, expected {expectedType}')
+        .replace('{type}', file.type !== '' ? file.type : file.name.split('.').slice(-1)[0])
+        .replace('{expectedType}', acceptTypes)
     : sizeExceeded && maxFileSize
-    ? `Size exceeded: ${formatBytes(file.size)}, expected under ${formatBytes(maxFileSize)}`
+    ? (localization?.sizeExceeded || 'Size exceeded: {size}, expected size under {maxSize}')
+        .replace('{size}', formatBytes(file.size))
+        .replace('{maxSize}', formatBytes(maxFileSize))
     : undefined;
 
   return {

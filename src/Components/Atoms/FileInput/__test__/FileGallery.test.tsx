@@ -43,6 +43,10 @@ describe('FileGallery Component', () => {
 
     userEvent.click(deleteButton);
 
+    const confirmButton = screen.getByTestId('TEST-ID-confirm');
+
+    userEvent.click(confirmButton);
+
     expect(updateFileDeleteMock).toBeCalledTimes(1);
     expect(updateFileDeleteMock).toBeCalledWith(file);
   });

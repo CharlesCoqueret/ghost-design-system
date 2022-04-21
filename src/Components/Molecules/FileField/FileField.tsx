@@ -72,6 +72,27 @@ export interface IFileFieldProps {
   style?: CSSProperties;
   /** Message present inside the drop zome (optional, default: 'Click or drag file to upload' ) */
   uploadMessage?: string | ReactElement;
+  /** Localization of related to deletion and errors */
+  localization?: {
+    // Delete tooltip (optional, default: 'Delete')
+    delete?: string;
+    // Delete popover title (optional, default: 'Confirm')
+    popoverConfirm?: string;
+    // Delete popover cancel button (optional, default: 'Cancel')
+    popoverCancel?: string;
+    // Delete popover confirm button (optional, default: 'Delete?')
+    popoverTitle?: string;
+    // Invalid type error (optional, default: 'Invalid type: {type}, expected {expectedType}',
+    // with {type} which will be automatically replaced by the current type,
+    // and {expectedtype} which will be automatically replaced by the expected type)
+    invalidType?: string;
+    // Quota exceeded error (optional, default: 'Quota exceeded: Maximum number of files reached')
+    quotaExceeded?: string;
+    // Size exceeded error (optional, default: 'Size exceeded: {size}, expected {maxSize}'
+    // with {size} which will be automatically replaced by the actual size of the file,
+    // and {maxSize} which will be automatically replaced by the expected size)
+    sizeExceeded?: string;
+  };
 }
 
 /**
@@ -99,6 +120,7 @@ export const FileField = (props: IFileFieldProps): ReactElement => {
     inputValue,
     label,
     labelSize,
+    localization,
     mandatory,
     maxFiles,
     maxFileSize,
@@ -146,6 +168,7 @@ export const FileField = (props: IFileFieldProps): ReactElement => {
         disabled={disabled}
         inputValue={inputValue}
         isInError={errorMessage !== undefined}
+        localization={localization}
         maxFiles={maxFiles}
         maxFileSize={maxFileSize}
         maxFolderDepth={maxFolderDepth}

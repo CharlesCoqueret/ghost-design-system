@@ -97,7 +97,10 @@
 
         .delete-icon {
           visibility: visible;
-          cursor: pointer;
+          height: unset;
+          &:hover {
+            background-color: unset;
+          }
         }
 
         progress {
