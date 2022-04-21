@@ -16,6 +16,8 @@ import classnames from 'classnames';
 export interface IRichTextInputProps {
   /** Class for the input (optional, default: undefined) */
   className?: string;
+  /** Convert onBlur all images to base64 (optional, default: true) */
+  convertImagesToBase64?: boolean;
   /** For test purpose only */
   dataTestId?: string;
   /** Disabled field (optional, default: false) */
@@ -42,12 +44,44 @@ export interface IRichTextInputProps {
   style?: CSSProperties;
 }
 
+const isDataSrc = (src: string) => {
+  if (src) return /^data:.*/i.test(src);
+  return false;
+};
+
+const getDataUrl = (img: HTMLImageElement): string => {
+  const canvas = document.createElement('canvas');
+  const ctx = canvas.getContext('2d');
+  if (!ctx) return img.src;
+
+  canvas.width = img.width || Number.parseInt(img.style.width);
+  canvas.height = img.height || Number.parseInt(img.style.height);
+
+  ctx.drawImage(img, 0, 0);
+  const dataUrl = canvas.toDataURL();
+  return dataUrl === 'data:' ? img.src : dataUrl;
+};
+
+const processImages = async (html: string): Promise<string> => {
+  const htmlDoc = new DOMParser().parseFromString(html, 'text/html');
+
+  const images = htmlDoc.getElementsByTagName('img');
+  for (let index = 0; index < images.length; index++) {
+    if (!isDataSrc(images[index].src)) {
+      images[index].src = getDataUrl(images[index]);
+    }
+  }
+
+  return htmlDoc.body.innerHTML;
+};
+
 const forbiddenTags = ['video', 'audio', 'track', 'source', 'script', 'object', 'iframe', 'embed', 'input', 'select'];
 const imageTags = ['img', 'svg', 'picture'];
 const linkTags = ['a'];
 
 const RichTextInput = (props: IRichTextInputProps): ReactElement => {
   const {
+    convertImagesToBase64,
     dataTestId,
     disabled,
     enableImage,
@@ -109,8 +143,8 @@ const RichTextInput = (props: IRichTextInputProps): ReactElement => {
     tabDisable: true,
     pasteTagsBlacklist: [
       ...forbiddenTags,
-      ...[enableImage ? imageTags : undefined],
-      ...[enableLink ? linkTags : undefined],
+      ...[enableImage ? undefined : imageTags],
+      ...[enableLink ? undefined : linkTags],
     ].join('|'),
   };
 
@@ -120,10 +154,13 @@ const RichTextInput = (props: IRichTextInputProps): ReactElement => {
    * @param _event Focus event
    * @param newValue new value
    */
-  const blurHandler = (_event: FocusEvent, newValue: string) => {
+  const blurHandler = async (_event: FocusEvent, newValue: string): Promise<void> => {
     if (onChange) {
-      // onChange(processImages(newValue));
-      onChange(newValue);
+      if (convertImagesToBase64) {
+        onChange(await processImages(newValue));
+      } else {
+        onChange(newValue);
+      }
     }
   };
 
@@ -151,6 +188,7 @@ const RichTextInput = (props: IRichTextInputProps): ReactElement => {
 
 RichTextInput.defaultProps = {
   className: undefined,
+  convertImagesToBase64: true,
   dataTestId: undefined,
   disabled: false,
   enableImage: false,

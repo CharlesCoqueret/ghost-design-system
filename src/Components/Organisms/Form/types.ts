@@ -232,6 +232,7 @@ export interface IFieldSwitchProps<T> extends IFieldBaseProps<T> {
 }
 
 export interface IFieldRichtextProps<T> extends IFieldBaseProps<T> {
+  convertImagesToBase64?: boolean;
   enableImage?: boolean;
   enableLink?: boolean;
   fieldType: FieldTypeEnum.RICHTEXT;

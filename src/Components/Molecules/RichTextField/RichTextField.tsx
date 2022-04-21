@@ -6,6 +6,8 @@ import { RichTextInput, lang } from '../../Atoms/RichTextInput';
 export interface IRichTextFieldProps {
   /** React Container ref (optional, default: undefined) */
   containerRef?: Ref<HTMLDivElement>;
+  /** Convert onBlur all images to base64 (optional, default: true) */
+  convertImagesToBase64?: boolean;
   /** For test purpose only */
   dataTestId?: string;
   /** Disabled field (optional, default: false) */
@@ -114,6 +116,7 @@ export const RichTextField = (props: IRichTextFieldProps): ReactElement => {
 
 RichTextField.defaultProps = {
   containerRef: undefined,
+  convertImagesToBase64: true,
   dataTestId: undefined,
   disabled: false,
   enableImage: false,
