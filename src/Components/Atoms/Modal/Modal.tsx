@@ -80,17 +80,17 @@ const Modal = (props: PropsWithChildren<IModalProps>): ReactElement => {
       setInitialBodyStyle({ overflowX: document.body.style.overflowX, overflowY: document.body.style.overflowX });
       document.body.style.overflowY = 'hidden';
       document.body.style.overflowX = 'hidden';
-      // disableTabOutside && document.body.addEventListener('keydown', preventDefaults, false);
+      disableTabOutside && document.body.addEventListener('keydown', preventDefaults, false);
     } else {
       document.body.style.overflowX = initialBodyStyle?.overflowX || '';
       document.body.style.overflowY = initialBodyStyle?.overflowY || '';
-      // disableTabOutside && document.body.removeEventListener('keydown', preventDefaults);
+      disableTabOutside && document.body.removeEventListener('keydown', preventDefaults);
     }
 
     return () => {
       document.body.style.overflowX = initialBodyStyle?.overflowX || '';
       document.body.style.overflowY = initialBodyStyle?.overflowY || '';
-      // disableTabOutside && document.body.removeEventListener('keydown', preventDefaults);
+      disableTabOutside && document.body.removeEventListener('keydown', preventDefaults);
     };
   }, [show]);
 
