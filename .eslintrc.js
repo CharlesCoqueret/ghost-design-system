@@ -42,7 +42,6 @@ module.exports = {
         selector: 'interface',
       },
     ],
-    '@typescript-eslint/switch-exhaustiveness-check': rules.ON,
     'react-hooks/rules-of-hooks': rules.ON,
     'react-hooks/exhaustive-deps': rules.OFF,
     'prettier/prettier': rules.ON,
