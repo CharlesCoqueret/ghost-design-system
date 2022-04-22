@@ -15,6 +15,7 @@ exports[`ButtonCell component ButtonCell renders and handles click 1`] = `
               class="gds-button-content"
               color="reversed"
               data-testid="BUTTON1"
+              tabindex="0"
               type="button"
             >
               <div
@@ -52,6 +53,7 @@ exports[`ButtonCell component ButtonCell renders hidden 1`] = `
             <button
               class="gds-button-content"
               color="reversed"
+              tabindex="0"
               type="button"
             >
               <div
@@ -107,6 +109,7 @@ exports[`ButtonCell component ButtonCell renders with more than 3 buttons and ha
               class="gds-button-content"
               color="reversed"
               data-testid="MORE"
+              tabindex="0"
               type="button"
             >
               <div
@@ -169,6 +172,7 @@ exports[`ButtonCell component ButtonCell renders with more than 3 buttons and ha
               class="gds-button-content"
               color="reversed"
               data-testid="MORE"
+              tabindex="0"
               type="button"
             >
               <div

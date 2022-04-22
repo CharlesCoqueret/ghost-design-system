@@ -60,10 +60,14 @@ const FileGallery = (props: IFileGallery): ReactElement => {
 
   return (
     <Tooltip tooltip={file.error} direction={MenuDirectionEnum.TOP}>
-      <div className={classnames('item-container', { error: file.error !== undefined })}>
+      <div className={classnames('item-container', { error: file.status === FileStatusEnum.ERROR })}>
         <div className='left'>
           <div className='paperclip-icon'>
-            {file.error ? <Icon icon={['fal', 'exclamation-triangle']} /> : <Icon icon={['fal', 'paperclip']} />}
+            {file.status === FileStatusEnum.ERROR ? (
+              <Icon icon={['fal', 'exclamation-triangle']} />
+            ) : (
+              <Icon icon={['fal', 'paperclip']} />
+            )}
           </div>
           <div
             data-testid={dataTestId ? `${dataTestId}-download` : undefined}
@@ -81,7 +85,23 @@ const FileGallery = (props: IFileGallery): ReactElement => {
                       });
                   }
                 : undefined
-            }>
+            }
+            onKeyUp={
+              downloadable
+                ? (event: React.KeyboardEvent<HTMLElement>) => {
+                    if (event.type === 'keyup' && event.key === 'Enter') {
+                      setDownloading(true);
+                      updateFileDownload(file)
+                        .catch()
+                        .finally(() => {
+                          setDownloading(false);
+                        });
+                      return;
+                    }
+                  }
+                : undefined
+            }
+            tabIndex={downloadable ? 0 : -1}>
             {file.name}
             {showFileSize && ` (${formatBytes(file.size)})`}
           </div>
@@ -114,7 +134,7 @@ const FileGallery = (props: IFileGallery): ReactElement => {
               dataTestId={dataTestId ? `${dataTestId}-delete` : undefined}
               onClick={
                 // If the file is in error, we can delete without confirmation
-                file.error
+                file.status === FileStatusEnum.ERROR
                   ? () => {
                       updateFileDelete(file);
                     }
@@ -122,7 +142,7 @@ const FileGallery = (props: IFileGallery): ReactElement => {
               }
               popover={
                 // If the file is in error, we can delete without confirmation
-                file.error
+                file.status === FileStatusEnum.ERROR
                   ? undefined
                   : {
                       title: localization?.popoverTitle ?? 'Delete?',

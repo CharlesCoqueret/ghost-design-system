@@ -24,6 +24,7 @@ exports[`Filter Component Filter renders advanced filter and handles changes 1`]
             class="gds-button-content"
             color="secondary"
             data-testid="DATA-TEST-ID-reset"
+            tabindex="0"
             type="button"
           >
             <div
@@ -36,6 +37,7 @@ exports[`Filter Component Filter renders advanced filter and handles changes 1`]
             class="gds-button-content"
             color="primary"
             data-testid="DATA-TEST-ID-open-advanced"
+            tabindex="0"
             type="button"
           >
             <div
@@ -77,6 +79,7 @@ exports[`Filter Component Filter renders advanced filter and handles changes 2`]
             class="gds-button-content"
             color="secondary"
             data-testid="DATA-TEST-ID-reset"
+            tabindex="0"
             type="button"
           >
             <div
@@ -89,6 +92,7 @@ exports[`Filter Component Filter renders advanced filter and handles changes 2`]
             class="gds-button-content"
             color="primary"
             data-testid="DATA-TEST-ID-open-advanced"
+            tabindex="0"
             type="button"
           >
             <div
@@ -146,6 +150,7 @@ exports[`Filter Component Filter renders advanced filter and handles changes 2`]
                 class="gds-button-content"
                 color="secondary"
                 data-testid="DATA-TEST-ID-advanced-reset"
+                tabindex="0"
                 type="button"
               >
                 <div
@@ -158,6 +163,7 @@ exports[`Filter Component Filter renders advanced filter and handles changes 2`]
                 class="gds-button-content"
                 color="primary"
                 data-testid="DATA-TEST-ID-advanced-submit"
+                tabindex="0"
                 type="button"
               >
                 <div
@@ -206,6 +212,7 @@ exports[`Filter Component Filter renders advanced filter and handles changes 3`]
             class="gds-button-content"
             color="secondary"
             data-testid="DATA-TEST-ID-reset"
+            tabindex="0"
             type="button"
           >
             <div
@@ -218,6 +225,7 @@ exports[`Filter Component Filter renders advanced filter and handles changes 3`]
             class="gds-button-content"
             color="primary"
             data-testid="DATA-TEST-ID-open-advanced"
+            tabindex="0"
             type="button"
           >
             <div
@@ -275,6 +283,7 @@ exports[`Filter Component Filter renders advanced filter and handles changes 3`]
                 class="gds-button-content"
                 color="secondary"
                 data-testid="DATA-TEST-ID-advanced-reset"
+                tabindex="0"
                 type="button"
               >
                 <div
@@ -287,6 +296,7 @@ exports[`Filter Component Filter renders advanced filter and handles changes 3`]
                 class="gds-button-content"
                 color="primary"
                 data-testid="DATA-TEST-ID-advanced-submit"
+                tabindex="0"
                 type="button"
               >
                 <div
@@ -335,6 +345,7 @@ exports[`Filter Component Filter renders advanced filter and handles changes 4`]
             class="gds-button-content"
             color="secondary"
             data-testid="DATA-TEST-ID-reset"
+            tabindex="0"
             type="button"
           >
             <div
@@ -347,6 +358,7 @@ exports[`Filter Component Filter renders advanced filter and handles changes 4`]
             class="gds-button-content"
             color="primary"
             data-testid="DATA-TEST-ID-open-advanced"
+            tabindex="0"
             type="button"
           >
             <div
@@ -404,6 +416,7 @@ exports[`Filter Component Filter renders advanced filter and handles changes 4`]
                 class="gds-button-content"
                 color="secondary"
                 data-testid="DATA-TEST-ID-advanced-reset"
+                tabindex="0"
                 type="button"
               >
                 <div
@@ -416,6 +429,7 @@ exports[`Filter Component Filter renders advanced filter and handles changes 4`]
                 class="gds-button-content"
                 color="primary"
                 data-testid="DATA-TEST-ID-advanced-submit"
+                tabindex="0"
                 type="button"
               >
                 <div
@@ -464,6 +478,7 @@ exports[`Filter Component Filter renders advanced filter and handles changes 5`]
             class="gds-button-content"
             color="secondary"
             data-testid="DATA-TEST-ID-reset"
+            tabindex="0"
             type="button"
           >
             <div
@@ -476,6 +491,7 @@ exports[`Filter Component Filter renders advanced filter and handles changes 5`]
             class="gds-button-content"
             color="primary"
             data-testid="DATA-TEST-ID-open-advanced"
+            tabindex="0"
             type="button"
           >
             <div
@@ -533,6 +549,7 @@ exports[`Filter Component Filter renders advanced filter and handles changes 5`]
                 class="gds-button-content"
                 color="secondary"
                 data-testid="DATA-TEST-ID-advanced-reset"
+                tabindex="0"
                 type="button"
               >
                 <div
@@ -545,6 +562,7 @@ exports[`Filter Component Filter renders advanced filter and handles changes 5`]
                 class="gds-button-content"
                 color="primary"
                 data-testid="DATA-TEST-ID-advanced-submit"
+                tabindex="0"
                 type="button"
               >
                 <div
@@ -593,6 +611,7 @@ exports[`Filter Component Filter renders advanced filter and handles changes 6`]
             class="gds-button-content"
             color="secondary"
             data-testid="DATA-TEST-ID-reset"
+            tabindex="0"
             type="button"
           >
             <div
@@ -605,6 +624,7 @@ exports[`Filter Component Filter renders advanced filter and handles changes 6`]
             class="gds-button-content"
             color="primary"
             data-testid="DATA-TEST-ID-open-advanced"
+            tabindex="0"
             type="button"
           >
             <div
@@ -643,6 +663,7 @@ exports[`Filter Component Filter renders filterbar and handles changes 1`] = `
           class="gds-button-content"
           color="secondary"
           data-testid="DATA-TEST-ID-reset"
+          tabindex="0"
           type="button"
         >
           <div
@@ -674,6 +695,7 @@ exports[`Filter Component Filter renders with no item in the filter bar 1`] = `
         <button
           class="gds-button-content"
           color="secondary"
+          tabindex="0"
           type="button"
         >
           <div
@@ -713,6 +735,7 @@ exports[`Filter Component Filter renders without data-testid 1`] = `
           <button
             class="gds-button-content"
             color="secondary"
+            tabindex="0"
             type="button"
           >
             <div
@@ -724,6 +747,7 @@ exports[`Filter Component Filter renders without data-testid 1`] = `
           <button
             class="gds-button-content"
             color="primary"
+            tabindex="0"
             type="button"
           >
             <div

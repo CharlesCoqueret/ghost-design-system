@@ -78,8 +78,10 @@ const Button = (props: IButtonProps): ReactElement => {
     <>
       <Tooltip direction={tooltipDirection} tooltip={label ? undefined : tooltip}>
         <button
-          ref={ref}
-          type={type}
+          className={classnames('gds-button-content', className)}
+          color={color}
+          data-testid={dataTestId}
+          disabled={loading || disabled}
           onClick={(event) => {
             if (onClick) {
               onClick(event);
@@ -91,10 +93,9 @@ const Button = (props: IButtonProps): ReactElement => {
               setIsPopoverOpen(true);
             }
           }}
-          disabled={loading || disabled}
-          className={classnames('gds-button-content', className)}
-          color={color}
-          data-testid={dataTestId}>
+          ref={ref}
+          type={type}
+          tabIndex={loading || disabled ? -1 : 0}>
           {(icon !== undefined || loading !== false) && (
             <div key='icon' className='button-icon-container'>
               {loading && <Icon icon={['fal', 'spinner']} size='lg' className='button-icon' />}

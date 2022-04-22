@@ -10,6 +10,7 @@ exports[`DatePickerHeader Component DatePickerHeader renders handles changes in 
         class="gds-button-content"
         color="reversed"
         data-testid="TESTID-decreaseMonth"
+        tabindex="0"
         type="button"
       >
         <div
@@ -90,6 +91,7 @@ exports[`DatePickerHeader Component DatePickerHeader renders handles changes in 
         class="gds-button-content"
         color="reversed"
         data-testid="TESTID-increaseMonth"
+        tabindex="0"
         type="button"
       >
         <div
@@ -109,6 +111,7 @@ exports[`DatePickerHeader Component DatePickerHeader renders handles changes in 
         class="gds-button-content"
         color="reversed"
         data-testid="TESTID-decreaseYear"
+        tabindex="0"
         type="button"
       >
         <div
@@ -634,6 +637,7 @@ exports[`DatePickerHeader Component DatePickerHeader renders handles changes in 
         class="gds-button-content"
         color="reversed"
         data-testid="TESTID-increaseYear"
+        tabindex="0"
         type="button"
       >
         <div

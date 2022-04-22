@@ -855,6 +855,7 @@ exports[`EditableDataTable Component EditableDataTable renders and handles line 
                 class="gds-button-content"
                 color="reversed"
                 data-testid="delete"
+                tabindex="0"
                 type="button"
               >
                 <div
@@ -888,6 +889,7 @@ exports[`EditableDataTable Component EditableDataTable renders and handles line 
                         class="gds-button-content"
                         color="secondary"
                         data-testid="cancel"
+                        tabindex="0"
                         type="button"
                       >
                         <div
@@ -900,6 +902,7 @@ exports[`EditableDataTable Component EditableDataTable renders and handles line 
                         class="gds-button-content"
                         color="primary"
                         data-testid="confirm"
+                        tabindex="0"
                         type="button"
                       >
                         <div
@@ -917,6 +920,7 @@ exports[`EditableDataTable Component EditableDataTable renders and handles line 
                 class="gds-button-content"
                 color="reversed"
                 data-testid="download"
+                tabindex="0"
                 type="button"
               >
                 <div
@@ -1061,6 +1065,7 @@ exports[`EditableDataTable Component EditableDataTable renders and handles line 
                 class="gds-button-content"
                 color="reversed"
                 data-testid="delete"
+                tabindex="0"
                 type="button"
               >
                 <div
@@ -1094,6 +1099,7 @@ exports[`EditableDataTable Component EditableDataTable renders and handles line 
                         class="gds-button-content"
                         color="secondary"
                         data-testid="cancel"
+                        tabindex="0"
                         type="button"
                       >
                         <div
@@ -1106,6 +1112,7 @@ exports[`EditableDataTable Component EditableDataTable renders and handles line 
                         class="gds-button-content"
                         color="primary"
                         data-testid="confirm"
+                        tabindex="0"
                         type="button"
                       >
                         <div
@@ -1123,6 +1130,7 @@ exports[`EditableDataTable Component EditableDataTable renders and handles line 
                 class="gds-button-content"
                 color="reversed"
                 data-testid="download"
+                tabindex="0"
                 type="button"
               >
                 <div
@@ -1359,6 +1367,7 @@ exports[`EditableDataTable Component EditableDataTable renders and handles line 
                 class="gds-button-content"
                 color="reversed"
                 data-testid="delete"
+                tabindex="0"
                 type="button"
               >
                 <div
@@ -1392,6 +1401,7 @@ exports[`EditableDataTable Component EditableDataTable renders and handles line 
                         class="gds-button-content"
                         color="secondary"
                         data-testid="cancel"
+                        tabindex="0"
                         type="button"
                       >
                         <div
@@ -1404,6 +1414,7 @@ exports[`EditableDataTable Component EditableDataTable renders and handles line 
                         class="gds-button-content"
                         color="primary"
                         data-testid="confirm"
+                        tabindex="0"
                         type="button"
                       >
                         <div
@@ -1421,6 +1432,7 @@ exports[`EditableDataTable Component EditableDataTable renders and handles line 
                 class="gds-button-content"
                 color="reversed"
                 data-testid="download"
+                tabindex="0"
                 type="button"
               >
                 <div
@@ -1565,6 +1577,7 @@ exports[`EditableDataTable Component EditableDataTable renders and handles line 
                 class="gds-button-content"
                 color="reversed"
                 data-testid="delete"
+                tabindex="0"
                 type="button"
               >
                 <div
@@ -1598,6 +1611,7 @@ exports[`EditableDataTable Component EditableDataTable renders and handles line 
                         class="gds-button-content"
                         color="secondary"
                         data-testid="cancel"
+                        tabindex="0"
                         type="button"
                       >
                         <div
@@ -1610,6 +1624,7 @@ exports[`EditableDataTable Component EditableDataTable renders and handles line 
                         class="gds-button-content"
                         color="primary"
                         data-testid="confirm"
+                        tabindex="0"
                         type="button"
                       >
                         <div
@@ -1627,6 +1642,7 @@ exports[`EditableDataTable Component EditableDataTable renders and handles line 
                 class="gds-button-content"
                 color="reversed"
                 data-testid="download"
+                tabindex="0"
                 type="button"
               >
                 <div
@@ -1865,6 +1881,7 @@ exports[`EditableDataTable Component EditableDataTable renders and handles line 
                 class="gds-button-content"
                 color="reversed"
                 data-testid="delete"
+                tabindex="0"
                 type="button"
               >
                 <div
@@ -1898,6 +1915,7 @@ exports[`EditableDataTable Component EditableDataTable renders and handles line 
                         class="gds-button-content"
                         color="secondary"
                         data-testid="cancel"
+                        tabindex="0"
                         type="button"
                       >
                         <div
@@ -1910,6 +1928,7 @@ exports[`EditableDataTable Component EditableDataTable renders and handles line 
                         class="gds-button-content"
                         color="primary"
                         data-testid="confirm"
+                        tabindex="0"
                         type="button"
                       >
                         <div
@@ -1927,6 +1946,7 @@ exports[`EditableDataTable Component EditableDataTable renders and handles line 
                 class="gds-button-content"
                 color="reversed"
                 data-testid="download"
+                tabindex="0"
                 type="button"
               >
                 <div
@@ -2480,6 +2500,7 @@ exports[`EditableDataTable Component EditableDataTable renders and new button cl
                 class="gds-button-content"
                 color="reversed"
                 data-testid="delete"
+                tabindex="0"
                 type="button"
               >
                 <div
@@ -2513,6 +2534,7 @@ exports[`EditableDataTable Component EditableDataTable renders and new button cl
                         class="gds-button-content"
                         color="secondary"
                         data-testid="cancel"
+                        tabindex="0"
                         type="button"
                       >
                         <div
@@ -2525,6 +2547,7 @@ exports[`EditableDataTable Component EditableDataTable renders and new button cl
                         class="gds-button-content"
                         color="primary"
                         data-testid="confirm"
+                        tabindex="0"
                         type="button"
                       >
                         <div
@@ -2542,6 +2565,7 @@ exports[`EditableDataTable Component EditableDataTable renders and new button cl
                 class="gds-button-content"
                 color="reversed"
                 data-testid="download"
+                tabindex="0"
                 type="button"
               >
                 <div
@@ -2686,6 +2710,7 @@ exports[`EditableDataTable Component EditableDataTable renders and new button cl
                 class="gds-button-content"
                 color="reversed"
                 data-testid="delete"
+                tabindex="0"
                 type="button"
               >
                 <div
@@ -2719,6 +2744,7 @@ exports[`EditableDataTable Component EditableDataTable renders and new button cl
                         class="gds-button-content"
                         color="secondary"
                         data-testid="cancel"
+                        tabindex="0"
                         type="button"
                       >
                         <div
@@ -2731,6 +2757,7 @@ exports[`EditableDataTable Component EditableDataTable renders and new button cl
                         class="gds-button-content"
                         color="primary"
                         data-testid="confirm"
+                        tabindex="0"
                         type="button"
                       >
                         <div
@@ -2748,6 +2775,7 @@ exports[`EditableDataTable Component EditableDataTable renders and new button cl
                 class="gds-button-content"
                 color="reversed"
                 data-testid="download"
+                tabindex="0"
                 type="button"
               >
                 <div
@@ -2770,6 +2798,7 @@ exports[`EditableDataTable Component EditableDataTable renders and new button cl
     <button
       class="gds-button-content gds-table-new-line"
       color="primary"
+      tabindex="0"
       type="button"
     >
       <div
@@ -2995,6 +3024,7 @@ exports[`EditableDataTable Component EditableDataTable renders and warn when onN
                 class="gds-button-content"
                 color="reversed"
                 data-testid="delete"
+                tabindex="0"
                 type="button"
               >
                 <div
@@ -3028,6 +3058,7 @@ exports[`EditableDataTable Component EditableDataTable renders and warn when onN
                         class="gds-button-content"
                         color="secondary"
                         data-testid="cancel"
+                        tabindex="0"
                         type="button"
                       >
                         <div
@@ -3040,6 +3071,7 @@ exports[`EditableDataTable Component EditableDataTable renders and warn when onN
                         class="gds-button-content"
                         color="primary"
                         data-testid="confirm"
+                        tabindex="0"
                         type="button"
                       >
                         <div
@@ -3057,6 +3089,7 @@ exports[`EditableDataTable Component EditableDataTable renders and warn when onN
                 class="gds-button-content"
                 color="reversed"
                 data-testid="download"
+                tabindex="0"
                 type="button"
               >
                 <div
@@ -3201,6 +3234,7 @@ exports[`EditableDataTable Component EditableDataTable renders and warn when onN
                 class="gds-button-content"
                 color="reversed"
                 data-testid="delete"
+                tabindex="0"
                 type="button"
               >
                 <div
@@ -3234,6 +3268,7 @@ exports[`EditableDataTable Component EditableDataTable renders and warn when onN
                         class="gds-button-content"
                         color="secondary"
                         data-testid="cancel"
+                        tabindex="0"
                         type="button"
                       >
                         <div
@@ -3246,6 +3281,7 @@ exports[`EditableDataTable Component EditableDataTable renders and warn when onN
                         class="gds-button-content"
                         color="primary"
                         data-testid="confirm"
+                        tabindex="0"
                         type="button"
                       >
                         <div
@@ -3263,6 +3299,7 @@ exports[`EditableDataTable Component EditableDataTable renders and warn when onN
                 class="gds-button-content"
                 color="reversed"
                 data-testid="download"
+                tabindex="0"
                 type="button"
               >
                 <div
@@ -3285,6 +3322,7 @@ exports[`EditableDataTable Component EditableDataTable renders and warn when onN
     <button
       class="gds-button-content gds-table-new-line"
       color="primary"
+      tabindex="0"
       type="button"
     >
       <div
@@ -3510,6 +3548,7 @@ exports[`EditableDataTable Component EditableDataTable renders with all buttons 
                 class="gds-button-content"
                 color="reversed"
                 data-testid="delete"
+                tabindex="0"
                 type="button"
               >
                 <div
@@ -3543,6 +3582,7 @@ exports[`EditableDataTable Component EditableDataTable renders with all buttons 
                         class="gds-button-content"
                         color="secondary"
                         data-testid="cancel"
+                        tabindex="0"
                         type="button"
                       >
                         <div
@@ -3555,6 +3595,7 @@ exports[`EditableDataTable Component EditableDataTable renders with all buttons 
                         class="gds-button-content"
                         color="primary"
                         data-testid="confirm"
+                        tabindex="0"
                         type="button"
                       >
                         <div
@@ -3572,6 +3613,7 @@ exports[`EditableDataTable Component EditableDataTable renders with all buttons 
                 class="gds-button-content"
                 color="reversed"
                 data-testid="download"
+                tabindex="0"
                 type="button"
               >
                 <div

@@ -63,7 +63,7 @@ exports[`FileField Component FileField renders with values in disabled highligte
         class="gallery"
       >
         <div
-          class="item-container"
+          class="item-container error"
         >
           <div
             class="left"
@@ -73,11 +73,12 @@ exports[`FileField Component FileField renders with values in disabled highligte
             >
               <i
                 class="icon"
-                icon="fal,paperclip"
+                icon="fal,exclamation-triangle"
               />
             </div>
             <div
               class="name"
+              tabindex="-1"
             >
               file.pdf
                (1.21 kB)
@@ -138,6 +139,7 @@ exports[`FileField Component FileField renders with values in readonly 1`] = `
             </div>
             <div
               class="name downloadable"
+              tabindex="0"
             >
               file.pdf
                (1.21 kB)
@@ -197,6 +199,7 @@ exports[`FileField Component FileField renders with values with fieldSize and in
             </div>
             <div
               class="name downloadable"
+              tabindex="0"
             >
               file.pdf
                (1.21 kB)
@@ -208,6 +211,7 @@ exports[`FileField Component FileField renders with values with fieldSize and in
             <button
               class="gds-button-content delete-icon"
               color="reversed"
+              tabindex="0"
               type="button"
             >
               <div
@@ -240,6 +244,7 @@ exports[`FileField Component FileField renders with values with fieldSize and in
                     <button
                       class="gds-button-content"
                       color="secondary"
+                      tabindex="0"
                       type="button"
                     >
                       <div
@@ -251,6 +256,7 @@ exports[`FileField Component FileField renders with values with fieldSize and in
                     <button
                       class="gds-button-content"
                       color="primary"
+                      tabindex="0"
                       type="button"
                     >
                       <div

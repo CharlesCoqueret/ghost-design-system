@@ -10,6 +10,7 @@ exports[`YearPickerHeader Component YearPickerHeader renders handles changes 1`]
         class="gds-button-content"
         color="reversed"
         data-testid="TESTID-decreaseYear"
+        tabindex="0"
         type="button"
       >
         <div
@@ -25,6 +26,7 @@ exports[`YearPickerHeader Component YearPickerHeader renders handles changes 1`]
         class="gds-button-content"
         color="reversed"
         data-testid="TESTID-increaseYear"
+        tabindex="0"
         type="button"
       >
         <div
@@ -50,6 +52,7 @@ exports[`YearPickerHeader Component YearPickerHeader renders without data-testid
       <button
         class="gds-button-content"
         color="reversed"
+        tabindex="0"
         type="button"
       >
         <div
@@ -64,6 +67,7 @@ exports[`YearPickerHeader Component YearPickerHeader renders without data-testid
       <button
         class="gds-button-content"
         color="reversed"
+        tabindex="0"
         type="button"
       >
         <div

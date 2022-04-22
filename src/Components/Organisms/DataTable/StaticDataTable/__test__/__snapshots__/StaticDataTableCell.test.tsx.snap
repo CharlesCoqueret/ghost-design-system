@@ -86,6 +86,7 @@ exports[`StaticDataTableCell component StaticDataTableCell renders with button 1
             <button
               class="gds-button-content"
               color="reversed"
+              tabindex="0"
               type="button"
             >
               <div

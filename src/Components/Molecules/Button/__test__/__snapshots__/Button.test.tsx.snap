@@ -7,6 +7,7 @@ exports[`Button Component Button renders and handle click 1`] = `
       class="gds-button-content"
       color="secondary"
       data-testid="DATA-TEST-ID"
+      tabindex="0"
       type="submit"
     >
       <div
@@ -35,6 +36,7 @@ exports[`Button Component Button renders when loading 1`] = `
       color="primary"
       data-testid="DATA-TEST-ID"
       disabled=""
+      tabindex="-1"
       type="button"
     >
       <div
@@ -97,6 +99,7 @@ exports[`Button Component Button renders with list and handle open menu and clic
       class="gds-button-content"
       color="secondary"
       data-testid="MAIN-BUTTON"
+      tabindex="0"
       type="button"
     >
       <div
@@ -166,6 +169,7 @@ exports[`Button Component Button renders with list and handle open menu and clic
       class="gds-button-content"
       color="secondary"
       data-testid="MAIN-BUTTON"
+      tabindex="0"
       type="button"
     >
       <div
@@ -235,6 +239,7 @@ exports[`Button Component Button renders with list and handle open menu and clic
       class="gds-button-content"
       color="secondary"
       data-testid="MAIN-BUTTON"
+      tabindex="0"
       type="button"
     >
       <div
@@ -304,6 +309,7 @@ exports[`Button Component Button renders with list and handle open menu and clos
       class="gds-button-content"
       color="secondary"
       data-testid="MAIN-BUTTON"
+      tabindex="0"
       type="button"
     >
       <div
@@ -371,6 +377,7 @@ exports[`Button Component Button renders with list and handle open menu and clos
       class="gds-button-content"
       color="secondary"
       data-testid="MAIN-BUTTON"
+      tabindex="0"
       type="button"
     >
       <div
@@ -438,6 +445,7 @@ exports[`Button Component Button renders with list and handle open menu and clos
       class="gds-button-content"
       color="secondary"
       data-testid="MAIN-BUTTON"
+      tabindex="0"
       type="button"
     >
       <div
@@ -505,6 +513,7 @@ exports[`Button Component Button renders with popover 1`] = `
       class="gds-button-content"
       color="secondary"
       data-testid="MAIN-BUTTON"
+      tabindex="0"
       type="button"
     >
       <div
@@ -546,6 +555,7 @@ exports[`Button Component Button renders with popover 1`] = `
                 class="gds-button-content"
                 color="primary"
                 data-testid="BUTTON1"
+                tabindex="0"
                 type="button"
               >
                 <div
@@ -566,6 +576,7 @@ exports[`Button Component Button renders with popover 1`] = `
                 class="gds-button-content"
                 color="secondary"
                 data-testid="BUTTON2"
+                tabindex="0"
                 type="button"
               >
                 <div
@@ -590,6 +601,7 @@ exports[`Button Component Button renders with popover 2`] = `
       class="gds-button-content"
       color="secondary"
       data-testid="MAIN-BUTTON"
+      tabindex="0"
       type="button"
     >
       <div
@@ -632,6 +644,7 @@ exports[`Button Component Button renders with popover 2`] = `
                 class="gds-button-content"
                 color="primary"
                 data-testid="BUTTON1"
+                tabindex="0"
                 type="button"
               >
                 <div
@@ -652,6 +665,7 @@ exports[`Button Component Button renders with popover 2`] = `
                 class="gds-button-content"
                 color="secondary"
                 data-testid="BUTTON2"
+                tabindex="0"
                 type="button"
               >
                 <div
@@ -676,6 +690,7 @@ exports[`Button Component Button renders with popover 3`] = `
       class="gds-button-content"
       color="secondary"
       data-testid="MAIN-BUTTON"
+      tabindex="0"
       type="button"
     >
       <div
@@ -718,6 +733,7 @@ exports[`Button Component Button renders with popover 3`] = `
                 class="gds-button-content"
                 color="primary"
                 data-testid="BUTTON1"
+                tabindex="0"
                 type="button"
               >
                 <div
@@ -738,6 +754,7 @@ exports[`Button Component Button renders with popover 3`] = `
                 class="gds-button-content"
                 color="secondary"
                 data-testid="BUTTON2"
+                tabindex="0"
                 type="button"
               >
                 <div
@@ -762,6 +779,7 @@ exports[`Button Component Button renders with popover without buttons 1`] = `
       class="gds-button-content"
       color="secondary"
       data-testid="MAIN-BUTTON"
+      tabindex="0"
       type="button"
     >
       <div
@@ -814,6 +832,7 @@ exports[`Button Component Button renders with popover without buttons 2`] = `
       class="gds-button-content"
       color="secondary"
       data-testid="MAIN-BUTTON"
+      tabindex="0"
       type="button"
     >
       <div
@@ -867,6 +886,7 @@ exports[`Button Component Button renders with popover without buttons 3`] = `
       class="gds-button-content"
       color="secondary"
       data-testid="MAIN-BUTTON"
+      tabindex="0"
       type="button"
     >
       <div
@@ -919,6 +939,7 @@ exports[`Button Component Button renders with tooltip 1`] = `
     <button
       class="gds-button-content"
       color="secondary"
+      tabindex="0"
       type="button"
     >
       <div
