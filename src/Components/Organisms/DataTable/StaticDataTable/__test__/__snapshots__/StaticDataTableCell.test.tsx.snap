@@ -126,7 +126,7 @@ exports[`StaticDataTableCell component StaticDataTableCell renders with checkbox
               <label
                 class="input-checkbox-field-read-only input-checkbox-field-checked"
                 for="checkbox-1"
-                tabindex="0"
+                tabindex="-1"
               >
                 <div
                   aria-checked="true"
@@ -223,6 +223,7 @@ exports[`StaticDataTableCell component StaticDataTableCell renders with date 1`]
                     name="date"
                     placeholder="-"
                     readonly=""
+                    tabindex="-1"
                     type="text"
                     value="Apr 22, 2022"
                   />
@@ -406,6 +407,7 @@ exports[`StaticDataTableCell component StaticDataTableCell renders with year 1`]
                     name="year"
                     placeholder="-"
                     readonly=""
+                    tabindex="-1"
                     type="text"
                     value="2022"
                   />

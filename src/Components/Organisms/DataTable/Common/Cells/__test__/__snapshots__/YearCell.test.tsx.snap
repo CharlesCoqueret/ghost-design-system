@@ -26,6 +26,7 @@ exports[`YearCell component YearCell renders 1`] = `
                     name="data"
                     placeholder="-"
                     readonly=""
+                    tabindex="-1"
                     type="text"
                     value="2022"
                   />
@@ -66,6 +67,7 @@ exports[`YearCell component YearCell renders in edit mode and handles change 1`]
                     class="field input-year-picker-input"
                     name="data"
                     placeholder="YYYY"
+                    tabindex="0"
                     type="text"
                     value="2022"
                   />
@@ -106,6 +108,7 @@ exports[`YearCell component YearCell renders in edit mode via extra 1`] = `
                     class="field input-year-picker-input"
                     name="data"
                     placeholder="YYYY"
+                    tabindex="0"
                     type="text"
                     value="2022"
                   />
@@ -148,6 +151,7 @@ exports[`YearCell component YearCell renders when hidden 1`] = `
                     name="data"
                     placeholder="-"
                     readonly=""
+                    tabindex="-1"
                     type="text"
                     value="2022"
                   />
@@ -189,6 +193,7 @@ exports[`YearCell component YearCell renders with forced value 1`] = `
                     name="data"
                     placeholder="-"
                     readonly=""
+                    tabindex="-1"
                     type="text"
                     value="2022"
                   />

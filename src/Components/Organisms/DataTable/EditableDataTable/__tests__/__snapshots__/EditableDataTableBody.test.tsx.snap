@@ -6,6 +6,7 @@ exports[`EditableDataTableBody Component EditableDataTableBody renders and handl
     <tbody>
       <tr
         class="pointer"
+        tabindex="0"
       >
         <td
           class="table--cell--code"
@@ -172,6 +173,7 @@ exports[`EditableDataTableBody Component EditableDataTableBody renders and handl
                     class="input-date-picker-input"
                     name="startDate"
                     placeholder="MMM DD, YYYY"
+                    tabindex="0"
                     type="text"
                     value="Mar 24, 2021"
                   />
@@ -193,9 +195,11 @@ exports[`EditableDataTableBody Component EditableDataTableBody renders and handl
     <tbody>
       <tr
         class="selected"
+        tabindex="-1"
       >
         <td
           class="table--value--selectable"
+          tabindex="0"
         >
           <div
             class="checkbox-marker selected"
@@ -369,6 +373,7 @@ exports[`EditableDataTableBody Component EditableDataTableBody renders and handl
                     class="input-date-picker-input"
                     name="startDate"
                     placeholder="MMM DD, YYYY"
+                    tabindex="0"
                     type="text"
                     value="Mar 24, 2021"
                   />

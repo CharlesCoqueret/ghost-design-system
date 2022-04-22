@@ -8,6 +8,7 @@ exports[`StaticDataTableHeader component StaticDataTableHeader disables sort whe
         <th>
           <div
             class="table--header-value table--header-value--sortable"
+            tabindex="0"
           >
             <span
               class="table--header-value--title right"
@@ -31,6 +32,7 @@ exports[`StaticDataTableHeader component StaticDataTableHeader handles sort chan
           <div
             class="table--header-value table--header-value--sortable"
             data-testid="DATA-TEST-ID-sort"
+            tabindex="0"
           >
             <span
               class="table--header-value--title right"
@@ -65,6 +67,7 @@ exports[`StaticDataTableHeader component StaticDataTableHeader handles sort chan
           <div
             class="table--header-value table--header-value--sortable"
             data-testid="DATA-TEST-ID-sort"
+            tabindex="0"
           >
             <span
               class="table--header-value--title right"
@@ -99,6 +102,7 @@ exports[`StaticDataTableHeader component StaticDataTableHeader handles sort chan
           <div
             class="table--header-value table--header-value--sortable"
             data-testid="DATA-TEST-ID-sort"
+            tabindex="0"
           >
             <span
               class="table--header-value--title right"
@@ -133,6 +137,7 @@ exports[`StaticDataTableHeader component StaticDataTableHeader handles sort chan
           <div
             class="table--header-value table--header-value--sortable"
             data-testid="DATA-TEST-ID-sort"
+            tabindex="0"
           >
             <span
               class="table--header-value--title right"
@@ -166,6 +171,7 @@ exports[`StaticDataTableHeader component StaticDataTableHeader renders without s
         <th>
           <div
             class="table--header-value"
+            tabindex="-1"
           >
             <span
               class="table--header-value--title right"
@@ -191,6 +197,7 @@ exports[`StaticDataTableHeader component StaticDataTableHeader with Total 1`] = 
         <th>
           <div
             class="table--header-value"
+            tabindex="-1"
           >
             <span
               class="table--header-value--title right"
@@ -213,6 +220,7 @@ exports[`StaticDataTableHeader component StaticDataTableHeader with custom sort 
         <th>
           <div
             class="table--header-value table--header-value--sortable"
+            tabindex="0"
           >
             <span
               class="table--header-value--title right"
@@ -248,6 +256,7 @@ exports[`StaticDataTableHeader component StaticDataTableHeader with hidden colum
         >
           <div
             class="table--header-value"
+            tabindex="-1"
           >
             <span
               class="table--header-value--title right"
@@ -273,6 +282,7 @@ exports[`StaticDataTableHeader component StaticDataTableHeader with row selectio
         <th>
           <div
             class="table--header-value table--header-value--sortable"
+            tabindex="0"
           >
             <span
               class="table--header-value--title right"

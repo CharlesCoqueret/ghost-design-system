@@ -69,7 +69,7 @@ const SwitchInput = (props: ISwitchInputProps): ReactElement => {
             key={option.value}
             onClick={handleChange(option.value)}
             onKeyUp={handleChange(option.value)}
-            tabIndex={0}>
+            tabIndex={readOnly || disabled ? -1 : 0}>
             <div className='switch-marker'>
               <input
                 type='checkbox'

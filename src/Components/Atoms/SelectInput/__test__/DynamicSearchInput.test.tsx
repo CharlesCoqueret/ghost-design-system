@@ -438,6 +438,24 @@ describe('DynamicSearchInput Component', () => {
     expect(noOptionsMessageMock).toBeCalledTimes(0);
     expect(searchOptionsMock).toBeCalledTimes(1);
     expect(onChangeMock).toBeCalledTimes(0);
+
+    container.rerender(
+      <DynamicSearchInput
+        dataTestId='DATA-TEST-ID'
+        name='SELECT'
+        noOptionsMessage={noOptionsMessageMock}
+        onChange={onChangeMock}
+        resolveValue={resolveValueMock}
+        searchOptions={searchOptionsMock}
+      />,
+    );
+
+    expect(container?.container).toMatchSnapshot();
+    expect(resolveValueMock).toBeCalledTimes(2);
+    expect(resolveValueMock).toBeCalledWith('OPTION2');
+    expect(noOptionsMessageMock).toBeCalledTimes(0);
+    expect(searchOptionsMock).toBeCalledTimes(1);
+    expect(onChangeMock).toBeCalledTimes(0);
   });
 
   it('DynamicSearchInput handles change to undefined', async () => {

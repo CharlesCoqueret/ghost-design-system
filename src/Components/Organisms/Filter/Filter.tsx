@@ -12,6 +12,8 @@ export interface IFilterProps<T> {
   advancedSearchItems?: Array<IFilterLayoutAndFieldsProps<T>>;
   /** For test purpose only */
   dataTestId?: string;
+  /** Disable tabbing outside modal (optional, default: true) */
+  disableTabOutside?: boolean;
   /** Initial filter values (optional, default: undefined) */
   initialValues?: Partial<T>;
   localization: {
@@ -34,7 +36,8 @@ export interface IFilterProps<T> {
  * Filter
  */
 const Filter = <T,>(props: IFilterProps<T>): React.ReactElement => {
-  const { advancedSearchItems, dataTestId, initialValues, localization, onChange, searchBarItems } = props;
+  const { advancedSearchItems, dataTestId, disableTabOutside, initialValues, localization, onChange, searchBarItems } =
+    props;
 
   const [currentSearchBarValues, setSearchBarCurrentValues] = useState<Partial<T> | undefined>(
     cloneDeep(initialValues),
@@ -122,10 +125,11 @@ const Filter = <T,>(props: IFilterProps<T>): React.ReactElement => {
           closeOnPressEscape
           closeOnClickOutside
           closeIcon
-          show={advancedSearchOpen}
+          disableTabOutside={disableTabOutside}
           onHide={handleCloseAdvancedSearch}
-          title={localization.advancedSearchTitle}
-          size={'lg'}>
+          show={advancedSearchOpen}
+          size={'lg'}
+          title={localization.advancedSearchTitle}>
           <ModalBody>
             <Container>
               <Row>

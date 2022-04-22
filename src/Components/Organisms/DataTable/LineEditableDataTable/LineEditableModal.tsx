@@ -176,7 +176,14 @@ const LineEditableModal = <T,>(props: ILineEditableModalProps<T>): ReactElement 
   });
 
   return (
-    <Modal show={true} title={title} closeIcon={false} closeOnPressEscape={false} closeOnClickOutside={false} size='lg'>
+    <Modal
+      show={true}
+      title={title}
+      closeIcon={false}
+      closeOnPressEscape={false}
+      closeOnClickOutside={false}
+      disableTabOutside={extra?.disableTabOutside}
+      size='lg'>
       <ModalBody>{formElement}</ModalBody>
       <ModalFooter>
         {extra?.rowEditExtraActions !== undefined &&

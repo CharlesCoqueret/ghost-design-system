@@ -73,7 +73,7 @@ const CheckboxInput = (props: ICheckboxInputProps): ReactElement => {
             key={option.value}
             onClick={handleChange(option.value)}
             onKeyUp={handleChange(option.value)}
-            tabIndex={0}>
+            tabIndex={readOnly || disabled ? -1 : 0}>
             <div
               aria-checked={option.checked}
               aria-label={option.label.toString()}

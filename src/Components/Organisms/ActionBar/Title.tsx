@@ -97,6 +97,7 @@ const Title = (props: ITitleProps): ReactElement => {
           ref={inputRef}
           style={currentInputStyle}
           type='text'
+          tabIndex={isEditable ? 0 : -1}
           value={currentTitle}
         />
       </Tooltip>

@@ -157,6 +157,7 @@ exports[`StaticDataTableBody component StaticDataTableBody renders with number h
       <tr
         class="pointer"
         data-testid="DATA-TEST-ID-row-0"
+        tabindex="0"
       >
         <td
           class=""
@@ -186,6 +187,7 @@ exports[`StaticDataTableBody component StaticDataTableBody renders with number h
       <tr
         class="pointer"
         data-testid="DATA-TEST-ID-row-0"
+        tabindex="0"
       >
         <td
           class=""
@@ -255,9 +257,11 @@ exports[`StaticDataTableBody component StaticDataTableBody renders with number s
       <tr
         class=""
         data-testid="DATA-TEST-ID-row-0"
+        tabindex="-1"
       >
         <td
           class="table--value--selectable"
+          tabindex="0"
         >
           <div
             class="checkbox-marker"
@@ -297,9 +301,11 @@ exports[`StaticDataTableBody component StaticDataTableBody renders with number s
       <tr
         class="selected"
         data-testid="DATA-TEST-ID-row-0"
+        tabindex="-1"
       >
         <td
           class="table--value--selectable"
+          tabindex="0"
         >
           <div
             class="checkbox-marker selected"
@@ -339,9 +345,11 @@ exports[`StaticDataTableBody component StaticDataTableBody renders with number s
       <tr
         class=""
         data-testid="DATA-TEST-ID-row-0"
+        tabindex="-1"
       >
         <td
           class="table--value--selectable"
+          tabindex="0"
         >
           <div
             class="checkbox-marker"
@@ -381,9 +389,11 @@ exports[`StaticDataTableBody component StaticDataTableBody renders with number s
       <tr
         class=""
         data-testid="DATA-TEST-ID-row-0"
+        tabindex="-1"
       >
         <td
           class="table--value--selectable"
+          tabindex="0"
         >
           <div
             class="checkbox-marker"
@@ -422,6 +432,7 @@ exports[`StaticDataTableBody component StaticDataTableBody renders with number w
     <tbody>
       <tr
         class=""
+        tabindex="-1"
       >
         <td />
         <td

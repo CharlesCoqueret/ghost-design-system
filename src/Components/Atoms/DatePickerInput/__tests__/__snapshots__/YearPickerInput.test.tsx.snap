@@ -16,6 +16,7 @@ exports[`YearPickerInput Component YearPickerInput renders and changes with empt
           class="field input-year-picker-input"
           name="NAME"
           placeholder="TESTPLACEHOLDER"
+          tabindex="0"
           type="text"
           value="2022"
         />
@@ -42,6 +43,7 @@ exports[`YearPickerInput Component YearPickerInput renders and changes without o
           class="field input-year-picker-input"
           name="NAME"
           placeholder="TESTPLACEHOLDER"
+          tabindex="0"
           type="text"
           value=""
         />
@@ -68,6 +70,7 @@ exports[`YearPickerInput Component YearPickerInput renders and changes without o
           class="field input-year-picker-input"
           name="NAME"
           placeholder="TESTPLACEHOLDER"
+          tabindex="0"
           type="text"
           value=""
         />
@@ -94,6 +97,7 @@ exports[`YearPickerInput Component YearPickerInput renders handles changes 1`] =
           class="field input-year-picker-input"
           name="NAME"
           placeholder="TESTPLACEHOLDER"
+          tabindex="0"
           type="text"
           value="1984"
         />
@@ -120,6 +124,7 @@ exports[`YearPickerInput Component YearPickerInput renders handles changes 2`] =
           class="field input-year-picker-input"
           name="NAME"
           placeholder="TESTPLACEHOLDER"
+          tabindex="0"
           type="text"
           value="1984"
         />
@@ -146,6 +151,7 @@ exports[`YearPickerInput Component YearPickerInput renders in Error 1`] = `
           class="field input-year-picker-input input-error"
           name="NAME"
           placeholder="YYYY"
+          tabindex="0"
           type="text"
           value="2022"
         />
@@ -173,6 +179,7 @@ exports[`YearPickerInput Component YearPickerInput renders in readOnly, highligh
           name="NAME"
           placeholder="-"
           readonly=""
+          tabindex="-1"
           type="text"
           value="2022"
         />

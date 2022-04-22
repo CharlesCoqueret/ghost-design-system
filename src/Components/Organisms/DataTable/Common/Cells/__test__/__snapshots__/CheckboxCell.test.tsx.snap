@@ -17,7 +17,7 @@ exports[`CheckboxCell component CheckboxCell renders 1`] = `
               <label
                 class="input-checkbox-field-read-only input-checkbox-field-checked"
                 for="checkbox-1"
-                tabindex="0"
+                tabindex="-1"
               >
                 <div
                   aria-checked="true"
@@ -36,7 +36,7 @@ exports[`CheckboxCell component CheckboxCell renders 1`] = `
               <label
                 class="input-checkbox-field-read-only"
                 for="checkbox-2"
-                tabindex="0"
+                tabindex="-1"
               >
                 <div
                   aria-checked="false"
@@ -55,7 +55,7 @@ exports[`CheckboxCell component CheckboxCell renders 1`] = `
               <label
                 class="input-checkbox-field-read-only"
                 for="checkbox-3"
-                tabindex="0"
+                tabindex="-1"
               >
                 <div
                   aria-label="Label 3"
@@ -258,7 +258,7 @@ exports[`CheckboxCell component CheckboxCell renders when hidden 1`] = `
               <label
                 class="input-checkbox-field-read-only input-checkbox-field-checked"
                 for="checkbox-5"
-                tabindex="0"
+                tabindex="-1"
               >
                 <div
                   aria-checked="true"
@@ -277,7 +277,7 @@ exports[`CheckboxCell component CheckboxCell renders when hidden 1`] = `
               <label
                 class="input-checkbox-field-read-only"
                 for="checkbox-6"
-                tabindex="0"
+                tabindex="-1"
               >
                 <div
                   aria-checked="false"
@@ -296,7 +296,7 @@ exports[`CheckboxCell component CheckboxCell renders when hidden 1`] = `
               <label
                 class="input-checkbox-field-read-only"
                 for="checkbox-7"
-                tabindex="0"
+                tabindex="-1"
               >
                 <div
                   aria-label="Label 3"
@@ -337,7 +337,7 @@ exports[`CheckboxCell component CheckboxCell renders with forced value 1`] = `
               <label
                 class="input-checkbox-field-read-only input-checkbox-field-checked"
                 for="checkbox-4"
-                tabindex="0"
+                tabindex="-1"
               >
                 <div
                   aria-checked="true"

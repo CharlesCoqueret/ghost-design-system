@@ -9,7 +9,7 @@ exports[`SwitchInput Component SwitchInput renders highlighted 1`] = `
       class="input-switch-field-read-only"
       data-testid="KEY_0"
       for="switch-31"
-      tabindex="0"
+      tabindex="-1"
     >
       <div
         class="switch-marker"
@@ -33,7 +33,7 @@ exports[`SwitchInput Component SwitchInput renders highlighted 1`] = `
       class="input-switch-field-read-only input-switch-field-checked"
       data-testid="KEY_1"
       for="switch-32"
-      tabindex="0"
+      tabindex="-1"
     >
       <div
         class="switch-marker"
@@ -58,7 +58,7 @@ exports[`SwitchInput Component SwitchInput renders highlighted 1`] = `
       class="input-switch-field-read-only"
       data-testid="KEY_2"
       for="switch-33"
-      tabindex="0"
+      tabindex="-1"
     >
       <div
         class="switch-marker"
@@ -82,7 +82,7 @@ exports[`SwitchInput Component SwitchInput renders highlighted 1`] = `
       class="input-switch-field-read-only"
       data-testid="KEY_3"
       for="switch-34"
-      tabindex="0"
+      tabindex="-1"
     >
       <div
         class="switch-marker"
@@ -105,7 +105,7 @@ exports[`SwitchInput Component SwitchInput renders highlighted 1`] = `
       class="input-switch-field-read-only field-highlighted"
       data-testid="KEY_4"
       for="switch-35"
-      tabindex="0"
+      tabindex="-1"
     >
       <div
         class="switch-marker"
@@ -128,7 +128,7 @@ exports[`SwitchInput Component SwitchInput renders highlighted 1`] = `
       class="input-switch-field-read-only"
       data-testid="KEY_5"
       for="switch-36"
-      tabindex="0"
+      tabindex="-1"
     >
       <div
         class="switch-marker"

@@ -11,6 +11,7 @@ exports[`EditableDataTable Component EditableDataTable renders and handles chang
           <th>
             <div
               class="table--header-value table--header-value--sortable"
+              tabindex="0"
             >
               <span
                 class="table--header-value--title center"
@@ -33,6 +34,7 @@ exports[`EditableDataTable Component EditableDataTable renders and handles chang
           <th>
             <div
               class="table--header-value table--header-value--sortable"
+              tabindex="0"
             >
               <span
                 class="table--header-value--title left"
@@ -55,6 +57,7 @@ exports[`EditableDataTable Component EditableDataTable renders and handles chang
           <th>
             <div
               class="table--header-value table--header-value--sortable"
+              tabindex="0"
             >
               <span
                 class="table--header-value--title left"
@@ -79,6 +82,7 @@ exports[`EditableDataTable Component EditableDataTable renders and handles chang
       <tbody>
         <tr
           class=""
+          tabindex="-1"
         >
           <td
             class="table--cell--code"
@@ -197,6 +201,7 @@ exports[`EditableDataTable Component EditableDataTable renders and handles chang
         </tr>
         <tr
           class=""
+          tabindex="-1"
         >
           <td
             class="table--cell--code"
@@ -332,6 +337,7 @@ exports[`EditableDataTable Component EditableDataTable renders and handles chang
           <th>
             <div
               class="table--header-value table--header-value--sortable"
+              tabindex="0"
             >
               <span
                 class="table--header-value--title center"
@@ -354,6 +360,7 @@ exports[`EditableDataTable Component EditableDataTable renders and handles chang
           <th>
             <div
               class="table--header-value table--header-value--sortable"
+              tabindex="0"
             >
               <span
                 class="table--header-value--title left"
@@ -376,6 +383,7 @@ exports[`EditableDataTable Component EditableDataTable renders and handles chang
           <th>
             <div
               class="table--header-value table--header-value--sortable"
+              tabindex="0"
             >
               <span
                 class="table--header-value--title left"
@@ -400,6 +408,7 @@ exports[`EditableDataTable Component EditableDataTable renders and handles chang
       <tbody>
         <tr
           class=""
+          tabindex="-1"
         >
           <td
             class="table--cell--code"
@@ -518,6 +527,7 @@ exports[`EditableDataTable Component EditableDataTable renders and handles chang
         </tr>
         <tr
           class=""
+          tabindex="-1"
         >
           <td
             class="table--cell--code"
@@ -653,6 +663,7 @@ exports[`EditableDataTable Component EditableDataTable renders and handles line 
           <th>
             <div
               class="table--header-value table--header-value--sortable"
+              tabindex="0"
             >
               <span
                 class="table--header-value--title center"
@@ -675,6 +686,7 @@ exports[`EditableDataTable Component EditableDataTable renders and handles line 
           <th>
             <div
               class="table--header-value table--header-value--sortable"
+              tabindex="0"
             >
               <span
                 class="table--header-value--title left"
@@ -697,6 +709,7 @@ exports[`EditableDataTable Component EditableDataTable renders and handles line 
           <th>
             <div
               class="table--header-value table--header-value--sortable"
+              tabindex="0"
             >
               <span
                 class="table--header-value--title left"
@@ -719,6 +732,7 @@ exports[`EditableDataTable Component EditableDataTable renders and handles line 
           <th>
             <div
               class="table--header-value"
+              tabindex="-1"
             >
               <span
                 class="table--header-value--title center"
@@ -732,6 +746,7 @@ exports[`EditableDataTable Component EditableDataTable renders and handles line 
       <tbody>
         <tr
           class=""
+          tabindex="-1"
         >
           <td
             class="table--cell--code"
@@ -940,6 +955,7 @@ exports[`EditableDataTable Component EditableDataTable renders and handles line 
         </tr>
         <tr
           class=""
+          tabindex="-1"
         >
           <td
             class="table--cell--code"
@@ -1165,6 +1181,7 @@ exports[`EditableDataTable Component EditableDataTable renders and handles line 
           <th>
             <div
               class="table--header-value table--header-value--sortable"
+              tabindex="0"
             >
               <span
                 class="table--header-value--title center"
@@ -1187,6 +1204,7 @@ exports[`EditableDataTable Component EditableDataTable renders and handles line 
           <th>
             <div
               class="table--header-value table--header-value--sortable"
+              tabindex="0"
             >
               <span
                 class="table--header-value--title left"
@@ -1209,6 +1227,7 @@ exports[`EditableDataTable Component EditableDataTable renders and handles line 
           <th>
             <div
               class="table--header-value table--header-value--sortable"
+              tabindex="0"
             >
               <span
                 class="table--header-value--title left"
@@ -1231,6 +1250,7 @@ exports[`EditableDataTable Component EditableDataTable renders and handles line 
           <th>
             <div
               class="table--header-value"
+              tabindex="-1"
             >
               <span
                 class="table--header-value--title center"
@@ -1244,6 +1264,7 @@ exports[`EditableDataTable Component EditableDataTable renders and handles line 
       <tbody>
         <tr
           class=""
+          tabindex="-1"
         >
           <td
             class="table--cell--code"
@@ -1452,6 +1473,7 @@ exports[`EditableDataTable Component EditableDataTable renders and handles line 
         </tr>
         <tr
           class=""
+          tabindex="-1"
         >
           <td
             class="table--cell--code"
@@ -1677,6 +1699,7 @@ exports[`EditableDataTable Component EditableDataTable renders and handles line 
           <th>
             <div
               class="table--header-value table--header-value--sortable"
+              tabindex="0"
             >
               <span
                 class="table--header-value--title center"
@@ -1699,6 +1722,7 @@ exports[`EditableDataTable Component EditableDataTable renders and handles line 
           <th>
             <div
               class="table--header-value table--header-value--sortable"
+              tabindex="0"
             >
               <span
                 class="table--header-value--title left"
@@ -1721,6 +1745,7 @@ exports[`EditableDataTable Component EditableDataTable renders and handles line 
           <th>
             <div
               class="table--header-value table--header-value--sortable"
+              tabindex="0"
             >
               <span
                 class="table--header-value--title left"
@@ -1743,6 +1768,7 @@ exports[`EditableDataTable Component EditableDataTable renders and handles line 
           <th>
             <div
               class="table--header-value"
+              tabindex="-1"
             >
               <span
                 class="table--header-value--title center"
@@ -1756,6 +1782,7 @@ exports[`EditableDataTable Component EditableDataTable renders and handles line 
       <tbody>
         <tr
           class=""
+          tabindex="-1"
         >
           <td
             class="table--cell--code"
@@ -1981,6 +2008,7 @@ exports[`EditableDataTable Component EditableDataTable renders and handles sort 
           <th>
             <div
               class="table--header-value table--header-value--sortable"
+              tabindex="0"
             >
               <span
                 class="table--header-value--title center"
@@ -2003,6 +2031,7 @@ exports[`EditableDataTable Component EditableDataTable renders and handles sort 
           <th>
             <div
               class="table--header-value table--header-value--sortable"
+              tabindex="0"
             >
               <span
                 class="table--header-value--title left"
@@ -2025,6 +2054,7 @@ exports[`EditableDataTable Component EditableDataTable renders and handles sort 
           <th>
             <div
               class="table--header-value table--header-value--sortable"
+              tabindex="0"
             >
               <span
                 class="table--header-value--title left"
@@ -2049,6 +2079,7 @@ exports[`EditableDataTable Component EditableDataTable renders and handles sort 
       <tbody>
         <tr
           class=""
+          tabindex="-1"
         >
           <td
             class="table--cell--code"
@@ -2165,6 +2196,7 @@ exports[`EditableDataTable Component EditableDataTable renders and handles sort 
         </tr>
         <tr
           class=""
+          tabindex="-1"
         >
           <td
             class="table--cell--code"
@@ -2298,6 +2330,7 @@ exports[`EditableDataTable Component EditableDataTable renders and new button cl
           <th>
             <div
               class="table--header-value table--header-value--sortable"
+              tabindex="0"
             >
               <span
                 class="table--header-value--title center"
@@ -2320,6 +2353,7 @@ exports[`EditableDataTable Component EditableDataTable renders and new button cl
           <th>
             <div
               class="table--header-value table--header-value--sortable"
+              tabindex="0"
             >
               <span
                 class="table--header-value--title left"
@@ -2342,6 +2376,7 @@ exports[`EditableDataTable Component EditableDataTable renders and new button cl
           <th>
             <div
               class="table--header-value table--header-value--sortable"
+              tabindex="0"
             >
               <span
                 class="table--header-value--title left"
@@ -2364,6 +2399,7 @@ exports[`EditableDataTable Component EditableDataTable renders and new button cl
           <th>
             <div
               class="table--header-value"
+              tabindex="-1"
             >
               <span
                 class="table--header-value--title center"
@@ -2377,6 +2413,7 @@ exports[`EditableDataTable Component EditableDataTable renders and new button cl
       <tbody>
         <tr
           class=""
+          tabindex="-1"
         >
           <td
             class="table--cell--code"
@@ -2585,6 +2622,7 @@ exports[`EditableDataTable Component EditableDataTable renders and new button cl
         </tr>
         <tr
           class=""
+          tabindex="-1"
         >
           <td
             class="table--cell--code"
@@ -2822,6 +2860,7 @@ exports[`EditableDataTable Component EditableDataTable renders and warn when onN
           <th>
             <div
               class="table--header-value table--header-value--sortable"
+              tabindex="0"
             >
               <span
                 class="table--header-value--title center"
@@ -2844,6 +2883,7 @@ exports[`EditableDataTable Component EditableDataTable renders and warn when onN
           <th>
             <div
               class="table--header-value table--header-value--sortable"
+              tabindex="0"
             >
               <span
                 class="table--header-value--title left"
@@ -2866,6 +2906,7 @@ exports[`EditableDataTable Component EditableDataTable renders and warn when onN
           <th>
             <div
               class="table--header-value table--header-value--sortable"
+              tabindex="0"
             >
               <span
                 class="table--header-value--title left"
@@ -2888,6 +2929,7 @@ exports[`EditableDataTable Component EditableDataTable renders and warn when onN
           <th>
             <div
               class="table--header-value"
+              tabindex="-1"
             >
               <span
                 class="table--header-value--title center"
@@ -2901,6 +2943,7 @@ exports[`EditableDataTable Component EditableDataTable renders and warn when onN
       <tbody>
         <tr
           class=""
+          tabindex="-1"
         >
           <td
             class="table--cell--code"
@@ -3109,6 +3152,7 @@ exports[`EditableDataTable Component EditableDataTable renders and warn when onN
         </tr>
         <tr
           class=""
+          tabindex="-1"
         >
           <td
             class="table--cell--code"
@@ -3346,6 +3390,7 @@ exports[`EditableDataTable Component EditableDataTable renders with all buttons 
           <th>
             <div
               class="table--header-value table--header-value--sortable"
+              tabindex="0"
             >
               <span
                 class="table--header-value--title center"
@@ -3368,6 +3413,7 @@ exports[`EditableDataTable Component EditableDataTable renders with all buttons 
           <th>
             <div
               class="table--header-value table--header-value--sortable"
+              tabindex="0"
             >
               <span
                 class="table--header-value--title left"
@@ -3390,6 +3436,7 @@ exports[`EditableDataTable Component EditableDataTable renders with all buttons 
           <th>
             <div
               class="table--header-value table--header-value--sortable"
+              tabindex="0"
             >
               <span
                 class="table--header-value--title left"
@@ -3412,6 +3459,7 @@ exports[`EditableDataTable Component EditableDataTable renders with all buttons 
           <th>
             <div
               class="table--header-value"
+              tabindex="-1"
             >
               <span
                 class="table--header-value--title center"
@@ -3425,6 +3473,7 @@ exports[`EditableDataTable Component EditableDataTable renders with all buttons 
       <tbody>
         <tr
           class=""
+          tabindex="-1"
         >
           <td
             class="table--cell--code"
@@ -3648,6 +3697,7 @@ exports[`EditableDataTable Component EditableDataTable renders with all methods 
           <th>
             <div
               class="table--header-value table--header-value--sortable"
+              tabindex="0"
             >
               <span
                 class="table--header-value--title center"
@@ -3670,6 +3720,7 @@ exports[`EditableDataTable Component EditableDataTable renders with all methods 
           <th>
             <div
               class="table--header-value table--header-value--sortable"
+              tabindex="0"
             >
               <span
                 class="table--header-value--title left"
@@ -3692,6 +3743,7 @@ exports[`EditableDataTable Component EditableDataTable renders with all methods 
           <th>
             <div
               class="table--header-value table--header-value--sortable"
+              tabindex="0"
             >
               <span
                 class="table--header-value--title left"
@@ -3714,6 +3766,7 @@ exports[`EditableDataTable Component EditableDataTable renders with all methods 
           <th>
             <div
               class="table--header-value"
+              tabindex="-1"
             >
               <span
                 class="table--header-value--title center"
@@ -3727,6 +3780,7 @@ exports[`EditableDataTable Component EditableDataTable renders with all methods 
       <tbody>
         <tr
           class=""
+          tabindex="-1"
         >
           <td
             class="table--cell--code"
@@ -3797,6 +3851,7 @@ exports[`EditableDataTable Component EditableDataTable renders with no buttons 1
           <th>
             <div
               class="table--header-value table--header-value--sortable"
+              tabindex="0"
             >
               <span
                 class="table--header-value--title center"
@@ -3819,6 +3874,7 @@ exports[`EditableDataTable Component EditableDataTable renders with no buttons 1
           <th>
             <div
               class="table--header-value table--header-value--sortable"
+              tabindex="0"
             >
               <span
                 class="table--header-value--title left"
@@ -3841,6 +3897,7 @@ exports[`EditableDataTable Component EditableDataTable renders with no buttons 1
           <th>
             <div
               class="table--header-value table--header-value--sortable"
+              tabindex="0"
             >
               <span
                 class="table--header-value--title left"
@@ -3865,6 +3922,7 @@ exports[`EditableDataTable Component EditableDataTable renders with no buttons 1
       <tbody>
         <tr
           class=""
+          tabindex="-1"
         >
           <td
             class="table--cell--code"

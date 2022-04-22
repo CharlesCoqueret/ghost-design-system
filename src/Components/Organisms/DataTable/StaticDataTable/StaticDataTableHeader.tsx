@@ -71,7 +71,19 @@ const StaticDataTableHeader = <T,>(props: IStaticDataTableHeaderProps<T>): React
                           updateSort(column.dataIndex);
                         }
                       : undefined
-                  }>
+                  }
+                  onKeyUp={
+                    column.sorter && column.type !== ColumnType.BUTTON
+                      ? (event) => {
+                          if (event.type === 'keyup' && event.key !== 'Enter') {
+                            return;
+                          }
+                          updateSort(column.dataIndex);
+                        }
+                      : undefined
+                  }
+                  // TODO handle keypress to run sort
+                  tabIndex={column.sorter && column.type !== ColumnType.BUTTON ? 0 : -1}>
                   <span
                     className={classnames('table--header-value--title', {
                       center: [ColumnType.CODE, ColumnType.DATE, ColumnType.BUTTON].includes(column.type),

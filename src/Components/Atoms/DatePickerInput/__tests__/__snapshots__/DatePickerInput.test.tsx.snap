@@ -17,6 +17,7 @@ exports[`DatePickerInput Component DatePickerInput renders highlighted in disabl
           disabled=""
           name="NAME"
           placeholder="MMM DD, YYYY"
+          tabindex="-1"
           type="text"
           value=""
         />
@@ -44,6 +45,7 @@ exports[`DatePickerInput Component DatePickerInput renders highlighted in readon
           name="NAME"
           placeholder="-"
           readonly=""
+          tabindex="-1"
           type="text"
           value=""
         />
@@ -70,6 +72,7 @@ exports[`DatePickerInput Component DatePickerInput renders in error 1`] = `
           class="input-date-picker-input input-error"
           name="NAME"
           placeholder="MMM DD, YYYY"
+          tabindex="0"
           type="text"
           value=""
         />
@@ -97,6 +100,7 @@ exports[`DatePickerInput Component DatePickerInput renders in error in readonly 
           name="NAME"
           placeholder="-"
           readonly=""
+          tabindex="-1"
           type="text"
           value=""
         />
@@ -123,6 +127,7 @@ exports[`DatePickerInput Component DatePickerInput renders with placeholder 1`] 
           class="input-date-picker-input"
           name="NAME"
           placeholder="TESTPLACEHOLDER"
+          tabindex="0"
           type="text"
           value=""
         />
@@ -149,6 +154,7 @@ exports[`DatePickerInput Component DatePickerInput renders without Portal 1`] = 
           class="input-date-picker-input"
           name="NAME"
           placeholder="MMM DD, YYYY"
+          tabindex="0"
           type="text"
           value=""
         />

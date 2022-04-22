@@ -18,6 +18,7 @@ exports[`Title Component Title renders 1`] = `
     class="title-edit"
     placeholder="PLACEHOLDED"
     style="display: flex; width: 0px; margin: auto;"
+    tabindex="0"
     type="text"
     value="TITLE"
   />
@@ -51,6 +52,7 @@ exports[`Title Component Title renders and blurs on enter 1`] = `
     class="title-edit"
     data-testid="DATA-TEST-ID"
     style="display: flex; width: 0px; margin: auto;"
+    tabindex="0"
     type="text"
     value="ABCDE"
   />
@@ -72,6 +74,7 @@ exports[`Title Component Title renders and blurs on tab 1`] = `
     class="title-edit"
     data-testid="DATA-TEST-ID"
     style="display: flex; width: 0px; margin: auto;"
+    tabindex="0"
     type="text"
     value="ABCDE"
   />
@@ -93,6 +96,7 @@ exports[`Title Component Title renders and handles changes 1`] = `
     class="title-edit"
     data-testid="DATA-TEST-ID"
     style="display: flex; width: 0px; margin: auto;"
+    tabindex="0"
     type="text"
     value="ABCDE"
   />
@@ -115,6 +119,7 @@ exports[`Title Component Title renders not editable 1`] = `
     data-testid="DATA-TEST-ID"
     readonly=""
     style="display: flex; width: 0px; margin: auto;"
+    tabindex="-1"
     type="text"
     value="TITLE"
   />
@@ -133,6 +138,7 @@ exports[`Title Component Title renders restores title when too short 1`] = `
     class="title-edit"
     data-testid="DATA-TEST-ID"
     style="display: flex; width: 0px; margin: auto;"
+    tabindex="0"
     type="text"
     value="TITLE"
   />

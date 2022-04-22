@@ -26,6 +26,7 @@ exports[`DateCell component DateCell renders 1`] = `
                     name="data"
                     placeholder="-"
                     readonly=""
+                    tabindex="-1"
                     type="text"
                     value="Apr 03, 2022"
                   />
@@ -66,6 +67,7 @@ exports[`DateCell component DateCell renders in edit mode and handles change 1`]
                     class="input-date-picker-input"
                     name="data"
                     placeholder="MMM DD, YYYY"
+                    tabindex="0"
                     type="text"
                     value="Apr 03, 2022"
                   />
@@ -106,6 +108,7 @@ exports[`DateCell component DateCell renders in edit mode via extra 1`] = `
                     class="input-date-picker-input"
                     name="data"
                     placeholder="MMM DD, YYYY"
+                    tabindex="0"
                     type="text"
                     value="Apr 03, 2022"
                   />
@@ -148,6 +151,7 @@ exports[`DateCell component DateCell renders when hidden 1`] = `
                     name="data"
                     placeholder="-"
                     readonly=""
+                    tabindex="-1"
                     type="text"
                     value="Apr 03, 2022"
                   />
@@ -189,6 +193,7 @@ exports[`DateCell component DateCell renders with forced value 1`] = `
                     name="data"
                     placeholder="-"
                     readonly=""
+                    tabindex="-1"
                     type="text"
                     value="Apr 04, 2022"
                   />

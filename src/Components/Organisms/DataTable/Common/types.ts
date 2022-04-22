@@ -272,6 +272,8 @@ export interface IExtraStaticDataTableProps<T> {
 export interface IExtraLineEditableDataTableProps<T> extends IExtraStaticDataTableProps<T> {
   /** Action column width (as a CSSProperty) (optional, default: undefined) */
   actionColumnWidth?: string;
+  /** Disable tabbing outside modal (optional, default: true) */
+  disableTabOutside?: boolean;
   /** Notification of initiation of changes on a specific row (optional, default: undefined) */
   onRowEdit?: (editRow: T, editedRowIndex: number) => void;
   /** Additional actions shown in the row edit modal (optional, default: undefined) */

@@ -93,6 +93,12 @@ const Button = (props: IButtonProps): ReactElement => {
               setIsPopoverOpen(true);
             }
           }}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter') e.stopPropagation();
+          }}
+          onKeyUp={(e) => {
+            if (e.key === 'Enter') e.stopPropagation();
+          }}
           ref={ref}
           type={type}
           tabIndex={loading || disabled ? -1 : 0}>

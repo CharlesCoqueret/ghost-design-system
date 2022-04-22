@@ -96,6 +96,7 @@ const DatePickerInput = (props: IDatePickerProps): ReactElement => {
         onClickOutside={(event) => {
           event.stopPropagation();
         }}
+        tabIndex={readOnly || disabled ? -1 : 0}
       />
     </div>
   );

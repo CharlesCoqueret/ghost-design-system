@@ -19,6 +19,7 @@ exports[`YearPickerField Component YearPickerField renders 1`] = `
             class="field input-year-picker-input"
             name="name"
             placeholder="YYYY"
+            tabindex="0"
             type="text"
             value=""
           />
@@ -50,6 +51,7 @@ exports[`YearPickerField Component YearPickerField renders with values in disabl
             disabled=""
             name="name"
             placeholder="YYYY"
+            tabindex="-1"
             type="text"
             value="12345"
           />
@@ -81,6 +83,7 @@ exports[`YearPickerField Component YearPickerField renders with values in readon
             name="name"
             placeholder="-"
             readonly=""
+            tabindex="-1"
             type="text"
             value="0012"
           />
@@ -111,6 +114,7 @@ exports[`YearPickerField Component YearPickerField renders with values with fiel
             class="field input-year-picker-input"
             name="name"
             placeholder="YYYY"
+            tabindex="0"
             type="text"
             value="0001"
           />

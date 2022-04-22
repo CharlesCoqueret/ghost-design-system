@@ -1,4 +1,4 @@
-import React, { ReactElement, MouseEvent, useState } from 'react';
+import React, { KeyboardEvent, ReactElement, MouseEvent, useState } from 'react';
 import classnames from 'classnames';
 
 import StaticDataTableCell from './StaticDataTableCell';
@@ -24,9 +24,13 @@ const StaticDataTableBody = <T,>(props: IStaticDataTableBodyProps<T>): ReactElem
 
   const handleRowClick = (row: T, rowIndex: number) => {
     return extra && extra.onRowClick
-      ? (event: MouseEvent<HTMLElement>) => {
-          event.preventDefault();
+      ? (event: MouseEvent<HTMLElement> | KeyboardEvent<HTMLElement>) => {
+          if (event.type === 'keyup' && (event as KeyboardEvent).key !== 'Enter') {
+            return;
+          }
           if (extra && extra.onRowClick) {
+            event.preventDefault();
+            event.stopPropagation();
             extra.onRowClick(row, rowIndex);
           }
         }
@@ -35,7 +39,7 @@ const StaticDataTableBody = <T,>(props: IStaticDataTableBodyProps<T>): ReactElem
 
   /** Handle */
   const handleSelectClick = (row: T, rowIndex: number) => {
-    return (_event: MouseEvent<HTMLElement>, selected: boolean) => {
+    return (_event: MouseEvent<HTMLElement> | KeyboardEvent<HTMLElement>, selected: boolean) => {
       const newSelectedRows = { ...selectedRows };
       newSelectedRows[rowIndex] = selected;
       setSelectedRows(newSelectedRows);
@@ -57,7 +61,9 @@ const StaticDataTableBody = <T,>(props: IStaticDataTableBodyProps<T>): ReactElem
             className={classnames({ pointer: extra && extra.onRowClick, selected: selectedRows[rowIndex] })}
             data-testid={dataTestId && `${dataTestId}-row-${rowIndex}`}
             key={`row-${rowIndex}`}
-            onClick={handleRowClick(row, rowIndex)}>
+            onClick={handleRowClick(row, rowIndex)}
+            onKeyUp={handleRowClick(row, rowIndex)}
+            tabIndex={extra && extra.onRowClick ? 0 : -1}>
             {isExtended &&
               (isSelectable ? (
                 <DataTableCellSelectable

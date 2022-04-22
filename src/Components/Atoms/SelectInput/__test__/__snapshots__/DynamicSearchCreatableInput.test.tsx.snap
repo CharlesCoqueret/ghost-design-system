@@ -1698,6 +1698,86 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handl
 </div>
 `;
 
+exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handles inputValue change 3`] = `
+<div>
+  <div
+    class="field gds-select-container input-select-field"
+  >
+    <div
+      class=" css-1959ul7-container"
+    >
+      <span
+        class="css-1f43avz-a11yText-A11yText"
+        id="react-select-10-live-region"
+      />
+      <span
+        aria-atomic="false"
+        aria-live="polite"
+        aria-relevant="additions text"
+        class="css-1f43avz-a11yText-A11yText"
+      />
+      <div
+        class=" css-154lpzf-control"
+      >
+        <div
+          class=" css-9plg90-ValueContainer"
+        >
+          <div
+            class=" css-14el2xx-placeholder"
+            id="react-select-10-placeholder"
+          >
+            Select...
+          </div>
+          <div
+            class=" css-6j8wv5-Input"
+            data-value=""
+          >
+            <input
+              aria-autocomplete="list"
+              aria-describedby="react-select-10-placeholder"
+              aria-expanded="false"
+              aria-haspopup="true"
+              autocapitalize="none"
+              autocomplete="off"
+              autocorrect="off"
+              class=""
+              id="DATA-TEST-ID"
+              role="combobox"
+              spellcheck="false"
+              style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+              tabindex="0"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          class=" css-1hb7zxy-IndicatorsContainer"
+        >
+          <span
+            class=" css-1okebmr-indicatorSeparator"
+          />
+          <div
+            aria-hidden="true"
+          >
+            <i
+              class="dynamic-search-icon icon"
+              data-testid="DATA-TEST-ID-magnifier"
+              icon="fal,magnifying-glass"
+            />
+          </div>
+        </div>
+      </div>
+      <input
+        name="SELECT"
+        type="hidden"
+        value=""
+      />
+    </div>
+  </div>
+</div>
+`;
+
 exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handles without dataTestId 1`] = `
 <div>
   <div
