@@ -112,7 +112,7 @@ const getLocaleObject = (localeSpec: string): Locale | undefined => {
   // Treat it as a locale name registered by registerLocale
   const scope = Object.assign({}, window, globalThis) as unknown as IGlobalThis;
 
-  return scope.__localeData__ && scope.__localeData__.hasOwnProperty(localeSpec)
+  return scope.__localeData__ && Object.prototype.hasOwnProperty.call(scope.__localeData__, localeSpec)
     ? scope.__localeData__[localeSpec]
     : undefined;
 };

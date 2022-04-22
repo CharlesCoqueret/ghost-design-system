@@ -46,19 +46,16 @@ const StaticDataTableFooterCell = <T,>(props: IStaticDataTableFooterCellProps<T>
     }
     case ColumnType.BADGE:
     case ColumnType.BUTTON:
+    case ColumnType.CHECKBOX:
     case ColumnType.CODE:
     case ColumnType.CUSTOM:
     case ColumnType.DATE:
     case ColumnType.DYNAMICSEARCH:
     case ColumnType.TEXT:
+    case ColumnType.TEXTAREA:
+    case ColumnType.YEAR:
       return <td className='table--footer-value center'>-</td>;
-
-    default: {
-      throw new Error('Missing ColumnType');
-    }
   }
-
-  throw new Error('Should have returned by then');
 };
 
 export default StaticDataTableFooterCell;

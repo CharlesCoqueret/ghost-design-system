@@ -62,7 +62,9 @@ const Form = <T,>(props: IFormProps<T>): ReactElement => {
             const objectDescription = validationSchema?.describe() as SchemaObjectDescription | undefined;
             const schemaDescription = objectDescription?.fields[field.dataIndex as string] as SchemaDescription;
             isRequired = schemaDescription.tests.some((test) => test.name === 'required');
-          } catch {}
+          } catch {
+            console.warn(`could not retrieve if ${field.dataIndex} is mandatory`);
+          }
 
           return (
             <FormField<T>

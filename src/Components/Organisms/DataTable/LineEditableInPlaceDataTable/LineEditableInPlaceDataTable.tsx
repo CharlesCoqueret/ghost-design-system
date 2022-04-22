@@ -140,13 +140,14 @@ const LineEditableInPlaceDataTable = <T,>(props: ILineEditableInPlaceDataTablePr
         ];
 
   const handleSortChange = useCallback((newSortField: keyof T, newSortDirection?: SortDirectionEnum) => {
-    if (sortField !== newSortField || newSortDirection !== newSortDirection) {
-      setSortField(newSortField);
-      setSortDirection(newSortDirection);
+    setSortField(newSortField);
+    setSortDirection(newSortDirection);
 
-      if (onSortChange) {
-        if (newSortField && newSortDirection) onSortChange(newSortField, newSortDirection);
-        else onSortChange();
+    if (onSortChange) {
+      if (newSortField && newSortDirection) {
+        onSortChange(newSortField, newSortDirection);
+      } else {
+        onSortChange();
       }
     }
   }, []);

@@ -55,19 +55,24 @@ describe('ButtonCell component', () => {
                 buttons: [
                   {
                     dataTestId: 'BUTTON1',
+                    icon: ['fal', 'cog'],
                     label: 'Button 1',
                     onClick: button1ClickMock,
                   },
                   {
+                    icon: ['fal', 'cog'],
                     label: 'Button 2',
                   },
                   {
+                    icon: ['fal', 'cog'],
                     label: 'Button 3',
                   },
                   {
+                    icon: ['fal', 'cog'],
                     label: 'Button 4',
                   },
                   {
+                    icon: ['fal', 'cog'],
                     label: 'Button 5',
                     hidden: () => true,
                   },

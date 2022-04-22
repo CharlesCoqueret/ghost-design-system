@@ -241,13 +241,14 @@ const FileInput = (props: IFileInputProps): ReactElement => {
     if (!onDelete) return;
 
     setLocalItems((prev) => [...prev.filter((f) => f.uid !== file.uid), { ...file, status: FileStatusEnum.DELETING }]);
-    return onDelete(file)
+    await onDelete(file)
       .then(() => {
         setLocalItems((prev) => prev.filter((f) => f.uid !== file.uid));
       })
       .catch(() => {
         setLocalItems((prev) => [...prev.filter((f) => f.uid !== file.uid), { ...file, status: FileStatusEnum.DONE }]);
       });
+    return;
   };
 
   /**

@@ -1,0 +1,299 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StaticDataTableHeader component StaticDataTableHeader disables sort when row is edited 1`] = `
+<div>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          <div
+            class="table--header-value table--header-value--sortable"
+          >
+            <span
+              class="table--header-value--title right"
+            >
+              Number
+            </span>
+          </div>
+        </th>
+      </tr>
+    </thead>
+  </table>
+</div>
+`;
+
+exports[`StaticDataTableHeader component StaticDataTableHeader handles sort change  1`] = `
+<div>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          <div
+            class="table--header-value table--header-value--sortable"
+            data-testid="DATA-TEST-ID-sort"
+          >
+            <span
+              class="table--header-value--title right"
+            >
+              Number
+            </span>
+            <span
+              class="table--header-value--sorter"
+            >
+              <i
+                class="icon"
+                icon="fas,sort"
+              />
+            </span>
+          </div>
+          <div>
+            Click to sort
+          </div>
+        </th>
+      </tr>
+    </thead>
+  </table>
+</div>
+`;
+
+exports[`StaticDataTableHeader component StaticDataTableHeader handles sort change  2`] = `
+<div>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          <div
+            class="table--header-value table--header-value--sortable"
+            data-testid="DATA-TEST-ID-sort"
+          >
+            <span
+              class="table--header-value--title right"
+            >
+              Number
+            </span>
+            <span
+              class="table--header-value--sorter"
+            >
+              <i
+                class="icon"
+                icon="fas,sort-down"
+              />
+            </span>
+          </div>
+          <div>
+            Click to sort
+          </div>
+        </th>
+      </tr>
+    </thead>
+  </table>
+</div>
+`;
+
+exports[`StaticDataTableHeader component StaticDataTableHeader handles sort change  3`] = `
+<div>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          <div
+            class="table--header-value table--header-value--sortable"
+            data-testid="DATA-TEST-ID-sort"
+          >
+            <span
+              class="table--header-value--title right"
+            >
+              Number
+            </span>
+            <span
+              class="table--header-value--sorter"
+            >
+              <i
+                class="icon"
+                icon="fas,sort-up"
+              />
+            </span>
+          </div>
+          <div>
+            Click to sort
+          </div>
+        </th>
+      </tr>
+    </thead>
+  </table>
+</div>
+`;
+
+exports[`StaticDataTableHeader component StaticDataTableHeader handles sort change  4`] = `
+<div>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          <div
+            class="table--header-value table--header-value--sortable"
+            data-testid="DATA-TEST-ID-sort"
+          >
+            <span
+              class="table--header-value--title right"
+            >
+              Number
+            </span>
+            <span
+              class="table--header-value--sorter"
+            >
+              <i
+                class="icon"
+                icon="fas,sort"
+              />
+            </span>
+          </div>
+          <div>
+            Click to sort
+          </div>
+        </th>
+      </tr>
+    </thead>
+  </table>
+</div>
+`;
+
+exports[`StaticDataTableHeader component StaticDataTableHeader renders without sort 1`] = `
+<div>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          <div
+            class="table--header-value"
+          >
+            <span
+              class="table--header-value--title right"
+            >
+              Number
+            </span>
+          </div>
+        </th>
+      </tr>
+    </thead>
+  </table>
+</div>
+`;
+
+exports[`StaticDataTableHeader component StaticDataTableHeader with Total 1`] = `
+<div>
+  <table>
+    <thead>
+      <tr>
+        <th
+          class="table--header--selectable"
+        />
+        <th>
+          <div
+            class="table--header-value"
+          >
+            <span
+              class="table--header-value--title right"
+            >
+              Number
+            </span>
+          </div>
+        </th>
+      </tr>
+    </thead>
+  </table>
+</div>
+`;
+
+exports[`StaticDataTableHeader component StaticDataTableHeader with custom sort message 1`] = `
+<div>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          <div
+            class="table--header-value table--header-value--sortable"
+          >
+            <span
+              class="table--header-value--title right"
+            >
+              Number
+            </span>
+            <span
+              class="table--header-value--sorter"
+            >
+              <i
+                class="icon"
+                icon="fas,sort"
+              />
+            </span>
+          </div>
+          <div>
+            New sort message
+          </div>
+        </th>
+      </tr>
+    </thead>
+  </table>
+</div>
+`;
+
+exports[`StaticDataTableHeader component StaticDataTableHeader with hidden column 1`] = `
+<div>
+  <table>
+    <thead>
+      <tr>
+        <th
+          style="display: none;"
+        >
+          <div
+            class="table--header-value"
+          >
+            <span
+              class="table--header-value--title right"
+            >
+              Number
+            </span>
+          </div>
+        </th>
+      </tr>
+    </thead>
+  </table>
+</div>
+`;
+
+exports[`StaticDataTableHeader component StaticDataTableHeader with row selection 1`] = `
+<div>
+  <table>
+    <thead>
+      <tr>
+        <th
+          class="table--header--selectable"
+        />
+        <th>
+          <div
+            class="table--header-value table--header-value--sortable"
+          >
+            <span
+              class="table--header-value--title right"
+            >
+              Number
+            </span>
+            <span
+              class="table--header-value--sorter"
+            >
+              <i
+                class="icon"
+                icon="fas,sort"
+              />
+            </span>
+          </div>
+          <div>
+            Click to sort
+          </div>
+        </th>
+      </tr>
+    </thead>
+  </table>
+</div>
+`;

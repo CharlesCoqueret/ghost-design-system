@@ -41,7 +41,7 @@ const StaticDataTableHeader = <T,>(props: IStaticDataTableHeaderProps<T>): React
 
   const isSelectable = extra?.onRowSelect;
   const isExtended = extra?.onRowSelect || extra?.computeTotal;
-  const isEditingRow = extra && 'editedRowIndex' in extra && extra?.editedRowIndex !== undefined;
+  const isEditingRow = extra && 'editedRowIndex' in extra && extra.editedRowIndex !== undefined;
 
   return (
     <thead>
@@ -64,6 +64,7 @@ const StaticDataTableHeader = <T,>(props: IStaticDataTableHeaderProps<T>): React
                 direction={MenuDirectionEnum.TOP}>
                 <div
                   className={classnames('table--header-value', { 'table--header-value--sortable': column.sorter })}
+                  data-testid={column.dataTestId ? `${column.dataTestId}-sort` : undefined}
                   onClick={
                     column.sorter && column.type !== ColumnType.BUTTON
                       ? () => {

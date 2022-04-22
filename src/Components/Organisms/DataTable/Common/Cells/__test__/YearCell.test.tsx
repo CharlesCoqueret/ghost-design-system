@@ -2,22 +2,22 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import DateCell from '../DateCell';
+import YearCell from '../YearCell';
 import { ColumnType } from '../../types';
 
-describe('DateCell component', () => {
-  it('DateCell renders', () => {
+describe('YearCell component', () => {
+  it('YearCell renders', () => {
     const { container } = render(
       <table>
         <tbody>
           <tr>
-            <DateCell
+            <YearCell
               column={{
                 dataIndex: 'data',
-                title: 'DateCell',
-                type: ColumnType.DATE,
+                title: 'YearCell',
+                type: ColumnType.YEAR,
               }}
-              row={{ data: new Date('Sun Apr 03 2022') }}
+              row={{ data: 2022 }}
               rowIndex={0}
             />
           </tr>
@@ -28,19 +28,19 @@ describe('DateCell component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('DateCell renders with forced value', () => {
+  it('YearCell renders with forced value', () => {
     const { container } = render(
       <table>
         <tbody>
           <tr>
-            <DateCell
+            <YearCell
               column={{
                 dataIndex: 'data',
-                title: 'DateCell',
-                type: ColumnType.DATE,
+                title: 'YearCell',
+                type: ColumnType.YEAR,
               }}
-              forcedValue={new Date('Mon Apr 04 2022')}
-              row={{ data: new Date('Sun Apr 03 2022') }}
+              forcedValue={2022}
+              row={{ data: 2000 }}
               rowIndex={0}
             />
           </tr>
@@ -51,19 +51,19 @@ describe('DateCell component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('DateCell renders when hidden', () => {
+  it('YearCell renders when hidden', () => {
     const { container } = render(
       <table>
         <tbody>
           <tr>
-            <DateCell
+            <YearCell
               column={{
                 dataIndex: 'data',
                 hidden: true,
-                title: 'DateCell',
-                type: ColumnType.DATE,
+                title: 'YearCell',
+                type: ColumnType.YEAR,
               }}
-              row={{ data: new Date('Sun Apr 03 2022') }}
+              row={{ data: 2022 }}
               rowIndex={0}
             />
           </tr>
@@ -74,23 +74,22 @@ describe('DateCell component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('DateCell renders in edit mode and handles change', async () => {
+  it('YearCell renders in edit mode and handles change', async () => {
     const onChangeMock = jest.fn();
 
     const { container } = render(
       <table>
         <tbody>
           <tr>
-            <DateCell
+            <YearCell
               column={{
                 dataIndex: 'data',
-                title: 'DateCell',
-                type: ColumnType.DATE,
-                dateFormat: 'MMM dd, yyyy',
+                title: 'YearCell',
+                type: ColumnType.YEAR,
               }}
               editing
               onChange={onChangeMock}
-              row={{ data: new Date('Sun Apr 03 2022') }}
+              row={{ data: 2022 }}
               rowIndex={0}
             />
           </tr>
@@ -100,32 +99,32 @@ describe('DateCell component', () => {
 
     expect(container).toMatchSnapshot();
 
-    const dateInput = await screen.findByPlaceholderText('MMM DD, YYYY');
+    const dateInput = await screen.findByDisplayValue(2022);
 
     userEvent.clear(dateInput);
 
     expect(onChangeMock).toBeCalledTimes(1);
-    expect(onChangeMock).toBeCalledWith(null);
+    expect(onChangeMock).toBeCalledWith(undefined);
 
-    userEvent.type(dateInput, '01/01/2000{enter}');
+    userEvent.type(dateInput, '2000{enter}');
 
-    expect(onChangeMock).toBeCalledTimes(9);
-    expect(onChangeMock).toBeCalledWith(new Date('01/01/2000'));
+    expect(onChangeMock).toBeCalledTimes(4);
+    expect(onChangeMock).toBeCalledWith(2000);
   });
 
-  it('DateCell renders in edit mode via extra', () => {
+  it('YearCell renders in edit mode via extra', () => {
     const { container } = render(
       <table>
         <tbody>
           <tr>
-            <DateCell
+            <YearCell
               column={{
                 dataIndex: 'data',
-                title: 'DateCell',
-                type: ColumnType.DATE,
+                title: 'YearCell',
+                type: ColumnType.YEAR,
               }}
               extra={{ editedRowIndex: 0 }}
-              row={{ data: new Date('Sun Apr 03 2022') }}
+              row={{ data: 2022 }}
               rowIndex={0}
             />
           </tr>

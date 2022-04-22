@@ -39,9 +39,9 @@ export interface IButtonCellProps<T> {
   className?: string;
   /** Button is hidden (optional, default: false) */
   hidden?: (row: T, rowIndex: number) => boolean;
-  /** Icon name (optional, default: undefined) */
-  icon?: IconProp;
-  /** Label use as tooltip if button of first level (optional, default: undefined) */
+  /** Icon name */
+  icon: IconProp;
+  /** Label use as tooltip if button of first level */
   label: string;
   /** Loading state, disabling the button and replacing icon with spiner (optional, default: false) */
   loading?: boolean;
@@ -217,6 +217,13 @@ export interface IColumnTextArea<T> extends IColumn {
   type: ColumnType.TEXTAREA;
 }
 
+export interface IColumnYear<T> extends IColumn {
+  dataIndex: keyof T;
+  editable?: boolean;
+  type: ColumnType.YEAR;
+  usePortal?: boolean;
+}
+
 export type IColumnType<T> =
   | IColumnAmount<T>
   | IColumnBadge<T>
@@ -229,7 +236,8 @@ export type IColumnType<T> =
   | IColumnNumber<T>
   | IColumnPercentage<T>
   | IColumnText<T>
-  | IColumnTextArea<T>;
+  | IColumnTextArea<T>
+  | IColumnYear<T>; // TODO year
 
 export type TableType<T> = Record<keyof T, string | number | Date | undefined | null>;
 

@@ -1,0 +1,229 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StaticDataTable component StaticDataTable renders and handles sort 1`] = `
+<div>
+  <table
+    class="gds-table"
+  >
+    <thead>
+      <tr>
+        <th>
+          <div
+            class="table--header-value table--header-value--sortable"
+            data-testid="DATA-TEST-ID-number-sort"
+          >
+            <span
+              class="table--header-value--title right"
+            >
+              Number
+            </span>
+            <span
+              class="table--header-value--sorter"
+            >
+              <i
+                class="icon"
+                icon="fas,sort"
+              />
+            </span>
+          </div>
+          <div>
+            Click to sort
+          </div>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        class=""
+      >
+        <td
+          class=""
+        >
+          <div
+            class="gds-field-group"
+          >
+            <span
+              class="gds-amount-field amount-field-read-only table--cell-value--number-readonly"
+              id="number"
+              name="number"
+            >
+              1
+            </span>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`StaticDataTable component StaticDataTable renders and handles sort 2`] = `
+<div>
+  <table
+    class="gds-table"
+  >
+    <thead>
+      <tr>
+        <th>
+          <div
+            class="table--header-value table--header-value--sortable"
+            data-testid="DATA-TEST-ID-number-sort"
+          >
+            <span
+              class="table--header-value--title right"
+            >
+              Number
+            </span>
+            <span
+              class="table--header-value--sorter"
+            >
+              <i
+                class="icon"
+                icon="fas,sort-down"
+              />
+            </span>
+          </div>
+          <div>
+            Click to sort
+          </div>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        class=""
+      >
+        <td
+          class=""
+        >
+          <div
+            class="gds-field-group"
+          >
+            <span
+              class="gds-amount-field amount-field-read-only table--cell-value--number-readonly"
+              id="number"
+              name="number"
+            >
+              1
+            </span>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`StaticDataTable component StaticDataTable renders and handles sort 3`] = `
+<div>
+  <table
+    class="gds-table"
+  >
+    <thead>
+      <tr>
+        <th>
+          <div
+            class="table--header-value table--header-value--sortable"
+            data-testid="DATA-TEST-ID-number-sort"
+          >
+            <span
+              class="table--header-value--title right"
+            >
+              Number
+            </span>
+            <span
+              class="table--header-value--sorter"
+            >
+              <i
+                class="icon"
+                icon="fas,sort-up"
+              />
+            </span>
+          </div>
+          <div>
+            Click to sort
+          </div>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        class=""
+      >
+        <td
+          class=""
+        >
+          <div
+            class="gds-field-group"
+          >
+            <span
+              class="gds-amount-field amount-field-read-only table--cell-value--number-readonly"
+              id="number"
+              name="number"
+            >
+              1
+            </span>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`StaticDataTable component StaticDataTable renders and handles sort 4`] = `
+<div>
+  <table
+    class="gds-table"
+  >
+    <thead>
+      <tr>
+        <th>
+          <div
+            class="table--header-value table--header-value--sortable"
+            data-testid="DATA-TEST-ID-number-sort"
+          >
+            <span
+              class="table--header-value--title right"
+            >
+              Number
+            </span>
+            <span
+              class="table--header-value--sorter"
+            >
+              <i
+                class="icon"
+                icon="fas,sort"
+              />
+            </span>
+          </div>
+          <div>
+            Click to sort
+          </div>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        class=""
+      >
+        <td
+          class=""
+        >
+          <div
+            class="gds-field-group"
+          >
+            <span
+              class="gds-amount-field amount-field-read-only table--cell-value--number-readonly"
+              id="number"
+              name="number"
+            >
+              1
+            </span>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;

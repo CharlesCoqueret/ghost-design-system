@@ -31,7 +31,7 @@ const useForm = <T extends AnyObject>(props: IUseFormProps<T>): IUseFormReturned
     });
 
     setValidationError((prev) => {
-      if (prev === undefined) return;
+      if (prev === undefined) return prev;
       delete prev[dataIndex];
       return { ...prev };
     });

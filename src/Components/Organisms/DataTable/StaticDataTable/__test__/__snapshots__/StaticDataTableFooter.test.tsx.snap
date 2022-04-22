@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StaticDataTableFooter component StaticDataTableFooter renders with computeTotal 1`] = `
+<div>
+  <table>
+    <tbody />
+    <tfoot>
+      <tr>
+        <td
+          class="table--footer--selectable"
+        >
+          Total
+        </td>
+        <td
+          class=""
+        >
+          <div
+            class="gds-field-group"
+          >
+            <div
+              class="gds-amount-field amount-field-read-only table--cell-value--number-readonly"
+            >
+              <span
+                class="gds-typography"
+              >
+                -
+              </span>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+</div>
+`;
+
+exports[`StaticDataTableFooter component StaticDataTableFooter renders with computeTotal and custom localization 1`] = `
+<div>
+  <table>
+    <tbody />
+    <tfoot>
+      <tr>
+        <td
+          class="table--footer--selectable"
+        >
+          Total
+        </td>
+        <td
+          class=""
+        >
+          <div
+            class="gds-field-group"
+          >
+            <div
+              class="gds-amount-field amount-field-read-only table--cell-value--number-readonly"
+            >
+              <span
+                class="gds-typography"
+              >
+                -
+              </span>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+</div>
+`;
+
+exports[`StaticDataTableFooter component StaticDataTableFooterCell renders with computeTotal 1`] = `
+<div>
+  <table>
+    <tbody />
+  </table>
+</div>
+`;
