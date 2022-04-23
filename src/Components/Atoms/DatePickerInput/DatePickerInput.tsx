@@ -83,7 +83,7 @@ const DatePickerInput = (props: IDatePickerProps): ReactElement => {
         disabled={disabled}
         fixedHeight
         readOnly={readOnly}
-        isClearable={!disabled && isClearable}
+        isClearable={!(disabled || readOnly) && isClearable}
         placeholderText={readOnly ? '-' : placeholder || localDateFormat.toUpperCase()}
         dateFormat={localDateFormat}
         disabledKeyboardNavigation

@@ -610,9 +610,9 @@ $datepicker__triangle-size: 0px !default;
   background-color: transparent;
   border: 0;
   outline: 0;
-  padding: 0 6px 0 0;
   position: absolute;
   top: 0;
+  bottom: 0;
   right: 0;
   height: 100%;
   display: table-cell;
@@ -620,19 +620,8 @@ $datepicker__triangle-size: 0px !default;
 
   &::after {
     cursor: pointer;
-    background-color: $datepicker__selected-color;
-    color: $white;
-    border-radius: 50%;
-    height: 16px;
-    width: 16px;
-    padding: 2px;
-    font-size: 12px;
-    line-height: 1;
-    text-align: center;
-    display: table-cell;
-    vertical-align: middle;
-    font-weight: 700;
-    content: 'X';
+    padding-right: 6px;
+    content: url("data:image/svg+xml; utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 450' height='1rem' ><path fill='currentColor' d='M315.3 411.3c-6.253 6.253-16.37 6.253-22.63 0L160 278.6l-132.7 132.7c-6.253 6.253-16.37 6.253-22.63 0c-6.253-6.253-6.253-16.37 0-22.63L137.4 256L4.69 123.3c-6.253-6.253-6.253-16.37 0-22.63c6.253-6.253 16.37-6.253 22.63 0L160 233.4l132.7-132.7c6.253-6.253 16.37-6.253 22.63 0c6.253 6.253 6.253 16.37 0 22.63L182.6 256l132.7 132.7C321.6 394.9 321.6 405.1 315.3 411.3z'/></svg>");
   }
 }
 
@@ -718,10 +707,6 @@ $datepicker__triangle-size: 0px !default;
   &.input-error:not(:disabled):not(:read-only):active {
     border: 1px solid $error;
   }
-}
-.react-datepicker__close-icon::after {
-  color: $charcoal;
-  background-color: transparent;
 }
 
 .react-datepicker__header-select {
