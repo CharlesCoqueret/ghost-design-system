@@ -174,7 +174,7 @@ describe('StaticDataTableBody component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('StaticDataTableBody renders with number handles row click', async () => {
+  it('StaticDataTableBody renders with number handles row click and row enter', async () => {
     const onRowClickMock = jest.fn();
 
     const { container } = render(
@@ -197,5 +197,14 @@ describe('StaticDataTableBody component', () => {
 
     expect(onRowClickMock).toBeCalledTimes(1);
     expect(onRowClickMock).toBeCalledWith({ number: 1 }, 0);
+
+    userEvent.keyboard('{Enter}');
+    expect(container).toMatchSnapshot();
+
+    expect(onRowClickMock).toBeCalledTimes(2);
+    expect(onRowClickMock).toBeCalledWith({ number: 1 }, 0);
+
+    userEvent.keyboard('a');
+    expect(onRowClickMock).toBeCalledTimes(2);
   });
 });
