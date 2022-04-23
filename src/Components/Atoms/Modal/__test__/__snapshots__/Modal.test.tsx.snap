@@ -74,6 +74,80 @@ exports[`Modal Component Modal renders handles press escape 1`] = `
 </div>
 `;
 
+exports[`Modal Component Modal renders handles tabbing 1`] = `<div />`;
+
+exports[`Modal Component Modal renders handles tabbing 2`] = `
+<div>
+  <div>
+    <div
+      class="gds-modal-overlay"
+    >
+      <div
+        class="modal-content size-lg"
+      >
+        <div
+          class="modal-header"
+        >
+          <div
+            class="modal-title"
+          >
+            MODALTITLE
+          </div>
+          <div
+            class="modal-close-icon"
+            data-testid="TESTID"
+          >
+            <i
+              class="icon"
+              icon="fal,times"
+            />
+          </div>
+        </div>
+        <input
+          data-testid="INPUT"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Modal Component Modal renders handles tabbing 3`] = `
+<div>
+  <div>
+    <div
+      class="gds-modal-overlay"
+    >
+      <div
+        class="modal-content size-lg"
+      >
+        <div
+          class="modal-header"
+        >
+          <div
+            class="modal-title"
+          >
+            MODALTITLE
+          </div>
+          <div
+            class="modal-close-icon"
+            data-testid="TESTID"
+          >
+            <i
+              class="icon"
+              icon="fal,times"
+            />
+          </div>
+        </div>
+        <input
+          data-testid="INPUT"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Modal Component Modal renders open 1`] = `
 <div>
   <div>

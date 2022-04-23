@@ -45,7 +45,7 @@ const Modal = (props: PropsWithChildren<IModalProps>): ReactElement => {
   const contentRef = useRef<HTMLDivElement>(null);
 
   const preventDefaults = (event: KeyboardEvent) => {
-    if (event.code !== 'Tab') return;
+    if (event.code !== 'Tab' && event.key !== 'Tab') return;
 
     const focusable = contentRef.current?.querySelectorAll(
       'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])',
