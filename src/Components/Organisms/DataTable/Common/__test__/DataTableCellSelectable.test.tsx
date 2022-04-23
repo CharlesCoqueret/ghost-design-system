@@ -1,5 +1,5 @@
 import React from 'react';
-import { act, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import DataTableCellSelectable from '../DataTableCellSelectable';
@@ -38,7 +38,7 @@ describe('DataTableCellSelectable component', () => {
   it('DataTableCellSelectable renders selected and handles click', async () => {
     const handleSelectClickMock = jest.fn();
 
-    const { container } = render(
+    const { container, rerender } = render(
       <table>
         <tbody>
           <tr>
@@ -57,12 +57,28 @@ describe('DataTableCellSelectable component', () => {
 
     const checkbox = await screen.findByTestId('DATA-TEST-ID');
 
-    act(() => {
-      userEvent.click(checkbox);
-    });
+    userEvent.click(checkbox);
 
     expect(handleSelectClickMock).toBeCalledTimes(1);
     expect(handleSelectClickMock).toBeCalledWith(expect.anything(), false);
+
+    rerender(
+      <table>
+        <tbody>
+          <tr>
+            <DataTableCellSelectable dataTestId={'DATA-TEST-ID'} handleSelectClick={handleSelectClickMock} selectable />
+          </tr>
+        </tbody>
+      </table>,
+    );
+
+    userEvent.keyboard('{Enter}');
+
+    expect(handleSelectClickMock).toBeCalledTimes(2);
+    expect(handleSelectClickMock).toBeCalledWith(expect.anything(), true);
+
+    userEvent.keyboard('a');
+    expect(handleSelectClickMock).toBeCalledTimes(2);
   });
 
   it('DataTableCellSelectable renders without click handler', async () => {
@@ -82,9 +98,7 @@ describe('DataTableCellSelectable component', () => {
 
     const checkbox = await screen.findByTestId('DATA-TEST-ID');
 
-    act(() => {
-      userEvent.click(checkbox);
-    });
+    userEvent.click(checkbox);
 
     expect(console.error).toBeCalledTimes(1);
     expect(console.error).toBeCalledWith('Missing handleSelectClick');

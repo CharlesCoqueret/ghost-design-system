@@ -1,11 +1,11 @@
-import React, { KeyboardEvent, MouseEvent, ReactElement } from 'react';
+import React, { KeyboardEvent, MouseEvent } from 'react';
 import classnames from 'classnames';
 
 import { Icon } from '../../../Atoms/Icon';
 
 interface IDataTableCellSelectableProps {
   handleSelectClick?: (event: MouseEvent<HTMLElement> | KeyboardEvent<HTMLElement>, selected: boolean) => void;
-  selected: boolean;
+  selected?: boolean;
   selectable: boolean;
   dataTestId?: string;
 }
@@ -21,7 +21,7 @@ interface IDataTableCellSelectableState {
 class DataTableCellSelectable extends React.Component<IDataTableCellSelectableProps, IDataTableCellSelectableState> {
   constructor(props: IDataTableCellSelectableProps) {
     super(props);
-    this.state = { selected: this.props.selected };
+    this.state = { selected: this.props.selected || false };
 
     this.onSelect = this.onSelect.bind(this);
   }
@@ -42,7 +42,7 @@ class DataTableCellSelectable extends React.Component<IDataTableCellSelectablePr
     }
   }
 
-  render(): ReactElement {
+  render() {
     return (
       <td
         key='cell-selectable'
