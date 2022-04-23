@@ -103,7 +103,7 @@ describe('StaticDataTableHeader component', () => {
 
     expect(container).toMatchSnapshot();
 
-    userEvent.click(sortButton);
+    userEvent.keyboard('{Enter}');
 
     expect(onSortChangeMock).toBeCalledTimes(3);
     expect(onSortChangeMock).toBeCalledWith('number', undefined);
@@ -127,6 +127,10 @@ describe('StaticDataTableHeader component', () => {
     );
 
     expect(container).toMatchSnapshot();
+
+    userEvent.keyboard('a');
+
+    expect(onSortChangeMock).toBeCalledTimes(3);
   });
 
   it('StaticDataTableHeader disables sort when row is edited', () => {
