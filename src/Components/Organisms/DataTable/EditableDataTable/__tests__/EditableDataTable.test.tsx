@@ -1,351 +1,197 @@
 import React from 'react';
-import { render, screen, act } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { EditableDataTable } from '..';
-import { ColumnType, IColumnType } from '../../Common/types';
+import EditableDataTable from '../EditableDataTable';
+import { ColumnType, SortDirectionEnum } from '../../Common/types';
 
-interface ITestType {
-  id: string;
-  name: string;
-  status: string;
-}
-
-const columns: IColumnType<ITestType>[] = [
-  {
-    title: 'Code',
-    dataIndex: 'id',
-    sorter: true,
-    type: ColumnType.CODE,
-  },
-  {
-    title: 'Text',
-    dataIndex: 'name',
-    type: ColumnType.TEXT,
-    ellipsis: true,
-    sorter: true,
-    editable: true,
-  },
-  {
-    title: 'Badge',
-    dataIndex: 'status',
-    sorter: true,
-    type: ColumnType.BADGE,
-    editable: true,
-    options: [{ label: 'Status', value: 'status' }],
-  },
-];
-
-const initialData = [
-  {
-    id: 'id',
-    name: 'name',
-    status: 'status',
-  },
-];
-
-describe('EditableDataTable Component', () => {
-  it('EditableDataTable renders with all buttons', () => {
+describe('EditableDataTable component', () => {
+  it('EditableDataTable renders', () => {
     const onEditMock = jest.fn();
-    const isEditableMock = jest.fn().mockImplementation(() => true);
-    const onRowDeleteMock = jest.fn();
-    const isDeletableMock = jest.fn().mockImplementation(() => true);
-    const onRowDownloadMock = jest.fn();
-    const isDownloadableMock = jest.fn().mockImplementation(() => true);
-    const canAddNewLineMock = jest.fn();
-    const onNewLineMock = jest.fn();
-
-    const extra = {
-      onEdit: onEditMock,
-      isEditable: isEditableMock,
-      onRowDelete: onRowDeleteMock,
-      isDeletable: isDeletableMock,
-      onRowDownload: onRowDownloadMock,
-      isDownloadable: isDownloadableMock,
-      canAddNewLine: canAddNewLineMock,
-      onNewLine: onNewLineMock,
-    };
-
-    const { container } = render(<EditableDataTable<ITestType> columns={columns} data={initialData} extra={extra} />);
-
-    expect(container).toMatchSnapshot();
-    expect(onEditMock).not.toBeCalled();
-    expect(onRowDeleteMock).not.toBeCalled();
-    expect(onRowDownloadMock).not.toBeCalled();
-    expect(onNewLineMock).not.toBeCalled();
-    expect(isDeletableMock).toBeCalledTimes(initialData.length);
-    expect(isEditableMock).toBeCalledTimes(initialData.length);
-    expect(isDownloadableMock).toBeCalledTimes(initialData.length);
-    expect(canAddNewLineMock).toBeCalledTimes(1);
-  });
-
-  it('EditableDataTable renders with no buttons', () => {
-    const onEditMock = jest.fn();
-    const isEditableMock = jest.fn().mockImplementation(() => false);
-
-    const extra = {
-      onEdit: onEditMock,
-      isEditable: isEditableMock,
-    };
-
-    const { container } = render(<EditableDataTable<ITestType> columns={columns} data={initialData} extra={extra} />);
-
-    expect(container).toMatchSnapshot();
-    expect(onEditMock).not.toBeCalled();
-    expect(isEditableMock).toBeCalledTimes(initialData.length);
-  });
-
-  it('EditableDataTable renders with all methods saying false', () => {
-    const onEditMock = jest.fn();
-    const isEditableMock = () => {
-      return false;
-    };
-    const onRowDeleteMock = jest.fn();
-    const isDeletableMock = () => {
-      return false;
-    };
-    const onRowDownloadMock = jest.fn();
-    const isDownloadableMock = () => {
-      return false;
-    };
-    const canAddNewLineMock = () => {
-      return false;
-    };
-    const onNewLineMock = jest.fn();
-
-    const extra = {
-      onEdit: onEditMock,
-      isEditable: isEditableMock,
-      onRowDelete: onRowDeleteMock,
-      isDeletable: isDeletableMock,
-      onRowDownload: onRowDownloadMock,
-      isDownloadable: isDownloadableMock,
-      canAddNewLine: canAddNewLineMock,
-      onNewLine: onNewLineMock,
-    };
-
-    const { container } = render(<EditableDataTable<ITestType> columns={columns} data={initialData} extra={extra} />);
-
-    expect(container).toMatchSnapshot();
-    expect(onEditMock).not.toBeCalled();
-    expect(onRowDeleteMock).not.toBeCalled();
-    expect(onRowDownloadMock).not.toBeCalled();
-    expect(onNewLineMock).not.toBeCalled();
-  });
-
-  it('EditableDataTable renders and new button clicked', async () => {
-    const onEditMock = jest.fn();
-    const isEditableMock = jest.fn().mockImplementation(() => true);
-    const onRowDeleteMock = jest.fn();
-    const isDeletableMock = jest.fn().mockImplementation(() => true);
-    const onRowDownloadMock = jest.fn();
-    const isDownloadableMock = jest.fn().mockImplementation(() => true);
-    const onNewLineMock = jest.fn().mockImplementation(() => {
-      return {
-        id: 'test',
-      };
-    });
-    const canAddNewLineMock = jest.fn().mockImplementation(() => true);
-
-    const extra = {
-      onEdit: onEditMock,
-      isEditable: isEditableMock,
-      onRowDelete: onRowDeleteMock,
-      isDeletable: isDeletableMock,
-      onRowDownload: onRowDownloadMock,
-      isDownloadable: isDownloadableMock,
-      onNewLine: onNewLineMock,
-      canAddNewLine: canAddNewLineMock,
-    };
-
-    const { container } = render(<EditableDataTable<ITestType> columns={columns} data={initialData} extra={extra} />);
-
-    const addLineButton = await screen.findAllByText('Add row');
-
-    act(() => {
-      if (addLineButton.length > 0) {
-        userEvent.click(addLineButton[0]);
-      }
-    });
-
-    expect(container).toMatchSnapshot();
-    expect(onEditMock).not.toBeCalled();
-    expect(onRowDeleteMock).not.toBeCalled();
-    expect(onRowDownloadMock).not.toBeCalled();
-    expect(onNewLineMock).toBeCalledTimes(1);
-    expect(isDeletableMock).toBeCalledTimes(1 + 2);
-    expect(isEditableMock).toBeCalledTimes(1 + 2);
-    expect(isDownloadableMock).toBeCalledTimes(1 + 2);
-    expect(canAddNewLineMock).toBeCalledTimes(1 + 1);
-  });
-
-  it('EditableDataTable renders and warn when onNewLine is not defined and new button is clicked', async () => {
-    const onEditMock = jest.fn();
-    const isEditableMock = jest.fn().mockImplementation(() => true);
-    const onRowDeleteMock = jest.fn();
-    const isDeletableMock = jest.fn().mockImplementation(() => true);
-    const onRowDownloadMock = jest.fn();
-    const isDownloadableMock = jest.fn().mockImplementation(() => true);
-    const canAddNewLineMock = jest.fn().mockImplementation(() => true);
-    const consoleWarnMock = jest.spyOn(console, 'warn').mockImplementation();
-
-    const extra = {
-      onEdit: onEditMock,
-      isEditable: isEditableMock,
-      onRowDelete: onRowDeleteMock,
-      isDeletable: isDeletableMock,
-      onRowDownload: onRowDownloadMock,
-      isDownloadable: isDownloadableMock,
-      canAddNewLine: canAddNewLineMock,
-    };
-
-    const { container } = render(<EditableDataTable<ITestType> columns={columns} data={initialData} extra={extra} />);
-
-    const addLineButton = await screen.findAllByText('Add row');
-
-    act(() => {
-      if (addLineButton.length > 0) {
-        userEvent.click(addLineButton[0]);
-      }
-    });
-
-    expect(container).toMatchSnapshot();
-    expect(console.warn).toBeCalled();
-    expect(onEditMock).not.toBeCalled();
-    expect(onRowDeleteMock).not.toBeCalled();
-    expect(onRowDownloadMock).not.toBeCalled();
-    expect(isDeletableMock).toBeCalledTimes(1 + 1);
-    expect(isEditableMock).toBeCalledTimes(1 + 1);
-    expect(isDownloadableMock).toBeCalledTimes(1 + 1);
-    expect(canAddNewLineMock).toBeCalledTimes(1);
-    consoleWarnMock.mockRestore();
-  });
-
-  it('EditableDataTable renders and handles sort', async () => {
-    const onEditMock = jest.fn();
-    const onSortChangeMock = jest.fn().mockImplementation(() => {
-      return {};
-    });
-
-    const extra = {
-      onEdit: onEditMock,
-    };
+    const onSortChangeMock = jest.fn();
 
     const { container } = render(
-      <EditableDataTable<ITestType>
-        columns={columns}
-        data={initialData}
-        extra={extra}
+      <EditableDataTable<{ number: number }>
+        columns={[{ dataIndex: 'number', title: 'Number', type: ColumnType.NUMBER }]}
+        data={[{ number: 1 }]}
+        extra={{ onEdit: onEditMock }}
         onSortChange={onSortChangeMock}
       />,
     );
 
-    const sortBadgeButton = await screen.findAllByText('Badge');
-    expect(sortBadgeButton.length).toBeGreaterThan(0);
-
-    act(() => {
-      if (sortBadgeButton.length > 0) {
-        userEvent.click(sortBadgeButton[0]);
-      }
-    });
-
     expect(container).toMatchSnapshot();
-    expect(onEditMock).not.toBeCalled();
-    expect(onSortChangeMock).toHaveBeenCalledWith('status', 'desc');
-
-    act(() => {
-      if (sortBadgeButton.length > 0) {
-        userEvent.click(sortBadgeButton[0]);
-      }
-    });
-
-    expect(onSortChangeMock).toHaveBeenCalledWith('status', 'asc');
-
-    act(() => {
-      if (sortBadgeButton.length > 0) {
-        userEvent.click(sortBadgeButton[0]);
-      }
-    });
-
-    expect(onSortChangeMock).toHaveBeenCalledWith();
   });
 
-  it('EditableDataTable renders and handles line download and line delete', async () => {
+  it('EditableDataTable handles sort', () => {
     const onEditMock = jest.fn();
-    const onRowDeleteMock = jest.fn();
-    const onRowDownloadMock = jest.fn();
-
-    const extra = {
-      onEdit: onEditMock,
-      onRowDelete: onRowDeleteMock,
-      onRowDownload: onRowDownloadMock,
-    };
-
-    const { container } = render(<EditableDataTable<ITestType> columns={columns} data={initialData} extra={extra} />);
-
-    const downloadButton = await screen.findAllByTestId('download');
-    expect(downloadButton.length).toBeGreaterThan(0);
-
-    act(() => {
-      if (downloadButton.length > 0) {
-        userEvent.click(downloadButton[0]);
-      }
-    });
-
-    expect(container).toMatchSnapshot();
-    expect(onRowDownloadMock).toBeCalledWith(initialData[0], 0);
-
-    const deleteButton = await screen.findAllByTestId('delete');
-    expect(deleteButton.length).toBeGreaterThan(0);
-
-    act(() => {
-      if (deleteButton.length > 0) {
-        userEvent.click(deleteButton[0]);
-      }
-    });
-
-    const confirmButton = await screen.findAllByTestId('confirm');
-    expect(confirmButton.length).toBeGreaterThan(0);
-
-    expect(container).toMatchSnapshot();
-
-    act(() => {
-      if (confirmButton.length > 0) {
-        userEvent.click(confirmButton[0]);
-      }
-    });
-
-    expect(container).toMatchSnapshot();
-    expect(onRowDeleteMock).toBeCalledWith(initialData[0], 0);
-  });
-
-  it('EditableDataTable renders and handles changes', async () => {
-    const onEditMock = jest.fn();
-
-    const extra = {
-      onEdit: onEditMock,
-    };
-
-    const newInput = 'test input';
+    const onSortChangeMock = jest.fn();
 
     const { container } = render(
-      <EditableDataTable<ITestType> columns={columns} data={initialData} dataTestId={'DATA-TEST-ID'} extra={extra} />,
+      <EditableDataTable<{ number: number }>
+        columns={[{ dataIndex: 'number', sorter: true, title: 'Number', type: ColumnType.NUMBER }]}
+        data={[{ number: 1 }]}
+        extra={{ onEdit: onEditMock }}
+        onSortChange={onSortChangeMock}
+      />,
     );
 
     expect(container).toMatchSnapshot();
 
-    const nameInputField = await screen.findAllByTestId('DATA-TEST-ID-Text-0');
-    expect(nameInputField.length).toBeGreaterThan(0);
+    userEvent.tab();
+    userEvent.keyboard('{Enter}');
 
-    act(() => {
-      if (nameInputField.length > 0) {
-        userEvent.click(nameInputField[0]);
-        userEvent.clear(nameInputField[0]);
-        userEvent.type(nameInputField[0], newInput);
-      }
-    });
+    expect(onSortChangeMock).toBeCalledTimes(1);
+    expect(onSortChangeMock).toBeCalledWith('number', SortDirectionEnum.DESC);
+
+    userEvent.keyboard('{Enter}');
+
+    expect(onSortChangeMock).toBeCalledTimes(2);
+    expect(onSortChangeMock).toBeCalledWith('number', SortDirectionEnum.ASC);
+
+    userEvent.keyboard('{Enter}');
+
+    expect(onSortChangeMock).toBeCalledTimes(3);
+    expect(onSortChangeMock).toBeCalledWith();
+  });
+
+  it('EditableDataTable handles change, onRowDelete and onRowDownload', () => {
+    const isDeletableMock = jest.fn().mockImplementation(() => true);
+    const isDownloadableMock = jest.fn().mockImplementation(() => true);
+    const onEditMock = jest.fn();
+    const onRowDeleteMock = jest.fn();
+    const onRowDownloadMock = jest.fn();
+
+    const { container } = render(
+      <EditableDataTable<{ number: number }>
+        columns={[{ dataIndex: 'number', editable: true, title: 'Number', type: ColumnType.NUMBER }]}
+        data={[{ number: 1 }]}
+        dataTestId='DATA-TEST-ID'
+        extra={{
+          isDeletable: isDeletableMock,
+          isDownloadable: isDownloadableMock,
+          onEdit: onEditMock,
+          onRowDelete: onRowDeleteMock,
+          onRowDownload: onRowDownloadMock,
+        }}
+      />,
+    );
 
     expect(container).toMatchSnapshot();
-    expect(onEditMock).toHaveBeenCalledTimes(newInput.length + 1);
+
+    userEvent.tab();
+    if (document.activeElement) {
+      userEvent.clear(document.activeElement);
+    }
+
+    expect(onEditMock).toBeCalledTimes(1);
+    expect(onEditMock).toBeCalledWith({ number: undefined }, 'number', 0);
+
+    // Download
+    const downloadButton = screen.getByTestId('DATA-TEST-ID-download');
+    userEvent.click(downloadButton);
+
+    expect(onRowDownloadMock).toBeCalledTimes(1);
+    expect(onRowDownloadMock).toBeCalledWith({ number: undefined }, 0);
+
+    // Delete and confirm in popover
+    const deleteButton = screen.getByTestId('DATA-TEST-ID-delete');
+    userEvent.click(deleteButton);
+
+    userEvent.tab();
+    userEvent.tab();
+    userEvent.keyboard('{Enter}');
+
+    expect(onRowDeleteMock).toBeCalledTimes(1);
+    expect(onRowDeleteMock).toBeCalledWith({ number: undefined }, 0);
+  });
+
+  it('EditableDataTable handles onRowDelete and onRowDownload with custom localization', () => {
+    const isDeletableMock = jest.fn().mockImplementation(() => false);
+    const isDownloadableMock = jest.fn().mockImplementation(() => false);
+    const onEditMock = jest.fn();
+    const onRowDeleteMock = jest.fn();
+    const onRowDownloadMock = jest.fn();
+    const canAddNewLineMock = jest.fn().mockImplementation(() => true);
+
+    const { container } = render(
+      <EditableDataTable<{ number: number }>
+        columns={[{ dataIndex: 'number', editable: true, title: 'Number', type: ColumnType.NUMBER }]}
+        data={[{ number: 1 }]}
+        extra={{
+          canAddNewLine: canAddNewLineMock,
+          isDeletable: isDeletableMock,
+          isDownloadable: isDownloadableMock,
+          localization: {
+            actionColumn: 'actionColumn',
+            addRow: 'addRow',
+            deleteButton: 'deleteButton',
+            deletePopoverCancel: 'deletePopoverCancel',
+            deletePopoverConfirm: 'deletePopoverConfirm',
+            deletePopoverMessage: 'deletePopoverMessage',
+            downloadButton: 'downloadButton',
+            moreActionsMessage: 'moreActionsMessage',
+          },
+          onEdit: onEditMock,
+          onRowDelete: onRowDeleteMock,
+          onRowDownload: onRowDownloadMock,
+        }}
+      />,
+    );
+
+    expect(container).toMatchSnapshot();
+  });
+
+  it('EditableDataTable handles canAddNewLine with onNewLine', () => {
+    const canAddNewLineMock = jest.fn().mockImplementation(() => true);
+    const onEditMock = jest.fn();
+    const onNewLineMock = jest.fn();
+
+    const { container } = render(
+      <EditableDataTable<{ number: number }>
+        columns={[{ dataIndex: 'number', title: 'Number', type: ColumnType.NUMBER }]}
+        data={[{ number: 1 }]}
+        extra={{
+          canAddNewLine: canAddNewLineMock,
+          onEdit: onEditMock,
+          onNewLine: onNewLineMock,
+        }}
+      />,
+    );
+
+    expect(canAddNewLineMock).toBeCalledTimes(1);
+
+    expect(container).toMatchSnapshot();
+
+    userEvent.tab();
+    userEvent.keyboard('{Enter}');
+
+    expect(onNewLineMock).toBeCalledTimes(1);
+  });
+
+  it('EditableDataTable handles canAddNewLine without onNewLine', () => {
+    console.error = jest.fn();
+    const canAddNewLineMock = jest.fn().mockImplementation(() => true);
+    const onEditMock = jest.fn();
+
+    const { container } = render(
+      <EditableDataTable<{ number: number }>
+        columns={[{ dataIndex: 'number', title: 'Number', type: ColumnType.NUMBER }]}
+        data={[{ number: 1 }]}
+        extra={{
+          canAddNewLine: canAddNewLineMock,
+          onEdit: onEditMock,
+        }}
+      />,
+    );
+
+    expect(canAddNewLineMock).toBeCalledTimes(1);
+
+    expect(container).toMatchSnapshot();
+
+    userEvent.tab();
+    userEvent.keyboard('{Enter}');
+
+    expect(console.error).toBeCalledTimes(1);
+    expect(console.error).toBeCalledWith('Missing onNewLine function');
   });
 });

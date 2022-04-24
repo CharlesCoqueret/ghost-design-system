@@ -20,7 +20,7 @@ import { ColumnType, IColumnType, IExtraEditableDataTableProps } from '../Common
 export interface IEditableDataTableCellProps<T> {
   column: IColumnType<T>;
   dataTestId?: string;
-  editable: boolean;
+  editable?: boolean;
   row: T;
   extra?: IExtraEditableDataTableProps<T>;
   rowIndex: number;

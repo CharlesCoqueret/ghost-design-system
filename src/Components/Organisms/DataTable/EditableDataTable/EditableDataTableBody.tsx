@@ -20,7 +20,7 @@ const EditableDataTableBody = <T,>(props: IEditableDataTableBodyProps<T>): React
 
   const [selectedRows, setSelectedRows] = useState<Record<number, boolean>>({});
 
-  const isSelectable = extra?.onRowSelect;
+  const isSelectable = extra.onRowSelect;
 
   const handleRowClick = (row: T, rowIndex: number) => {
     return extra && extra.onRowClick
@@ -42,7 +42,7 @@ const EditableDataTableBody = <T,>(props: IEditableDataTableBodyProps<T>): React
       const newSelectedRows = { ...selectedRows };
       newSelectedRows[rowIndex] = selected;
       setSelectedRows(newSelectedRows);
-      if (extra?.onRowSelect) {
+      if (extra.onRowSelect) {
         extra.onRowSelect(
           data.filter((_row, index) => newSelectedRows[index]),
           row,
@@ -55,7 +55,7 @@ const EditableDataTableBody = <T,>(props: IEditableDataTableBodyProps<T>): React
   return (
     <tbody>
       {data.map((row, rowIndex) => {
-        const isEditable = extra?.isEditable === undefined || extra.isEditable(row, rowIndex);
+        const isEditable = extra.isEditable === undefined || extra.isEditable(row, rowIndex);
         return (
           <tr
             key={`row-${rowIndex}`}
@@ -89,11 +89,11 @@ const EditableDataTableBody = <T,>(props: IEditableDataTableBodyProps<T>): React
           </tr>
         );
       })}
-      {!loading && (!data || data?.length === 0) && (
+      {!loading && (!data || data.length === 0) && (
         <tr className='no-data'>
           <td colSpan={columns.filter((column) => !column.hidden).length + (isSelectable ? 1 : 0)}>
             <div className='no-data-container'>
-              <div className='no-data-text'>{extra?.localization?.noData ?? 'No data'}</div>
+              <div className='no-data-text'>{extra.localization?.noData ?? 'No data'}</div>
               <Icon icon={['fal', 'inbox']} size='2x' className='no-data-icon' />
             </div>
           </td>

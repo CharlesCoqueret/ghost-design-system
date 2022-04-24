@@ -25,54 +25,55 @@ const EditableDataTable = <T,>(props: IEditableDataTableProps<T>): ReactElement 
   const [sortDirection, setSortDirection] = useState<SortDirectionEnum | undefined>();
 
   const currentColumns: Array<IColumnType<T>> =
-    !extra?.onRowDelete && !extra?.onRowDownload
+    !extra.onRowDelete && !extra.onRowDownload
       ? columns
       : [
           ...columns.filter((column) => column.type !== ColumnType.BUTTON),
           {
-            title: extra?.localization?.actionColumn ?? 'Actions',
+            title: extra.localization?.actionColumn ?? 'Actions',
             type: ColumnType.BUTTON,
-            moreActionsMessage: extra?.localization?.moreActionsMessage ?? 'More actions',
+            moreActionsMessage: extra.localization?.moreActionsMessage ?? 'More actions',
             buttons: [
               {
                 hidden: (row, rowIndex) => {
-                  if (!extra?.onRowDelete) return true;
-                  if (extra.isDeletable === undefined || extra.isDeletable(row, rowIndex)) {
+                  if (extra.onRowDelete && (extra.isDeletable === undefined || extra.isDeletable(row, rowIndex))) {
                     return false;
                   }
                   return true;
                 },
                 icon: ['fal', 'trash-alt'],
-                label: extra?.localization?.deleteButton ?? 'Delete',
+                label: extra.localization?.deleteButton ?? 'Delete',
                 onClick: (row, rowIndex) => {
-                  if (extra?.onRowDelete) {
+                  if (extra.onRowDelete) {
                     extra.onRowDelete(row, rowIndex);
                   }
                   setCurrentData((prev) => [...prev.filter((_item, index) => index !== rowIndex)]);
                 },
                 popover: {
-                  message: extra?.localization?.deletePopoverMessage ?? 'Delete?',
-                  cancel: extra?.localization?.deletePopoverCancel ?? 'Cancel',
-                  confirm: extra?.localization?.deletePopoverConfirm ?? 'Confirm',
+                  message: extra.localization?.deletePopoverMessage ?? 'Delete?',
+                  cancel: extra.localization?.deletePopoverCancel ?? 'Cancel',
+                  confirm: extra.localization?.deletePopoverConfirm ?? 'Confirm',
                 },
-                dataTestId: 'delete',
+                dataTestId: dataTestId ? `${dataTestId}-delete` : undefined,
               },
               {
                 hidden: (row, rowIndex) => {
-                  if (!extra?.onRowDownload) return true;
-                  if (extra.isDownloadable === undefined || extra.isDownloadable(row, rowIndex)) {
+                  if (
+                    extra.onRowDownload &&
+                    (extra.isDownloadable === undefined || extra.isDownloadable(row, rowIndex))
+                  ) {
                     return false;
                   }
                   return true;
                 },
                 icon: ['fal', 'arrow-down-to-line'],
-                label: extra?.localization?.downloadButton ?? 'Download',
+                label: extra.localization?.downloadButton ?? 'Download',
                 onClick: (row, rowIndex) => {
-                  if (extra?.onRowDownload) {
+                  if (extra.onRowDownload) {
                     extra.onRowDownload(row, rowIndex);
                   }
                 },
-                dataTestId: 'download',
+                dataTestId: dataTestId ? `${dataTestId}-download` : undefined,
               },
             ],
           },
@@ -100,8 +101,8 @@ const EditableDataTable = <T,>(props: IEditableDataTableProps<T>): ReactElement 
   };
 
   const addNewLine = () => {
-    if (extra?.onNewLine === undefined) {
-      console.warn('Missing onNewLine function');
+    if (extra.onNewLine === undefined) {
+      console.error('Missing onNewLine function');
       return;
     }
     const newLine = extra.onNewLine();
@@ -131,11 +132,11 @@ const EditableDataTable = <T,>(props: IEditableDataTableProps<T>): ReactElement 
         />
         <StaticDataTableFooter<T> columns={currentColumns} data={currentData} extra={extra} />
       </table>
-      {extra?.canAddNewLine && extra?.canAddNewLine() && (
+      {extra.canAddNewLine && extra.canAddNewLine() && (
         <Button
           className='gds-table-new-line'
           color={ColorButtonEnum.PRIMARY}
-          label={extra?.localization?.addRow ?? 'Add row'}
+          label={extra.localization?.addRow ?? 'Add row'}
           onClick={addNewLine}
         />
       )}
