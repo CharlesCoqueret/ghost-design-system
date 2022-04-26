@@ -3,11 +3,8 @@ import format from 'date-fns/format';
 import { registerLocale } from 'react-datepicker';
 import { Locale } from 'date-fns';
 
-const REGISTRAR_LOCALES: { [key: string]: Locale } = {};
-
-interface IGlobalThis {
-  __localeData__: Record<string, Locale>;
-  __localeId__: string;
+interface IGlobalThis extends Window {
+  __localeData__?: Record<string, Locale>;
 }
 
 export type existingLocale =
@@ -104,25 +101,20 @@ export type existingLocale =
   | string;
 
 export const importFnsLocaleFile = async (locale: existingLocale): Promise<void> => {
-  if (locale in Object.keys(REGISTRAR_LOCALES)) {
-    registerLocale(locale, REGISTRAR_LOCALES[locale]);
-  } else {
-    await import(`date-fns/locale/${locale}/index.js`)
-      .then((localeDataset) => {
-        REGISTRAR_LOCALES[locale] = localeDataset;
-        registerLocale(locale, localeDataset);
-      })
-      .catch(console.error);
-  }
-  return Promise.resolve();
+  return await import(`date-fns/locale/${locale}/index.js`)
+    .then((localeDataset) => {
+      registerLocale(locale, localeDataset);
+    })
+    .catch(console.error);
 };
 
 const getLocaleObject = (localeSpec: string): Locale | undefined => {
   // Treat it as a locale name registered by registerLocale
-  const scope =
-    typeof window !== 'undefined' ? (window as unknown as IGlobalThis) : (globalThis as unknown as IGlobalThis);
+  const scope = Object.assign({}, window, globalThis) as unknown as IGlobalThis;
 
-  return scope.__localeData__ ? scope.__localeData__[localeSpec] : undefined;
+  return scope.__localeData__ && Object.prototype.hasOwnProperty.call(scope.__localeData__, localeSpec)
+    ? scope.__localeData__[localeSpec]
+    : undefined;
 };
 
 export const formatDate = (date: Date, formatStr: string, locale?: string): string => {

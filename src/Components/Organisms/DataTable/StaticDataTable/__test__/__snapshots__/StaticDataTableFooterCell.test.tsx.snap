@@ -1,0 +1,185 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StaticDataTableFooterCell component StaticDataTableFooterCell renders with amount 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class=""
+        >
+          <div
+            class="gds-field-group"
+          >
+            <div
+              class="gds-amount-field amount-field-read-only table--cell-value--amount-readonly"
+            >
+              <span
+                class="gds-typography"
+              >
+                -
+              </span>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`StaticDataTableFooterCell component StaticDataTableFooterCell renders with amount 2`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class=""
+        >
+          <div
+            class="gds-field-group"
+          >
+            <div
+              class="gds-amount-field amount-field-read-only table--cell-value--amount-readonly"
+            >
+              <span
+                class="gds-typography"
+              >
+                -
+              </span>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`StaticDataTableFooterCell component StaticDataTableFooterCell renders with badge, button, checkbox, code, custom, date, dynamicsearch, text, textarea, year 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class="table--footer-value center"
+        >
+          -
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`StaticDataTableFooterCell component StaticDataTableFooterCell renders with number 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class=""
+        >
+          <div
+            class="gds-field-group"
+          >
+            <div
+              class="gds-amount-field amount-field-read-only table--cell-value--number-readonly"
+            >
+              <span
+                class="gds-typography"
+              >
+                -
+              </span>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`StaticDataTableFooterCell component StaticDataTableFooterCell renders with number 2`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class=""
+        >
+          <div
+            class="gds-field-group"
+          >
+            <div
+              class="gds-amount-field amount-field-read-only table--cell-value--number-readonly"
+            >
+              <span
+                class="gds-typography"
+              >
+                -
+              </span>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`StaticDataTableFooterCell component StaticDataTableFooterCell renders with percentage 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class=""
+        >
+          <div
+            class="gds-field-group"
+          >
+            <div
+              class="gds-amount-field amount-field-read-only table--cell-value--percentage-readonly"
+            >
+              <span
+                class="gds-typography"
+              >
+                - %
+              </span>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`StaticDataTableFooterCell component StaticDataTableFooterCell renders with percentage 2`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class=""
+        >
+          <div
+            class="gds-field-group"
+          >
+            <div
+              class="gds-amount-field amount-field-read-only table--cell-value--percentage-readonly"
+            >
+              <span
+                class="gds-typography"
+              >
+                - %
+              </span>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;

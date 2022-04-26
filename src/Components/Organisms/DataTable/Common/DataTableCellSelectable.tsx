@@ -1,11 +1,11 @@
-import React, { MouseEvent, ReactElement } from 'react';
+import React, { KeyboardEvent, MouseEvent } from 'react';
 import classnames from 'classnames';
 
 import { Icon } from '../../../Atoms/Icon';
 
 interface IDataTableCellSelectableProps {
-  handleSelectClick?: (event: MouseEvent<HTMLElement>, selected: boolean) => void;
-  selected: boolean;
+  handleSelectClick?: (event: MouseEvent<HTMLElement> | KeyboardEvent<HTMLElement>, selected: boolean) => void;
+  selected?: boolean;
   selectable: boolean;
   dataTestId?: string;
 }
@@ -21,12 +21,16 @@ interface IDataTableCellSelectableState {
 class DataTableCellSelectable extends React.Component<IDataTableCellSelectableProps, IDataTableCellSelectableState> {
   constructor(props: IDataTableCellSelectableProps) {
     super(props);
-    this.state = { selected: this.props.selected };
+    this.state = { selected: this.props.selected || false };
 
-    this.onClick = this.onClick.bind(this);
+    this.onSelect = this.onSelect.bind(this);
   }
 
-  onClick(event: MouseEvent<HTMLTableCellElement>): void {
+  onSelect(event: MouseEvent<HTMLElement> | KeyboardEvent<HTMLElement>): void {
+    if (event.type === 'keyup' && (event as KeyboardEvent).key !== 'Enter') {
+      return;
+    }
+
     event.stopPropagation();
 
     const selected = !this.props.selected;
@@ -38,12 +42,14 @@ class DataTableCellSelectable extends React.Component<IDataTableCellSelectablePr
     }
   }
 
-  render(): ReactElement {
+  render() {
     return (
       <td
         key='cell-selectable'
         className={this.props.selectable ? 'table--value--selectable' : 'table--value--selectable-disabled'}
-        onClick={this.props.selectable ? this.onClick : undefined}>
+        onClick={this.props.selectable ? this.onSelect : undefined}
+        onKeyUp={this.props.selectable ? this.onSelect : undefined}
+        tabIndex={this.props.selectable ? 0 : -1}>
         <div className={classnames('checkbox-marker', { selected: this.props.selected })}>
           <Icon
             icon={[

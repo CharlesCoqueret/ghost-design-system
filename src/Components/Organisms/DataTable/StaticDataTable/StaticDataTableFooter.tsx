@@ -20,7 +20,7 @@ const StaticDataTableFooter = <T,>(props: IStaticDataTableFooterProps<T>): React
     <tfoot>
       <tr>
         <td key='footer-selectable' className='table--footer--selectable'>
-          {extra?.localization?.total ?? 'Total'}
+          {extra.localization?.total ?? 'Total'}
         </td>
 
         {columns.map((column) => {

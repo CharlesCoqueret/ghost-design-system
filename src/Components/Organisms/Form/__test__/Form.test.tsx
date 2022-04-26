@@ -81,6 +81,8 @@ describe('Form Component', () => {
 
   it('Form renders without validation schema', () => {
     const handleDataChangeMock = jest.fn();
+    console.warn = jest.fn();
+
     const { container } = render(
       <Form<{ number?: number }>
         fields={[
@@ -96,5 +98,7 @@ describe('Form Component', () => {
     );
 
     expect(container).toMatchSnapshot();
+    expect(console.warn).toBeCalledTimes(1);
+    expect(console.warn).toBeCalledWith('could not retrieve if number is mandatory');
   });
 });

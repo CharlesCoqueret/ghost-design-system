@@ -1,0 +1,313 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FileCell component FileCell handles change 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class="table--cell--code"
+        >
+          <div
+            class="gds-field-group"
+          >
+            <div
+              class="field gds-file-input-container gds-typography"
+            >
+              <div
+                class="droparea"
+              >
+                <label
+                  class="label"
+                >
+                  Click or drag file to upload
+                  <input
+                    accept="*/*"
+                    class="input"
+                    multiple=""
+                    tabindex="-1"
+                    type="file"
+                    value=""
+                  />
+                </label>
+              </div>
+              <div
+                class="gallery"
+              >
+                <div
+                  class="item-container error"
+                >
+                  <div
+                    class="left"
+                  >
+                    <div
+                      class="paperclip-icon"
+                    >
+                      <i
+                        class="icon"
+                        icon="fal,exclamation-triangle"
+                      />
+                    </div>
+                    <div
+                      class="name"
+                      tabindex="-1"
+                    >
+                      filename.png
+                       (1.21 kB)
+                    </div>
+                  </div>
+                  <div
+                    class="right"
+                  >
+                    <button
+                      class="gds-button-content delete-icon"
+                      color="reversed"
+                      tabindex="0"
+                      type="button"
+                    >
+                      <div
+                        class="button-icon-container"
+                      >
+                        <i
+                          class="button-icon icon"
+                          icon="fal,trash-alt"
+                        />
+                      </div>
+                    </button>
+                    <div>
+                      Delete
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  Error message
+                </div>
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`FileCell component FileCell renders 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class="table--cell--code"
+        >
+          <div
+            class="gds-field-group"
+          >
+            <div
+              class="field gds-file-input-container gds-typography"
+            >
+              <div
+                class="droparea readonly"
+              >
+                <label
+                  class="label"
+                >
+                  Click or drag file to upload
+                  <input
+                    accept="*/*"
+                    class="input"
+                    multiple=""
+                    readonly=""
+                    tabindex="-1"
+                    type="file"
+                    value=""
+                  />
+                </label>
+              </div>
+              <div
+                class="gallery"
+              >
+                <div
+                  class="item-container error"
+                >
+                  <div
+                    class="left"
+                  >
+                    <div
+                      class="paperclip-icon"
+                    >
+                      <i
+                        class="icon"
+                        icon="fal,exclamation-triangle"
+                      />
+                    </div>
+                    <div
+                      class="name"
+                      tabindex="-1"
+                    >
+                      filename.png
+                       (1.21 kB)
+                    </div>
+                  </div>
+                  <div
+                    class="right"
+                  />
+                </div>
+                <div>
+                  Error message
+                </div>
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`FileCell component FileCell renders when hidden 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class="table--cell--code"
+          style="display: none;"
+        >
+          <div
+            class="gds-field-group"
+          >
+            <div
+              class="field gds-file-input-container gds-typography"
+            >
+              <div
+                class="droparea readonly"
+              >
+                <label
+                  class="label"
+                >
+                  Click or drag file to upload
+                  <input
+                    accept="*/*"
+                    class="input"
+                    multiple=""
+                    readonly=""
+                    tabindex="-1"
+                    type="file"
+                    value=""
+                  />
+                </label>
+              </div>
+              <div
+                class="gallery"
+              >
+                <div
+                  class="item-container error"
+                >
+                  <div
+                    class="left"
+                  >
+                    <div
+                      class="paperclip-icon"
+                    >
+                      <i
+                        class="icon"
+                        icon="fal,exclamation-triangle"
+                      />
+                    </div>
+                    <div
+                      class="name"
+                      tabindex="-1"
+                    >
+                      filename.png
+                       (1.21 kB)
+                    </div>
+                  </div>
+                  <div
+                    class="right"
+                  />
+                </div>
+                <div>
+                  Error message
+                </div>
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`FileCell component FileCell renders with forced value 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class="table--cell--code"
+        >
+          <div
+            class="gds-field-group"
+          >
+            <div
+              class="field gds-file-input-container gds-typography"
+            >
+              <div
+                class="droparea readonly"
+              >
+                <label
+                  class="label"
+                >
+                  Click or drag file to upload
+                  <input
+                    accept="*/*"
+                    class="input"
+                    multiple=""
+                    readonly=""
+                    tabindex="-1"
+                    type="file"
+                    value=""
+                  />
+                </label>
+              </div>
+              <div
+                class="gallery"
+              >
+                <div
+                  class="item-container"
+                >
+                  <div
+                    class="left"
+                  >
+                    <div
+                      class="paperclip-icon"
+                    >
+                      <i
+                        class="icon"
+                        icon="fal,paperclip"
+                      />
+                    </div>
+                    <div
+                      class="name downloadable"
+                      tabindex="0"
+                    >
+                      filename2.png
+                       (4.22 kB)
+                    </div>
+                  </div>
+                  <div
+                    class="right"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;

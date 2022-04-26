@@ -31,7 +31,7 @@ exports[`CustomCell component CustomCell renders in edit mode and handles change
           <span
             class="gds-typography"
           >
-            customRenderEdit
+            customRender
           </span>
         </td>
       </tr>
@@ -51,7 +51,7 @@ exports[`CustomCell component CustomCell renders in edit mode via extra 1`] = `
           <span
             class="gds-typography"
           >
-            customRenderEdit
+            customRender
           </span>
         </td>
       </tr>
@@ -112,7 +112,7 @@ exports[`CustomCell component CustomCell renders without forced value and withou
           <span
             class="gds-typography"
           >
-            -
+            customRender
           </span>
         </td>
       </tr>

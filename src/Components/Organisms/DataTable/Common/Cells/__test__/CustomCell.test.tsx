@@ -9,9 +9,6 @@ describe('CustomCell component', () => {
     const customRenderMock = jest.fn().mockImplementation(() => {
       return 'customRender';
     });
-    const customRenderEditMock = jest.fn().mockImplementation(() => {
-      return 'customRenderEdit';
-    });
 
     const { container } = render(
       <table>
@@ -20,7 +17,6 @@ describe('CustomCell component', () => {
             <CustomCell
               column={{
                 customRender: customRenderMock,
-                customRenderEdit: customRenderEditMock,
                 dataIndex: 'data',
                 title: 'CustomCell',
                 type: ColumnType.CUSTOM,
@@ -35,16 +31,12 @@ describe('CustomCell component', () => {
 
     expect(container).toMatchSnapshot();
     expect(customRenderMock).toBeCalledTimes(1);
-    expect(customRenderMock).toBeCalledWith({ data: 'DATA' }, 'data', 0);
-    expect(customRenderEditMock).toBeCalledTimes(0);
+    expect(customRenderMock).toBeCalledWith({ onChange: undefined, readOnly: true, inputValue: 'DATA' });
   });
 
   it('CustomCell renders with forced value', () => {
     const customRenderMock = jest.fn().mockImplementation(() => {
       return 'customRender';
-    });
-    const customRenderEditMock = jest.fn().mockImplementation(() => {
-      return 'customRenderEdit';
     });
 
     const { container } = render(
@@ -54,7 +46,6 @@ describe('CustomCell component', () => {
             <CustomCell
               column={{
                 customRender: customRenderMock,
-                customRenderEdit: customRenderEditMock,
                 dataIndex: 'data',
                 title: 'CustomCell',
                 type: ColumnType.CUSTOM,
@@ -70,15 +61,11 @@ describe('CustomCell component', () => {
 
     expect(container).toMatchSnapshot();
     expect(customRenderMock).toBeCalledTimes(0);
-    expect(customRenderEditMock).toBeCalledTimes(0);
   });
 
   it('CustomCell renders when hidden', () => {
     const customRenderMock = jest.fn().mockImplementation(() => {
       return 'customRender';
-    });
-    const customRenderEditMock = jest.fn().mockImplementation(() => {
-      return 'customRenderEdit';
     });
 
     const { container } = render(
@@ -88,7 +75,6 @@ describe('CustomCell component', () => {
             <CustomCell
               column={{
                 customRender: customRenderMock,
-                customRenderEdit: customRenderEditMock,
                 dataIndex: 'data',
                 hidden: true,
                 title: 'CustomCell',
@@ -104,7 +90,7 @@ describe('CustomCell component', () => {
 
     expect(container).toMatchSnapshot();
     expect(customRenderMock).toBeCalledTimes(1);
-    expect(customRenderEditMock).toBeCalledTimes(0);
+    expect(customRenderMock).toBeCalledWith({ inputValue: 'DATA', onChange: undefined, readOnly: true });
   });
 
   it('CustomCell renders in edit mode and handles change', () => {
@@ -112,17 +98,10 @@ describe('CustomCell component', () => {
       return;
     };
     const onChangeMock = jest.fn();
-    const customRenderMock = jest.fn().mockImplementation(() => {
+    const customRenderMock = jest.fn().mockImplementation((props: { onChange: (newValue: string) => void }) => {
+      customOnChangeCallback = props.onChange;
       return 'customRender';
     });
-    const customRenderEditMock = jest
-      .fn()
-      .mockImplementation(
-        (_row: { data: string }, _dataIndex: string, onChange: (newValue: string) => void, _rowIndex: number) => {
-          customOnChangeCallback = onChange;
-          return 'customRenderEdit';
-        },
-      );
 
     const { container } = render(
       <table>
@@ -131,7 +110,6 @@ describe('CustomCell component', () => {
             <CustomCell
               column={{
                 customRender: customRenderMock,
-                customRenderEdit: customRenderEditMock,
                 dataIndex: 'data',
                 title: 'CustomCell',
                 type: ColumnType.CUSTOM,
@@ -147,9 +125,8 @@ describe('CustomCell component', () => {
     );
 
     expect(container).toMatchSnapshot();
-    expect(customRenderMock).toBeCalledTimes(0);
-    expect(customRenderEditMock).toBeCalledTimes(1);
-    expect(customRenderEditMock).toBeCalledWith({ data: 'DATA' }, 'data', expect.any(Function), 0);
+    expect(customRenderMock).toBeCalledTimes(1);
+    expect(customRenderMock).toBeCalledWith({ onChange: expect.any(Function), readOnly: false, inputValue: 'DATA' });
 
     expect(customOnChangeCallback).toBeDefined();
 
@@ -164,9 +141,6 @@ describe('CustomCell component', () => {
     const customRenderMock = jest.fn().mockImplementation(() => {
       return 'customRender';
     });
-    const customRenderEditMock = jest.fn().mockImplementation(() => {
-      return 'customRenderEdit';
-    });
 
     const { container } = render(
       <table>
@@ -175,7 +149,6 @@ describe('CustomCell component', () => {
             <CustomCell
               column={{
                 customRender: customRenderMock,
-                customRenderEdit: customRenderEditMock,
                 dataIndex: 'data',
                 title: 'CustomCell',
                 type: ColumnType.CUSTOM,
@@ -191,17 +164,13 @@ describe('CustomCell component', () => {
     );
 
     expect(container).toMatchSnapshot();
-    expect(customRenderMock).toBeCalledTimes(0);
-    expect(customRenderEditMock).toBeCalledTimes(1);
-    expect(customRenderEditMock).toBeCalledWith({ data: 'DATA' }, 'data', expect.any(Function), 0);
+    expect(customRenderMock).toBeCalledTimes(1);
+    expect(customRenderMock).toBeCalledWith({ onChange: expect.any(Function), readOnly: false, inputValue: 'DATA' });
   });
 
   it('CustomCell renders without forced value and without row', () => {
     const customRenderMock = jest.fn().mockImplementation(() => {
       return 'customRender';
-    });
-    const customRenderEditMock = jest.fn().mockImplementation(() => {
-      return 'customRenderEdit';
     });
 
     const { container } = render(
@@ -211,7 +180,6 @@ describe('CustomCell component', () => {
             <CustomCell
               column={{
                 customRender: customRenderMock,
-                customRenderEdit: customRenderEditMock,
                 dataIndex: 'data',
                 title: 'CustomCell',
                 type: ColumnType.CUSTOM,
@@ -224,7 +192,7 @@ describe('CustomCell component', () => {
     );
 
     expect(container).toMatchSnapshot();
-    expect(customRenderMock).toBeCalledTimes(0);
-    expect(customRenderEditMock).toBeCalledTimes(0);
+    expect(customRenderMock).toBeCalledTimes(1);
+    expect(customRenderMock).toBeCalledWith({ onChange: undefined, readOnly: true, inputValue: undefined });
   });
 });

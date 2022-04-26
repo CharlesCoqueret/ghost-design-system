@@ -1,0 +1,487 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StaticDataTableBody component StaticDataTableBody renders with number and no data 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr
+        class="no-data"
+      >
+        <td
+          colspan="1"
+        >
+          <div
+            class="no-data-container"
+          >
+            <div
+              class="no-data-text"
+            >
+              No data
+            </div>
+            <i
+              class="no-data-icon icon"
+              icon="fal,inbox"
+            />
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`StaticDataTableBody component StaticDataTableBody renders with number and no data with hidden column 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr
+        class="no-data"
+      >
+        <td
+          colspan="1"
+        >
+          <div
+            class="no-data-container"
+          >
+            <div
+              class="no-data-text"
+            >
+              No data
+            </div>
+            <i
+              class="no-data-icon icon"
+              icon="fal,inbox"
+            />
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`StaticDataTableBody component StaticDataTableBody renders with number and no data with no custom message 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr
+        class="no-data"
+      >
+        <td
+          colspan="2"
+        >
+          <div
+            class="no-data-container"
+          >
+            <div
+              class="no-data-text"
+            >
+              No data
+            </div>
+            <i
+              class="no-data-icon icon"
+              icon="fal,inbox"
+            />
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`StaticDataTableBody component StaticDataTableBody renders with number and no data with no custom message 2`] = `
+<div>
+  <table>
+    <tbody>
+      <tr
+        class="no-data"
+      >
+        <td
+          colspan="2"
+        >
+          <div
+            class="no-data-container"
+          >
+            <div
+              class="no-data-text"
+            >
+              No data
+            </div>
+            <i
+              class="no-data-icon icon"
+              icon="fal,inbox"
+            />
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`StaticDataTableBody component StaticDataTableBody renders with number and no data with no custom message 3`] = `
+<div>
+  <table>
+    <tbody>
+      <tr
+        class="no-data"
+      >
+        <td
+          colspan="1"
+        >
+          <div
+            class="no-data-container"
+          >
+            <div
+              class="no-data-text"
+            >
+              No data
+            </div>
+            <i
+              class="no-data-icon icon"
+              icon="fal,inbox"
+            />
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`StaticDataTableBody component StaticDataTableBody renders with number handles row click and row enter 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr
+        class="pointer"
+        data-testid="DATA-TEST-ID-row-0"
+        tabindex="0"
+      >
+        <td
+          class=""
+        >
+          <div
+            class="gds-field-group"
+          >
+            <span
+              class="gds-amount-field amount-field-read-only table--cell-value--number-readonly"
+              id="number"
+              name="number"
+            >
+              1
+            </span>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`StaticDataTableBody component StaticDataTableBody renders with number handles row click and row enter 2`] = `
+<div>
+  <table>
+    <tbody>
+      <tr
+        class="pointer"
+        data-testid="DATA-TEST-ID-row-0"
+        tabindex="0"
+      >
+        <td
+          class=""
+        >
+          <div
+            class="gds-field-group"
+          >
+            <span
+              class="gds-amount-field amount-field-read-only table--cell-value--number-readonly"
+              id="number"
+              name="number"
+            >
+              1
+            </span>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`StaticDataTableBody component StaticDataTableBody renders with number handles row click and row enter 3`] = `
+<div>
+  <table>
+    <tbody>
+      <tr
+        class="pointer"
+        data-testid="DATA-TEST-ID-row-0"
+        tabindex="0"
+      >
+        <td
+          class=""
+        >
+          <div
+            class="gds-field-group"
+          >
+            <span
+              class="gds-amount-field amount-field-read-only table--cell-value--number-readonly"
+              id="number"
+              name="number"
+            >
+              1
+            </span>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`StaticDataTableBody component StaticDataTableBody renders with number loading  1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr
+        class="no-data"
+      >
+        <td
+          colspan="2"
+        >
+          <div>
+            loading
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`StaticDataTableBody component StaticDataTableBody renders with number loading with hidden column 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr
+        class="no-data"
+      >
+        <td
+          colspan="0"
+        >
+          <div>
+            loading
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`StaticDataTableBody component StaticDataTableBody renders with number selectable and handles selection 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr
+        class=""
+        data-testid="DATA-TEST-ID-row-0"
+        tabindex="-1"
+      >
+        <td
+          class="table--value--selectable"
+          tabindex="0"
+        >
+          <div
+            class="checkbox-marker"
+          >
+            <i
+              class="icon"
+              data-testid="DATA-TEST-ID-select-row-0"
+              icon="fal,square"
+            />
+          </div>
+        </td>
+        <td
+          class=""
+        >
+          <div
+            class="gds-field-group"
+          >
+            <span
+              class="gds-amount-field amount-field-read-only table--cell-value--number-readonly"
+              id="number"
+              name="number"
+            >
+              1
+            </span>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`StaticDataTableBody component StaticDataTableBody renders with number selectable and handles selection 2`] = `
+<div>
+  <table>
+    <tbody>
+      <tr
+        class="selected"
+        data-testid="DATA-TEST-ID-row-0"
+        tabindex="-1"
+      >
+        <td
+          class="table--value--selectable"
+          tabindex="0"
+        >
+          <div
+            class="checkbox-marker selected"
+          >
+            <i
+              class="icon"
+              data-testid="DATA-TEST-ID-select-row-0"
+              icon="fas,square-check"
+            />
+          </div>
+        </td>
+        <td
+          class=""
+        >
+          <div
+            class="gds-field-group"
+          >
+            <span
+              class="gds-amount-field amount-field-read-only table--cell-value--number-readonly"
+              id="number"
+              name="number"
+            >
+              1
+            </span>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`StaticDataTableBody component StaticDataTableBody renders with number selectable and handles selection 3`] = `
+<div>
+  <table>
+    <tbody>
+      <tr
+        class=""
+        data-testid="DATA-TEST-ID-row-0"
+        tabindex="-1"
+      >
+        <td
+          class="table--value--selectable"
+          tabindex="0"
+        >
+          <div
+            class="checkbox-marker"
+          >
+            <i
+              class="icon"
+              data-testid="DATA-TEST-ID-select-row-0"
+              icon="fal,square"
+            />
+          </div>
+        </td>
+        <td
+          class=""
+        >
+          <div
+            class="gds-field-group"
+          >
+            <span
+              class="gds-amount-field amount-field-read-only table--cell-value--number-readonly"
+              id="number"
+              name="number"
+            >
+              1
+            </span>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`StaticDataTableBody component StaticDataTableBody renders with number selectable row 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr
+        class=""
+        data-testid="DATA-TEST-ID-row-0"
+        tabindex="-1"
+      >
+        <td
+          class="table--value--selectable"
+          tabindex="0"
+        >
+          <div
+            class="checkbox-marker"
+          >
+            <i
+              class="icon"
+              data-testid="DATA-TEST-ID-select-row-0"
+              icon="fal,square"
+            />
+          </div>
+        </td>
+        <td
+          class=""
+        >
+          <div
+            class="gds-field-group"
+          >
+            <span
+              class="gds-amount-field amount-field-read-only table--cell-value--number-readonly"
+              id="number"
+              name="number"
+            >
+              1
+            </span>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`StaticDataTableBody component StaticDataTableBody renders with number with compute total 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr
+        class=""
+        tabindex="-1"
+      >
+        <td />
+        <td
+          class=""
+        >
+          <div
+            class="gds-field-group"
+          >
+            <span
+              class="gds-amount-field amount-field-read-only table--cell-value--number-readonly"
+              id="number"
+              name="number"
+            >
+              1
+            </span>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;

@@ -1,5 +1,404 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`FileGallery Component FileGallery handles delete without datatestid 1`] = `
+<div>
+  <div
+    class="item-container error"
+  >
+    <div
+      class="left"
+    >
+      <div
+        class="paperclip-icon"
+      >
+        <i
+          class="icon"
+          icon="fal,exclamation-triangle"
+        />
+      </div>
+      <div
+        class="name"
+        tabindex="-1"
+      >
+        NAME
+      </div>
+    </div>
+    <div
+      class="right"
+    >
+      <button
+        class="gds-button-content delete-icon"
+        color="reversed"
+        tabindex="0"
+        type="button"
+      >
+        <div
+          class="button-icon-container"
+        >
+          <i
+            class="button-icon icon"
+            icon="fal,trash-alt"
+          />
+        </div>
+      </button>
+      <div>
+        Delete
+      </div>
+    </div>
+  </div>
+  <div>
+    ERROR
+  </div>
+</div>
+`;
+
+exports[`FileGallery Component FileGallery handles delete without datatestid 2`] = `
+<div>
+  <div
+    class="item-container error"
+  >
+    <div
+      class="left"
+    >
+      <div
+        class="paperclip-icon"
+      >
+        <i
+          class="icon"
+          icon="fal,exclamation-triangle"
+        />
+      </div>
+      <div
+        class="name"
+        tabindex="-1"
+      >
+        NAME
+      </div>
+    </div>
+    <div
+      class="right"
+    >
+      <button
+        class="gds-button-content delete-icon"
+        color="reversed"
+        tabindex="0"
+        type="button"
+      >
+        <div
+          class="button-icon-container"
+        >
+          <i
+            class="button-icon icon"
+            icon="fal,trash-alt"
+          />
+        </div>
+      </button>
+      <div>
+        Delete
+      </div>
+    </div>
+  </div>
+  <div>
+    ERROR
+  </div>
+</div>
+`;
+
+exports[`FileGallery Component FileGallery handles download without datatestid 1`] = `
+<div>
+  <div
+    class="item-container"
+  >
+    <div
+      class="left"
+    >
+      <div
+        class="paperclip-icon"
+      >
+        <i
+          class="icon"
+          icon="fal,paperclip"
+        />
+      </div>
+      <div
+        class="name downloadable"
+        tabindex="0"
+      >
+        NAME
+      </div>
+    </div>
+    <div
+      class="right"
+    >
+      <button
+        class="gds-button-content delete-icon"
+        color="reversed"
+        tabindex="0"
+        type="button"
+      >
+        <div
+          class="button-icon-container"
+        >
+          <i
+            class="button-icon icon"
+            icon="fal,trash-alt"
+          />
+        </div>
+      </button>
+      <div>
+        Delete
+      </div>
+      <div>
+        <div>
+          ControlleMenu
+          closed
+          <div
+            class="gds-popover-container"
+          >
+            <div
+              class="popover-title"
+            >
+              Delete?
+            </div>
+            <div
+              class="popover-buttons"
+            >
+              <button
+                class="gds-button-content"
+                color="secondary"
+                tabindex="0"
+                type="button"
+              >
+                <div
+                  class="button-label-container"
+                >
+                  Cancel
+                </div>
+              </button>
+              <button
+                class="gds-button-content"
+                color="primary"
+                tabindex="0"
+                type="button"
+              >
+                <div
+                  class="button-label-container"
+                >
+                  Confirm
+                </div>
+              </button>
+            </div>
+          </div>
+          has ref
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`FileGallery Component FileGallery handles download without datatestid 2`] = `
+<div>
+  <div
+    class="item-container"
+  >
+    <div
+      class="left"
+    >
+      <div
+        class="paperclip-icon"
+      >
+        <i
+          class="icon"
+          icon="fal,paperclip"
+        />
+      </div>
+      <div
+        class="name"
+        tabindex="-1"
+      >
+        NAME
+      </div>
+      <svg
+        aria-hidden="true"
+        class="icon gds-loader size-1x spinner-icon"
+        focusable="false"
+        height="50"
+        icon="fal,spinner"
+        preserveAspectRatio="xMidYMid"
+        role="img"
+        style="background: transparent;"
+        viewBox="0 0 100 100"
+        width="50"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="50"
+          cy="50"
+          fill="transparent"
+          r="30"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-width="10"
+        >
+          <animatetransform
+            attributeName="transform"
+            dur="2s"
+            keyTimes="0;0.5;1"
+            repeatCount="indefinite"
+            type="rotate"
+            values="0 50 50;180 50 50;720 50 50"
+          />
+          <animate
+            attributeName="stroke-dasharray"
+            dur="2s"
+            keyTimes="0;0.5;1"
+            repeatCount="indefinite"
+            values="20 150; 150 20; 20 150"
+          />
+        </circle>
+      </svg>
+    </div>
+    <div
+      class="right"
+    >
+      <button
+        class="gds-button-content delete-icon"
+        color="reversed"
+        tabindex="0"
+        type="button"
+      >
+        <div
+          class="button-icon-container"
+        >
+          <i
+            class="button-icon icon"
+            icon="fal,trash-alt"
+          />
+        </div>
+      </button>
+      <div>
+        Delete
+      </div>
+      <div>
+        <div>
+          ControlleMenu
+          closed
+          <div
+            class="gds-popover-container"
+          >
+            <div
+              class="popover-title"
+            >
+              Delete?
+            </div>
+            <div
+              class="popover-buttons"
+            >
+              <button
+                class="gds-button-content"
+                color="secondary"
+                tabindex="0"
+                type="button"
+              >
+                <div
+                  class="button-label-container"
+                >
+                  Cancel
+                </div>
+              </button>
+              <button
+                class="gds-button-content"
+                color="primary"
+                tabindex="0"
+                type="button"
+              >
+                <div
+                  class="button-label-container"
+                >
+                  Confirm
+                </div>
+              </button>
+            </div>
+          </div>
+          has ref
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`FileGallery Component FileGallery handles uploading state without datatestid 1`] = `
+<div>
+  <div
+    class="item-container"
+  >
+    <div
+      class="left"
+    >
+      <div
+        class="paperclip-icon"
+      >
+        <i
+          class="icon"
+          icon="fal,paperclip"
+        />
+      </div>
+      <div
+        class="name downloadable"
+        tabindex="0"
+      >
+        NAME
+      </div>
+    </div>
+    <div
+      class="right"
+    >
+      <svg
+        aria-hidden="true"
+        class="icon gds-loader size-1x spinner-icon"
+        focusable="false"
+        height="50"
+        icon="fal,spinner"
+        preserveAspectRatio="xMidYMid"
+        role="img"
+        style="background: transparent;"
+        viewBox="0 0 100 100"
+        width="50"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="50"
+          cy="50"
+          fill="transparent"
+          r="30"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-width="10"
+        >
+          <animatetransform
+            attributeName="transform"
+            dur="2s"
+            keyTimes="0;0.5;1"
+            repeatCount="indefinite"
+            type="rotate"
+            values="0 50 50;180 50 50;720 50 50"
+          />
+          <animate
+            attributeName="stroke-dasharray"
+            dur="2s"
+            keyTimes="0;0.5;1"
+            repeatCount="indefinite"
+            values="20 150; 150 20; 20 150"
+          />
+        </circle>
+      </svg>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`FileGallery Component FileGallery renders and handles delete of error files 1`] = `
 <div>
   <div
@@ -19,6 +418,7 @@ exports[`FileGallery Component FileGallery renders and handles delete of error f
       <div
         class="name"
         data-testid="TEST-ID-download"
+        tabindex="-1"
       >
         NAME
          (1.21 kB)
@@ -27,14 +427,24 @@ exports[`FileGallery Component FileGallery renders and handles delete of error f
     <div
       class="right"
     >
-      <div
-        class="delete-icon"
+      <button
+        class="gds-button-content delete-icon"
+        color="reversed"
         data-testid="TEST-ID-delete"
+        tabindex="0"
+        type="button"
       >
-        <i
-          class="icon"
-          icon="fal,trash-alt"
-        />
+        <div
+          class="button-icon-container"
+        >
+          <i
+            class="button-icon icon"
+            icon="fal,trash-alt"
+          />
+        </div>
+      </button>
+      <div>
+        Delete
       </div>
     </div>
   </div>
@@ -63,6 +473,7 @@ exports[`FileGallery Component FileGallery renders and handles delete of uploadi
       <div
         class="name downloadable"
         data-testid="TEST-ID-download"
+        tabindex="0"
       >
         NAME
       </div>
@@ -139,6 +550,7 @@ exports[`FileGallery Component FileGallery renders and handles download and dele
       <div
         class="name downloadable"
         data-testid="TEST-ID-download"
+        tabindex="0"
       >
         NAME
       </div>
@@ -146,14 +558,70 @@ exports[`FileGallery Component FileGallery renders and handles download and dele
     <div
       class="right"
     >
-      <div
-        class="delete-icon"
+      <button
+        class="gds-button-content delete-icon"
+        color="reversed"
         data-testid="TEST-ID-delete"
+        tabindex="0"
+        type="button"
       >
-        <i
-          class="icon"
-          icon="fal,trash-alt"
-        />
+        <div
+          class="button-icon-container"
+        >
+          <i
+            class="button-icon icon"
+            icon="fal,trash-alt"
+          />
+        </div>
+      </button>
+      <div>
+        Delete
+      </div>
+      <div>
+        <div>
+          ControlleMenu
+          closed
+          <div
+            class="gds-popover-container"
+          >
+            <div
+              class="popover-title"
+            >
+              Delete?
+            </div>
+            <div
+              class="popover-buttons"
+            >
+              <button
+                class="gds-button-content"
+                color="secondary"
+                data-testid="TEST-ID-cancel"
+                tabindex="0"
+                type="button"
+              >
+                <div
+                  class="button-label-container"
+                >
+                  Cancel
+                </div>
+              </button>
+              <button
+                class="gds-button-content"
+                color="primary"
+                data-testid="TEST-ID-confirm"
+                tabindex="0"
+                type="button"
+              >
+                <div
+                  class="button-label-container"
+                >
+                  Confirm
+                </div>
+              </button>
+            </div>
+          </div>
+          has ref
+        </div>
       </div>
     </div>
   </div>
@@ -179,6 +647,7 @@ exports[`FileGallery Component FileGallery renders disabled deleting file 1`] = 
       <div
         class="name"
         data-testid="TEST-ID-download"
+        tabindex="-1"
       >
         NAME
       </div>
@@ -209,6 +678,7 @@ exports[`FileGallery Component FileGallery renders readonly of uploading file 1`
       <div
         class="name downloadable"
         data-testid="TEST-ID-download"
+        tabindex="0"
       >
         NAME
       </div>
@@ -221,44 +691,6 @@ exports[`FileGallery Component FileGallery renders readonly of uploading file 1`
         max="100"
         value="50"
       />
-    </div>
-  </div>
-</div>
-`;
-
-exports[`FileGallery Component FileGallery renders without datatestid 1`] = `
-<div>
-  <div
-    class="item-container"
-  >
-    <div
-      class="left"
-    >
-      <div
-        class="paperclip-icon"
-      >
-        <i
-          class="icon"
-          icon="fal,paperclip"
-        />
-      </div>
-      <div
-        class="name downloadable"
-      >
-        NAME
-      </div>
-    </div>
-    <div
-      class="right"
-    >
-      <div
-        class="delete-icon"
-      >
-        <i
-          class="icon"
-          icon="fal,trash-alt"
-        />
-      </div>
     </div>
   </div>
 </div>

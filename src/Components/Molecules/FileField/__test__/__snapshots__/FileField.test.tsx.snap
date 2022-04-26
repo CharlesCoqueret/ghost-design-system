@@ -10,7 +10,6 @@ exports[`FileField Component FileField renders 1`] = `
     >
       <div
         class="droparea"
-        tabindex="0"
       >
         <label
           class="label"
@@ -20,6 +19,7 @@ exports[`FileField Component FileField renders 1`] = `
             accept="*/*"
             class="input"
             multiple=""
+            tabindex="-1"
             type="file"
             value=""
           />
@@ -43,7 +43,6 @@ exports[`FileField Component FileField renders with values in disabled highligte
     >
       <div
         class="droparea disabled"
-        tabindex="0"
       >
         <label
           class="label"
@@ -54,6 +53,7 @@ exports[`FileField Component FileField renders with values in disabled highligte
             class="input"
             disabled=""
             multiple=""
+            tabindex="-1"
             type="file"
             value=""
           />
@@ -63,7 +63,7 @@ exports[`FileField Component FileField renders with values in disabled highligte
         class="gallery"
       >
         <div
-          class="item-container"
+          class="item-container error"
         >
           <div
             class="left"
@@ -73,11 +73,12 @@ exports[`FileField Component FileField renders with values in disabled highligte
             >
               <i
                 class="icon"
-                icon="fal,paperclip"
+                icon="fal,exclamation-triangle"
               />
             </div>
             <div
               class="name"
+              tabindex="-1"
             >
               file.pdf
                (1.21 kB)
@@ -103,7 +104,6 @@ exports[`FileField Component FileField renders with values in readonly 1`] = `
     >
       <div
         class="droparea readonly"
-        tabindex="0"
       >
         <label
           class="label"
@@ -114,6 +114,7 @@ exports[`FileField Component FileField renders with values in readonly 1`] = `
             class="input"
             multiple=""
             readonly=""
+            tabindex="-1"
             type="file"
             value=""
           />
@@ -138,6 +139,7 @@ exports[`FileField Component FileField renders with values in readonly 1`] = `
             </div>
             <div
               class="name downloadable"
+              tabindex="0"
             >
               file.pdf
                (1.21 kB)
@@ -163,7 +165,6 @@ exports[`FileField Component FileField renders with values with fieldSize and in
     >
       <div
         class="droparea"
-        tabindex="0"
       >
         <label
           class="label"
@@ -173,6 +174,7 @@ exports[`FileField Component FileField renders with values with fieldSize and in
             accept="*/*"
             class="input"
             multiple=""
+            tabindex="-1"
             type="file"
             value=""
           />
@@ -197,6 +199,7 @@ exports[`FileField Component FileField renders with values with fieldSize and in
             </div>
             <div
               class="name downloadable"
+              tabindex="0"
             >
               file.pdf
                (1.21 kB)
@@ -205,13 +208,67 @@ exports[`FileField Component FileField renders with values with fieldSize and in
           <div
             class="right"
           >
-            <div
-              class="delete-icon"
+            <button
+              class="gds-button-content delete-icon"
+              color="reversed"
+              tabindex="0"
+              type="button"
             >
-              <i
-                class="icon"
-                icon="fal,trash-alt"
-              />
+              <div
+                class="button-icon-container"
+              >
+                <i
+                  class="button-icon icon"
+                  icon="fal,trash-alt"
+                />
+              </div>
+            </button>
+            <div>
+              Delete
+            </div>
+            <div>
+              <div>
+                ControlleMenu
+                closed
+                <div
+                  class="gds-popover-container"
+                >
+                  <div
+                    class="popover-title"
+                  >
+                    Delete?
+                  </div>
+                  <div
+                    class="popover-buttons"
+                  >
+                    <button
+                      class="gds-button-content"
+                      color="secondary"
+                      tabindex="0"
+                      type="button"
+                    >
+                      <div
+                        class="button-label-container"
+                      >
+                        Cancel
+                      </div>
+                    </button>
+                    <button
+                      class="gds-button-content"
+                      color="primary"
+                      tabindex="0"
+                      type="button"
+                    >
+                      <div
+                        class="button-label-container"
+                      >
+                        Confirm
+                      </div>
+                    </button>
+                  </div>
+                </div>
+                has ref
+              </div>
             </div>
           </div>
         </div>

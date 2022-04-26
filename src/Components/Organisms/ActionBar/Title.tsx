@@ -38,7 +38,7 @@ const Title = (props: ITitleProps): ReactElement => {
     setCurrentInputStyle({
       display: 'flex',
       margin: 'auto',
-      width: `${spanRef?.current?.offsetWidth}px`,
+      width: `${spanRef.current?.offsetWidth}px`,
     });
   }, [spanRef]);
 
@@ -97,6 +97,7 @@ const Title = (props: ITitleProps): ReactElement => {
           ref={inputRef}
           style={currentInputStyle}
           type='text'
+          tabIndex={isEditable ? 0 : -1}
           value={currentTitle}
         />
       </Tooltip>

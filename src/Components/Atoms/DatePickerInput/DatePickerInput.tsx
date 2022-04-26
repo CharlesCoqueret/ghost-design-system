@@ -58,6 +58,8 @@ const DatePickerInput = (props: IDatePickerProps): ReactElement => {
     usePortal,
   } = props;
 
+  const localDateFormat = dateFormat || 'MMM dd, yyyy';
+
   return (
     <div className={classnames('field', className)}>
       <DatePicker
@@ -81,9 +83,9 @@ const DatePickerInput = (props: IDatePickerProps): ReactElement => {
         disabled={disabled}
         fixedHeight
         readOnly={readOnly}
-        isClearable={!disabled && isClearable}
-        placeholderText={readOnly ? '-' : placeholder || dateFormat?.toUpperCase()}
-        dateFormat={dateFormat}
+        isClearable={!(disabled || readOnly) && isClearable}
+        placeholderText={readOnly ? '-' : placeholder || localDateFormat.toUpperCase()}
+        dateFormat={localDateFormat}
         disabledKeyboardNavigation
         calendarStartDay={calendarStartDay}
         locale={locale}
@@ -94,6 +96,7 @@ const DatePickerInput = (props: IDatePickerProps): ReactElement => {
         onClickOutside={(event) => {
           event.stopPropagation();
         }}
+        tabIndex={readOnly || disabled ? -1 : 0}
       />
     </div>
   );
@@ -102,7 +105,6 @@ const DatePickerInput = (props: IDatePickerProps): ReactElement => {
 DatePickerInput.defaultProps = {
   calendarStartDay: WeekDayEnum.MONDAY,
   className: undefined,
-  dateFormat: 'MMM dd, yyyy',
   dateValue: undefined,
   disabled: false,
   highlighted: false,

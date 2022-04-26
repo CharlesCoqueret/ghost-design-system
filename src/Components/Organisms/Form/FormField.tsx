@@ -105,7 +105,8 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
           oldData={previousData && previousData[field.dataIndex]}
           shouldHighlight={shouldHighlight}>
           <field.customField
-            data={data}
+            {...field}
+            value={data[field.dataIndex]}
             onChange={(newValue: T[keyof T]) => {
               handleChange(field.dataIndex, newValue);
             }}

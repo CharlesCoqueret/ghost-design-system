@@ -8,12 +8,20 @@ import {
   CheckboxCell,
   CodeCell,
   CustomCell,
-  DynamicSearchCell,
   DateCell,
+  DescriptionCell,
+  DynamicSearchCell,
+  FileCell,
+  MultiSelectCell,
   NumberCell,
   PercentageCell,
-  TextCell,
+  RichTextCell,
+  SectionCell,
+  SwitchCell,
+  TableCell,
   TextAreaCell,
+  TextCell,
+  YearCell,
 } from '../Common/Cells';
 
 export interface IStaticDataTableCellProps<T> {
@@ -27,145 +35,92 @@ export interface IStaticDataTableCellProps<T> {
 const StaticDataTableCell = <T,>(props: IStaticDataTableCellProps<T>): ReactElement => {
   const { column, dataTestId, row, extra, rowIndex } = props;
 
+  const localDataTestId = dataTestId ? `${dataTestId}-${column.title}-${rowIndex}` : undefined;
+
   switch (column.type) {
     case ColumnType.AMOUNT: {
-      return (
-        <AmountCell<T>
-          column={column}
-          dataTestId={dataTestId ? `${dataTestId}-${column.title}-${rowIndex}` : undefined}
-          row={row}
-          extra={extra}
-          rowIndex={rowIndex}
-        />
-      );
+      return <AmountCell<T> column={column} dataTestId={localDataTestId} row={row} extra={extra} rowIndex={rowIndex} />;
     }
     case ColumnType.BADGE: {
-      return (
-        <BadgeCell<T>
-          column={column}
-          dataTestId={dataTestId ? `${dataTestId}-${column.title}-${rowIndex}` : undefined}
-          row={row}
-          extra={extra}
-          rowIndex={rowIndex}
-        />
-      );
+      return <BadgeCell<T> column={column} dataTestId={localDataTestId} row={row} extra={extra} rowIndex={rowIndex} />;
     }
     case ColumnType.BUTTON: {
-      return (
-        <ButtonCell<T>
-          column={column}
-          dataTestId={dataTestId ? `${dataTestId}-${column.title}-${rowIndex}` : undefined}
-          row={row}
-          extra={extra}
-          rowIndex={rowIndex}
-        />
-      );
+      return <ButtonCell<T> column={column} dataTestId={localDataTestId} row={row} extra={extra} rowIndex={rowIndex} />;
     }
     case ColumnType.CHECKBOX: {
       return (
-        <CheckboxCell<T>
-          column={column}
-          dataTestId={dataTestId ? `${dataTestId}-${column.title}-${rowIndex}` : undefined}
-          row={row}
-          extra={extra}
-          rowIndex={rowIndex}
-        />
+        <CheckboxCell<T> column={column} dataTestId={localDataTestId} row={row} extra={extra} rowIndex={rowIndex} />
       );
     }
     case ColumnType.CODE: {
-      return (
-        <CodeCell<T>
-          column={column}
-          dataTestId={dataTestId ? `${dataTestId}-${column.title}-${rowIndex}` : undefined}
-          row={row}
-          extra={extra}
-          rowIndex={rowIndex}
-        />
-      );
+      return <CodeCell<T> column={column} dataTestId={localDataTestId} row={row} extra={extra} rowIndex={rowIndex} />;
     }
     case ColumnType.CUSTOM: {
-      return (
-        <CustomCell<T>
-          column={column}
-          dataTestId={dataTestId ? `${dataTestId}-${column.title}-${rowIndex}` : undefined}
-          row={row}
-          extra={extra}
-          rowIndex={rowIndex}
-        />
-      );
+      return <CustomCell<T> column={column} dataTestId={localDataTestId} row={row} extra={extra} rowIndex={rowIndex} />;
     }
     case ColumnType.DATE: {
+      return <DateCell<T> column={column} dataTestId={localDataTestId} row={row} extra={extra} rowIndex={rowIndex} />;
+    }
+    case ColumnType.DESCRIPTION: {
       return (
-        <DateCell<T>
-          column={column}
-          dataTestId={dataTestId ? `${dataTestId}-${column.title}-${rowIndex}` : undefined}
-          row={row}
-          extra={extra}
-          rowIndex={rowIndex}
-        />
+        <DescriptionCell<T> column={column} dataTestId={localDataTestId} row={row} extra={extra} rowIndex={rowIndex} />
       );
     }
     case ColumnType.DYNAMICSEARCH: {
       return (
         <DynamicSearchCell<T>
           column={column}
-          dataTestId={dataTestId ? `${dataTestId}-${column.title}-${rowIndex}` : undefined}
+          dataTestId={localDataTestId}
           row={row}
           extra={extra}
           rowIndex={rowIndex}
         />
+      );
+    }
+    case ColumnType.FILE: {
+      return <FileCell<T> column={column} dataTestId={localDataTestId} row={row} extra={extra} rowIndex={rowIndex} />;
+    }
+    case ColumnType.MULTISELECT: {
+      return (
+        <MultiSelectCell<T> column={column} dataTestId={localDataTestId} row={row} extra={extra} rowIndex={rowIndex} />
       );
     }
     case ColumnType.NUMBER: {
-      return (
-        <NumberCell<T>
-          column={column}
-          dataTestId={dataTestId ? `${dataTestId}-${column.title}-${rowIndex}` : undefined}
-          row={row}
-          extra={extra}
-          rowIndex={rowIndex}
-        />
-      );
+      return <NumberCell<T> column={column} dataTestId={localDataTestId} row={row} extra={extra} rowIndex={rowIndex} />;
     }
     case ColumnType.PERCENTAGE: {
       return (
-        <PercentageCell<T>
-          column={column}
-          dataTestId={dataTestId ? `${dataTestId}-${column.title}-${rowIndex}` : undefined}
-          row={row}
-          extra={extra}
-          rowIndex={rowIndex}
-        />
+        <PercentageCell<T> column={column} dataTestId={localDataTestId} row={row} extra={extra} rowIndex={rowIndex} />
       );
     }
-    case ColumnType.TEXT: {
+    case ColumnType.RICHTEXT: {
       return (
-        <TextCell<T>
-          column={column}
-          dataTestId={dataTestId ? `${dataTestId}-${column.title}-${rowIndex}` : undefined}
-          row={row}
-          extra={extra}
-          rowIndex={rowIndex}
-        />
+        <RichTextCell<T> column={column} dataTestId={localDataTestId} row={row} extra={extra} rowIndex={rowIndex} />
       );
+    }
+    case ColumnType.SECTION: {
+      return (
+        <SectionCell<T> column={column} dataTestId={localDataTestId} row={row} extra={extra} rowIndex={rowIndex} />
+      );
+    }
+    case ColumnType.SWITCH: {
+      return <SwitchCell<T> column={column} dataTestId={localDataTestId} row={row} extra={extra} rowIndex={rowIndex} />;
+    }
+    case ColumnType.TABLE: {
+      return <TableCell<T> column={column} dataTestId={localDataTestId} row={row} extra={extra} rowIndex={rowIndex} />;
+    }
+    case ColumnType.TEXT: {
+      return <TextCell<T> column={column} dataTestId={localDataTestId} row={row} extra={extra} rowIndex={rowIndex} />;
     }
     case ColumnType.TEXTAREA: {
       return (
-        <TextAreaCell<T>
-          column={column}
-          dataTestId={dataTestId ? `${dataTestId}-${column.title}-${rowIndex}` : undefined}
-          row={row}
-          extra={extra}
-          rowIndex={rowIndex}
-        />
+        <TextAreaCell<T> column={column} dataTestId={localDataTestId} row={row} extra={extra} rowIndex={rowIndex} />
       );
     }
-    default: {
-      throw new Error('Missing ColumnType');
+    case ColumnType.YEAR: {
+      return <YearCell<T> column={column} dataTestId={localDataTestId} row={row} extra={extra} rowIndex={rowIndex} />;
     }
   }
-
-  throw new Error('Should have returned by then');
 };
 
 export default StaticDataTableCell;

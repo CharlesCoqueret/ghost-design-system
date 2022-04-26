@@ -20,7 +20,7 @@ export interface ILineEditableModalProps<T> {
   extra?: IExtraLineEditableDataTableProps<T>;
 }
 
-const columnToFieldMapper = <T,>(columns: Array<IColumnType<T>>): Array<IFieldAndLayoutProps<T>> => {
+export const columnToFieldMapper = <T,>(columns: Array<IColumnType<T>>): Array<IFieldAndLayoutProps<T>> => {
   return compact(
     columns.map((column) => {
       // Manage the case of hidden field in form
@@ -60,7 +60,14 @@ const columnToFieldMapper = <T,>(columns: Array<IColumnType<T>>): Array<IFieldAn
         case ColumnType.BUTTON: {
           return undefined;
         }
-        // TODO add checkbox mapping
+        case ColumnType.CHECKBOX: {
+          return {
+            dataIndex: column.dataIndex,
+            fieldType: FieldTypeEnum.CHECKBOX,
+            label: column.title,
+            readOnly: !column.editable,
+          };
+        }
         case ColumnType.CODE: {
           return {
             dataIndex: column.dataIndex,
@@ -69,7 +76,15 @@ const columnToFieldMapper = <T,>(columns: Array<IColumnType<T>>): Array<IFieldAn
             readOnly: true,
           };
         }
-        // TODO add custom mapping
+        case ColumnType.CUSTOM: {
+          return {
+            customField: column.customRender,
+            dataIndex: column.dataIndex,
+            fieldType: FieldTypeEnum.CUSTOM,
+            label: column.title,
+            readOnly: !column.editable,
+          };
+        }
         case ColumnType.DATE: {
           return {
             calendarStartDay: column.calendarStartDay,
@@ -83,7 +98,14 @@ const columnToFieldMapper = <T,>(columns: Array<IColumnType<T>>): Array<IFieldAn
             usePortal: column.usePortal,
           };
         }
-        // TODO add description mapping
+        case ColumnType.DESCRIPTION: {
+          return {
+            dataIndex: column.dataIndex,
+            description: column.description,
+            label: column.title,
+            fieldType: FieldTypeEnum.DESCRIPTION,
+          };
+        }
         case ColumnType.DYNAMICSEARCH: {
           return {
             colors: column.selectColors,
@@ -93,12 +115,51 @@ const columnToFieldMapper = <T,>(columns: Array<IColumnType<T>>): Array<IFieldAn
             label: column.title,
             noOptionsMessage: column.noOptionsMessage,
             placeholder: column.placeholder,
+            readOnly: !column.editable,
             resolveValue: column.resolveValue,
             searchOptions: column.searchOptions,
             usePortal: column.usePortal,
           };
         }
-        // TODO add file mapping
+        case ColumnType.FILE: {
+          return {
+            acceptTypes: column.acceptTypes,
+            additionalInfo: column.additionalInfo,
+            dataIndex: column.dataIndex,
+            fieldType: FieldTypeEnum.FILE,
+            label: column.title,
+            readOnly: !column.editable,
+            maxFiles: column.maxFiles,
+            maxFileSize: column.maxFileSize,
+            maxFolderDepth: column.maxFolderDepth,
+            onDelete: column.onDelete,
+            onDownload: column.onDownload,
+            requestHeaders: column.requestHeaders,
+            requestMethod: column.requestMethod,
+            requestUrl: column.requestUrl,
+            requestWithCredentials: column.requestWithCredentials,
+            showFileSize: column.showFileSize,
+            showProgressBar: column.showProgressBar,
+            uploadMessage: column.uploadMessage,
+            localization: column.localization,
+          };
+        }
+        case ColumnType.MULTISELECT: {
+          return {
+            colors: column.selectColors,
+            dataIndex: column.dataIndex,
+            eraseValueWhenNotInOptions: column.eraseValueWhenNotInOptions,
+            fieldType: FieldTypeEnum.MULTISELECT,
+            isClearable: column.isClearable,
+            label: column.title,
+            numberOfItemLabel: column.numberOfItemLabel,
+            numberOfItemsLabel: column.numberOfItemsLabel,
+            options: column.options,
+            placeholder: column.placeholder,
+            readOnly: !column.editable,
+            usePortal: column.usePortal,
+          };
+        }
         case ColumnType.NUMBER: {
           return {
             allowNegative: column.allowNegative,
@@ -133,7 +194,49 @@ const columnToFieldMapper = <T,>(columns: Array<IColumnType<T>>): Array<IFieldAn
             thousandsGroupStyle: column.thousandsGroupStyle,
           };
         }
-        // TODO add richtext mapping
+        case ColumnType.RICHTEXT: {
+          return {
+            convertImagesToBase64: column.convertImagesToBase64,
+            dataIndex: column.dataIndex,
+            enableImage: column.enableImage,
+            enableLink: column.enableLink,
+            locale: column.locale,
+            fieldType: FieldTypeEnum.RICHTEXT,
+            label: column.title,
+            maxLength: column.maxLength,
+            readOnly: !column.editable,
+          };
+        }
+        case ColumnType.SECTION: {
+          return {
+            collapsable: column.collapsable,
+            dataIndex: column.dataIndex,
+            fields: column.fields,
+            openInitially: column.openInitially,
+            fieldType: FieldTypeEnum.SWITCH,
+            label: column.title,
+          };
+        }
+        case ColumnType.SWITCH: {
+          return {
+            dataIndex: column.dataIndex,
+            fieldType: FieldTypeEnum.SWITCH,
+            label: column.title,
+            readOnly: !column.editable,
+          };
+        }
+        case ColumnType.TABLE: {
+          return {
+            columns: column.columns,
+            extra: column.extra,
+            loading: column.loading,
+            onSortChange: column.onSortChange,
+            fieldType: FieldTypeEnum.TABLE,
+            label: column.title,
+            dataIndex: column.dataIndex,
+            readOnly: !column.editable,
+          };
+        }
         case ColumnType.TEXT: {
           return {
             maxLength: column.maxLength,
@@ -154,12 +257,16 @@ const columnToFieldMapper = <T,>(columns: Array<IColumnType<T>>): Array<IFieldAn
             readOnly: !column.editable,
           };
         }
-        // TODO add year mapping
-        default: {
-          throw new Error('Missing ColumnType');
+        case ColumnType.YEAR: {
+          return {
+            dataIndex: column.dataIndex,
+            fieldType: FieldTypeEnum.YEAR,
+            label: column.title,
+            readOnly: !column.editable,
+            usePortal: column.usePortal,
+          };
         }
       }
-      throw new Error('Should have returned by then');
     }),
   );
 };
@@ -176,7 +283,14 @@ const LineEditableModal = <T,>(props: ILineEditableModalProps<T>): ReactElement 
   });
 
   return (
-    <Modal show={true} title={title} closeIcon={false} closeOnPressEscape={false} closeOnClickOutside={false} size='lg'>
+    <Modal
+      show={true}
+      title={title}
+      closeIcon={false}
+      closeOnPressEscape={false}
+      closeOnClickOutside={false}
+      disableTabOutside={extra?.disableTabOutside}
+      size='lg'>
       <ModalBody>{formElement}</ModalBody>
       <ModalFooter>
         {extra?.rowEditExtraActions !== undefined &&
@@ -187,12 +301,7 @@ const LineEditableModal = <T,>(props: ILineEditableModalProps<T>): ReactElement 
                 key={button.label}
                 label={button.label}
                 onClick={async () => {
-                  button
-                    .onClick(row, rowIndex)
-                    .then(() => {
-                      onClose();
-                    })
-                    .catch();
+                  button.onClick(row, rowIndex).then(onClose).catch();
                 }}
               />
             );

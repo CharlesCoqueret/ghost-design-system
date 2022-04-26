@@ -5,6 +5,20 @@ import userEvent from '@testing-library/user-event';
 import { SideBarItem } from '../SideBarSection';
 import SideBar from '../SideBar';
 
+const assign = window.location.assign;
+
+beforeAll(() => {
+  Object.defineProperty(window, 'location', {
+    value: {
+      assign: jest.fn(),
+    },
+  });
+});
+
+afterAll(() => {
+  window.location.assign = assign;
+});
+
 describe('SideBarItem Component', () => {
   it('SideBarItem renders', () => {
     const { container } = render(

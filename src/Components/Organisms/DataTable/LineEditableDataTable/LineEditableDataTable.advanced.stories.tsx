@@ -130,7 +130,7 @@ const columns: Array<IColumnType<ITaskView>> = [
       if (value === 1001) return Promise.resolve({ value: 1001, label: 'Jean' });
       if (value === 1002) return Promise.resolve({ value: 1002, label: 'Pierre' });
       if (value === 1003) return Promise.resolve({ value: 1003, label: 'Roger' });
-      Promise.resolve(undefined);
+      return Promise.resolve(undefined);
     },
     noOptionsMessage: (obj): string => {
       if (!obj.inputValue) return `Please type a few characters to search`;

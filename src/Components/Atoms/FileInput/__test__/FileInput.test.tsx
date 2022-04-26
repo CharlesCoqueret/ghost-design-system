@@ -101,6 +101,15 @@ describe('FileInput Component', () => {
         requestMethod='POST'
         requestUrl='http://test.com'
         requestWithCredentials
+        localization={{
+          delete: 'Delete',
+          popoverConfirm: 'Confirm',
+          popoverCancel: 'Cancel',
+          popoverTitle: 'Delete?',
+          invalidType: 'Invalid type: {type}, expected {expectedType}',
+          quotaExceeded: 'Quota exceeded: Maximum number of files reached',
+          sizeExceeded: 'Size exceeded: {size}, expected {maxSize}',
+        }}
       />,
     );
     expect(container).toMatchSnapshot();
@@ -556,6 +565,10 @@ describe('FileInput Component', () => {
 
     userEvent.click(deleteButton);
 
+    const confirmButton = screen.getByTestId('TEST-ID-confirm');
+
+    userEvent.click(confirmButton);
+
     expect(await screen.findByTestId('TEST-ID-spinner')).toBeTruthy();
     expect(screen.queryByTestId('TEST-ID-spinner')).toBeFalsy();
 
@@ -588,6 +601,10 @@ describe('FileInput Component', () => {
 
     userEvent.click(deleteButton);
 
+    const confirmButton = screen.getByTestId('TEST-ID-confirm');
+
+    userEvent.click(confirmButton);
+
     expect(onChangeMock).toBeCalledTimes(0);
     expect(container).toMatchSnapshot();
   });
@@ -618,6 +635,10 @@ describe('FileInput Component', () => {
     const deleteButton = screen.getByTestId('TEST-ID-delete');
 
     userEvent.click(deleteButton);
+
+    const confirmButton = screen.getByTestId('TEST-ID-confirm');
+
+    userEvent.click(confirmButton);
 
     expect(await screen.findByTestId('TEST-ID-spinner')).toBeTruthy();
     expect(screen.queryByTestId('TEST-ID-spinner')).toBeFalsy();

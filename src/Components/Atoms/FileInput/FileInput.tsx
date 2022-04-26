@@ -54,6 +54,27 @@ export interface IFileInputProps {
   style?: CSSProperties;
   /** Message present inside the drop zome (optional, default: 'Click or drag file to upload' ) */
   uploadMessage?: string | ReactElement;
+  /** Localization of related to deletion and errors */
+  localization?: {
+    // Delete tooltip (optional, default: 'Delete')
+    delete?: string;
+    // Delete popover title (optional, default: 'Confirm')
+    popoverConfirm?: string;
+    // Delete popover cancel button (optional, default: 'Cancel')
+    popoverCancel?: string;
+    // Delete popover confirm button (optional, default: 'Delete?')
+    popoverTitle?: string;
+    // Invalid type error (optional, default: 'Invalid type: {type}, expected {expectedType}',
+    // with {type} which will be automatically replaced by the current type,
+    // and {expectedtype} which will be automatically replaced by the expected type)
+    invalidType?: string;
+    // Quota exceeded error (optional, default: 'Quota exceeded: Maximum number of files reached')
+    quotaExceeded?: string;
+    // Size exceeded error (optional, default: 'Size exceeded: {size}, expected {maxSize}'
+    // with {size} which will be automatically replaced by the actual size of the file,
+    // and {maxSize} which will be automatically replaced by the expected size)
+    sizeExceeded?: string;
+  };
 }
 
 const preventDefaults = (event: DragEvent) => {
@@ -80,6 +101,7 @@ const FileInput = (props: IFileInputProps): ReactElement => {
     disabled,
     inputValue,
     isInError,
+    localization,
     maxFiles,
     maxFileSize,
     maxFolderDepth,
@@ -118,7 +140,11 @@ const FileInput = (props: IFileInputProps): ReactElement => {
         localItems.filter(
           (item) => item.status && [FileStatusEnum.DONE, FileStatusEnum.UPLOADING].includes(item.status),
         ).length >= maxFiles;
-      const newFile = initializeIFile(file, quotaExceeded, acceptTypes, maxFileSize);
+      const newFile = initializeIFile(file, quotaExceeded, acceptTypes, maxFileSize, {
+        invalidType: localization?.invalidType,
+        quotaExceeded: localization?.quotaExceeded,
+        sizeExceeded: localization?.sizeExceeded,
+      });
 
       setLocalItems((prev) => {
         return [...prev, newFile];
@@ -215,13 +241,14 @@ const FileInput = (props: IFileInputProps): ReactElement => {
     if (!onDelete) return;
 
     setLocalItems((prev) => [...prev.filter((f) => f.uid !== file.uid), { ...file, status: FileStatusEnum.DELETING }]);
-    return onDelete(file)
+    await onDelete(file)
       .then(() => {
         setLocalItems((prev) => prev.filter((f) => f.uid !== file.uid));
       })
       .catch(() => {
         setLocalItems((prev) => [...prev.filter((f) => f.uid !== file.uid), { ...file, status: FileStatusEnum.DONE }]);
       });
+    return;
   };
 
   /**
@@ -367,8 +394,7 @@ const FileInput = (props: IFileInputProps): ReactElement => {
       <div
         key='droparea'
         ref={dropArea}
-        className={classnames('droparea', { disabled: disabled, readonly: readOnly, error: isInError })}
-        tabIndex={0}>
+        className={classnames('droparea', { disabled: disabled, readonly: readOnly, error: isInError })}>
         <label className='label'>
           {uploadMessage}
           <input
@@ -380,6 +406,7 @@ const FileInput = (props: IFileInputProps): ReactElement => {
             onChange={handleOnChange}
             readOnly={readOnly}
             ref={input}
+            tabIndex={-1}
             type='file'
             value={[]}
           />
@@ -393,6 +420,12 @@ const FileInput = (props: IFileInputProps): ReactElement => {
               disabled={disabled}
               file={item}
               key={`${item.uid}`}
+              localization={{
+                delete: localization?.delete,
+                popoverCancel: localization?.popoverCancel,
+                popoverConfirm: localization?.popoverConfirm,
+                popoverTitle: localization?.popoverTitle,
+              }}
               progress={progress}
               readOnly={readOnly}
               showFileSize={showFileSize}

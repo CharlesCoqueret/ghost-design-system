@@ -88,6 +88,7 @@ const YearPickerInput = (props: IYearPickerProps): ReactElement => {
         onClickOutside={(event) => {
           event.stopPropagation();
         }}
+        tabIndex={readOnly || disabled ? -1 : 0}
       />
     </div>
   );

@@ -10,7 +10,6 @@ exports[`SwitchField Component SwitchField renders 1`] = `
     >
       <label
         class=""
-        data-testid="VALUE"
         for="switch-1"
         tabindex="0"
       >
@@ -46,9 +45,8 @@ exports[`SwitchField Component SwitchField renders with values in disabled highl
     >
       <label
         class="input-switch-field-disabled"
-        data-testid="VALUE"
         for="switch-3"
-        tabindex="0"
+        tabindex="-1"
       >
         <div
           class="switch-marker"
@@ -83,9 +81,8 @@ exports[`SwitchField Component SwitchField renders with values in readonly 1`] =
     >
       <label
         class="input-switch-field-read-only"
-        data-testid="VALUE"
         for="switch-2"
-        tabindex="0"
+        tabindex="-1"
       >
         <div
           class="switch-marker"
@@ -119,7 +116,6 @@ exports[`SwitchField Component SwitchField renders with values with fieldSize an
     >
       <label
         class=""
-        data-testid="VALUE"
         for="switch-4"
         tabindex="0"
       >

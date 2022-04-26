@@ -19,6 +19,7 @@ exports[`DatePickerField Component DatePickerField renders 1`] = `
             class="input-date-picker-input"
             name="name"
             placeholder="MMM DD, YYYY"
+            tabindex="0"
             type="text"
             value=""
           />
@@ -50,6 +51,7 @@ exports[`DatePickerField Component DatePickerField renders with values in disabl
             disabled=""
             name="name"
             placeholder="MMM DD, YYYY"
+            tabindex="-1"
             type="text"
             value="Mar 02, 2022"
           />
@@ -81,6 +83,7 @@ exports[`DatePickerField Component DatePickerField renders with values in readon
             name="name"
             placeholder="-"
             readonly=""
+            tabindex="-1"
             type="text"
             value="Mar 02, 2022"
           />
@@ -111,6 +114,7 @@ exports[`DatePickerField Component DatePickerField renders with values with fiel
             class="input-date-picker-input input-error"
             name="name"
             placeholder="MMM DD, YYYY"
+            tabindex="0"
             type="text"
             value="Mar 02, 2022"
           />

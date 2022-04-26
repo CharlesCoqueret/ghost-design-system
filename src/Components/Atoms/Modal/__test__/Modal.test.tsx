@@ -129,4 +129,42 @@ describe('Modal Component', () => {
     );
     expect(container).toMatchSnapshot();
   });
+
+  it('Modal renders handles tabbing', async () => {
+    const onHideMock = jest.fn();
+
+    const { container, rerender } = render(
+      <Modal show={false} title='MODALTITLE' dataTestId={'TESTID'} size='lg' closeIcon onHide={onHideMock}>
+        <input data-testId='INPUT' />
+      </Modal>,
+    );
+    expect(container).toMatchSnapshot();
+
+    rerender(
+      <Modal show={true} title='MODALTITLE' dataTestId={'TESTID'} size='lg' closeIcon onHide={onHideMock}>
+        <input data-testid='INPUT' />
+      </Modal>,
+    );
+    expect(container).toMatchSnapshot();
+
+    // Try to tab forward
+    userEvent.keyboard('{Tab}');
+
+    // Try to tab backward
+    userEvent.keyboard('{Shift>}{Tab}{/Shift}');
+
+    const input = screen.getByTestId('INPUT');
+
+    userEvent.click(input);
+
+    // Try to tab forward
+    userEvent.keyboard('{Tab}');
+
+    userEvent.click(input);
+
+    // Try to tab backward
+    userEvent.keyboard('{Shift>}{Tab}{/Shift}');
+
+    expect(container).toMatchSnapshot();
+  });
 });

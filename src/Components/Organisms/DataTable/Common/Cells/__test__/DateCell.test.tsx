@@ -1,5 +1,5 @@
 import React from 'react';
-import { act, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import DateCell from '../DateCell';
@@ -102,16 +102,12 @@ describe('DateCell component', () => {
 
     const dateInput = await screen.findByPlaceholderText('MMM DD, YYYY');
 
-    act(() => {
-      userEvent.clear(dateInput);
-    });
+    userEvent.clear(dateInput);
 
     expect(onChangeMock).toBeCalledTimes(1);
     expect(onChangeMock).toBeCalledWith(null);
 
-    act(() => {
-      userEvent.type(dateInput, '01/01/2000{enter}');
-    });
+    userEvent.type(dateInput, '01/01/2000{enter}');
 
     expect(onChangeMock).toBeCalledTimes(9);
     expect(onChangeMock).toBeCalledWith(new Date('01/01/2000'));

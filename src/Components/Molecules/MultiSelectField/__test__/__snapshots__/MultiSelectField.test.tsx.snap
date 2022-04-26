@@ -22,7 +22,7 @@ exports[`MultiSelectField Component MultiSelectField renders 1`] = `
           class="css-1f43avz-a11yText-A11yText"
         />
         <div
-          class=" css-154lpzf-control"
+          class=" css-1l9db9l-control"
         >
           <div
             class=" css-9plg90-ValueContainer"
@@ -142,7 +142,7 @@ exports[`MultiSelectField Component MultiSelectField renders with values with fi
           class="css-1f43avz-a11yText-A11yText"
         />
         <div
-          class=" css-154lpzf-control"
+          class=" css-1l9db9l-control"
         >
           <div
             class=" css-1xxnwvf-ValueContainer"

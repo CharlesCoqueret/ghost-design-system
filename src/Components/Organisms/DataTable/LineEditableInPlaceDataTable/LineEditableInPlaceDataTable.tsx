@@ -10,36 +10,37 @@ import usePropState from '../../../../hooks/use-prop-state';
 export interface ILineEditableInPlaceDataTableProps<T> {
   columns: Array<IColumnType<T>>;
   data: Array<T>;
-  extra?: IExtraLineEditableInPlaceDataTableProps<T>;
+  dataTestId?: string;
+  extra: IExtraLineEditableInPlaceDataTableProps<T>;
   loading?: ReactElement;
   onSortChange?: (sortField?: keyof T, sortDirection?: SortDirectionEnum) => void;
 }
 
 const LineEditableInPlaceDataTable = <T,>(props: ILineEditableInPlaceDataTableProps<T>): ReactElement => {
-  const { data, columns, extra, loading, onSortChange } = props;
+  const { columns, data, dataTestId, extra, loading, onSortChange } = props;
 
   const [currentData, setCurrentData] = usePropState<Array<T>>(data);
   const [sortField, setSortField] = useState<keyof T | undefined>();
   const [sortDirection, setSortDirection] = useState<SortDirectionEnum | undefined>();
-  const [editedRowIndex, setEditedRowIndex] = useState<number | undefined>(extra?.editedRowIndex);
+  const [editedRowIndex, setEditedRowIndex] = useState<number | undefined>(extra.editedRowIndex);
   const [snapshotEditedRow, setSnapshotEditedRow] = useState<T>();
 
   const currentColumns: Array<IColumnType<T>> =
-    !extra?.onRowSubmit && !extra?.onRowDelete && !extra?.onRowDownload
+    !extra.onRowSubmit && !extra.onRowDelete && !extra.onRowDownload
       ? columns
       : [
           ...columns.filter((column) => column.type !== ColumnType.BUTTON),
           {
-            title: extra?.localization?.actionColumn ?? 'Actions',
+            title: extra.localization?.actionColumn ?? 'Actions',
             type: ColumnType.BUTTON,
-            moreActionsMessage: extra?.localization?.moreActionsMessage ?? 'More actions',
+            moreActionsMessage: extra.localization?.moreActionsMessage ?? 'More actions',
             buttons: [
               {
                 hidden: (row, rowIndex) => {
                   // Hide button when another row is in edit mode
                   if (editedRowIndex !== undefined) return true;
                   // Hide the button if the changes cannot be submitted
-                  if (!extra?.onRowSubmit) return true;
+                  if (!extra.onRowSubmit) return true;
                   // Hide the button if it is marked as not editable
                   if (extra.isEditable === undefined || extra.isEditable(row, rowIndex)) {
                     return false;
@@ -47,19 +48,20 @@ const LineEditableInPlaceDataTable = <T,>(props: ILineEditableInPlaceDataTablePr
                   return true;
                 },
                 icon: ['fal', 'edit'],
-                label: extra?.localization?.editButton ?? 'Edit',
+                label: extra.localization?.editButton ?? 'Edit',
                 onClick: (row, rowIndex) => {
-                  if (extra?.onRowEdit) {
+                  if (extra.onRowEdit) {
                     extra.onRowEdit(row, rowIndex);
                   }
                   setSnapshotEditedRow({ ...row });
                   setEditedRowIndex(rowIndex);
                 },
+                dataTestId: dataTestId ? `${dataTestId}-edit` : undefined,
               },
               {
                 hidden: (row, rowIndex) => {
                   // Hide the button if deletion is not supported
-                  if (!extra?.onRowDelete) return true;
+                  if (!extra.onRowDelete) return true;
                   // Hide the button if item not deletable
                   if (extra.isDeletable === undefined || extra.isDeletable(row, rowIndex)) {
                     return editedRowIndex === rowIndex;
@@ -67,9 +69,9 @@ const LineEditableInPlaceDataTable = <T,>(props: ILineEditableInPlaceDataTablePr
                   return true;
                 },
                 icon: ['fal', 'trash-alt'],
-                label: extra?.localization?.deleteButton ?? 'Delete',
+                label: extra.localization?.deleteButton ?? 'Delete',
                 onClick: (row, rowIndex) => {
-                  if (extra?.onRowDelete) {
+                  if (extra.onRowDelete) {
                     extra.onRowDelete(row, rowIndex);
                   }
                   if (editedRowIndex && editedRowIndex > rowIndex) {
@@ -78,19 +80,20 @@ const LineEditableInPlaceDataTable = <T,>(props: ILineEditableInPlaceDataTablePr
                   setCurrentData((prev) => [...prev.filter((_item, index) => index !== rowIndex)]);
                 },
                 popover: {
-                  message: extra?.localization?.deletePopoverMessage ?? 'Delete?',
-                  cancel: extra?.localization?.deletePopoverCancel ?? 'Cancel',
-                  confirm: extra?.localization?.deletePopoverConfirm ?? 'Confirm',
+                  message: extra.localization?.deletePopoverMessage ?? 'Delete?',
+                  cancel: extra.localization?.deletePopoverCancel ?? 'Cancel',
+                  confirm: extra.localization?.deletePopoverConfirm ?? 'Confirm',
                 },
+                dataTestId: dataTestId ? `${dataTestId}-delete` : undefined,
               },
               {
                 hidden: (_row, rowIndex) => {
                   return editedRowIndex !== rowIndex;
                 },
                 icon: ['fal', 'check'],
-                label: extra?.localization?.submitButton ?? 'Submit',
+                label: extra.localization?.submitButton ?? 'Submit',
                 onClick: (row, rowIndex) => {
-                  if (extra?.onRowSubmit) {
+                  if (extra.onRowSubmit) {
                     extra.onRowSubmit(row, rowIndex);
                   }
                   setEditedRowIndex(undefined);
@@ -100,15 +103,16 @@ const LineEditableInPlaceDataTable = <T,>(props: ILineEditableInPlaceDataTablePr
                     return [...prev];
                   });
                 },
+                dataTestId: dataTestId ? `${dataTestId}-submit` : undefined,
               },
               {
                 hidden: (_row, rowIndex) => {
                   return editedRowIndex !== rowIndex;
                 },
                 icon: ['fal', 'times'],
-                label: extra?.localization?.cancelButton ?? 'Cancel',
+                label: extra.localization?.cancelButton ?? 'Cancel',
                 onClick: (row, rowIndex) => {
-                  if (extra?.onRowCancelEdit) {
+                  if (extra.onRowCancelEdit) {
                     extra.onRowCancelEdit(row, rowIndex);
                   }
                   setCurrentData((prev) => {
@@ -118,35 +122,38 @@ const LineEditableInPlaceDataTable = <T,>(props: ILineEditableInPlaceDataTablePr
                   setEditedRowIndex(undefined);
                   setSnapshotEditedRow(undefined);
                 },
+                dataTestId: dataTestId ? `${dataTestId}-cancel` : undefined,
               },
               {
                 hidden: (row, rowIndex) => {
-                  if (!extra?.onRowDownload) return true;
+                  if (!extra.onRowDownload) return true;
                   if (extra.isDownloadable === undefined || extra.isDownloadable(row, rowIndex)) {
                     return editedRowIndex === rowIndex;
                   }
                   return true;
                 },
                 icon: ['fal', 'arrow-down-to-line'],
-                label: extra?.localization?.downloadButton ?? 'Download',
+                label: extra.localization?.downloadButton ?? 'Download',
                 onClick: (row, rowIndex) => {
-                  if (extra?.onRowDownload) {
+                  if (extra.onRowDownload) {
                     extra.onRowDownload(row, rowIndex);
                   }
                 },
+                dataTestId: dataTestId ? `${dataTestId}-download` : undefined,
               },
             ],
           },
         ];
 
   const handleSortChange = useCallback((newSortField: keyof T, newSortDirection?: SortDirectionEnum) => {
-    if (sortField !== newSortField || newSortDirection !== newSortDirection) {
-      setSortField(newSortField);
-      setSortDirection(newSortDirection);
+    setSortField(newSortField);
+    setSortDirection(newSortDirection);
 
-      if (onSortChange) {
-        if (newSortField && newSortDirection) onSortChange(newSortField, newSortDirection);
-        else onSortChange();
+    if (onSortChange) {
+      if (newSortField && newSortDirection) {
+        onSortChange(newSortField, newSortDirection);
+      } else {
+        onSortChange();
       }
     }
   }, []);
@@ -159,10 +166,10 @@ const LineEditableInPlaceDataTable = <T,>(props: ILineEditableInPlaceDataTablePr
   };
 
   const addNewLine = () => {
-    if (extra?.onNewLine === undefined) {
-      throw new Error('Missing onNewLine function');
+    if (extra.onNewLine === undefined) {
+      console.error('Missing onNewLine function');
     }
-    const newLine = extra.onNewLine() || ({} as T);
+    const newLine = extra.onNewLine ? extra.onNewLine() : ({} as T);
     setSnapshotEditedRow(newLine);
     setCurrentData((prev) => {
       prev.push(newLine);
@@ -190,11 +197,11 @@ const LineEditableInPlaceDataTable = <T,>(props: ILineEditableInPlaceDataTablePr
         />
         <StaticDataTableFooter<T> columns={currentColumns} data={currentData} extra={extra} />
       </table>
-      {extra?.canAddNewLine && extra?.canAddNewLine() && (
+      {extra.canAddNewLine && extra.canAddNewLine() && (
         <Button
           className='gds-table-new-line'
           color={ColorButtonEnum.PRIMARY}
-          label={extra?.localization?.addRow ?? 'Add row'}
+          label={extra.localization?.addRow ?? 'Add row'}
           onClick={addNewLine}
           disabled={editedRowIndex !== undefined}
         />

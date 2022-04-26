@@ -14,6 +14,7 @@ exports[`ActionBar Component ActionBar renders 1`] = `
         <button
           class="gds-button-content"
           color="reversed"
+          tabindex="0"
           type="button"
         >
           <div
@@ -48,6 +49,7 @@ exports[`ActionBar Component ActionBar renders 1`] = `
           class="title-edit"
           placeholder="PLACEHOLDED"
           style="display: flex; width: 0px; margin: auto;"
+          tabindex="0"
           type="text"
           value="TITLE"
         />
@@ -91,6 +93,7 @@ exports[`ActionBar Component ActionBar renders 1`] = `
           class="gds-button-content"
           color="secondary"
           data-testid="ACTION1"
+          tabindex="0"
           type="button"
         >
           <div
@@ -115,6 +118,7 @@ exports[`ActionBar Component ActionBar renders 1`] = `
           class="gds-button-content"
           color="reversed"
           data-testid="BASICACTION1"
+          tabindex="0"
           type="button"
         >
           <div
@@ -150,6 +154,7 @@ exports[`ActionBar Component ActionBar renders with actions without label, empty
           class="title-edit"
           readonly=""
           style="display: flex; width: 0px; margin: auto;"
+          tabindex="-1"
           type="text"
           value="TITLE"
         />
@@ -180,6 +185,7 @@ exports[`ActionBar Component ActionBar renders without action, basicactions, ico
         <button
           class="gds-button-content"
           color="reversed"
+          tabindex="0"
           type="button"
         >
           <div
@@ -214,6 +220,7 @@ exports[`ActionBar Component ActionBar renders without action, basicactions, ico
           class="title-edit"
           placeholder="PLACEHOLDED"
           style="display: flex; width: 0px; margin: auto;"
+          tabindex="0"
           type="text"
           value="TITLE"
         />

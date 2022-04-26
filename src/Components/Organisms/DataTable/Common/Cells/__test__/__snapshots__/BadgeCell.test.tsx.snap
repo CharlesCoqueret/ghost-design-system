@@ -28,7 +28,7 @@ exports[`BadgeCell component BadgeCell handles changes 1`] = `
                   class="css-1f43avz-a11yText-A11yText"
                 />
                 <div
-                  class=" css-154lpzf-control"
+                  class=" css-1l9db9l-control"
                 >
                   <div
                     class=" css-9plg90-ValueContainer"
@@ -119,7 +119,7 @@ exports[`BadgeCell component BadgeCell handles changes 2`] = `
                   class="css-1f43avz-a11yText-A11yText"
                 />
                 <div
-                  class=" css-154lpzf-control"
+                  class=" css-1l9db9l-control"
                 >
                   <div
                     class=" css-9plg90-ValueContainer"
@@ -230,7 +230,7 @@ exports[`BadgeCell component BadgeCell renders cell editing with no row input 1`
                   class="css-1f43avz-a11yText-A11yText"
                 />
                 <div
-                  class=" css-154lpzf-control"
+                  class=" css-1l9db9l-control"
                 >
                   <div
                     class=" css-9plg90-ValueContainer"
@@ -344,7 +344,7 @@ exports[`BadgeCell component BadgeCell renders row editing with no row input 1`]
                   class="css-1f43avz-a11yText-A11yText"
                 />
                 <div
-                  class=" css-154lpzf-control"
+                  class=" css-1l9db9l-control"
                 >
                   <div
                     class=" css-9plg90-ValueContainer"

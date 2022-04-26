@@ -435,6 +435,26 @@ describe('DynamicSearchCreatableInput Component', () => {
     expect(noOptionsMessageMock).toBeCalledTimes(0);
     expect(searchOptionsMock).toBeCalledTimes(1);
     expect(onChangeMock).toBeCalledTimes(0);
+
+    container.rerender(
+      <DynamicSearchCreatableInput
+        dataTestId='DATA-TEST-ID'
+        handleCreate={handleCreateMock}
+        name='SELECT'
+        noOptionsMessage={noOptionsMessageMock}
+        onChange={onChangeMock}
+        resolveValue={resolveValueMock}
+        searchOptions={searchOptionsMock}
+      />,
+    );
+
+    expect(container?.container).toMatchSnapshot();
+    expect(handleCreateMock).toBeCalledTimes(0);
+    expect(resolveValueMock).toBeCalledTimes(2);
+    expect(resolveValueMock).toBeCalledWith('OPTION2');
+    expect(noOptionsMessageMock).toBeCalledTimes(0);
+    expect(searchOptionsMock).toBeCalledTimes(1);
+    expect(onChangeMock).toBeCalledTimes(0);
   });
 
   it('DynamicSearchCreatableInput handles change to undefined', async () => {

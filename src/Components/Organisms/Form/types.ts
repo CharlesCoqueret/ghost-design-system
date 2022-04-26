@@ -56,9 +56,9 @@ export type IFieldProps<T> =
   | IFieldMultiSelectProps<T>
   | IFieldNumberProps<T>
   | IFieldPercentageProps<T>
+  | IFieldRichtextProps<T>
   | IFieldSelectProps<T>
   | IFieldSwitchProps<T>
-  | IFieldRichtextProps<T>
   // TODO investigate type resolution
   // Using any to avoid circular type definition for now, until there is a way to get the type of an item of T[keyof T]
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -108,7 +108,16 @@ export interface IFieldCustomProps<T, U = unknown> extends IFieldBaseProps<T> {
   fieldType: FieldTypeEnum.CUSTOM;
   isEqual?: (previousValue: T[keyof T], currentValue: T[keyof T]) => boolean;
   data?: U;
-  customField: (props: U & { data: T; onChange: (value: T[keyof T]) => void }) => ReactElement;
+  customField: <
+    U extends {
+      highlighted?: boolean;
+      onChange?: (value: T[keyof T]) => void;
+      readOnly?: boolean;
+      value?: T[keyof T];
+    },
+  >(
+    props: U,
+  ) => ReactElement;
 }
 
 export interface IFieldDateProps<T> extends IFieldBaseProps<T> {
@@ -121,7 +130,8 @@ export interface IFieldDateProps<T> extends IFieldBaseProps<T> {
 }
 
 export interface IFieldDescriptionProps<T> extends Partial<IVisibilityProps<T>> {
-  description: ReactElement;
+  dataIndex?: keyof T;
+  description: ReactElement | (<U extends { value: T[keyof T] }>(props: U) => ReactElement);
   fieldType: FieldTypeEnum.DESCRIPTION;
 }
 
@@ -141,6 +151,15 @@ export interface IFieldFileProps<T> extends IFieldBaseProps<T> {
   showFileSize?: boolean;
   showProgressBar?: boolean;
   uploadMessage?: string | ReactElement;
+  localization?: {
+    delete?: string;
+    popoverConfirm?: string;
+    popoverCancel?: string;
+    popoverTitle?: string;
+    invalidType?: string;
+    quotaExceeded?: string;
+    sizeExceeded?: string;
+  };
 }
 
 export interface IFieldDynamicSearchProps<T> extends IFieldBaseProps<T> {
@@ -203,6 +222,15 @@ export interface IFieldPercentageProps<T> extends IFieldBaseProps<T> {
   thousandsGroupStyle?: ThousandsGroupStyle;
 }
 
+export interface IFieldRichtextProps<T> extends IFieldBaseProps<T> {
+  convertImagesToBase64?: boolean;
+  enableImage?: boolean;
+  enableLink?: boolean;
+  fieldType: FieldTypeEnum.RICHTEXT;
+  locale?: lang;
+  maxLength?: number;
+}
+
 export interface IFieldSectionProps<T> extends Partial<IVisibilityProps<T>> {
   collapsable?: boolean;
   fieldType: FieldTypeEnum.SECTION;
@@ -229,16 +257,6 @@ export interface IFieldSelectProps<T> extends IFieldBaseProps<T> {
 
 export interface IFieldSwitchProps<T> extends IFieldBaseProps<T> {
   fieldType: FieldTypeEnum.SWITCH;
-}
-
-export interface IFieldRichtextProps<T> extends IFieldBaseProps<T> {
-  enableImage?: boolean;
-  enableLink?: boolean;
-  fieldType: FieldTypeEnum.RICHTEXT;
-  locale?: lang;
-  maxLength?: number;
-  minLength?: number;
-  placeholder?: string;
 }
 
 export interface IFieldTableProps<T, U> extends IFieldBaseProps<T> {

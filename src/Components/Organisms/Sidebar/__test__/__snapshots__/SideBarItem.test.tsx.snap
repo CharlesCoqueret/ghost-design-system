@@ -16,6 +16,7 @@ exports[`SideBarItem Component SideBarItem handles click on entry in main menu a
           class=""
           data-testid="PARENT-TEST-ID"
           href="/link"
+          target="_blank"
         >
           partial url
           <div
@@ -55,6 +56,7 @@ exports[`SideBarItem Component SideBarItem handles click on entry in main menu a
             class=""
             data-testid="CHILD-TEST-ID"
             href="/link/link1"
+            target="_blank"
           >
             full url
             <div
@@ -70,6 +72,7 @@ exports[`SideBarItem Component SideBarItem handles click on entry in main menu a
           <a
             class=""
             href="/link/link2"
+            target="_blank"
           >
             full url
             <div
@@ -101,6 +104,7 @@ exports[`SideBarItem Component SideBarItem handles click on entry in main menu a
           class=""
           data-testid="PARENT-TEST-ID"
           href="/link"
+          target="_blank"
         >
           partial url
           <div
@@ -140,6 +144,7 @@ exports[`SideBarItem Component SideBarItem handles click on entry in main menu a
             class=""
             data-testid="CHILD-TEST-ID"
             href="/link/link1"
+            target="_blank"
           >
             full url
             <div
@@ -155,6 +160,7 @@ exports[`SideBarItem Component SideBarItem handles click on entry in main menu a
           <a
             class=""
             href="/link/link2"
+            target="_blank"
           >
             full url
             <div
@@ -186,6 +192,7 @@ exports[`SideBarItem Component SideBarItem handles click on entry in main menu a
           class=""
           data-testid="PARENT-TEST-ID"
           href="/link"
+          target="_blank"
         >
           partial url
           <div
@@ -225,6 +232,7 @@ exports[`SideBarItem Component SideBarItem handles click on entry in main menu a
             class=""
             data-testid="CHILD-TEST-ID"
             href="/link/link1"
+            target="_blank"
           >
             full url
             <div
@@ -240,6 +248,7 @@ exports[`SideBarItem Component SideBarItem handles click on entry in main menu a
           <a
             class=""
             href="/link/link2"
+            target="_blank"
           >
             full url
             <div
@@ -270,6 +279,7 @@ exports[`SideBarItem Component SideBarItem renders 1`] = `
         <a
           class=""
           href="/link"
+          target="_blank"
         >
           partial url
           <div
@@ -328,6 +338,7 @@ exports[`SideBarItem Component SideBarItem renders 1`] = `
           <a
             class="disabled"
             href="/link"
+            target="_blank"
           >
             full url
             <div
@@ -343,6 +354,7 @@ exports[`SideBarItem Component SideBarItem renders 1`] = `
           <a
             class=""
             href="/link"
+            target="_blank"
           >
             full url
             <div
@@ -373,6 +385,7 @@ exports[`SideBarItem Component SideBarItem renders with only one subitem visible
         <a
           class=""
           href="/link"
+          target="_blank"
         >
           full url
           <div
@@ -402,6 +415,7 @@ exports[`SideBarItem Component SideBarItem renders with url as Location 1`] = `
         <a
           class=""
           href="/link"
+          target="_blank"
         >
           partial url
           <div
@@ -440,6 +454,7 @@ exports[`SideBarItem Component SideBarItem renders with url as Location 1`] = `
           <a
             class=""
             href="PATHNAME"
+            target="_blank"
           >
             full url
             <div
@@ -455,6 +470,7 @@ exports[`SideBarItem Component SideBarItem renders with url as Location 1`] = `
           <a
             class=""
             href="/link2"
+            target="_blank"
           >
             full url
             <div
@@ -478,6 +494,7 @@ exports[`SideBarItem Component SideBarItem should generate an error when not in 
     <a
       class=""
       href="/link"
+      target="_blank"
     >
       full url
       <div

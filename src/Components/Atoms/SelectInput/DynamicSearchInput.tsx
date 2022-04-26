@@ -98,7 +98,7 @@ const DynamicSearchInput = (props: IDynamicSearchInputProps): ReactElement => {
         .finally(() => {
           setIsLoading(false);
         });
-    } else if (currentOption) {
+    } else {
       setCurrentOption(undefined);
     }
   };

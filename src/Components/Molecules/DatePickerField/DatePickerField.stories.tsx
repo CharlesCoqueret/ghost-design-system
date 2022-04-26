@@ -15,14 +15,15 @@ const Template: ComponentStory<typeof DatePickerField> = ({ inputValue, ...args 
   const [localValue, setLocalValue] = useState<Date | null | undefined>(inputValue);
 
   useEffect(() => {
-    const loadLocale = async () => {
+    const loadLocale = async (): Promise<void> => {
       if (args.locale) {
         setLoading(true);
-        return await importFnsLocaleFile(args.locale)
+        await importFnsLocaleFile(args.locale)
           .catch(console.error)
           .finally(() => {
             setLoading(false);
           });
+        return;
       }
     };
 

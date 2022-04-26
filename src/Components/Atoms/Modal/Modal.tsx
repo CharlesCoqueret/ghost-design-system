@@ -14,6 +14,8 @@ export interface IModalProps {
   closeOnClickOutside?: boolean;
   /** For test purpose only */
   dataTestId?: string;
+  /** Disable tabbing outside modal (optional, default: true) */
+  disableTabOutside?: boolean;
   /** Callback when a closing button has been triggered (close icon or click outiside for example) (optional, default: undefined) */
   onHide?: () => void;
   /** Control of the modal */
@@ -25,24 +27,70 @@ export interface IModalProps {
 }
 
 const Modal = (props: PropsWithChildren<IModalProps>): ReactElement => {
-  const { children, closeIcon, closeOnPressEscape, closeOnClickOutside, dataTestId, onHide, show, size, title } = props;
+  const {
+    children,
+    closeIcon,
+    closeOnPressEscape,
+    closeOnClickOutside,
+    dataTestId,
+    disableTabOutside,
+    onHide,
+    show,
+    size,
+    title,
+  } = props;
 
   const [isShaking, setIsShaking] = useState(false);
   const [initialBodyStyle, setInitialBodyStyle] = useState<Partial<CSSStyleDeclaration>>();
-  const contentRef = useRef(null);
+  const contentRef = useRef<HTMLDivElement>(null);
+
+  const preventDefaults = (event: KeyboardEvent) => {
+    if (event.code !== 'Tab' && event.key !== 'Tab') return;
+
+    const focusable = contentRef.current?.querySelectorAll(
+      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])',
+    );
+    const firstFocusable = focusable && focusable[0];
+    const lastFocusable = focusable && focusable[focusable.length - 1];
+
+    // If first focusable element, prevent shift + tab
+    if (focusable && document.activeElement === firstFocusable && event.shiftKey) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+
+    // If last focusable element, prevent tab
+    if (focusable && document.activeElement === lastFocusable && !event.shiftKey) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+
+    // If inside the modal, no worries
+    if (event.target && contentRef.current && contentRef.current.contains(event.target as Node)) {
+      return;
+    }
+
+    // else, prevent
+    event.preventDefault();
+    event.stopPropagation();
+  };
 
   useEffect(() => {
     if (show) {
       setInitialBodyStyle({ overflowX: document.body.style.overflowX, overflowY: document.body.style.overflowX });
       document.body.style.overflowY = 'hidden';
       document.body.style.overflowX = 'hidden';
+      disableTabOutside && document.body.addEventListener('keydown', preventDefaults, false);
     } else {
       document.body.style.overflowX = initialBodyStyle?.overflowX || '';
       document.body.style.overflowY = initialBodyStyle?.overflowY || '';
+      disableTabOutside && document.body.removeEventListener('keydown', preventDefaults);
     }
+
     return () => {
       document.body.style.overflowX = initialBodyStyle?.overflowX || '';
       document.body.style.overflowY = initialBodyStyle?.overflowY || '';
+      disableTabOutside && document.body.removeEventListener('keydown', preventDefaults);
     };
   }, [show]);
 
@@ -109,6 +157,7 @@ const Modal = (props: PropsWithChildren<IModalProps>): ReactElement => {
 
 Modal.defaultProps = {
   closeIcon: false,
+  disableTabOutside: true,
   enableClickOutide: false,
   onHide: undefined,
   size: 'sm',

@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SectionCell component SectionCell renders 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class=""
+        >
+          Section
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`SectionCell component SectionCell renders when hidden 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class=""
+          style="display: none;"
+        >
+          Section
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;

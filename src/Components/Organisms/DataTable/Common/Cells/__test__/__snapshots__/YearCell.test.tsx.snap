@@ -1,0 +1,210 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`YearCell component YearCell renders 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class=""
+        >
+          <div
+            class="gds-field-group"
+          >
+            <div
+              class="input-year-picker-field table--cell-value--date-readonly field"
+            >
+              <div
+                class="react-datepicker-wrapper"
+              >
+                <div
+                  class="react-datepicker__input-container"
+                >
+                  <input
+                    autocomplete="off"
+                    class="field input-year-picker-input-read-only"
+                    name="data"
+                    placeholder="-"
+                    readonly=""
+                    tabindex="-1"
+                    type="text"
+                    value="2022"
+                  />
+                </div>
+              </div>
+              <div />
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`YearCell component YearCell renders in edit mode and handles change 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class=""
+        >
+          <div
+            class="gds-field-group"
+          >
+            <div
+              class="input-year-picker-field field"
+            >
+              <div
+                class="react-datepicker-wrapper"
+              >
+                <div
+                  class="react-datepicker__input-container"
+                >
+                  <input
+                    autocomplete="off"
+                    class="field input-year-picker-input"
+                    name="data"
+                    placeholder="YYYY"
+                    tabindex="0"
+                    type="text"
+                    value="2022"
+                  />
+                </div>
+              </div>
+              <div />
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`YearCell component YearCell renders in edit mode via extra 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class=""
+        >
+          <div
+            class="gds-field-group"
+          >
+            <div
+              class="input-year-picker-field field"
+            >
+              <div
+                class="react-datepicker-wrapper"
+              >
+                <div
+                  class="react-datepicker__input-container"
+                >
+                  <input
+                    autocomplete="off"
+                    class="field input-year-picker-input"
+                    name="data"
+                    placeholder="YYYY"
+                    tabindex="0"
+                    type="text"
+                    value="2022"
+                  />
+                </div>
+              </div>
+              <div />
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`YearCell component YearCell renders when hidden 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class=""
+          style="display: none;"
+        >
+          <div
+            class="gds-field-group"
+          >
+            <div
+              class="input-year-picker-field table--cell-value--date-readonly field"
+            >
+              <div
+                class="react-datepicker-wrapper"
+              >
+                <div
+                  class="react-datepicker__input-container"
+                >
+                  <input
+                    autocomplete="off"
+                    class="field input-year-picker-input-read-only"
+                    name="data"
+                    placeholder="-"
+                    readonly=""
+                    tabindex="-1"
+                    type="text"
+                    value="2022"
+                  />
+                </div>
+              </div>
+              <div />
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`YearCell component YearCell renders with forced value 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class=""
+        >
+          <div
+            class="gds-field-group"
+          >
+            <div
+              class="input-year-picker-field table--cell-value--date-readonly field"
+            >
+              <div
+                class="react-datepicker-wrapper"
+              >
+                <div
+                  class="react-datepicker__input-container"
+                >
+                  <input
+                    autocomplete="off"
+                    class="field input-year-picker-input-read-only"
+                    name="data"
+                    placeholder="-"
+                    readonly=""
+                    tabindex="-1"
+                    type="text"
+                    value="2022"
+                  />
+                </div>
+              </div>
+              <div />
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;

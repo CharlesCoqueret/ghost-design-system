@@ -1,5 +1,26 @@
 # Changelog
 
+## 1.4.5 (2022-04-26)
+
+### Features
+
+- Organisms/DataTable add Description cell
+- Organisms/DataTable add File cell
+- Organisms/DataTable add Multiselect cell
+- Organisms/DataTable add RichText cell
+- Organisms/DataTable add Section cell
+- Organisms/DataTable add Switch cell
+- Organisms/DataTable add Table cell
+- Organisms/DataTable add Year cell
+
+### Bug Fixes
+
+- Atoms/FileInput disable tabindex on drop area, as it is not interactive
+- Atoms/FileInput disable tabindex on the hidden input of type file
+- Atoms/SelectInput Adjusting the input border color
+- Hooks/useWindowSize remove no longer used hook
+- Organisms/DataTable and Organisms/Form use a uniform custom component signature
+
 ## 1.4.4 (2022-04-20)
 
 ### Bug Fixes

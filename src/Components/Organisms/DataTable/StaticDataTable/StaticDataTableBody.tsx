@@ -1,4 +1,4 @@
-import React, { ReactElement, MouseEvent, useState } from 'react';
+import React, { KeyboardEvent, ReactElement, MouseEvent, useState } from 'react';
 import classnames from 'classnames';
 
 import StaticDataTableCell from './StaticDataTableCell';
@@ -9,12 +9,13 @@ import { Icon } from '../../../Atoms/Icon';
 interface IStaticDataTableBodyProps<T> {
   columns: Array<IColumnType<T>>;
   data: Array<T>;
+  dataTestId?: string;
   extra?: IExtraLineEditableInPlaceDataTableProps<T>;
   loading?: ReactElement;
 }
 
 const StaticDataTableBody = <T,>(props: IStaticDataTableBodyProps<T>): ReactElement => {
-  const { columns, data, extra, loading } = props;
+  const { columns, data, dataTestId, extra, loading } = props;
 
   const [selectedRows, setSelectedRows] = useState<Record<number, boolean>>({});
 
@@ -23,9 +24,13 @@ const StaticDataTableBody = <T,>(props: IStaticDataTableBodyProps<T>): ReactElem
 
   const handleRowClick = (row: T, rowIndex: number) => {
     return extra && extra.onRowClick
-      ? (event: MouseEvent<HTMLElement>) => {
-          event.preventDefault();
+      ? (event: MouseEvent<HTMLElement> | KeyboardEvent<HTMLElement>) => {
+          if (event.type === 'keyup' && (event as KeyboardEvent).key !== 'Enter') {
+            return;
+          }
           if (extra && extra.onRowClick) {
+            event.preventDefault();
+            event.stopPropagation();
             extra.onRowClick(row, rowIndex);
           }
         }
@@ -34,11 +39,11 @@ const StaticDataTableBody = <T,>(props: IStaticDataTableBodyProps<T>): ReactElem
 
   /** Handle */
   const handleSelectClick = (row: T, rowIndex: number) => {
-    return (_event: MouseEvent<HTMLElement>, selected: boolean) => {
+    return (_event: MouseEvent<HTMLElement> | KeyboardEvent<HTMLElement>, selected: boolean) => {
       const newSelectedRows = { ...selectedRows };
       newSelectedRows[rowIndex] = selected;
       setSelectedRows(newSelectedRows);
-      if (extra?.onRowSelect) {
+      if (extra && extra.onRowSelect) {
         extra.onRowSelect(
           data.filter((_row, index) => newSelectedRows[index]),
           row,
@@ -53,16 +58,20 @@ const StaticDataTableBody = <T,>(props: IStaticDataTableBodyProps<T>): ReactElem
       {data.map((row, rowIndex) => {
         return (
           <tr
+            className={classnames({ pointer: extra && extra.onRowClick, selected: selectedRows[rowIndex] })}
+            data-testid={dataTestId && `${dataTestId}-row-${rowIndex}`}
             key={`row-${rowIndex}`}
             onClick={handleRowClick(row, rowIndex)}
-            className={classnames({ pointer: extra && extra.onRowClick, selected: selectedRows[rowIndex] })}>
+            onKeyUp={handleRowClick(row, rowIndex)}
+            tabIndex={extra && extra.onRowClick ? 0 : -1}>
             {isExtended &&
               (isSelectable ? (
                 <DataTableCellSelectable
+                  dataTestId={dataTestId && `${dataTestId}-select-row-${rowIndex}`}
                   handleSelectClick={handleSelectClick(row, rowIndex)}
                   selected={selectedRows[rowIndex]}
                   selectable={
-                    (extra && extra.isSelectable ? extra?.isSelectable(row, rowIndex) : true) && !extra?.editedRowIndex
+                    (extra && extra.isSelectable ? extra.isSelectable(row, rowIndex) : true) && !extra.editedRowIndex
                   }
                 />
               ) : (
@@ -83,7 +92,7 @@ const StaticDataTableBody = <T,>(props: IStaticDataTableBodyProps<T>): ReactElem
           </tr>
         );
       })}
-      {!loading && (!data || data?.length === 0) && (
+      {!loading && (!data || data.length === 0) && (
         <tr className='no-data'>
           <td colSpan={columns.filter((column) => !column.hidden).length + (isSelectable ? 1 : 0)}>
             <div className='no-data-container'>

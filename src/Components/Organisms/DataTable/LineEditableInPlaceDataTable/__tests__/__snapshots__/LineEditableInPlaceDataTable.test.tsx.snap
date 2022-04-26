@@ -1,0 +1,1277 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable handles canAddNewLine with onNewLine 1`] = `
+<div>
+  <div>
+    <table
+      class="gds-table"
+    >
+      <thead>
+        <tr>
+          <th>
+            <div
+              class="table--header-value"
+              tabindex="-1"
+            >
+              <span
+                class="table--header-value--title right"
+              >
+                Number
+              </span>
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          class=""
+          tabindex="-1"
+        >
+          <td
+            class=""
+          >
+            <div
+              class="gds-field-group"
+            >
+              <span
+                class="gds-amount-field amount-field-read-only table--cell-value--number-readonly"
+                id="number"
+                name="number"
+              >
+                1
+              </span>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <button
+      class="gds-button-content gds-table-new-line"
+      color="primary"
+      tabindex="0"
+      type="button"
+    >
+      <div
+        class="button-label-container"
+      >
+        Add row
+      </div>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable handles canAddNewLine without onNewLine 1`] = `
+<div>
+  <div>
+    <table
+      class="gds-table"
+    >
+      <thead>
+        <tr>
+          <th>
+            <div
+              class="table--header-value"
+              tabindex="-1"
+            >
+              <span
+                class="table--header-value--title right"
+              >
+                Number
+              </span>
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          class=""
+          tabindex="-1"
+        >
+          <td
+            class=""
+          >
+            <div
+              class="gds-field-group"
+            >
+              <span
+                class="gds-amount-field amount-field-read-only table--cell-value--number-readonly"
+                id="number"
+                name="number"
+              >
+                1
+              </span>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <button
+      class="gds-button-content gds-table-new-line"
+      color="primary"
+      tabindex="0"
+      type="button"
+    >
+      <div
+        class="button-label-container"
+      >
+        Add row
+      </div>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable handles edit and cancel 1`] = `
+<div>
+  <div>
+    <table
+      class="gds-table"
+    >
+      <thead>
+        <tr>
+          <th>
+            <div
+              class="table--header-value"
+              tabindex="-1"
+            >
+              <span
+                class="table--header-value--title right"
+              >
+                Number
+              </span>
+            </div>
+          </th>
+          <th>
+            <div
+              class="table--header-value"
+              tabindex="-1"
+            >
+              <span
+                class="table--header-value--title center"
+              >
+                Actions
+              </span>
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          class=""
+          tabindex="-1"
+        >
+          <td
+            class=""
+          >
+            <div
+              class="gds-field-group"
+            >
+              <span
+                class="gds-amount-field amount-field-read-only table--cell-value--number-readonly"
+                id="number"
+                name="number"
+              >
+                PLACEHOLDER
+              </span>
+            </div>
+          </td>
+          <td
+            class=""
+          >
+            <div
+              class="table--cell--value--button"
+            >
+              <button
+                class="gds-button-content"
+                color="reversed"
+                data-testid="DATA-TEST-ID-edit"
+                tabindex="0"
+                type="button"
+              >
+                <div
+                  class="button-icon-container"
+                >
+                  <i
+                    class="button-icon icon"
+                    icon="fal,edit"
+                  />
+                </div>
+              </button>
+              <div>
+                Edit
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;
+
+exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable handles edit and cancel 2`] = `
+<div>
+  <div>
+    <table
+      class="gds-table"
+    >
+      <thead>
+        <tr>
+          <th>
+            <div
+              class="table--header-value"
+              tabindex="-1"
+            >
+              <span
+                class="table--header-value--title right"
+              >
+                Number
+              </span>
+            </div>
+          </th>
+          <th>
+            <div
+              class="table--header-value"
+              tabindex="-1"
+            >
+              <span
+                class="table--header-value--title center"
+              >
+                Actions
+              </span>
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          class=""
+          tabindex="-1"
+        >
+          <td
+            class=""
+          >
+            <div
+              class="gds-field-group"
+            >
+              <input
+                class="gds-amount-field"
+                inputmode="numeric"
+                name="number"
+                placeholder="PLACEHOLDER"
+                type="text"
+                value="1"
+              />
+            </div>
+          </td>
+          <td
+            class=""
+          >
+            <div
+              class="table--cell--value--button"
+            >
+              <button
+                class="gds-button-content"
+                color="reversed"
+                data-testid="DATA-TEST-ID-submit"
+                tabindex="0"
+                type="button"
+              >
+                <div
+                  class="button-icon-container"
+                >
+                  <i
+                    class="button-icon icon"
+                    icon="fal,check"
+                  />
+                </div>
+              </button>
+              <div>
+                Submit
+              </div>
+              <button
+                class="gds-button-content"
+                color="reversed"
+                data-testid="DATA-TEST-ID-cancel"
+                tabindex="0"
+                type="button"
+              >
+                <div
+                  class="button-icon-container"
+                >
+                  <i
+                    class="button-icon icon"
+                    icon="fal,times"
+                  />
+                </div>
+              </button>
+              <div>
+                Cancel
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;
+
+exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable handles edit and cancel 3`] = `
+<div>
+  <div>
+    <table
+      class="gds-table"
+    >
+      <thead>
+        <tr>
+          <th>
+            <div
+              class="table--header-value"
+              tabindex="-1"
+            >
+              <span
+                class="table--header-value--title right"
+              >
+                Number
+              </span>
+            </div>
+          </th>
+          <th>
+            <div
+              class="table--header-value"
+              tabindex="-1"
+            >
+              <span
+                class="table--header-value--title center"
+              >
+                Actions
+              </span>
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          class=""
+          tabindex="-1"
+        >
+          <td
+            class=""
+          >
+            <div
+              class="gds-field-group"
+            >
+              <input
+                class="gds-amount-field"
+                inputmode="numeric"
+                name="number"
+                placeholder="PLACEHOLDER"
+                type="text"
+                value=""
+              />
+            </div>
+          </td>
+          <td
+            class=""
+          >
+            <div
+              class="table--cell--value--button"
+            >
+              <button
+                class="gds-button-content"
+                color="reversed"
+                data-testid="DATA-TEST-ID-submit"
+                tabindex="0"
+                type="button"
+              >
+                <div
+                  class="button-icon-container"
+                >
+                  <i
+                    class="button-icon icon"
+                    icon="fal,check"
+                  />
+                </div>
+              </button>
+              <div>
+                Submit
+              </div>
+              <button
+                class="gds-button-content"
+                color="reversed"
+                data-testid="DATA-TEST-ID-cancel"
+                tabindex="0"
+                type="button"
+              >
+                <div
+                  class="button-icon-container"
+                >
+                  <i
+                    class="button-icon icon"
+                    icon="fal,times"
+                  />
+                </div>
+              </button>
+              <div>
+                Cancel
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;
+
+exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable handles edit and cancel 4`] = `
+<div>
+  <div>
+    <table
+      class="gds-table"
+    >
+      <thead>
+        <tr>
+          <th>
+            <div
+              class="table--header-value"
+              tabindex="-1"
+            >
+              <span
+                class="table--header-value--title right"
+              >
+                Number
+              </span>
+            </div>
+          </th>
+          <th>
+            <div
+              class="table--header-value"
+              tabindex="-1"
+            >
+              <span
+                class="table--header-value--title center"
+              >
+                Actions
+              </span>
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          class=""
+          tabindex="-1"
+        >
+          <td
+            class=""
+          >
+            <div
+              class="gds-field-group"
+            >
+              <span
+                class="gds-amount-field amount-field-read-only table--cell-value--number-readonly"
+                id="number"
+                name="number"
+              >
+                PLACEHOLDER
+              </span>
+            </div>
+          </td>
+          <td
+            class=""
+          >
+            <div
+              class="table--cell--value--button"
+            >
+              <button
+                class="gds-button-content"
+                color="reversed"
+                data-testid="DATA-TEST-ID-edit"
+                tabindex="0"
+                type="button"
+              >
+                <div
+                  class="button-icon-container"
+                >
+                  <i
+                    class="button-icon icon"
+                    icon="fal,edit"
+                  />
+                </div>
+              </button>
+              <div>
+                Edit
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;
+
+exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable handles edit and submit 1`] = `
+<div>
+  <div>
+    <table
+      class="gds-table"
+    >
+      <thead>
+        <tr>
+          <th>
+            <div
+              class="table--header-value"
+              tabindex="-1"
+            >
+              <span
+                class="table--header-value--title right"
+              >
+                Number
+              </span>
+            </div>
+          </th>
+          <th>
+            <div
+              class="table--header-value"
+              tabindex="-1"
+            >
+              <span
+                class="table--header-value--title center"
+              >
+                Actions
+              </span>
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          class=""
+          tabindex="-1"
+        >
+          <td
+            class=""
+          >
+            <div
+              class="gds-field-group"
+            >
+              <span
+                class="gds-amount-field amount-field-read-only table--cell-value--number-readonly"
+                id="number"
+                name="number"
+              >
+                PLACEHOLDER
+              </span>
+            </div>
+          </td>
+          <td
+            class=""
+          >
+            <div
+              class="table--cell--value--button"
+            >
+              <button
+                class="gds-button-content"
+                color="reversed"
+                data-testid="DATA-TEST-ID-edit"
+                tabindex="0"
+                type="button"
+              >
+                <div
+                  class="button-icon-container"
+                >
+                  <i
+                    class="button-icon icon"
+                    icon="fal,edit"
+                  />
+                </div>
+              </button>
+              <div>
+                Edit
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;
+
+exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable handles edit and submit 2`] = `
+<div>
+  <div>
+    <table
+      class="gds-table"
+    >
+      <thead>
+        <tr>
+          <th>
+            <div
+              class="table--header-value"
+              tabindex="-1"
+            >
+              <span
+                class="table--header-value--title right"
+              >
+                Number
+              </span>
+            </div>
+          </th>
+          <th>
+            <div
+              class="table--header-value"
+              tabindex="-1"
+            >
+              <span
+                class="table--header-value--title center"
+              >
+                Actions
+              </span>
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          class=""
+          tabindex="-1"
+        >
+          <td
+            class=""
+          >
+            <div
+              class="gds-field-group"
+            >
+              <input
+                class="gds-amount-field"
+                inputmode="numeric"
+                name="number"
+                placeholder="PLACEHOLDER"
+                type="text"
+                value=""
+              />
+            </div>
+          </td>
+          <td
+            class=""
+          >
+            <div
+              class="table--cell--value--button"
+            >
+              <button
+                class="gds-button-content"
+                color="reversed"
+                data-testid="DATA-TEST-ID-submit"
+                tabindex="0"
+                type="button"
+              >
+                <div
+                  class="button-icon-container"
+                >
+                  <i
+                    class="button-icon icon"
+                    icon="fal,check"
+                  />
+                </div>
+              </button>
+              <div>
+                Submit
+              </div>
+              <button
+                class="gds-button-content"
+                color="reversed"
+                data-testid="DATA-TEST-ID-cancel"
+                tabindex="0"
+                type="button"
+              >
+                <div
+                  class="button-icon-container"
+                >
+                  <i
+                    class="button-icon icon"
+                    icon="fal,times"
+                  />
+                </div>
+              </button>
+              <div>
+                Cancel
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;
+
+exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable handles edit and submit 3`] = `
+<div>
+  <div>
+    <table
+      class="gds-table"
+    >
+      <thead>
+        <tr>
+          <th>
+            <div
+              class="table--header-value"
+              tabindex="-1"
+            >
+              <span
+                class="table--header-value--title right"
+              >
+                Number
+              </span>
+            </div>
+          </th>
+          <th>
+            <div
+              class="table--header-value"
+              tabindex="-1"
+            >
+              <span
+                class="table--header-value--title center"
+              >
+                Actions
+              </span>
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          class=""
+          tabindex="-1"
+        >
+          <td
+            class=""
+          >
+            <div
+              class="gds-field-group"
+            >
+              <div
+                class="gds-amount-field amount-field-read-only table--cell-value--number-readonly"
+              >
+                <span
+                  class="gds-typography"
+                >
+                  -
+                </span>
+              </div>
+            </div>
+          </td>
+          <td
+            class=""
+          >
+            <div
+              class="table--cell--value--button"
+            >
+              <button
+                class="gds-button-content"
+                color="reversed"
+                data-testid="DATA-TEST-ID-edit"
+                tabindex="0"
+                type="button"
+              >
+                <div
+                  class="button-icon-container"
+                >
+                  <i
+                    class="button-icon icon"
+                    icon="fal,edit"
+                  />
+                </div>
+              </button>
+              <div>
+                Edit
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;
+
+exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable handles non editable content 1`] = `
+<div>
+  <div>
+    <table
+      class="gds-table"
+    >
+      <thead>
+        <tr>
+          <th>
+            <div
+              class="table--header-value"
+              tabindex="-1"
+            >
+              <span
+                class="table--header-value--title right"
+              >
+                Number
+              </span>
+            </div>
+          </th>
+          <th>
+            <div
+              class="table--header-value"
+              tabindex="-1"
+            >
+              <span
+                class="table--header-value--title center"
+              >
+                Actions
+              </span>
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          class=""
+          tabindex="-1"
+        >
+          <td
+            class=""
+          >
+            <div
+              class="gds-field-group"
+            >
+              <span
+                class="gds-amount-field amount-field-read-only table--cell-value--number-readonly"
+                id="number"
+                name="number"
+              >
+                PLACEHOLDER
+              </span>
+            </div>
+          </td>
+          <td
+            class=""
+          >
+            <div
+              class="table--cell--value--button"
+            />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;
+
+exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable handles onRowDelete and onRowDownload 1`] = `
+<div>
+  <div>
+    <table
+      class="gds-table"
+    >
+      <thead>
+        <tr>
+          <th>
+            <div
+              class="table--header-value"
+              tabindex="-1"
+            >
+              <span
+                class="table--header-value--title right"
+              >
+                Number
+              </span>
+            </div>
+          </th>
+          <th>
+            <div
+              class="table--header-value"
+              tabindex="-1"
+            >
+              <span
+                class="table--header-value--title center"
+              >
+                Actions
+              </span>
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          class=""
+          tabindex="-1"
+        >
+          <td
+            class=""
+          >
+            <div
+              class="gds-field-group"
+            >
+              <span
+                class="gds-amount-field amount-field-read-only table--cell-value--number-readonly"
+                id="number"
+                name="number"
+              >
+                1
+              </span>
+            </div>
+          </td>
+          <td
+            class=""
+          >
+            <div
+              class="table--cell--value--button"
+            >
+              <button
+                class="gds-button-content"
+                color="reversed"
+                data-testid="DATA-TEST-ID-delete"
+                tabindex="0"
+                type="button"
+              >
+                <div
+                  class="button-icon-container"
+                >
+                  <i
+                    class="button-icon icon"
+                    icon="fal,trash-alt"
+                  />
+                </div>
+              </button>
+              <div>
+                Delete
+              </div>
+              <div>
+                <div>
+                  ControlleMenu
+                  closed
+                  <div
+                    class="gds-popover-container"
+                  >
+                    <div
+                      class="popover-title"
+                    >
+                      Delete?
+                    </div>
+                    <div
+                      class="popover-buttons"
+                    >
+                      <button
+                        class="gds-button-content"
+                        color="secondary"
+                        data-testid="cancel"
+                        tabindex="0"
+                        type="button"
+                      >
+                        <div
+                          class="button-label-container"
+                        >
+                          Cancel
+                        </div>
+                      </button>
+                      <button
+                        class="gds-button-content"
+                        color="primary"
+                        data-testid="confirm"
+                        tabindex="0"
+                        type="button"
+                      >
+                        <div
+                          class="button-label-container"
+                        >
+                          Confirm
+                        </div>
+                      </button>
+                    </div>
+                  </div>
+                  has ref
+                </div>
+              </div>
+              <button
+                class="gds-button-content"
+                color="reversed"
+                data-testid="DATA-TEST-ID-download"
+                tabindex="0"
+                type="button"
+              >
+                <div
+                  class="button-icon-container"
+                >
+                  <i
+                    class="button-icon icon"
+                    icon="fal,arrow-down-to-line"
+                  />
+                </div>
+              </button>
+              <div>
+                Download
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr
+          class=""
+          tabindex="-1"
+        >
+          <td
+            class=""
+          >
+            <div
+              class="gds-field-group"
+            >
+              <input
+                class="gds-amount-field"
+                inputmode="numeric"
+                name="number"
+                type="text"
+                value="2"
+              />
+            </div>
+          </td>
+          <td
+            class=""
+          >
+            <div
+              class="table--cell--value--button"
+            >
+              <button
+                class="gds-button-content"
+                color="reversed"
+                data-testid="DATA-TEST-ID-submit"
+                tabindex="0"
+                type="button"
+              >
+                <div
+                  class="button-icon-container"
+                >
+                  <i
+                    class="button-icon icon"
+                    icon="fal,check"
+                  />
+                </div>
+              </button>
+              <div>
+                Submit
+              </div>
+              <button
+                class="gds-button-content"
+                color="reversed"
+                data-testid="DATA-TEST-ID-cancel"
+                tabindex="0"
+                type="button"
+              >
+                <div
+                  class="button-icon-container"
+                >
+                  <i
+                    class="button-icon icon"
+                    icon="fal,times"
+                  />
+                </div>
+              </button>
+              <div>
+                Cancel
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;
+
+exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable handles onRowDelete and onRowDownload with custom localization 1`] = `
+<div>
+  <div>
+    <table
+      class="gds-table"
+    >
+      <thead>
+        <tr>
+          <th>
+            <div
+              class="table--header-value"
+              tabindex="-1"
+            >
+              <span
+                class="table--header-value--title right"
+              >
+                Number
+              </span>
+            </div>
+          </th>
+          <th>
+            <div
+              class="table--header-value"
+              tabindex="-1"
+            >
+              <span
+                class="table--header-value--title center"
+              >
+                actionColumn
+              </span>
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          class=""
+          tabindex="-1"
+        >
+          <td
+            class=""
+          >
+            <div
+              class="gds-field-group"
+            >
+              <span
+                class="gds-amount-field amount-field-read-only table--cell-value--number-readonly"
+                id="number"
+                name="number"
+              >
+                1
+              </span>
+            </div>
+          </td>
+          <td
+            class=""
+          >
+            <div
+              class="table--cell--value--button"
+            />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <button
+      class="gds-button-content gds-table-new-line"
+      color="primary"
+      tabindex="0"
+      type="button"
+    >
+      <div
+        class="button-label-container"
+      >
+        addRow
+      </div>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable handles sort 1`] = `
+<div>
+  <div>
+    <table
+      class="gds-table"
+    >
+      <thead>
+        <tr>
+          <th>
+            <div
+              class="table--header-value table--header-value--sortable"
+              tabindex="0"
+            >
+              <span
+                class="table--header-value--title right"
+              >
+                Number
+              </span>
+              <span
+                class="table--header-value--sorter"
+              >
+                <i
+                  class="icon"
+                  icon="fas,sort"
+                />
+              </span>
+            </div>
+            <div>
+              Click to sort
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          class=""
+          tabindex="-1"
+        >
+          <td
+            class=""
+          >
+            <div
+              class="gds-field-group"
+            >
+              <span
+                class="gds-amount-field amount-field-read-only table--cell-value--number-readonly"
+                id="number"
+                name="number"
+              >
+                1
+              </span>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;
+
+exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable renders 1`] = `
+<div>
+  <div>
+    <table
+      class="gds-table"
+    >
+      <thead>
+        <tr>
+          <th>
+            <div
+              class="table--header-value"
+              tabindex="-1"
+            >
+              <span
+                class="table--header-value--title right"
+              >
+                Number
+              </span>
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          class=""
+          tabindex="-1"
+        >
+          <td
+            class=""
+          >
+            <div
+              class="gds-field-group"
+            >
+              <span
+                class="gds-amount-field amount-field-read-only table--cell-value--number-readonly"
+                id="number"
+                name="number"
+              >
+                1
+              </span>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;

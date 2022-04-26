@@ -1,0 +1,128 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RichTextCell component RichTextCell handles changes 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class=""
+        >
+          <div>
+            {"dataTestId":"DATA-TEST-ID","inputClassName":"gds-typography","inputValue":"text","name":"data","readOnly":false}
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`RichTextCell component RichTextCell handles changes 2`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class=""
+        >
+          <div>
+            {"dataTestId":"DATA-TEST-ID","inputClassName":"gds-typography","inputValue":"text","name":"data","readOnly":false}
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`RichTextCell component RichTextCell renders 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class=""
+        >
+          <div>
+            {"inputClassName":"gds-typography","inputValue":"text 1","name":"data","readOnly":true}
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`RichTextCell component RichTextCell renders cell editing with no row input 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class=""
+        >
+          <div>
+            {"inputClassName":"gds-typography","name":"data","readOnly":false}
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`RichTextCell component RichTextCell renders hidden 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class=""
+          style="display: none;"
+        >
+          <div>
+            {"inputClassName":"gds-typography","inputValue":"text 1","name":"data","readOnly":true}
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`RichTextCell component RichTextCell renders row editing with no row input 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class=""
+        >
+          <div>
+            {"inputClassName":"gds-typography","name":"data","readOnly":false}
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`RichTextCell component RichTextCell renders with forced value 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class=""
+        >
+          <div>
+            {"inputClassName":"gds-typography","inputValue":"text 2","name":"data","readOnly":true}
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;

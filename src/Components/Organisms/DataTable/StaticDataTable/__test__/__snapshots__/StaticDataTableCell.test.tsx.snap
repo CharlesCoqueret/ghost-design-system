@@ -1,0 +1,684 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StaticDataTableCell component StaticDataTableCell renders with amount 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class=""
+        >
+          <div
+            class="gds-field-group"
+          >
+            <span
+              class="gds-amount-field amount-field-read-only table--cell-value--amount-readonly"
+              id="amount"
+              name="amount"
+            >
+              1
+            </span>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`StaticDataTableCell component StaticDataTableCell renders with amount and data test id 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class=""
+        >
+          <div
+            class="gds-field-group"
+          >
+            <span
+              class="gds-amount-field amount-field-read-only table--cell-value--amount-readonly"
+              id="amount"
+              name="amount"
+            >
+              1
+            </span>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`StaticDataTableCell component StaticDataTableCell renders with badge 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class=""
+        >
+          <span
+            class="gds-badge secondary table--cell--value--badge-no-margin"
+          >
+            Badge
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`StaticDataTableCell component StaticDataTableCell renders with button 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class=""
+        >
+          <div
+            class="table--cell--value--button"
+          >
+            <button
+              class="gds-button-content"
+              color="reversed"
+              tabindex="0"
+              type="button"
+            >
+              <div
+                class="button-icon-container"
+              >
+                <i
+                  class="button-icon icon"
+                  icon="fal,cog"
+                />
+              </div>
+            </button>
+            <div>
+              label
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`StaticDataTableCell component StaticDataTableCell renders with checkbox 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class="table--cell--checkbox"
+        >
+          <div
+            class="gds-field-group"
+          >
+            <div
+              class="field gds-checkbox-container input-checkbox-field gds-typography"
+            >
+              <label
+                class="input-checkbox-field-read-only input-checkbox-field-checked"
+                for="checkbox-1"
+                tabindex="-1"
+              >
+                <div
+                  aria-checked="true"
+                  aria-label="label"
+                  class="checkbox-marker"
+                  id="checkbox-1"
+                  role="checkbox"
+                >
+                  <i
+                    class="icon"
+                    icon="fas,square-check"
+                  />
+                </div>
+                label
+              </label>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`StaticDataTableCell component StaticDataTableCell renders with code 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class="table--cell--code"
+        >
+          <div
+            class="gds-field-group"
+          >
+            <div
+              class="field input-text-field-read-only gds-typography"
+            >
+              <span
+                class="gds-typography"
+              >
+                code
+              </span>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`StaticDataTableCell component StaticDataTableCell renders with custom 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class=""
+        >
+          <span
+            class="gds-typography"
+          >
+            {"inputValue":"custom","readOnly":true}
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`StaticDataTableCell component StaticDataTableCell renders with date 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class=""
+        >
+          <div
+            class="gds-field-group"
+          >
+            <div
+              class="field input-date-picker-field table--cell-value--date-readonly"
+            >
+              <div
+                class="react-datepicker-wrapper"
+              >
+                <div
+                  class="react-datepicker__input-container"
+                >
+                  <input
+                    autocomplete="off"
+                    class="input-date-picker-input-read-only"
+                    name="date"
+                    placeholder="-"
+                    readonly=""
+                    tabindex="-1"
+                    type="text"
+                    value="Apr 22, 2022"
+                  />
+                </div>
+              </div>
+              <div />
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`StaticDataTableCell component StaticDataTableCell renders with description 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class="table--cell--code"
+        >
+          Description
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`StaticDataTableCell component StaticDataTableCell renders with dynamicsearch 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class=""
+        >
+          <div
+            class="gds-field-group"
+          >
+            <div
+              class="field gds-select-container input-select-field-read-only input-select-field"
+              data-testid="DATA-TEST-ID-Dynamic search-0"
+            >
+              <span
+                class="gds-typography"
+              >
+                label
+              </span>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`StaticDataTableCell component StaticDataTableCell renders with file 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class="table--cell--code"
+        >
+          <div
+            class="gds-field-group"
+          >
+            <div
+              class="field gds-file-input-container gds-typography"
+            >
+              <div
+                class="droparea readonly"
+              >
+                <label
+                  class="label"
+                >
+                  Click or drag file to upload
+                  <input
+                    accept="*/*"
+                    class="input"
+                    multiple=""
+                    readonly=""
+                    tabindex="-1"
+                    type="file"
+                    value=""
+                  />
+                </label>
+              </div>
+              <div
+                class="gallery"
+              >
+                <div
+                  class="item-container error"
+                >
+                  <div
+                    class="left"
+                  >
+                    <div
+                      class="paperclip-icon"
+                    >
+                      <i
+                        class="icon"
+                        icon="fal,exclamation-triangle"
+                      />
+                    </div>
+                    <div
+                      class="name"
+                      tabindex="-1"
+                    >
+                      filename.png
+                       (1.21 kB)
+                    </div>
+                  </div>
+                  <div
+                    class="right"
+                  />
+                </div>
+                <div>
+                  Error message
+                </div>
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`StaticDataTableCell component StaticDataTableCell renders with multiselect 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class=""
+        >
+          <div
+            class="gds-field-group"
+          >
+            <div
+              class="field gds-select-container input-select-field-read-only input-select-field"
+            >
+              <span
+                class="gds-typography"
+              >
+                Label 1
+              </span>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`StaticDataTableCell component StaticDataTableCell renders with number 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class=""
+        >
+          <div
+            class="gds-field-group"
+          >
+            <span
+              class="gds-amount-field amount-field-read-only table--cell-value--number-readonly"
+              id="number"
+              name="number"
+            >
+              1
+            </span>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`StaticDataTableCell component StaticDataTableCell renders with percentage 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class=""
+        >
+          <div
+            class="gds-field-group"
+          >
+            <span
+              class="gds-amount-field amount-field-read-only table--cell-value--percentage-readonly"
+              id="percentage"
+              name="percentage"
+            >
+              1 %
+            </span>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`StaticDataTableCell component StaticDataTableCell renders with section 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class=""
+        >
+          section
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`StaticDataTableCell component StaticDataTableCell renders with switch 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class="table--cell--checkbox"
+        >
+          <div
+            class="gds-field-group"
+          >
+            <div
+              class="field gds-switch-container input-switch-field gds-typography"
+            >
+              <label
+                class="input-switch-field-read-only input-switch-field-checked"
+                for="switch-2"
+                tabindex="-1"
+              >
+                <div
+                  class="switch-marker"
+                >
+                  <input
+                    aria-hidden="true"
+                    checked=""
+                    readonly=""
+                    type="checkbox"
+                  />
+                  <span
+                    aria-checked="true"
+                    aria-label="Label"
+                    class="silver"
+                    id="switch-2"
+                    role="checkbox"
+                  />
+                </div>
+                Label
+              </label>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`StaticDataTableCell component StaticDataTableCell renders with table 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class=""
+        >
+          <table
+            class="gds-table"
+          >
+            <thead>
+              <tr>
+                <th>
+                  <div
+                    class="table--header-value"
+                    tabindex="-1"
+                  >
+                    <span
+                      class="table--header-value--title right"
+                    >
+                      Number
+                    </span>
+                  </div>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr
+                class=""
+                tabindex="-1"
+              >
+                <td
+                  class=""
+                >
+                  <div
+                    class="gds-field-group"
+                  >
+                    <span
+                      class="gds-amount-field amount-field-read-only table--cell-value--number-readonly"
+                      id="number"
+                      name="number"
+                    >
+                      1
+                    </span>
+                  </div>
+                </td>
+              </tr>
+              <tr
+                class=""
+                tabindex="-1"
+              >
+                <td
+                  class=""
+                >
+                  <div
+                    class="gds-field-group"
+                  >
+                    <span
+                      class="gds-amount-field amount-field-read-only table--cell-value--number-readonly"
+                      id="number"
+                      name="number"
+                    >
+                      2
+                    </span>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`StaticDataTableCell component StaticDataTableCell renders with text 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class=""
+        >
+          <div
+            class="gds-field-group"
+          >
+            <div
+              class="field input-text-field-read-only gds-typography"
+            >
+              <span
+                class="gds-typography"
+              >
+                text
+              </span>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`StaticDataTableCell component StaticDataTableCell renders with textarea 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class=""
+        >
+          <div
+            class="gds-field-group"
+          >
+            <div
+              class="field gds-input-textarea-parent"
+            >
+              <textarea
+                class="input-textarea-field-read-only gds-typography"
+                id="textarea"
+                name="textarea"
+                readonly=""
+                rows="1"
+                style="height: 0px;"
+              >
+                textarea
+              </textarea>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`StaticDataTableCell component StaticDataTableCell renders with year 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class=""
+        >
+          <div
+            class="gds-field-group"
+          >
+            <div
+              class="input-year-picker-field table--cell-value--date-readonly field"
+            >
+              <div
+                class="react-datepicker-wrapper"
+              >
+                <div
+                  class="react-datepicker__input-container"
+                >
+                  <input
+                    autocomplete="off"
+                    class="field input-year-picker-input-read-only"
+                    name="year"
+                    placeholder="-"
+                    readonly=""
+                    tabindex="-1"
+                    type="text"
+                    value="2022"
+                  />
+                </div>
+              </div>
+              <div />
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;

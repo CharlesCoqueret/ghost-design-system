@@ -24,7 +24,7 @@ export const customStyles = (props: ICustomStylesProps = {}): StylesConfig<IOpti
 
   return {
     control: (provided, state) => {
-      let border = provided.border;
+      let border = `1px solid ${optionFocusColor}`;
       let hover = { border: `1px solid ${controlFocusColor}` };
 
       if (state.isFocused) {

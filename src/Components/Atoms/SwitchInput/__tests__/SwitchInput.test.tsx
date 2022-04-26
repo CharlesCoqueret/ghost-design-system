@@ -26,9 +26,9 @@ describe('SwitchInput Component', () => {
   it('SwitchInput renders triggers onChange', () => {
     const onChangeMock = jest.fn();
 
-    render(<SwitchInput onChange={onChangeMock} options={options} />);
+    render(<SwitchInput dataTestId='DATA-TEST-ID' onChange={onChangeMock} options={options} />);
 
-    const firstSwitch = screen.getByTestId(options[0].value);
+    const firstSwitch = screen.getByTestId('DATA-TEST-ID-0');
 
     userEvent.click(firstSwitch);
     expect(onChangeMock).toBeCalledTimes(1);
@@ -73,9 +73,9 @@ describe('SwitchInput Component', () => {
   it('SwitchInput renders does not trigger onChange when disabled', () => {
     const onChangeMock = jest.fn();
 
-    render(<SwitchInput onChange={onChangeMock} disabled options={options} />);
+    render(<SwitchInput dataTestId='DATA-TEST-ID' onChange={onChangeMock} disabled options={options} />);
 
-    const firstSwitch = screen.getByTestId(options[0].value);
+    const firstSwitch = screen.getByTestId('DATA-TEST-ID-0');
 
     userEvent.click(firstSwitch);
     expect(onChangeMock).toBeCalledTimes(0);
@@ -87,9 +87,9 @@ describe('SwitchInput Component', () => {
   it('SwitchInput renders does not trigger onChange when readOnly', () => {
     const onChangeMock = jest.fn();
 
-    render(<SwitchInput onChange={onChangeMock} readOnly options={options} />);
+    render(<SwitchInput dataTestId='DATA-TEST-ID' onChange={onChangeMock} readOnly options={options} />);
 
-    const firstSwitch = screen.getByTestId(options[0].value);
+    const firstSwitch = screen.getByTestId('DATA-TEST-ID-0');
 
     userEvent.click(firstSwitch);
     expect(onChangeMock).toBeCalledTimes(0);

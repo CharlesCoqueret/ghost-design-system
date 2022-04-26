@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import FileGallery from '../FileGallery';
@@ -15,11 +15,11 @@ describe('FileGallery Component', () => {
     });
 
     const file = {
-      uid: '1',
       name: 'NAME',
       size: 1234,
-      type: 'TYPE',
       status: FileStatusEnum.DONE,
+      type: 'TYPE',
+      uid: '1',
     };
 
     const { container } = render(
@@ -43,6 +43,10 @@ describe('FileGallery Component', () => {
 
     userEvent.click(deleteButton);
 
+    const confirmButton = screen.getByTestId('TEST-ID-confirm');
+
+    userEvent.click(confirmButton);
+
     expect(updateFileDeleteMock).toBeCalledTimes(1);
     expect(updateFileDeleteMock).toBeCalledWith(file);
   });
@@ -56,12 +60,12 @@ describe('FileGallery Component', () => {
     });
 
     const file = {
-      uid: '1',
+      error: 'ERROR',
       name: 'NAME',
       size: 1234,
-      type: 'TYPE',
       status: FileStatusEnum.ERROR,
-      error: 'ERROR',
+      type: 'TYPE',
+      uid: '1',
     };
 
     const { container } = render(
@@ -88,11 +92,11 @@ describe('FileGallery Component', () => {
     const updateFileDownloadMock = jest.fn();
 
     const file = {
-      uid: '1',
       name: 'NAME',
       size: 1234,
-      type: 'TYPE',
       status: FileStatusEnum.UPLOADING,
+      type: 'TYPE',
+      uid: '1',
     };
 
     const { container } = render(
@@ -113,11 +117,11 @@ describe('FileGallery Component', () => {
     const updateFileDownloadMock = jest.fn();
 
     const file = {
-      uid: '1',
       name: 'NAME',
       size: 1234,
-      type: 'TYPE',
       status: FileStatusEnum.UPLOADING,
+      type: 'TYPE',
+      uid: '1',
     };
 
     const { container } = render(
@@ -139,11 +143,11 @@ describe('FileGallery Component', () => {
     const updateFileDownloadMock = jest.fn();
 
     const file = {
-      uid: '1',
       name: 'NAME',
       size: 1234,
-      type: 'TYPE',
       status: FileStatusEnum.DELETING,
+      type: 'TYPE',
+      uid: '1',
     };
 
     const { container } = render(
@@ -158,21 +162,88 @@ describe('FileGallery Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('FileGallery renders without datatestid', () => {
+  it('FileGallery handles download without datatestid', async () => {
     const updateFileDeleteMock = jest.fn();
-    const updateFileDownloadMock = jest.fn();
+    const updateFileDownloadMock = jest.fn().mockImplementation(async () => {
+      return Promise.resolve();
+    });
 
     const file = {
-      uid: '1',
       name: 'NAME',
       size: 1234,
-      type: 'TYPE',
       status: FileStatusEnum.DONE,
+      type: 'TYPE',
+      uid: '1',
     };
 
     const { container } = render(
       <FileGallery file={file} updateFileDelete={updateFileDeleteMock} updateFileDownload={updateFileDownloadMock} />,
     );
+    expect(container).toMatchSnapshot();
+
+    // Select download link
+    userEvent.tab();
+    userEvent.keyboard('{Enter}');
+
+    expect(container).toMatchSnapshot();
+    expect(updateFileDownloadMock).toBeCalledTimes(1);
+
+    // Give time to updateFileDownloadMock to resolve
+    await waitFor(async () => {
+      await Promise.resolve();
+    });
+  });
+
+  it('FileGallery handles delete without datatestid', async () => {
+    const updateFileDeleteMock = jest.fn().mockImplementation(async () => {
+      return Promise.resolve();
+    });
+    const updateFileDownloadMock = jest.fn();
+
+    const file = {
+      error: 'ERROR',
+      name: 'NAME',
+      size: 1234,
+      status: FileStatusEnum.ERROR,
+      type: 'TYPE',
+      uid: '1',
+    };
+
+    const { container } = render(
+      <FileGallery file={file} updateFileDelete={updateFileDeleteMock} updateFileDownload={updateFileDownloadMock} />,
+    );
+
+    expect(container).toMatchSnapshot();
+
+    // Select first delete button
+    userEvent.tab();
+    userEvent.keyboard('{Enter}');
+
+    expect(container).toMatchSnapshot();
+    expect(updateFileDeleteMock).toBeCalledTimes(1);
+
+    // Give time to updateFileDeleteMock to resolve
+    await waitFor(async () => {
+      await Promise.resolve();
+    });
+  });
+
+  it('FileGallery handles uploading state without datatestid', async () => {
+    const updateFileDeleteMock = jest.fn();
+    const updateFileDownloadMock = jest.fn();
+
+    const file = {
+      name: 'NAME',
+      size: 1234,
+      status: FileStatusEnum.UPLOADING,
+      type: 'TYPE',
+      uid: '1',
+    };
+
+    const { container } = render(
+      <FileGallery file={file} updateFileDelete={updateFileDeleteMock} updateFileDownload={updateFileDownloadMock} />,
+    );
+
     expect(container).toMatchSnapshot();
   });
 });

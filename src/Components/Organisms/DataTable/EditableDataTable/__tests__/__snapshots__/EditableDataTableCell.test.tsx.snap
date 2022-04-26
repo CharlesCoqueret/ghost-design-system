@@ -1,0 +1,932 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EditableDataTableCell component EditableDataTableCell renders with amount and data test id 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class=""
+        >
+          <div
+            class="gds-field-group"
+          >
+            <input
+              class="gds-amount-field"
+              inputmode="numeric"
+              name="amount"
+              type="text"
+              value="1"
+            />
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`EditableDataTableCell component EditableDataTableCell renders with badge 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class=""
+        >
+          <div
+            class="gds-field-group"
+          >
+            <div
+              class="field gds-select-container input-select-field input-select-field"
+            >
+              <div
+                class=" css-1959ul7-container"
+              >
+                <span
+                  class="css-1f43avz-a11yText-A11yText"
+                  id="react-select-2-live-region"
+                />
+                <span
+                  aria-atomic="false"
+                  aria-live="polite"
+                  aria-relevant="additions text"
+                  class="css-1f43avz-a11yText-A11yText"
+                />
+                <div
+                  class=" css-1l9db9l-control"
+                >
+                  <div
+                    class=" css-9plg90-ValueContainer"
+                  >
+                    <div
+                      class=" css-qc6sy-singleValue"
+                    >
+                      Badge
+                    </div>
+                    <div
+                      class=" css-6j8wv5-Input"
+                      data-value=""
+                    >
+                      <input
+                        aria-autocomplete="list"
+                        aria-expanded="false"
+                        aria-haspopup="true"
+                        autocapitalize="none"
+                        autocomplete="off"
+                        autocorrect="off"
+                        class=""
+                        id="react-select-2-input"
+                        role="combobox"
+                        spellcheck="false"
+                        style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+                        tabindex="0"
+                        type="text"
+                        value=""
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class=" css-1hb7zxy-IndicatorsContainer"
+                  >
+                    <div
+                      aria-hidden="true"
+                    >
+                      <i
+                        class="dynamic-search-icon icon"
+                        icon="fal,xmark"
+                      />
+                    </div>
+                    <span
+                      class=" css-1okebmr-indicatorSeparator"
+                    />
+                    <div
+                      aria-hidden="true"
+                    >
+                      <i
+                        class="dynamic-search-icon icon"
+                        icon="fal,chevron-down"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <input
+                  name="Badge"
+                  type="hidden"
+                  value="badge"
+                />
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`EditableDataTableCell component EditableDataTableCell renders with button 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class=""
+        >
+          <div
+            class="table--cell--value--button"
+          >
+            <button
+              class="gds-button-content"
+              color="reversed"
+              tabindex="0"
+              type="button"
+            >
+              <div
+                class="button-icon-container"
+              >
+                <i
+                  class="button-icon icon"
+                  icon="fal,cog"
+                />
+              </div>
+            </button>
+            <div>
+              label
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`EditableDataTableCell component EditableDataTableCell renders with checkbox 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class="table--cell--checkbox"
+        >
+          <div
+            class="gds-field-group"
+          >
+            <div
+              class="field gds-checkbox-container input-checkbox-field gds-typography"
+            >
+              <label
+                class="input-checkbox-field-checked"
+                for="checkbox-1"
+                tabindex="0"
+              >
+                <div
+                  aria-checked="true"
+                  aria-label="Label"
+                  class="checkbox-marker"
+                  id="checkbox-1"
+                  role="checkbox"
+                >
+                  <i
+                    class="icon"
+                    icon="fas,square-check"
+                  />
+                </div>
+                Label
+              </label>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`EditableDataTableCell component EditableDataTableCell renders with code 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class="table--cell--code"
+        >
+          <div
+            class="gds-field-group"
+          >
+            <div
+              class="field input-text-field-read-only gds-typography"
+            >
+              <span
+                class="gds-typography"
+              >
+                code
+              </span>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`EditableDataTableCell component EditableDataTableCell renders with custom 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class=""
+        >
+          <input
+            data-testid="DATA-TEST-ID"
+            type="text"
+            value="custom"
+          />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`EditableDataTableCell component EditableDataTableCell renders with date 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class=""
+        >
+          <div
+            class="gds-field-group"
+          >
+            <div
+              class="field input-date-picker-field"
+            >
+              <div
+                class="react-datepicker-wrapper"
+              >
+                <div
+                  class="react-datepicker__input-container"
+                >
+                  <input
+                    autocomplete="off"
+                    class="input-date-picker-input"
+                    name="date"
+                    placeholder="MMM DD, YYYY"
+                    tabindex="0"
+                    type="text"
+                    value="Apr 22, 2022"
+                  />
+                  <button
+                    aria-label="Close"
+                    class="react-datepicker__close-icon"
+                    tabindex="-1"
+                    type="button"
+                  />
+                </div>
+              </div>
+              <div />
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`EditableDataTableCell component EditableDataTableCell renders with description 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class="table--cell--code"
+        >
+          Description
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`EditableDataTableCell component EditableDataTableCell renders with dynamicsearch 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class=""
+        >
+          <div
+            class="gds-field-group"
+          >
+            <div
+              class="field gds-select-container input-select-field input-select-field"
+            >
+              <div
+                class=" css-1959ul7-container"
+              >
+                <span
+                  class="css-1f43avz-a11yText-A11yText"
+                  id="react-select-3-live-region"
+                />
+                <span
+                  aria-atomic="false"
+                  aria-live="polite"
+                  aria-relevant="additions text"
+                  class="css-1f43avz-a11yText-A11yText"
+                />
+                <div
+                  class=" css-1l9db9l-control"
+                >
+                  <div
+                    class=" css-9plg90-ValueContainer"
+                  >
+                    <div
+                      class=" css-qc6sy-singleValue"
+                    >
+                      label
+                    </div>
+                    <div
+                      class=" css-6j8wv5-Input"
+                      data-value=""
+                    >
+                      <input
+                        aria-autocomplete="list"
+                        aria-expanded="false"
+                        aria-haspopup="true"
+                        autocapitalize="none"
+                        autocomplete="off"
+                        autocorrect="off"
+                        class=""
+                        id="DATA-TEST-ID-Dynamic search-0"
+                        role="combobox"
+                        spellcheck="false"
+                        style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+                        tabindex="0"
+                        type="text"
+                        value=""
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class=" css-1hb7zxy-IndicatorsContainer"
+                  >
+                    <div
+                      aria-hidden="true"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="icon gds-loader size-1x dynamic-search-spinner"
+                        data-testid="DATA-TEST-ID-Dynamic search-0-spinner"
+                        focusable="false"
+                        height="50"
+                        icon="fal,spinner"
+                        preserveAspectRatio="xMidYMid"
+                        role="img"
+                        style="background: transparent;"
+                        viewBox="0 0 100 100"
+                        width="50"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <circle
+                          cx="50"
+                          cy="50"
+                          fill="transparent"
+                          r="30"
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-width="10"
+                        >
+                          <animatetransform
+                            attributeName="transform"
+                            dur="2s"
+                            keyTimes="0;0.5;1"
+                            repeatCount="indefinite"
+                            type="rotate"
+                            values="0 50 50;180 50 50;720 50 50"
+                          />
+                          <animate
+                            attributeName="stroke-dasharray"
+                            dur="2s"
+                            keyTimes="0;0.5;1"
+                            repeatCount="indefinite"
+                            values="20 150; 150 20; 20 150"
+                          />
+                        </circle>
+                      </svg>
+                    </div>
+                    <span
+                      class=" css-1okebmr-indicatorSeparator"
+                    />
+                    <div
+                      aria-hidden="true"
+                    >
+                      <i
+                        class="dynamic-search-icon icon"
+                        data-testid="DATA-TEST-ID-Dynamic search-0-magnifier"
+                        icon="fal,magnifying-glass"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <input
+                  name="Dynamic search"
+                  type="hidden"
+                  value="value"
+                />
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`EditableDataTableCell component EditableDataTableCell renders with file 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class="table--cell--code"
+        >
+          <div
+            class="gds-field-group"
+          >
+            <div
+              class="field gds-file-input-container gds-typography"
+            >
+              <div
+                class="droparea"
+              >
+                <label
+                  class="label"
+                >
+                  Click or drag file to upload
+                  <input
+                    accept="*/*"
+                    class="input"
+                    multiple=""
+                    tabindex="-1"
+                    type="file"
+                    value=""
+                  />
+                </label>
+              </div>
+              <div
+                class="gallery"
+              >
+                <div
+                  class="item-container error"
+                >
+                  <div
+                    class="left"
+                  >
+                    <div
+                      class="paperclip-icon"
+                    >
+                      <i
+                        class="icon"
+                        icon="fal,exclamation-triangle"
+                      />
+                    </div>
+                    <div
+                      class="name"
+                      tabindex="-1"
+                    >
+                      filename.png
+                       (1.21 kB)
+                    </div>
+                  </div>
+                  <div
+                    class="right"
+                  >
+                    <button
+                      class="gds-button-content delete-icon"
+                      color="reversed"
+                      tabindex="0"
+                      type="button"
+                    >
+                      <div
+                        class="button-icon-container"
+                      >
+                        <i
+                          class="button-icon icon"
+                          icon="fal,trash-alt"
+                        />
+                      </div>
+                    </button>
+                    <div>
+                      Delete
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  Error message
+                </div>
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`EditableDataTableCell component EditableDataTableCell renders with multiselect 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class=""
+        >
+          <div
+            class="gds-field-group"
+          >
+            <div
+              class="field gds-select-container input-select-field input-select-field"
+            >
+              <div
+                class=" css-1959ul7-container"
+              >
+                <span
+                  class="css-1f43avz-a11yText-A11yText"
+                  id="react-select-4-live-region"
+                />
+                <span
+                  aria-atomic="false"
+                  aria-live="polite"
+                  aria-relevant="additions text"
+                  class="css-1f43avz-a11yText-A11yText"
+                />
+                <div
+                  class=" css-1l9db9l-control"
+                >
+                  <div
+                    class=" css-1xxnwvf-ValueContainer"
+                  >
+                    numberOfItemLabel
+                    <div
+                      class=" css-g5g4gj-Input"
+                      data-value=""
+                    >
+                      <input
+                        aria-autocomplete="list"
+                        aria-expanded="false"
+                        aria-haspopup="true"
+                        autocapitalize="none"
+                        autocomplete="off"
+                        autocorrect="off"
+                        class=""
+                        id="react-select-4-input"
+                        role="combobox"
+                        spellcheck="false"
+                        style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+                        tabindex="0"
+                        type="text"
+                        value=""
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class=" css-1hb7zxy-IndicatorsContainer"
+                  >
+                    <div
+                      aria-hidden="true"
+                    >
+                      <i
+                        class="dynamic-search-icon icon"
+                        icon="fal,xmark"
+                      />
+                    </div>
+                    <span
+                      class=" css-1okebmr-indicatorSeparator"
+                    />
+                    <div
+                      aria-hidden="true"
+                    >
+                      <i
+                        class="dynamic-search-icon icon"
+                        icon="fal,chevron-down"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <input
+                    name="Multiselect"
+                    type="hidden"
+                    value="value1"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`EditableDataTableCell component EditableDataTableCell renders with number 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class=""
+        >
+          <div
+            class="gds-field-group"
+          >
+            <input
+              class="gds-amount-field"
+              inputmode="numeric"
+              name="number"
+              type="text"
+              value="1"
+            />
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`EditableDataTableCell component EditableDataTableCell renders with percentage 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class=""
+        >
+          <div
+            class="gds-field-group"
+          >
+            <input
+              class="gds-amount-field"
+              inputmode="numeric"
+              name="percentage"
+              type="text"
+              value="1 %"
+            />
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`EditableDataTableCell component EditableDataTableCell renders with section 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class=""
+        >
+          section
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`EditableDataTableCell component EditableDataTableCell renders with switch 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class="table--cell--checkbox"
+        >
+          <div
+            class="gds-field-group"
+          >
+            <div
+              class="field gds-switch-container input-switch-field gds-typography"
+            >
+              <label
+                class="input-switch-field-checked"
+                for="switch-2"
+                tabindex="0"
+              >
+                <div
+                  class="switch-marker"
+                >
+                  <input
+                    aria-hidden="true"
+                    checked=""
+                    readonly=""
+                    type="checkbox"
+                  />
+                  <span
+                    aria-checked="true"
+                    aria-label="Label"
+                    class="primary"
+                    id="switch-2"
+                    role="checkbox"
+                  />
+                </div>
+                Label
+              </label>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`EditableDataTableCell component EditableDataTableCell renders with table 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class=""
+        >
+          <table
+            class="gds-table"
+          >
+            <thead>
+              <tr>
+                <th>
+                  <div
+                    class="table--header-value"
+                    tabindex="-1"
+                  >
+                    <span
+                      class="table--header-value--title right"
+                    >
+                      Number
+                    </span>
+                  </div>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr
+                class=""
+                tabindex="-1"
+              >
+                <td
+                  class=""
+                >
+                  <div
+                    class="gds-field-group"
+                  >
+                    <span
+                      class="gds-amount-field amount-field-read-only table--cell-value--number-readonly"
+                      id="number"
+                      name="number"
+                    >
+                      1
+                    </span>
+                  </div>
+                </td>
+              </tr>
+              <tr
+                class=""
+                tabindex="-1"
+              >
+                <td
+                  class=""
+                >
+                  <div
+                    class="gds-field-group"
+                  >
+                    <span
+                      class="gds-amount-field amount-field-read-only table--cell-value--number-readonly"
+                      id="number"
+                      name="number"
+                    >
+                      2
+                    </span>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`EditableDataTableCell component EditableDataTableCell renders with text 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class=""
+        >
+          <div
+            class="gds-field-group"
+          >
+            <input
+              class="field gds-input-text-field gds-typography"
+              id="text"
+              name="text"
+              type="text"
+              value="text"
+            />
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`EditableDataTableCell component EditableDataTableCell renders with textarea 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class=""
+        >
+          <div
+            class="gds-field-group"
+          >
+            <div
+              class="field gds-input-textarea-parent"
+            >
+              <textarea
+                class="input-textarea-field gds-typography"
+                id="textarea"
+                name="textarea"
+                rows="1"
+                style="height: 0px;"
+              >
+                textarea
+              </textarea>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`EditableDataTableCell component EditableDataTableCell renders with year 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class=""
+        >
+          <div
+            class="gds-field-group"
+          >
+            <div
+              class="input-year-picker-field field"
+            >
+              <div
+                class="react-datepicker-wrapper"
+              >
+                <div
+                  class="react-datepicker__input-container"
+                >
+                  <input
+                    autocomplete="off"
+                    class="field input-year-picker-input"
+                    name="year"
+                    placeholder="YYYY"
+                    tabindex="0"
+                    type="text"
+                    value="2022"
+                  />
+                </div>
+              </div>
+              <div />
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
