@@ -151,6 +151,5 @@ describe('Global export test', () => {
     expect(Global.useOnClickOutside).toBeDefined();
     expect(Global.useOnEscapePressed).toBeDefined();
     expect(Global.useRunAfterUpdate).toBeDefined();
-    expect(Global.useWindowSize).toBeDefined();
   });
 });
