@@ -114,14 +114,12 @@ const RichTextInput = (props: IRichTextInputProps): ReactElement => {
       highlight_color: '<i class="fal fa-highlighter"></i>',
       horizontal_rule: '<i class="far fa-horizontal-rule"></i>',
       image: '<i class="far fa-image"></i>',
-      // indent/outdent might need to be swapped when https://github.com/JiHong88/SunEditor/issues/884 gets fixed
-      indent: '<i class="far fa-outdent"></i>',
+      indent: '<i class="far fa-indent"></i>',
       italic: '<i class="far fa-italic"></i>',
       link: '<i class="far fa-link"></i>',
       list_bullets: '<i class="fal fa-list-ul"></i>',
       list_number: '<i class="fal fa-list-ol"></i>',
-      // indent/outdent might need to be swapped when https://github.com/JiHong88/SunEditor/issues/884 gets fixed
-      outdent: '<i class="far fa-indent"></i>',
+      outdent: '<i class="far fa-outdent"></i>',
       reduction: '<i class="fa-light fa-arrows-to-line fa-rotate-90"></i>',
       strike: '<i class="far fa-strikethrough"></i>',
       table: '<i class="fal fa-table"></i>',
