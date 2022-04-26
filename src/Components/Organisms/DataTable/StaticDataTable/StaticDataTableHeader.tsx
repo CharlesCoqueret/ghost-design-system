@@ -82,7 +82,6 @@ const StaticDataTableHeader = <T,>(props: IStaticDataTableHeaderProps<T>): React
                         }
                       : undefined
                   }
-                  // TODO handle keypress to run sort
                   tabIndex={column.sorter && column.type !== ColumnType.BUTTON ? 0 : -1}>
                   <span
                     className={classnames('table--header-value--title', {

@@ -54,7 +54,7 @@ exports[`EditableDataTableCell component EditableDataTableCell renders with badg
                   class="css-1f43avz-a11yText-A11yText"
                 />
                 <div
-                  class=" css-154lpzf-control"
+                  class=" css-1l9db9l-control"
                 >
                   <div
                     class=" css-9plg90-ValueContainer"
@@ -240,15 +240,11 @@ exports[`EditableDataTableCell component EditableDataTableCell renders with cust
         <td
           class=""
         >
-          <span
-            class="gds-typography"
-          >
-            <input
-              data-testid="DATA-TEST-ID"
-              type="text"
-              value="custom"
-            />
-          </span>
+          <input
+            data-testid="DATA-TEST-ID"
+            type="text"
+            value="custom"
+          />
         </td>
       </tr>
     </tbody>
@@ -303,6 +299,22 @@ exports[`EditableDataTableCell component EditableDataTableCell renders with date
 </div>
 `;
 
+exports[`EditableDataTableCell component EditableDataTableCell renders with description 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class="table--cell--code"
+        >
+          Description
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
 exports[`EditableDataTableCell component EditableDataTableCell renders with dynamicsearch 1`] = `
 <div>
   <table>
@@ -331,7 +343,7 @@ exports[`EditableDataTableCell component EditableDataTableCell renders with dyna
                   class="css-1f43avz-a11yText-A11yText"
                 />
                 <div
-                  class=" css-154lpzf-control"
+                  class=" css-1l9db9l-control"
                 >
                   <div
                     class=" css-9plg90-ValueContainer"
@@ -439,6 +451,195 @@ exports[`EditableDataTableCell component EditableDataTableCell renders with dyna
 </div>
 `;
 
+exports[`EditableDataTableCell component EditableDataTableCell renders with file 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class="table--cell--code"
+        >
+          <div
+            class="gds-field-group"
+          >
+            <div
+              class="field gds-file-input-container gds-typography"
+            >
+              <div
+                class="droparea"
+              >
+                <label
+                  class="label"
+                >
+                  Click or drag file to upload
+                  <input
+                    accept="*/*"
+                    class="input"
+                    multiple=""
+                    tabindex="-1"
+                    type="file"
+                    value=""
+                  />
+                </label>
+              </div>
+              <div
+                class="gallery"
+              >
+                <div
+                  class="item-container error"
+                >
+                  <div
+                    class="left"
+                  >
+                    <div
+                      class="paperclip-icon"
+                    >
+                      <i
+                        class="icon"
+                        icon="fal,exclamation-triangle"
+                      />
+                    </div>
+                    <div
+                      class="name"
+                      tabindex="-1"
+                    >
+                      filename.png
+                       (1.21 kB)
+                    </div>
+                  </div>
+                  <div
+                    class="right"
+                  >
+                    <button
+                      class="gds-button-content delete-icon"
+                      color="reversed"
+                      tabindex="0"
+                      type="button"
+                    >
+                      <div
+                        class="button-icon-container"
+                      >
+                        <i
+                          class="button-icon icon"
+                          icon="fal,trash-alt"
+                        />
+                      </div>
+                    </button>
+                    <div>
+                      Delete
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  Error message
+                </div>
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`EditableDataTableCell component EditableDataTableCell renders with multiselect 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class=""
+        >
+          <div
+            class="gds-field-group"
+          >
+            <div
+              class="field gds-select-container input-select-field input-select-field"
+            >
+              <div
+                class=" css-1959ul7-container"
+              >
+                <span
+                  class="css-1f43avz-a11yText-A11yText"
+                  id="react-select-4-live-region"
+                />
+                <span
+                  aria-atomic="false"
+                  aria-live="polite"
+                  aria-relevant="additions text"
+                  class="css-1f43avz-a11yText-A11yText"
+                />
+                <div
+                  class=" css-1l9db9l-control"
+                >
+                  <div
+                    class=" css-1xxnwvf-ValueContainer"
+                  >
+                    numberOfItemLabel
+                    <div
+                      class=" css-g5g4gj-Input"
+                      data-value=""
+                    >
+                      <input
+                        aria-autocomplete="list"
+                        aria-expanded="false"
+                        aria-haspopup="true"
+                        autocapitalize="none"
+                        autocomplete="off"
+                        autocorrect="off"
+                        class=""
+                        id="react-select-4-input"
+                        role="combobox"
+                        spellcheck="false"
+                        style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+                        tabindex="0"
+                        type="text"
+                        value=""
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class=" css-1hb7zxy-IndicatorsContainer"
+                  >
+                    <div
+                      aria-hidden="true"
+                    >
+                      <i
+                        class="dynamic-search-icon icon"
+                        icon="fal,xmark"
+                      />
+                    </div>
+                    <span
+                      class=" css-1okebmr-indicatorSeparator"
+                    />
+                    <div
+                      aria-hidden="true"
+                    >
+                      <i
+                        class="dynamic-search-icon icon"
+                        icon="fal,chevron-down"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <input
+                    name="Multiselect"
+                    type="hidden"
+                    value="value1"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
 exports[`EditableDataTableCell component EditableDataTableCell renders with number 1`] = `
 <div>
   <table>
@@ -491,6 +692,146 @@ exports[`EditableDataTableCell component EditableDataTableCell renders with perc
 </div>
 `;
 
+exports[`EditableDataTableCell component EditableDataTableCell renders with section 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class=""
+        >
+          section
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`EditableDataTableCell component EditableDataTableCell renders with switch 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class="table--cell--checkbox"
+        >
+          <div
+            class="gds-field-group"
+          >
+            <div
+              class="field gds-switch-container input-switch-field gds-typography"
+            >
+              <label
+                class="input-switch-field-checked"
+                for="switch-2"
+                tabindex="0"
+              >
+                <div
+                  class="switch-marker"
+                >
+                  <input
+                    aria-hidden="true"
+                    checked=""
+                    readonly=""
+                    type="checkbox"
+                  />
+                  <span
+                    aria-checked="true"
+                    aria-label="Label"
+                    class="primary"
+                    id="switch-2"
+                    role="checkbox"
+                  />
+                </div>
+                Label
+              </label>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`EditableDataTableCell component EditableDataTableCell renders with table 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class=""
+        >
+          <table
+            class="gds-table"
+          >
+            <thead>
+              <tr>
+                <th>
+                  <div
+                    class="table--header-value"
+                    tabindex="-1"
+                  >
+                    <span
+                      class="table--header-value--title right"
+                    >
+                      Number
+                    </span>
+                  </div>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr
+                class=""
+                tabindex="-1"
+              >
+                <td
+                  class=""
+                >
+                  <div
+                    class="gds-field-group"
+                  >
+                    <span
+                      class="gds-amount-field amount-field-read-only table--cell-value--number-readonly"
+                      id="number"
+                      name="number"
+                    >
+                      1
+                    </span>
+                  </div>
+                </td>
+              </tr>
+              <tr
+                class=""
+                tabindex="-1"
+              >
+                <td
+                  class=""
+                >
+                  <div
+                    class="gds-field-group"
+                  >
+                    <span
+                      class="gds-amount-field amount-field-read-only table--cell-value--number-readonly"
+                      id="number"
+                      name="number"
+                    >
+                      2
+                    </span>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
 exports[`EditableDataTableCell component EditableDataTableCell renders with text 1`] = `
 <div>
   <table>
@@ -517,7 +858,7 @@ exports[`EditableDataTableCell component EditableDataTableCell renders with text
 </div>
 `;
 
-exports[`EditableDataTableCell component EditableDataTableCell renders with text 2`] = `
+exports[`EditableDataTableCell component EditableDataTableCell renders with textarea 1`] = `
 <div>
   <table>
     <tbody>

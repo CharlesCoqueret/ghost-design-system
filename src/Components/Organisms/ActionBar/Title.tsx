@@ -38,7 +38,7 @@ const Title = (props: ITitleProps): ReactElement => {
     setCurrentInputStyle({
       display: 'flex',
       margin: 'auto',
-      width: `${spanRef?.current?.offsetWidth}px`,
+      width: `${spanRef.current?.offsetWidth}px`,
     });
   }, [spanRef]);
 

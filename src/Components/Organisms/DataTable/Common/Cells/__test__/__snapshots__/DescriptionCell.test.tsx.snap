@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DescriptionCell component DescriptionCell renders 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class="table--cell--code"
+        >
+          DESCRIPTION
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`DescriptionCell component DescriptionCell renders when hidden 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class="table--cell--code"
+          style="display: none;"
+        >
+          DESCRIPTION
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;

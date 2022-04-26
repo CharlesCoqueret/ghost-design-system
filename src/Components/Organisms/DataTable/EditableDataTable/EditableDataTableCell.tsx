@@ -8,9 +8,16 @@ import {
   CodeCell,
   CustomCell,
   DateCell,
+  DescriptionCell,
   DynamicSearchCell,
+  FileCell,
+  MultiSelectCell,
   NumberCell,
   PercentageCell,
+  RichTextCell,
+  SectionCell,
+  SwitchCell,
+  TableCell,
   TextAreaCell,
   TextCell,
   YearCell,
@@ -38,13 +45,13 @@ const EditableDataTableCell = <T,>(props: IEditableDataTableCellProps<T>): React
         <AmountCell<T>
           column={column}
           dataTestId={localDataTestId}
-          row={row}
+          editing={column.editable && editable}
           extra={extra}
-          rowIndex={rowIndex}
           onChange={(newValue) => {
             handleUpdateDataChange(rowIndex, column.dataIndex, newValue);
           }}
-          editing={column.editable && editable}
+          row={row}
+          rowIndex={rowIndex}
         />
       );
     }
@@ -53,49 +60,49 @@ const EditableDataTableCell = <T,>(props: IEditableDataTableCellProps<T>): React
         <BadgeCell<T>
           column={column}
           dataTestId={localDataTestId}
-          row={row}
+          editing={column.editable && editable}
           extra={extra}
-          rowIndex={rowIndex}
           onChange={(newValue) => {
             handleUpdateDataChange(rowIndex, column.dataIndex, newValue);
           }}
-          editing={column.editable && editable}
+          row={row}
+          rowIndex={rowIndex}
         />
       );
     }
     case ColumnType.BUTTON: {
-      return <ButtonCell<T> column={column} dataTestId={localDataTestId} row={row} extra={extra} rowIndex={rowIndex} />;
+      return <ButtonCell<T> column={column} dataTestId={localDataTestId} extra={extra} row={row} rowIndex={rowIndex} />;
     }
     case ColumnType.CHECKBOX: {
       return (
         <CheckboxCell<T>
           column={column}
           dataTestId={localDataTestId}
-          row={row}
+          editing={column.editable && editable}
           extra={extra}
-          rowIndex={rowIndex}
           onChange={(newValue) => {
             handleUpdateDataChange(rowIndex, column.dataIndex, newValue);
           }}
-          editing={column.editable && editable}
+          row={row}
+          rowIndex={rowIndex}
         />
       );
     }
     case ColumnType.CODE: {
-      return <CodeCell<T> column={column} dataTestId={localDataTestId} row={row} extra={extra} rowIndex={rowIndex} />;
+      return <CodeCell<T> column={column} dataTestId={localDataTestId} extra={extra} row={row} rowIndex={rowIndex} />;
     }
     case ColumnType.CUSTOM: {
       return (
         <CustomCell<T>
           column={column}
           dataTestId={localDataTestId}
-          row={row}
+          editing={column.editable && editable}
           extra={extra}
-          rowIndex={rowIndex}
           onChange={(newValue) => {
             handleUpdateDataChange(rowIndex, column.dataIndex, newValue);
           }}
-          editing={column.editable && editable}
+          row={row}
+          rowIndex={rowIndex}
         />
       );
     }
@@ -104,14 +111,19 @@ const EditableDataTableCell = <T,>(props: IEditableDataTableCellProps<T>): React
         <DateCell<T>
           column={column}
           dataTestId={localDataTestId}
-          row={row}
+          editing={column.editable && editable}
           extra={extra}
-          rowIndex={rowIndex}
           onChange={(newValue) => {
             handleUpdateDataChange(rowIndex, column.dataIndex, newValue);
           }}
-          editing={column.editable && editable}
+          row={row}
+          rowIndex={rowIndex}
         />
+      );
+    }
+    case ColumnType.DESCRIPTION: {
+      return (
+        <DescriptionCell<T> column={column} dataTestId={localDataTestId} extra={extra} row={row} rowIndex={rowIndex} />
       );
     }
     case ColumnType.DYNAMICSEARCH: {
@@ -119,13 +131,43 @@ const EditableDataTableCell = <T,>(props: IEditableDataTableCellProps<T>): React
         <DynamicSearchCell<T>
           column={column}
           dataTestId={localDataTestId}
-          row={row}
+          editing={column.editable && editable}
           extra={extra}
-          rowIndex={rowIndex}
           onChange={(newValue) => {
             handleUpdateDataChange(rowIndex, column.dataIndex, newValue);
           }}
+          row={row}
+          rowIndex={rowIndex}
+        />
+      );
+    }
+    case ColumnType.FILE: {
+      return (
+        <FileCell<T>
+          column={column}
+          dataTestId={localDataTestId}
           editing={column.editable && editable}
+          extra={extra}
+          onChange={(newValue) => {
+            handleUpdateDataChange(rowIndex, column.dataIndex, newValue);
+          }}
+          row={row}
+          rowIndex={rowIndex}
+        />
+      );
+    }
+    case ColumnType.MULTISELECT: {
+      return (
+        <MultiSelectCell<T>
+          column={column}
+          dataTestId={localDataTestId}
+          editing={column.editable && editable}
+          extra={extra}
+          onChange={(newValue) => {
+            handleUpdateDataChange(rowIndex, column.dataIndex, newValue);
+          }}
+          row={row}
+          rowIndex={rowIndex}
         />
       );
     }
@@ -134,13 +176,13 @@ const EditableDataTableCell = <T,>(props: IEditableDataTableCellProps<T>): React
         <NumberCell<T>
           column={column}
           dataTestId={localDataTestId}
-          row={row}
+          editing={column.editable && editable}
           extra={extra}
-          rowIndex={rowIndex}
           onChange={(newValue) => {
             handleUpdateDataChange(rowIndex, column.dataIndex, newValue);
           }}
-          editing={column.editable && editable}
+          row={row}
+          rowIndex={rowIndex}
         />
       );
     }
@@ -149,28 +191,66 @@ const EditableDataTableCell = <T,>(props: IEditableDataTableCellProps<T>): React
         <PercentageCell<T>
           column={column}
           dataTestId={localDataTestId}
-          row={row}
+          editing={column.editable && editable}
           extra={extra}
-          rowIndex={rowIndex}
           onChange={(newValue) => {
             handleUpdateDataChange(rowIndex, column.dataIndex, newValue);
           }}
-          editing={column.editable && editable}
+          row={row}
+          rowIndex={rowIndex}
         />
       );
+    }
+    case ColumnType.RICHTEXT: {
+      return (
+        <RichTextCell<T>
+          column={column}
+          dataTestId={localDataTestId}
+          editing={column.editable && editable}
+          extra={extra}
+          onChange={(newValue) => {
+            handleUpdateDataChange(rowIndex, column.dataIndex, newValue);
+          }}
+          row={row}
+          rowIndex={rowIndex}
+        />
+      );
+    }
+    case ColumnType.SECTION: {
+      return (
+        <SectionCell<T> column={column} dataTestId={localDataTestId} extra={extra} row={row} rowIndex={rowIndex} />
+      );
+    }
+    case ColumnType.SWITCH: {
+      return (
+        <SwitchCell<T>
+          column={column}
+          dataTestId={localDataTestId}
+          editing={column.editable && editable}
+          extra={extra}
+          onChange={(newValue) => {
+            handleUpdateDataChange(rowIndex, column.dataIndex, newValue);
+          }}
+          row={row}
+          rowIndex={rowIndex}
+        />
+      );
+    }
+    case ColumnType.TABLE: {
+      return <TableCell<T> column={column} dataTestId={localDataTestId} extra={extra} row={row} rowIndex={rowIndex} />;
     }
     case ColumnType.TEXT: {
       return (
         <TextCell<T>
           column={column}
           dataTestId={localDataTestId}
-          row={row}
+          editing={column.editable && editable}
           extra={extra}
-          rowIndex={rowIndex}
           onChange={(newValue) => {
             handleUpdateDataChange(rowIndex, column.dataIndex, newValue);
           }}
-          editing={column.editable && editable}
+          row={row}
+          rowIndex={rowIndex}
         />
       );
     }
@@ -179,13 +259,13 @@ const EditableDataTableCell = <T,>(props: IEditableDataTableCellProps<T>): React
         <TextAreaCell<T>
           column={column}
           dataTestId={localDataTestId}
-          row={row}
+          editing={column.editable && editable}
           extra={extra}
-          rowIndex={rowIndex}
           onChange={(newValue) => {
             handleUpdateDataChange(rowIndex, column.dataIndex, newValue);
           }}
-          editing={column.editable && editable}
+          row={row}
+          rowIndex={rowIndex}
         />
       );
     }
@@ -194,13 +274,13 @@ const EditableDataTableCell = <T,>(props: IEditableDataTableCellProps<T>): React
         <YearCell<T>
           column={column}
           dataTestId={localDataTestId}
-          row={row}
+          editing={column.editable && editable}
           extra={extra}
-          rowIndex={rowIndex}
           onChange={(newValue) => {
             handleUpdateDataChange(rowIndex, column.dataIndex, newValue);
           }}
-          editing={column.editable && editable}
+          row={row}
+          rowIndex={rowIndex}
         />
       );
     }

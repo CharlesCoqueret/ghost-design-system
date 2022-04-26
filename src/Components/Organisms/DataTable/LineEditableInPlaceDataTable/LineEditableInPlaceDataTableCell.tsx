@@ -8,11 +8,18 @@ import {
   CodeCell,
   CustomCell,
   DateCell,
+  DescriptionCell,
   DynamicSearchCell,
+  FileCell,
+  MultiSelectCell,
   NumberCell,
   PercentageCell,
-  TextCell,
+  RichTextCell,
+  SectionCell,
+  SwitchCell,
+  TableCell,
   TextAreaCell,
+  TextCell,
   YearCell,
 } from '../Common/Cells';
 import { ColumnType, IColumnType, IExtraLineEditableInPlaceDataTableProps } from '../Common/types';
@@ -37,12 +44,12 @@ const LineEditableInPlaceDataTableCell = <T,>(props: ILineEditableInPlaceDataTab
         <AmountCell<T>
           column={column}
           dataTestId={localDataTestId}
-          row={row}
           extra={extra}
-          rowIndex={rowIndex}
           onChange={(newValue) => {
             handleUpdateDataChange(rowIndex, column.dataIndex, newValue);
           }}
+          row={row}
+          rowIndex={rowIndex}
         />
       );
     }
@@ -51,46 +58,46 @@ const LineEditableInPlaceDataTableCell = <T,>(props: ILineEditableInPlaceDataTab
         <BadgeCell<T>
           column={column}
           dataTestId={localDataTestId}
-          row={row}
           extra={extra}
-          rowIndex={rowIndex}
           onChange={(newValue) => {
             handleUpdateDataChange(rowIndex, column.dataIndex, newValue);
           }}
+          row={row}
+          rowIndex={rowIndex}
         />
       );
     }
     case ColumnType.BUTTON: {
-      return <ButtonCell<T> column={column} dataTestId={localDataTestId} row={row} extra={extra} rowIndex={rowIndex} />;
+      return <ButtonCell<T> column={column} dataTestId={localDataTestId} extra={extra} row={row} rowIndex={rowIndex} />;
     }
     case ColumnType.CHECKBOX: {
       return (
         <CheckboxCell<T>
           column={column}
           dataTestId={localDataTestId}
-          row={row}
           extra={extra}
-          rowIndex={rowIndex}
           onChange={(newValue) => {
             handleUpdateDataChange(rowIndex, column.dataIndex, newValue);
           }}
+          row={row}
+          rowIndex={rowIndex}
         />
       );
     }
     case ColumnType.CODE: {
-      return <CodeCell<T> column={column} dataTestId={localDataTestId} row={row} extra={extra} rowIndex={rowIndex} />;
+      return <CodeCell<T> column={column} dataTestId={localDataTestId} extra={extra} row={row} rowIndex={rowIndex} />;
     }
     case ColumnType.CUSTOM: {
       return (
         <CustomCell<T>
           column={column}
           dataTestId={localDataTestId}
-          row={row}
           extra={extra}
-          rowIndex={rowIndex}
           onChange={(newValue) => {
             handleUpdateDataChange(rowIndex, column.dataIndex, newValue);
           }}
+          row={row}
+          rowIndex={rowIndex}
         />
       );
     }
@@ -99,13 +106,18 @@ const LineEditableInPlaceDataTableCell = <T,>(props: ILineEditableInPlaceDataTab
         <DateCell<T>
           column={column}
           dataTestId={localDataTestId}
-          row={row}
           extra={extra}
-          rowIndex={rowIndex}
           onChange={(newValue) => {
             handleUpdateDataChange(rowIndex, column.dataIndex, newValue);
           }}
+          row={row}
+          rowIndex={rowIndex}
         />
+      );
+    }
+    case ColumnType.DESCRIPTION: {
+      return (
+        <DescriptionCell<T> column={column} dataTestId={localDataTestId} extra={extra} row={row} rowIndex={rowIndex} />
       );
     }
     case ColumnType.DYNAMICSEARCH: {
@@ -113,12 +125,40 @@ const LineEditableInPlaceDataTableCell = <T,>(props: ILineEditableInPlaceDataTab
         <DynamicSearchCell<T>
           column={column}
           dataTestId={localDataTestId}
-          row={row}
           extra={extra}
-          rowIndex={rowIndex}
           onChange={(newValue) => {
             handleUpdateDataChange(rowIndex, column.dataIndex, newValue);
           }}
+          row={row}
+          rowIndex={rowIndex}
+        />
+      );
+    }
+    case ColumnType.FILE: {
+      return (
+        <FileCell<T>
+          column={column}
+          dataTestId={localDataTestId}
+          extra={extra}
+          onChange={(newValue) => {
+            handleUpdateDataChange(rowIndex, column.dataIndex, newValue);
+          }}
+          row={row}
+          rowIndex={rowIndex}
+        />
+      );
+    }
+    case ColumnType.MULTISELECT: {
+      return (
+        <MultiSelectCell<T>
+          column={column}
+          dataTestId={localDataTestId}
+          extra={extra}
+          onChange={(newValue) => {
+            handleUpdateDataChange(rowIndex, column.dataIndex, newValue);
+          }}
+          row={row}
+          rowIndex={rowIndex}
         />
       );
     }
@@ -127,12 +167,12 @@ const LineEditableInPlaceDataTableCell = <T,>(props: ILineEditableInPlaceDataTab
         <NumberCell<T>
           column={column}
           dataTestId={localDataTestId}
-          row={row}
           extra={extra}
-          rowIndex={rowIndex}
           onChange={(newValue) => {
             handleUpdateDataChange(rowIndex, column.dataIndex, newValue);
           }}
+          row={row}
+          rowIndex={rowIndex}
         />
       );
     }
@@ -141,26 +181,62 @@ const LineEditableInPlaceDataTableCell = <T,>(props: ILineEditableInPlaceDataTab
         <PercentageCell<T>
           column={column}
           dataTestId={localDataTestId}
-          row={row}
           extra={extra}
-          rowIndex={rowIndex}
           onChange={(newValue) => {
             handleUpdateDataChange(rowIndex, column.dataIndex, newValue);
           }}
+          row={row}
+          rowIndex={rowIndex}
         />
       );
+    }
+    case ColumnType.RICHTEXT: {
+      return (
+        <RichTextCell<T>
+          column={column}
+          dataTestId={localDataTestId}
+          extra={extra}
+          onChange={(newValue) => {
+            handleUpdateDataChange(rowIndex, column.dataIndex, newValue);
+          }}
+          row={row}
+          rowIndex={rowIndex}
+        />
+      );
+    }
+    case ColumnType.SECTION: {
+      return (
+        <SectionCell<T> column={column} dataTestId={localDataTestId} extra={extra} row={row} rowIndex={rowIndex} />
+      );
+    }
+    case ColumnType.SWITCH: {
+      return (
+        <SwitchCell<T>
+          column={column}
+          dataTestId={localDataTestId}
+          extra={extra}
+          onChange={(newValue) => {
+            handleUpdateDataChange(rowIndex, column.dataIndex, newValue);
+          }}
+          row={row}
+          rowIndex={rowIndex}
+        />
+      );
+    }
+    case ColumnType.TABLE: {
+      return <TableCell<T> column={column} dataTestId={localDataTestId} row={row} extra={extra} rowIndex={rowIndex} />;
     }
     case ColumnType.TEXT: {
       return (
         <TextCell<T>
           column={column}
           dataTestId={localDataTestId}
-          row={row}
           extra={extra}
-          rowIndex={rowIndex}
           onChange={(newValue) => {
             handleUpdateDataChange(rowIndex, column.dataIndex, newValue);
           }}
+          row={row}
+          rowIndex={rowIndex}
         />
       );
     }
@@ -169,12 +245,12 @@ const LineEditableInPlaceDataTableCell = <T,>(props: ILineEditableInPlaceDataTab
         <TextAreaCell<T>
           column={column}
           dataTestId={localDataTestId}
-          row={row}
           extra={extra}
-          rowIndex={rowIndex}
           onChange={(newValue) => {
             handleUpdateDataChange(rowIndex, column.dataIndex, newValue);
           }}
+          row={row}
+          rowIndex={rowIndex}
         />
       );
     }
@@ -183,12 +259,12 @@ const LineEditableInPlaceDataTableCell = <T,>(props: ILineEditableInPlaceDataTab
         <YearCell<T>
           column={column}
           dataTestId={localDataTestId}
-          row={row}
           extra={extra}
-          rowIndex={rowIndex}
           onChange={(newValue) => {
             handleUpdateDataChange(rowIndex, column.dataIndex, newValue);
           }}
+          row={row}
+          rowIndex={rowIndex}
         />
       );
     }

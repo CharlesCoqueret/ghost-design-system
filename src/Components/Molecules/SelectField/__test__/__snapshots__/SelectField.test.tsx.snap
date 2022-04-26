@@ -22,7 +22,7 @@ exports[`SelectField Component SelectField renders 1`] = `
           class="css-1f43avz-a11yText-A11yText"
         />
         <div
-          class=" css-154lpzf-control"
+          class=" css-1l9db9l-control"
         >
           <div
             class=" css-9plg90-ValueContainer"
@@ -105,7 +105,7 @@ exports[`SelectField Component SelectField renders with values in disabled highl
           class="css-1f43avz-a11yText-A11yText"
         />
         <div
-          class=" css-1pq4mj-control"
+          class=" css-16avjwk-control"
         >
           <div
             class=" css-9plg90-ValueContainer"
@@ -200,7 +200,7 @@ exports[`SelectField Component SelectField renders with values with fieldSize an
           class="css-1f43avz-a11yText-A11yText"
         />
         <div
-          class=" css-154lpzf-control"
+          class=" css-1l9db9l-control"
         >
           <div
             class=" css-9plg90-ValueContainer"

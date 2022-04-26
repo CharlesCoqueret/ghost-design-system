@@ -1,9 +1,31 @@
 import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
+import * as yup from 'yup';
+
+// Mocking suneditor which is problematic with Jest
+jest.mock('suneditor', () => {});
+jest.mock('suneditor/src/plugins/', () => {});
+jest.mock('suneditor/src/plugins/submenu/align', () => {});
+jest.mock('suneditor/src/plugins/command/blockquote', () => {});
+jest.mock('suneditor/src/plugins/submenu/fontColor', () => {});
+jest.mock('suneditor/src/plugins/submenu/fontSize', () => {});
+jest.mock('suneditor/src/plugins/submenu/formatBlock', () => {});
+jest.mock('suneditor/src/plugins/submenu/hiliteColor', () => {});
+jest.mock('suneditor/src/plugins/submenu/horizontalRule', () => {});
+jest.mock('suneditor/src/plugins/dialog/image', () => {});
+jest.mock('suneditor/src/plugins/dialog/link', () => {});
+jest.mock('suneditor/src/plugins/submenu/lineHeight', () => {});
+jest.mock('suneditor/src/plugins/submenu/list', () => {});
+jest.mock('suneditor/src/plugins/submenu/paragraphStyle', () => {});
+jest.mock('suneditor/src/plugins/submenu/table', () => {});
+jest.mock('suneditor-react', () => {});
+jest.mock('suneditor-react/dist', () => {});
+jest.mock('suneditor-react/dist/types/lang', () => {});
 
 import { ColumnType } from '../../Common/types';
 import StaticDataTableCell from '../StaticDataTableCell';
 import { IToggleEntry } from '../../../../Atoms/CheckBoxInput';
+import { FileStatusEnum, IFile } from '../../../../Atoms/FileInput';
 
 describe('StaticDataTableCell component', () => {
   it('StaticDataTableCell renders with amount and data test id', () => {
@@ -141,8 +163,7 @@ describe('StaticDataTableCell component', () => {
   });
 
   it('StaticDataTableCell renders with custom', () => {
-    const customRenderMock = jest.fn();
-    const customRenderEditMock = jest.fn();
+    const customRenderMock = jest.fn().mockImplementation((props: unknown) => JSON.stringify(props));
 
     const { container } = render(
       <table>
@@ -151,7 +172,6 @@ describe('StaticDataTableCell component', () => {
             <StaticDataTableCell<{ custom: string }>
               column={{
                 customRender: customRenderMock,
-                customRenderEdit: customRenderEditMock,
                 dataIndex: 'custom',
                 title: 'Custom',
                 type: ColumnType.CUSTOM,
@@ -179,6 +199,29 @@ describe('StaticDataTableCell component', () => {
                 type: ColumnType.DATE,
               }}
               row={{ date: new Date('Fri Apr 22 2022') }}
+              rowIndex={0}
+            />
+          </tr>
+        </tbody>
+      </table>,
+    );
+
+    expect(container).toMatchSnapshot();
+  });
+
+  it('StaticDataTableCell renders with description', async () => {
+    const { container } = render(
+      <table>
+        <tbody>
+          <tr>
+            <StaticDataTableCell<{ description: string }>
+              column={{
+                dataIndex: 'description',
+                description: () => <>Description</>,
+                title: 'Description',
+                type: ColumnType.DESCRIPTION,
+              }}
+              row={{ description: 'description' }}
               rowIndex={0}
             />
           </tr>
@@ -224,6 +267,77 @@ describe('StaticDataTableCell component', () => {
     expect(container).toMatchSnapshot();
   });
 
+  it('StaticDataTableCell renders with file', async () => {
+    const onDeleteMock = jest.fn().mockImplementation(() => {
+      return Promise.resolve();
+    });
+
+    const { container } = render(
+      <table>
+        <tbody>
+          <tr>
+            <StaticDataTableCell<{ file: Array<IFile> }>
+              column={{
+                dataIndex: 'file',
+                onDelete: onDeleteMock,
+                requestMethod: 'POST',
+                requestUrl: 'http://url.com',
+                title: 'File',
+                type: ColumnType.FILE,
+              }}
+              row={{
+                file: [
+                  {
+                    uid: '1',
+                    name: 'filename.png',
+                    size: 1234,
+                    type: 'image/png',
+                    status: FileStatusEnum.ERROR,
+                    error: 'Error message',
+                  },
+                ],
+              }}
+              rowIndex={0}
+            />
+          </tr>
+        </tbody>
+      </table>,
+    );
+
+    expect(container).toMatchSnapshot();
+  });
+
+  it('StaticDataTableCell renders with multiselect', async () => {
+    const { container } = render(
+      <table>
+        <tbody>
+          <tr>
+            <StaticDataTableCell<{ multiselect: Array<string> }>
+              column={{
+                dataIndex: 'multiselect',
+                isClearable: true,
+                numberOfItemLabel: 'numberOfItemLabel',
+                numberOfItemsLabel: 'numberOfItemsLabel',
+                options: [
+                  { value: 'value1', label: 'Label 1' },
+                  { value: 'value2', label: 'Label 2' },
+                ],
+                title: 'Multiselect',
+                type: ColumnType.MULTISELECT,
+              }}
+              row={{
+                multiselect: ['value1'],
+              }}
+              rowIndex={0}
+            />
+          </tr>
+        </tbody>
+      </table>,
+    );
+
+    expect(container).toMatchSnapshot();
+  });
+
   it('StaticDataTableCell renders with number', () => {
     const { container } = render(
       <table>
@@ -258,6 +372,92 @@ describe('StaticDataTableCell component', () => {
                 type: ColumnType.PERCENTAGE,
               }}
               row={{ percentage: 1 }}
+              rowIndex={0}
+            />
+          </tr>
+        </tbody>
+      </table>,
+    );
+
+    expect(container).toMatchSnapshot();
+  });
+
+  it('StaticDataTableCell renders with section', async () => {
+    const { container } = render(
+      <table>
+        <tbody>
+          <tr>
+            <StaticDataTableCell<{ section: string }>
+              column={{
+                dataIndex: 'section',
+                fields: [],
+                label: 'Section',
+                title: 'Section',
+                type: ColumnType.SECTION,
+              }}
+              row={{ section: 'section' }}
+              rowIndex={0}
+            />
+          </tr>
+        </tbody>
+      </table>,
+    );
+
+    expect(container).toMatchSnapshot();
+  });
+
+  it('StaticDataTableCell renders with switch', () => {
+    const { container } = render(
+      <table>
+        <tbody>
+          <tr>
+            <StaticDataTableCell<{ switch: Array<IToggleEntry> }>
+              column={{
+                dataIndex: 'switch',
+                title: 'Switch',
+                type: ColumnType.SWITCH,
+              }}
+              row={{ switch: [{ value: 'value', label: 'Label', checked: true }] }}
+              rowIndex={0}
+            />
+          </tr>
+        </tbody>
+      </table>,
+    );
+
+    expect(container).toMatchSnapshot();
+  });
+
+  it('StaticDataTableCell renders with table', async () => {
+    const { container } = render(
+      <table>
+        <tbody>
+          <tr>
+            <StaticDataTableCell<{ table: Array<{ number: number }> }>
+              column={{
+                columns: [
+                  {
+                    type: ColumnType.NUMBER,
+                    title: 'Number',
+                    dataIndex: 'number',
+                  },
+                ],
+                dataIndex: 'table',
+                extra: {
+                  validationSchema: yup.object({
+                    amount: yup.number().optional(),
+                  }),
+                  localization: {
+                    moreActionsMessage: 'moreActionsMessage',
+                    noData: 'noData',
+                    sortMessage: 'sortMessage',
+                    total: 'total',
+                  },
+                },
+                title: 'Table',
+                type: ColumnType.TABLE,
+              }}
+              row={{ table: [{ number: 1 }, { number: 2 }] }}
               rowIndex={0}
             />
           </tr>

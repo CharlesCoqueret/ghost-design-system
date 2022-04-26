@@ -10,7 +10,6 @@ exports[`FileField Component FileField renders 1`] = `
     >
       <div
         class="droparea"
-        tabindex="0"
       >
         <label
           class="label"
@@ -20,6 +19,7 @@ exports[`FileField Component FileField renders 1`] = `
             accept="*/*"
             class="input"
             multiple=""
+            tabindex="-1"
             type="file"
             value=""
           />
@@ -43,7 +43,6 @@ exports[`FileField Component FileField renders with values in disabled highligte
     >
       <div
         class="droparea disabled"
-        tabindex="0"
       >
         <label
           class="label"
@@ -54,6 +53,7 @@ exports[`FileField Component FileField renders with values in disabled highligte
             class="input"
             disabled=""
             multiple=""
+            tabindex="-1"
             type="file"
             value=""
           />
@@ -104,7 +104,6 @@ exports[`FileField Component FileField renders with values in readonly 1`] = `
     >
       <div
         class="droparea readonly"
-        tabindex="0"
       >
         <label
           class="label"
@@ -115,6 +114,7 @@ exports[`FileField Component FileField renders with values in readonly 1`] = `
             class="input"
             multiple=""
             readonly=""
+            tabindex="-1"
             type="file"
             value=""
           />
@@ -165,7 +165,6 @@ exports[`FileField Component FileField renders with values with fieldSize and in
     >
       <div
         class="droparea"
-        tabindex="0"
       >
         <label
           class="label"
@@ -175,6 +174,7 @@ exports[`FileField Component FileField renders with values with fieldSize and in
             accept="*/*"
             class="input"
             multiple=""
+            tabindex="-1"
             type="file"
             value=""
           />

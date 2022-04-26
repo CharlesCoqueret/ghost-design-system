@@ -1,0 +1,480 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MultiSelectCell component BadgeCell handles changes 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class=""
+        >
+          <div
+            class="gds-field-group"
+          >
+            <div
+              class="field gds-select-container input-select-field input-select-field"
+            >
+              <div
+                class=" css-1959ul7-container"
+              >
+                <span
+                  class="css-1f43avz-a11yText-A11yText"
+                  id="react-select-4-live-region"
+                />
+                <span
+                  aria-atomic="false"
+                  aria-live="polite"
+                  aria-relevant="additions text"
+                  class="css-1f43avz-a11yText-A11yText"
+                />
+                <div
+                  class=" css-1l9db9l-control"
+                >
+                  <div
+                    class=" css-1xxnwvf-ValueContainer"
+                  >
+                    numberOfItemLabel
+                    <div
+                      class=" css-g5g4gj-Input"
+                      data-value=""
+                    >
+                      <input
+                        aria-autocomplete="list"
+                        aria-expanded="false"
+                        aria-haspopup="true"
+                        autocapitalize="none"
+                        autocomplete="off"
+                        autocorrect="off"
+                        class=""
+                        id="react-select-4-input"
+                        role="combobox"
+                        spellcheck="false"
+                        style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+                        tabindex="0"
+                        type="text"
+                        value=""
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class=" css-1hb7zxy-IndicatorsContainer"
+                  >
+                    <span
+                      class=" css-1okebmr-indicatorSeparator"
+                    />
+                    <div
+                      aria-hidden="true"
+                    >
+                      <i
+                        class="dynamic-search-icon icon"
+                        icon="fal,chevron-down"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <input
+                    name="multiselectcell"
+                    type="hidden"
+                    value="option1"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`MultiSelectCell component BadgeCell handles changes 2`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class=""
+        >
+          <div
+            class="gds-field-group"
+          >
+            <div
+              class="field gds-select-container input-select-field input-select-field"
+            >
+              <div
+                class=" css-1959ul7-container"
+              >
+                <span
+                  class="css-1f43avz-a11yText-A11yText"
+                  id="react-select-4-live-region"
+                />
+                <span
+                  aria-atomic="false"
+                  aria-live="polite"
+                  aria-relevant="additions text"
+                  class="css-1f43avz-a11yText-A11yText"
+                />
+                <div
+                  class=" css-1l9db9l-control"
+                >
+                  <div
+                    class=" css-1xxnwvf-ValueContainer"
+                  >
+                    numberOfItemLabel
+                    <div
+                      class=" css-g5g4gj-Input"
+                      data-value=""
+                    >
+                      <input
+                        aria-autocomplete="list"
+                        aria-expanded="false"
+                        aria-haspopup="true"
+                        autocapitalize="none"
+                        autocomplete="off"
+                        autocorrect="off"
+                        class=""
+                        id="react-select-4-input"
+                        role="combobox"
+                        spellcheck="false"
+                        style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+                        tabindex="0"
+                        type="text"
+                        value=""
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class=" css-1hb7zxy-IndicatorsContainer"
+                  >
+                    <span
+                      class=" css-1okebmr-indicatorSeparator"
+                    />
+                    <div
+                      aria-hidden="true"
+                    >
+                      <i
+                        class="dynamic-search-icon icon"
+                        icon="fal,chevron-down"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <input
+                    name="multiselectcell"
+                    type="hidden"
+                    value="option1"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`MultiSelectCell component BadgeCell renders with erase value when not in options 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class=""
+        >
+          <div
+            class="gds-field-group"
+          >
+            <div
+              class="field gds-select-container input-select-field-read-only input-select-field"
+            >
+              <span
+                class="gds-typography"
+              >
+                -
+              </span>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`MultiSelectCell component MultiSelectCell renders 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class=""
+        >
+          <div
+            class="gds-field-group"
+          >
+            <div
+              class="field gds-select-container input-select-field-read-only input-select-field"
+            >
+              <span
+                class="gds-typography"
+              >
+                label 1
+              </span>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`MultiSelectCell component MultiSelectCell renders cell editing with no row input 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class=""
+        >
+          <div
+            class="gds-field-group"
+          >
+            <div
+              class="field gds-select-container input-select-field input-select-field"
+            >
+              <div
+                class=" css-1959ul7-container"
+              >
+                <span
+                  class="css-1f43avz-a11yText-A11yText"
+                  id="react-select-3-live-region"
+                />
+                <span
+                  aria-atomic="false"
+                  aria-live="polite"
+                  aria-relevant="additions text"
+                  class="css-1f43avz-a11yText-A11yText"
+                />
+                <div
+                  class=" css-1l9db9l-control"
+                >
+                  <div
+                    class=" css-9plg90-ValueContainer"
+                  >
+                    <div
+                      class=" css-14el2xx-placeholder"
+                      id="react-select-3-placeholder"
+                    >
+                      Select...
+                    </div>
+                    <div
+                      class=" css-6j8wv5-Input"
+                      data-value=""
+                    >
+                      <input
+                        aria-autocomplete="list"
+                        aria-describedby="react-select-3-placeholder"
+                        aria-expanded="false"
+                        aria-haspopup="true"
+                        autocapitalize="none"
+                        autocomplete="off"
+                        autocorrect="off"
+                        class=""
+                        id="react-select-3-input"
+                        role="combobox"
+                        spellcheck="false"
+                        style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+                        tabindex="0"
+                        type="text"
+                        value=""
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class=" css-1hb7zxy-IndicatorsContainer"
+                  >
+                    <span
+                      class=" css-1okebmr-indicatorSeparator"
+                    />
+                    <div
+                      aria-hidden="true"
+                    >
+                      <i
+                        class="dynamic-search-icon icon"
+                        icon="fal,chevron-down"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <input
+                    name="multiselectcell"
+                    type="hidden"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`MultiSelectCell component MultiSelectCell renders hidden 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class=""
+          style="display: none;"
+        >
+          <div
+            class="gds-field-group"
+          >
+            <div
+              class="field gds-select-container input-select-field-read-only input-select-field"
+            >
+              <span
+                class="gds-typography"
+              >
+                label 1
+              </span>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`MultiSelectCell component MultiSelectCell renders row editing with no row input 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class=""
+        >
+          <div
+            class="gds-field-group"
+          >
+            <div
+              class="field gds-select-container input-select-field input-select-field"
+            >
+              <div
+                class=" css-1959ul7-container"
+              >
+                <span
+                  class="css-1f43avz-a11yText-A11yText"
+                  id="react-select-2-live-region"
+                />
+                <span
+                  aria-atomic="false"
+                  aria-live="polite"
+                  aria-relevant="additions text"
+                  class="css-1f43avz-a11yText-A11yText"
+                />
+                <div
+                  class=" css-1l9db9l-control"
+                >
+                  <div
+                    class=" css-9plg90-ValueContainer"
+                  >
+                    <div
+                      class=" css-14el2xx-placeholder"
+                      id="react-select-2-placeholder"
+                    >
+                      Select...
+                    </div>
+                    <div
+                      class=" css-6j8wv5-Input"
+                      data-value=""
+                    >
+                      <input
+                        aria-autocomplete="list"
+                        aria-describedby="react-select-2-placeholder"
+                        aria-expanded="false"
+                        aria-haspopup="true"
+                        autocapitalize="none"
+                        autocomplete="off"
+                        autocorrect="off"
+                        class=""
+                        id="react-select-2-input"
+                        role="combobox"
+                        spellcheck="false"
+                        style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+                        tabindex="0"
+                        type="text"
+                        value=""
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class=" css-1hb7zxy-IndicatorsContainer"
+                  >
+                    <span
+                      class=" css-1okebmr-indicatorSeparator"
+                    />
+                    <div
+                      aria-hidden="true"
+                    >
+                      <i
+                        class="dynamic-search-icon icon"
+                        icon="fal,chevron-down"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <input
+                    name="multiselectcell"
+                    type="hidden"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`MultiSelectCell component MultiSelectCell renders with forced value 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class=""
+        >
+          <div
+            class="gds-field-group"
+          >
+            <div
+              class="field gds-select-container input-select-field-read-only input-select-field"
+            >
+              <span
+                class="gds-typography"
+              >
+                label 2
+              </span>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
