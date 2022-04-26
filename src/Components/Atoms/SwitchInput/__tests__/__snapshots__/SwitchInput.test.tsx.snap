@@ -7,7 +7,6 @@ exports[`SwitchInput Component SwitchInput renders highlighted 1`] = `
   >
     <label
       class="input-switch-field-read-only"
-      data-testid="KEY_0"
       for="switch-31"
       tabindex="-1"
     >
@@ -31,7 +30,6 @@ exports[`SwitchInput Component SwitchInput renders highlighted 1`] = `
     </label>
     <label
       class="input-switch-field-read-only input-switch-field-checked"
-      data-testid="KEY_1"
       for="switch-32"
       tabindex="-1"
     >
@@ -56,7 +54,6 @@ exports[`SwitchInput Component SwitchInput renders highlighted 1`] = `
     </label>
     <label
       class="input-switch-field-read-only"
-      data-testid="KEY_2"
       for="switch-33"
       tabindex="-1"
     >
@@ -80,7 +77,6 @@ exports[`SwitchInput Component SwitchInput renders highlighted 1`] = `
     </label>
     <label
       class="input-switch-field-read-only"
-      data-testid="KEY_3"
       for="switch-34"
       tabindex="-1"
     >
@@ -103,7 +99,6 @@ exports[`SwitchInput Component SwitchInput renders highlighted 1`] = `
     </label>
     <label
       class="input-switch-field-read-only field-highlighted"
-      data-testid="KEY_4"
       for="switch-35"
       tabindex="-1"
     >
@@ -126,7 +121,6 @@ exports[`SwitchInput Component SwitchInput renders highlighted 1`] = `
     </label>
     <label
       class="input-switch-field-read-only"
-      data-testid="KEY_5"
       for="switch-36"
       tabindex="-1"
     >
@@ -158,7 +152,6 @@ exports[`SwitchInput Component SwitchInput renders with input 1`] = `
   >
     <label
       class=""
-      data-testid="KEY_0"
       for="switch-1"
       tabindex="0"
     >
@@ -181,7 +174,6 @@ exports[`SwitchInput Component SwitchInput renders with input 1`] = `
     </label>
     <label
       class="input-switch-field-checked"
-      data-testid="KEY_1"
       for="switch-2"
       tabindex="0"
     >
@@ -206,7 +198,6 @@ exports[`SwitchInput Component SwitchInput renders with input 1`] = `
     </label>
     <label
       class=""
-      data-testid="KEY_2"
       for="switch-3"
       tabindex="0"
     >
@@ -230,7 +221,6 @@ exports[`SwitchInput Component SwitchInput renders with input 1`] = `
     </label>
     <label
       class=""
-      data-testid="KEY_3"
       for="switch-4"
       tabindex="0"
     >
@@ -253,7 +243,6 @@ exports[`SwitchInput Component SwitchInput renders with input 1`] = `
     </label>
     <label
       class=""
-      data-testid="KEY_4"
       for="switch-5"
       tabindex="0"
     >
@@ -276,7 +265,6 @@ exports[`SwitchInput Component SwitchInput renders with input 1`] = `
     </label>
     <label
       class=""
-      data-testid="KEY_5"
       for="switch-6"
       tabindex="0"
     >

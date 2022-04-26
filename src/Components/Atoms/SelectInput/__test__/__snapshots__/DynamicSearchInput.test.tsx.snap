@@ -19,7 +19,7 @@ exports[`DynamicSearchInput Component DynamicSearchInput handles change 1`] = `
         class="css-1f43avz-a11yText-A11yText"
       />
       <div
-        class=" css-154lpzf-control"
+        class=" css-1l9db9l-control"
       >
         <div
           class=" css-9plg90-ValueContainer"
@@ -251,7 +251,7 @@ exports[`DynamicSearchInput Component DynamicSearchInput handles change 3`] = `
         class="css-1f43avz-a11yText-A11yText"
       />
       <div
-        class=" css-154lpzf-control"
+        class=" css-1l9db9l-control"
       >
         <div
           class=" css-9plg90-ValueContainer"
@@ -329,7 +329,7 @@ exports[`DynamicSearchInput Component DynamicSearchInput handles change clearabl
         class="css-1f43avz-a11yText-A11yText"
       />
       <div
-        class=" css-154lpzf-control"
+        class=" css-1l9db9l-control"
       >
         <div
           class=" css-9plg90-ValueContainer"
@@ -414,7 +414,7 @@ exports[`DynamicSearchInput Component DynamicSearchInput handles change to undef
         class="css-1f43avz-a11yText-A11yText"
       />
       <div
-        class=" css-154lpzf-control"
+        class=" css-1l9db9l-control"
       >
         <div
           class=" css-9plg90-ValueContainer"
@@ -617,7 +617,7 @@ exports[`DynamicSearchInput Component DynamicSearchInput handles change with no 
         class="css-1f43avz-a11yText-A11yText"
       />
       <div
-        class=" css-154lpzf-control"
+        class=" css-1l9db9l-control"
       >
         <div
           class=" css-9plg90-ValueContainer"
@@ -846,7 +846,7 @@ exports[`DynamicSearchInput Component DynamicSearchInput handles change with no 
         class="css-1f43avz-a11yText-A11yText"
       />
       <div
-        class=" css-154lpzf-control"
+        class=" css-1l9db9l-control"
       >
         <div
           class=" css-9plg90-ValueContainer"
@@ -924,7 +924,7 @@ exports[`DynamicSearchInput Component DynamicSearchInput handles inputValue chan
         class="css-1f43avz-a11yText-A11yText"
       />
       <div
-        class=" css-154lpzf-control"
+        class=" css-1l9db9l-control"
       >
         <div
           class=" css-9plg90-ValueContainer"
@@ -1002,7 +1002,7 @@ exports[`DynamicSearchInput Component DynamicSearchInput handles inputValue chan
         class="css-1f43avz-a11yText-A11yText"
       />
       <div
-        class=" css-154lpzf-control"
+        class=" css-1l9db9l-control"
       >
         <div
           class=" css-9plg90-ValueContainer"
@@ -1080,7 +1080,7 @@ exports[`DynamicSearchInput Component DynamicSearchInput handles inputValue chan
         class="css-1f43avz-a11yText-A11yText"
       />
       <div
-        class=" css-154lpzf-control"
+        class=" css-1l9db9l-control"
       >
         <div
           class=" css-9plg90-ValueContainer"
@@ -1160,7 +1160,7 @@ exports[`DynamicSearchInput Component DynamicSearchInput renders 1`] = `
         class="css-1f43avz-a11yText-A11yText"
       />
       <div
-        class=" css-154lpzf-control"
+        class=" css-1l9db9l-control"
       >
         <div
           class=" css-9plg90-ValueContainer"
@@ -1421,7 +1421,7 @@ exports[`DynamicSearchInput Component DynamicSearchInput renders when resolveVal
         class="css-1f43avz-a11yText-A11yText"
       />
       <div
-        class=" css-154lpzf-control"
+        class=" css-1l9db9l-control"
       >
         <div
           class=" css-9plg90-ValueContainer"
@@ -1501,7 +1501,7 @@ exports[`DynamicSearchInput Component DynamicSearchInput renders with invalid in
         class="css-1f43avz-a11yText-A11yText"
       />
       <div
-        class=" css-154lpzf-control"
+        class=" css-1l9db9l-control"
       >
         <div
           class=" css-9plg90-ValueContainer"
@@ -1581,7 +1581,7 @@ exports[`DynamicSearchInput Component DynamicSearchInput renders without input v
         class="css-1f43avz-a11yText-A11yText"
       />
       <div
-        class=" css-154lpzf-control"
+        class=" css-1l9db9l-control"
       >
         <div
           class=" css-9plg90-ValueContainer"

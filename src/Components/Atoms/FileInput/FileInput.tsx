@@ -394,8 +394,7 @@ const FileInput = (props: IFileInputProps): ReactElement => {
       <div
         key='droparea'
         ref={dropArea}
-        className={classnames('droparea', { disabled: disabled, readonly: readOnly, error: isInError })}
-        tabIndex={0}>
+        className={classnames('droparea', { disabled: disabled, readonly: readOnly, error: isInError })}>
         <label className='label'>
           {uploadMessage}
           <input
@@ -407,6 +406,7 @@ const FileInput = (props: IFileInputProps): ReactElement => {
             onChange={handleOnChange}
             readOnly={readOnly}
             ref={input}
+            tabIndex={-1}
             type='file'
             value={[]}
           />

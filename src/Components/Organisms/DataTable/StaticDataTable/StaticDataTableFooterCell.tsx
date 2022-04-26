@@ -50,7 +50,14 @@ const StaticDataTableFooterCell = <T,>(props: IStaticDataTableFooterCellProps<T>
     case ColumnType.CODE:
     case ColumnType.CUSTOM:
     case ColumnType.DATE:
+    case ColumnType.DESCRIPTION:
     case ColumnType.DYNAMICSEARCH:
+    case ColumnType.FILE:
+    case ColumnType.MULTISELECT:
+    case ColumnType.RICHTEXT:
+    case ColumnType.SECTION:
+    case ColumnType.SWITCH:
+    case ColumnType.TABLE:
     case ColumnType.TEXT:
     case ColumnType.TEXTAREA:
     case ColumnType.YEAR:

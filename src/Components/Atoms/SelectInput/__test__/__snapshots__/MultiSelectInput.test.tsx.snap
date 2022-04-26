@@ -19,7 +19,7 @@ exports[`MultiSelectInput Component MultiSelectInput handles change 1`] = `
         class="css-1f43avz-a11yText-A11yText"
       />
       <div
-        class=" css-154lpzf-control"
+        class=" css-1l9db9l-control"
       >
         <div
           class=" css-9plg90-ValueContainer"
@@ -99,7 +99,7 @@ exports[`MultiSelectInput Component MultiSelectInput handles change with empty v
         class="css-1f43avz-a11yText-A11yText"
       />
       <div
-        class=" css-154lpzf-control"
+        class=" css-1l9db9l-control"
       >
         <div
           class=" css-9plg90-ValueContainer"
@@ -179,7 +179,7 @@ exports[`MultiSelectInput Component MultiSelectInput renders 1`] = `
         class="css-1f43avz-a11yText-A11yText"
       />
       <div
-        class=" css-154lpzf-control"
+        class=" css-1l9db9l-control"
       >
         <div
           class=" css-1xxnwvf-ValueContainer"
@@ -404,7 +404,7 @@ exports[`MultiSelectInput Component MultiSelectInput renders with invalid input 
         class="css-1f43avz-a11yText-A11yText"
       />
       <div
-        class=" css-154lpzf-control"
+        class=" css-1l9db9l-control"
       >
         <div
           class=" css-9plg90-ValueContainer"
@@ -484,7 +484,7 @@ exports[`MultiSelectInput Component MultiSelectInput renders with multiple input
         class="css-1f43avz-a11yText-A11yText"
       />
       <div
-        class=" css-154lpzf-control"
+        class=" css-1l9db9l-control"
       >
         <div
           class=" css-1xxnwvf-ValueContainer"
@@ -565,7 +565,7 @@ exports[`MultiSelectInput Component MultiSelectInput renders with valid value an
         class="css-1f43avz-a11yText-A11yText"
       />
       <div
-        class=" css-154lpzf-control"
+        class=" css-1l9db9l-control"
       >
         <div
           class=" css-1xxnwvf-ValueContainer"
@@ -650,7 +650,7 @@ exports[`MultiSelectInput Component MultiSelectInput renders with valid value an
         class="css-1f43avz-a11yText-A11yText"
       />
       <div
-        class=" css-154lpzf-control"
+        class=" css-1l9db9l-control"
       >
         <div
           class=" css-1xxnwvf-ValueContainer"
@@ -733,7 +733,7 @@ exports[`MultiSelectInput Component MultiSelectInput renders without input value
         class="css-1f43avz-a11yText-A11yText"
       />
       <div
-        class=" css-154lpzf-control"
+        class=" css-1l9db9l-control"
       >
         <div
           class=" css-9plg90-ValueContainer"
@@ -813,7 +813,7 @@ exports[`MultiSelectInput Component MultiSelectInput renders without portal 1`] 
         class="css-1f43avz-a11yText-A11yText"
       />
       <div
-        class=" css-154lpzf-control"
+        class=" css-1l9db9l-control"
       >
         <div
           class=" css-9plg90-ValueContainer"

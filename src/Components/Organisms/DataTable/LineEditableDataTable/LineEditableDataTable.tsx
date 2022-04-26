@@ -23,26 +23,26 @@ const LineEditableDataTable = <T,>(props: ILineEditableDataTableProps<T>): React
   const [currentData, setCurrentData] = usePropState<Array<T>>(data);
   const [sortField, setSortField] = useState<keyof T | undefined>();
   const [sortDirection, setSortDirection] = useState<SortDirectionEnum | undefined>();
-  const [editedRowIndex, setEditedRowIndex] = useState<number | undefined>(extra?.editedRowIndex);
+  const [editedRowIndex, setEditedRowIndex] = useState<number | undefined>(extra.editedRowIndex);
   const [isNewLine, setIsNewLine] = useState(false);
 
   const currentColumns: Array<IColumnType<T>> =
-    !extra?.onRowSubmit && !extra?.onRowDelete && !extra?.onRowDownload
+    !extra.onRowSubmit && !extra.onRowDelete && !extra.onRowDownload
       ? columns
       : [
           ...columns.filter((column) => column.type !== ColumnType.BUTTON),
           {
-            title: extra?.localization?.actionColumn ?? 'Actions',
+            title: extra.localization?.actionColumn ?? 'Actions',
             type: ColumnType.BUTTON,
-            width: extra?.actionColumnWidth,
-            moreActionsMessage: extra?.localization?.moreActionsMessage ?? 'More actions',
+            width: extra.actionColumnWidth,
+            moreActionsMessage: extra.localization?.moreActionsMessage ?? 'More actions',
             buttons: [
               {
                 hidden: (row, rowIndex) => {
                   // Hide button when another row is in edit mode
                   if (editedRowIndex !== undefined) return true;
                   // Hide the button if the changes cannot be submitted
-                  if (!extra?.onRowSubmit) return true;
+                  if (!extra.onRowSubmit) return true;
                   // Hide the button if it is marked as not editable
                   if (extra.isEditable === undefined || extra.isEditable(row, rowIndex)) {
                     return false;
@@ -50,9 +50,9 @@ const LineEditableDataTable = <T,>(props: ILineEditableDataTableProps<T>): React
                   return true;
                 },
                 icon: ['fal', 'edit'],
-                label: extra?.localization?.editButton ?? 'Edit',
+                label: extra.localization?.editButton ?? 'Edit',
                 onClick: (row, rowIndex) => {
-                  if (extra?.onRowEdit) {
+                  if (extra.onRowEdit) {
                     extra.onRowEdit(row, rowIndex);
                   }
                   setEditedRowIndex(rowIndex);
@@ -61,7 +61,7 @@ const LineEditableDataTable = <T,>(props: ILineEditableDataTableProps<T>): React
               {
                 hidden: (row, rowIndex) => {
                   // Hide the button if deletion is not supported
-                  if (!extra?.onRowDelete) return true;
+                  if (!extra.onRowDelete) return true;
                   // Hide the button if item not deletable
                   if (extra.isDeletable === undefined || extra.isDeletable(row, rowIndex)) {
                     return editedRowIndex === rowIndex;
@@ -69,34 +69,31 @@ const LineEditableDataTable = <T,>(props: ILineEditableDataTableProps<T>): React
                   return true;
                 },
                 icon: ['fal', 'trash-alt'],
-                label: extra?.localization?.deleteButton ?? 'Delete',
+                label: extra.localization?.deleteButton ?? 'Delete',
                 onClick: (row, rowIndex) => {
-                  if (extra?.onRowDelete) {
+                  if (extra.onRowDelete) {
                     extra.onRowDelete(row, rowIndex);
-                  }
-                  if (editedRowIndex && editedRowIndex > rowIndex) {
-                    setEditedRowIndex(editedRowIndex - 1);
                   }
                   setCurrentData((prev) => [...prev.filter((_item, index) => index !== rowIndex)]);
                 },
                 popover: {
-                  message: extra?.localization?.deletePopoverMessage ?? 'Delete?',
-                  cancel: extra?.localization?.deletePopoverCancel ?? 'Cancel',
-                  confirm: extra?.localization?.deletePopoverConfirm ?? 'Confirm',
+                  message: extra.localization?.deletePopoverMessage ?? 'Delete?',
+                  cancel: extra.localization?.deletePopoverCancel ?? 'Cancel',
+                  confirm: extra.localization?.deletePopoverConfirm ?? 'Confirm',
                 },
               },
               {
                 hidden: (row, rowIndex) => {
-                  if (!extra?.onRowDownload) return true;
+                  if (!extra.onRowDownload) return true;
                   if (extra.isDownloadable === undefined || extra.isDownloadable(row, rowIndex)) {
                     return editedRowIndex === rowIndex;
                   }
                   return true;
                 },
                 icon: ['fal', 'arrow-down-to-line'],
-                label: extra?.localization?.downloadButton ?? 'Download',
+                label: extra.localization?.downloadButton ?? 'Download',
                 onClick: (row, rowIndex) => {
-                  if (extra?.onRowDownload) {
+                  if (extra.onRowDownload) {
                     extra.onRowDownload(row, rowIndex);
                   }
                 },
@@ -119,10 +116,10 @@ const LineEditableDataTable = <T,>(props: ILineEditableDataTableProps<T>): React
   }, []);
 
   const addNewLine = () => {
-    if (extra?.onNewLine === undefined) {
-      throw new Error('Missing onNewLine function');
+    if (extra.onNewLine === undefined) {
+      console.error('Missing onNewLine function');
     }
-    const newLine = extra.onNewLine() || ({} as T);
+    const newLine = extra.onNewLine ? extra.onNewLine() : ({} as T);
     const newLineIndex = currentData.length;
     setCurrentData((prev) => {
       prev.push(newLine);
@@ -146,11 +143,11 @@ const LineEditableDataTable = <T,>(props: ILineEditableDataTableProps<T>): React
         <StaticDataTableFooter<T> columns={currentColumns} data={currentData} extra={extra} />
       </table>
 
-      {extra?.canAddNewLine && extra?.canAddNewLine() && (
+      {extra.canAddNewLine && extra.canAddNewLine() && (
         <Button
           className='gds-table-new-line'
           color={ColorButtonEnum.PRIMARY}
-          label={extra?.localization?.addRow ?? 'Add row'}
+          label={extra.localization?.addRow ?? 'Add row'}
           onClick={addNewLine}
           disabled={editedRowIndex !== undefined}
         />
@@ -158,13 +155,13 @@ const LineEditableDataTable = <T,>(props: ILineEditableDataTableProps<T>): React
       {editedRowIndex !== undefined && (
         <LineEditableModal<T>
           title={
-            extra?.localization?.modalTitle === undefined
+            extra.localization?.modalTitle === undefined
               ? 'Edit row'
               : typeof extra.localization.modalTitle === 'function'
               ? extra.localization.modalTitle(currentData[editedRowIndex], editedRowIndex)
               : extra.localization.modalTitle
           }
-          showChanges={extra?.showChanges || false}
+          showChanges={extra.showChanges || false}
           onSubmit={(newRow) => {
             if (extra.onRowSubmit) {
               extra.onRowSubmit(newRow, editedRowIndex);

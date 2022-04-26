@@ -28,7 +28,7 @@ exports[`DynamicSearchCell component DynamicSearchCell handles display of no mes
                   class="css-1f43avz-a11yText-A11yText"
                 />
                 <div
-                  class=" css-154lpzf-control"
+                  class=" css-1l9db9l-control"
                 >
                   <div
                     class=" css-9plg90-ValueContainer"
@@ -283,7 +283,7 @@ exports[`DynamicSearchCell component DynamicSearchCell renders in edit mode and 
                   class="css-1f43avz-a11yText-A11yText"
                 />
                 <div
-                  class=" css-154lpzf-control"
+                  class=" css-1l9db9l-control"
                 >
                   <div
                     class=" css-9plg90-ValueContainer"
@@ -526,7 +526,7 @@ exports[`DynamicSearchCell component DynamicSearchCell renders in edit mode via 
                   class="css-1f43avz-a11yText-A11yText"
                 />
                 <div
-                  class=" css-154lpzf-control"
+                  class=" css-1l9db9l-control"
                 >
                   <div
                     class=" css-9plg90-ValueContainer"

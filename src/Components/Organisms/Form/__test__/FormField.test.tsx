@@ -301,7 +301,7 @@ describe('FormField Component', () => {
       <FormField
         data={{ custom: 1 }}
         field={{
-          customField: (props: { onChange: typeof onChangeHandlerCustomField }) => {
+          customField: (props: { onChange?: typeof onChangeHandlerCustomField }) => {
             if (props.onChange) onChangeHandlerCustomField = props.onChange;
             return <div>Mocked CustomField props: {JSON.stringify(props)}</div>;
           },

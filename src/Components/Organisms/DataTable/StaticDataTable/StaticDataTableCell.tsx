@@ -9,11 +9,18 @@ import {
   CodeCell,
   CustomCell,
   DateCell,
+  DescriptionCell,
   DynamicSearchCell,
+  FileCell,
+  MultiSelectCell,
   NumberCell,
   PercentageCell,
-  TextCell,
+  RichTextCell,
+  SectionCell,
+  SwitchCell,
+  TableCell,
   TextAreaCell,
+  TextCell,
   YearCell,
 } from '../Common/Cells';
 
@@ -54,7 +61,11 @@ const StaticDataTableCell = <T,>(props: IStaticDataTableCellProps<T>): ReactElem
     case ColumnType.DATE: {
       return <DateCell<T> column={column} dataTestId={localDataTestId} row={row} extra={extra} rowIndex={rowIndex} />;
     }
-
+    case ColumnType.DESCRIPTION: {
+      return (
+        <DescriptionCell<T> column={column} dataTestId={localDataTestId} row={row} extra={extra} rowIndex={rowIndex} />
+      );
+    }
     case ColumnType.DYNAMICSEARCH: {
       return (
         <DynamicSearchCell<T>
@@ -66,6 +77,14 @@ const StaticDataTableCell = <T,>(props: IStaticDataTableCellProps<T>): ReactElem
         />
       );
     }
+    case ColumnType.FILE: {
+      return <FileCell<T> column={column} dataTestId={localDataTestId} row={row} extra={extra} rowIndex={rowIndex} />;
+    }
+    case ColumnType.MULTISELECT: {
+      return (
+        <MultiSelectCell<T> column={column} dataTestId={localDataTestId} row={row} extra={extra} rowIndex={rowIndex} />
+      );
+    }
     case ColumnType.NUMBER: {
       return <NumberCell<T> column={column} dataTestId={localDataTestId} row={row} extra={extra} rowIndex={rowIndex} />;
     }
@@ -73,6 +92,22 @@ const StaticDataTableCell = <T,>(props: IStaticDataTableCellProps<T>): ReactElem
       return (
         <PercentageCell<T> column={column} dataTestId={localDataTestId} row={row} extra={extra} rowIndex={rowIndex} />
       );
+    }
+    case ColumnType.RICHTEXT: {
+      return (
+        <RichTextCell<T> column={column} dataTestId={localDataTestId} row={row} extra={extra} rowIndex={rowIndex} />
+      );
+    }
+    case ColumnType.SECTION: {
+      return (
+        <SectionCell<T> column={column} dataTestId={localDataTestId} row={row} extra={extra} rowIndex={rowIndex} />
+      );
+    }
+    case ColumnType.SWITCH: {
+      return <SwitchCell<T> column={column} dataTestId={localDataTestId} row={row} extra={extra} rowIndex={rowIndex} />;
+    }
+    case ColumnType.TABLE: {
+      return <TableCell<T> column={column} dataTestId={localDataTestId} row={row} extra={extra} rowIndex={rowIndex} />;
     }
     case ColumnType.TEXT: {
       return <TextCell<T> column={column} dataTestId={localDataTestId} row={row} extra={extra} rowIndex={rowIndex} />;

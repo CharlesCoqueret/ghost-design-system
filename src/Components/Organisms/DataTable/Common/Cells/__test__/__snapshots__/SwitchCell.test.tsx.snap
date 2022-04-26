@@ -1,0 +1,421 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SwitchCell component SwitchCell renders 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class="table--cell--checkbox"
+        >
+          <div
+            class="gds-field-group"
+          >
+            <div
+              class="field gds-switch-container input-switch-field gds-typography"
+            >
+              <label
+                class="input-switch-field-read-only input-switch-field-checked"
+                for="switch-1"
+                tabindex="-1"
+              >
+                <div
+                  class="switch-marker"
+                >
+                  <input
+                    aria-hidden="true"
+                    checked=""
+                    readonly=""
+                    type="checkbox"
+                  />
+                  <span
+                    aria-checked="true"
+                    aria-label="Label 1"
+                    class="silver"
+                    id="switch-1"
+                    role="checkbox"
+                  />
+                </div>
+                Label 1
+              </label>
+              <label
+                class="input-switch-field-read-only"
+                for="switch-2"
+                tabindex="-1"
+              >
+                <div
+                  class="switch-marker"
+                >
+                  <input
+                    aria-hidden="true"
+                    readonly=""
+                    type="checkbox"
+                  />
+                  <span
+                    aria-checked="false"
+                    aria-label="Label 2"
+                    class="silver"
+                    id="switch-2"
+                    role="checkbox"
+                  />
+                </div>
+                Label 2
+              </label>
+              <label
+                class="input-switch-field-read-only"
+                for="switch-3"
+                tabindex="-1"
+              >
+                <div
+                  class="switch-marker"
+                >
+                  <input
+                    aria-hidden="true"
+                    readonly=""
+                    type="checkbox"
+                  />
+                  <span
+                    aria-label="Label 3"
+                    class="silver"
+                    id="switch-3"
+                    role="checkbox"
+                  />
+                </div>
+                Label 3
+              </label>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`SwitchCell component SwitchCell renders in edit mode and handles change 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class="table--cell--checkbox"
+        >
+          <div
+            class="gds-field-group"
+          >
+            <div
+              class="field gds-switch-container input-switch-field gds-typography"
+              data-testid="DATA-TEST-ID"
+            >
+              <label
+                class="input-switch-field-checked"
+                data-testid="DATA-TEST-ID-0"
+                for="switch-8"
+                tabindex="0"
+              >
+                <div
+                  class="switch-marker"
+                >
+                  <input
+                    aria-hidden="true"
+                    checked=""
+                    readonly=""
+                    type="checkbox"
+                  />
+                  <span
+                    aria-checked="true"
+                    aria-label="Label 1"
+                    class="primary"
+                    id="switch-8"
+                    role="checkbox"
+                  />
+                </div>
+                Label 1
+              </label>
+              <label
+                class=""
+                data-testid="DATA-TEST-ID-1"
+                for="switch-9"
+                tabindex="0"
+              >
+                <div
+                  class="switch-marker"
+                >
+                  <input
+                    aria-hidden="true"
+                    readonly=""
+                    type="checkbox"
+                  />
+                  <span
+                    aria-checked="false"
+                    aria-label="Label 2"
+                    class="pebble"
+                    id="switch-9"
+                    role="checkbox"
+                  />
+                </div>
+                Label 2
+              </label>
+              <label
+                class=""
+                data-testid="DATA-TEST-ID-2"
+                for="switch-10"
+                tabindex="0"
+              >
+                <div
+                  class="switch-marker"
+                >
+                  <input
+                    aria-hidden="true"
+                    readonly=""
+                    type="checkbox"
+                  />
+                  <span
+                    aria-label="Label 3"
+                    class="pebble"
+                    id="switch-10"
+                    role="checkbox"
+                  />
+                </div>
+                Label 3
+              </label>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`SwitchCell component SwitchCell renders in edit mode via extra 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class="table--cell--checkbox"
+        >
+          <div
+            class="gds-field-group"
+          >
+            <div
+              class="field gds-switch-container input-switch-field gds-typography"
+            >
+              <label
+                class="input-switch-field-checked"
+                for="switch-11"
+                tabindex="0"
+              >
+                <div
+                  class="switch-marker"
+                >
+                  <input
+                    aria-hidden="true"
+                    checked=""
+                    readonly=""
+                    type="checkbox"
+                  />
+                  <span
+                    aria-checked="true"
+                    aria-label="Label 1"
+                    class="primary"
+                    id="switch-11"
+                    role="checkbox"
+                  />
+                </div>
+                Label 1
+              </label>
+              <label
+                class=""
+                for="switch-12"
+                tabindex="0"
+              >
+                <div
+                  class="switch-marker"
+                >
+                  <input
+                    aria-hidden="true"
+                    readonly=""
+                    type="checkbox"
+                  />
+                  <span
+                    aria-checked="false"
+                    aria-label="Label 2"
+                    class="pebble"
+                    id="switch-12"
+                    role="checkbox"
+                  />
+                </div>
+                Label 2
+              </label>
+              <label
+                class=""
+                for="switch-13"
+                tabindex="0"
+              >
+                <div
+                  class="switch-marker"
+                >
+                  <input
+                    aria-hidden="true"
+                    readonly=""
+                    type="checkbox"
+                  />
+                  <span
+                    aria-label="Label 3"
+                    class="pebble"
+                    id="switch-13"
+                    role="checkbox"
+                  />
+                </div>
+                Label 3
+              </label>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`SwitchCell component SwitchCell renders when hidden 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class="table--cell--checkbox"
+          style="display: none;"
+        >
+          <div
+            class="gds-field-group"
+          >
+            <div
+              class="field gds-switch-container input-switch-field gds-typography"
+            >
+              <label
+                class="input-switch-field-read-only input-switch-field-checked"
+                for="switch-5"
+                tabindex="-1"
+              >
+                <div
+                  class="switch-marker"
+                >
+                  <input
+                    aria-hidden="true"
+                    checked=""
+                    readonly=""
+                    type="checkbox"
+                  />
+                  <span
+                    aria-checked="true"
+                    aria-label="Label 1"
+                    class="silver"
+                    id="switch-5"
+                    role="checkbox"
+                  />
+                </div>
+                Label 1
+              </label>
+              <label
+                class="input-switch-field-read-only"
+                for="switch-6"
+                tabindex="-1"
+              >
+                <div
+                  class="switch-marker"
+                >
+                  <input
+                    aria-hidden="true"
+                    readonly=""
+                    type="checkbox"
+                  />
+                  <span
+                    aria-checked="false"
+                    aria-label="Label 2"
+                    class="silver"
+                    id="switch-6"
+                    role="checkbox"
+                  />
+                </div>
+                Label 2
+              </label>
+              <label
+                class="input-switch-field-read-only"
+                for="switch-7"
+                tabindex="-1"
+              >
+                <div
+                  class="switch-marker"
+                >
+                  <input
+                    aria-hidden="true"
+                    readonly=""
+                    type="checkbox"
+                  />
+                  <span
+                    aria-label="Label 3"
+                    class="silver"
+                    id="switch-7"
+                    role="checkbox"
+                  />
+                </div>
+                Label 3
+              </label>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`SwitchCell component SwitchCell renders with forced value 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class="table--cell--checkbox"
+        >
+          <div
+            class="gds-field-group"
+          >
+            <div
+              class="field gds-switch-container input-switch-field gds-typography"
+            >
+              <label
+                class="input-switch-field-read-only input-switch-field-checked"
+                for="switch-4"
+                tabindex="-1"
+              >
+                <div
+                  class="switch-marker"
+                >
+                  <input
+                    aria-hidden="true"
+                    checked=""
+                    readonly=""
+                    type="checkbox"
+                  />
+                  <span
+                    aria-checked="true"
+                    aria-label="Label 4"
+                    class="silver"
+                    id="switch-4"
+                    role="checkbox"
+                  />
+                </div>
+                Label 4
+              </label>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;

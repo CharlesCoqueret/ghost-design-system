@@ -1,5 +1,6 @@
 import { CSSProperties, ReactElement } from 'react';
 import * as yup from 'yup';
+import lang from 'suneditor-react/dist/types/lang';
 
 import { IconProp } from '../../../Atoms/Icon';
 import { BadgeColorsEnum } from '../../../Atoms/Badge';
@@ -7,6 +8,8 @@ import { DateFormat, DateFormatEnum, WeekDayEnum } from '../../../Atoms/DatePick
 import { IOption } from '../../../Atoms/SelectInput';
 import { ThousandsGroupStyle } from '../../../Atoms/AmountInput';
 import { ColorButtonEnum } from '../../../Molecules/Button';
+import { IFile } from '../../../Atoms/FileInput';
+import { IFieldProps } from '../../Form';
 
 export enum ColumnType {
   AMOUNT = 'amount',
@@ -16,17 +19,19 @@ export enum ColumnType {
   CODE = 'code',
   CUSTOM = 'custom',
   DATE = 'date',
-  DESCRIPTION = 'description', // TODO Add description to table columns (for hidden use case)
+  DESCRIPTION = 'description',
   DYNAMICSEARCH = 'dynamicsearch',
-  FILE = 'file', // TODO Add file to table columns
+  FILE = 'file',
+  MULTISELECT = 'multiselect',
   NUMBER = 'number',
   PERCENTAGE = 'percentage',
-  RICHTEXT = 'richtext', // TODO Add rich text to table columns (for hidden use case)
-  SWITCH = 'switch', // TODO Add switch to table columns
-  TABLE = 'table', // TODO Add Table to table columns (for hidden use case)
+  RICHTEXT = 'richtext',
+  SECTION = 'section',
+  SWITCH = 'switch',
+  TABLE = 'table',
   TEXT = 'text',
   TEXTAREA = 'textarea',
-  YEAR = 'year', // TODO Add Year to table columns
+  YEAR = 'year',
 }
 
 export enum SortDirectionEnum {
@@ -115,28 +120,38 @@ export interface IColumnButton<T> extends IColumn {
   type: ColumnType.BUTTON;
 }
 
-export interface IColumnCode<T> extends IColumn {
-  dataIndex: keyof T;
-  type: ColumnType.CODE;
-}
-
 export interface IColumnCheckbox<T> extends IColumn {
   dataIndex: keyof T;
   editable?: boolean;
   type: ColumnType.CHECKBOX;
 }
 
+export interface IColumnCode<T> extends IColumn {
+  dataIndex: keyof T;
+  type: ColumnType.CODE;
+}
+
 export interface IColumnCustom<T> extends IColumn {
-  customRender: (row: T, dataIndex: keyof T, rowIndex: number) => ReactElement;
-  customRenderEdit: (
-    row: T,
-    dataIndex: keyof T,
-    onChangeCallback: (newValue: T[keyof T]) => void,
-    rowIndex: number,
+  customRender: <
+    U extends {
+      highlighted?: boolean;
+      inputValue?: T[keyof T];
+      onChange?: (value: T[keyof T]) => void;
+      readOnly?: boolean;
+    },
+  >(
+    props: U,
   ) => ReactElement;
+
   dataIndex: keyof T;
   editable?: boolean;
   type: ColumnType.CUSTOM;
+}
+
+export interface IColumnDescription<T> extends IColumn {
+  dataIndex: keyof T;
+  description: ReactElement | (<U extends { value: T[keyof T] }>(props: U) => ReactElement);
+  type: ColumnType.DESCRIPTION;
 }
 
 export interface IColumnDate<T> extends IColumn {
@@ -166,6 +181,56 @@ export interface IColumnDynamicSearch<T> extends IColumn {
     optionSelectedColor: string; // colors.primary,
   };
   type: ColumnType.DYNAMICSEARCH;
+  usePortal?: boolean;
+}
+
+export interface IColumnFile<T> extends IColumn {
+  acceptTypes?: string;
+  additionalInfo?: string | ReactElement;
+  dataIndex: keyof T;
+  editable?: boolean;
+  maxFiles?: number;
+  maxFileSize?: number;
+  maxFolderDepth?: number;
+  onDelete: (file: IFile) => Promise<void>;
+  onDownload?: (file: IFile) => Promise<void>;
+  requestHeaders?: Record<string, string>;
+  requestMethod: 'POST' | 'PUT';
+  requestUrl: string;
+  requestWithCredentials?: boolean;
+  showFileSize?: boolean;
+  showProgressBar?: boolean;
+  uploadMessage?: string | ReactElement;
+  localization?: {
+    delete?: string;
+    popoverConfirm?: string;
+    popoverCancel?: string;
+    popoverTitle?: string;
+    invalidType?: string;
+    quotaExceeded?: string;
+    sizeExceeded?: string;
+  };
+  type: ColumnType.FILE;
+}
+
+export interface IColumnMultiSelect<T> extends IColumn {
+  dataIndex: keyof T;
+  editable?: boolean;
+  // When the value is not present in the options, should the value be erased (optional, default: false)
+  eraseValueWhenNotInOptions?: boolean;
+  isClearable?: boolean;
+  options: Array<IOption> | ((data: T | undefined) => Array<IOption>);
+  numberOfItemLabel: string;
+  numberOfItemsLabel: string;
+  placeholder?: string;
+  selectColors?: {
+    controlErrorColor: string; // colors.error,
+    controlFocusColor: string; // colors.primary,
+    fontColor: string; // 'rgb(0, 0, 0)',
+    optionFocusColor: string; // colors.chalk,
+    optionSelectedColor: string; // colors.primary,
+  };
+  type: ColumnType.MULTISELECT;
   usePortal?: boolean;
 }
 
@@ -199,6 +264,42 @@ export interface IColumnPercentage<T> extends IColumn {
   type: ColumnType.PERCENTAGE;
 }
 
+export interface IColumnRichText<T> extends IColumn {
+  convertImagesToBase64?: boolean;
+  dataIndex: keyof T;
+  editable?: boolean;
+  enableImage?: boolean;
+  enableLink?: boolean;
+  locale?: lang;
+  maxLength?: number;
+  type: ColumnType.RICHTEXT;
+}
+
+export interface IColumnSection<T> extends IColumn {
+  collapsable?: boolean;
+  dataIndex: keyof T;
+  openInitially?: boolean;
+  fields: Array<IFieldProps<T>>;
+  label: string;
+  type: ColumnType.SECTION;
+}
+
+export interface IColumnSwitch<T> extends IColumn {
+  dataIndex: keyof T;
+  editable?: boolean;
+  type: ColumnType.SWITCH;
+}
+
+export interface IColumnTable<T, U> extends IColumn {
+  columns: Array<IColumnType<U>>;
+  dataIndex: keyof T;
+  editable?: boolean;
+  extra: IExtraLineEditableDataTableProps<U>;
+  loading?: ReactElement;
+  onSortChange?: (sortField?: keyof U, sortDirection?: SortDirectionEnum) => void;
+  type: ColumnType.TABLE;
+}
+
 export interface IColumnText<T> extends IColumn {
   dataIndex: keyof T;
   editable?: boolean;
@@ -228,16 +329,26 @@ export type IColumnType<T> =
   | IColumnAmount<T>
   | IColumnBadge<T>
   | IColumnButton<T>
-  | IColumnCode<T>
   | IColumnCheckbox<T>
+  | IColumnCode<T>
   | IColumnCustom<T>
   | IColumnDate<T>
+  | IColumnDescription<T>
   | IColumnDynamicSearch<T>
+  | IColumnFile<T>
+  | IColumnMultiSelect<T>
   | IColumnNumber<T>
   | IColumnPercentage<T>
+  | IColumnRichText<T>
+  | IColumnSection<T>
+  | IColumnSwitch<T>
+  // TODO investigate type resolution
+  // Using any to avoid circular type definition for now, until there is a way to get the type of an item of T[keyof T]
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  | IColumnTable<T, any>
   | IColumnText<T>
   | IColumnTextArea<T>
-  | IColumnYear<T>; // TODO year
+  | IColumnYear<T>;
 
 export type TableType<T> = Record<keyof T, string | number | Date | undefined | null>;
 

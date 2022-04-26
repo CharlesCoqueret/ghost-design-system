@@ -64,7 +64,7 @@ const SwitchInput = (props: ISwitchInputProps): ReactElement => {
               'field-highlighted': (readOnly || disabled) && highlighted && option.highlighted,
               'input-switch-field-checked': option.checked,
             })}
-            data-testid={option.value}
+            data-testid={dataTestId ? `${dataTestId}-${index}` : undefined}
             htmlFor={ids[index]}
             key={option.value}
             onClick={handleChange(option.value)}

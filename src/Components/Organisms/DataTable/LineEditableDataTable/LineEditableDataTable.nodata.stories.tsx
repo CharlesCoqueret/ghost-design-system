@@ -1,5 +1,6 @@
 import React, { ReactElement, useState } from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import * as yup from 'yup';
 
 import LineEditableDataTable, { ILineEditableDataTableProps } from './LineEditableDataTable';
 import { ColumnType, IColumnType } from '../Common/types';
@@ -22,6 +23,17 @@ interface IDemoType {
 }
 
 const initialData = [];
+
+const validationSchema: yup.SchemaOf<IDemoType> = yup.object({
+  dynamicSearch: yup.mixed().optional(),
+  hidden: yup.string().required(),
+  id: yup.string().required(),
+  name: yup.string().required(),
+  status: yup.string().required(),
+  price: yup.number().required(),
+  parts: yup.number().required(),
+  startDate: yup.date().min(new Date(), 'start date must be after today').required(),
+});
 
 const columns: IColumnType<IDemoType>[] = [
   {
@@ -105,6 +117,9 @@ const Template: ComponentStory<(args: ILineEditableDataTableProps<IDemoType>) =>
 
 export const NoDataAfter5Sec = Template.bind({});
 NoDataAfter5Sec.args = {
-  data: initialData,
   columns: columns,
+  data: initialData,
+  extra: {
+    validationSchema: validationSchema,
+  },
 };
