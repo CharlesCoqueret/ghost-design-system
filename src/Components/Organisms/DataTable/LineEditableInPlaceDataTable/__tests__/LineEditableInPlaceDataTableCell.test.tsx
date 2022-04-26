@@ -24,26 +24,28 @@ jest.mock('suneditor-react/dist', () => {});
 jest.mock('suneditor-react/dist/types/lang', () => {});
 
 import { ColumnType } from '../../Common/types';
-import EditableDataTableCell from '../EditableDataTableCell';
+import LineEditableInPlaceDataTableCell from '../LineEditableInPlaceDataTableCell';
 import { IToggleEntry } from '../../../../Atoms/CheckBoxInput';
 import { FileStatusEnum, IFile } from '../../../../Atoms/FileInput';
 
-describe('EditableDataTableCell component', () => {
-  it('EditableDataTableCell renders with amount and data test id', () => {
+describe('LineEditableInPlaceDataTableCell component', () => {
+  it('LineEditableInPlaceDataTableCell renders with amount and data test id', () => {
     const handleUpdateDataChangeMock = jest.fn();
 
     const { container } = render(
       <table>
         <tbody>
           <tr>
-            <EditableDataTableCell<{ amount: number }>
+            <LineEditableInPlaceDataTableCell<{ amount: number }>
               column={{
                 dataIndex: 'amount',
                 editable: true,
                 title: 'Amount',
                 type: ColumnType.AMOUNT,
               }}
-              editable
+              extra={{
+                editedRowIndex: 0,
+              }}
               handleUpdateDataChange={handleUpdateDataChangeMock}
               row={{ amount: 1 }}
               rowIndex={0}
@@ -64,14 +66,14 @@ describe('EditableDataTableCell component', () => {
     expect(handleUpdateDataChangeMock).toBeCalledWith(0, 'amount', 12);
   });
 
-  it('EditableDataTableCell renders with badge', () => {
+  it('LineEditableInPlaceDataTableCell renders with badge', () => {
     const handleUpdateDataChangeMock = jest.fn();
 
     const { container } = render(
       <table>
         <tbody>
           <tr>
-            <EditableDataTableCell<{ badge: string }>
+            <LineEditableInPlaceDataTableCell<{ badge: string }>
               column={{
                 dataIndex: 'badge',
                 editable: true,
@@ -83,7 +85,9 @@ describe('EditableDataTableCell component', () => {
                   { value: 'NEWVALUE', label: 'New value' },
                 ],
               }}
-              editable
+              extra={{
+                editedRowIndex: 0,
+              }}
               handleUpdateDataChange={handleUpdateDataChangeMock}
               row={{ badge: 'badge' }}
               rowIndex={0}
@@ -107,19 +111,22 @@ describe('EditableDataTableCell component', () => {
     expect(handleUpdateDataChangeMock).toBeCalledWith(0, 'badge', 'NEWVALUE');
   });
 
-  it('EditableDataTableCell renders with button', () => {
+  it('LineEditableInPlaceDataTableCell renders with button', () => {
     const handleUpdateDataChangeMock = jest.fn();
 
     const { container } = render(
       <table>
         <tbody>
           <tr>
-            <EditableDataTableCell<{ number: number }>
+            <LineEditableInPlaceDataTableCell<{ number: number }>
               column={{
                 title: 'Button',
                 type: ColumnType.BUTTON,
                 moreActionsMessage: 'More actions',
                 buttons: [{ label: 'label', icon: ['fal', 'cog'] }],
+              }}
+              extra={{
+                editedRowIndex: 0,
               }}
               handleUpdateDataChange={handleUpdateDataChangeMock}
               row={{ number: 1 }}
@@ -133,21 +140,23 @@ describe('EditableDataTableCell component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('EditableDataTableCell renders with checkbox', () => {
+  it('LineEditableInPlaceDataTableCell renders with checkbox', () => {
     const handleUpdateDataChangeMock = jest.fn();
 
     const { container } = render(
       <table>
         <tbody>
           <tr>
-            <EditableDataTableCell<{ checkbox: Array<IToggleEntry> }>
+            <LineEditableInPlaceDataTableCell<{ checkbox: Array<IToggleEntry> }>
               column={{
                 dataIndex: 'checkbox',
                 editable: true,
                 title: 'Checkbox',
                 type: ColumnType.CHECKBOX,
               }}
-              editable
+              extra={{
+                editedRowIndex: 0,
+              }}
               handleUpdateDataChange={handleUpdateDataChangeMock}
               row={{ checkbox: [{ value: 'value', label: 'Label', checked: true }] }}
               rowIndex={0}
@@ -167,20 +176,22 @@ describe('EditableDataTableCell component', () => {
     ]);
   });
 
-  it('EditableDataTableCell renders with code', () => {
+  it('LineEditableInPlaceDataTableCell renders with code', () => {
     const handleUpdateDataChangeMock = jest.fn();
 
     const { container } = render(
       <table>
         <tbody>
           <tr>
-            <EditableDataTableCell<{ code: string }>
+            <LineEditableInPlaceDataTableCell<{ code: string }>
               column={{
                 dataIndex: 'code',
                 title: 'Code',
                 type: ColumnType.CODE,
               }}
-              editable
+              extra={{
+                editedRowIndex: 0,
+              }}
               handleUpdateDataChange={handleUpdateDataChangeMock}
               row={{ code: 'code' }}
               rowIndex={0}
@@ -193,7 +204,7 @@ describe('EditableDataTableCell component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('EditableDataTableCell renders with custom', () => {
+  it('LineEditableInPlaceDataTableCell renders with custom', () => {
     const handleUpdateDataChangeMock = jest.fn();
     const customRenderMock = jest
       .fn()
@@ -212,7 +223,7 @@ describe('EditableDataTableCell component', () => {
       <table>
         <tbody>
           <tr>
-            <EditableDataTableCell<{ custom: string }>
+            <LineEditableInPlaceDataTableCell<{ custom: string }>
               column={{
                 customRender: customRenderMock,
                 dataIndex: 'custom',
@@ -220,7 +231,9 @@ describe('EditableDataTableCell component', () => {
                 title: 'Custom',
                 type: ColumnType.CUSTOM,
               }}
-              editable
+              extra={{
+                editedRowIndex: 0,
+              }}
               handleUpdateDataChange={handleUpdateDataChangeMock}
               row={{ custom: 'custom' }}
               rowIndex={0}
@@ -241,14 +254,14 @@ describe('EditableDataTableCell component', () => {
     expect(handleUpdateDataChangeMock).toBeCalledWith(0, 'custom', '');
   });
 
-  it('EditableDataTableCell renders with date', async () => {
+  it('LineEditableInPlaceDataTableCell renders with date', async () => {
     const handleUpdateDataChangeMock = jest.fn();
 
     const { container } = render(
       <table>
         <tbody>
           <tr>
-            <EditableDataTableCell<{ date: Date }>
+            <LineEditableInPlaceDataTableCell<{ date: Date }>
               column={{
                 dataIndex: 'date',
                 editable: true,
@@ -256,7 +269,9 @@ describe('EditableDataTableCell component', () => {
                 title: 'Date',
                 type: ColumnType.DATE,
               }}
-              editable
+              extra={{
+                editedRowIndex: 0,
+              }}
               handleUpdateDataChange={handleUpdateDataChangeMock}
               row={{ date: new Date('Fri Apr 22 2022') }}
               rowIndex={0}
@@ -282,21 +297,23 @@ describe('EditableDataTableCell component', () => {
     expect(handleUpdateDataChangeMock).toBeCalledWith(0, 'date', null);
   });
 
-  it('EditableDataTableCell renders with description', async () => {
+  it('LineEditableInPlaceDataTableCell renders with description', async () => {
     const handleUpdateDataChangeMock = jest.fn();
 
     const { container } = render(
       <table>
         <tbody>
           <tr>
-            <EditableDataTableCell<{ description: string }>
+            <LineEditableInPlaceDataTableCell<{ description: string }>
               column={{
                 dataIndex: 'description',
                 description: () => <>Description</>,
                 title: 'Description',
                 type: ColumnType.DESCRIPTION,
               }}
-              editable
+              extra={{
+                editedRowIndex: 0,
+              }}
               handleUpdateDataChange={handleUpdateDataChangeMock}
               row={{ description: 'description' }}
               rowIndex={0}
@@ -309,7 +326,7 @@ describe('EditableDataTableCell component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('EditableDataTableCell renders with dynamicsearch', async () => {
+  it('LineEditableInPlaceDataTableCell renders with dynamicsearch', async () => {
     const handleUpdateDataChangeMock = jest.fn();
     const resolveValueMock = jest.fn().mockImplementation(() => {
       return Promise.resolve({ value: 'value', label: 'label' });
@@ -320,7 +337,7 @@ describe('EditableDataTableCell component', () => {
       <table>
         <tbody>
           <tr>
-            <EditableDataTableCell<{ dynamicsearch: string }>
+            <LineEditableInPlaceDataTableCell<{ dynamicsearch: string }>
               column={{
                 dataIndex: 'dynamicsearch',
                 editable: true,
@@ -332,7 +349,9 @@ describe('EditableDataTableCell component', () => {
                 type: ColumnType.DYNAMICSEARCH,
               }}
               dataTestId='DATA-TEST-ID'
-              editable
+              extra={{
+                editedRowIndex: 0,
+              }}
               handleUpdateDataChange={handleUpdateDataChangeMock}
               row={{ dynamicsearch: 'value' }}
               rowIndex={0}
@@ -362,7 +381,7 @@ describe('EditableDataTableCell component', () => {
     expect(handleUpdateDataChangeMock).toBeCalledWith(0, 'dynamicsearch', undefined);
   });
 
-  it('EditableDataTableCell renders with file', async () => {
+  it('LineEditableInPlaceDataTableCell renders with file', async () => {
     const handleUpdateDataChangeMock = jest.fn();
     const onDeleteMock = jest.fn().mockImplementation(() => {
       return Promise.resolve();
@@ -372,7 +391,7 @@ describe('EditableDataTableCell component', () => {
       <table>
         <tbody>
           <tr>
-            <EditableDataTableCell<{ file: Array<IFile> }>
+            <LineEditableInPlaceDataTableCell<{ file: Array<IFile> }>
               column={{
                 dataIndex: 'file',
                 editable: true,
@@ -382,7 +401,9 @@ describe('EditableDataTableCell component', () => {
                 title: 'File',
                 type: ColumnType.FILE,
               }}
-              editable
+              extra={{
+                editedRowIndex: 0,
+              }}
               handleUpdateDataChange={handleUpdateDataChangeMock}
               row={{
                 file: [
@@ -428,14 +449,14 @@ describe('EditableDataTableCell component', () => {
     expect(handleUpdateDataChangeMock).toBeCalledWith(0, 'file', []);
   });
 
-  it('EditableDataTableCell renders with multiselect', async () => {
+  it('LineEditableInPlaceDataTableCell renders with multiselect', async () => {
     const handleUpdateDataChangeMock = jest.fn();
 
     const { container } = render(
       <table>
         <tbody>
           <tr>
-            <EditableDataTableCell<{ multiselect: Array<string> }>
+            <LineEditableInPlaceDataTableCell<{ multiselect: Array<string> }>
               column={{
                 dataIndex: 'multiselect',
                 editable: true,
@@ -449,7 +470,9 @@ describe('EditableDataTableCell component', () => {
                 title: 'Multiselect',
                 type: ColumnType.MULTISELECT,
               }}
-              editable
+              extra={{
+                editedRowIndex: 0,
+              }}
               handleUpdateDataChange={handleUpdateDataChangeMock}
               row={{
                 multiselect: ['value1'],
@@ -470,21 +493,23 @@ describe('EditableDataTableCell component', () => {
     expect(handleUpdateDataChangeMock).toBeCalledWith(0, 'multiselect', []);
   });
 
-  it('EditableDataTableCell renders with number', () => {
+  it('LineEditableInPlaceDataTableCell renders with number', () => {
     const handleUpdateDataChangeMock = jest.fn();
 
     const { container } = render(
       <table>
         <tbody>
           <tr>
-            <EditableDataTableCell<{ number: number }>
+            <LineEditableInPlaceDataTableCell<{ number: number }>
               column={{
                 dataIndex: 'number',
                 editable: true,
                 title: 'Number',
                 type: ColumnType.NUMBER,
               }}
-              editable
+              extra={{
+                editedRowIndex: 0,
+              }}
               handleUpdateDataChange={handleUpdateDataChangeMock}
               row={{ number: 1 }}
               rowIndex={0}
@@ -505,21 +530,23 @@ describe('EditableDataTableCell component', () => {
     expect(handleUpdateDataChangeMock).toBeCalledWith(0, 'number', undefined);
   });
 
-  it('EditableDataTableCell renders with percentage', () => {
+  it('LineEditableInPlaceDataTableCell renders with percentage', () => {
     const handleUpdateDataChangeMock = jest.fn();
 
     const { container } = render(
       <table>
         <tbody>
           <tr>
-            <EditableDataTableCell<{ percentage: number }>
+            <LineEditableInPlaceDataTableCell<{ percentage: number }>
               column={{
                 dataIndex: 'percentage',
                 editable: true,
                 title: 'Percentage',
                 type: ColumnType.PERCENTAGE,
               }}
-              editable
+              extra={{
+                editedRowIndex: 0,
+              }}
               handleUpdateDataChange={handleUpdateDataChangeMock}
               row={{ percentage: 1 }}
               rowIndex={0}
@@ -540,14 +567,14 @@ describe('EditableDataTableCell component', () => {
     expect(handleUpdateDataChangeMock).toBeCalledWith(0, 'percentage', undefined);
   });
 
-  it('EditableDataTableCell renders with section', async () => {
+  it('LineEditableInPlaceDataTableCell renders with section', async () => {
     const handleUpdateDataChangeMock = jest.fn();
 
     const { container } = render(
       <table>
         <tbody>
           <tr>
-            <EditableDataTableCell<{ section: string }>
+            <LineEditableInPlaceDataTableCell<{ section: string }>
               column={{
                 dataIndex: 'section',
                 fields: [],
@@ -555,7 +582,9 @@ describe('EditableDataTableCell component', () => {
                 title: 'Section',
                 type: ColumnType.SECTION,
               }}
-              editable
+              extra={{
+                editedRowIndex: 0,
+              }}
               handleUpdateDataChange={handleUpdateDataChangeMock}
               row={{ section: 'section' }}
               rowIndex={0}
@@ -568,21 +597,23 @@ describe('EditableDataTableCell component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('EditableDataTableCell renders with switch', () => {
+  it('LineEditableInPlaceDataTableCell renders with switch', () => {
     const handleUpdateDataChangeMock = jest.fn();
 
     const { container } = render(
       <table>
         <tbody>
           <tr>
-            <EditableDataTableCell<{ switch: Array<IToggleEntry> }>
+            <LineEditableInPlaceDataTableCell<{ switch: Array<IToggleEntry> }>
               column={{
                 dataIndex: 'switch',
                 editable: true,
                 title: 'Switch',
                 type: ColumnType.SWITCH,
               }}
-              editable
+              extra={{
+                editedRowIndex: 0,
+              }}
               handleUpdateDataChange={handleUpdateDataChangeMock}
               row={{ switch: [{ value: 'value', label: 'Label', checked: true }] }}
               rowIndex={0}
@@ -602,14 +633,14 @@ describe('EditableDataTableCell component', () => {
     ]);
   });
 
-  it('EditableDataTableCell renders with table', async () => {
+  it('LineEditableInPlaceDataTableCell renders with table', async () => {
     const handleUpdateDataChangeMock = jest.fn();
 
     const { container } = render(
       <table>
         <tbody>
           <tr>
-            <EditableDataTableCell<{ table: Array<{ number: number }> }>
+            <LineEditableInPlaceDataTableCell<{ table: Array<{ number: number }> }>
               column={{
                 columns: [
                   {
@@ -627,7 +658,9 @@ describe('EditableDataTableCell component', () => {
                 title: 'Table',
                 type: ColumnType.TABLE,
               }}
-              editable
+              extra={{
+                editedRowIndex: 0,
+              }}
               handleUpdateDataChange={handleUpdateDataChangeMock}
               row={{ table: [{ number: 1 }, { number: 2 }] }}
               rowIndex={0}
@@ -640,21 +673,23 @@ describe('EditableDataTableCell component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('EditableDataTableCell renders with text', () => {
+  it('LineEditableInPlaceDataTableCell renders with text', () => {
     const handleUpdateDataChangeMock = jest.fn();
 
     const { container } = render(
       <table>
         <tbody>
           <tr>
-            <EditableDataTableCell<{ text: string }>
+            <LineEditableInPlaceDataTableCell<{ text: string }>
               column={{
                 dataIndex: 'text',
                 editable: true,
                 title: 'Text',
                 type: ColumnType.TEXT,
               }}
-              editable
+              extra={{
+                editedRowIndex: 0,
+              }}
               handleUpdateDataChange={handleUpdateDataChangeMock}
               row={{ text: 'text' }}
               rowIndex={0}
@@ -675,21 +710,23 @@ describe('EditableDataTableCell component', () => {
     expect(handleUpdateDataChangeMock).toBeCalledWith(0, 'text', '');
   });
 
-  it('EditableDataTableCell renders with textarea', () => {
+  it('LineEditableInPlaceDataTableCell renders with textarea', () => {
     const handleUpdateDataChangeMock = jest.fn();
 
     const { container } = render(
       <table>
         <tbody>
           <tr>
-            <EditableDataTableCell<{ textarea: string }>
+            <LineEditableInPlaceDataTableCell<{ textarea: string }>
               column={{
                 dataIndex: 'textarea',
                 editable: true,
                 title: 'Textarea',
                 type: ColumnType.TEXTAREA,
               }}
-              editable
+              extra={{
+                editedRowIndex: 0,
+              }}
               handleUpdateDataChange={handleUpdateDataChangeMock}
               row={{ textarea: 'textarea' }}
               rowIndex={0}
@@ -710,21 +747,23 @@ describe('EditableDataTableCell component', () => {
     expect(handleUpdateDataChangeMock).toBeCalledWith(0, 'textarea', '');
   });
 
-  it('EditableDataTableCell renders with year', async () => {
+  it('LineEditableInPlaceDataTableCell renders with year', async () => {
     const handleUpdateDataChangeMock = jest.fn();
 
     const { container } = render(
       <table>
         <tbody>
           <tr>
-            <EditableDataTableCell<{ year: number }>
+            <LineEditableInPlaceDataTableCell<{ year: number }>
               column={{
                 dataIndex: 'year',
                 editable: true,
                 title: 'Year',
                 type: ColumnType.YEAR,
               }}
-              editable
+              extra={{
+                editedRowIndex: 0,
+              }}
               handleUpdateDataChange={handleUpdateDataChangeMock}
               row={{ year: 2022 }}
               rowIndex={0}

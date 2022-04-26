@@ -1,0 +1,279 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EditableDataTableCell component EditableDataTableCell handles iseditable function 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr
+        class="pointer"
+        tabindex="0"
+      >
+        <td
+          class=""
+        >
+          <div
+            class="gds-field-group"
+          >
+            <span
+              class="gds-amount-field amount-field-read-only table--cell-value--number-readonly"
+              id="number"
+              name="number"
+            >
+              1
+            </span>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`EditableDataTableCell component EditableDataTableCell handles iseditable function 2`] = `
+<div>
+  <table>
+    <tbody>
+      <tr
+        class="no-data"
+      >
+        <td
+          colspan="2"
+        >
+          <div
+            class="no-data-container"
+          >
+            <div
+              class="no-data-text"
+            >
+              Nothing
+            </div>
+            <i
+              class="no-data-icon icon"
+              icon="fal,inbox"
+            />
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`EditableDataTableCell component EditableDataTableCell handles iseditable function 3`] = `
+<div>
+  <table>
+    <tbody>
+      <tr
+        class=""
+        tabindex="-1"
+      >
+        <td
+          class="table--value--selectable"
+          tabindex="0"
+        >
+          <div
+            class="checkbox-marker"
+          >
+            <i
+              class="icon"
+              icon="fal,square"
+            />
+          </div>
+        </td>
+        <td
+          class=""
+        >
+          <div
+            class="gds-field-group"
+          >
+            <span
+              class="gds-amount-field amount-field-read-only table--cell-value--number-readonly"
+              id="number"
+              name="number"
+            >
+              1
+            </span>
+          </div>
+        </td>
+      </tr>
+      <tr
+        class="no-data"
+      >
+        <td
+          colspan="2"
+        >
+          Loading
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`EditableDataTableCell component EditableDataTableCell handles row click 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr
+        class="pointer"
+        tabindex="0"
+      >
+        <td
+          class=""
+        >
+          <div
+            class="gds-field-group"
+          >
+            <span
+              class="gds-amount-field amount-field-read-only table--cell-value--number-readonly"
+              id="number"
+              name="number"
+            >
+              1
+            </span>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`EditableDataTableCell component EditableDataTableCell handles row selection 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr
+        class=""
+        tabindex="-1"
+      >
+        <td
+          class="table--value--selectable"
+          tabindex="0"
+        >
+          <div
+            class="checkbox-marker"
+          >
+            <i
+              class="icon"
+              icon="fal,square"
+            />
+          </div>
+        </td>
+        <td
+          class=""
+        >
+          <div
+            class="gds-field-group"
+          >
+            <span
+              class="gds-amount-field amount-field-read-only table--cell-value--number-readonly"
+              id="number"
+              name="number"
+            >
+              1
+            </span>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`EditableDataTableCell component EditableDataTableCell renders 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr
+        class=""
+        tabindex="-1"
+      >
+        <td
+          class=""
+        >
+          <div
+            class="gds-field-group"
+          >
+            <span
+              class="gds-amount-field amount-field-read-only table--cell-value--number-readonly"
+              id="number"
+              name="number"
+            >
+              1
+            </span>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`EditableDataTableCell component EditableDataTableCell renders 2`] = `
+<div>
+  <table>
+    <tbody>
+      <tr
+        class=""
+        tabindex="-1"
+      >
+        <td
+          class=""
+        >
+          <div
+            class="gds-field-group"
+          >
+            <span
+              class="gds-amount-field amount-field-read-only table--cell-value--number-readonly"
+              id="number"
+              name="number"
+            >
+              1
+            </span>
+          </div>
+        </td>
+      </tr>
+      <tr
+        class="no-data"
+      >
+        <td
+          colspan="1"
+        >
+          Loading
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`EditableDataTableCell component EditableDataTableCell renders 3`] = `
+<div>
+  <table>
+    <tbody>
+      <tr
+        class="no-data"
+      >
+        <td
+          colspan="1"
+        >
+          <div
+            class="no-data-container"
+          >
+            <div
+              class="no-data-text"
+            >
+              No data
+            </div>
+            <i
+              class="no-data-icon icon"
+              icon="fal,inbox"
+            />
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
