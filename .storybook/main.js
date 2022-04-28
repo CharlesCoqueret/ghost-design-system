@@ -8,12 +8,11 @@ module.exports = {
     '@storybook/addon-a11y',
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
-    '@storybook/addon-links',
     '@storybook/addon-postcss',
     '@storybook/addon-storysource',
   ],
   core: {
-    builder: '@storybook/builder-webpack5',
+    builder: 'webpack5',
   },
   framework: '@storybook/react',
   webpackFinal: async (config) => {

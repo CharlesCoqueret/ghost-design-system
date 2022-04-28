@@ -1,4 +1,5 @@
-import { Meta, Preview, Source } from '@storybook/addon-docs';
+import { Canvas, Meta, Preview, Props, Story, Source } from '@storybook/addon-docs';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import ActionBar from './ActionBar';
 import { ColorButtonEnum } from '../../Molecules';
@@ -6,14 +7,16 @@ import { Badge, BadgeColorsEnum, Icon, Tooltip } from '../../Atoms';
 
 import actionBarStyle from '../../../assets/_actionbar.scss?raw';
 
+export const Template = (args) => {
+  return <ActionBar {...args} />;
+};
+
 <Meta
-  title='Organism/ActionBar/Doc'
+  title='Organism/ActionBar'
   component={ActionBar}
   parameters={{
     viewMode: 'docs',
-    previewTabs: {
-      canvas: { hidden: true },
-    },
+    layout: 'fullscreen',
   }}
 />
 
@@ -179,6 +182,80 @@ Play with ActionBar live on [CodeSandbox](https://codesandbox.io/s/actionbar-dem
     ]}
   />
 </Preview>
+
+## Props
+
+<Props of={ActionBar} sort='requiredFirst' />
+
+## Story
+
+<Canvas>
+  <Story
+    name='Default'
+    args={{
+      prefix: 'prefix',
+      title: 'title',
+      suffix: 'suffix',
+      primary: true,
+      placeholder: 'placeholder',
+      entityId: 'entityId',
+      onBackClicked: () => {
+        console.log('Back clicked');
+      },
+      backTooltip: 'Back',
+      onTitleEdit: (newTitle) => {
+        console.log(newTitle);
+      },
+      icon: <Icon icon={['fal', 'question-circle']} size='lg' />,
+      indicator: (
+        <Badge color={BadgeColorsEnum.HIGH} tooltip='indicator' type='notification'>
+          1
+        </Badge>
+      ),
+      status: (
+        <Badge color={BadgeColorsEnum.SECONDARY} tooltip='status' type='indicator'>
+          Status
+        </Badge>
+      ),
+      actions: [
+        {
+          label: 'Submit',
+          icon: ['fal', 'paper-plane'],
+          color: ColorButtonEnum.PRIMARY,
+          onClick: () => {
+            console.log('Submit clicked');
+          },
+        },
+        {
+          label: 'Cancel',
+          color: ColorButtonEnum.SECONDARY,
+          onClick: () => {
+            console.log('Cancel clicked');
+          },
+        },
+      ],
+      basicActions: [
+        {
+          tooltip: 'Save',
+          color: ColorButtonEnum.REVERSED,
+          icon: ['fal', 'save'],
+          onClick: () => {
+            console.log('Save clicked');
+          },
+        },
+        {
+          tooltip: 'Undo',
+          icon: ['fal', 'undo'],
+          color: ColorButtonEnum.REVERSED,
+          onClick: () => {
+            console.log('Undo clicked');
+          },
+        },
+      ],
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
 
 ## Style
 

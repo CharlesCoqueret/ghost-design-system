@@ -1,4 +1,5 @@
-import { Meta, Preview, Source } from '@storybook/addon-docs';
+import { Canvas, Meta, Preview, Props, Story, Source } from '@storybook/addon-docs';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import Filter from './Filter';
 import { FilterTypeEnum } from './types';
@@ -8,21 +9,23 @@ import { Icon } from '../../Atoms';
 
 import filterStyle from '../../../assets/_filter.scss?raw';
 
+export const Template = (args) => {
+  return <Filter {...args} />;
+};
+
 <Meta
-  title='Organism/Filter/Doc'
+  title='Organism/Filter'
   component={Filter}
   parameters={{
     viewMode: 'docs',
     layout: 'fullscreen',
-    previewTabs: {
-      canvas: { hidden: true },
-    },
   }}
 />
 
 # Filter
 
 Filter is a collection of input fields (either gathered on a row, or in a modal) to instantly filter the current view.
+As a developper, it is your responsibility to build the search criteria based on the provided filter values via onChange callback.
 
 Play with Filter live on [CodeSandbox](https://codesandbox.io/s/filter-demo-hi6upd)
 
@@ -283,6 +286,147 @@ Play with Filter live on [CodeSandbox](https://codesandbox.io/s/filter-demo-hi6u
     onChange={console.log}
   />
 </Preview>
+
+## Props
+
+<Props of={Filter} sort='requiredFirst' />
+
+## Story
+
+<Canvas>
+  <Story
+    name='Default'
+    args={{
+      advancedSearchItems: [
+        {
+          filterType: FilterTypeEnum.COLUMN,
+          fields: [
+            {
+              filterType: FilterTypeEnum.TITLE,
+              label: 'Section #1',
+            },
+            {
+              dataIndex: 'number',
+              filterType: FilterTypeEnum.NUMBER,
+              label: 'Number',
+              placeholder: 'Search number',
+            },
+            {
+              dataIndex: 'checkbox',
+              filterType: FilterTypeEnum.CHECKBOX,
+              label: 'Checkbox',
+            },
+            {
+              dataIndex: 'select',
+              filterType: FilterTypeEnum.SELECT,
+              isClearable: true,
+              label: 'Select',
+              options: [
+                { value: 'SELECT1', label: 'Option #1' },
+                { value: 'SELECT2', label: 'Option #2' },
+                { value: 'SELECT3', label: 'Option #3' },
+                { value: 'SELECT4', label: 'Option #4' },
+              ],
+              placeholder: 'Select an option',
+            },
+          ],
+        },
+        {
+          filterType: FilterTypeEnum.COLUMN,
+          fields: [
+            {
+              filterType: FilterTypeEnum.TITLE,
+              label: 'Section #2',
+            },
+            {
+              dataIndex: 'text',
+              filterType: FilterTypeEnum.TEXT,
+              label: 'Text',
+              placeholder: 'Search text',
+            },
+            {
+              dataIndex: 'dateFrom',
+              filterType: FilterTypeEnum.DATE,
+              isClearable: true,
+              label: 'From',
+            },
+            {
+              dataIndex: 'dateTo',
+              filterType: FilterTypeEnum.DATE,
+              isClearable: true,
+              label: 'To',
+            },
+            {
+              dataIndex: 'multiselect',
+              filterType: FilterTypeEnum.MULTISELECT,
+              isClearable: true,
+              label: 'Multiselect',
+              numberOfItemLabel: '{} item selected',
+              numberOfItemsLabel: '{} items selected',
+              options: [
+                { value: 'SELECT1', label: 'Option #1' },
+                { value: 'SELECT2', label: 'Option #2' },
+                { value: 'SELECT3', label: 'Option #3' },
+                { value: 'SELECT4', label: 'Option #4' },
+              ],
+              placeholder: 'Select options',
+            },
+          ],
+        },
+      ],
+      searchBarItems: [
+        {
+          dataIndex: 'dateFrom',
+          filterType: FilterTypeEnum.DATE,
+          isClearable: true,
+          label: 'From',
+        },
+        {
+          dataIndex: 'dateTo',
+          filterType: FilterTypeEnum.DATE,
+          isClearable: true,
+          label: 'To',
+        },
+        {
+          dataIndex: 'multiselect',
+          filterType: FilterTypeEnum.MULTISELECT,
+          fieldSize: 3,
+          isClearable: true,
+          numberOfItemLabel: '{} item selected',
+          numberOfItemsLabel: '{} items selected',
+          options: [
+            { value: 'SELECT1', label: 'Option #1' },
+            { value: 'SELECT2', label: 'Option #2' },
+            { value: 'SELECT3', label: 'Option #3' },
+            { value: 'SELECT4', label: 'Option #4' },
+          ],
+          placeholder: 'Select options',
+        },
+      ],
+      initialValues: {
+        checkbox: [
+          {
+            value: 'CHECKBOX1',
+            label: 'Checkbox #1',
+          },
+          {
+            value: 'CHECKBOX2',
+            label: 'Checkbox #2',
+          },
+        ],
+        dateFrom: new Date(),
+      },
+      localization: {
+        advancedSearch: 'Advanced search',
+        advancedSearchTitle: 'Advanced search',
+        search: 'Search',
+        reset: 'Reset',
+      },
+      onChange: console.log,
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
 
 ## Style
 

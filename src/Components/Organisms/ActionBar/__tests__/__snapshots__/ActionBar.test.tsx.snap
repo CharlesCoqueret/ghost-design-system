@@ -165,7 +165,26 @@ exports[`ActionBar Component ActionBar renders with actions without label, empty
     >
       <div
         class="actions"
-      />
+      >
+        <button
+          class="gds-button-content"
+          color="secondary"
+          tabindex="0"
+          type="button"
+        >
+          <div
+            class="button-icon-container"
+          >
+            <i
+              class="button-icon icon"
+              icon="fal,cog"
+            />
+          </div>
+        </button>
+        <div>
+          TOOLTIP
+        </div>
+      </div>
     </div>
   </div>
 </div>

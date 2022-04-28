@@ -89,7 +89,7 @@ const Filter = <T,>(props: IFilterProps<T>): React.ReactElement => {
   const hasAdvancedSearch = advancedSearchItems && advancedSearchItems.length > 0;
 
   return (
-    <div className='filter-container'>
+    <div className='gds-filter-container'>
       <div className='searchbar'>
         <div className='search-field'>
           {searchBarItems.map((item) => {
