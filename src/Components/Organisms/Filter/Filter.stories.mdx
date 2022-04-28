@@ -1,0 +1,291 @@
+import { Meta, Preview, Source } from '@storybook/addon-docs';
+
+import Filter from './Filter';
+import { FilterTypeEnum } from './types';
+import { IToggleEntry } from '../../Atoms/CheckBoxInput';
+import { IOption } from '../../Atoms/SelectInput';
+import { Icon } from '../../Atoms';
+
+import filterStyle from '../../../assets/_filter.scss?raw';
+
+<Meta
+  title='Organism/Filter/Doc'
+  component={Filter}
+  parameters={{
+    viewMode: 'docs',
+    layout: 'fullscreen',
+    previewTabs: {
+      canvas: { hidden: true },
+    },
+  }}
+/>
+
+# Filter
+
+Filter is a collection of input fields (either gathered on a row, or in a modal) to instantly filter the current view.
+
+Play with Filter live on [CodeSandbox](https://codesandbox.io/s/filter-demo-hi6upd)
+
+## search bar items
+
+<div
+  style={{
+    border: '1px solid red',
+    borderRadius: '4px',
+    padding: '1rem',
+    color: 'red',
+  }}>
+  <div
+    style={{
+      top: '50%',
+      left: '50%',
+    }}>
+    <Icon icon={['fal', 'exclamation-triangle']} size='lg' /> The search bar items should never exceed 5 items.
+  </div>
+</div>
+
+<Preview isExpanded={true}>
+  <Filter
+    searchBarItems={[
+      {
+        dataIndex: 'text',
+        filterType: FilterTypeEnum.TEXT,
+        placeholder: 'Search text',
+      },
+      {
+        dataIndex: 'dateFrom',
+        filterType: FilterTypeEnum.DATE,
+        isClearable: true,
+        label: 'From',
+      },
+      {
+        dataIndex: 'dateTo',
+        filterType: FilterTypeEnum.DATE,
+        isClearable: true,
+        label: 'To',
+      },
+    ]}
+    onChange={console.log}
+  />
+</Preview>
+
+## advanced search items
+
+<div
+  style={{
+    border: '1px solid deepskyblue',
+    borderRadius: '4px',
+    padding: '1rem',
+  }}>
+  <div
+    style={{
+      top: '50%',
+      left: '50%',
+    }}>
+    <Icon style={{ color: 'deepskyblue' }} icon={['fal', 'exclamation-circle']} size='lg' /> It is recommended to set
+    the fieldSize of select, multiselect, dynamic search and dynamic search creatable when inline.
+  </div>
+</div>
+
+<Preview isExpanded={false}>
+  <Filter
+    advancedSearchItems={[
+      {
+        filterType: FilterTypeEnum.COLUMN,
+        fields: [
+          {
+            filterType: FilterTypeEnum.TITLE,
+            label: 'Section #1',
+          },
+          {
+            dataIndex: 'number',
+            filterType: FilterTypeEnum.NUMBER,
+            label: 'Number',
+            placeholder: 'Search number',
+          },
+          {
+            filterType: FilterTypeEnum.TITLE,
+            label: 'Section #1 - 2',
+          },
+          {
+            dataIndex: 'select',
+            filterType: FilterTypeEnum.SELECT,
+            isClearable: true,
+            label: 'Select',
+            options: [
+              { value: 'SELECT1', label: 'Option #1' },
+              { value: 'SELECT2', label: 'Option #2' },
+            ],
+            placeholder: 'Select an option',
+          },
+        ],
+      },
+      {
+        filterType: FilterTypeEnum.COLUMN,
+        fields: [
+          {
+            filterType: FilterTypeEnum.TITLE,
+            label: 'Section #2',
+          },
+          {
+            dataIndex: 'text',
+            filterType: FilterTypeEnum.TEXT,
+            label: 'Text',
+            placeholder: 'Search text',
+          },
+          {
+            dataIndex: 'dateFrom',
+            filterType: FilterTypeEnum.DATE,
+            isClearable: true,
+            label: 'From',
+          },
+          {
+            dataIndex: 'dateTo',
+            filterType: FilterTypeEnum.DATE,
+            isClearable: true,
+            label: 'To',
+          },
+          {
+            dataIndex: 'multiselect',
+            filterType: FilterTypeEnum.MULTISELECT,
+            isClearable: true,
+            label: 'Multiselect',
+            numberOfItemLabel: '{} item selected',
+            numberOfItemsLabel: '{} items selected',
+            options: [
+              { value: 'SELECT1', label: 'Option #1' },
+              { value: 'SELECT2', label: 'Option #2' },
+            ],
+            placeholder: 'Select options',
+          },
+        ],
+      },
+    ]}
+    searchBarItems={[
+      {
+        dataIndex: 'text',
+        fieldSize: 4,
+        filterType: FilterTypeEnum.TEXT,
+        placeholder: 'Search text',
+      },
+      {
+        dataIndex: 'multiselect',
+        filterType: FilterTypeEnum.MULTISELECT,
+        fieldSize: 4,
+        isClearable: true,
+        numberOfItemLabel: '{} item selected',
+        numberOfItemsLabel: '{} items selected',
+        options: [
+          { value: 'SELECT1', label: 'Option #1' },
+          { value: 'SELECT2', label: 'Option #2' },
+        ],
+        placeholder: 'Select options',
+      },
+    ]}
+    onChange={console.log}
+  />
+</Preview>
+
+## localization
+
+<Preview isExpanded={false}>
+  <Filter
+    advancedSearchItems={[
+      {
+        filterType: FilterTypeEnum.COLUMN,
+        fields: [
+          {
+            filterType: FilterTypeEnum.TITLE,
+            label: 'Section #1',
+          },
+          {
+            dataIndex: 'number',
+            filterType: FilterTypeEnum.NUMBER,
+            label: 'Number',
+            placeholder: 'Search number',
+          },
+        ],
+      },
+      {
+        filterType: FilterTypeEnum.COLUMN,
+        fields: [
+          {
+            filterType: FilterTypeEnum.TITLE,
+            label: 'Section #2',
+          },
+          {
+            dataIndex: 'text',
+            filterType: FilterTypeEnum.TEXT,
+            label: 'Text',
+            placeholder: 'Search text',
+          },
+        ],
+      },
+    ]}
+    searchBarItems={[
+      {
+        dataIndex: 'text',
+        fieldSize: 4,
+        filterType: FilterTypeEnum.TEXT,
+        placeholder: 'Search text',
+      },
+    ]}
+    localization={{
+      advancedSearch: 'Custom Advanced search',
+      advancedSearchTitle: 'Custom Advanced search',
+      search: 'Custom Search',
+      reset: 'Custom Reset',
+    }}
+    onChange={console.log}
+  />
+</Preview>
+
+## initial value
+
+<Preview isExpanded={false}>
+  <Filter
+    advancedSearchItems={[
+      {
+        dataIndex: 'checkbox',
+        filterType: FilterTypeEnum.CHECKBOX,
+        label: 'Checkbox',
+      },
+      {
+        dataIndex: 'text',
+        filterType: FilterTypeEnum.TEXT,
+        label: 'Text',
+        placeholder: 'Search text',
+      },
+    ]}
+    searchBarItems={[
+      {
+        dataIndex: 'text',
+        fieldSize: 4,
+        filterType: FilterTypeEnum.TEXT,
+        placeholder: 'Search text',
+      },
+      {
+        dataIndex: 'checkbox',
+        fieldSize: 4,
+        filterType: FilterTypeEnum.CHECKBOX,
+      },
+    ]}
+    initialValues={{
+      checkbox: [
+        {
+          value: 'CHECKBOX1',
+          label: 'Checkbox #1',
+          checked: true,
+        },
+      ],
+      text: 'text',
+    }}
+    onChange={console.log}
+  />
+</Preview>
+
+## Style
+
+[source](https://github.com/CharlesCoqueret/ghost-design-system/blob/main/src/assets/_filter.scss)
+
+<Source language='css' dark format={true} code={filterStyle} />

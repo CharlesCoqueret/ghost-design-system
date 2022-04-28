@@ -1,0 +1,187 @@
+import { Meta, Preview, Source } from '@storybook/addon-docs';
+
+import ActionBar from './ActionBar';
+import { ColorButtonEnum } from '../../Molecules';
+import { Badge, BadgeColorsEnum, Icon, Tooltip } from '../../Atoms';
+
+import actionBarStyle from '../../../assets/_actionbar.scss?raw';
+
+<Meta
+  title='Organism/ActionBar/Doc'
+  component={ActionBar}
+  parameters={{
+    viewMode: 'docs',
+    previewTabs: {
+      canvas: { hidden: true },
+    },
+  }}
+/>
+
+# ActionBar
+
+The action bar provides to the user context and actions related to the current page scope.
+
+Play with ActionBar live on [CodeSandbox](https://codesandbox.io/s/actionbar-demo-k8y5tr)
+
+## Title
+
+<Preview isExpanded={true}>
+  <ActionBar title='title' />
+</Preview>
+
+## Primary
+
+<Preview isExpanded={true}>
+  <ActionBar title='Primary' primary={true} />
+</Preview>
+
+<Preview isExpanded={true}>
+  <ActionBar title='Secondary' primary={false} />
+</Preview>
+
+## Prefix, suffix and entityId
+
+<Preview isExpanded={true}>
+  <ActionBar title='title' entityId='entityId' prefix='prefix' suffix='suffix' />
+</Preview>
+
+## Back
+
+<Preview isExpanded={true}>
+  <ActionBar
+    title='title'
+    onBackClicked={() => {
+      console.log('Back clicked');
+    }}
+    backTooltip='Back'
+  />
+</Preview>
+
+## Title edition
+
+<Preview isExpanded={true}>
+  <ActionBar
+    title='title'
+    onTitleEdit={(newTitle) => {
+      console.log(newTitle);
+    }}
+    placeholder='placeholder'
+  />
+</Preview>
+
+## Icon
+
+<Preview isExpanded={true}>
+  <ActionBar title='title' icon={<Icon icon={['fal', 'question-circle']} size='lg' />} />
+</Preview>
+
+## Indicator
+
+<Preview isExpanded={true}>
+  <ActionBar
+    title='title'
+    indicator={
+      <Badge color={BadgeColorsEnum.HIGH} tooltip='indicator' type='notification'>
+        1
+      </Badge>
+    }
+  />
+</Preview>
+
+## Status
+
+<Preview isExpanded={true}>
+  <ActionBar
+    title='title'
+    status={
+      <Badge color={BadgeColorsEnum.SECONDARY} tooltip='status' type='indicator'>
+        Status
+      </Badge>
+    }
+  />
+</Preview>
+
+## Full size action
+
+<Preview isExpanded={true}>
+  <ActionBar
+    title='title'
+    actions={[
+      {
+        label: 'Submit',
+        icon: ['fal', 'paper-plane'],
+        color: ColorButtonEnum.PRIMARY,
+        onClick: () => {
+          console.log('Submit clicked');
+        },
+      },
+      {
+        label: 'Cancel',
+        color: ColorButtonEnum.SECONDARY,
+        onClick: () => {
+          console.log('Cancel clicked');
+        },
+      },
+    ]}
+  />
+</Preview>
+
+## Short hand actions
+
+<Preview isExpanded={true}>
+  <ActionBar
+    title='title'
+    basicActions={[
+      {
+        tooltip: 'Save',
+        color: ColorButtonEnum.REVERSED,
+        icon: ['fal', 'save'],
+        onClick: () => {
+          console.log('Save clicked');
+        },
+      },
+      {
+        tooltip: 'Undo',
+        icon: ['fal', 'undo'],
+        color: ColorButtonEnum.REVERSED,
+        onClick: () => {
+          console.log('Undo clicked');
+        },
+      },
+    ]}
+  />
+</Preview>
+
+## Different types of actions
+
+<Preview isExpanded={true}>
+  <ActionBar
+    title='title'
+    actions={[
+      {
+        label: 'Submit',
+        icon: ['fal', 'paper-plane'],
+        color: ColorButtonEnum.PRIMARY,
+        onClick: () => {
+          console.log('Submit clicked');
+        },
+      },
+    ]}
+    basicActions={[
+      {
+        tooltip: 'Save',
+        color: ColorButtonEnum.REVERSED,
+        icon: ['fal', 'save'],
+        onClick: () => {
+          console.log('Save clicked');
+        },
+      },
+    ]}
+  />
+</Preview>
+
+## Style
+
+[source](https://github.com/CharlesCoqueret/ghost-design-system/blob/main/src/assets/_actionbar.scss)
+
+<Source language='css' dark format={true} code={actionBarStyle} />
