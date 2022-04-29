@@ -109,7 +109,7 @@ const AmountInput = (props: IAmountInputProps): ReactElement => {
    * Read only case
    */
   if (readOnly) {
-    if (!inputValue || !Number.isFinite(Number(inputValue))) {
+    if (inputValue === undefined || inputValue === null || inputValue === '' || !Number.isFinite(Number(inputValue))) {
       return (
         <div
           className={classnames(

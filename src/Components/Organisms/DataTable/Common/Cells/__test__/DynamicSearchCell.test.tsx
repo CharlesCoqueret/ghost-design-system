@@ -222,6 +222,7 @@ describe('DynamicSearchCell component', () => {
             <DynamicSearchCell
               column={{
                 dataIndex: 'data',
+                editable: true,
                 hidden: true,
                 noOptionsMessage: noOptionsMessageMock,
                 resolveValue: resolveValueMock,

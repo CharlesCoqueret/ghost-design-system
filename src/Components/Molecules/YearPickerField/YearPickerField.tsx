@@ -31,8 +31,6 @@ export interface IYearPickerFieldProps {
   label?: string;
   /** Size of the field in a 12 column grid (optional, default: undefined) */
   labelSize?: number;
-  /** Locale to display months and day (optional, default: undefined) */
-  locale?: string;
   /** Mandatory field (optional, default: false) */
   mandatory?: boolean;
   /** Name of text field */

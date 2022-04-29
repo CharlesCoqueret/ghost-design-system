@@ -15,7 +15,7 @@ const MultiSelectCell = <T,>(props: ICellProps<T, IColumnMultiSelect<T>>): React
 
   let displayValue = (forcedValue || (row && row[column.dataIndex]) || undefined) as Array<string> | undefined;
   const isCurrentlyEditedRow =
-    editing || (extra && 'editedRowIndex' in extra ? extra.editedRowIndex === rowIndex : false);
+    editing || (extra && 'editedRowIndex' in extra ? extra.editedRowIndex === rowIndex && column.editable : false);
 
   const options = typeof column.options === 'function' ? column.options(row) : column.options;
 
@@ -35,7 +35,7 @@ const MultiSelectCell = <T,>(props: ICellProps<T, IColumnMultiSelect<T>>): React
   return (
     <td className={classnames({ ellipsis: column.ellipsis })} style={{ display: column.hidden ? 'none' : undefined }}>
       <MultiSelectField
-        colors={column.selectColors}
+        colors={column.colors}
         dataTestId={dataTestId}
         ellipsis={column.ellipsis}
         inputValue={displayValue}

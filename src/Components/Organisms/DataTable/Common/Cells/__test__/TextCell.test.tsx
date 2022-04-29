@@ -35,6 +35,7 @@ describe('TextCell component', () => {
             <TextCell
               column={{
                 dataIndex: 'data',
+                editable: true,
                 title: 'TextCell',
                 type: ColumnType.TEXT,
               }}

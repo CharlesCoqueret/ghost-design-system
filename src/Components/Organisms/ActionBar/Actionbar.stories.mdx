@@ -1,4 +1,4 @@
-import { Canvas, Meta, Preview, Props, Story, Source } from '@storybook/addon-docs';
+import { Canvas, Meta, ArgsTable, Story, Source } from '@storybook/addon-docs';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import ActionBar from './ActionBar';
@@ -12,7 +12,7 @@ export const Template = (args) => {
 };
 
 <Meta
-  title='Organism/ActionBar'
+  title='Organism'
   component={ActionBar}
   parameters={{
     viewMode: 'docs',
@@ -28,29 +28,29 @@ Play with ActionBar live on [CodeSandbox](https://codesandbox.io/s/actionbar-dem
 
 ## Title
 
-<Preview isExpanded={true}>
+<Canvas isExpanded={true}>
   <ActionBar title='title' />
-</Preview>
+</Canvas>
 
 ## Primary
 
-<Preview isExpanded={true}>
+<Canvas isExpanded={true}>
   <ActionBar title='Primary' primary={true} />
-</Preview>
+</Canvas>
 
-<Preview isExpanded={true}>
+<Canvas isExpanded={true}>
   <ActionBar title='Secondary' primary={false} />
-</Preview>
+</Canvas>
 
 ## Prefix, suffix and entityId
 
-<Preview isExpanded={true}>
+<Canvas isExpanded={true}>
   <ActionBar title='title' entityId='entityId' prefix='prefix' suffix='suffix' />
-</Preview>
+</Canvas>
 
 ## Back
 
-<Preview isExpanded={true}>
+<Canvas isExpanded={true}>
   <ActionBar
     title='title'
     onBackClicked={() => {
@@ -58,11 +58,11 @@ Play with ActionBar live on [CodeSandbox](https://codesandbox.io/s/actionbar-dem
     }}
     backTooltip='Back'
   />
-</Preview>
+</Canvas>
 
 ## Title edition
 
-<Preview isExpanded={true}>
+<Canvas isExpanded={true}>
   <ActionBar
     title='title'
     onTitleEdit={(newTitle) => {
@@ -70,17 +70,17 @@ Play with ActionBar live on [CodeSandbox](https://codesandbox.io/s/actionbar-dem
     }}
     placeholder='placeholder'
   />
-</Preview>
+</Canvas>
 
 ## Icon
 
-<Preview isExpanded={true}>
+<Canvas isExpanded={true}>
   <ActionBar title='title' icon={<Icon icon={['fal', 'question-circle']} size='lg' />} />
-</Preview>
+</Canvas>
 
 ## Indicator
 
-<Preview isExpanded={true}>
+<Canvas isExpanded={true}>
   <ActionBar
     title='title'
     indicator={
@@ -89,11 +89,11 @@ Play with ActionBar live on [CodeSandbox](https://codesandbox.io/s/actionbar-dem
       </Badge>
     }
   />
-</Preview>
+</Canvas>
 
 ## Status
 
-<Preview isExpanded={true}>
+<Canvas isExpanded={true}>
   <ActionBar
     title='title'
     status={
@@ -102,11 +102,11 @@ Play with ActionBar live on [CodeSandbox](https://codesandbox.io/s/actionbar-dem
       </Badge>
     }
   />
-</Preview>
+</Canvas>
 
 ## Full size action
 
-<Preview isExpanded={true}>
+<Canvas isExpanded={true}>
   <ActionBar
     title='title'
     actions={[
@@ -127,11 +127,11 @@ Play with ActionBar live on [CodeSandbox](https://codesandbox.io/s/actionbar-dem
       },
     ]}
   />
-</Preview>
+</Canvas>
 
 ## Short hand actions
 
-<Preview isExpanded={true}>
+<Canvas isExpanded={true}>
   <ActionBar
     title='title'
     basicActions={[
@@ -153,11 +153,11 @@ Play with ActionBar live on [CodeSandbox](https://codesandbox.io/s/actionbar-dem
       },
     ]}
   />
-</Preview>
+</Canvas>
 
 ## Different types of actions
 
-<Preview isExpanded={true}>
+<Canvas isExpanded={true}>
   <ActionBar
     title='title'
     actions={[
@@ -181,17 +181,17 @@ Play with ActionBar live on [CodeSandbox](https://codesandbox.io/s/actionbar-dem
       },
     ]}
   />
-</Preview>
+</Canvas>
 
 ## Props
 
-<Props of={ActionBar} sort='requiredFirst' />
+<ArgsTable of={ActionBar} sort='requiredFirst' />
 
 ## Story
 
 <Canvas>
   <Story
-    name='Default'
+    name='ActionBar'
     args={{
       prefix: 'prefix',
       title: 'title',

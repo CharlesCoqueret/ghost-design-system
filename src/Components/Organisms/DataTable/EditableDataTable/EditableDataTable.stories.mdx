@@ -1,0 +1,329 @@
+import { Canvas, Meta, ArgsTable, Story, Source } from '@storybook/addon-docs';
+import LinkTo from '@storybook/addon-links/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
+
+import EditableDataTable from './EditableDataTable';
+import { ColumnType } from '../Common/types';
+import FakeExtraEditableDataTable from '../Common/FakeComponents/FakeExtraEditableDataTable';
+import { Icon } from '../../../Atoms';
+
+import dataTableStyle from '../../../../assets/_datatable.scss?raw';
+
+export const TemplateEditableDataTable = (args) => {
+  return <EditableDataTable {...args} />;
+};
+
+<Meta
+  title='Organism/DataTable'
+  component={EditableDataTable}
+  parameters={{
+    viewMode: 'docs',
+    layout: 'fullscreen',
+  }}
+/>
+
+# EditableDataTable
+
+- The editable data table displays information in a grid-like format of rows and columns. It organizes
+  information in an easy to read and scan through way.
+- Edition is always active when enabled (column and row), and is happening in place, making it less
+  convenient for guidance, and error handling.
+- If data validation is required, please use <LinkTo story="Line-Editable-Data-Table">LineEditableDataTable</LinkTo>.
+
+Play with EditableDataTable live on [CodeSandbox](https://codesandbox.io/s/editabledatatable-demo-2tbec3)
+
+## Editable column
+
+Using the `editable` property of a column, you can enable edition of a column.
+
+<Canvas>
+  <EditableDataTable
+    columns={[
+      { currency: '€', dataIndex: 'amount', editable: true, title: 'Amount (editable)', type: ColumnType.AMOUNT },
+      { dataIndex: 'number', editable: false, title: 'Number (non-editable)', type: ColumnType.NUMBER },
+      { dataIndex: 'percentage', editable: true, title: 'Percentage (editable)', type: ColumnType.PERCENTAGE },
+    ]}
+    data={[
+      { amount: 0, number: 0, percentage: 0 },
+      { amount: 1, number: 10, percentage: 100 },
+      { amount: 2, number: 20, percentage: 200 },
+    ]}
+    extra={{
+      onEdit: (row, dataIndex, editedRowIndex) => {
+        console.log(
+          `Edited row: ${JSON.stringify(row)}, edited data index: ${dataIndex}, edited row index: ${editedRowIndex}`,
+        );
+      },
+    }}
+  />
+</Canvas>
+
+## Editable row
+
+Using `isEditable` and `onEdit` you can enable edition and manage the edition of a row.
+
+<Canvas>
+  <EditableDataTable
+    columns={[
+      { dataIndex: 'text', editable: true, title: 'Text (editable)', type: ColumnType.TEXT },
+      { dataIndex: 'number', editable: false, title: 'Number (non-editable)', type: ColumnType.NUMBER },
+      { dataIndex: 'percentage', editable: true, title: 'Percentage (editable)', type: ColumnType.PERCENTAGE },
+    ]}
+    data={[
+      { text: 'Editable row 0', number: 0, percentage: 0 },
+      { text: 'Non-editable row 1', number: 10, percentage: 100 },
+      { text: 'Editable row 2', number: 20, percentage: 200 },
+    ]}
+    extra={{
+      onEdit: (row, dataIndex, editedRowIndex) => {
+        console.log(
+          `Edited row: ${JSON.stringify(row)}, edited data index: ${dataIndex}, edited row index: ${editedRowIndex}`,
+        );
+      },
+      isEditable: (row, rowIndex) => !row.text.includes('Non-editable'),
+    }}
+  />
+</Canvas>
+
+## Downloadable row
+
+Using `isDownloadable` and `onRowDownload` you can enable download and manage the download of a row.
+
+<Canvas>
+  <EditableDataTable
+    columns={[
+      { dataIndex: 'text', editable: true, title: 'Text', type: ColumnType.TEXT },
+      { dataIndex: 'number', editable: true, title: 'Number', type: ColumnType.NUMBER },
+      { dataIndex: 'percentage', editable: true, title: 'Percentage', type: ColumnType.PERCENTAGE },
+    ]}
+    data={[
+      { text: 'Downloadable row 0', number: 0, percentage: 0 },
+      { text: 'Non-downloadable row 1', number: 10, percentage: 100 },
+      { text: 'Downloadable row 2', number: 20, percentage: 200 },
+    ]}
+    extra={{
+      onEdit: (row, dataIndex, editedRowIndex) => {
+        console.log(
+          `Edited row: ${JSON.stringify(row)}, edited data index: ${dataIndex}, edited row index: ${editedRowIndex}`,
+        );
+      },
+      isDownloadable: (row, rowIndex) => !row.text.includes('Non-downloadable'),
+      onRowDownload: (row, rowIndex) => {
+        console.log(`Download requested for row: ${JSON.stringify(row)}, at row index: ${rowIndex}`);
+      },
+      localization: {
+        actionColumn: 'Custom actions',
+        downloadButton: 'Custom download',
+      },
+    }}
+  />
+</Canvas>
+
+## Deletable row
+
+Using `isDeletable` and `onRowDelete` you can enable deletion and manage the deletion of a row.
+
+<Canvas>
+  <EditableDataTable
+    columns={[
+      { dataIndex: 'text', editable: true, title: 'Text', type: ColumnType.TEXT },
+      { dataIndex: 'number', editable: true, title: 'Number', type: ColumnType.NUMBER },
+      { dataIndex: 'percentage', editable: true, title: 'Percentage', type: ColumnType.PERCENTAGE },
+    ]}
+    data={[
+      { text: 'Deletable row 0', number: 0, percentage: 0 },
+      { text: 'Non-deletable row 1', number: 10, percentage: 100 },
+      { text: 'Deletable row 2', number: 20, percentage: 200 },
+    ]}
+    extra={{
+      onEdit: (row, dataIndex, editedRowIndex) => {
+        console.log(
+          `Edited row: ${JSON.stringify(row)}, edited data index: ${dataIndex}, edited row index: ${editedRowIndex}`,
+        );
+      },
+      isDeletable: (row, rowIndex) => !row.text.includes('Non-deletable'),
+      onRowDelete: (row, rowIndex) => {
+        console.log(`Delete requested for row: ${JSON.stringify(row)}, at row index: ${rowIndex}`);
+      },
+      localization: {
+        deleteButton: 'Custom Delete',
+        deletePopoverMessage: 'Custom do you confirm deletion ?',
+        deletePopoverConfirm: 'Custom comfirm',
+        deletePopoverCancel: 'Custom cancel',
+      },
+    }}
+  />
+</Canvas>
+
+## Add new row
+
+Using `canAddNewLine` and `onNewLine` you can enable new row creation and manage the initial value of a new row.
+
+<Canvas>
+  <EditableDataTable
+    columns={[
+      { dataIndex: 'text', editable: false, title: 'Text', type: ColumnType.TEXT },
+      { dataIndex: 'number', editable: true, title: 'Number', type: ColumnType.NUMBER },
+      { dataIndex: 'percentage', editable: true, title: 'Percentage', type: ColumnType.PERCENTAGE },
+    ]}
+    data={[
+      { text: 'Existing row 0', number: 0, percentage: 0 },
+      { text: 'Existing row 1', number: 10, percentage: 100 },
+      { text: 'Existing row 2', number: 20, percentage: 200 },
+    ]}
+    extra={{
+      onEdit: (row, dataIndex, editedRowIndex) => {
+        console.log(
+          `Edited row: ${JSON.stringify(row)}, edited data index: ${dataIndex}, edited row index: ${editedRowIndex}`,
+        );
+      },
+      canAddNewLine: () => true,
+      onNewLine: () => {
+        const initialRow = { text: 'Newly created row', number: 100, percentage: 10 };
+        console.log(`Returning the default object: ${JSON.stringify(initialRow)}`);
+        return initialRow;
+      },
+    }}
+  />
+</Canvas>
+
+## Props
+
+<ArgsTable of={EditableDataTable} sort='requiredFirst' exclude={['dataTestId']} />
+
+## extra: IExtraEditableDataTableProps<T\>
+
+<ArgsTable of={FakeExtraEditableDataTable} sort='requiredFirst' />
+
+## Story
+
+<Canvas>
+  <Story
+    name='EditableDataTable'
+    args={{
+      data: [
+        {
+          name: 'Lorem ipsum dolor sit amet consectetur adipiscing elit',
+          status: 'INACTIVE',
+          price: -100000,
+          parts: -10,
+          startDate: new Date(2021, 2, 24),
+        },
+        {
+          name: 'Consecte',
+          status: 'ACTIVE',
+          price: -2500000,
+          parts: 15,
+          startDate: new Date(2021, 1, 13),
+        },
+        {
+          name: 'Sed',
+          status: 'IN_PROGRESS',
+          price: 150000,
+          parts: 3,
+          startDate: new Date(2021, 1, 4),
+        },
+        {
+          name: 'dolore eu fugiat nulla pariatur',
+          status: 'IN_PROGRESS',
+          price: -354000,
+          parts: 70,
+          startDate: new Date(2021, 1, 15),
+        },
+        {
+          name: 'Sed ut perspiciatis',
+          status: 'ACTIVE',
+          price: 4150000,
+          parts: 30,
+          startDate: new Date(2021, 2, 17),
+        },
+        {
+          name: 'Ut enim ad minima veniam',
+          status: 'ACTIVE',
+          price: -70500,
+          parts: 10,
+          startDate: new Date(2021, 3, 10),
+        },
+      ],
+      columns: [
+        {
+          title: 'Text',
+          dataIndex: 'name',
+          editable: true,
+          type: ColumnType.TEXT,
+          ellipsis: true,
+          sorter: true,
+          width: '20%',
+        },
+        {
+          title: 'Badge',
+          dataIndex: 'status',
+          editable: true,
+          sorter: true,
+          type: ColumnType.BADGE,
+          options: [
+            { label: 'Inactive', value: 'INACTIVE' },
+            { label: 'In progress', value: 'IN_PROGRESS' },
+            { label: 'Active', value: 'ACTIVE' },
+          ],
+        },
+        {
+          title: 'Amount',
+          dataIndex: 'price',
+          editable: true,
+          sorter: true,
+          type: ColumnType.AMOUNT,
+          currency: '€',
+        },
+        {
+          title: 'Percentage',
+          dataIndex: 'parts',
+          editable: true,
+          sorter: true,
+          type: ColumnType.PERCENTAGE,
+        },
+        {
+          title: 'Date',
+          dataIndex: 'startDate',
+          sorter: true,
+          type: ColumnType.DATE,
+        },
+      ],
+      extra: {
+        computeTotal: (data, dataIndex) => {
+          if (dataIndex === 'price' || dataIndex === 'parts') {
+            return data
+              .map((row) => {
+                return row[dataIndex];
+              })
+              .reduce((a, b) => Number(a) + Number(b), 0);
+          } else {
+            return '-';
+          }
+        },
+        onEdit: (row, dataIndex, rowIndex) => {
+          console.log(`edited row: ${JSON.stringify(row)}, data index: ${dataIndex}, row index: ${rowIndex}`);
+        },
+        onRowClick: (row) => {
+          console.log(`clicked row: ${JSON.stringify(row)}`);
+        },
+        onRowSelect: (rows, row) => {
+          console.log(`Number of rows selected: ${rows.length}\nSelected row: ${row.name}`);
+        },
+        canAddNewLine: () => true,
+        onNewLine: () => {
+          const initialRow = { text: 'Newly created row', number: 100, percentage: 10 };
+          console.log(`Returning the default object: ${JSON.stringify(initialRow)}`);
+          return initialRow;
+        },
+        onRowDelete: (row, rowIndex) => {
+          console.log(`Delete requested for row: ${JSON.stringify(row)}, at row index: ${rowIndex}`);
+        },
+        onRowDownload: (row, rowIndex) => {
+          console.log(`Download requested for row: ${JSON.stringify(row)}, at row index: ${rowIndex}`);
+        },
+      },
+    }}>
+    {TemplateEditableDataTable.bind({})}
+  </Story>
+</Canvas>

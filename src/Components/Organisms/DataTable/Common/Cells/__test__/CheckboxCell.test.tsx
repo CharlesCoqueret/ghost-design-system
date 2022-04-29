@@ -213,6 +213,7 @@ describe('CheckboxCell component', () => {
             <CheckboxCell
               column={{
                 dataIndex: 'data',
+                editable: true,
                 title: 'CheckboxCell',
                 type: ColumnType.CHECKBOX,
               }}

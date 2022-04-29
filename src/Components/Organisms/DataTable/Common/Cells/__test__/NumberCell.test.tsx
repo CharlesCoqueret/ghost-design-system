@@ -29,7 +29,7 @@ describe('NumberCell component', () => {
         <tbody>
           <tr>
             <NumberCell
-              column={{ dataIndex: 'data', title: 'NumberCell', type: ColumnType.NUMBER }}
+              column={{ dataIndex: 'data', editable: true, title: 'NumberCell', type: ColumnType.NUMBER }}
               extra={{ editedRowIndex: 6 }}
               rowIndex={6}
             />

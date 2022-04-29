@@ -39,14 +39,15 @@ export const columnToFieldMapper = <T,>(columns: Array<IColumnType<T>>): Array<I
             minValue: column.minValue,
             placeholder: column.placeholder,
             readOnly: !column.editable,
-            suffix: column.currency,
+            suffix: column.suffix,
+            prefix: column.prefix,
             thousandSeparator: column.thousandSeparator,
             thousandsGroupStyle: column.thousandsGroupStyle,
           };
         }
         case ColumnType.BADGE: {
           return {
-            colors: column.selectColors,
+            colors: column.colors,
             dataIndex: column.dataIndex,
             fieldType: FieldTypeEnum.SELECT,
             isClearable: column.isClearable,
@@ -108,7 +109,7 @@ export const columnToFieldMapper = <T,>(columns: Array<IColumnType<T>>): Array<I
         }
         case ColumnType.DYNAMICSEARCH: {
           return {
-            colors: column.selectColors,
+            colors: column.colors,
             dataIndex: column.dataIndex,
             fieldType: FieldTypeEnum.DYNAMICSEARCH,
             isClearable: column.isClearable,
@@ -146,7 +147,7 @@ export const columnToFieldMapper = <T,>(columns: Array<IColumnType<T>>): Array<I
         }
         case ColumnType.MULTISELECT: {
           return {
-            colors: column.selectColors,
+            colors: column.colors,
             dataIndex: column.dataIndex,
             eraseValueWhenNotInOptions: column.eraseValueWhenNotInOptions,
             fieldType: FieldTypeEnum.MULTISELECT,

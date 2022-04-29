@@ -15,7 +15,9 @@ const BadgeCell = <T,>(props: ICellProps<T, IColumnBadge<T>>): ReactElement => {
   const displayValue = (forcedValue || (row && row[column.dataIndex]) || undefined) as string | undefined;
   const isCurrentlyEditedRow =
     editing ||
-    (extra && 'editedRowIndex' in extra ? extra.editedRowIndex === rowIndex && column.options.length > 0 : false);
+    (extra && 'editedRowIndex' in extra
+      ? extra.editedRowIndex === rowIndex && column.options.length > 0 && column.editable
+      : false);
 
   const options = typeof column.options === 'function' ? column.options(row) : column.options;
 
@@ -33,7 +35,7 @@ const BadgeCell = <T,>(props: ICellProps<T, IColumnBadge<T>>): ReactElement => {
     <td className={classnames({ ellipsis: column.ellipsis })} style={{ display: column.hidden ? 'none' : undefined }}>
       {isCurrentlyEditedRow ? (
         <SelectField
-          colors={column.selectColors}
+          colors={column.colors}
           inputValue={displayValue}
           isClearable={column.isClearable}
           name={column.title.toString()}

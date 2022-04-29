@@ -7,9 +7,12 @@ import { FileField } from '../../../../Molecules/FileField';
 import { IFile } from '../../../../Atoms/FileInput';
 
 const FileCell = <T,>(props: ICellProps<T, IColumnFile<T>>): ReactElement => {
-  const { column, dataTestId, forcedValue, onChange, row } = props;
+  const { column, dataTestId, editing, extra, forcedValue, onChange, row, rowIndex } = props;
 
   const displayValue = (forcedValue || (row && row[column.dataIndex])) as Array<IFile> | undefined;
+
+  const isCurrentlyEditedRow =
+    editing || (extra && 'editedRowIndex' in extra ? extra.editedRowIndex === rowIndex && column.editable : false);
 
   return (
     <td
@@ -40,7 +43,7 @@ const FileCell = <T,>(props: ICellProps<T, IColumnFile<T>>): ReactElement => {
         showFileSize={column.showFileSize}
         showProgressBar={column.showProgressBar}
         uploadMessage={column.uploadMessage}
-        readOnly={!column.editable}
+        readOnly={!isCurrentlyEditedRow}
       />
     </td>
   );

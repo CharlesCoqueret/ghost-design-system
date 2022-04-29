@@ -1,0 +1,728 @@
+import { Canvas, Meta, ArgsTable, Story, Source } from '@storybook/addon-docs';
+import LinkTo from '@storybook/addon-links/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
+import * as yup from 'yup';
+
+import StaticDataTable from './StaticDataTable/StaticDataTable';
+import LineEditableDataTable from './LineEditableDataTable/LineEditableDataTable';
+import { ColumnType } from './Common/types';
+import FakeExtraStaticDataTable from './Common/FakeComponents/FakeExtraStaticDataTable';
+import { Icon } from '../../Atoms';
+
+import dataTableStyle from '../../../assets/_datatable.scss?raw';
+
+export const TemplateStaticDataTable = (args) => {
+  return <StaticDataTable {...args} />;
+};
+
+<Meta
+  title='Organism/DataTable'
+  component={StaticDataTable}
+  parameters={{
+    viewMode: 'docs',
+    layout: 'fullscreen',
+  }}
+/>
+
+# DataTable
+
+The data table displays information in a grid-like format of rows and columns. They organize information in an easy to read and scan through way.
+
+Play with DataTable live on [CodeSandbox](https://codesandbox.io/s/datatable-demo-z5fb38)
+
+## Types
+
+There is 4 types of data tables:
+
+- <LinkTo story='static-data-table'>StaticDataTable</LinkTo> which displays information in a static, non-editable way.
+- <LinkTo story='editable-data-table'>EditableDataTable</LinkTo> which displays information in an fully editable way without
+  control (no data validation). All rows are editable at all time.
+- <LinkTo story='line-editable-in-place-data-table'>LineEditableInPlaceDataTable</LinkTo> which displays information in a
+  static, non-editable and allows edition of a single row at a time without control (no data validation).
+- <LinkTo story='line-editable-data-table'>LineEditableDataTable</LinkTo> which displays information in a static, non-editable,
+  and allows edition of a single row at a time with control (data validation).
+
+## Common features
+
+### Column types
+
+More details about <LinkTo story='columns'>Columns</LinkTo>
+
+#### Amount, number and percentage
+
+<Canvas>
+  <StaticDataTable
+    columns={[
+      { currency: '€', dataIndex: 'amount', title: 'Amount', type: ColumnType.AMOUNT },
+      { dataIndex: 'number', title: 'Number', type: ColumnType.NUMBER },
+      { dataIndex: 'percentage', title: 'Percentage', type: ColumnType.PERCENTAGE },
+    ]}
+    data={[
+      { amount: 0, number: 0, percentage: 0 },
+      { amount: 1, number: 10, percentage: 100 },
+      { amount: 2, number: 20, percentage: 200 },
+    ]}
+  />
+</Canvas>
+
+#### Badge, code, text
+
+<Canvas>
+  <StaticDataTable
+    columns={[
+      {
+        dataIndex: 'badge',
+        options: [
+          { label: 'Badge #1', value: 'B1' },
+          { label: 'Badge #2', value: 'B2' },
+          { label: 'Badge #3', value: 'B3' },
+        ],
+        title: 'Badge',
+        type: ColumnType.BADGE,
+      },
+      {
+        dataIndex: 'code',
+        title: 'Code',
+        type: ColumnType.CODE,
+      },
+      {
+        dataIndex: 'text',
+        title: 'Text',
+        type: ColumnType.TEXT,
+      },
+    ]}
+    data={[
+      { badge: 'B1', code: 'Code #1', text: 'Text #1' },
+      { badge: 'B2', code: 'Code #2', text: 'Text #2' },
+      { badge: 'B3', code: 'Code #3', text: 'Text #3' },
+    ]}
+  />
+</Canvas>
+
+#### Button, Date, Year
+
+<Canvas>
+  <StaticDataTable
+    columns={[
+      { dataIndex: 'date', title: 'Date', type: ColumnType.DATE },
+      { dataIndex: 'year', title: 'Year', type: ColumnType.YEAR },
+      {
+        buttons: [
+          {
+            icon: ['fal', 'arrow-down-to-line'],
+            label: 'Download',
+            onClick: (row) => {
+              console.log(`download icon clicked on row: ${row.id}`);
+            },
+          },
+          {
+            icon: ['fal', 'eye'],
+            label: 'Watch',
+            onClick: (row) => {
+              console.log(`Eye icon clicked on row: ${row.id}`);
+            },
+          },
+        ],
+        moreActionsMessage: 'Nore actions',
+        title: 'Buttons',
+        type: ColumnType.BUTTON,
+      },
+    ]}
+    data={[
+      { date: new Date(new Date() - 86400000), year: '2020' },
+      { date: new Date(), year: '2021' },
+      { date: new Date(new Date() - -86400000), year: '2022' },
+    ]}
+  />
+</Canvas>
+
+#### Checkbox, CustomCell, Description, DynamicSearch, File, MultiSelect, RichText, Section, Switch, Table and TextArea
+
+Other column types exists to be hidden in the table, but available as read only or editable in a form such as in the modal used in <LinkTo story="Line-Editable-Data-Table">LineEditableDataTable</LinkTo>
+
+Play with Advanced LineEditableDataTable live on [CodeSandbox](https://codesandbox.io/s/datatable-lineeditabledatatable-demo-soy9fr)
+
+<Canvas>
+  <LineEditableDataTable
+    columns={[
+      {
+        currency: '€',
+        dataIndex: 'amount',
+        editable: true,
+        title: 'Amount',
+        type: ColumnType.AMOUNT,
+      },
+      {
+        dataIndex: 'number',
+        editable: true,
+        title: 'Number',
+        type: ColumnType.NUMBER,
+      },
+      {
+        dataIndex: 'percentage',
+        editable: true,
+        title: 'Percentage',
+        type: ColumnType.PERCENTAGE,
+      },
+      {
+        dataIndex: 'checkbox',
+        editable: true,
+        hidden: true,
+        title: 'Checkbox',
+        type: ColumnType.CHECKBOX,
+      },
+      {
+        dataIndex: 'description',
+        description: <div>Description</div>,
+        hidden: true,
+        title: 'Description',
+        type: ColumnType.DESCRIPTION,
+      },
+      {
+        dataIndex: 'dynamicsearch',
+        editable: true,
+        hidden: true,
+        title: 'Dynamic search',
+        type: ColumnType.DYNAMICSEARCH,
+        resolveValue: (value) => {
+          if (value === 1001) return Promise.resolve({ value: 1001, label: 'Jean' });
+          if (value === 1002) return Promise.resolve({ value: 1002, label: 'Pierre' });
+          if (value === 1003) return Promise.resolve({ value: 1003, label: 'Roger' });
+          return Promise.resolve(undefined);
+        },
+        noOptionsMessage: (obj) => {
+          if (!obj.inputValue) return `Please type a few characters to search`;
+          return `No option found for ${obj.inputValue}`;
+        },
+        searchOptions: () =>
+          Promise.resolve([
+            { value: 1001, label: 'Jean' },
+            { value: 1002, label: 'Pierre' },
+            { value: 1003, label: 'Roger' },
+          ]),
+      },
+      {
+        dataIndex: 'file',
+        editable: true,
+        hidden: true,
+        title: 'File',
+        type: ColumnType.FILE,
+        requestMethod: 'POST',
+        requestUrl: 'https://file-upload-tester.herokuapp.com/upload/file',
+        onDelete: (file) => {
+          console.log(JSON.stringify(file));
+          return Promise.resolve();
+        },
+      },
+      {
+        dataIndex: 'multiselect',
+        editable: true,
+        hidden: true,
+        options: [
+          { value: 'VALUE1', label: 'Label 1' },
+          { value: 'VALUE2', label: 'Label 2' },
+          { value: 'VALUE3', label: 'Label 3' },
+        ],
+        numberOfItemLabel: '{} item selected',
+        numberOfItemsLabel: '{} items selected',
+        title: 'Multi select',
+        type: ColumnType.MULTISELECT,
+      },
+      {
+        dataIndex: 'richtext',
+        editable: true,
+        hidden: true,
+        title: 'Rich text',
+        type: ColumnType.RICHTEXT,
+      },
+      {
+        dataIndex: 'section',
+        fields: [],
+        hidden: true,
+        label: 'Section',
+        title: 'Section',
+        type: ColumnType.SECTION,
+      },
+      {
+        dataIndex: 'switch',
+        editable: true,
+        hidden: true,
+        title: 'Switch',
+        type: ColumnType.SWITCH,
+      },
+      {
+        dataIndex: 'textarea',
+        editable: true,
+        hidden: true,
+        title: 'Text area',
+        type: ColumnType.TEXTAREA,
+      },
+    ]}
+    data={[
+      {
+        amount: 0,
+        number: 0,
+        percentage: 0,
+        checkbox: [{ value: 'CHECKBOX1', label: 'Checkbox #1', checked: true }],
+        description: undefined,
+        dynamicsearch: 1001,
+        file: [],
+        multiselect: ['VALUE1'],
+        richtext: '<h1>Rich text 1</h1>',
+        section: undefined,
+        switch: [{ value: 'SWITCH1', label: 'Switch #1', checked: true }],
+        textarea: 'textarea 1',
+      },
+      {
+        amount: 1,
+        number: 1,
+        percentage: 1,
+        checkbox: [{ value: 'CHECKBOX1', label: 'Checkbox #1', checked: false }],
+        description: undefined,
+        dynamicsearch: 1002,
+        file: [],
+        multiselect: ['VALUE2'],
+        richtext: '<h1>Rich text 2</h1>',
+        section: undefined,
+        switch: [{ value: 'SWITCH1', label: 'Switch #1', checked: false }],
+        textarea: 'textarea 2',
+      },
+    ]}
+    extra={{
+      actionColumnWidth: '50px',
+      onRowEdit: (row, rowIndex) => {
+        console.log(`Row start edition: ${JSON.stringify(row)}, edited row index: ${rowIndex}`);
+      },
+      onRowSubmit: (row, rowIndex) => {
+        console.log(`Edited row: ${JSON.stringify(row)}, edited row index: ${rowIndex}`);
+      },
+      onRowCancelEdit: (row, rowIndex) => {
+        console.log(`Cancel edition of row: ${JSON.stringify(row)}, edited row index: ${rowIndex}`);
+      },
+      validationSchema: yup.object({
+        amount: yup.number().required(),
+        number: yup.number().required(),
+        percentage: yup.number().required(),
+        checkbox: yup
+          .array(
+            yup
+              .object({
+                value: yup.mixed().required(),
+                label: yup.string().required(),
+                checked: yup.bool().optional(),
+                highlighted: yup.bool().optional(),
+              })
+              .optional(),
+          )
+          .required(),
+        description: yup.string().optional(),
+        dynamicsearch: yup.number().optional(),
+        file: yup.array(yup.object()),
+        multiselect: yup.array(yup.string().required()).required().min(0),
+        richtext: yup.string().optional(),
+        section: yup.string().optional(),
+        switch: yup
+          .array(
+            yup
+              .object({
+                value: yup.mixed().required(),
+                label: yup.string().required(),
+                checked: yup.bool().optional(),
+                highlighted: yup.bool().optional(),
+              })
+              .optional(),
+          )
+          .required(),
+        textarea: yup.string().required(),
+      }),
+    }}
+  />
+</Canvas>
+
+### Hidden Column (description column is hidden)
+
+<Canvas>
+  <StaticDataTable
+    columns={[
+      {
+        dataIndex: 'description',
+        hidden: true,
+        label: 'Description',
+        title: 'Description',
+        type: ColumnType.DESCRIPTION,
+      },
+      { dataIndex: 'number', title: 'Number', type: ColumnType.NUMBER },
+      { dataIndex: 'percentage', title: 'Percentage', type: ColumnType.PERCENTAGE },
+    ]}
+    data={[
+      { description: undefined, number: 0, percentage: 0 },
+      { description: undefined, number: 10, percentage: 100 },
+      { description: undefined, number: 20, percentage: 200 },
+    ]}
+  />
+</Canvas>
+
+### Column sort
+
+`onSortChange` is called whenever any of the column sort are called.
+
+When the filter is back to its initial value, onSortChange is then called with undefined for both argument.
+
+<Source
+  language='tsx'
+  dark
+  format={true}
+  code='onSortChange?: (sortField?: keyof T, sortDirection?: SortDirectionEnum) => void;'
+/>
+
+<Canvas>
+  <StaticDataTable
+    columns={[
+      { currency: '€', dataIndex: 'amount', sorter: true, title: 'Amount', type: ColumnType.AMOUNT },
+      { dataIndex: 'number', sorter: true, title: 'Number', type: ColumnType.NUMBER },
+      { dataIndex: 'percentage', sorter: true, title: 'Percentage', type: ColumnType.PERCENTAGE },
+    ]}
+    data={[
+      { amount: 0, number: 0, percentage: 0 },
+      { amount: 1, number: 10, percentage: 100 },
+      { amount: 2, number: 20, percentage: 200 },
+    ]}
+    onSortChange={(sortField, sortDirection) =>
+      console.log('sortField: ', sortField, ', sortDirection: ', sortDirection)
+    }
+    extra={{
+      localization: {
+        sortMessage: 'Click to sort message',
+      },
+    }}
+  />
+</Canvas>
+
+### Loading
+
+Set `loading` to undefined when the loading is done.
+
+<Canvas>
+  <StaticDataTable
+    columns={[
+      { currency: '€', dataIndex: 'amount', title: 'Amount', type: ColumnType.AMOUNT },
+      { dataIndex: 'number', title: 'Number', type: ColumnType.NUMBER },
+      { dataIndex: 'percentage', title: 'Percentage', type: ColumnType.PERCENTAGE },
+    ]}
+    data={[]}
+    loading={
+      <div style={{ display: 'flex', justifyContent: 'space-around' }}>
+        <Icon icon={['fal', 'spinner']} size='3x' />
+      </div>
+    }
+  />
+</Canvas>
+
+### No data with custom message
+
+<Canvas>
+  <StaticDataTable
+    columns={[
+      { currency: '€', dataIndex: 'amount', title: 'Amount', type: ColumnType.AMOUNT },
+      { dataIndex: 'number', title: 'Number', type: ColumnType.NUMBER },
+      { dataIndex: 'percentage', title: 'Percentage', type: ColumnType.PERCENTAGE },
+    ]}
+    data={[]}
+    extra={{
+      localization: {
+        noData: 'There is nothing here',
+      },
+    }}
+  />
+</Canvas>
+
+### Clickable row
+
+<Canvas>
+  <StaticDataTable
+    columns={[
+      { currency: '€', dataIndex: 'amount', title: 'Amount', type: ColumnType.AMOUNT },
+      { dataIndex: 'number', title: 'Number', type: ColumnType.NUMBER },
+      { dataIndex: 'percentage', title: 'Percentage', type: ColumnType.PERCENTAGE },
+    ]}
+    data={[
+      { amount: 0, number: 0, percentage: 0 },
+      { amount: 1, number: 10, percentage: 100 },
+      { amount: 2, number: 20, percentage: 200 },
+    ]}
+    extra={{
+      onRowClick: (row, rowIndex) => console.log('row: ', row, ', rowIndex: ', rowIndex),
+    }}
+  />
+</Canvas>
+
+### Selectable row
+
+`onRowSelect` is called whenever selection is made with an array of the selected rows, the row that was ticked and its row index.
+
+<Source
+  language='tsx'
+  dark
+  format={true}
+  code='onRowSelect?: (selectedRows: Array<T>, tickedRow: T, rowIndex: number) => void;'
+/>
+
+<Canvas>
+  <StaticDataTable
+    columns={[
+      { currency: '€', dataIndex: 'amount', title: 'Amount', type: ColumnType.AMOUNT },
+      { dataIndex: 'number', title: 'Number', type: ColumnType.NUMBER },
+      { dataIndex: 'percentage', title: 'Percentage', type: ColumnType.PERCENTAGE },
+    ]}
+    data={[
+      { amount: 0, number: 0, percentage: 0 },
+      { amount: 1, number: 10, percentage: 100 },
+      { amount: 2, number: 20, percentage: 200 },
+    ]}
+    extra={{
+      onRowSelect: (selectedRows, tickedRow, rowIndex) =>
+        console.log('selectedRows: ', selectedRows, ', tickedRow: ', tickedRow, ', rowIndex: ', rowIndex),
+    }}
+  />
+</Canvas>
+
+### Disable selection on specific rows
+
+<Source language='tsx' dark format={true} code='isSelectable?: (row: T, rowIndex: number) => boolean;' />
+
+<Canvas>
+  <StaticDataTable
+    columns={[
+      { currency: '€', dataIndex: 'amount', title: 'Amount', type: ColumnType.AMOUNT },
+      { dataIndex: 'number', title: 'Number', type: ColumnType.NUMBER },
+      { dataIndex: 'percentage', title: 'Percentage', type: ColumnType.PERCENTAGE },
+    ]}
+    data={[
+      { amount: 0, number: 0, percentage: 0 },
+      { amount: 1, number: 10, percentage: 100 },
+      { amount: 2, number: 20, percentage: 200 },
+    ]}
+    extra={{
+      onRowSelect: (selectedRows, tickedRow, rowIndex) =>
+        console.log('selectedRows: ', selectedRows, ', tickedRow: ', tickedRow, ', rowIndex: ', rowIndex),
+      isSelectable: (row, rowIndex) => {
+        if (rowIndex === 1) return false;
+        return true;
+      },
+    }}
+  />
+</Canvas>
+
+### Total
+
+<Canvas>
+  <StaticDataTable
+    columns={[
+      { currency: '€', dataIndex: 'amount', title: 'Amount', type: ColumnType.AMOUNT },
+      { dataIndex: 'number', title: 'Number', type: ColumnType.NUMBER },
+      { dataIndex: 'percentage', title: 'Percentage', type: ColumnType.PERCENTAGE },
+    ]}
+    data={[
+      { amount: 0, number: 0, percentage: 0 },
+      { amount: 1, number: 10, percentage: 100 },
+      { amount: 2, number: 20, percentage: 200 },
+    ]}
+    extra={{
+      computeTotal: (data, dataIndex) => {
+        return data
+          .map((row) => {
+            return row[dataIndex];
+          })
+          .reduce((a, b) => Number(a) + Number(b), 0);
+      },
+      localization: {
+        total: 'Total:',
+      },
+    }}
+  />
+</Canvas>
+
+### Currency and date format
+
+<Canvas>
+  <StaticDataTable
+    columns={[
+      { dataIndex: 'amount', title: 'Amount', type: ColumnType.AMOUNT },
+      { dataIndex: 'date', title: 'Date', type: ColumnType.DATE },
+    ]}
+    data={[
+      { amount: 0, date: new Date(new Date() - 86400000) },
+      { amount: 1, date: new Date() },
+      { amount: 2, date: new Date(new Date() - -86400000) },
+    ]}
+    extra={{
+      currency: '$',
+      dateFormat: 'yyyy/MM/dd',
+    }}
+  />
+</Canvas>
+
+## Props
+
+<ArgsTable of={StaticDataTable} sort='requiredFirst' />
+
+## extra: IExtraStaticDataTableProps<T\>
+
+<ArgsTable of={FakeExtraStaticDataTable} sort='requiredFirst' />
+
+## Story
+
+<Canvas>
+  <Story
+    name='DataTable'
+    args={{
+      data: [
+        {
+          id: 'UGA',
+          name: 'Lorem ipsum dolor sit amet consectetur adipiscing elit',
+          status: 'INACTIVE',
+          price: -100000,
+          parts: -10,
+          startDate: new Date(2021, 2, 24),
+        },
+        {
+          id: 'ARE',
+          name: 'Consecte',
+          status: 'ACTIVE',
+          price: -2500000,
+          parts: 15,
+          startDate: new Date(2021, 1, 13),
+        },
+        {
+          id: 'GBR',
+          name: 'Sed',
+          status: 'IN_PROGRESS',
+          price: 150000,
+          parts: 3,
+          startDate: new Date(2021, 1, 4),
+        },
+        {
+          id: 'JUF',
+          name: 'dolore eu fugiat nulla pariatur',
+          status: 'IN_PROGRESS',
+          price: -354000,
+          parts: 70,
+          startDate: new Date(2021, 1, 15),
+        },
+        {
+          id: 'YAI',
+          name: 'Sed ut perspiciatis',
+          status: 'ACTIVE',
+          price: 4150000,
+          parts: 30,
+          startDate: new Date(2021, 2, 17),
+        },
+        {
+          id: 'SML',
+          name: 'Ut enim ad minima veniam',
+          status: 'ACTIVE',
+          price: -70500,
+          parts: 10,
+          startDate: new Date(2021, 3, 10),
+        },
+      ],
+      columns: [
+        {
+          title: 'Code',
+          dataIndex: 'id',
+          sorter: true,
+          type: ColumnType.CODE,
+          width: '70px',
+        },
+        {
+          title: 'Text',
+          dataIndex: 'name',
+          type: ColumnType.TEXT,
+          ellipsis: true,
+          sorter: true,
+          width: '20%',
+        },
+        {
+          title: 'Badge',
+          dataIndex: 'status',
+          sorter: true,
+          type: ColumnType.BADGE,
+          options: [
+            { label: 'Inactive', value: 'INACTIVE' },
+            { label: 'In progress', value: 'IN_PROGRESS' },
+            { label: 'Active', value: 'ACTIVE' },
+          ],
+        },
+        {
+          title: 'Amount',
+          dataIndex: 'price',
+          sorter: true,
+          type: ColumnType.AMOUNT,
+          currency: '€',
+        },
+        {
+          title: 'Percentage',
+          dataIndex: 'parts',
+          sorter: true,
+          type: ColumnType.PERCENTAGE,
+        },
+        {
+          title: 'Date',
+          dataIndex: 'startDate',
+          sorter: true,
+          type: ColumnType.DATE,
+        },
+        {
+          title: 'Actions',
+          type: ColumnType.BUTTON,
+          moreActionsMessage: 'Nore actions',
+          buttons: [
+            {
+              icon: ['fal', 'arrow-down-to-line'],
+              label: 'Download',
+              onClick: (row) => {
+                console.log(`download icon clicked on row: ${row.id}`);
+              },
+            },
+            {
+              icon: ['fal', 'eye'],
+              label: 'Watch',
+              onClick: (row) => {
+                console.log(`Eye icon clicked on row: ${row.id}`);
+              },
+            },
+          ],
+        },
+      ],
+      extra: {
+        computeTotal: (data, dataIndex) => {
+          if (dataIndex === 'price' || dataIndex === 'parts') {
+            return data
+              .map((row) => {
+                return row[dataIndex];
+              })
+              .reduce((a, b) => Number(a) + Number(b), 0);
+          } else {
+            return '-';
+          }
+        },
+        onRowClick: (row) => {
+          console.log(`clicked row: ${row.id}`);
+        },
+        isSelectable: (row) => {
+          return row.id !== 'UGA';
+        },
+        onRowSelect: (rows, row) => {
+          console.log(`Number of rows selected: ${rows.length}\nSelected row: ${row.id}`);
+        },
+      },
+    }}>
+    {TemplateStaticDataTable.bind({})}
+  </Story>
+</Canvas>
+
+## Style
+
+[source](https://github.com/CharlesCoqueret/ghost-design-system/blob/main/src/assets/_datatable.scss)
+
+<Source language='css' dark format={true} code={dataTableStyle} />
