@@ -137,7 +137,7 @@ describe('Global export test', () => {
     expect(Global.Filter).toBeDefined();
     expect(Global.FilterItem).toBeDefined();
 
-    expect(Global.Navbar).toBeDefined();
+    expect(Global.NavBar).toBeDefined();
     expect(Global.NavItem).toBeDefined();
 
     expect(Global.SideBarSection).toBeDefined();
