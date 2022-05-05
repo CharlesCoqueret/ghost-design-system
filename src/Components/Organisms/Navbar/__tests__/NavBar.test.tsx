@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import NavBar from '../Navbar';
+import NavBar from '../NavBar';
 
 describe('NavBar Component', () => {
   it('NavBar renders', () => {

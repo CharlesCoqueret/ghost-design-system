@@ -1,7 +1,6 @@
 import React, { CSSProperties, PropsWithChildren, useState } from 'react';
 import classnames from 'classnames';
 
-import SideBarSection, { ISideBarSection } from './SideBarSection';
 import { SideBarContext } from './SideBarContext';
 
 export interface ISideBarProps {
@@ -9,44 +8,48 @@ export interface ISideBarProps {
   backToMenu: string;
   /** Custom class (optional, default undefined) */
   className?: string;
-  /** List of sections to be displayed in the submenu (optional, default: undefined) */
-  sections?: Array<ISideBarSection>;
+  /** Height of the sidebar (optional, default: '100%') */
+  height?: CSSProperties['height'];
   /** override css property (optional, default: undefined) */
   style?: CSSProperties;
-  /** Keep the sidebar unfixed for demo (optional, default: false) */
+  /** whether the sidebar can be used unfixed for demo mostyly (optional, default: false) */
   unfixed?: boolean;
+  /** Width of the sidebar (optional, default: '270px')*/
+  width?: CSSProperties['width'];
 }
 
 const SideBar = (props: PropsWithChildren<ISideBarProps>): React.ReactElement => {
-  const { backToMenu, children, className, sections, style, unfixed } = props;
+  const { backToMenu, children, className, height, style, unfixed, width } = props;
 
   const [isInSubMenu, setIsInSubMenu] = useState(false);
 
   return (
-    <nav className={classnames('gds-sidebar-container', className, { unfixed: unfixed })} style={style}>
-      <SideBarContext.Provider
-        value={{
-          backToMenu: backToMenu,
-          isInSubMenu: isInSubMenu,
-          setIsInSubMenu: setIsInSubMenu,
-        }}>
-        <ul className={classnames('mainmenu', { 'in-submenu': isInSubMenu })}>
-          {sections &&
-            sections.map((section, index) => {
-              return <SideBarSection key={`section-${section.title}-${index}`} section={section} />;
-            })}
+    <SideBarContext.Provider
+      value={{
+        backToMenu: backToMenu,
+        height: height,
+        isInSubMenu: isInSubMenu,
+        setIsInSubMenu: setIsInSubMenu,
+        unfixed: unfixed,
+        width: width,
+      }}>
+      <nav
+        className={classnames('gds-sidebar-container', { unfixed: unfixed }, { submenu: isInSubMenu }, className)}
+        style={{ height: height, width: width, ...style }}>
+        <ul className='sidebar' style={{ width: width, left: isInSubMenu ? `-${width}` : '0px' }}>
           {children}
         </ul>
-      </SideBarContext.Provider>
-    </nav>
+      </nav>
+    </SideBarContext.Provider>
   );
 };
 
 SideBar.defaultProps = {
   className: undefined,
-  sections: undefined,
+  height: '100%',
   style: undefined,
   unfixed: false,
+  width: '270px',
 };
 
 export default SideBar;
