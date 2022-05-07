@@ -1,0 +1,243 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavItem Component NavItem renders 1`] = `
+<div>
+  <div
+    class="nav-bar-menu-item"
+    data-testid="DATA-TEST-ID"
+  >
+    <i
+      class="icon"
+      icon="fal,icons"
+    />
+    <div
+      class="nav-bar-menu-label"
+    >
+      LABEL
+    </div>
+    <span
+      class="gds-badge pill danger counter"
+    >
+      1
+    </span>
+    <i
+      class="nav-bar-menu-caret icon"
+      icon="fas,caret-down"
+    />
+  </div>
+  <div>
+    <div>
+      ControlleMenu
+      closed
+      <div
+        data-testid="CUSTOM-SUB-ITEM"
+      />
+      has no ref
+    </div>
+  </div>
+</div>
+`;
+
+exports[`NavItem Component NavItem renders 2`] = `
+<div>
+  <div
+    class="nav-bar-menu-item"
+    data-testid="DATA-TEST-ID"
+  >
+    <i
+      class="icon"
+      icon="fal,icons"
+    />
+    <div
+      class="nav-bar-menu-label"
+    >
+      LABEL
+    </div>
+    <span
+      class="gds-badge pill danger counter"
+    >
+      1
+    </span>
+    <i
+      class="nav-bar-menu-caret icon"
+      icon="fas,caret-down"
+    />
+  </div>
+  <div>
+    <div>
+      ControlleMenu
+      open
+      <div
+        data-testid="CUSTOM-SUB-ITEM"
+      />
+      has no ref
+    </div>
+  </div>
+</div>
+`;
+
+exports[`NavItem Component NavItem renders 3`] = `
+<div>
+  <div
+    class="nav-bar-menu-item"
+    data-testid="DATA-TEST-ID"
+  >
+    <i
+      class="icon"
+      icon="fal,icons"
+    />
+    <div
+      class="nav-bar-menu-label"
+    >
+      LABEL
+    </div>
+    <span
+      class="gds-badge pill danger counter"
+    >
+      1
+    </span>
+    <i
+      class="nav-bar-menu-caret icon"
+      icon="fas,caret-down"
+    />
+  </div>
+  <div>
+    <div>
+      ControlleMenu
+      closed
+      <div
+        data-testid="CUSTOM-SUB-ITEM"
+      />
+      has no ref
+    </div>
+  </div>
+</div>
+`;
+
+exports[`NavItem Component NavItem renders with subitems 1`] = `
+<div>
+  <div
+    class="nav-bar-menu-item"
+    data-testid="DATA-TEST-ID"
+  >
+    <div
+      class="nav-bar-menu-label"
+    >
+      ITEM
+    </div>
+    <i
+      class="nav-bar-menu-caret icon"
+      icon="fas,caret-down"
+    />
+  </div>
+  <div>
+    <div>
+      ControlleMenu
+      closed
+      <div
+        data-testid="SUBITEMDATA-TEST-ID"
+      >
+        MenuItem
+        SUBITEM
+      </div>
+      has no ref
+    </div>
+  </div>
+</div>
+`;
+
+exports[`NavItem Component NavItem renders with subitems 2`] = `
+<div>
+  <div
+    class="nav-bar-menu-item"
+    data-testid="DATA-TEST-ID"
+  >
+    <div
+      class="nav-bar-menu-label"
+    >
+      ITEM
+    </div>
+    <i
+      class="nav-bar-menu-caret icon"
+      icon="fas,caret-down"
+    />
+  </div>
+  <div>
+    <div>
+      ControlleMenu
+      open
+      <div
+        data-testid="SUBITEMDATA-TEST-ID"
+      >
+        MenuItem
+        SUBITEM
+      </div>
+      has no ref
+    </div>
+  </div>
+</div>
+`;
+
+exports[`NavItem Component NavItem renders with subitems 3`] = `
+<div>
+  <div
+    class="nav-bar-menu-item"
+    data-testid="DATA-TEST-ID"
+  >
+    <div
+      class="nav-bar-menu-label"
+    >
+      ITEM
+    </div>
+    <i
+      class="nav-bar-menu-caret icon"
+      icon="fas,caret-down"
+    />
+  </div>
+  <div>
+    <div>
+      ControlleMenu
+      open
+      <div
+        data-testid="SUBITEMDATA-TEST-ID"
+      >
+        MenuItem
+        SUBITEM
+      </div>
+      has no ref
+    </div>
+  </div>
+</div>
+`;
+
+exports[`NavItem Component NavItem renders with subitems 4`] = `
+<div>
+  <div
+    class="nav-bar-menu-item"
+    data-testid="DATA-TEST-ID"
+  >
+    <div
+      class="nav-bar-menu-label"
+    >
+      ITEM
+    </div>
+    <i
+      class="nav-bar-menu-caret icon"
+      icon="fas,caret-down"
+    />
+  </div>
+  <div>
+    <div>
+      ControlleMenu
+      closed
+      <div
+        data-testid="SUBITEMDATA-TEST-ID"
+      >
+        MenuItem
+        SUBITEM
+      </div>
+      has no ref
+    </div>
+  </div>
+</div>
+`;

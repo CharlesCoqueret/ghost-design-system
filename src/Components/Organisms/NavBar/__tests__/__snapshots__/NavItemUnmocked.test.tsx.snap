@@ -1,0 +1,204 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavItem unmocked Component NavItem unmocked submenu gets closed 1`] = `
+<body>
+  <div>
+    <div
+      class="nav-bar-menu-item"
+      data-testid="DATA-TEST-ID"
+    >
+      <div
+        class="nav-bar-menu-label"
+      >
+        ITEM
+      </div>
+      <i
+        class="nav-bar-menu-caret icon"
+        icon="fas,caret-down"
+      />
+    </div>
+  </div>
+  <div
+    id="root-portal-id"
+  >
+    <div>
+      <div
+        class="szh-menu-container"
+      >
+        <ul
+          aria-label="Menu"
+          class="szh-menu szh-menu--state-closed szh-menu--dir-bottom"
+          role="menu"
+          style="left: 0px; top: 0px;"
+          tabindex="-1"
+        >
+          <div
+            class="szh-menu__arrow szh-menu__arrow--dir-bottom"
+          />
+          <li
+            class="szh-menu__item"
+            data-testid="SUBITEMDATA-TEST-ID"
+            role="menuitem"
+            tabindex="-1"
+          >
+            SUBITEM
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`NavItem unmocked Component NavItem unmocked submenu gets closed 2`] = `
+<body>
+  <div>
+    <div
+      class="nav-bar-menu-item"
+      data-testid="DATA-TEST-ID"
+    >
+      <div
+        class="nav-bar-menu-label"
+      >
+        ITEM
+      </div>
+      <i
+        class="nav-bar-menu-caret icon"
+        icon="fas,caret-down"
+      />
+    </div>
+  </div>
+  <div
+    id="root-portal-id"
+  >
+    <div>
+      <div
+        class="szh-menu-container"
+      >
+        <ul
+          aria-label="Menu"
+          class="szh-menu szh-menu--state-open szh-menu--dir-bottom"
+          role="menu"
+          style="left: 0px; top: 0px;"
+          tabindex="-1"
+        >
+          <div
+            class="szh-menu__arrow szh-menu__arrow--dir-bottom"
+            style="left: 0px;"
+          />
+          <li
+            class="szh-menu__item"
+            data-testid="SUBITEMDATA-TEST-ID"
+            role="menuitem"
+            tabindex="-1"
+          >
+            SUBITEM
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`NavItem unmocked Component NavItem unmocked submenu gets closed 3`] = `
+<body>
+  <div>
+    <div
+      class="nav-bar-menu-item"
+      data-testid="DATA-TEST-ID"
+    >
+      <div
+        class="nav-bar-menu-label"
+      >
+        ITEM
+      </div>
+      <i
+        class="nav-bar-menu-caret icon"
+        icon="fas,caret-down"
+      />
+    </div>
+  </div>
+  <div
+    id="root-portal-id"
+  >
+    <div>
+      <div
+        class="szh-menu-container"
+      >
+        <ul
+          aria-label="Menu"
+          class="szh-menu szh-menu--state-closed szh-menu--dir-bottom"
+          role="menu"
+          style="left: 0px; top: 0px;"
+          tabindex="-1"
+        >
+          <div
+            class="szh-menu__arrow szh-menu__arrow--dir-bottom"
+            style="left: 0px;"
+          />
+          <li
+            class="szh-menu__item"
+            data-testid="SUBITEMDATA-TEST-ID"
+            role="menuitem"
+            tabindex="-1"
+          >
+            SUBITEM
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`NavItem unmocked Component NavItem unmocked submenu gets closed 4`] = `
+<body>
+  <div>
+    <div
+      class="nav-bar-menu-item"
+      data-testid="DATA-TEST-ID"
+    >
+      <div
+        class="nav-bar-menu-label"
+      >
+        ITEM
+      </div>
+      <i
+        class="nav-bar-menu-caret icon"
+        icon="fas,caret-down"
+      />
+    </div>
+  </div>
+  <div
+    id="root-portal-id"
+  >
+    <div>
+      <div
+        class="szh-menu-container"
+      >
+        <ul
+          aria-label="Menu"
+          class="szh-menu szh-menu--state-open szh-menu--dir-bottom"
+          role="menu"
+          style="left: 0px; top: 0px;"
+          tabindex="-1"
+        >
+          <div
+            class="szh-menu__arrow szh-menu__arrow--dir-bottom"
+            style="left: 0px;"
+          />
+          <li
+            class="szh-menu__item"
+            data-testid="SUBITEMDATA-TEST-ID"
+            role="menuitem"
+            tabindex="-1"
+          >
+            SUBITEM
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+`;
