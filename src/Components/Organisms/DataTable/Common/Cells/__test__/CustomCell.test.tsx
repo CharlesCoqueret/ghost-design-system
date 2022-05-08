@@ -150,6 +150,7 @@ describe('CustomCell component', () => {
               column={{
                 customRender: customRenderMock,
                 dataIndex: 'data',
+                editable: true,
                 title: 'CustomCell',
                 type: ColumnType.CUSTOM,
               }}

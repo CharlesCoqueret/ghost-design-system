@@ -4,7 +4,7 @@ exports[`Filter Component Filter renders advanced filter and handles changes 1`]
 <body>
   <div>
     <div
-      class="filter-container"
+      class="gds-filter-container"
     >
       <div
         class="searchbar"
@@ -59,7 +59,7 @@ exports[`Filter Component Filter renders advanced filter and handles changes 2`]
 >
   <div>
     <div
-      class="filter-container"
+      class="gds-filter-container"
     >
       <div
         class="searchbar"
@@ -192,7 +192,7 @@ exports[`Filter Component Filter renders advanced filter and handles changes 3`]
 >
   <div>
     <div
-      class="filter-container"
+      class="gds-filter-container"
     >
       <div
         class="searchbar"
@@ -325,7 +325,7 @@ exports[`Filter Component Filter renders advanced filter and handles changes 4`]
 >
   <div>
     <div
-      class="filter-container"
+      class="gds-filter-container"
     >
       <div
         class="searchbar"
@@ -458,7 +458,7 @@ exports[`Filter Component Filter renders advanced filter and handles changes 5`]
 >
   <div>
     <div
-      class="filter-container"
+      class="gds-filter-container"
     >
       <div
         class="searchbar"
@@ -591,7 +591,7 @@ exports[`Filter Component Filter renders advanced filter and handles changes 6`]
 >
   <div>
     <div
-      class="filter-container"
+      class="gds-filter-container"
     >
       <div
         class="searchbar"
@@ -643,7 +643,7 @@ exports[`Filter Component Filter renders advanced filter and handles changes 6`]
 exports[`Filter Component Filter renders filterbar and handles changes 1`] = `
 <div>
   <div
-    class="filter-container"
+    class="gds-filter-container"
   >
     <div
       class="searchbar"
@@ -681,7 +681,7 @@ exports[`Filter Component Filter renders filterbar and handles changes 1`] = `
 exports[`Filter Component Filter renders with no item in the filter bar 1`] = `
 <div>
   <div
-    class="filter-container"
+    class="gds-filter-container"
   >
     <div
       class="searchbar"
@@ -716,7 +716,7 @@ exports[`Filter Component Filter renders without data-testid 1`] = `
 >
   <div>
     <div
-      class="filter-container"
+      class="gds-filter-container"
     >
       <div
         class="searchbar"

@@ -121,6 +121,7 @@ describe('DateCell component', () => {
             <DateCell
               column={{
                 dataIndex: 'data',
+                editable: true,
                 title: 'DateCell',
                 type: ColumnType.DATE,
               }}

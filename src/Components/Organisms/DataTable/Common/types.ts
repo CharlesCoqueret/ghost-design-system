@@ -1,15 +1,24 @@
 import { CSSProperties, ReactElement } from 'react';
 import * as yup from 'yup';
-import lang from 'suneditor-react/dist/types/lang';
 
 import { IconProp } from '../../../Atoms/Icon';
-import { BadgeColorsEnum } from '../../../Atoms/Badge';
-import { DateFormat, DateFormatEnum, WeekDayEnum } from '../../../Atoms/DatePickerInput';
-import { IOption } from '../../../Atoms/SelectInput';
-import { ThousandsGroupStyle } from '../../../Atoms/AmountInput';
+import { DateFormat } from '../../../Atoms/DatePickerInput';
 import { ColorButtonEnum } from '../../../Molecules/Button';
-import { IFile } from '../../../Atoms/FileInput';
-import { IFieldProps } from '../../Form';
+import { IAmountFieldProps } from '../../../Molecules/AmountField/AmountField';
+import { ISelectFieldProps } from '../../../Molecules/SelectField/SelectField';
+import { IBadgeProps } from '../../../Atoms/Badge/Badge';
+import { IDatePickerFieldProps } from '../../../Molecules/DatePickerField/DatePickerField';
+import { IDynamicSearchFieldProps } from '../../../Molecules/DynamicSearchField/DynamicSearchField';
+import { IFileFieldProps } from '../../../Molecules/FileField/FileField';
+import { IMultiSelectFieldProps } from '../../../Molecules/MultiSelectField/MultiSelectField';
+import { IPercentageFieldProps } from '../../../Molecules/PercentageField/PercentageField';
+import { IRichTextFieldProps } from '../../../Molecules/RichTextField/RichTextField';
+import { ILineEditableDataTableProps } from '../LineEditableDataTable/LineEditableDataTable';
+import { ITextFieldProps } from '../../../Molecules/TextField/TextField';
+import { ITextAreaFieldProps } from '../../../Molecules/TextAreaField/TextAreaField';
+import { IYearPickerFieldProps } from '../../../Molecules/YearPickerField/YearPickerField';
+import { IOption } from '../../../Atoms/SelectInput';
+import { IFieldSectionProps } from '../../Form/types';
 
 export enum ColumnType {
   AMOUNT = 'amount',
@@ -79,59 +88,72 @@ interface IColumn {
   width?: CSSProperties['width'];
 }
 
-export interface IColumnAmount<T> extends IColumn {
-  allowNegative?: boolean;
-  currency?: string;
+export interface IColumnAmount<T>
+  extends IColumn,
+    Pick<
+      IAmountFieldProps,
+      | 'allowNegative'
+      | 'decimalScale'
+      | 'decimalSeparator'
+      | 'maxValue'
+      | 'minValue'
+      | 'placeholder'
+      | 'prefix'
+      | 'suffix'
+      | 'thousandSeparator'
+      | 'thousandsGroupStyle'
+    > {
+  /** Entry of the value in T (type: keyof T) */
   dataIndex: keyof T;
-  decimalScale?: number;
-  decimalSeparator?: string;
+  /** Enables edition for column (optional, default: false) */
   editable?: boolean;
-  maxValue?: number;
-  minValue?: number;
-  placeholder?: string;
-  thousandSeparator?: string;
-  thousandsGroupStyle?: ThousandsGroupStyle;
+  /** Column type */
   type: ColumnType.AMOUNT;
 }
 
-export interface IColumnBadge<T> extends IColumn {
-  color?: BadgeColorsEnum;
+export interface IColumnBadge<T>
+  extends IColumn,
+    Pick<ISelectFieldProps, 'isClearable' | 'colors' | 'placeholder' | 'usePortal'>,
+    Pick<IBadgeProps, 'color'> {
+  /** Entry of the value in T (type: keyof T) */
   dataIndex: keyof T;
+  /** Enables edition for column (optional, default: false) */
   editable?: boolean;
-  isClearable?: boolean;
   // When the value is not present in the options, should the value be erased (optional, default: false)
   eraseValueWhenNotInOptions?: boolean;
+  /** Options available to be picked from */
   options: Array<IOption> | ((row: T | undefined) => Array<IOption>);
-  selectColors?: {
-    controlErrorColor: string; // colors.error,
-    controlFocusColor: string; // colors.primary,
-    fontColor: string; // 'rgb(0, 0, 0)',
-    optionFocusColor: string; // colors.chalk,
-    optionSelectedColor: string; // colors.primary,
-  };
-  placeholder?: string;
+  /** Column type */
   type: ColumnType.BADGE;
-  usePortal?: boolean;
 }
 
 export interface IColumnButton<T> extends IColumn {
+  /** List of buttons properties to be displayed */
   buttons: Array<IButtonCellProps<T>>;
+  /** Tooltip message used when the number of buttons exceeds 3 */
   moreActionsMessage: string;
+  /** Column type */
   type: ColumnType.BUTTON;
 }
 
 export interface IColumnCheckbox<T> extends IColumn {
+  /** Entry of the value in T (type: keyof T) */
   dataIndex: keyof T;
+  /** Enables edition for column (optional, default: false) */
   editable?: boolean;
+  /** Column type */
   type: ColumnType.CHECKBOX;
 }
 
 export interface IColumnCode<T> extends IColumn {
+  /** Entry of the value in T (type: keyof T) */
   dataIndex: keyof T;
+  /** Column type */
   type: ColumnType.CODE;
 }
 
 export interface IColumnCustom<T> extends IColumn {
+  /** Custom render component */
   customRender: <
     U extends {
       highlighted?: boolean;
@@ -142,187 +164,205 @@ export interface IColumnCustom<T> extends IColumn {
   >(
     props: U,
   ) => ReactElement;
-
+  /** Entry of the value in T (type: keyof T) */
   dataIndex: keyof T;
+  /** Enables edition for column (optional, default: false) */
   editable?: boolean;
+  /** Column type */
   type: ColumnType.CUSTOM;
 }
 
 export interface IColumnDescription<T> extends IColumn {
+  /** Entry of the value in T (type: keyof T) */
   dataIndex: keyof T;
+  /** Custom render description component */
   description: ReactElement | (<U extends { value: T[keyof T] }>(props: U) => ReactElement);
+  /** Column type */
   type: ColumnType.DESCRIPTION;
 }
 
-export interface IColumnDate<T> extends IColumn {
-  calendarStartDay?: WeekDayEnum;
+export interface IColumnDate<T>
+  extends IColumn,
+    Pick<IDatePickerFieldProps, 'calendarStartDay' | 'dateFormat' | 'isClearable' | 'locale' | 'usePortal'> {
+  /** Entry of the value in T (type: keyof T) */
   dataIndex: keyof T;
-  dateFormat?: DateFormat;
+  /** Enables edition for column (optional, default: false) */
   editable?: boolean;
-  isClearable?: boolean;
-  locale?: string;
+  /** Column type */
   type: ColumnType.DATE;
-  usePortal?: boolean;
 }
 
-export interface IColumnDynamicSearch<T> extends IColumn {
+export interface IColumnDynamicSearch<T>
+  extends IColumn,
+    Pick<
+      IDynamicSearchFieldProps,
+      'colors' | 'isClearable' | 'noOptionsMessage' | 'placeholder' | 'resolveValue' | 'searchOptions' | 'usePortal'
+    > {
+  /** Entry of the value in T (type: keyof T) */
   dataIndex: keyof T;
+  /** Enables edition for column (optional, default: false) */
   editable?: boolean;
-  isClearable?: boolean;
-  noOptionsMessage: (obj: { inputValue: string }) => string;
-  placeholder?: string;
-  resolveValue: (value: string | number) => Promise<IOption | undefined>;
-  searchOptions: (searchTerm: string) => Promise<Array<IOption>>;
-  selectColors?: {
-    controlErrorColor: string; // colors.error,
-    controlFocusColor: string; // colors.primary,
-    fontColor: string; // 'rgb(0, 0, 0)',
-    optionFocusColor: string; // colors.chalk,
-    optionSelectedColor: string; // colors.primary,
-  };
+  /** Column type */
   type: ColumnType.DYNAMICSEARCH;
-  usePortal?: boolean;
 }
 
-export interface IColumnFile<T> extends IColumn {
-  acceptTypes?: string;
-  additionalInfo?: string | ReactElement;
+export interface IColumnFile<T>
+  extends IColumn,
+    Pick<
+      IFileFieldProps,
+      | 'acceptTypes'
+      | 'additionalInfo'
+      | 'maxFiles'
+      | 'maxFileSize'
+      | 'maxFolderDepth'
+      | 'onDelete'
+      | 'onDownload'
+      | 'requestHeaders'
+      | 'requestMethod'
+      | 'requestUrl'
+      | 'requestWithCredentials'
+      | 'showFileSize'
+      | 'showProgressBar'
+      | 'uploadMessage'
+      | 'localization'
+    > {
+  /** Entry of the value in T (type: keyof T) */
   dataIndex: keyof T;
+  /** Enables edition for column (optional, default: false) */
   editable?: boolean;
-  maxFiles?: number;
-  maxFileSize?: number;
-  maxFolderDepth?: number;
-  onDelete: (file: IFile) => Promise<void>;
-  onDownload?: (file: IFile) => Promise<void>;
-  requestHeaders?: Record<string, string>;
-  requestMethod: 'POST' | 'PUT';
-  requestUrl: string;
-  requestWithCredentials?: boolean;
-  showFileSize?: boolean;
-  showProgressBar?: boolean;
-  uploadMessage?: string | ReactElement;
-  localization?: {
-    delete?: string;
-    popoverConfirm?: string;
-    popoverCancel?: string;
-    popoverTitle?: string;
-    invalidType?: string;
-    quotaExceeded?: string;
-    sizeExceeded?: string;
-  };
+  /** Column type */
   type: ColumnType.FILE;
 }
 
-export interface IColumnMultiSelect<T> extends IColumn {
+export interface IColumnMultiSelect<T>
+  extends IColumn,
+    Pick<
+      IMultiSelectFieldProps,
+      'isClearable' | 'numberOfItemLabel' | 'numberOfItemsLabel' | 'placeholder' | 'colors' | 'usePortal'
+    > {
+  /** Entry of the value in T (type: keyof T) */
   dataIndex: keyof T;
+  /** Enables edition for column (optional, default: false) */
   editable?: boolean;
   // When the value is not present in the options, should the value be erased (optional, default: false)
   eraseValueWhenNotInOptions?: boolean;
-  isClearable?: boolean;
-  options: Array<IOption> | ((data: T | undefined) => Array<IOption>);
-  numberOfItemLabel: string;
-  numberOfItemsLabel: string;
-  placeholder?: string;
-  selectColors?: {
-    controlErrorColor: string; // colors.error,
-    controlFocusColor: string; // colors.primary,
-    fontColor: string; // 'rgb(0, 0, 0)',
-    optionFocusColor: string; // colors.chalk,
-    optionSelectedColor: string; // colors.primary,
-  };
+  /** Options available to be picked from */
+  options: Array<IOption> | ((row: T | undefined) => Array<IOption>);
+  /** Column type */
   type: ColumnType.MULTISELECT;
-  usePortal?: boolean;
 }
 
-export interface IColumnNumber<T> extends IColumn {
-  allowNegative?: boolean;
+export interface IColumnNumber<T>
+  extends IColumn,
+    Pick<
+      IAmountFieldProps,
+      | 'allowNegative'
+      | 'decimalScale'
+      | 'decimalSeparator'
+      | 'maxValue'
+      | 'minValue'
+      | 'placeholder'
+      | 'prefix'
+      | 'suffix'
+      | 'thousandSeparator'
+      | 'thousandsGroupStyle'
+    > {
+  /** Entry of the value in T (type: keyof T) */
   dataIndex: keyof T;
-  decimalScale?: number;
-  decimalSeparator?: string;
+  /** Enables edition for column (optional, default: false) */
   editable?: boolean;
-  maxValue?: number;
-  minValue?: number;
-  placeholder?: string;
-  prefix?: string;
-  suffix?: string;
-  thousandSeparator?: string;
-  thousandsGroupStyle?: ThousandsGroupStyle;
+  /** Column type */
   type: ColumnType.NUMBER;
 }
 
-export interface IColumnPercentage<T> extends IColumn {
-  allowNegative?: boolean;
+export interface IColumnPercentage<T>
+  extends IColumn,
+    Pick<
+      IPercentageFieldProps,
+      | 'allowNegative'
+      | 'decimalScale'
+      | 'decimalSeparator'
+      | 'maxValue'
+      | 'minValue'
+      | 'placeholder'
+      | 'thousandSeparator'
+      | 'thousandsGroupStyle'
+    > {
+  /** Entry of the value in T (type: keyof T) */
   dataIndex: keyof T;
-  decimalScale?: number;
-  decimalSeparator?: string;
+  /** Enables edition for column (optional, default: false) */
   editable?: boolean;
-  maxValue?: number;
-  minValue?: number;
-  placeholder?: string;
-  thousandSeparator?: string;
-  thousandsGroupStyle?: ThousandsGroupStyle;
+  /** Column type */
   type: ColumnType.PERCENTAGE;
 }
 
-export interface IColumnRichText<T> extends IColumn {
-  convertImagesToBase64?: boolean;
+export interface IColumnRichText<T>
+  extends IColumn,
+    Pick<IRichTextFieldProps, 'convertImagesToBase64' | 'enableImage' | 'enableLink' | 'locale' | 'maxLength'> {
+  /** Entry of the value in T (type: keyof T) */
   dataIndex: keyof T;
+  /** Enables edition for column (optional, default: false) */
   editable?: boolean;
-  enableImage?: boolean;
-  enableLink?: boolean;
-  locale?: lang;
-  maxLength?: number;
+  /** Column type */
   type: ColumnType.RICHTEXT;
 }
 
-export interface IColumnSection<T> extends IColumn {
-  collapsable?: boolean;
+export interface IColumnSection<T>
+  extends IColumn,
+    Pick<IFieldSectionProps<T>, 'collapsable' | 'fields' | 'label' | 'openInitially'> {
+  /** Entry of the value in T (type: keyof T) */
   dataIndex: keyof T;
-  openInitially?: boolean;
-  fields: Array<IFieldProps<T>>;
-  label: string;
+  /** Column type */
   type: ColumnType.SECTION;
 }
 
 export interface IColumnSwitch<T> extends IColumn {
+  /** Entry of the value in T (type: keyof T) */
   dataIndex: keyof T;
+  /** Enables edition for column (optional, default: false) */
   editable?: boolean;
+  /** Column type */
   type: ColumnType.SWITCH;
 }
 
-export interface IColumnTable<T, U> extends IColumn {
-  columns: Array<IColumnType<U>>;
+export interface IColumnTable<T, U>
+  extends IColumn,
+    Pick<ILineEditableDataTableProps<U>, 'columns' | 'extra' | 'loading' | 'onSortChange'> {
+  /** Entry of the value in T (type: keyof T) */
   dataIndex: keyof T;
+  /** Enables edition for column (optional, default: false) */
   editable?: boolean;
-  extra: IExtraLineEditableDataTableProps<U>;
-  loading?: ReactElement;
-  onSortChange?: (sortField?: keyof U, sortDirection?: SortDirectionEnum) => void;
+  /** Column type */
   type: ColumnType.TABLE;
 }
 
-export interface IColumnText<T> extends IColumn {
+export interface IColumnText<T> extends IColumn, Pick<ITextFieldProps, 'maxLength' | 'minLength' | 'placeholder'> {
+  /** Entry of the value in T (type: keyof T) */
   dataIndex: keyof T;
+  /** Enables edition for column (optional, default: false) */
   editable?: boolean;
-  maxLength?: number;
-  minLength?: number;
-  placeholder?: string;
+  /** Column type */
   type: ColumnType.TEXT;
 }
 
-export interface IColumnTextArea<T> extends IColumn {
+export interface IColumnTextArea<T>
+  extends IColumn,
+    Pick<ITextAreaFieldProps, 'maxLength' | 'minLength' | 'placeholder'> {
+  /** Entry of the value in T (type: keyof T) */
   dataIndex: keyof T;
+  /** Enables edition for column (optional, default: false) */
   editable?: boolean;
-  maxLength?: number;
-  minLength?: number;
-  placeholder?: string;
+  /** Column type */
   type: ColumnType.TEXTAREA;
 }
 
-export interface IColumnYear<T> extends IColumn {
+export interface IColumnYear<T> extends IColumn, Pick<IYearPickerFieldProps, 'usePortal'> {
+  /** Entry of the value in T (type: keyof T) */
   dataIndex: keyof T;
+  /** Enables edition for column (optional, default: false) */
   editable?: boolean;
+  /** Column type */
   type: ColumnType.YEAR;
-  usePortal?: boolean;
 }
 
 export type IColumnType<T> =
@@ -358,7 +398,7 @@ export interface IExtraStaticDataTableProps<T> {
   /** Global currency, which can be override by the amount column setting (optional, default: undefined) */
   currency?: string;
   /** Global date format, which can be override by the date column setting (optional, default: undefined) */
-  dateFormat?: DateFormatEnum;
+  dateFormat?: DateFormat;
   /** Method used to enable the click on row, and handle the click on a specific row (optional, default: undefined) */
   onRowClick?: (row: T, rowIndex: number) => void;
   /** Method used to enable the selection of rows, and handle the selection of a specific row (optional, default: undefined) */

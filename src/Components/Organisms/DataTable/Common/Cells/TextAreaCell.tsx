@@ -10,7 +10,7 @@ const TextAreaCell = <T,>(props: ICellProps<T, IColumnTextArea<T>>): ReactElemen
 
   const displayValue = (forcedValue || (row && row[column.dataIndex])) as string | undefined;
   const isCurrentlyEditedRow =
-    editing || (extra && 'editedRowIndex' in extra ? extra.editedRowIndex === rowIndex : false);
+    editing || (extra && 'editedRowIndex' in extra ? extra.editedRowIndex === rowIndex && column.editable : false);
 
   return (
     <td className={classnames({ ellipsis: column.ellipsis })} style={{ display: column.hidden ? 'none' : undefined }}>

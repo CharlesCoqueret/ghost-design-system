@@ -9,10 +9,10 @@ const AmountCell = <T,>(props: ICellProps<T, IColumnAmount<T>>): ReactElement =>
   const { column, editing, extra, forcedValue, onChange, row, rowIndex } = props;
 
   const displayValue = (forcedValue || (row && row[column.dataIndex])) as number | string | undefined;
-  const currency = column.currency || extra?.currency;
+  const suffix = column.suffix || extra?.currency;
   const isNegative = Number.isFinite(Number(displayValue)) && Number(displayValue) < 0;
   const isCurrentlyEditedRow =
-    editing || (extra && 'editedRowIndex' in extra ? extra.editedRowIndex === rowIndex : false);
+    editing || (extra && 'editedRowIndex' in extra ? extra.editedRowIndex === rowIndex && column.editable : false);
 
   return (
     <td className={classnames({ ellipsis: column.ellipsis })} style={{ display: column.hidden ? 'none' : undefined }}>
@@ -38,7 +38,7 @@ const AmountCell = <T,>(props: ICellProps<T, IColumnAmount<T>>): ReactElement =>
         thousandSeparator={column.thousandSeparator}
         thousandsGroupStyle={column.thousandsGroupStyle}
         readOnly={!isCurrentlyEditedRow}
-        suffix={currency}
+        suffix={suffix}
       />
     </td>
   );

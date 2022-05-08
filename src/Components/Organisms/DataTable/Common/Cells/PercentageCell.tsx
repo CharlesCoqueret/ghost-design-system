@@ -10,7 +10,7 @@ const PercentageCell = <T,>(props: ICellProps<T, IColumnPercentage<T>>): ReactEl
   const displayValue = (forcedValue || (row && row[column.dataIndex])) as number | string | undefined;
   const isNegative = Number.isFinite(Number(displayValue)) && Number(displayValue) < 0;
   const isCurrentlyEditedRow =
-    editing || (extra && 'editedRowIndex' in extra ? extra.editedRowIndex === rowIndex : false);
+    editing || (extra && 'editedRowIndex' in extra ? extra.editedRowIndex === rowIndex && column.editable : false);
 
   return (
     <td className={classnames({ ellipsis: column.ellipsis })} style={{ display: column.hidden ? 'none' : undefined }}>

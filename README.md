@@ -2,6 +2,9 @@
 
 [Demo](https://charlescoqueret.github.io/ghost-design-system/)
 
+[![Coverage Status](https://coveralls.io/repos/github/CharlesCoqueret/ghost-design-system/badge.svg?branch=main)](https://coveralls.io/github/CharlesCoqueret/ghost-design-system?branch=main)
+![node-current](https://img.shields.io/node/v/ghost-design-system)
+
 ## Available components:
 
 - Atoms:
@@ -125,9 +128,8 @@ Peer dependencies:
 
 - [react](https://fr.reactjs.org/)
 - [react-dom](https://fr.reactjs.org/docs/react-dom.html)
-- [react-router-dom](https://reactrouter.com/)
-- [suneditor](http://suneditor.com/) (for CSS import)
-- [tippyjs](https://atomiks.github.io/tippyjs/) (for CSS import)
+- [suneditor](http://suneditor.com/) - for SCSS import
+- [tippyjs](https://atomiks.github.io/tippyjs/) - for SCSS import
 
 Dev dependencies:
 
@@ -154,7 +156,7 @@ Dev dependencies:
 |   |   |   ├── Example
 |   |   |   |   ├── __tests__
 |   |   |   |   |   ├── Example.test.tsx
-|   |   |   |   ├── Example.stories.tsx
+|   |   |   |   ├── Example.stories.mdx
 |   |   |   |   ├── Example.tsx
 |   |   |   |   ├── index.ts
 |   |   |   ├── index.ts

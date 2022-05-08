@@ -97,7 +97,7 @@ const ActionBar = (props: IActionBarProps): ReactElement => {
         {actions && actions.length > 0 && (
           <div className='actions'>
             {actions.map((action) => {
-              return <Button key={action.label || action.tooltip} {...action} icon={undefined} />;
+              return <Button key={action.label || action.tooltip} {...action} />;
             })}
           </div>
         )}

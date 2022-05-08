@@ -213,6 +213,7 @@ describe('SwitchCell component', () => {
             <SwitchCell
               column={{
                 dataIndex: 'data',
+                editable: true,
                 title: 'SwitchCell',
                 type: ColumnType.SWITCH,
               }}
