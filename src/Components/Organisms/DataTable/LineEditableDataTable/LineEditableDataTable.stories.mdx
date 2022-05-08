@@ -1,0 +1,530 @@
+import { Canvas, Meta, ArgsTable, Story, Source } from '@storybook/addon-docs';
+import * as yup from 'yup';
+
+import LineEditableDataTable from './LineEditableDataTable';
+import { ColumnType } from '../Common/types';
+import FakeExtraLineEditableDataTable from '../Common/FakeComponents/FakeExtraLineEditableDataTable';
+import { Icon } from '../../../Atoms';
+
+import dataTableStyle from '../../../../assets/_datatable.scss?raw';
+
+export const TemplateLineEditableDataTable = (args) => {
+  return <LineEditableDataTable {...args} />;
+};
+
+<Meta
+  title='Organism/DataTable'
+  component={LineEditableDataTable}
+  parameters={{
+    viewMode: 'docs',
+    layout: 'fullscreen',
+  }}
+/>
+
+# LineEditableDataTable
+
+- The line editable data table displays information in a grid-like format of rows and columns. It organizes
+  information in an easy to read and scan through way.
+- Edition is managed through a full size form in a modal with data validation.
+- The big benefit of using the line editable data table is to enrich the edition experience with additional
+  information which can be absent from the table.
+
+Play with LineEditableDataTable live on [CodeSandbox](https://codesandbox.io/s/lineeditabledatatable-demo-mfix5w)
+
+## LineEditable column
+
+Using the `editable` property of a column, you can enable edition of a column.
+
+<Canvas>
+  <LineEditableDataTable
+    columns={[
+      { currency: '€', dataIndex: 'amount', editable: true, title: 'Amount (editable)', type: ColumnType.AMOUNT },
+      { dataIndex: 'number', editable: false, title: 'Number (non-editable)', type: ColumnType.NUMBER },
+      { dataIndex: 'percentage', editable: true, title: 'Percentage (editable)', type: ColumnType.PERCENTAGE },
+    ]}
+    data={[
+      { amount: 0, number: 0, percentage: 0 },
+      { amount: 1, number: 10, percentage: 100 },
+      { amount: 2, number: 20, percentage: 200 },
+    ]}
+    extra={{
+      onRowSubmit: (row, rowIndex) => {
+        console.log(`Edited row: ${JSON.stringify(row)}, edited row index: ${rowIndex}`);
+      },
+      validationSchema: yup.object({
+        amount: yup.number().required(),
+        number: yup.number().required(),
+        percentage: yup.number().required(),
+      }),
+    }}
+  />
+</Canvas>
+
+## LineEditable row
+
+Using `isEditable`, `onRowEdit`, `onRowSubmit`, `onRowCancelEdit` you can enable and manage the edition of a row.
+
+Please setup `validationSchema` properly to get data validation. More info: [Yup](https://github.com/jquense/yup#yup)
+
+<Canvas>
+  <LineEditableDataTable
+    columns={[
+      { dataIndex: 'text', editable: true, title: 'Text (editable)', type: ColumnType.TEXT },
+      { dataIndex: 'number', editable: false, title: 'Number (non-editable)', type: ColumnType.NUMBER },
+      { dataIndex: 'percentage', editable: true, title: 'Percentage (editable)', type: ColumnType.PERCENTAGE },
+    ]}
+    data={[
+      { text: 'LineEditable row 0', number: 0, percentage: 0 },
+      { text: 'Non-editable row 1', number: 10, percentage: 100 },
+      { text: 'LineEditable row 2', number: 20, percentage: 200 },
+    ]}
+    extra={{
+      onRowEdit: (row, rowIndex) => {
+        console.log(`Row start edition: ${JSON.stringify(row)}, edited row index: ${rowIndex}`);
+      },
+      onRowSubmit: (row, rowIndex) => {
+        console.log(`Edited row: ${JSON.stringify(row)}, edited row index: ${rowIndex}`);
+      },
+      onRowCancelEdit: (row, rowIndex) => {
+        console.log(`Cancel edition of row: ${JSON.stringify(row)}, edited row index: ${rowIndex}`);
+      },
+      isEditable: (row, rowIndex) => !row.text.includes('Non-editable'),
+      validationSchema: yup.object({
+        text: yup.string().required().min(3, 'Text should be at least 3 characters long'),
+        number: yup.number().optional().min(0, 'Number is optional, but must be positive'),
+        percentage: yup
+          .number()
+          .required('Percentage is required')
+          .min(-200, 'Percentage must be above -200%')
+          .max(200, 'Percentage must be below 200%'),
+      }),
+    }}
+  />
+</Canvas>
+
+## Downloadable row
+
+Using `isDownloadable` and `onRowDownload` you can enable download and manage the download of a row.
+
+<Canvas>
+  <LineEditableDataTable
+    columns={[
+      { dataIndex: 'text', editable: true, title: 'Text', type: ColumnType.TEXT },
+      { dataIndex: 'number', editable: true, title: 'Number', type: ColumnType.NUMBER },
+      { dataIndex: 'percentage', editable: true, title: 'Percentage', type: ColumnType.PERCENTAGE },
+    ]}
+    data={[
+      { text: 'Downloadable row 0', number: 0, percentage: 0 },
+      { text: 'Non-downloadable row 1', number: 10, percentage: 100 },
+      { text: 'Downloadable row 2', number: 20, percentage: 200 },
+    ]}
+    extra={{
+      isDownloadable: (row, rowIndex) => !row.text.includes('Non-downloadable'),
+      onRowDownload: (row, rowIndex) => {
+        console.log(`Download requested for row: ${JSON.stringify(row)}, at row index: ${rowIndex}`);
+      },
+      localization: {
+        actionColumn: 'Custom actions',
+        downloadButton: 'Custom download',
+      },
+    }}
+  />
+</Canvas>
+
+## Deletable row
+
+Using `isDeletable` and `onRowDelete` you can enable deletion and manage the deletion of a row.
+
+<Canvas>
+  <LineEditableDataTable
+    columns={[
+      { dataIndex: 'text', editable: true, title: 'Text', type: ColumnType.TEXT },
+      { dataIndex: 'number', editable: true, title: 'Number', type: ColumnType.NUMBER },
+      { dataIndex: 'percentage', editable: true, title: 'Percentage', type: ColumnType.PERCENTAGE },
+    ]}
+    data={[
+      { text: 'Deletable row 0', number: 0, percentage: 0 },
+      { text: 'Non-deletable row 1', number: 10, percentage: 100 },
+      { text: 'Deletable row 2', number: 20, percentage: 200 },
+    ]}
+    extra={{
+      isDeletable: (row, rowIndex) => !row.text.includes('Non-deletable'),
+      onRowDelete: (row, rowIndex) => {
+        console.log(`Delete requested for row: ${JSON.stringify(row)}, at row index: ${rowIndex}`);
+      },
+      localization: {
+        deleteButton: 'Custom Delete',
+        deletePopoverMessage: 'Custom do you confirm deletion ?',
+        deletePopoverConfirm: 'Custom comfirm',
+        deletePopoverCancel: 'Custom cancel',
+      },
+    }}
+  />
+</Canvas>
+
+## Add new row
+
+Using `canAddNewLine` and `onNewLine` you can enable new row creation and manage the initial value of a new row.
+
+Reminder, you might `onRowEdit`, `onRowSubmit`, `onRowCancelEdit` to capture the changes.
+
+<Canvas>
+  <LineEditableDataTable
+    columns={[
+      { dataIndex: 'text', editable: false, title: 'Text', type: ColumnType.TEXT },
+      { dataIndex: 'number', editable: true, title: 'Number', type: ColumnType.NUMBER },
+      { dataIndex: 'percentage', editable: true, title: 'Percentage', type: ColumnType.PERCENTAGE },
+    ]}
+    data={[
+      { text: 'Existing row 0', number: 0, percentage: 0 },
+      { text: 'Existing row 1', number: 10, percentage: 100 },
+      { text: 'Existing row 2', number: 20, percentage: 200 },
+    ]}
+    extra={{
+      onRowEdit: (row, rowIndex) => {
+        console.log(`Row start edition: ${JSON.stringify(row)}, edited row index: ${rowIndex}`);
+      },
+      onRowSubmit: (row, rowIndex) => {
+        console.log(`Edited row: ${JSON.stringify(row)}, edited row index: ${rowIndex}`);
+      },
+      onRowCancelEdit: (row, rowIndex) => {
+        console.log(`Cancel edition of row: ${JSON.stringify(row)}, edited row index: ${rowIndex}`);
+      },
+      validationSchema: yup.object({
+        text: yup.string().required().min(3, 'Text should be at least 3 characters long'),
+        number: yup.number().optional().min(0, 'Number is optional, but must be positive'),
+        percentage: yup
+          .number()
+          .required('Percentage is required')
+          .min(-200, 'Percentage must be above -200%')
+          .max(200, 'Percentage must be below 200%'),
+      }),
+      canAddNewLine: () => true,
+      onNewLine: () => {
+        const initialRow = { text: 'Newly created row', number: 100, percentage: 10 };
+        console.log(`Returning the default object: ${JSON.stringify(initialRow)}`);
+        return initialRow;
+      },
+    }}
+  />
+</Canvas>
+
+## Advanced use case with hidden columns
+
+<Canvas>
+  <LineEditableDataTable
+    columns={[
+      {
+        dataIndex: 'creationDate',
+        sorter: true,
+        title: 'Start date',
+        type: ColumnType.DATE,
+      },
+      {
+        dataIndex: 'taskType',
+        ellipsis: true,
+        title: 'Type',
+        type: ColumnType.TEXT,
+      },
+      {
+        dataIndex: 'description',
+        hidden: true,
+        editable: true,
+        title: 'Description',
+        type: ColumnType.TEXT,
+      },
+      {
+        dataIndex: 'dueDate',
+        editable: true,
+        sorter: true,
+        title: 'Due date',
+        type: ColumnType.DATE,
+      },
+      {
+        dataIndex: 'assignee',
+        editable: true,
+        ellipsis: true,
+        title: 'Assigned to',
+        type: ColumnType.DYNAMICSEARCH,
+        isClearable: true,
+        resolveValue: (value) => {
+          if (value === 1001) return Promise.resolve({ value: 1001, label: 'Jean' });
+          if (value === 1002) return Promise.resolve({ value: 1002, label: 'Pierre' });
+          if (value === 1003) return Promise.resolve({ value: 1003, label: 'Roger' });
+          return Promise.resolve(undefined);
+        },
+        noOptionsMessage: (obj) => {
+          if (!obj.inputValue) return `Please type a few characters to search`;
+          return `No option found for ${obj.inputValue}`;
+        },
+        searchOptions: () =>
+          Promise.resolve([
+            { value: 1001, label: 'Jean' },
+            { value: 1002, label: 'Pierre' },
+            { value: 1003, label: 'Roger' },
+          ]),
+      },
+      {
+        dataIndex: 'comment',
+        editable: true,
+        title: 'Comment',
+        type: ColumnType.TEXTAREA,
+        hidden: true,
+      },
+      {
+        dataIndex: 'team',
+        editable: true,
+        ellipsis: true,
+        title: 'Team',
+        isClearable: true,
+        type: ColumnType.BADGE,
+        options: [
+          {
+            teamId: 1,
+            name: 'Accountant',
+            description: 'Accountant',
+          },
+          {
+            teamId: 2,
+            name: 'Developer',
+            description: 'Making the impossible possible',
+          },
+          {
+            teamId: 3,
+            name: 'Product',
+            description: 'Making the possible impossible',
+          },
+          {
+            teamId: 4,
+            name: 'Architect',
+            description: 'Making the impossible strong',
+          },
+          {
+            teamId: 5,
+            name: 'Designer',
+            description: 'Making the impossible look nice',
+          },
+        ].map((team) => ({
+          label: team.name,
+          value: team.teamId,
+        })),
+      },
+    ]}
+    data={[
+      {
+        assignee: undefined,
+        comment: undefined,
+        creationDate: new Date('2022-04-05'),
+        description: 'Description of task id 12',
+        dueDate: undefined,
+        linkedId: 10,
+        taskType: 'Task type 1',
+        taskId: 12,
+        team: 2,
+      },
+      {
+        assignee: 1001,
+        comment: undefined,
+        creationDate: new Date('2020-09-01'),
+        description: 'Description of task id 13',
+        dueDate: undefined,
+        linkedId: 11,
+        taskType: 'Task type 2',
+        taskId: 13,
+        team: 1,
+      },
+    ]}
+    extra={{
+      actionColumnWidth: '50px',
+      onRowEdit: (row, rowIndex) => {
+        console.log(`Row start edition: ${JSON.stringify(row)}, edited row index: ${rowIndex}`);
+      },
+      onRowSubmit: (row, rowIndex) => {
+        console.log(`Edited row: ${JSON.stringify(row)}, edited row index: ${rowIndex}`);
+      },
+      onRowCancelEdit: (row, rowIndex) => {
+        console.log(`Cancel edition of row: ${JSON.stringify(row)}, edited row index: ${rowIndex}`);
+      },
+      onRowDelete: (row, rowIndex) => {
+        console.log(`Delete requested for row: ${JSON.stringify(row)}, at row index: ${rowIndex}`);
+      },
+      validationSchema: yup.object({
+        assignee: yup.number().required(),
+        comment: yup
+          .string()
+          .required()
+          .min(3)
+          .transform((value) => value.trim()),
+        creationDate: yup.date().required(),
+        description: yup.string().required(),
+        dueDate: yup.date().required(),
+        linkedId: yup.number().optional(),
+        taskId: yup.number().optional(),
+        taskType: yup.string().optional(),
+        team: yup.number().required(),
+      }),
+      canAddNewLine: () => true,
+      onNewLine: () => {
+        const initialRow = { text: 'Newly created row', number: 100, percentage: 10 };
+        console.log(`Returning the default object: ${JSON.stringify(initialRow)}`);
+        return initialRow;
+      },
+      localization: {
+        actionColumn: '',
+        modalTitle: '',
+      },
+    }}
+  />
+</Canvas>
+
+## Props
+
+<ArgsTable of={LineEditableDataTable} sort='requiredFirst' exclude={['dataTestId']} />
+
+## extra: IExtraLineEditableDataTableProps<T\>
+
+<ArgsTable of={FakeExtraLineEditableDataTable} sort='requiredFirst' />
+
+## Story
+
+<Canvas>
+  <Story
+    name='LineEditableDataTable'
+    args={{
+      data: [
+        {
+          id: 'UGA',
+          status: 'INACTIVE',
+          price: -100000,
+          parts: -10,
+          startDate: new Date(2021, 2, 24),
+        },
+        {
+          id: 'ARE',
+          status: 'ACTIVE',
+          price: -2500000,
+          parts: 15,
+          startDate: new Date(2021, 1, 13),
+        },
+        {
+          id: 'GBR',
+          status: 'IN_PROGRESS',
+          price: 150000,
+          parts: 3,
+          startDate: new Date(2021, 1, 4),
+        },
+        {
+          id: 'JUF',
+          status: 'IN_PROGRESS',
+          price: -354000,
+          parts: 70,
+          startDate: new Date(2021, 1, 15),
+        },
+        {
+          id: 'YAI',
+          status: 'ACTIVE',
+          price: 4150000,
+          parts: 30,
+          startDate: new Date(2021, 2, 17),
+        },
+        {
+          id: 'SML',
+          status: 'ACTIVE',
+          price: -70500,
+          parts: 10,
+          startDate: new Date(2021, 3, 10),
+        },
+      ],
+      columns: [
+        {
+          title: 'Code',
+          dataIndex: 'id',
+          sorter: true,
+          type: ColumnType.CODE,
+          width: '70px',
+        },
+        {
+          title: 'Badge',
+          dataIndex: 'status',
+          editable: true,
+          sorter: true,
+          type: ColumnType.BADGE,
+          options: [
+            { label: 'Inactive', value: 'INACTIVE' },
+            { label: 'In progress', value: 'IN_PROGRESS' },
+            { label: 'Active', value: 'ACTIVE' },
+          ],
+        },
+        {
+          title: 'Amount',
+          dataIndex: 'price',
+          editable: true,
+          sorter: true,
+          type: ColumnType.AMOUNT,
+          currency: '€',
+        },
+        {
+          title: 'Percentage',
+          dataIndex: 'parts',
+          editable: true,
+          sorter: true,
+          type: ColumnType.PERCENTAGE,
+        },
+        {
+          title: 'Date',
+          dataIndex: 'startDate',
+          sorter: true,
+          type: ColumnType.DATE,
+        },
+      ],
+      extra: {
+        computeTotal: (data, dataIndex) => {
+          if (dataIndex === 'price' || dataIndex === 'parts') {
+            return data
+              .map((row) => {
+                return row[dataIndex];
+              })
+              .reduce((a, b) => Number(a) + Number(b), 0);
+          } else {
+            return '-';
+          }
+        },
+        onRowEdit: (row, rowIndex) => {
+          console.log(`Row start edition: ${JSON.stringify(row)}, edited row index: ${rowIndex}`);
+        },
+        onRowSubmit: (row, rowIndex) => {
+          console.log(`Edited row: ${JSON.stringify(row)}, edited row index: ${rowIndex}`);
+        },
+        onRowCancelEdit: (row, rowIndex) => {
+          console.log(`Cancel edition of row: ${JSON.stringify(row)}, edited row index: ${rowIndex}`);
+        },
+        validationSchema: yup.object({
+          id: yup.string().required(),
+          status: yup.string().required(),
+          price: yup.number().required(),
+          parts: yup.number().required(),
+          startDate: yup.date().required(),
+        }),
+        canAddNewLine: () => true,
+        onNewLine: () => {
+          const initialRow = { text: 'Newly created row', number: 100, percentage: 10 };
+          console.log(`Returning the default object: ${JSON.stringify(initialRow)}`);
+          return initialRow;
+        },
+        onRowDelete: (row, rowIndex) => {
+          console.log(`Delete requested for row: ${JSON.stringify(row)}, at row index: ${rowIndex}`);
+        },
+        onRowDownload: (row, rowIndex) => {
+          console.log(`Download requested for row: ${JSON.stringify(row)}, at row index: ${rowIndex}`);
+        },
+        onRowClick: (row) => {
+          console.log(`clicked row: ${JSON.stringify(row)}`);
+        },
+        onRowSelect: (rows, row) => {
+          console.log(`Number of rows selected: ${rows.length}\nSelected row: ${row.id}`);
+        },
+      },
+    }}>
+    {TemplateLineEditableDataTable.bind({})}
+  </Story>
+</Canvas>

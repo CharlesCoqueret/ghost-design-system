@@ -41,6 +41,7 @@ describe('MultiSelectCell component', () => {
             <MultiSelectCell
               column={{
                 dataIndex: 'data',
+                editable: true,
                 numberOfItemLabel: 'numberOfItemLabel',
                 numberOfItemsLabel: 'numberOfItemsLabel',
                 options: () => [

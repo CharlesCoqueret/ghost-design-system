@@ -9,7 +9,7 @@ const CustomCell = <T,>(props: ICellProps<T, IColumnCustom<T>>): ReactElement =>
   const { column, editing, extra, forcedValue, onChange, row, rowIndex } = props;
 
   const isCurrentlyEditedRow =
-    editing || (extra && 'editedRowIndex' in extra ? extra.editedRowIndex === rowIndex : false);
+    editing || (extra && 'editedRowIndex' in extra ? extra.editedRowIndex === rowIndex && column.editable : false);
   const displayValue = forcedValue
     ? forcedValue
     : column.customRender({

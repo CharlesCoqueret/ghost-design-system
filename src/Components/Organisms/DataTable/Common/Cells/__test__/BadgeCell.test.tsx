@@ -39,6 +39,7 @@ describe('BadgeCell component', () => {
             <BadgeCell
               column={{
                 dataIndex: 'data',
+                editable: true,
                 options: [
                   { value: 'option1', label: 'label 1' },
                   { value: 'option2', label: 'label 2' },

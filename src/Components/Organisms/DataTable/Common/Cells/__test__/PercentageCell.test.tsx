@@ -29,7 +29,7 @@ describe('PercentageCell component', () => {
         <tbody>
           <tr>
             <PercentageCell
-              column={{ dataIndex: 'data', title: 'PercentageCell', type: ColumnType.PERCENTAGE }}
+              column={{ dataIndex: 'data', editable: true, title: 'PercentageCell', type: ColumnType.PERCENTAGE }}
               extra={{ editedRowIndex: 6 }}
               rowIndex={6}
             />

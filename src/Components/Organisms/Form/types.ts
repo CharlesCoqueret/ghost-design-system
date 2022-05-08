@@ -1,12 +1,18 @@
 import { ReactElement } from 'react';
-import lang from 'suneditor-react/dist/types/lang';
 
-import { DateFormat, WeekDayEnum } from '../../Atoms/DatePickerInput';
-import { IFile } from '../../Atoms/FileInput';
 import { IOption } from '../../Atoms/SelectInput';
-import { ThousandsGroupStyle } from '../../Atoms/AmountInput';
-import { IColumnType } from '../DataTable/Common';
-import { IExtraLineEditableDataTableProps, SortDirectionEnum } from '../DataTable/Common/types';
+import { IAmountFieldProps } from '../../Molecules/AmountField/AmountField';
+import { IDatePickerFieldProps } from '../../Molecules/DatePickerField/DatePickerField';
+import { IFileFieldProps } from '../../Molecules/FileField/FileField';
+import { IDynamicSearchFieldProps } from '../../Molecules/DynamicSearchField/DynamicSearchField';
+import { IMultiSelectFieldProps } from '../../Molecules/MultiSelectField/MultiSelectField';
+import { IPercentageFieldProps } from '../../Molecules/PercentageField/PercentageField';
+import { IRichTextFieldProps } from '../../Molecules/RichTextField/RichTextField';
+import { ISelectFieldProps } from '../../Molecules/SelectField/SelectField';
+import { ILineEditableDataTableProps } from '../DataTable/LineEditableDataTable/LineEditableDataTable';
+import { ITextFieldProps } from '../../Molecules/TextField/TextField';
+import { ITextAreaFieldProps } from '../../Molecules/TextAreaField/TextAreaField';
+import { IYearPickerFieldProps } from '../../Molecules/YearPickerField/YearPickerField';
 
 export interface IFormSubmitReturnedType<T> {
   data: T;
@@ -86,18 +92,22 @@ export interface IFieldBaseProps<T> extends Partial<IVisibilityProps<T>> {
   readOnly?: boolean;
 }
 
-export interface IFieldAmountProps<T> extends IFieldBaseProps<T> {
-  allowNegative?: boolean;
-  decimalScale?: number;
-  decimalSeparator?: string;
+export interface IFieldAmountProps<T>
+  extends IFieldBaseProps<T>,
+    Pick<
+      IAmountFieldProps,
+      | 'allowNegative'
+      | 'decimalScale'
+      | 'decimalSeparator'
+      | 'maxValue'
+      | 'minValue'
+      | 'placeholder'
+      | 'prefix'
+      | 'suffix'
+      | 'thousandSeparator'
+      | 'thousandsGroupStyle'
+    > {
   fieldType: FieldTypeEnum.AMOUNT;
-  maxValue?: number;
-  minValue?: number;
-  placeholder?: string;
-  prefix?: string | undefined;
-  suffix?: string | undefined;
-  thousandSeparator?: string;
-  thousandsGroupStyle?: ThousandsGroupStyle;
 }
 
 export interface IFieldCheckboxProps<T> extends IFieldBaseProps<T> {
@@ -120,13 +130,10 @@ export interface IFieldCustomProps<T, U = unknown> extends IFieldBaseProps<T> {
   ) => ReactElement;
 }
 
-export interface IFieldDateProps<T> extends IFieldBaseProps<T> {
-  calendarStartDay?: WeekDayEnum;
-  dateFormat?: DateFormat;
+export interface IFieldDateProps<T>
+  extends IFieldBaseProps<T>,
+    Pick<IDatePickerFieldProps, 'calendarStartDay' | 'dateFormat' | 'isClearable' | 'locale' | 'placeholder'> {
   fieldType: FieldTypeEnum.DATE;
-  isClearable?: boolean;
-  locale?: string;
-  placeholder?: string;
 }
 
 export interface IFieldDescriptionProps<T> extends Partial<IVisibilityProps<T>> {
@@ -135,100 +142,88 @@ export interface IFieldDescriptionProps<T> extends Partial<IVisibilityProps<T>> 
   fieldType: FieldTypeEnum.DESCRIPTION;
 }
 
-export interface IFieldFileProps<T> extends IFieldBaseProps<T> {
-  acceptTypes?: string;
-  additionalInfo?: string | ReactElement;
+export interface IFieldFileProps<T>
+  extends IFieldBaseProps<T>,
+    Pick<
+      IFileFieldProps,
+      | 'acceptTypes'
+      | 'additionalInfo'
+      | 'maxFiles'
+      | 'maxFileSize'
+      | 'maxFolderDepth'
+      | 'onDelete'
+      | 'onDownload'
+      | 'requestHeaders'
+      | 'requestMethod'
+      | 'requestUrl'
+      | 'requestWithCredentials'
+      | 'showFileSize'
+      | 'showProgressBar'
+      | 'uploadMessage'
+      | 'localization'
+    > {
   fieldType: FieldTypeEnum.FILE;
-  maxFiles?: number;
-  maxFileSize?: number;
-  maxFolderDepth?: number;
-  onDelete: (file: IFile) => Promise<void>;
-  onDownload?: (file: IFile) => Promise<void>;
-  requestHeaders?: Record<string, string>;
-  requestMethod: 'POST' | 'PUT';
-  requestUrl: string;
-  requestWithCredentials?: boolean;
-  showFileSize?: boolean;
-  showProgressBar?: boolean;
-  uploadMessage?: string | ReactElement;
-  localization?: {
-    delete?: string;
-    popoverConfirm?: string;
-    popoverCancel?: string;
-    popoverTitle?: string;
-    invalidType?: string;
-    quotaExceeded?: string;
-    sizeExceeded?: string;
-  };
 }
 
-export interface IFieldDynamicSearchProps<T> extends IFieldBaseProps<T> {
-  colors?: {
-    controlErrorColor: string; // colors.error,
-    controlFocusColor: string; // colors.primary,
-    fontColor: string; // 'rgb(0, 0, 0)',
-    optionFocusColor: string; // colors.chalk,
-    optionSelectedColor: string; // colors.primary,
-  };
+export interface IFieldDynamicSearchProps<T>
+  extends IFieldBaseProps<T>,
+    Pick<
+      IDynamicSearchFieldProps,
+      'colors' | 'isClearable' | 'noOptionsMessage' | 'placeholder' | 'resolveValue' | 'searchOptions'
+    > {
   fieldType: FieldTypeEnum.DYNAMICSEARCH;
-  isClearable?: boolean;
-  noOptionsMessage: (obj: { inputValue: string }) => string;
-  placeholder?: string;
-  resolveValue: (value: string | number) => Promise<IOption | undefined>;
-  searchOptions: (searchTerm: string) => Promise<Array<IOption>>;
 }
 
-export interface IFieldMultiSelectProps<T> extends IFieldBaseProps<T> {
-  colors?: {
-    controlErrorColor: string; // colors.error,
-    controlFocusColor: string; // colors.primary,
-    fontColor: string; // 'rgb(0, 0, 0)',
-    optionFocusColor: string; // colors.chalk,
-    optionSelectedColor: string; // colors.primary,
-  };
+export interface IFieldMultiSelectProps<T>
+  extends IFieldBaseProps<T>,
+    Pick<
+      IMultiSelectFieldProps,
+      'colors' | 'isClearable' | 'numberOfItemLabel' | 'numberOfItemsLabel' | 'placeholder'
+    > {
   // When the value is not present in the options, should the value be erased (optional, default: false)
   eraseValueWhenNotInOptions?: boolean;
-  isClearable?: boolean;
   fieldType: FieldTypeEnum.MULTISELECT;
   options: Array<IOption> | ((data: T) => Array<IOption>);
-  numberOfItemLabel: string;
-  numberOfItemsLabel: string;
-  placeholder?: string;
 }
 
-export interface IFieldNumberProps<T> extends IFieldBaseProps<T> {
-  allowNegative?: boolean;
-  decimalScale?: number;
-  decimalSeparator?: string;
+export interface IFieldNumberProps<T>
+  extends IFieldBaseProps<T>,
+    Pick<
+      IAmountFieldProps,
+      | 'allowNegative'
+      | 'decimalScale'
+      | 'decimalSeparator'
+      | 'maxValue'
+      | 'minValue'
+      | 'placeholder'
+      | 'prefix'
+      | 'suffix'
+      | 'thousandSeparator'
+      | 'thousandsGroupStyle'
+    > {
   fieldType: FieldTypeEnum.NUMBER;
-  maxValue?: number;
-  minValue?: number;
-  placeholder?: string;
-  prefix?: string | undefined;
-  suffix?: string | undefined;
-  thousandSeparator?: string;
-  thousandsGroupStyle?: ThousandsGroupStyle;
 }
 
-export interface IFieldPercentageProps<T> extends IFieldBaseProps<T> {
-  allowNegative?: boolean;
-  decimalScale?: number;
-  decimalSeparator?: string;
+export interface IFieldPercentageProps<T>
+  extends IFieldBaseProps<T>,
+    Pick<
+      IPercentageFieldProps,
+      | 'allowNegative'
+      | 'decimalScale'
+      | 'decimalSeparator'
+      | 'maxValue'
+      | 'minValue'
+      | 'placeholder'
+      | 'thousandSeparator'
+      | 'thousandsGroupStyle'
+    > {
   fieldType: FieldTypeEnum.PERCENTAGE;
-  maxValue?: number;
-  minValue?: number;
-  placeholder?: string;
-  thousandSeparator?: string;
-  thousandsGroupStyle?: ThousandsGroupStyle;
 }
 
-export interface IFieldRichtextProps<T> extends IFieldBaseProps<T> {
-  convertImagesToBase64?: boolean;
-  enableImage?: boolean;
-  enableLink?: boolean;
+export interface IFieldRichtextProps<T>
+  extends IFieldBaseProps<T>,
+    Pick<IRichTextFieldProps, 'convertImagesToBase64' | 'enableImage' | 'enableLink' | 'locale' | 'maxLength'> {
   fieldType: FieldTypeEnum.RICHTEXT;
-  locale?: lang;
-  maxLength?: number;
 }
 
 export interface IFieldSectionProps<T> extends Partial<IVisibilityProps<T>> {
@@ -239,49 +234,37 @@ export interface IFieldSectionProps<T> extends Partial<IVisibilityProps<T>> {
   label: string;
 }
 
-export interface IFieldSelectProps<T> extends IFieldBaseProps<T> {
-  colors?: {
-    controlErrorColor: string; // colors.error,
-    controlFocusColor: string; // colors.primary,
-    fontColor: string; // 'rgb(0, 0, 0)',
-    optionFocusColor: string; // colors.chalk,
-    optionSelectedColor: string; // colors.primary,
-  };
+export interface IFieldSelectProps<T>
+  extends IFieldBaseProps<T>,
+    Pick<ISelectFieldProps, 'colors' | 'isClearable' | 'placeholder'> {
   // When the value is not present in the options, should the value be erased (optional, default: false)
   eraseValueWhenNotInOptions?: boolean;
-  isClearable?: boolean;
   fieldType: FieldTypeEnum.SELECT;
   options: Array<IOption> | ((data: T) => Array<IOption>);
-  placeholder?: string;
 }
 
 export interface IFieldSwitchProps<T> extends IFieldBaseProps<T> {
   fieldType: FieldTypeEnum.SWITCH;
 }
 
-export interface IFieldTableProps<T, U> extends IFieldBaseProps<T> {
-  columns: Array<IColumnType<U>>;
+export interface IFieldTableProps<T, U>
+  extends IFieldBaseProps<T>,
+    Pick<ILineEditableDataTableProps<U>, 'columns' | 'extra' | 'loading' | 'onSortChange'> {
   fieldType: FieldTypeEnum.TABLE;
-  extra: IExtraLineEditableDataTableProps<U>;
-  loading?: ReactElement;
-  onSortChange?: (sortField?: keyof U, sortDirection?: SortDirectionEnum) => void;
 }
 
-export interface IFieldTextProps<T> extends IFieldBaseProps<T> {
+export interface IFieldTextProps<T>
+  extends IFieldBaseProps<T>,
+    Pick<ITextFieldProps, 'maxLength' | 'minLength' | 'placeholder'> {
   fieldType: FieldTypeEnum.TEXT;
-  maxLength?: number;
-  minLength?: number;
-  placeholder?: string;
 }
 
-export interface IFieldTextAreaProps<T> extends IFieldBaseProps<T> {
+export interface IFieldTextAreaProps<T>
+  extends IFieldBaseProps<T>,
+    Pick<ITextAreaFieldProps, 'maxLength' | 'minLength' | 'placeholder'> {
   fieldType: FieldTypeEnum.TEXTAREA;
-  maxLength?: number;
-  minLength?: number;
-  placeholder?: string;
 }
 
-export interface IFieldYearProps<T> extends IFieldBaseProps<T> {
+export interface IFieldYearProps<T> extends IFieldBaseProps<T>, Pick<IYearPickerFieldProps, 'placeholder'> {
   fieldType: FieldTypeEnum.YEAR;
-  placeholder?: string;
 }

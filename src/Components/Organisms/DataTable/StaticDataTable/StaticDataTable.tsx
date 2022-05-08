@@ -8,10 +8,15 @@ import StaticDataTableHeader from './StaticDataTableHeader';
 import { IColumnType, IExtraStaticDataTableProps, SortDirectionEnum } from '../Common/types';
 
 export interface IStaticDataTableProps<T> {
+  /** Data to be displayed in the table */
   data: Array<T>;
+  /** Description of the columns */
   columns: Array<IColumnType<T>>;
+  /** Extra features of the table (optional, default: undefined) */
   extra?: IExtraStaticDataTableProps<T>;
+  /** Loading element, usually a spinner, displayed when set (optional, default: undefined) */
   loading?: ReactElement;
+  /** Callback whenever sort is clicked (optional, default: undefined) */
   onSortChange?: (sortField?: keyof T, sortDirection?: SortDirectionEnum) => void;
 }
 
@@ -53,6 +58,9 @@ const StaticDataTable = <T,>(props: IStaticDataTableProps<T>): ReactElement => {
 StaticDataTable.defaultProps = {
   columns: [],
   data: [],
+  extra: undefined,
+  loading: undefined,
+  onSortChange: undefined,
 };
 
 export default StaticDataTable;

@@ -51,6 +51,7 @@ describe('RichTextCell component', () => {
             <RichTextCell
               column={{
                 dataIndex: 'data',
+                editable: true,
                 title: 'RichTextCell',
                 type: ColumnType.RICHTEXT,
               }}

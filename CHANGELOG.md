@@ -1,5 +1,19 @@
 # Changelog
 
+## 1.4.6 (2022-05-08)
+
+### Features
+
+- Organisms/SideBar simplified interface using component instead of props
+- Organisms documentation
+
+### Bug Fixes
+
+- Atoms/AmountInput support value 0 as a valid value
+- Organisms/ActionBar allow use of icon in action button
+- Organisms/DataTable ensure only editable row are editable
+- Organisms/Filter add scss prefix to container class
+
 ## 1.4.5 (2022-04-26)
 
 ### Features

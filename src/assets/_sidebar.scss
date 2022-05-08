@@ -1,94 +1,90 @@
-$width: 270px;
-
-// Container
 .gds-sidebar-container {
-  align-items: center;
-  box-sizing: border-box;
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-  overflow-x: hidden;
-  padding: 0px;
   position: fixed;
-  width: $width;
   border-right: $chalk 1px solid;
+  overflow: hidden auto;
+  box-sizing: border-box;
+  clip-path: inset(0px);
 
-  a,
-  a:hover,
-  a:focus,
-  a:visited {
-    color: unset;
-  }
-
-  // Disable scrollbar
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-  &::-webkit-scrollbar {
-    display: none;
-  }
-
-  // Main menu
-  .mainmenu {
-    box-sizing: border-box;
+  ul {
     display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    left: 0px;
-    margin: 0px;
-    margin-bottom: 20px;
+    flex-wrap: wrap;
+    list-style: none;
+    margin-bottom: 0;
+    padding-left: 0;
     min-height: 100%;
-    padding: 0px;
-    position: absolute;
-    top: 0px;
-    visibility: visible;
-    width: $width;
-    border-right: $chalk 1px solid;
-    transition: left 0.5s ease-in-out, visibility 0.5s linear 0s;
-
-    list-style: none;
+    flex-direction: column;
     margin-block: 0px;
     padding-inline: 0px;
-
-    &.in-submenu {
-      left: -$width;
-      visibility: hidden;
-      transition: left 0.5s ease-in-out, visibility 0.5s linear 0s;
-    }
   }
 
-  // Sub menu
-  .submenu {
-    box-sizing: border-box;
+  .sidebar {
     display: flex;
     flex-direction: column;
-    flex-wrap: nowrap;
-    left: $width;
     margin: 0px;
     position: absolute;
-    visibility: hidden;
-    width: $width;
-    transition: left 0.5s ease-in-out, visibility 0.5s linear 0s;
+    box-sizing: border-box;
+    min-height: 100%;
+    border-right: $chalk 1px solid;
+    top: 0;
+    left: 0;
+    visibility: visible;
+    transition: all 0.5s ease;
+  }
 
-    list-style: none;
-    margin-block: 0px;
-    padding-inline: 0px;
+  .item {
+    box-sizing: border-box;
+    cursor: pointer;
+    display: list-item;
+    min-height: 32px;
+    padding: 0px 10px;
 
-    &.in-submenu {
-      visibility: visible;
-      transition: left 0.5s ease-in-out, visibility 0.5s linear 0s;
+    .label {
+      display: flex;
+      padding: 0px 10px 0px 20px;
+    }
+
+    a {
+      padding: 10px 0px;
+      border-radius: 4px;
+      text-decoration: none;
+      display: flex;
+      color: unset;
+
+      .external-link {
+        margin: auto 10px auto 0px;
+      }
+
+      .chevron-right {
+        margin: auto;
+        margin-right: 10px;
+      }
+    }
+
+    a:hover {
+      background-color: rgba($chalk, 0.33);
+    }
+
+    a.active {
+      background-color: rgba($primary, 0.33);
+      color: $primary;
+    }
+
+    &.disabled {
+      color: $silver;
+      pointer-events: none;
     }
   }
 
-  .title {
-    box-sizing: border-box;
+  .section {
     font-weight: 600;
     min-height: 32px;
     padding-left: 10px;
     padding-right: 10px;
     padding-top: 10px;
+    color: $charcoal;
     display: flex;
     align-items: center;
-    pointer-events: none;
+    box-sizing: border-box;
   }
 
   .back {
@@ -98,6 +94,11 @@ $width: 270px;
     cursor: pointer;
     display: flex;
     align-items: center;
+    border-radius: 4px;
+
+    &:hover {
+      background-color: rgba($chalk, 0.33);
+    }
 
     .label {
       display: flex;
@@ -106,75 +107,37 @@ $width: 270px;
         margin: auto 10px;
       }
     }
-
-    &:hover {
-      background-color: rgba($chalk, 0.33);
-    }
-  }
-
-  .item {
-    box-sizing: border-box;
-    display: list-item;
-    min-height: 32px;
-    padding: 0px 10px;
-    cursor: pointer;
-
-    a {
-      padding: 10px 0px;
-      border-radius: 4px;
-      text-decoration: none;
-      display: flex;
-
-      .label {
-        display: flex;
-        padding: 0px 10px 0px 20px;
-      }
-
-      .external-link {
-        margin: auto 0px;
-      }
-
-      .chevron-right {
-        margin: auto;
-        margin-right: 10px;
-      }
-
-      &:hover {
-        background-color: rgba($chalk, 0.33);
-      }
-
-      &.active {
-        background-color: rgba($primary, 0.1);
-        color: $primary;
-        &:hover {
-          background-color: rgba($primary, 0.2);
-        }
-        .label {
-          font-weight: 800;
-        }
-      }
-    }
-
-    &.disabled {
-      color: $silver;
-      cursor: default;
-      pointer-events: none;
-    }
   }
 
   .sidebar-divider {
     margin: 15px;
     border-top: $chalk 1px solid;
   }
-}
 
-// Special demo case
-.gds-sidebar-container.unfixed {
-  position: relative;
-  height: stretch;
+  &.submenu {
+    .sidebar {
+      visibility: hidden;
+      transition: all 0.5s ease;
+    }
+  }
 
-  .mainmenu,
+  &.unfixed {
+    position: relative;
+    height: fill-available;
+    .submenu {
+      position: absolute;
+    }
+  }
+
   .submenu {
-    height: stretch;
+    position: fixed;
+    box-sizing: border-box;
+    visibility: hidden;
+    transition: all 0.5s ease;
+
+    &.visible {
+      visibility: visible;
+      transition: all 0.5s ease;
+    }
   }
 }

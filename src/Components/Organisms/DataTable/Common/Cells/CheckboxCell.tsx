@@ -11,7 +11,7 @@ const CheckboxCell = <T,>(props: ICellProps<T, IColumnCheckbox<T>>): ReactElemen
 
   const displayValue = (forcedValue || (row && row[column.dataIndex])) as unknown as Array<IToggleEntry>;
   const isCurrentlyEditedRow =
-    editing || (extra && 'editedRowIndex' in extra ? extra.editedRowIndex === rowIndex : false);
+    editing || (extra && 'editedRowIndex' in extra ? extra.editedRowIndex === rowIndex && column.editable : false);
 
   return (
     <td

@@ -12,7 +12,7 @@ describe('AmountCell component', () => {
         <tbody>
           <tr>
             <AmountCell
-              column={{ currency: 'COLUMNCURRENCY', dataIndex: 'data', title: 'amountcell', type: ColumnType.AMOUNT }}
+              column={{ suffix: 'COLUMNCURRENCY', dataIndex: 'data', title: 'amountcell', type: ColumnType.AMOUNT }}
               row={{ data: 1234 }}
               rowIndex={0}
             />
@@ -29,7 +29,7 @@ describe('AmountCell component', () => {
         <tbody>
           <tr>
             <AmountCell
-              column={{ dataIndex: 'data', title: 'amountcell', type: ColumnType.AMOUNT }}
+              column={{ dataIndex: 'data', editable: true, title: 'amountcell', type: ColumnType.AMOUNT }}
               extra={{ editedRowIndex: 6 }}
               rowIndex={6}
             />
