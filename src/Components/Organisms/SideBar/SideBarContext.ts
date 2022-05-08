@@ -12,7 +12,7 @@ export const SideBarContext = createContext<{
   height: '100%',
   isInSubMenu: false,
   setIsInSubMenu: () => {
-    console.error('Sidebar component should wrap that component');
+    console.error('SideBar component should wrap that component');
   },
   unfixed: false,
   width: '270px',

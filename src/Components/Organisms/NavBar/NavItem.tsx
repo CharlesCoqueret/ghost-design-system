@@ -16,8 +16,6 @@ export interface INavItemProps {
   icon?: IconProp;
   /** Label of the menu (optional if icon is defuned, default: undefined) */
   label?: string;
-  /** Link for redirection on click (optional, default: undefined) */
-  link?: string;
   /** On Click handler (optional, default: undefined) */
   onClick?: () => void;
   /** Submenu items (optional, default: undefined) */

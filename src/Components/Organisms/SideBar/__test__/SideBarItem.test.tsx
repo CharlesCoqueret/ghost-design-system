@@ -121,7 +121,7 @@ describe('SideBarItem Component', () => {
 
     unmount();
 
-    expect(console.error).toBeCalledWith('Sidebar component should wrap that component');
+    expect(console.error).toBeCalledWith('SideBar component should wrap that component');
 
     expect(container).toMatchSnapshot();
   });
