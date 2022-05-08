@@ -1,6 +1,6 @@
 import React, { PropsWithChildren, ReactElement, useContext, useEffect, useState } from 'react';
 import classnames from 'classnames';
-import { NavLink, Location } from 'react-router-dom';
+import { NavLink, Location, useNavigate } from 'react-router-dom';
 
 import { Icon } from '../../Atoms/Icon';
 import { SideBarContext } from './SideBarContext';
@@ -28,15 +28,18 @@ const SideBarItem = (props: PropsWithChildren<ISideBarItemProps>): ReactElement 
   const { children, dataTestId, disabled, externalLink, hidden, label, to } = props;
   const { isInSubMenu, setIsInSubMenu, backToMenu, unfixed, width } = useContext(SideBarContext);
   const [subMenuActive, setSubMenuActive] = useState(false);
+  const navigate = useNavigate();
 
   const [hasSubMenu, setHasSubMenu] = useState(false);
   const [subMenuEntries, setSubMenuEntries] = useState(0);
   const [singleTo, setSingleTo] = useState(to);
+  const [firstTo, setFirstTo] = useState<string | Location | undefined>(undefined);
 
   useEffect(() => {
     let localHasSubMenu = false;
     let localSubMenuEntries = 0;
     let localSingleTo = singleTo;
+    let localFirstTo: typeof firstTo = undefined;
     React.Children.forEach(children, (child) => {
       if (React.isValidElement(child)) {
         if (
@@ -47,6 +50,9 @@ const SideBarItem = (props: PropsWithChildren<ISideBarItemProps>): ReactElement 
           localSubMenuEntries += 1;
           if ('to' in child.props) {
             localSingleTo = child.props.to;
+            if (localFirstTo === undefined) {
+              localFirstTo = child.props.to;
+            }
           }
           return;
         }
@@ -55,11 +61,15 @@ const SideBarItem = (props: PropsWithChildren<ISideBarItemProps>): ReactElement 
     setHasSubMenu(localHasSubMenu);
     setSubMenuEntries(localSubMenuEntries);
     setSingleTo(localSingleTo);
+    setFirstTo(localFirstTo);
   }, [children]);
 
   const toggleSubMenu = (): void => {
     setIsInSubMenu(!isInSubMenu);
     setSubMenuActive(!subMenuActive);
+    if (firstTo) {
+      navigate(firstTo, { replace: true });
+    }
   };
 
   const onClickHandler = !disabled && hasSubMenu && subMenuEntries > 1 ? toggleSubMenu : undefined;
