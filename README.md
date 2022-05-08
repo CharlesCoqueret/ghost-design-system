@@ -151,4 +151,4 @@ Dev dependencies:
 
 ---
 
-[To go further](./FUTHER.md)
+[To go further](./FURTHER.md)
