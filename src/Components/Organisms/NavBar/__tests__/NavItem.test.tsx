@@ -15,7 +15,6 @@ describe('NavItem Component', () => {
         dataTestId='DATA-TEST-ID'
         icon={['fal', 'icons']}
         label='LABEL'
-        link='LINK'
         onClick={onClickMock}
       />,
     );
