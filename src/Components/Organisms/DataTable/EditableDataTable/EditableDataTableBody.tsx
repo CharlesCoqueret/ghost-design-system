@@ -21,6 +21,7 @@ const EditableDataTableBody = <T,>(props: IEditableDataTableBodyProps<T>): React
   const [selectedRows, setSelectedRows] = useState<Record<number, boolean>>({});
 
   const isSelectable = extra.onRowSelect;
+  const isExtended = extra.onRowSelect || extra.computeTotal;
 
   const handleRowClick = (row: T, rowIndex: number) => {
     return extra && extra.onRowClick
@@ -63,15 +64,17 @@ const EditableDataTableBody = <T,>(props: IEditableDataTableBodyProps<T>): React
             onKeyUp={handleRowClick(row, rowIndex)}
             className={classnames({ pointer: extra && extra.onRowClick, selected: selectedRows[rowIndex] })}
             tabIndex={extra && extra.onRowClick ? 0 : -1}>
-            {isSelectable && (
-              <DataTableCellSelectable
-                handleSelectClick={handleSelectClick(row, rowIndex)}
-                selected={selectedRows[rowIndex]}
-                selectable={extra.isSelectable ? extra.isSelectable(row, rowIndex) : true}
-                dataTestId={`select-row-${rowIndex}`}
-              />
-            )}
-
+            {isExtended &&
+              (isSelectable ? (
+                <DataTableCellSelectable
+                  handleSelectClick={handleSelectClick(row, rowIndex)}
+                  selected={selectedRows[rowIndex]}
+                  selectable={extra.isSelectable ? extra.isSelectable(row, rowIndex) : true}
+                  dataTestId={`select-row-${rowIndex}`}
+                />
+              ) : (
+                <td></td>
+              ))}
             {columns.map((column) => {
               return (
                 <EditableDataTableCell<T>
