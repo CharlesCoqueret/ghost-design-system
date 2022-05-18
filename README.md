@@ -42,18 +42,20 @@
   - [Text field](https://charlescoqueret.github.io/ghost-design-system/?path=/story/molecule-textfield--default)
   - [YearPicker field](https://charlescoqueret.github.io/ghost-design-system/?path=/story/molecule-yearpickerfield--default)
 - Organisms:
-  - [ActionBar](https://charlescoqueret.github.io/ghost-design-system/?path=/story/organism-actionbar--default)
+  - [ActionBar](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/organism--action-bar)
   - Datatable:
-    - [Editable Data Table (full editable)](https://charlescoqueret.github.io/ghost-design-system/?path=/story/organism-datatable-editabledatatable--default)
-    - [Line editable Data Table (editon in popup form with data validation)](https://charlescoqueret.github.io/ghost-design-system/?path=/story/organism-datatable-lineeditabledatatable--default)
-    - [Line editable in place data table (edition of a line in place)](https://charlescoqueret.github.io/ghost-design-system/?path=/story/organism-datatable-lineeditableinplacedatatable--default)
-    - [Static data table](https://charlescoqueret.github.io/ghost-design-system/?path=/story/organism-datatable-staticdatatable--default)
-  - [Filter](https://charlescoqueret.github.io/ghost-design-system/?path=/story/organism-filter--default)
+    - [Generic Data Table](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/organism-datatable--data-table)
+    - [Editable Data Table (full editable)](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/organism-datatable--editable-data-table)
+    - [Line editable Data Table (editon in popup form with data validation)](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/organism-datatable--line-editable-data-table)
+    - [Line editable in place data table (edition of a line in place)](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/organism-datatable--line-editable-in-place-data-table)
+    - [Static data table](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/organism-datatable--static-data-table)
+    - [Colunns](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/organism-datatable-columns--page)
+  - [Filter](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/organism--filter)
   - Form:
     - Form component
     - [useForm hook](https://charlescoqueret.github.io/ghost-design-system/?path=/story/organism-useform--default)
-  - [NavBar](https://charlescoqueret.github.io/ghost-design-system/?path=/story/organism-navbar--default)
-  - [SideBar](https://charlescoqueret.github.io/ghost-design-system/?path=/story/organism-sidebar--default)
+  - [NavBar](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/organism--nav-bar)
+  - [SideBar](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/organism--side-bar)
 
 ## Usage
 
