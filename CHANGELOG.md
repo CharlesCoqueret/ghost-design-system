@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.4.7 (2022-05-20)
+
+- Organisms/SideBar scss should only transition left and visibility instead of all
+- Organisms/SideBar use stretch instead of fill-available scss
+- Organisms/Datatable ensure the gutter column is displayed when total or select are displayed
+
 ## 1.4.6 (2022-05-08)
 
 ### Features
