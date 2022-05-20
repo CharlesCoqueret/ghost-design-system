@@ -64,6 +64,8 @@ describe('SideBarItem Component', () => {
   });
 
   it('SideBarItem handles click on entry in main menu and handles click on submenu', async () => {
+    console.info = jest.fn();
+
     const { container } = render(
       <SideBar backToMenu={'Back to menu'} style={{ height: '600px' }}>
         <SideBarItem label='LABEL' to='/link' dataTestId='PARENT-TEST-ID'>
@@ -79,6 +81,9 @@ describe('SideBarItem Component', () => {
 
     userEvent.click(parentEntry);
     expect(container).toMatchSnapshot();
+
+    expect(console.info).toBeCalledTimes(1);
+    expect(console.info).toBeCalledWith('url pushed:', '/link/link1');
 
     const childEntry = await screen.findByTestId('CHILD-TEST-ID');
     userEvent.click(childEntry);

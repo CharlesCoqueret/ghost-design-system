@@ -28,7 +28,7 @@
     top: 0;
     left: 0;
     visibility: visible;
-    transition: all 0.5s ease;
+    transition: left 0.5s ease-in-out, visibility 0.5s linear;
   }
 
   .item {
@@ -117,13 +117,13 @@
   &.submenu {
     .sidebar {
       visibility: hidden;
-      transition: all 0.5s ease;
+      transition: left 0.5s ease-in-out, visibility 0.5s linear 0.5s;
     }
   }
 
   &.unfixed {
     position: relative;
-    height: fill-available;
+    height: stretch;
     .submenu {
       position: absolute;
     }
@@ -133,11 +133,11 @@
     position: fixed;
     box-sizing: border-box;
     visibility: hidden;
-    transition: all 0.5s ease;
+    transition: left 0.5s ease-in-out, visibility 0.5s linear;
 
     &.visible {
       visibility: visible;
-      transition: all 0.5s ease;
+      transition: left 0.5s ease-in-out, visibility 0.5s linear;
     }
   }
 }
