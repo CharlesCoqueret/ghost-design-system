@@ -27,8 +27,10 @@ exports[`FilterItem Component FilterItem renders Column and title 1`] = `
         </h2>
       </div>
       <div
+        aria-hidden="false"
         class="section-body"
-        style="transition: height 500ms linear; height: auto;"
+        id="react-collapsed-panel-1"
+        style="box-sizing: border-box; display: none; height: 0px; overflow: hidden;"
       />
     </div>
     <div>

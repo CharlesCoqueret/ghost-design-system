@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import Section, { ISectionProps } from './Section';
@@ -29,6 +29,7 @@ export default {
 } as ComponentMeta<typeof Section>;
 
 const Template: ComponentStory<typeof Section> = (args: ISectionProps) => {
+  const [val, setval] = useState(initialData.textarea);
   return (
     <Section {...args}>
       <Container>
@@ -40,7 +41,7 @@ const Template: ComponentStory<typeof Section> = (args: ISectionProps) => {
             <DatePickerField inputValue={initialData.date} label='Date' name='date' readOnly />
           </Row>
           <Row>
-            <TextAreaField inputValue={initialData.textarea} label='Textarea' name='textarea' readOnly />
+            <TextAreaField inputValue={val} label='Textarea' name='textarea' onChange={setval} />
           </Row>
           <Row>
             <YearPickerField inputValue={initialData.year} label='Year' name='year' readOnly />

@@ -1,8 +1,8 @@
-import React, { PropsWithChildren, ReactElement, useEffect, useRef, useState } from 'react';
+import React, { PropsWithChildren, ReactElement, useEffect } from 'react';
 import classnames from 'classnames';
+import useCollapse from 'react-collapsed';
 
 import { Icon } from '../Icon';
-import { useRunAfterUpdate } from '../../../hooks';
 import { Typography } from '../Typography';
 
 export interface ISectionProps {
@@ -23,44 +23,14 @@ export interface ISectionProps {
 const Section = (props: PropsWithChildren<ISectionProps>): ReactElement => {
   const { children, collapsable, dataTestId, level, openInitially, separator, title } = props;
 
-  const runAfterUpdate = useRunAfterUpdate();
-  const [open, setOpen] = useState<boolean>(collapsable ? openInitially === true : true);
-  const contentRef = useRef<HTMLDivElement>(null);
+  const { getCollapseProps, setExpanded, isExpanded } = useCollapse({ duration: 500 });
 
   useEffect(() => {
-    if (!contentRef.current) return;
-
-    if (contentRef.current.style.height === undefined || contentRef.current.style.height === '') {
-      contentRef.current.style.height = open ? 'auto' : '0px';
-      if (open) {
-        runAfterUpdate(() => {
-          if (!contentRef.current) return;
-          contentRef.current.style.height = getComputedStyle(contentRef.current).height;
-        });
-      }
-      return;
-    }
-
-    // From height auto to 0px
-    if (!open) {
-      contentRef.current.offsetHeight;
-      contentRef.current.style.height = '0px';
-    }
-    // From 0px to auto
-    else {
-      const prevHeight = contentRef.current.style.height;
-      contentRef.current.style.height = 'auto';
-      const endHeight = getComputedStyle(contentRef.current).height;
-      contentRef.current.style.height = prevHeight;
-      contentRef.current.offsetHeight;
-      contentRef.current.style.height = endHeight;
-    }
-  }, [open]);
+    setExpanded(collapsable ? openInitially === true : true);
+  }, [collapsable, openInitially]);
 
   const handleClick = () => {
-    if (collapsable) {
-      setOpen((prev) => !prev);
-    }
+    setExpanded((prev) => !prev);
   };
 
   return (
@@ -71,15 +41,14 @@ const Section = (props: PropsWithChildren<ISectionProps>): ReactElement => {
         data-testid={dataTestId}>
         <Typography.Title level={level || 2}>{title}</Typography.Title>
         {collapsable && (
-          <Icon icon={['fal', 'chevron-left']} size='xs' className={classnames('collapse-icon', { open: open })} />
+          <Icon
+            icon={['fal', 'chevron-left']}
+            size='xs'
+            className={classnames('collapse-icon', { open: isExpanded })}
+          />
         )}
       </div>
-      <div
-        className='section-body'
-        ref={contentRef}
-        style={{
-          transition: 'height 500ms linear',
-        }}>
+      <div className='section-body' {...getCollapseProps()}>
         {children}
       </div>
       {separator && <div className='section-footer' />}

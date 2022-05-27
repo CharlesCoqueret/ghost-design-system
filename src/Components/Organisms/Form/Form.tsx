@@ -63,7 +63,7 @@ const Form = <T,>(props: IFormProps<T>): ReactElement => {
             const schemaDescription = objectDescription?.fields[field.dataIndex as string] as SchemaDescription;
             isRequired = schemaDescription.tests.some((test) => test.name === 'required');
           } catch {
-            console.warn(`could not retrieve if ${field.dataIndex} is mandatory`);
+            console.warn(`could not retrieve if ${JSON.stringify(field.dataIndex)} is mandatory`);
           }
 
           return (
