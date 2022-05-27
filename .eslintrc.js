@@ -32,7 +32,13 @@ module.exports = {
     },
     sourceType: 'module',
   },
-  extends: ['plugin:@typescript-eslint/recommended', 'plugin:react/recommended', 'eslint-config-prettier', 'prettier'],
+  extends: [
+    'plugin:@typescript-eslint/recommended',
+    'plugin:react/recommended',
+    'eslint-config-prettier',
+    'prettier',
+    'plugin:storybook/recommended',
+  ],
   rules: {
     '@typescript-eslint/naming-convention': [
       rules.ON,

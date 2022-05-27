@@ -99,6 +99,6 @@ describe('Form Component', () => {
 
     expect(container).toMatchSnapshot();
     expect(console.warn).toBeCalledTimes(1);
-    expect(console.warn).toBeCalledWith('could not retrieve if number is mandatory');
+    expect(console.warn).toBeCalledWith('could not retrieve if "number" is mandatory');
   });
 });

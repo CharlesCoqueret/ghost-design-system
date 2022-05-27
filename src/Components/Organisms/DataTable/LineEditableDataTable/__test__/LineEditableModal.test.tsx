@@ -124,7 +124,7 @@ describe('LineEditableModal component', () => {
     expect(onCancelMock).toBeCalledTimes(1);
     expect(onCancelMock).toBeCalledWith({ amount: 1 });
     expect(console.warn).toBeCalledTimes(1);
-    expect(console.warn).toBeCalledWith('could not retrieve if amount is mandatory');
+    expect(console.warn).toBeCalledWith('could not retrieve if "amount" is mandatory');
   });
 
   it('LineEditableModal renders with amount and submitting with invalid value', () => {
