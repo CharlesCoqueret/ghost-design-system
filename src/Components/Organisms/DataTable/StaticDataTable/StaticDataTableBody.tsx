@@ -59,6 +59,7 @@ const StaticDataTableBody = <T,>(props: IStaticDataTableBodyProps<T>): ReactElem
         return (
           <tr
             className={classnames({ pointer: extra && extra.onRowClick, selected: selectedRows[rowIndex] })}
+            style={extra?.rowStyle}
             data-testid={dataTestId && `${dataTestId}-row-${rowIndex}`}
             key={`row-${rowIndex}`}
             onClick={handleRowClick(row, rowIndex)}

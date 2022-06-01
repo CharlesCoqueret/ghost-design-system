@@ -59,10 +59,11 @@ const EditableDataTableBody = <T,>(props: IEditableDataTableBodyProps<T>): React
         const isEditable = extra.isEditable === undefined || extra.isEditable(row, rowIndex);
         return (
           <tr
+            className={classnames({ pointer: extra && extra.onRowClick, selected: selectedRows[rowIndex] })}
+            style={extra.rowStyle}
             key={`row-${rowIndex}`}
             onClick={handleRowClick(row, rowIndex)}
             onKeyUp={handleRowClick(row, rowIndex)}
-            className={classnames({ pointer: extra && extra.onRowClick, selected: selectedRows[rowIndex] })}
             tabIndex={extra && extra.onRowClick ? 0 : -1}>
             {isExtended &&
               (isSelectable ? (

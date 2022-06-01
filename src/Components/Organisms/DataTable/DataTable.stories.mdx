@@ -561,6 +561,29 @@ Set `loading` to undefined when the loading is done.
   />
 </Canvas>
 
+### Row style
+
+`rowStyle` can be defined for all body rows.
+Especially usefull when having to display 2 tables side by side.
+
+<Canvas>
+  <StaticDataTable
+    columns={[
+      { currency: '€', dataIndex: 'amount', sorter: true, title: 'Amount', type: ColumnType.AMOUNT },
+      { dataIndex: 'number', sorter: true, title: 'Number', type: ColumnType.NUMBER },
+      { dataIndex: 'percentage', sorter: true, title: 'Percentage', type: ColumnType.PERCENTAGE },
+    ]}
+    data={[
+      { amount: 0, number: 0, percentage: 0 },
+      { amount: 1, number: 10, percentage: 100 },
+      { amount: 2, number: 20, percentage: 200 },
+    ]}
+    extra={{
+      rowStyle: { height: '60px' },
+    }}
+  />
+</Canvas>
+
 ## Props
 
 <ArgsTable of={StaticDataTable} sort='requiredFirst' />
