@@ -1,4 +1,4 @@
-import { Location } from 'react-router-dom';
+import { Location } from 'history';
 
 /**
  * Converts a Location of string to full path
