@@ -1,6 +1,7 @@
 import React, { PropsWithChildren, ReactElement, useContext, useEffect, useState } from 'react';
 import classnames from 'classnames';
-import { NavLink, Location, useNavigate } from 'react-router-dom';
+import { Location } from 'history';
+import { NavLink, useHistory } from 'react-router-dom';
 
 import { Icon } from '../../Atoms/Icon';
 import { SideBarContext } from './SideBarContext';
@@ -28,7 +29,7 @@ const SideBarItem = (props: PropsWithChildren<ISideBarItemProps>): ReactElement 
   const { children, dataTestId, disabled, externalLink, hidden, label, to } = props;
   const { isInSubMenu, setIsInSubMenu, backToMenu, unfixed, width } = useContext(SideBarContext);
   const [subMenuActive, setSubMenuActive] = useState(false);
-  const navigate = useNavigate();
+  const history = useHistory();
 
   const [hasSubMenu, setHasSubMenu] = useState(false);
   const [subMenuEntries, setSubMenuEntries] = useState(0);
@@ -68,7 +69,7 @@ const SideBarItem = (props: PropsWithChildren<ISideBarItemProps>): ReactElement 
     setIsInSubMenu(!isInSubMenu);
     setSubMenuActive(!subMenuActive);
     if (firstTo) {
-      navigate(firstTo, { replace: true });
+      history.push(firstTo);
     }
   };
 
@@ -96,7 +97,7 @@ const SideBarItem = (props: PropsWithChildren<ISideBarItemProps>): ReactElement 
         <NavLink
           className={classnames({ disabled: disabled })}
           data-testid={dataTestId}
-          end={!hasSubMenu}
+          exact={!hasSubMenu}
           target={targetType}
           to={children && subMenuEntries === 1 ? singleTo : to}>
           <div className='label'>{label}</div>
