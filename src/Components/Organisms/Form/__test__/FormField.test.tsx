@@ -209,6 +209,7 @@ describe('FormField Component', () => {
     const handleChangeMock = jest.fn();
     const container = render(
       <FormField
+        enableSideBySide
         data={{ amount: 50 }}
         field={{ dataIndex: 'amount', fieldType: FieldTypeEnum.AMOUNT, label: 'amount' }}
         handleChange={handleChangeMock}
@@ -243,6 +244,7 @@ describe('FormField Component', () => {
     const handleChangeMock = jest.fn();
     const container = render(
       <FormField
+        enableSideBySide
         data={{
           checkbox: [
             { value: 'value1', label: 'label1' },
@@ -299,6 +301,7 @@ describe('FormField Component', () => {
 
     const container = render(
       <FormField
+        enableSideBySide
         data={{ custom: 1 }}
         field={{
           customField: (props: { onChange?: typeof onChangeHandlerCustomField }) => {
@@ -354,6 +357,7 @@ describe('FormField Component', () => {
 
     const container = render(
       <FormField
+        enableSideBySide
         data={{ date: new Date('2022-04-12T00:00:00.000Z') }}
         field={{
           dataIndex: 'date',
@@ -399,6 +403,7 @@ describe('FormField Component', () => {
 
     const container = render(
       <FormField
+        enableSideBySide
         data={{ dynamicsearch: 'value1' }}
         field={{
           dataIndex: 'dynamicsearch',
@@ -448,6 +453,7 @@ describe('FormField Component', () => {
 
     const container = render(
       <FormField
+        enableSideBySide
         data={{ file: [{ name: 'file1', size: 1, type: 'type1', status: FileStatusEnum.DONE }] }}
         field={{
           dataIndex: 'file',
@@ -501,6 +507,7 @@ describe('FormField Component', () => {
     const handleChangeMock = jest.fn();
     const container = render(
       <FormField
+        enableSideBySide
         data={{ multiselect: ['value1'] }}
         field={{
           dataIndex: 'multiselect',
@@ -577,6 +584,7 @@ describe('FormField Component', () => {
     const handleChangeMock = jest.fn();
     const container = render(
       <FormField
+        enableSideBySide
         data={{ number: 50 }}
         field={{ dataIndex: 'number', fieldType: FieldTypeEnum.NUMBER, label: 'number' }}
         handleChange={handleChangeMock}
@@ -610,6 +618,7 @@ describe('FormField Component', () => {
     const handleChangeMock = jest.fn();
     const container = render(
       <FormField
+        enableSideBySide
         data={{ percentage: 50 }}
         field={{ dataIndex: 'percentage', fieldType: FieldTypeEnum.PERCENTAGE, label: 'percentage' }}
         handleChange={handleChangeMock}
@@ -643,6 +652,7 @@ describe('FormField Component', () => {
     const handleChangeMock = jest.fn();
     const container = render(
       <FormField
+        enableSideBySide
         data={{ richtext: 'richtext' }}
         field={{ dataIndex: 'richtext', fieldType: FieldTypeEnum.RICHTEXT, label: 'richtext' }}
         handleChange={handleChangeMock}
@@ -676,6 +686,7 @@ describe('FormField Component', () => {
     const handleChangeMock = jest.fn();
     const container = render(
       <FormField
+        enableSideBySide
         data={{ select: 'value1' }}
         field={{
           dataIndex: 'select',
@@ -746,6 +757,7 @@ describe('FormField Component', () => {
     const handleChangeMock = jest.fn();
     const container = render(
       <FormField
+        enableSideBySide
         data={{
           switch: [
             { value: 'value1', label: 'label1' },
@@ -843,6 +855,7 @@ describe('FormField Component', () => {
     const handleChangeMock = jest.fn();
     const container = render(
       <FormField
+        enableSideBySide
         data={{ text: 'text' }}
         field={{ dataIndex: 'text', fieldType: FieldTypeEnum.TEXT, label: 'text' }}
         handleChange={handleChangeMock}
@@ -876,6 +889,7 @@ describe('FormField Component', () => {
     const handleChangeMock = jest.fn();
     const container = render(
       <FormField
+        enableSideBySide
         data={{ textarea: 'textarea' }}
         field={{ dataIndex: 'textarea', fieldType: FieldTypeEnum.TEXTAREA, label: 'textearea' }}
         handleChange={handleChangeMock}
@@ -909,6 +923,7 @@ describe('FormField Component', () => {
     const handleChangeMock = jest.fn();
     const container = render(
       <FormField
+        enableSideBySide
         data={{ year: 2022 }}
         field={{ dataIndex: 'year', fieldType: FieldTypeEnum.YEAR, label: 'year' }}
         handleChange={handleChangeMock}

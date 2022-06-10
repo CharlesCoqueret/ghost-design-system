@@ -102,6 +102,22 @@ const fields: Array<IFieldAndLayoutProps<IDataType>> = [
 
 export const Highlighted = Template.bind({});
 Highlighted.args = {
+  enableSideBySide: true,
+  initialData: initialData,
+  fields: fields,
+  previousData: previousData,
+};
+
+export const SideBySideEnabled = Template.bind({});
+SideBySideEnabled.args = {
+  enableSideBySide: true,
+  initialData: initialData,
+  fields: fields,
+};
+
+export const SideBySideDisabled = Template.bind({});
+SideBySideDisabled.args = {
+  enableSideBySide: false,
   initialData: initialData,
   fields: fields,
   previousData: previousData,

@@ -276,6 +276,7 @@ const LineEditableModal = <T,>(props: ILineEditableModalProps<T>): ReactElement 
   const { columns, extra, onCancel, onClose, onSubmit, showChanges, row, rowIndex, title } = props;
 
   const { formElement, getData, submit } = useForm<T>({
+    enableSideBySide: showChanges,
     initialData: row,
     previousData: showChanges ? cloneDeep(row) : undefined,
     fields: columnToFieldMapper(columns),

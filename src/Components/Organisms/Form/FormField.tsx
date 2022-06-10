@@ -29,6 +29,7 @@ import { useRunAfterUpdate } from '../../../hooks';
 
 export interface IFormFieldProps<T> {
   data: T;
+  enableSideBySide?: boolean;
   field: IFieldProps<T>;
   handleChange: (dataIndex: keyof T, newValue: T[keyof T]) => void;
   previousData?: T;
@@ -38,7 +39,16 @@ export interface IFormFieldProps<T> {
 }
 
 const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
-  const { data, field, handleChange, previousData, requiredFromValidation, usePortal, validationError } = props;
+  const {
+    data,
+    enableSideBySide,
+    field,
+    handleChange,
+    previousData,
+    requiredFromValidation,
+    usePortal,
+    validationError,
+  } = props;
 
   const errorMessage = validationError && validationError[field.dataIndex as keyof T]?.message;
 
@@ -49,6 +59,7 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
       const shouldHighlight = previousData && previousData[field.dataIndex] !== data[field.dataIndex];
       return (
         <Highlighter
+          enableSideBySide={enableSideBySide}
           highlight={previousData !== undefined}
           oldData={previousData && previousData[field.dataIndex]}
           shouldHighlight={shouldHighlight}>
@@ -81,6 +92,7 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
         });
       return (
         <Highlighter
+          enableSideBySide={enableSideBySide}
           highlight={previousData !== undefined}
           oldData={highlightedOldData}
           shouldHighlight={shouldHighlight}>
@@ -101,6 +113,7 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
         previousData && field.isEqual && !field.isEqual(previousData[field.dataIndex], data[field.dataIndex]);
       return (
         <Highlighter
+          enableSideBySide={enableSideBySide}
           highlight={previousData !== undefined}
           oldData={previousData && previousData[field.dataIndex]}
           shouldHighlight={shouldHighlight}>
@@ -120,6 +133,7 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
         !isSameDay(previousData[field.dataIndex] as unknown as Date, data[field.dataIndex] as unknown as Date);
       return (
         <Highlighter
+          enableSideBySide={enableSideBySide}
           highlight={previousData !== undefined}
           oldData={previousData && previousData[field.dataIndex]}
           shouldHighlight={shouldHighlight}>
@@ -141,6 +155,7 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
       const shouldHighlight = previousData && previousData[field.dataIndex] !== data[field.dataIndex];
       return (
         <Highlighter
+          enableSideBySide={enableSideBySide}
           highlight={previousData !== undefined}
           oldData={previousData && previousData[field.dataIndex]}
           shouldHighlight={shouldHighlight}>
@@ -167,6 +182,7 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
           }));
       return (
         <Highlighter
+          enableSideBySide={enableSideBySide}
           highlight={previousData !== undefined}
           oldData={previousData && previousData[field.dataIndex]}
           shouldHighlight={shouldHighlight}>
@@ -210,6 +226,7 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
         );
       return (
         <Highlighter
+          enableSideBySide={enableSideBySide}
           highlight={previousData !== undefined}
           oldData={previousData && (previousData[field.dataIndex] as unknown as Array<string> | undefined)}
           shouldHighlight={shouldHighlight}>
@@ -231,6 +248,7 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
       const shouldHighlight = previousData && previousData[field.dataIndex] !== data[field.dataIndex];
       return (
         <Highlighter
+          enableSideBySide={enableSideBySide}
           highlight={previousData !== undefined}
           oldData={previousData && previousData[field.dataIndex]}
           shouldHighlight={shouldHighlight}>
@@ -251,6 +269,7 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
       const shouldHighlight = previousData && previousData[field.dataIndex] !== data[field.dataIndex];
       return (
         <Highlighter
+          enableSideBySide={enableSideBySide}
           highlight={previousData !== undefined}
           oldData={previousData && previousData[field.dataIndex]}
           shouldHighlight={shouldHighlight}>
@@ -271,6 +290,7 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
       const shouldHighlight = previousData && previousData[field.dataIndex] !== data[field.dataIndex];
       return (
         <Highlighter
+          enableSideBySide={enableSideBySide}
           highlight={previousData !== undefined}
           oldData={previousData && previousData[field.dataIndex]}
           shouldHighlight={shouldHighlight}>
@@ -300,6 +320,7 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
       const shouldHighlight = previousData && previousData[field.dataIndex] !== data[field.dataIndex];
       return (
         <Highlighter
+          enableSideBySide={enableSideBySide}
           highlight={previousData !== undefined}
           oldData={previousData && previousData[field.dataIndex]}
           shouldHighlight={shouldHighlight}>
@@ -333,6 +354,7 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
         });
       return (
         <Highlighter
+          enableSideBySide={enableSideBySide}
           highlight={previousData !== undefined}
           oldData={highlightedOldData}
           shouldHighlight={shouldHighlight}>
@@ -373,6 +395,7 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
       const shouldHighlight = previousData && previousData[field.dataIndex] !== data[field.dataIndex];
       return (
         <Highlighter
+          enableSideBySide={enableSideBySide}
           highlight={previousData !== undefined}
           oldData={previousData && previousData[field.dataIndex]}
           shouldHighlight={shouldHighlight}>
@@ -393,6 +416,7 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
       const shouldHighlight = previousData && previousData[field.dataIndex] !== data[field.dataIndex];
       return (
         <Highlighter
+          enableSideBySide={enableSideBySide}
           highlight={previousData !== undefined}
           oldData={previousData && previousData[field.dataIndex]}
           shouldHighlight={shouldHighlight}>
@@ -413,6 +437,7 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
       const shouldHighlight = previousData && previousData[field.dataIndex] !== data[field.dataIndex];
       return (
         <Highlighter
+          enableSideBySide={enableSideBySide}
           highlight={previousData !== undefined}
           oldData={previousData && previousData[field.dataIndex]}
           shouldHighlight={shouldHighlight}>
@@ -434,6 +459,7 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
 };
 
 FormField.defaultProps = {
+  enableSideBySide: undefined,
   previousData: undefined,
   requiredFromValidation: undefined,
   validationError: undefined,
