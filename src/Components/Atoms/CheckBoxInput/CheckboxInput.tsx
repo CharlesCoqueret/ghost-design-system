@@ -103,6 +103,7 @@ CheckboxInput.defaultProps = {
   inline: false,
   isInError: false,
   onChange: undefined,
+  options: [],
   readOnly: false,
 };
 

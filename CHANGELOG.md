@@ -6,9 +6,11 @@
 
 - Organisms/DataTable add the ability to specify the style for all body rows of a table
 - Organisms/Form provide a way to enable side by side, even when previousData is not defined.
+- Organisms/SideBar use react-router-dom 5.x until react-router-dom 6.x support of [Prompt](https://reactrouter.com/docs/en/v6/upgrading/v5#prompt-is-not-currently-supported)
 
 ### Bug Fixes
 
+- Atoms/CheckboxInput ensure options has a fallback value ( = [] )
 - Atoms/Section use react-collapsed to support the dynamic sizing of the content
 - Organisms/Form remove highlight property from Highlighter (as it is no longer necessary with enableSideBySide property
 - Organisms/SideBar adjust alpha on active link from 33% to 15%
