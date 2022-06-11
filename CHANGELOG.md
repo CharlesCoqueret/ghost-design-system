@@ -1,6 +1,20 @@
 # Changelog
 
+## 1.4.8 (2022-06-11)
+
+### Features
+
+- Organisms/DataTable add the ability to specify the style for all body rows of a table
+- Organisms/Form provide a way to enable side by side, even when previousData is not defined.
+
+### Bug Fixes
+
+- Atoms/Section use react-collapsed to support the dynamic sizing of the content
+- Organisms/Form remove highlight property from Highlighter (as it is no longer necessary with enableSideBySide property
+
 ## 1.4.7 (2022-05-20)
+
+### Bug Fixes
 
 - Organisms/SideBar scss should only transition left and visibility instead of all
 - Organisms/SideBar use stretch instead of fill-available scss
