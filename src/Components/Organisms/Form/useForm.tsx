@@ -9,15 +9,16 @@ import { yupResolver, FieldError } from './yupResolver';
 import { useRunAfterUpdate } from '../../../hooks';
 
 export interface IUseFormProps<T extends AnyObject> {
-  initialData: T;
+  enableSideBySide?: boolean;
   fields: Array<IFieldAndLayoutProps<T>>;
+  initialData: T;
   previousData?: T;
   usePortal?: boolean;
   validationSchema?: yup.SchemaOf<T>;
 }
 
 const useForm = <T extends AnyObject>(props: IUseFormProps<T>): IUseFormReturnedType<T> => {
-  const { fields, initialData, previousData, usePortal, validationSchema } = props;
+  const { enableSideBySide, fields, initialData, previousData, usePortal, validationSchema } = props;
 
   const [currentData, setCurrentData] = useState<T>(cloneDeep(initialData));
   const [isModified, setIsModified] = useState<boolean>(false);
@@ -74,6 +75,7 @@ const useForm = <T extends AnyObject>(props: IUseFormProps<T>): IUseFormReturned
   return {
     formElement: (
       <Form
+        enableSideBySide={enableSideBySide}
         fields={fields}
         handleDataChange={handleDataChange}
         initialData={currentData}
@@ -91,6 +93,7 @@ const useForm = <T extends AnyObject>(props: IUseFormProps<T>): IUseFormReturned
 };
 
 useForm.defaultProps = {
+  enableSideBySide: undefined,
   previousData: undefined,
   validationSchema: undefined,
   usePortal: true,
