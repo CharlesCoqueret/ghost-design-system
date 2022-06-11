@@ -15,5 +15,5 @@ export const SideBarContext = createContext<{
     console.error('SideBar component should wrap that component');
   },
   unfixed: false,
-  width: '270px',
+  width: '250px',
 });

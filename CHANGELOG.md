@@ -12,6 +12,8 @@
 - Atoms/Section use react-collapsed to support the dynamic sizing of the content
 - Organisms/Form remove highlight property from Highlighter (as it is no longer necessary with enableSideBySide property
 - Organisms/SideBar adjust alpha on active link from 33% to 15%
+- Organisms/SideBar adjust margin-left from 20px to 10px for items
+- Organisms/SideBar adjust default sideBar width from 270px to 250px
 
 ## 1.4.7 (2022-05-20)
 
