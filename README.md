@@ -126,6 +126,7 @@ This react components library uses the following:
 - [date-fns](https://date-fns.org/)
 - [lodash](https://lodash.com/)
 - [numeral](http://numeraljs.com/)
+- [react-collapsed](https://github.com/roginfarrer/react-collapsed#react-collapsed-usecollapse)
 - [react-datepicker](https://reactdatepicker.com/)
 - [react-number-format](https://github.com/s-yadav/react-number-format#readme)
 - [react-select](https://react-select.com/)

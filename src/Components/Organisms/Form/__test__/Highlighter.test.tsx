@@ -20,7 +20,7 @@ describe('Highlighter Component', () => {
     });
 
     const { container } = render(
-      <Highlighter oldData='OLDDATA' highlight shouldHighlight>
+      <Highlighter enableSideBySide oldData='OLDDATA' shouldHighlight>
         <Element />
       </Highlighter>,
     );
@@ -30,7 +30,7 @@ describe('Highlighter Component', () => {
 
   it('Highlighter renders with highlight and inValidElement', () => {
     const { container } = render(
-      <Highlighter oldData='OLDDATA' highlight shouldHighlight>
+      <Highlighter enableSideBySide oldData='OLDDATA' shouldHighlight>
         {''}
       </Highlighter>,
     );

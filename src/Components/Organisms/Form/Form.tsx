@@ -9,6 +9,7 @@ import { FieldError } from './yupResolver';
 import { Container, Col, Row, Section } from '../../Atoms/Layout';
 
 export interface IFormProps<T extends AnyObject> {
+  enableSideBySide?: boolean;
   fields: Array<IFieldAndLayoutProps<T>>;
   handleDataChange: (dataIndex: keyof T, newValue: T[keyof T]) => void;
   initialData: T;
@@ -19,7 +20,16 @@ export interface IFormProps<T extends AnyObject> {
 }
 
 const Form = <T,>(props: IFormProps<T>): ReactElement => {
-  const { fields, handleDataChange, initialData, previousData, validationSchema, validationError, usePortal } = props;
+  const {
+    enableSideBySide,
+    fields,
+    handleDataChange,
+    initialData,
+    previousData,
+    validationSchema,
+    validationError,
+    usePortal,
+  } = props;
 
   return (
     <Container>
@@ -41,6 +51,7 @@ const Form = <T,>(props: IFormProps<T>): ReactElement => {
                 collapsable={field.collapsable}
                 openInitially={field.openInitially}>
                 <Form
+                  enableSideBySide={enableSideBySide}
                   fields={field.fields}
                   handleDataChange={handleDataChange}
                   initialData={initialData}
@@ -63,11 +74,12 @@ const Form = <T,>(props: IFormProps<T>): ReactElement => {
             const schemaDescription = objectDescription?.fields[field.dataIndex as string] as SchemaDescription;
             isRequired = schemaDescription.tests.some((test) => test.name === 'required');
           } catch {
-            console.warn(`could not retrieve if ${field.dataIndex} is mandatory`);
+            console.warn(`could not retrieve if ${JSON.stringify(field.dataIndex)} is mandatory`);
           }
 
           return (
             <FormField<T>
+              enableSideBySide={enableSideBySide}
               key={`field-${field.label}`}
               field={field}
               data={initialData}
@@ -85,6 +97,7 @@ const Form = <T,>(props: IFormProps<T>): ReactElement => {
 };
 
 Form.defaultProps = {
+  enableSideBySide: undefined,
   previousData: undefined,
   validationError: undefined,
   validationSchema: undefined,

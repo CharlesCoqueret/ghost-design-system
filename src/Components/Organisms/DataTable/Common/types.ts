@@ -403,6 +403,8 @@ export interface IExtraStaticDataTableProps<T> {
   onRowClick?: (row: T, rowIndex: number) => void;
   /** Method used to enable the selection of rows, and handle the selection of a specific row (optional, default: undefined) */
   onRowSelect?: (selectedRows: Array<T>, clickedRow: T, rowIndex: number) => void;
+  /** CSS style of the rows */
+  rowStyle?: CSSProperties;
   /** Method used to disable the selection of a specific row, by default not called and considered as selectable (optional, default: undefined) */
   isSelectable?: (row: T, rowIndex: number) => boolean;
   /** localization (optional, default:

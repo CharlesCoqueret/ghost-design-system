@@ -29,6 +29,7 @@ import { useRunAfterUpdate } from '../../../hooks';
 
 export interface IFormFieldProps<T> {
   data: T;
+  enableSideBySide?: boolean;
   field: IFieldProps<T>;
   handleChange: (dataIndex: keyof T, newValue: T[keyof T]) => void;
   previousData?: T;
@@ -38,7 +39,16 @@ export interface IFormFieldProps<T> {
 }
 
 const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
-  const { data, field, handleChange, previousData, requiredFromValidation, usePortal, validationError } = props;
+  const {
+    data,
+    enableSideBySide,
+    field,
+    handleChange,
+    previousData,
+    requiredFromValidation,
+    usePortal,
+    validationError,
+  } = props;
 
   const errorMessage = validationError && validationError[field.dataIndex as keyof T]?.message;
 
@@ -49,7 +59,7 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
       const shouldHighlight = previousData && previousData[field.dataIndex] !== data[field.dataIndex];
       return (
         <Highlighter
-          highlight={previousData !== undefined}
+          enableSideBySide={enableSideBySide}
           oldData={previousData && previousData[field.dataIndex]}
           shouldHighlight={shouldHighlight}>
           <AmountField
@@ -80,10 +90,7 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
           }
         });
       return (
-        <Highlighter
-          highlight={previousData !== undefined}
-          oldData={highlightedOldData}
-          shouldHighlight={shouldHighlight}>
+        <Highlighter enableSideBySide={enableSideBySide} oldData={highlightedOldData} shouldHighlight={shouldHighlight}>
           <CheckboxField
             {...field}
             mandatory={requiredFromValidation || field.mandatory}
@@ -101,7 +108,7 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
         previousData && field.isEqual && !field.isEqual(previousData[field.dataIndex], data[field.dataIndex]);
       return (
         <Highlighter
-          highlight={previousData !== undefined}
+          enableSideBySide={enableSideBySide}
           oldData={previousData && previousData[field.dataIndex]}
           shouldHighlight={shouldHighlight}>
           <field.customField
@@ -120,7 +127,7 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
         !isSameDay(previousData[field.dataIndex] as unknown as Date, data[field.dataIndex] as unknown as Date);
       return (
         <Highlighter
-          highlight={previousData !== undefined}
+          enableSideBySide={enableSideBySide}
           oldData={previousData && previousData[field.dataIndex]}
           shouldHighlight={shouldHighlight}>
           <DatePickerField
@@ -141,7 +148,7 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
       const shouldHighlight = previousData && previousData[field.dataIndex] !== data[field.dataIndex];
       return (
         <Highlighter
-          highlight={previousData !== undefined}
+          enableSideBySide={enableSideBySide}
           oldData={previousData && previousData[field.dataIndex]}
           shouldHighlight={shouldHighlight}>
           <DynamicSearchField
@@ -167,7 +174,7 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
           }));
       return (
         <Highlighter
-          highlight={previousData !== undefined}
+          enableSideBySide={enableSideBySide}
           oldData={previousData && previousData[field.dataIndex]}
           shouldHighlight={shouldHighlight}>
           <FileField
@@ -210,7 +217,7 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
         );
       return (
         <Highlighter
-          highlight={previousData !== undefined}
+          enableSideBySide={enableSideBySide}
           oldData={previousData && (previousData[field.dataIndex] as unknown as Array<string> | undefined)}
           shouldHighlight={shouldHighlight}>
           <MultiSelectField
@@ -231,7 +238,7 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
       const shouldHighlight = previousData && previousData[field.dataIndex] !== data[field.dataIndex];
       return (
         <Highlighter
-          highlight={previousData !== undefined}
+          enableSideBySide={enableSideBySide}
           oldData={previousData && previousData[field.dataIndex]}
           shouldHighlight={shouldHighlight}>
           <AmountField
@@ -251,7 +258,7 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
       const shouldHighlight = previousData && previousData[field.dataIndex] !== data[field.dataIndex];
       return (
         <Highlighter
-          highlight={previousData !== undefined}
+          enableSideBySide={enableSideBySide}
           oldData={previousData && previousData[field.dataIndex]}
           shouldHighlight={shouldHighlight}>
           <PercentageField
@@ -271,7 +278,7 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
       const shouldHighlight = previousData && previousData[field.dataIndex] !== data[field.dataIndex];
       return (
         <Highlighter
-          highlight={previousData !== undefined}
+          enableSideBySide={enableSideBySide}
           oldData={previousData && previousData[field.dataIndex]}
           shouldHighlight={shouldHighlight}>
           <RichTextField
@@ -300,7 +307,7 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
       const shouldHighlight = previousData && previousData[field.dataIndex] !== data[field.dataIndex];
       return (
         <Highlighter
-          highlight={previousData !== undefined}
+          enableSideBySide={enableSideBySide}
           oldData={previousData && previousData[field.dataIndex]}
           shouldHighlight={shouldHighlight}>
           <SelectField
@@ -332,10 +339,7 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
           }
         });
       return (
-        <Highlighter
-          highlight={previousData !== undefined}
-          oldData={highlightedOldData}
-          shouldHighlight={shouldHighlight}>
+        <Highlighter enableSideBySide={enableSideBySide} oldData={highlightedOldData} shouldHighlight={shouldHighlight}>
           <SwitchField
             {...field}
             mandatory={requiredFromValidation || field.mandatory}
@@ -373,7 +377,7 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
       const shouldHighlight = previousData && previousData[field.dataIndex] !== data[field.dataIndex];
       return (
         <Highlighter
-          highlight={previousData !== undefined}
+          enableSideBySide={enableSideBySide}
           oldData={previousData && previousData[field.dataIndex]}
           shouldHighlight={shouldHighlight}>
           <TextField
@@ -393,7 +397,7 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
       const shouldHighlight = previousData && previousData[field.dataIndex] !== data[field.dataIndex];
       return (
         <Highlighter
-          highlight={previousData !== undefined}
+          enableSideBySide={enableSideBySide}
           oldData={previousData && previousData[field.dataIndex]}
           shouldHighlight={shouldHighlight}>
           <TextAreaField
@@ -413,7 +417,7 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
       const shouldHighlight = previousData && previousData[field.dataIndex] !== data[field.dataIndex];
       return (
         <Highlighter
-          highlight={previousData !== undefined}
+          enableSideBySide={enableSideBySide}
           oldData={previousData && previousData[field.dataIndex]}
           shouldHighlight={shouldHighlight}>
           <YearPickerField
@@ -434,6 +438,7 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
 };
 
 FormField.defaultProps = {
+  enableSideBySide: undefined,
   previousData: undefined,
   requiredFromValidation: undefined,
   validationError: undefined,

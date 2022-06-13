@@ -20,8 +20,10 @@ exports[`Section Component Section renders 1`] = `
       />
     </div>
     <div
+      aria-hidden="false"
       class="section-body"
-      style="transition: height 500ms linear; height: auto;"
+      id="react-collapsed-panel-1"
+      style="box-sizing: border-box; display: none; height: 0px; overflow: hidden;"
     >
       <div
         id="CHILD1"
@@ -57,8 +59,10 @@ exports[`Section Component Section renders 2`] = `
       />
     </div>
     <div
+      aria-hidden="true"
       class="section-body"
-      style="transition: height 500ms linear; height: 0px;"
+      id="react-collapsed-panel-1"
+      style="box-sizing: border-box; display: none; height: 0px; overflow: hidden;"
     >
       <div
         id="CHILD1"
@@ -94,8 +98,10 @@ exports[`Section Component Section renders 3`] = `
       />
     </div>
     <div
+      aria-hidden="false"
       class="section-body"
-      style="transition: height 500ms linear; height: auto;"
+      id="react-collapsed-panel-1"
+      style="box-sizing: border-box; display: none; height: 0px; overflow: hidden;"
     >
       <div
         id="CHILD1"
@@ -131,8 +137,10 @@ exports[`Section Component Section renders collapsable closed by default 1`] = `
       />
     </div>
     <div
+      aria-hidden="true"
       class="section-body"
-      style="transition: height 500ms linear; height: 0px;"
+      id="react-collapsed-panel-5"
+      style="box-sizing: border-box; display: none; height: 0px; overflow: hidden;"
     >
       <div
         id="CHILD1"
@@ -164,8 +172,10 @@ exports[`Section Component Section renders not collapsable 1`] = `
       </h2>
     </div>
     <div
+      aria-hidden="false"
       class="section-body"
-      style="transition: height 500ms linear; height: auto;"
+      id="react-collapsed-panel-6"
+      style="box-sizing: border-box; display: none; height: 0px; overflow: hidden;"
     >
       <div
         id="CHILD1"
@@ -197,8 +207,10 @@ exports[`Section Component Section renders not collapsable 2`] = `
       </h2>
     </div>
     <div
+      aria-hidden="true"
       class="section-body"
-      style="transition: height 500ms linear; height: auto;"
+      id="react-collapsed-panel-6"
+      style="box-sizing: border-box; display: none; height: 0px; overflow: hidden;"
     >
       <div
         id="CHILD1"
@@ -230,8 +242,10 @@ exports[`Section Component Section renders not collapsable 3`] = `
       </h2>
     </div>
     <div
+      aria-hidden="false"
       class="section-body"
-      style="transition: height 500ms linear; height: auto;"
+      id="react-collapsed-panel-9"
+      style="box-sizing: border-box; display: none; height: 0px; overflow: hidden;"
     >
       <div
         id="CHILD1"

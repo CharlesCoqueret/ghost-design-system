@@ -3,15 +3,15 @@ import React, { PropsWithChildren, ReactElement } from 'react';
 import { Col, Row } from '../../Atoms/Layout';
 
 export interface IHighlighterProps {
-  highlight?: boolean;
+  enableSideBySide?: boolean;
   shouldHighlight?: boolean;
   oldData?: unknown;
 }
 
 const Highlighter = (props: PropsWithChildren<IHighlighterProps>): ReactElement => {
-  const { children, highlight, oldData, shouldHighlight } = props;
+  const { children, enableSideBySide, oldData, shouldHighlight } = props;
 
-  if (!highlight || oldData === undefined) return <>{children}</>;
+  if (!enableSideBySide) return <>{children}</>;
 
   return (
     <>

@@ -1,6 +1,25 @@
 # Changelog
 
+## 1.4.8 (2022-06-11)
+
+### Features
+
+- Organisms/DataTable add the ability to specify the style for all body rows of a table
+- Organisms/Form provide a way to enable side by side, even when previousData is not defined.
+- Organisms/SideBar use react-router-dom 5.x until react-router-dom 6.x support of [Prompt](https://reactrouter.com/docs/en/v6/upgrading/v5#prompt-is-not-currently-supported)
+
+### Bug Fixes
+
+- Atoms/CheckboxInput ensure options has a fallback value ( = [] )
+- Atoms/Section use react-collapsed to support the dynamic sizing of the content
+- Organisms/Form remove highlight property from Highlighter (as it is no longer necessary with enableSideBySide property
+- Organisms/SideBar adjust alpha on active link from 33% to 15%
+- Organisms/SideBar adjust margin-left from 20px to 10px for items
+- Organisms/SideBar adjust default sideBar width from 270px to 250px
+
 ## 1.4.7 (2022-05-20)
+
+### Bug Fixes
 
 - Organisms/SideBar scss should only transition left and visibility instead of all
 - Organisms/SideBar use stretch instead of fill-available scss

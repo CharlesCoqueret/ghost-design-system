@@ -23,12 +23,12 @@ const LineEditableInPlaceDataTableBody = <T,>(props: ILineEditableInPlaceDataTab
   const isExtended = extra.onRowSelect || extra.computeTotal;
 
   const handleRowClick = (row: T, rowIndex: number) => {
-    return extra && extra.onRowClick
+    return extra.onRowClick
       ? (event: MouseEvent<HTMLElement> | KeyboardEvent<HTMLElement>) => {
           if (event.type === 'keyup' && (event as KeyboardEvent).key !== 'Enter') {
             return;
           }
-          if (extra && extra.onRowClick) {
+          if (extra.onRowClick) {
             event.preventDefault();
             extra.onRowClick(row, rowIndex);
           }
@@ -57,11 +57,12 @@ const LineEditableInPlaceDataTableBody = <T,>(props: ILineEditableInPlaceDataTab
       {data.map((row, rowIndex) => {
         return (
           <tr
+            className={classnames({ pointer: extra.onRowClick, selected: selectedRows[rowIndex] })}
+            style={extra.rowStyle}
             key={`row-${rowIndex}`}
             onClick={handleRowClick(row, rowIndex)}
             onKeyUp={handleRowClick(row, rowIndex)}
-            className={classnames({ pointer: extra && extra.onRowClick, selected: selectedRows[rowIndex] })}
-            tabIndex={extra && extra.onRowClick ? 0 : -1}>
+            tabIndex={extra.onRowClick ? 0 : -1}>
             {isExtended &&
               (isSelectable ? (
                 <DataTableCellSelectable

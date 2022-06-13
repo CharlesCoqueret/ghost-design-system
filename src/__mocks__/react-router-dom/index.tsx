@@ -1,15 +1,27 @@
 import React, { PropsWithChildren, ReactElement } from 'react';
-import { NavLinkProps, Location, Path } from 'react-router-dom';
+import { NavLinkProps } from 'react-router-dom';
+import { Location, LocationDescriptor } from 'history';
 
-export const locationString = (location: string | Location | Partial<Path> | undefined): string => {
+export const locationString = (
+  location: string | Location | LocationDescriptor | ((location: Location) => LocationDescriptor) | undefined,
+): string => {
+  if (location === undefined || location == null) {
+    return '';
+  }
+
   if (typeof location === 'string') {
     return location;
   }
-  return location?.pathname || '';
+
+  if ('pathname' in location) {
+    return location.pathname || '';
+  }
+
+  return '';
 };
 
 export const NavLink = (props: PropsWithChildren<NavLinkProps> & { ['data-testid']?: string }): ReactElement => {
-  const { children, className, ['data-testid']: dataTestId, end, onClick, target, to } = props;
+  const { children, className, ['data-testid']: dataTestId, exact, onClick, target, to } = props;
 
   return (
     <a
@@ -18,7 +30,7 @@ export const NavLink = (props: PropsWithChildren<NavLinkProps> & { ['data-testid
       data-testid={dataTestId}
       onClick={onClick}
       target={target}>
-      {end ? 'full url' : 'partial url'}
+      {exact ? 'full url' : 'partial url'}
       {children}
     </a>
   );
@@ -27,5 +39,13 @@ export const NavLink = (props: PropsWithChildren<NavLinkProps> & { ['data-testid
 export const useNavigate = () => {
   return (url: string): void => {
     console.info('url pushed:', url);
+  };
+};
+
+export const useHistory = () => {
+  return {
+    push: (url: string): void => {
+      console.info('url pushed:', url);
+    },
   };
 };
