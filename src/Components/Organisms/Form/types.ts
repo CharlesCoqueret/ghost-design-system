@@ -123,7 +123,7 @@ export interface IFieldCustomProps<T, U = unknown> extends IFieldBaseProps<T> {
       highlighted?: boolean;
       onChange?: (value: T[keyof T]) => void;
       readOnly?: boolean;
-      value?: T[keyof T];
+      inputValue?: T[keyof T];
     },
   >(
     props: U,
