@@ -1,4 +1,4 @@
-import { ReactElement, ComponentType } from 'react';
+import { ReactElement } from 'react';
 
 import { IOption } from '../../Atoms/SelectInput';
 import { IAmountFieldProps } from '../../Molecules/AmountField/AmountField';
@@ -118,9 +118,16 @@ export interface IFieldCustomProps<T, U = unknown> extends IFieldBaseProps<T> {
   fieldType: FieldTypeEnum.CUSTOM;
   isEqual?: (previousValue: T[keyof T], currentValue: T[keyof T]) => boolean;
   data?: U;
-  customField: ComponentType<
-    U & { highlighted?: boolean; onChange?: (value: T[keyof T]) => void; readOnly?: boolean; inputValue?: T[keyof T] }
-  >;
+  customField: <
+    U extends {
+      highlighted?: boolean;
+      onChange?: (value: T[keyof T]) => void;
+      readOnly?: boolean;
+      inputValue?: T[keyof T];
+    },
+  >(
+    props: U,
+  ) => ReactElement;
 }
 
 export interface IFieldDateProps<T>

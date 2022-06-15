@@ -20,7 +20,7 @@ describe('Highlighter Component', () => {
     });
 
     const { container } = render(
-      <Highlighter enableSideBySide oldData='OLDDATA' shouldHighlight>
+      <Highlighter enableOldData enableSideBySide oldData='OLDDATA' shouldHighlight>
         <Element />
       </Highlighter>,
     );

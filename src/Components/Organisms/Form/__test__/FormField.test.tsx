@@ -209,6 +209,7 @@ describe('FormField Component', () => {
     const handleChangeMock = jest.fn();
     const container = render(
       <FormField
+        enableOldData
         enableSideBySide
         data={{ amount: 50 }}
         field={{ dataIndex: 'amount', fieldType: FieldTypeEnum.AMOUNT, label: 'amount' }}
@@ -244,6 +245,7 @@ describe('FormField Component', () => {
     const handleChangeMock = jest.fn();
     const container = render(
       <FormField
+        enableOldData
         enableSideBySide
         data={{
           checkbox: [
@@ -301,6 +303,7 @@ describe('FormField Component', () => {
 
     const container = render(
       <FormField
+        enableOldData
         enableSideBySide
         data={{ custom: 1 }}
         field={{
@@ -357,6 +360,7 @@ describe('FormField Component', () => {
 
     const container = render(
       <FormField
+        enableOldData
         enableSideBySide
         data={{ date: new Date('2022-04-12T00:00:00.000Z') }}
         field={{
@@ -403,6 +407,7 @@ describe('FormField Component', () => {
 
     const container = render(
       <FormField
+        enableOldData
         enableSideBySide
         data={{ dynamicsearch: 'value1' }}
         field={{
@@ -453,6 +458,7 @@ describe('FormField Component', () => {
 
     const container = render(
       <FormField
+        enableOldData
         enableSideBySide
         data={{ file: [{ name: 'file1', size: 1, type: 'type1', status: FileStatusEnum.DONE }] }}
         field={{
@@ -507,6 +513,7 @@ describe('FormField Component', () => {
     const handleChangeMock = jest.fn();
     const container = render(
       <FormField
+        enableOldData
         enableSideBySide
         data={{ multiselect: ['value1'] }}
         field={{
@@ -584,6 +591,7 @@ describe('FormField Component', () => {
     const handleChangeMock = jest.fn();
     const container = render(
       <FormField
+        enableOldData
         enableSideBySide
         data={{ number: 50 }}
         field={{ dataIndex: 'number', fieldType: FieldTypeEnum.NUMBER, label: 'number' }}
@@ -618,6 +626,7 @@ describe('FormField Component', () => {
     const handleChangeMock = jest.fn();
     const container = render(
       <FormField
+        enableOldData
         enableSideBySide
         data={{ percentage: 50 }}
         field={{ dataIndex: 'percentage', fieldType: FieldTypeEnum.PERCENTAGE, label: 'percentage' }}
@@ -652,6 +661,7 @@ describe('FormField Component', () => {
     const handleChangeMock = jest.fn();
     const container = render(
       <FormField
+        enableOldData
         enableSideBySide
         data={{ richtext: 'richtext' }}
         field={{ dataIndex: 'richtext', fieldType: FieldTypeEnum.RICHTEXT, label: 'richtext' }}
@@ -686,6 +696,7 @@ describe('FormField Component', () => {
     const handleChangeMock = jest.fn();
     const container = render(
       <FormField
+        enableOldData
         enableSideBySide
         data={{ select: 'value1' }}
         field={{
@@ -757,6 +768,7 @@ describe('FormField Component', () => {
     const handleChangeMock = jest.fn();
     const container = render(
       <FormField
+        enableOldData
         enableSideBySide
         data={{
           switch: [
@@ -855,6 +867,7 @@ describe('FormField Component', () => {
     const handleChangeMock = jest.fn();
     const container = render(
       <FormField
+        enableOldData
         enableSideBySide
         data={{ text: 'text' }}
         field={{ dataIndex: 'text', fieldType: FieldTypeEnum.TEXT, label: 'text' }}
@@ -889,6 +902,7 @@ describe('FormField Component', () => {
     const handleChangeMock = jest.fn();
     const container = render(
       <FormField
+        enableOldData
         enableSideBySide
         data={{ textarea: 'textarea' }}
         field={{ dataIndex: 'textarea', fieldType: FieldTypeEnum.TEXTAREA, label: 'textearea' }}
@@ -923,6 +937,7 @@ describe('FormField Component', () => {
     const handleChangeMock = jest.fn();
     const container = render(
       <FormField
+        enableOldData
         enableSideBySide
         data={{ year: 2022 }}
         field={{ dataIndex: 'year', fieldType: FieldTypeEnum.YEAR, label: 'year' }}

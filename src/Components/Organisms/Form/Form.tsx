@@ -9,6 +9,7 @@ import { FieldError } from './yupResolver';
 import { Container, Col, Row, Section } from '../../Atoms/Layout';
 
 export interface IFormProps<T extends AnyObject> {
+  enableOldData?: boolean;
   enableSideBySide?: boolean;
   fields: Array<IFieldAndLayoutProps<T>>;
   handleDataChange: (dataIndex: keyof T, newValue: T[keyof T]) => void;
@@ -21,6 +22,7 @@ export interface IFormProps<T extends AnyObject> {
 
 const Form = <T,>(props: IFormProps<T>): ReactElement => {
   const {
+    enableOldData,
     enableSideBySide,
     fields,
     handleDataChange,
@@ -51,6 +53,7 @@ const Form = <T,>(props: IFormProps<T>): ReactElement => {
                 collapsable={field.collapsable}
                 openInitially={field.openInitially}>
                 <Form
+                  enableOldData={enableOldData}
                   enableSideBySide={enableSideBySide}
                   fields={field.fields}
                   handleDataChange={handleDataChange}
@@ -79,6 +82,7 @@ const Form = <T,>(props: IFormProps<T>): ReactElement => {
 
           return (
             <FormField<T>
+              enableOldData={enableOldData}
               enableSideBySide={enableSideBySide}
               key={`field-${field.label}`}
               field={field}
@@ -97,6 +101,7 @@ const Form = <T,>(props: IFormProps<T>): ReactElement => {
 };
 
 Form.defaultProps = {
+  enableOldData: undefined,
   enableSideBySide: undefined,
   previousData: undefined,
   validationError: undefined,
