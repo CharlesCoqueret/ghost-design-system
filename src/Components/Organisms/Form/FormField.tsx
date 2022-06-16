@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React, { memo, ReactElement } from 'react';
 import isSameDay from 'date-fns/isSameDay';
 import intersection from 'lodash/intersection';
 import isEqual from 'lodash/isEqual';
@@ -54,6 +54,8 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
 
   const errorMessage = validationError && validationError[field.dataIndex as keyof T]?.message;
 
+  const localUsePortal = usePortal === undefined ? true : usePortal;
+
   const runAfterUpdate = useRunAfterUpdate();
 
   switch (field.fieldType) {
@@ -104,7 +106,7 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
             onChange={(newValue: Array<IToggleEntry> | undefined) => {
               handleChange(field.dataIndex, newValue as unknown as T[keyof T]);
             }}
-            inputValue={(data && (data[field.dataIndex] as unknown as Array<IToggleEntry> | undefined)) ?? undefined}
+            inputValue={(data && (data[field.dataIndex] as unknown as Array<IToggleEntry>)) ?? undefined}
             errorMessage={errorMessage}
           />
         </Highlighter>
@@ -149,7 +151,7 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
             }}
             inputValue={(data && (data[field.dataIndex] as unknown as Date | null | undefined)) ?? undefined}
             errorMessage={errorMessage}
-            usePortal={usePortal}
+            usePortal={localUsePortal}
           />
         </Highlighter>
       );
@@ -367,7 +369,7 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
             onChange={(newValue: IToggleEntry[]) => {
               handleChange(field.dataIndex, newValue as unknown as T[keyof T]);
             }}
-            inputValue={(data && (data[field.dataIndex] as unknown as IToggleEntry[] | undefined)) ?? undefined}
+            inputValue={(data && (data[field.dataIndex] as unknown as IToggleEntry[])) ?? undefined}
             errorMessage={errorMessage}
           />
         </Highlighter>
@@ -453,7 +455,7 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
             }}
             inputValue={(data && (data[field.dataIndex] as unknown as number | undefined)) ?? undefined}
             errorMessage={errorMessage}
-            usePortal={usePortal}
+            usePortal={localUsePortal}
           />
         </Highlighter>
       );
@@ -461,13 +463,4 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
   }
 };
 
-FormField.defaultProps = {
-  enableOldData: undefined,
-  enableSideBySide: undefined,
-  previousData: undefined,
-  requiredFromValidation: undefined,
-  validationError: undefined,
-  usePortal: true,
-};
-
-export default FormField;
+export default memo(FormField) as typeof FormField;

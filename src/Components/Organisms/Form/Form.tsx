@@ -1,4 +1,4 @@
-import React, { Fragment, ReactElement } from 'react';
+import React, { Fragment, memo, ReactElement } from 'react';
 import * as yup from 'yup';
 import { AnyObject } from 'yup/lib/object';
 import { SchemaDescription, SchemaObjectDescription } from 'yup/lib/schema';
@@ -33,6 +33,8 @@ const Form = <T,>(props: IFormProps<T>): ReactElement => {
     usePortal,
   } = props;
 
+  const localUsePortal = usePortal === undefined ? true : usePortal;
+
   return (
     <Container>
       <Col>
@@ -52,7 +54,7 @@ const Form = <T,>(props: IFormProps<T>): ReactElement => {
                 title={field.label}
                 collapsable={field.collapsable}
                 openInitially={field.openInitially}>
-                <Form
+                <Form<T>
                   enableOldData={enableOldData}
                   enableSideBySide={enableSideBySide}
                   fields={field.fields}
@@ -61,7 +63,7 @@ const Form = <T,>(props: IFormProps<T>): ReactElement => {
                   previousData={previousData}
                   validationError={validationError}
                   validationSchema={validationSchema}
-                  usePortal={usePortal}
+                  usePortal={localUsePortal}
                 />
               </Section>
             );
@@ -91,7 +93,7 @@ const Form = <T,>(props: IFormProps<T>): ReactElement => {
               handleChange={handleDataChange}
               validationError={validationError}
               requiredFromValidation={isRequired}
-              usePortal={usePortal}
+              usePortal={localUsePortal}
             />
           );
         })}
@@ -100,13 +102,4 @@ const Form = <T,>(props: IFormProps<T>): ReactElement => {
   );
 };
 
-Form.defaultProps = {
-  enableOldData: undefined,
-  enableSideBySide: undefined,
-  previousData: undefined,
-  validationError: undefined,
-  validationSchema: undefined,
-  usePortal: true,
-};
-
-export default Form;
+export default memo(Form) as typeof Form;

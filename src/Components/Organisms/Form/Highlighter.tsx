@@ -1,4 +1,4 @@
-import React, { PropsWithChildren, ReactElement } from 'react';
+import React, { memo, PropsWithChildren, ReactElement } from 'react';
 
 import { Col, Row } from '../../Atoms/Layout';
 
@@ -44,4 +44,4 @@ const Highlighter = (props: PropsWithChildren<IHighlighterProps>): ReactElement 
   );
 };
 
-export default Highlighter;
+export default memo(Highlighter);

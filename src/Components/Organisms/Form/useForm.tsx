@@ -75,7 +75,7 @@ const useForm = <T extends AnyObject>(props: IUseFormProps<T>): IUseFormReturned
 
   return {
     formElement: (
-      <Form
+      <Form<T>
         enableOldData={enableOldData}
         enableSideBySide={enableSideBySide}
         fields={fields}

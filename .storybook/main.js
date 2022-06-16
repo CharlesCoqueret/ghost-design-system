@@ -6,7 +6,20 @@ module.exports = {
   stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
   addons: [
     '@storybook/addon-a11y',
-    '@storybook/addon-essentials',
+    '@storybook/addon-links',
+    '@storybook/addon-actions',
+    {
+      name: '@storybook/addon-docs',
+      options: {
+        configureJSX: true,
+        sourceLoaderOptions: null,
+        transcludeMarkdown: true,
+      },
+    },
+    '@storybook/addon-controls',
+    '@storybook/addon-toolbars',
+    '@storybook/addon-measure',
+    '@storybook/addon-outline',
     '@storybook/addon-interactions',
     '@storybook/addon-postcss',
     '@storybook/addon-storysource',
@@ -16,7 +29,7 @@ module.exports = {
   },
   framework: '@storybook/react',
   webpackFinal: async (config) => {
-    config.module.rules.unshift({
+    config.module.rules.push({
       test: /\.scss$/i,
       resourceQuery: /raw/,
       type: 'asset/source',
