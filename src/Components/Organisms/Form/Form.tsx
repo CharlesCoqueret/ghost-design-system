@@ -1,4 +1,4 @@
-import React, { Fragment, ReactElement } from 'react';
+import React, { Fragment, memo, ReactElement } from 'react';
 import * as yup from 'yup';
 import { AnyObject } from 'yup/lib/object';
 import { SchemaDescription, SchemaObjectDescription } from 'yup/lib/schema';
@@ -9,6 +9,7 @@ import { FieldError } from './yupResolver';
 import { Container, Col, Row, Section } from '../../Atoms/Layout';
 
 export interface IFormProps<T extends AnyObject> {
+  enableOldData?: boolean;
   enableSideBySide?: boolean;
   fields: Array<IFieldAndLayoutProps<T>>;
   handleDataChange: (dataIndex: keyof T, newValue: T[keyof T]) => void;
@@ -21,6 +22,7 @@ export interface IFormProps<T extends AnyObject> {
 
 const Form = <T,>(props: IFormProps<T>): ReactElement => {
   const {
+    enableOldData,
     enableSideBySide,
     fields,
     handleDataChange,
@@ -30,6 +32,8 @@ const Form = <T,>(props: IFormProps<T>): ReactElement => {
     validationError,
     usePortal,
   } = props;
+
+  const localUsePortal = usePortal === undefined ? true : usePortal;
 
   return (
     <Container>
@@ -51,6 +55,7 @@ const Form = <T,>(props: IFormProps<T>): ReactElement => {
                 collapsable={field.collapsable}
                 openInitially={field.openInitially}>
                 <Form
+                  enableOldData={enableOldData}
                   enableSideBySide={enableSideBySide}
                   fields={field.fields}
                   handleDataChange={handleDataChange}
@@ -58,7 +63,7 @@ const Form = <T,>(props: IFormProps<T>): ReactElement => {
                   previousData={previousData}
                   validationError={validationError}
                   validationSchema={validationSchema}
-                  usePortal={usePortal}
+                  usePortal={localUsePortal}
                 />
               </Section>
             );
@@ -79,6 +84,7 @@ const Form = <T,>(props: IFormProps<T>): ReactElement => {
 
           return (
             <FormField<T>
+              enableOldData={enableOldData}
               enableSideBySide={enableSideBySide}
               key={`field-${field.label}`}
               field={field}
@@ -87,7 +93,7 @@ const Form = <T,>(props: IFormProps<T>): ReactElement => {
               handleChange={handleDataChange}
               validationError={validationError}
               requiredFromValidation={isRequired}
-              usePortal={usePortal}
+              usePortal={localUsePortal}
             />
           );
         })}
@@ -96,12 +102,4 @@ const Form = <T,>(props: IFormProps<T>): ReactElement => {
   );
 };
 
-Form.defaultProps = {
-  enableSideBySide: undefined,
-  previousData: undefined,
-  validationError: undefined,
-  validationSchema: undefined,
-  usePortal: true,
-};
-
-export default Form;
+export default memo(Form) as typeof Form;
