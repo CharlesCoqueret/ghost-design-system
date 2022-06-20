@@ -430,7 +430,7 @@ exports[`StaticDataTableCell component StaticDataTableCell renders with percenta
               id="percentage"
               name="percentage"
             >
-              1 %
+              0.01 %
             </span>
           </div>
         </td>

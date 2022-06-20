@@ -682,7 +682,7 @@ exports[`LineEditableInPlaceDataTableCell component LineEditableInPlaceDataTable
               inputmode="numeric"
               name="percentage"
               type="text"
-              value="1 %"
+              value="0.01 %"
             />
           </div>
         </td>
