@@ -207,7 +207,7 @@ exports[`Section Component Section renders not collapsable 2`] = `
       </h2>
     </div>
     <div
-      aria-hidden="true"
+      aria-hidden="false"
       class="section-body"
       id="react-collapsed-panel-6"
       style="box-sizing: border-box; display: none; height: 0px; overflow: hidden;"
@@ -244,7 +244,7 @@ exports[`Section Component Section renders not collapsable 3`] = `
     <div
       aria-hidden="false"
       class="section-body"
-      id="react-collapsed-panel-9"
+      id="react-collapsed-panel-8"
       style="box-sizing: border-box; display: none; height: 0px; overflow: hidden;"
     >
       <div

@@ -30,7 +30,9 @@ const Section = (props: PropsWithChildren<ISectionProps>): ReactElement => {
   }, [collapsable, openInitially]);
 
   const handleClick = () => {
-    setExpanded((prev) => !prev);
+    if (collapsable) {
+      setExpanded((prev) => !prev);
+    }
   };
 
   return (
