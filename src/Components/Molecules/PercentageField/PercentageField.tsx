@@ -104,7 +104,7 @@ export const PercentageField = (props: IPercentageFieldProps): ReactElement => {
       onChange(undefined);
       return;
     }
-    onChange(value * 100);
+    onChange(value / 100);
   };
 
   return (
@@ -131,9 +131,9 @@ export const PercentageField = (props: IPercentageFieldProps): ReactElement => {
         highlighted={highlighted}
         inputValue={
           typeof inputValue === 'string'
-            ? parseFloat(inputValue) / 100
+            ? parseFloat(inputValue) * 100
             : typeof inputValue === 'number'
-            ? inputValue / 100
+            ? inputValue * 100
             : inputValue
         }
         isInError={errorMessage !== undefined}

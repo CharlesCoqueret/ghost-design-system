@@ -682,7 +682,7 @@ exports[`EditableDataTableCell component EditableDataTableCell renders with perc
               inputmode="numeric"
               name="percentage"
               type="text"
-              value="0.01 %"
+              value="100 %"
             />
           </div>
         </td>

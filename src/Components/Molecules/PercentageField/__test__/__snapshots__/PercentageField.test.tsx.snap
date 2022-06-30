@@ -27,7 +27,7 @@ exports[`PercentageField Component PercentageField renders with values in disabl
       inputmode="numeric"
       name="name"
       type="text"
-      value="123.46 %"
+      value="1,234,567 %"
     />
   </div>
 </div>
@@ -43,7 +43,7 @@ exports[`PercentageField Component PercentageField renders with values in readon
       id="name"
       name="name"
     >
-      0.12 %
+      1,234 %
     </span>
   </div>
 </div>
@@ -59,7 +59,7 @@ exports[`PercentageField Component PercentageField renders with values with fiel
       inputmode="numeric"
       name="name"
       type="text"
-      value="0.01 %"
+      value="123 %"
     />
   </div>
 </div>
