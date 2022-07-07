@@ -6,9 +6,9 @@ import { Icon } from '../Icon';
 import { Typography } from '../Typography';
 
 export interface ISectionProps {
-  /** When set the section gets collapsable ability (optional, default true) */
-  collapsable?: boolean;
-  /** Open initially if collapsable (optional, default: true) */
+  /** When set the section gets collapsible ability (optional, default true) */
+  collapsible?: boolean;
+  /** Open initially if collapsible (optional, default: true) */
   openInitially?: boolean;
   /** Add separator at the end of the section (optional, default: true) */
   separator?: boolean;
@@ -21,16 +21,16 @@ export interface ISectionProps {
 }
 
 const Section = (props: PropsWithChildren<ISectionProps>): ReactElement => {
-  const { children, collapsable, dataTestId, level, openInitially, separator, title } = props;
+  const { children, collapsible, dataTestId, level, openInitially, separator, title } = props;
 
   const { getCollapseProps, setExpanded, isExpanded } = useCollapse({ duration: 500 });
 
   useEffect(() => {
-    setExpanded(collapsable ? openInitially === true : true);
-  }, [collapsable, openInitially]);
+    setExpanded(collapsible ? openInitially === true : true);
+  }, [collapsible, openInitially]);
 
   const handleClick = () => {
-    if (collapsable) {
+    if (collapsible) {
       setExpanded((prev) => !prev);
     }
   };
@@ -38,11 +38,11 @@ const Section = (props: PropsWithChildren<ISectionProps>): ReactElement => {
   return (
     <div className='gds-layout-section-container'>
       <div
-        className={classnames('section-header', { collapsable: collapsable })}
+        className={classnames('section-header', { collapsible: collapsible })}
         onClick={handleClick}
         data-testid={dataTestId}>
         <Typography.Title level={level || 2}>{title}</Typography.Title>
-        {collapsable && (
+        {collapsible && (
           <Icon
             icon={['fal', 'chevron-left']}
             size='xs'
@@ -59,7 +59,7 @@ const Section = (props: PropsWithChildren<ISectionProps>): ReactElement => {
 };
 
 Section.defaultProps = {
-  collapsable: true,
+  collapsible: true,
   openInitially: true,
   separator: true,
 };

@@ -12,7 +12,7 @@ exports[`Form Component Form renders with description and sections 1`] = `
         class="gds-layout-section-container"
       >
         <div
-          class="section-header collapsable"
+          class="section-header collapsible"
         >
           <h2
             class="gds-typography"

@@ -52,7 +52,7 @@ const Form = <T,>(props: IFormProps<T>): ReactElement => {
               <Section
                 key={`section-${field.label}`}
                 title={field.label}
-                collapsable={field.collapsable}
+                collapsible={field.collapsible}
                 openInitially={field.openInitially}>
                 <Form
                   enableOldData={enableOldData}

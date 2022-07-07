@@ -198,7 +198,7 @@ const FilterItem = <T,>(props: IFilterItemProps<T>): ReactElement => {
       );
     }
     case FilterTypeEnum.TITLE: {
-      return <Section title={item.label} collapsable={false} separator={false} />;
+      return <Section title={item.label} collapsible={false} separator={false} />;
     }
   }
 };

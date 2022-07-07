@@ -22,7 +22,7 @@ const Template: ComponentStory<typeof Text> = (arg: ITextProps) => {
         <Typography.Text type={TextTypeEnum.TINY}>Typography.Text type: tiny</Typography.Text>
         <Typography.Text type={TextTypeEnum.HIGHLIGHTED}>Typography.Text type: highlighted</Typography.Text>
         <Typography.Text type={TextTypeEnum.DISABLED}>Typography.Text type: disabled</Typography.Text>
-        <Section title='Your own example here:' collapsable={false} separator={false}>
+        <Section title='Your own example here:' collapsible={false} separator={false}>
           <Typography.Text {...arg}>
             Your own example here: Lorem ipsum dolor sit amet. Ut voluptas reiciendis vel praesentium laborum hic
             voluptas asperiores nam rerum nihil obcaecati labore. Id praesentium porro ea placeat rerum aut tempore

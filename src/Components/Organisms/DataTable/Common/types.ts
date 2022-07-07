@@ -309,7 +309,7 @@ export interface IColumnRichText<T>
 
 export interface IColumnSection<T>
   extends IColumn,
-    Pick<IFieldSectionProps<T>, 'collapsable' | 'fields' | 'label' | 'openInitially'> {
+    Pick<IFieldSectionProps<T>, 'collapsible' | 'fields' | 'label' | 'openInitially'> {
   /** Entry of the value in T (type: keyof T) */
   dataIndex: keyof T;
   /** Column type */

@@ -517,7 +517,7 @@ describe('columnToFieldMapper helper', () => {
         readOnly: true,
       },
       {
-        collapsable: undefined,
+        collapsible: undefined,
         dataIndex: 'section',
         fieldType: 'switch',
         fields: [],
