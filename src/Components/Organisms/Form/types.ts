@@ -13,6 +13,7 @@ import { ILineEditableDataTableProps } from '../DataTable/LineEditableDataTable/
 import { ITextFieldProps } from '../../Molecules/TextField/TextField';
 import { ITextAreaFieldProps } from '../../Molecules/TextAreaField/TextAreaField';
 import { IYearPickerFieldProps } from '../../Molecules/YearPickerField/YearPickerField';
+import { IFormProps } from './Form';
 
 export interface IFormSubmitReturnedType<T> {
   data: T;
@@ -21,6 +22,7 @@ export interface IFormSubmitReturnedType<T> {
 
 export interface IUseFormReturnedType<T> {
   formElement: ReactElement;
+  formProps: IFormProps<T>;
   getData: () => T;
   isModified: () => boolean;
   reset: () => void;
