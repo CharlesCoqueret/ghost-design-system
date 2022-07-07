@@ -9,7 +9,8 @@ const AmountCell = <T,>(props: ICellProps<T, IColumnAmount<T>>): ReactElement =>
   const { column, editing, extra, forcedValue, onChange, row, rowIndex } = props;
 
   const displayValue = (forcedValue || (row && row[column.dataIndex])) as number | string | undefined;
-  const suffix = column.suffix || extra?.currency;
+  const suffix = column.suffix || extra?.suffix;
+  const prefix = column.prefix || extra?.prefix;
   const isNegative = Number.isFinite(Number(displayValue)) && Number(displayValue) < 0;
   const isCurrentlyEditedRow =
     editing || (extra && 'editedRowIndex' in extra ? extra.editedRowIndex === rowIndex && column.editable : false);
@@ -35,6 +36,7 @@ const AmountCell = <T,>(props: ICellProps<T, IColumnAmount<T>>): ReactElement =>
           }
         }}
         placeholder={column.placeholder}
+        prefix={prefix}
         thousandSeparator={column.thousandSeparator}
         thousandsGroupStyle={column.thousandsGroupStyle}
         readOnly={!isCurrentlyEditedRow}
