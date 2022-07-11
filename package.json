@@ -68,6 +68,9 @@
     "suneditor": "^2.43.0",
     "tippy.js": "^6.3.1"
   },
+  "engines": {
+    "node": ">=16.16.0"
+  },
   "devDependencies": {
     "@babel/core": "^7.17.9",
     "@fortawesome/pro-light-svg-icons": "^6.1.1",
@@ -125,8 +128,5 @@
     "ts-loader": "^8.0.11",
     "typescript": "^4.6.3",
     "webpack": "^5.72.0"
-  },
-  "engines": {
-    "node": ">=14.0.0"
   }
 }
