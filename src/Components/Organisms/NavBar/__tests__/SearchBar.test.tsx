@@ -4,6 +4,10 @@ import userEvent from '@testing-library/user-event';
 
 import SearchBar from '../SearchBar';
 
+afterEach(() => {
+  jest.useRealTimers();
+});
+
 describe('SearchBar Component', () => {
   it('SearchBar renders', () => {
     const onSearchMock = jest.fn();
@@ -20,7 +24,7 @@ describe('SearchBar Component', () => {
     expect(onSearchMock).not.toBeCalled();
   });
 
-  it('SearchBar handles search but no results', () => {
+  it('SearchBar handles search but no results', async () => {
     const onSearchMock = jest.fn().mockImplementation(async () => {
       return Promise.resolve([]);
     });
@@ -40,11 +44,11 @@ describe('SearchBar Component', () => {
       userEvent.type(input, 'my new search');
     });
 
-    waitFor(() => {
+    await waitFor(() => {
       expect(onSearchMock).toBeCalledTimes(13);
+      expect(onSearchMock).lastCalledWith('my new search');
+      expect(container).toMatchSnapshot();
     });
-    expect(onSearchMock).lastCalledWith('my new search');
-    expect(container).toMatchSnapshot();
   });
 
   it('SearchBar handles search with only spaces', () => {

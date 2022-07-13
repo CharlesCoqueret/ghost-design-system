@@ -62,8 +62,8 @@
     "yup": "^0.32.11"
   },
   "peerDependencies": {
-    "react": "^16.8.0",
-    "react-dom": "^16.8.0",
+    "react": "^16.14.0 || ^17.0.0",
+    "react-dom": "^16.14.0 || ^17.0.0",
     "react-router-dom": "5.3.3",
     "suneditor": "^2.43.0",
     "tippy.js": "^6.3.1"
@@ -95,7 +95,7 @@
     "@types/jest": "^27.4.1",
     "@types/node": "^14",
     "@types/numeral": "^2.0.2",
-    "@types/react": "^16.9.56",
+    "@types/react": "16.14.28",
     "@types/react-datepicker": "^4.4.0",
     "@types/react-dom": "^16.9.8",
     "@types/react-router-dom": "^5.3.3",
