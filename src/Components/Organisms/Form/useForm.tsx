@@ -9,16 +9,27 @@ import { yupResolver, FieldError } from './yupResolver';
 import { useRunAfterUpdate } from '../../../hooks';
 
 export interface IUseFormProps<T extends AnyObject> {
+  enableOldData?: boolean;
   enableSideBySide?: boolean;
   fields: Array<IFieldAndLayoutProps<T>>;
   initialData: T;
+  onChangeNotification?: () => void;
   previousData?: T;
   usePortal?: boolean;
   validationSchema?: yup.SchemaOf<T>;
 }
 
 const useForm = <T extends AnyObject>(props: IUseFormProps<T>): IUseFormReturnedType<T> => {
-  const { enableSideBySide, fields, initialData, previousData, usePortal, validationSchema } = props;
+  const {
+    enableOldData,
+    enableSideBySide,
+    fields,
+    initialData,
+    onChangeNotification,
+    previousData,
+    usePortal,
+    validationSchema,
+  } = props;
 
   const [currentData, setCurrentData] = useState<T>(cloneDeep(initialData));
   const [isModified, setIsModified] = useState<boolean>(false);
@@ -30,6 +41,10 @@ const useForm = <T extends AnyObject>(props: IUseFormProps<T>): IUseFormReturned
       prev[dataIndex] = newValue;
       return { ...prev };
     });
+
+    if (onChangeNotification) {
+      onChangeNotification();
+    }
 
     setValidationError((prev) => {
       if (prev === undefined) return prev;
@@ -45,6 +60,11 @@ const useForm = <T extends AnyObject>(props: IUseFormProps<T>): IUseFormReturned
 
   const reset = () => {
     setCurrentData(cloneDeep(initialData));
+
+    if (onChangeNotification) {
+      onChangeNotification();
+    }
+
     setValidationError(undefined);
     setIsModified(false);
   };
@@ -75,6 +95,7 @@ const useForm = <T extends AnyObject>(props: IUseFormProps<T>): IUseFormReturned
   return {
     formElement: (
       <Form
+        enableOldData={enableOldData}
         enableSideBySide={enableSideBySide}
         fields={fields}
         handleDataChange={handleDataChange}
@@ -85,6 +106,17 @@ const useForm = <T extends AnyObject>(props: IUseFormProps<T>): IUseFormReturned
         usePortal={usePortal}
       />
     ),
+    formProps: {
+      enableOldData,
+      enableSideBySide,
+      fields,
+      handleDataChange,
+      initialData: currentData,
+      validationError,
+      previousData,
+      validationSchema,
+      usePortal,
+    },
     getData,
     isModified: () => isModified,
     reset,
@@ -93,7 +125,9 @@ const useForm = <T extends AnyObject>(props: IUseFormProps<T>): IUseFormReturned
 };
 
 useForm.defaultProps = {
+  enableOldData: undefined,
   enableSideBySide: undefined,
+  onChangeNotification: undefined,
   previousData: undefined,
   validationSchema: undefined,
   usePortal: true,

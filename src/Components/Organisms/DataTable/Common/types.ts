@@ -309,7 +309,7 @@ export interface IColumnRichText<T>
 
 export interface IColumnSection<T>
   extends IColumn,
-    Pick<IFieldSectionProps<T>, 'collapsable' | 'fields' | 'label' | 'openInitially'> {
+    Pick<IFieldSectionProps<T>, 'collapsible' | 'fields' | 'label' | 'openInitially'> {
   /** Entry of the value in T (type: keyof T) */
   dataIndex: keyof T;
   /** Column type */
@@ -395,8 +395,10 @@ export type TableType<T> = Record<keyof T, string | number | Date | undefined | 
 export interface IExtraStaticDataTableProps<T> {
   /** Method used to enable and compute the total for each column (optional, default: undefined) */
   computeTotal?: (data: Array<T>, dataIndex: keyof T) => T[keyof T] | undefined;
-  /** Global currency, which can be override by the amount column setting (optional, default: undefined) */
-  currency?: string;
+  /** Global suffix, which can be override by the amount column setting (optional, default: undefined) */
+  suffix?: string;
+  /** Global prefix, which can be override by the amount column setting (optional, default: undefined) */
+  prefix?: string;
   /** Global date format, which can be override by the date column setting (optional, default: undefined) */
   dateFormat?: DateFormat;
   /** Method used to enable the click on row, and handle the click on a specific row (optional, default: undefined) */

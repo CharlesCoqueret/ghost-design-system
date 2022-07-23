@@ -210,7 +210,7 @@ export const columnToFieldMapper = <T,>(columns: Array<IColumnType<T>>): Array<I
         }
         case ColumnType.SECTION: {
           return {
-            collapsable: column.collapsable,
+            collapsible: column.collapsible,
             dataIndex: column.dataIndex,
             fields: column.fields,
             openInitially: column.openInitially,
@@ -276,6 +276,7 @@ const LineEditableModal = <T,>(props: ILineEditableModalProps<T>): ReactElement 
   const { columns, extra, onCancel, onClose, onSubmit, showChanges, row, rowIndex, title } = props;
 
   const { formElement, getData, submit } = useForm<T>({
+    enableOldData: showChanges,
     enableSideBySide: showChanges,
     initialData: row,
     previousData: showChanges ? cloneDeep(row) : undefined,

@@ -78,7 +78,7 @@ exports[`FormField Component FormField renders custom field 1`] = `
     >
       <div>
         Mocked CustomField props: 
-        {"dataIndex":"custom","fieldType":"custom","label":"custom","value":1}
+        {"dataIndex":"custom","fieldType":"custom","label":"custom","inputValue":1}
       </div>
     </div>
     <div
@@ -86,7 +86,7 @@ exports[`FormField Component FormField renders custom field 1`] = `
     >
       <div>
         Mocked CustomField props: 
-        {"dataIndex":"custom","fieldType":"custom","label":"custom","value":1,"readOnly":true,"inputValue":0,"highlighted":true}
+        {"dataIndex":"custom","fieldType":"custom","label":"custom","inputValue":0,"readOnly":true,"highlighted":true}
       </div>
     </div>
   </div>

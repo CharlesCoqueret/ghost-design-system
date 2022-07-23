@@ -13,6 +13,7 @@ import { ILineEditableDataTableProps } from '../DataTable/LineEditableDataTable/
 import { ITextFieldProps } from '../../Molecules/TextField/TextField';
 import { ITextAreaFieldProps } from '../../Molecules/TextAreaField/TextAreaField';
 import { IYearPickerFieldProps } from '../../Molecules/YearPickerField/YearPickerField';
+import { IFormProps } from './Form';
 
 export interface IFormSubmitReturnedType<T> {
   data: T;
@@ -21,6 +22,7 @@ export interface IFormSubmitReturnedType<T> {
 
 export interface IUseFormReturnedType<T> {
   formElement: ReactElement;
+  formProps: IFormProps<T>;
   getData: () => T;
   isModified: () => boolean;
   reset: () => void;
@@ -123,7 +125,7 @@ export interface IFieldCustomProps<T, U = unknown> extends IFieldBaseProps<T> {
       highlighted?: boolean;
       onChange?: (value: T[keyof T]) => void;
       readOnly?: boolean;
-      value?: T[keyof T];
+      inputValue?: T[keyof T];
     },
   >(
     props: U,
@@ -227,7 +229,7 @@ export interface IFieldRichtextProps<T>
 }
 
 export interface IFieldSectionProps<T> extends Partial<IVisibilityProps<T>> {
-  collapsable?: boolean;
+  collapsible?: boolean;
   fieldType: FieldTypeEnum.SECTION;
   openInitially?: boolean;
   fields: Array<IFieldProps<T>>;

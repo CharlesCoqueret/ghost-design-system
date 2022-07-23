@@ -15,7 +15,7 @@ describe('PercentageField Component', () => {
   });
 
   it('PercentageField renders with values in disabled highligted', () => {
-    const { container } = render(<PercentageField inputValue={12345.57} name='name' disabled highlighted />);
+    const { container } = render(<PercentageField inputValue={12345.67} name='name' disabled highlighted />);
     expect(container).toMatchSnapshot();
   });
 

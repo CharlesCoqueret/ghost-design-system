@@ -57,6 +57,7 @@ const ActionBar = (props: IActionBarProps): ReactElement => {
     placeholder,
     primary,
     prefix,
+    renameTooltip,
     status,
     suffix,
     title,
@@ -81,6 +82,7 @@ const ActionBar = (props: IActionBarProps): ReactElement => {
             onTitleEdit={onTitleEdit}
             placeholder={placeholder}
             prefix={prefix}
+            renameTooltip={renameTooltip}
             suffix={suffix}
             title={title}
           />

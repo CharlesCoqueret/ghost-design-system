@@ -37,7 +37,7 @@ Using the `editable` property of a column, you can enable edition of a column.
 <Canvas>
   <LineEditableInPlaceDataTable
     columns={[
-      { currency: '€', dataIndex: 'amount', editable: true, title: 'Amount (editable)', type: ColumnType.AMOUNT },
+      { suffix: '€', dataIndex: 'amount', editable: true, title: 'Amount (editable)', type: ColumnType.AMOUNT },
       { dataIndex: 'number', editable: false, title: 'Number (non-editable)', type: ColumnType.NUMBER },
       { dataIndex: 'percentage', editable: true, title: 'Percentage (editable)', type: ColumnType.PERCENTAGE },
     ]}
@@ -296,7 +296,7 @@ Using `canAddNewLine` and `onNewLine` you can enable new row creation and manage
           editable: true,
           sorter: true,
           type: ColumnType.AMOUNT,
-          currency: '€',
+          suffix: '€',
         },
         {
           title: 'Percentage',

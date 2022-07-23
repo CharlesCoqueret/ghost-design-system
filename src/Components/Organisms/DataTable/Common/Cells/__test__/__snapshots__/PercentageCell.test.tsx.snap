@@ -16,7 +16,7 @@ exports[`PercentageCell component PercentageCell handles changes 1`] = `
               inputmode="numeric"
               name="data"
               type="text"
-              value="12.34 %"
+              value="1,234 %"
             />
           </div>
         </td>
@@ -68,7 +68,7 @@ exports[`PercentageCell component PercentageCell renders 1`] = `
               id="data"
               name="data"
             >
-              12.34 %
+              1,234 %
             </span>
           </div>
         </td>
@@ -121,7 +121,7 @@ exports[`PercentageCell component PercentageCell renders hidden 1`] = `
               id="data"
               name="data"
             >
-              12.34 %
+              1,234 %
             </span>
           </div>
         </td>
@@ -173,7 +173,7 @@ exports[`PercentageCell component PercentageCell renders with forced value 1`] =
               id="data"
               name="data"
             >
-              -43.21 %
+              -4,321 %
             </span>
           </div>
         </td>

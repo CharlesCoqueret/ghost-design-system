@@ -1,5 +1,28 @@
 # Changelog
 
+## 1.4.9 (2022-07-23)
+
+### Features
+
+- Add support for react 17
+- Molecules/PercentageField handle division by 100 et multiply by 100 for input.
+- Organisms/Form Provide a way to enable old data in the side by side view.
+- Organisms/useForm add formProps to the useForm method
+- Organisms/useForm add onChangeNotification to the useForm
+
+### Bug Fixes
+
+- BREAKING-CHANGE: typo collapsible instead of collapsable
+- Atoms/Modal Remove the separator of the header and footer
+- Atoms/Section ensure section collapsible can be disabled
+- Organisms/ActionBar enable renameTooltip for translation
+- Organisms/ActionBar fix action button margin to the right
+- Organisms/ActionBar give 1px margin to prevent offsetWidth rounding to cause ellipsis.
+- Organisms/DataTable use suffix and prefix for amountCells (instead of currency)
+- Organisms/Form fix customfield using React.FunctionComponent signature
+- Organisms/Form fix customfield using inputvalue instead of value
+- Organisms/Form use memo on Form, FormField, Highlighter
+
 ## 1.4.8 (2022-06-11)
 
 ### Features

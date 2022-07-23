@@ -52,7 +52,7 @@ More details about <LinkTo story='columns'>Columns</LinkTo>
 <Canvas>
   <StaticDataTable
     columns={[
-      { currency: '€', dataIndex: 'amount', title: 'Amount', type: ColumnType.AMOUNT },
+      { suffix: '€', dataIndex: 'amount', title: 'Amount', type: ColumnType.AMOUNT },
       { dataIndex: 'number', title: 'Number', type: ColumnType.NUMBER },
       { dataIndex: 'percentage', title: 'Percentage', type: ColumnType.PERCENTAGE },
     ]}
@@ -145,7 +145,7 @@ Play with Advanced LineEditableDataTable live on [CodeSandbox](https://codesandb
   <LineEditableDataTable
     columns={[
       {
-        currency: '€',
+        suffix: '€',
         dataIndex: 'amount',
         editable: true,
         title: 'Amount',
@@ -377,7 +377,7 @@ When the filter is back to its initial value, onSortChange is then called with u
 <Canvas>
   <StaticDataTable
     columns={[
-      { currency: '€', dataIndex: 'amount', sorter: true, title: 'Amount', type: ColumnType.AMOUNT },
+      { suffix: '€', dataIndex: 'amount', sorter: true, title: 'Amount', type: ColumnType.AMOUNT },
       { dataIndex: 'number', sorter: true, title: 'Number', type: ColumnType.NUMBER },
       { dataIndex: 'percentage', sorter: true, title: 'Percentage', type: ColumnType.PERCENTAGE },
     ]}
@@ -404,7 +404,7 @@ Set `loading` to undefined when the loading is done.
 <Canvas>
   <StaticDataTable
     columns={[
-      { currency: '€', dataIndex: 'amount', title: 'Amount', type: ColumnType.AMOUNT },
+      { suffix: '€', dataIndex: 'amount', title: 'Amount', type: ColumnType.AMOUNT },
       { dataIndex: 'number', title: 'Number', type: ColumnType.NUMBER },
       { dataIndex: 'percentage', title: 'Percentage', type: ColumnType.PERCENTAGE },
     ]}
@@ -422,7 +422,7 @@ Set `loading` to undefined when the loading is done.
 <Canvas>
   <StaticDataTable
     columns={[
-      { currency: '€', dataIndex: 'amount', title: 'Amount', type: ColumnType.AMOUNT },
+      { suffix: '€', dataIndex: 'amount', title: 'Amount', type: ColumnType.AMOUNT },
       { dataIndex: 'number', title: 'Number', type: ColumnType.NUMBER },
       { dataIndex: 'percentage', title: 'Percentage', type: ColumnType.PERCENTAGE },
     ]}
@@ -440,7 +440,7 @@ Set `loading` to undefined when the loading is done.
 <Canvas>
   <StaticDataTable
     columns={[
-      { currency: '€', dataIndex: 'amount', title: 'Amount', type: ColumnType.AMOUNT },
+      { suffix: '€', dataIndex: 'amount', title: 'Amount', type: ColumnType.AMOUNT },
       { dataIndex: 'number', title: 'Number', type: ColumnType.NUMBER },
       { dataIndex: 'percentage', title: 'Percentage', type: ColumnType.PERCENTAGE },
     ]}
@@ -469,7 +469,7 @@ Set `loading` to undefined when the loading is done.
 <Canvas>
   <StaticDataTable
     columns={[
-      { currency: '€', dataIndex: 'amount', title: 'Amount', type: ColumnType.AMOUNT },
+      { suffix: '€', dataIndex: 'amount', title: 'Amount', type: ColumnType.AMOUNT },
       { dataIndex: 'number', title: 'Number', type: ColumnType.NUMBER },
       { dataIndex: 'percentage', title: 'Percentage', type: ColumnType.PERCENTAGE },
     ]}
@@ -492,7 +492,7 @@ Set `loading` to undefined when the loading is done.
 <Canvas>
   <StaticDataTable
     columns={[
-      { currency: '€', dataIndex: 'amount', title: 'Amount', type: ColumnType.AMOUNT },
+      { suffix: '€', dataIndex: 'amount', title: 'Amount', type: ColumnType.AMOUNT },
       { dataIndex: 'number', title: 'Number', type: ColumnType.NUMBER },
       { dataIndex: 'percentage', title: 'Percentage', type: ColumnType.PERCENTAGE },
     ]}
@@ -517,7 +517,7 @@ Set `loading` to undefined when the loading is done.
 <Canvas>
   <StaticDataTable
     columns={[
-      { currency: '€', dataIndex: 'amount', title: 'Amount', type: ColumnType.AMOUNT },
+      { suffix: '€', dataIndex: 'amount', title: 'Amount', type: ColumnType.AMOUNT },
       { dataIndex: 'number', title: 'Number', type: ColumnType.NUMBER },
       { dataIndex: 'percentage', title: 'Percentage', type: ColumnType.PERCENTAGE },
     ]}
@@ -555,7 +555,7 @@ Set `loading` to undefined when the loading is done.
       { amount: 2, date: new Date(new Date() - -86400000) },
     ]}
     extra={{
-      currency: '$',
+      suffix: '$',
       dateFormat: 'yyyy/MM/dd',
     }}
   />
@@ -569,7 +569,7 @@ Especially usefull when having to display 2 tables side by side.
 <Canvas>
   <StaticDataTable
     columns={[
-      { currency: '€', dataIndex: 'amount', sorter: true, title: 'Amount', type: ColumnType.AMOUNT },
+      { suffix: '€', dataIndex: 'amount', sorter: true, title: 'Amount', type: ColumnType.AMOUNT },
       { dataIndex: 'number', sorter: true, title: 'Number', type: ColumnType.NUMBER },
       { dataIndex: 'percentage', sorter: true, title: 'Percentage', type: ColumnType.PERCENTAGE },
     ]}
@@ -680,7 +680,7 @@ Especially usefull when having to display 2 tables side by side.
           dataIndex: 'price',
           sorter: true,
           type: ColumnType.AMOUNT,
-          currency: '€',
+          suffix: '€',
         },
         {
           title: 'Percentage',

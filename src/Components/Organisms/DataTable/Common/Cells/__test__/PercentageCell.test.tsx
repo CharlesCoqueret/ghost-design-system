@@ -117,7 +117,7 @@ describe('PercentageCell component', () => {
     );
     expect(container).toMatchSnapshot();
 
-    const PERCENTAGE = await screen.findByDisplayValue('12.34 %');
+    const PERCENTAGE = await screen.findByDisplayValue('1,234 %');
 
     userEvent.clear(PERCENTAGE);
 

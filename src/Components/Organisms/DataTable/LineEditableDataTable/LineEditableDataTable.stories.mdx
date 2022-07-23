@@ -38,7 +38,7 @@ Using the `editable` property of a column, you can enable edition of a column.
 <Canvas>
   <LineEditableDataTable
     columns={[
-      { currency: '€', dataIndex: 'amount', editable: true, title: 'Amount (editable)', type: ColumnType.AMOUNT },
+      { suffix: '€', dataIndex: 'amount', editable: true, title: 'Amount (editable)', type: ColumnType.AMOUNT },
       { dataIndex: 'number', editable: false, title: 'Number (non-editable)', type: ColumnType.NUMBER },
       { dataIndex: 'percentage', editable: true, title: 'Percentage (editable)', type: ColumnType.PERCENTAGE },
     ]}
@@ -461,7 +461,7 @@ Reminder, you might `onRowEdit`, `onRowSubmit`, `onRowCancelEdit` to capture the
           editable: true,
           sorter: true,
           type: ColumnType.AMOUNT,
-          currency: '€',
+          suffix: '€',
         },
         {
           title: 'Percentage',

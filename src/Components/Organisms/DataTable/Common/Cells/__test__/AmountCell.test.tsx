@@ -86,7 +86,7 @@ describe('AmountCell component', () => {
           <tr>
             <AmountCell
               column={{ dataIndex: 'data', title: 'amountcell', type: ColumnType.AMOUNT }}
-              extra={{ currency: 'EXTRACURRENCY' }}
+              extra={{ suffix: 'EXTRACURRENCY' }}
               forcedValue={-4321}
               row={{ data: 1234 }}
               rowIndex={0}

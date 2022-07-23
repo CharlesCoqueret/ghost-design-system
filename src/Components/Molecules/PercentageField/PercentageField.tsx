@@ -96,6 +96,17 @@ export const PercentageField = (props: IPercentageFieldProps): ReactElement => {
     thousandsGroupStyle,
   } = props;
 
+  const handleChange = (value: number | undefined) => {
+    if (!onChange) {
+      return;
+    }
+    if (!value) {
+      onChange(undefined);
+      return;
+    }
+    onChange(value / 100);
+  };
+
   return (
     <GenericField
       containerRef={containerRef}
@@ -118,12 +129,18 @@ export const PercentageField = (props: IPercentageFieldProps): ReactElement => {
         disabled={disabled}
         ellipsis={ellipsis}
         highlighted={highlighted}
-        inputValue={inputValue}
+        inputValue={
+          typeof inputValue === 'string'
+            ? parseFloat(inputValue) * 100
+            : typeof inputValue === 'number'
+            ? inputValue * 100
+            : inputValue
+        }
         isInError={errorMessage !== undefined}
         maxValue={maxValue}
         minValue={minValue}
         name={name}
-        onChange={onChange}
+        onChange={handleChange}
         placeholder={placeholder}
         readOnly={readOnly}
         suffix='%'

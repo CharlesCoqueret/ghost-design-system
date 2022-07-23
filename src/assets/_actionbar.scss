@@ -108,29 +108,20 @@
 
     .actions {
       display: flex;
-      & > *:first-child {
-        margin: auto 5px auto 0px;
-      }
       & > * {
         margin: auto 5px;
-      }
-      & > *:last-child {
-        margin: auto 10px auto 5px;
       }
     }
 
     .separator {
       display: flex;
-      margin: auto 5px;
+      margin: auto 10px;
     }
 
     .basic-actions {
       display: flex;
       & > * {
         margin: auto 5px;
-      }
-      & > *:last-child {
-        margin: auto 0px auto 3px;
       }
     }
   }

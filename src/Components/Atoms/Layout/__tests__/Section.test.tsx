@@ -7,7 +7,7 @@ import Section from '../Section';
 describe('Section Component', () => {
   it('Section renders', () => {
     const { container } = render(
-      <Section collapsable={true} openInitially={true} title='TITLE' dataTestId='DATA-TEST-ID'>
+      <Section collapsible={true} openInitially={true} title='TITLE' dataTestId='DATA-TEST-ID'>
         <div id='CHILD1' />
         <div id='CHILD2' />
       </Section>,
@@ -26,9 +26,9 @@ describe('Section Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('Section renders collapsable closed by default', () => {
+  it('Section renders collapsible closed by default', () => {
     const { container } = render(
-      <Section collapsable={true} openInitially={false} title='TITLE' dataTestId='DATA-TEST-ID'>
+      <Section collapsible={true} openInitially={false} title='TITLE' dataTestId='DATA-TEST-ID'>
         <div id='CHILD1' />
         <div id='CHILD2' />
       </Section>,
@@ -37,9 +37,9 @@ describe('Section Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('Section renders not collapsable', () => {
+  it('Section renders not collapsible', () => {
     const { container } = render(
-      <Section collapsable={false} openInitially={true} title='TITLE' dataTestId='DATA-TEST-ID'>
+      <Section collapsible={false} openInitially={true} title='TITLE' dataTestId='DATA-TEST-ID'>
         <div id='CHILD1' />
         <div id='CHILD2' />
       </Section>,
@@ -54,9 +54,9 @@ describe('Section Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('Section renders not collapsable', () => {
+  it('Section renders not collapsible', () => {
     const { container } = render(
-      <Section collapsable={false} openInitially={false} title='TITLE' dataTestId='DATA-TEST-ID'>
+      <Section collapsible={false} openInitially={false} title='TITLE' dataTestId='DATA-TEST-ID'>
         <div id='CHILD1' />
         <div id='CHILD2' />
       </Section>,

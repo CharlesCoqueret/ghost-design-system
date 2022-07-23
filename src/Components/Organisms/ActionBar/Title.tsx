@@ -38,7 +38,11 @@ const Title = (props: ITitleProps): ReactElement => {
     setCurrentInputStyle({
       display: 'flex',
       margin: 'auto',
-      width: `${spanRef.current?.offsetWidth}px`,
+      width: `${
+        spanRef.current?.offsetWidth && Number.isFinite(spanRef.current?.offsetWidth)
+          ? spanRef.current.offsetWidth + 2
+          : 0
+      }px`,
     });
   }, [spanRef]);
 

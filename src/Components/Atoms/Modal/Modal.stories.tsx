@@ -27,7 +27,7 @@ const Template: ComponentStory<typeof Modal> = (args: IModalProps) => {
       <Button label='Click to open the modal' onClick={openModal} />
       <Modal title='Lorem ipsum' {...args} show={show} onHide={closeModal}>
         <ModalBody>
-          <p>Lorem ipsum dolor sit amet.</p>
+          <div>Lorem ipsum dolor sit amet.</div>
         </ModalBody>
         <ModalFooter>
           <Button color={ColorButtonEnum.PRIMARY} label='Ok' onClick={closeModal} />

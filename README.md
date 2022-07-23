@@ -14,7 +14,7 @@
   - Layout
     - [Row](https://charlescoqueret.github.io/ghost-design-system/?path=/story/atom-layout-row--default)
     - [Col](https://charlescoqueret.github.io/ghost-design-system/?path=/story/atom-layout-col--default)
-    - [Collapsable section](https://charlescoqueret.github.io/ghost-design-system/?path=/story/atom-layout-section--default)
+    - [Collapsible section](https://charlescoqueret.github.io/ghost-design-system/?path=/story/atom-layout-section--default)
   - [Link](https://charlescoqueret.github.io/ghost-design-system/?path=/story/atom-link--default)
   - [Modal](https://charlescoqueret.github.io/ghost-design-system/?path=/story/atom-modal--default)
   - Portal
