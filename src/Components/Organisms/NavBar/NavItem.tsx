@@ -59,15 +59,15 @@ const NavItem = (props: INavItemProps): ReactElement => {
     <>
       <Tooltip tooltip={tooltip}>
         <div className='nav-bar-menu-item' data-testid={dataTestId} ref={ref} onClick={handleClick}>
-          {label && link ? (
+          {link ? (
             <NavLink to={link}>
               {icon && <Icon icon={icon} size={label ? '1x' : '2x'} />}
-              <div className='nav-bar-menu-label'>{label}</div>
+              {label && <div className='nav-bar-menu-label'>{label}</div>}
             </NavLink>
           ) : (
             <>
               {icon && <Icon icon={icon} size={label ? '1x' : '2x'} />}
-              <div className='nav-bar-menu-label'>{label}</div>
+              {label && <div className='nav-bar-menu-label'>{label}</div>}
             </>
           )}
           {counter && (
