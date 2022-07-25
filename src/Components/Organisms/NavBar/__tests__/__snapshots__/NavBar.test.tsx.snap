@@ -13,6 +13,7 @@ exports[`NavBar Component NavBar renders 1`] = `
       >
         <img
           alt="alt"
+          class="nav-bar-brand-image"
           src="logoSource"
         />
       </a>
@@ -85,6 +86,7 @@ exports[`NavBar Component NavBar renders with variations 1`] = `
       >
         <img
           alt="logo"
+          class="nav-bar-brand-image"
           src="logosource"
         />
       </a>
@@ -140,6 +142,7 @@ exports[`NavBar Component NavBar renders without buttons or icons 1`] = `
       >
         <img
           alt="alt"
+          class="nav-bar-brand-image"
           src="logoSource"
         />
       </a>

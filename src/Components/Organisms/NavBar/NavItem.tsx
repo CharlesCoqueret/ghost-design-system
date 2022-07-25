@@ -1,9 +1,11 @@
 import React, { ReactElement, useRef, useState } from 'react';
 import { ControlledMenu, MenuItem } from '@szhsin/react-menu';
+import { NavLink } from 'react-router-dom';
 
 import { Icon, IconProp } from '../../Atoms/Icon';
 import { Badge, BadgeColorsEnum } from '../../Atoms/Badge';
 import { Portal } from '../../Atoms/Portal';
+import { Tooltip } from '../../Atoms/Tooltip';
 
 export interface INavItemProps {
   /** Counter in a badge floating above the NavItem (optional, default: undefined) */
@@ -16,14 +18,18 @@ export interface INavItemProps {
   icon?: IconProp;
   /** Label of the menu (optional if icon is defuned, default: undefined) */
   label?: string;
+  /** Link (optional, default: undefined) */
+  link?: string;
   /** On Click handler (optional, default: undefined) */
   onClick?: () => void;
   /** Submenu items (optional, default: undefined) */
   subItems?: Array<INavItemProps>;
+  /** Tooltip (optional, default: undefined) */
+  tooltip?: string;
 }
 
 const NavItem = (props: INavItemProps): ReactElement => {
-  const { counter, customSubItem, dataTestId, icon, label, onClick, subItems } = props;
+  const { counter, customSubItem, dataTestId, icon, label, link, onClick, subItems, tooltip } = props;
 
   const ref = useRef<HTMLDivElement>(null);
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -51,16 +57,18 @@ const NavItem = (props: INavItemProps): ReactElement => {
 
   return (
     <>
-      <div className='nav-bar-menu-item' data-testid={dataTestId} ref={ref} onClick={handleClick}>
-        {icon && <Icon icon={icon} size='2x' />}
-        {label && <div className='nav-bar-menu-label'>{label}</div>}
-        {counter && (
-          <Badge color={BadgeColorsEnum.DANGER} type='notification' className='counter'>
-            {counter}
-          </Badge>
-        )}
-        {hasMenu && label && <Icon icon={['fas', 'caret-down']} size='lg' className='nav-bar-menu-caret' />}
-      </div>
+      <Tooltip tooltip={tooltip}>
+        <div className='nav-bar-menu-item' data-testid={dataTestId} ref={ref} onClick={handleClick}>
+          {icon && <Icon icon={icon} size='2x' />}
+          {label && <div className='nav-bar-menu-label'>{link ? <NavLink to={link}>{label}</NavLink> : label}</div>}
+          {counter && (
+            <Badge color={BadgeColorsEnum.DANGER} type='notification' className='counter'>
+              {counter}
+            </Badge>
+          )}
+          {hasMenu && label && <Icon icon={['fas', 'caret-down']} size='lg' className='nav-bar-menu-caret' />}
+        </div>
+      </Tooltip>
       {hasMenu ? (
         <Portal>
           <ControlledMenu
@@ -80,7 +88,7 @@ const NavItem = (props: INavItemProps): ReactElement => {
                       item.onClick();
                     }
                   }}>
-                  {item.label}
+                  {item.link ? <NavLink to={item.link}>{item.label}</NavLink> : item.label}
                 </MenuItem>
               );
             })}

@@ -29,7 +29,11 @@ const NavBar = (props: INavBarProps): ReactElement => {
     <nav className='gds-nav-bar-container noselect'>
       <div className='nav-bar-brand'>
         <a href={brand.redirection || NavBar.defaultProps.brand.redirection}>
-          <img src={brand.logoSource} alt={brand.alt ?? NavBar.defaultProps.brand.alt} />
+          <img
+            src={brand.logoSource}
+            alt={brand.alt ?? NavBar.defaultProps.brand.alt}
+            className='nav-bar-brand-image'
+          />
         </a>
       </div>
       <div className='nav-bar-items-container'>
