@@ -59,8 +59,17 @@ const NavItem = (props: INavItemProps): ReactElement => {
     <>
       <Tooltip tooltip={tooltip}>
         <div className='nav-bar-menu-item' data-testid={dataTestId} ref={ref} onClick={handleClick}>
-          {icon && <Icon icon={icon} size='2x' />}
-          {label && <div className='nav-bar-menu-label'>{link ? <NavLink to={link}>{label}</NavLink> : label}</div>}
+          {label && link ? (
+            <NavLink to={link}>
+              {icon && <Icon icon={icon} size={label ? '1x' : '2x'} />}
+              <div className='nav-bar-menu-label'>{label}</div>
+            </NavLink>
+          ) : (
+            <>
+              {icon && <Icon icon={icon} size={label ? '1x' : '2x'} />}
+              <div className='nav-bar-menu-label'>{label}</div>
+            </>
+          )}
           {counter && (
             <Badge color={BadgeColorsEnum.DANGER} type='notification' className='counter'>
               {counter}
@@ -79,6 +88,22 @@ const NavItem = (props: INavItemProps): ReactElement => {
             skipOpen={skipOpen}
             onClose={closeMenu}>
             {subItems?.map((item): ReactElement => {
+              if (item.link)
+                return (
+                  <NavLink to={item.link}>
+                    <MenuItem
+                      key={item.label}
+                      data-testid={item.dataTestId}
+                      onClick={() => {
+                        if (item.onClick) {
+                          item.onClick();
+                        }
+                      }}>
+                      {item.label}
+                    </MenuItem>
+                  </NavLink>
+                );
+
               return (
                 <MenuItem
                   key={item.label}
@@ -88,7 +113,7 @@ const NavItem = (props: INavItemProps): ReactElement => {
                       item.onClick();
                     }
                   }}>
-                  {item.link ? <NavLink to={item.link}>{item.label}</NavLink> : item.label}
+                  {item.label}
                 </MenuItem>
               );
             })}
