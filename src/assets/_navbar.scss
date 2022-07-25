@@ -17,6 +17,10 @@
   .nav-bar-brand {
     margin: 10px;
     height: 44px;
+
+    .nav-bar-brand-image {
+      max-height: 44px;
+    }
   }
 
   .nav-bar-items-container {
