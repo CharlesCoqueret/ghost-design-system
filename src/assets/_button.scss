@@ -112,6 +112,10 @@
   position: absolute;
   border: 1px solid rgba(0, 0, 0, 0.1);
   background-color: #fff;
+  a {
+    all: unset;
+    text-decoration: none;
+  }
 }
 .szh-menu:focus {
   outline: none;
