@@ -1,4 +1,5 @@
 import React, { ReactElement } from 'react';
+import { NavLink } from 'react-router-dom';
 import NavItem, { INavItemProps } from './NavItem';
 import SearchBar, { ISearchBarProps } from './SearchBar';
 
@@ -28,13 +29,13 @@ const NavBar = (props: INavBarProps): ReactElement => {
   return (
     <nav className='gds-nav-bar-container noselect'>
       <div className='nav-bar-brand'>
-        <a href={brand.redirection || NavBar.defaultProps.brand.redirection}>
+        <NavLink to={brand.redirection || NavBar.defaultProps.brand.redirection}>
           <img
             src={brand.logoSource}
             alt={brand.alt ?? NavBar.defaultProps.brand.alt}
             className='nav-bar-brand-image'
           />
-        </a>
+        </NavLink>
       </div>
       <div className='nav-bar-items-container'>
         <div className='nav-bar-items-group'>

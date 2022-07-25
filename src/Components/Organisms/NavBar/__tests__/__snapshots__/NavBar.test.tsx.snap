@@ -11,6 +11,7 @@ exports[`NavBar Component NavBar renders 1`] = `
       <a
         href="redirection"
       >
+        partial url
         <img
           alt="alt"
           class="nav-bar-brand-image"
@@ -84,6 +85,7 @@ exports[`NavBar Component NavBar renders with variations 1`] = `
       <a
         href="/"
       >
+        partial url
         <img
           alt="logo"
           class="nav-bar-brand-image"
@@ -140,6 +142,7 @@ exports[`NavBar Component NavBar renders without buttons or icons 1`] = `
       <a
         href="redirection"
       >
+        partial url
         <img
           alt="alt"
           class="nav-bar-brand-image"
