@@ -88,22 +88,6 @@ const NavItem = (props: INavItemProps): ReactElement => {
             skipOpen={skipOpen}
             onClose={closeMenu}>
             {subItems?.map((item): ReactElement => {
-              if (item.link)
-                return (
-                  <NavLink to={item.link}>
-                    <MenuItem
-                      key={item.label}
-                      data-testid={item.dataTestId}
-                      onClick={() => {
-                        if (item.onClick) {
-                          item.onClick();
-                        }
-                      }}>
-                      {item.label}
-                    </MenuItem>
-                  </NavLink>
-                );
-
               return (
                 <MenuItem
                   key={item.label}
@@ -112,7 +96,8 @@ const NavItem = (props: INavItemProps): ReactElement => {
                     if (item.onClick) {
                       item.onClick();
                     }
-                  }}>
+                  }}
+                  href={item.link}>
                   {item.label}
                 </MenuItem>
               );

@@ -25,6 +25,7 @@ export interface IUseFormReturnedType<T> {
   formProps: IFormProps<T>;
   getData: () => T;
   isModified: () => boolean;
+  rehydrate: (data: T) => void;
   reset: () => void;
   submit: () => IFormSubmitReturnedType<T>;
 }

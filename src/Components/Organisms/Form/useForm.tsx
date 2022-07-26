@@ -36,6 +36,12 @@ const useForm = <T extends AnyObject>(props: IUseFormProps<T>): IUseFormReturned
   const [validationError, setValidationError] = useState<Partial<Record<keyof T, FieldError>>>();
   const runAfterUpdate = useRunAfterUpdate();
 
+  const rehydrate = (newData: T): void => {
+    setCurrentData(newData);
+    setIsModified(false);
+    setValidationError(undefined);
+  };
+
   const handleDataChange = (dataIndex: keyof T, newValue: T[keyof T]): void => {
     setCurrentData((prev) => {
       prev[dataIndex] = newValue;
@@ -119,6 +125,7 @@ const useForm = <T extends AnyObject>(props: IUseFormProps<T>): IUseFormReturned
     },
     getData,
     isModified: () => isModified,
+    rehydrate,
     reset,
     submit,
   };
