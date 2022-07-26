@@ -4,7 +4,6 @@ import React, {
   FocusEvent,
   KeyboardEvent,
   ReactElement,
-  useCallback,
   useEffect,
   useRef,
   useState,
@@ -34,7 +33,7 @@ const Title = (props: ITitleProps): ReactElement => {
 
   const isEditable = onTitleEdit !== undefined;
 
-  const updateInputWidth = useCallback(() => {
+  const updateInputWidth = () => {
     setCurrentInputStyle({
       display: 'flex',
       margin: 'auto',
@@ -43,34 +42,28 @@ const Title = (props: ITitleProps): ReactElement => {
           ? spanRef.current.offsetWidth + 5 + 'px'
           : undefined,
     });
-  }, [spanRef]);
+  };
 
-  const handleKeyDown = useCallback((event: KeyboardEvent<HTMLInputElement>) => {
+  const handleKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
     if (event.key === 'Enter' || event.key === 'Tab') {
       event.currentTarget.blur();
     }
-  }, []);
+  };
 
-  const handleChange = useCallback(
-    (event: ChangeEvent<HTMLInputElement>) => {
-      setCurrentTitle(event.target.value);
-      updateInputWidth();
-    },
-    [spanRef],
-  );
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setCurrentTitle(event.target.value);
+    updateInputWidth();
+  };
 
-  const handleBlur = useCallback(
-    (event: FocusEvent<HTMLInputElement>) => {
-      if (event.target.value.trim().length == 0) {
-        setCurrentTitle(title);
-        return;
-      }
-      if (onTitleEdit) {
-        onTitleEdit(event.target.value.trim());
-      }
-    },
-    [currentTitle],
-  );
+  const handleBlur = (event: FocusEvent<HTMLInputElement>) => {
+    if (event.target.value.trim().length == 0) {
+      setCurrentTitle(title);
+      return;
+    }
+    if (onTitleEdit) {
+      onTitleEdit(event.target.value.trim());
+    }
+  };
 
   useEffect(() => {
     updateInputWidth();
