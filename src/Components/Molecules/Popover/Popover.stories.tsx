@@ -15,7 +15,7 @@ const Template: ComponentStory<typeof Popover> = (args: IPopoverProps) => {
   const ref = useRef<HTMLDivElement>(null);
 
   return (
-    <div ref={ref}>
+    <div ref={ref} style={{ margin: '30px 0' }}>
       <Button
         label='Click me to see the popover'
         icon={['fal', 'trash-alt']}

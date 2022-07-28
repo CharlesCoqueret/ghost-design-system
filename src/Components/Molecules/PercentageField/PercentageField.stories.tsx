@@ -10,7 +10,11 @@ export default {
 } as ComponentMeta<typeof PercentageField>;
 
 const Template: ComponentStory<typeof PercentageField> = (args: IPercentageFieldProps) => {
-  return <PercentageField {...args} />;
+  return (
+    <div style={{ margin: '30px 0' }}>
+      <PercentageField {...args} />
+    </div>
+  );
 };
 
 export const Default = Template.bind({});
