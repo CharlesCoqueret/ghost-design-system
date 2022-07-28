@@ -1,6 +1,7 @@
 import React, { ReactElement, useRef, useState } from 'react';
-import { ControlledMenu, MenuItem } from '@szhsin/react-menu';
-import { NavLink } from 'react-router-dom';
+import { ControlledMenu, MenuDivider, MenuHeader, MenuItem } from '@szhsin/react-menu';
+import { Link, NavLink } from 'react-router-dom';
+import InfiniteScroll from 'react-infinite-scroller';
 
 import { Icon, IconProp } from '../../Atoms/Icon';
 import { Badge, BadgeColorsEnum } from '../../Atoms/Badge';
@@ -10,8 +11,17 @@ import { Tooltip } from '../../Atoms/Tooltip';
 export interface INavItemProps {
   /** Counter in a badge floating above the NavItem (optional, default: undefined) */
   counter?: string | number;
-  /** custom submenu (optional, default: undefined) */
-  customSubItem?: ReactElement;
+  /** custom infinite scroll config (optional, default: undefined) */
+  customInfiniteScrollConfig?: {
+    footer: ReactElement;
+    header: string;
+    items: Array<{ [key: string]: unknown }>;
+    loadMore: (p: number) => void;
+    loading: boolean;
+    noItems: string;
+    renderItem: (item: { [key: string]: unknown }) => ReactElement;
+    total: number | undefined;
+  };
   /** For test purpose only */
   dataTestId?: string;
   /** Icon on the left of the clickable button (optional if label is defined, default: undefined) */
@@ -29,12 +39,12 @@ export interface INavItemProps {
 }
 
 const NavItem = (props: INavItemProps): ReactElement => {
-  const { counter, customSubItem, dataTestId, icon, label, link, onClick, subItems, tooltip } = props;
+  const { counter, customInfiniteScrollConfig, dataTestId, icon, label, link, onClick, subItems, tooltip } = props;
 
   const ref = useRef<HTMLDivElement>(null);
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const skipOpen = useRef(false);
-  const hasMenu = (subItems && subItems.length > 0) || customSubItem !== undefined;
+  const hasMenu = (subItems && subItems.length > 0) || customInfiniteScrollConfig !== undefined;
 
   const closeMenu = () => {
     setIsOpen(false);
@@ -81,12 +91,12 @@ const NavItem = (props: INavItemProps): ReactElement => {
       {hasMenu ? (
         <Portal>
           <ControlledMenu
-            state={isOpen ? 'open' : 'closed'}
-            align='center'
-            arrow
+            align={customInfiniteScrollConfig ? 'end' : 'center'}
             anchorRef={ref}
-            skipOpen={skipOpen}
-            onClose={closeMenu}>
+            arrow
+            onClose={closeMenu}
+            state={isOpen ? 'open' : 'closed'}
+            skipOpen={skipOpen}>
             {subItems?.map((item): ReactElement => {
               return (
                 <MenuItem
@@ -96,13 +106,40 @@ const NavItem = (props: INavItemProps): ReactElement => {
                     if (item.onClick) {
                       item.onClick();
                     }
-                  }}
-                  href={item.link}>
-                  {item.label}
+                  }}>
+                  {item.link ? <Link to={item.link}>{item.label}</Link> : item.label}
                 </MenuItem>
               );
             })}
-            {customSubItem}
+            {customInfiniteScrollConfig && (
+              <>
+                <MenuHeader key='header'>{customInfiniteScrollConfig.header}</MenuHeader>
+                <div style={{ width: '400px', maxHeight: '80vh', overflowY: 'scroll' }}>
+                  <InfiniteScroll
+                    key='infinite'
+                    loadMore={customInfiniteScrollConfig.loadMore}
+                    hasMore={
+                      !customInfiniteScrollConfig.loading &&
+                      (customInfiniteScrollConfig.total === undefined ||
+                        customInfiniteScrollConfig.items.length < customInfiniteScrollConfig.total)
+                    }
+                    useWindow={false}
+                    initialLoad={false}>
+                    {customInfiniteScrollConfig.total === 0 ? (
+                      <MenuHeader>{customInfiniteScrollConfig.noItems}</MenuHeader>
+                    ) : (
+                      customInfiniteScrollConfig.items.map((item) => (
+                        <>
+                          <MenuItem key={item.label as string}>{customInfiniteScrollConfig.renderItem(item)}</MenuItem>
+                          <MenuDivider />
+                        </>
+                      ))
+                    )}
+                  </InfiniteScroll>
+                </div>
+                <MenuHeader key='footer'>{customInfiniteScrollConfig.footer}</MenuHeader>
+              </>
+            )}
           </ControlledMenu>
         </Portal>
       ) : (

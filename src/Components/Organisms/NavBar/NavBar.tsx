@@ -40,13 +40,13 @@ const NavBar = (props: INavBarProps): ReactElement => {
       <div className='nav-bar-items-container'>
         <div className='nav-bar-items-group'>
           {navButtons?.map((navItem) => (
-            <NavItem key={`menu-${navItem.label}-${navItem.icon?.toString()}`} {...navItem} />
+            <NavItem key={`menu-${navItem.label}-${JSON.stringify(navItem.icon)}`} {...navItem} />
           ))}
         </div>
         <div className='nav-bar-items-group'>
           {searchBar && <SearchBar {...searchBar} />}
           {navIcons?.map((navItem) => (
-            <NavItem key={`menu-${navItem.label}-${navItem.icon?.toString()}`} {...navItem} />
+            <NavItem key={`menu-${navItem.label}-${JSON.stringify(navItem.icon)}`} {...navItem} />
           ))}
         </div>
       </div>
