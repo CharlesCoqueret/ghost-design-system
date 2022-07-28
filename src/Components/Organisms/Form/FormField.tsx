@@ -312,8 +312,9 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
       );
     }
     case FieldTypeEnum.SELECT: {
-      const { options, ...rest } = field;
+      const { options, onChange, isLoading, ...rest } = field;
       const localOptions = typeof options === 'function' ? options(data) : options;
+      const localIsLoading = typeof isLoading === 'function' ? isLoading(data, localOptions) : isLoading;
       if (field.eraseValueWhenNotInOptions && data && data[field.dataIndex]) {
         if (!map(localOptions, 'value').includes(data[field.dataIndex] as unknown as string)) {
           runAfterUpdate(() => {
@@ -331,9 +332,11 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
           <SelectField
             {...rest}
             options={localOptions}
+            isLoading={localIsLoading}
             mandatory={requiredFromValidation || field.mandatory}
             name={field.dataIndex.toString()}
             onChange={(newValue: string | number | null | undefined) => {
+              onChange && onChange(newValue);
               handleChange(field.dataIndex, newValue as unknown as T[keyof T]);
             }}
             inputValue={(data && (data[field.dataIndex] as unknown as string | undefined)) ?? undefined}

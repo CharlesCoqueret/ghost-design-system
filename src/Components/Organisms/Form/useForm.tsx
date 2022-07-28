@@ -36,8 +36,8 @@ const useForm = <T extends AnyObject>(props: IUseFormProps<T>): IUseFormReturned
   const [validationError, setValidationError] = useState<Partial<Record<keyof T, FieldError>>>();
   const runAfterUpdate = useRunAfterUpdate();
 
-  const rehydrate = (newData: T): void => {
-    setCurrentData(newData);
+  const rehydrate = (newData?: T): void => {
+    newData && setCurrentData(newData);
     setIsModified(false);
     setValidationError(undefined);
   };
