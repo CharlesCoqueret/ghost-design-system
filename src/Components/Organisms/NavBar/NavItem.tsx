@@ -13,7 +13,6 @@ export interface INavItemProps {
   counter?: string | number;
   /** custom infinite scroll config (optional, default: undefined) */
   customInfiniteScrollConfig?: {
-    footer: ReactElement;
     header: string;
     items: Array<{ [key: string]: unknown }>;
     loadMore: (p: number) => void;
@@ -22,6 +21,8 @@ export interface INavItemProps {
     renderItem: (item: { [key: string]: unknown }) => ReactElement;
     total: number | undefined;
   };
+  /** custom submenu (optional, default: undefined) */
+  customSubItem?: ReactElement;
   /** For test purpose only */
   dataTestId?: string;
   /** Icon on the left of the clickable button (optional if label is defined, default: undefined) */
@@ -39,12 +40,24 @@ export interface INavItemProps {
 }
 
 const NavItem = (props: INavItemProps): ReactElement => {
-  const { counter, customInfiniteScrollConfig, dataTestId, icon, label, link, onClick, subItems, tooltip } = props;
+  const {
+    counter,
+    customInfiniteScrollConfig,
+    customSubItem,
+    dataTestId,
+    icon,
+    label,
+    link,
+    onClick,
+    subItems,
+    tooltip,
+  } = props;
 
   const ref = useRef<HTMLDivElement>(null);
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const skipOpen = useRef(false);
-  const hasMenu = (subItems && subItems.length > 0) || customInfiniteScrollConfig !== undefined;
+  const hasMenu =
+    (subItems && subItems.length > 0) || customInfiniteScrollConfig !== undefined || customSubItem !== undefined;
 
   const closeMenu = () => {
     setIsOpen(false);
@@ -111,10 +124,11 @@ const NavItem = (props: INavItemProps): ReactElement => {
                 </MenuItem>
               );
             })}
+            {customSubItem}
             {customInfiniteScrollConfig && (
               <>
                 <MenuHeader key='header'>{customInfiniteScrollConfig.header}</MenuHeader>
-                <div style={{ width: '400px', maxHeight: '80vh', overflowY: 'scroll' }}>
+                <div style={{ maxWidth: '400px', maxHeight: '80vh', overflowY: 'auto' }}>
                   <InfiniteScroll
                     key='infinite'
                     loadMore={customInfiniteScrollConfig.loadMore}
@@ -123,21 +137,21 @@ const NavItem = (props: INavItemProps): ReactElement => {
                       (customInfiniteScrollConfig.total === undefined ||
                         customInfiniteScrollConfig.items.length < customInfiniteScrollConfig.total)
                     }
+                    threshold={1}
                     useWindow={false}
-                    initialLoad={false}>
+                    initialLoad={true}>
                     {customInfiniteScrollConfig.total === 0 ? (
-                      <MenuHeader>{customInfiniteScrollConfig.noItems}</MenuHeader>
+                      <MenuHeader key='header-noitem'>{customInfiniteScrollConfig.noItems}</MenuHeader>
                     ) : (
                       customInfiniteScrollConfig.items.map((item) => (
-                        <>
-                          <MenuItem key={item.label as string}>{customInfiniteScrollConfig.renderItem(item)}</MenuItem>
+                        <React.Fragment key={item.label as string}>
+                          <MenuItem>{customInfiniteScrollConfig.renderItem(item)}</MenuItem>
                           <MenuDivider />
-                        </>
+                        </React.Fragment>
                       ))
                     )}
                   </InfiniteScroll>
                 </div>
-                <MenuHeader key='footer'>{customInfiniteScrollConfig.footer}</MenuHeader>
               </>
             )}
           </ControlledMenu>
