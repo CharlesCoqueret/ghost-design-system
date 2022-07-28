@@ -25,7 +25,7 @@ export interface IUseFormReturnedType<T> {
   formProps: IFormProps<T>;
   getData: () => T;
   isModified: () => boolean;
-  rehydrate: (data: T) => void;
+  rehydrate: (data?: T) => void;
   reset: () => void;
   submit: () => IFormSubmitReturnedType<T>;
 }
@@ -239,11 +239,12 @@ export interface IFieldSectionProps<T> extends Partial<IVisibilityProps<T>> {
 
 export interface IFieldSelectProps<T>
   extends IFieldBaseProps<T>,
-    Pick<ISelectFieldProps, 'colors' | 'isClearable' | 'placeholder'> {
+    Pick<ISelectFieldProps, 'colors' | 'isClearable' | 'placeholder' | 'onChange'> {
   // When the value is not present in the options, should the value be erased (optional, default: false)
   eraseValueWhenNotInOptions?: boolean;
   fieldType: FieldTypeEnum.SELECT;
   options: Array<IOption> | ((data: T) => Array<IOption>);
+  isLoading?: boolean | ((data: T, options: Array<IOption>) => boolean);
 }
 
 export interface IFieldSwitchProps<T> extends IFieldBaseProps<T> {

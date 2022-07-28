@@ -6,6 +6,7 @@ import { IOption } from './types';
 import { customStyles } from './selectStyles';
 import { Icon } from '../Icon';
 import { Typography } from '../Typography';
+import LoadingIndicator from './Common/LoadingIndicator';
 
 export interface ISelectInputProps {
   /** Class for the input (optional, default: undefined) */
@@ -32,6 +33,8 @@ export interface ISelectInputProps {
   isClearable?: boolean;
   /** Is in Error (optional, default: false) */
   isInError?: boolean;
+  /** Show loader icon (optional, default: false) */
+  isLoading?: boolean;
   /** Maximum height of the menu in px (optional, default: 300) */
   maxMenuHeight?: number;
   /** Name of select input */
@@ -59,6 +62,7 @@ const SelectInput = (props: ISelectInputProps): ReactElement => {
     inputValue,
     isClearable,
     isInError,
+    isLoading,
     maxMenuHeight,
     name,
     onChange,
@@ -99,7 +103,9 @@ const SelectInput = (props: ISelectInputProps): ReactElement => {
         className,
       )}>
       <ReactSelect<IOption, false>
+        isLoading={isLoading}
         components={{
+          LoadingIndicator,
           DropdownIndicator: (props: DropdownIndicatorProps<IOption, false>) => {
             const { innerProps } = props;
             return (
@@ -143,7 +149,7 @@ const SelectInput = (props: ISelectInputProps): ReactElement => {
         placeholder={placeholder}
         menuPortalTarget={usePortal ? document.querySelector('body') : undefined}
         styles={customStyles({ ...colors, isInError })}
-        value={options.find((option) => option.value === inputValue) || null}
+        value={options?.find((option) => option.value === inputValue) || null}
       />
     </div>
   );
@@ -164,6 +170,7 @@ SelectInput.defaultProps = {
   inputValue: undefined,
   isClearable: false,
   isInError: false,
+  isLoading: false,
   maxMenuHeight: 300,
   onChange: undefined,
   placeholder: undefined,

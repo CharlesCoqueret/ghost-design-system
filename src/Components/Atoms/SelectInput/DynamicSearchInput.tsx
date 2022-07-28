@@ -1,12 +1,13 @@
 import React, { ReactElement, useEffect, useState } from 'react';
 import { default as ReactSelectAsync } from 'react-select/async';
-import { ClearIndicatorProps, DropdownIndicatorProps, LoadingIndicatorProps } from 'react-select';
+import { ClearIndicatorProps, DropdownIndicatorProps } from 'react-select';
 import classnames from 'classnames';
 
 import { customStyles } from './selectStyles';
 import { IOption } from './types';
 import { Icon } from '../Icon';
 import { Typography } from '../Typography';
+import LoadingIndicator from './Common/LoadingIndicator';
 
 export interface IDynamicSearchInputProps {
   /** Class for the input (optional, default: undefined) */
@@ -146,18 +147,7 @@ const DynamicSearchInput = (props: IDynamicSearchInputProps): ReactElement => {
         backspaceRemovesValue={isClearable}
         closeMenuOnSelect={true}
         components={{
-          LoadingIndicator: (props: LoadingIndicatorProps<IOption, false>) => {
-            const { innerProps } = props;
-            return (
-              <div {...innerProps}>
-                <Icon
-                  icon={['fal', 'spinner']}
-                  className='dynamic-search-spinner'
-                  data-testid={dataTestId ? `${dataTestId}-spinner` : undefined}
-                />
-              </div>
-            );
-          },
+          LoadingIndicator,
           DropdownIndicator: (props: DropdownIndicatorProps<IOption, false>) => {
             const { innerProps } = props;
             return (

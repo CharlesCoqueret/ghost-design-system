@@ -81,7 +81,7 @@ const Template: ComponentStory<typeof DynamicSearchCreatableField> = ({
   inputValue,
   ...args
 }: IDynamicSearchCreatableFieldProps) => {
-  const [localValue, setLocalValue] = useState<string | number | undefined>(inputValue);
+  const [localValue, setLocalValue] = useState<string | number | null | undefined>(inputValue);
 
   return <DynamicSearchCreatableField {...args} inputValue={localValue || ''} onChange={setLocalValue} />;
 };
