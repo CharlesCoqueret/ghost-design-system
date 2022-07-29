@@ -69,6 +69,10 @@ const Title = (props: ITitleProps): ReactElement => {
     updateInputWidth();
   }, [currentTitle]);
 
+  useEffect(() => {
+    setCurrentTitle(title);
+  }, [title]);
+
   return (
     <>
       {prefix && (
