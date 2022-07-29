@@ -39,6 +39,8 @@ export interface ISelectFieldProps {
   inputValue: string | number | undefined;
   /** Provide the ability to clear the value (optional, default: false) */
   isClearable?: boolean;
+  /** Show loader icon (optional, default: false) */
+  isLoading?: boolean;
   /** Label (optional, default: undefined) */
   label?: string;
   /** Size of the field in a 12 column grid (optional, default: undefined) */
@@ -83,6 +85,7 @@ export const SelectField = (props: ISelectFieldProps): ReactElement => {
     inputClassName,
     inputValue,
     isClearable,
+    isLoading,
     label,
     labelSize,
     mandatory,
@@ -108,19 +111,20 @@ export const SelectField = (props: ISelectFieldProps): ReactElement => {
       mandatory={mandatory}
       readOnly={readOnly}>
       <SelectInput
-        colors={colors}
         className={classnames(inputClassName, 'input-select-field')}
+        colors={colors}
         dataTestId={dataTestId}
+        disabled={disabled}
         ellipsis={ellipsis}
         highlighted={highlighted}
-        isInError={errorMessage !== undefined}
-        isClearable={isClearable}
-        name={name}
-        placeholder={placeholder}
-        options={options}
-        disabled={disabled}
         inputValue={inputValue}
+        isClearable={isClearable}
+        isInError={errorMessage !== undefined}
+        isLoading={isLoading}
+        name={name}
         onChange={onChange}
+        options={options}
+        placeholder={placeholder}
         readOnly={readOnly}
         usePortal={usePortal}
       />
