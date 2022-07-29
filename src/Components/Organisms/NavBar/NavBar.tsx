@@ -28,7 +28,7 @@ const NavBar = (props: INavBarProps): ReactElement => {
 
   return (
     <nav className='gds-nav-bar-container noselect'>
-      <div className='nav-bar-brand'>
+      <div className='nav-bar-brand' key='brand'>
         <NavLink to={brand.redirection || NavBar.defaultProps.brand.redirection}>
           <img
             src={brand.logoSource}
@@ -37,13 +37,18 @@ const NavBar = (props: INavBarProps): ReactElement => {
           />
         </NavLink>
       </div>
-      <div className='nav-bar-items-container'>
-        <div className='nav-bar-items-group'>
+      <div className='nav-bar-items-container' key='items'>
+        <div className='nav-bar-items-group' key='leftitems'>
           {navButtons?.map((navItem) => (
-            <NavItem key={`menu-${navItem.label}-${JSON.stringify(navItem.icon)}`} {...navItem} />
+            <NavItem
+              key={`menu-${
+                navItem.label || (navItem.icon && Array.isArray(navItem.icon) && navItem.icon[1]) || navItem.tooltip
+              }`}
+              {...navItem}
+            />
           ))}
         </div>
-        <div className='nav-bar-items-group'>
+        <div className='nav-bar-items-group' key='rightitems'>
           {searchBar && <SearchBar {...searchBar} />}
           {navIcons?.map((navItem) => (
             <NavItem key={`menu-${navItem.label}-${JSON.stringify(navItem.icon)}`} {...navItem} />

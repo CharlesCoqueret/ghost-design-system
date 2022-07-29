@@ -39,7 +39,7 @@ const Title = (props: ITitleProps): ReactElement => {
       margin: 'auto',
       width:
         spanRef.current?.offsetWidth && Number.isFinite(spanRef.current.offsetWidth)
-          ? spanRef.current.offsetWidth + 5 + 'px'
+          ? spanRef.current.offsetWidth + 8 + 'px'
           : undefined,
     });
   };

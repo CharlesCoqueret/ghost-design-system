@@ -27,6 +27,8 @@ export interface ITooltipStates {
 const Tooltip = (props: ITooltipProps) => {
   const { arrow, children, delay, direction, disabled, tooltip } = props;
 
+  if (!children) return <></>;
+
   if (!tooltip || disabled) return <>{children}</>;
 
   return (
@@ -34,6 +36,15 @@ const Tooltip = (props: ITooltipProps) => {
       {children}
     </Tippy>
   );
+};
+
+Tooltip.defaultProps = {
+  arrow: true,
+  delay: 0,
+  disabled: false,
+  direction: MenuDirectionEnum.BOTTOM,
+  children: undefined,
+  tooltip: undefined,
 };
 
 export default Tooltip;

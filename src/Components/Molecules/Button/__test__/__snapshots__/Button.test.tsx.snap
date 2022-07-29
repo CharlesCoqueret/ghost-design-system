@@ -127,14 +127,19 @@ exports[`Button Component Button renders with list and handle open menu and clic
     <div>
       <div
         class="szh-menu-container"
+        style="position: relative;"
       >
         <ul
           aria-label="Menu"
           class="szh-menu szh-menu--state-closed szh-menu--dir-bottom button-menu"
           role="menu"
-          style="left: 0px; top: 0px;"
+          style="margin: 0px; display: none; position: absolute; left: 0px; top: 0px;"
           tabindex="-1"
         >
+          <div
+            style="position: absolute; left: 0px; top: 0px;"
+            tabindex="-1"
+          />
           <li
             class="szh-menu__item"
             data-testid="BUTTON1"
@@ -197,14 +202,19 @@ exports[`Button Component Button renders with list and handle open menu and clic
     <div>
       <div
         class="szh-menu-container"
+        style="position: relative;"
       >
         <ul
           aria-label="Menu"
           class="szh-menu szh-menu--state-open szh-menu--dir-bottom button-menu"
           role="menu"
-          style="left: 0px; top: 0px;"
+          style="margin: 0px; position: absolute; left: 0px; top: 0px;"
           tabindex="-1"
         >
+          <div
+            style="position: absolute; left: 0px; top: 0px;"
+            tabindex="-1"
+          />
           <li
             class="szh-menu__item"
             data-testid="BUTTON1"
@@ -267,14 +277,19 @@ exports[`Button Component Button renders with list and handle open menu and clic
     <div>
       <div
         class="szh-menu-container"
+        style="position: relative;"
       >
         <ul
           aria-label="Menu"
           class="szh-menu szh-menu--state-closed szh-menu--dir-bottom button-menu"
           role="menu"
-          style="left: 0px; top: 0px;"
+          style="margin: 0px; position: absolute; left: 0px; top: 0px; display: none;"
           tabindex="-1"
         >
+          <div
+            style="position: absolute; left: 0px; top: 0px;"
+            tabindex="-1"
+          />
           <li
             class="szh-menu__item"
             data-testid="BUTTON1"
@@ -337,14 +352,19 @@ exports[`Button Component Button renders with list and handle open menu and clos
     <div>
       <div
         class="szh-menu-container"
+        style="position: relative;"
       >
         <ul
           aria-label="Menu"
           class="szh-menu szh-menu--state-closed szh-menu--dir-bottom button-menu"
           role="menu"
-          style="left: 0px; top: 0px;"
+          style="margin: 0px; display: none; position: absolute; left: 0px; top: 0px;"
           tabindex="-1"
         >
+          <div
+            style="position: absolute; left: 0px; top: 0px;"
+            tabindex="-1"
+          />
           <li
             class="szh-menu__item"
             role="menuitem"
@@ -405,14 +425,19 @@ exports[`Button Component Button renders with list and handle open menu and clos
     <div>
       <div
         class="szh-menu-container"
+        style="position: relative;"
       >
         <ul
           aria-label="Menu"
           class="szh-menu szh-menu--state-open szh-menu--dir-bottom button-menu"
           role="menu"
-          style="left: 0px; top: 0px;"
+          style="margin: 0px; position: absolute; left: 0px; top: 0px;"
           tabindex="-1"
         >
+          <div
+            style="position: absolute; left: 0px; top: 0px;"
+            tabindex="-1"
+          />
           <li
             class="szh-menu__item"
             role="menuitem"
@@ -473,14 +498,19 @@ exports[`Button Component Button renders with list and handle open menu and clos
     <div>
       <div
         class="szh-menu-container"
+        style="position: relative;"
       >
         <ul
           aria-label="Menu"
           class="szh-menu szh-menu--state-open szh-menu--dir-bottom button-menu"
           role="menu"
-          style="left: 0px; top: 0px;"
+          style="margin: 0px; position: absolute; left: 0px; top: 0px;"
           tabindex="-1"
         >
+          <div
+            style="position: absolute; left: 0px; top: 0px;"
+            tabindex="-1"
+          />
           <li
             class="szh-menu__item"
             role="menuitem"
@@ -529,16 +559,22 @@ exports[`Button Component Button renders with popover 1`] = `
     <div>
       <div
         class="szh-menu-container"
+        style="position: relative;"
       >
         <ul
           aria-label="Menu"
           class="szh-menu szh-menu--state-closed szh-menu--dir-top"
           role="menu"
-          style="left: 0px; top: 0px;"
+          style="margin: 0px; display: none; position: absolute; left: 0px; top: 0px;"
           tabindex="-1"
         >
           <div
+            style="position: absolute; left: 0px; top: 0px;"
+            tabindex="-1"
+          />
+          <div
             class="szh-menu__arrow szh-menu__arrow--dir-top"
+            style="position: absolute;"
           />
           <div
             class="gds-popover-container"
@@ -617,17 +653,22 @@ exports[`Button Component Button renders with popover 2`] = `
     <div>
       <div
         class="szh-menu-container"
+        style="position: relative;"
       >
         <ul
           aria-label="Menu"
           class="szh-menu szh-menu--state-open szh-menu--dir-top"
           role="menu"
-          style="left: 0px; top: 0px;"
+          style="margin: 0px; position: absolute; left: 0px; top: 0px;"
           tabindex="-1"
         >
           <div
+            style="position: absolute; left: 0px; top: 0px;"
+            tabindex="-1"
+          />
+          <div
             class="szh-menu__arrow szh-menu__arrow--dir-top"
-            style="left: 0px;"
+            style="position: absolute; left: 0px;"
           />
           <div
             class="gds-popover-container"
@@ -706,17 +747,22 @@ exports[`Button Component Button renders with popover 3`] = `
     <div>
       <div
         class="szh-menu-container"
+        style="position: relative;"
       >
         <ul
           aria-label="Menu"
           class="szh-menu szh-menu--state-closed szh-menu--dir-top"
           role="menu"
-          style="left: 0px; top: 0px;"
+          style="margin: 0px; position: absolute; left: 0px; top: 0px; display: none;"
           tabindex="-1"
         >
           <div
+            style="position: absolute; left: 0px; top: 0px;"
+            tabindex="-1"
+          />
+          <div
             class="szh-menu__arrow szh-menu__arrow--dir-top"
-            style="left: 0px;"
+            style="position: absolute; left: 0px;"
           />
           <div
             class="gds-popover-container"
@@ -795,16 +841,22 @@ exports[`Button Component Button renders with popover without buttons 1`] = `
     <div>
       <div
         class="szh-menu-container"
+        style="position: relative;"
       >
         <ul
           aria-label="Menu"
           class="szh-menu szh-menu--state-closed szh-menu--dir-top"
           role="menu"
-          style="left: 0px; top: 0px;"
+          style="margin: 0px; display: none; position: absolute; left: 0px; top: 0px;"
           tabindex="-1"
         >
           <div
+            style="position: absolute; left: 0px; top: 0px;"
+            tabindex="-1"
+          />
+          <div
             class="szh-menu__arrow szh-menu__arrow--dir-top"
+            style="position: absolute;"
           />
           <div
             class="gds-popover-container"
@@ -848,17 +900,22 @@ exports[`Button Component Button renders with popover without buttons 2`] = `
     <div>
       <div
         class="szh-menu-container"
+        style="position: relative;"
       >
         <ul
           aria-label="Menu"
           class="szh-menu szh-menu--state-open szh-menu--dir-top"
           role="menu"
-          style="left: 0px; top: 0px;"
+          style="margin: 0px; position: absolute; left: 0px; top: 0px;"
           tabindex="-1"
         >
           <div
+            style="position: absolute; left: 0px; top: 0px;"
+            tabindex="-1"
+          />
+          <div
             class="szh-menu__arrow szh-menu__arrow--dir-top"
-            style="left: 0px;"
+            style="position: absolute; left: 0px;"
           />
           <div
             class="gds-popover-container"
@@ -902,17 +959,22 @@ exports[`Button Component Button renders with popover without buttons 3`] = `
     <div>
       <div
         class="szh-menu-container"
+        style="position: relative;"
       >
         <ul
           aria-label="Menu"
           class="szh-menu szh-menu--state-closed szh-menu--dir-top"
           role="menu"
-          style="left: 0px; top: 0px;"
+          style="margin: 0px; position: absolute; left: 0px; top: 0px; display: none;"
           tabindex="-1"
         >
           <div
+            style="position: absolute; left: 0px; top: 0px;"
+            tabindex="-1"
+          />
+          <div
             class="szh-menu__arrow szh-menu__arrow--dir-top"
-            style="left: 0px;"
+            style="position: absolute; left: 0px;"
           />
           <div
             class="gds-popover-container"
