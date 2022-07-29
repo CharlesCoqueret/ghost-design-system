@@ -134,12 +134,17 @@ exports[`NavItem Component NavItem renders with subitems 1`] = `
     <div>
       ControlleMenu
       closed
-      <div
-        data-testid="SUBITEMDATA-TEST-ID"
+      <a
+        href="#"
       >
-        MenuItem
-        SUBITEM
-      </div>
+        partial url
+        <div
+          data-testid="SUBITEMDATA-TEST-ID"
+        >
+          MenuItem
+          SUBITEM
+        </div>
+      </a>
       has no ref
     </div>
   </div>
@@ -166,12 +171,17 @@ exports[`NavItem Component NavItem renders with subitems 2`] = `
     <div>
       ControlleMenu
       open
-      <div
-        data-testid="SUBITEMDATA-TEST-ID"
+      <a
+        href="#"
       >
-        MenuItem
-        SUBITEM
-      </div>
+        partial url
+        <div
+          data-testid="SUBITEMDATA-TEST-ID"
+        >
+          MenuItem
+          SUBITEM
+        </div>
+      </a>
       has no ref
     </div>
   </div>
@@ -198,12 +208,17 @@ exports[`NavItem Component NavItem renders with subitems 3`] = `
     <div>
       ControlleMenu
       open
-      <div
-        data-testid="SUBITEMDATA-TEST-ID"
+      <a
+        href="#"
       >
-        MenuItem
-        SUBITEM
-      </div>
+        partial url
+        <div
+          data-testid="SUBITEMDATA-TEST-ID"
+        >
+          MenuItem
+          SUBITEM
+        </div>
+      </a>
       has no ref
     </div>
   </div>
@@ -230,12 +245,17 @@ exports[`NavItem Component NavItem renders with subitems 4`] = `
     <div>
       ControlleMenu
       closed
-      <div
-        data-testid="SUBITEMDATA-TEST-ID"
+      <a
+        href="#"
       >
-        MenuItem
-        SUBITEM
-      </div>
+        partial url
+        <div
+          data-testid="SUBITEMDATA-TEST-ID"
+        >
+          MenuItem
+          SUBITEM
+        </div>
+      </a>
       has no ref
     </div>
   </div>

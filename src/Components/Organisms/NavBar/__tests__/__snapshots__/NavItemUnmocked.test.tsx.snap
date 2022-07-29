@@ -41,14 +41,19 @@ exports[`NavItem unmocked Component NavItem unmocked submenu gets closed 1`] = `
             class="szh-menu__arrow szh-menu__arrow--dir-bottom"
             style="position: absolute;"
           />
-          <li
-            class="szh-menu__item"
-            data-testid="SUBITEMDATA-TEST-ID"
-            role="menuitem"
-            tabindex="-1"
+          <a
+            href="#"
           >
-            SUBITEM
-          </li>
+            partial url
+            <li
+              class="szh-menu__item"
+              data-testid="SUBITEMDATA-TEST-ID"
+              role="menuitem"
+              tabindex="-1"
+            >
+              SUBITEM
+            </li>
+          </a>
         </ul>
       </div>
     </div>
@@ -97,14 +102,19 @@ exports[`NavItem unmocked Component NavItem unmocked submenu gets closed 2`] = `
             class="szh-menu__arrow szh-menu__arrow--dir-bottom"
             style="position: absolute; left: 0px;"
           />
-          <li
-            class="szh-menu__item"
-            data-testid="SUBITEMDATA-TEST-ID"
-            role="menuitem"
-            tabindex="-1"
+          <a
+            href="#"
           >
-            SUBITEM
-          </li>
+            partial url
+            <li
+              class="szh-menu__item"
+              data-testid="SUBITEMDATA-TEST-ID"
+              role="menuitem"
+              tabindex="-1"
+            >
+              SUBITEM
+            </li>
+          </a>
         </ul>
       </div>
     </div>
@@ -153,14 +163,19 @@ exports[`NavItem unmocked Component NavItem unmocked submenu gets closed 3`] = `
             class="szh-menu__arrow szh-menu__arrow--dir-bottom"
             style="position: absolute; left: 0px;"
           />
-          <li
-            class="szh-menu__item"
-            data-testid="SUBITEMDATA-TEST-ID"
-            role="menuitem"
-            tabindex="-1"
+          <a
+            href="#"
           >
-            SUBITEM
-          </li>
+            partial url
+            <li
+              class="szh-menu__item"
+              data-testid="SUBITEMDATA-TEST-ID"
+              role="menuitem"
+              tabindex="-1"
+            >
+              SUBITEM
+            </li>
+          </a>
         </ul>
       </div>
     </div>
@@ -209,14 +224,19 @@ exports[`NavItem unmocked Component NavItem unmocked submenu gets closed 4`] = `
             class="szh-menu__arrow szh-menu__arrow--dir-bottom"
             style="position: absolute; left: 0px;"
           />
-          <li
-            class="szh-menu__item"
-            data-testid="SUBITEMDATA-TEST-ID"
-            role="menuitem"
-            tabindex="-1"
+          <a
+            href="#"
           >
-            SUBITEM
-          </li>
+            partial url
+            <li
+              class="szh-menu__item"
+              data-testid="SUBITEMDATA-TEST-ID"
+              role="menuitem"
+              tabindex="-1"
+            >
+              SUBITEM
+            </li>
+          </a>
         </ul>
       </div>
     </div>

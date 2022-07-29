@@ -112,17 +112,17 @@ const NavItem = (props: INavItemProps): ReactElement => {
             skipOpen={skipOpen}>
             {subItems?.map((item): ReactElement => {
               return (
-                <MenuItem
-                  data-testid={item.dataTestId}
-                  href={item.link}
-                  key={item.label}
-                  onClick={() => {
-                    if (item.onClick) {
-                      item.onClick();
-                    }
-                  }}>
-                  {item.label}
-                </MenuItem>
+                <NavLink to={item.link || '#'} key={item.label}>
+                  <MenuItem
+                    data-testid={item.dataTestId}
+                    onClick={() => {
+                      if (item.onClick) {
+                        item.onClick();
+                      }
+                    }}>
+                    {item.label}
+                  </MenuItem>
+                </NavLink>
               );
             })}
             {customSubItem}
