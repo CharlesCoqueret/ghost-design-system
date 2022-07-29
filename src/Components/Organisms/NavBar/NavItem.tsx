@@ -1,6 +1,6 @@
 import React, { ReactElement, useRef, useState } from 'react';
 import { ControlledMenu, MenuDivider, MenuHeader, MenuItem } from '@szhsin/react-menu';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import InfiniteScroll from 'react-infinite-scroller';
 
 import { Icon, IconProp } from '../../Atoms/Icon';
@@ -113,14 +113,15 @@ const NavItem = (props: INavItemProps): ReactElement => {
             {subItems?.map((item): ReactElement => {
               return (
                 <MenuItem
-                  key={item.label}
                   data-testid={item.dataTestId}
+                  href={item.link}
+                  key={item.label}
                   onClick={() => {
                     if (item.onClick) {
                       item.onClick();
                     }
                   }}>
-                  {item.link ? <Link to={item.link}>{item.label}</Link> : item.label}
+                  {item.label}
                 </MenuItem>
               );
             })}
