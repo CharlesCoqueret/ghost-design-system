@@ -156,7 +156,7 @@ export interface IFieldFileProps<T>
       | 'maxFolderDepth'
       | 'onDelete'
       | 'onDownload'
-      | 'onFailure',
+      | 'onFailure'
       | 'onSuccess'
       | 'requestHeaders'
       | 'requestMethod'
