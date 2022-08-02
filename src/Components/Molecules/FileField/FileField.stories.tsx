@@ -33,6 +33,13 @@ const Template: ComponentStory<typeof FileField> = (args: IFileFieldProps) => {
         }
         return Promise.resolve();
       }}
+      onFailure={(file: IFile, statusText) => {
+        return { ...file, error: statusText };
+      }}
+      onSuccess={(file: IFile, serverResponse) => {
+        const response = serverResponse as { id: string };
+        return { ...file, id: response.id };
+      }}
     />
   );
 };

@@ -193,7 +193,6 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
           <FileField
             {...field}
             mandatory={requiredFromValidation || field.mandatory}
-            name={field.dataIndex.toString()}
             onChange={(newValue: Array<IFile>) => {
               handleChange(
                 field.dataIndex,
@@ -202,6 +201,9 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
               return Promise.resolve();
             }}
             onDelete={field.onDelete}
+            onDownload={field.onDownload}
+            onFailure={field.onFailure}
+            onSuccess={field.onSuccess}
             inputValue={(data && (data[field.dataIndex] as unknown as Array<IFile>)) ?? undefined}
             errorMessage={errorMessage}
           />

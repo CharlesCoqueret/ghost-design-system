@@ -28,7 +28,6 @@ const FileCell = <T,>(props: ICellProps<T, IColumnFile<T>>): ReactElement => {
         maxFiles={column.maxFiles}
         maxFileSize={column.maxFileSize}
         maxFolderDepth={column.maxFolderDepth}
-        name={String(column.dataIndex)}
         onChange={(newValue: Array<IFile>) => {
           if (onChange) {
             onChange(newValue as unknown as T[keyof T]);
@@ -36,6 +35,8 @@ const FileCell = <T,>(props: ICellProps<T, IColumnFile<T>>): ReactElement => {
         }}
         onDelete={column.onDelete}
         onDownload={column.onDownload}
+        onFailure={column.onFailure}
+        onSuccess={column.onSuccess}
         requestHeaders={column.requestHeaders}
         requestMethod={column.requestMethod}
         requestUrl={column.requestUrl}

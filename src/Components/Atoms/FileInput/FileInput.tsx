@@ -36,6 +36,10 @@ export interface IFileInputProps {
    * The client should let the user know if the download fails.
    * Promise resolution or rejection will only prevent multiple downloads of the same file. */
   onDownload?: (file: IFile) => Promise<void>;
+  /** Handler of the upload failing, use this method to update the error message if needed (optional, default: undefined) */
+  onFailure?: (file: IFile, statusText: string) => IFile;
+  /** Handler of the upload succeeding, use this method to update the id if needed (optional, default: undefined) */
+  onSuccess?: (file: IFile, serverResponse: unknown) => IFile;
   /** Read only field (optional, default: false) */
   readOnly?: boolean;
   /** Extra header (optional, default: undefined) */
@@ -43,7 +47,7 @@ export interface IFileInputProps {
   /** HTTP method used for the upload (optional, default: 'POST' ) */
   requestMethod: 'POST' | 'PUT';
   /** Url of the request */
-  requestUrl: string;
+  requestUrl?: string;
   /** Enable withCredentials on the request (optional, default: undefined) */
   requestWithCredentials?: boolean;
   /** Show file size in the gallery (optional, default: true) */
@@ -108,6 +112,8 @@ const FileInput = (props: IFileInputProps): ReactElement => {
     onChange,
     onDelete,
     onDownload,
+    onFailure,
+    onSuccess,
     readOnly,
     requestHeaders,
     requestMethod,
@@ -176,9 +182,12 @@ const FileInput = (props: IFileInputProps): ReactElement => {
   const updateFileError = (file: IFile, error: string): void => {
     setLocalItems((prev) => {
       const fileToUpdate = prev.find((f) => f.uid === file.uid);
+
       return compact([
         ...prev.filter((f) => f.uid !== file.uid),
-        fileToUpdate && { ...fileToUpdate, status: FileStatusEnum.ERROR, error: error },
+        onFailure
+          ? { ...onFailure(file, error), status: FileStatusEnum.ERROR }
+          : fileToUpdate && { ...fileToUpdate, status: FileStatusEnum.ERROR, error: error },
       ]);
     });
 
@@ -202,12 +211,13 @@ const FileInput = (props: IFileInputProps): ReactElement => {
 
       return compact([
         ...prev.filter((f) => f.uid !== file.uid),
-        fileToUpdate && {
-          ...fileToUpdate,
-          status: FileStatusEnum.DONE,
-          error: undefined,
-          serverResponse: serverResponse,
-        },
+        onSuccess
+          ? { ...onSuccess(file, serverResponse), status: FileStatusEnum.DONE, error: undefined }
+          : fileToUpdate && {
+              ...fileToUpdate,
+              status: FileStatusEnum.DONE,
+              error: undefined,
+            },
       ]);
     });
 
@@ -262,6 +272,11 @@ const FileInput = (props: IFileInputProps): ReactElement => {
    */
   const uploadFile = useCallback(
     (file: File): void => {
+      if (requestUrl === undefined) {
+        console.error('missing requestUrl to File Input field');
+        return;
+      }
+
       const newFile = addFileLocalItems(file);
 
       if (newFile.status !== FileStatusEnum.UPLOADING) return;

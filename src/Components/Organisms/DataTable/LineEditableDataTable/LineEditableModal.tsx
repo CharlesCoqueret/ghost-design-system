@@ -135,6 +135,8 @@ export const columnToFieldMapper = <T,>(columns: Array<IColumnType<T>>): Array<I
             maxFolderDepth: column.maxFolderDepth,
             onDelete: column.onDelete,
             onDownload: column.onDownload,
+            onFailure: column.onFailure,
+            onSuccess: column.onSuccess,
             requestHeaders: column.requestHeaders,
             requestMethod: column.requestMethod,
             requestUrl: column.requestUrl,

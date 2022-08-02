@@ -217,6 +217,8 @@ export interface IColumnFile<T>
       | 'maxFolderDepth'
       | 'onDelete'
       | 'onDownload'
+      | 'onFailure'
+      | 'onSuccess'
       | 'requestHeaders'
       | 'requestMethod'
       | 'requestUrl'
