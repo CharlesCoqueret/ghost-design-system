@@ -33,7 +33,7 @@ const Popover = (props: PropsWithChildren<IPopoverProps>): ReactElement => {
   }, [open]);
 
   return (
-    <Portal>
+    <Portal rootId='popover-portal-id'>
       <ControlledMenu
         ref={menuRef}
         state={isOpen ? 'open' : 'closed'}

@@ -554,7 +554,7 @@ exports[`Button Component Button renders with popover 1`] = `
     </button>
   </div>
   <div
-    id="root-portal-id"
+    id="popover-portal-id"
   >
     <div>
       <div
@@ -648,7 +648,7 @@ exports[`Button Component Button renders with popover 2`] = `
     </button>
   </div>
   <div
-    id="root-portal-id"
+    id="popover-portal-id"
   >
     <div>
       <div
@@ -742,7 +742,7 @@ exports[`Button Component Button renders with popover 3`] = `
     </button>
   </div>
   <div
-    id="root-portal-id"
+    id="popover-portal-id"
   >
     <div>
       <div
@@ -836,7 +836,7 @@ exports[`Button Component Button renders with popover without buttons 1`] = `
     </button>
   </div>
   <div
-    id="root-portal-id"
+    id="popover-portal-id"
   >
     <div>
       <div
@@ -895,7 +895,7 @@ exports[`Button Component Button renders with popover without buttons 2`] = `
     </button>
   </div>
   <div
-    id="root-portal-id"
+    id="popover-portal-id"
   >
     <div>
       <div
@@ -954,7 +954,7 @@ exports[`Button Component Button renders with popover without buttons 3`] = `
     </button>
   </div>
   <div
-    id="root-portal-id"
+    id="popover-portal-id"
   >
     <div>
       <div
