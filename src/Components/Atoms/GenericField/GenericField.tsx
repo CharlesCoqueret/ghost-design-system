@@ -4,7 +4,7 @@ import classnames from 'classnames';
 import GenericFieldLabel from './GenericFieldLabel';
 import GenericFieldDescription from './GenericFieldDescrption';
 
-interface IGenericFieldProps {
+export interface IGenericFieldProps {
   containerRef?: Ref<HTMLDivElement>;
   /** Disabled field (optional, default: undefined) */
   disabled?: boolean;
