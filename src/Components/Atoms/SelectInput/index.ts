@@ -3,3 +3,4 @@ export { default as DynamicSearchCreatableInput } from './DynamicSearchCreatable
 export { default as DynamicSearchInput } from './DynamicSearchInput';
 export { default as MultiSelectInput } from './MultiSelectInput';
 export { default as SelectInput } from './SelectInput';
+export { customStyles as SelectInputCustomStyles } from './selectStyles';
