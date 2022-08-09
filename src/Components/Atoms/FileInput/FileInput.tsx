@@ -139,27 +139,23 @@ const FileInput = (props: IFileInputProps): ReactElement => {
    * @param file new file
    * @returns IFile with status, and eventually error if one of the requirement is not met
    */
-  const addFileLocalItems = useCallback(
-    (file: File): IFile => {
-      const quotaExceeded =
-        maxFiles !== undefined &&
-        localItems.filter(
-          (item) => item.status && [FileStatusEnum.DONE, FileStatusEnum.UPLOADING].includes(item.status),
-        ).length >= maxFiles;
-      const newFile = initializeIFile(file, quotaExceeded, acceptTypes, maxFileSize, {
-        invalidType: localization?.invalidType,
-        quotaExceeded: localization?.quotaExceeded,
-        sizeExceeded: localization?.sizeExceeded,
-      });
+  const addFileLocalItems = (file: File): IFile => {
+    const quotaExceeded =
+      maxFiles !== undefined &&
+      localItems.filter((item) => item.status && [FileStatusEnum.DONE, FileStatusEnum.UPLOADING].includes(item.status))
+        .length >= maxFiles;
+    const newFile = initializeIFile(file, quotaExceeded, acceptTypes, maxFileSize, {
+      invalidType: localization?.invalidType,
+      quotaExceeded: localization?.quotaExceeded,
+      sizeExceeded: localization?.sizeExceeded,
+    });
 
-      setLocalItems((prev) => {
-        return [...prev, newFile];
-      });
+    setLocalItems((prev) => {
+      return [...prev, newFile];
+    });
 
-      return newFile;
-    },
-    [acceptTypes, maxFileSize, maxFiles],
-  );
+    return newFile;
+  };
 
   /**
    * Updates the progress for the file

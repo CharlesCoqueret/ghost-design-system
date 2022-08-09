@@ -1,4 +1,4 @@
-import React, { CSSProperties, ReactElement, Ref } from 'react';
+import React, { CSSProperties, ReactElement, Ref, useState } from 'react';
 
 import { GenericField } from '../../Atoms/GenericField';
 import { FileInput, IFile, FileStatusEnum } from '../../Atoms/FileInput';
@@ -143,6 +143,25 @@ export const FileField = (props: IFileFieldProps): ReactElement => {
     uploadMessage,
   } = props;
 
+  const [inputLength, setInputLength] = useState(
+    inputValue?.filter((file) => {
+      if (!file.status) return false;
+      return [FileStatusEnum.DONE, FileStatusEnum.UPLOADING].includes(file.status);
+    }).length,
+  );
+
+  const localOnChange = (files: Array<IFile>): void => {
+    if (onChange) {
+      onChange(files);
+    }
+    setInputLength(
+      files.filter((file) => {
+        if (!file.status) return false;
+        return [FileStatusEnum.DONE, FileStatusEnum.UPLOADING].includes(file.status);
+      }).length,
+    );
+  };
+
   return (
     <GenericField
       containerRef={containerRef}
@@ -152,12 +171,7 @@ export const FileField = (props: IFileFieldProps): ReactElement => {
       helperText={helperText}
       highlighted={highlighted}
       inline={inline}
-      inputLength={
-        inputValue?.filter((file) => {
-          if (!file.status) return false;
-          return [FileStatusEnum.DONE, FileStatusEnum.UPLOADING].includes(file.status);
-        }).length
-      }
+      inputLength={inputLength}
       invertInputDescription
       label={label}
       labelSize={labelSize}
@@ -176,7 +190,7 @@ export const FileField = (props: IFileFieldProps): ReactElement => {
         maxFiles={maxFiles}
         maxFileSize={maxFileSize}
         maxFolderDepth={maxFolderDepth}
-        onChange={onChange}
+        onChange={localOnChange}
         onDelete={onDelete}
         onDownload={onDownload}
         onFailure={onFailure}
