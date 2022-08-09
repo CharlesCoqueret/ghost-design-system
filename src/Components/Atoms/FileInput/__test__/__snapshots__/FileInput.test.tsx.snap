@@ -639,6 +639,11 @@ exports[`FileInput Component FileInput handle drop of file 2`] = `
         <div
           class="right"
         >
+          <progress
+            class="progress"
+            max="100"
+            value="0"
+          />
           <svg
             aria-hidden="true"
             class="icon gds-loader size-1x spinner-icon"
