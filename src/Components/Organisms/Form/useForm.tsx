@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useState } from 'react';
 import cloneDeep from 'lodash/cloneDeep';
 import * as yup from 'yup';
 import { AnyObject } from 'yup/lib/types';
@@ -42,7 +42,7 @@ const useForm = <T extends AnyObject>(props: IUseFormProps<T>): IUseFormReturned
     setValidationError(undefined);
   };
 
-  const handleDataChange = useCallback((dataIndex: keyof T, newValue: T[keyof T]): void => {
+  const handleDataChange = (dataIndex: keyof T, newValue: T[keyof T]): void => {
     setCurrentData((prev) => {
       prev[dataIndex] = newValue;
       return { ...prev };
@@ -58,7 +58,7 @@ const useForm = <T extends AnyObject>(props: IUseFormProps<T>): IUseFormReturned
       return { ...prev };
     });
     setIsModified(true);
-  }, []);
+  };
 
   const getData = () => {
     return cloneDeep(currentData);
