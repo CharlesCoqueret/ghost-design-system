@@ -1,5 +1,73 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`PercentageField Component PercentageField does nothing when onChange is not defined 1`] = `
+<div>
+  <div
+    class="gds-field-group"
+  >
+    <input
+      class="gds-amount-field"
+      data-testid="DATA-TEST-ID"
+      inputmode="numeric"
+      name="name"
+      type="text"
+      value="123 %"
+    />
+  </div>
+</div>
+`;
+
+exports[`PercentageField Component PercentageField does nothing when onChange is not defined 2`] = `
+<div>
+  <div
+    class="gds-field-group"
+  >
+    <input
+      class="gds-amount-field"
+      data-testid="DATA-TEST-ID"
+      inputmode="numeric"
+      name="name"
+      type="text"
+      value="12 %"
+    />
+  </div>
+</div>
+`;
+
+exports[`PercentageField Component PercentageField handles change 1`] = `
+<div>
+  <div
+    class="gds-field-group"
+  >
+    <input
+      class="gds-amount-field"
+      data-testid="DATA-TEST-ID"
+      inputmode="numeric"
+      name="name"
+      type="text"
+      value="123 %"
+    />
+  </div>
+</div>
+`;
+
+exports[`PercentageField Component PercentageField handles change 2`] = `
+<div>
+  <div
+    class="gds-field-group"
+  >
+    <input
+      class="gds-amount-field"
+      data-testid="DATA-TEST-ID"
+      inputmode="numeric"
+      name="name"
+      type="text"
+      value="12 %"
+    />
+  </div>
+</div>
+`;
+
 exports[`PercentageField Component PercentageField renders 1`] = `
 <div>
   <div
@@ -45,6 +113,38 @@ exports[`PercentageField Component PercentageField renders with values in readon
     >
       1,234 %
     </span>
+  </div>
+</div>
+`;
+
+exports[`PercentageField Component PercentageField renders with values set as string 1`] = `
+<div>
+  <div
+    class="gds-field-group"
+  >
+    <input
+      class="gds-amount-field"
+      inputmode="numeric"
+      name="name"
+      type="text"
+      value="123 %"
+    />
+  </div>
+</div>
+`;
+
+exports[`PercentageField Component PercentageField renders with values set as undefined 1`] = `
+<div>
+  <div
+    class="gds-field-group"
+  >
+    <input
+      class="gds-amount-field"
+      inputmode="numeric"
+      name="name"
+      type="text"
+      value=" %"
+    />
   </div>
 </div>
 `;
