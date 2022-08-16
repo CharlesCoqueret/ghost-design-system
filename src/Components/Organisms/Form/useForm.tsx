@@ -84,7 +84,7 @@ const useForm = <T extends AnyObject>(props: IUseFormProps<T>): IUseFormReturned
   const submit = (): IFormSubmitReturnedType<T> => {
     let isValid = true;
     if (validationSchema) {
-      const errors = yupResolver(validationSchema, { strict: true, abortEarly: false }, currentData);
+      const errors = yupResolver(validationSchema, { abortEarly: false }, currentData);
       isValid = errors === undefined;
       // Logging validation errors in case the developer has checked it.
       if (!isValid) console.error(errors);

@@ -85,4 +85,12 @@
       display: none !important;
     }
   }
+
+  // Remove margin for richtext editor when in readonly
+  &.readonly,
+  &.disabled {
+    .sun-editor-editable {
+      padding: unset;
+    }
+  }
 }
