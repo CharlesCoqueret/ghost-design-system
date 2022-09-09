@@ -604,7 +604,7 @@ describe('FileInput Component', () => {
 
     userEvent.click(confirmButton);
 
-    expect(onChangeMock).toBeCalledTimes(0);
+    expect(onChangeMock).toBeCalledTimes(1);
     expect(container).toMatchSnapshot();
   });
 

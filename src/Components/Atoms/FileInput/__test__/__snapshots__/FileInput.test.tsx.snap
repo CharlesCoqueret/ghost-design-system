@@ -1180,6 +1180,7 @@ exports[`FileInput Component FileInput handles correctly deletion when no handle
         <input
           class="input"
           data-testid="TEST-ID"
+          multiple=""
           tabindex="-1"
           type="file"
           value=""
@@ -1188,101 +1189,7 @@ exports[`FileInput Component FileInput handles correctly deletion when no handle
     </div>
     <div
       class="gallery"
-    >
-      <div
-        class="item-container"
-      >
-        <div
-          class="left"
-        >
-          <div
-            class="paperclip-icon"
-          >
-            <i
-              class="icon"
-              icon="fal,paperclip"
-            />
-          </div>
-          <div
-            class="name downloadable"
-            data-testid="TEST-ID-download"
-            tabindex="0"
-          >
-            AME
-             (1.21 kB)
-          </div>
-        </div>
-        <div
-          class="right"
-        >
-          <button
-            class="gds-button-content delete-icon"
-            color="reversed"
-            data-testid="TEST-ID-delete"
-            tabindex="0"
-            type="button"
-          >
-            <div
-              class="button-icon-container"
-            >
-              <i
-                class="button-icon icon"
-                icon="fal,trash-alt"
-              />
-            </div>
-          </button>
-          <div>
-            Delete
-          </div>
-          <div>
-            <div>
-              ControlleMenu
-              closed
-              <div
-                class="gds-popover-container"
-              >
-                <div
-                  class="popover-title"
-                >
-                  Delete?
-                </div>
-                <div
-                  class="popover-buttons"
-                >
-                  <button
-                    class="gds-button-content"
-                    color="secondary"
-                    data-testid="TEST-ID-cancel"
-                    tabindex="0"
-                    type="button"
-                  >
-                    <div
-                      class="button-label-container"
-                    >
-                      Cancel
-                    </div>
-                  </button>
-                  <button
-                    class="gds-button-content"
-                    color="primary"
-                    data-testid="TEST-ID-confirm"
-                    tabindex="0"
-                    type="button"
-                  >
-                    <div
-                      class="button-label-container"
-                    >
-                      Confirm
-                    </div>
-                  </button>
-                </div>
-              </div>
-              has ref
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    />
   </div>
 </div>
 `;
