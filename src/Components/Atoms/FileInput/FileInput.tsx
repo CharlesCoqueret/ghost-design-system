@@ -217,7 +217,11 @@ const FileInput = (props: IFileInputProps): ReactElement => {
    * @returns Promise
    */
   const updateFileDelete = async (file: IFile): Promise<void> => {
-    if (!onDelete) return;
+    if (!onDelete) {
+      setLocalItems((prev) => prev.filter((f) => f.uid !== file.uid));
+
+      return;
+    }
 
     setLocalItems((prev) => [...prev.filter((f) => f.uid !== file.uid), { ...file, status: FileStatusEnum.DELETING }]);
     await onDelete(file)
@@ -227,7 +231,6 @@ const FileInput = (props: IFileInputProps): ReactElement => {
       .catch(() => {
         setLocalItems((prev) => [...prev.filter((f) => f.uid !== file.uid), { ...file, status: FileStatusEnum.DONE }]);
       });
-    return;
   };
 
   /**
@@ -395,7 +398,7 @@ const FileInput = (props: IFileInputProps): ReactElement => {
       currentDropArea.removeEventListener('dragleave', unhighlight);
       currentDropArea.removeEventListener('drop', handleDrop);
     };
-  }, []);
+  }, [localItems]);
 
   return (
     <div className={classnames('field', 'gds-file-input-container', className)} style={style}>
