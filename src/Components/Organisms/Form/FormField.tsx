@@ -21,6 +21,7 @@ import { RichTextField } from '../../Molecules/RichTextField';
 import { TextAreaField } from '../../Molecules/TextAreaField';
 import { TextField } from '../../Molecules/TextField';
 import { YearPickerField } from '../../Molecules/YearPickerField';
+import { EditableDataTable } from '../DataTable/EditableDataTable';
 import { LineEditableDataTable } from '../DataTable/LineEditableDataTable';
 import Highlighter from './Highlighter';
 import { FieldTypeEnum, IFieldProps } from './types';
@@ -376,19 +377,51 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
         </Highlighter>
       );
     }
-    case FieldTypeEnum.TABLE: {
+    case FieldTypeEnum.LINE_EDITABLE_TABLE: {
       return (
-        <Highlighter enableSideBySide={enableSideBySide}>
+        <Highlighter
+          enableOldData={enableOldData}
+          enableSideBySide={enableSideBySide}
+          oldData={previousData}
+          shouldHighlight={false}>
           <LineEditableDataTable
             {...field}
             extra={{
               ...field.extra,
               onRowSubmit: (editedRow, submittedRowIndex: number) => {
                 (data[field.dataIndex] as unknown as Array<unknown>)[submittedRowIndex] = editedRow;
+                handleChange(field.dataIndex, data[field.dataIndex]);
+              },
+              onRowDelete: (_deletedRow, deletedRowIndex: number) => {
+                (data[field.dataIndex] as unknown as Array<unknown>).splice(deletedRowIndex, 1);
+                handleChange(field.dataIndex, data[field.dataIndex]);
+              },
+            }}
+            data={data && (data[field.dataIndex] as unknown as Array<AnyObject>)}
+          />
+        </Highlighter>
+      );
+    }
+    case FieldTypeEnum.EDITABLE_TABLE: {
+      return (
+        <Highlighter
+          enableOldData={enableOldData}
+          enableSideBySide={enableSideBySide}
+          oldData={previousData}
+          shouldHighlight={false}>
+          <EditableDataTable
+            {...field}
+            extra={{
+              ...field.extra,
+              onEdit: (editedRow, _dataIndex, submittedRowIndex: number) => {
+                (data[field.dataIndex] as unknown as Array<unknown>)[submittedRowIndex] = editedRow;
+                handleChange(field.dataIndex, data[field.dataIndex]);
+              },
+              onRowDelete: (_deletedRow, deletedRowIndex: number) => {
+                (data[field.dataIndex] as unknown as Array<unknown>).splice(deletedRowIndex, 1);
                 handleChange(field.dataIndex, data[field.dataIndex] as unknown as T[keyof T]);
               },
-              onRowDelete: (_editedRow, submittedRowIndex: number) => {
-                (data[field.dataIndex] as unknown as Array<unknown>).splice(submittedRowIndex, 1);
+              onRowAdded: () => {
                 handleChange(field.dataIndex, data[field.dataIndex] as unknown as T[keyof T]);
               },
             }}

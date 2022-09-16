@@ -580,6 +580,9 @@ export interface IExtraEditableDataTableProps<T> extends IExtraStaticDataTablePr
   canAddNewLine?: () => boolean;
   /** Method used to when the new line button is clicked to get initial values (optional, default: undefined) */
   onNewLine?: () => T;
+  /** Notification of a newly added row (optional, default: undefined),
+   * this is defined to ensure data synchronization after state update */
+  onRowAdded?: () => void;
   /** localization (optional, default:
    *    actionColumn: 'Actions'
    *    addRow: 'Add row'

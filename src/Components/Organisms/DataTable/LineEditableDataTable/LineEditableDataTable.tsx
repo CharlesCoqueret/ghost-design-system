@@ -1,4 +1,5 @@
 import React, { ReactElement, useCallback, useState } from 'react';
+import { AnyObject } from 'yup/lib/object';
 
 import { Button, ColorButtonEnum } from '../../../Molecules/Button';
 import usePropState from '../../../../hooks/use-prop-state';
@@ -17,7 +18,7 @@ export interface ILineEditableDataTableProps<T> {
   onSortChange?: (sortField?: keyof T, sortDirection?: SortDirectionEnum) => void;
 }
 
-const LineEditableDataTable = <T,>(props: ILineEditableDataTableProps<T>): ReactElement => {
+const LineEditableDataTable = <T extends AnyObject>(props: ILineEditableDataTableProps<T>): ReactElement => {
   const { data, columns, extra, loading, onSortChange } = props;
 
   const [currentData, setCurrentData] = usePropState<Array<T>>(data);

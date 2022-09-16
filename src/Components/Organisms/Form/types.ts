@@ -1,4 +1,5 @@
 import { ReactElement } from 'react';
+import { AnyObject } from 'yup/lib/object';
 
 import { IOption } from '../../Atoms/SelectInput';
 import { IAmountFieldProps } from '../../Molecules/AmountField/AmountField';
@@ -14,13 +15,14 @@ import { ITextFieldProps } from '../../Molecules/TextField/TextField';
 import { ITextAreaFieldProps } from '../../Molecules/TextAreaField/TextAreaField';
 import { IYearPickerFieldProps } from '../../Molecules/YearPickerField/YearPickerField';
 import { IFormProps } from './Form';
+import { IEditableDataTableProps } from '../DataTable/EditableDataTable/EditableDataTable';
 
 export interface IFormSubmitReturnedType<T> {
   data: T;
   valid: boolean;
 }
 
-export interface IUseFormReturnedType<T> {
+export interface IUseFormReturnedType<T extends AnyObject> {
   formElement: ReactElement;
   formProps: IFormProps<T>;
   getData: () => T;
@@ -45,7 +47,8 @@ export enum FieldTypeEnum {
   SECTION = 'section',
   SELECT = 'select',
   SWITCH = 'switch',
-  TABLE = 'table',
+  LINE_EDITABLE_TABLE = 'lineeditabletable',
+  EDITABLE_TABLE = 'editabletable',
   TEXT = 'text',
   TEXTAREA = 'textarea',
   YEAR = 'year',
@@ -71,7 +74,11 @@ export type IFieldProps<T> =
   // TODO investigate type resolution
   // Using any to avoid circular type definition for now, until there is a way to get the type of an item of T[keyof T]
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  | IFieldTableProps<T, any>
+  | IFieldLineEditableTableProps<T, any>
+  // TODO investigate type resolution
+  // Using any to avoid circular type definition for now, until there is a way to get the type of an item of T[keyof T]
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  | IFieldEditableTableProps<T, any>
   | IFieldTextAreaProps<T>
   | IFieldTextProps<T>
   | IFieldYearProps<T>;
@@ -252,10 +259,15 @@ export interface IFieldSwitchProps<T> extends IFieldBaseProps<T> {
   fieldType: FieldTypeEnum.SWITCH;
 }
 
-export interface IFieldTableProps<T, U>
+export interface IFieldEditableTableProps<T, U>
+  extends IFieldBaseProps<T>,
+    Pick<IEditableDataTableProps<U>, 'columns' | 'extra' | 'loading' | 'onSortChange'> {
+  fieldType: FieldTypeEnum.EDITABLE_TABLE;
+}
+export interface IFieldLineEditableTableProps<T, U>
   extends IFieldBaseProps<T>,
     Pick<ILineEditableDataTableProps<U>, 'columns' | 'extra' | 'loading' | 'onSortChange'> {
-  fieldType: FieldTypeEnum.TABLE;
+  fieldType: FieldTypeEnum.LINE_EDITABLE_TABLE;
 }
 
 export interface IFieldTextProps<T>

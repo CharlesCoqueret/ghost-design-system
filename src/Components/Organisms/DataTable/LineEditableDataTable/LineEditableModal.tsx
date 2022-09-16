@@ -1,6 +1,7 @@
 import React, { ReactElement } from 'react';
 import compact from 'lodash/compact';
 import cloneDeep from 'lodash/cloneDeep';
+import { AnyObject } from 'yup/lib/object';
 
 import { Modal, ModalBody, ModalFooter } from '../../../Atoms/Modal';
 import { Button, ColorButtonEnum } from '../../../Molecules/Button';
@@ -234,7 +235,7 @@ export const columnToFieldMapper = <T,>(columns: Array<IColumnType<T>>): Array<I
             extra: column.extra,
             loading: column.loading,
             onSortChange: column.onSortChange,
-            fieldType: FieldTypeEnum.TABLE,
+            fieldType: FieldTypeEnum.LINEEDITABLETABLE,
             label: column.title,
             dataIndex: column.dataIndex,
             readOnly: !column.editable,
@@ -274,7 +275,7 @@ export const columnToFieldMapper = <T,>(columns: Array<IColumnType<T>>): Array<I
   );
 };
 
-const LineEditableModal = <T,>(props: ILineEditableModalProps<T>): ReactElement => {
+const LineEditableModal = <T extends AnyObject>(props: ILineEditableModalProps<T>): ReactElement => {
   const { columns, extra, onCancel, onClose, onSubmit, showChanges, row, rowIndex, title } = props;
 
   const { formElement, getData, submit } = useForm<T>({

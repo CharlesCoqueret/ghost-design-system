@@ -110,6 +110,9 @@ const EditableDataTable = <T,>(props: IEditableDataTableProps<T>): ReactElement 
       prev.push(newLine);
       return [...prev];
     });
+    if (extra.onRowAdded) {
+      extra.onRowAdded();
+    }
   };
 
   return (

@@ -9,7 +9,7 @@ import { Link } from '../../Atoms/Link';
 import { Typography } from '../../Atoms/Typography';
 
 import useForm, { IUseFormProps } from './useForm';
-import { FieldTypeEnum, IFieldAndLayoutProps, IFieldTableProps } from './types';
+import { FieldTypeEnum, IFieldAndLayoutProps, IFieldFullEditableTableProps, IFieldTableProps } from './types';
 import { ColumnType } from '../DataTable/Common';
 
 export default {
@@ -35,6 +35,7 @@ interface IDataType {
   select: string | undefined;
   switch: Array<IToggleEntry> | undefined;
   table: Array<IDataTableType>;
+  fulleditabletable: Array<IDataTableType>;
   text: string | undefined;
   textarea: string | undefined;
   year: number | undefined;
@@ -111,6 +112,11 @@ const initialData: IDataType = {
     { number: 2, text: 'text 2' },
     { number: 3, text: 'text 3' },
   ],
+  fulleditabletable: [
+    { number: 1, text: 'text 1' },
+    { number: 2, text: 'text 2' },
+    { number: 3, text: 'text 3' },
+  ],
   text: 'text',
   textarea:
     'Lorem ipsum dolor sit amet. Ut voluptas reiciendis vel praesentium laborum hic voluptas asperiores nam ' +
@@ -136,7 +142,7 @@ const validationSchema = yup.object({
     .test({
       name: 'one-true',
       message: 'At least one required',
-      test: (val) => val.some((entry) => entry.checked === true),
+      test: (val) => (val ? val.some((entry) => entry.checked === true) : false),
     })
     .required(),
   date: yup.date().min(new Date('01/01/1980'), 'Date needs to be after Jan 1 1980').required(),
@@ -161,10 +167,11 @@ const validationSchema = yup.object({
     .test({
       name: 'one-true',
       message: 'At least one required',
-      test: (val) => val.some((entry) => entry.checked === true),
+      test: (val) => (val ? val.some((entry) => entry.checked === true) : false),
     })
     .required(),
   table: yup.array().min(1).required(),
+  fulleditabletable: yup.array().min(1).required(),
   text: yup
     .string()
     .required()
@@ -284,9 +291,47 @@ const fields: Array<IFieldAndLayoutProps<IDataType>> = [
       },
       onNewLine: () => ({ number: 100, text: 'text' }),
     },
-    fieldType: FieldTypeEnum.TABLE,
+    fieldType: FieldTypeEnum.LINE_EDITABLE_TABLE,
     label: 'Table',
   } as IFieldTableProps<IDataType, IDataTableType>,
+  {
+    columns: [
+      {
+        dataIndex: 'number',
+        editable: true,
+        title: 'Number',
+        type: ColumnType.NUMBER,
+      },
+      {
+        dataIndex: 'text',
+        editable: true,
+        title: 'Text',
+        type: ColumnType.TEXT,
+      },
+    ],
+    dataIndex: 'fulleditabletable',
+    extra: {
+      validationSchema: yup.object({
+        number: yup.number().required(),
+        text: yup.string().required(),
+      }),
+      onEdit: () => {
+        // Enabling edition
+        return;
+      },
+      onRowDelete: () => {
+        // Enabling deletion
+        return;
+      },
+      canAddNewLine: () => {
+        // Enabling Add new line
+        return true;
+      },
+      onNewLine: () => ({ number: 100, text: 'text' }),
+    },
+    fieldType: FieldTypeEnum.EDITABLE_TABLE,
+    label: 'Full editable table',
+  } as IFieldFullEditableTableProps<IDataType, IDataTableType>,
   { label: 'Text', dataIndex: 'text', fieldType: FieldTypeEnum.TEXT },
   { label: 'Textarea', dataIndex: 'textarea', fieldType: FieldTypeEnum.TEXTAREA },
   { label: 'Year', dataIndex: 'year', fieldType: FieldTypeEnum.YEAR },

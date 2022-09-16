@@ -24,17 +24,28 @@ const Highlighter = (props: PropsWithChildren<IHighlighterProps>): ReactElement 
             <Col>
               {enableOldData &&
                 React.cloneElement(child, {
-                  onChange: undefined,
-                  readOnly: true,
-                  inputValue: oldData,
-                  highlighted: shouldHighlight,
-                  errorMessage: undefined,
-                  placeholder: undefined,
-                  helperText: undefined,
                   disabled: undefined,
-                  maxLength: undefined,
+                  errorMessage: undefined,
+                  extra: {
+                    // For table use case
+                    onEdit: undefined,
+                    onRowEdit: undefined,
+                    onRowSubmit: undefined,
+                    onRowDelete: undefined,
+                    isEditable: () => false,
+                    isDeletable: () => false,
+                    canAddNewLine: () => false,
+                  },
+                  helperText: undefined,
+                  highlighted: shouldHighlight,
                   id: undefined,
+                  inputValue: oldData, // For fields
+                  data: oldData, // For table use case
+                  maxLength: undefined,
                   name: undefined,
+                  onChange: undefined,
+                  placeholder: undefined,
+                  readOnly: true,
                 })}
             </Col>
           </Row>
