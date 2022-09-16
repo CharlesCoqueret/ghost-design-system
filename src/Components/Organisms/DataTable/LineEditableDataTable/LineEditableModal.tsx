@@ -235,7 +235,7 @@ export const columnToFieldMapper = <T,>(columns: Array<IColumnType<T>>): Array<I
             extra: column.extra,
             loading: column.loading,
             onSortChange: column.onSortChange,
-            fieldType: FieldTypeEnum.LINEEDITABLETABLE,
+            fieldType: FieldTypeEnum.LINE_EDITABLE_TABLE,
             label: column.title,
             dataIndex: column.dataIndex,
             readOnly: !column.editable,
