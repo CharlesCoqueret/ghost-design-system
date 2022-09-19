@@ -382,7 +382,7 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
         <Highlighter
           enableOldData={enableOldData}
           enableSideBySide={enableSideBySide}
-          oldData={previousData}
+          oldData={previousData && previousData[field.dataIndex]}
           shouldHighlight={false}>
           <LineEditableDataTable
             {...field}
@@ -407,7 +407,7 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
         <Highlighter
           enableOldData={enableOldData}
           enableSideBySide={enableSideBySide}
-          oldData={previousData}
+          oldData={previousData && previousData[field.dataIndex]}
           shouldHighlight={false}>
           <EditableDataTable
             {...field}
