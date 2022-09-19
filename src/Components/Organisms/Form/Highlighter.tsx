@@ -27,6 +27,7 @@ const Highlighter = (props: PropsWithChildren<IHighlighterProps>): ReactElement 
                   disabled: undefined,
                   errorMessage: undefined,
                   extra: {
+                    ...child.props?.extra,
                     // For table use case
                     onEdit: undefined,
                     onRowEdit: undefined,
