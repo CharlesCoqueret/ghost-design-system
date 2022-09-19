@@ -839,7 +839,7 @@ describe('FormField Component', () => {
               number: yup.number().required('Value for number is required'),
             }),
           },
-          fieldType: FieldTypeEnum.TABLE,
+          fieldType: FieldTypeEnum.LINE_EDITABLE_TABLE,
           label: 'table',
         }}
         handleChange={handleChangeMock}

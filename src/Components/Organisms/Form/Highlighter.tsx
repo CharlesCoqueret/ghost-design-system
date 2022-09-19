@@ -41,7 +41,7 @@ const Highlighter = (props: PropsWithChildren<IHighlighterProps>): ReactElement 
                   highlighted: shouldHighlight,
                   id: undefined,
                   inputValue: oldData, // For fields
-                  data: oldData, // For table use case
+                  data: oldData || [], // For table use case
                   maxLength: undefined,
                   name: undefined,
                   onChange: undefined,

@@ -18,7 +18,7 @@ exports[`FormField Component FormField renders amount field 1`] = `
     >
       <div>
         Mocked AmountField props: 
-        {"dataIndex":"amount","fieldType":"amount","label":"amount","inputValue":"0","readOnly":true,"highlighted":true}
+        {"dataIndex":"amount","fieldType":"amount","label":"amount","inputValue":"0","extra":{},"highlighted":true,"data":"0","readOnly":true}
       </div>
     </div>
   </div>
@@ -52,7 +52,7 @@ exports[`FormField Component FormField renders checkbox field 1`] = `
     >
       <div>
         Mocked CheckboxField props: 
-        {"dataIndex":"checkbox","fieldType":"checkbox","label":"checkbox","inputValue":[{"value":"value1","label":"label1","checked":true,"highlighted":true},{"value":"value2","label":"label2","checked":false,"highlighted":true},{"value":"value3","label":"label3","highlighted":true},{"value":"value4","label":"label4"}],"readOnly":true,"highlighted":true}
+        {"dataIndex":"checkbox","fieldType":"checkbox","label":"checkbox","inputValue":[{"value":"value1","label":"label1","checked":true,"highlighted":true},{"value":"value2","label":"label2","checked":false,"highlighted":true},{"value":"value3","label":"label3","highlighted":true},{"value":"value4","label":"label4"}],"extra":{},"highlighted":true,"data":[{"value":"value1","label":"label1","checked":true,"highlighted":true},{"value":"value2","label":"label2","checked":false,"highlighted":true},{"value":"value3","label":"label3","highlighted":true},{"value":"value4","label":"label4"}],"readOnly":true}
       </div>
     </div>
   </div>
@@ -86,7 +86,7 @@ exports[`FormField Component FormField renders custom field 1`] = `
     >
       <div>
         Mocked CustomField props: 
-        {"dataIndex":"custom","fieldType":"custom","label":"custom","inputValue":0,"readOnly":true,"highlighted":true}
+        {"dataIndex":"custom","fieldType":"custom","label":"custom","inputValue":0,"extra":{},"highlighted":true,"data":[],"readOnly":true}
       </div>
     </div>
   </div>
@@ -120,7 +120,7 @@ exports[`FormField Component FormField renders date field 1`] = `
     >
       <div>
         Mocked DatePickerField props: 
-        {"dataIndex":"date","fieldType":"date","label":"date","inputValue":"1984-09-24T00:00:00.000Z","usePortal":true,"readOnly":true,"highlighted":true}
+        {"dataIndex":"date","fieldType":"date","label":"date","inputValue":"1984-09-24T00:00:00.000Z","usePortal":true,"extra":{},"highlighted":true,"data":"1984-09-24T00:00:00.000Z","readOnly":true}
       </div>
     </div>
   </div>
@@ -154,7 +154,7 @@ exports[`FormField Component FormField renders dynamic search field 1`] = `
     >
       <div>
         Mocked DynamicSearchField props: 
-        {"dataIndex":"dynamicsearch","fieldType":"dynamicsearch","label":"dynamicsearch","inputValue":"value2","readOnly":true,"highlighted":true}
+        {"dataIndex":"dynamicsearch","fieldType":"dynamicsearch","label":"dynamicsearch","inputValue":"value2","extra":{},"highlighted":true,"data":"value2","readOnly":true}
       </div>
     </div>
   </div>
@@ -188,7 +188,7 @@ exports[`FormField Component FormField renders file field 1`] = `
     >
       <div>
         Mocked FileField props: 
-        {"dataIndex":"file","fieldType":"file","label":"file","requestMethod":"POST","requestUrl":"test.url","inputValue":[{"name":"file2","size":2,"type":"type2","status":"done"}],"readOnly":true,"highlighted":false}
+        {"dataIndex":"file","fieldType":"file","label":"file","requestMethod":"POST","requestUrl":"test.url","inputValue":[{"name":"file2","size":2,"type":"type2","status":"done"}],"extra":{},"highlighted":false,"data":[{"name":"file2","size":2,"type":"type2","status":"done"}],"readOnly":true}
       </div>
     </div>
   </div>
@@ -222,7 +222,7 @@ exports[`FormField Component FormField renders multi select field 1`] = `
     >
       <div>
         Mocked MultiSelectField props: 
-        {"dataIndex":"multiselect","fieldType":"multiselect","label":"multiselect","numberOfItemLabel":"{} item selected","numberOfItemsLabel":"{} items selected","options":[{"value":"value1","label":"label1"},{"value":"value2","label":"label2"}],"inputValue":["value2"],"readOnly":true,"highlighted":true}
+        {"dataIndex":"multiselect","fieldType":"multiselect","label":"multiselect","numberOfItemLabel":"{} item selected","numberOfItemsLabel":"{} items selected","options":[{"value":"value1","label":"label1"},{"value":"value2","label":"label2"}],"inputValue":["value2"],"extra":{},"highlighted":true,"data":["value2"],"readOnly":true}
       </div>
     </div>
   </div>
@@ -265,7 +265,7 @@ exports[`FormField Component FormField renders number field 1`] = `
     >
       <div>
         Mocked AmountField props: 
-        {"dataIndex":"number","fieldType":"number","label":"number","inputValue":"0","readOnly":true,"highlighted":true}
+        {"dataIndex":"number","fieldType":"number","label":"number","inputValue":"0","extra":{},"highlighted":true,"data":"0","readOnly":true}
       </div>
     </div>
   </div>
@@ -299,7 +299,7 @@ exports[`FormField Component FormField renders percentage field 1`] = `
     >
       <div>
         Mocked PercentageField props: 
-        {"dataIndex":"percentage","fieldType":"percentage","label":"percentage","inputValue":"0","readOnly":true,"highlighted":true}
+        {"dataIndex":"percentage","fieldType":"percentage","label":"percentage","inputValue":"0","extra":{},"highlighted":true,"data":"0","readOnly":true}
       </div>
     </div>
   </div>
@@ -333,7 +333,7 @@ exports[`FormField Component FormField renders rich text field 1`] = `
     >
       <div>
         Mocked RichTextField props: 
-        {"dataIndex":"richtext","fieldType":"richtext","label":"richtext","inputValue":"old richtext","readOnly":true,"highlighted":true}
+        {"dataIndex":"richtext","fieldType":"richtext","label":"richtext","inputValue":"old richtext","extra":{},"highlighted":true,"data":"old richtext","readOnly":true}
       </div>
     </div>
   </div>
@@ -367,7 +367,7 @@ exports[`FormField Component FormField renders select field 1`] = `
     >
       <div>
         Mocked SelectField props: 
-        {"dataIndex":"select","fieldType":"select","label":"select","options":[{"value":"value1","label":"label1"},{"value":"value2","label":"label2"}],"inputValue":"value1","readOnly":true,"highlighted":false}
+        {"dataIndex":"select","fieldType":"select","label":"select","options":[{"value":"value1","label":"label1"},{"value":"value2","label":"label2"}],"inputValue":"value1","extra":{},"highlighted":false,"data":"value1","readOnly":true}
       </div>
     </div>
   </div>
@@ -410,7 +410,7 @@ exports[`FormField Component FormField renders switch field 1`] = `
     >
       <div>
         Mocked SwitchField props: 
-        {"dataIndex":"switch","fieldType":"switch","label":"switch","inputValue":[{"value":"value1","label":"label1","checked":true,"highlighted":true},{"value":"value2","label":"label2","checked":false,"highlighted":true},{"value":"value3","label":"label3","highlighted":true},{"value":"value4","label":"label4"}],"readOnly":true,"highlighted":true}
+        {"dataIndex":"switch","fieldType":"switch","label":"switch","inputValue":[{"value":"value1","label":"label1","checked":true,"highlighted":true},{"value":"value2","label":"label2","checked":false,"highlighted":true},{"value":"value3","label":"label3","highlighted":true},{"value":"value4","label":"label4"}],"extra":{},"highlighted":true,"data":[{"value":"value1","label":"label1","checked":true,"highlighted":true},{"value":"value2","label":"label2","checked":false,"highlighted":true},{"value":"value3","label":"label3","highlighted":true},{"value":"value4","label":"label4"}],"readOnly":true}
       </div>
     </div>
   </div>
@@ -430,7 +430,7 @@ exports[`FormField Component FormField renders table field 1`] = `
 <div>
   <div>
     Mocked SwitchField props: 
-    {"columns":[{"title":"number","dataIndex":"number","type":"number"}],"dataIndex":"table","extra":{"validationSchema":{"deps":[],"tests":[],"transforms":[null],"conditions":[],"_whitelist":{"list":{},"refs":{}},"_blacklist":{"list":{},"refs":{}},"exclusiveTests":{},"spec":{"strip":false,"strict":false,"abortEarly":true,"recursive":true,"nullable":false,"presence":"optional"},"fields":{"number":{"type":"number","_whitelist":{"list":{},"refs":{}},"_blacklist":{"list":{},"refs":{}},"exclusiveTests":{"required":true},"deps":[],"conditions":[],"tests":[null],"transforms":[null],"spec":{"strip":false,"strict":false,"abortEarly":true,"recursive":true,"nullable":false,"presence":"required"}}},"_nodes":["number"],"_excludedEdges":[],"type":"object"}},"fieldType":"table","label":"table","data":[{"number":1},{"number":2},{"number":3}]}
+    {"columns":[{"title":"number","dataIndex":"number","type":"number"}],"dataIndex":"table","extra":{"validationSchema":{"deps":[],"tests":[],"transforms":[null],"conditions":[],"_whitelist":{"list":{},"refs":{}},"_blacklist":{"list":{},"refs":{}},"exclusiveTests":{},"spec":{"strip":false,"strict":false,"abortEarly":true,"recursive":true,"nullable":false,"presence":"optional"},"fields":{"number":{"type":"number","_whitelist":{"list":{},"refs":{}},"_blacklist":{"list":{},"refs":{}},"exclusiveTests":{"required":true},"deps":[],"conditions":[],"tests":[null],"transforms":[null],"spec":{"strip":false,"strict":false,"abortEarly":true,"recursive":true,"nullable":false,"presence":"required"}}},"_nodes":["number"],"_excludedEdges":[],"type":"object"}},"fieldType":"lineeditabletable","label":"table","data":[{"number":1},{"number":2},{"number":3}]}
   </div>
 </div>
 `;
@@ -453,7 +453,7 @@ exports[`FormField Component FormField renders text field 1`] = `
     >
       <div>
         Mocked TextField props: 
-        {"dataIndex":"text","fieldType":"text","label":"text","inputValue":"old text","readOnly":true,"highlighted":true}
+        {"dataIndex":"text","fieldType":"text","label":"text","inputValue":"old text","extra":{},"highlighted":true,"data":"old text","readOnly":true}
       </div>
     </div>
   </div>
@@ -487,7 +487,7 @@ exports[`FormField Component FormField renders textarea field 1`] = `
     >
       <div>
         Mocked TextAreaField props: 
-        {"dataIndex":"textarea","fieldType":"textarea","label":"textearea","inputValue":"old textarea","readOnly":true,"highlighted":true}
+        {"dataIndex":"textarea","fieldType":"textarea","label":"textearea","inputValue":"old textarea","extra":{},"highlighted":true,"data":"old textarea","readOnly":true}
       </div>
     </div>
   </div>
@@ -521,7 +521,7 @@ exports[`FormField Component FormField renders year field 1`] = `
     >
       <div>
         Mocked YearPickerField props: 
-        {"dataIndex":"year","fieldType":"year","label":"year","inputValue":2020,"usePortal":true,"readOnly":true,"highlighted":true}
+        {"dataIndex":"year","fieldType":"year","label":"year","inputValue":2020,"usePortal":true,"extra":{},"highlighted":true,"data":2020,"readOnly":true}
       </div>
     </div>
   </div>
