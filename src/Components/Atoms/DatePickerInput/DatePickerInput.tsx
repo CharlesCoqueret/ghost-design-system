@@ -61,7 +61,11 @@ const DatePickerInput = (props: IDatePickerProps): ReactElement => {
   const localDateFormat = dateFormat || 'MMM dd, yyyy';
 
   return (
-    <div className={classnames('field', className)}>
+    <div
+      className={classnames('field', className)}
+      onClick={(event) => {
+        event.stopPropagation();
+      }}>
       <DatePicker
         name={name}
         selected={inputValue}
