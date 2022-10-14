@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react';
 import Numeral from 'numeral';
-import NumberFormat, { NumberFormatValues } from 'react-number-format';
+import NumberFormat, { NumberFormatValues, SourceInfo } from 'react-number-format';
 import classnames from 'classnames';
 import compact from 'lodash/compact';
 
@@ -99,8 +99,8 @@ const AmountInput = (props: IAmountInputProps): ReactElement => {
 
   const numberFormatThousandSeparator = thousandsGroupStyle === ThousandsGroupStyle.NONE ? '' : thousandSeparator;
 
-  const onValueChange = (newValue: NumberFormatValues): void => {
-    if (onChange) {
+  const onValueChange = (newValue: NumberFormatValues, sourceInfo: SourceInfo): void => {
+    if (sourceInfo.source !== 'prop' && onChange) {
       onChange(newValue.floatValue);
     }
   };
