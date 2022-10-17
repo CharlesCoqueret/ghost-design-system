@@ -19,6 +19,7 @@ const DateCell = <T,>(props: ICellProps<T, IColumnDate<T>>): ReactElement => {
         dataTestId={dataTestId}
         calendarStartDay={column.calendarStartDay}
         dateFormat={dateFormat}
+        fieldClassName={column.fieldClassName}
         name={String(column.dataIndex)}
         inputClassName={classnames({ 'table--cell-value--date-readonly': !isCurrentlyEditedRow })}
         inputValue={displayValue}

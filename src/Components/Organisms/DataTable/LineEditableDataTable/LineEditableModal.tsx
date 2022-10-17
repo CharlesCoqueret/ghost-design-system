@@ -93,6 +93,7 @@ export const columnToFieldMapper = <T,>(columns: Array<IColumnType<T>>): Array<I
             dataIndex: column.dataIndex,
             dateFormat: column.dateFormat,
             fieldType: FieldTypeEnum.DATE,
+            fieldClassName: column.fieldClassName,
             isClearable: column.isClearable,
             label: column.title,
             locale: column.locale,

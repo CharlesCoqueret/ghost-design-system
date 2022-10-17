@@ -183,7 +183,10 @@ export interface IColumnDescription<T> extends IColumn {
 
 export interface IColumnDate<T>
   extends IColumn,
-    Pick<IDatePickerFieldProps, 'calendarStartDay' | 'dateFormat' | 'isClearable' | 'locale' | 'usePortal'> {
+    Pick<
+      IDatePickerFieldProps,
+      'calendarStartDay' | 'dateFormat' | 'fieldClassName' | 'isClearable' | 'locale' | 'usePortal'
+    > {
   /** Entry of the value in T (type: keyof T) */
   dataIndex: keyof T;
   /** Enables edition for column (optional, default: false) */
