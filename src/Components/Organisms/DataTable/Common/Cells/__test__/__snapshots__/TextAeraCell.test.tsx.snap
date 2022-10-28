@@ -86,7 +86,6 @@ exports[`TextAreaCell component TextAreaCell renders 1`] = `
                 name="data"
                 readonly=""
                 rows="1"
-                style="height: 0px;"
               >
                 text 1
               </textarea>
@@ -150,7 +149,6 @@ exports[`TextAreaCell component TextAreaCell renders hidden 1`] = `
                 name="data"
                 readonly=""
                 rows="1"
-                style="height: 0px;"
               >
                 text 1
               </textarea>
@@ -213,7 +211,6 @@ exports[`TextAreaCell component TextAreaCell renders with forced value 1`] = `
                 name="data"
                 readonly=""
                 rows="1"
-                style="height: 0px;"
               >
                 text 2
               </textarea>

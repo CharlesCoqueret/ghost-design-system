@@ -628,7 +628,6 @@ exports[`StaticDataTableCell component StaticDataTableCell renders with textarea
                 name="textarea"
                 readonly=""
                 rows="1"
-                style="height: 0px;"
               >
                 textarea
               </textarea>

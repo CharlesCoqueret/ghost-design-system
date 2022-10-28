@@ -63,7 +63,7 @@ const TextAreaInput = (props: ITextAreaInputProps): ReactElement => {
   useEffect(() => {
     setTextAreaHeight(undefined);
     runAfterUpdate(updateHeight);
-  }, []);
+  }, [inputValue]);
 
   /**
    * Handler of changes
@@ -97,7 +97,7 @@ const TextAreaInput = (props: ITextAreaInputProps): ReactElement => {
         ref={textAreaRef}
         rows={1}
         style={{
-          height: textAreaHeight,
+          height: readOnly ? undefined : textAreaHeight,
         }}
         id={name}
         name={name}

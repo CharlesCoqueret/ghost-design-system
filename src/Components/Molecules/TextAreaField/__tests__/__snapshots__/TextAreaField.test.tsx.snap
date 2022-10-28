@@ -74,7 +74,6 @@ exports[`TextAreaField Component TextAreaField renders in readonly 1`] = `
         name="NAME"
         readonly=""
         rows="1"
-        style="height: 0px;"
       >
         INPUT-VALUE
       </textarea>
@@ -97,7 +96,6 @@ exports[`TextAreaField Component TextAreaField renders in readonly highlighted 1
         name="NAME"
         readonly=""
         rows="1"
-        style="height: 0px;"
       />
     </div>
   </div>
