@@ -76,6 +76,7 @@ exports[`MultiSelectField Component MultiSelectField renders 1`] = `
           <input
             name="name"
             type="hidden"
+            value=""
           />
         </div>
       </div>

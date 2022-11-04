@@ -73,6 +73,7 @@ exports[`MultiSelectInput Component MultiSelectInput handles change 1`] = `
         <input
           name="SELECT"
           type="hidden"
+          value=""
         />
       </div>
     </div>
@@ -153,6 +154,7 @@ exports[`MultiSelectInput Component MultiSelectInput handles change with empty v
         <input
           name="SELECT"
           type="hidden"
+          value=""
         />
       </div>
     </div>
@@ -378,6 +380,7 @@ exports[`MultiSelectInput Component MultiSelectInput renders inError 1`] = `
         <input
           name="SELECT"
           type="hidden"
+          value=""
         />
       </div>
     </div>
@@ -458,6 +461,7 @@ exports[`MultiSelectInput Component MultiSelectInput renders with invalid input 
         <input
           name="SELECT"
           type="hidden"
+          value=""
         />
       </div>
     </div>
@@ -787,6 +791,7 @@ exports[`MultiSelectInput Component MultiSelectInput renders without input value
         <input
           name="SELECT"
           type="hidden"
+          value=""
         />
       </div>
     </div>
@@ -867,6 +872,7 @@ exports[`MultiSelectInput Component MultiSelectInput renders without portal 1`] 
         <input
           name="SELECT"
           type="hidden"
+          value=""
         />
       </div>
     </div>

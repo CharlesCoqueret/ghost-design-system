@@ -201,7 +201,7 @@ exports[`DynamicSearchInput Component DynamicSearchInput handles change 2`] = `
       </div>
       <div>
         <div
-          class=" css-omztxt"
+          class=" css-1yfmvl6-MenuPortal"
         >
           <div
             class=" css-26l3qy-menu"
@@ -567,7 +567,7 @@ exports[`DynamicSearchInput Component DynamicSearchInput handles change to undef
       </div>
       <div>
         <div
-          class=" css-omztxt"
+          class=" css-1yfmvl6-MenuPortal"
         >
           <div
             class=" css-26l3qy-menu"
@@ -796,7 +796,7 @@ exports[`DynamicSearchInput Component DynamicSearchInput handles change with no 
       </div>
       <div>
         <div
-          class=" css-omztxt"
+          class=" css-1yfmvl6-MenuPortal"
         >
           <div
             class=" css-26l3qy-menu"
