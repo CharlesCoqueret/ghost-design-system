@@ -1,3 +1,8 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
+
+// Disabling typescript for this file, as not all component have the exact same interface
+
 import React, { memo, PropsWithChildren, ReactElement } from 'react';
 
 import { Col, Row } from '../../Atoms/Layout';
