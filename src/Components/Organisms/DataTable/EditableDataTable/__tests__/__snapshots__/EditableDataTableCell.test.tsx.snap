@@ -876,8 +876,6 @@ exports[`EditableDataTableCell component EditableDataTableCell renders with text
                 class="input-textarea-field gds-typography"
                 id="textarea"
                 name="textarea"
-                rows="1"
-                style="height: 0px;"
               >
                 textarea
               </textarea>

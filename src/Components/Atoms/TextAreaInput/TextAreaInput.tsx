@@ -1,7 +1,6 @@
-import React, { ReactElement, useEffect, useRef, useState } from 'react';
+import React, { ReactElement } from 'react';
 import classnames from 'classnames';
-
-import useRunAfterUpdate from '../../../hooks/use-run-after-update';
+import TextareaAutosize from 'react-textarea-autosize';
 
 export interface ITextAreaInputProps {
   /** For test purpose only */
@@ -47,33 +46,11 @@ const TextAreaInput = (props: ITextAreaInputProps): ReactElement => {
   } = props;
 
   /**
-   * Mecanics to update the text area height
-   */
-  const runAfterUpdate = useRunAfterUpdate();
-  const textAreaRef = useRef<HTMLTextAreaElement>(null);
-  const [textAreaHeight, setTextAreaHeight] = useState<string | undefined>('auto');
-
-  const updateHeight = () => {
-    setTextAreaHeight(`${textAreaRef.current?.scrollHeight}px`);
-  };
-
-  /**
-   * Ensure the height is properly set when initial value requires a bigger height.
-   */
-  useEffect(() => {
-    setTextAreaHeight(undefined);
-    runAfterUpdate(updateHeight);
-  }, [inputValue]);
-
-  /**
    * Handler of changes
    *
    * @param event input event
    */
   const onChangeHandler = (event: React.ChangeEvent<HTMLTextAreaElement>): void => {
-    setTextAreaHeight('auto');
-    runAfterUpdate(updateHeight);
-
     if (onChange) {
       onChange(event);
     }
@@ -81,7 +58,8 @@ const TextAreaInput = (props: ITextAreaInputProps): ReactElement => {
 
   return (
     <div className={classnames('field', 'gds-input-textarea-parent')}>
-      <textarea
+      <TextareaAutosize
+        onChange={onChangeHandler}
         className={classnames(
           { 'input-textarea-field': !readOnly },
           { 'input-textarea-field-read-only': readOnly },
@@ -94,17 +72,13 @@ const TextAreaInput = (props: ITextAreaInputProps): ReactElement => {
           inputClassName,
         )}
         data-testid={dataTestId}
-        ref={textAreaRef}
-        rows={1}
-        style={{
-          height: readOnly ? undefined : textAreaHeight,
-        }}
         id={name}
         name={name}
         placeholder={placeholder}
+        minRows={3}
+        maxRows={10}
         maxLength={maxLength}
         minLength={minLength}
-        onChange={onChangeHandler}
         disabled={disabled}
         readOnly={readOnly}
         value={inputValue}

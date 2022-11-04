@@ -12,24 +12,18 @@
     flex: 1;
     resize: none;
     box-sizing: border-box;
-    min-height: 80px;
-    max-height: 200px;
-    border-radius: 4px;
-    border: 1px solid $chalk;
     padding: 6px 10px;
     outline: 0;
+  }
 
-    &:not(.input-error):not(:disabled):not(:read-only):focus,
-    &:not(.input-error):not(:disabled):not(:read-only):active,
-    &:not(.input-error):not(:disabled):not(:read-only):hover {
+  .input-textarea-field {
+    border-radius: 4px;
+    border: 1px solid $chalk;
+
+    &:not(.input-error):focus,
+    &:not(.input-error):active,
+    &:not(.input-error):hover {
       border: 1px solid $primary;
-    }
-
-    &:read-only,
-    &:read-only:hover,
-    &:read-only:active,
-    &:read-only:focus {
-      border: 1px solid $chalk;
     }
 
     &.input-error {
@@ -41,5 +35,13 @@
       background-color: $chalk;
       color: $pebble;
     }
+  }
+
+  .input-textarea-field-read-only {
+    border-radius: 0px;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom: 1px solid $chalk;
   }
 }

@@ -627,7 +627,6 @@ exports[`StaticDataTableCell component StaticDataTableCell renders with textarea
                 id="textarea"
                 name="textarea"
                 readonly=""
-                rows="1"
               >
                 textarea
               </textarea>
