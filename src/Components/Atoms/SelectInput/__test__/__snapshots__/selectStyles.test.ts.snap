@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`customStyles method customStyles option 1`] = `
-Object {
-  ":active": Object {
+{
+  ":active": {
     "backgroundColor": "rgba(38,186,212,0.5)",
   },
   "backgroundColor": "rgba(38,186,212,0.5)",
@@ -18,8 +18,8 @@ Object {
 `;
 
 exports[`customStyles method customStyles option 2`] = `
-Object {
-  ":active": Object {
+{
+  ":active": {
     "backgroundColor": "rgba(38,186,212,0.66)",
   },
   "backgroundColor": "rgba(38,186,212,0.33)",
