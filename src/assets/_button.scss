@@ -24,6 +24,7 @@
       }
     }
     &:disabled {
+      cursor: default;
       background-color: $silver;
     }
   }
@@ -43,6 +44,7 @@
       }
     }
     &:disabled {
+      cursor: default;
       background-color: $silver;
     }
   }
@@ -63,6 +65,7 @@
       }
     }
     &:disabled {
+      cursor: default;
       color: $silver;
     }
   }

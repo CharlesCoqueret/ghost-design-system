@@ -86,10 +86,10 @@ const Button = (props: IButtonProps): ReactElement => {
             if (onClick) {
               onClick(event);
             }
-            if (hasMenu) {
+            if (hasMenu && !disabled) {
               if (!skipOpen.current) setIsMenuOpen((prev) => !prev);
             }
-            if (hasPopover) {
+            if (hasPopover && !disabled) {
               setIsPopoverOpen(true);
             }
           }}

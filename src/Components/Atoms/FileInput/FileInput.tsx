@@ -424,6 +424,7 @@ const FileInput = (props: IFileInputProps): ReactElement => {
         </label>
       </div>
       <div key='gallery' className='gallery'>
+        {readOnly && localItems.length === 0 && '-'}
         {localItems.map((item) => {
           return (
             <FileGallery
