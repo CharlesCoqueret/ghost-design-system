@@ -30,7 +30,7 @@ exports[`NavItem unmocked Component NavItem unmocked submenu gets closed 1`] = `
           aria-label="Menu"
           class="szh-menu szh-menu--state-closed szh-menu--dir-bottom"
           role="menu"
-          style="margin: 0px; display: none; position: absolute; left: 0px; top: 0px;"
+          style="position: absolute; margin: 0px; display: none; left: 0px; top: 0px;"
           tabindex="-1"
         >
           <div
@@ -91,7 +91,7 @@ exports[`NavItem unmocked Component NavItem unmocked submenu gets closed 2`] = `
           aria-label="Menu"
           class="szh-menu szh-menu--state-open szh-menu--dir-bottom"
           role="menu"
-          style="margin: 0px; position: absolute; left: 0px; top: 0px;"
+          style="position: absolute; margin: 0px; left: 0px; top: 0px;"
           tabindex="-1"
         >
           <div
@@ -152,7 +152,7 @@ exports[`NavItem unmocked Component NavItem unmocked submenu gets closed 3`] = `
           aria-label="Menu"
           class="szh-menu szh-menu--state-closed szh-menu--dir-bottom"
           role="menu"
-          style="margin: 0px; position: absolute; left: 0px; top: 0px; display: none;"
+          style="position: absolute; margin: 0px; left: 0px; top: 0px; display: none;"
           tabindex="-1"
         >
           <div
@@ -213,7 +213,7 @@ exports[`NavItem unmocked Component NavItem unmocked submenu gets closed 4`] = `
           aria-label="Menu"
           class="szh-menu szh-menu--state-open szh-menu--dir-bottom"
           role="menu"
-          style="margin: 0px; position: absolute; left: 0px; top: 0px;"
+          style="position: absolute; margin: 0px; left: 0px; top: 0px;"
           tabindex="-1"
         >
           <div

@@ -1,5 +1,7 @@
 .gds-nav-bar-container {
-  position: relative;
+  position: fixed;
+  top: 0px;
+  width: 100%;
   display: flex;
   align-items: center;
   background-color: $smoke;
@@ -99,4 +101,8 @@
       }
     }
   }
+}
+
+.positionRelative {
+  position: relative;
 }

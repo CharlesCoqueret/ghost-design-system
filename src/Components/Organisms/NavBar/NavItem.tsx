@@ -109,6 +109,7 @@ const NavItem = (props: INavItemProps): ReactElement => {
             arrow
             onClose={closeMenu}
             state={isOpen ? 'open' : 'closed'}
+            menuStyle={{ position: 'fixed' }}
             skipOpen={skipOpen}>
             {subItems?.map((item): ReactElement => {
               return (

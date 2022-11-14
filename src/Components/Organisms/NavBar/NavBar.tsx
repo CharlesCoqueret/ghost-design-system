@@ -1,5 +1,7 @@
 import React, { ReactElement } from 'react';
 import { NavLink } from 'react-router-dom';
+import classnames from 'classnames';
+
 import NavItem, { INavItemProps } from './NavItem';
 import SearchBar, { ISearchBarProps } from './SearchBar';
 
@@ -15,6 +17,8 @@ export interface IBrandProps {
 export interface INavBarProps {
   /** Brand properties */
   brand: IBrandProps;
+  /** Classname to be propagated to the top level container (options, default: undefined) */
+  className?: string;
   /** Navigation Buttons (on the left side) (optional, default: undefined) */
   navButtons?: Array<INavItemProps>;
   /** Navigation Buttons (on the right side) (optional, default: undefined) */
@@ -24,10 +28,10 @@ export interface INavBarProps {
 }
 
 const NavBar = (props: INavBarProps): ReactElement => {
-  const { brand, navButtons, navIcons, searchBar } = props;
+  const { brand, navButtons, navIcons, searchBar, className } = props;
 
   return (
-    <nav className='gds-nav-bar-container noselect'>
+    <nav className={classnames('gds-nav-bar-container', 'noselect', className)}>
       <div className='nav-bar-brand' key='brand'>
         <NavLink to={brand.redirection || NavBar.defaultProps.brand.redirection}>
           <img
@@ -66,6 +70,7 @@ const NavBar = (props: INavBarProps): ReactElement => {
 
 NavBar.defaultProps = {
   brand: { redirection: '/', alt: 'logo' },
+  className: undefined,
   navButtons: undefined,
   navIcons: undefined,
   searchBar: undefined,
