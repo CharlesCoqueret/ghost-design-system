@@ -9,9 +9,10 @@ import usePortfolioRequest from './use-portfolio-hook';
 import { SortDirectionEnum } from '../../Organisms/DataTable/Common/types';
 import { IStaticDataTableProps } from '../../Organisms/DataTable/StaticDataTable/StaticDataTable';
 
-export interface IPortfolio<FilterType, PortfolioType, RequestBodyType, RequestParamType, ResultType> {
+export interface IPortfolioProps<FilterType, PortfolioType, RequestBodyType, RequestParamType, ResultType> {
   axiosInstance: AxiosInstance;
   baseUrl: string;
+  verb: 'POST' | 'GET';
   filter?: Pick<
     IFilterProps<FilterType>,
     'advancedSearchItems' | 'disableTabOutside' | 'initialValues' | 'localization' | 'searchBarItems'
@@ -23,13 +24,17 @@ export interface IPortfolio<FilterType, PortfolioType, RequestBodyType, RequestP
     sort?: keyof PortfolioType,
     direction?: SortDirectionEnum,
   ) => RequestBodyType;
-  requestParamMapper: (filterValue: Partial<FilterType> | undefined) => RequestParamType;
+  requestParamMapper: (
+    filterValues: Partial<FilterType> | undefined,
+    sort?: keyof PortfolioType,
+    direction?: SortDirectionEnum,
+  ) => RequestParamType;
   resultMapper: (result: ResultType) => Promise<Array<PortfolioType>>;
   table: Pick<IStaticDataTableProps<PortfolioType>, 'columns' | 'extra'>;
 }
 
 const Portfolio = <FilterType, PortfolioType, RequestBodyType, RequestParamType, ResultType>(
-  props: IPortfolio<FilterType, PortfolioType, RequestBodyType, RequestParamType, ResultType>,
+  props: IPortfolioProps<FilterType, PortfolioType, RequestBodyType, RequestParamType, ResultType>,
 ) => {
   const {
     axiosInstance,
@@ -41,6 +46,7 @@ const Portfolio = <FilterType, PortfolioType, RequestBodyType, RequestParamType,
     requestParamMapper,
     resultMapper,
     table,
+    verb,
   } = props;
 
   const [filterValues, setFilterValues] = useState<Partial<FilterType> | undefined>();
@@ -66,6 +72,7 @@ const Portfolio = <FilterType, PortfolioType, RequestBodyType, RequestParamType,
     requestParamMapper,
     resultMapper,
     sort,
+    verb,
   );
 
   const onFilterChange = (filterValue: Partial<FilterType> | undefined) => {
@@ -87,7 +94,7 @@ const Portfolio = <FilterType, PortfolioType, RequestBodyType, RequestParamType,
           loadMore={setCurrentPage}
           hasMore={!isLoading && hasMoreEntities}
           useWindow={false}
-          getScrollParent={node}>
+          getScrollParent={() => node.current}>
           <StaticDataTable<PortfolioType>
             {...table}
             data={entities}

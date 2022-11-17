@@ -15,9 +15,14 @@ const usePortfolioRequest = <FilterType, PortfolioType, RequestBodyType, Request
     sort?: keyof PortfolioType,
     direction?: SortDirectionEnum,
   ) => RequestBodyType,
-  requestParamMapper: (filterValue: Partial<FilterType> | undefined) => RequestParamType,
+  requestParamMapper: (
+    filterValues: Partial<FilterType> | undefined,
+    sort?: keyof PortfolioType,
+    direction?: SortDirectionEnum,
+  ) => RequestParamType,
   resultMapper: (result: ResultType) => Promise<Array<PortfolioType>>,
   sort: keyof PortfolioType | undefined,
+  verb: 'POST' | 'GET',
 ): { isLoading: boolean; entities: Array<PortfolioType>; hasMoreEntities: boolean } => {
   const { CancelToken } = axios;
   let cancel: Canceler;
@@ -33,13 +38,20 @@ const usePortfolioRequest = <FilterType, PortfolioType, RequestBodyType, Request
 
   useEffect(() => {
     setIsLoading(true);
-    axiosInstance
-      .post<ResultType>(baseUrl, requestBodyMapper(filterValues), {
-        ...requestParamMapper(filterValues),
-        cancelToken: new CancelToken((c) => {
-          cancel = c;
-        }),
-      })
+    (verb === 'POST'
+      ? axiosInstance.post<ResultType>('/', requestBodyMapper(filterValues, sort, direction), {
+          ...requestParamMapper(filterValues, sort, direction),
+          cancelToken: new CancelToken((c) => {
+            cancel = c;
+          }),
+        })
+      : axiosInstance.get<ResultType>('/', {
+          ...requestParamMapper(filterValues, sort, direction),
+          cancelToken: new CancelToken((c) => {
+            cancel = c;
+          }),
+        })
+    )
       .then((response) => {
         if (cancelled) {
           setHasMoreEntities(false);
