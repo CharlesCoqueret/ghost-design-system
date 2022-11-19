@@ -56,6 +56,8 @@
     - [useForm hook](https://charlescoqueret.github.io/ghost-design-system/?path=/story/organism-useform--default)
   - [NavBar](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/organism--nav-bar)
   - [SideBar](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/organism--side-bar)
+- Templates:
+  - [Portfolio](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/template--portfolio)
 
 ## Usage
 
@@ -128,8 +130,12 @@ This react components library uses the following:
 - [numeral](http://numeraljs.com/)
 - [react-collapsed](https://github.com/roginfarrer/react-collapsed#react-collapsed-usecollapse)
 - [react-datepicker](https://reactdatepicker.com/)
+- [react-infinite-scroller](https://github.com/danbovey/react-infinite-scroller)
+- [react-intersection-observer](https://react-intersection-observer.vercel.app/?path=/story/introduction--page)
 - [react-number-format](https://github.com/s-yadav/react-number-format#readme)
+- [react-query](https://react-query-v3.tanstack.com/)
 - [react-select](https://react-select.com/)
+- [react-textarea-autosize](http://andarist.github.io/react-textarea-autosize/)
 - [suneditor](http://suneditor.com/)
 - [tippyjs](https://atomiks.github.io/tippyjs/)
 - [yup](https://github.com/jquense/yup)
