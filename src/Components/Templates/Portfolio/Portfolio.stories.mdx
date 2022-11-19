@@ -1,0 +1,193 @@
+import { Canvas, Meta, ArgsTable, Story, Source } from '@storybook/addon-docs';
+import LinkTo from '@storybook/addon-links/react';
+import { QueryClient, QueryClientProvider } from 'react-query';
+
+import Portfolio from './Portfolio';
+import { ColumnType, FilterTypeEnum, SortDirectionEnum } from '../../Organisms';
+
+import portfolioStyle from '../../../assets/_portfolio.scss?raw';
+
+export const TemplatePortfolio = (args) => {
+  const queryClient = new QueryClient();
+  return (
+    <QueryClientProvider client={queryClient}>
+      <Portfolio {...args} />
+    </QueryClientProvider>
+  );
+};
+
+<Meta
+  title='Template/Portfolio'
+  component={Portfolio}
+  parameters={{
+    viewMode: 'docs',
+    layout: 'fullscreen',
+  }}
+/>
+
+# Portfolio
+
+The Portfolio is a high order component providing a way to show a combination of elements:
+
+- <LinkTo kind='organism--filter'>Filter</LinkTo>
+- <LinkTo story='organism-datatable--static-data-table'>StaticDataTable</LinkTo>
+
+The data displayed will be requested by the component.
+The data can be filtered, thanks to the Filter capabilities.
+The data can be sorted, thanks to the StaticDataTable capabilities.
+The data can be paginated, thanks to the built-in "infinite scroll".
+
+In order to use this component, please surround it with a [QueryClientProvider](https://react-query-v3.tanstack.com/reference/QueryClientProvider)
+
+```ts filename="Component.tsx"
+import React from 'react';
+import { QueryClient, QueryClientProvider } from 'react-query';
+
+const Component = (args) => {
+  const queryClient = new QueryClient();
+
+  return (
+    <QueryClientProvider client={queryClient}>
+      <Portfolio {...args} />
+    </QueryClientProvider>
+  );
+};
+```
+
+## Props
+
+<ArgsTable of={Portfolio} sort='requiredFirst' />
+
+## Style
+
+[source](https://github.com/CharlesCoqueret/ghost-design-system/blob/main/src/assets/_portfolio.scss)
+
+<Source language='css' dark format={true} code={portfolioStyle} />
+
+## Story
+
+<Canvas>
+  <Story
+    name='Portfolio'
+    args={{
+      convertData: (response) => {
+        return response.records.map((record) => {
+          return {
+            prenoms: record.fields.prenoms,
+            sex: record.fields.sexe,
+            annee: Number.isFinite(Number(record.fields.annee)) ? Number(record.fields.annee) : -1,
+            nombre: record.fields.nombre,
+          };
+        });
+      },
+      filter: {
+        localization: {
+          advancedSearch: 'Advanced search',
+          advancedSearchTitle: 'Advanced search',
+          search: 'Search',
+          reset: 'Reset',
+        },
+        searchBarItems: [
+          {
+            filterType: FilterTypeEnum.TEXT,
+            dataIndex: 'query',
+          },
+          {
+            filterType: FilterTypeEnum.SELECT,
+            dataIndex: 'sexe',
+            options: [
+              { value: 'M', label: 'Men' },
+              { value: 'F', label: 'Women' },
+            ],
+            isClearable: true,
+          },
+          {
+            filterType: FilterTypeEnum.DATE,
+            dataIndex: 'from',
+            isClearable: true,
+          },
+          {
+            filterType: FilterTypeEnum.DATE,
+            dataIndex: 'to',
+            isClearable: true,
+          },
+        ],
+      },
+      getData: (filter, sort, direction, pageParam, signal) => {
+        const start = pageParam ?? 0;
+        const pageSize = 10;
+        const datasetId = 'liste_des_prenoms';
+        const baseUrl = new URL('https://opendata.paris.fr/api/records/1.0/search/');
+        baseUrl.searchParams.append('dataset', datasetId);
+        if (filter?.query && filter.query.trim().length > 0) {
+          baseUrl.searchParams.append('q', filter.query.trim());
+        }
+        if (filter?.sexe) {
+          baseUrl.searchParams.append('refine.sexe', filter.sexe);
+        }
+        baseUrl.searchParams.append('facet', 'sexe');
+        baseUrl.searchParams.append('facet', 'prenoms');
+        baseUrl.searchParams.append('facet', 'annee');
+        baseUrl.searchParams.append('rows', pageSize.toString());
+        baseUrl.searchParams.append('start', start.toString());
+        if (filter?.from && filter?.to) {
+          baseUrl.searchParams.append(
+            'q',
+            `annee:[${filter?.from.getFullYear()}-01-01 TO ${filter?.to.getFullYear()}-01-01]`,
+          );
+        } else if (filter?.from) {
+          baseUrl.searchParams.append('q', `annee>=${filter?.from.getFullYear()}-01-01`);
+        } else if (filter?.to) {
+          baseUrl.searchParams.append('q', `annee<=${filter?.to.getFullYear()}-01-01`);
+        }
+        if (sort && direction) {
+          baseUrl.searchParams.append('sort', `${direction === SortDirectionEnum.ASC ? '' : '-'}${sort}`);
+        }
+        const requestInit = {
+          method: 'GET',
+          signal: signal,
+        };
+        return fetch(baseUrl.toString(), requestInit).then(async (response) => {
+          return await response.json();
+        });
+      },
+      getNextPageParam: (result) => {
+        let res = undefined;
+        if ((result.parameters.start ?? 0) + (result.parameters.rows ?? 0) < result.nhits) {
+          res = (result.parameters.start ?? 0) + (result.parameters.rows ?? 0);
+        }
+        return res;
+      },
+      handleError: alert,
+      table: {
+        columns: [
+          {
+            title: 'Firstname',
+            dataIndex: 'prenoms',
+            editable: false,
+            type: ColumnType.TEXT,
+            sorter: true,
+          },
+          {
+            title: 'Sex',
+            dataIndex: 'sex',
+            type: ColumnType.CODE,
+          },
+          {
+            title: 'Year',
+            dataIndex: 'annee',
+            type: ColumnType.YEAR,
+            sorter: true,
+          },
+          {
+            title: 'Number',
+            dataIndex: 'nombre',
+            type: ColumnType.NUMBER,
+            sorter: true,
+          },
+        ],
+      },
+    }}>
+    {TemplatePortfolio.bind({})}
+  </Story>
+</Canvas>

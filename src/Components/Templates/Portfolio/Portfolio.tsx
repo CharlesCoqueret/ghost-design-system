@@ -8,9 +8,9 @@ import { SortDirectionEnum } from '../../Organisms/DataTable/Common/types';
 import { StaticDataTable } from '../../Organisms/DataTable/StaticDataTable';
 import { IStaticDataTableProps } from '../../Organisms/DataTable/StaticDataTable/StaticDataTable';
 
-interface IPortfolioProps<FilterType, PortfolioType, ResponseType, PaginationType = number> {
+export interface IPortfolioProps<FilterType, PortfolioType, ResponseType, PaginationType = number> {
   /**
-   * Convert data synchronously.
+   * Converts data synchronously.
    *
    * Note:
    * - If extra data are required to populate the portfolio, please use the getData handler to enrich it.
@@ -24,7 +24,7 @@ interface IPortfolioProps<FilterType, PortfolioType, ResponseType, PaginationTyp
     'advancedSearchItems' | 'disableTabOutside' | 'initialValues' | 'localization' | 'searchBarItems'
   >;
   /**
-   * Handle API call.
+   * Handles the request for additional data (filtered, sorted, paginated).
    *
    * Note:
    * - signal is used for cancelling the request
@@ -39,10 +39,13 @@ interface IPortfolioProps<FilterType, PortfolioType, ResponseType, PaginationTyp
     pageParam: PaginationType | undefined,
     signal: AbortSignal | undefined,
   ) => Promise<ResponseType>;
-  // Provide u
-  getNextPageParam: (result: ResponseType, allResults: Array<ResponseType>) => PaginationType | undefined;
-  handleError: (error: unknown) => void;
   /* Provide pagination information passed to the getData request */
+  getNextPageParam: (result: ResponseType, allResults: Array<ResponseType>) => PaginationType | undefined;
+  /* Handles error */
+  handleError: (error: unknown) => void;
+  /**
+   * Description of the static data table
+   */
   table: Pick<IStaticDataTableProps<PortfolioType>, 'columns' | 'extra'>;
 }
 
@@ -78,7 +81,6 @@ const Portfolio = <FilterType, PortfolioType, ResponseType, PaginationType>(
   };
 
   useEffect(() => {
-    console.log('inView', inView);
     if (inView) {
       fetchNextPage();
     }
@@ -91,17 +93,21 @@ const Portfolio = <FilterType, PortfolioType, ResponseType, PaginationType>(
   }, [error]);
 
   return (
-    <div className='gds-portfolio-container'>
-      {filter ? <Filter {...filter} onChange={onFilterChange} /> : <></>}
+    <div className='gds-portfolio'>
+      {filter && (
+        <div className='gds-portfolio-filter'>
+          <Filter {...filter} onChange={onFilterChange} />
+        </div>
+      )}
 
-      <div className='table-container'>
+      <div className='gds-portfolio-table'>
         <StaticDataTable<PortfolioType>
           {...table}
           data={data?.pages.map(convertData).flat()}
           onSortChange={onSortChange}
           loading={isFetching ? <Loader size='3x' /> : undefined}
         />
-        <div ref={ref} style={{ height: '10px' }} />
+        <div ref={ref} style={{ height: '20px' }} />
       </div>
     </div>
   );

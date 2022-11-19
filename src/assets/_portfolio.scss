@@ -1,0 +1,13 @@
+.gds-portfolio {
+  padding: 0px 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1;
+
+  .gds-portfolio-filter {
+    height: 64px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+  }
+}
