@@ -9,7 +9,7 @@ export const parameters = {
   options: {
     storySort: {
       method: 'alphabetical',
-      order: ['Atoms', 'Organisms', 'Molecules'],
+      order: ['Atom', 'Molecule', 'Organism', 'Template'],
     },
   },
 };
