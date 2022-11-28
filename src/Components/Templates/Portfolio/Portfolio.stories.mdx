@@ -8,12 +8,7 @@ import { ColumnType, FilterTypeEnum, SortDirectionEnum } from '../../Organisms';
 import portfolioStyle from '../../../assets/_portfolio.scss?raw';
 
 export const TemplatePortfolio = (args) => {
-  const queryClient = new QueryClient();
-  return (
-    <QueryClientProvider client={queryClient}>
-      <Portfolio {...args} />
-    </QueryClientProvider>
-  );
+  return <Portfolio {...args} />;
 };
 
 <Meta
@@ -36,23 +31,6 @@ The data displayed will be requested by the component.
 The data can be filtered, thanks to the Filter capabilities.
 The data can be sorted, thanks to the StaticDataTable capabilities.
 The data can be paginated, thanks to the built-in "infinite scroll".
-
-In order to use this component, please surround it with a [QueryClientProvider](https://react-query-v3.tanstack.com/reference/QueryClientProvider)
-
-```ts filename="Component.tsx"
-import React from 'react';
-import { QueryClient, QueryClientProvider } from 'react-query';
-
-const Component = (args) => {
-  const queryClient = new QueryClient();
-
-  return (
-    <QueryClientProvider client={queryClient}>
-      <Portfolio {...args} />
-    </QueryClientProvider>
-  );
-};
-```
 
 ## Props
 
