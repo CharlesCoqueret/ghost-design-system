@@ -127,7 +127,7 @@ const DynamicSearchCreatableInput = (props: IDynamicSearchCreatableInputProps): 
     if (inputValue !== currentOption?.value) resolveIncomingValue();
   }, [inputValue]);
 
-  if (readOnly) {
+  if (readOnly || disabled) {
     return (
       <div
         className={classnames(

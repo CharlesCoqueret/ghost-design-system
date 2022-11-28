@@ -68,7 +68,7 @@ const SelectInput = (props: ISelectInputProps): ReactElement => {
     usePortal,
   } = props;
 
-  if (readOnly) {
+  if (readOnly || disabled) {
     const displayValue = (inputValue && options.find((option) => option.value === inputValue)?.label) || '-';
     return (
       <div

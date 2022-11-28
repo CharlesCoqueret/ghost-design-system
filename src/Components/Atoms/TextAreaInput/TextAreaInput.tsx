@@ -74,7 +74,7 @@ const TextAreaInput = (props: ITextAreaInputProps): ReactElement => {
         data-testid={dataTestId}
         id={name}
         name={name}
-        placeholder={placeholder}
+        placeholder={!inputValue && (readOnly || disabled) ? '-' : placeholder}
         minRows={3}
         maxRows={10}
         maxLength={maxLength}

@@ -70,7 +70,7 @@ exports[`DatePickerInput Component DatePickerInput renders highlighted in disabl
           class="input-date-picker-input field-highlighted"
           disabled=""
           name="NAME"
-          placeholder="MMM DD, YYYY"
+          placeholder="-"
           tabindex="-1"
           type="text"
           value=""

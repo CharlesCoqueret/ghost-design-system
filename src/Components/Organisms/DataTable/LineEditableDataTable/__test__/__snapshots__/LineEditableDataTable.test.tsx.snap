@@ -174,7 +174,7 @@ exports[`LineEditableDataTable component LineEditableDataTable handles delete 1`
                 id="number"
                 name="number"
               >
-                NUMBER
+                1
               </span>
             </div>
           </td>
@@ -307,7 +307,7 @@ exports[`LineEditableDataTable component LineEditableDataTable handles delete wi
                 id="number"
                 name="number"
               >
-                NUMBER
+                1
               </span>
             </div>
           </td>
@@ -549,7 +549,7 @@ exports[`LineEditableDataTable component LineEditableDataTable handles download 
                 id="number"
                 name="number"
               >
-                NUMBER
+                1
               </span>
             </div>
           </td>
@@ -636,7 +636,7 @@ exports[`LineEditableDataTable component LineEditableDataTable handles edit and 
                 id="number"
                 name="number"
               >
-                NUMBER
+                1
               </span>
             </div>
           </td>
@@ -723,7 +723,7 @@ exports[`LineEditableDataTable component LineEditableDataTable handles non delet
                 id="number"
                 name="number"
               >
-                NUMBER
+                1
               </span>
             </div>
           </td>
@@ -791,7 +791,7 @@ exports[`LineEditableDataTable component LineEditableDataTable handles non downl
                 id="number"
                 name="number"
               >
-                NUMBER
+                1
               </span>
             </div>
           </td>
@@ -859,7 +859,7 @@ exports[`LineEditableDataTable component LineEditableDataTable handles non edita
                 id="number"
                 name="number"
               >
-                NUMBER
+                1
               </span>
             </div>
           </td>

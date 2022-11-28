@@ -159,7 +159,6 @@ const AmountInput = (props: IAmountInputProps): ReactElement => {
           { 'field-highlighted': readOnly && highlighted },
           className,
         )}
-        format={placeholder}
         allowEmptyFormatting
         displayType={'text'}
         isNumericString={typeof inputValue === 'string'}

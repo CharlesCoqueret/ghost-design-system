@@ -87,6 +87,7 @@ exports[`TextAreaField Component TextAreaField renders in readonly highlighted 1
         class="input-textarea-field-read-only field-highlighted"
         id="NAME"
         name="NAME"
+        placeholder="-"
         readonly=""
       />
     </div>

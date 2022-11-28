@@ -172,7 +172,7 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
                 id="number"
                 name="number"
               >
-                PLACEHOLDER
+                1
               </span>
             </div>
           </td>
@@ -476,7 +476,7 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
                 id="number"
                 name="number"
               >
-                PLACEHOLDER
+                1
               </span>
             </div>
           </td>
@@ -564,7 +564,7 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
                 id="number"
                 name="number"
               >
-                PLACEHOLDER
+                1
               </span>
             </div>
           </td>
@@ -850,7 +850,7 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
                 id="number"
                 name="number"
               >
-                PLACEHOLDER
+                1
               </span>
             </div>
           </td>

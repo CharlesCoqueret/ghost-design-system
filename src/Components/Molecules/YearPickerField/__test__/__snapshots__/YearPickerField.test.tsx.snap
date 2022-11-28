@@ -81,7 +81,7 @@ exports[`YearPickerField Component YearPickerField renders with values in readon
             autocomplete="off"
             class="field input-year-picker-input-read-only"
             name="name"
-            placeholder="-"
+            placeholder="YYYY"
             readonly=""
             tabindex="-1"
             type="text"
