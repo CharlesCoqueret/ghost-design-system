@@ -106,13 +106,14 @@ const Filter = <T,>(props: IFilterProps<T>): React.ReactElement => {
         </div>
         <div className='search-actions'>
           <Button
+            color={ColorButtonEnum.REVERSED}
             dataTestId={dataTestId ? `${dataTestId}-reset` : undefined}
             label={localization.reset}
             onClick={handleReset}
           />
           {hasAdvancedSearch && (
             <Button
-              color={ColorButtonEnum.PRIMARY}
+              color={ColorButtonEnum.REVERSED}
               dataTestId={dataTestId ? `${dataTestId}-open-advanced` : undefined}
               label={localization.advancedSearch}
               onClick={handleOpenAdvancedSearch}
@@ -148,13 +149,13 @@ const Filter = <T,>(props: IFilterProps<T>): React.ReactElement => {
           </ModalBody>
           <ModalFooter>
             <Button
-              color={ColorButtonEnum.REVERSED}
+              color={ColorButtonEnum.SECONDARY}
               dataTestId={dataTestId ? `${dataTestId}-advanced-reset` : undefined}
               label={localization.reset}
               onClick={handleAdvancedFilterReset}
             />
             <Button
-              color={ColorButtonEnum.REVERSED}
+              color={ColorButtonEnum.PRIMARY}
               dataTestId={dataTestId ? `${dataTestId}-advanced-submit` : undefined}
               label={localization.search}
               onClick={handleSubmitSearch}
