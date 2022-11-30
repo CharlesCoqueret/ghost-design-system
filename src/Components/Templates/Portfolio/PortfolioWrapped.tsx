@@ -49,7 +49,7 @@ export interface IPortfolioProps<FilterType, PortfolioType, ResponseType, Pagina
   /**
    * Description of the static data table
    */
-  table: Pick<IStaticDataTableProps<PortfolioType>, 'columns' | 'extra'>;
+  table: Pick<IStaticDataTableProps<PortfolioType>, 'columns' | 'extra' | 'stickyHeader'>;
   /** Custom table className (optional, default: undefined) */
   tableClassName?: string;
 }

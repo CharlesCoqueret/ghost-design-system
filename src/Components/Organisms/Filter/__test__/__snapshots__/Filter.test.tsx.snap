@@ -148,7 +148,7 @@ exports[`Filter Component Filter renders advanced filter and handles changes 2`]
             >
               <button
                 class="gds-button-content"
-                color="secondary"
+                color="reversed"
                 data-testid="DATA-TEST-ID-advanced-reset"
                 tabindex="0"
                 type="button"
@@ -161,7 +161,7 @@ exports[`Filter Component Filter renders advanced filter and handles changes 2`]
               </button>
               <button
                 class="gds-button-content"
-                color="primary"
+                color="reversed"
                 data-testid="DATA-TEST-ID-advanced-submit"
                 tabindex="0"
                 type="button"
@@ -281,7 +281,7 @@ exports[`Filter Component Filter renders advanced filter and handles changes 3`]
             >
               <button
                 class="gds-button-content"
-                color="secondary"
+                color="reversed"
                 data-testid="DATA-TEST-ID-advanced-reset"
                 tabindex="0"
                 type="button"
@@ -294,7 +294,7 @@ exports[`Filter Component Filter renders advanced filter and handles changes 3`]
               </button>
               <button
                 class="gds-button-content"
-                color="primary"
+                color="reversed"
                 data-testid="DATA-TEST-ID-advanced-submit"
                 tabindex="0"
                 type="button"
@@ -414,7 +414,7 @@ exports[`Filter Component Filter renders advanced filter and handles changes 4`]
             >
               <button
                 class="gds-button-content"
-                color="secondary"
+                color="reversed"
                 data-testid="DATA-TEST-ID-advanced-reset"
                 tabindex="0"
                 type="button"
@@ -427,7 +427,7 @@ exports[`Filter Component Filter renders advanced filter and handles changes 4`]
               </button>
               <button
                 class="gds-button-content"
-                color="primary"
+                color="reversed"
                 data-testid="DATA-TEST-ID-advanced-submit"
                 tabindex="0"
                 type="button"
@@ -547,7 +547,7 @@ exports[`Filter Component Filter renders advanced filter and handles changes 5`]
             >
               <button
                 class="gds-button-content"
-                color="secondary"
+                color="reversed"
                 data-testid="DATA-TEST-ID-advanced-reset"
                 tabindex="0"
                 type="button"
@@ -560,7 +560,7 @@ exports[`Filter Component Filter renders advanced filter and handles changes 5`]
               </button>
               <button
                 class="gds-button-content"
-                color="primary"
+                color="reversed"
                 data-testid="DATA-TEST-ID-advanced-submit"
                 tabindex="0"
                 type="button"

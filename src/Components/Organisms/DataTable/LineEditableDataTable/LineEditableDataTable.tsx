@@ -16,10 +16,12 @@ export interface ILineEditableDataTableProps<T> {
   extra: IExtraLineEditableDataTableProps<T>;
   loading?: ReactElement;
   onSortChange?: (sortField?: keyof T, sortDirection?: SortDirectionEnum) => void;
+  /** Sticky header (optional, default:false) */
+  stickyHeader?: boolean;
 }
 
 const LineEditableDataTable = <T extends AnyObject>(props: ILineEditableDataTableProps<T>): ReactElement => {
-  const { data, columns, extra, loading, onSortChange } = props;
+  const { data, columns, extra, loading, onSortChange, stickyHeader } = props;
 
   const [currentData, setCurrentData] = usePropState<Array<T>>(data);
   const [sortField, setSortField] = useState<keyof T | undefined>();
@@ -139,6 +141,7 @@ const LineEditableDataTable = <T extends AnyObject>(props: ILineEditableDataTabl
           sortField={sortField}
           sortDirection={sortDirection}
           extra={{ ...extra, editedRowIndex }}
+          stickyHeader={stickyHeader}
         />
         <StaticDataTableBody<T> columns={currentColumns} data={currentData} extra={extra} loading={loading} />
         <StaticDataTableFooter<T> columns={currentColumns} data={currentData} extra={extra} />
@@ -205,6 +208,7 @@ const LineEditableDataTable = <T extends AnyObject>(props: ILineEditableDataTabl
 LineEditableDataTable.defaultProps = {
   columns: [],
   data: [],
+  stickyHeader: false,
 };
 
 export default LineEditableDataTable;

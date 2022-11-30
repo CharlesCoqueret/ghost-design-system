@@ -11,6 +11,7 @@ import {
 } from '../Common/types';
 import { MenuDirectionEnum, Tooltip } from '../../../Atoms/Tooltip';
 import { Icon } from '../../../Atoms/Icon';
+import { Typography } from '../../../Atoms/Typography';
 
 interface IStaticDataTableHeaderProps<T> {
   columns: Array<IColumnType<T>>;
@@ -18,6 +19,7 @@ interface IStaticDataTableHeaderProps<T> {
   onSortChange: (newSortField: keyof T, newSortDirection?: SortDirectionEnum) => void;
   sortField?: keyof T;
   sortDirection?: SortDirectionEnum;
+  stickyHeader?: boolean;
 }
 
 const nextSortDirection = (current?: SortDirectionEnum): SortDirectionEnum | undefined => {
@@ -27,7 +29,7 @@ const nextSortDirection = (current?: SortDirectionEnum): SortDirectionEnum | und
 };
 
 const StaticDataTableHeader = <T,>(props: IStaticDataTableHeaderProps<T>): ReactElement => {
-  const { columns, onSortChange, sortField, sortDirection, extra } = props;
+  const { columns, extra, onSortChange, sortField, sortDirection, stickyHeader } = props;
 
   const updateSort = (dataIndex: keyof T) => {
     onSortChange(dataIndex, nextSortDirection(dataIndex === sortField ? sortDirection : undefined));
@@ -48,15 +50,20 @@ const StaticDataTableHeader = <T,>(props: IStaticDataTableHeaderProps<T>): React
       <tr>
         {isExtended &&
           (isSelectable ? (
-            <th key='header-selectable' className='table--header--selectable'>
+            <th key='header-selectable' className={classnames('table--header--selectable', { sticky: stickyHeader })}>
               {/* <input type='checkbox' />  // TODO implement the select all, select partial to deselect */}
             </th>
           ) : (
-            <th key='header-extended' className='table--header--selectable'></th>
+            <th
+              key='header-extended'
+              className={classnames('table--header--selectable', { sticky: stickyHeader })}></th>
           ))}
         {columns.map((column, index) => {
           return (
-            <th key={`header-${index}`} style={{ display: column.hidden ? 'none' : undefined, width: column.width }}>
+            <th
+              key={`header-${index}`}
+              style={{ display: column.hidden ? 'none' : undefined, width: column.width }}
+              className={classnames({ sticky: stickyHeader })}>
               <Tooltip
                 tooltip={
                   column.sorter && !isEditingRow ? extra?.localization?.sortMessage ?? 'Click to sort' : undefined
@@ -83,16 +90,17 @@ const StaticDataTableHeader = <T,>(props: IStaticDataTableHeaderProps<T>): React
                       : undefined
                   }
                   tabIndex={column.sorter && column.type !== ColumnType.BUTTON ? 0 : -1}>
-                  <span
+                  <Typography.Text
                     className={classnames('table--header-value--title', {
                       center: [ColumnType.CODE, ColumnType.DATE, ColumnType.BUTTON].includes(column.type),
                       left: [ColumnType.TEXT, ColumnType.BADGE, ColumnType.CUSTOM, ColumnType.DYNAMICSEARCH].includes(
                         column.type,
                       ),
                       right: [ColumnType.NUMBER, ColumnType.AMOUNT, ColumnType.PERCENTAGE].includes(column.type),
-                    })}>
+                    })}
+                    ellipsis>
                     {column.title}
-                  </span>
+                  </Typography.Text>
                   {column.sorter && !isEditingRow && column.type !== ColumnType.BUTTON && (
                     <span className='table--header-value--sorter'>
                       <Icon icon={['fas', iconName(column.dataIndex)]} />

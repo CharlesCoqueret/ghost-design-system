@@ -768,13 +768,16 @@ exports[`LineEditableInPlaceDataTableCell component LineEditableInPlaceDataTable
           >
             <thead>
               <tr>
-                <th>
+                <th
+                  class=""
+                >
                   <div
                     class="table--header-value"
                     tabindex="-1"
                   >
                     <span
-                      class="table--header-value--title right"
+                      class="gds-typography table--header-value--title right ellipsis"
+                      title="Number"
                     >
                       Number
                     </span>

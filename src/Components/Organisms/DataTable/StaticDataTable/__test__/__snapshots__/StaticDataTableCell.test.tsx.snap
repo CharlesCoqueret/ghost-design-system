@@ -516,13 +516,16 @@ exports[`StaticDataTableCell component StaticDataTableCell renders with table 1`
           >
             <thead>
               <tr>
-                <th>
+                <th
+                  class=""
+                >
                   <div
                     class="table--header-value"
                     tabindex="-1"
                   >
                     <span
-                      class="table--header-value--title right"
+                      class="gds-typography table--header-value--title right ellipsis"
+                      title="Number"
                     >
                       Number
                     </span>

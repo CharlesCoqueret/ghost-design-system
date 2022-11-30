@@ -7,14 +7,17 @@ exports[`StaticDataTable component StaticDataTable renders and handles sort 1`] 
   >
     <thead>
       <tr>
-        <th>
+        <th
+          class=""
+        >
           <div
             class="table--header-value table--header-value--sortable"
             data-testid="DATA-TEST-ID-number-sort"
             tabindex="0"
           >
             <span
-              class="table--header-value--title right"
+              class="gds-typography table--header-value--title right ellipsis"
+              title="Number"
             >
               Number
             </span>
@@ -66,14 +69,17 @@ exports[`StaticDataTable component StaticDataTable renders and handles sort 2`] 
   >
     <thead>
       <tr>
-        <th>
+        <th
+          class=""
+        >
           <div
             class="table--header-value table--header-value--sortable"
             data-testid="DATA-TEST-ID-number-sort"
             tabindex="0"
           >
             <span
-              class="table--header-value--title right"
+              class="gds-typography table--header-value--title right ellipsis"
+              title="Number"
             >
               Number
             </span>
@@ -125,14 +131,17 @@ exports[`StaticDataTable component StaticDataTable renders and handles sort 3`] 
   >
     <thead>
       <tr>
-        <th>
+        <th
+          class=""
+        >
           <div
             class="table--header-value table--header-value--sortable"
             data-testid="DATA-TEST-ID-number-sort"
             tabindex="0"
           >
             <span
-              class="table--header-value--title right"
+              class="gds-typography table--header-value--title right ellipsis"
+              title="Number"
             >
               Number
             </span>
@@ -184,14 +193,17 @@ exports[`StaticDataTable component StaticDataTable renders and handles sort 4`] 
   >
     <thead>
       <tr>
-        <th>
+        <th
+          class=""
+        >
           <div
             class="table--header-value table--header-value--sortable"
             data-testid="DATA-TEST-ID-number-sort"
             tabindex="0"
           >
             <span
-              class="table--header-value--title right"
+              class="gds-typography table--header-value--title right ellipsis"
+              title="Number"
             >
               Number
             </span>
