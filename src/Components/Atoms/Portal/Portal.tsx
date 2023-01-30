@@ -27,7 +27,7 @@ const Portal = (props: PropsWithChildren<IPortalProps>): ReactElement => {
         target.current.remove();
       }
       if (container && container.childNodes.length === 0) {
-        container.remove();
+        // container.remove();
       }
     };
   }, [rootId]);

@@ -42,6 +42,7 @@ const Modal = (props: PropsWithChildren<IModalProps>): ReactElement => {
 
   const [isShaking, setIsShaking] = useState(false);
   const [initialBodyStyle, setInitialBodyStyle] = useState<Partial<CSSStyleDeclaration>>();
+  const containerRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
 
   const preventDefaults = (event: KeyboardEvent) => {
@@ -102,7 +103,8 @@ const Modal = (props: PropsWithChildren<IModalProps>): ReactElement => {
     }, 500);
   };
 
-  useOnClickOutside(contentRef, () => {
+  useOnClickOutside(contentRef, containerRef, show, () => {
+    console.log('show', contentRef, show);
     if (closeOnClickOutside && onHide) {
       onHide();
     } else {
@@ -121,7 +123,8 @@ const Modal = (props: PropsWithChildren<IModalProps>): ReactElement => {
   if (show)
     return (
       <Portal>
-        <div className='gds-modal-overlay'>
+        <div className='gds-modal-overlay'
+             ref={containerRef}>
           <div
             className={classnames('modal-content', {
               'size-sm': size === 'sm',

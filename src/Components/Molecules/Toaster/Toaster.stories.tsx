@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { error, errorPersistent, notify, success, Toaster } from './Toaster';
@@ -7,6 +7,7 @@ import Modal from '../../Atoms/Modal/Modal';
 import ModalBody from '../../Atoms/Modal/ModalBody';
 import ModalFooter from '../../Atoms/Modal/ModalFooter';
 import { TextAreaField } from '../TextAreaField';
+import Popover from '../Popover/Popover';
 
 export default {
     title: 'Molecule/Toaster',
@@ -17,6 +18,8 @@ export default {
 const Template: ComponentStory<typeof Toaster> = () => {
     const [show, setShow] = useState(false);
     const [message, setMessage] = useState('Toast message');
+    const [open, setOpen] = useState(false);
+    const ref = useRef<HTMLDivElement>(null);
 
     const closeModal = () => {
         setShow(false);
@@ -46,6 +49,45 @@ const Template: ComponentStory<typeof Toaster> = () => {
                         <Button color={ColorButtonEnum.PRIMARY} label="Ok" onClick={closeModal} />
                     </ModalFooter>
                 </Modal>
+            </div>
+
+            <div ref={ref}>
+                <Button
+                    label='Click me to see the popover'
+                    icon={['fal', 'trash-alt']}
+                    onClick={() => {
+                        setOpen(true);
+                    }}
+                    color={ColorButtonEnum.REVERSED}
+                />
+                <Popover
+                    anchorRef={ref}
+                    open={open}
+                    onClose={() => {
+                        console.log('Cancelled because of click outside');
+                        setOpen(false);
+                    }}>
+                    <div className='popover-title'>Delete?</div>
+
+                    <div className='popover-buttons'>
+                        <Button
+                            label='Cancel'
+                            color={ColorButtonEnum.SECONDARY}
+                            onClick={() => {
+                                console.log('Cancelled');
+                                setOpen(false);
+                            }}
+                        />
+                        <Button
+                            label='Confirm'
+                            color={ColorButtonEnum.PRIMARY}
+                            onClick={() => {
+                                console.log('Confirmed');
+                                setOpen(false);
+                            }}
+                        />
+                    </div>
+                </Popover>
             </div>
 
             <b>Toasts</b>

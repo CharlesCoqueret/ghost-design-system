@@ -11,6 +11,7 @@ const useEventListener = <
   eventName: KW | KH,
   handler: (event: WindowEventMap[KW] | HTMLElementEventMap[KH] | Event) => void,
   element?: RefObject<T>,
+  startListening?: boolean,
 ) => {
   const savedHandler = useRef(handler);
 
@@ -19,19 +20,21 @@ const useEventListener = <
   }, [handler]);
 
   useEffect(() => {
+    if (!element?.current) return;
     const targetElement: T | Window = element?.current || window;
     if (!(targetElement && targetElement.addEventListener)) {
       return;
     }
 
     const eventListener: typeof handler = (event) => savedHandler.current(event);
-
+    console.log('target element', targetElement);
     targetElement.addEventListener(eventName, eventListener);
 
     return () => {
+      console.log('remove listener', targetElement);
       targetElement.removeEventListener(eventName, eventListener);
     };
-  }, [eventName, element]);
+  }, [eventName, element, startListening]);
 };
 
 export default useEventListener;

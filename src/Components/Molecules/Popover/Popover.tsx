@@ -20,7 +20,7 @@ const Popover = (props: PropsWithChildren<IPopoverProps>): ReactElement => {
   const skipOpen = useRef(false);
   const menuRef = useRef(null);
 
-  useOnClickOutside(menuRef, () => {
+  useOnClickOutside(menuRef, menuRef, true, () => {
     if (open) {
       onClose();
     }
