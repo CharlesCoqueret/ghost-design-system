@@ -1,0 +1,339 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Toaster Component Toaster contrainer renders 1`] = `
+<div>
+  <div>
+    <div
+      style="position: fixed; z-index: 9999; top: 16px; left: 16px; right: 16px; bottom: 16px; pointer-events: none;"
+    />
+  </div>
+</div>
+`;
+
+exports[`Toaster Component Toaster renders error persistant closes 1`] = `
+<div>
+  <div>
+    <div
+      style="position: fixed; z-index: 9999; top: 16px; left: 16px; right: 16px; bottom: 16px; pointer-events: none;"
+    >
+      <div
+        class="go4109123758"
+        style="left: 0px; right: 0px; display: flex; position: absolute; transition: all 230ms cubic-bezier(.21,1.02,.73,1); transform: translateY(0px); bottom: 0px; justify-content: flex-end;"
+      >
+        <div
+          class="go2072408551"
+          style="opacity: 0;"
+        >
+          <i
+            class="icon"
+            color="red"
+            icon="fas,circle-xmark"
+          />
+          <div
+            aria-live="polite"
+            class="go3958317564"
+            role="status"
+          >
+            <div>
+              ERROR PERSISTENT
+              <i
+                class="gds-toaster-close-icon icon"
+                icon="fal,xmark"
+                role="button"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toaster Component Toaster renders error persistant closes 2`] = `
+<div>
+  <div>
+    <div
+      style="position: fixed; z-index: 9999; top: 16px; left: 16px; right: 16px; bottom: 16px; pointer-events: none;"
+    />
+  </div>
+</div>
+`;
+
+exports[`Toaster Component Toaster renders error persistant with options 1`] = `
+<div>
+  <div>
+    <div
+      style="position: fixed; z-index: 9999; top: 16px; left: 16px; right: 16px; bottom: 16px; pointer-events: none;"
+    >
+      <div
+        class="go4109123758"
+        style="left: 0px; right: 0px; display: flex; position: absolute; transition: all 230ms cubic-bezier(.21,1.02,.73,1); transform: translateY(0px); bottom: 0px; justify-content: flex-end;"
+      >
+        <div
+          class="go2072408551 CLASSNAME"
+          style="opacity: 0;"
+        >
+          <i
+            class="icon"
+            color="red"
+            icon="fas,circle-xmark"
+          />
+          <div
+            aria-live="polite"
+            class="go3958317564"
+            role="status"
+          >
+            <div>
+              ERROR PERSISTENT
+              <i
+                class="gds-toaster-close-icon icon"
+                icon="fal,xmark"
+                role="button"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toaster Component Toaster renders error persistant without options 1`] = `
+<div>
+  <div>
+    <div
+      style="position: fixed; z-index: 9999; top: 16px; left: 16px; right: 16px; bottom: 16px; pointer-events: none;"
+    >
+      <div
+        class="go4109123758"
+        style="left: 0px; right: 0px; display: flex; position: absolute; transition: all 230ms cubic-bezier(.21,1.02,.73,1); transform: translateY(0px); bottom: 0px; justify-content: flex-end;"
+      >
+        <div
+          class="go2072408551"
+          style="opacity: 0;"
+        >
+          <i
+            class="icon"
+            color="red"
+            icon="fas,circle-xmark"
+          />
+          <div
+            aria-live="polite"
+            class="go3958317564"
+            role="status"
+          >
+            <div>
+              ERROR PERSISTENT
+              <i
+                class="gds-toaster-close-icon icon"
+                icon="fal,xmark"
+                role="button"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toaster Component Toaster renders error with options 1`] = `
+<div>
+  <div>
+    <div
+      style="position: fixed; z-index: 9999; top: 16px; left: 16px; right: 16px; bottom: 16px; pointer-events: none;"
+    >
+      <div
+        class="go4109123758"
+        style="left: 0px; right: 0px; display: flex; position: absolute; transition: all 230ms cubic-bezier(.21,1.02,.73,1); transform: translateY(0px); bottom: 0px; justify-content: flex-end;"
+      >
+        <div
+          class="go2072408551 CLASSNAME"
+          style="opacity: 0;"
+        >
+          <i
+            class="icon"
+            color="red"
+            icon="fas,circle-xmark"
+          />
+          <div
+            aria-live="polite"
+            class="go3958317564"
+            role="status"
+          >
+            ERROR
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toaster Component Toaster renders error without options 1`] = `
+<div>
+  <div>
+    <div
+      style="position: fixed; z-index: 9999; top: 16px; left: 16px; right: 16px; bottom: 16px; pointer-events: none;"
+    >
+      <div
+        class="go4109123758"
+        style="left: 0px; right: 0px; display: flex; position: absolute; transition: all 230ms cubic-bezier(.21,1.02,.73,1); transform: translateY(0px); bottom: 0px; justify-content: flex-end;"
+      >
+        <div
+          class="go2072408551"
+          style="opacity: 0;"
+        >
+          <i
+            class="icon"
+            color="red"
+            icon="fas,circle-xmark"
+          />
+          <div
+            aria-live="polite"
+            class="go3958317564"
+            role="status"
+          >
+            ERROR
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toaster Component Toaster renders notify with options 1`] = `
+<div>
+  <div>
+    <div
+      style="position: fixed; z-index: 9999; top: 16px; left: 16px; right: 16px; bottom: 16px; pointer-events: none;"
+    >
+      <div
+        class="go4109123758"
+        style="left: 0px; right: 0px; display: flex; position: absolute; transition: all 230ms cubic-bezier(.21,1.02,.73,1); transform: translateY(0px); bottom: 0px; justify-content: flex-end;"
+      >
+        <div
+          class="go2072408551 CLASSNAME"
+          style="opacity: 0;"
+        >
+          <div
+            aria-live="polite"
+            class="go3958317564"
+            role="status"
+          >
+            NOTIFY
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toaster Component Toaster renders notify without options  and clears 1`] = `
+<div>
+  <div>
+    <div
+      style="position: fixed; z-index: 9999; top: 16px; left: 16px; right: 16px; bottom: 16px; pointer-events: none;"
+    >
+      <div
+        class="go4109123758"
+        style="left: 0px; right: 0px; display: flex; position: absolute; transition: all 230ms cubic-bezier(.21,1.02,.73,1); transform: translateY(0px); bottom: 0px; justify-content: flex-end;"
+      >
+        <div
+          class="go2072408551"
+          style="opacity: 0;"
+        >
+          <div
+            aria-live="polite"
+            class="go3958317564"
+            role="status"
+          >
+            NOTIFY
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toaster Component Toaster renders notify without options  and clears 2`] = `
+<div>
+  <div>
+    <div
+      style="position: fixed; z-index: 9999; top: 16px; left: 16px; right: 16px; bottom: 16px; pointer-events: none;"
+    />
+  </div>
+</div>
+`;
+
+exports[`Toaster Component Toaster renders success with options 1`] = `
+<div>
+  <div>
+    <div
+      style="position: fixed; z-index: 9999; top: 16px; left: 16px; right: 16px; bottom: 16px; pointer-events: none;"
+    >
+      <div
+        class="go4109123758"
+        style="left: 0px; right: 0px; display: flex; position: absolute; transition: all 230ms cubic-bezier(.21,1.02,.73,1); transform: translateY(0px); bottom: 0px; justify-content: flex-end;"
+      >
+        <div
+          class="go2072408551 CLASSNAME"
+          style="opacity: 0;"
+        >
+          <i
+            class="icon"
+            color="green"
+            icon="fas,circle-check"
+          />
+          <div
+            aria-live="polite"
+            class="go3958317564"
+            role="status"
+          >
+            SUCCESS
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toaster Component Toaster renders success without options 1`] = `
+<div>
+  <div>
+    <div
+      style="position: fixed; z-index: 9999; top: 16px; left: 16px; right: 16px; bottom: 16px; pointer-events: none;"
+    >
+      <div
+        class="go4109123758"
+        style="left: 0px; right: 0px; display: flex; position: absolute; transition: all 230ms cubic-bezier(.21,1.02,.73,1); transform: translateY(0px); bottom: 0px; justify-content: flex-end;"
+      >
+        <div
+          class="go2072408551"
+          style="opacity: 0;"
+        >
+          <i
+            class="icon"
+            color="green"
+            icon="fas,circle-check"
+          />
+          <div
+            aria-live="polite"
+            class="go3958317564"
+            role="status"
+          >
+            SUCCESS
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -1,6 +1,7 @@
 import React, { ReactElement } from 'react';
-import { toast, Toaster as HotToaster } from 'react-hot-toast';
-import { Icon } from '../../Atoms';
+import { toast, Toaster as HotToaster, ToastOptions } from 'react-hot-toast';
+
+import Icon from '../../Atoms/Icon/Icon';
 import Portal from '../../Atoms/Portal/Portal';
 
 /**
@@ -12,76 +13,98 @@ import Portal from '../../Atoms/Portal/Portal';
  * Blank toast: duration 5s
  */
 export const Toaster = (): ReactElement => {
-    return (
-        <Portal rootId="toaster-portal-id">
-            <HotToaster
-                position="bottom-right"
-                toastOptions={{
-                    success: {
-                        icon: <Icon icon={['fas', 'circle-check']} color="green" />,
-                        duration: 3000, // 3 seconds
-                    },
-                    error: {
-                        icon: <Icon icon={['fas', 'circle-xmark']} color="red" />,
-                        duration: 5000, // 5 seconds
-                    },
-                    blank: {
-                        duration: 5000, // 5 seconds
-                    },
-                }}
-            />
-        </Portal>
-    );
+  return (
+    <Portal rootId='toaster-portal-id'>
+      <HotToaster
+        position='bottom-right'
+        toastOptions={{
+          success: {
+            icon: <Icon icon={['fas', 'circle-check']} color='green' />,
+            duration: 3000, // 3 seconds
+          },
+          error: {
+            icon: <Icon icon={['fas', 'circle-xmark']} color='red' />,
+            duration: 5000, // 5 seconds
+          },
+          blank: {
+            duration: 5000, // 5 seconds
+          },
+        }}
+      />
+    </Portal>
+  );
 };
 
 /**
- * Toast a basic message with default configuration (@see Toaster)
+ * Toast a basic message with default configuration (@see Toaster).
+ *
  * @param message message to toast
+ * @param (optional) options additional notify toast options
+ *
+ * @returns id of the toast
  */
-export const notify = (message: string): string => toast(message);
+export const notify = (message: string, options?: ToastOptions): string => toast(message, options);
 
 /**
- * Toast a success message with default configuration (@see Toaster)
+ * Toast a success message with default configuration (@see Toaster).
+ *
  * @param message message to toast
+ * @param (optional) options additional success toast options
+ *
+ * @returns id of the toast
  */
-export const success = (message: string): string => toast.success(message);
+export const success = (message: string, options?: ToastOptions): string => toast.success(message, options);
 
 /**
- * Toast an error message with default configuration (@see Toaster)
+ * Toast an error message with default configuration (@see Toaster).
+ *
  * @param message message to toast
+ * @param (optional) options additional error toast options
+ *
+ * @returns id of the toast
  */
-export const error = (message: string): string => toast.error(message);
+export const error = (message: string, options?: ToastOptions): string => toast.error(message, options);
 
 /**
- * Toast a persistent error message
- * Configuration: icon xmark, a button (xmark) to dismiss toast
+ * Toast a persistent error message.
+ *
+ * Configuration: icon xmark, a button (xmark) to dismiss toast.
+ *
  * @param message message to toast
+ * @param (optional) options additional persistent error toast options
+ *
+ * @returns id of the toast
  */
-export const errorPersistent = (message: string): string =>
-    toast.error(
-        (t) => (
-            <div
-                className="persistent-toast-content"
-                onClick={(event): void => {
-                    event.stopPropagation();
-                    event.preventDefault();
-                }}>
-                <div>{message}</div>
-                <div
-                    className="toast-close-icon"
-                    data-testid={`toast-${t.id}-close-icon`}
-                    onClick={(event): void => {
-                        event.stopPropagation();
-                        event.preventDefault();
-                        toast.dismiss(t.id);
-                    }}>
-                    <Icon icon={['fal', 'xmark']} />
-                </div>
-            </div>
-        ),
-        {
-            duration: Infinity,
-        },
-    );
+export const errorPersistent = (message: string, options?: ToastOptions): string =>
+  toast.error(
+    (t) => (
+      <div>
+        {message}
+        <Icon
+          icon={['fal', 'xmark']}
+          role='button'
+          className='gds-toaster-close-icon'
+          onClick={(event): void => {
+            event.stopPropagation();
+            event.preventDefault();
+            toast.dismiss(t.id);
+          }}
+        />
+      </div>
+    ),
+    {
+      duration: Infinity,
+      ...options,
+    },
+  );
+
+/**
+ * Close the a specific toaster given its id, or all if no id provided.
+ *
+ * @param toastId (optional) closes the toaster identified by its id, if non provided, all are closed.
+ */
+export const dismiss = (toastId?: string): void => {
+  toast.dismiss(toastId);
+};
 
 export default Toaster;
