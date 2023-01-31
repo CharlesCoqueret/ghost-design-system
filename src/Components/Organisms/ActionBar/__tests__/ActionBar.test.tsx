@@ -64,7 +64,7 @@ describe('ActionBar Component', () => {
 
     const { container } = render(
       <ActionBar
-        actions={[{ icon: ['fal', 'cog'], tooltip: 'TOOLTIP' }]}
+        actions={[{ icon: ['fal', 'gear'], tooltip: 'TOOLTIP' }]}
         backTooltip='BACKTOOLTIP'
         basicActions={[]}
         title='TITLE'

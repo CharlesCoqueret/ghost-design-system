@@ -2,6 +2,8 @@ import React, { ReactElement } from 'react';
 import { Icon } from '../Icon';
 import { Tooltip } from '../Tooltip';
 
+import styles from './Link.module.scss';
+
 export interface ILinkProps {
   /** Text displayed for the link */
   text: string;
@@ -28,7 +30,7 @@ const Link = (props: ILinkProps): ReactElement => {
   const externalLink = isExternalLink(link);
 
   return (
-    <div className='gds-link-container'>
+    <div className={styles.container}>
       {externalLink ? (
         <>
           <a href={link} target='_blank' rel='noreferrer'>
@@ -36,7 +38,7 @@ const Link = (props: ILinkProps): ReactElement => {
               <>{text}</>
             </Tooltip>
           </a>
-          <Icon icon={['fal', 'external-link']} size='1x' />
+          <Icon icon={['fal', 'external-link']} className={styles.icon} size='1x' />
         </>
       ) : (
         <a href={link}>

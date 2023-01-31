@@ -50,13 +50,6 @@ export interface IFilterDateProps<T> extends IFilterBaseProps<T> {
 }
 
 export interface IFilterDynamicSearchProps<T> extends IFilterBaseProps<T> {
-  colors?: {
-    controlErrorColor: string; // colors.error,
-    controlFocusColor: string; // colors.primary,
-    fontColor: string; // 'rgb(0, 0, 0)',
-    optionFocusColor: string; // colors.chalk,
-    optionSelectedColor: string; // colors.primary,
-  };
   filterType: FilterTypeEnum.DYNAMICSEARCH;
   isClearable?: boolean;
   name?: string;
@@ -67,13 +60,6 @@ export interface IFilterDynamicSearchProps<T> extends IFilterBaseProps<T> {
 }
 
 export interface IFilterMultiSelectProps<T> extends IFilterBaseProps<T> {
-  colors?: {
-    controlErrorColor: string; // colors.error,
-    controlFocusColor: string; // colors.primary,
-    fontColor: string; // 'rgb(0, 0, 0)',
-    optionFocusColor: string; // colors.chalk,
-    optionSelectedColor: string; // colors.primary,
-  };
   filterType: FilterTypeEnum.MULTISELECT;
   isClearable?: boolean;
   name?: string;
@@ -104,13 +90,6 @@ export interface IFilerColProps<T> {
 }
 
 export interface IFilterSelectProps<T> extends IFilterBaseProps<T> {
-  colors?: {
-    controlErrorColor: string; // colors.error,
-    controlFocusColor: string; // colors.primary,
-    fontColor: string; // 'rgb(0, 0, 0)',
-    optionFocusColor: string; // colors.chalk,
-    optionSelectedColor: string; // colors.primary,
-  };
   filterType: FilterTypeEnum.SELECT;
   isClearable?: boolean;
   name?: string;

@@ -5,6 +5,7 @@ import classnames from 'classnames';
 import compact from 'lodash/compact';
 
 import { Typography } from '../Typography';
+import styles from './AmountInput.module.scss';
 
 /**
  * Numeral Options:
@@ -113,9 +114,11 @@ const AmountInput = (props: IAmountInputProps): ReactElement => {
       return (
         <div
           className={classnames(
-            'gds-amount-field',
-            'amount-field-read-only',
-            { 'field-highlighted': readOnly && highlighted },
+            styles.default,
+            styles.readOnly,
+            {
+              [styles.highlighted]: (readOnly || disabled) && highlighted,
+            },
             className,
           )}
           data-testid={dataTestId}>
@@ -127,9 +130,11 @@ const AmountInput = (props: IAmountInputProps): ReactElement => {
       return (
         <div
           className={classnames(
-            'gds-amount-field',
-            'amount-field-read-only',
-            { 'field-highlighted': readOnly && highlighted },
+            styles.default,
+            styles.readOnly,
+            {
+              [styles.highlighted]: (readOnly || disabled) && highlighted,
+            },
             className,
           )}
           data-testid={dataTestId}>
@@ -145,25 +150,28 @@ const AmountInput = (props: IAmountInputProps): ReactElement => {
     }
     return (
       <NumberFormat
-        thousandSeparator={numberFormatThousandSeparator}
-        decimalSeparator={decimalSeparator}
-        thousandsGroupStyle={numberFormatThousandGroupStyle}
-        data-testid={dataTestId}
-        decimalScale={decimalScale}
-        id={name}
-        name={name}
-        value={inputValue}
+        allowEmptyFormatting
+        autoComplete='off'
         className={classnames(
-          'gds-amount-field',
-          'amount-field-read-only',
-          { 'field-highlighted': readOnly && highlighted },
+          styles.default,
+          styles.readOnly,
+          {
+            [styles.highlighted]: (readOnly || disabled) && highlighted,
+          },
           className,
         )}
-        allowEmptyFormatting
+        data-testid={dataTestId}
+        decimalScale={decimalScale}
+        decimalSeparator={decimalSeparator}
         displayType={'text'}
+        id={name}
         isNumericString={typeof inputValue === 'string'}
+        name={name}
         prefix={prefix ? `${prefix} ` : undefined}
         suffix={suffix ? ` ${suffix}` : undefined}
+        thousandSeparator={numberFormatThousandSeparator}
+        thousandsGroupStyle={numberFormatThousandGroupStyle}
+        value={inputValue}
       />
     );
   }
@@ -173,31 +181,33 @@ const AmountInput = (props: IAmountInputProps): ReactElement => {
    */
   return (
     <NumberFormat
-      thousandSeparator={numberFormatThousandSeparator}
-      decimalSeparator={decimalSeparator}
-      thousandsGroupStyle={numberFormatThousandGroupStyle}
-      data-testid={dataTestId}
-      decimalScale={decimalScale}
+      allowEmptyFormatting
       allowNegative={allowNegative}
-      name={name}
+      autoComplete='off'
       className={classnames(
-        'gds-amount-field',
-        { 'amount-field-error': !readOnly && !disabled && isInError },
+        styles.default,
+        { [styles.disabled]: disabled },
+        { [styles.error]: !readOnly && !disabled && isInError },
         className,
       )}
+      data-testid={dataTestId}
+      decimalScale={decimalScale}
+      decimalSeparator={decimalSeparator}
+      disabled={disabled}
       isAllowed={(newValue: NumberFormatValues): boolean => {
         if (minValue && newValue.floatValue && newValue.floatValue < minValue) return false;
         if (maxValue && newValue.floatValue && newValue.floatValue > maxValue) return false;
         return true;
       }}
-      allowEmptyFormatting
-      value={inputValue}
-      placeholder={placeholder}
-      onValueChange={onValueChange}
-      disabled={disabled}
       isNumericString={typeof inputValue === 'string'}
+      name={name}
+      onValueChange={onValueChange}
+      placeholder={placeholder}
       prefix={prefix ? `${prefix} ` : undefined}
       suffix={suffix ? ` ${suffix}` : undefined}
+      thousandSeparator={numberFormatThousandSeparator}
+      thousandsGroupStyle={numberFormatThousandGroupStyle}
+      value={inputValue}
     />
   );
 };

@@ -1,20 +1,28 @@
-import React, { PropsWithChildren, ReactElement, RefObject, useEffect, useRef, useState } from 'react';
+import React, { ReactElement, RefObject, useEffect, useRef, useState } from 'react';
 import { ControlledMenu } from '@szhsin/react-menu';
 
 import { useOnClickOutside } from '../../../hooks';
 import { Portal } from '../../Atoms/Portal';
+import Button from '../Button/Button';
+import { IButtonProps } from '../Button/Button.props';
+
+import styles from './Popover.module.scss';
 
 export interface IPopoverProps {
   /** Reference of the element from which the popover pops */
   anchorRef: RefObject<HTMLElement>;
+  /** List of buttons to be displayed in the popover */
+  buttons: Array<IButtonProps>;
   /** Callback when a click is captured outside the popover (it is recommended to set open to close) */
   onClose: () => void;
   /** Control of the popover (true to open the popover) */
   open: boolean;
+  /** Title of the popover */
+  title: string;
 }
 
-const Popover = (props: PropsWithChildren<IPopoverProps>): ReactElement => {
-  const { anchorRef, children, onClose, open } = props;
+const Popover = (props: IPopoverProps): ReactElement => {
+  const { anchorRef, buttons, onClose, open, title } = props;
 
   const [isOpen, setIsOpen] = useState<boolean | undefined>(open);
   const skipOpen = useRef(false);
@@ -42,13 +50,23 @@ const Popover = (props: PropsWithChildren<IPopoverProps>): ReactElement => {
         arrow
         anchorRef={anchorRef}
         skipOpen={skipOpen}>
-        <div className='gds-popover-container'>{children}</div>
+        <div className={styles.container}>
+          <div key='title' className={styles.title}>
+            {title}
+          </div>
+          <div key='buttons' className={styles.buttons}>
+            {buttons.map((button) => (
+              <Button key={`${button.label}-${button.icon?.toString()}`} {...button} />
+            ))}
+          </div>
+        </div>
       </ControlledMenu>
     </Portal>
   );
 };
 
 Popover.defaultProps = {
+  buttons: [],
   title: undefined,
 };
 

@@ -3,7 +3,7 @@
 exports[`DynamicSearchInput Component DynamicSearchInput handles change 1`] = `
 <div>
   <div
-    class="field gds-select-container input-select-field"
+    class="container"
   >
     <div
       class=" css-1959ul7-container"
@@ -19,7 +19,7 @@ exports[`DynamicSearchInput Component DynamicSearchInput handles change 1`] = `
         class="css-1f43avz-a11yText-A11yText"
       />
       <div
-        class=" css-1l9db9l-control"
+        class=" css-yqi6bw-control"
       >
         <div
           class=" css-9plg90-ValueContainer"
@@ -63,7 +63,7 @@ exports[`DynamicSearchInput Component DynamicSearchInput handles change 1`] = `
             aria-hidden="true"
           >
             <i
-              class="dynamic-search-icon icon"
+              class="icon icon"
               data-testid="DATA-TEST-ID-magnifier"
               icon="fal,magnifying-glass"
             />
@@ -83,7 +83,7 @@ exports[`DynamicSearchInput Component DynamicSearchInput handles change 1`] = `
 exports[`DynamicSearchInput Component DynamicSearchInput handles change 2`] = `
 <div>
   <div
-    class="field gds-select-container input-select-field"
+    class="container"
   >
     <div
       class=" css-1959ul7-container"
@@ -108,7 +108,7 @@ exports[`DynamicSearchInput Component DynamicSearchInput handles change 2`] = `
         </span>
       </span>
       <div
-        class=" css-1tkmbhg-control"
+        class=" css-6xdgpl-control"
       >
         <div
           class=" css-9plg90-ValueContainer"
@@ -146,7 +146,7 @@ exports[`DynamicSearchInput Component DynamicSearchInput handles change 2`] = `
           >
             <svg
               aria-hidden="true"
-              class="icon gds-loader size-1x dynamic-search-spinner"
+              class="icon size-1x spinner"
               data-testid="DATA-TEST-ID-spinner"
               focusable="false"
               height="50"
@@ -192,7 +192,7 @@ exports[`DynamicSearchInput Component DynamicSearchInput handles change 2`] = `
             aria-hidden="true"
           >
             <i
-              class="dynamic-search-icon icon"
+              class="icon icon"
               data-testid="DATA-TEST-ID-magnifier"
               icon="fal,magnifying-glass"
             />
@@ -235,7 +235,7 @@ exports[`DynamicSearchInput Component DynamicSearchInput handles change 2`] = `
 exports[`DynamicSearchInput Component DynamicSearchInput handles change 3`] = `
 <div>
   <div
-    class="field gds-select-container input-select-field"
+    class="container"
   >
     <div
       class=" css-1959ul7-container"
@@ -251,7 +251,7 @@ exports[`DynamicSearchInput Component DynamicSearchInput handles change 3`] = `
         class="css-1f43avz-a11yText-A11yText"
       />
       <div
-        class=" css-1l9db9l-control"
+        class=" css-yqi6bw-control"
       >
         <div
           class=" css-9plg90-ValueContainer"
@@ -293,7 +293,7 @@ exports[`DynamicSearchInput Component DynamicSearchInput handles change 3`] = `
             aria-hidden="true"
           >
             <i
-              class="dynamic-search-icon icon"
+              class="icon icon"
               data-testid="DATA-TEST-ID-magnifier"
               icon="fal,magnifying-glass"
             />
@@ -313,7 +313,7 @@ exports[`DynamicSearchInput Component DynamicSearchInput handles change 3`] = `
 exports[`DynamicSearchInput Component DynamicSearchInput handles change clearable 1`] = `
 <div>
   <div
-    class="field gds-select-container input-select-field"
+    class="container"
   >
     <div
       class=" css-1959ul7-container"
@@ -329,7 +329,7 @@ exports[`DynamicSearchInput Component DynamicSearchInput handles change clearabl
         class="css-1f43avz-a11yText-A11yText"
       />
       <div
-        class=" css-1l9db9l-control"
+        class=" css-yqi6bw-control"
       >
         <div
           class=" css-9plg90-ValueContainer"
@@ -368,7 +368,7 @@ exports[`DynamicSearchInput Component DynamicSearchInput handles change clearabl
             aria-hidden="true"
           >
             <i
-              class="dynamic-search-icon icon"
+              class="icon icon"
               icon="fal,xmark"
             />
           </div>
@@ -379,7 +379,7 @@ exports[`DynamicSearchInput Component DynamicSearchInput handles change clearabl
             aria-hidden="true"
           >
             <i
-              class="dynamic-search-icon icon"
+              class="icon icon"
               icon="fal,magnifying-glass"
             />
           </div>
@@ -398,7 +398,7 @@ exports[`DynamicSearchInput Component DynamicSearchInput handles change clearabl
 exports[`DynamicSearchInput Component DynamicSearchInput handles change to undefined 1`] = `
 <div>
   <div
-    class="field gds-select-container input-select-field"
+    class="container"
   >
     <div
       class=" css-1959ul7-container"
@@ -414,7 +414,7 @@ exports[`DynamicSearchInput Component DynamicSearchInput handles change to undef
         class="css-1f43avz-a11yText-A11yText"
       />
       <div
-        class=" css-1l9db9l-control"
+        class=" css-yqi6bw-control"
       >
         <div
           class=" css-9plg90-ValueContainer"
@@ -453,7 +453,7 @@ exports[`DynamicSearchInput Component DynamicSearchInput handles change to undef
             aria-hidden="true"
           >
             <i
-              class="dynamic-search-icon icon"
+              class="icon icon"
               data-testid="DATA-TEST-ID-clear"
               icon="fal,xmark"
             />
@@ -465,7 +465,7 @@ exports[`DynamicSearchInput Component DynamicSearchInput handles change to undef
             aria-hidden="true"
           >
             <i
-              class="dynamic-search-icon icon"
+              class="icon icon"
               data-testid="DATA-TEST-ID-magnifier"
               icon="fal,magnifying-glass"
             />
@@ -485,7 +485,7 @@ exports[`DynamicSearchInput Component DynamicSearchInput handles change to undef
 exports[`DynamicSearchInput Component DynamicSearchInput handles change to undefined 2`] = `
 <div>
   <div
-    class="field gds-select-container input-select-field"
+    class="container"
   >
     <div
       class=" css-1959ul7-container"
@@ -512,7 +512,7 @@ exports[`DynamicSearchInput Component DynamicSearchInput handles change to undef
         </span>
       </span>
       <div
-        class=" css-1tkmbhg-control"
+        class=" css-6xdgpl-control"
       >
         <div
           class=" css-9plg90-ValueContainer"
@@ -558,7 +558,7 @@ exports[`DynamicSearchInput Component DynamicSearchInput handles change to undef
             aria-hidden="true"
           >
             <i
-              class="dynamic-search-icon icon"
+              class="icon icon"
               data-testid="DATA-TEST-ID-magnifier"
               icon="fal,magnifying-glass"
             />
@@ -601,7 +601,7 @@ exports[`DynamicSearchInput Component DynamicSearchInput handles change to undef
 exports[`DynamicSearchInput Component DynamicSearchInput handles change with no option string 1`] = `
 <div>
   <div
-    class="field gds-select-container input-select-field"
+    class="container"
   >
     <div
       class=" css-1959ul7-container"
@@ -617,7 +617,7 @@ exports[`DynamicSearchInput Component DynamicSearchInput handles change with no 
         class="css-1f43avz-a11yText-A11yText"
       />
       <div
-        class=" css-1l9db9l-control"
+        class=" css-yqi6bw-control"
       >
         <div
           class=" css-9plg90-ValueContainer"
@@ -659,7 +659,7 @@ exports[`DynamicSearchInput Component DynamicSearchInput handles change with no 
             aria-hidden="true"
           >
             <i
-              class="dynamic-search-icon icon"
+              class="icon icon"
               data-testid="DATA-TEST-ID-magnifier"
               icon="fal,magnifying-glass"
             />
@@ -679,7 +679,7 @@ exports[`DynamicSearchInput Component DynamicSearchInput handles change with no 
 exports[`DynamicSearchInput Component DynamicSearchInput handles change with no option string 2`] = `
 <div>
   <div
-    class="field gds-select-container input-select-field"
+    class="container"
   >
     <div
       class=" css-1959ul7-container"
@@ -704,7 +704,7 @@ exports[`DynamicSearchInput Component DynamicSearchInput handles change with no 
         </span>
       </span>
       <div
-        class=" css-1tkmbhg-control"
+        class=" css-6xdgpl-control"
       >
         <div
           class=" css-9plg90-ValueContainer"
@@ -741,7 +741,7 @@ exports[`DynamicSearchInput Component DynamicSearchInput handles change with no 
           >
             <svg
               aria-hidden="true"
-              class="icon gds-loader size-1x dynamic-search-spinner"
+              class="icon size-1x spinner"
               data-testid="DATA-TEST-ID-spinner"
               focusable="false"
               height="50"
@@ -787,7 +787,7 @@ exports[`DynamicSearchInput Component DynamicSearchInput handles change with no 
             aria-hidden="true"
           >
             <i
-              class="dynamic-search-icon icon"
+              class="icon icon"
               data-testid="DATA-TEST-ID-magnifier"
               icon="fal,magnifying-glass"
             />
@@ -830,7 +830,7 @@ exports[`DynamicSearchInput Component DynamicSearchInput handles change with no 
 exports[`DynamicSearchInput Component DynamicSearchInput handles change with no option string 3`] = `
 <div>
   <div
-    class="field gds-select-container input-select-field"
+    class="container"
   >
     <div
       class=" css-1959ul7-container"
@@ -846,7 +846,7 @@ exports[`DynamicSearchInput Component DynamicSearchInput handles change with no 
         class="css-1f43avz-a11yText-A11yText"
       />
       <div
-        class=" css-1l9db9l-control"
+        class=" css-yqi6bw-control"
       >
         <div
           class=" css-9plg90-ValueContainer"
@@ -888,7 +888,7 @@ exports[`DynamicSearchInput Component DynamicSearchInput handles change with no 
             aria-hidden="true"
           >
             <i
-              class="dynamic-search-icon icon"
+              class="icon icon"
               data-testid="DATA-TEST-ID-magnifier"
               icon="fal,magnifying-glass"
             />
@@ -908,7 +908,7 @@ exports[`DynamicSearchInput Component DynamicSearchInput handles change with no 
 exports[`DynamicSearchInput Component DynamicSearchInput handles inputValue change 1`] = `
 <div>
   <div
-    class="field gds-select-container input-select-field"
+    class="container"
   >
     <div
       class=" css-1959ul7-container"
@@ -924,7 +924,7 @@ exports[`DynamicSearchInput Component DynamicSearchInput handles inputValue chan
         class="css-1f43avz-a11yText-A11yText"
       />
       <div
-        class=" css-1l9db9l-control"
+        class=" css-yqi6bw-control"
       >
         <div
           class=" css-9plg90-ValueContainer"
@@ -966,7 +966,7 @@ exports[`DynamicSearchInput Component DynamicSearchInput handles inputValue chan
             aria-hidden="true"
           >
             <i
-              class="dynamic-search-icon icon"
+              class="icon icon"
               data-testid="DATA-TEST-ID-magnifier"
               icon="fal,magnifying-glass"
             />
@@ -986,7 +986,7 @@ exports[`DynamicSearchInput Component DynamicSearchInput handles inputValue chan
 exports[`DynamicSearchInput Component DynamicSearchInput handles inputValue change 2`] = `
 <div>
   <div
-    class="field gds-select-container input-select-field"
+    class="container"
   >
     <div
       class=" css-1959ul7-container"
@@ -1002,7 +1002,7 @@ exports[`DynamicSearchInput Component DynamicSearchInput handles inputValue chan
         class="css-1f43avz-a11yText-A11yText"
       />
       <div
-        class=" css-1l9db9l-control"
+        class=" css-yqi6bw-control"
       >
         <div
           class=" css-9plg90-ValueContainer"
@@ -1044,7 +1044,7 @@ exports[`DynamicSearchInput Component DynamicSearchInput handles inputValue chan
             aria-hidden="true"
           >
             <i
-              class="dynamic-search-icon icon"
+              class="icon icon"
               data-testid="DATA-TEST-ID-magnifier"
               icon="fal,magnifying-glass"
             />
@@ -1064,7 +1064,7 @@ exports[`DynamicSearchInput Component DynamicSearchInput handles inputValue chan
 exports[`DynamicSearchInput Component DynamicSearchInput handles inputValue change 3`] = `
 <div>
   <div
-    class="field gds-select-container input-select-field"
+    class="container"
   >
     <div
       class=" css-1959ul7-container"
@@ -1080,7 +1080,7 @@ exports[`DynamicSearchInput Component DynamicSearchInput handles inputValue chan
         class="css-1f43avz-a11yText-A11yText"
       />
       <div
-        class=" css-1l9db9l-control"
+        class=" css-yqi6bw-control"
       >
         <div
           class=" css-9plg90-ValueContainer"
@@ -1124,7 +1124,7 @@ exports[`DynamicSearchInput Component DynamicSearchInput handles inputValue chan
             aria-hidden="true"
           >
             <i
-              class="dynamic-search-icon icon"
+              class="icon icon"
               data-testid="DATA-TEST-ID-magnifier"
               icon="fal,magnifying-glass"
             />
@@ -1144,7 +1144,7 @@ exports[`DynamicSearchInput Component DynamicSearchInput handles inputValue chan
 exports[`DynamicSearchInput Component DynamicSearchInput renders 1`] = `
 <div>
   <div
-    class="field gds-select-container input-select-field"
+    class="container"
   >
     <div
       class=" css-1959ul7-container"
@@ -1160,7 +1160,7 @@ exports[`DynamicSearchInput Component DynamicSearchInput renders 1`] = `
         class="css-1f43avz-a11yText-A11yText"
       />
       <div
-        class=" css-1l9db9l-control"
+        class=" css-yqi6bw-control"
       >
         <div
           class=" css-9plg90-ValueContainer"
@@ -1202,7 +1202,7 @@ exports[`DynamicSearchInput Component DynamicSearchInput renders 1`] = `
             aria-hidden="true"
           >
             <i
-              class="dynamic-search-icon icon"
+              class="icon icon"
               data-testid="DATA-TEST-ID-magnifier"
               icon="fal,magnifying-glass"
             />
@@ -1222,11 +1222,11 @@ exports[`DynamicSearchInput Component DynamicSearchInput renders 1`] = `
 exports[`DynamicSearchInput Component DynamicSearchInput renders in error and disabled 1`] = `
 <div>
   <div
-    class="field gds-select-container input-select-field-read-only"
+    class="container"
     data-testid="DATA-TEST-ID"
   >
     <span
-      class="gds-typography"
+      class="typography"
     >
       option 1
     </span>
@@ -1237,7 +1237,7 @@ exports[`DynamicSearchInput Component DynamicSearchInput renders in error and di
 exports[`DynamicSearchInput Component DynamicSearchInput renders in error without portal 1`] = `
 <div>
   <div
-    class="field gds-select-container input-select-field input-error"
+    class="container"
   >
     <div
       class=" css-1959ul7-container"
@@ -1253,7 +1253,7 @@ exports[`DynamicSearchInput Component DynamicSearchInput renders in error withou
         class="css-1f43avz-a11yText-A11yText"
       />
       <div
-        class=" css-ocyqvw-control"
+        class=" css-xb2911-control"
       >
         <div
           class=" css-9plg90-ValueContainer"
@@ -1297,7 +1297,7 @@ exports[`DynamicSearchInput Component DynamicSearchInput renders in error withou
             aria-hidden="true"
           >
             <i
-              class="dynamic-search-icon icon"
+              class="icon icon"
               data-testid="DATA-TEST-ID-magnifier"
               icon="fal,magnifying-glass"
             />
@@ -1317,11 +1317,11 @@ exports[`DynamicSearchInput Component DynamicSearchInput renders in error withou
 exports[`DynamicSearchInput Component DynamicSearchInput renders in readOnly 1`] = `
 <div>
   <div
-    class="field gds-select-container input-select-field-read-only field-highlighted"
+    class="container highlighted"
     data-testid="DATA-TEST-ID"
   >
     <span
-      class="gds-typography"
+      class="typography"
     >
       option 1
     </span>
@@ -1332,10 +1332,10 @@ exports[`DynamicSearchInput Component DynamicSearchInput renders in readOnly 1`]
 exports[`DynamicSearchInput Component DynamicSearchInput renders in readOnly without datatestid 1`] = `
 <div>
   <div
-    class="field gds-select-container input-select-field-read-only field-highlighted"
+    class="container highlighted"
   >
     <span
-      class="gds-typography"
+      class="typography"
     >
       option 1
     </span>
@@ -1346,7 +1346,7 @@ exports[`DynamicSearchInput Component DynamicSearchInput renders in readOnly wit
 exports[`DynamicSearchInput Component DynamicSearchInput renders when resolveValue rejects 1`] = `
 <div>
   <div
-    class="field gds-select-container input-select-field"
+    class="container"
   >
     <div
       class=" css-1959ul7-container"
@@ -1362,7 +1362,7 @@ exports[`DynamicSearchInput Component DynamicSearchInput renders when resolveVal
         class="css-1f43avz-a11yText-A11yText"
       />
       <div
-        class=" css-1l9db9l-control"
+        class=" css-yqi6bw-control"
       >
         <div
           class=" css-9plg90-ValueContainer"
@@ -1406,7 +1406,7 @@ exports[`DynamicSearchInput Component DynamicSearchInput renders when resolveVal
             aria-hidden="true"
           >
             <i
-              class="dynamic-search-icon icon"
+              class="icon icon"
               data-testid="DATA-TEST-ID-magnifier"
               icon="fal,magnifying-glass"
             />
@@ -1426,7 +1426,7 @@ exports[`DynamicSearchInput Component DynamicSearchInput renders when resolveVal
 exports[`DynamicSearchInput Component DynamicSearchInput renders with invalid input value 1`] = `
 <div>
   <div
-    class="field gds-select-container input-select-field"
+    class="container"
   >
     <div
       class=" css-1959ul7-container"
@@ -1442,7 +1442,7 @@ exports[`DynamicSearchInput Component DynamicSearchInput renders with invalid in
         class="css-1f43avz-a11yText-A11yText"
       />
       <div
-        class=" css-1l9db9l-control"
+        class=" css-yqi6bw-control"
       >
         <div
           class=" css-9plg90-ValueContainer"
@@ -1486,7 +1486,7 @@ exports[`DynamicSearchInput Component DynamicSearchInput renders with invalid in
             aria-hidden="true"
           >
             <i
-              class="dynamic-search-icon icon"
+              class="icon icon"
               data-testid="DATA-TEST-ID-magnifier"
               icon="fal,magnifying-glass"
             />
@@ -1506,7 +1506,7 @@ exports[`DynamicSearchInput Component DynamicSearchInput renders with invalid in
 exports[`DynamicSearchInput Component DynamicSearchInput renders without input value 1`] = `
 <div>
   <div
-    class="field gds-select-container input-select-field"
+    class="container"
   >
     <div
       class=" css-1959ul7-container"
@@ -1522,7 +1522,7 @@ exports[`DynamicSearchInput Component DynamicSearchInput renders without input v
         class="css-1f43avz-a11yText-A11yText"
       />
       <div
-        class=" css-1l9db9l-control"
+        class=" css-yqi6bw-control"
       >
         <div
           class=" css-9plg90-ValueContainer"
@@ -1566,7 +1566,7 @@ exports[`DynamicSearchInput Component DynamicSearchInput renders without input v
             aria-hidden="true"
           >
             <i
-              class="dynamic-search-icon icon"
+              class="icon icon"
               data-testid="DATA-TEST-ID-magnifier"
               icon="fal,magnifying-glass"
             />

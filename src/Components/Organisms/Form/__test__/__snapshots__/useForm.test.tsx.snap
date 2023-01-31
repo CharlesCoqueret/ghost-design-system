@@ -25,7 +25,7 @@ exports[`useForm hook provides the right elements 3`] = `
     {"fields":[{"fieldType":"number","dataIndex":"number","label":"Number"}],"initialData":{},"validationError":{"number":{"type":"required","message":"Value for number is required"}},"previousData":{"number":0},"validationSchema":{"deps":[],"tests":[],"transforms":[null],"conditions":[],"_whitelist":{"list":{},"refs":{}},"_blacklist":{"list":{},"refs":{}},"exclusiveTests":{},"spec":{"strip":false,"strict":false,"abortEarly":true,"recursive":true,"nullable":false,"presence":"optional"},"fields":{"number":{"type":"number","_whitelist":{"list":{},"refs":{}},"_blacklist":{"list":{},"refs":{}},"exclusiveTests":{"required":true},"deps":[],"conditions":[],"tests":[null],"transforms":[null],"spec":{"strip":false,"strict":false,"abortEarly":true,"recursive":true,"nullable":false,"presence":"required"}}},"_nodes":["number"],"_excludedEdges":[],"type":"object"}}
   </div>
   <div
-    class="field-error-message"
+    class="field-error"
   />
 </div>
 `;
@@ -37,7 +37,7 @@ exports[`useForm hook provides the right elements 4`] = `
     {"fields":[{"fieldType":"number","dataIndex":"number","label":"Number"}],"initialData":{"number":100},"validationError":{},"previousData":{"number":0},"validationSchema":{"deps":[],"tests":[],"transforms":[null],"conditions":[],"_whitelist":{"list":{},"refs":{}},"_blacklist":{"list":{},"refs":{}},"exclusiveTests":{},"spec":{"strip":false,"strict":false,"abortEarly":true,"recursive":true,"nullable":false,"presence":"optional"},"fields":{"number":{"type":"number","_whitelist":{"list":{},"refs":{}},"_blacklist":{"list":{},"refs":{}},"exclusiveTests":{"required":true},"deps":[],"conditions":[],"tests":[null],"transforms":[null],"spec":{"strip":false,"strict":false,"abortEarly":true,"recursive":true,"nullable":false,"presence":"required"}}},"_nodes":["number"],"_excludedEdges":[],"type":"object"}}
   </div>
   <div
-    class="field-error-message"
+    class="field-error"
   />
 </div>
 `;

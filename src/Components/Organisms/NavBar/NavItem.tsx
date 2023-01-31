@@ -8,6 +8,8 @@ import { Badge, BadgeColorsEnum } from '../../Atoms/Badge';
 import { Portal } from '../../Atoms/Portal';
 import { Tooltip } from '../../Atoms/Tooltip';
 
+import styles from './NavItem.module.scss';
+
 export interface INavItemProps {
   /** Counter in a badge floating above the NavItem (optional, default: undefined) */
   counter?: string | number;
@@ -81,24 +83,24 @@ const NavItem = (props: INavItemProps): ReactElement => {
   return (
     <>
       <Tooltip tooltip={tooltip}>
-        <div className='nav-bar-menu-item' data-testid={dataTestId} ref={ref} onClick={handleClick}>
+        <div className={styles.item} data-testid={dataTestId} ref={ref} onClick={handleClick}>
           {link ? (
             <NavLink to={link}>
               {icon && <Icon icon={icon} size={label ? '1x' : '2x'} />}
-              {label && <div className='nav-bar-menu-label'>{label}</div>}
+              {label && <div className={styles.label}>{label}</div>}
             </NavLink>
           ) : (
             <>
               {icon && <Icon icon={icon} size={label ? '1x' : '2x'} />}
-              {label && <div className='nav-bar-menu-label'>{label}</div>}
+              {label && <div className={styles.label}>{label}</div>}
             </>
           )}
           {counter && (
-            <Badge color={BadgeColorsEnum.DANGER} type='notification' className='counter'>
-              {counter}
+            <Badge color={BadgeColorsEnum.DANGER} type='notification' className={styles.counter}>
+              {isFinite(Number(counter)) && Number(counter) > 99 ? '+99' : counter}
             </Badge>
           )}
-          {hasMenu && label && <Icon icon={['fas', 'caret-down']} size='lg' className='nav-bar-menu-caret' />}
+          {hasMenu && label && <Icon icon={['fas', 'caret-down']} size='lg' className={styles.caret} />}
         </div>
       </Tooltip>
       {hasMenu ? (

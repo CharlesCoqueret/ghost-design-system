@@ -1,39 +1,26 @@
-import alpha from 'color-alpha';
 import { StylesConfig } from 'react-select';
 
 import { IOption } from './types';
 
 interface ICustomStylesProps {
-  controlErrorColor?: string;
-  controlFocusColor?: string;
-  fontColor?: string;
-  optionFocusColor?: string;
-  optionSelectedColor?: string;
   isInError?: boolean;
 }
 
 export const customStyles = (props: ICustomStylesProps = {}): StylesConfig<IOption> => {
-  const {
-    controlErrorColor = 'rgb(255,52,24)',
-    controlFocusColor = 'rgb(1,82,129)',
-    fontColor = 'rgb(0,0,0)',
-    optionFocusColor = 'rgb(228,228,228)',
-    optionSelectedColor = 'rgb(38,186,212)',
-    isInError = false,
-  } = props;
+  const { isInError = false } = props;
 
   return {
     control: (provided, state) => {
-      let border = `1px solid ${optionFocusColor}`;
-      let hover = { border: `1px solid ${controlFocusColor}` };
+      let border = `1px solid rgb(var(--theme-provider-chalk))`;
+      let hover = { border: '1px solid rgb(var(--theme-provider-scooter))' };
 
       if (state.isFocused) {
-        border = `1px solid ${controlFocusColor}`;
+        border = '1px solid rgb(var(--theme-provider-scooter))';
       }
 
       if (isInError) {
-        border = `1px solid ${controlErrorColor}`;
-        hover = { border: `1px solid ${controlErrorColor}` };
+        border = '1px solid rgb(var(--theme-provider-error))';
+        hover = { border: '1px solid rgb(var(--theme-provider-error))' };
       }
 
       return {
@@ -60,23 +47,23 @@ export const customStyles = (props: ICustomStylesProps = {}): StylesConfig<IOpti
     option: (provided, state) => {
       let backgroundColor = provided.backgroundColor;
       let active = provided[':active'];
-      const color = fontColor;
+      const color = 'rgb(var(--theme-provider-black))';
       const cursor = 'pointer';
 
       if (state.isFocused && state.isSelected) {
-        backgroundColor = alpha(optionSelectedColor, 0.5);
+        backgroundColor = 'rgba(var(--theme-provider-scooter), 0.5)';
         active = {
           ...active,
-          backgroundColor: alpha(optionSelectedColor, 0.5),
+          backgroundColor: 'rgba(var(--theme-provider-scooter), 0.5)',
         };
       } else if (state.isFocused) {
-        backgroundColor = alpha(optionFocusColor, 0.33);
-        active = { ...active, backgroundColor: alpha(optionFocusColor, 0.66) };
+        backgroundColor = 'rgba(var(--theme-provider-chalk), 0.33)';
+        active = { ...active, backgroundColor: 'rgba(var(--theme-provider-chalk), 0.66)' };
       } else if (state.isSelected) {
-        backgroundColor = alpha(optionSelectedColor, 0.33);
+        backgroundColor = 'rgba(var(--theme-provider-scooter), 0.33)';
         active = {
           ...active,
-          backgroundColor: alpha(optionSelectedColor, 0.66),
+          backgroundColor: 'rgba(var(--theme-provider-scooter), 0.66)',
         };
       }
 

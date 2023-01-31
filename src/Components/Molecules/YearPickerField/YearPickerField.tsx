@@ -1,5 +1,4 @@
 import React, { ReactElement, Ref } from 'react';
-import classnames from 'classnames';
 
 import { GenericField } from '../../Atoms/GenericField';
 import { YearPickerInput } from '../../Atoms/DatePickerInput';
@@ -90,7 +89,7 @@ export const YearPickerField = (props: IYearPickerFieldProps): ReactElement => {
       mandatory={mandatory}
       readOnly={readOnly}>
       <YearPickerInput
-        className={classnames('input-year-picker-field', inputClassName)}
+        className={inputClassName}
         dataTestId={dataTestId}
         disabled={disabled}
         highlighted={highlighted}

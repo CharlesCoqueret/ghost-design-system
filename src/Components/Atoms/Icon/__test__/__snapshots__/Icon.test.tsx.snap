@@ -3,8 +3,8 @@
 exports[`Icon component Icon renders 1`] = `
 <div>
   <i
-    class="CLASSNAME icon"
-    icon="fal,cog"
+    class="icon CLASSNAME"
+    icon="fal,gear"
   />
 </div>
 `;

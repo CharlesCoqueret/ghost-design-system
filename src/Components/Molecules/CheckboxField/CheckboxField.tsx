@@ -1,16 +1,14 @@
 import React, { ReactElement, Ref } from 'react';
-import classnames from 'classnames';
 
 import { GenericField } from '../../Atoms/GenericField';
-import { IToggleEntry, CheckboxInput } from '../../Atoms/CheckBoxInput';
+import { ICheckboxInputProps } from '../../Atoms/CheckBoxInput/CheckboxInput';
+import { CheckboxInput } from '../../Atoms/CheckBoxInput';
 
-export interface ICheckboxFieldProps {
+export interface ICheckboxFieldProps extends Omit<ICheckboxInputProps, 'className' | 'isInError'> {
   /** React Container ref (optional, default: undefined) */
   containerRef?: Ref<HTMLDivElement>;
   /** For test purpose only */
   dataTestId?: string;
-  /** Disabled field (optional, default: false) */
-  disabled?: boolean;
   /** Error message (optional, default: undefined) */
   errorMessage?: string;
   /** Class for the field surrounding the input (optional, default: undefined) */
@@ -19,24 +17,14 @@ export interface ICheckboxFieldProps {
   fieldSize?: number;
   /** Helper text (optional, default: undefined) */
   helperText?: string;
-  /** Highlighted field and highlight the toggle entries marked as highlight (optional, default: false) */
-  highlighted?: boolean;
-  /** Inline field (optional, default: false) */
-  inline?: boolean;
   /** Class for the input (optional, default: undefined) */
   inputClassName?: string;
-  /** Input value */
-  inputValue: Array<IToggleEntry>;
   /** Label (optional, default: undefined) */
   label?: string;
   /** Size of the field in a 12 column grid (optional, default: undefined) */
   labelSize?: number;
   /** Mandatory field (optional, default: false) */
   mandatory?: boolean;
-  /** Handler of value changes (optional, default: undefined) */
-  onChange?: (values: Array<IToggleEntry>) => void;
-  /** Read only field (optional, default: false) */
-  readOnly?: boolean;
 }
 
 /**
@@ -53,6 +41,7 @@ export const CheckboxField = (props: ICheckboxFieldProps): ReactElement => {
     dataTestId,
     disabled,
     errorMessage,
+    ellipsis,
     fieldClassName,
     fieldSize,
     helperText,
@@ -82,13 +71,14 @@ export const CheckboxField = (props: ICheckboxFieldProps): ReactElement => {
       mandatory={mandatory}
       readOnly={readOnly}>
       <CheckboxInput
-        className={classnames('input-checkbox-field', inputClassName)}
+        className={inputClassName}
         dataTestId={dataTestId}
         disabled={disabled}
+        ellipsis={ellipsis}
         highlighted={highlighted}
         inline={inline}
         isInError={errorMessage !== undefined}
-        options={inputValue}
+        inputValue={inputValue}
         onChange={onChange}
         readOnly={readOnly}
       />
@@ -99,6 +89,7 @@ export const CheckboxField = (props: ICheckboxFieldProps): ReactElement => {
 CheckboxField.defaultProps = {
   disabled: false,
   errorMessage: undefined,
+  ellipsis: false,
   fieldClassName: undefined,
   fieldSize: undefined,
   helperText: undefined,

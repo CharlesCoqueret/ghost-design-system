@@ -7,17 +7,17 @@ exports[`DatePickerHeader Component DatePickerHeader renders handles changes in 
       class="react-datepicker__header-select-wrapper"
     >
       <button
-        class="gds-button-content"
+        class="button"
         color="reversed"
         data-testid="TESTID-decreaseMonth"
         tabindex="0"
         type="button"
       >
         <div
-          class="button-icon-container"
+          class="icon"
         >
           <i
-            class="button-icon icon"
+            class="icon"
             icon="fal,chevron-left"
           />
         </div>
@@ -88,17 +88,17 @@ exports[`DatePickerHeader Component DatePickerHeader renders handles changes in 
         </option>
       </select>
       <button
-        class="gds-button-content"
+        class="button"
         color="reversed"
         data-testid="TESTID-increaseMonth"
         tabindex="0"
         type="button"
       >
         <div
-          class="button-icon-container"
+          class="icon"
         >
           <i
-            class="button-icon icon"
+            class="icon"
             icon="fal,chevron-right"
           />
         </div>
@@ -108,17 +108,17 @@ exports[`DatePickerHeader Component DatePickerHeader renders handles changes in 
       class="react-datepicker__header-select-wrapper"
     >
       <button
-        class="gds-button-content"
+        class="button"
         color="reversed"
         data-testid="TESTID-decreaseYear"
         tabindex="0"
         type="button"
       >
         <div
-          class="button-icon-container"
+          class="icon"
         >
           <i
-            class="button-icon icon"
+            class="icon"
             icon="fal,chevron-left"
           />
         </div>
@@ -634,17 +634,17 @@ exports[`DatePickerHeader Component DatePickerHeader renders handles changes in 
         </option>
       </select>
       <button
-        class="gds-button-content"
+        class="button"
         color="reversed"
         data-testid="TESTID-increaseYear"
         tabindex="0"
         type="button"
       >
         <div
-          class="button-icon-container"
+          class="icon"
         >
           <i
-            class="button-icon icon"
+            class="icon"
             icon="fal,chevron-right"
           />
         </div>

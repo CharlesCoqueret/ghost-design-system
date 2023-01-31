@@ -3,20 +3,20 @@
 exports[`CheckboxField Component CheckboxField renders and handles changes 1`] = `
 <div>
   <div
-    class="gds-field-group"
+    class="fieldGroup"
   >
     <div
-      class="field gds-checkbox-container input-checkbox-field"
+      class="container"
     >
       <label
-        class=""
+        class="label"
         data-testid="DATA-TEST-ID-0"
         for="checkbox-1"
         tabindex="0"
       >
         <div
           aria-label="Label 1"
-          class="checkbox-marker"
+          class="checkboxMarker"
           id="checkbox-1"
           role="checkbox"
         >
@@ -35,20 +35,20 @@ exports[`CheckboxField Component CheckboxField renders and handles changes 1`] =
 exports[`CheckboxField Component CheckboxField renders and handles changes 2`] = `
 <div>
   <div
-    class="gds-field-group"
+    class="fieldGroup"
   >
     <div
-      class="field gds-checkbox-container input-checkbox-field"
+      class="container"
     >
       <label
-        class=""
+        class="label"
         data-testid="DATA-TEST-ID-0"
         for="checkbox-1"
         tabindex="0"
       >
         <div
           aria-label="Label 1"
-          class="checkbox-marker"
+          class="checkboxMarker"
           id="checkbox-1"
           role="checkbox"
         >
@@ -67,19 +67,19 @@ exports[`CheckboxField Component CheckboxField renders and handles changes 2`] =
 exports[`CheckboxField Component CheckboxField renders with values in disabled highligted 1`] = `
 <div>
   <div
-    class="gds-field-group"
+    class="fieldGroup"
   >
     <div
-      class="field gds-checkbox-container input-checkbox-field"
+      class="container"
     >
       <label
-        class="input-checkbox-field-disabled field-highlighted"
+        class="label disabled highlighted"
         for="checkbox-3"
         tabindex="-1"
       >
         <div
           aria-label="Label 1"
-          class="checkbox-marker"
+          class="checkboxMarker disabled"
           id="checkbox-3"
           role="checkbox"
         >
@@ -91,13 +91,13 @@ exports[`CheckboxField Component CheckboxField renders with values in disabled h
         Label 1
       </label>
       <label
-        class="input-checkbox-field-disabled"
+        class="label disabled"
         for="checkbox-4"
         tabindex="-1"
       >
         <div
           aria-label="Label 2"
-          class="checkbox-marker"
+          class="checkboxMarker disabled"
           id="checkbox-4"
           role="checkbox"
         >
@@ -109,13 +109,13 @@ exports[`CheckboxField Component CheckboxField renders with values in disabled h
         Label 2
       </label>
       <label
-        class="input-checkbox-field-disabled"
+        class="label disabled"
         for="checkbox-5"
         tabindex="-1"
       >
         <div
           aria-label="Label 3"
-          class="checkbox-marker"
+          class="checkboxMarker disabled"
           id="checkbox-5"
           role="checkbox"
         >
@@ -134,19 +134,19 @@ exports[`CheckboxField Component CheckboxField renders with values in disabled h
 exports[`CheckboxField Component CheckboxField renders with values in readonly 1`] = `
 <div>
   <div
-    class="gds-field-group"
+    class="fieldGroup"
   >
     <div
-      class="field gds-checkbox-container input-checkbox-field"
+      class="container"
     >
       <label
-        class="input-checkbox-field-read-only"
+        class="label readOnly"
         for="checkbox-2"
         tabindex="-1"
       >
         <div
           aria-label="Label 1"
-          class="checkbox-marker"
+          class="checkboxMarker readOnly"
           id="checkbox-2"
           role="checkbox"
         >
@@ -165,19 +165,19 @@ exports[`CheckboxField Component CheckboxField renders with values in readonly 1
 exports[`CheckboxField Component CheckboxField renders with values with fieldSize and inline 1`] = `
 <div>
   <div
-    class="gds-field-group field-size-6 field-inline"
+    class="fieldGroup size-6 inline"
   >
     <div
-      class="field gds-checkbox-container inline input-checkbox-field"
+      class="container inlineContainer"
     >
       <label
-        class="input-checkbox-field-error inline"
+        class="label inlineLabel"
         for="checkbox-6"
         tabindex="0"
       >
         <div
           aria-label="Label 1"
-          class="checkbox-marker"
+          class="checkboxMarker"
           id="checkbox-6"
           role="checkbox"
         >

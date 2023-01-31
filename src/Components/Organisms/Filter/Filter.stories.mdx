@@ -6,8 +6,6 @@ import { IToggleEntry } from '../../Atoms/CheckBoxInput';
 import { IOption } from '../../Atoms/SelectInput';
 import { Icon } from '../../Atoms';
 
-import filterStyle from '../../../assets/_filter.scss?raw';
-
 export const Template = (args) => {
   return <Filter {...args} />;
 };
@@ -84,7 +82,7 @@ Play with Filter live on [CodeSandbox](https://codesandbox.io/s/filter-demo-hi6u
       top: '50%',
       left: '50%',
     }}>
-    <Icon style={{ color: 'deepskyblue' }} icon={['fal', 'exclamation-circle']} size='lg' /> It is recommended to set
+    <Icon style={{ color: 'deepskyblue' }} icon={['fal', 'exclamation-triangle']} size='lg' /> It is recommended to set
     the fieldSize of select, multiselect, dynamic search and dynamic search creatable when inline.
   </div>
 </div>
@@ -327,6 +325,7 @@ For layout management, please refer to this [example](https://codesandbox.io/s/s
                 { value: 'SELECT2', label: 'Option #2' },
                 { value: 'SELECT3', label: 'Option #3' },
                 { value: 'SELECT4', label: 'Option #4' },
+                { value: 'SELECT5', label: 'Option #5' },
               ],
               placeholder: 'Select an option',
             },
@@ -428,9 +427,3 @@ For layout management, please refer to this [example](https://codesandbox.io/s/s
     {Template.bind({})}
   </Story>
 </Canvas>
-
-## Style
-
-[source](https://github.com/CharlesCoqueret/ghost-design-system/blob/main/src/assets/_filter.scss)
-
-<Source language='css' dark format={true} code={filterStyle} />

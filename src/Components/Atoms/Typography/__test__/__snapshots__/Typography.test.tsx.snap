@@ -3,7 +3,7 @@
 exports[`Typography.Text Component Typography.Text ellipsis with no text 1`] = `
 <div>
   <span
-    class="gds-typography ellipsis"
+    class="typography ellipsis"
   >
     <div />
   </span>
@@ -13,7 +13,7 @@ exports[`Typography.Text Component Typography.Text ellipsis with no text 1`] = `
 exports[`Typography.Text Component Typography.Text handles click 1`] = `
 <div>
   <span
-    class="gds-typography link"
+    class="typography link"
     data-testid="DATA-TEST-ID"
   >
     TEXT
@@ -24,7 +24,7 @@ exports[`Typography.Text Component Typography.Text handles click 1`] = `
 exports[`Typography.Text Component Typography.Text renders with all types 1`] = `
 <div>
   <span
-    class="gds-typography error disabled helper highlighted label placeholder tiny"
+    class="typography error disabled helper highlighted label placeholder tiny"
   >
     TEXT
   </span>
@@ -34,7 +34,7 @@ exports[`Typography.Text Component Typography.Text renders with all types 1`] = 
 exports[`Typography.Text Component Typography.Text renders with all types 2`] = `
 <div>
   <span
-    class="gds-typography"
+    class="typography"
   >
     TEXT
   </span>
@@ -44,7 +44,7 @@ exports[`Typography.Text Component Typography.Text renders with all types 2`] = 
 exports[`Typography.Text Component Typography.Text renders with all types 3`] = `
 <div>
   <span
-    class="gds-typography disabled"
+    class="typography disabled"
   >
     TEXT
   </span>
@@ -54,7 +54,7 @@ exports[`Typography.Text Component Typography.Text renders with all types 3`] = 
 exports[`Typography.Text Component Typography.Text renders with all types 4`] = `
 <div>
   <span
-    class="gds-typography error"
+    class="typography error"
   >
     TEXT
   </span>
@@ -64,7 +64,7 @@ exports[`Typography.Text Component Typography.Text renders with all types 4`] = 
 exports[`Typography.Text Component Typography.Text renders with all types 5`] = `
 <div>
   <span
-    class="gds-typography helper"
+    class="typography helper"
   >
     TEXT
   </span>
@@ -74,7 +74,7 @@ exports[`Typography.Text Component Typography.Text renders with all types 5`] = 
 exports[`Typography.Text Component Typography.Text renders with all types 6`] = `
 <div>
   <span
-    class="gds-typography highlighted"
+    class="typography highlighted"
   >
     TEXT
   </span>
@@ -84,7 +84,7 @@ exports[`Typography.Text Component Typography.Text renders with all types 6`] = 
 exports[`Typography.Text Component Typography.Text renders with all types 7`] = `
 <div>
   <span
-    class="gds-typography label"
+    class="typography label"
   >
     TEXT
   </span>
@@ -94,7 +94,7 @@ exports[`Typography.Text Component Typography.Text renders with all types 7`] = 
 exports[`Typography.Text Component Typography.Text renders with all types 8`] = `
 <div>
   <span
-    class="gds-typography placeholder"
+    class="typography placeholder"
   >
     TEXT
   </span>
@@ -104,7 +104,7 @@ exports[`Typography.Text Component Typography.Text renders with all types 8`] = 
 exports[`Typography.Text Component Typography.Text renders with all types 9`] = `
 <div>
   <span
-    class="gds-typography tiny"
+    class="typography tiny"
   >
     TEXT
   </span>
@@ -114,7 +114,7 @@ exports[`Typography.Text Component Typography.Text renders with all types 9`] = 
 exports[`Typography.Text Component Typography.Text renders with no types 1`] = `
 <div>
   <span
-    class="gds-typography CLASSNAME ellipsis"
+    class="typography CLASSNAME ellipsis"
     style="height: 200px;"
     title="TEXT"
   >
@@ -126,7 +126,7 @@ exports[`Typography.Text Component Typography.Text renders with no types 1`] = `
 exports[`Typography.Title Component Typography.Title ellipsis with no text 1`] = `
 <div>
   <h3
-    class="gds-typography ellipsis"
+    class="typography ellipsis h3"
   >
     <div />
   </h3>
@@ -136,7 +136,7 @@ exports[`Typography.Title Component Typography.Title ellipsis with no text 1`] =
 exports[`Typography.Title Component Typography.Title handles click 1`] = `
 <div>
   <h1
-    class="gds-typography"
+    class="typography h1"
     data-testid="DATA-TEST-ID"
   >
     TITLE
@@ -147,7 +147,7 @@ exports[`Typography.Title Component Typography.Title handles click 1`] = `
 exports[`Typography.Title Component Typography.Title renders 1`] = `
 <div>
   <h2
-    class="gds-typography ellipsis CLASSNAME"
+    class="typography ellipsis h2 CLASSNAME"
     style="height: 200px;"
     title="TITLE"
   >

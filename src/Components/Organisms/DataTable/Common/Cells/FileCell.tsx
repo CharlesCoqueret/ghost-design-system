@@ -22,7 +22,6 @@ const FileCell = <T,>(props: ICellProps<T, IColumnFile<T>>): ReactElement => {
         acceptTypes={column.acceptTypes}
         additionalInfo={column.additionalInfo}
         dataTestId={dataTestId}
-        inputClassName={classnames('gds-typography', { ellipsis: column.ellipsis })}
         inputValue={displayValue}
         localization={column.localization}
         maxFiles={column.maxFiles}

@@ -113,7 +113,7 @@ export interface IColumnAmount<T>
 
 export interface IColumnBadge<T>
   extends IColumn,
-    Pick<ISelectFieldProps, 'isClearable' | 'colors' | 'placeholder' | 'usePortal'>,
+    Pick<ISelectFieldProps, 'isClearable' | 'placeholder' | 'usePortal'>,
     Pick<IBadgeProps, 'color'> {
   /** Entry of the value in T (type: keyof T) */
   dataIndex: keyof T;
@@ -199,7 +199,7 @@ export interface IColumnDynamicSearch<T>
   extends IColumn,
     Pick<
       IDynamicSearchFieldProps,
-      'colors' | 'isClearable' | 'noOptionsMessage' | 'placeholder' | 'resolveValue' | 'searchOptions' | 'usePortal'
+      'isClearable' | 'noOptionsMessage' | 'placeholder' | 'resolveValue' | 'searchOptions' | 'usePortal'
     > {
   /** Entry of the value in T (type: keyof T) */
   dataIndex: keyof T;
@@ -243,7 +243,7 @@ export interface IColumnMultiSelect<T>
   extends IColumn,
     Pick<
       IMultiSelectFieldProps,
-      'isClearable' | 'numberOfItemLabel' | 'numberOfItemsLabel' | 'placeholder' | 'colors' | 'usePortal'
+      'isClearable' | 'numberOfItemLabel' | 'numberOfItemsLabel' | 'placeholder' | 'usePortal'
     > {
   /** Entry of the value in T (type: keyof T) */
   dataIndex: keyof T;

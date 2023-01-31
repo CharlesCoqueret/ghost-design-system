@@ -8,17 +8,11 @@ import { IOption } from './types';
 import { Icon } from '../Icon';
 import { Typography } from '../Typography';
 
+import styles from './SelectInput.module.scss';
+
 export interface IDynamicSearchInputProps {
   /** Class for the input (optional, default: undefined) */
   className?: string;
-  /** Custom colors settings */
-  colors?: {
-    controlErrorColor: string; // colors.error,
-    controlFocusColor: string; // colors.primary,
-    fontColor: string; // 'rgb(0, 0, 0)',
-    optionFocusColor: string; // colors.chalk,
-    optionSelectedColor: string; // colors.primary,
-  };
   /** For test purpose only */
   dataTestId?: string;
   /** Disabled field (optional, default: false) */
@@ -56,7 +50,6 @@ export interface IDynamicSearchInputProps {
 const DynamicSearchInput = (props: IDynamicSearchInputProps): ReactElement => {
   const {
     className,
-    colors,
     dataTestId,
     disabled,
     ellipsis,
@@ -111,11 +104,9 @@ const DynamicSearchInput = (props: IDynamicSearchInputProps): ReactElement => {
     return (
       <div
         className={classnames(
-          'field',
-          'gds-select-container',
-          'input-select-field-read-only',
+          styles.container,
           {
-            'field-highlighted': highlighted,
+            [styles.highlighted]: (readOnly || disabled) && highlighted,
           },
           className,
         )}
@@ -132,16 +123,7 @@ const DynamicSearchInput = (props: IDynamicSearchInputProps): ReactElement => {
   }
 
   return (
-    <div
-      className={classnames(
-        'field',
-        'gds-select-container',
-        'input-select-field',
-        {
-          'input-error': isInError && !disabled,
-        },
-        className,
-      )}>
+    <div className={classnames(styles.container, className)}>
       <ReactSelectAsync<IOption, false>
         backspaceRemovesValue={isClearable}
         closeMenuOnSelect={true}
@@ -152,7 +134,7 @@ const DynamicSearchInput = (props: IDynamicSearchInputProps): ReactElement => {
               <div {...innerProps}>
                 <Icon
                   icon={['fal', 'spinner']}
-                  className='dynamic-search-spinner'
+                  className={styles.spinner}
                   data-testid={dataTestId ? `${dataTestId}-spinner` : undefined}
                 />
               </div>
@@ -164,7 +146,7 @@ const DynamicSearchInput = (props: IDynamicSearchInputProps): ReactElement => {
               <div {...innerProps}>
                 <Icon
                   icon={['fal', 'magnifying-glass']}
-                  className='dynamic-search-icon'
+                  className={styles.icon}
                   data-testid={dataTestId ? `${dataTestId}-magnifier` : undefined}
                 />
               </div>
@@ -176,7 +158,7 @@ const DynamicSearchInput = (props: IDynamicSearchInputProps): ReactElement => {
               <div {...innerProps}>
                 <Icon
                   icon={['fal', 'xmark']}
-                  className='dynamic-search-icon'
+                  className={styles.icon}
                   data-testid={dataTestId ? `${dataTestId}-clear` : undefined}
                 />
               </div>
@@ -208,7 +190,7 @@ const DynamicSearchInput = (props: IDynamicSearchInputProps): ReactElement => {
           setIsLoading(false);
         }}
         placeholder={placeholder}
-        styles={customStyles({ ...colors, isInError })}
+        styles={customStyles({ isInError: isInError && !(disabled && readOnly) })}
         value={currentOption === undefined ? null : currentOption}
       />
     </div>
@@ -217,13 +199,6 @@ const DynamicSearchInput = (props: IDynamicSearchInputProps): ReactElement => {
 
 DynamicSearchInput.defaultProps = {
   className: undefined,
-  colors: {
-    controlErrorColor: 'rgb(255, 52, 24)',
-    controlFocusColor: 'rgb(38, 186, 212)',
-    fontColor: 'rgb(0, 0, 0)',
-    optionFocusColor: 'rgb(228, 228, 228)',
-    optionSelectedColor: 'rgb(38, 186, 212)',
-  },
   disabled: false,
   ellipsis: false,
   highlighted: false,

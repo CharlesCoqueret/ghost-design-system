@@ -19,7 +19,7 @@ const SwitchCell = <T,>(props: ICellProps<T, IColumnSwitch<T>>): ReactElement =>
       style={{ display: column.hidden ? 'none' : undefined }}>
       <SwitchField
         dataTestId={dataTestId}
-        inputClassName={classnames('gds-typography', { ellipsis: column.ellipsis })}
+        ellipsis={column.ellipsis}
         inputValue={displayValue}
         onChange={(newValue: Array<IToggleEntry>) => {
           if (onChange) {

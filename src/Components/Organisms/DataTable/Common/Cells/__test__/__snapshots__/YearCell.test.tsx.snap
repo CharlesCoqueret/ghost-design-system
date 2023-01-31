@@ -9,10 +9,10 @@ exports[`YearCell component YearCell renders 1`] = `
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <div
-              class="input-year-picker-field table--cell-value--date-readonly field"
+              class="input-year-picker-wrapper-read-only table--cell-value--date-readonly"
             >
               <div
                 class="react-datepicker-wrapper"
@@ -22,7 +22,7 @@ exports[`YearCell component YearCell renders 1`] = `
                 >
                   <input
                     autocomplete="off"
-                    class="field input-year-picker-input-read-only"
+                    class="input-year-picker-input-read-only"
                     name="data"
                     placeholder="YYYY"
                     readonly=""
@@ -51,10 +51,10 @@ exports[`YearCell component YearCell renders in edit mode and handles change 1`]
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <div
-              class="input-year-picker-field field"
+              class=""
             >
               <div
                 class="react-datepicker-wrapper"
@@ -64,7 +64,7 @@ exports[`YearCell component YearCell renders in edit mode and handles change 1`]
                 >
                   <input
                     autocomplete="off"
-                    class="field input-year-picker-input"
+                    class="input-year-picker-input"
                     name="data"
                     placeholder="YYYY"
                     tabindex="0"
@@ -92,10 +92,10 @@ exports[`YearCell component YearCell renders in edit mode via extra 1`] = `
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <div
-              class="input-year-picker-field field"
+              class=""
             >
               <div
                 class="react-datepicker-wrapper"
@@ -105,7 +105,7 @@ exports[`YearCell component YearCell renders in edit mode via extra 1`] = `
                 >
                   <input
                     autocomplete="off"
-                    class="field input-year-picker-input"
+                    class="input-year-picker-input"
                     name="data"
                     placeholder="YYYY"
                     tabindex="0"
@@ -134,10 +134,10 @@ exports[`YearCell component YearCell renders when hidden 1`] = `
           style="display: none;"
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <div
-              class="input-year-picker-field table--cell-value--date-readonly field"
+              class="input-year-picker-wrapper-read-only table--cell-value--date-readonly"
             >
               <div
                 class="react-datepicker-wrapper"
@@ -147,7 +147,7 @@ exports[`YearCell component YearCell renders when hidden 1`] = `
                 >
                   <input
                     autocomplete="off"
-                    class="field input-year-picker-input-read-only"
+                    class="input-year-picker-input-read-only"
                     name="data"
                     placeholder="YYYY"
                     readonly=""
@@ -176,10 +176,10 @@ exports[`YearCell component YearCell renders with forced value 1`] = `
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <div
-              class="input-year-picker-field table--cell-value--date-readonly field"
+              class="input-year-picker-wrapper-read-only table--cell-value--date-readonly"
             >
               <div
                 class="react-datepicker-wrapper"
@@ -189,7 +189,7 @@ exports[`YearCell component YearCell renders with forced value 1`] = `
                 >
                   <input
                     autocomplete="off"
-                    class="field input-year-picker-input-read-only"
+                    class="input-year-picker-input-read-only"
                     name="data"
                     placeholder="YYYY"
                     readonly=""

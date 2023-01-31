@@ -3,10 +3,10 @@
 exports[`FileField Component FileField renders 1`] = `
 <div>
   <div
-    class="gds-field-group"
+    class="fieldGroup"
   >
     <div
-      class="field gds-file-input-container"
+      class="container"
     >
       <div
         class="droparea"
@@ -36,10 +36,10 @@ exports[`FileField Component FileField renders 1`] = `
 exports[`FileField Component FileField renders with values in disabled highligted 1`] = `
 <div>
   <div
-    class="gds-field-group"
+    class="fieldGroup"
   >
     <div
-      class="field gds-file-input-container"
+      class="container"
     >
       <div
         class="droparea disabled"
@@ -63,13 +63,13 @@ exports[`FileField Component FileField renders with values in disabled highligte
         class="gallery"
       >
         <div
-          class="item-container error"
+          class="container error"
         >
           <div
             class="left"
           >
             <div
-              class="paperclip-icon"
+              class="paperclipIcon"
             >
               <i
                 class="icon"
@@ -97,10 +97,10 @@ exports[`FileField Component FileField renders with values in disabled highligte
 exports[`FileField Component FileField renders with values in readonly 1`] = `
 <div>
   <div
-    class="gds-field-group"
+    class="fieldGroup"
   >
     <div
-      class="field gds-file-input-container"
+      class="container"
     >
       <div
         class="droparea readonly"
@@ -124,13 +124,13 @@ exports[`FileField Component FileField renders with values in readonly 1`] = `
         class="gallery"
       >
         <div
-          class="item-container"
+          class="container"
         >
           <div
             class="left"
           >
             <div
-              class="paperclip-icon"
+              class="paperclipIcon"
             >
               <i
                 class="icon"
@@ -158,10 +158,10 @@ exports[`FileField Component FileField renders with values in readonly 1`] = `
 exports[`FileField Component FileField renders with values with fieldSize and inline 1`] = `
 <div>
   <div
-    class="gds-field-group field-size-6 field-inline"
+    class="fieldGroup size-6 inline"
   >
     <div
-      class="field gds-file-input-container"
+      class="container"
     >
       <div
         class="droparea"
@@ -184,13 +184,13 @@ exports[`FileField Component FileField renders with values with fieldSize and in
         class="gallery"
       >
         <div
-          class="item-container"
+          class="container"
         >
           <div
             class="left"
           >
             <div
-              class="paperclip-icon"
+              class="paperclipIcon"
             >
               <i
                 class="icon"
@@ -209,16 +209,16 @@ exports[`FileField Component FileField renders with values with fieldSize and in
             class="right"
           >
             <button
-              class="gds-button-content delete-icon"
+              class="button deleteIcon"
               color="reversed"
               tabindex="0"
               type="button"
             >
               <div
-                class="button-icon-container"
+                class="icon"
               >
                 <i
-                  class="button-icon icon"
+                  class="icon"
                   icon="fal,trash-alt"
                 />
               </div>
@@ -231,36 +231,36 @@ exports[`FileField Component FileField renders with values with fieldSize and in
                 ControlleMenu
                 closed
                 <div
-                  class="gds-popover-container"
+                  class="container"
                 >
                   <div
-                    class="popover-title"
+                    class="title"
                   >
                     Delete?
                   </div>
                   <div
-                    class="popover-buttons"
+                    class="buttons"
                   >
                     <button
-                      class="gds-button-content"
+                      class="button"
                       color="secondary"
                       tabindex="0"
                       type="button"
                     >
                       <div
-                        class="button-label-container"
+                        class="label"
                       >
                         Cancel
                       </div>
                     </button>
                     <button
-                      class="gds-button-content"
+                      class="button"
                       color="primary"
                       tabindex="0"
                       type="button"
                     >
                       <div
-                        class="button-label-container"
+                        class="label"
                       >
                         Confirm
                       </div>

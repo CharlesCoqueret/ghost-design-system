@@ -1,0 +1,50 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.droparea {
+  border: 2px dashed rgb(var(--theme-provider-chalk));
+  border-radius: 4px;
+  width: auto;
+
+  &.readonly,
+  &.disabled {
+    border: none;
+    display: none;
+  }
+
+  &.maxFileReached {
+    border: none;
+    display: none;
+  }
+
+  &.error {
+    border: 2px dashed rgb(var(--theme-provider-error));
+  }
+
+  &:not(.error):hover {
+    border-color: rgb(var(--theme-provider-scooter));
+  }
+
+  &:not(.error).highlight {
+    border-color: rgb(var(--theme-provider-scooter));
+  }
+
+  input[type='file'] {
+    display: none;
+  }
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  padding: 20px;
+  cursor: pointer;
+}
+
+.gallery {
+  margin-top: 10px;
+}

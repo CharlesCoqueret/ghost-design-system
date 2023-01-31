@@ -1,0 +1,19 @@
+.container {
+  margin: auto;
+  color: rgb(var(--theme-provider-charcoal));
+  a,
+  a:hover,
+  a:focus,
+  a:visited {
+    color: unset;
+  }
+
+  &:hover,
+  &:focus {
+    color: rgb(var(--theme-provider-scooter));
+  }
+}
+
+.icon {
+  margin: auto 8px;
+}

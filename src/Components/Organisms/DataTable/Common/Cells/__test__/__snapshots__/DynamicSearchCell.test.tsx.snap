@@ -9,10 +9,10 @@ exports[`DynamicSearchCell component DynamicSearchCell handles display of no mes
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <div
-              class="field gds-select-container input-select-field input-select-field"
+              class="container"
             >
               <div
                 class=" css-1959ul7-container"
@@ -28,7 +28,7 @@ exports[`DynamicSearchCell component DynamicSearchCell handles display of no mes
                   class="css-1f43avz-a11yText-A11yText"
                 />
                 <div
-                  class=" css-1l9db9l-control"
+                  class=" css-yqi6bw-control"
                 >
                   <div
                     class=" css-9plg90-ValueContainer"
@@ -67,7 +67,7 @@ exports[`DynamicSearchCell component DynamicSearchCell handles display of no mes
                       aria-hidden="true"
                     >
                       <i
-                        class="dynamic-search-icon icon"
+                        class="icon icon"
                         data-testid="DATA-TEST-ID-clear"
                         icon="fal,xmark"
                       />
@@ -79,7 +79,7 @@ exports[`DynamicSearchCell component DynamicSearchCell handles display of no mes
                       aria-hidden="true"
                     >
                       <i
-                        class="dynamic-search-icon icon"
+                        class="icon icon"
                         data-testid="DATA-TEST-ID-magnifier"
                         icon="fal,magnifying-glass"
                       />
@@ -110,10 +110,10 @@ exports[`DynamicSearchCell component DynamicSearchCell handles display of no mes
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <div
-              class="field gds-select-container input-select-field input-select-field"
+              class="container"
             >
               <div
                 class=" css-1959ul7-container"
@@ -140,7 +140,7 @@ exports[`DynamicSearchCell component DynamicSearchCell handles display of no mes
                   </span>
                 </span>
                 <div
-                  class=" css-1tkmbhg-control"
+                  class=" css-6xdgpl-control"
                 >
                   <div
                     class=" css-9plg90-ValueContainer"
@@ -186,7 +186,7 @@ exports[`DynamicSearchCell component DynamicSearchCell handles display of no mes
                       aria-hidden="true"
                     >
                       <i
-                        class="dynamic-search-icon icon"
+                        class="icon icon"
                         data-testid="DATA-TEST-ID-magnifier"
                         icon="fal,magnifying-glass"
                       />
@@ -240,10 +240,10 @@ exports[`DynamicSearchCell component DynamicSearchCell renders 1`] = `
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <div
-              class="field gds-select-container input-select-field-read-only input-select-field"
+              class="container"
             >
               -
             </div>
@@ -264,10 +264,10 @@ exports[`DynamicSearchCell component DynamicSearchCell renders in edit mode and 
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <div
-              class="field gds-select-container input-select-field input-select-field"
+              class="container"
             >
               <div
                 class=" css-1959ul7-container"
@@ -283,7 +283,7 @@ exports[`DynamicSearchCell component DynamicSearchCell renders in edit mode and 
                   class="css-1f43avz-a11yText-A11yText"
                 />
                 <div
-                  class=" css-1l9db9l-control"
+                  class=" css-yqi6bw-control"
                 >
                   <div
                     class=" css-9plg90-ValueContainer"
@@ -322,7 +322,7 @@ exports[`DynamicSearchCell component DynamicSearchCell renders in edit mode and 
                       aria-hidden="true"
                     >
                       <i
-                        class="dynamic-search-icon icon"
+                        class="icon icon"
                         data-testid="DATA-TEST-ID-clear"
                         icon="fal,xmark"
                       />
@@ -334,7 +334,7 @@ exports[`DynamicSearchCell component DynamicSearchCell renders in edit mode and 
                       aria-hidden="true"
                     >
                       <i
-                        class="dynamic-search-icon icon"
+                        class="icon icon"
                         data-testid="DATA-TEST-ID-magnifier"
                         icon="fal,magnifying-glass"
                       />
@@ -365,10 +365,10 @@ exports[`DynamicSearchCell component DynamicSearchCell renders in edit mode and 
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <div
-              class="field gds-select-container input-select-field input-select-field"
+              class="container"
             >
               <div
                 class=" css-1959ul7-container"
@@ -395,7 +395,7 @@ exports[`DynamicSearchCell component DynamicSearchCell renders in edit mode and 
                   </span>
                 </span>
                 <div
-                  class=" css-1tkmbhg-control"
+                  class=" css-6xdgpl-control"
                 >
                   <div
                     class=" css-9plg90-ValueContainer"
@@ -441,7 +441,7 @@ exports[`DynamicSearchCell component DynamicSearchCell renders in edit mode and 
                       aria-hidden="true"
                     >
                       <i
-                        class="dynamic-search-icon icon"
+                        class="icon icon"
                         data-testid="DATA-TEST-ID-magnifier"
                         icon="fal,magnifying-glass"
                       />
@@ -464,7 +464,7 @@ exports[`DynamicSearchCell component DynamicSearchCell renders in edit mode and 
                       >
                         <div
                           aria-disabled="false"
-                          class=" css-cfsx9x-option"
+                          class=" css-1qrt2ky-option"
                           id="react-select-2-option-0"
                           tabindex="-1"
                         >
@@ -472,7 +472,7 @@ exports[`DynamicSearchCell component DynamicSearchCell renders in edit mode and 
                         </div>
                         <div
                           aria-disabled="false"
-                          class=" css-pgxi80-option"
+                          class=" css-jzr0x-option"
                           id="react-select-2-option-1"
                           tabindex="-1"
                         >
@@ -507,10 +507,10 @@ exports[`DynamicSearchCell component DynamicSearchCell renders in edit mode via 
           style="display: none;"
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <div
-              class="field gds-select-container input-select-field input-select-field"
+              class="container"
             >
               <div
                 class=" css-1959ul7-container"
@@ -526,7 +526,7 @@ exports[`DynamicSearchCell component DynamicSearchCell renders in edit mode via 
                   class="css-1f43avz-a11yText-A11yText"
                 />
                 <div
-                  class=" css-1l9db9l-control"
+                  class=" css-yqi6bw-control"
                 >
                   <div
                     class=" css-9plg90-ValueContainer"
@@ -568,7 +568,7 @@ exports[`DynamicSearchCell component DynamicSearchCell renders in edit mode via 
                     >
                       <svg
                         aria-hidden="true"
-                        class="icon gds-loader size-1x dynamic-search-spinner"
+                        class="icon size-1x spinner"
                         focusable="false"
                         height="50"
                         icon="fal,spinner"
@@ -613,7 +613,7 @@ exports[`DynamicSearchCell component DynamicSearchCell renders in edit mode via 
                       aria-hidden="true"
                     >
                       <i
-                        class="dynamic-search-icon icon"
+                        class="icon icon"
                         icon="fal,magnifying-glass"
                       />
                     </div>
@@ -644,10 +644,10 @@ exports[`DynamicSearchCell component DynamicSearchCell renders when hidden 1`] =
           style="display: none;"
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <div
-              class="field gds-select-container input-select-field-read-only input-select-field"
+              class="container"
             >
               -
             </div>
@@ -668,14 +668,14 @@ exports[`DynamicSearchCell component DynamicSearchCell renders with forced value
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <div
-              class="field gds-select-container input-select-field-read-only input-select-field"
+              class="container"
               data-testid="DATA-TEST-ID"
             >
               <span
-                class="gds-typography"
+                class="typography"
               >
                 Label 2
               </span>

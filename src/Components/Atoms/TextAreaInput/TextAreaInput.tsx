@@ -2,6 +2,8 @@ import React, { ReactElement } from 'react';
 import classnames from 'classnames';
 import TextareaAutosize from 'react-textarea-autosize';
 
+import styles from './TextAreaInput.module.scss';
+
 export interface ITextAreaInputProps {
   /** For test purpose only */
   dataTestId?: string;
@@ -57,17 +59,16 @@ const TextAreaInput = (props: ITextAreaInputProps): ReactElement => {
   };
 
   return (
-    <div className={classnames('field', 'gds-input-textarea-parent')}>
+    <div className={styles.container}>
       <TextareaAutosize
         onChange={onChangeHandler}
         className={classnames(
-          { 'input-textarea-field': !readOnly },
-          { 'input-textarea-field-read-only': readOnly },
+          styles.textarea,
           {
-            'input-error': isInError && !disabled,
-          },
-          {
-            'field-highlighted': highlighted,
+            [styles.readOnly]: readOnly,
+            [styles.disabled]: disabled,
+            [styles.error]: isInError && !(disabled || readOnly),
+            [styles.highlighted]: (readOnly || disabled) && highlighted,
           },
           inputClassName,
         )}

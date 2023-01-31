@@ -3,11 +3,11 @@
 exports[`SearchBar Component SearchBar handles search but no results 1`] = `
 <div>
   <div
-    class="nav-bar-menu-item nav-bar-search-container"
+    class="container"
   >
     <input
-      autocomplete="false"
-      class="nav-bar-search"
+      autocomplete="off"
+      class="search"
       data-testid="SEARCH"
       placeholder="PLACEHOLDER"
       type="text"
@@ -29,11 +29,11 @@ exports[`SearchBar Component SearchBar handles search but no results 1`] = `
 exports[`SearchBar Component SearchBar handles search with only spaces 1`] = `
 <div>
   <div
-    class="nav-bar-menu-item nav-bar-search-container"
+    class="container"
   >
     <input
-      autocomplete="false"
-      class="nav-bar-search"
+      autocomplete="off"
+      class="search"
       data-testid="SEARCH"
       placeholder="PLACEHOLDER"
       type="text"
@@ -52,11 +52,11 @@ exports[`SearchBar Component SearchBar handles search with only spaces 1`] = `
 exports[`SearchBar Component SearchBar handles search with results 1`] = `
 <div>
   <div
-    class="nav-bar-menu-item nav-bar-search-container"
+    class="container"
   >
     <input
-      autocomplete="false"
-      class="nav-bar-search"
+      autocomplete="off"
+      class="search"
       data-testid="SEARCH"
       placeholder="PLACEHOLDER"
       type="text"
@@ -91,11 +91,11 @@ exports[`SearchBar Component SearchBar handles search with results 1`] = `
 exports[`SearchBar Component SearchBar renders 1`] = `
 <div>
   <div
-    class="nav-bar-menu-item nav-bar-search-container"
+    class="container"
   >
     <input
-      autocomplete="false"
-      class="nav-bar-search"
+      autocomplete="off"
+      class="search"
       placeholder="PLACEHOLDER"
       type="text"
     />

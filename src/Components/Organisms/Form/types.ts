@@ -181,17 +181,14 @@ export interface IFieldDynamicSearchProps<T>
   extends IFieldBaseProps<T>,
     Pick<
       IDynamicSearchFieldProps,
-      'colors' | 'isClearable' | 'noOptionsMessage' | 'placeholder' | 'resolveValue' | 'searchOptions'
+      'isClearable' | 'noOptionsMessage' | 'placeholder' | 'resolveValue' | 'searchOptions'
     > {
   fieldType: FieldTypeEnum.DYNAMICSEARCH;
 }
 
 export interface IFieldMultiSelectProps<T>
   extends IFieldBaseProps<T>,
-    Pick<
-      IMultiSelectFieldProps,
-      'colors' | 'isClearable' | 'numberOfItemLabel' | 'numberOfItemsLabel' | 'placeholder'
-    > {
+    Pick<IMultiSelectFieldProps, 'isClearable' | 'numberOfItemLabel' | 'numberOfItemsLabel' | 'placeholder'> {
   // When the value is not present in the options, should the value be erased (optional, default: false)
   eraseValueWhenNotInOptions?: boolean;
   fieldType: FieldTypeEnum.MULTISELECT;
@@ -248,7 +245,7 @@ export interface IFieldSectionProps<T> extends Partial<IVisibilityProps<T>> {
 
 export interface IFieldSelectProps<T>
   extends IFieldBaseProps<T>,
-    Pick<ISelectFieldProps, 'colors' | 'isClearable' | 'placeholder'> {
+    Pick<ISelectFieldProps, 'isClearable' | 'placeholder'> {
   // When the value is not present in the options, should the value be erased (optional, default: false)
   eraseValueWhenNotInOptions?: boolean;
   fieldType: FieldTypeEnum.SELECT;

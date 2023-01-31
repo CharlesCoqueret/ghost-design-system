@@ -3,10 +3,10 @@
 exports[`SelectField Component SelectField renders 1`] = `
 <div>
   <div
-    class="gds-field-group"
+    class="fieldGroup"
   >
     <div
-      class="field gds-select-container input-select-field input-select-field"
+      class="container"
     >
       <div
         class=" css-1959ul7-container"
@@ -22,7 +22,7 @@ exports[`SelectField Component SelectField renders 1`] = `
           class="css-1f43avz-a11yText-A11yText"
         />
         <div
-          class=" css-1l9db9l-control"
+          class=" css-yqi6bw-control"
         >
           <div
             class=" css-9plg90-ValueContainer"
@@ -66,7 +66,7 @@ exports[`SelectField Component SelectField renders 1`] = `
               aria-hidden="true"
             >
               <i
-                class="dynamic-search-icon icon"
+                class="icon icon"
                 icon="fal,chevron-down"
               />
             </div>
@@ -86,13 +86,13 @@ exports[`SelectField Component SelectField renders 1`] = `
 exports[`SelectField Component SelectField renders with values in disabled highligted 1`] = `
 <div>
   <div
-    class="gds-field-group"
+    class="fieldGroup"
   >
     <div
-      class="field gds-select-container input-select-field-read-only field-highlighted input-select-field"
+      class="container highlighted"
     >
       <span
-        class="gds-typography"
+        class="typography"
       >
         Label
       </span>
@@ -104,13 +104,13 @@ exports[`SelectField Component SelectField renders with values in disabled highl
 exports[`SelectField Component SelectField renders with values in readonly 1`] = `
 <div>
   <div
-    class="gds-field-group"
+    class="fieldGroup"
   >
     <div
-      class="field gds-select-container input-select-field-read-only input-select-field"
+      class="container"
     >
       <span
-        class="gds-typography"
+        class="typography"
       >
         Label
       </span>
@@ -122,10 +122,10 @@ exports[`SelectField Component SelectField renders with values in readonly 1`] =
 exports[`SelectField Component SelectField renders with values with fieldSize and inline 1`] = `
 <div>
   <div
-    class="gds-field-group field-size-6 field-inline"
+    class="fieldGroup size-6 inline"
   >
     <div
-      class="field gds-select-container input-select-field input-select-field"
+      class="container"
     >
       <div
         class=" css-1959ul7-container"
@@ -141,7 +141,7 @@ exports[`SelectField Component SelectField renders with values with fieldSize an
           class="css-1f43avz-a11yText-A11yText"
         />
         <div
-          class=" css-1l9db9l-control"
+          class=" css-yqi6bw-control"
         >
           <div
             class=" css-9plg90-ValueContainer"
@@ -183,7 +183,7 @@ exports[`SelectField Component SelectField renders with values with fieldSize an
               aria-hidden="true"
             >
               <i
-                class="dynamic-search-icon icon"
+                class="icon icon"
                 icon="fal,chevron-down"
               />
             </div>

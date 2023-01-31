@@ -7,6 +7,8 @@ import { Button, ColorButtonEnum } from '../../Molecules/Button';
 import { IFilterFieldsProps, IFilterLayoutAndFieldsProps } from './types';
 import FilterItem from './FilterItem';
 
+import styles from './Filter.module.scss';
+
 export interface IFilterProps<T> {
   /** List of filter items shown in advanced search (optional, default: undefined) */
   advancedSearchItems?: Array<IFilterLayoutAndFieldsProps<T>>;
@@ -89,9 +91,9 @@ const Filter = <T,>(props: IFilterProps<T>): React.ReactElement => {
   const hasAdvancedSearch = advancedSearchItems && advancedSearchItems.length > 0;
 
   return (
-    <div className='gds-filter-container'>
-      <div className='searchbar'>
-        <div className='search-field'>
+    <div className={styles.container}>
+      <div className={styles.bar}>
+        <div className={styles.fields}>
           {searchBarItems.map((item) => {
             return (
               <FilterItem<T>
@@ -104,7 +106,7 @@ const Filter = <T,>(props: IFilterProps<T>): React.ReactElement => {
             );
           })}
         </div>
-        <div className='search-actions'>
+        <div className={styles.actions}>
           <Button
             color={ColorButtonEnum.REVERSED}
             dataTestId={dataTestId ? `${dataTestId}-reset` : undefined}

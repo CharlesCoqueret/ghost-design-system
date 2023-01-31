@@ -3,7 +3,7 @@
 exports[`SideBar Component SideBar renders 1`] = `
 <div>
   <nav
-    class="gds-sidebar-container"
+    class="container"
     style="height: 600px; width: 270px;"
   >
     <ul
@@ -30,7 +30,7 @@ exports[`SideBar Component SideBar renders 1`] = `
             EXTERNAL
           </div>
           <i
-            class="external-link icon"
+            class="icon externalLink"
             icon="fal,external-link"
           />
         </a>
@@ -73,7 +73,7 @@ exports[`SideBar Component SideBar renders 1`] = `
 exports[`SideBar Component SideBar renders without sections 1`] = `
 <div>
   <nav
-    class="gds-sidebar-container"
+    class="container"
     style="height: 600px; width: 270px;"
   >
     <ul

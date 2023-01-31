@@ -35,10 +35,7 @@ export default {
     scss({ output: false }),
     typescript({ exclude: ['**/__tests__', '**/*.test.ts'], useTsconfigDeclarationDir: true }),
     copy({
-      targets: [
-        { src: 'src/assets/_*.scss', dest: 'dist/assets' },
-        { src: ['src/assets/fonts/Montserrat-Regular.ttf'], dest: 'dist/assets/fonts' },
-      ],
+      targets: [{ src: ['src/assets/fonts/Montserrat-Regular.ttf'], dest: 'dist/assets/fonts' }],
     }),
   ],
 };

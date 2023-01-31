@@ -13,17 +13,11 @@ import { IOption } from './types';
 import { Icon } from '../Icon';
 import { Typography } from '../Typography';
 
+import styles from './SelectInput.module.scss';
+
 export interface IMultiSelectInputProps {
   /** Class for the input (optional, default: undefined) */
   className?: string;
-  /** Custom colors settings */
-  colors?: {
-    controlErrorColor: string; // colors.error,
-    controlFocusColor: string; // colors.primary,
-    fontColor: string; // 'rgb(0, 0, 0)',
-    optionFocusColor: string; // colors.chalk,
-    optionSelectedColor: string; // colors.primary,
-  };
   /** For test purpose only */
   dataTestId?: string;
   /** Disabled field (optional, default: false) */
@@ -96,7 +90,6 @@ const CustomValueContainer = ({
 const MultiSelectInput = (props: IMultiSelectInputProps): ReactElement => {
   const {
     className,
-    colors,
     dataTestId,
     disabled,
     ellipsis,
@@ -130,11 +123,9 @@ const MultiSelectInput = (props: IMultiSelectInputProps): ReactElement => {
     return (
       <div
         className={classnames(
-          'field',
-          'gds-select-container',
-          'input-select-field-read-only',
+          styles.container,
           {
-            'field-highlighted': highlighted,
+            [styles.highlighted]: (readOnly || disabled) && highlighted,
           },
           className,
         )}
@@ -150,16 +141,7 @@ const MultiSelectInput = (props: IMultiSelectInputProps): ReactElement => {
   }
 
   return (
-    <div
-      className={classnames(
-        'field',
-        'gds-select-container',
-        'input-select-field',
-        {
-          'input-error': isInError && !disabled,
-        },
-        className,
-      )}>
+    <div className={classnames(styles.container, className)}>
       <ReactSelect<IOption, true>
         closeMenuOnSelect={false}
         components={{
@@ -169,7 +151,7 @@ const MultiSelectInput = (props: IMultiSelectInputProps): ReactElement => {
               <div {...innerProps}>
                 <Icon
                   icon={['fal', 'chevron-down']}
-                  className='dynamic-search-icon'
+                  className={styles.icon}
                   data-testid={dataTestId ? `${dataTestId}-magnifier` : undefined}
                 />
               </div>
@@ -181,7 +163,7 @@ const MultiSelectInput = (props: IMultiSelectInputProps): ReactElement => {
               <div {...innerProps}>
                 <Icon
                   icon={['fal', 'xmark']}
-                  className='dynamic-search-icon'
+                  className={styles.icon}
                   data-testid={dataTestId ? `${dataTestId}-clear` : undefined}
                 />
               </div>
@@ -206,7 +188,7 @@ const MultiSelectInput = (props: IMultiSelectInputProps): ReactElement => {
         }}
         options={options}
         placeholder={placeholder}
-        styles={customStyles({ ...colors, isInError })}
+        styles={customStyles({ isInError: isInError && !(disabled && readOnly) })}
         value={options.filter((option) => inputValue && inputValue.indexOf(option.value) >= 0)}
       />
     </div>
@@ -215,13 +197,6 @@ const MultiSelectInput = (props: IMultiSelectInputProps): ReactElement => {
 
 MultiSelectInput.defaultProps = {
   className: undefined,
-  colors: {
-    controlErrorColor: 'rgb(255, 52, 24)',
-    controlFocusColor: 'rgb(38, 186, 212)',
-    fontColor: 'rgb(0, 0, 0)',
-    optionFocusColor: 'rgb(228, 228, 228)',
-    optionSelectedColor: 'rgb(38, 186, 212)',
-  },
   disabled: false,
   ellipsis: false,
   highlighted: false,

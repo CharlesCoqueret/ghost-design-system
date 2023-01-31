@@ -71,7 +71,7 @@ const TemplateScroll: ComponentStory<typeof Modal> = (args: IModalProps) => {
           </ModalBody>
           <ModalFooter>
             <Button color={ColorButtonEnum.SECONDARY} label='cancel' onClick={closeModal} />
-            <Button color={ColorButtonEnum.PRIMARY} label='Submit' icon={['fal', 'paper-plane']} onClick={closeModal} />
+            <Button color={ColorButtonEnum.PRIMARY} label='Submit' onClick={closeModal} />
           </ModalFooter>
         </Modal>
       </div>

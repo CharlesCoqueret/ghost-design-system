@@ -26,7 +26,7 @@ const ButtonCell = <T,>(props: ICellProps<T, IColumnButton<T>>): ReactElement =>
           <Button
             color={ColorButtonEnum.REVERSED}
             dataTestId={dataTestId}
-            icon={['fal', 'ellipsis-h']}
+            icon={['fal', 'ellipsis']}
             itemList={column.buttons.map((item) => {
               return {
                 dataTestId: item.dataTestId,

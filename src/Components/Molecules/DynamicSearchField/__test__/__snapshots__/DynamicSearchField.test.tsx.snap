@@ -3,10 +3,10 @@
 exports[`DynamicSearchField Component DynamicSearchField renders 1`] = `
 <div>
   <div
-    class="gds-field-group"
+    class="fieldGroup"
   >
     <div
-      class="field gds-select-container input-select-field input-select-field"
+      class="container"
     >
       <div
         class=" css-1959ul7-container"
@@ -22,7 +22,7 @@ exports[`DynamicSearchField Component DynamicSearchField renders 1`] = `
           class="css-1f43avz-a11yText-A11yText"
         />
         <div
-          class=" css-1l9db9l-control"
+          class=" css-yqi6bw-control"
         >
           <div
             class=" css-9plg90-ValueContainer"
@@ -66,7 +66,7 @@ exports[`DynamicSearchField Component DynamicSearchField renders 1`] = `
               aria-hidden="true"
             >
               <i
-                class="dynamic-search-icon icon"
+                class="icon icon"
                 data-testid="DATA-TEST-ID-magnifier"
                 icon="fal,magnifying-glass"
               />
@@ -87,14 +87,14 @@ exports[`DynamicSearchField Component DynamicSearchField renders 1`] = `
 exports[`DynamicSearchField Component DynamicSearchField renders with values in disabled highligted 1`] = `
 <div>
   <div
-    class="gds-field-group"
+    class="fieldGroup"
   >
     <div
-      class="field gds-select-container input-select-field-read-only field-highlighted input-select-field"
+      class="container highlighted"
       data-testid="DATA-TEST-ID"
     >
       <span
-        class="gds-typography"
+        class="typography"
       >
         Label 1
       </span>
@@ -106,14 +106,14 @@ exports[`DynamicSearchField Component DynamicSearchField renders with values in 
 exports[`DynamicSearchField Component DynamicSearchField renders with values in readonly 1`] = `
 <div>
   <div
-    class="gds-field-group"
+    class="fieldGroup"
   >
     <div
-      class="field gds-select-container input-select-field-read-only input-select-field"
+      class="container"
       data-testid="DATA-TEST-ID"
     >
       <span
-        class="gds-typography"
+        class="typography"
       >
         Label 1
       </span>
@@ -125,10 +125,10 @@ exports[`DynamicSearchField Component DynamicSearchField renders with values in 
 exports[`DynamicSearchField Component DynamicSearchField renders with values with fieldSize and inline 1`] = `
 <div>
   <div
-    class="gds-field-group field-size-6 field-inline"
+    class="fieldGroup size-6 inline"
   >
     <div
-      class="field gds-select-container input-select-field input-select-field"
+      class="container"
     >
       <div
         class=" css-1959ul7-container"
@@ -144,7 +144,7 @@ exports[`DynamicSearchField Component DynamicSearchField renders with values wit
           class="css-1f43avz-a11yText-A11yText"
         />
         <div
-          class=" css-1l9db9l-control"
+          class=" css-yqi6bw-control"
         >
           <div
             class=" css-9plg90-ValueContainer"
@@ -186,7 +186,7 @@ exports[`DynamicSearchField Component DynamicSearchField renders with values wit
               aria-hidden="true"
             >
               <i
-                class="dynamic-search-icon icon"
+                class="icon icon"
                 data-testid="DATA-TEST-ID-magnifier"
                 icon="fal,magnifying-glass"
               />

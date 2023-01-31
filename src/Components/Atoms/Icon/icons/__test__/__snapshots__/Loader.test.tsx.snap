@@ -4,7 +4,7 @@ exports[`Loader component Loader renders 1`] = `
 <div>
   <svg
     aria-hidden="true"
-    class="icon gds-loader size-2x CLASSNAME"
+    class="icon size-2x CLASSNAME"
     data-testid="DATA-TEST-ID"
     focusable="false"
     height="50"

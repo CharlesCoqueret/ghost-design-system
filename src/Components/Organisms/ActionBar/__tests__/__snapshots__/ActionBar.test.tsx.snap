@@ -3,25 +3,25 @@
 exports[`ActionBar Component ActionBar renders 1`] = `
 <div>
   <div
-    class="gds-action-bar primary CLASSNAME"
+    class="container primary CLASSNAME"
   >
     <div
-      class="left-side"
+      class="left"
     >
       <div
-        class="back-icon"
+        class="back"
       >
         <button
-          class="gds-button-content"
+          class="button"
           color="reversed"
           tabindex="0"
           type="button"
         >
           <div
-            class="button-icon-container"
+            class="icon"
           >
             <i
-              class="button-icon icon"
+              class="icon"
               icon="fal,arrow-left"
             />
           </div>
@@ -31,25 +31,26 @@ exports[`ActionBar Component ActionBar renders 1`] = `
         </div>
       </div>
       <div
-        class="title"
+        class="container"
       >
         <h1
-          class="gds-typography ellipsis align-edit"
+          class="typography ellipsis h1 prefix"
           title="PREFIX"
         >
           PREFIX
         </h1>
         <span
-          class="title-edit-hidden"
+          class="hiddenTitle"
         >
           TITLE
         </span>
         <input
           autocomplete="off"
-          class="title-edit"
+          class="title"
           placeholder="PLACEHOLDED"
-          style="display: flex; margin: auto;"
+          style=""
           tabindex="0"
+          title="TITLE"
           type="text"
           value="TITLE"
         />
@@ -57,13 +58,18 @@ exports[`ActionBar Component ActionBar renders 1`] = `
           TOOLTIP
         </div>
         <h1
-          class="gds-typography ellipsis align-edit"
+          class="typography h1 entity"
         >
           - 
+        </h1>
+        <h1
+          class="typography ellipsis h1 entity"
+          title="ENTITYID"
+        >
           ENTITYID
         </h1>
         <h1
-          class="gds-typography ellipsis align-edit"
+          class="typography ellipsis h1 suffix"
           title="SUFFIX"
         >
           SUFFIX
@@ -84,20 +90,20 @@ exports[`ActionBar Component ActionBar renders 1`] = `
       </div>
     </div>
     <div
-      class="right-side"
+      class="right"
     >
       <div
         class="actions"
       >
         <button
-          class="gds-button-content"
+          class="button"
           color="secondary"
           data-testid="ACTION1"
           tabindex="0"
           type="button"
         >
           <div
-            class="button-label-container"
+            class="label"
           >
             action1
           </div>
@@ -112,17 +118,17 @@ exports[`ActionBar Component ActionBar renders 1`] = `
         />
       </div>
       <div
-        class="basic-actions"
+        class="basicActions"
       >
         <button
-          class="gds-button-content"
+          class="button"
           color="reversed"
           data-testid="BASICACTION1"
           tabindex="0"
           type="button"
         >
           <div
-            class="button-label-container"
+            class="label"
           >
             basicaction1
           </div>
@@ -136,48 +142,49 @@ exports[`ActionBar Component ActionBar renders 1`] = `
 exports[`ActionBar Component ActionBar renders with actions without label, empty basicactions 1`] = `
 <div>
   <div
-    class="gds-action-bar"
+    class="container secondary"
   >
     <div
-      class="left-side"
+      class="left"
     >
       <div
-        class="title"
+        class="container"
       >
         <span
-          class="title-edit-hidden"
+          class="hiddenTitle"
         >
           TITLE
         </span>
         <input
           autocomplete="off"
-          class="title-edit"
+          class="title"
           readonly=""
-          style="display: flex; margin: auto;"
+          style=""
           tabindex="-1"
+          title="TITLE"
           type="text"
           value="TITLE"
         />
       </div>
     </div>
     <div
-      class="right-side"
+      class="right"
     >
       <div
         class="actions"
       >
         <button
-          class="gds-button-content"
+          class="button"
           color="secondary"
           tabindex="0"
           type="button"
         >
           <div
-            class="button-icon-container"
+            class="icon"
           >
             <i
-              class="button-icon icon"
-              icon="fal,cog"
+              class="icon"
+              icon="fal,gear"
             />
           </div>
         </button>
@@ -193,25 +200,25 @@ exports[`ActionBar Component ActionBar renders with actions without label, empty
 exports[`ActionBar Component ActionBar renders without action, basicactions, icon, indicator or status 1`] = `
 <div>
   <div
-    class="gds-action-bar primary CLASSNAME"
+    class="container primary CLASSNAME"
   >
     <div
-      class="left-side"
+      class="left"
     >
       <div
-        class="back-icon"
+        class="back"
       >
         <button
-          class="gds-button-content"
+          class="button"
           color="reversed"
           tabindex="0"
           type="button"
         >
           <div
-            class="button-icon-container"
+            class="icon"
           >
             <i
-              class="button-icon icon"
+              class="icon"
               icon="fal,arrow-left"
             />
           </div>
@@ -221,25 +228,26 @@ exports[`ActionBar Component ActionBar renders without action, basicactions, ico
         </div>
       </div>
       <div
-        class="title"
+        class="container"
       >
         <h1
-          class="gds-typography ellipsis align-edit"
+          class="typography ellipsis h1 prefix"
           title="PREFIX"
         >
           PREFIX
         </h1>
         <span
-          class="title-edit-hidden"
+          class="hiddenTitle"
         >
           TITLE
         </span>
         <input
           autocomplete="off"
-          class="title-edit"
+          class="title"
           placeholder="PLACEHOLDED"
-          style="display: flex; margin: auto;"
+          style=""
           tabindex="0"
+          title="TITLE"
           type="text"
           value="TITLE"
         />
@@ -247,13 +255,18 @@ exports[`ActionBar Component ActionBar renders without action, basicactions, ico
           TOOLTIP
         </div>
         <h1
-          class="gds-typography ellipsis align-edit"
+          class="typography h1 entity"
         >
           - 
+        </h1>
+        <h1
+          class="typography ellipsis h1 entity"
+          title="ENTITYID"
+        >
           ENTITYID
         </h1>
         <h1
-          class="gds-typography ellipsis align-edit"
+          class="typography ellipsis h1 suffix"
           title="SUFFIX"
         >
           SUFFIX
@@ -261,7 +274,7 @@ exports[`ActionBar Component ActionBar renders without action, basicactions, ico
       </div>
     </div>
     <div
-      class="right-side"
+      class="right"
     />
   </div>
 </div>

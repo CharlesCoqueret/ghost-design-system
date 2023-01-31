@@ -12,23 +12,21 @@ exports[`FilterItem Component FilterItem renders CheckboxField 1`] = `
 exports[`FilterItem Component FilterItem renders Column and title 1`] = `
 <div>
   <div
-    class="gds-layout-col"
+    class="col"
   >
-    <div
-      class="gds-layout-section-container"
-    >
+    <div>
       <div
-        class="section-header"
+        class="header"
       >
         <h2
-          class="gds-typography"
+          class="typography h2"
         >
           TITLE
         </h2>
       </div>
       <div
         aria-hidden="false"
-        class="section-body"
+        class="body"
         id="react-collapsed-panel-1"
         style="box-sizing: border-box; display: none; height: 0px; overflow: hidden;"
       />

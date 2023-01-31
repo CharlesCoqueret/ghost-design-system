@@ -1,6 +1,7 @@
 import React from 'react';
 import { TextAreaField } from '..';
-import { render, fireEvent } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 describe('TextAreaField Component', () => {
   it('TextAreaField renders', () => {
@@ -24,21 +25,16 @@ describe('TextAreaField Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('TextAreaField renders handles changes', () => {
+  it('TextAreaField renders handles changes', async () => {
     const onChangeMock = jest.fn();
 
-    const { container } = render(<TextAreaField onChange={onChangeMock} name='NAME' />);
+    const { container } = render(<TextAreaField dataTestId='DATA-TEST-ID' onChange={onChangeMock} name='NAME' />);
 
     expect(container).toMatchSnapshot();
 
-    const inputNode = container.querySelector('textarea.input-textarea-field');
-    if (inputNode)
-      fireEvent.change(inputNode, {
-        target: {
-          value: 'NEW INPUT\n'.repeat(10),
-        },
-      });
-    expect(onChangeMock).toBeCalledWith('NEW INPUT\n'.repeat(10));
-    expect(container).toMatchSnapshot();
+    const inputNode = await screen.findByTestId('DATA-TEST-ID');
+
+    userEvent.type(inputNode, 'N\n'.repeat(10));
+    expect(onChangeMock).toBeCalledTimes(20);
   });
 });

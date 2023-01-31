@@ -3,7 +3,7 @@ import { MemoryRouter as Router } from 'react-router-dom';
 
 import NavBar from './NavBar';
 
-import navbarStyle from '../../../assets/_navbar.scss?raw';
+import styles from './NavBar.stories.module.scss';
 
 export const Template = (args) => {
   return (
@@ -42,7 +42,7 @@ Play with NavBar live on [CodeSandbox](https://codesandbox.io/s/sidebar-demo-t4s
         logoSource: './images/logo.svg',
         redirection: '/',
       }}
-      className='positionRelative'
+      className={styles.positionRelative}
     />
   </Router>
 </Canvas>
@@ -55,7 +55,7 @@ Play with NavBar live on [CodeSandbox](https://codesandbox.io/s/sidebar-demo-t4s
       brand={{
         logoSource: './images/logo.svg',
       }}
-      className='positionRelative'
+      className={styles.positionRelative}
       navButtons={[
         {
           label: 'Label 1',
@@ -110,7 +110,7 @@ Play with NavBar live on [CodeSandbox](https://codesandbox.io/s/sidebar-demo-t4s
       brand={{
         logoSource: './images/logo.svg',
       }}
-      className='positionRelative'
+      className={styles.positionRelative}
       navIcons={[
         {
           icon: ['fal', 'ballot-check'],
@@ -126,7 +126,7 @@ Play with NavBar live on [CodeSandbox](https://codesandbox.io/s/sidebar-demo-t4s
         },
         {
           icon: ['fal', 'bell'],
-          counter: '+99',
+          counter: 100,
           customSubItem: (
             <div
               style={{
@@ -167,7 +167,7 @@ Play with NavBar live on [CodeSandbox](https://codesandbox.io/s/sidebar-demo-t4s
           ),
         },
         {
-          icon: ['fal', 'cog'],
+          icon: ['fal', 'gear'],
           subItems: [
             {
               label: 'Label 1',
@@ -201,7 +201,7 @@ Play with NavBar live on [CodeSandbox](https://codesandbox.io/s/sidebar-demo-t4s
       brand={{
         logoSource: './images/logo.svg',
       }}
-      className='positionRelative'
+      className={styles.positionRelative}
       searchBar={{
         placeholder: 'Search',
         onSearch: () => {
@@ -232,7 +232,7 @@ For layout management, please refer to this [example](https://codesandbox.io/s/s
         logoSource: './images/logo.svg',
         redirection: '/',
       },
-      className: 'positionRelative',
+      className: styles.positionRelative,
       navButtons: [
         {
           label: 'Label 1',
@@ -341,7 +341,7 @@ For layout management, please refer to this [example](https://codesandbox.io/s/s
           ),
         },
         {
-          icon: ['fal', 'cog'],
+          icon: ['fal', 'gear'],
           subItems: [
             {
               label: 'Label 1',
@@ -367,9 +367,3 @@ For layout management, please refer to this [example](https://codesandbox.io/s/s
     {Template.bind({})}
   </Story>
 </Canvas>
-
-## Style
-
-[source](https://github.com/CharlesCoqueret/ghost-design-system/blob/main/src/assets/_navbar.scss)
-
-<Source language='css' dark format={true} code={navbarStyle} />

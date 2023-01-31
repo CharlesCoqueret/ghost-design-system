@@ -1,0 +1,16 @@
+.section {
+  font-weight: 600;
+  min-height: 32px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  color: rgb(var(--theme-provider-charcoal));
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.divider {
+  margin: 15px;
+  border-top: rgb(var(--theme-provider-chalk)) 1px solid;
+}

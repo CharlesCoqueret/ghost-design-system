@@ -1,18 +1,9 @@
 import React, { ReactElement, Ref } from 'react';
-import classnames from 'classnames';
 
 import { GenericField } from '../../Atoms/GenericField';
 import { DynamicSearchInput, IOption } from '../../Atoms/SelectInput';
 
 export interface IDynamicSearchFieldProps {
-  /** Custom colors settings */
-  colors?: {
-    controlErrorColor: string; // colors.error,
-    controlFocusColor: string; // colors.primary,
-    fontColor: string; // 'rgb(0, 0, 0)',
-    optionFocusColor: string; // colors.chalk,
-    optionSelectedColor: string; // colors.primary,
-  };
   /** React Container ref (optional, default: undefined) */
   containerRef?: Ref<HTMLDivElement>;
   /** For test purpose only */
@@ -73,7 +64,6 @@ export interface IDynamicSearchFieldProps {
  */
 export const DynamicSearchField = (props: IDynamicSearchFieldProps): ReactElement => {
   const {
-    colors,
     containerRef,
     dataTestId,
     disabled,
@@ -114,8 +104,7 @@ export const DynamicSearchField = (props: IDynamicSearchFieldProps): ReactElemen
       mandatory={mandatory}
       readOnly={readOnly}>
       <DynamicSearchInput
-        colors={colors}
-        className={classnames(inputClassName, 'input-select-field')}
+        className={inputClassName}
         dataTestId={dataTestId}
         ellipsis={ellipsis}
         highlighted={highlighted}
@@ -137,13 +126,6 @@ export const DynamicSearchField = (props: IDynamicSearchFieldProps): ReactElemen
 };
 
 DynamicSearchField.defaultProps = {
-  colors: {
-    controlErrorColor: 'rgb(255, 52, 24)',
-    controlFocusColor: 'rgb(38, 186, 212)',
-    fontColor: 'rgb(0, 0, 0)',
-    optionFocusColor: 'rgb(228, 228, 228)',
-    optionSelectedColor: 'rgb(38, 186, 212)',
-  },
   disabled: false,
   ellipsis: false,
   errorMessage: undefined,

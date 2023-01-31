@@ -9,13 +9,13 @@ exports[`StaticDataTableFooterCell component StaticDataTableFooterCell renders w
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <div
-              class="gds-amount-field amount-field-read-only table--cell-value--amount-readonly"
+              class="default readOnly table--cell-value--amount-readonly"
             >
               <span
-                class="gds-typography"
+                class="typography"
               >
                 -
               </span>
@@ -37,13 +37,13 @@ exports[`StaticDataTableFooterCell component StaticDataTableFooterCell renders w
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <div
-              class="gds-amount-field amount-field-read-only table--cell-value--amount-readonly"
+              class="default readOnly table--cell-value--amount-readonly"
             >
               <span
-                class="gds-typography"
+                class="typography"
               >
                 -
               </span>
@@ -81,13 +81,13 @@ exports[`StaticDataTableFooterCell component StaticDataTableFooterCell renders w
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <div
-              class="gds-amount-field amount-field-read-only table--cell-value--number-readonly"
+              class="default readOnly table--cell-value--number-readonly"
             >
               <span
-                class="gds-typography"
+                class="typography"
               >
                 -
               </span>
@@ -109,13 +109,13 @@ exports[`StaticDataTableFooterCell component StaticDataTableFooterCell renders w
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <div
-              class="gds-amount-field amount-field-read-only table--cell-value--number-readonly"
+              class="default readOnly table--cell-value--number-readonly"
             >
               <span
-                class="gds-typography"
+                class="typography"
               >
                 -
               </span>
@@ -137,13 +137,13 @@ exports[`StaticDataTableFooterCell component StaticDataTableFooterCell renders w
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <div
-              class="gds-amount-field amount-field-read-only table--cell-value--percentage-readonly"
+              class="default readOnly table--cell-value--percentage-readonly"
             >
               <span
-                class="gds-typography"
+                class="typography"
               >
                 - %
               </span>
@@ -165,13 +165,13 @@ exports[`StaticDataTableFooterCell component StaticDataTableFooterCell renders w
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <div
-              class="gds-amount-field amount-field-read-only table--cell-value--percentage-readonly"
+              class="default readOnly table--cell-value--percentage-readonly"
             >
               <span
-                class="gds-typography"
+                class="typography"
               >
                 - %
               </span>

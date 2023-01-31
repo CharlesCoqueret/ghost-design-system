@@ -9,10 +9,10 @@ exports[`FileCell component FileCell handles change 1`] = `
           class="table--cell--code"
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <div
-              class="field gds-file-input-container gds-typography"
+              class="container"
             >
               <div
                 class="droparea"
@@ -35,13 +35,13 @@ exports[`FileCell component FileCell handles change 1`] = `
                 class="gallery"
               >
                 <div
-                  class="item-container error"
+                  class="container error"
                 >
                   <div
                     class="left"
                   >
                     <div
-                      class="paperclip-icon"
+                      class="paperclipIcon"
                     >
                       <i
                         class="icon"
@@ -60,16 +60,16 @@ exports[`FileCell component FileCell handles change 1`] = `
                     class="right"
                   >
                     <button
-                      class="gds-button-content delete-icon"
+                      class="button deleteIcon"
                       color="reversed"
                       tabindex="0"
                       type="button"
                     >
                       <div
-                        class="button-icon-container"
+                        class="icon"
                       >
                         <i
-                          class="button-icon icon"
+                          class="icon"
                           icon="fal,trash-alt"
                         />
                       </div>
@@ -101,10 +101,10 @@ exports[`FileCell component FileCell renders 1`] = `
           class="table--cell--code"
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <div
-              class="field gds-file-input-container gds-typography"
+              class="container"
             >
               <div
                 class="droparea readonly"
@@ -128,13 +128,13 @@ exports[`FileCell component FileCell renders 1`] = `
                 class="gallery"
               >
                 <div
-                  class="item-container error"
+                  class="container error"
                 >
                   <div
                     class="left"
                   >
                     <div
-                      class="paperclip-icon"
+                      class="paperclipIcon"
                     >
                       <i
                         class="icon"
@@ -176,10 +176,10 @@ exports[`FileCell component FileCell renders when hidden 1`] = `
           style="display: none;"
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <div
-              class="field gds-file-input-container gds-typography"
+              class="container"
             >
               <div
                 class="droparea readonly"
@@ -203,13 +203,13 @@ exports[`FileCell component FileCell renders when hidden 1`] = `
                 class="gallery"
               >
                 <div
-                  class="item-container error"
+                  class="container error"
                 >
                   <div
                     class="left"
                   >
                     <div
-                      class="paperclip-icon"
+                      class="paperclipIcon"
                     >
                       <i
                         class="icon"
@@ -250,10 +250,10 @@ exports[`FileCell component FileCell renders with forced value 1`] = `
           class="table--cell--code"
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <div
-              class="field gds-file-input-container gds-typography"
+              class="container"
             >
               <div
                 class="droparea readonly"
@@ -277,13 +277,13 @@ exports[`FileCell component FileCell renders with forced value 1`] = `
                 class="gallery"
               >
                 <div
-                  class="item-container"
+                  class="container"
                 >
                   <div
                     class="left"
                   >
                     <div
-                      class="paperclip-icon"
+                      class="paperclipIcon"
                     >
                       <i
                         class="icon"

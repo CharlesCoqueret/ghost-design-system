@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import Col, { IColProps } from './Col';
+import ColComponent, { IColProps } from './Col';
 import { AmountField, DatePickerField, TextAreaField, YearPickerField } from '../../Molecules';
 import Container from './Container';
 import Row from './Row';
@@ -22,46 +22,46 @@ const initialData = {
 };
 
 export default {
-  title: 'Atom/Layout/Col',
-  component: Col,
+  title: 'Atom/Layout',
+  component: ColComponent,
   parameters: { actions: { argTypesRegex: '^on.*' }, controls: { sort: 'requiredFirst' } },
-} as ComponentMeta<typeof Col>;
+} as ComponentMeta<typeof ColComponent>;
 
-const Template: ComponentStory<typeof Col> = (args: IColProps) => {
+const Template: ComponentStory<typeof ColComponent> = (args: IColProps) => {
   const [help, setHelp] = useState(false);
 
   return (
     <>
       <Container style={help ? { border: '2px dotted green' } : { border: '2px dotted transparent' }}>
         <Row>
-          <Col
+          <ColComponent
             {...args}
             style={
               help ? { ...args.style, border: '3px dotted red' } : { ...args.style, border: '3px dotted transparent' }
             }>
             <AmountField inputValue={initialData.amount} label='Amount' suffix='$' name='amount' readOnly />
-          </Col>
-          <Col
+          </ColComponent>
+          <ColComponent
             {...args}
             style={
               help ? { ...args.style, border: '3px dotted red' } : { ...args.style, border: '3px dotted transparent' }
             }>
             <DatePickerField inputValue={initialData.date} label='Date' name='date' readOnly />
-          </Col>
-          <Col
+          </ColComponent>
+          <ColComponent
             {...args}
             style={
               help ? { ...args.style, border: '3px dotted red' } : { ...args.style, border: '3px dotted transparent' }
             }>
             <TextAreaField inputValue={initialData.textarea} label='Textarea' name='textarea' readOnly />
-          </Col>
-          <Col
+          </ColComponent>
+          <ColComponent
             {...args}
             style={
               help ? { ...args.style, border: '3px dotted red' } : { ...args.style, border: '3px dotted transparent' }
             }>
             <YearPickerField inputValue={initialData.year} label='Year' name='year' readOnly />
-          </Col>
+          </ColComponent>
         </Row>
       </Container>
       <label>
@@ -84,5 +84,5 @@ const Template: ComponentStory<typeof Col> = (args: IColProps) => {
   );
 };
 
-export const Default = Template.bind({});
-Default.args = {};
+export const Col = Template.bind({});
+Col.args = {};

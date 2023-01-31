@@ -3,17 +3,17 @@
 exports[`CheckboxInput Component CheckboxInput renders highlighted 1`] = `
 <div>
   <div
-    class="field gds-checkbox-container"
+    class="container"
   >
     <label
-      class="input-checkbox-field-read-only"
+      class="label readOnly"
       for="checkbox-31"
       tabindex="-1"
     >
       <div
         aria-checked="false"
         aria-label="checkbox label 0"
-        class="checkbox-marker"
+        class="checkboxMarker readOnly"
         id="checkbox-31"
         role="checkbox"
       >
@@ -25,14 +25,14 @@ exports[`CheckboxInput Component CheckboxInput renders highlighted 1`] = `
       checkbox label 0
     </label>
     <label
-      class="input-checkbox-field-read-only input-checkbox-field-checked"
+      class="label readOnly checked"
       for="checkbox-32"
       tabindex="-1"
     >
       <div
         aria-checked="true"
         aria-label="checkbox label 1"
-        class="checkbox-marker"
+        class="checkboxMarker checked readOnly"
         id="checkbox-32"
         role="checkbox"
       >
@@ -44,14 +44,14 @@ exports[`CheckboxInput Component CheckboxInput renders highlighted 1`] = `
       checkbox label 1
     </label>
     <label
-      class="input-checkbox-field-read-only"
+      class="label readOnly"
       for="checkbox-33"
       tabindex="-1"
     >
       <div
         aria-checked="false"
         aria-label="checkbox label 2"
-        class="checkbox-marker"
+        class="checkboxMarker readOnly"
         id="checkbox-33"
         role="checkbox"
       >
@@ -63,13 +63,13 @@ exports[`CheckboxInput Component CheckboxInput renders highlighted 1`] = `
       checkbox label 2
     </label>
     <label
-      class="input-checkbox-field-read-only"
+      class="label readOnly"
       for="checkbox-34"
       tabindex="-1"
     >
       <div
         aria-label="checkbox label 3"
-        class="checkbox-marker"
+        class="checkboxMarker readOnly"
         id="checkbox-34"
         role="checkbox"
       >
@@ -81,13 +81,13 @@ exports[`CheckboxInput Component CheckboxInput renders highlighted 1`] = `
       checkbox label 3
     </label>
     <label
-      class="input-checkbox-field-read-only field-highlighted"
+      class="label readOnly highlighted"
       for="checkbox-35"
       tabindex="-1"
     >
       <div
         aria-label="checkbox label 4"
-        class="checkbox-marker"
+        class="checkboxMarker readOnly"
         id="checkbox-35"
         role="checkbox"
       >
@@ -99,13 +99,13 @@ exports[`CheckboxInput Component CheckboxInput renders highlighted 1`] = `
       checkbox label 4
     </label>
     <label
-      class="input-checkbox-field-read-only"
+      class="label readOnly"
       for="checkbox-36"
       tabindex="-1"
     >
       <div
         aria-label="checkbox label 5"
-        class="checkbox-marker"
+        class="checkboxMarker readOnly"
         id="checkbox-36"
         role="checkbox"
       >
@@ -123,16 +123,16 @@ exports[`CheckboxInput Component CheckboxInput renders highlighted 1`] = `
 exports[`CheckboxInput Component CheckboxInput renders with input 1`] = `
 <div>
   <div
-    class="field gds-checkbox-container"
+    class="container"
   >
     <label
-      class=""
+      class="label"
       for="checkbox-1"
       tabindex="0"
     >
       <div
         aria-label="checkbox label 0"
-        class="checkbox-marker"
+        class="checkboxMarker"
         id="checkbox-1"
         role="checkbox"
       >
@@ -144,14 +144,14 @@ exports[`CheckboxInput Component CheckboxInput renders with input 1`] = `
       checkbox label 0
     </label>
     <label
-      class="input-checkbox-field-checked"
+      class="label checked"
       for="checkbox-2"
       tabindex="0"
     >
       <div
         aria-checked="true"
         aria-label="checkbox label 1"
-        class="checkbox-marker"
+        class="checkboxMarker checked"
         id="checkbox-2"
         role="checkbox"
       >
@@ -163,14 +163,14 @@ exports[`CheckboxInput Component CheckboxInput renders with input 1`] = `
       checkbox label 1
     </label>
     <label
-      class=""
+      class="label"
       for="checkbox-3"
       tabindex="0"
     >
       <div
         aria-checked="false"
         aria-label="checkbox label 2"
-        class="checkbox-marker"
+        class="checkboxMarker"
         id="checkbox-3"
         role="checkbox"
       >
@@ -182,13 +182,13 @@ exports[`CheckboxInput Component CheckboxInput renders with input 1`] = `
       checkbox label 2
     </label>
     <label
-      class=""
+      class="label"
       for="checkbox-4"
       tabindex="0"
     >
       <div
         aria-label="checkbox label 3"
-        class="checkbox-marker"
+        class="checkboxMarker"
         id="checkbox-4"
         role="checkbox"
       >
@@ -200,13 +200,13 @@ exports[`CheckboxInput Component CheckboxInput renders with input 1`] = `
       checkbox label 3
     </label>
     <label
-      class=""
+      class="label"
       for="checkbox-5"
       tabindex="0"
     >
       <div
         aria-label="checkbox label 4"
-        class="checkbox-marker"
+        class="checkboxMarker"
         id="checkbox-5"
         role="checkbox"
       >
@@ -218,13 +218,13 @@ exports[`CheckboxInput Component CheckboxInput renders with input 1`] = `
       checkbox label 4
     </label>
     <label
-      class=""
+      class="label"
       for="checkbox-6"
       tabindex="0"
     >
       <div
         aria-label="checkbox label 5"
-        class="checkbox-marker"
+        class="checkboxMarker"
         id="checkbox-6"
         role="checkbox"
       >
@@ -242,7 +242,7 @@ exports[`CheckboxInput Component CheckboxInput renders with input 1`] = `
 exports[`CheckboxInput Component CheckboxInput renders with no options 1`] = `
 <div>
   <div
-    class="field gds-checkbox-container"
+    class="container"
   />
 </div>
 `;

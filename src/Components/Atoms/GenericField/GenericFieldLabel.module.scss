@@ -1,0 +1,24 @@
+@use 'sass:math';
+
+.label {
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 0px;
+  padding-bottom: unset;
+  font-weight: 600;
+  padding-bottom: 4px;
+  align-items: center;
+}
+
+.mandatory {
+  padding-left: 4px;
+  color: rgb(var(--theme-provider-error));
+}
+
+@for $size from 1 through 12 {
+  .size-#{$size} {
+    width: percentage(math.div($size, 12));
+    flex: unset !important;
+    flex-grow: unset !important;
+  }
+}

@@ -1,104 +1,96 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import Tooltip, { ITooltipProps } from './Tooltip';
+import { default as TooltipComponent, ITooltipProps } from './Tooltip';
 import { MenuDirectionEnum } from './types';
 
 export default {
-  title: 'Atom/Tooltip',
-  component: Tooltip,
+  title: 'Atom',
+  component: TooltipComponent,
   parameters: { actions: { argTypesRegex: '^on.*' }, controls: { sort: 'requiredFirst' } },
-} as ComponentMeta<typeof Tooltip>;
+} as ComponentMeta<typeof TooltipComponent>;
 
-const ManagedTemplate: ComponentStory<typeof Tooltip> = (args: ITooltipProps) => (
-  <div
-    style={{
-      display: 'grid',
-      gridTemplateColumns: 'repeat(3, 1fr)',
-      gridGap: '20px',
-      gridAutoRows: 'minmax(100px, auto)',
-    }}>
-    <Tooltip {...args} direction={MenuDirectionEnum.BOTTOM}>
-      <div
-        style={{
-          height: '100px',
-          lineHeight: '100px',
-          textAlign: 'center',
-          backgroundColor: 'lightblue',
-        }}>
-        Hover me (bottom)
-      </div>
-    </Tooltip>
-
-    <Tooltip {...args} direction={MenuDirectionEnum.RIGHT}>
-      <div
-        style={{
-          height: '100px',
-          lineHeight: '100px',
-          textAlign: 'center',
-          backgroundColor: 'lightblue',
-        }}>
-        Hover me (right)
-      </div>
-    </Tooltip>
-
-    <Tooltip {...args} direction={MenuDirectionEnum.LEFT}>
-      <div
-        style={{
-          height: '100px',
-          lineHeight: '100px',
-          textAlign: 'center',
-          backgroundColor: 'lightblue',
-        }}>
-        Hover me (left)
-      </div>
-    </Tooltip>
-
-    <Tooltip {...args} direction={MenuDirectionEnum.TOP}>
-      <div
-        style={{
-          height: '100px',
-          lineHeight: '100px',
-          textAlign: 'center',
-          backgroundColor: 'lightblue',
-        }}>
-        Hover me (top)
-      </div>
-    </Tooltip>
-  </div>
-);
-
-const Template: ComponentStory<typeof Tooltip> = (args: ITooltipProps) => {
-  return (
+const ManagedTemplate: ComponentStory<typeof TooltipComponent> = (args: ITooltipProps) => (
+  <>
+    <div
+      style={{
+        display: 'grid',
+        gridTemplateColumns: 'repeat(2, 1fr)',
+        rowGap: '50px',
+        columnGap: '50px',
+        gridAutoRows: 'minmax(100px, auto)',
+      }}>
+      <TooltipComponent {...args} direction={MenuDirectionEnum.BOTTOM}>
+        <div
+          style={{
+            height: '100px',
+            lineHeight: '100px',
+            textAlign: 'center',
+            backgroundColor: 'lightblue',
+          }}>
+          Hover me (bottom)
+        </div>
+      </TooltipComponent>
+      <TooltipComponent {...args} direction={MenuDirectionEnum.LEFT}>
+        <div
+          style={{
+            height: '100px',
+            lineHeight: '100px',
+            textAlign: 'center',
+            backgroundColor: 'lightblue',
+          }}>
+          Hover me (left)
+        </div>
+      </TooltipComponent>
+      <TooltipComponent {...args} direction={MenuDirectionEnum.RIGHT}>
+        <div
+          style={{
+            height: '100px',
+            lineHeight: '100px',
+            textAlign: 'center',
+            backgroundColor: 'lightblue',
+          }}>
+          Hover me (right)
+        </div>
+      </TooltipComponent>
+      <TooltipComponent {...args} direction={MenuDirectionEnum.TOP}>
+        <div
+          style={{
+            height: '100px',
+            lineHeight: '100px',
+            textAlign: 'center',
+            backgroundColor: 'lightblue',
+          }}>
+          Hover me (top)
+        </div>
+      </TooltipComponent>
+    </div>
     <div>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.{' '}
-        <Tooltip {...args}>
-          <big>TOOLTIP HERE</big>
-        </Tooltip>{' '}
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        <TooltipComponent {...args}>
+          <b>
+            <u> TOOLTIP HERE </u>
+          </b>
+        </TooltipComponent>
         vulputate sit amet mi nec fringilla. Curabitur nibh elit, lobortis at tincidunt hendrerit, placerat vel velit.
         Sed pellentesque venenatis nisi, tincidunt tincidunt purus sodales vitae. Quisque pharetra augue eu aliquet
         ornare. Maecenas facilisis, tortor eu tincidunt dictum, tortor erat scelerisque arcu, id accumsan nisl enim et
         ex. In elementum sagittis leo, quis convallis velit ullamcorper quis. Sed elementum nec ipsum et interdum. Nam
-        vel sollicitudin justo, eu feugiat{' '}
-        <Tooltip {...args}>
-          <big>TOOLTIP HERE</big>
-        </Tooltip>{' '}
+        vel sollicitudin justo, eu feugiat
+        <TooltipComponent {...args}>
+          <b>
+            <u> TOOLTIP HERE </u>
+          </b>
+        </TooltipComponent>
         neque. Quisque a magna augue.
       </p>
     </div>
-  );
-};
+  </>
+);
 
-export const Default = ManagedTemplate.bind({});
-Default.args = {
+export const Tooltip = ManagedTemplate.bind({});
+Tooltip.args = {
   tooltip: 'Tooltip',
-  delay: 200,
-};
-
-export const Text = Template.bind({});
-Text.args = {
-  tooltip: 'Tooltip',
-  direction: MenuDirectionEnum.TOP,
   delay: 200,
 };

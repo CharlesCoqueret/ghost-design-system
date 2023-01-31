@@ -1,0 +1,95 @@
+.gds-rich-text-container {
+  @import 'suneditor/dist/css/suneditor.min';
+  // Removing z-index to get the modal over the rich text
+  .sun-editor .se-wrapper,
+  .sun-editor .se-toolbar {
+    z-index: unset;
+  }
+
+  // Removing the sticky toolbar
+  .sun-editor .se-toolbar-sticky-dummy {
+    visibility: hidden;
+  }
+
+  .se-wrapper-inner {
+    border: 1px solid transparent;
+    &:focus,
+    &:hover {
+      border: 1px solid rgb(var(--theme-provider-scooter));
+    }
+  }
+
+  &.error {
+    .se-wrapper-inner,
+    .se-wrapper-inner:focus {
+      border: 1px solid rgb(var(--theme-provider-error));
+    }
+  }
+
+  &.disabled,
+  &.readonly {
+    .sun-editor {
+      border: none;
+    }
+    .se-wrapper-inner,
+    .se-wrapper-inner:focus {
+      border: 1px solid transparent;
+      user-select: text;
+    }
+  }
+
+  .sun-editor-editable {
+    * {
+      font-family: rgb(var(--theme-provider-font-family));
+      box-sizing: border-box;
+    }
+
+    table {
+      border-collapse: collapse;
+    }
+
+    table,
+    td,
+    th {
+      border: 1px solid rgb(var(--theme-provider-pebble));
+    }
+  }
+
+  // Replacement of the toolbar bottom outline by a border
+  .sun-editor .se-toolbar {
+    outline: unset;
+    border: none;
+    background-color: rgb(var(--theme-provider-white));
+    .se-btn-select.se-btn-tool-format {
+      width: 100px;
+    }
+    .se-btn-module-border {
+      border: none;
+    }
+  }
+
+  // Hidding background color of the character counter
+  .sun-editor .se-resizing-bar {
+    background-color: transparent;
+  }
+
+  // Prevent usage of image via links
+  .se-dialog-image {
+    // Hide tabs in the image dialog to avoid accessing to url settings
+    .se-dialog-tabs {
+      display: none;
+    }
+    // Hide form for image dialog to avoid accessing to url settings
+    ._se_tab_content_url {
+      display: none !important;
+    }
+  }
+
+  // Remove margin for richtext editor when in readonly
+  &.readonly,
+  &.disabled {
+    .sun-editor-editable {
+      padding: unset;
+    }
+  }
+}

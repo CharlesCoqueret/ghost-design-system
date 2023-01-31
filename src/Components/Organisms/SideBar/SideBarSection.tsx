@@ -1,5 +1,7 @@
 import React, { PropsWithChildren, ReactElement } from 'react';
 
+import styles from './SideBarSection.module.scss';
+
 export interface ISideBarSectionProps {
   /** Disable the section, visible, but no interaction (optional, default: false) */
   disabled?: boolean;
@@ -18,8 +20,8 @@ const SideBarSection = (props: PropsWithChildren<ISideBarSectionProps>): ReactEl
 
   return (
     <>
-      {divider && <div className='sidebar-divider' />}
-      {label && <div className='section'>{label}</div>}
+      {divider && <div className={styles.divider} />}
+      {label && <div className={styles.section}>{label}</div>}
       {children}
     </>
   );

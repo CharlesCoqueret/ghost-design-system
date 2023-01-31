@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import Section, { ISectionProps } from './Section';
+import SectionComponent, { ISectionProps } from './Section';
 import { AmountField, DatePickerField, TextAreaField, YearPickerField } from '../../Molecules';
 import Row from './Row';
 import Container from './Container';
@@ -24,14 +24,14 @@ const initialData = {
 
 export default {
   title: 'Atom/Layout/Section',
-  component: Section,
+  component: SectionComponent,
   parameters: { actions: { argTypesRegex: '^on.*' }, controls: { sort: 'requiredFirst' } },
-} as ComponentMeta<typeof Section>;
+} as ComponentMeta<typeof SectionComponent>;
 
-const Template: ComponentStory<typeof Section> = (args: ISectionProps) => {
+const Template: ComponentStory<typeof SectionComponent> = (args: ISectionProps) => {
   const [val, setval] = useState(initialData.textarea);
   return (
-    <Section {...args}>
+    <SectionComponent {...args}>
       <Container>
         <Col>
           <Row>
@@ -48,12 +48,12 @@ const Template: ComponentStory<typeof Section> = (args: ISectionProps) => {
           </Row>
         </Col>
       </Container>
-    </Section>
+    </SectionComponent>
   );
 };
 
-export const Default = Template.bind({});
-Default.args = {
+export const Section = Template.bind({});
+Section.args = {
   title: 'Title',
   openInitially: true,
 };

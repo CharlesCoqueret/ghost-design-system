@@ -1,6 +1,8 @@
 import React, { CSSProperties, PropsWithChildren, ReactElement } from 'react';
 import classNames from 'classnames';
 
+import styles from './Typography.module.scss';
+
 export interface ITitleProps {
   /** custom classname */
   className?: string;
@@ -23,7 +25,7 @@ const Title = (props: PropsWithChildren<ITitleProps>): ReactElement => {
 
   return (
     <HeaderTag
-      className={classNames('gds-typography', { ellipsis: ellipsis }, className)}
+      className={classNames(styles.typography, { [styles.ellipsis]: ellipsis }, styles[`h${level || 3}`], className)}
       data-testid={dataTestId}
       onClick={onClick}
       style={style}
@@ -32,6 +34,7 @@ const Title = (props: PropsWithChildren<ITitleProps>): ReactElement => {
     </HeaderTag>
   );
 };
+
 Title.defaultProps = {
   className: undefined,
   ellipsis: false,
@@ -71,22 +74,25 @@ const Text = (props: PropsWithChildren<ITextProps>): ReactElement => {
 
   return (
     <span
-      className={classNames('gds-typography', className, {
-        ellipsis: ellipsis,
-        error:
+      className={classNames(styles.typography, className, {
+        [styles.ellipsis]: ellipsis,
+        [styles.error]:
           type && (type === TextTypeEnum.ERROR || (Array.isArray(type) && type.includes(TextTypeEnum.PLACEHOLDER))),
-        disabled:
+        [styles.disabled]:
           type && (type === TextTypeEnum.DISABLED || (Array.isArray(type) && type.includes(TextTypeEnum.DISABLED))),
-        helper: type && (type === TextTypeEnum.HELPER || (Array.isArray(type) && type.includes(TextTypeEnum.HELPER))),
-        highlighted:
+        [styles.helper]:
+          type && (type === TextTypeEnum.HELPER || (Array.isArray(type) && type.includes(TextTypeEnum.HELPER))),
+        [styles.highlighted]:
           type &&
           (type === TextTypeEnum.HIGHLIGHTED || (Array.isArray(type) && type.includes(TextTypeEnum.HIGHLIGHTED))),
-        label: type && (type === TextTypeEnum.LABEL || (Array.isArray(type) && type.includes(TextTypeEnum.TINY))),
-        link: isLink,
-        placeholder:
+        [styles.label]:
+          type && (type === TextTypeEnum.LABEL || (Array.isArray(type) && type.includes(TextTypeEnum.TINY))),
+        [styles.link]: isLink,
+        [styles.placeholder]:
           type &&
           (type === TextTypeEnum.PLACEHOLDER || (Array.isArray(type) && type.includes(TextTypeEnum.PLACEHOLDER))),
-        tiny: type && (type === TextTypeEnum.TINY || (Array.isArray(type) && type.includes(TextTypeEnum.TINY))),
+        [styles.tiny]:
+          type && (type === TextTypeEnum.TINY || (Array.isArray(type) && type.includes(TextTypeEnum.TINY))),
       })}
       data-testid={dataTestId}
       onClick={onClick}
@@ -109,5 +115,4 @@ const Typography = {
   Text: Text,
 };
 
-export { Title, Text };
 export default Typography;

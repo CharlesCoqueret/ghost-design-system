@@ -9,10 +9,10 @@ exports[`DateCell component DateCell renders 1`] = `
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <div
-              class="field input-date-picker-field table--cell-value--date-readonly"
+              class="input-date-picker-wrapper-read-only table--cell-value--date-readonly"
             >
               <div
                 class="react-datepicker-wrapper"
@@ -51,10 +51,10 @@ exports[`DateCell component DateCell renders in edit mode and handles change 1`]
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <div
-              class="field input-date-picker-field"
+              class=""
             >
               <div
                 class="react-datepicker-wrapper"
@@ -92,10 +92,10 @@ exports[`DateCell component DateCell renders in edit mode via extra 1`] = `
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <div
-              class="field input-date-picker-field"
+              class=""
             >
               <div
                 class="react-datepicker-wrapper"
@@ -134,10 +134,10 @@ exports[`DateCell component DateCell renders when hidden 1`] = `
           style="display: none;"
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <div
-              class="field input-date-picker-field table--cell-value--date-readonly"
+              class="input-date-picker-wrapper-read-only table--cell-value--date-readonly"
             >
               <div
                 class="react-datepicker-wrapper"
@@ -176,10 +176,10 @@ exports[`DateCell component DateCell renders with forced value 1`] = `
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <div
-              class="field input-date-picker-field table--cell-value--date-readonly"
+              class="input-date-picker-wrapper-read-only table--cell-value--date-readonly"
             >
               <div
                 class="react-datepicker-wrapper"

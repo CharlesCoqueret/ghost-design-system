@@ -10,7 +10,7 @@ const Container = (props: PropsWithChildren<IContainerProps>): ReactElement => {
   const { children, className, style } = props;
 
   return (
-    <div className={classnames(className, 'gds-layout-container')} style={style}>
+    <div className={classnames(className)} style={style}>
       {children}
     </div>
   );

@@ -1,16 +1,16 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import Typography, { Title, ITitleProps } from './Typography';
+import Typography, { ITitleProps } from './Typography';
 import { Col, Container } from '../Layout';
 
 export default {
-  title: 'Atom/Typography/Title',
-  component: Title,
+  title: 'Atom/Typography',
+  component: Typography.Title,
   parameters: { actions: { argTypesRegex: '^on.*' }, controls: { sort: 'requiredFirst' } },
 } as ComponentMeta<typeof Title>;
 
-const Template: ComponentStory<typeof Title> = (arg: ITitleProps) => {
+const Template: ComponentStory<typeof Typography.Title> = (arg: ITitleProps) => {
   return (
     <Container>
       <Col>
@@ -33,8 +33,8 @@ const Template: ComponentStory<typeof Title> = (arg: ITitleProps) => {
   );
 };
 
-export const Default = Template.bind({});
-Default.args = {
+export const Title = Template.bind({});
+Title.args = {
   level: 3,
   ellipsis: true,
 };

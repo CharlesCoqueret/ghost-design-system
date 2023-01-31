@@ -1,48 +1,19 @@
 import React, { Fragment, ReactElement, useRef, useState } from 'react';
-import { MenuDivider, MenuItem, MenuAlign, ControlledMenu } from '@szhsin/react-menu';
+import { MenuDivider, MenuItem, ControlledMenu } from '@szhsin/react-menu';
 import classnames from 'classnames';
 
-import { Icon, IconProp } from '../../Atoms/Icon';
+import { Icon } from '../../Atoms/Icon';
 import { MenuDirectionEnum, Tooltip } from '../../Atoms/Tooltip';
 import Portal from '../../Atoms/Portal/Portal';
 import Popover from '../Popover/Popover';
-import { IItemListProps } from './ItemList';
+import { IButtonProps } from './Button.props';
+
+import styles from './Button.module.scss';
 
 export enum ColorButtonEnum {
   PRIMARY = 'primary',
   SECONDARY = 'secondary',
   REVERSED = 'reversed',
-}
-
-export interface IButtonProps {
-  /** Custom className (optional, default: undefined) */
-  className?: string;
-  /** Color of the button (optional, default: ColorButtonEnum.SECONDARY) */
-  color?: ColorButtonEnum;
-  /** Button is disabled (optional, default: false) */
-  disabled?: boolean;
-  /** Dropdown alignment option (optional, default: 'end' ) */
-  dropdownAlign?: MenuAlign;
-  /** Icon name (optional, default: undefined) */
-  icon?: IconProp;
-  /** :ist of items to display in the dropdown on click on the button (optional, default: undefined) */
-  itemList?: Array<IItemListProps>;
-  /** Label (optional, default: undefined) */
-  label?: string;
-  /** Loading state, disabling the button and replacing icon with spiner (optional, default: false) */
-  loading?: boolean;
-  /** Button click event handler (optional, default: undefined) */
-  onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
-  /** Optional popover (optional, default: undefined) */
-  popover?: { buttons?: Array<IButtonProps>; title?: string };
-  /** text to be displayed as a tooltip (optional, default: undefinef=d) */
-  tooltip?: string;
-  /** position of the tooltip (optional, default: 'bottom') */
-  tooltipDirection?: MenuDirectionEnum;
-  /** button type (optional, default: 'button') */
-  type?: 'submit' | 'button' | 'reset';
-  /** For test purpose only */
-  dataTestId?: string;
 }
 
 const Button = (props: IButtonProps): ReactElement => {
@@ -70,7 +41,6 @@ const Button = (props: IButtonProps): ReactElement => {
   const ref = useRef<HTMLButtonElement>(null);
 
   const hasMenu = itemList && itemList.length > 0;
-  const hasPopover = popover !== undefined;
 
   if (!label && !icon) return <></>;
 
@@ -78,7 +48,7 @@ const Button = (props: IButtonProps): ReactElement => {
     <>
       <Tooltip direction={tooltipDirection} tooltip={label ? undefined : tooltip}>
         <button
-          className={classnames('gds-button-content', className)}
+          className={classnames(styles.button, className)}
           color={color}
           data-testid={dataTestId}
           disabled={loading || disabled}
@@ -89,7 +59,7 @@ const Button = (props: IButtonProps): ReactElement => {
             if (hasMenu && !disabled) {
               if (!skipOpen.current) setIsMenuOpen((prev) => !prev);
             }
-            if (hasPopover && !disabled) {
+            if (popover && !disabled) {
               setIsPopoverOpen(true);
             }
           }}
@@ -103,21 +73,21 @@ const Button = (props: IButtonProps): ReactElement => {
           type={type}
           tabIndex={loading || disabled ? -1 : 0}>
           {(icon !== undefined || loading !== false) && (
-            <div key='icon' className='button-icon-container'>
-              {loading && <Icon icon={['fal', 'spinner']} size='lg' className='button-icon' />}
-              {!loading && icon && <Icon icon={icon} size='lg' className='button-icon' />}
+            <div key='icon' className={styles.icon}>
+              {loading && <Icon icon={['fal', 'spinner']} size='lg' />}
+              {!loading && icon && <Icon icon={icon} size='lg' />}
             </div>
           )}
 
           {label ? (
             <>
-              <div key='label' className='button-label-container'>
+              <div key='label' className={styles.label}>
                 {label}
               </div>
               {hasMenu ? (
-                <div key='control' className='button-menu-control-container'>
-                  <Icon icon={['fal', 'pipe']} size='lg' className='button-icon' />
-                  <Icon icon={['fas', 'caret-down']} size='lg' className='button-icon' />
+                <div key='control' className={styles.menuControl}>
+                  <Icon icon={['fal', 'pipe']} size='lg' />
+                  <Icon icon={['fas', 'caret-down']} size='lg' />
                 </div>
               ) : (
                 <></>
@@ -134,7 +104,6 @@ const Button = (props: IButtonProps): ReactElement => {
           <ControlledMenu
             state={isMenuOpen ? 'open' : 'closed'}
             align={dropdownAlign}
-            menuClassName='button-menu'
             anchorRef={ref}
             skipOpen={skipOpen}
             onClose={() => setIsMenuOpen(false)}>
@@ -162,29 +131,26 @@ const Button = (props: IButtonProps): ReactElement => {
       ) : (
         <></>
       )}
-      {hasPopover && popover ? (
+      {popover ? (
         <Popover
           anchorRef={ref}
+          buttons={popover.buttons.map((button) => {
+            return {
+              ...button,
+              onClick: (e) => {
+                setIsPopoverOpen(false);
+                if (button.onClick) {
+                  button.onClick(e);
+                }
+              },
+            };
+          })}
           open={isPopoverOpen}
           onClose={() => {
             setIsPopoverOpen(false);
-          }}>
-          {popover.title && <div className='popover-title'>{popover.title}</div>}
-          <div className='popover-buttons'>
-            {popover.buttons?.map((button) => (
-              <Button
-                key={`${button.label}-${button.icon?.toString()}`}
-                {...button}
-                onClick={(e) => {
-                  setIsPopoverOpen(false);
-                  if (button.onClick) {
-                    button.onClick(e);
-                  }
-                }}
-              />
-            ))}
-          </div>
-        </Popover>
+          }}
+          title={popover.title}
+        />
       ) : (
         <></>
       )}

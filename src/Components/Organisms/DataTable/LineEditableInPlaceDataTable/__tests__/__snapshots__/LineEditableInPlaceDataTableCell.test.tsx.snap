@@ -9,10 +9,11 @@ exports[`LineEditableInPlaceDataTableCell component LineEditableInPlaceDataTable
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <input
-              class="gds-amount-field"
+              autocomplete="off"
+              class="default"
               inputmode="numeric"
               name="amount"
               type="text"
@@ -35,10 +36,10 @@ exports[`LineEditableInPlaceDataTableCell component LineEditableInPlaceDataTable
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <div
-              class="field gds-select-container input-select-field input-select-field"
+              class="container"
             >
               <div
                 class=" css-1959ul7-container"
@@ -54,7 +55,7 @@ exports[`LineEditableInPlaceDataTableCell component LineEditableInPlaceDataTable
                   class="css-1f43avz-a11yText-A11yText"
                 />
                 <div
-                  class=" css-1l9db9l-control"
+                  class=" css-yqi6bw-control"
                 >
                   <div
                     class=" css-9plg90-ValueContainer"
@@ -93,7 +94,7 @@ exports[`LineEditableInPlaceDataTableCell component LineEditableInPlaceDataTable
                       aria-hidden="true"
                     >
                       <i
-                        class="dynamic-search-icon icon"
+                        class="icon icon"
                         icon="fal,xmark"
                       />
                     </div>
@@ -104,7 +105,7 @@ exports[`LineEditableInPlaceDataTableCell component LineEditableInPlaceDataTable
                       aria-hidden="true"
                     >
                       <i
-                        class="dynamic-search-icon icon"
+                        class="icon icon"
                         icon="fal,chevron-down"
                       />
                     </div>
@@ -137,17 +138,17 @@ exports[`LineEditableInPlaceDataTableCell component LineEditableInPlaceDataTable
             class="table--cell--value--button"
           >
             <button
-              class="gds-button-content"
+              class="button"
               color="reversed"
               tabindex="0"
               type="button"
             >
               <div
-                class="button-icon-container"
+                class="icon"
               >
                 <i
-                  class="button-icon icon"
-                  icon="fal,cog"
+                  class="icon"
+                  icon="fal,gear"
                 />
               </div>
             </button>
@@ -171,20 +172,20 @@ exports[`LineEditableInPlaceDataTableCell component LineEditableInPlaceDataTable
           class="table--cell--checkbox"
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <div
-              class="field gds-checkbox-container input-checkbox-field gds-typography"
+              class="container"
             >
               <label
-                class="input-checkbox-field-checked"
+                class="label checked"
                 for="checkbox-1"
                 tabindex="0"
               >
                 <div
                   aria-checked="true"
                   aria-label="Label"
-                  class="checkbox-marker"
+                  class="checkboxMarker checked"
                   id="checkbox-1"
                   role="checkbox"
                 >
@@ -213,17 +214,13 @@ exports[`LineEditableInPlaceDataTableCell component LineEditableInPlaceDataTable
           class="table--cell--code"
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
-            <div
-              class="field input-text-field-read-only gds-typography"
+            <span
+              class="typography"
             >
-              <span
-                class="gds-typography"
-              >
-                code
-              </span>
-            </div>
+              code
+            </span>
           </div>
         </td>
       </tr>
@@ -261,10 +258,10 @@ exports[`LineEditableInPlaceDataTableCell component LineEditableInPlaceDataTable
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <div
-              class="field input-date-picker-field"
+              class=""
             >
               <div
                 class="react-datepicker-wrapper"
@@ -324,10 +321,10 @@ exports[`LineEditableInPlaceDataTableCell component LineEditableInPlaceDataTable
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <div
-              class="field gds-select-container input-select-field input-select-field"
+              class="container"
             >
               <div
                 class=" css-1959ul7-container"
@@ -343,7 +340,7 @@ exports[`LineEditableInPlaceDataTableCell component LineEditableInPlaceDataTable
                   class="css-1f43avz-a11yText-A11yText"
                 />
                 <div
-                  class=" css-1l9db9l-control"
+                  class=" css-yqi6bw-control"
                 >
                   <div
                     class=" css-9plg90-ValueContainer"
@@ -383,7 +380,7 @@ exports[`LineEditableInPlaceDataTableCell component LineEditableInPlaceDataTable
                     >
                       <svg
                         aria-hidden="true"
-                        class="icon gds-loader size-1x dynamic-search-spinner"
+                        class="icon size-1x spinner"
                         data-testid="DATA-TEST-ID-Dynamic search-0-spinner"
                         focusable="false"
                         height="50"
@@ -429,7 +426,7 @@ exports[`LineEditableInPlaceDataTableCell component LineEditableInPlaceDataTable
                       aria-hidden="true"
                     >
                       <i
-                        class="dynamic-search-icon icon"
+                        class="icon icon"
                         data-testid="DATA-TEST-ID-Dynamic search-0-magnifier"
                         icon="fal,magnifying-glass"
                       />
@@ -460,10 +457,10 @@ exports[`LineEditableInPlaceDataTableCell component LineEditableInPlaceDataTable
           class="table--cell--code"
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <div
-              class="field gds-file-input-container gds-typography"
+              class="container"
             >
               <div
                 class="droparea"
@@ -486,13 +483,13 @@ exports[`LineEditableInPlaceDataTableCell component LineEditableInPlaceDataTable
                 class="gallery"
               >
                 <div
-                  class="item-container error"
+                  class="container error"
                 >
                   <div
                     class="left"
                   >
                     <div
-                      class="paperclip-icon"
+                      class="paperclipIcon"
                     >
                       <i
                         class="icon"
@@ -511,16 +508,16 @@ exports[`LineEditableInPlaceDataTableCell component LineEditableInPlaceDataTable
                     class="right"
                   >
                     <button
-                      class="gds-button-content delete-icon"
+                      class="button deleteIcon"
                       color="reversed"
                       tabindex="0"
                       type="button"
                     >
                       <div
-                        class="button-icon-container"
+                        class="icon"
                       >
                         <i
-                          class="button-icon icon"
+                          class="icon"
                           icon="fal,trash-alt"
                         />
                       </div>
@@ -552,10 +549,10 @@ exports[`LineEditableInPlaceDataTableCell component LineEditableInPlaceDataTable
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <div
-              class="field gds-select-container input-select-field input-select-field"
+              class="container"
             >
               <div
                 class=" css-1959ul7-container"
@@ -571,7 +568,7 @@ exports[`LineEditableInPlaceDataTableCell component LineEditableInPlaceDataTable
                   class="css-1f43avz-a11yText-A11yText"
                 />
                 <div
-                  class=" css-1l9db9l-control"
+                  class=" css-yqi6bw-control"
                 >
                   <div
                     class=" css-1xxnwvf-ValueContainer"
@@ -606,7 +603,7 @@ exports[`LineEditableInPlaceDataTableCell component LineEditableInPlaceDataTable
                       aria-hidden="true"
                     >
                       <i
-                        class="dynamic-search-icon icon"
+                        class="icon icon"
                         icon="fal,xmark"
                       />
                     </div>
@@ -617,7 +614,7 @@ exports[`LineEditableInPlaceDataTableCell component LineEditableInPlaceDataTable
                       aria-hidden="true"
                     >
                       <i
-                        class="dynamic-search-icon icon"
+                        class="icon icon"
                         icon="fal,chevron-down"
                       />
                     </div>
@@ -649,10 +646,11 @@ exports[`LineEditableInPlaceDataTableCell component LineEditableInPlaceDataTable
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <input
-              class="gds-amount-field"
+              autocomplete="off"
+              class="default"
               inputmode="numeric"
               name="number"
               type="text"
@@ -675,10 +673,11 @@ exports[`LineEditableInPlaceDataTableCell component LineEditableInPlaceDataTable
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <input
-              class="gds-amount-field"
+              autocomplete="off"
+              class="default"
               inputmode="numeric"
               name="percentage"
               type="text"
@@ -717,18 +716,18 @@ exports[`LineEditableInPlaceDataTableCell component LineEditableInPlaceDataTable
           class="table--cell--checkbox"
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <div
-              class="field gds-switch-container input-switch-field gds-typography"
+              class="container"
             >
               <label
-                class="input-switch-field-checked"
+                class="label"
                 for="switch-2"
                 tabindex="0"
               >
                 <div
-                  class="switch-marker"
+                  class="switch"
                 >
                   <input
                     aria-hidden="true"
@@ -776,7 +775,7 @@ exports[`LineEditableInPlaceDataTableCell component LineEditableInPlaceDataTable
                     tabindex="-1"
                   >
                     <span
-                      class="gds-typography table--header-value--title right ellipsis"
+                      class="typography table--header-value--title right ellipsis"
                       title="Number"
                     >
                       Number
@@ -794,10 +793,11 @@ exports[`LineEditableInPlaceDataTableCell component LineEditableInPlaceDataTable
                   class=""
                 >
                   <div
-                    class="gds-field-group"
+                    class="fieldGroup"
                   >
                     <span
-                      class="gds-amount-field amount-field-read-only table--cell-value--number-readonly"
+                      autocomplete="off"
+                      class="default readOnly table--cell-value--number-readonly"
                       id="number"
                       name="number"
                     >
@@ -814,10 +814,11 @@ exports[`LineEditableInPlaceDataTableCell component LineEditableInPlaceDataTable
                   class=""
                 >
                   <div
-                    class="gds-field-group"
+                    class="fieldGroup"
                   >
                     <span
-                      class="gds-amount-field amount-field-read-only table--cell-value--number-readonly"
+                      autocomplete="off"
+                      class="default readOnly table--cell-value--number-readonly"
                       id="number"
                       name="number"
                     >
@@ -844,10 +845,11 @@ exports[`LineEditableInPlaceDataTableCell component LineEditableInPlaceDataTable
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <input
-              class="field gds-input-text-field gds-typography"
+              autocomplete="off"
+              class="container"
               id="text"
               name="text"
               type="text"
@@ -870,13 +872,13 @@ exports[`LineEditableInPlaceDataTableCell component LineEditableInPlaceDataTable
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <div
-              class="field gds-input-textarea-parent"
+              class="container"
             >
               <textarea
-                class="input-textarea-field gds-typography"
+                class="textarea"
                 id="textarea"
                 name="textarea"
               >
@@ -900,10 +902,10 @@ exports[`LineEditableInPlaceDataTableCell component LineEditableInPlaceDataTable
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <div
-              class="input-year-picker-field field"
+              class=""
             >
               <div
                 class="react-datepicker-wrapper"
@@ -913,7 +915,7 @@ exports[`LineEditableInPlaceDataTableCell component LineEditableInPlaceDataTable
                 >
                   <input
                     autocomplete="off"
-                    class="field input-year-picker-input"
+                    class="input-year-picker-input"
                     name="year"
                     placeholder="YYYY"
                     tabindex="0"

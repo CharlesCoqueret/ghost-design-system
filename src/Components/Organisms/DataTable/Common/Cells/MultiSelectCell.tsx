@@ -35,7 +35,6 @@ const MultiSelectCell = <T,>(props: ICellProps<T, IColumnMultiSelect<T>>): React
   return (
     <td className={classnames({ ellipsis: column.ellipsis })} style={{ display: column.hidden ? 'none' : undefined }}>
       <MultiSelectField
-        colors={column.colors}
         dataTestId={dataTestId}
         ellipsis={column.ellipsis}
         inputValue={displayValue}

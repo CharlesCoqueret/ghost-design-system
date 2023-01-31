@@ -3,7 +3,7 @@
 exports[`Col Component Col renders 1`] = `
 <div>
   <div
-    class="CLASSNAME gds-layout-col"
+    class="col CLASSNAME"
     style="height: 300px; width: 30%;"
   >
     <div

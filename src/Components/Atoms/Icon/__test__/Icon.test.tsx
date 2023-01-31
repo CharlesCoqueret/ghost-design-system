@@ -5,7 +5,7 @@ import Icon from '../Icon';
 
 describe('Icon component', () => {
   it('Icon renders', () => {
-    const { container } = render(<Icon icon={['fal', 'cog']} className={'CLASSNAME'} />);
+    const { container } = render(<Icon icon={['fal', 'gear']} className={'CLASSNAME'} />);
     expect(container).toMatchSnapshot();
   });
 });

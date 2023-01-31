@@ -3,13 +3,13 @@
 exports[`FileGallery Component FileGallery handles delete without datatestid 1`] = `
 <div>
   <div
-    class="item-container error"
+    class="container error"
   >
     <div
       class="left"
     >
       <div
-        class="paperclip-icon"
+        class="paperclipIcon"
       >
         <i
           class="icon"
@@ -27,16 +27,16 @@ exports[`FileGallery Component FileGallery handles delete without datatestid 1`]
       class="right"
     >
       <button
-        class="gds-button-content delete-icon"
+        class="button deleteIcon"
         color="reversed"
         tabindex="0"
         type="button"
       >
         <div
-          class="button-icon-container"
+          class="icon"
         >
           <i
-            class="button-icon icon"
+            class="icon"
             icon="fal,trash-alt"
           />
         </div>
@@ -55,13 +55,13 @@ exports[`FileGallery Component FileGallery handles delete without datatestid 1`]
 exports[`FileGallery Component FileGallery handles delete without datatestid 2`] = `
 <div>
   <div
-    class="item-container error"
+    class="container error"
   >
     <div
       class="left"
     >
       <div
-        class="paperclip-icon"
+        class="paperclipIcon"
       >
         <i
           class="icon"
@@ -79,16 +79,16 @@ exports[`FileGallery Component FileGallery handles delete without datatestid 2`]
       class="right"
     >
       <button
-        class="gds-button-content delete-icon"
+        class="button deleteIcon"
         color="reversed"
         tabindex="0"
         type="button"
       >
         <div
-          class="button-icon-container"
+          class="icon"
         >
           <i
-            class="button-icon icon"
+            class="icon"
             icon="fal,trash-alt"
           />
         </div>
@@ -107,13 +107,13 @@ exports[`FileGallery Component FileGallery handles delete without datatestid 2`]
 exports[`FileGallery Component FileGallery handles download without datatestid 1`] = `
 <div>
   <div
-    class="item-container"
+    class="container"
   >
     <div
       class="left"
     >
       <div
-        class="paperclip-icon"
+        class="paperclipIcon"
       >
         <i
           class="icon"
@@ -131,16 +131,16 @@ exports[`FileGallery Component FileGallery handles download without datatestid 1
       class="right"
     >
       <button
-        class="gds-button-content delete-icon"
+        class="button deleteIcon"
         color="reversed"
         tabindex="0"
         type="button"
       >
         <div
-          class="button-icon-container"
+          class="icon"
         >
           <i
-            class="button-icon icon"
+            class="icon"
             icon="fal,trash-alt"
           />
         </div>
@@ -153,36 +153,36 @@ exports[`FileGallery Component FileGallery handles download without datatestid 1
           ControlleMenu
           closed
           <div
-            class="gds-popover-container"
+            class="container"
           >
             <div
-              class="popover-title"
+              class="title"
             >
               Delete?
             </div>
             <div
-              class="popover-buttons"
+              class="buttons"
             >
               <button
-                class="gds-button-content"
+                class="button"
                 color="secondary"
                 tabindex="0"
                 type="button"
               >
                 <div
-                  class="button-label-container"
+                  class="label"
                 >
                   Cancel
                 </div>
               </button>
               <button
-                class="gds-button-content"
+                class="button"
                 color="primary"
                 tabindex="0"
                 type="button"
               >
                 <div
-                  class="button-label-container"
+                  class="label"
                 >
                   Confirm
                 </div>
@@ -200,13 +200,13 @@ exports[`FileGallery Component FileGallery handles download without datatestid 1
 exports[`FileGallery Component FileGallery handles download without datatestid 2`] = `
 <div>
   <div
-    class="item-container"
+    class="container"
   >
     <div
       class="left"
     >
       <div
-        class="paperclip-icon"
+        class="paperclipIcon"
       >
         <i
           class="icon"
@@ -221,7 +221,7 @@ exports[`FileGallery Component FileGallery handles download without datatestid 2
       </div>
       <svg
         aria-hidden="true"
-        class="icon gds-loader size-1x spinner-icon"
+        class="icon size-1x spinnerIcon"
         focusable="false"
         height="50"
         icon="fal,spinner"
@@ -263,16 +263,16 @@ exports[`FileGallery Component FileGallery handles download without datatestid 2
       class="right"
     >
       <button
-        class="gds-button-content delete-icon"
+        class="button deleteIcon"
         color="reversed"
         tabindex="0"
         type="button"
       >
         <div
-          class="button-icon-container"
+          class="icon"
         >
           <i
-            class="button-icon icon"
+            class="icon"
             icon="fal,trash-alt"
           />
         </div>
@@ -285,36 +285,36 @@ exports[`FileGallery Component FileGallery handles download without datatestid 2
           ControlleMenu
           closed
           <div
-            class="gds-popover-container"
+            class="container"
           >
             <div
-              class="popover-title"
+              class="title"
             >
               Delete?
             </div>
             <div
-              class="popover-buttons"
+              class="buttons"
             >
               <button
-                class="gds-button-content"
+                class="button"
                 color="secondary"
                 tabindex="0"
                 type="button"
               >
                 <div
-                  class="button-label-container"
+                  class="label"
                 >
                   Cancel
                 </div>
               </button>
               <button
-                class="gds-button-content"
+                class="button"
                 color="primary"
                 tabindex="0"
                 type="button"
               >
                 <div
-                  class="button-label-container"
+                  class="label"
                 >
                   Confirm
                 </div>
@@ -332,13 +332,13 @@ exports[`FileGallery Component FileGallery handles download without datatestid 2
 exports[`FileGallery Component FileGallery handles uploading state without datatestid 1`] = `
 <div>
   <div
-    class="item-container"
+    class="container"
   >
     <div
       class="left"
     >
       <div
-        class="paperclip-icon"
+        class="paperclipIcon"
       >
         <i
           class="icon"
@@ -357,7 +357,7 @@ exports[`FileGallery Component FileGallery handles uploading state without datat
     >
       <svg
         aria-hidden="true"
-        class="icon gds-loader size-1x spinner-icon"
+        class="icon size-1x spinnerIcon"
         focusable="false"
         height="50"
         icon="fal,spinner"
@@ -402,13 +402,13 @@ exports[`FileGallery Component FileGallery handles uploading state without datat
 exports[`FileGallery Component FileGallery renders and handles delete of error files 1`] = `
 <div>
   <div
-    class="item-container error"
+    class="container error"
   >
     <div
       class="left"
     >
       <div
-        class="paperclip-icon"
+        class="paperclipIcon"
       >
         <i
           class="icon"
@@ -428,17 +428,17 @@ exports[`FileGallery Component FileGallery renders and handles delete of error f
       class="right"
     >
       <button
-        class="gds-button-content delete-icon"
+        class="button deleteIcon"
         color="reversed"
         data-testid="TEST-ID-delete"
         tabindex="0"
         type="button"
       >
         <div
-          class="button-icon-container"
+          class="icon"
         >
           <i
-            class="button-icon icon"
+            class="icon"
             icon="fal,trash-alt"
           />
         </div>
@@ -457,13 +457,13 @@ exports[`FileGallery Component FileGallery renders and handles delete of error f
 exports[`FileGallery Component FileGallery renders and handles delete of uploading files 1`] = `
 <div>
   <div
-    class="item-container"
+    class="container"
   >
     <div
       class="left"
     >
       <div
-        class="paperclip-icon"
+        class="paperclipIcon"
       >
         <i
           class="icon"
@@ -488,7 +488,7 @@ exports[`FileGallery Component FileGallery renders and handles delete of uploadi
       />
       <svg
         aria-hidden="true"
-        class="icon gds-loader size-1x spinner-icon"
+        class="icon size-1x spinnerIcon"
         data-testid="TEST-ID-spinner"
         focusable="false"
         height="50"
@@ -534,13 +534,13 @@ exports[`FileGallery Component FileGallery renders and handles delete of uploadi
 exports[`FileGallery Component FileGallery renders and handles download and delete of done files 1`] = `
 <div>
   <div
-    class="item-container"
+    class="container"
   >
     <div
       class="left"
     >
       <div
-        class="paperclip-icon"
+        class="paperclipIcon"
       >
         <i
           class="icon"
@@ -559,17 +559,17 @@ exports[`FileGallery Component FileGallery renders and handles download and dele
       class="right"
     >
       <button
-        class="gds-button-content delete-icon"
+        class="button deleteIcon"
         color="reversed"
         data-testid="TEST-ID-delete"
         tabindex="0"
         type="button"
       >
         <div
-          class="button-icon-container"
+          class="icon"
         >
           <i
-            class="button-icon icon"
+            class="icon"
             icon="fal,trash-alt"
           />
         </div>
@@ -582,38 +582,38 @@ exports[`FileGallery Component FileGallery renders and handles download and dele
           ControlleMenu
           closed
           <div
-            class="gds-popover-container"
+            class="container"
           >
             <div
-              class="popover-title"
+              class="title"
             >
               Delete?
             </div>
             <div
-              class="popover-buttons"
+              class="buttons"
             >
               <button
-                class="gds-button-content"
+                class="button"
                 color="secondary"
                 data-testid="TEST-ID-cancel"
                 tabindex="0"
                 type="button"
               >
                 <div
-                  class="button-label-container"
+                  class="label"
                 >
                   Cancel
                 </div>
               </button>
               <button
-                class="gds-button-content"
+                class="button"
                 color="primary"
                 data-testid="TEST-ID-confirm"
                 tabindex="0"
                 type="button"
               >
                 <div
-                  class="button-label-container"
+                  class="label"
                 >
                   Confirm
                 </div>
@@ -631,13 +631,13 @@ exports[`FileGallery Component FileGallery renders and handles download and dele
 exports[`FileGallery Component FileGallery renders disabled deleting file 1`] = `
 <div>
   <div
-    class="item-container"
+    class="container"
   >
     <div
       class="left"
     >
       <div
-        class="paperclip-icon"
+        class="paperclipIcon"
       >
         <i
           class="icon"
@@ -662,13 +662,13 @@ exports[`FileGallery Component FileGallery renders disabled deleting file 1`] = 
 exports[`FileGallery Component FileGallery renders readonly of uploading file 1`] = `
 <div>
   <div
-    class="item-container"
+    class="container"
   >
     <div
       class="left"
     >
       <div
-        class="paperclip-icon"
+        class="paperclipIcon"
       >
         <i
           class="icon"

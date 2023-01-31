@@ -73,7 +73,6 @@ const FilterItem = <T,>(props: IFilterItemProps<T>): ReactElement => {
           label={item.label}
           inputValue={inputValues && (inputValues[item.dataIndex] as unknown as string | number | undefined)}
           name={item.name || item.dataIndex.toString()}
-          colors={item.colors}
           noOptionsMessage={item.noOptionsMessage}
           isClearable={item.isClearable}
           placeholder={item.placeholder}
@@ -97,7 +96,6 @@ const FilterItem = <T,>(props: IFilterItemProps<T>): ReactElement => {
           label={item.label}
           inputValue={inputValues && (inputValues[item.dataIndex] as unknown as Array<string | number> | undefined)}
           name={item.name || item.dataIndex.toString()}
-          colors={item.colors}
           numberOfItemLabel={item.numberOfItemLabel}
           numberOfItemsLabel={item.numberOfItemsLabel}
           options={item.options}
@@ -165,7 +163,6 @@ const FilterItem = <T,>(props: IFilterItemProps<T>): ReactElement => {
           label={item.label}
           inputValue={inputValues && (inputValues[item.dataIndex] as unknown as string | number | undefined)}
           name={item.name || item.dataIndex.toString()}
-          colors={item.colors}
           options={item.options}
           isClearable={item.isClearable}
           placeholder={item.placeholder}

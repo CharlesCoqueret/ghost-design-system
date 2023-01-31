@@ -5,6 +5,8 @@ import { useOnClickOutside, useOnEscapePressed } from '../../../hooks';
 import { Portal } from '../Portal';
 import { Icon } from '../Icon';
 
+import styles from './Modal.module.scss';
+
 export interface IModalProps {
   /** Show the close icon (optional, default: false) */
   closeIcon?: boolean;
@@ -50,8 +52,8 @@ const Modal = (props: PropsWithChildren<IModalProps>): ReactElement => {
     const focusable = contentRef.current?.querySelectorAll(
       'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])',
     );
-    const firstFocusable = focusable && focusable[0];
-    const lastFocusable = focusable && focusable[focusable.length - 1];
+    const firstFocusable = focusable && (focusable[0] as HTMLElement);
+    const lastFocusable = focusable && (focusable[focusable.length - 1] as HTMLElement);
 
     // If first focusable element, prevent shift + tab
     if (focusable && document.activeElement === firstFocusable && event.shiftKey) {
@@ -68,6 +70,11 @@ const Modal = (props: PropsWithChildren<IModalProps>): ReactElement => {
     // If inside the modal, no worries
     if (event.target && contentRef.current && contentRef.current.contains(event.target as Node)) {
       return;
+    }
+
+    // If the element has a focus property, then we focus on it.
+    if (firstFocusable && firstFocusable.focus && typeof firstFocusable.focus === 'function') {
+      firstFocusable.focus();
     }
 
     // else, prevent
@@ -121,20 +128,20 @@ const Modal = (props: PropsWithChildren<IModalProps>): ReactElement => {
   if (show)
     return (
       <Portal>
-        <div className='gds-modal-overlay'>
+        <div className={styles.overlay}>
           <div
-            className={classnames('modal-content', {
-              'size-sm': size === 'sm',
-              'size-lg': size === 'lg',
-              shake: isShaking,
+            className={classnames(styles.container, {
+              [styles.small]: size === 'sm',
+              [styles.large]: size === 'lg',
+              [styles.shake]: isShaking,
             })}
             ref={contentRef}>
             {(closeIcon || title) && (
-              <div className='modal-header'>
-                <div className='modal-title'>{title}</div>
+              <div className={styles.header}>
+                <div className={styles.title}>{title}</div>
                 {closeIcon && (
                   <div
-                    className='modal-close-icon'
+                    className={styles.closeIcon}
                     data-testid={dataTestId}
                     onClick={(event) => {
                       event.stopPropagation();

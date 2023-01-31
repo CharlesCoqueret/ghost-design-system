@@ -52,7 +52,7 @@ const LineEditableDataTable = <T extends AnyObject>(props: ILineEditableDataTabl
                   }
                   return true;
                 },
-                icon: ['fal', 'edit'],
+                icon: ['fal', 'pen'],
                 label: extra.localization?.editButton ?? 'Edit',
                 onClick: (row, rowIndex) => {
                   if (extra.onRowEdit) {

@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`NavItem Component NavItem renders 1`] = `
+exports[`NavItem Component NavItem renders alone 1`] = `
 <div>
   <div
-    class="nav-bar-menu-item"
+    class="item"
     data-testid="DATA-TEST-ID"
   >
     <i
@@ -11,17 +11,17 @@ exports[`NavItem Component NavItem renders 1`] = `
       icon="fal,icons"
     />
     <div
-      class="nav-bar-menu-label"
+      class="label"
     >
       LABEL
     </div>
     <span
-      class="gds-badge pill danger counter"
+      class="default pill danger counter"
     >
       1
     </span>
     <i
-      class="nav-bar-menu-caret icon"
+      class="icon caret"
       icon="fas,caret-down"
     />
   </div>
@@ -38,10 +38,10 @@ exports[`NavItem Component NavItem renders 1`] = `
 </div>
 `;
 
-exports[`NavItem Component NavItem renders 2`] = `
+exports[`NavItem Component NavItem renders alone 2`] = `
 <div>
   <div
-    class="nav-bar-menu-item"
+    class="item"
     data-testid="DATA-TEST-ID"
   >
     <i
@@ -49,17 +49,17 @@ exports[`NavItem Component NavItem renders 2`] = `
       icon="fal,icons"
     />
     <div
-      class="nav-bar-menu-label"
+      class="label"
     >
       LABEL
     </div>
     <span
-      class="gds-badge pill danger counter"
+      class="default pill danger counter"
     >
       1
     </span>
     <i
-      class="nav-bar-menu-caret icon"
+      class="icon caret"
       icon="fas,caret-down"
     />
   </div>
@@ -76,10 +76,10 @@ exports[`NavItem Component NavItem renders 2`] = `
 </div>
 `;
 
-exports[`NavItem Component NavItem renders 3`] = `
+exports[`NavItem Component NavItem renders alone 3`] = `
 <div>
   <div
-    class="nav-bar-menu-item"
+    class="item"
     data-testid="DATA-TEST-ID"
   >
     <i
@@ -87,17 +87,17 @@ exports[`NavItem Component NavItem renders 3`] = `
       icon="fal,icons"
     />
     <div
-      class="nav-bar-menu-label"
+      class="label"
     >
       LABEL
     </div>
     <span
-      class="gds-badge pill danger counter"
+      class="default pill danger counter"
     >
       1
     </span>
     <i
-      class="nav-bar-menu-caret icon"
+      class="icon caret"
       icon="fas,caret-down"
     />
   </div>
@@ -114,19 +114,65 @@ exports[`NavItem Component NavItem renders 3`] = `
 </div>
 `;
 
+exports[`NavItem Component NavItem renders handles counter as digits 1`] = `
+<div>
+  <div
+    class="item"
+  >
+    <i
+      class="icon"
+      icon="fal,icons"
+    />
+    <div
+      class="label"
+    >
+      LABEL
+    </div>
+    <span
+      class="default pill danger counter"
+    >
+      +99
+    </span>
+  </div>
+</div>
+`;
+
+exports[`NavItem Component NavItem renders handles counter as string 1`] = `
+<div>
+  <div
+    class="item"
+  >
+    <i
+      class="icon"
+      icon="fal,icons"
+    />
+    <div
+      class="label"
+    >
+      LABEL
+    </div>
+    <span
+      class="default pill danger counter"
+    >
+      test
+    </span>
+  </div>
+</div>
+`;
+
 exports[`NavItem Component NavItem renders with subitems 1`] = `
 <div>
   <div
-    class="nav-bar-menu-item"
+    class="item"
     data-testid="DATA-TEST-ID"
   >
     <div
-      class="nav-bar-menu-label"
+      class="label"
     >
       ITEM
     </div>
     <i
-      class="nav-bar-menu-caret icon"
+      class="icon caret"
       icon="fas,caret-down"
     />
   </div>
@@ -154,16 +200,16 @@ exports[`NavItem Component NavItem renders with subitems 1`] = `
 exports[`NavItem Component NavItem renders with subitems 2`] = `
 <div>
   <div
-    class="nav-bar-menu-item"
+    class="item"
     data-testid="DATA-TEST-ID"
   >
     <div
-      class="nav-bar-menu-label"
+      class="label"
     >
       ITEM
     </div>
     <i
-      class="nav-bar-menu-caret icon"
+      class="icon caret"
       icon="fas,caret-down"
     />
   </div>
@@ -191,16 +237,16 @@ exports[`NavItem Component NavItem renders with subitems 2`] = `
 exports[`NavItem Component NavItem renders with subitems 3`] = `
 <div>
   <div
-    class="nav-bar-menu-item"
+    class="item"
     data-testid="DATA-TEST-ID"
   >
     <div
-      class="nav-bar-menu-label"
+      class="label"
     >
       ITEM
     </div>
     <i
-      class="nav-bar-menu-caret icon"
+      class="icon caret"
       icon="fas,caret-down"
     />
   </div>
@@ -228,16 +274,16 @@ exports[`NavItem Component NavItem renders with subitems 3`] = `
 exports[`NavItem Component NavItem renders with subitems 4`] = `
 <div>
   <div
-    class="nav-bar-menu-item"
+    class="item"
     data-testid="DATA-TEST-ID"
   >
     <div
-      class="nav-bar-menu-label"
+      class="label"
     >
       ITEM
     </div>
     <i
-      class="nav-bar-menu-caret icon"
+      class="icon caret"
       icon="fas,caret-down"
     />
   </div>

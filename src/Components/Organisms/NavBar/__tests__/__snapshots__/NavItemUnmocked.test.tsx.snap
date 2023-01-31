@@ -4,16 +4,16 @@ exports[`NavItem unmocked Component NavItem unmocked submenu gets closed 1`] = `
 <body>
   <div>
     <div
-      class="nav-bar-menu-item"
+      class="item"
       data-testid="DATA-TEST-ID"
     >
       <div
-        class="nav-bar-menu-label"
+        class="label"
       >
         ITEM
       </div>
       <i
-        class="nav-bar-menu-caret icon"
+        class="icon caret"
         icon="fas,caret-down"
       />
     </div>
@@ -65,16 +65,16 @@ exports[`NavItem unmocked Component NavItem unmocked submenu gets closed 2`] = `
 <body>
   <div>
     <div
-      class="nav-bar-menu-item"
+      class="item"
       data-testid="DATA-TEST-ID"
     >
       <div
-        class="nav-bar-menu-label"
+        class="label"
       >
         ITEM
       </div>
       <i
-        class="nav-bar-menu-caret icon"
+        class="icon caret"
         icon="fas,caret-down"
       />
     </div>
@@ -126,16 +126,16 @@ exports[`NavItem unmocked Component NavItem unmocked submenu gets closed 3`] = `
 <body>
   <div>
     <div
-      class="nav-bar-menu-item"
+      class="item"
       data-testid="DATA-TEST-ID"
     >
       <div
-        class="nav-bar-menu-label"
+        class="label"
       >
         ITEM
       </div>
       <i
-        class="nav-bar-menu-caret icon"
+        class="icon caret"
         icon="fas,caret-down"
       />
     </div>
@@ -187,16 +187,16 @@ exports[`NavItem unmocked Component NavItem unmocked submenu gets closed 4`] = `
 <body>
   <div>
     <div
-      class="nav-bar-menu-item"
+      class="item"
       data-testid="DATA-TEST-ID"
     >
       <div
-        class="nav-bar-menu-label"
+        class="label"
       >
         ITEM
       </div>
       <i
-        class="nav-bar-menu-caret icon"
+        class="icon caret"
         icon="fas,caret-down"
       />
     </div>

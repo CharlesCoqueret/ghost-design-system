@@ -16,10 +16,16 @@ export interface IYearPickerProps {
   highlighted?: boolean;
   /** Input year value (optional, default: undefined) */
   inputValue?: number;
+  /** Ability to clear the value (optional, default: false) */
+  isClearable?: boolean;
   /** Is in Error (optional, default: false) */
   isInError?: boolean;
   /** Name of year picker input */
   name: string;
+  /** Maximum date that can be picked (optional, default: undefined) */
+  maxDate?: Date;
+  /** Minimum date that can be picked (optional, default: undefined) */
+  minDate?: Date;
   /** Handler of value changes (optional, default: undefined) */
   onChange?: (date: number | undefined) => void;
   /** Placeholder value (optional, default: undefined) */
@@ -37,7 +43,10 @@ const YearPickerInput = (props: IYearPickerProps): ReactElement => {
     disabled,
     highlighted,
     inputValue,
+    isClearable,
     isInError,
+    maxDate,
+    minDate,
     name,
     onChange,
     placeholder,
@@ -60,34 +69,37 @@ const YearPickerInput = (props: IYearPickerProps): ReactElement => {
   const selected = inputValue ? today : undefined;
 
   return (
-    <div className={classnames(className, 'field')}>
+    <div className={classnames({ 'input-year-picker-wrapper-read-only': readOnly }, className)}>
       <DatePicker
-        name={name}
-        data-testid={dataTestId}
-        selected={selected}
-        className={classnames('field', {
+        autoComplete='off'
+        autoFocus={false}
+        className={classnames({
           'input-year-picker-input-read-only': readOnly,
           'input-year-picker-input': !readOnly,
           'field-highlighted': highlighted && readOnly,
           'input-error': isInError && !readOnly && !disabled,
         })}
-        autoFocus={false}
-        preventOpenOnFocus
-        onChange={handleChange}
+        data-testid={dataTestId}
+        dateFormat={dateFormat}
         disabled={disabled}
         fixedHeight
-        readOnly={readOnly}
-        placeholderText={!inputValue && (readOnly || disabled) ? '-' : placeholder || dateFormat.toUpperCase()}
-        dateFormat={dateFormat}
         disabledKeyboardNavigation
-        showPopperArrow={false}
-        renderCustomHeader={YearPickerHeader}
-        autoComplete='off'
-        popperContainer={usePortal ? Portal : undefined}
-        showYearPicker
+        isClearable={!(disabled || readOnly) && isClearable}
+        maxDate={maxDate}
+        minDate={minDate}
+        name={name}
+        onChange={handleChange}
         onClickOutside={(event) => {
           event.stopPropagation();
         }}
+        placeholderText={!inputValue && (readOnly || disabled) ? '-' : placeholder || dateFormat.toUpperCase()}
+        popperContainer={usePortal ? Portal : undefined}
+        preventOpenOnFocus
+        readOnly={readOnly}
+        renderCustomHeader={YearPickerHeader}
+        selected={selected}
+        showYearPicker
+        showPopperArrow={false}
         tabIndex={readOnly || disabled ? -1 : 0}
       />
     </div>
@@ -102,6 +114,8 @@ YearPickerInput.defaultProps = {
   highlighted: false,
   isClearable: false,
   isInError: false,
+  maxDate: undefined,
+  minDate: undefined,
   placeholder: undefined,
   readOnly: false,
   usePortal: true,

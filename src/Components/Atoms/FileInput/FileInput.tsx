@@ -6,6 +6,8 @@ import { FileStatusEnum, IFile } from './types';
 import { getFilesWebkitDataTransferItems, initializeIFile, injectDoneStatus, injectUid } from './fileUtils';
 import FileGallery from './FileGallery';
 
+import styles from './FileInput.module.scss';
+
 export interface IFileInputProps {
   /** Accepted types (optional, default: '\*\/\*') */
   acceptTypes?: string;
@@ -401,12 +403,21 @@ const FileInput = (props: IFileInputProps): ReactElement => {
   }, [localItems]);
 
   return (
-    <div className={classnames('field', 'gds-file-input-container', className)} style={style}>
+    <div className={classnames(styles.container, className)} style={style}>
       <div
         key='droparea'
         ref={dropArea}
-        className={classnames('droparea', { disabled: disabled, readonly: readOnly, error: isInError })}>
-        <label className='label'>
+        className={classnames(styles.droparea, {
+          [styles.disabled]: disabled,
+          [styles.readonly]: readOnly,
+          [styles.maxFileReached]:
+            maxFiles !== undefined &&
+            localItems.filter((file) => {
+              return file.status && [FileStatusEnum.DONE, FileStatusEnum.UPLOADING].includes(file.status);
+            }).length >= maxFiles,
+          [styles.error]: isInError,
+        })}>
+        <label className={styles.label}>
           {uploadMessage}
           <input
             accept={acceptTypes}
@@ -423,7 +434,7 @@ const FileInput = (props: IFileInputProps): ReactElement => {
           />
         </label>
       </div>
-      <div key='gallery' className='gallery'>
+      <div key='gallery' className={styles.gallery}>
         {readOnly && localItems.length === 0 && '-'}
         {localItems.map((item) => {
           return (

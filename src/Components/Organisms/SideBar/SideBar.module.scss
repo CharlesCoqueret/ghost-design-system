@@ -1,0 +1,43 @@
+.container {
+  position: fixed;
+  border-right: rgb(var(--theme-provider-chalk)) 1px solid;
+  overflow: hidden auto;
+  box-sizing: border-box;
+  clip-path: inset(0px);
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin-bottom: 0;
+    padding-left: 0;
+    min-height: 100%;
+    flex-direction: column;
+    margin-block: 0px;
+    padding-inline: 0px;
+  }
+
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+    position: absolute;
+    box-sizing: border-box;
+    min-height: 100%;
+    border-right: rgb(var(--theme-provider-chalk)) 1px solid;
+    top: 0;
+    left: 0;
+    visibility: visible;
+    transition: left 0.5s ease-in-out, visibility 0.5s linear;
+  }
+
+  .sidebarHidden {
+    visibility: hidden;
+    transition: left 0.5s ease-in-out, visibility 0.5s linear 0.5s;
+  }
+
+  &.unfixed {
+    position: relative;
+    height: stretch;
+  }
+}

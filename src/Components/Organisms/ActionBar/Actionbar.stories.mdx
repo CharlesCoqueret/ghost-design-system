@@ -4,8 +4,6 @@ import ActionBar from './ActionBar';
 import { ColorButtonEnum } from '../../Molecules';
 import { Badge, BadgeColorsEnum, Icon, Tooltip } from '../../Atoms';
 
-import actionBarStyle from '../../../assets/_actionbar.scss?raw';
-
 export const Template = (args) => {
   return <ActionBar {...args} />;
 };
@@ -257,9 +255,3 @@ For layout management, please refer to this [example](https://codesandbox.io/s/s
     {Template.bind({})}
   </Story>
 </Canvas>
-
-## Style
-
-[source](https://github.com/CharlesCoqueret/ghost-design-system/blob/main/src/assets/_actionbar.scss)
-
-<Source language='css' dark format={true} code={actionBarStyle} />

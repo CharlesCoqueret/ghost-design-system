@@ -7,6 +7,8 @@ import { MenuDirectionEnum, Tooltip } from '../Tooltip';
 import { FileStatusEnum, IFile } from './types';
 import { formatBytes } from './fileUtils';
 
+import styles from './FileGallery.module.scss';
+
 export interface IFileGallery {
   /** For test purpose only */
   dataTestId?: string;
@@ -60,19 +62,17 @@ const FileGallery = (props: IFileGallery): ReactElement => {
 
   return (
     <Tooltip tooltip={file.error} direction={MenuDirectionEnum.TOP}>
-      <div className={classnames('item-container', { error: file.status === FileStatusEnum.ERROR })}>
-        <div className='left'>
-          <div className='paperclip-icon'>
-            {file.status === FileStatusEnum.ERROR ? (
-              <Icon icon={['fal', 'exclamation-triangle']} />
-            ) : (
-              <Icon icon={['fal', 'paperclip']} />
-            )}
+      <div className={classnames(styles.container, { [styles.error]: file.status === FileStatusEnum.ERROR })}>
+        <div className={styles.left}>
+          <div className={styles.paperclipIcon}>
+            <Icon
+              icon={file.status === FileStatusEnum.ERROR ? ['fal', 'exclamation-triangle'] : ['fal', 'paperclip']}
+            />
           </div>
           <div
             data-testid={dataTestId ? `${dataTestId}-download` : undefined}
-            className={classnames('name', {
-              downloadable: downloadable,
+            className={classnames(styles.name, {
+              [styles.downloadable]: downloadable,
             })}
             onClick={
               downloadable
@@ -107,29 +107,31 @@ const FileGallery = (props: IFileGallery): ReactElement => {
           </div>
           {downloading && (
             <Icon
-              className='spinner-icon'
+              className={styles.spinnerIcon}
               data-testid={dataTestId ? `${dataTestId}-spinner` : undefined}
               icon={['fal', 'spinner']}
             />
           )}
         </div>
-        <div className='right'>
+        <div className={styles.right}>
           {showProgressBar == true &&
             file.uid !== undefined &&
             progress !== undefined &&
-            progress[file.uid] !== undefined && <progress className='progress' max={100} value={progress[file.uid]} />}
+            progress[file.uid] !== undefined && (
+              <progress className={styles.progress} max={100} value={progress[file.uid]} />
+            )}
 
           {readOnly || disabled ? (
             <></>
           ) : file.status && [FileStatusEnum.UPLOADING, FileStatusEnum.DELETING].includes(file.status) ? (
             <Icon
-              className='spinner-icon'
+              className={styles.spinnerIcon}
               data-testid={dataTestId ? `${dataTestId}-spinner` : undefined}
               icon={['fal', 'spinner']}
             />
           ) : (
             <Button
-              className='delete-icon'
+              className={styles.deleteIcon}
               icon={['fal', 'trash-alt']}
               color={ColorButtonEnum.REVERSED}
               dataTestId={dataTestId ? `${dataTestId}-delete` : undefined}

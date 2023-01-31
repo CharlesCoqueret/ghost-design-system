@@ -19,7 +19,6 @@ const RichTextCell = <T,>(props: ICellProps<T, IColumnRichText<T>>): ReactElemen
         dataTestId={dataTestId}
         enableImage={column.enableImage}
         enableLink={column.enableLink}
-        inputClassName={classnames('gds-typography', { ellipsis: column.ellipsis })}
         inputValue={displayValue}
         locale={column.locale}
         maxLength={column.maxLength}

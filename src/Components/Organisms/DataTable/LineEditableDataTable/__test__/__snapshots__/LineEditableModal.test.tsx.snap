@@ -4,45 +4,46 @@ exports[`LineEditableModal component LineEditableModal renders with amount and s
 <div>
   <div>
     <div
-      class="gds-modal-overlay"
+      class="overlay"
     >
       <div
-        class="modal-content size-lg"
+        class="container large"
       >
         <div
-          class="modal-header"
+          class="header"
         >
           <div
-            class="modal-title"
+            class="title"
           >
             TITLE
           </div>
         </div>
         <div
-          class="modal-body"
+          class="container"
         >
           <div
-            class="gds-layout-container"
+            class=""
           >
             <div
-              class="gds-layout-col"
+              class="col"
             >
               <div
-                class="gds-layout-row"
+                class="row"
               >
                 <div
-                  class="gds-layout-col"
+                  class="col"
                 >
                   <div
-                    class="gds-field-group"
+                    class="fieldGroup"
                   >
                     <label
-                      class="field-label"
+                      class="label"
                     >
                       Amount
                     </label>
                     <input
-                      class="gds-amount-field"
+                      autocomplete="off"
+                      class="default"
                       inputmode="numeric"
                       name="amount"
                       type="text"
@@ -51,18 +52,19 @@ exports[`LineEditableModal component LineEditableModal renders with amount and s
                   </div>
                 </div>
                 <div
-                  class="gds-layout-col"
+                  class="col"
                 >
                   <div
-                    class="gds-field-group"
+                    class="fieldGroup"
                   >
                     <label
-                      class="field-label"
+                      class="label"
                     >
                       Amount
                     </label>
                     <span
-                      class="gds-amount-field amount-field-read-only"
+                      autocomplete="off"
+                      class="default readOnly"
                     >
                       1
                     </span>
@@ -73,28 +75,28 @@ exports[`LineEditableModal component LineEditableModal renders with amount and s
           </div>
         </div>
         <div
-          class="modal-footer"
+          class="container"
         >
           <button
-            class="gds-button-content"
+            class="button"
             color="secondary"
             tabindex="0"
             type="button"
           >
             <div
-              class="button-label-container"
+              class="label"
             >
               Cancel
             </div>
           </button>
           <button
-            class="gds-button-content"
+            class="button"
             color="primary"
             tabindex="0"
             type="button"
           >
             <div
-              class="button-label-container"
+              class="label"
             >
               Submit
             </div>
@@ -110,54 +112,54 @@ exports[`LineEditableModal component LineEditableModal renders with amount hidde
 <div>
   <div>
     <div
-      class="gds-modal-overlay"
+      class="overlay"
     >
       <div
-        class="modal-content size-lg"
+        class="container large"
       >
         <div
-          class="modal-header"
+          class="header"
         >
           <div
-            class="modal-title"
+            class="title"
           >
             TITLE
           </div>
         </div>
         <div
-          class="modal-body"
+          class="container"
         >
           <div
-            class="gds-layout-container"
+            class=""
           >
             <div
-              class="gds-layout-col"
+              class="col"
             />
           </div>
         </div>
         <div
-          class="modal-footer"
+          class="container"
         >
           <button
-            class="gds-button-content"
+            class="button"
             color="secondary"
             tabindex="0"
             type="button"
           >
             <div
-              class="button-label-container"
+              class="label"
             >
               Cancel
             </div>
           </button>
           <button
-            class="gds-button-content"
+            class="button"
             color="primary"
             tabindex="0"
             type="button"
           >
             <div
-              class="button-label-container"
+              class="label"
             >
               Submit
             </div>

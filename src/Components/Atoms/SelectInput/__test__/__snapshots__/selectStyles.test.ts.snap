@@ -3,10 +3,10 @@
 exports[`customStyles method customStyles option 1`] = `
 {
   ":active": {
-    "backgroundColor": "rgba(38,186,212,0.5)",
+    "backgroundColor": "rgba(var(--theme-provider-scooter), 0.5)",
   },
-  "backgroundColor": "rgba(38,186,212,0.5)",
-  "color": "rgb(0,0,0)",
+  "backgroundColor": "rgba(var(--theme-provider-scooter), 0.5)",
+  "color": "rgb(var(--theme-provider-black))",
   "cursor": "pointer",
   "height": "5px",
   "maxWidth": "100%",
@@ -20,10 +20,10 @@ exports[`customStyles method customStyles option 1`] = `
 exports[`customStyles method customStyles option 2`] = `
 {
   ":active": {
-    "backgroundColor": "rgba(38,186,212,0.66)",
+    "backgroundColor": "rgba(var(--theme-provider-scooter), 0.66)",
   },
-  "backgroundColor": "rgba(38,186,212,0.33)",
-  "color": "rgb(0,0,0)",
+  "backgroundColor": "rgba(var(--theme-provider-scooter), 0.33)",
+  "color": "rgb(var(--theme-provider-black))",
   "cursor": "pointer",
   "height": "5px",
   "maxWidth": "100%",

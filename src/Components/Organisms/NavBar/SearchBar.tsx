@@ -2,6 +2,8 @@ import React, { ChangeEvent, ReactElement, useRef, useState } from 'react';
 import { ControlledMenu, MenuItem } from '@szhsin/react-menu';
 import { Portal } from '../../Atoms/Portal';
 
+import styles from './SearchBar.module.scss';
+
 export interface ISearchBarProps {
   onSearch: (searchTerm: string) => Promise<Array<ReactElement>>;
   placeholder: string;
@@ -47,25 +49,25 @@ const SearchBar = (props: ISearchBarProps): ReactElement => {
 
   return (
     <>
-      <div className='nav-bar-menu-item nav-bar-search-container' ref={ref}>
+      <div className={styles.container} ref={ref}>
         <input
-          type='text'
-          placeholder={placeholder}
-          className='nav-bar-search'
-          onChange={handleChange}
-          autoComplete='false'
+          autoComplete='off'
+          className={styles.search}
           data-testid={dataTestId}
+          onChange={handleChange}
+          placeholder={placeholder}
+          type='text'
         />
       </div>
       <Portal>
         <ControlledMenu
-          state={isOpen ? 'open' : 'closed'}
           align='center'
-          arrow
           anchorRef={ref}
-          skipOpen={skipOpen}
+          arrow
+          captureFocus={false}
           onClose={closeMenu}
-          captureFocus={false}>
+          skipOpen={skipOpen}
+          state={isOpen ? 'open' : 'closed'}>
           {searching
             ? searchingIndicator
             : result?.map((resultItem, index) => {

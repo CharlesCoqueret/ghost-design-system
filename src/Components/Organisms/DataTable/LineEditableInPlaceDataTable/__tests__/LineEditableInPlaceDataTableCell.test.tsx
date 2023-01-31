@@ -123,7 +123,7 @@ describe('LineEditableInPlaceDataTableCell component', () => {
                 title: 'Button',
                 type: ColumnType.BUTTON,
                 moreActionsMessage: 'More actions',
-                buttons: [{ label: 'label', icon: ['fal', 'cog'] }],
+                buttons: [{ label: 'label', icon: ['fal', 'gear'] }],
               }}
               extra={{
                 editedRowIndex: 0,

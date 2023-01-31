@@ -9,7 +9,7 @@ exports[`EditableDataTableCell richtext case EditableDataTableCell renders with 
           class=""
         >
           <div>
-            {"inputClassName":"gds-typography","inputValue":"richtext","name":"richtext","readOnly":false}
+            {"inputValue":"richtext","name":"richtext","readOnly":false}
           </div>
         </td>
       </tr>

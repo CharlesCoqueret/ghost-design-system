@@ -119,7 +119,7 @@ describe('EditableDataTableCell component', () => {
                 title: 'Button',
                 type: ColumnType.BUTTON,
                 moreActionsMessage: 'More actions',
-                buttons: [{ label: 'label', icon: ['fal', 'cog'] }],
+                buttons: [{ label: 'label', icon: ['fal', 'gear'] }],
               }}
               handleUpdateDataChange={handleUpdateDataChangeMock}
               row={{ number: 1 }}

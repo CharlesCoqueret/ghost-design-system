@@ -12,17 +12,17 @@ exports[`ButtonCell component ButtonCell renders and handles click 1`] = `
             class="table--cell--value--button"
           >
             <button
-              class="gds-button-content"
+              class="button"
               color="reversed"
               data-testid="BUTTON1"
               tabindex="0"
               type="button"
             >
               <div
-                class="button-icon-container"
+                class="icon"
               >
                 <i
-                  class="button-icon icon"
+                  class="icon"
                   icon="fal,briefcase"
                 />
               </div>
@@ -51,16 +51,16 @@ exports[`ButtonCell component ButtonCell renders hidden 1`] = `
             class="table--cell--value--button"
           >
             <button
-              class="gds-button-content"
+              class="button"
               color="reversed"
               tabindex="0"
               type="button"
             >
               <div
-                class="button-icon-container"
+                class="icon"
               >
                 <i
-                  class="button-icon icon"
+                  class="icon"
                   icon="fal,briefcase"
                 />
               </div>
@@ -106,18 +106,18 @@ exports[`ButtonCell component ButtonCell renders with more than 3 buttons and ha
             class="table--cell--value--button"
           >
             <button
-              class="gds-button-content"
+              class="button"
               color="reversed"
               data-testid="MORE"
               tabindex="0"
               type="button"
             >
               <div
-                class="button-icon-container"
+                class="icon"
               >
                 <i
-                  class="button-icon icon"
-                  icon="fal,ellipsis-h"
+                  class="icon"
+                  icon="fal,ellipsis"
                 />
               </div>
             </button>
@@ -169,18 +169,18 @@ exports[`ButtonCell component ButtonCell renders with more than 3 buttons and ha
             class="table--cell--value--button"
           >
             <button
-              class="gds-button-content"
+              class="button"
               color="reversed"
               data-testid="MORE"
               tabindex="0"
               type="button"
             >
               <div
-                class="button-icon-container"
+                class="icon"
               >
                 <i
-                  class="button-icon icon"
-                  icon="fal,ellipsis-h"
+                  class="icon"
+                  icon="fal,ellipsis"
                 />
               </div>
             </button>

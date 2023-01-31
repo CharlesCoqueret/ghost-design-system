@@ -3,47 +3,45 @@
 exports[`Form Component Form renders with description and sections 1`] = `
 <div>
   <div
-    class="gds-layout-container"
+    class=""
   >
     <div
-      class="gds-layout-col"
+      class="col"
     >
-      <div
-        class="gds-layout-section-container"
-      >
+      <div>
         <div
-          class="section-header collapsible"
+          class="header collapsible"
         >
           <h2
-            class="gds-typography"
+            class="typography h2"
           >
             Title
           </h2>
           <i
-            class="collapse-icon open icon"
+            class="icon icon open"
             icon="fal,chevron-left"
           />
         </div>
         <div
           aria-hidden="false"
-          class="section-body"
+          class="body"
           id="react-collapsed-panel-1"
           style="box-sizing: border-box; display: none; height: 0px; overflow: hidden;"
         >
           <div
-            class="gds-layout-container"
+            class=""
           >
             <div
-              class="gds-layout-col"
+              class="col"
             />
           </div>
         </div>
         <div
-          class="section-footer"
+          class="footer"
         />
       </div>
       <div
-        class="gds-layout-row"
+        class="row"
       >
         Description
       </div>
@@ -55,26 +53,27 @@ exports[`Form Component Form renders with description and sections 1`] = `
 exports[`Form Component Form renders with mandatory field 1`] = `
 <div>
   <div
-    class="gds-layout-container"
+    class=""
   >
     <div
-      class="gds-layout-col"
+      class="col"
     >
       <div
-        class="gds-field-group"
+        class="fieldGroup"
       >
         <label
-          class="field-label"
+          class="label"
         >
           Number
           <span
-            class="field-label-mandatory"
+            class="mandatory"
           >
             *
           </span>
         </label>
         <input
-          class="gds-amount-field"
+          autocomplete="off"
+          class="default"
           inputmode="numeric"
           name="number"
           type="text"
@@ -89,21 +88,22 @@ exports[`Form Component Form renders with mandatory field 1`] = `
 exports[`Form Component Form renders without validation schema 1`] = `
 <div>
   <div
-    class="gds-layout-container"
+    class=""
   >
     <div
-      class="gds-layout-col"
+      class="col"
     >
       <div
-        class="gds-field-group"
+        class="fieldGroup"
       >
         <label
-          class="field-label"
+          class="label"
         >
           Number
         </label>
         <input
-          class="gds-amount-field"
+          autocomplete="off"
+          class="default"
           inputmode="numeric"
           name="number"
           type="text"

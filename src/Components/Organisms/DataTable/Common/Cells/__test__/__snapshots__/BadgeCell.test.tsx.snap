@@ -9,10 +9,10 @@ exports[`BadgeCell component BadgeCell handles changes 1`] = `
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <div
-              class="field gds-select-container input-select-field input-select-field"
+              class="container"
             >
               <div
                 class=" css-1959ul7-container"
@@ -28,7 +28,7 @@ exports[`BadgeCell component BadgeCell handles changes 1`] = `
                   class="css-1f43avz-a11yText-A11yText"
                 />
                 <div
-                  class=" css-1l9db9l-control"
+                  class=" css-yqi6bw-control"
                 >
                   <div
                     class=" css-9plg90-ValueContainer"
@@ -70,7 +70,7 @@ exports[`BadgeCell component BadgeCell handles changes 1`] = `
                       aria-hidden="true"
                     >
                       <i
-                        class="dynamic-search-icon icon"
+                        class="icon icon"
                         icon="fal,chevron-down"
                       />
                     </div>
@@ -100,10 +100,10 @@ exports[`BadgeCell component BadgeCell handles changes 2`] = `
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <div
-              class="field gds-select-container input-select-field input-select-field"
+              class="container"
             >
               <div
                 class=" css-1959ul7-container"
@@ -119,7 +119,7 @@ exports[`BadgeCell component BadgeCell handles changes 2`] = `
                   class="css-1f43avz-a11yText-A11yText"
                 />
                 <div
-                  class=" css-1l9db9l-control"
+                  class=" css-yqi6bw-control"
                 >
                   <div
                     class=" css-9plg90-ValueContainer"
@@ -161,7 +161,7 @@ exports[`BadgeCell component BadgeCell handles changes 2`] = `
                       aria-hidden="true"
                     >
                       <i
-                        class="dynamic-search-icon icon"
+                        class="icon icon"
                         icon="fal,chevron-down"
                       />
                     </div>
@@ -191,7 +191,7 @@ exports[`BadgeCell component BadgeCell renders 1`] = `
           class=""
         >
           <span
-            class="gds-badge secondary table--cell--value--badge-no-margin"
+            class="default secondary table--cell--value--badge-no-margin"
           >
             label 1
           </span>
@@ -211,10 +211,10 @@ exports[`BadgeCell component BadgeCell renders cell editing with no row input 1`
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <div
-              class="field gds-select-container input-select-field input-select-field"
+              class="container"
             >
               <div
                 class=" css-1959ul7-container"
@@ -230,7 +230,7 @@ exports[`BadgeCell component BadgeCell renders cell editing with no row input 1`
                   class="css-1f43avz-a11yText-A11yText"
                 />
                 <div
-                  class=" css-1l9db9l-control"
+                  class=" css-yqi6bw-control"
                 >
                   <div
                     class=" css-9plg90-ValueContainer"
@@ -274,7 +274,7 @@ exports[`BadgeCell component BadgeCell renders cell editing with no row input 1`
                       aria-hidden="true"
                     >
                       <i
-                        class="dynamic-search-icon icon"
+                        class="icon icon"
                         icon="fal,chevron-down"
                       />
                     </div>
@@ -305,7 +305,7 @@ exports[`BadgeCell component BadgeCell renders hidden 1`] = `
           style="display: none;"
         >
           <span
-            class="gds-badge secondary table--cell--value--badge-no-margin"
+            class="default secondary table--cell--value--badge-no-margin"
           >
             label 1
           </span>
@@ -325,10 +325,10 @@ exports[`BadgeCell component BadgeCell renders row editing with no row input 1`]
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <div
-              class="field gds-select-container input-select-field input-select-field"
+              class="container"
             >
               <div
                 class=" css-1959ul7-container"
@@ -344,7 +344,7 @@ exports[`BadgeCell component BadgeCell renders row editing with no row input 1`]
                   class="css-1f43avz-a11yText-A11yText"
                 />
                 <div
-                  class=" css-1l9db9l-control"
+                  class=" css-yqi6bw-control"
                 >
                   <div
                     class=" css-9plg90-ValueContainer"
@@ -388,7 +388,7 @@ exports[`BadgeCell component BadgeCell renders row editing with no row input 1`]
                       aria-hidden="true"
                     >
                       <i
-                        class="dynamic-search-icon icon"
+                        class="icon icon"
                         icon="fal,chevron-down"
                       />
                     </div>
@@ -432,7 +432,7 @@ exports[`BadgeCell component BadgeCell renders with forced value 1`] = `
           class=""
         >
           <span
-            class="gds-badge secondary table--cell--value--badge-no-margin"
+            class="default secondary table--cell--value--badge-no-margin"
           >
             label 2
           </span>

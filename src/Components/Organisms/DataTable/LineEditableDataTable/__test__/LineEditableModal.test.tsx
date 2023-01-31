@@ -247,7 +247,7 @@ describe('columnToFieldMapper helper', () => {
           type: ColumnType.BADGE,
         },
         {
-          buttons: [{ label: 'Button', icon: ['fal', 'cog'] }],
+          buttons: [{ label: 'Button', icon: ['fal', 'gear'] }],
           moreActionsMessage: 'moreActionsMessage',
           title: 'Button',
           type: ColumnType.BUTTON,
@@ -387,7 +387,6 @@ describe('columnToFieldMapper helper', () => {
         thousandsGroupStyle: undefined,
       },
       {
-        colors: undefined,
         dataIndex: 'badge',
         fieldType: FieldTypeEnum.SELECT,
         isClearable: undefined,
@@ -429,7 +428,6 @@ describe('columnToFieldMapper helper', () => {
         label: 'Description',
       },
       {
-        colors: undefined,
         dataIndex: 'dynamicsearch',
         fieldType: 'dynamicsearch',
         isClearable: undefined,
@@ -465,7 +463,6 @@ describe('columnToFieldMapper helper', () => {
         uploadMessage: undefined,
       },
       {
-        colors: undefined,
         dataIndex: 'multiselect',
         eraseValueWhenNotInOptions: undefined,
         fieldType: 'multiselect',

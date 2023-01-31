@@ -96,25 +96,25 @@ describe('LineEditableInPlaceDataTable component', () => {
       />,
     );
 
-    expect(container).toMatchSnapshot(); // 1
+    expect(container).toMatchSnapshot();
 
     // Edit
     const editButton = screen.getByTestId('DATA-TEST-ID-edit');
     userEvent.click(editButton);
 
-    expect(container).toMatchSnapshot(); // 2
+    expect(container).toMatchSnapshot();
     expect(onRowEditMock).toBeCalledTimes(1);
     expect(onRowEditMock).toBeCalledWith({ number: 1 }, 0);
 
     const input = screen.getByPlaceholderText('PLACEHOLDER');
     userEvent.clear(input);
 
-    expect(container).toMatchSnapshot(); // 3
+    expect(container).toMatchSnapshot();
 
     const cancelButton = screen.getByTestId('DATA-TEST-ID-cancel');
     userEvent.click(cancelButton);
 
-    expect(container).toMatchSnapshot(); // 4
+    expect(container).toMatchSnapshot();
     expect(onRowCancelEditMock).toBeCalledTimes(1);
     expect(onRowCancelEditMock).toBeCalledWith({ number: undefined }, 0);
   });

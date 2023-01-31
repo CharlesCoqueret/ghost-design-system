@@ -5,6 +5,8 @@ import classnames from 'classnames';
 import NavItem, { INavItemProps } from './NavItem';
 import SearchBar, { ISearchBarProps } from './SearchBar';
 
+import styles from './NavBar.module.scss';
+
 export interface IBrandProps {
   /** Logo positionned at the top right corner of the app */
   logoSource: string;
@@ -31,29 +33,20 @@ const NavBar = (props: INavBarProps): ReactElement => {
   const { brand, navButtons, navIcons, searchBar, className } = props;
 
   return (
-    <nav className={classnames('gds-nav-bar-container', 'noselect', className)}>
-      <div className='nav-bar-brand' key='brand'>
+    <nav className={classnames(styles.container, className)}>
+      <div className={styles.brand} key='brand'>
         <NavLink to={brand.redirection || NavBar.defaultProps.brand.redirection}>
-          <img
-            src={brand.logoSource}
-            alt={brand.alt ?? NavBar.defaultProps.brand.alt}
-            className='nav-bar-brand-image'
-          />
+          <img src={brand.logoSource} alt={brand.alt ?? NavBar.defaultProps.brand.alt} className={styles.brandLogo} />
         </NavLink>
       </div>
-      <div className='nav-bar-items-container' key='items'>
-        <div className='nav-bar-items-group' key='leftitems'>
+      <div className={styles.itemsContainer} key='items'>
+        <div className={styles.itemsGroup} key='leftitems'>
           {navButtons?.map((navItem) => (
-            <NavItem
-              key={`menu-${
-                navItem.label || (navItem.icon && Array.isArray(navItem.icon) && navItem.icon[1]) || navItem.tooltip
-              }`}
-              {...navItem}
-            />
+            <NavItem key={`menu-${navItem.label || navItem.tooltip}`} {...navItem} />
           ))}
         </div>
-        <div className='nav-bar-items-group' key='rightitems'>
-          {searchBar && <SearchBar {...searchBar} />}
+        <div className={styles.itemsGroup} key='rightitems'>
+          {searchBar && <SearchBar key='searchbar' {...searchBar} />}
           {navIcons?.map((navItem) => (
             <NavItem
               key={`menu-${

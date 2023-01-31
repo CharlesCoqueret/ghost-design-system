@@ -164,7 +164,7 @@ const RichTextInput = (props: IRichTextInputProps): ReactElement => {
 
   return (
     <div
-      className={classnames('field', 'gds-rich-text-container', {
+      className={classnames('gds-rich-text-container', {
         disabled: disabled,
         readonly: readOnly,
         error: !disabled && !readOnly && isInError,

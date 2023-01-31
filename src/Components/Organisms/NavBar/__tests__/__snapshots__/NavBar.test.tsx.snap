@@ -3,10 +3,10 @@
 exports[`NavBar Component NavBar renders 1`] = `
 <div>
   <nav
-    class="gds-nav-bar-container noselect"
+    class="container"
   >
     <div
-      class="nav-bar-brand"
+      class="brand"
     >
       <a
         href="redirection"
@@ -14,36 +14,36 @@ exports[`NavBar Component NavBar renders 1`] = `
         partial url
         <img
           alt="alt"
-          class="nav-bar-brand-image"
+          class="brandLogo"
           src="logoSource"
         />
       </a>
     </div>
     <div
-      class="nav-bar-items-container"
+      class="itemsContainer"
     >
       <div
-        class="nav-bar-items-group"
+        class="itemsGroup"
       >
         <div
-          class="nav-bar-menu-item"
+          class="item"
         >
           <div
-            class="nav-bar-menu-label"
+            class="label"
           >
             button
           </div>
         </div>
       </div>
       <div
-        class="nav-bar-items-group"
+        class="itemsGroup"
       >
         <div
-          class="nav-bar-menu-item nav-bar-search-container"
+          class="container"
         >
           <input
-            autocomplete="false"
-            class="nav-bar-search"
+            autocomplete="off"
+            class="search"
             placeholder="placeholder"
             type="text"
           />
@@ -56,14 +56,14 @@ exports[`NavBar Component NavBar renders 1`] = `
           </div>
         </div>
         <div
-          class="nav-bar-menu-item"
+          class="item"
         >
           <i
             class="icon"
             icon="fal,icons"
           />
           <div
-            class="nav-bar-menu-label"
+            class="label"
           >
             button
           </div>
@@ -77,10 +77,10 @@ exports[`NavBar Component NavBar renders 1`] = `
 exports[`NavBar Component NavBar renders with variations 1`] = `
 <div>
   <nav
-    class="gds-nav-bar-container noselect"
+    class="container"
   >
     <div
-      class="nav-bar-brand"
+      class="brand"
     >
       <a
         href="/"
@@ -88,39 +88,39 @@ exports[`NavBar Component NavBar renders with variations 1`] = `
         partial url
         <img
           alt="logo"
-          class="nav-bar-brand-image"
+          class="brandLogo"
           src="logosource"
         />
       </a>
     </div>
     <div
-      class="nav-bar-items-container"
+      class="itemsContainer"
     >
       <div
-        class="nav-bar-items-group"
+        class="itemsGroup"
       >
         <div
-          class="nav-bar-menu-item"
+          class="item"
         >
           <i
             class="icon"
             icon="fal,icons"
           />
           <div
-            class="nav-bar-menu-label"
+            class="label"
           >
             button
           </div>
         </div>
       </div>
       <div
-        class="nav-bar-items-group"
+        class="itemsGroup"
       >
         <div
-          class="nav-bar-menu-item"
+          class="item"
         >
           <div
-            class="nav-bar-menu-label"
+            class="label"
           >
             button
           </div>
@@ -134,10 +134,10 @@ exports[`NavBar Component NavBar renders with variations 1`] = `
 exports[`NavBar Component NavBar renders without buttons or icons 1`] = `
 <div>
   <nav
-    class="gds-nav-bar-container noselect"
+    class="container"
   >
     <div
-      class="nav-bar-brand"
+      class="brand"
     >
       <a
         href="redirection"
@@ -145,19 +145,19 @@ exports[`NavBar Component NavBar renders without buttons or icons 1`] = `
         partial url
         <img
           alt="alt"
-          class="nav-bar-brand-image"
+          class="brandLogo"
           src="logoSource"
         />
       </a>
     </div>
     <div
-      class="nav-bar-items-container"
+      class="itemsContainer"
     >
       <div
-        class="nav-bar-items-group"
+        class="itemsGroup"
       />
       <div
-        class="nav-bar-items-group"
+        class="itemsGroup"
       />
     </div>
   </nav>

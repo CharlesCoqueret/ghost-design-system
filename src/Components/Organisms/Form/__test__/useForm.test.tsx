@@ -15,7 +15,7 @@ jest.mock('../Form', () => {
       return (
         <>
           <div>Mocked Form props: {JSON.stringify(props)}</div>
-          {props.validationError && <div className='field-error-message' />}
+          {props.validationError && <div className='field-error' />}
         </>
       );
     },

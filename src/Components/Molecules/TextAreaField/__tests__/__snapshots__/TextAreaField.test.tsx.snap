@@ -3,13 +3,13 @@
 exports[`TextAreaField Component TextAreaField renders 1`] = `
 <div>
   <div
-    class="gds-field-group field-size-2"
+    class="fieldGroup size-2"
   >
     <div
-      class="field gds-input-textarea-parent"
+      class="container"
     >
       <textarea
-        class="input-textarea-field"
+        class="textarea"
         id="NAME"
         name="NAME"
       />
@@ -21,31 +21,14 @@ exports[`TextAreaField Component TextAreaField renders 1`] = `
 exports[`TextAreaField Component TextAreaField renders handles changes 1`] = `
 <div>
   <div
-    class="gds-field-group"
+    class="fieldGroup"
   >
     <div
-      class="field gds-input-textarea-parent"
+      class="container"
     >
       <textarea
-        class="input-textarea-field"
-        id="NAME"
-        name="NAME"
-      />
-    </div>
-  </div>
-</div>
-`;
-
-exports[`TextAreaField Component TextAreaField renders handles changes 2`] = `
-<div>
-  <div
-    class="gds-field-group"
-  >
-    <div
-      class="field gds-input-textarea-parent"
-    >
-      <textarea
-        class="input-textarea-field"
+        class="textarea"
+        data-testid="DATA-TEST-ID"
         id="NAME"
         name="NAME"
       />
@@ -57,13 +40,13 @@ exports[`TextAreaField Component TextAreaField renders handles changes 2`] = `
 exports[`TextAreaField Component TextAreaField renders in readonly 1`] = `
 <div>
   <div
-    class="gds-field-group field-size-6"
+    class="fieldGroup size-6"
   >
     <div
-      class="field gds-input-textarea-parent"
+      class="container"
     >
       <textarea
-        class="input-textarea-field-read-only"
+        class="textarea readOnly"
         id="NAME"
         name="NAME"
         readonly=""
@@ -78,13 +61,13 @@ exports[`TextAreaField Component TextAreaField renders in readonly 1`] = `
 exports[`TextAreaField Component TextAreaField renders in readonly highlighted 1`] = `
 <div>
   <div
-    class="gds-field-group"
+    class="fieldGroup"
   >
     <div
-      class="field gds-input-textarea-parent"
+      class="container"
     >
       <textarea
-        class="input-textarea-field-read-only field-highlighted"
+        class="textarea readOnly highlighted"
         id="NAME"
         name="NAME"
         placeholder="-"
@@ -98,13 +81,13 @@ exports[`TextAreaField Component TextAreaField renders in readonly highlighted 1
 exports[`TextAreaField Component TextAreaField renders with error 1`] = `
 <div>
   <div
-    class="gds-field-group"
+    class="fieldGroup"
   >
     <div
-      class="field gds-input-textarea-parent"
+      class="container"
     >
       <textarea
-        class="input-textarea-field input-error"
+        class="textarea error"
         id="NAME"
         name="NAME"
       >
@@ -112,10 +95,10 @@ exports[`TextAreaField Component TextAreaField renders with error 1`] = `
       </textarea>
     </div>
     <div
-      class="field-message"
+      class="message"
     >
       <div
-        class="field-error-message"
+        class="error field-error"
       >
         ERROR-MESSAGE
       </div>

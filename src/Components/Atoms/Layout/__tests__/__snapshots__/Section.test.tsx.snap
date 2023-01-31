@@ -2,26 +2,24 @@
 
 exports[`Section Component Section renders 1`] = `
 <div>
-  <div
-    class="gds-layout-section-container"
-  >
+  <div>
     <div
-      class="section-header collapsible"
+      class="header collapsible"
       data-testid="DATA-TEST-ID"
     >
       <h2
-        class="gds-typography"
+        class="typography h2"
       >
         TITLE
       </h2>
       <i
-        class="collapse-icon open icon"
+        class="icon icon open"
         icon="fal,chevron-left"
       />
     </div>
     <div
       aria-hidden="false"
-      class="section-body"
+      class="body"
       id="react-collapsed-panel-1"
       style="box-sizing: border-box; display: none; height: 0px; overflow: hidden;"
     >
@@ -33,7 +31,7 @@ exports[`Section Component Section renders 1`] = `
       />
     </div>
     <div
-      class="section-footer"
+      class="footer"
     />
   </div>
 </div>
@@ -41,26 +39,24 @@ exports[`Section Component Section renders 1`] = `
 
 exports[`Section Component Section renders 2`] = `
 <div>
-  <div
-    class="gds-layout-section-container"
-  >
+  <div>
     <div
-      class="section-header collapsible"
+      class="header collapsible"
       data-testid="DATA-TEST-ID"
     >
       <h2
-        class="gds-typography"
+        class="typography h2"
       >
         TITLE
       </h2>
       <i
-        class="collapse-icon icon"
+        class="icon icon"
         icon="fal,chevron-left"
       />
     </div>
     <div
       aria-hidden="true"
-      class="section-body"
+      class="body"
       id="react-collapsed-panel-1"
       style="box-sizing: border-box; display: none; height: 0px; overflow: hidden;"
     >
@@ -72,7 +68,7 @@ exports[`Section Component Section renders 2`] = `
       />
     </div>
     <div
-      class="section-footer"
+      class="footer"
     />
   </div>
 </div>
@@ -80,26 +76,24 @@ exports[`Section Component Section renders 2`] = `
 
 exports[`Section Component Section renders 3`] = `
 <div>
-  <div
-    class="gds-layout-section-container"
-  >
+  <div>
     <div
-      class="section-header collapsible"
+      class="header collapsible"
       data-testid="DATA-TEST-ID"
     >
       <h2
-        class="gds-typography"
+        class="typography h2"
       >
         TITLE
       </h2>
       <i
-        class="collapse-icon open icon"
+        class="icon icon open"
         icon="fal,chevron-left"
       />
     </div>
     <div
       aria-hidden="false"
-      class="section-body"
+      class="body"
       id="react-collapsed-panel-1"
       style="box-sizing: border-box; display: none; height: 0px; overflow: hidden;"
     >
@@ -111,7 +105,7 @@ exports[`Section Component Section renders 3`] = `
       />
     </div>
     <div
-      class="section-footer"
+      class="footer"
     />
   </div>
 </div>
@@ -119,26 +113,24 @@ exports[`Section Component Section renders 3`] = `
 
 exports[`Section Component Section renders collapsible closed by default 1`] = `
 <div>
-  <div
-    class="gds-layout-section-container"
-  >
+  <div>
     <div
-      class="section-header collapsible"
+      class="header collapsible"
       data-testid="DATA-TEST-ID"
     >
       <h2
-        class="gds-typography"
+        class="typography h2"
       >
         TITLE
       </h2>
       <i
-        class="collapse-icon icon"
+        class="icon icon"
         icon="fal,chevron-left"
       />
     </div>
     <div
       aria-hidden="true"
-      class="section-body"
+      class="body"
       id="react-collapsed-panel-5"
       style="box-sizing: border-box; display: none; height: 0px; overflow: hidden;"
     >
@@ -150,7 +142,7 @@ exports[`Section Component Section renders collapsible closed by default 1`] = `
       />
     </div>
     <div
-      class="section-footer"
+      class="footer"
     />
   </div>
 </div>
@@ -158,22 +150,20 @@ exports[`Section Component Section renders collapsible closed by default 1`] = `
 
 exports[`Section Component Section renders not collapsible 1`] = `
 <div>
-  <div
-    class="gds-layout-section-container"
-  >
+  <div>
     <div
-      class="section-header"
+      class="header"
       data-testid="DATA-TEST-ID"
     >
       <h2
-        class="gds-typography"
+        class="typography h2"
       >
         TITLE
       </h2>
     </div>
     <div
       aria-hidden="false"
-      class="section-body"
+      class="body"
       id="react-collapsed-panel-6"
       style="box-sizing: border-box; display: none; height: 0px; overflow: hidden;"
     >
@@ -185,7 +175,7 @@ exports[`Section Component Section renders not collapsible 1`] = `
       />
     </div>
     <div
-      class="section-footer"
+      class="footer"
     />
   </div>
 </div>
@@ -193,22 +183,20 @@ exports[`Section Component Section renders not collapsible 1`] = `
 
 exports[`Section Component Section renders not collapsible 2`] = `
 <div>
-  <div
-    class="gds-layout-section-container"
-  >
+  <div>
     <div
-      class="section-header"
+      class="header"
       data-testid="DATA-TEST-ID"
     >
       <h2
-        class="gds-typography"
+        class="typography h2"
       >
         TITLE
       </h2>
     </div>
     <div
       aria-hidden="false"
-      class="section-body"
+      class="body"
       id="react-collapsed-panel-6"
       style="box-sizing: border-box; display: none; height: 0px; overflow: hidden;"
     >
@@ -220,7 +208,7 @@ exports[`Section Component Section renders not collapsible 2`] = `
       />
     </div>
     <div
-      class="section-footer"
+      class="footer"
     />
   </div>
 </div>
@@ -228,22 +216,20 @@ exports[`Section Component Section renders not collapsible 2`] = `
 
 exports[`Section Component Section renders not collapsible 3`] = `
 <div>
-  <div
-    class="gds-layout-section-container"
-  >
+  <div>
     <div
-      class="section-header"
+      class="header"
       data-testid="DATA-TEST-ID"
     >
       <h2
-        class="gds-typography"
+        class="typography h2"
       >
         TITLE
       </h2>
     </div>
     <div
       aria-hidden="false"
-      class="section-body"
+      class="body"
       id="react-collapsed-panel-8"
       style="box-sizing: border-box; display: none; height: 0px; overflow: hidden;"
     >
@@ -255,7 +241,7 @@ exports[`Section Component Section renders not collapsible 3`] = `
       />
     </div>
     <div
-      class="section-footer"
+      class="footer"
     />
   </div>
 </div>

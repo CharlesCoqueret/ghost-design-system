@@ -4,13 +4,13 @@ exports[`Filter Component Filter renders advanced filter and handles changes 1`]
 <body>
   <div>
     <div
-      class="gds-filter-container"
+      class="container"
     >
       <div
-        class="searchbar"
+        class="bar"
       >
         <div
-          class="search-field"
+          class="fields"
         >
           <div>
             Mocked FilterItem props: 
@@ -18,30 +18,30 @@ exports[`Filter Component Filter renders advanced filter and handles changes 1`]
           </div>
         </div>
         <div
-          class="search-actions"
+          class="actions"
         >
           <button
-            class="gds-button-content"
+            class="button"
             color="reversed"
             data-testid="DATA-TEST-ID-reset"
             tabindex="0"
             type="button"
           >
             <div
-              class="button-label-container"
+              class="label"
             >
               reset
             </div>
           </button>
           <button
-            class="gds-button-content"
+            class="button"
             color="reversed"
             data-testid="DATA-TEST-ID-open-advanced"
             tabindex="0"
             type="button"
           >
             <div
-              class="button-label-container"
+              class="label"
             >
               advancedSearch
             </div>
@@ -59,13 +59,13 @@ exports[`Filter Component Filter renders advanced filter and handles changes 2`]
 >
   <div>
     <div
-      class="gds-filter-container"
+      class="container"
     >
       <div
-        class="searchbar"
+        class="bar"
       >
         <div
-          class="search-field"
+          class="fields"
         >
           <div>
             Mocked FilterItem props: 
@@ -73,30 +73,30 @@ exports[`Filter Component Filter renders advanced filter and handles changes 2`]
           </div>
         </div>
         <div
-          class="search-actions"
+          class="actions"
         >
           <button
-            class="gds-button-content"
+            class="button"
             color="reversed"
             data-testid="DATA-TEST-ID-reset"
             tabindex="0"
             type="button"
           >
             <div
-              class="button-label-container"
+              class="label"
             >
               reset
             </div>
           </button>
           <button
-            class="gds-button-content"
+            class="button"
             color="reversed"
             data-testid="DATA-TEST-ID-open-advanced"
             tabindex="0"
             type="button"
           >
             <div
-              class="button-label-container"
+              class="label"
             >
               advancedSearch
             </div>
@@ -105,21 +105,21 @@ exports[`Filter Component Filter renders advanced filter and handles changes 2`]
       </div>
       <div>
         <div
-          class="gds-modal-overlay"
+          class="overlay"
         >
           <div
-            class="modal-content size-lg"
+            class="container large"
           >
             <div
-              class="modal-header"
+              class="header"
             >
               <div
-                class="modal-title"
+                class="title"
               >
                 advancedSearchTitle
               </div>
               <div
-                class="modal-close-icon"
+                class="closeIcon"
               >
                 <i
                   class="icon"
@@ -128,13 +128,13 @@ exports[`Filter Component Filter renders advanced filter and handles changes 2`]
               </div>
             </div>
             <div
-              class="modal-body"
+              class="container"
             >
               <div
-                class="gds-layout-container"
+                class=""
               >
                 <div
-                  class="gds-layout-row"
+                  class="row"
                 >
                   <div>
                     Mocked FilterItem props: 
@@ -144,30 +144,30 @@ exports[`Filter Component Filter renders advanced filter and handles changes 2`]
               </div>
             </div>
             <div
-              class="modal-footer"
+              class="container"
             >
               <button
-                class="gds-button-content"
+                class="button"
                 color="secondary"
                 data-testid="DATA-TEST-ID-advanced-reset"
                 tabindex="0"
                 type="button"
               >
                 <div
-                  class="button-label-container"
+                  class="label"
                 >
                   reset
                 </div>
               </button>
               <button
-                class="gds-button-content"
+                class="button"
                 color="primary"
                 data-testid="DATA-TEST-ID-advanced-submit"
                 tabindex="0"
                 type="button"
               >
                 <div
-                  class="button-label-container"
+                  class="label"
                 >
                   search
                 </div>
@@ -192,13 +192,13 @@ exports[`Filter Component Filter renders advanced filter and handles changes 3`]
 >
   <div>
     <div
-      class="gds-filter-container"
+      class="container"
     >
       <div
-        class="searchbar"
+        class="bar"
       >
         <div
-          class="search-field"
+          class="fields"
         >
           <div>
             Mocked FilterItem props: 
@@ -206,30 +206,30 @@ exports[`Filter Component Filter renders advanced filter and handles changes 3`]
           </div>
         </div>
         <div
-          class="search-actions"
+          class="actions"
         >
           <button
-            class="gds-button-content"
+            class="button"
             color="reversed"
             data-testid="DATA-TEST-ID-reset"
             tabindex="0"
             type="button"
           >
             <div
-              class="button-label-container"
+              class="label"
             >
               reset
             </div>
           </button>
           <button
-            class="gds-button-content"
+            class="button"
             color="reversed"
             data-testid="DATA-TEST-ID-open-advanced"
             tabindex="0"
             type="button"
           >
             <div
-              class="button-label-container"
+              class="label"
             >
               advancedSearch
             </div>
@@ -238,21 +238,21 @@ exports[`Filter Component Filter renders advanced filter and handles changes 3`]
       </div>
       <div>
         <div
-          class="gds-modal-overlay"
+          class="overlay"
         >
           <div
-            class="modal-content size-lg"
+            class="container large"
           >
             <div
-              class="modal-header"
+              class="header"
             >
               <div
-                class="modal-title"
+                class="title"
               >
                 advancedSearchTitle
               </div>
               <div
-                class="modal-close-icon"
+                class="closeIcon"
               >
                 <i
                   class="icon"
@@ -261,13 +261,13 @@ exports[`Filter Component Filter renders advanced filter and handles changes 3`]
               </div>
             </div>
             <div
-              class="modal-body"
+              class="container"
             >
               <div
-                class="gds-layout-container"
+                class=""
               >
                 <div
-                  class="gds-layout-row"
+                  class="row"
                 >
                   <div>
                     Mocked FilterItem props: 
@@ -277,30 +277,30 @@ exports[`Filter Component Filter renders advanced filter and handles changes 3`]
               </div>
             </div>
             <div
-              class="modal-footer"
+              class="container"
             >
               <button
-                class="gds-button-content"
+                class="button"
                 color="secondary"
                 data-testid="DATA-TEST-ID-advanced-reset"
                 tabindex="0"
                 type="button"
               >
                 <div
-                  class="button-label-container"
+                  class="label"
                 >
                   reset
                 </div>
               </button>
               <button
-                class="gds-button-content"
+                class="button"
                 color="primary"
                 data-testid="DATA-TEST-ID-advanced-submit"
                 tabindex="0"
                 type="button"
               >
                 <div
-                  class="button-label-container"
+                  class="label"
                 >
                   search
                 </div>
@@ -325,13 +325,13 @@ exports[`Filter Component Filter renders advanced filter and handles changes 4`]
 >
   <div>
     <div
-      class="gds-filter-container"
+      class="container"
     >
       <div
-        class="searchbar"
+        class="bar"
       >
         <div
-          class="search-field"
+          class="fields"
         >
           <div>
             Mocked FilterItem props: 
@@ -339,30 +339,30 @@ exports[`Filter Component Filter renders advanced filter and handles changes 4`]
           </div>
         </div>
         <div
-          class="search-actions"
+          class="actions"
         >
           <button
-            class="gds-button-content"
+            class="button"
             color="reversed"
             data-testid="DATA-TEST-ID-reset"
             tabindex="0"
             type="button"
           >
             <div
-              class="button-label-container"
+              class="label"
             >
               reset
             </div>
           </button>
           <button
-            class="gds-button-content"
+            class="button"
             color="reversed"
             data-testid="DATA-TEST-ID-open-advanced"
             tabindex="0"
             type="button"
           >
             <div
-              class="button-label-container"
+              class="label"
             >
               advancedSearch
             </div>
@@ -371,21 +371,21 @@ exports[`Filter Component Filter renders advanced filter and handles changes 4`]
       </div>
       <div>
         <div
-          class="gds-modal-overlay"
+          class="overlay"
         >
           <div
-            class="modal-content size-lg"
+            class="container large"
           >
             <div
-              class="modal-header"
+              class="header"
             >
               <div
-                class="modal-title"
+                class="title"
               >
                 advancedSearchTitle
               </div>
               <div
-                class="modal-close-icon"
+                class="closeIcon"
               >
                 <i
                   class="icon"
@@ -394,13 +394,13 @@ exports[`Filter Component Filter renders advanced filter and handles changes 4`]
               </div>
             </div>
             <div
-              class="modal-body"
+              class="container"
             >
               <div
-                class="gds-layout-container"
+                class=""
               >
                 <div
-                  class="gds-layout-row"
+                  class="row"
                 >
                   <div>
                     Mocked FilterItem props: 
@@ -410,30 +410,30 @@ exports[`Filter Component Filter renders advanced filter and handles changes 4`]
               </div>
             </div>
             <div
-              class="modal-footer"
+              class="container"
             >
               <button
-                class="gds-button-content"
+                class="button"
                 color="secondary"
                 data-testid="DATA-TEST-ID-advanced-reset"
                 tabindex="0"
                 type="button"
               >
                 <div
-                  class="button-label-container"
+                  class="label"
                 >
                   reset
                 </div>
               </button>
               <button
-                class="gds-button-content"
+                class="button"
                 color="primary"
                 data-testid="DATA-TEST-ID-advanced-submit"
                 tabindex="0"
                 type="button"
               >
                 <div
-                  class="button-label-container"
+                  class="label"
                 >
                   search
                 </div>
@@ -458,13 +458,13 @@ exports[`Filter Component Filter renders advanced filter and handles changes 5`]
 >
   <div>
     <div
-      class="gds-filter-container"
+      class="container"
     >
       <div
-        class="searchbar"
+        class="bar"
       >
         <div
-          class="search-field"
+          class="fields"
         >
           <div>
             Mocked FilterItem props: 
@@ -472,30 +472,30 @@ exports[`Filter Component Filter renders advanced filter and handles changes 5`]
           </div>
         </div>
         <div
-          class="search-actions"
+          class="actions"
         >
           <button
-            class="gds-button-content"
+            class="button"
             color="reversed"
             data-testid="DATA-TEST-ID-reset"
             tabindex="0"
             type="button"
           >
             <div
-              class="button-label-container"
+              class="label"
             >
               reset
             </div>
           </button>
           <button
-            class="gds-button-content"
+            class="button"
             color="reversed"
             data-testid="DATA-TEST-ID-open-advanced"
             tabindex="0"
             type="button"
           >
             <div
-              class="button-label-container"
+              class="label"
             >
               advancedSearch
             </div>
@@ -504,21 +504,21 @@ exports[`Filter Component Filter renders advanced filter and handles changes 5`]
       </div>
       <div>
         <div
-          class="gds-modal-overlay"
+          class="overlay"
         >
           <div
-            class="modal-content size-lg"
+            class="container large"
           >
             <div
-              class="modal-header"
+              class="header"
             >
               <div
-                class="modal-title"
+                class="title"
               >
                 advancedSearchTitle
               </div>
               <div
-                class="modal-close-icon"
+                class="closeIcon"
               >
                 <i
                   class="icon"
@@ -527,13 +527,13 @@ exports[`Filter Component Filter renders advanced filter and handles changes 5`]
               </div>
             </div>
             <div
-              class="modal-body"
+              class="container"
             >
               <div
-                class="gds-layout-container"
+                class=""
               >
                 <div
-                  class="gds-layout-row"
+                  class="row"
                 >
                   <div>
                     Mocked FilterItem props: 
@@ -543,30 +543,30 @@ exports[`Filter Component Filter renders advanced filter and handles changes 5`]
               </div>
             </div>
             <div
-              class="modal-footer"
+              class="container"
             >
               <button
-                class="gds-button-content"
+                class="button"
                 color="secondary"
                 data-testid="DATA-TEST-ID-advanced-reset"
                 tabindex="0"
                 type="button"
               >
                 <div
-                  class="button-label-container"
+                  class="label"
                 >
                   reset
                 </div>
               </button>
               <button
-                class="gds-button-content"
+                class="button"
                 color="primary"
                 data-testid="DATA-TEST-ID-advanced-submit"
                 tabindex="0"
                 type="button"
               >
                 <div
-                  class="button-label-container"
+                  class="label"
                 >
                   search
                 </div>
@@ -591,13 +591,13 @@ exports[`Filter Component Filter renders advanced filter and handles changes 6`]
 >
   <div>
     <div
-      class="gds-filter-container"
+      class="container"
     >
       <div
-        class="searchbar"
+        class="bar"
       >
         <div
-          class="search-field"
+          class="fields"
         >
           <div>
             Mocked FilterItem props: 
@@ -605,30 +605,30 @@ exports[`Filter Component Filter renders advanced filter and handles changes 6`]
           </div>
         </div>
         <div
-          class="search-actions"
+          class="actions"
         >
           <button
-            class="gds-button-content"
+            class="button"
             color="reversed"
             data-testid="DATA-TEST-ID-reset"
             tabindex="0"
             type="button"
           >
             <div
-              class="button-label-container"
+              class="label"
             >
               reset
             </div>
           </button>
           <button
-            class="gds-button-content"
+            class="button"
             color="reversed"
             data-testid="DATA-TEST-ID-open-advanced"
             tabindex="0"
             type="button"
           >
             <div
-              class="button-label-container"
+              class="label"
             >
               advancedSearch
             </div>
@@ -643,13 +643,13 @@ exports[`Filter Component Filter renders advanced filter and handles changes 6`]
 exports[`Filter Component Filter renders filterbar and handles changes 1`] = `
 <div>
   <div
-    class="gds-filter-container"
+    class="container"
   >
     <div
-      class="searchbar"
+      class="bar"
     >
       <div
-        class="search-field"
+        class="fields"
       >
         <div>
           Mocked FilterItem props: 
@@ -657,17 +657,17 @@ exports[`Filter Component Filter renders filterbar and handles changes 1`] = `
         </div>
       </div>
       <div
-        class="search-actions"
+        class="actions"
       >
         <button
-          class="gds-button-content"
+          class="button"
           color="reversed"
           data-testid="DATA-TEST-ID-reset"
           tabindex="0"
           type="button"
         >
           <div
-            class="button-label-container"
+            class="label"
           >
             reset
           </div>
@@ -681,25 +681,25 @@ exports[`Filter Component Filter renders filterbar and handles changes 1`] = `
 exports[`Filter Component Filter renders with no item in the filter bar 1`] = `
 <div>
   <div
-    class="gds-filter-container"
+    class="container"
   >
     <div
-      class="searchbar"
+      class="bar"
     >
       <div
-        class="search-field"
+        class="fields"
       />
       <div
-        class="search-actions"
+        class="actions"
       >
         <button
-          class="gds-button-content"
+          class="button"
           color="reversed"
           tabindex="0"
           type="button"
         >
           <div
-            class="button-label-container"
+            class="label"
           >
             reset
           </div>
@@ -716,13 +716,13 @@ exports[`Filter Component Filter renders without data-testid 1`] = `
 >
   <div>
     <div
-      class="gds-filter-container"
+      class="container"
     >
       <div
-        class="searchbar"
+        class="bar"
       >
         <div
-          class="search-field"
+          class="fields"
         >
           <div>
             Mocked FilterItem props: 
@@ -730,28 +730,28 @@ exports[`Filter Component Filter renders without data-testid 1`] = `
           </div>
         </div>
         <div
-          class="search-actions"
+          class="actions"
         >
           <button
-            class="gds-button-content"
+            class="button"
             color="reversed"
             tabindex="0"
             type="button"
           >
             <div
-              class="button-label-container"
+              class="label"
             >
               reset
             </div>
           </button>
           <button
-            class="gds-button-content"
+            class="button"
             color="reversed"
             tabindex="0"
             type="button"
           >
             <div
-              class="button-label-container"
+              class="label"
             >
               advancedSearch
             </div>

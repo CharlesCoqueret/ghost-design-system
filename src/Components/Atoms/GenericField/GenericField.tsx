@@ -2,7 +2,9 @@ import React, { PropsWithChildren, ReactElement, Ref } from 'react';
 import classnames from 'classnames';
 
 import GenericFieldLabel from './GenericFieldLabel';
-import GenericFieldDescription from './GenericFieldDescrption';
+import GenericFieldDescription from './GenericFieldDescription';
+
+import styles from './GenericField.module.scss';
 
 export interface IGenericFieldProps {
   containerRef?: Ref<HTMLDivElement>;
@@ -45,6 +47,9 @@ export interface IGenericFieldProps {
  *
  * When in read only, no error message nor counter, only helper text.
  *
+ * In case of error, the component injects the 'field-error' class which is required for the scroll to error
+ * used in the useForm hook.
+ *
  */
 const GenericField = (props: PropsWithChildren<IGenericFieldProps>): ReactElement => {
   const {
@@ -68,12 +73,14 @@ const GenericField = (props: PropsWithChildren<IGenericFieldProps>): ReactElemen
 
   return (
     <div
-      className={classnames('gds-field-group', fieldSize && `field-size-${fieldSize}`, fieldClassName, {
-        'field-inline': inline,
+      className={classnames(styles.fieldGroup, fieldSize && styles[`size-${fieldSize}`], fieldClassName, {
+        [styles.inline]: inline,
       })}
       ref={containerRef}>
       <GenericFieldLabel
-        className={classnames({ 'field-highlighted': highlighted && (readOnly || disabled) })}
+        className={classnames({
+          [styles.highlighted]: (readOnly || disabled) && highlighted,
+        })}
         label={label}
         mandatory={mandatory}
         readOnly={readOnly}

@@ -9,10 +9,11 @@ exports[`StaticDataTableCell component StaticDataTableCell renders with amount 1
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <span
-              class="gds-amount-field amount-field-read-only table--cell-value--amount-readonly"
+              autocomplete="off"
+              class="default readOnly table--cell-value--amount-readonly"
               id="amount"
               name="amount"
             >
@@ -35,10 +36,11 @@ exports[`StaticDataTableCell component StaticDataTableCell renders with amount a
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <span
-              class="gds-amount-field amount-field-read-only table--cell-value--amount-readonly"
+              autocomplete="off"
+              class="default readOnly table--cell-value--amount-readonly"
               id="amount"
               name="amount"
             >
@@ -61,7 +63,7 @@ exports[`StaticDataTableCell component StaticDataTableCell renders with badge 1`
           class=""
         >
           <span
-            class="gds-badge secondary table--cell--value--badge-no-margin"
+            class="default secondary table--cell--value--badge-no-margin"
           >
             Badge
           </span>
@@ -84,17 +86,17 @@ exports[`StaticDataTableCell component StaticDataTableCell renders with button 1
             class="table--cell--value--button"
           >
             <button
-              class="gds-button-content"
+              class="button"
               color="reversed"
               tabindex="0"
               type="button"
             >
               <div
-                class="button-icon-container"
+                class="icon"
               >
                 <i
-                  class="button-icon icon"
-                  icon="fal,cog"
+                  class="icon"
+                  icon="fal,gear"
                 />
               </div>
             </button>
@@ -118,20 +120,20 @@ exports[`StaticDataTableCell component StaticDataTableCell renders with checkbox
           class="table--cell--checkbox"
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <div
-              class="field gds-checkbox-container input-checkbox-field gds-typography"
+              class="container"
             >
               <label
-                class="input-checkbox-field-read-only input-checkbox-field-checked"
+                class="label readOnly checked"
                 for="checkbox-1"
                 tabindex="-1"
               >
                 <div
                   aria-checked="true"
                   aria-label="label"
-                  class="checkbox-marker"
+                  class="checkboxMarker checked readOnly"
                   id="checkbox-1"
                   role="checkbox"
                 >
@@ -160,17 +162,13 @@ exports[`StaticDataTableCell component StaticDataTableCell renders with code 1`]
           class="table--cell--code"
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
-            <div
-              class="field input-text-field-read-only gds-typography"
+            <span
+              class="typography"
             >
-              <span
-                class="gds-typography"
-              >
-                code
-              </span>
-            </div>
+              code
+            </span>
           </div>
         </td>
       </tr>
@@ -188,7 +186,7 @@ exports[`StaticDataTableCell component StaticDataTableCell renders with custom 1
           class=""
         >
           <span
-            class="gds-typography"
+            class="typography"
           >
             {"inputValue":"custom","readOnly":true}
           </span>
@@ -208,10 +206,10 @@ exports[`StaticDataTableCell component StaticDataTableCell renders with date 1`]
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <div
-              class="field input-date-picker-field table--cell-value--date-readonly"
+              class="input-date-picker-wrapper-read-only table--cell-value--date-readonly"
             >
               <div
                 class="react-datepicker-wrapper"
@@ -266,14 +264,14 @@ exports[`StaticDataTableCell component StaticDataTableCell renders with dynamics
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <div
-              class="field gds-select-container input-select-field-read-only input-select-field"
+              class="container"
               data-testid="DATA-TEST-ID-Dynamic search-0"
             >
               <span
-                class="gds-typography"
+                class="typography"
               >
                 label
               </span>
@@ -295,10 +293,10 @@ exports[`StaticDataTableCell component StaticDataTableCell renders with file 1`]
           class="table--cell--code"
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <div
-              class="field gds-file-input-container gds-typography"
+              class="container"
             >
               <div
                 class="droparea readonly"
@@ -322,13 +320,13 @@ exports[`StaticDataTableCell component StaticDataTableCell renders with file 1`]
                 class="gallery"
               >
                 <div
-                  class="item-container error"
+                  class="container error"
                 >
                   <div
                     class="left"
                   >
                     <div
-                      class="paperclip-icon"
+                      class="paperclipIcon"
                     >
                       <i
                         class="icon"
@@ -369,13 +367,13 @@ exports[`StaticDataTableCell component StaticDataTableCell renders with multisel
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <div
-              class="field gds-select-container input-select-field-read-only input-select-field"
+              class="container"
             >
               <span
-                class="gds-typography"
+                class="typography"
               >
                 Label 1
               </span>
@@ -397,10 +395,11 @@ exports[`StaticDataTableCell component StaticDataTableCell renders with number 1
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <span
-              class="gds-amount-field amount-field-read-only table--cell-value--number-readonly"
+              autocomplete="off"
+              class="default readOnly table--cell-value--number-readonly"
               id="number"
               name="number"
             >
@@ -423,10 +422,11 @@ exports[`StaticDataTableCell component StaticDataTableCell renders with percenta
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <span
-              class="gds-amount-field amount-field-read-only table--cell-value--percentage-readonly"
+              autocomplete="off"
+              class="default readOnly table--cell-value--percentage-readonly"
               id="percentage"
               name="percentage"
             >
@@ -465,18 +465,18 @@ exports[`StaticDataTableCell component StaticDataTableCell renders with switch 1
           class="table--cell--checkbox"
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <div
-              class="field gds-switch-container input-switch-field gds-typography"
+              class="container"
             >
               <label
-                class="input-switch-field-read-only input-switch-field-checked"
+                class="label readOnly"
                 for="switch-2"
                 tabindex="-1"
               >
                 <div
-                  class="switch-marker"
+                  class="switch"
                 >
                   <input
                     aria-hidden="true"
@@ -524,7 +524,7 @@ exports[`StaticDataTableCell component StaticDataTableCell renders with table 1`
                     tabindex="-1"
                   >
                     <span
-                      class="gds-typography table--header-value--title right ellipsis"
+                      class="typography table--header-value--title right ellipsis"
                       title="Number"
                     >
                       Number
@@ -542,10 +542,11 @@ exports[`StaticDataTableCell component StaticDataTableCell renders with table 1`
                   class=""
                 >
                   <div
-                    class="gds-field-group"
+                    class="fieldGroup"
                   >
                     <span
-                      class="gds-amount-field amount-field-read-only table--cell-value--number-readonly"
+                      autocomplete="off"
+                      class="default readOnly table--cell-value--number-readonly"
                       id="number"
                       name="number"
                     >
@@ -562,10 +563,11 @@ exports[`StaticDataTableCell component StaticDataTableCell renders with table 1`
                   class=""
                 >
                   <div
-                    class="gds-field-group"
+                    class="fieldGroup"
                   >
                     <span
-                      class="gds-amount-field amount-field-read-only table--cell-value--number-readonly"
+                      autocomplete="off"
+                      class="default readOnly table--cell-value--number-readonly"
                       id="number"
                       name="number"
                     >
@@ -592,17 +594,13 @@ exports[`StaticDataTableCell component StaticDataTableCell renders with text 1`]
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
-            <div
-              class="field input-text-field-read-only gds-typography"
+            <span
+              class="typography"
             >
-              <span
-                class="gds-typography"
-              >
-                text
-              </span>
-            </div>
+              text
+            </span>
           </div>
         </td>
       </tr>
@@ -620,13 +618,13 @@ exports[`StaticDataTableCell component StaticDataTableCell renders with textarea
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <div
-              class="field gds-input-textarea-parent"
+              class="container"
             >
               <textarea
-                class="input-textarea-field-read-only gds-typography"
+                class="textarea readOnly"
                 id="textarea"
                 name="textarea"
                 readonly=""
@@ -651,10 +649,10 @@ exports[`StaticDataTableCell component StaticDataTableCell renders with year 1`]
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <div
-              class="input-year-picker-field table--cell-value--date-readonly field"
+              class="input-year-picker-wrapper-read-only table--cell-value--date-readonly"
             >
               <div
                 class="react-datepicker-wrapper"
@@ -664,7 +662,7 @@ exports[`StaticDataTableCell component StaticDataTableCell renders with year 1`]
                 >
                   <input
                     autocomplete="off"
-                    class="field input-year-picker-input-read-only"
+                    class="input-year-picker-input-read-only"
                     name="year"
                     placeholder="YYYY"
                     readonly=""

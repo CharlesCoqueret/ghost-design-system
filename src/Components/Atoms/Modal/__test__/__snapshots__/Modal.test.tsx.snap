@@ -6,10 +6,10 @@ exports[`Modal Component Modal renders handles click outside 1`] = `
 <div>
   <div>
     <div
-      class="gds-modal-overlay"
+      class="overlay"
     >
       <div
-        class="modal-content size-sm"
+        class="container small"
       >
         <div
           id="CHILD1"
@@ -24,21 +24,21 @@ exports[`Modal Component Modal renders handles close icon 1`] = `
 <div>
   <div>
     <div
-      class="gds-modal-overlay"
+      class="overlay"
     >
       <div
-        class="modal-content size-lg"
+        class="container large"
       >
         <div
-          class="modal-header"
+          class="header"
         >
           <div
-            class="modal-title"
+            class="title"
           >
             MODALTITLE
           </div>
           <div
-            class="modal-close-icon"
+            class="closeIcon"
             data-testid="TESTID"
           >
             <i
@@ -60,10 +60,10 @@ exports[`Modal Component Modal renders handles press escape 1`] = `
 <div>
   <div>
     <div
-      class="gds-modal-overlay"
+      class="overlay"
     >
       <div
-        class="modal-content size-sm"
+        class="container small"
       >
         <div
           id="CHILD1"
@@ -80,21 +80,21 @@ exports[`Modal Component Modal renders handles tabbing 2`] = `
 <div>
   <div>
     <div
-      class="gds-modal-overlay"
+      class="overlay"
     >
       <div
-        class="modal-content size-lg"
+        class="container large"
       >
         <div
-          class="modal-header"
+          class="header"
         >
           <div
-            class="modal-title"
+            class="title"
           >
             MODALTITLE
           </div>
           <div
-            class="modal-close-icon"
+            class="closeIcon"
             data-testid="TESTID"
           >
             <i
@@ -116,21 +116,21 @@ exports[`Modal Component Modal renders handles tabbing 3`] = `
 <div>
   <div>
     <div
-      class="gds-modal-overlay"
+      class="overlay"
     >
       <div
-        class="modal-content size-lg"
+        class="container large"
       >
         <div
-          class="modal-header"
+          class="header"
         >
           <div
-            class="modal-title"
+            class="title"
           >
             MODALTITLE
           </div>
           <div
-            class="modal-close-icon"
+            class="closeIcon"
             data-testid="TESTID"
           >
             <i
@@ -152,16 +152,16 @@ exports[`Modal Component Modal renders open 1`] = `
 <div>
   <div>
     <div
-      class="gds-modal-overlay"
+      class="overlay"
     >
       <div
-        class="modal-content size-sm"
+        class="container small"
       >
         <div
-          class="modal-header"
+          class="header"
         >
           <div
-            class="modal-title"
+            class="title"
           >
             MODALTITLE
           </div>
@@ -179,10 +179,10 @@ exports[`Modal Component Modal renders shakes when click outside when it is not 
 <div>
   <div>
     <div
-      class="gds-modal-overlay"
+      class="overlay"
     >
       <div
-        class="modal-content size-sm"
+        class="container small"
       >
         <div
           id="CHILD1"
@@ -197,10 +197,10 @@ exports[`Modal Component Modal renders shakes when click outside when it is not 
 <div>
   <div>
     <div
-      class="gds-modal-overlay"
+      class="overlay"
     >
       <div
-        class="modal-content size-sm shake"
+        class="container small shake"
       >
         <div
           id="CHILD1"
@@ -215,10 +215,10 @@ exports[`Modal Component Modal renders shakes when press escape when it is not a
 <div>
   <div>
     <div
-      class="gds-modal-overlay"
+      class="overlay"
     >
       <div
-        class="modal-content size-sm"
+        class="container small"
       >
         <div
           id="CHILD1"
@@ -233,10 +233,10 @@ exports[`Modal Component Modal renders shakes when press escape when it is not a
 <div>
   <div>
     <div
-      class="gds-modal-overlay"
+      class="overlay"
     >
       <div
-        class="modal-content size-sm shake"
+        class="container small shake"
       >
         <div
           id="CHILD1"
@@ -251,10 +251,10 @@ exports[`Modal Component Modal renders shakes when press escape when it is not a
 <div>
   <div>
     <div
-      class="gds-modal-overlay"
+      class="overlay"
     >
       <div
-        class="modal-content size-sm"
+        class="container small"
       >
         <div
           id="CHILD1"
@@ -269,10 +269,10 @@ exports[`Modal Component Modal renders transition from open to close 1`] = `
 <div>
   <div>
     <div
-      class="gds-modal-overlay"
+      class="overlay"
     >
       <div
-        class="modal-content size-sm"
+        class="container small"
       >
         <div
           id="CHILD1"

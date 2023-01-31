@@ -7,6 +7,8 @@ import { Icon } from '../../Atoms/Icon';
 import { SideBarContext } from './SideBarContext';
 import { isExternalLink } from './sideBarUtils';
 
+import styles from './SideBarItem.module.scss';
+
 /**
  * Interface of navigation item component
  */
@@ -92,32 +94,32 @@ const SideBarItem = (props: PropsWithChildren<ISideBarItemProps>): ReactElement 
   return (
     <>
       <li
-        className={classnames('item', { disabled: disabled || (children && subMenuEntries === 0) })}
+        className={classnames(styles.item, { [styles.disabled]: disabled || (children && subMenuEntries === 0) })}
         onClick={onClickHandler}>
         <NavLink
-          className={classnames({ disabled: disabled })}
+          className={classnames({ [styles.disabled]: disabled })}
           data-testid={dataTestId}
           exact={!hasSubMenu}
           target={targetType}
           to={children && subMenuEntries === 1 ? singleTo : to}>
-          <div className='label'>{label}</div>
-          {externalLink && <Icon icon={['fal', 'external-link']} className='external-link' />}
+          <div className={styles.label}>{label}</div>
+          {externalLink && <Icon icon={['fal', 'external-link']} size='sm' className={styles.externalLink} />}
           {!disabled && hasSubMenu && subMenuEntries > 1 && (
-            <Icon icon={['fal', 'chevron-right']} className='chevron-right' />
+            <Icon icon={['fal', 'chevron-right']} size='lg' className={styles.chevronRight} />
           )}
         </NavLink>
       </li>
       {hasSubMenu && subMenuEntries > 1 && (
         <ul
-          className={classnames('submenu', { visible: subMenuActive })}
+          className={classnames(styles.submenu, { [styles.visible]: subMenuActive, [styles.unfixed]: unfixed })}
           style={{ width: width, left: unfixed ? width : subMenuActive ? '0px' : width }}>
-          <li className='back' onClick={toggleSubMenu}>
-            <div className='label'>
-              <Icon icon={['fal', 'chevron-left']} className='chevron-left' />
+          <li className={styles.back} onClick={toggleSubMenu}>
+            <div className={styles.label}>
+              <Icon icon={['fal', 'chevron-left']} size='lg' className={styles.chevronLeft} />
               {backToMenu}
             </div>
           </li>
-          <div className='sidebar-divider' />
+          <div className={styles.divider} />
           {children}
         </ul>
       )}

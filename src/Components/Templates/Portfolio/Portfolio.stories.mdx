@@ -5,8 +5,6 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 import Portfolio from './Portfolio';
 import { ColumnType, FilterTypeEnum, SortDirectionEnum } from '../../Organisms';
 
-import portfolioStyle from '../../../assets/_portfolio.scss?raw';
-
 export const TemplatePortfolio = (args) => {
   return <Portfolio {...args} />;
 };
@@ -35,12 +33,6 @@ The data can be paginated, thanks to the built-in "infinite scroll".
 ## Props
 
 <ArgsTable of={Portfolio} sort='requiredFirst' />
-
-## Style
-
-[source](https://github.com/CharlesCoqueret/ghost-design-system/blob/main/src/assets/_portfolio.scss)
-
-<Source language='css' dark format={true} code={portfolioStyle} />
 
 ## Story
 
@@ -164,6 +156,7 @@ The data can be paginated, thanks to the built-in "infinite scroll".
             sorter: true,
           },
         ],
+        stickyHeader: true,
       },
     }}>
     {TemplatePortfolio.bind({})}

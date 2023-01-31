@@ -26,8 +26,8 @@
   "scripts": {
     "build": "rollup -c && npm run build:css && npm run build:css-min",
     "build-storybook": "build-storybook -o docs-build",
-    "build:css": "sass src/assets/index.scss dist/ghost-design-system.css --error-css --stop-on-error",
-    "build:css-min": "sass src/assets/index.scss dist/ghost-design-system.min.css --error-css --stop-on-error --style=compressed",
+    "build:css": "sass src/assets/index.scss dist/ghost-design-system.css --load-path=./node_modules/ --error-css --stop-on-error",
+    "build:css-min": "sass src/assets/index.scss dist/ghost-design-system.min.css  --load-path=./node_modules/ --error-css --stop-on-error --style=compressed",
     "clean": "rm -rf npm-*.log package-lock.json node_modules coverage dist docs-build && npm cache verify",
     "format": "prettier --write \"src/**/*.{ts,tsx,json,js,jsx}\"",
     "format:check": "prettier --list-different \"src/**/*.{ts,tsx,json,js,jsx}\"",
@@ -50,8 +50,6 @@
     "@szhsin/react-menu": "3.2.1",
     "@tippyjs/react": "4.2.6",
     "classnames": "2.3.2",
-    "color-alpha": "1.1.3",
-    "color-rgba": "2.4.0",
     "date-fns": "2.29.3",
     "lodash": "4.17.21",
     "numeral": "2.0.6",
@@ -66,14 +64,13 @@
     "react-textarea-autosize": "8.4.0",
     "suneditor": "2.44.3",
     "suneditor-react": "3.4.1",
+    "tippy.js": "6.3.7",
     "yup": "0.32.11"
   },
   "peerDependencies": {
     "react": "^16.14.0 || ^17.0.0",
     "react-dom": "^16.14.0 || ^17.0.0",
-    "react-router-dom": "5.3.4",
-    "suneditor": "2.44.3",
-    "tippy.js": "6.3.7"
+    "react-router-dom": "5.3.4"
   },
   "engines": {
     "node": ">=16.8.0"
@@ -110,6 +107,7 @@
     "@typescript-eslint/eslint-plugin": "5.42.1",
     "@typescript-eslint/parser": "5.42.1",
     "babel-loader": "9.1.0",
+    "color-rgba": "2.4.0",
     "css-loader": "6.7.1",
     "eslint": "8.27.0",
     "eslint-config-prettier": "8.5.0",

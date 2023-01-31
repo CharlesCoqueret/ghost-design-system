@@ -1,0 +1,73 @@
+.overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  // This must remain black whatever the theme is.
+  background-color: rgba(var(--theme-provider-black), 0.7);
+  overflow-x: auto;
+}
+
+.container {
+  position: relative;
+  background-color: rgb(var(--theme-provider-white));
+  margin: 100px auto;
+  padding: 32px;
+  border-radius: 4px;
+  box-shadow: rgba(var(--theme-provider-black), 0.25) 0px 54px 55px,
+    rgba(var(--theme-provider-black), 0.12) 0px -12px 30px, rgba(var(--theme-provider-black), 0.12) 0px 4px 6px,
+    rgba(var(--theme-provider-black), 0.17) 0px 12px 13px, rgba(var(--theme-provider-black), 0.09) 0px -3px 5px;
+  overflow: auto;
+  z-index: auto;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+.shake {
+  animation: shake 0.5s;
+}
+
+.small {
+  width: 300px;
+}
+
+.large {
+  width: 800px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 16px;
+}
+
+.title {
+  font-size: 1.2rem;
+}
+
+.closeIcon {
+  margin-left: 16px;
+  cursor: pointer;
+}
+
+@keyframes shake {
+  0% {
+    transform: skewY(-2deg);
+  }
+  5% {
+    transform: skewY(2deg);
+  }
+  10% {
+    transform: skewY(-2deg);
+  }
+  15% {
+    transform: skewY(2deg);
+  }
+  20% {
+    transform: skewY(0deg);
+  }
+  100% {
+    transform: skewY(0deg);
+  }
+}

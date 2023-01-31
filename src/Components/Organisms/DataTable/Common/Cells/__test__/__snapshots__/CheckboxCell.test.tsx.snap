@@ -9,20 +9,20 @@ exports[`CheckboxCell component CheckboxCell renders 1`] = `
           class="table--cell--checkbox"
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <div
-              class="field gds-checkbox-container input-checkbox-field gds-typography"
+              class="container"
             >
               <label
-                class="input-checkbox-field-read-only input-checkbox-field-checked"
+                class="label readOnly checked"
                 for="checkbox-1"
                 tabindex="-1"
               >
                 <div
                   aria-checked="true"
                   aria-label="Label 1"
-                  class="checkbox-marker"
+                  class="checkboxMarker checked readOnly"
                   id="checkbox-1"
                   role="checkbox"
                 >
@@ -34,14 +34,14 @@ exports[`CheckboxCell component CheckboxCell renders 1`] = `
                 Label 1
               </label>
               <label
-                class="input-checkbox-field-read-only"
+                class="label readOnly"
                 for="checkbox-2"
                 tabindex="-1"
               >
                 <div
                   aria-checked="false"
                   aria-label="Label 2"
-                  class="checkbox-marker"
+                  class="checkboxMarker readOnly"
                   id="checkbox-2"
                   role="checkbox"
                 >
@@ -53,13 +53,13 @@ exports[`CheckboxCell component CheckboxCell renders 1`] = `
                 Label 2
               </label>
               <label
-                class="input-checkbox-field-read-only"
+                class="label readOnly"
                 for="checkbox-3"
                 tabindex="-1"
               >
                 <div
                   aria-label="Label 3"
-                  class="checkbox-marker"
+                  class="checkboxMarker readOnly"
                   id="checkbox-3"
                   role="checkbox"
                 >
@@ -88,13 +88,13 @@ exports[`CheckboxCell component CheckboxCell renders in edit mode and handles ch
           class="table--cell--checkbox"
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <div
-              class="field gds-checkbox-container input-checkbox-field gds-typography"
+              class="container"
             >
               <label
-                class="input-checkbox-field-checked"
+                class="label checked"
                 data-testid="DATA-TEST-ID-0"
                 for="checkbox-8"
                 tabindex="0"
@@ -102,7 +102,7 @@ exports[`CheckboxCell component CheckboxCell renders in edit mode and handles ch
                 <div
                   aria-checked="true"
                   aria-label="Label 1"
-                  class="checkbox-marker"
+                  class="checkboxMarker checked"
                   id="checkbox-8"
                   role="checkbox"
                 >
@@ -114,7 +114,7 @@ exports[`CheckboxCell component CheckboxCell renders in edit mode and handles ch
                 Label 1
               </label>
               <label
-                class=""
+                class="label"
                 data-testid="DATA-TEST-ID-1"
                 for="checkbox-9"
                 tabindex="0"
@@ -122,7 +122,7 @@ exports[`CheckboxCell component CheckboxCell renders in edit mode and handles ch
                 <div
                   aria-checked="false"
                   aria-label="Label 2"
-                  class="checkbox-marker"
+                  class="checkboxMarker"
                   id="checkbox-9"
                   role="checkbox"
                 >
@@ -134,14 +134,14 @@ exports[`CheckboxCell component CheckboxCell renders in edit mode and handles ch
                 Label 2
               </label>
               <label
-                class=""
+                class="label"
                 data-testid="DATA-TEST-ID-2"
                 for="checkbox-10"
                 tabindex="0"
               >
                 <div
                   aria-label="Label 3"
-                  class="checkbox-marker"
+                  class="checkboxMarker"
                   id="checkbox-10"
                   role="checkbox"
                 >
@@ -170,20 +170,20 @@ exports[`CheckboxCell component CheckboxCell renders in edit mode via extra 1`] 
           class="table--cell--checkbox"
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <div
-              class="field gds-checkbox-container input-checkbox-field gds-typography"
+              class="container"
             >
               <label
-                class="input-checkbox-field-checked"
+                class="label checked"
                 for="checkbox-11"
                 tabindex="0"
               >
                 <div
                   aria-checked="true"
                   aria-label="Label 1"
-                  class="checkbox-marker"
+                  class="checkboxMarker checked"
                   id="checkbox-11"
                   role="checkbox"
                 >
@@ -195,14 +195,14 @@ exports[`CheckboxCell component CheckboxCell renders in edit mode via extra 1`] 
                 Label 1
               </label>
               <label
-                class=""
+                class="label"
                 for="checkbox-12"
                 tabindex="0"
               >
                 <div
                   aria-checked="false"
                   aria-label="Label 2"
-                  class="checkbox-marker"
+                  class="checkboxMarker"
                   id="checkbox-12"
                   role="checkbox"
                 >
@@ -214,13 +214,13 @@ exports[`CheckboxCell component CheckboxCell renders in edit mode via extra 1`] 
                 Label 2
               </label>
               <label
-                class=""
+                class="label"
                 for="checkbox-13"
                 tabindex="0"
               >
                 <div
                   aria-label="Label 3"
-                  class="checkbox-marker"
+                  class="checkboxMarker"
                   id="checkbox-13"
                   role="checkbox"
                 >
@@ -250,20 +250,20 @@ exports[`CheckboxCell component CheckboxCell renders when hidden 1`] = `
           style="display: none;"
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <div
-              class="field gds-checkbox-container input-checkbox-field gds-typography"
+              class="container"
             >
               <label
-                class="input-checkbox-field-read-only input-checkbox-field-checked"
+                class="label readOnly checked"
                 for="checkbox-5"
                 tabindex="-1"
               >
                 <div
                   aria-checked="true"
                   aria-label="Label 1"
-                  class="checkbox-marker"
+                  class="checkboxMarker checked readOnly"
                   id="checkbox-5"
                   role="checkbox"
                 >
@@ -275,14 +275,14 @@ exports[`CheckboxCell component CheckboxCell renders when hidden 1`] = `
                 Label 1
               </label>
               <label
-                class="input-checkbox-field-read-only"
+                class="label readOnly"
                 for="checkbox-6"
                 tabindex="-1"
               >
                 <div
                   aria-checked="false"
                   aria-label="Label 2"
-                  class="checkbox-marker"
+                  class="checkboxMarker readOnly"
                   id="checkbox-6"
                   role="checkbox"
                 >
@@ -294,13 +294,13 @@ exports[`CheckboxCell component CheckboxCell renders when hidden 1`] = `
                 Label 2
               </label>
               <label
-                class="input-checkbox-field-read-only"
+                class="label readOnly"
                 for="checkbox-7"
                 tabindex="-1"
               >
                 <div
                   aria-label="Label 3"
-                  class="checkbox-marker"
+                  class="checkboxMarker readOnly"
                   id="checkbox-7"
                   role="checkbox"
                 >
@@ -329,20 +329,20 @@ exports[`CheckboxCell component CheckboxCell renders with forced value 1`] = `
           class="table--cell--checkbox"
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <div
-              class="field gds-checkbox-container input-checkbox-field gds-typography"
+              class="container"
             >
               <label
-                class="input-checkbox-field-read-only input-checkbox-field-checked"
+                class="label readOnly checked"
                 for="checkbox-4"
                 tabindex="-1"
               >
                 <div
                   aria-checked="true"
                   aria-label="Label 4"
-                  class="checkbox-marker"
+                  class="checkboxMarker checked readOnly"
                   id="checkbox-4"
                   role="checkbox"
                 >

@@ -3,7 +3,7 @@
 exports[`Badge Component Badge renders notification 1`] = `
 <div>
   <span
-    class="gds-badge pill danger CLASSNAME"
+    class="default pill danger CLASSNAME"
   >
     BADGE
   </span>
@@ -16,7 +16,7 @@ exports[`Badge Component Badge renders notification 1`] = `
 exports[`Badge Component Badge renders notification 2`] = `
 <div>
   <span
-    class="gds-badge pill danger CLASSNAME"
+    class="default pill danger CLASSNAME"
   >
     <div />
   </span>

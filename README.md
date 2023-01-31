@@ -68,49 +68,21 @@
 npm install ghost-design-system
 ```
 
-2. Define the set of colors by copying the file: ~ghost-design-system/dist/assets/\_colors.scss)
-
-```scss
-// Neutral pallet
-$chalk: rgb(228, 228, 228);
-$charcoal: rgb(51, 51, 51);
-$pebble: rgb(117, 117, 117);
-$silver: rgb(196, 196, 196);
-$smoke: rgb(248, 248, 248);
-$white: rgb(255, 255, 255);
-
-// Additional pallet
-$scooter: rgb(38, 186, 212);
-$buttercup: rgb(244, 174, 38);
-$cerulean: rgb(1, 82, 129);
-$cinnabar: rgb(232, 61, 71);
-$fern: rgb(92, 184, 92);
-$sky: rgb(16, 156, 241);
-$tangerine: rgb(229, 114, 0);
-
-$error: rgb(255, 52, 24);
-
-$primary: $scooter;
-$secondary: $pebble;
-$tertiary: $charcoal;
-
-$fontfamily: 'Montserrat', sans-serif;
-```
-
-3. Create your `index.scss` file:
-
-```scss
-@import 'colors.scss';
-@import '~ghost-design-system/dist/assets/_global.scss';
-@import '~ghost-design-system/dist/assets/_general.scss'; // Optional
-```
-
-4. Load the required icon set, for example in your `index.tsx` :
+3. Load the required icon set and initialize the ThemeProvider, for example in your `index.tsx` :
 
 ```ts
-import { loadIcons } from 'ghost-design-system';
+import { loadIcons, ThemeProvider } from 'ghost-design-system';
+import '~ghost-design-system/dist/ghost-design-system.min.css';
 
 loadIcons();
+
+const App = () => {
+  return (
+    <ThemeProvider>
+      <RestOfYourApp>
+    </ThemeProvider>
+  )
+}
 ```
 
 5. You should be ready to use any of the components of the library.
@@ -124,7 +96,6 @@ This react components library uses the following:
 - [@fortawesome](https://fontawesome.com/)
 - [@szhsin/react-menu](https://szhsin.github.io/react-menu/)
 - [classnames](https://github.com/JedWatson/classnames#readme)
-- [color-alpha](https://github.com/colorjs/color-alpha)
 - [color-rgba](https://github.com/colorjs/color-rgba)
 - [date-fns](https://date-fns.org/)
 - [lodash](https://lodash.com/)
@@ -143,10 +114,9 @@ This react components library uses the following:
 
 Peer dependencies:
 
-- [react](https://fr.reactjs.org/)
-- [react-dom](https://fr.reactjs.org/docs/react-dom.html)
-- [suneditor](http://suneditor.com/) - for SCSS import
-- [tippyjs](https://atomiks.github.io/tippyjs/) - for SCSS import
+- [react](https://reactjs.org/)
+- [react-dom](https://reactjs.org/docs/react-dom.html)
+- [react-router-dom](https://v5.reactrouter.com/)
 
 Dev dependencies:
 
@@ -154,7 +124,7 @@ Dev dependencies:
 - [Jest](https://jestjs.io/)
 - [Prettier](https://prettier.io/)
 - [Rollup](https://rollupjs.org/)
-- [SCSS](https://sass-lang.com/)
+- [SASS](https://sass-lang.com/)
 - [Storybook](https://storybook.js.org/)
 - [Testing-library](https://testing-library.com/)
 - [Typescript](https://www.typescriptlang.org/)

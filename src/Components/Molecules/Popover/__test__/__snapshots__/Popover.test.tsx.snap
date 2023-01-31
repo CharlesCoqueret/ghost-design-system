@@ -25,14 +25,18 @@ exports[`Popover Component Popover renders 1`] = `
             style="position: absolute;"
           />
           <div
-            class="gds-popover-container"
+            class="container"
           >
-            CONTENT
+            <div
+              class="title"
+            />
+            <div
+              class="buttons"
+            />
           </div>
         </ul>
       </div>
     </div>
-    ,
   </div>
   <div
     id="popover-portal-id"
@@ -67,14 +71,18 @@ exports[`Popover Component Popover renders 2`] = `
             style="position: absolute; left: 0px;"
           />
           <div
-            class="gds-popover-container"
+            class="container"
           >
-            CONTENT
+            <div
+              class="title"
+            />
+            <div
+              class="buttons"
+            />
           </div>
         </ul>
       </div>
     </div>
-    ,
   </div>
   <div
     id="popover-portal-id"

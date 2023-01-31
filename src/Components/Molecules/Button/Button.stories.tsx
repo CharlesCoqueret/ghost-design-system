@@ -34,7 +34,7 @@ export const Primary = Template.bind({});
 Primary.args = {
   label: 'Button primary',
   tooltip: 'Button primary',
-  icon: ['fal', 'cog'],
+  icon: ['fal', 'circle-info'],
   color: ColorButtonEnum.PRIMARY,
 };
 

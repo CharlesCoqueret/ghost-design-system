@@ -29,6 +29,10 @@ export interface IDatePickerProps {
   locale?: string;
   /** Name of date picker input */
   name: string;
+  /** Maximum date that can be picked (optional, default: undefined) */
+  maxDate?: Date;
+  /** Minimum date that can be picked (optional, default: undefined) */
+  minDate?: Date;
   /** Handler of value changes (optional, default: undefined) */
   onChange?: (date: Date | null) => void;
   /** Placeholder value (optional, default: undefined) */
@@ -51,6 +55,8 @@ const DatePickerInput = (props: IDatePickerProps): ReactElement => {
     isClearable,
     isInError,
     locale,
+    maxDate,
+    minDate,
     name,
     onChange,
     placeholder,
@@ -60,46 +66,50 @@ const DatePickerInput = (props: IDatePickerProps): ReactElement => {
 
   const localDateFormat = dateFormat || 'MMM dd, yyyy';
 
+  // Investigate custom input https://github.com/Hacker0x01/react-datepicker/issues/2479#issuecomment-1013838239
+
   return (
     <div
-      className={classnames('field', className)}
+      className={classnames({ 'input-date-picker-wrapper-read-only': readOnly }, className)}
       onClick={(event) => {
         event.stopPropagation();
       }}>
       <DatePicker
-        name={name}
-        selected={inputValue}
+        autoComplete='off'
+        autoFocus={false}
+        calendarStartDay={calendarStartDay}
         className={classnames({
-          'input-date-picker-input-read-only': readOnly,
+          'input-date-picker-input-read-only': readOnly || disabled,
           'input-date-picker-input': !readOnly,
-          'field-highlighted': highlighted && (readOnly || disabled),
-          'input-error': isInError && !readOnly && !disabled,
+          highlighted: highlighted && (readOnly || disabled),
+          'input-error': isInError && !(readOnly || disabled),
         })}
         data-testid={dataTestId}
-        autoFocus={false}
-        preventOpenOnFocus
+        dateFormat={localDateFormat}
+        disabled={disabled}
+        disabledKeyboardNavigation
+        fixedHeight
+        isClearable={!(disabled || readOnly) && isClearable}
+        locale={locale}
+        maxDate={maxDate}
+        minDate={minDate}
+        name={name}
         onChange={
           onChange ||
           (() => {
             return;
           })
         }
-        disabled={disabled}
-        fixedHeight
         readOnly={readOnly}
-        isClearable={!(disabled || readOnly) && isClearable}
         placeholderText={!inputValue && (readOnly || disabled) ? '-' : placeholder || localDateFormat.toUpperCase()}
-        dateFormat={localDateFormat}
-        disabledKeyboardNavigation
-        calendarStartDay={calendarStartDay}
-        locale={locale}
         showPopperArrow={false}
         popperContainer={usePortal ? Portal : undefined}
         renderCustomHeader={DatePickerHeader(locale)}
-        autoComplete='off'
         onClickOutside={(event) => {
           event.stopPropagation();
         }}
+        preventOpenOnFocus
+        selected={inputValue}
         tabIndex={readOnly || disabled ? -1 : 0}
       />
     </div>
@@ -115,6 +125,8 @@ DatePickerInput.defaultProps = {
   isClearable: false,
   isInError: false,
   locale: undefined,
+  maxDate: undefined,
+  minDate: undefined,
   placeholder: undefined,
   readOnly: false,
   usePortal: true,

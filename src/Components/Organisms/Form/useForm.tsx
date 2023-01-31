@@ -76,7 +76,7 @@ const useForm = <T extends AnyObject>(props: IUseFormProps<T>): IUseFormReturned
   };
 
   const scrollToError = () => {
-    const error = document.body.getElementsByClassName('field-error-message').item(0);
+    const error = document.body.getElementsByClassName('field-error').item(0);
     if (!error) return;
     error.scrollIntoView({ behavior: 'smooth', block: 'center' });
   };

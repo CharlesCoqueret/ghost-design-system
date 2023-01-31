@@ -2,6 +2,8 @@ import React, { ReactElement } from 'react';
 import classnames from 'classnames';
 import { Typography } from '../Typography';
 
+import styles from './TextInput.module.scss';
+
 export interface ITextInputProps {
   /** For test purpose only */
   dataTestId?: string;
@@ -48,29 +50,31 @@ const TextInput = (props: ITextInputProps): ReactElement => {
     readOnly,
   } = props;
 
-  if (readOnly || disabled)
+  if (readOnly) {
     return (
-      <div
+      <Typography.Text
+        ellipsis={ellipsis}
         className={classnames(
-          'field',
-          'input-text-field-read-only',
           {
-            'field-highlighted': highlighted,
+            [styles.highlighted]: (readOnly || disabled) && highlighted,
           },
           inputClassName,
         )}
         data-testid={dataTestId}>
-        <Typography.Text ellipsis={ellipsis}>{inputValue ? inputValue : '-'}</Typography.Text>
-      </div>
+        {inputValue ? inputValue : '-'}
+      </Typography.Text>
     );
+  }
 
   return (
     <input
+      autoComplete='off'
       className={classnames(
-        'field',
-        'gds-input-text-field',
+        styles.container,
         {
-          'input-error': isInError && !disabled,
+          [styles.error]: isInError && !disabled,
+          [styles.disabled]: disabled,
+          [styles.highlighted]: (readOnly || disabled) && highlighted,
         },
         inputClassName,
       )}
@@ -83,7 +87,6 @@ const TextInput = (props: ITextInputProps): ReactElement => {
       minLength={minLength}
       onChange={onChange}
       disabled={disabled}
-      readOnly={readOnly}
       value={inputValue}
     />
   );

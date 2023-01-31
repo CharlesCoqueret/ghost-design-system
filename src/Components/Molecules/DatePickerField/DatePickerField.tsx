@@ -1,5 +1,4 @@
 import React, { ReactElement, Ref } from 'react';
-import classnames from 'classnames';
 
 import { GenericField } from '../../Atoms/GenericField';
 import { DatePickerInput, WeekDayEnum, DateFormat } from '../../Atoms/DatePickerInput';
@@ -103,7 +102,7 @@ export const DatePickerField = (props: IDatePickerFieldProps): ReactElement => {
       readOnly={readOnly}>
       <DatePickerInput
         calendarStartDay={calendarStartDay}
-        className={classnames('input-date-picker-field', inputClassName)}
+        className={inputClassName}
         dataTestId={dataTestId}
         dateFormat={dateFormat}
         disabled={disabled}

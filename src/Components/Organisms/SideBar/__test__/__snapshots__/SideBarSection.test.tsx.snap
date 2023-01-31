@@ -3,7 +3,7 @@
 exports[`SideBarSection Component SideBarSection renders 1`] = `
 <div>
   <nav
-    class="gds-sidebar-container"
+    class="container"
     style="height: 600px; width: 270px;"
   >
     <ul
@@ -11,7 +11,7 @@ exports[`SideBarSection Component SideBarSection renders 1`] = `
       style="width: 270px; left: 0px;"
     >
       <div
-        class="sidebar-divider"
+        class="divider"
       />
       <div
         class="section"
@@ -56,7 +56,7 @@ exports[`SideBarSection Component SideBarSection renders 1`] = `
 exports[`SideBarSection Component SideBarSection renders hidden section 1`] = `
 <div>
   <nav
-    class="gds-sidebar-container"
+    class="container"
     style="height: 600px; width: 270px;"
   >
     <ul

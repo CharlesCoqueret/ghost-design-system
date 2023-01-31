@@ -1,22 +1,21 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import Badge, { BadgeColorsEnum, IBadgeProps } from './Badge';
-// import { MenuDirectionEnum } from '../Tooltip';
+import BadgeComponent, { BadgeColorsEnum, IBadgeProps } from './Badge';
 
 export default {
-  title: 'Atom/Badge',
-  component: Badge,
+  title: 'Atom',
+  component: BadgeComponent,
   parameters: { actions: { argTypesRegex: '^on.*' }, controls: { sort: 'requiredFirst' } },
-} as ComponentMeta<typeof Badge>;
+} as ComponentMeta<typeof BadgeComponent>;
 
 const getRandomInt = (min = 1, max = 100): number => {
   return Math.round(Math.random() * (max - min) + min);
 };
 
-const Template: ComponentStory<typeof Badge> = (args: IBadgeProps) => {
+const Template: ComponentStory<typeof BadgeComponent> = (args: IBadgeProps) => {
   if (args.className || args.color || args.tooltip || args.tooltipDirection || args.type) {
-    return <Badge {...args}>{args.type === 'notification' ? '+1' : 'STATUS'}</Badge>;
+    return <BadgeComponent {...args}>{args.type === 'notification' ? '+1' : 'STATUS'}</BadgeComponent>;
   }
   return (
     <div
@@ -32,12 +31,12 @@ const Template: ComponentStory<typeof Badge> = (args: IBadgeProps) => {
           <div key={color} style={{ display: 'flex', flexDirection: 'column' }}>
             <div style={{ fontWeight: '800', fontSize: '16px', marginBottom: '5px' }}>{color}</div>
             <div>
-              <Badge type='notification' color={BadgeColorsEnum[color]}>
+              <BadgeComponent type='notification' color={BadgeColorsEnum[color]}>
                 +{getRandomInt()}
-              </Badge>
-              <Badge type='indicator' color={BadgeColorsEnum[color]}>
+              </BadgeComponent>
+              <BadgeComponent type='indicator' color={BadgeColorsEnum[color]}>
                 STATUS
-              </Badge>
+              </BadgeComponent>
             </div>
           </div>
         );
@@ -46,5 +45,5 @@ const Template: ComponentStory<typeof Badge> = (args: IBadgeProps) => {
   );
 };
 
-export const Default = Template.bind({});
-Default.args = {};
+export const Badge = Template.bind({});
+Badge.args = {};

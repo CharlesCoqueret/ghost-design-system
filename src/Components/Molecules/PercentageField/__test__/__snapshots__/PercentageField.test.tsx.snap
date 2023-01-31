@@ -3,10 +3,11 @@
 exports[`PercentageField Component PercentageField does nothing when onChange is not defined 1`] = `
 <div>
   <div
-    class="gds-field-group"
+    class="fieldGroup"
   >
     <input
-      class="gds-amount-field"
+      autocomplete="off"
+      class="default"
       data-testid="DATA-TEST-ID"
       inputmode="numeric"
       name="name"
@@ -20,10 +21,11 @@ exports[`PercentageField Component PercentageField does nothing when onChange is
 exports[`PercentageField Component PercentageField does nothing when onChange is not defined 2`] = `
 <div>
   <div
-    class="gds-field-group"
+    class="fieldGroup"
   >
     <input
-      class="gds-amount-field"
+      autocomplete="off"
+      class="default"
       data-testid="DATA-TEST-ID"
       inputmode="numeric"
       name="name"
@@ -37,10 +39,11 @@ exports[`PercentageField Component PercentageField does nothing when onChange is
 exports[`PercentageField Component PercentageField handles change 1`] = `
 <div>
   <div
-    class="gds-field-group"
+    class="fieldGroup"
   >
     <input
-      class="gds-amount-field"
+      autocomplete="off"
+      class="default"
       data-testid="DATA-TEST-ID"
       inputmode="numeric"
       name="name"
@@ -54,10 +57,11 @@ exports[`PercentageField Component PercentageField handles change 1`] = `
 exports[`PercentageField Component PercentageField handles change 2`] = `
 <div>
   <div
-    class="gds-field-group"
+    class="fieldGroup"
   >
     <input
-      class="gds-amount-field"
+      autocomplete="off"
+      class="default"
       data-testid="DATA-TEST-ID"
       inputmode="numeric"
       name="name"
@@ -71,10 +75,11 @@ exports[`PercentageField Component PercentageField handles change 2`] = `
 exports[`PercentageField Component PercentageField renders 1`] = `
 <div>
   <div
-    class="gds-field-group"
+    class="fieldGroup"
   >
     <input
-      class="gds-amount-field"
+      autocomplete="off"
+      class="default"
       inputmode="numeric"
       name="name"
       type="text"
@@ -87,10 +92,11 @@ exports[`PercentageField Component PercentageField renders 1`] = `
 exports[`PercentageField Component PercentageField renders with values in disabled highligted 1`] = `
 <div>
   <div
-    class="gds-field-group"
+    class="fieldGroup"
   >
     <input
-      class="gds-amount-field"
+      autocomplete="off"
+      class="default disabled"
       disabled=""
       inputmode="numeric"
       name="name"
@@ -104,10 +110,11 @@ exports[`PercentageField Component PercentageField renders with values in disabl
 exports[`PercentageField Component PercentageField renders with values in readonly 1`] = `
 <div>
   <div
-    class="gds-field-group"
+    class="fieldGroup"
   >
     <span
-      class="gds-amount-field amount-field-read-only"
+      autocomplete="off"
+      class="default readOnly"
       id="name"
       name="name"
     >
@@ -120,10 +127,11 @@ exports[`PercentageField Component PercentageField renders with values in readon
 exports[`PercentageField Component PercentageField renders with values set as string 1`] = `
 <div>
   <div
-    class="gds-field-group"
+    class="fieldGroup"
   >
     <input
-      class="gds-amount-field"
+      autocomplete="off"
+      class="default"
       inputmode="numeric"
       name="name"
       type="text"
@@ -136,10 +144,11 @@ exports[`PercentageField Component PercentageField renders with values set as st
 exports[`PercentageField Component PercentageField renders with values set as undefined 1`] = `
 <div>
   <div
-    class="gds-field-group"
+    class="fieldGroup"
   >
     <input
-      class="gds-amount-field"
+      autocomplete="off"
+      class="default"
       inputmode="numeric"
       name="name"
       type="text"
@@ -152,10 +161,11 @@ exports[`PercentageField Component PercentageField renders with values set as un
 exports[`PercentageField Component PercentageField renders with values with fieldSize and inline 1`] = `
 <div>
   <div
-    class="gds-field-group field-size-6 field-inline"
+    class="fieldGroup size-6 inline"
   >
     <input
-      class="gds-amount-field"
+      autocomplete="off"
+      class="default"
       inputmode="numeric"
       name="name"
       type="text"

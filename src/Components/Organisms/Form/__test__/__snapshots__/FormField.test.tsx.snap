@@ -3,10 +3,10 @@
 exports[`FormField Component FormField renders amount field 1`] = `
 <div>
   <div
-    class="gds-layout-row"
+    class="row"
   >
     <div
-      class="gds-layout-col"
+      class="col"
     >
       <div>
         Mocked AmountField props: 
@@ -14,7 +14,7 @@ exports[`FormField Component FormField renders amount field 1`] = `
       </div>
     </div>
     <div
-      class="gds-layout-col"
+      class="col"
     >
       <div>
         Mocked AmountField props: 
@@ -37,10 +37,10 @@ exports[`FormField Component FormField renders amount field 2`] = `
 exports[`FormField Component FormField renders checkbox field 1`] = `
 <div>
   <div
-    class="gds-layout-row"
+    class="row"
   >
     <div
-      class="gds-layout-col"
+      class="col"
     >
       <div>
         Mocked CheckboxField props: 
@@ -48,7 +48,7 @@ exports[`FormField Component FormField renders checkbox field 1`] = `
       </div>
     </div>
     <div
-      class="gds-layout-col"
+      class="col"
     >
       <div>
         Mocked CheckboxField props: 
@@ -71,10 +71,10 @@ exports[`FormField Component FormField renders checkbox field 2`] = `
 exports[`FormField Component FormField renders custom field 1`] = `
 <div>
   <div
-    class="gds-layout-row"
+    class="row"
   >
     <div
-      class="gds-layout-col"
+      class="col"
     >
       <div>
         Mocked CustomField props: 
@@ -82,7 +82,7 @@ exports[`FormField Component FormField renders custom field 1`] = `
       </div>
     </div>
     <div
-      class="gds-layout-col"
+      class="col"
     >
       <div>
         Mocked CustomField props: 
@@ -105,10 +105,10 @@ exports[`FormField Component FormField renders custom field 2`] = `
 exports[`FormField Component FormField renders date field 1`] = `
 <div>
   <div
-    class="gds-layout-row"
+    class="row"
   >
     <div
-      class="gds-layout-col"
+      class="col"
     >
       <div>
         Mocked DatePickerField props: 
@@ -116,7 +116,7 @@ exports[`FormField Component FormField renders date field 1`] = `
       </div>
     </div>
     <div
-      class="gds-layout-col"
+      class="col"
     >
       <div>
         Mocked DatePickerField props: 
@@ -139,10 +139,10 @@ exports[`FormField Component FormField renders date field 2`] = `
 exports[`FormField Component FormField renders dynamic search field 1`] = `
 <div>
   <div
-    class="gds-layout-row"
+    class="row"
   >
     <div
-      class="gds-layout-col"
+      class="col"
     >
       <div>
         Mocked DynamicSearchField props: 
@@ -150,7 +150,7 @@ exports[`FormField Component FormField renders dynamic search field 1`] = `
       </div>
     </div>
     <div
-      class="gds-layout-col"
+      class="col"
     >
       <div>
         Mocked DynamicSearchField props: 
@@ -173,10 +173,10 @@ exports[`FormField Component FormField renders dynamic search field 2`] = `
 exports[`FormField Component FormField renders file field 1`] = `
 <div>
   <div
-    class="gds-layout-row"
+    class="row"
   >
     <div
-      class="gds-layout-col"
+      class="col"
     >
       <div>
         Mocked FileField props: 
@@ -184,7 +184,7 @@ exports[`FormField Component FormField renders file field 1`] = `
       </div>
     </div>
     <div
-      class="gds-layout-col"
+      class="col"
     >
       <div>
         Mocked FileField props: 
@@ -207,10 +207,10 @@ exports[`FormField Component FormField renders file field 2`] = `
 exports[`FormField Component FormField renders multi select field 1`] = `
 <div>
   <div
-    class="gds-layout-row"
+    class="row"
   >
     <div
-      class="gds-layout-col"
+      class="col"
     >
       <div>
         Mocked MultiSelectField props: 
@@ -218,7 +218,7 @@ exports[`FormField Component FormField renders multi select field 1`] = `
       </div>
     </div>
     <div
-      class="gds-layout-col"
+      class="col"
     >
       <div>
         Mocked MultiSelectField props: 
@@ -250,10 +250,10 @@ exports[`FormField Component FormField renders multi select field 3`] = `
 exports[`FormField Component FormField renders number field 1`] = `
 <div>
   <div
-    class="gds-layout-row"
+    class="row"
   >
     <div
-      class="gds-layout-col"
+      class="col"
     >
       <div>
         Mocked AmountField props: 
@@ -261,7 +261,7 @@ exports[`FormField Component FormField renders number field 1`] = `
       </div>
     </div>
     <div
-      class="gds-layout-col"
+      class="col"
     >
       <div>
         Mocked AmountField props: 
@@ -284,10 +284,10 @@ exports[`FormField Component FormField renders number field 2`] = `
 exports[`FormField Component FormField renders percentage field 1`] = `
 <div>
   <div
-    class="gds-layout-row"
+    class="row"
   >
     <div
-      class="gds-layout-col"
+      class="col"
     >
       <div>
         Mocked PercentageField props: 
@@ -295,7 +295,7 @@ exports[`FormField Component FormField renders percentage field 1`] = `
       </div>
     </div>
     <div
-      class="gds-layout-col"
+      class="col"
     >
       <div>
         Mocked PercentageField props: 
@@ -318,10 +318,10 @@ exports[`FormField Component FormField renders percentage field 2`] = `
 exports[`FormField Component FormField renders rich text field 1`] = `
 <div>
   <div
-    class="gds-layout-row"
+    class="row"
   >
     <div
-      class="gds-layout-col"
+      class="col"
     >
       <div>
         Mocked RichTextField props: 
@@ -329,7 +329,7 @@ exports[`FormField Component FormField renders rich text field 1`] = `
       </div>
     </div>
     <div
-      class="gds-layout-col"
+      class="col"
     >
       <div>
         Mocked RichTextField props: 
@@ -352,10 +352,10 @@ exports[`FormField Component FormField renders rich text field 2`] = `
 exports[`FormField Component FormField renders select field 1`] = `
 <div>
   <div
-    class="gds-layout-row"
+    class="row"
   >
     <div
-      class="gds-layout-col"
+      class="col"
     >
       <div>
         Mocked SelectField props: 
@@ -363,7 +363,7 @@ exports[`FormField Component FormField renders select field 1`] = `
       </div>
     </div>
     <div
-      class="gds-layout-col"
+      class="col"
     >
       <div>
         Mocked SelectField props: 
@@ -395,10 +395,10 @@ exports[`FormField Component FormField renders select field 3`] = `
 exports[`FormField Component FormField renders switch field 1`] = `
 <div>
   <div
-    class="gds-layout-row"
+    class="row"
   >
     <div
-      class="gds-layout-col"
+      class="col"
     >
       <div>
         Mocked SwitchField props: 
@@ -406,7 +406,7 @@ exports[`FormField Component FormField renders switch field 1`] = `
       </div>
     </div>
     <div
-      class="gds-layout-col"
+      class="col"
     >
       <div>
         Mocked SwitchField props: 
@@ -438,10 +438,10 @@ exports[`FormField Component FormField renders table field 1`] = `
 exports[`FormField Component FormField renders text field 1`] = `
 <div>
   <div
-    class="gds-layout-row"
+    class="row"
   >
     <div
-      class="gds-layout-col"
+      class="col"
     >
       <div>
         Mocked TextField props: 
@@ -449,7 +449,7 @@ exports[`FormField Component FormField renders text field 1`] = `
       </div>
     </div>
     <div
-      class="gds-layout-col"
+      class="col"
     >
       <div>
         Mocked TextField props: 
@@ -472,10 +472,10 @@ exports[`FormField Component FormField renders text field 2`] = `
 exports[`FormField Component FormField renders textarea field 1`] = `
 <div>
   <div
-    class="gds-layout-row"
+    class="row"
   >
     <div
-      class="gds-layout-col"
+      class="col"
     >
       <div>
         Mocked TextAreaField props: 
@@ -483,7 +483,7 @@ exports[`FormField Component FormField renders textarea field 1`] = `
       </div>
     </div>
     <div
-      class="gds-layout-col"
+      class="col"
     >
       <div>
         Mocked TextAreaField props: 
@@ -506,10 +506,10 @@ exports[`FormField Component FormField renders textarea field 2`] = `
 exports[`FormField Component FormField renders year field 1`] = `
 <div>
   <div
-    class="gds-layout-row"
+    class="row"
   >
     <div
-      class="gds-layout-col"
+      class="col"
     >
       <div>
         Mocked YearPickerField props: 
@@ -517,7 +517,7 @@ exports[`FormField Component FormField renders year field 1`] = `
       </div>
     </div>
     <div
-      class="gds-layout-col"
+      class="col"
     >
       <div>
         Mocked YearPickerField props: 

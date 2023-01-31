@@ -3,7 +3,7 @@
 exports[`GenericField Component GenericField renders 1`] = `
 <div>
   <div
-    class="gds-field-group"
+    class="fieldGroup"
   />
 </div>
 `;
@@ -11,7 +11,7 @@ exports[`GenericField Component GenericField renders 1`] = `
 exports[`GenericField Component GenericField renders inline with error message, not displaying the error 1`] = `
 <div>
   <div
-    class="gds-field-group field-inline"
+    class="fieldGroup inline"
   />
 </div>
 `;
@@ -19,7 +19,7 @@ exports[`GenericField Component GenericField renders inline with error message, 
 exports[`GenericField Component GenericField renders with children 1`] = `
 <div>
   <div
-    class="gds-field-group"
+    class="fieldGroup"
   >
     <div
       class="CHILD-TEST"
@@ -31,13 +31,13 @@ exports[`GenericField Component GenericField renders with children 1`] = `
 exports[`GenericField Component GenericField renders with error message 1`] = `
 <div>
   <div
-    class="gds-field-group"
+    class="fieldGroup"
   >
     <div
-      class="field-message"
+      class="message"
     >
       <div
-        class="field-error-message"
+        class="error field-error"
       >
         ERROR-MESSAGE
       </div>
@@ -49,13 +49,13 @@ exports[`GenericField Component GenericField renders with error message 1`] = `
 exports[`GenericField Component GenericField renders with error message and helper text, displaying only error 1`] = `
 <div>
   <div
-    class="gds-field-group"
+    class="fieldGroup"
   >
     <div
-      class="field-message"
+      class="message"
     >
       <div
-        class="field-error-message"
+        class="error field-error"
       >
         ERROR-MESSAGE
       </div>
@@ -67,13 +67,13 @@ exports[`GenericField Component GenericField renders with error message and help
 exports[`GenericField Component GenericField renders with error message in read only, not displaying the error 1`] = `
 <div>
   <div
-    class="gds-field-group"
+    class="fieldGroup"
   >
     <div
-      class="field-message"
+      class="message"
     >
       <div
-        class="field-helper-text"
+        class="helper"
       />
     </div>
   </div>
@@ -83,13 +83,13 @@ exports[`GenericField Component GenericField renders with error message in read 
 exports[`GenericField Component GenericField renders with error message in read only, not displaying the error, only displaying the helper text 1`] = `
 <div>
   <div
-    class="gds-field-group"
+    class="fieldGroup"
   >
     <div
-      class="field-message"
+      class="message"
     >
       <div
-        class="field-helper-text"
+        class="helper"
       >
         HELPER-TEXT
       </div>
@@ -101,18 +101,18 @@ exports[`GenericField Component GenericField renders with error message in read 
 exports[`GenericField Component GenericField renders with helper text and counter 1`] = `
 <div>
   <div
-    class="gds-field-group"
+    class="fieldGroup"
   >
     <div
-      class="field-message"
+      class="message"
     >
       <div
-        class="field-helper-text"
+        class="helper"
       >
         HELPER-TEXT
       </div>
       <div
-        class="field-counter"
+        class="counter"
       >
         5 / 10
       </div>
@@ -124,7 +124,7 @@ exports[`GenericField Component GenericField renders with helper text and counte
 exports[`GenericField Component GenericField renders with highlight in readonly 1`] = `
 <div>
   <div
-    class="gds-field-group"
+    class="fieldGroup"
   />
 </div>
 `;
@@ -132,7 +132,7 @@ exports[`GenericField Component GenericField renders with highlight in readonly 
 exports[`GenericField Component GenericField renders with highlight not in readonly 1`] = `
 <div>
   <div
-    class="gds-field-group"
+    class="fieldGroup"
   />
 </div>
 `;
@@ -140,13 +140,13 @@ exports[`GenericField Component GenericField renders with highlight not in reado
 exports[`GenericField Component GenericField renders with invertInputDescription 1`] = `
 <div>
   <div
-    class="gds-field-group"
+    class="fieldGroup"
   >
     <div
-      class="field-message field-inverted"
+      class="message inverted"
     >
       <div
-        class="field-helper-text"
+        class="helper"
       >
         HELPER
       </div>
@@ -159,14 +159,14 @@ exports[`GenericField Component GenericField renders with invertInputDescription
 exports[`GenericField Component GenericField renders with invertInputDescription 2`] = `
 <div>
   <div
-    class="gds-field-group"
+    class="fieldGroup"
   >
     CHILD
     <div
-      class="field-message"
+      class="message"
     >
       <div
-        class="field-helper-text"
+        class="helper"
       >
         HELPER
       </div>

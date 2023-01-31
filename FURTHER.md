@@ -14,6 +14,7 @@
 |   |   |   ├── Example
 |   |   |   |   ├── __tests__
 |   |   |   |   |   ├── Example.test.tsx
+|   |   |   |   ├── Example.module.scss
 |   |   |   |   ├── Example.stories.mdx
 |   |   |   |   ├── Example.tsx
 |   |   |   |   ├── index.ts
@@ -33,7 +34,7 @@ export \* from './MyComponent';
 export \* from './SomeOtherComponent';
 ```
 
-You can develop your new component using storybook as your playground. Once you have added the `.stories.tsx` file for you new component, you can run `yarn storybook` to start the service.
+You can develop your new component using storybook as your playground. Once you have added the `.stories.tsx` file for you new component, you can run `npm run storybook` to start the service.
 
 ## Tests
 

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import Row, { IRowProps } from './Row';
+import RowComponent, { IRowProps } from './Row';
 import { AmountField, DatePickerField, TextAreaField, YearPickerField } from '../../Molecules';
 import Container from './Container';
 import Col from './Col';
@@ -22,46 +22,46 @@ const initialData = {
 };
 
 export default {
-  title: 'Atom/Layout/Row',
-  component: Row,
+  title: 'Atom/Layout',
+  component: RowComponent,
   parameters: { actions: { argTypesRegex: '^on.*' }, controls: { sort: 'requiredFirst' } },
-} as ComponentMeta<typeof Row>;
+} as ComponentMeta<typeof RowComponent>;
 
-const Template: ComponentStory<typeof Row> = (args: IRowProps) => {
+const Template: ComponentStory<typeof RowComponent> = (args: IRowProps) => {
   const [help, setHelp] = useState(false);
 
   return (
     <>
       <Container style={help ? { border: '2px dotted green' } : { border: '2px dotted transparent' }}>
         <Col>
-          <Row
+          <RowComponent
             {...args}
             style={
               help ? { ...args.style, border: '3px dotted red' } : { ...args.style, border: '3px dotted transparent' }
             }>
             <AmountField inputValue={initialData.amount} label='Amount' suffix='$' name='amount' readOnly />
-          </Row>
-          <Row
+          </RowComponent>
+          <RowComponent
             {...args}
             style={
               help ? { ...args.style, border: '3px dotted red' } : { ...args.style, border: '3px dotted transparent' }
             }>
             <DatePickerField inputValue={initialData.date} label='Date' name='date' readOnly />
-          </Row>
-          <Row
+          </RowComponent>
+          <RowComponent
             {...args}
             style={
               help ? { ...args.style, border: '3px dotted red' } : { ...args.style, border: '3px dotted transparent' }
             }>
             <TextAreaField inputValue={initialData.textarea} label='Textarea' name='textarea' readOnly />
-          </Row>
-          <Row
+          </RowComponent>
+          <RowComponent
             {...args}
             style={
               help ? { ...args.style, border: '3px dotted red' } : { ...args.style, border: '3px dotted transparent' }
             }>
             <YearPickerField inputValue={initialData.year} label='Year' name='year' readOnly />
-          </Row>
+          </RowComponent>
         </Col>
       </Container>
 
@@ -85,5 +85,5 @@ const Template: ComponentStory<typeof Row> = (args: IRowProps) => {
   );
 };
 
-export const Default = Template.bind({});
-Default.args = {};
+export const Row = Template.bind({});
+Row.args = {};

@@ -3,7 +3,7 @@
 exports[`SelectInput Component SelectInput handles change 1`] = `
 <div>
   <div
-    class="field gds-select-container input-select-field"
+    class="container"
   >
     <div
       class=" css-1959ul7-container"
@@ -19,7 +19,7 @@ exports[`SelectInput Component SelectInput handles change 1`] = `
         class="css-1f43avz-a11yText-A11yText"
       />
       <div
-        class=" css-1l9db9l-control"
+        class=" css-yqi6bw-control"
       >
         <div
           class=" css-9plg90-ValueContainer"
@@ -58,7 +58,7 @@ exports[`SelectInput Component SelectInput handles change 1`] = `
             aria-hidden="true"
           >
             <i
-              class="dynamic-search-icon icon"
+              class="icon icon"
               icon="fal,xmark"
             />
           </div>
@@ -69,7 +69,7 @@ exports[`SelectInput Component SelectInput handles change 1`] = `
             aria-hidden="true"
           >
             <i
-              class="dynamic-search-icon icon"
+              class="icon icon"
               icon="fal,chevron-down"
             />
           </div>
@@ -88,7 +88,7 @@ exports[`SelectInput Component SelectInput handles change 1`] = `
 exports[`SelectInput Component SelectInput handles change with data-testid 1`] = `
 <div>
   <div
-    class="field gds-select-container input-select-field"
+    class="container"
   >
     <div
       class=" css-1959ul7-container"
@@ -104,7 +104,7 @@ exports[`SelectInput Component SelectInput handles change with data-testid 1`] =
         class="css-1f43avz-a11yText-A11yText"
       />
       <div
-        class=" css-1l9db9l-control"
+        class=" css-yqi6bw-control"
       >
         <div
           class=" css-9plg90-ValueContainer"
@@ -143,7 +143,7 @@ exports[`SelectInput Component SelectInput handles change with data-testid 1`] =
             aria-hidden="true"
           >
             <i
-              class="dynamic-search-icon icon"
+              class="icon icon"
               data-testid="DATA-TEST-ID-clear"
               icon="fal,xmark"
             />
@@ -155,7 +155,7 @@ exports[`SelectInput Component SelectInput handles change with data-testid 1`] =
             aria-hidden="true"
           >
             <i
-              class="dynamic-search-icon icon"
+              class="icon icon"
               data-testid="DATA-TEST-ID-magnifier"
               icon="fal,chevron-down"
             />
@@ -175,7 +175,7 @@ exports[`SelectInput Component SelectInput handles change with data-testid 1`] =
 exports[`SelectInput Component SelectInput handles change with empty value when clearable 1`] = `
 <div>
   <div
-    class="field gds-select-container input-select-field"
+    class="container"
   >
     <div
       class=" css-1959ul7-container"
@@ -191,7 +191,7 @@ exports[`SelectInput Component SelectInput handles change with empty value when 
         class="css-1f43avz-a11yText-A11yText"
       />
       <div
-        class=" css-1l9db9l-control"
+        class=" css-yqi6bw-control"
       >
         <div
           class=" css-9plg90-ValueContainer"
@@ -235,7 +235,7 @@ exports[`SelectInput Component SelectInput handles change with empty value when 
             aria-hidden="true"
           >
             <i
-              class="dynamic-search-icon icon"
+              class="icon icon"
               data-testid="DATA-TEST-ID-magnifier"
               icon="fal,chevron-down"
             />
@@ -255,7 +255,7 @@ exports[`SelectInput Component SelectInput handles change with empty value when 
 exports[`SelectInput Component SelectInput renders 1`] = `
 <div>
   <div
-    class="field gds-select-container input-select-field"
+    class="container"
   >
     <div
       class=" css-1959ul7-container"
@@ -271,7 +271,7 @@ exports[`SelectInput Component SelectInput renders 1`] = `
         class="css-1f43avz-a11yText-A11yText"
       />
       <div
-        class=" css-1l9db9l-control"
+        class=" css-yqi6bw-control"
       >
         <div
           class=" css-9plg90-ValueContainer"
@@ -315,7 +315,7 @@ exports[`SelectInput Component SelectInput renders 1`] = `
             aria-hidden="true"
           >
             <i
-              class="dynamic-search-icon icon"
+              class="icon icon"
               icon="fal,chevron-down"
             />
           </div>
@@ -334,10 +334,10 @@ exports[`SelectInput Component SelectInput renders 1`] = `
 exports[`SelectInput Component SelectInput renders disabled 1`] = `
 <div>
   <div
-    class="field gds-select-container input-select-field-read-only"
+    class="container"
   >
     <span
-      class="gds-typography"
+      class="typography"
     >
       -
     </span>
@@ -348,10 +348,10 @@ exports[`SelectInput Component SelectInput renders disabled 1`] = `
 exports[`SelectInput Component SelectInput renders highlight in readOnly 1`] = `
 <div>
   <div
-    class="field gds-select-container input-select-field-read-only field-highlighted"
+    class="container highlighted"
   >
     <span
-      class="gds-typography"
+      class="typography"
     >
       -
     </span>
@@ -362,10 +362,10 @@ exports[`SelectInput Component SelectInput renders highlight in readOnly 1`] = `
 exports[`SelectInput Component SelectInput renders in readOnly 1`] = `
 <div>
   <div
-    class="field gds-select-container input-select-field-read-only"
+    class="container"
   >
     <span
-      class="gds-typography"
+      class="typography"
     >
       option 2
     </span>
@@ -376,10 +376,10 @@ exports[`SelectInput Component SelectInput renders in readOnly 1`] = `
 exports[`SelectInput Component SelectInput renders in readOnly with invalid value 1`] = `
 <div>
   <div
-    class="field gds-select-container input-select-field-read-only"
+    class="container"
   >
     <span
-      class="gds-typography"
+      class="typography"
     >
       -
     </span>
@@ -390,7 +390,7 @@ exports[`SelectInput Component SelectInput renders in readOnly with invalid valu
 exports[`SelectInput Component SelectInput renders with fieldsize, inError 1`] = `
 <div>
   <div
-    class="field gds-select-container input-select-field input-error"
+    class="container"
   >
     <div
       class=" css-1959ul7-container"
@@ -406,7 +406,7 @@ exports[`SelectInput Component SelectInput renders with fieldsize, inError 1`] =
         class="css-1f43avz-a11yText-A11yText"
       />
       <div
-        class=" css-ocyqvw-control"
+        class=" css-xb2911-control"
       >
         <div
           class=" css-9plg90-ValueContainer"
@@ -450,7 +450,7 @@ exports[`SelectInput Component SelectInput renders with fieldsize, inError 1`] =
             aria-hidden="true"
           >
             <i
-              class="dynamic-search-icon icon"
+              class="icon icon"
               icon="fal,chevron-down"
             />
           </div>
@@ -469,7 +469,7 @@ exports[`SelectInput Component SelectInput renders with fieldsize, inError 1`] =
 exports[`SelectInput Component SelectInput renders without portal 1`] = `
 <div>
   <div
-    class="field gds-select-container input-select-field"
+    class="container"
   >
     <div
       class=" css-1959ul7-container"
@@ -485,7 +485,7 @@ exports[`SelectInput Component SelectInput renders without portal 1`] = `
         class="css-1f43avz-a11yText-A11yText"
       />
       <div
-        class=" css-1l9db9l-control"
+        class=" css-yqi6bw-control"
       >
         <div
           class=" css-9plg90-ValueContainer"
@@ -529,7 +529,7 @@ exports[`SelectInput Component SelectInput renders without portal 1`] = `
             aria-hidden="true"
           >
             <i
-              class="dynamic-search-icon icon"
+              class="icon icon"
               icon="fal,chevron-down"
             />
           </div>

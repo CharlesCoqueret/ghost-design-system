@@ -18,7 +18,7 @@ describe('SwitchInput Component', () => {
   it('SwitchInput renders with input', () => {
     const onChangeMock = jest.fn();
 
-    const { container } = render(<SwitchInput onChange={onChangeMock} options={options} />);
+    const { container } = render(<SwitchInput onChange={onChangeMock} inputValue={options} />);
     expect(container).toMatchSnapshot();
     expect(onChangeMock).toBeCalledTimes(0);
   });
@@ -26,7 +26,7 @@ describe('SwitchInput Component', () => {
   it('SwitchInput renders triggers onChange', () => {
     const onChangeMock = jest.fn();
 
-    render(<SwitchInput dataTestId='DATA-TEST-ID' onChange={onChangeMock} options={options} />);
+    render(<SwitchInput dataTestId='DATA-TEST-ID' onChange={onChangeMock} inputValue={options} />);
 
     const firstSwitch = screen.getByTestId('DATA-TEST-ID-0');
 
@@ -48,7 +48,7 @@ describe('SwitchInput Component', () => {
   it('SwitchInput renders triggers onChange via keyboard', () => {
     const onChangeMock = jest.fn();
 
-    render(<SwitchInput onChange={onChangeMock} options={options} />);
+    render(<SwitchInput onChange={onChangeMock} inputValue={options} />);
 
     userEvent.tab();
 
@@ -73,7 +73,7 @@ describe('SwitchInput Component', () => {
   it('SwitchInput renders does not trigger onChange when disabled', () => {
     const onChangeMock = jest.fn();
 
-    render(<SwitchInput dataTestId='DATA-TEST-ID' onChange={onChangeMock} disabled options={options} />);
+    render(<SwitchInput dataTestId='DATA-TEST-ID' onChange={onChangeMock} disabled inputValue={options} />);
 
     const firstSwitch = screen.getByTestId('DATA-TEST-ID-0');
 
@@ -87,7 +87,7 @@ describe('SwitchInput Component', () => {
   it('SwitchInput renders does not trigger onChange when readOnly', () => {
     const onChangeMock = jest.fn();
 
-    render(<SwitchInput dataTestId='DATA-TEST-ID' onChange={onChangeMock} readOnly options={options} />);
+    render(<SwitchInput dataTestId='DATA-TEST-ID' onChange={onChangeMock} readOnly inputValue={options} />);
 
     const firstSwitch = screen.getByTestId('DATA-TEST-ID-0');
 
@@ -101,7 +101,7 @@ describe('SwitchInput Component', () => {
   it('SwitchInput renders highlighted', () => {
     const onChangeMock = jest.fn();
 
-    const { container } = render(<SwitchInput onChange={onChangeMock} readOnly highlighted options={options} />);
+    const { container } = render(<SwitchInput onChange={onChangeMock} readOnly highlighted inputValue={options} />);
     expect(container).toMatchSnapshot();
     expect(onChangeMock).toBeCalledTimes(0);
   });
@@ -109,7 +109,7 @@ describe('SwitchInput Component', () => {
   it('SwitchInput renders with no options', () => {
     const onChangeMock = jest.fn();
 
-    const { container } = render(<SwitchInput onChange={onChangeMock} readOnly highlighted options={[]} />);
+    const { container } = render(<SwitchInput onChange={onChangeMock} readOnly highlighted inputValue={[]} />);
     expect(container).toMatchSnapshot();
     expect(onChangeMock).toBeCalledTimes(0);
   });

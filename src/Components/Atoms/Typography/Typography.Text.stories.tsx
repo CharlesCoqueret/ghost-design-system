@@ -1,27 +1,29 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import Typography, { Text, ITextProps, TextTypeEnum } from './Typography';
+import Typography, { ITextProps, TextTypeEnum } from './Typography';
 import { Col, Container, Section } from '../Layout';
 
 export default {
-  title: 'Atom/Typography/Text',
-  component: Text,
+  title: 'Atom/Typography',
+  component: Typography.Text,
   parameters: { actions: { argTypesRegex: '^on.*' }, controls: { sort: 'requiredFirst' } },
 } as ComponentMeta<typeof Text>;
 
-const Template: ComponentStory<typeof Text> = (arg: ITextProps) => {
+const Template: ComponentStory<typeof Typography.Text> = (arg: ITextProps) => {
   return (
     <Container>
       <Col>
-        <Typography.Text type={TextTypeEnum.BODY}>Typography.Text type: body</Typography.Text>
-        <Typography.Text type={TextTypeEnum.ERROR}>Typography.Text type: error</Typography.Text>
-        <Typography.Text type={TextTypeEnum.HELPER}>Typography.Text type: helper</Typography.Text>
-        <Typography.Text type={TextTypeEnum.LABEL}>Typography.Text type: label</Typography.Text>
-        <Typography.Text type={TextTypeEnum.PLACEHOLDER}>Typography.Text type: placeholder</Typography.Text>
-        <Typography.Text type={TextTypeEnum.TINY}>Typography.Text type: tiny</Typography.Text>
-        <Typography.Text type={TextTypeEnum.HIGHLIGHTED}>Typography.Text type: highlighted</Typography.Text>
-        <Typography.Text type={TextTypeEnum.DISABLED}>Typography.Text type: disabled</Typography.Text>
+        <Section title='Examples:' collapsible={true} openInitially={false} separator={true}>
+          <Typography.Text type={TextTypeEnum.BODY}>Typography.Text type: body</Typography.Text>
+          <Typography.Text type={TextTypeEnum.ERROR}>Typography.Text type: error</Typography.Text>
+          <Typography.Text type={TextTypeEnum.HELPER}>Typography.Text type: helper</Typography.Text>
+          <Typography.Text type={TextTypeEnum.LABEL}>Typography.Text type: label</Typography.Text>
+          <Typography.Text type={TextTypeEnum.PLACEHOLDER}>Typography.Text type: placeholder</Typography.Text>
+          <Typography.Text type={TextTypeEnum.TINY}>Typography.Text type: tiny</Typography.Text>
+          <Typography.Text type={TextTypeEnum.HIGHLIGHTED}>Typography.Text type: highlighted</Typography.Text>
+          <Typography.Text type={TextTypeEnum.DISABLED}>Typography.Text type: disabled</Typography.Text>
+        </Section>
         <Section title='Your own example here:' collapsible={false} separator={false}>
           <Typography.Text {...arg}>
             Your own example here: Lorem ipsum dolor sit amet. Ut voluptas reiciendis vel praesentium laborum hic
@@ -40,8 +42,9 @@ const Template: ComponentStory<typeof Text> = (arg: ITextProps) => {
   );
 };
 
-export const Default = Template.bind({});
-Default.args = {
-  type: TextTypeEnum.PLACEHOLDER,
-  ellipsis: true,
+export const Text = Template.bind({});
+Text.args = {
+  type: TextTypeEnum.HELPER,
+  ellipsis: false,
+  onClick: undefined,
 };

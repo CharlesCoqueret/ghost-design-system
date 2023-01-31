@@ -4,8 +4,7 @@
 }
 
 * {
-  font-family: $fontfamily;
+  font-family: var(--theme-provider-font-family);
   font-size: 14px;
-
   -webkit-font-smoothing: antialiased;
 }

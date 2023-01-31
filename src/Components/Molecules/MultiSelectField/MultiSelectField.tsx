@@ -1,18 +1,9 @@
 import React, { ReactElement, Ref } from 'react';
-import classnames from 'classnames';
 
 import { GenericField } from '../../Atoms/GenericField';
 import { IOption, MultiSelectInput } from '../../Atoms/SelectInput';
 
 export interface IMultiSelectFieldProps {
-  /** Custom colors settings */
-  colors?: {
-    controlErrorColor: string; // colors.error,
-    controlFocusColor: string; // colors.primary,
-    fontColor: string; // 'rgb(0, 0, 0)',
-    optionFocusColor: string; // colors.chalk,
-    optionSelectedColor: string; // colors.primary,
-  };
   /** React Container ref (optional, default: undefined) */
   containerRef?: Ref<HTMLDivElement>;
   /** For test purpose only */
@@ -75,7 +66,6 @@ export interface IMultiSelectFieldProps {
  */
 export const MultiSelectField = (props: IMultiSelectFieldProps): ReactElement => {
   const {
-    colors,
     containerRef,
     dataTestId,
     disabled,
@@ -116,8 +106,7 @@ export const MultiSelectField = (props: IMultiSelectFieldProps): ReactElement =>
       mandatory={mandatory}
       readOnly={readOnly}>
       <MultiSelectInput
-        className={classnames(inputClassName, 'input-select-field')}
-        colors={colors}
+        className={inputClassName}
         dataTestId={dataTestId}
         disabled={disabled}
         ellipsis={ellipsis}
@@ -139,13 +128,6 @@ export const MultiSelectField = (props: IMultiSelectFieldProps): ReactElement =>
 };
 
 MultiSelectField.defaultProps = {
-  colors: {
-    controlErrorColor: 'rgb(255, 52, 24)',
-    controlFocusColor: 'rgb(38, 186, 212)',
-    fontColor: 'rgb(0, 0, 0)',
-    optionFocusColor: 'rgb(228, 228, 228)',
-    optionSelectedColor: 'rgb(38, 186, 212)',
-  },
   disabled: false,
   ellipsis: false,
   errorMessage: undefined,

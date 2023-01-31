@@ -1,0 +1,32 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: rgb(var(--theme-provider-charcoal));
+  padding: 10px 10px 10px 0px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.collapsible {
+  cursor: pointer;
+}
+
+.icon {
+  transform: rotate(-90deg);
+  transition: transform 500ms linear;
+  margin: auto 0px;
+}
+
+.open {
+  transform: rotate(90deg);
+}
+
+.body {
+  overflow: hidden;
+}
+
+.footer {
+  padding: 10px 0px;
+  border-bottom: 1px solid rgb(var(--theme-provider-silver));
+}

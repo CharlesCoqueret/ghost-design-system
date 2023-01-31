@@ -1,0 +1,81 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  transition: background-color 500ms ease-in-out;
+  margin: auto;
+  min-height: 30px;
+
+  &:hover {
+    background-color: rgb(var(--theme-provider-smoke));
+  }
+}
+
+.error {
+  color: rgb(var(--theme-provider-error));
+}
+
+.left {
+  display: flex;
+  flex-direction: row;
+  overflow-x: hidden;
+  flex: 1 1;
+  margin: 0px auto;
+}
+
+.paperclipIcon {
+  margin: auto 8px;
+}
+
+.name {
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin: auto 0px;
+}
+
+.downloadable {
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.spinnerIcon {
+  visibility: visible;
+}
+
+.right {
+  display: flex;
+  flex-direction: row;
+}
+
+.deleteIcon {
+  visibility: visible;
+  height: unset;
+  &:hover {
+    background-color: unset;
+  }
+}
+
+.progress {
+  border: 1px solid rgb(var(--theme-provider-silver));
+  margin: auto 8px;
+  border-radius: 4px;
+  height: 10px;
+  color: rgb(var(--theme-provider-scooter));
+  background-color: rgb(var(--theme-provider-chalk));
+
+  &::-moz-progress-bar {
+    background: rgb(var(--theme-provider-chalk));
+  }
+
+  &::-webkit-progress-value {
+    background: rgb(var(--theme-provider-scooter));
+  }
+
+  &::-webkit-progress-bar {
+    background: rgb(var(--theme-provider-chalk));
+  }
+}

@@ -5,7 +5,7 @@ import userEvent from '@testing-library/user-event';
 import NavItem from '../NavItem';
 
 describe('NavItem Component', () => {
-  it('NavItem renders', () => {
+  it('NavItem renders alone', () => {
     const onClickMock = jest.fn();
 
     const { container } = render(
@@ -37,6 +37,16 @@ describe('NavItem Component', () => {
 
     expect(container).toMatchSnapshot();
     expect(onClickMock).toBeCalledTimes(2);
+  });
+
+  it('NavItem renders handles counter as digits', () => {
+    const { container } = render(<NavItem counter={100} icon={['fal', 'icons']} label='LABEL' />);
+    expect(container).toMatchSnapshot();
+  });
+
+  it('NavItem renders handles counter as string', () => {
+    const { container } = render(<NavItem counter='test' icon={['fal', 'icons']} label='LABEL' />);
+    expect(container).toMatchSnapshot();
   });
 
   it('NavItem renders with subitems', () => {

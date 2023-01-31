@@ -1,0 +1,31 @@
+.error {
+  color: rgb(var(--theme-provider-error));
+}
+
+.helper {
+  font-style: italic;
+}
+
+.counter {
+  text-align: right;
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  min-width: 50px;
+}
+
+.message {
+  padding: 4px 0;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  color: rgb(var(--theme-provider-pebble));
+  font-size: 12px;
+}
+
+.inverted {
+  margin-top: 0px;
+  padding: 4px 0;
+}

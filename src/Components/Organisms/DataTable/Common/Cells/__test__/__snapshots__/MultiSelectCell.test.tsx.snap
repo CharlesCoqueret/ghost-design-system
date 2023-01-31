@@ -9,10 +9,10 @@ exports[`MultiSelectCell component BadgeCell handles changes 1`] = `
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <div
-              class="field gds-select-container input-select-field input-select-field"
+              class="container"
             >
               <div
                 class=" css-1959ul7-container"
@@ -28,7 +28,7 @@ exports[`MultiSelectCell component BadgeCell handles changes 1`] = `
                   class="css-1f43avz-a11yText-A11yText"
                 />
                 <div
-                  class=" css-1l9db9l-control"
+                  class=" css-yqi6bw-control"
                 >
                   <div
                     class=" css-1xxnwvf-ValueContainer"
@@ -66,7 +66,7 @@ exports[`MultiSelectCell component BadgeCell handles changes 1`] = `
                       aria-hidden="true"
                     >
                       <i
-                        class="dynamic-search-icon icon"
+                        class="icon icon"
                         icon="fal,chevron-down"
                       />
                     </div>
@@ -98,10 +98,10 @@ exports[`MultiSelectCell component BadgeCell handles changes 2`] = `
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <div
-              class="field gds-select-container input-select-field input-select-field"
+              class="container"
             >
               <div
                 class=" css-1959ul7-container"
@@ -117,7 +117,7 @@ exports[`MultiSelectCell component BadgeCell handles changes 2`] = `
                   class="css-1f43avz-a11yText-A11yText"
                 />
                 <div
-                  class=" css-1l9db9l-control"
+                  class=" css-yqi6bw-control"
                 >
                   <div
                     class=" css-1xxnwvf-ValueContainer"
@@ -155,7 +155,7 @@ exports[`MultiSelectCell component BadgeCell handles changes 2`] = `
                       aria-hidden="true"
                     >
                       <i
-                        class="dynamic-search-icon icon"
+                        class="icon icon"
                         icon="fal,chevron-down"
                       />
                     </div>
@@ -187,13 +187,13 @@ exports[`MultiSelectCell component BadgeCell renders with erase value when not i
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <div
-              class="field gds-select-container input-select-field-read-only input-select-field"
+              class="container"
             >
               <span
-                class="gds-typography"
+                class="typography"
               >
                 -
               </span>
@@ -215,13 +215,13 @@ exports[`MultiSelectCell component MultiSelectCell renders 1`] = `
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <div
-              class="field gds-select-container input-select-field-read-only input-select-field"
+              class="container"
             >
               <span
-                class="gds-typography"
+                class="typography"
               >
                 label 1
               </span>
@@ -243,10 +243,10 @@ exports[`MultiSelectCell component MultiSelectCell renders cell editing with no 
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <div
-              class="field gds-select-container input-select-field input-select-field"
+              class="container"
             >
               <div
                 class=" css-1959ul7-container"
@@ -262,7 +262,7 @@ exports[`MultiSelectCell component MultiSelectCell renders cell editing with no 
                   class="css-1f43avz-a11yText-A11yText"
                 />
                 <div
-                  class=" css-1l9db9l-control"
+                  class=" css-yqi6bw-control"
                 >
                   <div
                     class=" css-9plg90-ValueContainer"
@@ -306,7 +306,7 @@ exports[`MultiSelectCell component MultiSelectCell renders cell editing with no 
                       aria-hidden="true"
                     >
                       <i
-                        class="dynamic-search-icon icon"
+                        class="icon icon"
                         icon="fal,chevron-down"
                       />
                     </div>
@@ -339,13 +339,13 @@ exports[`MultiSelectCell component MultiSelectCell renders hidden 1`] = `
           style="display: none;"
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <div
-              class="field gds-select-container input-select-field-read-only input-select-field"
+              class="container"
             >
               <span
-                class="gds-typography"
+                class="typography"
               >
                 label 1
               </span>
@@ -367,10 +367,10 @@ exports[`MultiSelectCell component MultiSelectCell renders row editing with no r
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <div
-              class="field gds-select-container input-select-field input-select-field"
+              class="container"
             >
               <div
                 class=" css-1959ul7-container"
@@ -386,7 +386,7 @@ exports[`MultiSelectCell component MultiSelectCell renders row editing with no r
                   class="css-1f43avz-a11yText-A11yText"
                 />
                 <div
-                  class=" css-1l9db9l-control"
+                  class=" css-yqi6bw-control"
                 >
                   <div
                     class=" css-9plg90-ValueContainer"
@@ -430,7 +430,7 @@ exports[`MultiSelectCell component MultiSelectCell renders row editing with no r
                       aria-hidden="true"
                     >
                       <i
-                        class="dynamic-search-icon icon"
+                        class="icon icon"
                         icon="fal,chevron-down"
                       />
                     </div>
@@ -462,13 +462,13 @@ exports[`MultiSelectCell component MultiSelectCell renders with forced value 1`]
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <div
-              class="field gds-select-container input-select-field-read-only input-select-field"
+              class="container"
             >
               <span
-                class="gds-typography"
+                class="typography"
               >
                 label 2
               </span>

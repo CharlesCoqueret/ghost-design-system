@@ -8,17 +8,11 @@ import { IOption } from './types';
 import { Icon } from '../Icon';
 import { Typography } from '../Typography';
 
+import styles from './SelectInput.module.scss';
+
 export interface IDynamicSearchCreatableInputProps {
   /** Class for the input (optional, default: undefined) */
   className?: string;
-  /** Custom colors settings */
-  colors?: {
-    controlErrorColor: string; // colors.error,
-    controlFocusColor: string; // colors.primary,
-    fontColor: string; // 'rgb(0, 0, 0)',
-    optionFocusColor: string; // colors.chalk,
-    optionSelectedColor: string; // colors.primary,
-  };
   /** For test purpose only */
   dataTestId?: string;
   /** Disabled field (optional, default: false) */
@@ -58,7 +52,6 @@ export interface IDynamicSearchCreatableInputProps {
 const DynamicSearchCreatableInput = (props: IDynamicSearchCreatableInputProps): ReactElement => {
   const {
     className,
-    colors,
     dataTestId,
     disabled,
     ellipsis,
@@ -131,11 +124,9 @@ const DynamicSearchCreatableInput = (props: IDynamicSearchCreatableInputProps): 
     return (
       <div
         className={classnames(
-          'field',
-          'gds-select-container',
-          'input-select-field-read-only',
+          styles.container,
           {
-            'field-highlighted': highlighted,
+            [styles.highlighted]: (readOnly || disabled) && highlighted,
           },
           className,
         )}
@@ -152,16 +143,7 @@ const DynamicSearchCreatableInput = (props: IDynamicSearchCreatableInputProps): 
   }
 
   return (
-    <div
-      className={classnames(
-        'field',
-        'gds-select-container',
-        'input-select-field',
-        {
-          'input-error': isInError && !disabled,
-        },
-        className,
-      )}>
+    <div className={classnames(styles.container, className)}>
       <ReactSelectAsyncCreatable<IOption, false>
         allowCreateWhileLoading={false}
         closeMenuOnSelect={true}
@@ -172,7 +154,7 @@ const DynamicSearchCreatableInput = (props: IDynamicSearchCreatableInputProps): 
               <div {...innerProps}>
                 <Icon
                   icon={['fal', 'spinner']}
-                  className='dynamic-search-spinner'
+                  className={styles.spinner}
                   data-testid={dataTestId ? `${dataTestId}-spinner` : undefined}
                 />
               </div>
@@ -184,7 +166,7 @@ const DynamicSearchCreatableInput = (props: IDynamicSearchCreatableInputProps): 
               <div {...innerProps}>
                 <Icon
                   icon={['fal', 'magnifying-glass']}
-                  className='dynamic-search-icon'
+                  className={styles.icon}
                   data-testid={dataTestId ? `${dataTestId}-magnifier` : undefined}
                 />
               </div>
@@ -196,7 +178,7 @@ const DynamicSearchCreatableInput = (props: IDynamicSearchCreatableInputProps): 
               <div {...innerProps}>
                 <Icon
                   icon={['fal', 'xmark']}
-                  className='dynamic-search-icon'
+                  className={styles.icon}
                   data-testid={dataTestId ? `${dataTestId}-clear` : undefined}
                 />
               </div>
@@ -228,7 +210,7 @@ const DynamicSearchCreatableInput = (props: IDynamicSearchCreatableInputProps): 
         }}
         onCreateOption={localHandleCreate}
         placeholder={placeholder}
-        styles={customStyles({ ...colors, isInError })}
+        styles={customStyles({ isInError: isInError && !(disabled && readOnly) })}
         value={currentOption}
       />
     </div>
@@ -237,13 +219,6 @@ const DynamicSearchCreatableInput = (props: IDynamicSearchCreatableInputProps): 
 
 DynamicSearchCreatableInput.defaultProps = {
   className: undefined,
-  colors: {
-    controlErrorColor: 'rgb(255, 52, 24)',
-    controlFocusColor: 'rgb(38, 186, 212)',
-    fontColor: 'rgb(0, 0, 0)',
-    optionFocusColor: 'rgb(228, 228, 228)',
-    optionSelectedColor: 'rgb(38, 186, 212)',
-  },
   disabled: false,
   ellipsis: false,
   highlighted: false,

@@ -1,16 +1,16 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import Pulsar from './Pulsar';
+import PulsarComponent from './Pulsar';
 
 export default {
-  title: 'Atom/Pulsar',
-  component: Pulsar,
+  title: 'Atom',
+  component: PulsarComponent,
   parameters: { actions: { argTypesRegex: '^on.*' }, controls: { sort: 'requiredFirst' }, layout: 'centered' },
-} as ComponentMeta<typeof Pulsar>;
+} as ComponentMeta<typeof PulsarComponent>;
 
-const Template: ComponentStory<typeof Pulsar> = () => {
-  return <Pulsar />;
+const Template: ComponentStory<typeof PulsarComponent> = () => {
+  return <PulsarComponent />;
 };
 
-export const Default = Template.bind({});
+export const Pulsar = Template.bind({});

@@ -1,0 +1,52 @@
+.container {
+  display: inline-flex;
+  overflow: hidden;
+}
+
+.prefix,
+.entity,
+.suffix {
+  border: 1px solid transparent;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+.hiddenTitle {
+  background-color: transparent;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  color: transparent;
+  display: inline-flex;
+  font-size: 22px;
+  margin: auto 2px;
+  outline: none;
+  overflow: hidden;
+  position: absolute;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  user-select: none;
+  white-space: nowrap;
+  z-index: -1;
+}
+
+.title {
+  background-color: transparent;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  display: inline-flex;
+  font-size: 22px;
+  margin: auto 2px;
+  outline: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  white-space: nowrap;
+
+  &:not(:read-only):hover {
+    border: 1px solid rgb(var(--theme-provider-chalk));
+  }
+
+  &:not(:read-only):focus {
+    border: 1px solid rgb(var(--theme-provider-scooter));
+  }
+}
