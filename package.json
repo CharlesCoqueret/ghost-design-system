@@ -1,7 +1,7 @@
 {
   "name": "ghost-design-system",
   "license": "MIT",
-  "version": "1.4.10-next.40",
+  "version": "1.4.10-next.41",
   "description": "Ghost design system - React Component Library",
   "author": {
     "name": "Charles Coqueret",
@@ -19,7 +19,9 @@
     "table",
     "header",
     "input",
-    "navigation"
+    "navigation",
+    "portfolio",
+    "toaster"
   ],
   "scripts": {
     "build": "rollup -c && npm run build:css && npm run build:css-min",
