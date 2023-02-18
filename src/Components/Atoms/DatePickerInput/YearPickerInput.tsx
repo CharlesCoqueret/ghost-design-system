@@ -60,7 +60,15 @@ const YearPickerInput = (props: IYearPickerProps): ReactElement => {
   const selected = inputValue ? today : undefined;
 
   return (
-    <div className={classnames(className, 'field')}>
+    <div
+      className={classnames('field', className)}
+      onClick={
+        readOnly || disabled
+          ? undefined
+          : (event) => {
+              event.stopPropagation();
+            }
+      }>
       <DatePicker
         name={name}
         data-testid={dataTestId}

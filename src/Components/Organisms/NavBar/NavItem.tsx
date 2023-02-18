@@ -1,4 +1,4 @@
-import React, { ReactElement, useRef, useState } from 'react';
+import React, { Fragment, ReactElement, useRef, useState } from 'react';
 import { ControlledMenu, MenuDivider, MenuHeader, MenuItem } from '@szhsin/react-menu';
 import { NavLink } from 'react-router-dom';
 import InfiniteScroll from 'react-infinite-scroller';
@@ -83,31 +83,34 @@ const NavItem = (props: INavItemProps): ReactElement => {
       <Tooltip tooltip={tooltip}>
         <div className='nav-bar-menu-item' data-testid={dataTestId} ref={ref} onClick={handleClick}>
           {link ? (
-            <NavLink to={link}>
+            <NavLink to={link} key='link'>
               {icon && <Icon icon={icon} size={label ? '1x' : '2x'} />}
               {label && <div className='nav-bar-menu-label'>{label}</div>}
             </NavLink>
           ) : (
-            <>
+            <Fragment key='icon'>
               {icon && <Icon icon={icon} size={label ? '1x' : '2x'} />}
               {label && <div className='nav-bar-menu-label'>{label}</div>}
-            </>
+            </Fragment>
           )}
           {counter && (
-            <Badge color={BadgeColorsEnum.DANGER} type='notification' className='counter'>
+            <Badge color={BadgeColorsEnum.DANGER} type='notification' className='counter' key='counter'>
               {counter}
             </Badge>
           )}
-          {hasMenu && label && <Icon icon={['fas', 'caret-down']} size='lg' className='nav-bar-menu-caret' />}
+          {hasMenu && label && (
+            <Icon icon={['fas', 'caret-down']} size='lg' className='nav-bar-menu-caret' key='caret' />
+          )}
         </div>
       </Tooltip>
       {hasMenu ? (
-        <Portal>
+        <Portal key='portal'>
           <ControlledMenu
             align={customInfiniteScrollConfig ? 'end' : 'center'}
             anchorRef={ref}
             arrow
             onClose={closeMenu}
+            key='controlledmenu'
             state={isOpen ? 'open' : 'closed'}
             menuStyle={{ position: 'fixed' }}
             skipOpen={skipOpen}>
@@ -128,7 +131,7 @@ const NavItem = (props: INavItemProps): ReactElement => {
             })}
             {customSubItem}
             {customInfiniteScrollConfig && (
-              <>
+              <Fragment key='infinitescroll'>
                 <MenuHeader key='header'>{customInfiniteScrollConfig.header}</MenuHeader>
                 <div style={{ maxWidth: '400px', maxHeight: '80vh', overflowY: 'auto' }}>
                   <InfiniteScroll
@@ -145,8 +148,8 @@ const NavItem = (props: INavItemProps): ReactElement => {
                     {customInfiniteScrollConfig.total === 0 ? (
                       <MenuHeader key='header-noitem'>{customInfiniteScrollConfig.noItems}</MenuHeader>
                     ) : (
-                      customInfiniteScrollConfig.items.map((item) => (
-                        <React.Fragment key={item.label as string}>
+                      customInfiniteScrollConfig.items.map((item, index) => (
+                        <React.Fragment key={`notification-${index}`}>
                           <MenuItem>{customInfiniteScrollConfig.renderItem(item)}</MenuItem>
                           <MenuDivider />
                         </React.Fragment>
@@ -154,7 +157,7 @@ const NavItem = (props: INavItemProps): ReactElement => {
                     )}
                   </InfiniteScroll>
                 </div>
-              </>
+              </Fragment>
             )}
           </ControlledMenu>
         </Portal>

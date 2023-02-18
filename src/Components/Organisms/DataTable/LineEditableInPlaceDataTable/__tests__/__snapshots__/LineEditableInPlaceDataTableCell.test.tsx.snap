@@ -903,7 +903,7 @@ exports[`LineEditableInPlaceDataTableCell component LineEditableInPlaceDataTable
             class="gds-field-group"
           >
             <div
-              class="input-year-picker-field field"
+              class="field input-year-picker-field"
             >
               <div
                 class="react-datepicker-wrapper"

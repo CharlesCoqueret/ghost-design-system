@@ -654,7 +654,7 @@ exports[`StaticDataTableCell component StaticDataTableCell renders with year 1`]
             class="gds-field-group"
           >
             <div
-              class="input-year-picker-field table--cell-value--date-readonly field"
+              class="field input-year-picker-field table--cell-value--date-readonly"
             >
               <div
                 class="react-datepicker-wrapper"

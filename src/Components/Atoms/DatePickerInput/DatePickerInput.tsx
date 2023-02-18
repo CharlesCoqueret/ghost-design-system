@@ -63,9 +63,13 @@ const DatePickerInput = (props: IDatePickerProps): ReactElement => {
   return (
     <div
       className={classnames('field', className)}
-      onClick={(event) => {
-        event.stopPropagation();
-      }}>
+      onClick={
+        readOnly || disabled
+          ? undefined
+          : (event) => {
+              event.stopPropagation();
+            }
+      }>
       <DatePicker
         name={name}
         selected={inputValue}

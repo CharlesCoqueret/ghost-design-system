@@ -19,12 +19,8 @@
   .nav-bar-brand {
     margin: 10px 10px 10px 20px;
     height: auto;
-
-    a {
-      all: unset;
-      display: flex;
-      align-items: center;
-    }
+    display: flex;
+    align-items: center;
 
     .nav-bar-brand-image {
       max-height: 22px;
