@@ -21,7 +21,7 @@ exports[`Toaster Component Toaster renders error persistant closes 1`] = `
         style="left: 0px; right: 0px; display: flex; position: absolute; transition: all 230ms cubic-bezier(.21,1.02,.73,1); transform: translateY(0px); bottom: 0px; justify-content: flex-end;"
       >
         <div
-          class="go2072408551"
+          class="go2072408551 gds-toaster"
           style="opacity: 0;"
         >
           <i
@@ -34,14 +34,12 @@ exports[`Toaster Component Toaster renders error persistant closes 1`] = `
             class="go3958317564"
             role="status"
           >
-            <div>
-              ERROR PERSISTENT
-              <i
-                class="gds-toaster-close-icon icon"
-                icon="fal,xmark"
-                role="button"
-              />
-            </div>
+            ERROR PERSISTENT
+            <i
+              class="gds-toaster-close-icon icon"
+              icon="fal,xmark"
+              role="button"
+            />
           </div>
         </div>
       </div>
@@ -84,14 +82,12 @@ exports[`Toaster Component Toaster renders error persistant with options 1`] = `
             class="go3958317564"
             role="status"
           >
-            <div>
-              ERROR PERSISTENT
-              <i
-                class="gds-toaster-close-icon icon"
-                icon="fal,xmark"
-                role="button"
-              />
-            </div>
+            ERROR PERSISTENT
+            <i
+              class="gds-toaster-close-icon icon"
+              icon="fal,xmark"
+              role="button"
+            />
           </div>
         </div>
       </div>
@@ -111,7 +107,7 @@ exports[`Toaster Component Toaster renders error persistant without options 1`] 
         style="left: 0px; right: 0px; display: flex; position: absolute; transition: all 230ms cubic-bezier(.21,1.02,.73,1); transform: translateY(0px); bottom: 0px; justify-content: flex-end;"
       >
         <div
-          class="go2072408551"
+          class="go2072408551 gds-toaster"
           style="opacity: 0;"
         >
           <i
@@ -124,14 +120,12 @@ exports[`Toaster Component Toaster renders error persistant without options 1`] 
             class="go3958317564"
             role="status"
           >
-            <div>
-              ERROR PERSISTENT
-              <i
-                class="gds-toaster-close-icon icon"
-                icon="fal,xmark"
-                role="button"
-              />
-            </div>
+            ERROR PERSISTENT
+            <i
+              class="gds-toaster-close-icon icon"
+              icon="fal,xmark"
+              role="button"
+            />
           </div>
         </div>
       </div>
@@ -184,7 +178,7 @@ exports[`Toaster Component Toaster renders error without options 1`] = `
         style="left: 0px; right: 0px; display: flex; position: absolute; transition: all 230ms cubic-bezier(.21,1.02,.73,1); transform: translateY(0px); bottom: 0px; justify-content: flex-end;"
       >
         <div
-          class="go2072408551"
+          class="go2072408551 gds-toaster"
           style="opacity: 0;"
         >
           <i
@@ -245,7 +239,7 @@ exports[`Toaster Component Toaster renders notify without options  and clears 1`
         style="left: 0px; right: 0px; display: flex; position: absolute; transition: all 230ms cubic-bezier(.21,1.02,.73,1); transform: translateY(0px); bottom: 0px; justify-content: flex-end;"
       >
         <div
-          class="go2072408551"
+          class="go2072408551 gds-toaster"
           style="opacity: 0;"
         >
           <div
@@ -316,7 +310,7 @@ exports[`Toaster Component Toaster renders success without options 1`] = `
         style="left: 0px; right: 0px; display: flex; position: absolute; transition: all 230ms cubic-bezier(.21,1.02,.73,1); transform: translateY(0px); bottom: 0px; justify-content: flex-end;"
       >
         <div
-          class="go2072408551"
+          class="go2072408551 gds-toaster"
           style="opacity: 0;"
         >
           <i

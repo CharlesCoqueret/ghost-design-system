@@ -18,6 +18,7 @@ export const Toaster = (): ReactElement => {
       <HotToaster
         position='bottom-right'
         toastOptions={{
+          className: 'gds-toaster',
           success: {
             icon: <Icon icon={['fas', 'circle-check']} color='green' />,
             duration: 3000, // 3 seconds
@@ -78,7 +79,7 @@ export const error = (message: string, options?: ToastOptions): string => toast.
 export const errorPersistent = (message: string, options?: ToastOptions): string =>
   toast.error(
     (t) => (
-      <div>
+      <>
         {message}
         <Icon
           icon={['fal', 'xmark']}
@@ -90,7 +91,7 @@ export const errorPersistent = (message: string, options?: ToastOptions): string
             toast.dismiss(t.id);
           }}
         />
-      </div>
+      </>
     ),
     {
       duration: Infinity,
