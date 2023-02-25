@@ -119,13 +119,7 @@ Play with NavBar live on [CodeSandbox](https://codesandbox.io/s/sidebar-demo-t4s
 
 <Canvas isExpanded={true}>
   <Router>
-    <NavBar
-      brand={{
-        logoSource: './images/logo.svg',
-        redirection: '/',
-      }}
-      className='positionRelative'
-    />
+    <NavBar logoSource='./images/logo.svg' redirection='/' className='positionRelative' />
   </Router>
 </Canvas>
 
@@ -133,12 +127,7 @@ Play with NavBar live on [CodeSandbox](https://codesandbox.io/s/sidebar-demo-t4s
 
 <Canvas isExpanded={false}>
   <Router>
-    <NavBar
-      brand={{
-        logoSource: './images/logo.svg',
-        redirection: '/',
-      }}
-      className='positionRelative'>
+    <NavBar logoSource='./images/logo.svg' redirection='/' className='positionRelative'>
       <NavBarMenu>
         <NavItem
           label='Label 1'
@@ -189,10 +178,7 @@ Play with NavBar live on [CodeSandbox](https://codesandbox.io/s/sidebar-demo-t4s
 
 <Canvas isExpanded={false}>
   <Router>
-    <NavBar
-      brand={{
-        logoSource: './images/logo.svg',
-      }}
+    <NavBar logoSource='./images/logo.svg'>
       className='positionRelative'>
       <NavBarUtilities>
         <NavItem
@@ -288,10 +274,8 @@ For layout management, please refer to this [example](https://codesandbox.io/s/s
   <Story
     name='NavBar'
     args={{
-      brand: {
-        logoSource: './images/logo.svg',
-        redirection: '/',
-      },
+      logoSource: './images/logo.svg',
+      redirection: '/',
     }}>
     {Template.bind({})}
   </Story>
