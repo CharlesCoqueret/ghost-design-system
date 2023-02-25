@@ -67,13 +67,16 @@ const DatePickerInput = (props: IDatePickerProps): ReactElement => {
   const localDateFormat = dateFormat || 'MMM dd, yyyy';
 
   // Investigate custom input https://github.com/Hacker0x01/react-datepicker/issues/2479#issuecomment-1013838239
-
   return (
     <div
-      className={classnames({ 'input-date-picker-wrapper-read-only': readOnly }, className)}
-      onClick={(event) => {
-        event.stopPropagation();
-      }}>
+      className={classnames({ 'input-date-picker-wrapper-read-only': readOnly || disabled }, className)}
+      onClick={
+        readOnly || disabled
+          ? undefined
+          : (event) => {
+              event.stopPropagation();
+            }
+      }>
       <DatePicker
         autoComplete='off'
         autoFocus={false}

@@ -6,6 +6,7 @@ import {
   faArrowsToLine,
   faArrowUpFromLine,
   faArrowsLeftRightToLine,
+  faArrowCircleRight, // deprecated
   faBallotCheck,
   faBell,
   faBriefcase,
@@ -43,6 +44,7 @@ import {
   faQuestionCircle,
   faSave,
   faScaleBalanced,
+  faSort as faSortLight, // deprecated
   faSquare as faSquareLight,
   faTable,
   faTextSize,
@@ -84,6 +86,7 @@ import {
 
 const loadIcons = (): void => {
   library.add(
+    faArrowCircleRight,
     faArrowDownToLine,
     faArrowLeft,
     faArrowsLeftRightToLine,
@@ -124,6 +127,7 @@ const loadIcons = (): void => {
     faSave,
     faScaleBalanced,
     faSort,
+    faSortLight,
     faSortDown,
     faSortUp,
     faSquareLight,

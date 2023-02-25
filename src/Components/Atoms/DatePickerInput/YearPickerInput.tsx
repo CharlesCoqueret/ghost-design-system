@@ -69,7 +69,15 @@ const YearPickerInput = (props: IYearPickerProps): ReactElement => {
   const selected = inputValue ? today : undefined;
 
   return (
-    <div className={classnames({ 'input-year-picker-wrapper-read-only': readOnly }, className)}>
+    <div
+      className={classnames({ 'input-year-picker-wrapper-read-only': readOnly || disabled }, className)}
+      onClick={
+        readOnly || disabled
+          ? undefined
+          : (event) => {
+              event.stopPropagation();
+            }
+      }>
       <DatePicker
         autoComplete='off'
         autoFocus={false}

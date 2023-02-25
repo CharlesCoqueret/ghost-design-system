@@ -11,29 +11,12 @@
   user-select: none;
 }
 
-.brand {
-  margin: 10px 10px 10px 20px;
-  height: auto;
-
-  a {
-    all: unset;
-    display: flex;
-    align-items: center;
-  }
-
-  .brandLogo {
-    max-height: 22px;
-    cursor: pointer;
-  }
-}
-
 .itemsContainer {
   display: flex;
   justify-content: space-between;
   width: 100%;
 }
 
-.itemsGroup {
-  display: flex;
-  margin: auto 0;
+.positionRelative {
+  position: relative;
 }
