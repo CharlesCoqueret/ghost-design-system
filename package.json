@@ -39,7 +39,7 @@
     "test:coverage": "jest --colors --coverage",
     "test:watch": "jest --watch"
   },
-  "module": "dist/index.js",
+  "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "style": "dist/ghost-design-system.css",
   "dependencies": {
@@ -126,7 +126,6 @@
     "rollup-plugin-copy": "3.4.0",
     "rollup-plugin-peer-deps-external": "2.2.4",
     "rollup-plugin-postcss": "^4.0.2",
-    "rollup-plugin-typescript2": "0.34.1",
     "sass": "1.56.1",
     "sass-loader": "13.2.0",
     "style-loader": "3.3.1",

@@ -120,7 +120,6 @@ const FileGallery = (props: IFileGallery): ReactElement => {
             progress[file.uid] !== undefined && (
               <progress className={styles.progress} max={100} value={progress[file.uid]} />
             )}
-
           {readOnly || disabled ? (
             <></>
           ) : file.status && [FileStatusEnum.UPLOADING, FileStatusEnum.DELETING].includes(file.status) ? (

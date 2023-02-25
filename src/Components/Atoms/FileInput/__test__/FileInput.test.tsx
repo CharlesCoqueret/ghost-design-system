@@ -598,7 +598,9 @@ describe('FileInput Component', () => {
 
     const deleteButton = await screen.findByTestId('TEST-ID-delete');
 
-    userEvent.click(deleteButton);
+    act(() => {
+      userEvent.click(deleteButton);
+    });
 
     const confirmButton = screen.getByTestId('TEST-ID-confirm');
 

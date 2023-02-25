@@ -103,15 +103,15 @@ const DatePickerInput = (props: IDatePickerProps): ReactElement => {
             return;
           })
         }
-        readOnly={readOnly}
-        placeholderText={!inputValue && (readOnly || disabled) ? '-' : placeholder || localDateFormat.toUpperCase()}
-        showPopperArrow={false}
-        popperContainer={usePortal ? Portal : undefined}
-        renderCustomHeader={DatePickerHeader(locale)}
         onClickOutside={(event) => {
           event.stopPropagation();
         }}
+        placeholderText={!inputValue && (readOnly || disabled) ? '-' : placeholder || localDateFormat.toUpperCase()}
+        popperContainer={usePortal ? Portal : undefined}
         preventOpenOnFocus
+        readOnly={readOnly}
+        renderCustomHeader={DatePickerHeader(locale)}
+        showPopperArrow={false}
         selected={inputValue}
         tabIndex={readOnly || disabled ? -1 : 0}
       />

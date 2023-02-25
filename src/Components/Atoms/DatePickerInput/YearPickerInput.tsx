@@ -90,8 +90,8 @@ const YearPickerInput = (props: IYearPickerProps): ReactElement => {
         data-testid={dataTestId}
         dateFormat={dateFormat}
         disabled={disabled}
-        fixedHeight
         disabledKeyboardNavigation
+        fixedHeight
         isClearable={!(disabled || readOnly) && isClearable}
         maxDate={maxDate}
         minDate={minDate}

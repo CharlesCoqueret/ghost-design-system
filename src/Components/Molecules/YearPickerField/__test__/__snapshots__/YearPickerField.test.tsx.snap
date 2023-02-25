@@ -37,7 +37,7 @@ exports[`YearPickerField Component YearPickerField renders with values in disabl
     class="fieldGroup"
   >
     <div
-      class=""
+      class="input-year-picker-wrapper-read-only"
     >
       <div
         class="react-datepicker-wrapper"

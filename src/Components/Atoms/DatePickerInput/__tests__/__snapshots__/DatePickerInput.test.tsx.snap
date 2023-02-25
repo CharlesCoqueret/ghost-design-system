@@ -57,7 +57,7 @@ exports[`DatePickerInput Component DatePickerInput renders and changes without o
 exports[`DatePickerInput Component DatePickerInput renders highlighted in disabled 1`] = `
 <div>
   <div
-    class=""
+    class="input-date-picker-wrapper-read-only"
   >
     <div
       class="react-datepicker-wrapper"
