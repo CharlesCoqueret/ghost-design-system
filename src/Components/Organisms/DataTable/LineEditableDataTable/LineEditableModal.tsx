@@ -1,6 +1,7 @@
 import React, { ReactElement } from 'react';
 import compact from 'lodash/compact';
 import cloneDeep from 'lodash/cloneDeep';
+import { AnyObject } from 'yup/lib/object';
 
 import { Modal, ModalBody, ModalFooter } from '../../../Atoms/Modal';
 import { Button, ColorButtonEnum } from '../../../Molecules/Button';
@@ -92,6 +93,7 @@ export const columnToFieldMapper = <T,>(columns: Array<IColumnType<T>>): Array<I
             dataIndex: column.dataIndex,
             dateFormat: column.dateFormat,
             fieldType: FieldTypeEnum.DATE,
+            fieldClassName: column.fieldClassName,
             isClearable: column.isClearable,
             label: column.title,
             locale: column.locale,
@@ -135,6 +137,8 @@ export const columnToFieldMapper = <T,>(columns: Array<IColumnType<T>>): Array<I
             maxFolderDepth: column.maxFolderDepth,
             onDelete: column.onDelete,
             onDownload: column.onDownload,
+            onFailure: column.onFailure,
+            onSuccess: column.onSuccess,
             requestHeaders: column.requestHeaders,
             requestMethod: column.requestMethod,
             requestUrl: column.requestUrl,
@@ -232,7 +236,7 @@ export const columnToFieldMapper = <T,>(columns: Array<IColumnType<T>>): Array<I
             extra: column.extra,
             loading: column.loading,
             onSortChange: column.onSortChange,
-            fieldType: FieldTypeEnum.TABLE,
+            fieldType: FieldTypeEnum.LINE_EDITABLE_TABLE,
             label: column.title,
             dataIndex: column.dataIndex,
             readOnly: !column.editable,
@@ -272,7 +276,7 @@ export const columnToFieldMapper = <T,>(columns: Array<IColumnType<T>>): Array<I
   );
 };
 
-const LineEditableModal = <T,>(props: ILineEditableModalProps<T>): ReactElement => {
+const LineEditableModal = <T extends AnyObject>(props: ILineEditableModalProps<T>): ReactElement => {
   const { columns, extra, onCancel, onClose, onSubmit, showChanges, row, rowIndex, title } = props;
 
   const { formElement, getData, submit } = useForm<T>({

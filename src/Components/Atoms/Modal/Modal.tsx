@@ -158,7 +158,7 @@ const Modal = (props: PropsWithChildren<IModalProps>): ReactElement => {
 Modal.defaultProps = {
   closeIcon: false,
   disableTabOutside: true,
-  enableClickOutide: false,
+  enableClickOutside: false,
   onHide: undefined,
   size: 'sm',
   title: undefined,

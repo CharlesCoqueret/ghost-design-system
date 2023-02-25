@@ -1,6 +1,6 @@
 import React from 'react';
 import { DatePickerInput } from '..';
-import { render, screen, waitFor } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 describe('DatePickerInput Component', () => {
@@ -16,21 +16,17 @@ describe('DatePickerInput Component', () => {
     // Using dynamic date instead of static value to ensure local time is taken into consideration.
     const expectedDate = new Date('Wed Mar 02 2022');
 
-    await waitFor(() => {
-      expect(onChangeMock).toHaveBeenLastCalledWith(expectedDate, expect.anything());
-    });
+    expect(onChangeMock).toHaveBeenLastCalledWith(expectedDate, expect.anything());
   });
 
   it('DatePickerInput renders and changes without onChange prop', async () => {
-    render(<DatePickerInput name='NAME' placeholder='TESTPLACEHOLDER' />);
+    const { container } = render(<DatePickerInput name='NAME' placeholder='TESTPLACEHOLDER' />);
+    expect(container).toMatchSnapshot();
 
     const inputNode = await screen.findByPlaceholderText('TESTPLACEHOLDER');
-
     userEvent.type(inputNode, '3/2/22{enter}');
 
-    await waitFor(() => {
-      expect(inputNode).not.toBeNull();
-    });
+    expect(container).toMatchSnapshot();
   });
 
   it('DatePickerInput renders highlighted in readonly', () => {

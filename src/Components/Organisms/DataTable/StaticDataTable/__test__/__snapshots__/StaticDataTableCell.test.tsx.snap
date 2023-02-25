@@ -223,7 +223,7 @@ exports[`StaticDataTableCell component StaticDataTableCell renders with date 1`]
                     autocomplete="off"
                     class="input-date-picker-input-read-only"
                     name="date"
-                    placeholder="-"
+                    placeholder="MMM DD, YYYY"
                     readonly=""
                     tabindex="-1"
                     type="text"
@@ -516,13 +516,16 @@ exports[`StaticDataTableCell component StaticDataTableCell renders with table 1`
           >
             <thead>
               <tr>
-                <th>
+                <th
+                  class=""
+                >
                   <div
                     class="table--header-value"
                     tabindex="-1"
                   >
                     <span
-                      class="table--header-value--title right"
+                      class="gds-typography table--header-value--title right ellipsis"
+                      title="Number"
                     >
                       Number
                     </span>
@@ -627,8 +630,6 @@ exports[`StaticDataTableCell component StaticDataTableCell renders with textarea
                 id="textarea"
                 name="textarea"
                 readonly=""
-                rows="1"
-                style="height: 0px;"
               >
                 textarea
               </textarea>
@@ -653,7 +654,7 @@ exports[`StaticDataTableCell component StaticDataTableCell renders with year 1`]
             class="gds-field-group"
           >
             <div
-              class="input-year-picker-field table--cell-value--date-readonly field"
+              class="field input-year-picker-field table--cell-value--date-readonly"
             >
               <div
                 class="react-datepicker-wrapper"
@@ -665,7 +666,7 @@ exports[`StaticDataTableCell component StaticDataTableCell renders with year 1`]
                     autocomplete="off"
                     class="field input-year-picker-input-read-only"
                     name="year"
-                    placeholder="-"
+                    placeholder="YYYY"
                     readonly=""
                     tabindex="-1"
                     type="text"

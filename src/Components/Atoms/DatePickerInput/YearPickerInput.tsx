@@ -60,7 +60,15 @@ const YearPickerInput = (props: IYearPickerProps): ReactElement => {
   const selected = inputValue ? today : undefined;
 
   return (
-    <div className={classnames(className, 'field')}>
+    <div
+      className={classnames('field', className)}
+      onClick={
+        readOnly || disabled
+          ? undefined
+          : (event) => {
+              event.stopPropagation();
+            }
+      }>
       <DatePicker
         name={name}
         data-testid={dataTestId}
@@ -77,7 +85,7 @@ const YearPickerInput = (props: IYearPickerProps): ReactElement => {
         disabled={disabled}
         fixedHeight
         readOnly={readOnly}
-        placeholderText={readOnly ? '-' : placeholder || dateFormat.toUpperCase()}
+        placeholderText={!inputValue && (readOnly || disabled) ? '-' : placeholder || dateFormat.toUpperCase()}
         dateFormat={dateFormat}
         disabledKeyboardNavigation
         showPopperArrow={false}

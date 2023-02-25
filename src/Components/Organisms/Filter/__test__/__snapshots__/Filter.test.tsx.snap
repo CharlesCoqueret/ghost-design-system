@@ -22,7 +22,7 @@ exports[`Filter Component Filter renders advanced filter and handles changes 1`]
         >
           <button
             class="gds-button-content"
-            color="secondary"
+            color="reversed"
             data-testid="DATA-TEST-ID-reset"
             tabindex="0"
             type="button"
@@ -35,7 +35,7 @@ exports[`Filter Component Filter renders advanced filter and handles changes 1`]
           </button>
           <button
             class="gds-button-content"
-            color="primary"
+            color="reversed"
             data-testid="DATA-TEST-ID-open-advanced"
             tabindex="0"
             type="button"
@@ -77,7 +77,7 @@ exports[`Filter Component Filter renders advanced filter and handles changes 2`]
         >
           <button
             class="gds-button-content"
-            color="secondary"
+            color="reversed"
             data-testid="DATA-TEST-ID-reset"
             tabindex="0"
             type="button"
@@ -90,7 +90,7 @@ exports[`Filter Component Filter renders advanced filter and handles changes 2`]
           </button>
           <button
             class="gds-button-content"
-            color="primary"
+            color="reversed"
             data-testid="DATA-TEST-ID-open-advanced"
             tabindex="0"
             type="button"
@@ -210,7 +210,7 @@ exports[`Filter Component Filter renders advanced filter and handles changes 3`]
         >
           <button
             class="gds-button-content"
-            color="secondary"
+            color="reversed"
             data-testid="DATA-TEST-ID-reset"
             tabindex="0"
             type="button"
@@ -223,7 +223,7 @@ exports[`Filter Component Filter renders advanced filter and handles changes 3`]
           </button>
           <button
             class="gds-button-content"
-            color="primary"
+            color="reversed"
             data-testid="DATA-TEST-ID-open-advanced"
             tabindex="0"
             type="button"
@@ -343,7 +343,7 @@ exports[`Filter Component Filter renders advanced filter and handles changes 4`]
         >
           <button
             class="gds-button-content"
-            color="secondary"
+            color="reversed"
             data-testid="DATA-TEST-ID-reset"
             tabindex="0"
             type="button"
@@ -356,7 +356,7 @@ exports[`Filter Component Filter renders advanced filter and handles changes 4`]
           </button>
           <button
             class="gds-button-content"
-            color="primary"
+            color="reversed"
             data-testid="DATA-TEST-ID-open-advanced"
             tabindex="0"
             type="button"
@@ -476,7 +476,7 @@ exports[`Filter Component Filter renders advanced filter and handles changes 5`]
         >
           <button
             class="gds-button-content"
-            color="secondary"
+            color="reversed"
             data-testid="DATA-TEST-ID-reset"
             tabindex="0"
             type="button"
@@ -489,7 +489,7 @@ exports[`Filter Component Filter renders advanced filter and handles changes 5`]
           </button>
           <button
             class="gds-button-content"
-            color="primary"
+            color="reversed"
             data-testid="DATA-TEST-ID-open-advanced"
             tabindex="0"
             type="button"
@@ -609,7 +609,7 @@ exports[`Filter Component Filter renders advanced filter and handles changes 6`]
         >
           <button
             class="gds-button-content"
-            color="secondary"
+            color="reversed"
             data-testid="DATA-TEST-ID-reset"
             tabindex="0"
             type="button"
@@ -622,7 +622,7 @@ exports[`Filter Component Filter renders advanced filter and handles changes 6`]
           </button>
           <button
             class="gds-button-content"
-            color="primary"
+            color="reversed"
             data-testid="DATA-TEST-ID-open-advanced"
             tabindex="0"
             type="button"
@@ -661,7 +661,7 @@ exports[`Filter Component Filter renders filterbar and handles changes 1`] = `
       >
         <button
           class="gds-button-content"
-          color="secondary"
+          color="reversed"
           data-testid="DATA-TEST-ID-reset"
           tabindex="0"
           type="button"
@@ -694,7 +694,7 @@ exports[`Filter Component Filter renders with no item in the filter bar 1`] = `
       >
         <button
           class="gds-button-content"
-          color="secondary"
+          color="reversed"
           tabindex="0"
           type="button"
         >
@@ -734,7 +734,7 @@ exports[`Filter Component Filter renders without data-testid 1`] = `
         >
           <button
             class="gds-button-content"
-            color="secondary"
+            color="reversed"
             tabindex="0"
             type="button"
           >
@@ -746,7 +746,7 @@ exports[`Filter Component Filter renders without data-testid 1`] = `
           </button>
           <button
             class="gds-button-content"
-            color="primary"
+            color="reversed"
             tabindex="0"
             type="button"
           >

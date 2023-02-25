@@ -10,7 +10,9 @@ export enum FileStatusEnum {
 }
 
 export interface IFile {
-  /** Unique id (optional, if not provided, will be automatically generated) */
+  /** id (optional) */
+  id?: string;
+  /** Unique id for the library (will be automatically generated, not to be used) */
   uid?: string;
   /** Name of the file */
   name: string;
@@ -24,7 +26,4 @@ export interface IFile {
   progress?: number;
   /** Error message of the upload, meaningful while status is FileStatusEnum.ERROR */
   error?: string;
-  /** Result provided by the upload call
-   * (usually as a string, which might need to be parsed, for example using JSON.parse) */
-  serverResponse?: unknown;
 }

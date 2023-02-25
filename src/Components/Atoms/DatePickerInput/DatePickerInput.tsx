@@ -61,7 +61,15 @@ const DatePickerInput = (props: IDatePickerProps): ReactElement => {
   const localDateFormat = dateFormat || 'MMM dd, yyyy';
 
   return (
-    <div className={classnames('field', className)}>
+    <div
+      className={classnames('field', className)}
+      onClick={
+        readOnly || disabled
+          ? undefined
+          : (event) => {
+              event.stopPropagation();
+            }
+      }>
       <DatePicker
         name={name}
         selected={inputValue}
@@ -84,7 +92,7 @@ const DatePickerInput = (props: IDatePickerProps): ReactElement => {
         fixedHeight
         readOnly={readOnly}
         isClearable={!(disabled || readOnly) && isClearable}
-        placeholderText={readOnly ? '-' : placeholder || localDateFormat.toUpperCase()}
+        placeholderText={!inputValue && (readOnly || disabled) ? '-' : placeholder || localDateFormat.toUpperCase()}
         dateFormat={localDateFormat}
         disabledKeyboardNavigation
         calendarStartDay={calendarStartDay}

@@ -201,7 +201,7 @@ exports[`DynamicSearchInput Component DynamicSearchInput handles change 2`] = `
       </div>
       <div>
         <div
-          class=" css-omztxt"
+          class=" css-1yfmvl6-MenuPortal"
         >
           <div
             class=" css-26l3qy-menu"
@@ -405,7 +405,7 @@ exports[`DynamicSearchInput Component DynamicSearchInput handles change to undef
     >
       <span
         class="css-1f43avz-a11yText-A11yText"
-        id="react-select-12-live-region"
+        id="react-select-11-live-region"
       />
       <span
         aria-atomic="false"
@@ -492,7 +492,7 @@ exports[`DynamicSearchInput Component DynamicSearchInput handles change to undef
     >
       <span
         class="css-1f43avz-a11yText-A11yText"
-        id="react-select-12-live-region"
+        id="react-select-11-live-region"
       />
       <span
         aria-atomic="false"
@@ -519,7 +519,7 @@ exports[`DynamicSearchInput Component DynamicSearchInput handles change to undef
         >
           <div
             class=" css-14el2xx-placeholder"
-            id="react-select-12-placeholder"
+            id="react-select-11-placeholder"
           >
             Select...
           </div>
@@ -529,11 +529,11 @@ exports[`DynamicSearchInput Component DynamicSearchInput handles change to undef
           >
             <input
               aria-autocomplete="list"
-              aria-controls="react-select-12-listbox"
-              aria-describedby="react-select-12-placeholder"
+              aria-controls="react-select-11-listbox"
+              aria-describedby="react-select-11-placeholder"
               aria-expanded="true"
               aria-haspopup="true"
-              aria-owns="react-select-12-listbox"
+              aria-owns="react-select-11-listbox"
               autocapitalize="none"
               autocomplete="off"
               autocorrect="off"
@@ -567,11 +567,11 @@ exports[`DynamicSearchInput Component DynamicSearchInput handles change to undef
       </div>
       <div>
         <div
-          class=" css-omztxt"
+          class=" css-1yfmvl6-MenuPortal"
         >
           <div
             class=" css-26l3qy-menu"
-            id="react-select-12-listbox"
+            id="react-select-11-listbox"
           >
             <div
               class="css-bp8cua-ScrollManager"
@@ -796,7 +796,7 @@ exports[`DynamicSearchInput Component DynamicSearchInput handles change with no 
       </div>
       <div>
         <div
-          class=" css-omztxt"
+          class=" css-1yfmvl6-MenuPortal"
         >
           <div
             class=" css-26l3qy-menu"
@@ -915,7 +915,7 @@ exports[`DynamicSearchInput Component DynamicSearchInput handles inputValue chan
     >
       <span
         class="css-1f43avz-a11yText-A11yText"
-        id="react-select-11-live-region"
+        id="react-select-10-live-region"
       />
       <span
         aria-atomic="false"
@@ -993,7 +993,7 @@ exports[`DynamicSearchInput Component DynamicSearchInput handles inputValue chan
     >
       <span
         class="css-1f43avz-a11yText-A11yText"
-        id="react-select-11-live-region"
+        id="react-select-10-live-region"
       />
       <span
         aria-atomic="false"
@@ -1071,7 +1071,7 @@ exports[`DynamicSearchInput Component DynamicSearchInput handles inputValue chan
     >
       <span
         class="css-1f43avz-a11yText-A11yText"
-        id="react-select-11-live-region"
+        id="react-select-10-live-region"
       />
       <span
         aria-atomic="false"
@@ -1087,7 +1087,7 @@ exports[`DynamicSearchInput Component DynamicSearchInput handles inputValue chan
         >
           <div
             class=" css-14el2xx-placeholder"
-            id="react-select-11-placeholder"
+            id="react-select-10-placeholder"
           >
             Select...
           </div>
@@ -1097,7 +1097,7 @@ exports[`DynamicSearchInput Component DynamicSearchInput handles inputValue chan
           >
             <input
               aria-autocomplete="list"
-              aria-describedby="react-select-11-placeholder"
+              aria-describedby="react-select-10-placeholder"
               aria-expanded="false"
               aria-haspopup="true"
               autocapitalize="none"
@@ -1222,73 +1222,14 @@ exports[`DynamicSearchInput Component DynamicSearchInput renders 1`] = `
 exports[`DynamicSearchInput Component DynamicSearchInput renders in error and disabled 1`] = `
 <div>
   <div
-    class="field gds-select-container input-select-field"
+    class="field gds-select-container input-select-field-read-only"
+    data-testid="DATA-TEST-ID"
   >
-    <div
-      class=" css-j5ssuk-container"
+    <span
+      class="gds-typography"
     >
-      <span
-        class="css-1f43avz-a11yText-A11yText"
-        id="react-select-9-live-region"
-      />
-      <span
-        aria-atomic="false"
-        aria-live="polite"
-        aria-relevant="additions text"
-        class="css-1f43avz-a11yText-A11yText"
-      />
-      <div
-        class=" css-6gods9-control"
-      >
-        <div
-          class=" css-9plg90-ValueContainer"
-        >
-          <div
-            class=" css-lr9fot-singleValue"
-          >
-            option 1
-          </div>
-          <div
-            class=" css-jzldcf-Input"
-            data-value=""
-          >
-            <input
-              aria-autocomplete="list"
-              aria-expanded="false"
-              aria-haspopup="true"
-              autocapitalize="none"
-              autocomplete="off"
-              autocorrect="off"
-              class=""
-              disabled=""
-              id="DATA-TEST-ID"
-              role="combobox"
-              spellcheck="false"
-              style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
-              tabindex="0"
-              type="text"
-              value=""
-            />
-          </div>
-        </div>
-        <div
-          class=" css-1hb7zxy-IndicatorsContainer"
-        >
-          <span
-            class=" css-109onse-indicatorSeparator"
-          />
-          <div
-            aria-hidden="true"
-          >
-            <i
-              class="dynamic-search-icon icon"
-              data-testid="DATA-TEST-ID-magnifier"
-              icon="fal,magnifying-glass"
-            />
-          </div>
-        </div>
-      </div>
-    </div>
+      option 1
+    </span>
   </div>
 </div>
 `;
@@ -1303,7 +1244,7 @@ exports[`DynamicSearchInput Component DynamicSearchInput renders in error withou
     >
       <span
         class="css-1f43avz-a11yText-A11yText"
-        id="react-select-10-live-region"
+        id="react-select-9-live-region"
       />
       <span
         aria-atomic="false"
@@ -1319,7 +1260,7 @@ exports[`DynamicSearchInput Component DynamicSearchInput renders in error withou
         >
           <div
             class=" css-14el2xx-placeholder"
-            id="react-select-10-placeholder"
+            id="react-select-9-placeholder"
           >
             Select...
           </div>
@@ -1329,7 +1270,7 @@ exports[`DynamicSearchInput Component DynamicSearchInput renders in error withou
           >
             <input
               aria-autocomplete="list"
-              aria-describedby="react-select-10-placeholder"
+              aria-describedby="react-select-9-placeholder"
               aria-expanded="false"
               aria-haspopup="true"
               autocapitalize="none"

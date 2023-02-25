@@ -81,7 +81,7 @@ const fields: Array<IFieldAndLayoutProps<IDataType>> = [
     ),
     fieldType: FieldTypeEnum.DESCRIPTION,
     hidden: (data: IDataType) => {
-      return data.amount < 1000;
+      return data.amount ? data.amount < 1000 : false;
     },
   },
   {
@@ -101,7 +101,7 @@ const fields: Array<IFieldAndLayoutProps<IDataType>> = [
     dataIndex: 'percentage',
     fieldType: FieldTypeEnum.PERCENTAGE,
     hidden: (data: IDataType) => {
-      return data.number < 0;
+      return data.number ? data.number < 0 : false;
     },
   },
   { label: 'Checbox', dataIndex: 'checkbox', fieldType: FieldTypeEnum.CHECKBOX },

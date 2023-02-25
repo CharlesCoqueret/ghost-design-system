@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`NavItem unmocked Component NavItem unmocked submenu gets closed 1`] = `
+exports[`NavItem unmocked Component renders with submenu gets closed 1`] = `
 <body>
   <div>
     <div
@@ -24,25 +24,36 @@ exports[`NavItem unmocked Component NavItem unmocked submenu gets closed 1`] = `
     <div>
       <div
         class="szh-menu-container"
+        style="position: relative;"
       >
         <ul
           aria-label="Menu"
           class="szh-menu szh-menu--state-closed szh-menu--dir-bottom"
           role="menu"
-          style="left: 0px; top: 0px;"
+          style="position: absolute; margin: 0px; display: none; left: 0px; top: 0px;"
           tabindex="-1"
         >
           <div
-            class="szh-menu__arrow szh-menu__arrow--dir-bottom"
-          />
-          <li
-            class="szh-menu__item"
-            data-testid="SUBITEMDATA-TEST-ID"
-            role="menuitem"
+            style="position: absolute; left: 0px; top: 0px;"
             tabindex="-1"
+          />
+          <div
+            class="szh-menu__arrow szh-menu__arrow--dir-bottom"
+            style="position: absolute;"
+          />
+          <a
+            href="#"
           >
-            SUBITEM
-          </li>
+            partial url
+            <li
+              class="szh-menu__item"
+              data-testid="SUBITEMDATA-TEST-ID"
+              role="menuitem"
+              tabindex="-1"
+            >
+              SUBITEM
+            </li>
+          </a>
         </ul>
       </div>
     </div>
@@ -50,7 +61,7 @@ exports[`NavItem unmocked Component NavItem unmocked submenu gets closed 1`] = `
 </body>
 `;
 
-exports[`NavItem unmocked Component NavItem unmocked submenu gets closed 2`] = `
+exports[`NavItem unmocked Component renders with submenu gets closed 2`] = `
 <body>
   <div>
     <div
@@ -74,26 +85,36 @@ exports[`NavItem unmocked Component NavItem unmocked submenu gets closed 2`] = `
     <div>
       <div
         class="szh-menu-container"
+        style="position: relative;"
       >
         <ul
           aria-label="Menu"
           class="szh-menu szh-menu--state-open szh-menu--dir-bottom"
           role="menu"
-          style="left: 0px; top: 0px;"
+          style="position: absolute; margin: 0px; left: 0px; top: 0px;"
           tabindex="-1"
         >
           <div
-            class="szh-menu__arrow szh-menu__arrow--dir-bottom"
-            style="left: 0px;"
-          />
-          <li
-            class="szh-menu__item"
-            data-testid="SUBITEMDATA-TEST-ID"
-            role="menuitem"
+            style="position: absolute; left: 0px; top: 0px;"
             tabindex="-1"
+          />
+          <div
+            class="szh-menu__arrow szh-menu__arrow--dir-bottom"
+            style="position: absolute; left: 0px;"
+          />
+          <a
+            href="#"
           >
-            SUBITEM
-          </li>
+            partial url
+            <li
+              class="szh-menu__item"
+              data-testid="SUBITEMDATA-TEST-ID"
+              role="menuitem"
+              tabindex="-1"
+            >
+              SUBITEM
+            </li>
+          </a>
         </ul>
       </div>
     </div>
@@ -101,7 +122,7 @@ exports[`NavItem unmocked Component NavItem unmocked submenu gets closed 2`] = `
 </body>
 `;
 
-exports[`NavItem unmocked Component NavItem unmocked submenu gets closed 3`] = `
+exports[`NavItem unmocked Component renders with submenu gets closed 3`] = `
 <body>
   <div>
     <div
@@ -125,26 +146,36 @@ exports[`NavItem unmocked Component NavItem unmocked submenu gets closed 3`] = `
     <div>
       <div
         class="szh-menu-container"
+        style="position: relative;"
       >
         <ul
           aria-label="Menu"
           class="szh-menu szh-menu--state-closed szh-menu--dir-bottom"
           role="menu"
-          style="left: 0px; top: 0px;"
+          style="position: absolute; margin: 0px; left: 0px; top: 0px; display: none;"
           tabindex="-1"
         >
           <div
-            class="szh-menu__arrow szh-menu__arrow--dir-bottom"
-            style="left: 0px;"
-          />
-          <li
-            class="szh-menu__item"
-            data-testid="SUBITEMDATA-TEST-ID"
-            role="menuitem"
+            style="position: absolute; left: 0px; top: 0px;"
             tabindex="-1"
+          />
+          <div
+            class="szh-menu__arrow szh-menu__arrow--dir-bottom"
+            style="position: absolute; left: 0px;"
+          />
+          <a
+            href="#"
           >
-            SUBITEM
-          </li>
+            partial url
+            <li
+              class="szh-menu__item"
+              data-testid="SUBITEMDATA-TEST-ID"
+              role="menuitem"
+              tabindex="-1"
+            >
+              SUBITEM
+            </li>
+          </a>
         </ul>
       </div>
     </div>
@@ -152,7 +183,7 @@ exports[`NavItem unmocked Component NavItem unmocked submenu gets closed 3`] = `
 </body>
 `;
 
-exports[`NavItem unmocked Component NavItem unmocked submenu gets closed 4`] = `
+exports[`NavItem unmocked Component renders with submenu gets closed 4`] = `
 <body>
   <div>
     <div
@@ -176,26 +207,36 @@ exports[`NavItem unmocked Component NavItem unmocked submenu gets closed 4`] = `
     <div>
       <div
         class="szh-menu-container"
+        style="position: relative;"
       >
         <ul
           aria-label="Menu"
           class="szh-menu szh-menu--state-open szh-menu--dir-bottom"
           role="menu"
-          style="left: 0px; top: 0px;"
+          style="position: absolute; margin: 0px; left: 0px; top: 0px;"
           tabindex="-1"
         >
           <div
-            class="szh-menu__arrow szh-menu__arrow--dir-bottom"
-            style="left: 0px;"
-          />
-          <li
-            class="szh-menu__item"
-            data-testid="SUBITEMDATA-TEST-ID"
-            role="menuitem"
+            style="position: absolute; left: 0px; top: 0px;"
             tabindex="-1"
+          />
+          <div
+            class="szh-menu__arrow szh-menu__arrow--dir-bottom"
+            style="position: absolute; left: 0px;"
+          />
+          <a
+            href="#"
           >
-            SUBITEM
-          </li>
+            partial url
+            <li
+              class="szh-menu__item"
+              data-testid="SUBITEMDATA-TEST-ID"
+              role="menuitem"
+              tabindex="-1"
+            >
+              SUBITEM
+            </li>
+          </a>
         </ul>
       </div>
     </div>

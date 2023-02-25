@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`NavItem Component NavItem renders 1`] = `
+exports[`NavItem Component renders as basic label 1`] = `
 <div>
   <div
     class="nav-bar-menu-item"
@@ -38,7 +38,7 @@ exports[`NavItem Component NavItem renders 1`] = `
 </div>
 `;
 
-exports[`NavItem Component NavItem renders 2`] = `
+exports[`NavItem Component renders as basic label 2`] = `
 <div>
   <div
     class="nav-bar-menu-item"
@@ -76,7 +76,7 @@ exports[`NavItem Component NavItem renders 2`] = `
 </div>
 `;
 
-exports[`NavItem Component NavItem renders 3`] = `
+exports[`NavItem Component renders as basic label 3`] = `
 <div>
   <div
     class="nav-bar-menu-item"
@@ -114,7 +114,7 @@ exports[`NavItem Component NavItem renders 3`] = `
 </div>
 `;
 
-exports[`NavItem Component NavItem renders with subitems 1`] = `
+exports[`NavItem Component renders with interactive subitems 1`] = `
 <div>
   <div
     class="nav-bar-menu-item"
@@ -134,19 +134,24 @@ exports[`NavItem Component NavItem renders with subitems 1`] = `
     <div>
       ControlleMenu
       closed
-      <div
-        data-testid="SUBITEMDATA-TEST-ID"
+      <a
+        href="#"
       >
-        MenuItem
-        SUBITEM
-      </div>
+        partial url
+        <div
+          data-testid="SUBITEMDATA-TEST-ID"
+        >
+          MenuItem
+          SUBITEM
+        </div>
+      </a>
       has no ref
     </div>
   </div>
 </div>
 `;
 
-exports[`NavItem Component NavItem renders with subitems 2`] = `
+exports[`NavItem Component renders with interactive subitems 2`] = `
 <div>
   <div
     class="nav-bar-menu-item"
@@ -166,19 +171,24 @@ exports[`NavItem Component NavItem renders with subitems 2`] = `
     <div>
       ControlleMenu
       open
-      <div
-        data-testid="SUBITEMDATA-TEST-ID"
+      <a
+        href="#"
       >
-        MenuItem
-        SUBITEM
-      </div>
+        partial url
+        <div
+          data-testid="SUBITEMDATA-TEST-ID"
+        >
+          MenuItem
+          SUBITEM
+        </div>
+      </a>
       has no ref
     </div>
   </div>
 </div>
 `;
 
-exports[`NavItem Component NavItem renders with subitems 3`] = `
+exports[`NavItem Component renders with interactive subitems 3`] = `
 <div>
   <div
     class="nav-bar-menu-item"
@@ -198,19 +208,24 @@ exports[`NavItem Component NavItem renders with subitems 3`] = `
     <div>
       ControlleMenu
       open
-      <div
-        data-testid="SUBITEMDATA-TEST-ID"
+      <a
+        href="#"
       >
-        MenuItem
-        SUBITEM
-      </div>
+        partial url
+        <div
+          data-testid="SUBITEMDATA-TEST-ID"
+        >
+          MenuItem
+          SUBITEM
+        </div>
+      </a>
       has no ref
     </div>
   </div>
 </div>
 `;
 
-exports[`NavItem Component NavItem renders with subitems 4`] = `
+exports[`NavItem Component renders with interactive subitems 4`] = `
 <div>
   <div
     class="nav-bar-menu-item"
@@ -230,12 +245,17 @@ exports[`NavItem Component NavItem renders with subitems 4`] = `
     <div>
       ControlleMenu
       closed
-      <div
-        data-testid="SUBITEMDATA-TEST-ID"
+      <a
+        href="#"
       >
-        MenuItem
-        SUBITEM
-      </div>
+        partial url
+        <div
+          data-testid="SUBITEMDATA-TEST-ID"
+        >
+          MenuItem
+          SUBITEM
+        </div>
+      </a>
       has no ref
     </div>
   </div>

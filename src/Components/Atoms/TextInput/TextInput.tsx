@@ -48,7 +48,7 @@ const TextInput = (props: ITextInputProps): ReactElement => {
     readOnly,
   } = props;
 
-  if (readOnly)
+  if (readOnly || disabled)
     return (
       <div
         className={classnames(
@@ -60,7 +60,7 @@ const TextInput = (props: ITextInputProps): ReactElement => {
           inputClassName,
         )}
         data-testid={dataTestId}>
-        <Typography.Text ellipsis={ellipsis}>{inputValue}</Typography.Text>
+        <Typography.Text ellipsis={ellipsis}>{inputValue ? inputValue : '-'}</Typography.Text>
       </div>
     );
 

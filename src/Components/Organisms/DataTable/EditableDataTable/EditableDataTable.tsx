@@ -15,10 +15,12 @@ export interface IEditableDataTableProps<T> {
   extra: IExtraEditableDataTableProps<T>;
   loading?: ReactElement;
   onSortChange?: (sortField?: keyof T, sortDirection?: SortDirectionEnum) => void;
+  /** Sticky header (optional, default:false) */
+  stickyHeader?: boolean;
 }
 
 const EditableDataTable = <T,>(props: IEditableDataTableProps<T>): ReactElement => {
-  const { columns, data, dataTestId, extra, loading, onSortChange } = props;
+  const { columns, data, dataTestId, extra, loading, onSortChange, stickyHeader } = props;
 
   const [currentData, setCurrentData] = usePropState<Array<T>>(data);
   const [sortField, setSortField] = useState<keyof T | undefined>();
@@ -110,6 +112,9 @@ const EditableDataTable = <T,>(props: IEditableDataTableProps<T>): ReactElement 
       prev.push(newLine);
       return [...prev];
     });
+    if (extra.onRowAdded) {
+      extra.onRowAdded();
+    }
   };
 
   return (
@@ -121,6 +126,7 @@ const EditableDataTable = <T,>(props: IEditableDataTableProps<T>): ReactElement 
           sortField={sortField}
           sortDirection={sortDirection}
           extra={extra}
+          stickyHeader={stickyHeader}
         />
         <EditableDataTableBody<T>
           columns={currentColumns}
@@ -147,6 +153,7 @@ const EditableDataTable = <T,>(props: IEditableDataTableProps<T>): ReactElement 
 EditableDataTable.defaultProps = {
   columns: [],
   data: [],
+  stickyHeader: false,
 };
 
 export default EditableDataTable;

@@ -316,6 +316,7 @@ exports[`MultiSelectCell component MultiSelectCell renders cell editing with no 
                   <input
                     name="multiselectcell"
                     type="hidden"
+                    value=""
                   />
                 </div>
               </div>
@@ -439,6 +440,7 @@ exports[`MultiSelectCell component MultiSelectCell renders row editing with no r
                   <input
                     name="multiselectcell"
                     type="hidden"
+                    value=""
                   />
                 </div>
               </div>

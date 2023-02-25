@@ -1,8 +1,11 @@
 .gds-filter-container {
+  display: flex;
+  flex: 1 1;
+
   .searchbar {
     display: flex;
+    flex: 1 1;
     justify-content: space-between;
-    padding: 0px 8px;
 
     .search-field {
       display: flex;

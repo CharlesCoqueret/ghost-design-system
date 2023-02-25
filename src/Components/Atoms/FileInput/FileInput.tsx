@@ -1,6 +1,5 @@
-import React, { ChangeEvent, CSSProperties, ReactElement, useCallback, useEffect, useRef, useState } from 'react';
+import React, { ChangeEvent, CSSProperties, ReactElement, useEffect, useRef, useState } from 'react';
 import classnames from 'classnames';
-import sortBy from 'lodash/sortBy';
 import compact from 'lodash/compact';
 
 import { FileStatusEnum, IFile } from './types';
@@ -36,6 +35,10 @@ export interface IFileInputProps {
    * The client should let the user know if the download fails.
    * Promise resolution or rejection will only prevent multiple downloads of the same file. */
   onDownload?: (file: IFile) => Promise<void>;
+  /** Handler of the upload failing, use this method to update the error message if needed (optional, default: undefined) */
+  onFailure?: (file: IFile, statusText: string) => IFile;
+  /** Handler of the upload succeeding, use this method to update the id if needed (optional, default: undefined) */
+  onSuccess?: (file: IFile, serverResponse: unknown) => IFile;
   /** Read only field (optional, default: false) */
   readOnly?: boolean;
   /** Extra header (optional, default: undefined) */
@@ -43,7 +46,7 @@ export interface IFileInputProps {
   /** HTTP method used for the upload (optional, default: 'POST' ) */
   requestMethod: 'POST' | 'PUT';
   /** Url of the request */
-  requestUrl: string;
+  requestUrl?: string;
   /** Enable withCredentials on the request (optional, default: undefined) */
   requestWithCredentials?: boolean;
   /** Show file size in the gallery (optional, default: true) */
@@ -108,6 +111,8 @@ const FileInput = (props: IFileInputProps): ReactElement => {
     onChange,
     onDelete,
     onDownload,
+    onFailure,
+    onSuccess,
     readOnly,
     requestHeaders,
     requestMethod,
@@ -124,36 +129,6 @@ const FileInput = (props: IFileInputProps): ReactElement => {
   const dropArea = useRef<HTMLDivElement>(null);
   const input = useRef<HTMLInputElement>(null);
   const initialLocalItemsDefinition = useRef(true);
-
-  /**
-   * Adds file to the local list:
-   *    - checks if size requirement is met (cf maxFileSize)
-   *    - checks if maxFiles requirement is met (cf maxFiles)
-   *    - checks if file type requirement is met (cf accepTypes)
-   * @param file new file
-   * @returns IFile with status, and eventually error if one of the requirement is not met
-   */
-  const addFileLocalItems = useCallback(
-    (file: File): IFile => {
-      const quotaExceeded =
-        maxFiles !== undefined &&
-        localItems.filter(
-          (item) => item.status && [FileStatusEnum.DONE, FileStatusEnum.UPLOADING].includes(item.status),
-        ).length >= maxFiles;
-      const newFile = initializeIFile(file, quotaExceeded, acceptTypes, maxFileSize, {
-        invalidType: localization?.invalidType,
-        quotaExceeded: localization?.quotaExceeded,
-        sizeExceeded: localization?.sizeExceeded,
-      });
-
-      setLocalItems((prev) => {
-        return [...prev, newFile];
-      });
-
-      return newFile;
-    },
-    [acceptTypes, maxFileSize, maxFiles],
-  );
 
   /**
    * Updates the progress for the file
@@ -176,9 +151,12 @@ const FileInput = (props: IFileInputProps): ReactElement => {
   const updateFileError = (file: IFile, error: string): void => {
     setLocalItems((prev) => {
       const fileToUpdate = prev.find((f) => f.uid === file.uid);
+
       return compact([
         ...prev.filter((f) => f.uid !== file.uid),
-        fileToUpdate && { ...fileToUpdate, status: FileStatusEnum.ERROR, error: error },
+        onFailure
+          ? { ...onFailure(file, error), status: FileStatusEnum.ERROR }
+          : fileToUpdate && { ...fileToUpdate, status: FileStatusEnum.ERROR, error: error },
       ]);
     });
 
@@ -202,12 +180,13 @@ const FileInput = (props: IFileInputProps): ReactElement => {
 
       return compact([
         ...prev.filter((f) => f.uid !== file.uid),
-        fileToUpdate && {
-          ...fileToUpdate,
-          status: FileStatusEnum.DONE,
-          error: undefined,
-          serverResponse: serverResponse,
-        },
+        onSuccess
+          ? { ...onSuccess(file, serverResponse), status: FileStatusEnum.DONE, error: undefined }
+          : fileToUpdate && {
+              ...fileToUpdate,
+              status: FileStatusEnum.DONE,
+              error: undefined,
+            },
       ]);
     });
 
@@ -238,7 +217,11 @@ const FileInput = (props: IFileInputProps): ReactElement => {
    * @returns Promise
    */
   const updateFileDelete = async (file: IFile): Promise<void> => {
-    if (!onDelete) return;
+    if (!onDelete) {
+      setLocalItems((prev) => prev.filter((f) => f.uid !== file.uid));
+
+      return;
+    }
 
     setLocalItems((prev) => [...prev.filter((f) => f.uid !== file.uid), { ...file, status: FileStatusEnum.DELETING }]);
     await onDelete(file)
@@ -248,7 +231,38 @@ const FileInput = (props: IFileInputProps): ReactElement => {
       .catch(() => {
         setLocalItems((prev) => [...prev.filter((f) => f.uid !== file.uid), { ...file, status: FileStatusEnum.DONE }]);
       });
-    return;
+  };
+
+  /**
+   * Manages the upload of the provided Files:
+   *    - checks if size requirement is met (cf maxFileSize)
+   *    - checks if maxFiles requirement is met (cf maxFiles)
+   *    - checks if file type requirement is met (cf accepTypes)
+   *    - Adds file reference locally
+   *    - Call single file upload
+   * @param files files to upload
+   */
+  const uploadFiles = (files: Array<File>): void => {
+    let fileCount = localItems.filter(
+      (item) => item.status && [FileStatusEnum.DONE, FileStatusEnum.UPLOADING].includes(item.status),
+    ).length;
+
+    files.map((file) => {
+      const quotaExceeded = maxFiles ? fileCount >= maxFiles : false;
+      fileCount += 1;
+
+      const newFile = initializeIFile(file, quotaExceeded, acceptTypes, maxFileSize, {
+        invalidType: localization?.invalidType,
+        quotaExceeded: localization?.quotaExceeded,
+        sizeExceeded: localization?.sizeExceeded,
+      });
+
+      setLocalItems((prev) => {
+        return [...prev, newFile];
+      });
+
+      uploadFile(newFile, file);
+    });
   };
 
   /**
@@ -260,50 +274,50 @@ const FileInput = (props: IFileInputProps): ReactElement => {
    * Sets the progress of the corresponding file to 0.
    * @param file file to upload
    */
-  const uploadFile = useCallback(
-    (file: File): void => {
-      const newFile = addFileLocalItems(file);
+  const uploadFile = (file: IFile, fileContent: File): void => {
+    if (requestUrl === undefined) {
+      console.error('missing requestUrl to File Input field');
+      return;
+    }
 
-      if (newFile.status !== FileStatusEnum.UPLOADING) return;
+    if (file.status !== FileStatusEnum.UPLOADING) return;
 
-      const xhr = new XMLHttpRequest();
-      if (requestWithCredentials !== undefined) {
-        xhr.withCredentials = requestWithCredentials;
+    const xhr = new XMLHttpRequest();
+    if (requestWithCredentials !== undefined) {
+      xhr.withCredentials = requestWithCredentials;
+    }
+
+    xhr.open(requestMethod, requestUrl, true);
+
+    if (requestHeaders) {
+      for (const headerKey in requestHeaders) {
+        xhr.setRequestHeader(headerKey, requestHeaders[headerKey]);
       }
+    }
 
-      xhr.open(requestMethod, requestUrl, true);
+    xhr.upload.addEventListener('progress', (event: ProgressEvent<XMLHttpRequestEventTarget>) => {
+      updateFileProgress(file, (event.loaded * 100.0) / event.total);
+    });
 
-      if (requestHeaders) {
-        for (const headerKey in requestHeaders) {
-          xhr.setRequestHeader(headerKey, requestHeaders[headerKey]);
-        }
+    xhr.addEventListener('readystatechange', () => {
+      if (xhr.readyState === 4 && xhr.status === 200) {
+        updateFileUploaded(file, xhr.response);
+      } else if (xhr.readyState === 4 && xhr.status !== 200) {
+        updateFileError(file, xhr.statusText);
       }
+    });
 
-      xhr.upload.addEventListener('progress', (event: ProgressEvent<XMLHttpRequestEventTarget>) => {
-        updateFileProgress(newFile, (event.loaded * 100.0) / event.total);
-      });
+    xhr.addEventListener('timeout', () => {
+      updateFileError(file, 'Timeout');
+    });
 
-      xhr.addEventListener('readystatechange', () => {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-          updateFileUploaded(newFile, xhr.response);
-        } else if (xhr.readyState === 4 && xhr.status !== 200) {
-          updateFileError(newFile, xhr.statusText);
-        }
-      });
+    updateFileProgress(file, 0);
 
-      xhr.addEventListener('timeout', () => {
-        updateFileError(newFile, 'Timeout');
-      });
+    const formData = new FormData();
+    formData.append('file', fileContent);
 
-      updateFileProgress(file, 0);
-
-      const formData = new FormData();
-      formData.append('file', file);
-
-      xhr.send(formData);
-    },
-    [requestHeaders, requestMethod, requestUrl, requestWithCredentials],
-  );
+    xhr.send(formData);
+  };
 
   /**
    * Handles change event for the input
@@ -312,7 +326,7 @@ const FileInput = (props: IFileInputProps): ReactElement => {
   const handleOnChange = (event: ChangeEvent<HTMLInputElement>): void => {
     if (event.target instanceof HTMLInputElement && event.target.files) {
       const localFiles = Array.from(event.target.files);
-      localFiles.forEach(uploadFile);
+      uploadFiles(localFiles);
     }
   };
 
@@ -320,17 +334,14 @@ const FileInput = (props: IFileInputProps): ReactElement => {
    * Handles drop event for the drop zone
    * @param event drag event which might tirgger uploadFile
    */
-  const handleDrop = useCallback(
-    (event: DragEvent) => {
-      const items = event.dataTransfer?.items;
-      if (items) {
-        getFilesWebkitDataTransferItems(items, maxFolderDepth).then((files) => {
-          files.forEach(uploadFile);
-        });
-      }
-    },
-    [maxFolderDepth],
-  );
+  const handleDrop = (event: DragEvent) => {
+    const items = event.dataTransfer?.items;
+    if (items) {
+      getFilesWebkitDataTransferItems(items, maxFolderDepth).then((files) => {
+        uploadFiles(files);
+      });
+    }
+  };
 
   /**
    * Notify any files changes (including new files, states changes, deleted files, ...), except for
@@ -387,7 +398,7 @@ const FileInput = (props: IFileInputProps): ReactElement => {
       currentDropArea.removeEventListener('dragleave', unhighlight);
       currentDropArea.removeEventListener('drop', handleDrop);
     };
-  }, []);
+  }, [localItems]);
 
   return (
     <div className={classnames('field', 'gds-file-input-container', className)} style={style}>
@@ -413,7 +424,8 @@ const FileInput = (props: IFileInputProps): ReactElement => {
         </label>
       </div>
       <div key='gallery' className='gallery'>
-        {sortBy(localItems, 'uid').map((item) => {
+        {readOnly && localItems.length === 0 && '-'}
+        {localItems.map((item) => {
           return (
             <FileGallery
               dataTestId={dataTestId}

@@ -12,8 +12,6 @@ exports[`TextAreaField Component TextAreaField renders 1`] = `
         class="input-textarea-field"
         id="NAME"
         name="NAME"
-        rows="1"
-        style="height: 0px;"
       />
     </div>
   </div>
@@ -32,8 +30,6 @@ exports[`TextAreaField Component TextAreaField renders handles changes 1`] = `
         class="input-textarea-field"
         id="NAME"
         name="NAME"
-        rows="1"
-        style="height: 0px;"
       />
     </div>
   </div>
@@ -52,8 +48,6 @@ exports[`TextAreaField Component TextAreaField renders handles changes 2`] = `
         class="input-textarea-field"
         id="NAME"
         name="NAME"
-        rows="1"
-        style="height: 0px;"
       />
     </div>
   </div>
@@ -73,8 +67,6 @@ exports[`TextAreaField Component TextAreaField renders in readonly 1`] = `
         id="NAME"
         name="NAME"
         readonly=""
-        rows="1"
-        style="height: 0px;"
       >
         INPUT-VALUE
       </textarea>
@@ -95,9 +87,8 @@ exports[`TextAreaField Component TextAreaField renders in readonly highlighted 1
         class="input-textarea-field-read-only field-highlighted"
         id="NAME"
         name="NAME"
+        placeholder="-"
         readonly=""
-        rows="1"
-        style="height: 0px;"
       />
     </div>
   </div>
@@ -116,8 +107,6 @@ exports[`TextAreaField Component TextAreaField renders with error 1`] = `
         class="input-textarea-field input-error"
         id="NAME"
         name="NAME"
-        rows="1"
-        style="height: 0px;"
       >
         INPUT-VALUE
       </textarea>

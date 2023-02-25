@@ -7,7 +7,7 @@ import NavItem from '../NavItem';
 jest.unmock('@szhsin/react-menu');
 jest.unmock('react-dom');
 describe('NavItem unmocked Component', () => {
-  it('NavItem unmocked submenu gets closed', () => {
+  it('renders with submenu gets closed', () => {
     const onClickMock = jest.fn();
 
     const { baseElement } = render(

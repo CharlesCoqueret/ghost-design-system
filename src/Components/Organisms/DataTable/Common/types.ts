@@ -183,7 +183,10 @@ export interface IColumnDescription<T> extends IColumn {
 
 export interface IColumnDate<T>
   extends IColumn,
-    Pick<IDatePickerFieldProps, 'calendarStartDay' | 'dateFormat' | 'isClearable' | 'locale' | 'usePortal'> {
+    Pick<
+      IDatePickerFieldProps,
+      'calendarStartDay' | 'dateFormat' | 'fieldClassName' | 'isClearable' | 'locale' | 'usePortal'
+    > {
   /** Entry of the value in T (type: keyof T) */
   dataIndex: keyof T;
   /** Enables edition for column (optional, default: false) */
@@ -217,6 +220,8 @@ export interface IColumnFile<T>
       | 'maxFolderDepth'
       | 'onDelete'
       | 'onDownload'
+      | 'onFailure'
+      | 'onSuccess'
       | 'requestHeaders'
       | 'requestMethod'
       | 'requestUrl'
@@ -578,6 +583,9 @@ export interface IExtraEditableDataTableProps<T> extends IExtraStaticDataTablePr
   canAddNewLine?: () => boolean;
   /** Method used to when the new line button is clicked to get initial values (optional, default: undefined) */
   onNewLine?: () => T;
+  /** Notification of a newly added row (optional, default: undefined),
+   * this is defined to ensure data synchronization after state update */
+  onRowAdded?: () => void;
   /** localization (optional, default:
    *    actionColumn: 'Actions'
    *    addRow: 'Add row'

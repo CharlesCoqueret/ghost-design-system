@@ -159,7 +159,6 @@ describe('FileInput Component', () => {
       {
         error: undefined,
         name: 'hello.png',
-        serverResponse: 'RESPONSE',
         size: 5,
         status: FileStatusEnum.DONE,
         type: 'image/png',
@@ -284,7 +283,7 @@ describe('FileInput Component', () => {
     expect(progressCallback).not.toBeUndefined();
     expect(readystatechangeCallback).not.toBeUndefined();
 
-    //simulate unsucessful end
+    //simulate unsuccessful end
     act(() => {
       if (readystatechangeCallback) {
         (readystatechangeCallback as () => void)();
@@ -599,13 +598,17 @@ describe('FileInput Component', () => {
 
     const deleteButton = await screen.findByTestId('TEST-ID-delete');
 
-    userEvent.click(deleteButton);
+    act(() => {
+      userEvent.click(deleteButton);
+    });
 
     const confirmButton = screen.getByTestId('TEST-ID-confirm');
 
-    userEvent.click(confirmButton);
+    act(() => {
+      userEvent.click(confirmButton);
+    });
 
-    expect(onChangeMock).toBeCalledTimes(0);
+    expect(onChangeMock).toBeCalledTimes(1);
     expect(container).toMatchSnapshot();
   });
 

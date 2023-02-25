@@ -177,7 +177,7 @@ exports[`YearPickerInput Component YearPickerInput renders in readOnly, highligh
           autocomplete="off"
           class="field input-year-picker-input-read-only field-highlighted"
           name="NAME"
-          placeholder="-"
+          placeholder="YYYY"
           readonly=""
           tabindex="-1"
           type="text"

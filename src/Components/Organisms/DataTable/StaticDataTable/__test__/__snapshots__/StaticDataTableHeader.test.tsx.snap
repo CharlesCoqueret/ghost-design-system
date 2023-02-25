@@ -5,13 +5,16 @@ exports[`StaticDataTableHeader component StaticDataTableHeader disables sort whe
   <table>
     <thead>
       <tr>
-        <th>
+        <th
+          class=""
+        >
           <div
             class="table--header-value table--header-value--sortable"
             tabindex="0"
           >
             <span
-              class="table--header-value--title right"
+              class="gds-typography table--header-value--title right ellipsis"
+              title="Number"
             >
               Number
             </span>
@@ -28,14 +31,17 @@ exports[`StaticDataTableHeader component StaticDataTableHeader handles sort chan
   <table>
     <thead>
       <tr>
-        <th>
+        <th
+          class=""
+        >
           <div
             class="table--header-value table--header-value--sortable"
             data-testid="DATA-TEST-ID-sort"
             tabindex="0"
           >
             <span
-              class="table--header-value--title right"
+              class="gds-typography table--header-value--title right ellipsis"
+              title="Number"
             >
               Number
             </span>
@@ -63,14 +69,17 @@ exports[`StaticDataTableHeader component StaticDataTableHeader handles sort chan
   <table>
     <thead>
       <tr>
-        <th>
+        <th
+          class=""
+        >
           <div
             class="table--header-value table--header-value--sortable"
             data-testid="DATA-TEST-ID-sort"
             tabindex="0"
           >
             <span
-              class="table--header-value--title right"
+              class="gds-typography table--header-value--title right ellipsis"
+              title="Number"
             >
               Number
             </span>
@@ -98,14 +107,17 @@ exports[`StaticDataTableHeader component StaticDataTableHeader handles sort chan
   <table>
     <thead>
       <tr>
-        <th>
+        <th
+          class=""
+        >
           <div
             class="table--header-value table--header-value--sortable"
             data-testid="DATA-TEST-ID-sort"
             tabindex="0"
           >
             <span
-              class="table--header-value--title right"
+              class="gds-typography table--header-value--title right ellipsis"
+              title="Number"
             >
               Number
             </span>
@@ -133,14 +145,17 @@ exports[`StaticDataTableHeader component StaticDataTableHeader handles sort chan
   <table>
     <thead>
       <tr>
-        <th>
+        <th
+          class=""
+        >
           <div
             class="table--header-value table--header-value--sortable"
             data-testid="DATA-TEST-ID-sort"
             tabindex="0"
           >
             <span
-              class="table--header-value--title right"
+              class="gds-typography table--header-value--title right ellipsis"
+              title="Number"
             >
               Number
             </span>
@@ -168,13 +183,16 @@ exports[`StaticDataTableHeader component StaticDataTableHeader renders without s
   <table>
     <thead>
       <tr>
-        <th>
+        <th
+          class=""
+        >
           <div
             class="table--header-value"
             tabindex="-1"
           >
             <span
-              class="table--header-value--title right"
+              class="gds-typography table--header-value--title right ellipsis"
+              title="Number"
             >
               Number
             </span>
@@ -194,13 +212,16 @@ exports[`StaticDataTableHeader component StaticDataTableHeader with Total 1`] = 
         <th
           class="table--header--selectable"
         />
-        <th>
+        <th
+          class=""
+        >
           <div
             class="table--header-value"
             tabindex="-1"
           >
             <span
-              class="table--header-value--title right"
+              class="gds-typography table--header-value--title right ellipsis"
+              title="Number"
             >
               Number
             </span>
@@ -217,13 +238,16 @@ exports[`StaticDataTableHeader component StaticDataTableHeader with custom sort 
   <table>
     <thead>
       <tr>
-        <th>
+        <th
+          class=""
+        >
           <div
             class="table--header-value table--header-value--sortable"
             tabindex="0"
           >
             <span
-              class="table--header-value--title right"
+              class="gds-typography table--header-value--title right ellipsis"
+              title="Number"
             >
               Number
             </span>
@@ -252,6 +276,7 @@ exports[`StaticDataTableHeader component StaticDataTableHeader with hidden colum
     <thead>
       <tr>
         <th
+          class=""
           style="display: none;"
         >
           <div
@@ -259,7 +284,8 @@ exports[`StaticDataTableHeader component StaticDataTableHeader with hidden colum
             tabindex="-1"
           >
             <span
-              class="table--header-value--title right"
+              class="gds-typography table--header-value--title right ellipsis"
+              title="Number"
             >
               Number
             </span>
@@ -279,13 +305,16 @@ exports[`StaticDataTableHeader component StaticDataTableHeader with row selectio
         <th
           class="table--header--selectable"
         />
-        <th>
+        <th
+          class=""
+        >
           <div
             class="table--header-value table--header-value--sortable"
             tabindex="0"
           >
             <span
-              class="table--header-value--title right"
+              class="gds-typography table--header-value--title right ellipsis"
+              title="Number"
             >
               Number
             </span>

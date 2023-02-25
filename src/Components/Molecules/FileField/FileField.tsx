@@ -1,4 +1,4 @@
-import React, { CSSProperties, ReactElement, Ref } from 'react';
+import React, { CSSProperties, ReactElement, Ref, useState } from 'react';
 
 import { GenericField } from '../../Atoms/GenericField';
 import { FileInput, IFile, FileStatusEnum } from '../../Atoms/FileInput';
@@ -42,8 +42,6 @@ export interface IFileFieldProps {
   maxFileSize?: number;
   /** Maximum folder depth scanned when dropping a folder (optional, default: 2) */
   maxFolderDepth?: number;
-  /** Name of text field */
-  name: string;
   /** handler of changes, notifying any files changes (including new files, states changes, deleted files...)
    * To retrieve the up to date files, simply filter the files on the status FileStatusEnum.DONE */
   onChange?: (files: Array<IFile>) => void;
@@ -54,14 +52,18 @@ export interface IFileFieldProps {
    * The client should let the user know if the download fails.
    * Promise resolution or rejection will only prevent multiple downloads of the same file. */
   onDownload?: (file: IFile) => Promise<void>;
+  /** Handler of the upload failing, use this method to update the error message if needed (optional, default: undefined) */
+  onFailure?: (file: IFile, statusText: string) => IFile;
+  /** Handler of the upload succeeding, use this method to update the id if needed (optional, default: undefined) */
+  onSuccess?: (file: IFile, serverResponse: unknown) => IFile;
   /** Read only field (optional, default: false) */
   readOnly?: boolean;
   /** Extra header (optional, default: undefined) */
   requestHeaders?: Record<string, string>;
   /** HTTP method used for the upload (optional, default: 'POST' ) */
-  requestMethod: 'POST' | 'PUT';
-  /** Url of the request */
-  requestUrl: string;
+  requestMethod?: 'POST' | 'PUT';
+  /** Url of the request (optional, default: undefined) */
+  requestUrl?: string;
   /** Enable withCredentials on the request (optional, default: undefined) */
   requestWithCredentials?: boolean;
   /** Show file size in the gallery (optional, default: true) */
@@ -128,6 +130,8 @@ export const FileField = (props: IFileFieldProps): ReactElement => {
     onChange,
     onDelete,
     onDownload,
+    onFailure,
+    onSuccess,
     readOnly,
     requestHeaders,
     requestMethod,
@@ -139,6 +143,25 @@ export const FileField = (props: IFileFieldProps): ReactElement => {
     uploadMessage,
   } = props;
 
+  const [inputLength, setInputLength] = useState(
+    inputValue?.filter((file) => {
+      if (!file.status) return false;
+      return [FileStatusEnum.DONE, FileStatusEnum.UPLOADING].includes(file.status);
+    }).length,
+  );
+
+  const localOnChange = (files: Array<IFile>): void => {
+    if (onChange) {
+      onChange(files);
+    }
+    setInputLength(
+      files.filter((file) => {
+        if (!file.status) return false;
+        return [FileStatusEnum.DONE, FileStatusEnum.UPLOADING].includes(file.status);
+      }).length,
+    );
+  };
+
   return (
     <GenericField
       containerRef={containerRef}
@@ -148,12 +171,7 @@ export const FileField = (props: IFileFieldProps): ReactElement => {
       helperText={helperText}
       highlighted={highlighted}
       inline={inline}
-      inputLength={
-        inputValue?.filter((file) => {
-          if (!file.status) return false;
-          return [FileStatusEnum.DONE, FileStatusEnum.UPLOADING].includes(file.status);
-        }).length
-      }
+      inputLength={inputLength}
       invertInputDescription
       label={label}
       labelSize={labelSize}
@@ -172,9 +190,11 @@ export const FileField = (props: IFileFieldProps): ReactElement => {
         maxFiles={maxFiles}
         maxFileSize={maxFileSize}
         maxFolderDepth={maxFolderDepth}
-        onChange={onChange}
+        onChange={localOnChange}
         onDelete={onDelete}
         onDownload={onDownload}
+        onFailure={onFailure}
+        onSuccess={onSuccess}
         readOnly={readOnly}
         requestHeaders={requestHeaders}
         requestMethod={requestMethod}

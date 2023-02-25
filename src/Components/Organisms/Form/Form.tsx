@@ -20,7 +20,7 @@ export interface IFormProps<T extends AnyObject> {
   usePortal?: boolean;
 }
 
-const Form = <T,>(props: IFormProps<T>): ReactElement => {
+const Form = <T extends AnyObject>(props: IFormProps<T>): ReactElement => {
   const {
     enableOldData,
     enableSideBySide,

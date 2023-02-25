@@ -51,6 +51,7 @@ const LoadingTemplate = () => {
 export const List = Template.bind({});
 List.args = {
   icons: [
+    ['fal', 'arrow-circle-right'],
     ['fal', 'arrow-down-to-line'],
     ['fal', 'arrow-left'],
     ['fal', 'arrow-up-from-line'],
@@ -96,6 +97,7 @@ List.args = {
     ['fal', 'plus'],
     ['fal', 'question-circle'],
     ['fal', 'save'],
+    ['fal', 'sort'],
     ['fal', 'spinner'],
     ['fal', 'square'],
     ['fal', 'table'],

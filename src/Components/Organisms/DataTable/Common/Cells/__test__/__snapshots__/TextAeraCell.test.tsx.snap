@@ -19,8 +19,6 @@ exports[`TextAreaCell component TextAreaCell handles changes 1`] = `
                 data-testid="DATA-TEST-ID"
                 id="data"
                 name="data"
-                rows="1"
-                style="height: 0px;"
               >
                 text
               </textarea>
@@ -52,8 +50,6 @@ exports[`TextAreaCell component TextAreaCell handles changes 2`] = `
                 data-testid="DATA-TEST-ID"
                 id="data"
                 name="data"
-                rows="1"
-                style="height: 0px;"
               >
                 text
               </textarea>
@@ -85,8 +81,6 @@ exports[`TextAreaCell component TextAreaCell renders 1`] = `
                 id="data"
                 name="data"
                 readonly=""
-                rows="1"
-                style="height: 0px;"
               >
                 text 1
               </textarea>
@@ -117,8 +111,6 @@ exports[`TextAreaCell component TextAreaCell renders cell editing with no row in
                 class="input-textarea-field gds-typography"
                 id="data"
                 name="data"
-                rows="1"
-                style="height: 0px;"
               />
             </div>
           </div>
@@ -149,8 +141,6 @@ exports[`TextAreaCell component TextAreaCell renders hidden 1`] = `
                 id="data"
                 name="data"
                 readonly=""
-                rows="1"
-                style="height: 0px;"
               >
                 text 1
               </textarea>
@@ -181,8 +171,6 @@ exports[`TextAreaCell component TextAreaCell renders row editing with no row inp
                 class="input-textarea-field gds-typography"
                 id="data"
                 name="data"
-                rows="1"
-                style="height: 0px;"
               />
             </div>
           </div>
@@ -212,8 +200,6 @@ exports[`TextAreaCell component TextAreaCell renders with forced value 1`] = `
                 id="data"
                 name="data"
                 readonly=""
-                rows="1"
-                style="height: 0px;"
               >
                 text 2
               </textarea>

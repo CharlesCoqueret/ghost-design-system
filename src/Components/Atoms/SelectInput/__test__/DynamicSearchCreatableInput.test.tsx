@@ -333,8 +333,7 @@ describe('DynamicSearchCreatableInput Component', () => {
     expect(handleCreateMock).toBeCalledTimes(0);
     expect(resolveValueMock).toBeCalledTimes(1);
     expect(noOptionsMessage).toBeCalledTimes(0);
-    expect(searchOptionsMock).toBeCalledTimes(1);
-    expect(searchOptionsMock).toBeCalledWith('', expect.any(Function));
+    expect(searchOptionsMock).toBeCalledTimes(0);
   });
 
   it('DynamicSearchCreatableInput renders in error without portal', async () => {

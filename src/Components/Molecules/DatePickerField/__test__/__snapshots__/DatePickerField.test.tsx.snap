@@ -81,7 +81,7 @@ exports[`DatePickerField Component DatePickerField renders with values in readon
             autocomplete="off"
             class="input-date-picker-input-read-only"
             name="name"
-            placeholder="-"
+            placeholder="MMM DD, YYYY"
             readonly=""
             tabindex="-1"
             type="text"

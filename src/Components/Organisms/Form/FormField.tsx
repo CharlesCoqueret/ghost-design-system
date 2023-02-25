@@ -21,6 +21,7 @@ import { RichTextField } from '../../Molecules/RichTextField';
 import { TextAreaField } from '../../Molecules/TextAreaField';
 import { TextField } from '../../Molecules/TextField';
 import { YearPickerField } from '../../Molecules/YearPickerField';
+import { EditableDataTable } from '../DataTable/EditableDataTable';
 import { LineEditableDataTable } from '../DataTable/LineEditableDataTable';
 import Highlighter from './Highlighter';
 import { FieldTypeEnum, IFieldProps } from './types';
@@ -193,7 +194,6 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
           <FileField
             {...field}
             mandatory={requiredFromValidation || field.mandatory}
-            name={field.dataIndex.toString()}
             onChange={(newValue: Array<IFile>) => {
               handleChange(
                 field.dataIndex,
@@ -202,6 +202,9 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
               return Promise.resolve();
             }}
             onDelete={field.onDelete}
+            onDownload={field.onDownload}
+            onFailure={field.onFailure}
+            onSuccess={field.onSuccess}
             inputValue={(data && (data[field.dataIndex] as unknown as Array<IFile>)) ?? undefined}
             errorMessage={errorMessage}
           />
@@ -374,19 +377,51 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
         </Highlighter>
       );
     }
-    case FieldTypeEnum.TABLE: {
+    case FieldTypeEnum.LINE_EDITABLE_TABLE: {
       return (
-        <Highlighter enableSideBySide={enableSideBySide}>
+        <Highlighter
+          enableOldData={enableOldData}
+          enableSideBySide={enableSideBySide}
+          oldData={previousData && previousData[field.dataIndex]}
+          shouldHighlight={false}>
           <LineEditableDataTable
             {...field}
             extra={{
               ...field.extra,
               onRowSubmit: (editedRow, submittedRowIndex: number) => {
                 (data[field.dataIndex] as unknown as Array<unknown>)[submittedRowIndex] = editedRow;
+                handleChange(field.dataIndex, data[field.dataIndex]);
+              },
+              onRowDelete: (_deletedRow, deletedRowIndex: number) => {
+                (data[field.dataIndex] as unknown as Array<unknown>).splice(deletedRowIndex, 1);
+                handleChange(field.dataIndex, data[field.dataIndex]);
+              },
+            }}
+            data={data && (data[field.dataIndex] as unknown as Array<AnyObject>)}
+          />
+        </Highlighter>
+      );
+    }
+    case FieldTypeEnum.EDITABLE_TABLE: {
+      return (
+        <Highlighter
+          enableOldData={enableOldData}
+          enableSideBySide={enableSideBySide}
+          oldData={previousData && previousData[field.dataIndex]}
+          shouldHighlight={false}>
+          <EditableDataTable
+            {...field}
+            extra={{
+              ...field.extra,
+              onEdit: (editedRow, _dataIndex, submittedRowIndex: number) => {
+                (data[field.dataIndex] as unknown as Array<unknown>)[submittedRowIndex] = editedRow;
+                handleChange(field.dataIndex, data[field.dataIndex]);
+              },
+              onRowDelete: (_deletedRow, deletedRowIndex: number) => {
+                (data[field.dataIndex] as unknown as Array<unknown>).splice(deletedRowIndex, 1);
                 handleChange(field.dataIndex, data[field.dataIndex] as unknown as T[keyof T]);
               },
-              onRowDelete: (_editedRow, submittedRowIndex: number) => {
-                (data[field.dataIndex] as unknown as Array<unknown>).splice(submittedRowIndex, 1);
+              onRowAdded: () => {
                 handleChange(field.dataIndex, data[field.dataIndex] as unknown as T[keyof T]);
               },
             }}

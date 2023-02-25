@@ -13,4 +13,5 @@ export * from './SelectField';
 export * from './SwitchField';
 export * from './TextAreaField';
 export * from './TextField';
+export * from './Toaster';
 export * from './YearPickerField';

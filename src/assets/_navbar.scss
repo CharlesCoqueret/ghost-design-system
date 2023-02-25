@@ -1,5 +1,7 @@
 .gds-nav-bar-container {
-  position: relative;
+  position: fixed;
+  top: 0px;
+  width: 100%;
   display: flex;
   align-items: center;
   background-color: $smoke;
@@ -15,8 +17,15 @@
   user-select: none;
 
   .nav-bar-brand {
-    margin: 10px;
-    height: 44px;
+    margin: 10px 10px 10px 20px;
+    height: auto;
+    display: flex;
+    align-items: center;
+
+    .nav-bar-brand-image {
+      max-height: 22px;
+      cursor: pointer;
+    }
   }
 
   .nav-bar-items-container {
@@ -37,6 +46,12 @@
         .counter {
           position: absolute;
           transform: translateX(12px) translateY(10px);
+        }
+
+        a {
+          all: unset;
+          display: flex;
+          align-items: center;
         }
 
         &:hover {
@@ -82,4 +97,8 @@
       }
     }
   }
+}
+
+.positionRelative {
+  position: relative;
 }

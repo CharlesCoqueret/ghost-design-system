@@ -114,9 +114,10 @@ const FileGallery = (props: IFileGallery): ReactElement => {
           )}
         </div>
         <div className='right'>
-          {showProgressBar && file.uid && progress && progress[file.uid] && (
-            <progress className='progress' max={100} value={file.uid && progress[file.uid]} />
-          )}
+          {showProgressBar == true &&
+            file.uid !== undefined &&
+            progress !== undefined &&
+            progress[file.uid] !== undefined && <progress className='progress' max={100} value={progress[file.uid]} />}
 
           {readOnly || disabled ? (
             <></>

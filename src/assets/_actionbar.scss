@@ -25,6 +25,7 @@
     position: sticky;
     box-sizing: border-box;
     box-shadow: 0px 4px 10px color.change($charcoal, $alpha: 0.1);
+    height: 64px;
   }
 
   .left-side {
@@ -66,6 +67,7 @@
         border: 1px solid transparent;
         z-index: -1;
         border-radius: 4px;
+        user-select: none;
       }
 
       .title-edit {

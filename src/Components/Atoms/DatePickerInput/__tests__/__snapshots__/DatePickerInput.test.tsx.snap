@@ -1,5 +1,59 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`DatePickerInput Component DatePickerInput renders and changes without onChange prop 1`] = `
+<div>
+  <div
+    class="field"
+  >
+    <div
+      class="react-datepicker-wrapper"
+    >
+      <div
+        class="react-datepicker__input-container"
+      >
+        <input
+          autocomplete="off"
+          class="input-date-picker-input"
+          name="NAME"
+          placeholder="TESTPLACEHOLDER"
+          tabindex="0"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+    <div />
+  </div>
+</div>
+`;
+
+exports[`DatePickerInput Component DatePickerInput renders and changes without onChange prop 2`] = `
+<div>
+  <div
+    class="field"
+  >
+    <div
+      class="react-datepicker-wrapper"
+    >
+      <div
+        class="react-datepicker__input-container"
+      >
+        <input
+          autocomplete="off"
+          class="input-date-picker-input"
+          name="NAME"
+          placeholder="TESTPLACEHOLDER"
+          tabindex="0"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+    <div />
+  </div>
+</div>
+`;
+
 exports[`DatePickerInput Component DatePickerInput renders highlighted in disabled 1`] = `
 <div>
   <div
@@ -16,7 +70,7 @@ exports[`DatePickerInput Component DatePickerInput renders highlighted in disabl
           class="input-date-picker-input field-highlighted"
           disabled=""
           name="NAME"
-          placeholder="MMM DD, YYYY"
+          placeholder="-"
           tabindex="-1"
           type="text"
           value=""

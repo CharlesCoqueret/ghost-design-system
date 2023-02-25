@@ -768,13 +768,16 @@ exports[`EditableDataTableCell component EditableDataTableCell renders with tabl
           >
             <thead>
               <tr>
-                <th>
+                <th
+                  class=""
+                >
                   <div
                     class="table--header-value"
                     tabindex="-1"
                   >
                     <span
-                      class="table--header-value--title right"
+                      class="gds-typography table--header-value--title right ellipsis"
+                      title="Number"
                     >
                       Number
                     </span>
@@ -876,8 +879,6 @@ exports[`EditableDataTableCell component EditableDataTableCell renders with text
                 class="input-textarea-field gds-typography"
                 id="textarea"
                 name="textarea"
-                rows="1"
-                style="height: 0px;"
               >
                 textarea
               </textarea>
@@ -902,7 +903,7 @@ exports[`EditableDataTableCell component EditableDataTableCell renders with year
             class="gds-field-group"
           >
             <div
-              class="input-year-picker-field field"
+              class="field input-year-picker-field"
             >
               <div
                 class="react-datepicker-wrapper"

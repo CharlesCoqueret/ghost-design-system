@@ -1,22 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`NavBar Component NavBar renders 1`] = `
+exports[`NavBar Component renders with menu, and utilities 1`] = `
 <div>
   <nav
     class="gds-nav-bar-container noselect"
   >
-    <div
+    <a
       class="nav-bar-brand"
+      href="redirection"
     >
-      <a
-        href="redirection"
-      >
-        <img
-          alt="alt"
-          src="logoSource"
-        />
-      </a>
-    </div>
+      partial url
+      <img
+        alt="alt"
+        class="nav-bar-brand-image"
+        src="logoSource"
+      />
+    </a>
     <div
       class="nav-bar-items-container"
     >
@@ -33,26 +32,10 @@ exports[`NavBar Component NavBar renders 1`] = `
           </div>
         </div>
       </div>
+      <div />
       <div
         class="nav-bar-items-group"
       >
-        <div
-          class="nav-bar-menu-item nav-bar-search-container"
-        >
-          <input
-            autocomplete="false"
-            class="nav-bar-search"
-            placeholder="placeholder"
-            type="text"
-          />
-        </div>
-        <div>
-          <div>
-            ControlleMenu
-            closed
-            has no ref
-          </div>
-        </div>
         <div
           class="nav-bar-menu-item"
         >
@@ -72,88 +55,25 @@ exports[`NavBar Component NavBar renders 1`] = `
 </div>
 `;
 
-exports[`NavBar Component NavBar renders with variations 1`] = `
+exports[`NavBar Component renders without menu nor utilities 1`] = `
 <div>
   <nav
     class="gds-nav-bar-container noselect"
   >
-    <div
+    <a
       class="nav-bar-brand"
+      href="redirection"
     >
-      <a
-        href="/"
-      >
-        <img
-          alt="logo"
-          src="logosource"
-        />
-      </a>
-    </div>
+      partial url
+      <img
+        alt="alt"
+        class="nav-bar-brand-image"
+        src="logoSource"
+      />
+    </a>
     <div
       class="nav-bar-items-container"
-    >
-      <div
-        class="nav-bar-items-group"
-      >
-        <div
-          class="nav-bar-menu-item"
-        >
-          <i
-            class="icon"
-            icon="fal,icons"
-          />
-          <div
-            class="nav-bar-menu-label"
-          >
-            button
-          </div>
-        </div>
-      </div>
-      <div
-        class="nav-bar-items-group"
-      >
-        <div
-          class="nav-bar-menu-item"
-        >
-          <div
-            class="nav-bar-menu-label"
-          >
-            button
-          </div>
-        </div>
-      </div>
-    </div>
-  </nav>
-</div>
-`;
-
-exports[`NavBar Component NavBar renders without buttons or icons 1`] = `
-<div>
-  <nav
-    class="gds-nav-bar-container noselect"
-  >
-    <div
-      class="nav-bar-brand"
-    >
-      <a
-        href="redirection"
-      >
-        <img
-          alt="alt"
-          src="logoSource"
-        />
-      </a>
-    </div>
-    <div
-      class="nav-bar-items-container"
-    >
-      <div
-        class="nav-bar-items-group"
-      />
-      <div
-        class="nav-bar-items-group"
-      />
-    </div>
+    />
   </nav>
 </div>
 `;

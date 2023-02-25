@@ -8,13 +8,16 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
     >
       <thead>
         <tr>
-          <th>
+          <th
+            class=""
+          >
             <div
               class="table--header-value"
               tabindex="-1"
             >
               <span
-                class="table--header-value--title right"
+                class="gds-typography table--header-value--title right ellipsis"
+                title="Number"
               >
                 Number
               </span>
@@ -69,13 +72,16 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
     >
       <thead>
         <tr>
-          <th>
+          <th
+            class=""
+          >
             <div
               class="table--header-value"
               tabindex="-1"
             >
               <span
-                class="table--header-value--title right"
+                class="gds-typography table--header-value--title right ellipsis"
+                title="Number"
               >
                 Number
               </span>
@@ -130,25 +136,31 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
     >
       <thead>
         <tr>
-          <th>
+          <th
+            class=""
+          >
             <div
               class="table--header-value"
               tabindex="-1"
             >
               <span
-                class="table--header-value--title right"
+                class="gds-typography table--header-value--title right ellipsis"
+                title="Number"
               >
                 Number
               </span>
             </div>
           </th>
-          <th>
+          <th
+            class=""
+          >
             <div
               class="table--header-value"
               tabindex="-1"
             >
               <span
-                class="table--header-value--title center"
+                class="gds-typography table--header-value--title center ellipsis"
+                title="Actions"
               >
                 Actions
               </span>
@@ -172,7 +184,7 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
                 id="number"
                 name="number"
               >
-                PLACEHOLDER
+                1
               </span>
             </div>
           </td>
@@ -218,25 +230,31 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
     >
       <thead>
         <tr>
-          <th>
+          <th
+            class=""
+          >
             <div
               class="table--header-value"
               tabindex="-1"
             >
               <span
-                class="table--header-value--title right"
+                class="gds-typography table--header-value--title right ellipsis"
+                title="Number"
               >
                 Number
               </span>
             </div>
           </th>
-          <th>
+          <th
+            class=""
+          >
             <div
               class="table--header-value"
               tabindex="-1"
             >
               <span
-                class="table--header-value--title center"
+                class="gds-typography table--header-value--title center ellipsis"
+                title="Actions"
               >
                 Actions
               </span>
@@ -326,25 +344,31 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
     >
       <thead>
         <tr>
-          <th>
+          <th
+            class=""
+          >
             <div
               class="table--header-value"
               tabindex="-1"
             >
               <span
-                class="table--header-value--title right"
+                class="gds-typography table--header-value--title right ellipsis"
+                title="Number"
               >
                 Number
               </span>
             </div>
           </th>
-          <th>
+          <th
+            class=""
+          >
             <div
               class="table--header-value"
               tabindex="-1"
             >
               <span
-                class="table--header-value--title center"
+                class="gds-typography table--header-value--title center ellipsis"
+                title="Actions"
               >
                 Actions
               </span>
@@ -434,25 +458,31 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
     >
       <thead>
         <tr>
-          <th>
+          <th
+            class=""
+          >
             <div
               class="table--header-value"
               tabindex="-1"
             >
               <span
-                class="table--header-value--title right"
+                class="gds-typography table--header-value--title right ellipsis"
+                title="Number"
               >
                 Number
               </span>
             </div>
           </th>
-          <th>
+          <th
+            class=""
+          >
             <div
               class="table--header-value"
               tabindex="-1"
             >
               <span
-                class="table--header-value--title center"
+                class="gds-typography table--header-value--title center ellipsis"
+                title="Actions"
               >
                 Actions
               </span>
@@ -476,7 +506,7 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
                 id="number"
                 name="number"
               >
-                PLACEHOLDER
+                1
               </span>
             </div>
           </td>
@@ -522,25 +552,31 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
     >
       <thead>
         <tr>
-          <th>
+          <th
+            class=""
+          >
             <div
               class="table--header-value"
               tabindex="-1"
             >
               <span
-                class="table--header-value--title right"
+                class="gds-typography table--header-value--title right ellipsis"
+                title="Number"
               >
                 Number
               </span>
             </div>
           </th>
-          <th>
+          <th
+            class=""
+          >
             <div
               class="table--header-value"
               tabindex="-1"
             >
               <span
-                class="table--header-value--title center"
+                class="gds-typography table--header-value--title center ellipsis"
+                title="Actions"
               >
                 Actions
               </span>
@@ -564,7 +600,7 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
                 id="number"
                 name="number"
               >
-                PLACEHOLDER
+                1
               </span>
             </div>
           </td>
@@ -610,25 +646,31 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
     >
       <thead>
         <tr>
-          <th>
+          <th
+            class=""
+          >
             <div
               class="table--header-value"
               tabindex="-1"
             >
               <span
-                class="table--header-value--title right"
+                class="gds-typography table--header-value--title right ellipsis"
+                title="Number"
               >
                 Number
               </span>
             </div>
           </th>
-          <th>
+          <th
+            class=""
+          >
             <div
               class="table--header-value"
               tabindex="-1"
             >
               <span
-                class="table--header-value--title center"
+                class="gds-typography table--header-value--title center ellipsis"
+                title="Actions"
               >
                 Actions
               </span>
@@ -718,25 +760,31 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
     >
       <thead>
         <tr>
-          <th>
+          <th
+            class=""
+          >
             <div
               class="table--header-value"
               tabindex="-1"
             >
               <span
-                class="table--header-value--title right"
+                class="gds-typography table--header-value--title right ellipsis"
+                title="Number"
               >
                 Number
               </span>
             </div>
           </th>
-          <th>
+          <th
+            class=""
+          >
             <div
               class="table--header-value"
               tabindex="-1"
             >
               <span
-                class="table--header-value--title center"
+                class="gds-typography table--header-value--title center ellipsis"
+                title="Actions"
               >
                 Actions
               </span>
@@ -808,25 +856,31 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
     >
       <thead>
         <tr>
-          <th>
+          <th
+            class=""
+          >
             <div
               class="table--header-value"
               tabindex="-1"
             >
               <span
-                class="table--header-value--title right"
+                class="gds-typography table--header-value--title right ellipsis"
+                title="Number"
               >
                 Number
               </span>
             </div>
           </th>
-          <th>
+          <th
+            class=""
+          >
             <div
               class="table--header-value"
               tabindex="-1"
             >
               <span
-                class="table--header-value--title center"
+                class="gds-typography table--header-value--title center ellipsis"
+                title="Actions"
               >
                 Actions
               </span>
@@ -850,7 +904,7 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
                 id="number"
                 name="number"
               >
-                PLACEHOLDER
+                1
               </span>
             </div>
           </td>
@@ -876,25 +930,31 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
     >
       <thead>
         <tr>
-          <th>
+          <th
+            class=""
+          >
             <div
               class="table--header-value"
               tabindex="-1"
             >
               <span
-                class="table--header-value--title right"
+                class="gds-typography table--header-value--title right ellipsis"
+                title="Number"
               >
                 Number
               </span>
             </div>
           </th>
-          <th>
+          <th
+            class=""
+          >
             <div
               class="table--header-value"
               tabindex="-1"
             >
               <span
-                class="table--header-value--title center"
+                class="gds-typography table--header-value--title center ellipsis"
+                title="Actions"
               >
                 Actions
               </span>
@@ -1095,25 +1155,31 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
     >
       <thead>
         <tr>
-          <th>
+          <th
+            class=""
+          >
             <div
               class="table--header-value"
               tabindex="-1"
             >
               <span
-                class="table--header-value--title right"
+                class="gds-typography table--header-value--title right ellipsis"
+                title="Number"
               >
                 Number
               </span>
             </div>
           </th>
-          <th>
+          <th
+            class=""
+          >
             <div
               class="table--header-value"
               tabindex="-1"
             >
               <span
-                class="table--header-value--title center"
+                class="gds-typography table--header-value--title center ellipsis"
+                title="actionColumn"
               >
                 actionColumn
               </span>
@@ -1175,13 +1241,16 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
     >
       <thead>
         <tr>
-          <th>
+          <th
+            class=""
+          >
             <div
               class="table--header-value table--header-value--sortable"
               tabindex="0"
             >
               <span
-                class="table--header-value--title right"
+                class="gds-typography table--header-value--title right ellipsis"
+                title="Number"
               >
                 Number
               </span>
@@ -1235,13 +1304,16 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable ren
     >
       <thead>
         <tr>
-          <th>
+          <th
+            class=""
+          >
             <div
               class="table--header-value"
               tabindex="-1"
             >
               <span
-                class="table--header-value--title right"
+                class="gds-typography table--header-value--title right ellipsis"
+                title="Number"
               >
                 Number
               </span>

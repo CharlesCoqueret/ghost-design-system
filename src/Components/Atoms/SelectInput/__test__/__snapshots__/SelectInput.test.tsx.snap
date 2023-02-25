@@ -334,74 +334,13 @@ exports[`SelectInput Component SelectInput renders 1`] = `
 exports[`SelectInput Component SelectInput renders disabled 1`] = `
 <div>
   <div
-    class="field gds-select-container input-select-field"
+    class="field gds-select-container input-select-field-read-only"
   >
-    <div
-      class=" css-j5ssuk-container"
+    <span
+      class="gds-typography"
     >
-      <span
-        class="css-1f43avz-a11yText-A11yText"
-        id="react-select-8-live-region"
-      />
-      <span
-        aria-atomic="false"
-        aria-live="polite"
-        aria-relevant="additions text"
-        class="css-1f43avz-a11yText-A11yText"
-      />
-      <div
-        class=" css-16avjwk-control"
-      >
-        <div
-          class=" css-9plg90-ValueContainer"
-        >
-          <div
-            class=" css-14el2xx-placeholder"
-            id="react-select-8-placeholder"
-          >
-            Select...
-          </div>
-          <div
-            class=" css-jzldcf-Input"
-            data-value=""
-          >
-            <input
-              aria-autocomplete="list"
-              aria-describedby="react-select-8-placeholder"
-              aria-expanded="false"
-              aria-haspopup="true"
-              autocapitalize="none"
-              autocomplete="off"
-              autocorrect="off"
-              class=""
-              disabled=""
-              id="react-select-8-input"
-              role="combobox"
-              spellcheck="false"
-              style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
-              tabindex="0"
-              type="text"
-              value=""
-            />
-          </div>
-        </div>
-        <div
-          class=" css-1hb7zxy-IndicatorsContainer"
-        >
-          <span
-            class=" css-109onse-indicatorSeparator"
-          />
-          <div
-            aria-hidden="true"
-          >
-            <i
-              class="dynamic-search-icon icon"
-              icon="fal,chevron-down"
-            />
-          </div>
-        </div>
-      </div>
-    </div>
+      -
+    </span>
   </div>
 </div>
 `;

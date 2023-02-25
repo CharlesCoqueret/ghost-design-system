@@ -14,10 +14,12 @@ export interface ILineEditableInPlaceDataTableProps<T> {
   extra: IExtraLineEditableInPlaceDataTableProps<T>;
   loading?: ReactElement;
   onSortChange?: (sortField?: keyof T, sortDirection?: SortDirectionEnum) => void;
+  /** Sticky header (optional, default:false) */
+  stickyHeader?: boolean;
 }
 
 const LineEditableInPlaceDataTable = <T,>(props: ILineEditableInPlaceDataTableProps<T>): ReactElement => {
-  const { columns, data, dataTestId, extra, loading, onSortChange } = props;
+  const { columns, data, dataTestId, extra, loading, onSortChange, stickyHeader } = props;
 
   const [currentData, setCurrentData] = usePropState<Array<T>>(data);
   const [sortField, setSortField] = useState<keyof T | undefined>();
@@ -187,6 +189,7 @@ const LineEditableInPlaceDataTable = <T,>(props: ILineEditableInPlaceDataTablePr
           sortField={sortField}
           sortDirection={sortDirection}
           extra={{ ...extra, editedRowIndex }}
+          stickyHeader={stickyHeader}
         />
         <LineEditableInPlaceDataTableBody<T>
           columns={currentColumns}
@@ -213,6 +216,7 @@ const LineEditableInPlaceDataTable = <T,>(props: ILineEditableInPlaceDataTablePr
 LineEditableInPlaceDataTable.defaultProps = {
   columns: [],
   data: [],
+  stickyHeader: false,
 };
 
 export default LineEditableInPlaceDataTable;

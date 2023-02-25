@@ -1,4 +1,5 @@
 import React, { ReactElement, useCallback, useState } from 'react';
+import { AnyObject } from 'yup/lib/object';
 
 import { Button, ColorButtonEnum } from '../../../Molecules/Button';
 import usePropState from '../../../../hooks/use-prop-state';
@@ -15,10 +16,12 @@ export interface ILineEditableDataTableProps<T> {
   extra: IExtraLineEditableDataTableProps<T>;
   loading?: ReactElement;
   onSortChange?: (sortField?: keyof T, sortDirection?: SortDirectionEnum) => void;
+  /** Sticky header (optional, default:false) */
+  stickyHeader?: boolean;
 }
 
-const LineEditableDataTable = <T,>(props: ILineEditableDataTableProps<T>): ReactElement => {
-  const { data, columns, extra, loading, onSortChange } = props;
+const LineEditableDataTable = <T extends AnyObject>(props: ILineEditableDataTableProps<T>): ReactElement => {
+  const { data, columns, extra, loading, onSortChange, stickyHeader } = props;
 
   const [currentData, setCurrentData] = usePropState<Array<T>>(data);
   const [sortField, setSortField] = useState<keyof T | undefined>();
@@ -138,6 +141,7 @@ const LineEditableDataTable = <T,>(props: ILineEditableDataTableProps<T>): React
           sortField={sortField}
           sortDirection={sortDirection}
           extra={{ ...extra, editedRowIndex }}
+          stickyHeader={stickyHeader}
         />
         <StaticDataTableBody<T> columns={currentColumns} data={currentData} extra={extra} loading={loading} />
         <StaticDataTableFooter<T> columns={currentColumns} data={currentData} extra={extra} />
@@ -204,6 +208,7 @@ const LineEditableDataTable = <T,>(props: ILineEditableDataTableProps<T>): React
 LineEditableDataTable.defaultProps = {
   columns: [],
   data: [],
+  stickyHeader: false,
 };
 
 export default LineEditableDataTable;

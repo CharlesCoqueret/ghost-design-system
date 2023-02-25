@@ -19,7 +19,7 @@ exports[`Highlighter Component Highlighter renders with highlight 1`] = `
     <div
       class="gds-layout-col"
     >
-      {"readOnly":true,"inputValue":"OLDDATA","highlighted":true}
+      {"extra":{},"highlighted":true,"inputValue":"OLDDATA","data":"OLDDATA","readOnly":true}
     </div>
   </div>
 </div>

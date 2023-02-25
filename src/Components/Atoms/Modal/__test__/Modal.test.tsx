@@ -41,7 +41,10 @@ describe('Modal Component', () => {
 
     const closeButton = await screen.findByTestId('TESTID');
 
-    userEvent.click(closeButton);
+    act(() => {
+      userEvent.click(closeButton);
+    });
+
     expect(onHideMock).toHaveBeenCalledTimes(1);
   });
 
@@ -55,7 +58,10 @@ describe('Modal Component', () => {
     );
     expect(container).toMatchSnapshot();
 
-    userEvent.click(document.body);
+    act(() => {
+      userEvent.click(document.body);
+    });
+
     expect(onHideMock).toHaveBeenCalledTimes(1);
   });
 
@@ -69,7 +75,10 @@ describe('Modal Component', () => {
     );
     expect(container).toMatchSnapshot();
 
-    userEvent.click(document.body);
+    act(() => {
+      userEvent.click(document.body);
+    });
+
     expect(container).toMatchSnapshot();
 
     expect(onHideMock).toHaveBeenCalledTimes(0);
@@ -86,7 +95,10 @@ describe('Modal Component', () => {
 
     expect(container).toMatchSnapshot();
 
-    userEvent.type(document.body, '{escape}');
+    act(() => {
+      userEvent.type(document.body, '{escape}');
+    });
+
     expect(onHideMock).toHaveBeenCalledTimes(1);
   });
 
@@ -101,7 +113,10 @@ describe('Modal Component', () => {
     );
     expect(container).toMatchSnapshot();
 
-    userEvent.type(document.body, '{escape}');
+    act(() => {
+      userEvent.type(document.body, '{escape}');
+    });
+
     expect(container).toMatchSnapshot();
 
     act(() => {
@@ -155,12 +170,16 @@ describe('Modal Component', () => {
 
     const input = screen.getByTestId('INPUT');
 
-    userEvent.click(input);
+    act(() => {
+      userEvent.click(input);
+    });
 
     // Try to tab forward
     userEvent.keyboard('{Tab}');
 
-    userEvent.click(input);
+    act(() => {
+      userEvent.click(input);
+    });
 
     // Try to tab backward
     userEvent.keyboard('{Shift>}{Tab}{/Shift}');

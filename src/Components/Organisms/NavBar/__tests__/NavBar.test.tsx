@@ -2,47 +2,29 @@ import React from 'react';
 import { render } from '@testing-library/react';
 
 import NavBar from '../NavBar';
+import NavBarMenu from '../NavBarMenu';
+import NavBarUtilities from '../NavBarUtilities';
+import NavItem from '../NavItem';
 
 describe('NavBar Component', () => {
-  it('NavBar renders', () => {
-    const onSearchMock = jest.fn();
-
+  it('renders with menu, and utilities', () => {
     const { container } = render(
-      <NavBar
-        brand={{ logoSource: 'logoSource', redirection: 'redirection', alt: 'alt' }}
-        navButtons={[{ label: 'button' }]}
-        navIcons={[{ label: 'button', icon: ['fal', 'icons'] }]}
-        searchBar={{ onSearch: onSearchMock, placeholder: 'placeholder' }}
-      />,
+      <NavBar logoSource='logoSource' redirection='redirection' alt='alt'>
+        <NavBarMenu>
+          <NavItem label='button' />
+        </NavBarMenu>
+        <NavBarUtilities>
+          <NavItem label='button' icon={['fal', 'icons']} />
+        </NavBarUtilities>
+      </NavBar>,
     );
 
     expect(container).toMatchSnapshot();
-    expect(onSearchMock).not.toBeCalled();
   });
 
-  it('NavBar renders without buttons or icons', () => {
-    const onSearchMock = jest.fn();
-
-    const { container } = render(
-      <NavBar brand={{ logoSource: 'logoSource', redirection: 'redirection', alt: 'alt' }} />,
-    );
+  it('renders without menu nor utilities', () => {
+    const { container } = render(<NavBar logoSource='logoSource' redirection='redirection' alt='alt' />);
 
     expect(container).toMatchSnapshot();
-    expect(onSearchMock).not.toBeCalled();
-  });
-
-  it('NavBar renders with variations', () => {
-    const onSearchMock = jest.fn();
-
-    const { container } = render(
-      <NavBar
-        brand={{ logoSource: 'logosource' }}
-        navButtons={[{ label: 'button', icon: ['fal', 'icons'] }]}
-        navIcons={[{ label: 'button' }]}
-      />,
-    );
-
-    expect(container).toMatchSnapshot();
-    expect(onSearchMock).not.toBeCalled();
   });
 });

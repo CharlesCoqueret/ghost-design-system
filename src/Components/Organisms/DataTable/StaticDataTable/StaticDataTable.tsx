@@ -18,10 +18,12 @@ export interface IStaticDataTableProps<T> {
   loading?: ReactElement;
   /** Callback whenever sort is clicked (optional, default: undefined) */
   onSortChange?: (sortField?: keyof T, sortDirection?: SortDirectionEnum) => void;
+  /** Sticky header (optional, default:false) */
+  stickyHeader?: boolean;
 }
 
 const StaticDataTable = <T,>(props: IStaticDataTableProps<T>): ReactElement => {
-  const { data, columns, extra, loading, onSortChange } = props;
+  const { data, columns, extra, loading, onSortChange, stickyHeader } = props;
 
   const [currentData] = usePropState<Array<T>>(data);
   const [sortField, setSortField] = useState<keyof T | undefined>();
@@ -48,6 +50,7 @@ const StaticDataTable = <T,>(props: IStaticDataTableProps<T>): ReactElement => {
         onSortChange={handleSortChange}
         sortDirection={sortDirection}
         sortField={sortField}
+        stickyHeader={stickyHeader}
       />
       <StaticDataTableBody<T> columns={columns} data={currentData} extra={extra} loading={loading} />
       <StaticDataTableFooter<T> columns={columns} data={currentData} extra={extra} />
@@ -61,6 +64,7 @@ StaticDataTable.defaultProps = {
   extra: undefined,
   loading: undefined,
   onSortChange: undefined,
+  stickyHeader: false,
 };
 
 export default StaticDataTable;
