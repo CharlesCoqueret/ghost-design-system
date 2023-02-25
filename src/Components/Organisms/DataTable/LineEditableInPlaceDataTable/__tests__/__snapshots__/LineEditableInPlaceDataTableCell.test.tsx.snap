@@ -55,18 +55,18 @@ exports[`LineEditableInPlaceDataTableCell component LineEditableInPlaceDataTable
                   class="css-1f43avz-a11yText-A11yText"
                 />
                 <div
-                  class=" css-yqi6bw-control"
+                  class=" css-1iiyd84-control"
                 >
                   <div
-                    class=" css-9plg90-ValueContainer"
+                    class=" css-yhb162-ValueContainer"
                   >
                     <div
-                      class=" css-qc6sy-singleValue"
+                      class=" css-1dimb5e-singleValue"
                     >
                       Badge
                     </div>
                     <div
-                      class=" css-6j8wv5-Input"
+                      class=" css-qbdosj-Input"
                       data-value=""
                     >
                       <input
@@ -99,7 +99,7 @@ exports[`LineEditableInPlaceDataTableCell component LineEditableInPlaceDataTable
                       />
                     </div>
                     <span
-                      class=" css-1okebmr-indicatorSeparator"
+                      class=" css-1u9des2-indicatorSeparator"
                     />
                     <div
                       aria-hidden="true"
@@ -340,18 +340,18 @@ exports[`LineEditableInPlaceDataTableCell component LineEditableInPlaceDataTable
                   class="css-1f43avz-a11yText-A11yText"
                 />
                 <div
-                  class=" css-yqi6bw-control"
+                  class=" css-1iiyd84-control"
                 >
                   <div
-                    class=" css-9plg90-ValueContainer"
+                    class=" css-yhb162-ValueContainer"
                   >
                     <div
-                      class=" css-qc6sy-singleValue"
+                      class=" css-1dimb5e-singleValue"
                     >
                       label
                     </div>
                     <div
-                      class=" css-6j8wv5-Input"
+                      class=" css-qbdosj-Input"
                       data-value=""
                     >
                       <input
@@ -420,7 +420,7 @@ exports[`LineEditableInPlaceDataTableCell component LineEditableInPlaceDataTable
                       </svg>
                     </div>
                     <span
-                      class=" css-1okebmr-indicatorSeparator"
+                      class=" css-1u9des2-indicatorSeparator"
                     />
                     <div
                       aria-hidden="true"
@@ -568,14 +568,14 @@ exports[`LineEditableInPlaceDataTableCell component LineEditableInPlaceDataTable
                   class="css-1f43avz-a11yText-A11yText"
                 />
                 <div
-                  class=" css-yqi6bw-control"
+                  class=" css-1iiyd84-control"
                 >
                   <div
-                    class=" css-1xxnwvf-ValueContainer"
+                    class=" css-16ryfrw-ValueContainer"
                   >
                     numberOfItemLabel
                     <div
-                      class=" css-g5g4gj-Input"
+                      class=" css-qwwk3k-Input"
                       data-value=""
                     >
                       <input
@@ -608,7 +608,7 @@ exports[`LineEditableInPlaceDataTableCell component LineEditableInPlaceDataTable
                       />
                     </div>
                     <span
-                      class=" css-1okebmr-indicatorSeparator"
+                      class=" css-1u9des2-indicatorSeparator"
                     />
                     <div
                       aria-hidden="true"

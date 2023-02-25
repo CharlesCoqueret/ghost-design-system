@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { act, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { Button } from '..';
@@ -31,7 +31,10 @@ describe('Button Component', () => {
     expect(baseElement).toMatchSnapshot();
 
     const button = await screen.findByTestId('DATA-TEST-ID');
-    userEvent.click(button);
+
+    act(() => {
+      userEvent.click(button);
+    });
 
     expect(onClickMock).toBeCalledTimes(0);
   });
@@ -51,7 +54,10 @@ describe('Button Component', () => {
     expect(baseElement).toMatchSnapshot();
 
     const button = await screen.findByTestId('DATA-TEST-ID');
-    userEvent.click(button);
+
+    act(() => {
+      userEvent.click(button);
+    });
 
     expect(onClickMock).toBeCalledTimes(1);
   });
@@ -77,7 +83,10 @@ describe('Button Component', () => {
     expect(baseElement).toMatchSnapshot();
 
     const mainButton = await screen.findByTestId('MAIN-BUTTON');
-    userEvent.click(mainButton);
+
+    act(() => {
+      userEvent.click(mainButton);
+    });
 
     expect(baseElement).toMatchSnapshot();
     expect(mainButtonClickMock).toBeCalledTimes(1);
@@ -85,7 +94,10 @@ describe('Button Component', () => {
     expect(button2ClickMock).toBeCalledTimes(0);
 
     const button1 = await screen.findByTestId('BUTTON1');
-    userEvent.click(button1);
+
+    act(() => {
+      userEvent.click(button1);
+    });
 
     expect(baseElement).toMatchSnapshot();
     expect(mainButtonClickMock).toBeCalledTimes(1);
@@ -112,12 +124,17 @@ describe('Button Component', () => {
     expect(baseElement).toMatchSnapshot();
 
     const mainButton = await screen.findByTestId('MAIN-BUTTON');
-    userEvent.click(mainButton);
+
+    act(() => {
+      userEvent.click(mainButton);
+    });
 
     expect(baseElement).toMatchSnapshot();
     expect(mainButtonClickMock).toBeCalledTimes(1);
 
-    userEvent.click(baseElement);
+    act(() => {
+      userEvent.click(baseElement);
+    });
 
     expect(baseElement).toMatchSnapshot();
     expect(mainButtonClickMock).toBeCalledTimes(1);
@@ -161,13 +178,19 @@ describe('Button Component', () => {
     expect(baseElement).toMatchSnapshot();
 
     const mainButton = await screen.findByTestId('MAIN-BUTTON');
-    userEvent.click(mainButton);
+
+    act(() => {
+      userEvent.click(mainButton);
+    });
 
     expect(baseElement).toMatchSnapshot();
     expect(button1ClickMock).toBeCalledTimes(0);
 
     const button1 = await screen.findByTestId('BUTTON1');
-    userEvent.click(button1);
+
+    act(() => {
+      userEvent.click(button1);
+    });
 
     expect(baseElement).toMatchSnapshot();
     expect(button1ClickMock).toBeCalledTimes(1);
@@ -187,11 +210,16 @@ describe('Button Component', () => {
     expect(baseElement).toMatchSnapshot();
 
     const mainButton = await screen.findByTestId('MAIN-BUTTON');
-    userEvent.click(mainButton);
+
+    act(() => {
+      userEvent.click(mainButton);
+    });
 
     expect(baseElement).toMatchSnapshot();
 
-    userEvent.click(baseElement);
+    act(() => {
+      userEvent.click(baseElement);
+    });
 
     expect(baseElement).toMatchSnapshot();
   });

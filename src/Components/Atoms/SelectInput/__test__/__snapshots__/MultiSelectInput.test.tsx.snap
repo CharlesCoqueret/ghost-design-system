@@ -19,19 +19,19 @@ exports[`MultiSelectInput Component MultiSelectInput handles change 1`] = `
         class="css-1f43avz-a11yText-A11yText"
       />
       <div
-        class=" css-yqi6bw-control"
+        class=" css-1iiyd84-control"
       >
         <div
-          class=" css-9plg90-ValueContainer"
+          class=" css-yhb162-ValueContainer"
         >
           <div
-            class=" css-14el2xx-placeholder"
+            class=" css-1jqq78o-placeholder"
             id="react-select-6-placeholder"
           >
             Select...
           </div>
           <div
-            class=" css-6j8wv5-Input"
+            class=" css-qbdosj-Input"
             data-value=""
           >
             <input
@@ -57,7 +57,7 @@ exports[`MultiSelectInput Component MultiSelectInput handles change 1`] = `
           class=" css-1hb7zxy-IndicatorsContainer"
         >
           <span
-            class=" css-1okebmr-indicatorSeparator"
+            class=" css-1u9des2-indicatorSeparator"
           />
           <div
             aria-hidden="true"
@@ -100,19 +100,19 @@ exports[`MultiSelectInput Component MultiSelectInput handles change with empty v
         class="css-1f43avz-a11yText-A11yText"
       />
       <div
-        class=" css-yqi6bw-control"
+        class=" css-1iiyd84-control"
       >
         <div
-          class=" css-9plg90-ValueContainer"
+          class=" css-yhb162-ValueContainer"
         >
           <div
-            class=" css-14el2xx-placeholder"
+            class=" css-1jqq78o-placeholder"
             id="react-select-7-placeholder"
           >
             Select...
           </div>
           <div
-            class=" css-6j8wv5-Input"
+            class=" css-qbdosj-Input"
             data-value=""
           >
             <input
@@ -138,7 +138,7 @@ exports[`MultiSelectInput Component MultiSelectInput handles change with empty v
           class=" css-1hb7zxy-IndicatorsContainer"
         >
           <span
-            class=" css-1okebmr-indicatorSeparator"
+            class=" css-1u9des2-indicatorSeparator"
           />
           <div
             aria-hidden="true"
@@ -181,14 +181,14 @@ exports[`MultiSelectInput Component MultiSelectInput renders 1`] = `
         class="css-1f43avz-a11yText-A11yText"
       />
       <div
-        class=" css-yqi6bw-control"
+        class=" css-1iiyd84-control"
       >
         <div
-          class=" css-1xxnwvf-ValueContainer"
+          class=" css-16ryfrw-ValueContainer"
         >
           1 item selected
           <div
-            class=" css-g5g4gj-Input"
+            class=" css-qwwk3k-Input"
             data-value=""
           >
             <input
@@ -213,7 +213,7 @@ exports[`MultiSelectInput Component MultiSelectInput renders 1`] = `
           class=" css-1hb7zxy-IndicatorsContainer"
         >
           <span
-            class=" css-1okebmr-indicatorSeparator"
+            class=" css-1u9des2-indicatorSeparator"
           />
           <div
             aria-hidden="true"
@@ -326,19 +326,19 @@ exports[`MultiSelectInput Component MultiSelectInput renders inError 1`] = `
         class="css-1f43avz-a11yText-A11yText"
       />
       <div
-        class=" css-xb2911-control"
+        class=" css-d83tmf-control"
       >
         <div
-          class=" css-9plg90-ValueContainer"
+          class=" css-yhb162-ValueContainer"
         >
           <div
-            class=" css-14el2xx-placeholder"
+            class=" css-1jqq78o-placeholder"
             id="react-select-11-placeholder"
           >
             Select...
           </div>
           <div
-            class=" css-6j8wv5-Input"
+            class=" css-qbdosj-Input"
             data-value=""
           >
             <input
@@ -364,7 +364,7 @@ exports[`MultiSelectInput Component MultiSelectInput renders inError 1`] = `
           class=" css-1hb7zxy-IndicatorsContainer"
         >
           <span
-            class=" css-1okebmr-indicatorSeparator"
+            class=" css-1u9des2-indicatorSeparator"
           />
           <div
             aria-hidden="true"
@@ -407,19 +407,19 @@ exports[`MultiSelectInput Component MultiSelectInput renders with invalid input 
         class="css-1f43avz-a11yText-A11yText"
       />
       <div
-        class=" css-yqi6bw-control"
+        class=" css-1iiyd84-control"
       >
         <div
-          class=" css-9plg90-ValueContainer"
+          class=" css-yhb162-ValueContainer"
         >
           <div
-            class=" css-14el2xx-placeholder"
+            class=" css-1jqq78o-placeholder"
             id="react-select-5-placeholder"
           >
             Select...
           </div>
           <div
-            class=" css-6j8wv5-Input"
+            class=" css-qbdosj-Input"
             data-value=""
           >
             <input
@@ -445,7 +445,7 @@ exports[`MultiSelectInput Component MultiSelectInput renders with invalid input 
           class=" css-1hb7zxy-IndicatorsContainer"
         >
           <span
-            class=" css-1okebmr-indicatorSeparator"
+            class=" css-1u9des2-indicatorSeparator"
           />
           <div
             aria-hidden="true"
@@ -488,14 +488,14 @@ exports[`MultiSelectInput Component MultiSelectInput renders with multiple input
         class="css-1f43avz-a11yText-A11yText"
       />
       <div
-        class=" css-yqi6bw-control"
+        class=" css-1iiyd84-control"
       >
         <div
-          class=" css-1xxnwvf-ValueContainer"
+          class=" css-16ryfrw-ValueContainer"
         >
           2 items selected
           <div
-            class=" css-g5g4gj-Input"
+            class=" css-qwwk3k-Input"
             data-value=""
           >
             <input
@@ -520,7 +520,7 @@ exports[`MultiSelectInput Component MultiSelectInput renders with multiple input
           class=" css-1hb7zxy-IndicatorsContainer"
         >
           <span
-            class=" css-1okebmr-indicatorSeparator"
+            class=" css-1u9des2-indicatorSeparator"
           />
           <div
             aria-hidden="true"
@@ -569,14 +569,14 @@ exports[`MultiSelectInput Component MultiSelectInput renders with valid value an
         class="css-1f43avz-a11yText-A11yText"
       />
       <div
-        class=" css-yqi6bw-control"
+        class=" css-1iiyd84-control"
       >
         <div
-          class=" css-1xxnwvf-ValueContainer"
+          class=" css-16ryfrw-ValueContainer"
         >
           1 item selected
           <div
-            class=" css-g5g4gj-Input"
+            class=" css-qwwk3k-Input"
             data-value=""
           >
             <input
@@ -610,7 +610,7 @@ exports[`MultiSelectInput Component MultiSelectInput renders with valid value an
             />
           </div>
           <span
-            class=" css-1okebmr-indicatorSeparator"
+            class=" css-1u9des2-indicatorSeparator"
           />
           <div
             aria-hidden="true"
@@ -654,14 +654,14 @@ exports[`MultiSelectInput Component MultiSelectInput renders with valid value an
         class="css-1f43avz-a11yText-A11yText"
       />
       <div
-        class=" css-yqi6bw-control"
+        class=" css-1iiyd84-control"
       >
         <div
-          class=" css-1xxnwvf-ValueContainer"
+          class=" css-16ryfrw-ValueContainer"
         >
           1 item selected
           <div
-            class=" css-g5g4gj-Input"
+            class=" css-qwwk3k-Input"
             data-value=""
           >
             <input
@@ -694,7 +694,7 @@ exports[`MultiSelectInput Component MultiSelectInput renders with valid value an
             />
           </div>
           <span
-            class=" css-1okebmr-indicatorSeparator"
+            class=" css-1u9des2-indicatorSeparator"
           />
           <div
             aria-hidden="true"
@@ -737,19 +737,19 @@ exports[`MultiSelectInput Component MultiSelectInput renders without input value
         class="css-1f43avz-a11yText-A11yText"
       />
       <div
-        class=" css-yqi6bw-control"
+        class=" css-1iiyd84-control"
       >
         <div
-          class=" css-9plg90-ValueContainer"
+          class=" css-yhb162-ValueContainer"
         >
           <div
-            class=" css-14el2xx-placeholder"
+            class=" css-1jqq78o-placeholder"
             id="react-select-4-placeholder"
           >
             Select...
           </div>
           <div
-            class=" css-6j8wv5-Input"
+            class=" css-qbdosj-Input"
             data-value=""
           >
             <input
@@ -775,7 +775,7 @@ exports[`MultiSelectInput Component MultiSelectInput renders without input value
           class=" css-1hb7zxy-IndicatorsContainer"
         >
           <span
-            class=" css-1okebmr-indicatorSeparator"
+            class=" css-1u9des2-indicatorSeparator"
           />
           <div
             aria-hidden="true"
@@ -818,19 +818,19 @@ exports[`MultiSelectInput Component MultiSelectInput renders without portal 1`] 
         class="css-1f43avz-a11yText-A11yText"
       />
       <div
-        class=" css-yqi6bw-control"
+        class=" css-1iiyd84-control"
       >
         <div
-          class=" css-9plg90-ValueContainer"
+          class=" css-yhb162-ValueContainer"
         >
           <div
-            class=" css-14el2xx-placeholder"
+            class=" css-1jqq78o-placeholder"
             id="react-select-10-placeholder"
           >
             Select...
           </div>
           <div
-            class=" css-6j8wv5-Input"
+            class=" css-qbdosj-Input"
             data-value=""
           >
             <input
@@ -856,7 +856,7 @@ exports[`MultiSelectInput Component MultiSelectInput renders without portal 1`] 
           class=" css-1hb7zxy-IndicatorsContainer"
         >
           <span
-            class=" css-1okebmr-indicatorSeparator"
+            class=" css-1u9des2-indicatorSeparator"
           />
           <div
             aria-hidden="true"
