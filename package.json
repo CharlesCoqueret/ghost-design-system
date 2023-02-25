@@ -1,7 +1,7 @@
 {
   "name": "ghost-design-system",
   "license": "MIT",
-  "version": "1.4.10-next.43",
+  "version": "1.4.10",
   "description": "Ghost design system - React Component Library",
   "author": {
     "name": "Charles Coqueret",
@@ -24,10 +24,9 @@
     "toaster"
   ],
   "scripts": {
-    "build": "rollup -c && npm run build:css && npm run build:css-min",
+    "build": "rm -rf dist && rollup -c && npm run build:css",
     "build-storybook": "build-storybook -o docs-build",
     "build:css": "sass src/assets/index.scss dist/ghost-design-system.css --error-css --stop-on-error",
-    "build:css-min": "sass src/assets/index.scss dist/ghost-design-system.min.css --error-css --stop-on-error --style=compressed",
     "clean": "rm -rf npm-*.log package-lock.json node_modules coverage dist docs-build && npm cache verify",
     "format": "prettier --write \"src/**/*.{ts,tsx,json,js,jsx}\"",
     "format:check": "prettier --list-different \"src/**/*.{ts,tsx,json,js,jsx}\"",
@@ -41,9 +40,8 @@
     "test:watch": "jest --watch"
   },
   "main": "dist/index.js",
-  "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
-  "style": "dist/ghost-design-system.min.css",
+  "style": "dist/ghost-design-system.css",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "6.2.0",
     "@fortawesome/react-fontawesome": "0.2.0",
@@ -57,7 +55,7 @@
     "numeral": "2.0.6",
     "react-collapsed": "3.3.2",
     "react-datepicker": "4.8.0",
-    "react-hot-toast": "^2.4.0",
+    "react-hot-toast": "2.4.0",
     "react-infinite-scroller": "1.2.6",
     "react-intersection-observer": "9.4.1",
     "react-number-format": "4.9.4",

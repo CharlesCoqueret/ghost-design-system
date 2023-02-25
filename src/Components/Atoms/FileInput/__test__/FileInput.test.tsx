@@ -598,11 +598,15 @@ describe('FileInput Component', () => {
 
     const deleteButton = await screen.findByTestId('TEST-ID-delete');
 
-    userEvent.click(deleteButton);
+    act(() => {
+      userEvent.click(deleteButton);
+    });
 
     const confirmButton = screen.getByTestId('TEST-ID-confirm');
 
-    userEvent.click(confirmButton);
+    act(() => {
+      userEvent.click(confirmButton);
+    });
 
     expect(onChangeMock).toBeCalledTimes(1);
     expect(container).toMatchSnapshot();

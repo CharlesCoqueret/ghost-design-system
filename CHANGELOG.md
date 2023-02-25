@@ -1,5 +1,101 @@
 # Changelog
 
+## 1.4.10 (2023-02-25)
+
+Co-authored-by: @renv118
+
+### Breaking changes
+
+Organism/NavBar transform the customSubItem to customInfiinitScrollConfig to support infinite scroll
+Organism/NavBar remove support for SearchBar
+
+### Features
+
+Add export IGenericFieldProps
+Atoms/FileInput Add onFailure to manage the recently failed uploaded file
+Atoms/FileInput Add onSuccess to manage the recently successfully uploaded file
+Atoms/FileInput Add optional id to the be used by the library (separate from the uid)
+Atoms/FileInput show a - when in ready only without any uploaded files
+Molecules/Button prevent menu interactions when the button is disabled
+Molecules/Button show default cursor on disabled button
+Molecules/Toaster add Toaster component
+Molecules/Toaster add ability to dismiss a toaster or all toasters
+Molecules/Toaster add notify, success, error, persistent error
+Molecules/Toaster add shadow to toaster
+Organism/NavBar split into NavBar, NavBarBrand, NavBarMenu, NavBarUtilities
+Organisms/ActionBar provide the ability to update the title even after rendering
+Organisms/DataTable Add Tooltip fo the column title
+Organisms/DataTable provide a way to make the header sticky/floating whenever scrolling
+Organisms/Datatable spread fieldClassName for DatePickerField from LineEditableDataTable
+Organisms/Form add rehydrate function to update the initialData in the useForm
+Organisms/Form add support for editable datatable
+Organisms/NavBar Adding customInfinitScrollConfig to support infinite scroll
+Organisms/NavBar Adding link to the NavItemProps
+Organisms/NavBar Adding tooltip to the NavItemProps
+Organisms/NavBar restore customSubItem
+Template/Portfolio provide a way to make the table header sticky/floating whenever scrolling
+Templates/portfolio component creation
+
+### Bug fixes
+
+Atom/DatePickerInput disable click trap around the date when in readOnly of disabled mode
+Atom/YearPickerInput disable click trap around the date when in readOnly of disabled mode
+Atoms/AmountInput ensure changes originated from the props do not trigger onChange callback
+Atoms/AmountInput remove unnecessary format in readOnly
+Atoms/DatePickerInput prevent click event from bubbling up (especially when in a clickable row in a datatable)
+Atoms/DatePickerInput remove position relative from css class .react-datepicker\_\_input-container
+Atoms/DatePicketInput Set '-' as placeholder when input is empty and in readOnly or disabled
+Atoms/DynamicSearchCreatableInput Handle readOnly and disabled the same way
+Atoms/DynamicSearchInput Handle readOnly and disabled the same way
+Atoms/FileInput Remove useCallback on addFileLocalItems as it might prevent check of max files
+Atoms/FileInput display progress bar even when progress is at 0%
+Atoms/FileInput handle file upload in batch as the state is only updated at the end of the upload.
+Atoms/FileInput handle upload of items via drag'n drop.
+Atoms/FileInput remove all useCallback
+Atoms/FileInput remove the sort by uid of file, keep the natural order.
+Atoms/Icon add a few icons used by legacy lib.
+Atoms/Section Get back to react-collapsed 3.3.2 to avoid react 18 required.= with useId feature.
+Atoms/SelectInput Handle readOnly and disabled the same way
+Atoms/TextAreaInput Set '-' as placeholder when input is empty and in readOnly or disabled
+Atoms/TextAreaInput fix the size management of textarea, even in read only.
+Atoms/TextAreaInput height in readonly
+Atoms/TextInput Set '-' as placeholder when input is empty and in readOnly or disabled
+Atoms/YearPicketInput Set '-' as placeholder when input is empty and in readOnly or disabled
+Molecules/Button Remove style for links inside menu
+Molecules/FileField Handle management of file counter properly (not only with input length, but with current state)
+Molecules/Popover specify for popover its own portal root id
+Molecules/RichTextField Remove padding in readonly and disabled
+Molecules/Toaster align closing icon for persistent toaster
+Organisms/ActionBar Ensure the Title subcomponent is supporting updates of the onTitleChange callback
+Organisms/ActionBar Extending the width for title
+Organisms/ActionBar Make the whole item in menu clickable (not only the text)
+Organisms/ActionBar fix width configuration of title
+Organisms/ActionBar prevent selection of the "shadowed" title
+Organisms/ActionBar set height of primary bar to 64px
+Organisms/Datatable fix naming
+Organisms/FileField Make requestUrl and requestMethod optional
+Organisms/FileField Remove serverResponse from IFile as it must be handled in onSuccess
+Organisms/FileField Remove unnecessary name
+Organisms/Filter set buttons of the filter bar to reversed
+Organisms/Form ensure highlighter has the original extras
+Organisms/Form fix access to oldData for tables
+Organisms/Form fix typo in type definition
+Organisms/Form support highlighter with empty previousData for data table
+Organisms/NavBar Rename link with redirection for brand link
+Organisms/NavBar Use MenuItem instead of NavLink inside the menu
+Organisms/NavBar adding missing keys
+Organisms/NavBar fix label management for links
+Organisms/NavBar fix link to display flex
+Organisms/NavBar forcing the icon to fit with a max height of 44px
+Organisms/NavBar remove all effect anchor link css inside the navbar
+Organisms/NavBar update brand icon margin
+Organisms/Navbar Ensure links are centered
+Organisms/Navbar adjusting the link of items
+Organisms/Tooltip Handling default values
+Organisms/useForm remove strict from yup validation
+Template/Portfolio css margin
+Templates/Portfolio wrapping the Portfolio inside a QueryClientProvider and offering a PortfolioWrapped in case you need to use your own QueryClientProvider.
+
 ## 1.4.9 (2022-07-23)
 
 ### Features

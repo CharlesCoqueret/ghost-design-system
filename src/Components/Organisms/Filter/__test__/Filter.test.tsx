@@ -72,7 +72,9 @@ describe('Filter Component', () => {
 
     const resetButton = await screen.findByTestId('DATA-TEST-ID-reset');
 
-    userEvent.click(resetButton);
+    act(() => {
+      userEvent.click(resetButton);
+    });
 
     expect(onChangeMock).toBeCalledTimes(3);
     expect(onChangeMock).toBeCalledWith(undefined);
@@ -153,7 +155,10 @@ describe('Filter Component', () => {
     expect(baseElement).toMatchSnapshot();
 
     const submitAdvanceSearchButton = await screen.findByTestId('DATA-TEST-ID-advanced-submit');
-    userEvent.click(submitAdvanceSearchButton);
+
+    act(() => {
+      userEvent.click(submitAdvanceSearchButton);
+    });
 
     expect(baseElement).toMatchSnapshot();
     expect(onChangeMock).toBeCalledTimes(2);

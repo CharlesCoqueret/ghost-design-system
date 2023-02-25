@@ -12,11 +12,6 @@ export default {
   output: [
     {
       file: packageJson.main,
-      format: 'cjs',
-      exports: 'named',
-    },
-    {
-      file: packageJson.module,
       format: 'esm',
       exports: 'named',
     },
@@ -33,7 +28,7 @@ export default {
     resolve(),
     commonjs(),
     scss({ output: false }),
-    typescript({ exclude: ['**/__tests__', '**/*.test.ts'], useTsconfigDeclarationDir: true }),
+    typescript({ exclude: ['**/__tests__', '**/*.test.ts', '**/Fake*'], useTsconfigDeclarationDir: true }),
     copy({
       targets: [
         { src: 'src/assets/_*.scss', dest: 'dist/assets' },
