@@ -1,11 +1,13 @@
 import React from 'react';
 import * as yup from 'yup';
 
-import { Button, ColorButtonEnum } from '../../Molecules';
+import { ColorButtonEnum } from '../../Molecules/Button';
 
 import useForm, { IUseFormProps } from './useForm';
 import { FieldTypeEnum, IFieldAndLayoutProps } from './types';
+import Section from '../../Atoms/Layout/Section';
 import { IOption } from '../../Atoms';
+import { ActionBar } from '../ActionBar';
 
 export default {
   title: 'Organism/useForm',
@@ -21,34 +23,38 @@ const Template = (args: IUseFormProps<IDataType>) => {
   const { formElement, getData, isModified, submit, reset } = useForm<IDataType>(args);
   return (
     <>
-      <div style={{ display: 'flex', justifyContent: 'space-around' }}>
-        <Button
-          label='Submit'
-          onClick={() => {
-            console.log('submit', JSON.stringify(submit()));
-          }}
-          color={ColorButtonEnum.PRIMARY}
-        />
-        <Button
-          label='Reset'
-          onClick={() => {
-            console.log('reset', JSON.stringify(reset()));
-          }}
-          color={ColorButtonEnum.SECONDARY}
-        />
-      </div>
-      <div>{formElement}</div>
-      <div>
+      <ActionBar
+        title='Conditional select'
+        actions={[
+          {
+            label: 'Submit',
+            color: ColorButtonEnum.PRIMARY,
+            onClick: () => {
+              console.log('submit', JSON.stringify(submit()));
+            },
+          },
+          {
+            label: 'Reset',
+            color: ColorButtonEnum.SECONDARY,
+            onClick: () => {
+              console.log('reset', JSON.stringify(reset()));
+            },
+          },
+        ]}
+      />
+      <Section title='Form' collapsible={false}>
+        {formElement}
+      </Section>
+
+      <Section title='Data' openInitially={false} separator={false}>
         <pre>Has been modified: {isModified().toString()}</pre>
-      </div>
-      <div>
         Current data:
         <textarea
           style={{ width: '100%', boxSizing: 'border-box', height: '300px' }}
           value={JSON.stringify(getData(), null, 2)}
           readOnly
         />
-      </div>
+      </Section>
     </>
   );
 };
@@ -109,7 +115,7 @@ const validationSchema = yup.object({
       return yup
         .mixed()
         .oneOf(option2[select1]?.map((option) => option.value))
-        .required(`option2 must be on of ${option2[select1].map((option) => option.label)}`);
+        .required(`option2 must be defined`);
     }),
   select3: yup
     .mixed()
@@ -121,7 +127,7 @@ const validationSchema = yup.object({
       return yup
         .mixed()
         .oneOf(option3[select2]?.map((option) => option.value))
-        .required(`option3 must be on of ${option3[select2].map((option) => option.label)}`);
+        .required(`option2 must be defined`);
     }),
 });
 

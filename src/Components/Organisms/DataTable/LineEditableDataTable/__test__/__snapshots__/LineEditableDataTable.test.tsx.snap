@@ -455,34 +455,30 @@ exports[`LineEditableDataTable component LineEditableDataTable handles delete wi
             class="container"
           >
             <div
-              class=""
+              class="col"
             >
               <div
-                class="col"
+                class="fieldGroup"
               >
-                <div
-                  class="fieldGroup"
+                <label
+                  class="label"
                 >
-                  <label
-                    class="label"
+                  Number
+                  <span
+                    class="mandatory"
                   >
-                    Number
-                    <span
-                      class="mandatory"
-                    >
-                      *
-                    </span>
-                  </label>
-                  <input
-                    autocomplete="off"
-                    class="default"
-                    inputmode="numeric"
-                    name="number"
-                    placeholder="NUMBER"
-                    type="text"
-                    value="2"
-                  />
-                </div>
+                    *
+                  </span>
+                </label>
+                <input
+                  autocomplete="off"
+                  class="default"
+                  inputmode="numeric"
+                  name="number"
+                  placeholder="NUMBER"
+                  type="text"
+                  value="2"
+                />
               </div>
             </div>
           </div>

@@ -4,7 +4,6 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import SectionComponent, { ISectionProps } from './Section';
 import { AmountField, DatePickerField, TextAreaField, YearPickerField } from '../../Molecules';
 import Row from './Row';
-import Container from './Container';
 import Col from './Col';
 
 const initialData = {
@@ -32,22 +31,20 @@ const Template: ComponentStory<typeof SectionComponent> = (args: ISectionProps) 
   const [val, setval] = useState(initialData.textarea);
   return (
     <SectionComponent {...args}>
-      <Container>
-        <Col>
-          <Row>
-            <AmountField inputValue={initialData.amount} label='Amount' suffix='$' name='amount' readOnly />
-          </Row>
-          <Row>
-            <DatePickerField inputValue={initialData.date} label='Date' name='date' readOnly />
-          </Row>
-          <Row>
-            <TextAreaField inputValue={val} label='Textarea' name='textarea' onChange={setval} />
-          </Row>
-          <Row>
-            <YearPickerField inputValue={initialData.year} label='Year' name='year' readOnly />
-          </Row>
-        </Col>
-      </Container>
+      <Col>
+        <Row>
+          <AmountField inputValue={initialData.amount} label='Amount' suffix='$' name='amount' readOnly />
+        </Row>
+        <Row>
+          <DatePickerField inputValue={initialData.date} label='Date' name='date' readOnly />
+        </Row>
+        <Row>
+          <TextAreaField inputValue={val} label='Textarea' name='textarea' onChange={setval} />
+        </Row>
+        <Row>
+          <YearPickerField inputValue={initialData.year} label='Year' name='year' readOnly />
+        </Row>
+      </Col>
     </SectionComponent>
   );
 };

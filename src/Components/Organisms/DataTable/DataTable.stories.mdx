@@ -125,6 +125,7 @@ More details about <LinkTo story='columns'>Columns</LinkTo>
         moreActionsMessage: 'Nore actions',
         title: 'Buttons',
         type: ColumnType.BUTTON,
+        width: '100px',
       },
     ]}
     data={[
@@ -288,7 +289,7 @@ Play with Advanced LineEditableDataTable live on [CodeSandbox](https://codesandb
       },
     ]}
     extra={{
-      actionColumnWidth: '50px',
+      actionColumnWidth: '100px',
       onRowEdit: (row, rowIndex) => {
         console.log(`Row start edition: ${JSON.stringify(row)}, edited row index: ${rowIndex}`);
       },
@@ -698,6 +699,7 @@ Especially usefull when having to display 2 tables side by side.
           title: 'Actions',
           type: ColumnType.BUTTON,
           moreActionsMessage: 'Nore actions',
+          width: '100px',
           buttons: [
             {
               icon: ['fal', 'arrow-down-to-line'],

@@ -131,15 +131,11 @@ exports[`Filter Component Filter renders advanced filter and handles changes 2`]
               class="container"
             >
               <div
-                class=""
+                class="row"
               >
-                <div
-                  class="row"
-                >
-                  <div>
-                    Mocked FilterItem props: 
-                    {"inputValues":{"number":1},"item":{"dataIndex":"number","filterType":"number","label":"Number","placeholder":"Search number","dataTestId":"NUMBER-ADVANCED-SEARCH"}}
-                  </div>
+                <div>
+                  Mocked FilterItem props: 
+                  {"inputValues":{"number":1},"item":{"dataIndex":"number","filterType":"number","label":"Number","placeholder":"Search number","dataTestId":"NUMBER-ADVANCED-SEARCH"}}
                 </div>
               </div>
             </div>
@@ -264,15 +260,11 @@ exports[`Filter Component Filter renders advanced filter and handles changes 3`]
               class="container"
             >
               <div
-                class=""
+                class="row"
               >
-                <div
-                  class="row"
-                >
-                  <div>
-                    Mocked FilterItem props: 
-                    {"inputValues":{"number":10},"item":{"dataIndex":"number","filterType":"number","label":"Number","placeholder":"Search number","dataTestId":"NUMBER-ADVANCED-SEARCH"}}
-                  </div>
+                <div>
+                  Mocked FilterItem props: 
+                  {"inputValues":{"number":10},"item":{"dataIndex":"number","filterType":"number","label":"Number","placeholder":"Search number","dataTestId":"NUMBER-ADVANCED-SEARCH"}}
                 </div>
               </div>
             </div>
@@ -397,15 +389,11 @@ exports[`Filter Component Filter renders advanced filter and handles changes 4`]
               class="container"
             >
               <div
-                class=""
+                class="row"
               >
-                <div
-                  class="row"
-                >
-                  <div>
-                    Mocked FilterItem props: 
-                    {"inputValues":{"number":1},"item":{"dataIndex":"number","filterType":"number","label":"Number","placeholder":"Search number","dataTestId":"NUMBER-ADVANCED-SEARCH"}}
-                  </div>
+                <div>
+                  Mocked FilterItem props: 
+                  {"inputValues":{"number":1},"item":{"dataIndex":"number","filterType":"number","label":"Number","placeholder":"Search number","dataTestId":"NUMBER-ADVANCED-SEARCH"}}
                 </div>
               </div>
             </div>
@@ -530,15 +518,11 @@ exports[`Filter Component Filter renders advanced filter and handles changes 5`]
               class="container"
             >
               <div
-                class=""
+                class="row"
               >
-                <div
-                  class="row"
-                >
-                  <div>
-                    Mocked FilterItem props: 
-                    {"inputValues":{"number":100},"item":{"dataIndex":"number","filterType":"number","label":"Number","placeholder":"Search number","dataTestId":"NUMBER-ADVANCED-SEARCH"}}
-                  </div>
+                <div>
+                  Mocked FilterItem props: 
+                  {"inputValues":{"number":100},"item":{"dataIndex":"number","filterType":"number","label":"Number","placeholder":"Search number","dataTestId":"NUMBER-ADVANCED-SEARCH"}}
                 </div>
               </div>
             </div>

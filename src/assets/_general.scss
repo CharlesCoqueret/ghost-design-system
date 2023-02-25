@@ -1,10 +1,20 @@
 @font-face {
   font-family: 'Montserrat';
+  font-weight: 400;
   src: url('./fonts/Montserrat-Regular.ttf');
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 * {
   font-family: var(--theme-provider-font-family);
-  font-size: 14px;
-  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
 }

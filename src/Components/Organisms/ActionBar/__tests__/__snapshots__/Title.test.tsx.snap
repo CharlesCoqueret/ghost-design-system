@@ -11,11 +11,11 @@ exports[`Title Component Title renders 1`] = `
     >
       PREFIX
     </h1>
-    <span
+    <div
       class="hiddenTitle"
     >
       TITLE
-    </span>
+    </div>
     <input
       autocomplete="off"
       class="title"
@@ -55,11 +55,11 @@ exports[`Title Component Title renders and blurs on enter 1`] = `
   <div
     class="container"
   >
-    <span
+    <div
       class="hiddenTitle"
     >
       ABCDE
-    </span>
+    </div>
     <input
       autocomplete="off"
       class="title"
@@ -82,11 +82,11 @@ exports[`Title Component Title renders and blurs on tab 1`] = `
   <div
     class="container"
   >
-    <span
+    <div
       class="hiddenTitle"
     >
       ABCDE
-    </span>
+    </div>
     <input
       autocomplete="off"
       class="title"
@@ -109,11 +109,11 @@ exports[`Title Component Title renders and handles changes 1`] = `
   <div
     class="container"
   >
-    <span
+    <div
       class="hiddenTitle"
     >
       ABCDE
-    </span>
+    </div>
     <input
       autocomplete="off"
       class="title"
@@ -136,11 +136,11 @@ exports[`Title Component Title renders not editable 1`] = `
   <div
     class="container"
   >
-    <span
+    <div
       class="hiddenTitle"
     >
       TITLE
-    </span>
+    </div>
     <input
       autocomplete="off"
       class="title"
@@ -161,11 +161,11 @@ exports[`Title Component Title renders restores title when too short 1`] = `
   <div
     class="container"
   >
-    <span
+    <div
       class="hiddenTitle"
     >
       TITLE
-    </span>
+    </div>
     <input
       autocomplete="off"
       class="title"

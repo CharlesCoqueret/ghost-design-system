@@ -39,11 +39,11 @@ exports[`ActionBar Component ActionBar renders 1`] = `
         >
           PREFIX
         </h1>
-        <span
+        <div
           class="hiddenTitle"
         >
           TITLE
-        </span>
+        </div>
         <input
           autocomplete="off"
           class="title"
@@ -150,11 +150,11 @@ exports[`ActionBar Component ActionBar renders with actions without label, empty
       <div
         class="container"
       >
-        <span
+        <div
           class="hiddenTitle"
         >
           TITLE
-        </span>
+        </div>
         <input
           autocomplete="off"
           class="title"
@@ -236,11 +236,11 @@ exports[`ActionBar Component ActionBar renders without action, basicactions, ico
         >
           PREFIX
         </h1>
-        <span
+        <div
           class="hiddenTitle"
         >
           TITLE
-        </span>
+        </div>
         <input
           autocomplete="off"
           class="title"

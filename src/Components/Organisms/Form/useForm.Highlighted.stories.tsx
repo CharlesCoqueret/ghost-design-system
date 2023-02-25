@@ -2,11 +2,13 @@ import React from 'react';
 import cloneDeep from 'lodash/cloneDeep';
 
 import { IToggleEntry } from '../../Atoms/CheckBoxInput/types';
-import { Button, ColorButtonEnum } from '../../Molecules';
+import { ColorButtonEnum } from '../../Molecules';
 
 import useForm, { IUseFormProps } from './useForm';
 import { FieldTypeEnum, IFieldAndLayoutProps } from './types';
+import Section from '../../Atoms/Layout/Section';
 import { Link, Typography } from '../../Atoms';
+import { ActionBar } from '../ActionBar';
 
 export default {
   title: 'Organism/useForm',
@@ -19,42 +21,45 @@ interface IDataType {
   description?: string;
 }
 
-const Template = (args: IUseFormProps<IDataType>) => {
-  const { formElement, getData, isModified, submit, reset } = useForm<IDataType>(args);
+const Template = (args: IUseFormProps<IDataType> & { title: string }) => {
+  const { title, ...props } = args;
+  const { formElement, getData, isModified, submit, reset } = useForm<IDataType>(props);
 
   return (
     <>
-      <div style={{ display: 'flex', justifyContent: 'space-around' }}>
-        <Typography.Title level={1}>With changed highlighted</Typography.Title>
-      </div>
-      <div style={{ display: 'flex', justifyContent: 'space-around' }}>
-        <Button
-          label='Submit'
-          onClick={() => {
-            console.log('submit', JSON.stringify(submit()));
-          }}
-          color={ColorButtonEnum.PRIMARY}
-        />
-        <Button
-          label='Reset'
-          onClick={() => {
-            console.log('reset', JSON.stringify(reset()));
-          }}
-          color={ColorButtonEnum.SECONDARY}
-        />
-      </div>
-      <div>{formElement}</div>
-      <div>
+      <ActionBar
+        title={title}
+        actions={[
+          {
+            label: 'Submit',
+            color: ColorButtonEnum.PRIMARY,
+            onClick: () => {
+              console.log('submit', JSON.stringify(submit()));
+            },
+          },
+          {
+            label: 'Reset',
+            color: ColorButtonEnum.SECONDARY,
+            onClick: () => {
+              console.log('reset', JSON.stringify(reset()));
+            },
+          },
+        ]}
+      />
+
+      <Section title='Form' collapsible={false}>
+        {formElement}
+      </Section>
+
+      <Section title='Data' openInitially={false} separator={false}>
         <pre>Has been modified: {isModified().toString()}</pre>
-      </div>
-      <div>
         Current data:
         <textarea
           style={{ width: '100%', boxSizing: 'border-box', height: '300px' }}
           value={JSON.stringify(getData(), null, 2)}
           readOnly
         />
-      </div>
+      </Section>
     </>
   );
 };
@@ -102,6 +107,7 @@ const fields: Array<IFieldAndLayoutProps<IDataType>> = [
 
 export const Highlighted = Template.bind({});
 Highlighted.args = {
+  title: 'Side by side enabled and highlighted',
   enableOldData: true,
   enableSideBySide: true,
   initialData: initialData,
@@ -111,6 +117,7 @@ Highlighted.args = {
 
 export const SideBySideEnabled = Template.bind({});
 SideBySideEnabled.args = {
+  title: 'Side by side enabled',
   enableSideBySide: true,
   initialData: initialData,
   fields: fields,
@@ -118,6 +125,7 @@ SideBySideEnabled.args = {
 
 export const SideBySideDisabled = Template.bind({});
 SideBySideDisabled.args = {
+  title: 'Side by side disabled',
   enableSideBySide: false,
   initialData: initialData,
   fields: fields,

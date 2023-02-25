@@ -1,9 +1,8 @@
 import React, { createContext, PropsWithChildren, useEffect, useState } from 'react';
 
 type RGB = `${number}, ${number}, ${number}`;
-type HEX = `#${string}`;
 
-type Color = RGB | HEX;
+type Color = RGB;
 
 export interface ITheme {
   black: Color;
@@ -42,7 +41,7 @@ const sky = '16, 156, 241';
 const smoke = '248, 248, 248';
 const tangerine = '229, 114, 0';
 const white = '255, 255, 255';
-const fontFamily = 'Montserrat, sans-serif';
+const fontFamily = 'Montserrat, Arial, sans-serif';
 
 export const defaultTheme: ITheme = {
   black,
@@ -111,6 +110,11 @@ const ThemeProvider = (props: PropsWithChildren<IThemeProvider>) => {
   }, [currentTheme]);
 
   return <ThemeContext.Provider value={{ theme: currentTheme, setCurrentTheme }}>{children}</ThemeContext.Provider>;
+};
+
+ThemeProvider.defaultProps = {
+  theme: defaultTheme,
+  children: undefined,
 };
 
 export default ThemeProvider;

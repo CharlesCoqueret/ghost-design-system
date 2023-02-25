@@ -7,7 +7,6 @@ import '../src/assets/index.scss';
 loadIcons();
 
 export const parameters = {
-  controls: { expanded: true },
   layout: 'fullscreen',
   options: {
     storySort: {
@@ -19,8 +18,12 @@ export const parameters = {
 
 export const decorators = [
   (Story) => (
-    <ThemeProvider>
+    <div style={{ padding: '42px' }}>
+      <ThemeProvider />
       <Story />
-    </ThemeProvider>
+      <div id='root-portal-id' />
+      <div id='toaster-portal-id' />
+      <div id='select-portal-id' />
+    </div>
   ),
 ];

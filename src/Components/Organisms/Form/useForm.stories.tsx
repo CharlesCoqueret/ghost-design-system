@@ -1,16 +1,19 @@
 import React from 'react';
 import * as yup from 'yup';
 import cloneDeep from 'lodash/cloneDeep';
+import { action } from '@storybook/addon-actions';
 
 import { IToggleEntry } from '../../Atoms/CheckBoxInput/types';
-import { Button, ColorButtonEnum } from '../../Molecules/Button';
-import { IFile } from '../../Atoms/FileInput';
+import { ColorButtonEnum } from '../../Molecules/Button';
+import { FileStatusEnum, IFile } from '../../Atoms/FileInput';
 import { Link } from '../../Atoms/Link';
 import { Typography } from '../../Atoms/Typography';
 
 import useForm, { IUseFormProps } from './useForm';
-import { FieldTypeEnum, IFieldAndLayoutProps, IFieldFullEditableTableProps, IFieldTableProps } from './types';
+import { FieldTypeEnum, IFieldAndLayoutProps, IFieldEditableTableProps, IFieldLineEditableTableProps } from './types';
 import { ColumnType } from '../DataTable/Common';
+import Section from '../../Atoms/Layout/Section';
+import { ActionBar } from '../ActionBar';
 
 export default {
   title: 'Organism/useForm',
@@ -44,36 +47,39 @@ interface IDataType {
 const Template = (args: IUseFormProps<IDataType>) => {
   const { formElement, getData, isModified, submit, reset } = useForm<IDataType>(args);
   return (
-    <div>
-      <div style={{ display: 'flex', justifyContent: 'space-around' }}>
-        <Button
-          label='Submit'
-          onClick={() => {
-            console.log('submit', JSON.stringify(submit()));
-          }}
-          color={ColorButtonEnum.PRIMARY}
-        />
-        <Button
-          label='Reset'
-          onClick={() => {
-            console.log('reset', JSON.stringify(reset()));
-          }}
-          color={ColorButtonEnum.SECONDARY}
-        />
-      </div>
-      <div>{formElement}</div>
-      <div>
+    <>
+      <ActionBar
+        title='useForm'
+        actions={[
+          {
+            label: 'Submit',
+            color: ColorButtonEnum.PRIMARY,
+            onClick: () => {
+              action(`Submit ${JSON.stringify(submit())}`);
+            },
+          },
+          {
+            label: 'Reset',
+            color: ColorButtonEnum.SECONDARY,
+            onClick: () => {
+              action(`Reset ${JSON.stringify(reset())}`);
+            },
+          },
+        ]}
+      />
+      <Section title='Form' collapsible={false}>
+        {formElement}
+      </Section>
+      <Section title='Data' openInitially={false} separator={false}>
         <pre>Has been modified: {isModified().toString()}</pre>
-      </div>
-      <div>
         Current data:
         <textarea
           style={{ width: '100%', boxSizing: 'border-box', height: '300px' }}
           value={JSON.stringify(getData(), null, 2)}
           readOnly
         />
-      </div>
-    </div>
+      </Section>
+    </>
   );
 };
 
@@ -100,7 +106,7 @@ const initialData: IDataType = {
   date: new Date(),
   description: 'Description',
   dynamicsearch: 'value1',
-  file: [],
+  file: [{ uid: '1', name: 'test file.png', size: 1234, type: 'image/png', status: FileStatusEnum.DONE }],
   multiselect: options.map((option) => option.value),
   number: 10,
   percentage: 50,
@@ -261,77 +267,91 @@ const fields: Array<IFieldAndLayoutProps<IDataType>> = [
   { label: 'Select', dataIndex: 'select', fieldType: FieldTypeEnum.SELECT, options: options },
   { label: 'Switch', dataIndex: 'switch', fieldType: FieldTypeEnum.SWITCH },
   {
-    columns: [
+    collapsible: false,
+    label: 'Line editable table',
+    fields: [
       {
-        dataIndex: 'number',
-        editable: true,
-        title: 'Number',
-        type: ColumnType.NUMBER,
-      },
-      {
-        dataIndex: 'text',
-        editable: true,
-        title: 'Text',
-        type: ColumnType.TEXT,
-      },
+        columns: [
+          {
+            dataIndex: 'number',
+            editable: true,
+            title: 'Number',
+            type: ColumnType.NUMBER,
+          },
+          {
+            dataIndex: 'text',
+            editable: true,
+            title: 'Text',
+            type: ColumnType.TEXT,
+          },
+        ],
+        dataIndex: 'table',
+        extra: {
+          validationSchema: yup.object({
+            number: yup.number().required(),
+            text: yup.string().required(),
+          }),
+          onRowDelete: () => {
+            // Enabling deletion
+            return;
+          },
+          canAddNewLine: () => {
+            // Enabling Add new line
+            return true;
+          },
+          onNewLine: () => ({ number: 100, text: 'text' }),
+        },
+        fieldType: FieldTypeEnum.LINE_EDITABLE_TABLE,
+        label: 'Line editable table',
+      } as IFieldLineEditableTableProps<IDataType, IDataTableType>,
     ],
-    dataIndex: 'table',
-    extra: {
-      validationSchema: yup.object({
-        number: yup.number().required(),
-        text: yup.string().required(),
-      }),
-      onRowDelete: () => {
-        // Enabling deletion
-        return;
-      },
-      canAddNewLine: () => {
-        // Enabling Add new line
-        return true;
-      },
-      onNewLine: () => ({ number: 100, text: 'text' }),
-    },
-    fieldType: FieldTypeEnum.LINE_EDITABLE_TABLE,
-    label: 'Table',
-  } as IFieldTableProps<IDataType, IDataTableType>,
+    fieldType: FieldTypeEnum.SECTION,
+  },
   {
-    columns: [
+    collapsible: false,
+    label: 'Editable table',
+    fields: [
       {
-        dataIndex: 'number',
-        editable: true,
-        title: 'Number',
-        type: ColumnType.NUMBER,
-      },
-      {
-        dataIndex: 'text',
-        editable: true,
-        title: 'Text',
-        type: ColumnType.TEXT,
-      },
+        columns: [
+          {
+            dataIndex: 'number',
+            editable: true,
+            title: 'Number',
+            type: ColumnType.NUMBER,
+          },
+          {
+            dataIndex: 'text',
+            editable: true,
+            title: 'Text',
+            type: ColumnType.TEXT,
+          },
+        ],
+        dataIndex: 'fulleditabletable',
+        extra: {
+          validationSchema: yup.object({
+            number: yup.number().required(),
+            text: yup.string().required(),
+          }),
+          onEdit: () => {
+            // Enabling edition
+            return;
+          },
+          onRowDelete: () => {
+            // Enabling deletion
+            return;
+          },
+          canAddNewLine: () => {
+            // Enabling Add new line
+            return true;
+          },
+          onNewLine: () => ({ number: 100, text: 'text' }),
+        },
+        fieldType: FieldTypeEnum.EDITABLE_TABLE,
+        label: 'Editable table',
+      } as IFieldEditableTableProps<IDataType, IDataTableType>,
     ],
-    dataIndex: 'fulleditabletable',
-    extra: {
-      validationSchema: yup.object({
-        number: yup.number().required(),
-        text: yup.string().required(),
-      }),
-      onEdit: () => {
-        // Enabling edition
-        return;
-      },
-      onRowDelete: () => {
-        // Enabling deletion
-        return;
-      },
-      canAddNewLine: () => {
-        // Enabling Add new line
-        return true;
-      },
-      onNewLine: () => ({ number: 100, text: 'text' }),
-    },
-    fieldType: FieldTypeEnum.EDITABLE_TABLE,
-    label: 'Full editable table',
-  } as IFieldFullEditableTableProps<IDataType, IDataTableType>,
+    fieldType: FieldTypeEnum.SECTION,
+  },
   { label: 'Text', dataIndex: 'text', fieldType: FieldTypeEnum.TEXT },
   { label: 'Textarea', dataIndex: 'textarea', fieldType: FieldTypeEnum.TEXTAREA },
   { label: 'Year', dataIndex: 'year', fieldType: FieldTypeEnum.YEAR },

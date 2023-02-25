@@ -27,7 +27,6 @@ const Section = (props: PropsWithChildren<ISectionProps>): ReactElement => {
 
   const { getCollapseProps, setExpanded, isExpanded } = useCollapse({
     duration: 500,
-    hasDisabledAnimation: !collapsible,
   });
 
   useEffect(() => {

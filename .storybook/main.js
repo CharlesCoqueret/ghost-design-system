@@ -5,11 +5,12 @@ const maxAssetSize = 250 * 1024;
 module.exports = {
   stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
   addons: [
-    '@storybook/addon-a11y',
     '@storybook/addon-essentials',
+    '@storybook/addon-actions',
+    '@storybook/addon-storysource',
     '@storybook/addon-interactions',
     '@storybook/addon-postcss',
-    '@storybook/addon-storysource',
+    '@storybook/addon-a11y',
   ],
   core: {
     builder: 'webpack5',

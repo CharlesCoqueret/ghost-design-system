@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import cloneDeep from 'lodash/cloneDeep';
 
-import { Container, Row } from '../../Atoms/Layout';
+import { Row } from '../../Atoms/Layout';
 import { Modal, ModalBody, ModalFooter } from '../../Atoms/Modal';
 import { Button, ColorButtonEnum } from '../../Molecules/Button';
 import { IFilterFieldsProps, IFilterLayoutAndFieldsProps } from './types';
@@ -134,20 +134,18 @@ const Filter = <T,>(props: IFilterProps<T>): React.ReactElement => {
           size={'lg'}
           title={localization.advancedSearchTitle}>
           <ModalBody>
-            <Container>
-              <Row>
-                {advancedSearchItems.map((item, index) => {
-                  return (
-                    <FilterItem<T>
-                      key={'dataIndex' in item ? item.dataIndex.toString() : `section-${index}`}
-                      inputValues={currentModalValues}
-                      item={item}
-                      onChange={onChangeAdvancedFilterValue}
-                    />
-                  );
-                })}
-              </Row>
-            </Container>
+            <Row>
+              {advancedSearchItems.map((item, index) => {
+                return (
+                  <FilterItem<T>
+                    key={'dataIndex' in item ? item.dataIndex.toString() : `section-${index}`}
+                    inputValues={currentModalValues}
+                    item={item}
+                    onChange={onChangeAdvancedFilterValue}
+                  />
+                );
+              })}
+            </Row>
           </ModalBody>
           <ModalFooter>
             <Button

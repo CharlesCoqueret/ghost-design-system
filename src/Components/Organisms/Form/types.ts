@@ -238,9 +238,11 @@ export interface IFieldRichtextProps<T>
 export interface IFieldSectionProps<T> extends Partial<IVisibilityProps<T>> {
   collapsible?: boolean;
   fieldType: FieldTypeEnum.SECTION;
-  openInitially?: boolean;
   fields: Array<IFieldProps<T>>;
   label: string;
+  level?: 1 | 2 | 3;
+  openInitially?: boolean;
+  separator?: boolean;
 }
 
 export interface IFieldSelectProps<T>

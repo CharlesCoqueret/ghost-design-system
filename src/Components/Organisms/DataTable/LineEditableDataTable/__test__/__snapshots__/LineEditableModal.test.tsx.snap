@@ -22,53 +22,49 @@ exports[`LineEditableModal component LineEditableModal renders with amount and s
           class="container"
         >
           <div
-            class=""
+            class="col"
           >
             <div
-              class="col"
+              class="row"
             >
               <div
-                class="row"
+                class="col"
               >
                 <div
-                  class="col"
+                  class="fieldGroup"
                 >
-                  <div
-                    class="fieldGroup"
+                  <label
+                    class="label"
                   >
-                    <label
-                      class="label"
-                    >
-                      Amount
-                    </label>
-                    <input
-                      autocomplete="off"
-                      class="default"
-                      inputmode="numeric"
-                      name="amount"
-                      type="text"
-                      value="1"
-                    />
-                  </div>
+                    Amount
+                  </label>
+                  <input
+                    autocomplete="off"
+                    class="default"
+                    inputmode="numeric"
+                    name="amount"
+                    type="text"
+                    value="1"
+                  />
                 </div>
+              </div>
+              <div
+                class="col"
+              >
                 <div
-                  class="col"
+                  class="fieldGroup"
                 >
-                  <div
-                    class="fieldGroup"
+                  <label
+                    class="label"
                   >
-                    <label
-                      class="label"
-                    >
-                      Amount
-                    </label>
-                    <span
-                      autocomplete="off"
-                      class="default readOnly"
-                    >
-                      1
-                    </span>
-                  </div>
+                    Amount
+                  </label>
+                  <span
+                    autocomplete="off"
+                    class="default readOnly"
+                  >
+                    1
+                  </span>
                 </div>
               </div>
             </div>
@@ -130,12 +126,8 @@ exports[`LineEditableModal component LineEditableModal renders with amount hidde
           class="container"
         >
           <div
-            class=""
-          >
-            <div
-              class="col"
-            />
-          </div>
+            class="col"
+          />
         </div>
         <div
           class="container"

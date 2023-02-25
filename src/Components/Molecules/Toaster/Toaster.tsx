@@ -4,6 +4,8 @@ import { toast, Toaster as HotToaster, ToastOptions } from 'react-hot-toast';
 import Icon from '../../Atoms/Icon/Icon';
 import Portal from '../../Atoms/Portal/Portal';
 
+import styles from './Toaster.module.scss';
+
 /**
  * Toast container component
  *
@@ -18,12 +20,13 @@ export const Toaster = (): ReactElement => {
       <HotToaster
         position='bottom-right'
         toastOptions={{
+          className: styles.container,
           success: {
-            icon: <Icon icon={['fas', 'circle-check']} color='green' />,
+            icon: <Icon icon={['fas', 'circle-check']} className={styles.success} />,
             duration: 3000, // 3 seconds
           },
           error: {
-            icon: <Icon icon={['fas', 'circle-xmark']} color='red' />,
+            icon: <Icon icon={['fas', 'circle-xmark']} className={styles.error} />,
             duration: 5000, // 5 seconds
           },
           blank: {
@@ -78,19 +81,19 @@ export const error = (message: string, options?: ToastOptions): string => toast.
 export const errorPersistent = (message: string, options?: ToastOptions): string =>
   toast.error(
     (t) => (
-      <div>
+      <>
         {message}
         <Icon
           icon={['fal', 'xmark']}
           role='button'
-          className='gds-toaster-close-icon'
+          className={styles.icon}
           onClick={(event): void => {
             event.stopPropagation();
             event.preventDefault();
             toast.dismiss(t.id);
           }}
         />
-      </div>
+      </>
     ),
     {
       duration: Infinity,

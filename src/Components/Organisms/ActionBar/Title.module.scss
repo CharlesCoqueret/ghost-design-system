@@ -7,20 +7,23 @@
 .entity,
 .suffix {
   border: 1px solid transparent;
-  margin-left: 2px;
-  margin-right: 2px;
+  margin: auto 2px;
 }
 
 .hiddenTitle {
+  font-family: Arial, Helvetica, sans-serif !important;
   background-color: transparent;
   border-radius: 4px;
   border: 1px solid transparent;
+  box-sizing: border-box;
   color: transparent;
   display: inline-flex;
+  font-family: 'Arial';
   font-size: 22px;
   margin: auto 2px;
   outline: none;
   overflow: hidden;
+  padding: 1px 2px;
   position: absolute;
   text-overflow: ellipsis;
   text-transform: uppercase;
@@ -30,14 +33,18 @@
 }
 
 .title {
+  font-family: Arial, Helvetica, sans-serif !important;
   background-color: transparent;
   border-radius: 4px;
   border: 1px solid transparent;
+  box-sizing: border-box;
   display: inline-flex;
+  font-family: var(--theme-provider-font-family);
   font-size: 22px;
   margin: auto 2px;
   outline: none;
   overflow: hidden;
+  padding: 1px 2px;
   text-overflow: ellipsis;
   text-transform: uppercase;
   white-space: nowrap;

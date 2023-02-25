@@ -39,7 +39,7 @@ const Title = (props: ITitleProps): ReactElement => {
     setCurrentInputStyle({
       width:
         spanRef.current?.offsetWidth && Number.isFinite(spanRef.current.offsetWidth)
-          ? spanRef.current.offsetWidth + 'px'
+          ? spanRef.current.offsetWidth + 3 + 'px'
           : undefined,
     });
   };

@@ -21,12 +21,11 @@ exports[`Toaster Component Toaster renders error persistant closes 1`] = `
         style="left: 0px; right: 0px; display: flex; position: absolute; transition: all 230ms cubic-bezier(.21,1.02,.73,1); transform: translateY(0px); bottom: 0px; justify-content: flex-end;"
       >
         <div
-          class="go2072408551"
+          class="go2072408551 container"
           style="opacity: 0;"
         >
           <i
-            class="icon"
-            color="red"
+            class="icon error"
             icon="fas,circle-xmark"
           />
           <div
@@ -34,14 +33,12 @@ exports[`Toaster Component Toaster renders error persistant closes 1`] = `
             class="go3958317564"
             role="status"
           >
-            <div>
-              ERROR PERSISTENT
-              <i
-                class="gds-toaster-close-icon icon"
-                icon="fal,xmark"
-                role="button"
-              />
-            </div>
+            ERROR PERSISTENT
+            <i
+              class="icon icon"
+              icon="fal,xmark"
+              role="button"
+            />
           </div>
         </div>
       </div>
@@ -75,8 +72,7 @@ exports[`Toaster Component Toaster renders error persistant with options 1`] = `
           style="opacity: 0;"
         >
           <i
-            class="icon"
-            color="red"
+            class="icon error"
             icon="fas,circle-xmark"
           />
           <div
@@ -84,14 +80,12 @@ exports[`Toaster Component Toaster renders error persistant with options 1`] = `
             class="go3958317564"
             role="status"
           >
-            <div>
-              ERROR PERSISTENT
-              <i
-                class="gds-toaster-close-icon icon"
-                icon="fal,xmark"
-                role="button"
-              />
-            </div>
+            ERROR PERSISTENT
+            <i
+              class="icon icon"
+              icon="fal,xmark"
+              role="button"
+            />
           </div>
         </div>
       </div>
@@ -111,12 +105,11 @@ exports[`Toaster Component Toaster renders error persistant without options 1`] 
         style="left: 0px; right: 0px; display: flex; position: absolute; transition: all 230ms cubic-bezier(.21,1.02,.73,1); transform: translateY(0px); bottom: 0px; justify-content: flex-end;"
       >
         <div
-          class="go2072408551"
+          class="go2072408551 container"
           style="opacity: 0;"
         >
           <i
-            class="icon"
-            color="red"
+            class="icon error"
             icon="fas,circle-xmark"
           />
           <div
@@ -124,14 +117,12 @@ exports[`Toaster Component Toaster renders error persistant without options 1`] 
             class="go3958317564"
             role="status"
           >
-            <div>
-              ERROR PERSISTENT
-              <i
-                class="gds-toaster-close-icon icon"
-                icon="fal,xmark"
-                role="button"
-              />
-            </div>
+            ERROR PERSISTENT
+            <i
+              class="icon icon"
+              icon="fal,xmark"
+              role="button"
+            />
           </div>
         </div>
       </div>
@@ -155,8 +146,7 @@ exports[`Toaster Component Toaster renders error with options 1`] = `
           style="opacity: 0;"
         >
           <i
-            class="icon"
-            color="red"
+            class="icon error"
             icon="fas,circle-xmark"
           />
           <div
@@ -184,12 +174,11 @@ exports[`Toaster Component Toaster renders error without options 1`] = `
         style="left: 0px; right: 0px; display: flex; position: absolute; transition: all 230ms cubic-bezier(.21,1.02,.73,1); transform: translateY(0px); bottom: 0px; justify-content: flex-end;"
       >
         <div
-          class="go2072408551"
+          class="go2072408551 container"
           style="opacity: 0;"
         >
           <i
-            class="icon"
-            color="red"
+            class="icon error"
             icon="fas,circle-xmark"
           />
           <div
@@ -245,7 +234,7 @@ exports[`Toaster Component Toaster renders notify without options  and clears 1`
         style="left: 0px; right: 0px; display: flex; position: absolute; transition: all 230ms cubic-bezier(.21,1.02,.73,1); transform: translateY(0px); bottom: 0px; justify-content: flex-end;"
       >
         <div
-          class="go2072408551"
+          class="go2072408551 container"
           style="opacity: 0;"
         >
           <div
@@ -287,8 +276,7 @@ exports[`Toaster Component Toaster renders success with options 1`] = `
           style="opacity: 0;"
         >
           <i
-            class="icon"
-            color="green"
+            class="icon success"
             icon="fas,circle-check"
           />
           <div
@@ -316,12 +304,11 @@ exports[`Toaster Component Toaster renders success without options 1`] = `
         style="left: 0px; right: 0px; display: flex; position: absolute; transition: all 230ms cubic-bezier(.21,1.02,.73,1); transform: translateY(0px); bottom: 0px; justify-content: flex-end;"
       >
         <div
-          class="go2072408551"
+          class="go2072408551 container"
           style="opacity: 0;"
         >
           <i
-            class="icon"
-            color="green"
+            class="icon success"
             icon="fas,circle-check"
           />
           <div

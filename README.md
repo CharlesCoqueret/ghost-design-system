@@ -78,11 +78,12 @@ loadIcons();
 
 const App = () => {
   return (
-    <ThemeProvider>
-      <RestOfYourApp>
-    </ThemeProvider>
-  )
-}
+    <>
+      <ThemeProvider />
+      <RestOfYourApp />
+    </>
+  );
+};
 ```
 
 5. You should be ready to use any of the components of the library.
@@ -102,6 +103,7 @@ This react components library uses the following:
 - [numeral](http://numeraljs.com/)
 - [react-collapsed](https://github.com/roginfarrer/react-collapsed#react-collapsed-usecollapse)
 - [react-datepicker](https://reactdatepicker.com/)
+- [react-hot-toast](https://react-hot-toast.com/)
 - [react-infinite-scroller](https://github.com/danbovey/react-infinite-scroller)
 - [react-intersection-observer](https://react-intersection-observer.vercel.app/?path=/story/introduction--page)
 - [react-number-format](https://github.com/s-yadav/react-number-format#readme)

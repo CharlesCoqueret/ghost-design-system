@@ -73,13 +73,13 @@ import {
 // Button and checkbox
 import {
   faCaretDown,
+  faCircleCheck,
+  faCircleXmark,
   faSquare,
   faSquareCheck,
   faSort,
   faSortDown,
   faSortUp,
-  faCircleCheck,
-  faCircleXmark,
 } from '@fortawesome/pro-solid-svg-icons';
 
 const loadIcons = (): void => {

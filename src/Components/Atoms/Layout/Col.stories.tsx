@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import ColComponent, { IColProps } from './Col';
 import { AmountField, DatePickerField, TextAreaField, YearPickerField } from '../../Molecules';
-import Container from './Container';
 import Row from './Row';
 
 const initialData = {
@@ -28,59 +27,21 @@ export default {
 } as ComponentMeta<typeof ColComponent>;
 
 const Template: ComponentStory<typeof ColComponent> = (args: IColProps) => {
-  const [help, setHelp] = useState(false);
-
   return (
-    <>
-      <Container style={help ? { border: '2px dotted green' } : { border: '2px dotted transparent' }}>
-        <Row>
-          <ColComponent
-            {...args}
-            style={
-              help ? { ...args.style, border: '3px dotted red' } : { ...args.style, border: '3px dotted transparent' }
-            }>
-            <AmountField inputValue={initialData.amount} label='Amount' suffix='$' name='amount' readOnly />
-          </ColComponent>
-          <ColComponent
-            {...args}
-            style={
-              help ? { ...args.style, border: '3px dotted red' } : { ...args.style, border: '3px dotted transparent' }
-            }>
-            <DatePickerField inputValue={initialData.date} label='Date' name='date' readOnly />
-          </ColComponent>
-          <ColComponent
-            {...args}
-            style={
-              help ? { ...args.style, border: '3px dotted red' } : { ...args.style, border: '3px dotted transparent' }
-            }>
-            <TextAreaField inputValue={initialData.textarea} label='Textarea' name='textarea' readOnly />
-          </ColComponent>
-          <ColComponent
-            {...args}
-            style={
-              help ? { ...args.style, border: '3px dotted red' } : { ...args.style, border: '3px dotted transparent' }
-            }>
-            <YearPickerField inputValue={initialData.year} label='Year' name='year' readOnly />
-          </ColComponent>
-        </Row>
-      </Container>
-      <label>
-        <input
-          type='checkbox'
-          checked={help}
-          onChange={() => {
-            setHelp((prev) => !prev);
-          }}
-        />
-        Enable Helper
-      </label>
-      {help && (
-        <>
-          <p>Container in green</p>
-          <p>Col in red</p>
-        </>
-      )}
-    </>
+    <Row>
+      <ColComponent {...args}>
+        <AmountField inputValue={initialData.amount} label='Amount' suffix='$' name='amount' readOnly />
+      </ColComponent>
+      <ColComponent {...args}>
+        <DatePickerField inputValue={initialData.date} label='Date' name='date' readOnly />
+      </ColComponent>
+      <ColComponent {...args}>
+        <TextAreaField inputValue={initialData.textarea} label='Textarea' name='textarea' readOnly />
+      </ColComponent>
+      <ColComponent {...args}>
+        <YearPickerField inputValue={initialData.year} label='Year' name='year' readOnly />
+      </ColComponent>
+    </Row>
   );
 };
 

@@ -3,48 +3,40 @@
 exports[`Form Component Form renders with description and sections 1`] = `
 <div>
   <div
-    class=""
+    class="col"
   >
-    <div
-      class="col"
-    >
-      <div>
-        <div
-          class="header collapsible"
+    <div>
+      <div
+        class="header collapsible"
+      >
+        <h2
+          class="typography h2"
         >
-          <h2
-            class="typography h2"
-          >
-            Title
-          </h2>
-          <i
-            class="icon icon open"
-            icon="fal,chevron-left"
-          />
-        </div>
-        <div
-          aria-hidden="false"
-          class="body"
-          id="react-collapsed-panel-1"
-          style="box-sizing: border-box; display: none; height: 0px; overflow: hidden;"
-        >
-          <div
-            class=""
-          >
-            <div
-              class="col"
-            />
-          </div>
-        </div>
-        <div
-          class="footer"
+          Title
+        </h2>
+        <i
+          class="icon icon open"
+          icon="fal,chevron-left"
         />
       </div>
       <div
-        class="row"
+        aria-hidden="false"
+        class="body"
+        id="react-collapsed-panel-1"
+        style="box-sizing: border-box; display: none; height: 0px; overflow: hidden;"
       >
-        Description
+        <div
+          class="col"
+        />
       </div>
+      <div
+        class="footer"
+      />
+    </div>
+    <div
+      class="row"
+    >
+      Description
     </div>
   </div>
 </div>
@@ -53,33 +45,29 @@ exports[`Form Component Form renders with description and sections 1`] = `
 exports[`Form Component Form renders with mandatory field 1`] = `
 <div>
   <div
-    class=""
+    class="col"
   >
     <div
-      class="col"
+      class="fieldGroup"
     >
-      <div
-        class="fieldGroup"
+      <label
+        class="label"
       >
-        <label
-          class="label"
+        Number
+        <span
+          class="mandatory"
         >
-          Number
-          <span
-            class="mandatory"
-          >
-            *
-          </span>
-        </label>
-        <input
-          autocomplete="off"
-          class="default"
-          inputmode="numeric"
-          name="number"
-          type="text"
-          value=""
-        />
-      </div>
+          *
+        </span>
+      </label>
+      <input
+        autocomplete="off"
+        class="default"
+        inputmode="numeric"
+        name="number"
+        type="text"
+        value=""
+      />
     </div>
   </div>
 </div>
@@ -88,28 +76,24 @@ exports[`Form Component Form renders with mandatory field 1`] = `
 exports[`Form Component Form renders without validation schema 1`] = `
 <div>
   <div
-    class=""
+    class="col"
   >
     <div
-      class="col"
+      class="fieldGroup"
     >
-      <div
-        class="fieldGroup"
+      <label
+        class="label"
       >
-        <label
-          class="label"
-        >
-          Number
-        </label>
-        <input
-          autocomplete="off"
-          class="default"
-          inputmode="numeric"
-          name="number"
-          type="text"
-          value=""
-        />
-      </div>
+        Number
+      </label>
+      <input
+        autocomplete="off"
+        class="default"
+        inputmode="numeric"
+        name="number"
+        type="text"
+        value=""
+      />
     </div>
   </div>
 </div>

@@ -61,6 +61,7 @@ The data can be paginated, thanks to the built-in "infinite scroll".
           {
             filterType: FilterTypeEnum.TEXT,
             dataIndex: 'query',
+            placeholder: 'Name',
           },
           {
             filterType: FilterTypeEnum.SELECT,
@@ -75,11 +76,13 @@ The data can be paginated, thanks to the built-in "infinite scroll".
             filterType: FilterTypeEnum.DATE,
             dataIndex: 'from',
             isClearable: true,
+            label: 'From',
           },
           {
             filterType: FilterTypeEnum.DATE,
             dataIndex: 'to',
             isClearable: true,
+            label: 'To',
           },
         ],
       },

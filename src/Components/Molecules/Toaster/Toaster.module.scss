@@ -1,0 +1,16 @@
+.container {
+  max-width: 50%;
+}
+
+.icon {
+  cursor: pointer;
+  margin: auto auto auto 10px;
+}
+
+.success {
+  color: rgb(var(--theme-provider-fern));
+}
+
+.error {
+  color: rgb(var(--theme-provider-cinnabar));
+}
