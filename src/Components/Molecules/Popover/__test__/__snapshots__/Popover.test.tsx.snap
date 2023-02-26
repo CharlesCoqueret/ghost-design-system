@@ -7,7 +7,7 @@ exports[`Popover Component Popover renders 1`] = `
     <div>
       <div
         class="szh-menu-container"
-        style="position: relative;"
+        style="position: absolute;"
       >
         <ul
           aria-label="Menu"
@@ -53,7 +53,7 @@ exports[`Popover Component Popover renders 2`] = `
     <div>
       <div
         class="szh-menu-container"
-        style="position: relative;"
+        style="position: absolute;"
       >
         <ul
           aria-label="Menu"

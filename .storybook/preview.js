@@ -1,6 +1,5 @@
 import React from 'react';
-import ThemeProvider from '../src/Components/Atoms/Theme/ThemeProvider';
-import { loadIcons } from '../src/Components';
+import { ThemeProvider, loadIcons } from '../src/Components';
 
 import '../src/assets/index.scss';
 

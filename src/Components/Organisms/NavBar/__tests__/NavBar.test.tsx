@@ -23,7 +23,7 @@ describe('NavBar Component', () => {
   });
 
   it('renders without menu nor utilities', () => {
-    const { container } = render(<NavBar logoSource='logoSource' redirection='redirection' alt='alt' />);
+    const { container } = render(<NavBar logoSource='logoSource' />);
 
     expect(container).toMatchSnapshot();
   });

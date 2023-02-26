@@ -127,7 +127,7 @@ exports[`Button Component Button renders with list and handle open menu and clic
     <div>
       <div
         class="szh-menu-container"
-        style="position: relative;"
+        style="position: absolute;"
       >
         <ul
           aria-label="Menu"
@@ -202,7 +202,7 @@ exports[`Button Component Button renders with list and handle open menu and clic
     <div>
       <div
         class="szh-menu-container"
-        style="position: relative;"
+        style="position: absolute;"
       >
         <ul
           aria-label="Menu"
@@ -277,7 +277,7 @@ exports[`Button Component Button renders with list and handle open menu and clic
     <div>
       <div
         class="szh-menu-container"
-        style="position: relative;"
+        style="position: absolute;"
       >
         <ul
           aria-label="Menu"
@@ -352,7 +352,7 @@ exports[`Button Component Button renders with list and handle open menu and clos
     <div>
       <div
         class="szh-menu-container"
-        style="position: relative;"
+        style="position: absolute;"
       >
         <ul
           aria-label="Menu"
@@ -425,7 +425,7 @@ exports[`Button Component Button renders with list and handle open menu and clos
     <div>
       <div
         class="szh-menu-container"
-        style="position: relative;"
+        style="position: absolute;"
       >
         <ul
           aria-label="Menu"
@@ -498,7 +498,7 @@ exports[`Button Component Button renders with list and handle open menu and clos
     <div>
       <div
         class="szh-menu-container"
-        style="position: relative;"
+        style="position: absolute;"
       >
         <ul
           aria-label="Menu"
@@ -559,7 +559,7 @@ exports[`Button Component Button renders with popover 1`] = `
     <div>
       <div
         class="szh-menu-container"
-        style="position: relative;"
+        style="position: absolute;"
       >
         <ul
           aria-label="Menu"
@@ -653,7 +653,7 @@ exports[`Button Component Button renders with popover 2`] = `
     <div>
       <div
         class="szh-menu-container"
-        style="position: relative;"
+        style="position: absolute;"
       >
         <ul
           aria-label="Menu"
@@ -747,7 +747,7 @@ exports[`Button Component Button renders with popover 3`] = `
     <div>
       <div
         class="szh-menu-container"
-        style="position: relative;"
+        style="position: absolute;"
       >
         <ul
           aria-label="Menu"
@@ -841,7 +841,7 @@ exports[`Button Component Button renders with popover without buttons 1`] = `
     <div>
       <div
         class="szh-menu-container"
-        style="position: relative;"
+        style="position: absolute;"
       >
         <ul
           aria-label="Menu"
@@ -900,7 +900,7 @@ exports[`Button Component Button renders with popover without buttons 2`] = `
     <div>
       <div
         class="szh-menu-container"
-        style="position: relative;"
+        style="position: absolute;"
       >
         <ul
           aria-label="Menu"
@@ -959,7 +959,7 @@ exports[`Button Component Button renders with popover without buttons 3`] = `
     <div>
       <div
         class="szh-menu-container"
-        style="position: relative;"
+        style="position: absolute;"
       >
         <ul
           aria-label="Menu"

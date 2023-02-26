@@ -16,7 +16,7 @@ const NavBarBrand = (props: IBrandProps): ReactElement => {
   const { redirection, logoSource, alt } = props;
   return (
     <NavLink to={redirection || NavBarBrand.defaultProps.redirection} className={styles.brand}>
-      <img src={logoSource} alt={alt ?? NavBarBrand.defaultProps.alt} className={styles.brandLogo} />
+      <img src={logoSource} alt={alt || NavBarBrand.defaultProps.alt} className={styles.brandLogo} />
     </NavLink>
   );
 };
