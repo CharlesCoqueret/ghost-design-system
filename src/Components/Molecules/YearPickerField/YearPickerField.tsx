@@ -32,8 +32,8 @@ export interface IYearPickerFieldProps {
   labelSize?: number;
   /** Mandatory field (optional, default: false) */
   mandatory?: boolean;
-  /** Name of text field */
-  name: string;
+  /** Name of text field (optional, default: false) */
+  name?: string;
   /** Handler of value changes (optional, default: undefined) */
   onChange?: (year: number | undefined) => void;
   /** Placeholder value (optional, default: undefined) */
@@ -117,6 +117,7 @@ YearPickerField.defaultProps = {
   inputValue: undefined,
   label: undefined,
   labelSize: undefined,
+  name: undefined,
   mandatory: false,
   onChange: undefined,
   placeholder: undefined,

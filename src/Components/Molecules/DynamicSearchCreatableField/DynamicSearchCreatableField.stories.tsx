@@ -95,7 +95,6 @@ Default.args = {
   inputValue: '3d9265a6ddc5ed3e2550778bb3b53229b02954a9',
   isClearable: true,
   isInError: false,
-  name: 'name',
   noOptionsMessage: (obj) => {
     if (!obj.inputValue) return `Please type a few characters to search`;
     return `No option found for ${obj.inputValue}`;
@@ -115,7 +114,6 @@ ReadOnly.args = {
   label: 'Dynamic Search field in read only with label size = 4 and field size = 6',
   fieldSize: 6,
   labelSize: 4,
-  name: 'name',
   readOnly: true,
   disabled: false,
   highlighted: false,
@@ -140,7 +138,6 @@ Error.args = {
   fieldSize: 6,
   label: 'Dynamic Search field in error with label size = 4 and field size = 6',
   labelSize: 4,
-  name: 'name',
   errorMessage: 'This text is on error',
   inputValue: '3d9265a6ddc5ed3e2550778bb3b53229b02954a9',
   isClearable: true,
@@ -163,7 +160,6 @@ Helper.args = {
   helperText: 'Helper text',
   label: 'Dynamic Search field with helper and counter',
   mandatory: true,
-  name: 'name',
   errorMessage: 'This text is on error',
   inputValue: '3d9265a6ddc5ed3e2550778bb3b53229b02954a9',
   isClearable: true,
@@ -186,7 +182,6 @@ Highlighted.args = {
   helperText: 'Helper text',
   highlighted: true,
   label: 'Dynamic Search field highlighted',
-  name: 'name',
   readOnly: true,
   inputValue: '3d9265a6ddc5ed3e2550778bb3b53229b02954a9',
   isClearable: true,
@@ -209,7 +204,6 @@ Disabled.args = {
   disabled: true,
   helperText: 'Helper text',
   label: 'Dynamic Search field disabled',
-  name: 'name',
   inputValue: '3d9265a6ddc5ed3e2550778bb3b53229b02954a9',
   isClearable: true,
   isInError: false,

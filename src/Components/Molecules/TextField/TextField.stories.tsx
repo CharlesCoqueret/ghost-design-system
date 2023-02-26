@@ -28,14 +28,12 @@ const Template: ComponentStory<typeof TextField> = ({ inputValue, ...args }: ITe
 export const Default = Template.bind({});
 Default.args = {
   placeholder: 'Placeholder text',
-  name: 'name',
   label: 'Text field test',
 };
 
 export const ReadOnly = Template.bind({});
 ReadOnly.args = {
   inputValue: 'This is a rather long sample text',
-  name: 'name',
   label: 'Text field in read only with label size = 4 and field size = 2',
   readOnly: true,
   fieldSize: 2,
@@ -45,14 +43,12 @@ ReadOnly.args = {
 export const Error = Template.bind({});
 Error.args = {
   placeholder: 'Placeholder text',
-  name: 'name',
   label: 'Text field in error',
   errorMessage: 'This text is on error',
 };
 
 export const HelperAndCounter = Template.bind({});
 HelperAndCounter.args = {
-  name: 'name',
   label: 'Text field with helper and counter',
   helperText: 'Helper text',
   maxLength: 20,
@@ -60,7 +56,6 @@ HelperAndCounter.args = {
 
 export const Highlighted = Template.bind({});
 Highlighted.args = {
-  name: 'name',
   label: 'Text field highlighted',
   inputValue: 'This is a highlighted sample text',
   readOnly: true,
@@ -70,7 +65,6 @@ Highlighted.args = {
 
 export const Disabled = Template.bind({});
 Disabled.args = {
-  name: 'name',
   label: 'Text field highlighted',
   inputValue: 'This is a disabled sample text',
   disabled: true,

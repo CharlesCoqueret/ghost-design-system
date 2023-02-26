@@ -40,8 +40,8 @@ export interface IDatePickerFieldProps {
   locale?: string;
   /** Mandatory field (optional, default: false) */
   mandatory?: boolean;
-  /** Name of text field */
-  name: string;
+  /** Name of text field (optional, default: undefined) */
+  name?: string;
   /** Handler of value changes (optional, default: undefined) */
   onChange?: (date: Date | null) => void;
   /** Placeholder value (optional, default: undefined) */
@@ -135,6 +135,7 @@ DatePickerField.defaultProps = {
   label: undefined,
   labelSize: undefined,
   mandatory: false,
+  name: undefined,
   onChange: undefined,
   placeholder: undefined,
   readOnly: false,

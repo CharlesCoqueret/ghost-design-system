@@ -30,16 +30,16 @@ const Template: ComponentStory<typeof RowComponent> = (args: IRowProps) => {
   return (
     <Col>
       <RowComponent {...args}>
-        <AmountField inputValue={initialData.amount} label='Amount' suffix='$' name='amount' readOnly />
+        <AmountField inputValue={initialData.amount} label='Amount' suffix='$' readOnly />
       </RowComponent>
       <RowComponent {...args}>
-        <DatePickerField inputValue={initialData.date} label='Date' name='date' readOnly />
+        <DatePickerField inputValue={initialData.date} label='Date' readOnly />
       </RowComponent>
       <RowComponent {...args}>
-        <TextAreaField inputValue={initialData.textarea} label='Textarea' name='textarea' readOnly />
+        <TextAreaField inputValue={initialData.textarea} label='Textarea' readOnly />
       </RowComponent>
       <RowComponent {...args}>
-        <YearPickerField inputValue={initialData.year} label='Year' name='year' readOnly />
+        <YearPickerField inputValue={initialData.year} label='Year' readOnly />
       </RowComponent>
     </Col>
   );

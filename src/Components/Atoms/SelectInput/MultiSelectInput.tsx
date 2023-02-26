@@ -34,8 +34,8 @@ export interface IMultiSelectInputProps {
   isInError?: boolean;
   /** Maximum height of the menu in px (optional, default: 300) */
   maxMenuHeight?: number;
-  /** Name of select input */
-  name: string;
+  /** Name of select input (optional, default: undefined) */
+  name?: string;
   /** Label to be used when one item is selected (example: "{} item selected")
    * Note: the {} will be replaced by the actual number */
   numberOfItemLabel: string;
@@ -204,6 +204,7 @@ MultiSelectInput.defaultProps = {
   isClearable: false,
   isInError: false,
   maxMenuHeight: 300,
+  name: undefined,
   numberOfItemLabel: '{} item selected',
   numberOfItemsLabel: '{} items selected',
   onChange: undefined,

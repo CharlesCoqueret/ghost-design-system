@@ -13,6 +13,8 @@ import table from 'suneditor/src/plugins/submenu/table';
 import { SunEditorOptions } from 'suneditor/src/options';
 import classnames from 'classnames';
 
+import './RichTextInput.module.scss';
+
 export interface IRichTextInputProps {
   /** Class for the input (optional, default: undefined) */
   className?: string;
@@ -164,7 +166,7 @@ const RichTextInput = (props: IRichTextInputProps): ReactElement => {
 
   return (
     <div
-      className={classnames('gds-rich-text-container', {
+      className={classnames('gdsRichTextInputContainer', {
         disabled: disabled,
         readonly: readOnly,
         error: !disabled && !readOnly && isInError,

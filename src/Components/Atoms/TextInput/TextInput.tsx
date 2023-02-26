@@ -23,8 +23,8 @@ export interface ITextInputProps {
   maxLength?: number;
   /** Minimum length of textfield (optional, default: undefined) */
   minLength?: number;
-  /** Name of text field */
-  name: string;
+  /** Name of text field (optional, default: undefined) */
+  name?: string;
   /** Handler of value changes (optional, default: undefined) */
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   /** Placeholder value (optional, default: undefined) */
@@ -100,6 +100,7 @@ TextInput.defaultProps = {
   isInError: false,
   maxLength: undefined,
   minLength: undefined,
+  name: undefined,
   onChange: undefined,
   placeholder: undefined,
   readOnly: false,

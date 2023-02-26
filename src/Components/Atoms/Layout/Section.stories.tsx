@@ -33,16 +33,16 @@ const Template: ComponentStory<typeof SectionComponent> = (args: ISectionProps) 
     <SectionComponent {...args}>
       <Col>
         <Row>
-          <AmountField inputValue={initialData.amount} label='Amount' suffix='$' name='amount' readOnly />
+          <AmountField inputValue={initialData.amount} label='Amount' suffix='$' readOnly />
         </Row>
         <Row>
-          <DatePickerField inputValue={initialData.date} label='Date' name='date' readOnly />
+          <DatePickerField inputValue={initialData.date} label='Date' readOnly />
         </Row>
         <Row>
-          <TextAreaField inputValue={val} label='Textarea' name='textarea' onChange={setval} />
+          <TextAreaField inputValue={val} label='Textarea' onChange={setval} />
         </Row>
         <Row>
-          <YearPickerField inputValue={initialData.year} label='Year' name='year' readOnly />
+          <YearPickerField inputValue={initialData.year} label='Year' readOnly />
         </Row>
       </Col>
     </SectionComponent>

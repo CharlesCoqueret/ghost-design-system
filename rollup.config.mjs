@@ -11,8 +11,14 @@ export default {
   input: 'src/index.ts',
   output: [
     {
+      file: packageJson.module,
+      format: 'es',
+      exports: 'named',
+      sourcemap: true,
+    },
+    {
       file: packageJson.main,
-      format: 'esm',
+      format: 'cjs',
       exports: 'named',
       sourcemap: true,
     },
@@ -30,7 +36,7 @@ export default {
     commonjs(),
     postcss({
       extract: false,
-      modules: true,
+      autoModules: true,
       use: ['sass'],
     }),
     typescript({ exclude: ['**/__tests__', '**/*.test.ts', '**/Fake*'], sourceMap: true }),

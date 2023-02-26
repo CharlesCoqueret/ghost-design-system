@@ -29,7 +29,6 @@ const Template: ComponentStory<typeof TextAreaField> = (args: ITextAreaFieldProp
 export const Default = Template.bind({});
 Default.args = {
   placeholder: 'Placeholder text',
-  name: 'name',
   label: 'Text field',
 };
 
@@ -49,7 +48,6 @@ ReadOnly.args = {
     'Aliquam ac ornare sem, sit amet facilisis eros. Nulla gravida, ipsum quis convallis sodales, nibh arcu ' +
     'venenatis quam, eu commodo leo leo vel metus. Sed vel vestibulum sapien. Vivamus eu felis eget purus ' +
     'pellentesque maximus at quis turpis. Duis ornare venenatis turpis, vitae tempor urna mollis ac.\n',
-  name: 'name',
   label: 'Text field in read only with label size = 6 and field size = 4',
   readOnly: true,
   fieldSize: 4,
@@ -59,14 +57,12 @@ ReadOnly.args = {
 export const Error = Template.bind({});
 Error.args = {
   placeholder: 'Placeholder text',
-  name: 'name',
   label: 'Text field in error',
   errorMessage: 'This text is on error',
 };
 
 export const HelperAndCounter = Template.bind({});
 HelperAndCounter.args = {
-  name: 'name',
   label: 'Text field with helper and counter',
   helperText: 'Helper text',
   mandatory: true,
@@ -75,7 +71,6 @@ HelperAndCounter.args = {
 
 export const Highlighted = Template.bind({});
 Highlighted.args = {
-  name: 'name',
   label: 'Text field highlighted',
   inputValue: 'This is a highlighted sample text',
   readOnly: true,
@@ -85,7 +80,6 @@ Highlighted.args = {
 
 export const Disabled = Template.bind({});
 Disabled.args = {
-  name: 'name',
   label: 'Text field disabled',
   inputValue: 'This is a disabled sample text',
   disabled: true,

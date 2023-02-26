@@ -54,7 +54,6 @@ const Template: ComponentStory<typeof SelectField> = (args: ISelectFieldProps) =
 export const Default = ManagedTemplate.bind({});
 Default.args = {
   label: 'Select field',
-  name: 'name',
   options: options,
   placeholder: 'Select placeholder',
 };
@@ -64,7 +63,6 @@ ReadOnly.args = {
   fieldSize: 6,
   label: 'Select field in read only with label size = 4 and field size = 6',
   labelSize: 4,
-  name: 'name',
   options: options,
   placeholder: 'Select placeholder',
   readOnly: true,
@@ -76,7 +74,6 @@ Error.args = {
   fieldSize: 6,
   label: 'Select field in error with label size = 4 and field size = 6',
   labelSize: 4,
-  name: 'name',
   options: options,
   placeholder: 'Select placeholder',
   errorMessage: 'This text is on error',
@@ -87,7 +84,6 @@ Helper.args = {
   helperText: 'Helper text',
   label: 'Select field with helper and counter',
   mandatory: true,
-  name: 'name',
   options: options,
   placeholder: 'Select placeholder',
 };
@@ -97,7 +93,6 @@ Highlighted.args = {
   helperText: 'Helper text',
   highlighted: true,
   label: 'Select field highlighted',
-  name: 'name',
   options: options,
   placeholder: 'Select placeholder',
   readOnly: true,
@@ -109,7 +104,6 @@ Disabled.args = {
   disabled: true,
   helperText: 'Helper text',
   label: 'Select field disabled',
-  name: 'name',
   options: options,
   placeholder: 'Select placeholder',
   inputValue: selectedOptions,

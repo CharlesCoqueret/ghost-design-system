@@ -36,8 +36,8 @@ export interface IDynamicSearchFieldProps {
   labelSize?: number;
   /** Mandatory field (optional, default: false) */
   mandatory?: boolean;
-  /** Name of text field */
-  name: string;
+  /** Name of text field (optional, default: undefined) */
+  name?: string;
   /** No option message (dispayed when no results are available) */
   noOptionsMessage: string | ((obj: { inputValue: string }) => string);
   /** Handler of value changes (optional, default: undefined) */
@@ -140,6 +140,7 @@ DynamicSearchField.defaultProps = {
   label: undefined,
   labelSize: undefined,
   mandatory: false,
+  name: undefined,
   onChange: undefined,
   placeholder: undefined,
   readOnly: false,

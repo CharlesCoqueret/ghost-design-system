@@ -1,57 +1,47 @@
-import React, { ReactElement } from 'react';
+import React, { PropsWithChildren, ReactElement } from 'react';
+import { NavLink, NavLinkProps } from 'react-router-dom';
+import { LocationDescriptor } from 'history';
 import { Icon } from '../Icon';
 import { Tooltip } from '../Tooltip';
 
 import styles from './Link.module.scss';
 
-export interface ILinkProps {
-  /** Text displayed for the link */
-  text: string;
-  /** Link url */
-  link: string;
+export interface ILinkProps extends NavLinkProps {
+  /** External link indicator (optional, default: false) */
+  externalLink?: boolean;
+  /** Text displayed for the link (optional, default: undefined) */
+  text?: string;
+  /** Url of the destination in a string or Location format */
+  to: LocationDescriptor<unknown>;
   /** Tooltip content of the link (optional, default: undefined) */
   tooltip?: string;
 }
 
-/**
- * Indicates if the url is an external link
- *
- * @param url string
- * @returns true if the link is an external link
- */
-const isExternalLink = (url: string): boolean => {
-  const tmp = document.createElement('a');
-  tmp.href = url;
-  return tmp.host !== window.location.host;
-};
-
-const Link = (props: ILinkProps): ReactElement => {
-  const { text, link, tooltip } = props;
-  const externalLink = isExternalLink(link);
+const Link = (props: PropsWithChildren<ILinkProps>): ReactElement => {
+  const { children, externalLink, to, text, tooltip, ...rest } = props;
 
   return (
     <div className={styles.container}>
-      {externalLink ? (
-        <>
-          <a href={link} target='_blank' rel='noreferrer'>
-            <Tooltip tooltip={tooltip}>
-              <>{text}</>
-            </Tooltip>
-          </a>
-          <Icon icon={['fal', 'external-link']} className={styles.icon} size='1x' />
-        </>
-      ) : (
-        <a href={link}>
-          <Tooltip tooltip={tooltip}>
-            <>{text}</>
-          </Tooltip>
-        </a>
-      )}
+      <NavLink
+        to={to}
+        {...rest}
+        rel={externalLink ? 'noreferrer' : rest.rel}
+        target={externalLink ? '_blank' : rest.target}>
+        <Tooltip tooltip={tooltip}>
+          <>
+            {text}
+            {children}
+          </>
+        </Tooltip>
+        {externalLink && <Icon icon={['fal', 'external-link']} className={styles.icon} size='1x' />}
+      </NavLink>
     </div>
   );
 };
 
 Link.defaultProps = {
+  externalLink: false,
+  text: undefined,
   tooltip: undefined,
 };
 

@@ -49,8 +49,8 @@ export interface IAmountInputProps {
   maxValue?: number;
   /** Min value (optional, default: undefined) */
   minValue?: number;
-  /** Name of select input */
-  name: string;
+  /** Name of select input (optional, default: undefined) */
+  name?: string;
   /** Handler of value changes (optional, default: undefined) */
   onChange?: (value: number | undefined) => void;
   /** Placeholder value (optional, default: undefined) */
@@ -217,6 +217,7 @@ AmountInput.defaultProps = {
   decimalSeparator: '.',
   ellipsis: false,
   inputValue: '',
+  name: undefined,
   placeholder: undefined,
   prefix: undefined,
   suffix: undefined,

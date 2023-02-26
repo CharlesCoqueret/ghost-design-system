@@ -40,8 +40,8 @@ export interface IRichTextFieldProps {
   mandatory?: boolean;
   /** Maximum number of character of the field (optionsl, default: undefined) */
   maxLength?: number;
-  /** Name of text field */
-  name: string;
+  /** Name of text field (optional, default: undefined) */
+  name?: string;
   /** handler of changes notifying only on blur of the input for performance reason */
   onChange?: (newValue: string) => void;
   /** Read only field (optional, default: false) */
@@ -133,6 +133,7 @@ RichTextField.defaultProps = {
   locale: undefined,
   mandatory: undefined,
   maxLength: undefined,
+  name: undefined,
   readOnly: false,
   style: undefined,
 };

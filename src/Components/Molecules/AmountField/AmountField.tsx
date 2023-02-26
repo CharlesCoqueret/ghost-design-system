@@ -44,8 +44,8 @@ export interface IAmountFieldProps {
   maxValue?: number;
   /** Min value (optional, default: undefined) */
   minValue?: number;
-  /** Name of text field */
-  name: string;
+  /** Name of text field (optional, default: undefined) */
+  name?: string;
   /** Handler of value changes (optional, default: undefined) */
   onChange?: (value: number | undefined) => void;
   /** Placeholder value (optional, default: undefined) */
@@ -160,6 +160,7 @@ AmountField.defaultProps = {
   mandatory: false,
   maxValue: undefined,
   minValue: undefined,
+  name: undefined,
   onChange: undefined,
   placeholder: undefined,
   prefix: undefined,

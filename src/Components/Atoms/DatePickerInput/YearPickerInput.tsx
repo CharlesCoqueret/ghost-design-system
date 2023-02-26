@@ -5,6 +5,8 @@ import classnames from 'classnames';
 import YearPickerHeader from './YearPickerHeader';
 import { Portal } from '../Portal';
 
+import './DatePickerInput.module.scss';
+
 export interface IYearPickerProps {
   /** Class for the input (optional, default: undefined) */
   className?: string;
@@ -20,8 +22,8 @@ export interface IYearPickerProps {
   isClearable?: boolean;
   /** Is in Error (optional, default: false) */
   isInError?: boolean;
-  /** Name of year picker input */
-  name: string;
+  /** Name of year picker input (optional, default: undefined) */
+  name?: string;
   /** Maximum date that can be picked (optional, default: undefined) */
   maxDate?: Date;
   /** Minimum date that can be picked (optional, default: undefined) */
@@ -122,6 +124,7 @@ YearPickerInput.defaultProps = {
   highlighted: false,
   isClearable: false,
   isInError: false,
+  name: undefined,
   maxDate: undefined,
   minDate: undefined,
   placeholder: undefined,

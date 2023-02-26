@@ -45,7 +45,6 @@ const Template: ComponentStory<typeof FileField> = (args: IFileFieldProps) => {
 };
 
 const commonProps = {
-  name: 'name',
   maxFileSize: 10 * 1024 * 1024,
   inputValue: [
     { uid: '1', name: 'test file.png', size: 1234, type: 'image/png', status: FileStatusEnum.DONE },

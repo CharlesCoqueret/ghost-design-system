@@ -36,8 +36,8 @@ export interface IMultiSelectFieldProps {
   labelSize?: number;
   /** Mandatory field (optional, default: false) */
   mandatory?: boolean;
-  /** Name of text field */
-  name: string;
+  /** Name of text field (optiona, default: undefined) */
+  name?: string;
   /** Label to be used when one item is selected (example: "{} item selected")
    * Note: the {} will be replaced by the actual number */
   numberOfItemLabel: string;
@@ -142,6 +142,7 @@ MultiSelectField.defaultProps = {
   label: undefined,
   labelSize: undefined,
   mandatory: false,
+  name: undefined,
   onChange: undefined,
   placeholder: undefined,
   readOnly: false,

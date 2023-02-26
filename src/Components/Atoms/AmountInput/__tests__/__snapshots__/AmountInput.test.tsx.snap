@@ -7,7 +7,6 @@ exports[`AmountInput Component AmountInput renders 1`] = `
     class="default"
     data-testid="name"
     inputmode="numeric"
-    name="name"
     type="text"
     value=""
   />
@@ -20,7 +19,6 @@ exports[`AmountInput Component AmountInput renders groupint style NONE 1`] = `
     autocomplete="off"
     class="default"
     inputmode="numeric"
-    name="name"
     type="text"
     value=""
   />
@@ -47,8 +45,6 @@ exports[`AmountInput Component AmountInput renders in readonly with value LAKH f
   <span
     autocomplete="off"
     class="default readOnly highlighted"
-    id="name"
-    name="name"
   >
     A 1,23,45,67,890.12 B
   </span>
@@ -60,8 +56,6 @@ exports[`AmountInput Component AmountInput renders in readonly with value LAKH f
   <span
     autocomplete="off"
     class="default readOnly highlighted"
-    id="name"
-    name="name"
   >
     1,23,45,67,890.12
   </span>
@@ -103,7 +97,6 @@ exports[`AmountInput Component AmountInput renders triggers onChange 1`] = `
     class="default"
     data-testid="name"
     inputmode="numeric"
-    name="name"
     type="text"
     value="A 123,456,789 B"
   />
@@ -117,7 +110,6 @@ exports[`AmountInput Component AmountInput renders triggers onChange with min an
     class="default"
     data-testid="name"
     inputmode="numeric"
-    name="name"
     type="text"
     value="12"
   />
@@ -131,7 +123,6 @@ exports[`AmountInput Component AmountInput renders triggers onChange with min an
     class="default"
     data-testid="name"
     inputmode="numeric"
-    name="name"
     type="text"
     value="-12"
   />
@@ -174,8 +165,6 @@ exports[`AmountInput Component AmountInput renders with empty input in read only
     autocomplete="off"
     class="default readOnly"
     data-testid="name"
-    id="name"
-    name="name"
   >
     A 10 B
   </span>
@@ -188,8 +177,6 @@ exports[`AmountInput Component AmountInput renders with empty input in read only
     autocomplete="off"
     class="default readOnly"
     data-testid="name"
-    id="name"
-    name="name"
   >
     A 10 B
   </span>

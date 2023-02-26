@@ -34,8 +34,8 @@ export interface ITextAreaFieldProps {
   maxLength?: number;
   /** Minimum length of textAreafield (optional, default: undefined) */
   minLength?: number;
-  /** Name of text field */
-  name: string;
+  /** Name of text field (optional, default: undefined) */
+  name?: string;
   /** Handler of value changes (optional, default: undefined) */
   onChange?: (newValue: string) => void;
   /** Placeholder value (optional, default: undefined) */
@@ -136,6 +136,7 @@ TextAreaField.defaultProps = {
   mandatory: false,
   maxLength: undefined,
   minLength: undefined,
+  name: undefined,
   onChange: undefined,
   placeholder: undefined,
   readOnly: false,

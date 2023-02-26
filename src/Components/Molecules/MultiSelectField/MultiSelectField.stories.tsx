@@ -34,8 +34,8 @@ export default {
 } as ComponentMeta<typeof MultiSelectField>;
 
 const ManagedTemplate: ComponentStory<typeof MultiSelectField> = (args: IMultiSelectFieldProps) => {
-  const [inputValue, setInputValue] = useState<Array<string | number>>(args.inputValue || []);
-  return <MultiSelectField {...args} inputValue={inputValue} onChange={setInputValue} />;
+  const [inputValue, setInputValue] = useState<Array<string | number> | null | undefined>(args.inputValue || []);
+  return <MultiSelectField {...args} inputValue={inputValue || undefined} onChange={setInputValue} />;
 };
 
 const Template: ComponentStory<typeof MultiSelectField> = (args: IMultiSelectFieldProps) => {
@@ -46,7 +46,6 @@ export const Default = ManagedTemplate.bind({});
 Default.args = {
   isClearable: true,
   label: 'MultiSelect field',
-  name: 'name',
   numberOfItemLabel: '{} item selected',
   numberOfItemsLabel: '{} items selected',
   options: options,
@@ -58,7 +57,6 @@ ReadOnly.args = {
   fieldSize: 6,
   label: 'MuliSelect field in read only with label size = 4 and field size = 6',
   labelSize: 4,
-  name: 'name',
   numberOfItemLabel: '{} item selected',
   numberOfItemsLabel: '{} items selected',
   options: options,
@@ -72,7 +70,6 @@ Error.args = {
   fieldSize: 6,
   label: 'MuliSelect field in error with label size = 4 and field size = 6',
   labelSize: 4,
-  name: 'name',
   numberOfItemLabel: '{} item selected',
   numberOfItemsLabel: '{} items selected',
   options: options,
@@ -85,7 +82,6 @@ Helper.args = {
   helperText: 'Helper text',
   label: 'MultiSelect field with helper and counter',
   mandatory: true,
-  name: 'name',
   numberOfItemLabel: '{} item selected',
   numberOfItemsLabel: '{} items selected',
   options: options,
@@ -97,7 +93,6 @@ Highlighted.args = {
   helperText: 'Helper text',
   highlighted: true,
   label: 'MultiSelect field highlighted',
-  name: 'name',
   numberOfItemLabel: '{} item selected',
   numberOfItemsLabel: '{} items selected',
   options: options,
@@ -111,7 +106,6 @@ Disabled.args = {
   disabled: true,
   helperText: 'Helper text',
   label: 'MultiSelect field disabled',
-  name: 'name',
   numberOfItemLabel: '{} item selected',
   numberOfItemsLabel: '{} items selected',
   options: options,

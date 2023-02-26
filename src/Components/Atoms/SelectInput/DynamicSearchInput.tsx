@@ -29,8 +29,8 @@ export interface IDynamicSearchInputProps {
   isInError?: boolean;
   /** Maximum height of the menu in px (optional, default: 300) */
   maxMenuHeight?: number;
-  /** Name of select input */
-  name: string;
+  /** Name of select input (optional, default: undefined) */
+  name?: string;
   /** No option message (dispayed when no results are available) */
   noOptionsMessage: string | ((obj: { inputValue: string }) => string);
   /** Handler of value changes (optional, default: undefined) */
@@ -206,6 +206,7 @@ DynamicSearchInput.defaultProps = {
   isClearable: false,
   isInError: false,
   maxMenuHeight: 300,
+  name: undefined,
   noOptionsMessage: 'No options',
   onChange: undefined,
   options: undefined,

@@ -14,7 +14,6 @@ exports[`DatePickerInput Component DatePickerInput renders and changes without o
         <input
           autocomplete="off"
           class="input-date-picker-input"
-          name="NAME"
           placeholder="TESTPLACEHOLDER"
           tabindex="0"
           type="text"
@@ -41,7 +40,6 @@ exports[`DatePickerInput Component DatePickerInput renders and changes without o
         <input
           autocomplete="off"
           class="input-date-picker-input"
-          name="NAME"
           placeholder="TESTPLACEHOLDER"
           tabindex="0"
           type="text"
@@ -69,7 +67,6 @@ exports[`DatePickerInput Component DatePickerInput renders highlighted in disabl
           autocomplete="off"
           class="input-date-picker-input-read-only input-date-picker-input highlighted"
           disabled=""
-          name="NAME"
           placeholder="-"
           tabindex="-1"
           type="text"
@@ -96,7 +93,6 @@ exports[`DatePickerInput Component DatePickerInput renders highlighted in readon
         <input
           autocomplete="off"
           class="input-date-picker-input-read-only highlighted"
-          name="NAME"
           placeholder="-"
           readonly=""
           tabindex="-1"
@@ -124,7 +120,6 @@ exports[`DatePickerInput Component DatePickerInput renders in error 1`] = `
         <input
           autocomplete="off"
           class="input-date-picker-input input-error"
-          name="NAME"
           placeholder="MMM DD, YYYY"
           tabindex="0"
           type="text"
@@ -151,7 +146,6 @@ exports[`DatePickerInput Component DatePickerInput renders in error in readonly 
         <input
           autocomplete="off"
           class="input-date-picker-input-read-only"
-          name="NAME"
           placeholder="-"
           readonly=""
           tabindex="-1"
@@ -179,7 +173,6 @@ exports[`DatePickerInput Component DatePickerInput renders with placeholder 1`] 
         <input
           autocomplete="off"
           class="input-date-picker-input"
-          name="NAME"
           placeholder="TESTPLACEHOLDER"
           tabindex="0"
           type="text"
@@ -206,7 +199,6 @@ exports[`DatePickerInput Component DatePickerInput renders without Portal 1`] = 
         <input
           autocomplete="off"
           class="input-date-picker-input"
-          name="NAME"
           placeholder="MMM DD, YYYY"
           tabindex="0"
           type="text"

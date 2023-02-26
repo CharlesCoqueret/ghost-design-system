@@ -14,7 +14,6 @@ exports[`YearPickerInput Component YearPickerInput renders and changes with empt
         <input
           autocomplete="off"
           class="input-year-picker-input"
-          name="NAME"
           placeholder="TESTPLACEHOLDER"
           tabindex="0"
           type="text"
@@ -41,7 +40,6 @@ exports[`YearPickerInput Component YearPickerInput renders and changes without o
         <input
           autocomplete="off"
           class="input-year-picker-input"
-          name="NAME"
           placeholder="TESTPLACEHOLDER"
           tabindex="0"
           type="text"
@@ -68,7 +66,6 @@ exports[`YearPickerInput Component YearPickerInput renders and changes without o
         <input
           autocomplete="off"
           class="input-year-picker-input"
-          name="NAME"
           placeholder="TESTPLACEHOLDER"
           tabindex="0"
           type="text"
@@ -95,7 +92,6 @@ exports[`YearPickerInput Component YearPickerInput renders handles changes 1`] =
         <input
           autocomplete="off"
           class="input-year-picker-input"
-          name="NAME"
           placeholder="TESTPLACEHOLDER"
           tabindex="0"
           type="text"
@@ -122,7 +118,6 @@ exports[`YearPickerInput Component YearPickerInput renders handles changes 2`] =
         <input
           autocomplete="off"
           class="input-year-picker-input"
-          name="NAME"
           placeholder="TESTPLACEHOLDER"
           tabindex="0"
           type="text"
@@ -149,7 +144,6 @@ exports[`YearPickerInput Component YearPickerInput renders in Error 1`] = `
         <input
           autocomplete="off"
           class="input-year-picker-input input-error"
-          name="NAME"
           placeholder="YYYY"
           tabindex="0"
           type="text"
@@ -176,7 +170,6 @@ exports[`YearPickerInput Component YearPickerInput renders in readOnly, highligh
         <input
           autocomplete="off"
           class="input-year-picker-input-read-only field-highlighted"
-          name="NAME"
           placeholder="YYYY"
           readonly=""
           tabindex="-1"

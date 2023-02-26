@@ -36,8 +36,8 @@ export interface ISelectFieldProps {
   labelSize?: number;
   /** Mandatory field (optional, default: false) */
   mandatory?: boolean;
-  /** Name of text field */
-  name: string;
+  /** Name of text field (optional, default: undefined) */
+  name?: string;
   /** Handler of value changes (optional, default: undefined) */
   onChange?: (newValue: string | number | null | undefined) => void;
   /** Options available to be picked from */
@@ -132,6 +132,7 @@ SelectField.defaultProps = {
   label: undefined,
   labelSize: undefined,
   mandatory: false,
+  name: undefined,
   onChange: undefined,
   placeholder: undefined,
   readOnly: false,

@@ -1,11 +1,10 @@
 import React, { PropsWithChildren, ReactElement, useContext, useEffect, useState } from 'react';
 import classnames from 'classnames';
-import { Location } from 'history';
+import { LocationDescriptor } from 'history';
 import { NavLink, useHistory } from 'react-router-dom';
 
 import { Icon } from '../../Atoms/Icon';
 import { SideBarContext } from './SideBarContext';
-import { isExternalLink } from './sideBarUtils';
 
 import styles from './SideBarItem.module.scss';
 
@@ -24,7 +23,7 @@ export interface ISideBarItemProps {
   /** Label of the item */
   label: string;
   /** Redicrection applied on click on item */
-  to: string | Location;
+  to: LocationDescriptor;
 }
 
 const SideBarItem = (props: PropsWithChildren<ISideBarItemProps>): ReactElement => {
@@ -36,7 +35,7 @@ const SideBarItem = (props: PropsWithChildren<ISideBarItemProps>): ReactElement 
   const [hasSubMenu, setHasSubMenu] = useState(false);
   const [subMenuEntries, setSubMenuEntries] = useState(0);
   const [singleTo, setSingleTo] = useState(to);
-  const [firstTo, setFirstTo] = useState<string | Location | undefined>(undefined);
+  const [firstTo, setFirstTo] = useState<Location | undefined>(undefined);
 
   useEffect(() => {
     let localHasSubMenu = false;
@@ -87,8 +86,7 @@ const SideBarItem = (props: PropsWithChildren<ISideBarItemProps>): ReactElement 
   // Is hidden
   if (hidden) return <></>;
 
-  const targetType =
-    isExternalLink(children && subMenuEntries === 1 ? singleTo : to) || externalLink ? '_blank' : undefined;
+  const targetType = externalLink ? '_blank' : undefined;
 
   // Is not hidden or has subitems
   return (

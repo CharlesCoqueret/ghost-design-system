@@ -40,7 +40,7 @@
   - [Switch field](https://charlescoqueret.github.io/ghost-design-system/?path=/story/molecule-switchfield--default)
   - [Textarea field](https://charlescoqueret.github.io/ghost-design-system/?path=/story/molecule-textareafield--default)
   - [Text field](https://charlescoqueret.github.io/ghost-design-system/?path=/story/molecule-textfield--default)
-  - [Toaster](https://charlescoqueret.github.io/ghost-design-system/?path=/story/molecule-toaster)
+  - [Toaster](https://charlescoqueret.github.io/ghost-design-system/?path=/story/molecule--toaster)
   - [YearPicker field](https://charlescoqueret.github.io/ghost-design-system/?path=/story/molecule-yearpickerfield--default)
 - Organisms:
   - [ActionBar](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/organism--action-bar)
@@ -58,7 +58,7 @@
   - [NavBar](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/organism--nav-bar)
   - [SideBar](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/organism--side-bar)
 - Templates:
-  - [Portfolio](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/template--portfolio)
+  - [Portfolio](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/template-portfolio--portfolio)
 
 ## Usage
 
@@ -81,6 +81,9 @@ const App = () => {
     <>
       <ThemeProvider />
       <RestOfYourApp />
+      <div id='root-portal-id' />
+      <div id='toaster-portal-id' />
+      <div id='select-portal-id' />
     </>
   );
 };

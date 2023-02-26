@@ -305,7 +305,7 @@ const FileInput = (props: IFileInputProps): ReactElement => {
       if (xhr.readyState === 4 && xhr.status === 200) {
         updateFileUploaded(file, xhr.response);
       } else if (xhr.readyState === 4 && xhr.status !== 200) {
-        updateFileError(file, xhr.statusText);
+        updateFileError(file, xhr.statusText || 'Error');
       }
     });
 

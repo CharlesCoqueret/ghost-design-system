@@ -6,6 +6,8 @@ import DatePickerHeader from './DatePickerHeader';
 import { DateFormat, WeekDayEnum } from './types';
 import { Portal } from '../Portal';
 
+import './DatePickerInput.module.scss';
+
 export interface IDatePickerProps {
   /** Calendar start week day (optional: default: WeekDayEnum.MONDAY )  */
   calendarStartDay?: WeekDayEnum;
@@ -27,8 +29,8 @@ export interface IDatePickerProps {
   isInError?: boolean;
   /** Locale to display months and day (optional, default: undefined) */
   locale?: string;
-  /** Name of date picker input */
-  name: string;
+  /** Name of date picker input (optional, default: undefined) */
+  name?: string;
   /** Maximum date that can be picked (optional, default: undefined) */
   maxDate?: Date;
   /** Minimum date that can be picked (optional, default: undefined) */
@@ -128,6 +130,7 @@ DatePickerInput.defaultProps = {
   isClearable: false,
   isInError: false,
   locale: undefined,
+  name: undefined,
   maxDate: undefined,
   minDate: undefined,
   placeholder: undefined,

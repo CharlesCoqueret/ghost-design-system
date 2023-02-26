@@ -62,11 +62,11 @@ exports[`NavBar Component renders without menu nor utilities 1`] = `
   >
     <a
       class="brand"
-      href="redirection"
+      href="/"
     >
       partial url
       <img
-        alt="alt"
+        alt="logo"
         class="brandLogo"
         src="logoSource"
       />

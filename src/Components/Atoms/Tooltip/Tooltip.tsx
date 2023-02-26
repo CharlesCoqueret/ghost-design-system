@@ -3,6 +3,8 @@ import Tippy from '@tippyjs/react';
 
 import { MenuDirectionEnum } from './types';
 
+import './Tooltip.module.scss';
+
 export interface ITooltipProps {
   /** Tooltip has arrow (optional, default: true) */
   arrow?: boolean;

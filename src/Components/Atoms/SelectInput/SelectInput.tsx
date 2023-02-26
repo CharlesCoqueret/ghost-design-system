@@ -28,8 +28,8 @@ export interface ISelectInputProps {
   isInError?: boolean;
   /** Maximum height of the menu in px (optional, default: 300) */
   maxMenuHeight?: number;
-  /** Name of select input */
-  name: string;
+  /** Name of select input (optional, default: undefined) */
+  name?: string;
   /** Handler of value changes (optional, default: undefined) */
   onChange?: (selectedOption: string | number | null | undefined) => void;
   /** Options to be displayed */
@@ -140,6 +140,7 @@ SelectInput.defaultProps = {
   isClearable: false,
   isInError: false,
   maxMenuHeight: 300,
+  name: undefined,
   onChange: undefined,
   placeholder: undefined,
   readOnly: false,

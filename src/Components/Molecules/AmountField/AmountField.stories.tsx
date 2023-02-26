@@ -18,7 +18,6 @@ export const Default = Template.bind({});
 Default.args = {
   inputValue: 1234567890,
   label: 'Amount field',
-  name: 'name',
   placeholder: 'Placeholder amount',
   suffix: '€',
 };
@@ -29,7 +28,6 @@ ReadOnly.args = {
   inputValue: 1234567890,
   label: 'Amount field in read only with label size = 4 and field size = 2',
   labelSize: 4,
-  name: 'name',
   readOnly: true,
   suffix: '€',
 };
@@ -39,7 +37,6 @@ Error.args = {
   errorMessage: 'This amount is on error',
   inputValue: 1234567890,
   label: 'Amount field in error',
-  name: 'name',
   placeholder: 'Placeholder amount',
   suffix: '€',
 };
@@ -51,7 +48,6 @@ HelperAndLimit.args = {
   label: 'Amount field with helper and maximum value: 100',
   mandatory: true,
   maxValue: 100,
-  name: 'name',
   suffix: '€',
 };
 
@@ -61,7 +57,6 @@ Highlighted.args = {
   highlighted: true,
   inputValue: 1234567890,
   label: 'Amount field highlighted',
-  name: 'name',
   readOnly: true,
   suffix: '€',
 };
@@ -72,7 +67,6 @@ Disabled.args = {
   helperText: 'Helper text',
   inputValue: 1234567890,
   label: "Amount field disabled and ' as thousand separator",
-  name: 'name',
   suffix: '€',
   thousandSeparator: "'",
 };

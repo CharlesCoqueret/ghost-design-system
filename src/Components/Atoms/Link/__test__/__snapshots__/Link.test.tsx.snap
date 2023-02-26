@@ -7,18 +7,18 @@ exports[`Link Component Link renders external link with tooltip 1`] = `
   >
     <a
       href="http://www.link.com"
-      rel="noreferrer"
       target="_blank"
     >
+      partial url
       TEXT
       <div>
         TOOLTIP
       </div>
+      <i
+        class="icon icon"
+        icon="fal,external-link"
+      />
     </a>
-    <i
-      class="icon icon"
-      icon="fal,external-link"
-    />
   </div>
 </div>
 `;
@@ -31,6 +31,7 @@ exports[`Link Component Link renders internal link 1`] = `
     <a
       href="/link"
     >
+      partial url
       TEXT
     </a>
   </div>
