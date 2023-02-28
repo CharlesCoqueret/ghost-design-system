@@ -2,7 +2,6 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import LinkComponent, { ILinkProps } from './Link';
-import { BrowserRouter as Router } from 'react-router-dom';
 
 export default {
   title: 'Atom',
@@ -11,11 +10,7 @@ export default {
 } as ComponentMeta<typeof LinkComponent>;
 
 const Template: ComponentStory<typeof LinkComponent> = (args: ILinkProps) => {
-  return (
-    <Router>
-      <LinkComponent {...args} />
-    </Router>
-  );
+  return <LinkComponent {...args} />;
 };
 
 export const Link = Template.bind({});

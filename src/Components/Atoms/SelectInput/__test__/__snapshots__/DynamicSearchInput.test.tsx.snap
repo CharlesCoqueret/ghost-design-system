@@ -200,7 +200,7 @@ exports[`DynamicSearchInput Component DynamicSearchInput handles change 2`] = `
         </div>
       </div>
       <div
-        class=" css-1nmdiq5-menu"
+        class=" css-1a09ke2-menu"
         id="react-select-6-listbox"
       >
         <div
@@ -560,7 +560,7 @@ exports[`DynamicSearchInput Component DynamicSearchInput handles change to undef
         </div>
       </div>
       <div
-        class=" css-1nmdiq5-menu"
+        class=" css-1a09ke2-menu"
         id="react-select-11-listbox"
       >
         <div
@@ -783,7 +783,7 @@ exports[`DynamicSearchInput Component DynamicSearchInput handles change with no 
         </div>
       </div>
       <div
-        class=" css-1nmdiq5-menu"
+        class=" css-1a09ke2-menu"
         id="react-select-7-listbox"
       >
         <div

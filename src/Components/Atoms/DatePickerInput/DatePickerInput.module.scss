@@ -27,6 +27,7 @@
     color: $datepicker__text-color;
     border: 1px solid $datepicker__border-color;
     border-radius: $datepicker__border-radius;
+    box-shadow: 0px 2px 10px 0px rgba(var(--theme-provider-black), 0.25);
     display: inline-block;
     position: relative;
   }

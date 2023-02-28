@@ -1,7 +1,10 @@
 import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+
 import { ThemeProvider, loadIcons } from '../src/Components';
 
 import '../src/assets/index.scss';
+import './storybook.css';
 
 loadIcons();
 
@@ -18,11 +21,13 @@ export const parameters = {
 export const decorators = [
   (Story) => (
     <div style={{ padding: '42px' }}>
-      <ThemeProvider />
-      <Story />
-      <div id='root-portal-id' />
-      <div id='toaster-portal-id' />
-      <div id='select-portal-id' />
+      <Router>
+        <ThemeProvider />
+        <Story />
+        <div id='root-portal-id' />
+        <div id='toaster-portal-id' />
+        <div id='select-portal-id' />
+      </Router>
     </div>
   ),
 ];

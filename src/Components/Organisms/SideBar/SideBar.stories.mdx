@@ -1,5 +1,4 @@
 import { Canvas, Meta, ArgsTable, Story, Source } from '@storybook/addon-docs';
-import { MemoryRouter as Router } from 'react-router-dom';
 
 import SideBar from './SideBar';
 import SideBarItem from './SideBarItem';
@@ -7,46 +6,44 @@ import SideBarSection from './SideBarSection';
 
 export const Template = (args) => {
   return (
-    <Router>
-      <SideBar {...args}>
-        <SideBarSection label='Section #1'>
-          <SideBarItem label='Direct link #1' to='/link1' />
-          <SideBarItem label='Direct link #2 - external link' to='/link2' externalLink />
-          <SideBarItem label='Direct link #3' to='/link3' />
-        </SideBarSection>
-        <SideBarSection label='Section #2'>
-          <SideBarItem label='Disabled subsection #2-1' to='/link4' disabled>
-            <SideBarItem label='Direct link 1 in #2-1' to='/link4/link1' />
-            <SideBarItem label='Direct link 2 in #2-2' to='/link4/link2' />
-          </SideBarItem>
-          <SideBarItem label='Subsection #2-2 with divider' to='/link5'>
-            <SideBarItem label='Direct link 1 in #2-2' to='/link5/link1' />
-            <SideBarItem label='Direct link 2 in #2-2' to='/link5/link2' />
-          </SideBarItem>
-          <SideBarItem label='Subsection #2-3' to='/link6'>
-            <SideBarItem label='Direct link 1 in #2-3' to='/link6/link1' />
-            <SideBarItem label='Direct link 2 in #2-3' to='/link6/link2' />
-          </SideBarItem>
-          <SideBarItem label='Hidden subsection #2-4' to='/link7' hidden>
-            <SideBarItem label='Direct link 1 in #2-4' to='/link7/link1' />
-            <SideBarItem label='Direct link 2 in #2-4' to='/link7/link2' />
-          </SideBarItem>
-        </SideBarSection>
-        <SideBarSection divider label='Section #3 with divider'>
-          <SideBarItem label='Subsection #3-1 with only one non-hidden subitem' to='/link8'>
-            <SideBarItem label='Hidden direct link 1 in #3-1' to='/link8/link1' hidden />
-            <SideBarItem label='Direct link 3 in #3-1' to='/link8/link2' />
-          </SideBarItem>
-          <SideBarItem label='Subsection #3-2 with all subitems hidden or disabled' to='/link9'>
-            <SideBarItem label='Hidden direct link 1 in #3-2' to='/link9/link1' hidden />
-            <SideBarItem label='Hidden direct link 2 in #3-2' to='/link9/link2' disabled />
-          </SideBarItem>
-        </SideBarSection>
-        <SideBarSection divider>
-          <SideBarItem label='Direct link in invisible section with divider' to='/link10' />
-        </SideBarSection>
-      </SideBar>
-    </Router>
+    <SideBar {...args}>
+      <SideBarSection label='Section #1'>
+        <SideBarItem label='Direct link #1' to='/link1' />
+        <SideBarItem label='Direct link #2 - external link' to='/link2' externalLink />
+        <SideBarItem label='Direct link #3' to='/link3' />
+      </SideBarSection>
+      <SideBarSection label='Section #2'>
+        <SideBarItem label='Disabled subsection #2-1' to='/link4' disabled>
+          <SideBarItem label='Direct link 1 in #2-1' to='/link4/link1' />
+          <SideBarItem label='Direct link 2 in #2-2' to='/link4/link2' />
+        </SideBarItem>
+        <SideBarItem label='Subsection #2-2 with divider' to='/link5'>
+          <SideBarItem label='Direct link 1 in #2-2' to='/link5/link1' />
+          <SideBarItem label='Direct link 2 in #2-2' to='/link5/link2' />
+        </SideBarItem>
+        <SideBarItem label='Subsection #2-3' to='/link6'>
+          <SideBarItem label='Direct link 1 in #2-3' to='/link6/link1' />
+          <SideBarItem label='Direct link 2 in #2-3' to='/link6/link2' />
+        </SideBarItem>
+        <SideBarItem label='Hidden subsection #2-4' to='/link7' hidden>
+          <SideBarItem label='Direct link 1 in #2-4' to='/link7/link1' />
+          <SideBarItem label='Direct link 2 in #2-4' to='/link7/link2' />
+        </SideBarItem>
+      </SideBarSection>
+      <SideBarSection divider label='Section #3 with divider'>
+        <SideBarItem label='Subsection #3-1 with only one non-hidden subitem' to='/link8'>
+          <SideBarItem label='Hidden direct link 1 in #3-1' to='/link8/link1' hidden />
+          <SideBarItem label='Direct link 3 in #3-1' to='/link8/link2' />
+        </SideBarItem>
+        <SideBarItem label='Subsection #3-2 with all subitems hidden or disabled' to='/link9'>
+          <SideBarItem label='Hidden direct link 1 in #3-2' to='/link9/link1' hidden />
+          <SideBarItem label='Hidden direct link 2 in #3-2' to='/link9/link2' disabled />
+        </SideBarItem>
+      </SideBarSection>
+      <SideBarSection divider>
+        <SideBarItem label='Direct link in invisible section with divider' to='/link10' />
+      </SideBarSection>
+    </SideBar>
   );
 };
 
@@ -74,74 +71,68 @@ Play with SideBar live on [CodeSandbox](https://codesandbox.io/s/sidebar-demo-t4
 ## SideBar with section
 
 <Canvas isExpanded={true}>
-  <Router>
-    <SideBar backToMenu='Back to menu' height='300px' unfixed width='250px'>
-      <SideBarSection label='Section #1'>
-        <SideBarItem label='Direct link #1' to='/link1' />
-        <SideBarItem label='Direct link #2 - external link' to='/link2' externalLink />
-        <SideBarItem label='Direct link #3' to='/link3' />
-      </SideBarSection>
-    </SideBar>
-  </Router>
+  <SideBar backToMenu='Back to menu' height='300px' unfixed width='250px'>
+    <SideBarSection label='Section #1'>
+      <SideBarItem label='Direct link #1' to='/link1' />
+      <SideBarItem label='Direct link #2 - external link' to='/link2' externalLink />
+      <SideBarItem label='Direct link #3' to='/link3' />
+    </SideBarSection>
+  </SideBar>
 </Canvas>
 
 ## SideBar with nested items
 
 <Canvas isExpanded={true}>
-  <Router>
-    <SideBar backToMenu='Back to menu' height='250px' unfixed width='400px'>
-      <SideBarItem label='With subitems' to='/link1'>
-        <SideBarItem label='Direct link #1' to='/link1/link1' />
-        <SideBarItem label='Direct link #2' to='/link1/link2' />
-      </SideBarItem>
-      <SideBarItem label='Direct Link' to='/link2' />
-    </SideBar>
-  </Router>
+  <SideBar backToMenu='Back to menu' height='250px' unfixed width='400px'>
+    <SideBarItem label='With subitems' to='/link1'>
+      <SideBarItem label='Direct link #1' to='/link1/link1' />
+      <SideBarItem label='Direct link #2' to='/link1/link2' />
+    </SideBarItem>
+    <SideBarItem label='Direct Link' to='/link2' />
+  </SideBar>
 </Canvas>
 
 ## SideBar advanced example
 
 <Canvas isExpanded={true}>
-  <Router>
-    <SideBar backToMenu='Back to menu' height='600px' unfixed width='250px'>
-      <SideBarSection label='Section #1'>
-        <SideBarItem label='Direct link #1' to='/link1' />
-        <SideBarItem label='Direct link #2 - external link' to='/link2' externalLink />
-        <SideBarItem label='Direct link #3' to='/link3' />
-      </SideBarSection>
-      <SideBarSection label='Section #2'>
-        <SideBarItem label='Disabled subsection #2-1' to='/link4' disabled>
-          <SideBarItem label='Direct link 1 in #2-1' to='/link4/link1' />
-          <SideBarItem label='Direct link 2 in #2-2' to='/link4/link2' />
-        </SideBarItem>
-        <SideBarItem label='Subsection #2-2 with divider' to='/link5'>
-          <SideBarItem label='Direct link 1 in #2-2' to='/link5/link1' />
-          <SideBarItem label='Direct link 2 in #2-2' to='/link5/link2' />
-        </SideBarItem>
-        <SideBarItem label='Subsection #2-3' to='/link6'>
-          <SideBarItem label='Direct link 1 in #2-3' to='/link6/link1' />
-          <SideBarItem label='Direct link 2 in #2-3' to='/link6/link2' />
-        </SideBarItem>
-        <SideBarItem label='Hidden subsection #2-4' to='/link7' hidden>
-          <SideBarItem label='Direct link 1 in #2-4' to='/link7/link1' />
-          <SideBarItem label='Direct link 2 in #2-4' to='/link7/link2' />
-        </SideBarItem>
-      </SideBarSection>
-      <SideBarSection label='Section #3 with divider' divider>
-        <SideBarItem label='Subsection #3-1 with only one non-hidden subitem' to='/link8'>
-          <SideBarItem label='Hidden direct link 1 in #3-1' to='/link8/link1' hidden />
-          <SideBarItem label='Direct link 3 in #3-1' to='/link8/link2' />
-        </SideBarItem>
-        <SideBarItem label='Subsection #3-2 with all subitems hidden or disabled' to='/link9'>
-          <SideBarItem label='Hidden direct link 1 in #3-2' to='/link9/link1' hidden />
-          <SideBarItem label='Hidden direct link 2 in #3-2' to='/link9/link2' disabled />
-        </SideBarItem>
-      </SideBarSection>
-      <SideBarSection divider>
-        <SideBarItem label='Direct link in invisible section with divider' to='/link10' />
-      </SideBarSection>
-    </SideBar>
-  </Router>
+  <SideBar backToMenu='Back to menu' height='600px' unfixed width='250px'>
+    <SideBarSection label='Section #1'>
+      <SideBarItem label='Direct link #1' to='/link1' />
+      <SideBarItem label='Direct link #2 - external link' to='/link2' externalLink />
+      <SideBarItem label='Direct link #3' to='/link3' />
+    </SideBarSection>
+    <SideBarSection label='Section #2'>
+      <SideBarItem label='Disabled subsection #2-1' to='/link4' disabled>
+        <SideBarItem label='Direct link 1 in #2-1' to='/link4/link1' />
+        <SideBarItem label='Direct link 2 in #2-2' to='/link4/link2' />
+      </SideBarItem>
+      <SideBarItem label='Subsection #2-2 with divider' to='/link5'>
+        <SideBarItem label='Direct link 1 in #2-2' to='/link5/link1' />
+        <SideBarItem label='Direct link 2 in #2-2' to='/link5/link2' />
+      </SideBarItem>
+      <SideBarItem label='Subsection #2-3' to='/link6'>
+        <SideBarItem label='Direct link 1 in #2-3' to='/link6/link1' />
+        <SideBarItem label='Direct link 2 in #2-3' to='/link6/link2' />
+      </SideBarItem>
+      <SideBarItem label='Hidden subsection #2-4' to='/link7' hidden>
+        <SideBarItem label='Direct link 1 in #2-4' to='/link7/link1' />
+        <SideBarItem label='Direct link 2 in #2-4' to='/link7/link2' />
+      </SideBarItem>
+    </SideBarSection>
+    <SideBarSection label='Section #3 with divider' divider>
+      <SideBarItem label='Subsection #3-1 with only one non-hidden subitem' to='/link8'>
+        <SideBarItem label='Hidden direct link 1 in #3-1' to='/link8/link1' hidden />
+        <SideBarItem label='Direct link 3 in #3-1' to='/link8/link2' />
+      </SideBarItem>
+      <SideBarItem label='Subsection #3-2 with all subitems hidden or disabled' to='/link9'>
+        <SideBarItem label='Hidden direct link 1 in #3-2' to='/link9/link1' hidden />
+        <SideBarItem label='Hidden direct link 2 in #3-2' to='/link9/link2' disabled />
+      </SideBarItem>
+    </SideBarSection>
+    <SideBarSection divider>
+      <SideBarItem label='Direct link in invisible section with divider' to='/link10' />
+    </SideBarSection>
+  </SideBar>
 </Canvas>
 
 ## Props

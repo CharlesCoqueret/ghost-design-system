@@ -86,5 +86,8 @@ export const customStyles = (props: ICustomStylesProps = {}): StylesConfig<IOpti
     container: (provided) => {
       return { ...provided, maxWidth: '100%', width: '100%' };
     },
+    menu: (provided) => {
+      return { ...provided, boxShadow: '0px 2px 10px 0px rgba(var(--theme-provider-black), 0.25)' };
+    },
   };
 };
