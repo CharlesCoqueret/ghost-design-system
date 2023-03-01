@@ -83,7 +83,6 @@ const App = () => {
       <RestOfYourApp />
       <div id='root-portal-id' />
       <div id='toaster-portal-id' />
-      <div id='select-portal-id' />
     </>
   );
 };

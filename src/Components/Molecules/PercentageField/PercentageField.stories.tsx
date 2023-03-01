@@ -7,6 +7,13 @@ export default {
   title: 'Molecule/PercentageField',
   component: PercentageField,
   parameters: { actions: { argTypesRegex: '^on.*' }, controls: { sort: 'requiredFirst' } },
+  argTypes: {
+    dataTestId: {
+      table: {
+        disable: true,
+      },
+    },
+  },
 } as ComponentMeta<typeof PercentageField>;
 
 const Template: ComponentStory<typeof PercentageField> = (args: IPercentageFieldProps) => {

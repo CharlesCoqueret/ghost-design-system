@@ -29,6 +29,13 @@ export default {
   title: 'Molecule/SelectField',
   component: SelectField,
   parameters: { actions: { argTypesRegex: '^on.*' }, controls: { sort: 'requiredFirst' } },
+  argTypes: {
+    dataTestId: {
+      table: {
+        disable: true,
+      },
+    },
+  },
 } as ComponentMeta<typeof SelectField>;
 
 const ManagedTemplate: ComponentStory<typeof SelectField> = (args: ISelectFieldProps) => {

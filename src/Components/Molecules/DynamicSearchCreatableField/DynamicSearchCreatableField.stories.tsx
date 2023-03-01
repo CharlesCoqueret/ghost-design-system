@@ -75,6 +75,13 @@ export default {
   title: 'Molecule/DynamicSearchCreatableField',
   component: DynamicSearchCreatableField,
   parameters: { actions: { argTypesRegex: '^on.*' }, controls: { sort: 'requiredFirst' } },
+  argTypes: {
+    dataTestId: {
+      table: {
+        disable: true,
+      },
+    },
+  },
 } as ComponentMeta<typeof DynamicSearchCreatableField>;
 
 const Template: ComponentStory<typeof DynamicSearchCreatableField> = ({

@@ -21,7 +21,7 @@ export interface IButtonProps {
   dropdownAlign?: MenuAlign;
   /** Icon name (optional, default: undefined) */
   icon?: IconProp;
-  /** :ist of items to display in the dropdown on click on the button (optional, default: undefined) */
+  /** List of items to display in the dropdown on click on the button (optional, default: undefined) */
   itemList?: Array<IItemListProps>;
   /** Label (optional, default: undefined) */
   label?: string;
@@ -31,11 +31,14 @@ export interface IButtonProps {
   onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
   /** Optional popover (optional, default: undefined) */
   popover?: { buttons: Array<IButtonProps>; title: string };
-  /** text to be displayed as a tooltip (optional, default: undefinef=d) */
+  /**
+   * Text to be displayed as a tooltip (optional, default: undefined)
+   * note: only visible when there is no label
+   */
   tooltip?: string;
-  /** position of the tooltip (optional, default: 'bottom') */
+  /** Position of the tooltip (optional, default: 'bottom') */
   tooltipDirection?: MenuDirectionEnum;
-  /** button type (optional, default: 'button') */
+  /** Button type (optional, default: 'button') */
   type?: 'submit' | 'button' | 'reset';
   /** For test purpose only */
   dataTestId?: string;

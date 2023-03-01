@@ -6,7 +6,7 @@ import DatePickerHeader from './DatePickerHeader';
 import { DateFormat, WeekDayEnum } from './types';
 import { Portal } from '../Portal';
 
-import './DatePickerInput.module.scss';
+import styles from './DatePickerInput.module.scss';
 
 export interface IDatePickerProps {
   /** Calendar start week day (optional: default: WeekDayEnum.MONDAY )  */
@@ -71,7 +71,11 @@ const DatePickerInput = (props: IDatePickerProps): ReactElement => {
   // Investigate custom input https://github.com/Hacker0x01/react-datepicker/issues/2479#issuecomment-1013838239
   return (
     <div
-      className={classnames({ 'input-date-picker-wrapper-read-only': readOnly || disabled }, className)}
+      className={classnames(
+        styles.container,
+        { 'input-date-picker-wrapper-read-only': readOnly || disabled },
+        className,
+      )}
       onClick={
         readOnly || disabled
           ? undefined

@@ -21,15 +21,10 @@ export const locationString = (
 };
 
 export const NavLink = (props: PropsWithChildren<NavLinkProps> & { ['data-testid']?: string }): ReactElement => {
-  const { children, className, ['data-testid']: dataTestId, exact, onClick, target, to } = props;
+  const { children, className, ['data-testid']: dataTestId, exact, target, to } = props;
 
   return (
-    <a
-      href={locationString(to)}
-      className={className as string | undefined}
-      data-testid={dataTestId}
-      onClick={onClick}
-      target={target}>
+    <a href={locationString(to)} className={className as string | undefined} data-testid={dataTestId} target={target}>
       {exact ? 'full url' : 'partial url'}
       {children}
     </a>

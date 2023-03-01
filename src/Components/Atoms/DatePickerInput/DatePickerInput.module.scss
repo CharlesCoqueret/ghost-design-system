@@ -1,3 +1,8 @@
+.container {
+  display: flex;
+  flex: 1;
+}
+
 :global {
   $datepicker__background-color: rgb(var(--theme-provider-chalk)) !default;
   $datepicker__border-color: rgb(var(--theme-provider-chalk)) !default;

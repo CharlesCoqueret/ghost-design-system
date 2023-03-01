@@ -7,6 +7,13 @@ export default {
   title: 'Molecule/RichTextField',
   component: RichTextField,
   parameters: { actions: { argTypesRegex: '^on.*' }, controls: { sort: 'requiredFirst' } },
+  argTypes: {
+    dataTestId: {
+      table: {
+        disable: true,
+      },
+    },
+  },
 } as ComponentMeta<typeof RichTextField>;
 
 const Template: ComponentStory<typeof RichTextField> = (args: IRichTextFieldProps) => {

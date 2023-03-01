@@ -31,6 +31,13 @@ export default {
   title: 'Molecule/MultiSelectField',
   component: MultiSelectField,
   parameters: { actions: { argTypesRegex: '^on.*' }, controls: { sort: 'requiredFirst' } },
+  argTypes: {
+    dataTestId: {
+      table: {
+        disable: true,
+      },
+    },
+  },
 } as ComponentMeta<typeof MultiSelectField>;
 
 const ManagedTemplate: ComponentStory<typeof MultiSelectField> = (args: IMultiSelectFieldProps) => {

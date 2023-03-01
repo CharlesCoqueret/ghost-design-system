@@ -25,6 +25,13 @@ export default {
   title: 'Molecule/CheckboxField',
   component: CheckboxField,
   parameters: { actions: { argTypesRegex: '^on.*' }, controls: { sort: 'requiredFirst' } },
+  argTypes: {
+    dataTestId: {
+      table: {
+        disable: true,
+      },
+    },
+  },
 } as ComponentMeta<typeof CheckboxField>;
 
 const Template: ComponentStory<typeof CheckboxField> = ({ inputValue, ...args }: ICheckboxFieldProps) => {

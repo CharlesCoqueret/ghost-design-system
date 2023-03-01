@@ -7,11 +7,13 @@
   animation: pulsar 2s infinite;
 }
 
-@keyframes pulsar {
-  0% {
-    box-shadow: 0 0 0 0 rgba(var(--theme-provider-error), 0.4);
-  }
-  100% {
-    box-shadow: 0 0 0 10px rgba(var(--theme-provider-error), 0);
+:global {
+  @keyframes pulsar {
+    0% {
+      box-shadow: 0 0 0 0 rgba(var(--theme-provider-error), 0.4);
+    }
+    100% {
+      box-shadow: 0 0 0 10px rgba(var(--theme-provider-error), 0);
+    }
   }
 }

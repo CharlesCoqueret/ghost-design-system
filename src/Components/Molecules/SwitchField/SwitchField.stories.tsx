@@ -25,6 +25,13 @@ export default {
   title: 'Molecule/SwitchField',
   component: SwitchField,
   parameters: { actions: { argTypesRegex: '^on.*' }, controls: { sort: 'requiredFirst' } },
+  argTypes: {
+    dataTestId: {
+      table: {
+        disable: true,
+      },
+    },
+  },
 } as ComponentMeta<typeof SwitchField>;
 
 const Template: ComponentStory<typeof SwitchField> = ({ inputValue, ...args }: ISwitchFieldProps) => {

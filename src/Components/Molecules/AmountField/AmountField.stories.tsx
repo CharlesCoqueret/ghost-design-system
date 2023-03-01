@@ -7,6 +7,13 @@ export default {
   title: 'Molecule/AmountField',
   component: AmountField,
   parameters: { actions: { argTypesRegex: '^on.*' }, controls: { sort: 'requiredFirst' } },
+  argTypes: {
+    dataTestId: {
+      table: {
+        disable: true,
+      },
+    },
+  },
 } as ComponentMeta<typeof AmountField>;
 
 const Template: ComponentStory<typeof AmountField> = ({ inputValue, ...args }: IAmountFieldProps) => {

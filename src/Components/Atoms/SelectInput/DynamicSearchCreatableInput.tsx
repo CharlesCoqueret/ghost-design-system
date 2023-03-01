@@ -198,7 +198,7 @@ const DynamicSearchCreatableInput = (props: IDynamicSearchCreatableInputProps): 
         name={name}
         maxMenuHeight={maxMenuHeight}
         menuPlacement='auto'
-        menuPortalTarget={usePortal ? document.getElementById('select-portal-id') : undefined}
+        menuPortalTarget={usePortal ? document.querySelector('body') : undefined}
         menuShouldBlockScroll={true}
         noOptionsMessage={localNoOptionMessage}
         onChange={(option) => {

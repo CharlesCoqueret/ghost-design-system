@@ -123,7 +123,7 @@ const SelectInput = (props: ISelectInputProps): ReactElement => {
         }}
         options={options}
         placeholder={placeholder}
-        menuPortalTarget={usePortal ? document.getElementById('select-portal-id') : undefined}
+        menuPortalTarget={usePortal ? document.querySelector('body') : undefined}
         styles={customStyles({ isInError: isInError && !(disabled && readOnly) })}
         value={options.find((option) => option.value === inputValue) || null}
       />

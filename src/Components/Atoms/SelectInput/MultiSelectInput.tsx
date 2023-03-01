@@ -179,7 +179,7 @@ const MultiSelectInput = (props: IMultiSelectInputProps): ReactElement => {
         name={name}
         maxMenuHeight={maxMenuHeight}
         menuPlacement='auto'
-        menuPortalTarget={usePortal ? document.getElementById('select-portal-id') : undefined}
+        menuPortalTarget={usePortal ? document.querySelector('body') : undefined}
         menuShouldBlockScroll={true}
         onChange={(options) => {
           if (onChange) {

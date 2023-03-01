@@ -5,7 +5,7 @@ import classnames from 'classnames';
 import YearPickerHeader from './YearPickerHeader';
 import { Portal } from '../Portal';
 
-import './DatePickerInput.module.scss';
+import styles from './DatePickerInput.module.scss';
 
 export interface IYearPickerProps {
   /** Class for the input (optional, default: undefined) */
@@ -72,7 +72,11 @@ const YearPickerInput = (props: IYearPickerProps): ReactElement => {
 
   return (
     <div
-      className={classnames({ 'input-year-picker-wrapper-read-only': readOnly || disabled }, className)}
+      className={classnames(
+        styles.container,
+        { 'input-year-picker-wrapper-read-only': readOnly || disabled },
+        className,
+      )}
       onClick={
         readOnly || disabled
           ? undefined

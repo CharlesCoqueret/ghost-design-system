@@ -7,6 +7,13 @@ export default {
   title: 'Molecule/TextField',
   component: TextField,
   parameters: { actions: { argTypesRegex: '^on.*' }, controls: { sort: 'requiredFirst' } },
+  argTypes: {
+    dataTestId: {
+      table: {
+        disable: true,
+      },
+    },
+  },
 } as ComponentMeta<typeof TextField>;
 
 const Template: ComponentStory<typeof TextField> = ({ inputValue, ...args }: ITextFieldProps) => {

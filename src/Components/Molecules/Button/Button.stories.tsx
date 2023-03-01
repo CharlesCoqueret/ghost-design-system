@@ -1,12 +1,20 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import Button, { ColorButtonEnum, IButtonProps } from './Button';
+import Button, { ColorButtonEnum } from './Button';
+import { IButtonProps } from './Button.props';
 
 export default {
   title: 'Molecule/Button',
   component: Button,
   parameters: { actions: { argTypesRegex: '^on.*' }, controls: { sort: 'requiredFirst' }, layout: 'centered' },
+  argTypes: {
+    dataTestId: {
+      table: {
+        disable: true,
+      },
+    },
+  },
 } as ComponentMeta<typeof Button>;
 
 const Template: ComponentStory<typeof Button> = (args: IButtonProps) => {

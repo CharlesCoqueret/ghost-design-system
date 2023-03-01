@@ -26,7 +26,6 @@ export const decorators = [
         <Story />
         <div id='root-portal-id' />
         <div id='toaster-portal-id' />
-        <div id='select-portal-id' />
       </Router>
     </div>
   ),

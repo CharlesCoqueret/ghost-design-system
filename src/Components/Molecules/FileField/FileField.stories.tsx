@@ -9,6 +9,13 @@ export default {
   title: 'Molecule/FileField',
   component: FileField,
   parameters: { actions: { argTypesRegex: '^on.*' }, controls: { sort: 'requiredFirst' } },
+  argTypes: {
+    dataTestId: {
+      table: {
+        disable: true,
+      },
+    },
+  },
 } as ComponentMeta<typeof FileField>;
 
 const Template: ComponentStory<typeof FileField> = (args: IFileFieldProps) => {

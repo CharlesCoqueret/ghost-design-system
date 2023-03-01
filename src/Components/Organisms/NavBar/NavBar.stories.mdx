@@ -135,7 +135,7 @@ export const Template = (args) => {
 };
 
 <Meta
-  title='Organism'
+  title='Organism/NavBar'
   component={NavBar}
   parameters={{
     viewMode: 'docs',
@@ -154,150 +154,6 @@ It can contain:
 
 Play with NavBar live on [CodeSandbox](https://codesandbox.io/s/sidebar-demo-t4s312)
 
-## Brand
-
-<Canvas isExpanded={true}>
-  <NavBar logoSource='./images/logo.svg' redirection='/' className={styles.positionRelative} />
-</Canvas>
-
-## Navigation buttons
-
-<Canvas isExpanded={false}>
-  <NavBar logoSource='./images/logo.svg' redirection='/' className={styles.positionRelative}>
-    <NavBarMenu>
-      <NavItem
-        label='Label 1'
-        subItems={[
-          {
-            label: 'Label 1',
-            onClick: () => {
-              console.log('label 1 - label 1');
-            },
-          },
-          {
-            label: 'Label 2',
-            onClick: () => {
-              console.log('label 1 - label 2');
-            },
-          },
-        ]}
-      />
-      <NavItem
-        label='Label 2'
-        subItems={[
-          {
-            label: 'Label 1',
-            onClick: () => {
-              console.log('label 2 - label 1');
-            },
-          },
-          {
-            label: 'Label 2',
-            onClick: () => {
-              console.log('label 2 - label 2');
-            },
-          },
-        ]}
-      />
-      <NavItem
-        label='Label 3'
-        onClick={() => {
-          console.log('label 3');
-        }}
-      />
-    </NavBarMenu>
-  </NavBar>
-</Canvas>
-
-## NavIcons
-
-<Canvas isExpanded={false}>
-  <NavBar logoSource='./images/logo.svg' className={styles.positionRelative}>
-    <NavBarUtilities>
-      <NavItem
-        icon={['fal', 'ballot-check']}
-        counter={2}
-        subItems={[
-          {
-            label: 'Label 1',
-          },
-          {
-            label: 'Label 2',
-          },
-        ]}
-      />
-      <NavItem
-        icon={['fal', 'bell']}
-        counter='+99'
-        customSubItem={
-          <div
-            style={{
-              maxWidth: '500px',
-              height: '300px',
-              padding: '0px 16px',
-              overflowX: 'hidden',
-              overflowY: 'auto',
-              backgroundColor: 'black',
-            }}>
-            <p>
-              Lorem ipsum dolor sit amet. Ut voluptas reiciendis vel praesentium laborum hic voluptas asperiores nam
-              rerum nihil obcaecati labore. Id praesentium porro ea placeat rerum aut tempore totam aut illum cupiditate
-              sed laborum explicabo. Hic explicabo voluptatibus qui repellat fugiat ex voluptatum fuga qui architecto
-              atque quo illum quas aut facilis nesciunt? Ut suscipit rerum ut perferendis nihil ea autem unde est enim
-              veniam nam odio tempora.
-            </p>
-            <p>
-              Quo numquam iste est repellendus numquam et galisum omnis ad praesentium dolores aut neque saepe vel
-              consectetur enim aut cumque neque. Et voluptate sapiente quisquam quasi eum beatae voluptas rem iure
-              velit. Sed impedit eaque 33 natus nihil est quaerat porro est quia nisi qui doloribus aperiam. Sit culpa
-              illum ea consectetur perspiciatis ex veritatis dolorem id velit sequi qui maiores asperiores!
-            </p>
-            <p>
-              Lorem ipsum dolor sit amet. Ut voluptas reiciendis vel praesentium laborum hic voluptas asperiores nam
-              rerum nihil obcaecati labore. Id praesentium porro ea placeat rerum aut tempore totam aut illum cupiditate
-              sed laborum explicabo. Hic explicabo voluptatibus qui repellat fugiat ex voluptatum fuga qui architecto
-              atque quo illum quas aut facilis nesciunt? Ut suscipit rerum ut perferendis nihil ea autem unde est enim
-              veniam nam odio tempora.
-            </p>
-            <p>
-              Quo numquam iste est repellendus numquam et galisum omnis ad praesentium dolores aut neque saepe vel
-              consectetur enim aut cumque neque. Et voluptate sapiente quisquam quasi eum beatae voluptas rem iure
-              velit. Sed impedit eaque 33 natus nihil est quaerat porro est quia nisi qui doloribus aperiam. Sit culpa
-              illum ea consectetur perspiciatis ex veritatis dolorem id velit sequi qui maiores asperiores!
-            </p>
-          </div>
-        }
-      />
-      <NavItem
-        icon={['fal', 'cog']}
-        subItems={[
-          {
-            label: 'Label 1',
-          },
-          {
-            label: 'Label 2',
-          },
-        ]}
-      />
-      <NavItem
-        icon={['fal', 'user-circle']}
-        subItems={[
-          {
-            label: 'Label 1',
-          },
-          {
-            label: 'Label 2',
-          },
-        ]}
-      />
-    </NavBarUtilities>
-  </NavBar>
-</Canvas>
-
-## Props
-
-<ArgsTable of={NavBar} sort='requiredFirst' />
-
 For layout management, please refer to this [example](https://codesandbox.io/s/size-management-sidebar-xtpkk0)
 
 ## Story
@@ -310,5 +166,155 @@ For layout management, please refer to this [example](https://codesandbox.io/s/s
       redirection: '/',
     }}>
     {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Props
+
+<ArgsTable of={NavBar} sort='requiredFirst' />
+
+## Brand
+
+<Canvas withSource={true}>
+  <Story name='Brand'>
+    <NavBar logoSource='./images/logo.svg' redirection='/' className={styles.positionRelative} />
+  </Story>
+</Canvas>
+
+## NavBarMenu
+
+<Canvas isExpanded={false}>
+  <Story name='NavBarMenu'>
+    <NavBar logoSource='./images/logo.svg' redirection='/' className={styles.positionRelative}>
+      <NavBarMenu>
+        <NavItem
+          label='Label 1'
+          subItems={[
+            {
+              label: 'Label 1',
+              onClick: () => {
+                console.log('label 1 - label 1');
+              },
+            },
+            {
+              label: 'Label 2',
+              onClick: () => {
+                console.log('label 1 - label 2');
+              },
+            },
+          ]}
+        />
+        <NavItem
+          label='Label 2'
+          subItems={[
+            {
+              label: 'Label 1',
+              onClick: () => {
+                console.log('label 2 - label 1');
+              },
+            },
+            {
+              label: 'Label 2',
+              onClick: () => {
+                console.log('label 2 - label 2');
+              },
+            },
+          ]}
+        />
+        <NavItem
+          label='Label 3'
+          onClick={() => {
+            console.log('label 3');
+          }}
+        />
+      </NavBarMenu>
+    </NavBar>
+  </Story>
+</Canvas>
+
+## NavBarUtilities
+
+<Canvas isExpanded={false}>
+  <Story name='NavBarUtilities'>
+    <NavBar logoSource='./images/logo.svg' className={styles.positionRelative}>
+      <NavBarUtilities>
+        <NavItem
+          icon={['fal', 'ballot-check']}
+          counter={2}
+          subItems={[
+            {
+              label: 'Label 1',
+            },
+            {
+              label: 'Label 2',
+            },
+          ]}
+        />
+        <NavItem
+          icon={['fal', 'bell']}
+          counter='+99'
+          customSubItem={
+            <div
+              style={{
+                maxWidth: '500px',
+                height: '300px',
+                padding: '0px 16px',
+                overflowX: 'hidden',
+                overflowY: 'auto',
+                backgroundColor: 'black',
+              }}>
+              <p>
+                Lorem ipsum dolor sit amet. Ut voluptas reiciendis vel praesentium laborum hic voluptas asperiores nam
+                rerum nihil obcaecati labore. Id praesentium porro ea placeat rerum aut tempore totam aut illum
+                cupiditate sed laborum explicabo. Hic explicabo voluptatibus qui repellat fugiat ex voluptatum fuga qui
+                architecto atque quo illum quas aut facilis nesciunt? Ut suscipit rerum ut perferendis nihil ea autem
+                unde est enim veniam nam odio tempora.
+              </p>
+              <p>
+                Quo numquam iste est repellendus numquam et galisum omnis ad praesentium dolores aut neque saepe vel
+                consectetur enim aut cumque neque. Et voluptate sapiente quisquam quasi eum beatae voluptas rem iure
+                velit. Sed impedit eaque 33 natus nihil est quaerat porro est quia nisi qui doloribus aperiam. Sit culpa
+                illum ea consectetur perspiciatis ex veritatis dolorem id velit sequi qui maiores asperiores!
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet. Ut voluptas reiciendis vel praesentium laborum hic voluptas asperiores nam
+                rerum nihil obcaecati labore. Id praesentium porro ea placeat rerum aut tempore totam aut illum
+                cupiditate sed laborum explicabo. Hic explicabo voluptatibus qui repellat fugiat ex voluptatum fuga qui
+                architecto atque quo illum quas aut facilis nesciunt? Ut suscipit rerum ut perferendis nihil ea autem
+                unde est enim veniam nam odio tempora.
+              </p>
+              <p>
+                Quo numquam iste est repellendus numquam et galisum omnis ad praesentium dolores aut neque saepe vel
+                consectetur enim aut cumque neque. Et voluptate sapiente quisquam quasi eum beatae voluptas rem iure
+                velit. Sed impedit eaque 33 natus nihil est quaerat porro est quia nisi qui doloribus aperiam. Sit culpa
+                illum ea consectetur perspiciatis ex veritatis dolorem id velit sequi qui maiores asperiores!
+              </p>
+            </div>
+          }
+        />
+        <NavItem
+          icon={['fal', 'cog']}
+          subItems={[
+            {
+              label: 'Label 1',
+            },
+            {
+              label: 'Label 2',
+            },
+          ]}
+        />
+        <NavItem
+          icon={['fal', 'user-circle']}
+          subItems={[
+            {
+              label: 'Label 1',
+            },
+            {
+              label: 'Label 2',
+            },
+          ]}
+        />
+      </NavBarUtilities>
+    </NavBar>
   </Story>
 </Canvas>

@@ -8,10 +8,17 @@ export default {
   title: 'Molecule/DatePickerField',
   component: DatePickerField,
   parameters: { actions: { argTypesRegex: '^on.*' }, controls: { sort: 'requiredFirst' } },
+  argTypes: {
+    dataTestId: {
+      table: {
+        disable: true,
+      },
+    },
+  },
 } as ComponentMeta<typeof DatePickerField>;
 
 const Template: ComponentStory<typeof DatePickerField> = ({ inputValue, ...args }: IDatePickerFieldProps) => {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [localValue, setLocalValue] = useState<Date | null | undefined>(inputValue);
 
   useEffect(() => {
@@ -24,6 +31,8 @@ const Template: ComponentStory<typeof DatePickerField> = ({ inputValue, ...args 
             setLoading(false);
           });
         return;
+      } else {
+        setLoading(false);
       }
     };
 
