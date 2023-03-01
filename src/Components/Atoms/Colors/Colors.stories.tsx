@@ -23,6 +23,7 @@ enum COLORSENUM {
   CINNABAR = 'cinnarbar',
   FERN = 'fern',
   SKY = 'sky',
+  SKYHIGH = 'skyhigh',
   TANGERINE = 'tangerine',
   ERROR = 'error',
 }
@@ -79,6 +80,7 @@ const colors: Record<COLORSENUM, IColor> = {
   [COLORSENUM.CERULEAN]: colorBuilder(COLORSENUM.CERULEAN, colorsVariables.cerulean),
   [COLORSENUM.FERN]: colorBuilder(COLORSENUM.FERN, colorsVariables.fern),
   [COLORSENUM.SKY]: colorBuilder(COLORSENUM.SKY, colorsVariables.sky),
+  [COLORSENUM.SKYHIGH]: colorBuilder(COLORSENUM.SKYHIGH, colorsVariables.skyhigh),
   [COLORSENUM.SCOOTER]: colorBuilder(COLORSENUM.SCOOTER, colorsVariables.scooter),
   [COLORSENUM.ERROR]: colorBuilder(COLORSENUM.ERROR, colorsVariables.error),
   [COLORSENUM.BUTTERCUP]: colorBuilder(COLORSENUM.BUTTERCUP, colorsVariables.buttercup),
@@ -130,6 +132,7 @@ export const ExtendedPaletter = Template.bind({});
 ExtendedPaletter.args = {
   colors: [
     colors[COLORSENUM.SKY],
+    colors[COLORSENUM.SKYHIGH],
     colors[COLORSENUM.FERN],
     colors[COLORSENUM.BUTTERCUP],
     colors[COLORSENUM.TANGERINE],

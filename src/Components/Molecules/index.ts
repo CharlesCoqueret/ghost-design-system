@@ -1,5 +1,6 @@
 export * from './AmountField';
 export * from './Button';
+export * from './Banner';
 export * from './CheckboxField';
 export * from './DatePickerField';
 export * from './DynamicSearchCreatableField';
