@@ -12,6 +12,7 @@ export interface IStyle {
   readonly secondary: string;
   readonly silver: string;
   readonly sky: string;
+  readonly skyhigh: string;
   readonly smoke: string;
   readonly tangerine: string;
   readonly tertiary: string;

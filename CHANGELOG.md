@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.4.11 (2023-03-01)
+
+### Features
+
+Add Banner component
+
 ## 1.4.10 (2023-02-25)
 
 Co-authored-by: @renv118
