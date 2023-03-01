@@ -25,6 +25,7 @@
     - [Title](https://charlescoqueret.github.io/ghost-design-system/?path=/story/atom-typography-title--default)
 - Molecules:
   - [Amount field](https://charlescoqueret.github.io/ghost-design-system/?path=/story/molecule-amountfield--default)
+  - [Banner](https://charlescoqueret.github.io/ghost-design-system/?path=/story/molecule--banner)
   - [Button](https://charlescoqueret.github.io/ghost-design-system/?path=/story/molecule-button--simple)
   - [Checkbox field](https://charlescoqueret.github.io/ghost-design-system/?path=/story/molecule-checkboxfield--default)
   - [Datepicker field](https://charlescoqueret.github.io/ghost-design-system/?path=/story/molecule-datepickerfield--default)
@@ -86,6 +87,7 @@ $cerulean: rgb(1, 82, 129);
 $cinnabar: rgb(232, 61, 71);
 $fern: rgb(92, 184, 92);
 $sky: rgb(16, 156, 241);
+$skyhigh: rgb(206 228 255);
 $tangerine: rgb(229, 114, 0);
 
 $error: rgb(255, 52, 24);

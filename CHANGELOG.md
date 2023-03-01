@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.4.12 (2023-03-01)
+
+### Bug fixes
+
+Add scss as standard for banner
+
 ## 1.4.11 (2023-03-01)
 
 ### Features

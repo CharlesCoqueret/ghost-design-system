@@ -1,8 +1,6 @@
 import React, { PropsWithChildren, ReactElement } from 'react';
 import classnames from 'classnames';
 
-import styles from './Banner.module.scss';
-
 export enum BannerType {
   INFORMATION = 'information',
 }
@@ -19,8 +17,8 @@ const Banner = (props: PropsWithChildren<IBannerProps>): ReactElement => {
 
   return (
     <div
-      className={classnames(styles.container, {
-        [styles[type as string]]: true,
+      className={classnames('gds-banner-container', {
+        [type as string]: true,
       })}>
       {children}
     </div>
