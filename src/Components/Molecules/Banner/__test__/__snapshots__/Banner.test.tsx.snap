@@ -5,7 +5,7 @@ exports[`Banner Component renders nothing without children 1`] = `<div />`;
 exports[`Banner Component renders with children 1`] = `
 <div>
   <div
-    class="container information"
+    class="gds-banner-container information"
   >
     <div
       id="CHILD1"
