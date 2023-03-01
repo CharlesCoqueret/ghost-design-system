@@ -21,8 +21,4 @@ const Template: ComponentStory<typeof BannerComponent> = (args: IBannerProps) =>
 };
 
 export const Banner = Template.bind({});
-Banner.args = {
-  title: 'Signatures',
-  openInitially: true,
-  collapsible: true,
-};
+Banner.args = {};
