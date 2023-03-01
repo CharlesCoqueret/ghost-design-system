@@ -25,6 +25,7 @@
     - [Title](https://charlescoqueret.github.io/ghost-design-system/?path=/story/atom-typography-title--default)
 - Molecules:
   - [Amount field](https://charlescoqueret.github.io/ghost-design-system/?path=/story/molecule-amountfield--default)
+  - [Banner](https://charlescoqueret.github.io/ghost-design-system/?path=/story/molecule--banner)
   - [Button](https://charlescoqueret.github.io/ghost-design-system/?path=/story/molecule-button--simple)
   - [Checkbox field](https://charlescoqueret.github.io/ghost-design-system/?path=/story/molecule-checkboxfield--default)
   - [Datepicker field](https://charlescoqueret.github.io/ghost-design-system/?path=/story/molecule-datepickerfield--default)

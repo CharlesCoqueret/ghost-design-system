@@ -19,6 +19,7 @@ export interface ITheme {
   secondary: Color;
   silver: Color;
   sky: Color;
+  skyhigh: Color;
   smoke: Color;
   tangerine: Color;
   tertiary: Color;
@@ -38,6 +39,7 @@ const pebble = '117, 117, 117';
 const scooter = '38, 186, 212';
 const silver = '196, 196, 196';
 const sky = '16, 156, 241';
+const skyhigh = '206, 228, 255';
 const smoke = '248, 248, 248';
 const tangerine = '229, 114, 0';
 const white = '255, 255, 255';
@@ -58,6 +60,7 @@ export const defaultTheme: ITheme = {
   secondary: pebble,
   silver,
   sky,
+  skyhigh,
   smoke,
   tangerine,
   tertiary: charcoal,
@@ -102,6 +105,7 @@ const ThemeProvider = (props: PropsWithChildren<IThemeProvider>) => {
     rootDocumentStyle.setProperty('--theme-provider-secondary', currentTheme.secondary);
     rootDocumentStyle.setProperty('--theme-provider-silver', currentTheme.silver);
     rootDocumentStyle.setProperty('--theme-provider-sky', currentTheme.sky);
+    rootDocumentStyle.setProperty('--theme-provider-skyhigh', currentTheme.skyhigh);
     rootDocumentStyle.setProperty('--theme-provider-smoke', currentTheme.smoke);
     rootDocumentStyle.setProperty('--theme-provider-tangerine', currentTheme.tangerine);
     rootDocumentStyle.setProperty('--theme-provider-tertiary', currentTheme.tertiary);
