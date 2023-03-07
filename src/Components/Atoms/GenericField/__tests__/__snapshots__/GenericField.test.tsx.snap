@@ -64,19 +64,11 @@ exports[`GenericField Component GenericField renders with error message and help
 </div>
 `;
 
-exports[`GenericField Component GenericField renders with error message in read only, not displaying the error 1`] = `
+exports[`GenericField Component GenericField renders with error message in read only and maxLength, not displaying the error  1`] = `
 <div>
   <div
     class="gds-field-group"
-  >
-    <div
-      class="field-message"
-    >
-      <div
-        class="field-helper-text"
-      />
-    </div>
-  </div>
+  />
 </div>
 `;
 
@@ -172,5 +164,13 @@ exports[`GenericField Component GenericField renders with invertInputDescription
       </div>
     </div>
   </div>
+</div>
+`;
+
+exports[`GenericField Component GenericField renders with maxLength in read only, not displaying the description section 1`] = `
+<div>
+  <div
+    class="gds-field-group"
+  />
 </div>
 `;
