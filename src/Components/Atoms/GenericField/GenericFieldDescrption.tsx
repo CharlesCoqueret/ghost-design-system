@@ -41,15 +41,17 @@ const message = ({
  * Generic field description
  *
  * Does nothing in inline mode.
+ * Does nothing when there is no helper text, max length nor error message.
+ * Does nothing when there is no helper text and read only.
  * Displays an error message if there is an error message and if not in read only.
  * Displays a helper message if defined.
  * Displays a counter if the input length and max length are defined.
  *
  */
 const GenericFieldDescription = (props: IGenericFieldDescriptionProps): ReactElement => {
-  const { errorMessage, helperText, inline, invertInputDescription, maxLength } = props;
+  const { errorMessage, helperText, inline, invertInputDescription, maxLength, readOnly } = props;
 
-  if (inline || (!helperText && !maxLength && !errorMessage)) return <></>;
+  if (inline || (!helperText && !maxLength && !errorMessage) || (!helperText && readOnly)) return <></>;
 
   return (
     <div className={classNames('field-message', { 'field-inverted': invertInputDescription })}>{message(props)}</div>
