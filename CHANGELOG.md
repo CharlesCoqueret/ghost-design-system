@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.4.13 (2023-03-07)
+
+### Bug fixes
+
+Hide field max length when the field is in readonly
+
 ## 1.4.12 (2023-03-01)
 
 ### Bug fixes

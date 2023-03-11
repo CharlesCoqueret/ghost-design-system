@@ -31,8 +31,14 @@ describe('GenericField Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('GenericField renders with error message in read only, not displaying the error', () => {
+  it('GenericField renders with error message in read only and maxLength, not displaying the error ', () => {
     const { container } = render(<GenericField readOnly errorMessage='ERROR-MESSAGE' maxLength={10} />);
+
+    expect(container).toMatchSnapshot();
+  });
+
+  it('GenericField renders with maxLength in read only, not displaying the description section', () => {
+    const { container } = render(<GenericField readOnly maxLength={10} />);
 
     expect(container).toMatchSnapshot();
   });
