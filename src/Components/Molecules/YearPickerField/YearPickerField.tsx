@@ -26,12 +26,18 @@ export interface IYearPickerFieldProps {
   inputClassName?: string;
   /** Input year value (optional, default: undefined) */
   inputValue?: number;
+  /** Provide the ability to clear the value (optional, default: false) */
+  isClearable?: boolean;
   /** Label (optional, default: undefined) */
   label?: string;
   /** Size of the field in a 12 column grid (optional, default: undefined) */
   labelSize?: number;
   /** Mandatory field (optional, default: false) */
   mandatory?: boolean;
+  /** Maximum date that can be picked (optional, default: undefined) */
+  maxDate?: Date;
+  /** Minimum date that can be picked (optional, default: undefined) */
+  minDate?: Date;
   /** Name of text field (optional, default: false) */
   name?: string;
   /** Handler of value changes (optional, default: undefined) */
@@ -65,9 +71,12 @@ export const YearPickerField = (props: IYearPickerFieldProps): ReactElement => {
     inline,
     inputClassName,
     inputValue,
+    isClearable,
     label,
     labelSize,
     mandatory,
+    maxDate,
+    minDate,
     name,
     onChange,
     placeholder,
@@ -94,7 +103,10 @@ export const YearPickerField = (props: IYearPickerFieldProps): ReactElement => {
         disabled={disabled}
         highlighted={highlighted}
         isInError={errorMessage !== undefined}
+        isClearable={isClearable}
         name={name}
+        maxDate={maxDate}
+        minDate={minDate}
         placeholder={placeholder}
         inputValue={inputValue}
         onChange={onChange}
@@ -115,10 +127,13 @@ YearPickerField.defaultProps = {
   inline: false,
   inputClassName: undefined,
   inputValue: undefined,
+  isClearable: false,
   label: undefined,
   labelSize: undefined,
   name: undefined,
   mandatory: false,
+  maxDate: undefined,
+  minDate: undefined,
   onChange: undefined,
   placeholder: undefined,
   readOnly: false,

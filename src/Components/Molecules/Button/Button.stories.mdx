@@ -1,0 +1,128 @@
+import { Canvas, Meta, ArgsTable, Story } from '@storybook/addon-docs';
+import { MemoryRouter as Router } from 'react-router-dom';
+
+import Button, { ColorButtonEnum } from './Button';
+
+<Meta
+  title='Molecule/Button'
+  component={Button}
+  parameters={{
+    viewMode: 'docs',
+    layout: 'centered',
+  }}
+  argTypes={{
+    dataTestId: {
+      table: {
+        disable: true,
+      },
+    },
+  }}
+/>
+
+# Button
+
+export const ButtonTemplate = (args) => {
+  return <Button {...args} />;
+};
+
+<Canvas withSource='open'>
+  <Story
+    name='Button'
+    args={{
+      label: 'Button primary',
+      tooltip: 'Button primary',
+      icon: ['fal', 'gear'],
+      color: ColorButtonEnum.PRIMARY,
+    }}>
+    {ButtonTemplate.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable of={Button} sort='requiredFirst' exclude={['dataTestId']} />
+
+### Primary
+
+<Canvas withSource='open'>
+  <Router>
+    <Button label='Primary button' tooltip='Simple button primary' color={ColorButtonEnum.PRIMARY} />
+  </Router>
+</Canvas>
+
+### Secondary
+
+<Canvas withSource='open'>
+  <Router>
+    <Button label='Button secondary' tooltip='Button secondary' color={ColorButtonEnum.SECONDARY} />
+  </Router>
+</Canvas>
+
+### Reversed
+
+<Canvas withSource='open'>
+  <Router>
+    <Button label='Button reversed' tooltip='Button reversed' color={ColorButtonEnum.REVERSED} />
+  </Router>
+</Canvas>
+
+### Loading
+
+<Canvas withSource='open'>
+  <Router>
+    <Button label='Button loading' tooltip='Button loading' color={ColorButtonEnum.PRIMARY} loading={true} />
+  </Router>
+</Canvas>
+
+### List
+
+export const itemList = [
+  { itemId: 'key1', label: 'First option' },
+  { itemId: 'key2', label: 'Second option' },
+  { itemId: 'key3', label: 'Third option', divider: true },
+];
+
+<Canvas withSource='open'>
+  <Router>
+    <Button label='Button primary' tooltip='Dropdown primary' color={ColorButtonEnum.PRIMARY} itemList={itemList} />
+  </Router>
+</Canvas>
+
+### Icon
+
+<Canvas withSource='open'>
+  <Router>
+    <Button icon={['fal', 'arrow-down-to-line']} color={ColorButtonEnum.REVERSED} tooltip='Icon reversed' />
+  </Router>
+</Canvas>
+
+### Icon with list
+
+<Canvas withSource='open'>
+  <Router>
+    <Button icon={['fal', 'ellipsis']} color={ColorButtonEnum.REVERSED} tooltip='Icon reversed' itemList={itemList} />
+  </Router>
+</Canvas>
+
+### Trash with popover
+
+<Canvas withSource='open'>
+  <Router>
+    <Button
+      icon={['fal', 'trash-alt']}
+      color={ColorButtonEnum.REVERSED}
+      tooltip='Delete'
+      popover={{
+        title: 'Delete?',
+        buttons: [
+          {
+            label: 'Cancel',
+            color: ColorButtonEnum.SECONDARY,
+          },
+          {
+            label: 'Confirm',
+            color: ColorButtonEnum.PRIMARY,
+          },
+        ],
+      }}
+    />
+  </Router>
+</Canvas>

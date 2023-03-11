@@ -1,0 +1,94 @@
+import { useState } from 'react';
+import { Canvas, Meta, ArgsTable, Story } from '@storybook/addon-docs';
+
+import TextField, { ITextFieldProps } from './TextField';
+
+<Meta
+  title='Molecule/TextField'
+  component={TextField}
+  parameters={{
+    viewMode: 'docs',
+    layout: 'fullscreen',
+  }}
+  argTypes={{
+    dataTestId: {
+      table: {
+        disable: true,
+      },
+    },
+  }}
+/>
+
+# TextField
+
+export const Template = (args) => {
+  const [val, setVal] = useState(args.inputValue);
+  return <TextField {...args} inputValue={val} onChange={setVal} />;
+};
+
+<Canvas withSource='open'>
+  <Story
+    name='TextField'
+    args={{
+      inputValue: 'This is a sample text',
+      label: 'Text field',
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable of={TextField} sort='requiredFirst' exclude={['dataTestId']} />
+
+### Read Only
+
+<Canvas>
+  <Template
+    inputValue='This is a sample text'
+    fieldSize={6}
+    label='Text field in read only with label size = 4 and field size = 6'
+    labelSize={4}
+    readOnly={true}
+    placeholder='Placeholder text'
+  />
+</Canvas>
+
+### Error
+
+<Canvas>
+  <Template
+    inputValue='This is a sample text'
+    placeholder='Placeholder text'
+    label='Text field in error'
+    errorMessage='This text is on error'
+  />
+</Canvas>
+
+### Helper with counter
+
+<Canvas>
+  <Template
+    inputValue='This is a sample'
+    label='Text field with helper and counter'
+    helperText='Helper text'
+    mandatory={true}
+    maxLength={20}
+  />
+</Canvas>
+
+### Highlighted
+
+<Canvas>
+  <Template
+    label='Text field highlighted'
+    inputValue='This is a sample text'
+    readOnly={true}
+    highlighted={true}
+    helperText='Helper text'
+  />
+</Canvas>
+
+### Disabled
+
+<Canvas>
+  <Template label='Text field disabled' inputValue='This is a sample text' disabled={true} helperText='Helper text' />
+</Canvas>

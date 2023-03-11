@@ -1,19 +1,30 @@
-import React, { useRef, useState } from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { useState, useRef } from 'react';
+import { Canvas, Meta, ArgsTable, Story } from '@storybook/addon-docs';
 
-import Popover, { IPopoverProps } from './Popover';
+import Popover from './Popover';
 import Button, { ColorButtonEnum } from '../Button/Button';
 
-export default {
-  title: 'Molecule/Popover',
-  component: Popover,
-  parameters: { actions: { argTypesRegex: '^on.*' }, controls: { sort: 'requiredFirst' }, layout: 'centered' },
-} as ComponentMeta<typeof Popover>;
+<Meta
+  title='Molecule/Popover'
+  component={Popover}
+  parameters={{
+    viewMode: 'docs',
+    layout: 'centered',
+  }}
+  argTypes={{
+    dataTestId: {
+      table: {
+        disable: true,
+      },
+    },
+  }}
+/>
 
-const Template: ComponentStory<typeof Popover> = (args: IPopoverProps) => {
+# Popover
+
+export const Template = () => {
   const [open, setOpen] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
-
+  const ref = useRef(null);
   return (
     <div ref={ref}>
       <Button
@@ -25,14 +36,12 @@ const Template: ComponentStory<typeof Popover> = (args: IPopoverProps) => {
         color={ColorButtonEnum.REVERSED}
       />
       <Popover
-        {...args}
         anchorRef={ref}
         buttons={[
           {
             label: 'Cancel',
             color: ColorButtonEnum.SECONDARY,
             onClick: () => {
-              console.log('Cancelled');
               setOpen(false);
             },
           },
@@ -40,14 +49,12 @@ const Template: ComponentStory<typeof Popover> = (args: IPopoverProps) => {
             label: 'Confirm',
             color: ColorButtonEnum.PRIMARY,
             onClick: () => {
-              console.log('Confirmed');
               setOpen(false);
             },
           },
         ]}
         open={open}
         onClose={() => {
-          console.log('Cancelled because of click outside');
           setOpen(false);
         }}
         title='Delete?'
@@ -56,5 +63,8 @@ const Template: ComponentStory<typeof Popover> = (args: IPopoverProps) => {
   );
 };
 
-export const Default = Template.bind({});
-Default.args = {};
+<Canvas withSource='open'>
+  <Story name='Popover'>{Template.bind({})}</Story>
+</Canvas>
+
+<ArgsTable of={Popover} sort='requiredFirst' exclude={['dataTestId']} />

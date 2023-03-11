@@ -5,7 +5,7 @@ import { default as TooltipComponent, ITooltipProps } from './Tooltip';
 import { MenuDirectionEnum } from './types';
 
 export default {
-  title: 'Atom',
+  title: 'Atom/Tooltip',
   component: TooltipComponent,
   parameters: { actions: { argTypesRegex: '^on.*' }, controls: { sort: 'requiredFirst' } },
 } as ComponentMeta<typeof TooltipComponent>;

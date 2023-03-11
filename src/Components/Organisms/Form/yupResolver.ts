@@ -32,9 +32,9 @@ export const yupResolver = <T extends AnyObject>(
     else {
       console.error('Error with incorrect type:', error, 'Trying to resolve it.');
       try {
-        return parseErrorSchema(error as yup.ValidationError) as Record<keyof T, FieldError>;
+        return parseErrorSchema(error as yup.ValidationError);
       } catch {
-        console.error('Error with incorrect that could not be resolved');
+        console.error('Error with incorrect type that could not be resolved');
       }
     }
   }

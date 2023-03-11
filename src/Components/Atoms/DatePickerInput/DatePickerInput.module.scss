@@ -369,9 +369,6 @@
     }
 
     &:last-of-type {
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
       user-select: none;
       border-bottom-left-radius: $datepicker__border-radius;
       border-bottom-right-radius: $datepicker__border-radius;

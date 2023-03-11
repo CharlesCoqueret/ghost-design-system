@@ -1,4 +1,4 @@
-import React, { Fragment, ReactElement, useRef, useState } from 'react';
+import React, { CSSProperties, Fragment, ReactElement, useRef, useState } from 'react';
 import { ControlledMenu, MenuDivider, MenuHeader, MenuItem } from '@szhsin/react-menu';
 import { NavLink } from 'react-router-dom';
 import InfiniteScroll from 'react-infinite-scroller';
@@ -9,8 +9,11 @@ import { Portal } from '../../Atoms/Portal';
 import { Tooltip } from '../../Atoms/Tooltip';
 
 import styles from './NavItem.module.scss';
+import classnames from 'classnames';
 
 export interface INavItemProps {
+  /** Class for the container (optional, default: undefined) */
+  className?: string;
   /** Counter in a badge floating above the NavItem (optional, default: undefined) */
   counter?: string | number;
   /** custom infinite scroll config (optional, default: undefined) */
@@ -35,6 +38,8 @@ export interface INavItemProps {
   link?: string;
   /** On Click handler (optional, default: undefined) */
   onClick?: () => void;
+  /** Custom style (optional, default: undefined) */
+  style?: CSSProperties;
   /** Submenu items (optional, default: undefined) */
   subItems?: Array<INavItemProps>;
   /** Tooltip (optional, default: undefined) */
@@ -43,6 +48,7 @@ export interface INavItemProps {
 
 const NavItem = (props: INavItemProps): ReactElement => {
   const {
+    className,
     counter,
     customInfiniteScrollConfig,
     customSubItem,
@@ -51,6 +57,7 @@ const NavItem = (props: INavItemProps): ReactElement => {
     label,
     link,
     onClick,
+    style,
     subItems,
     tooltip,
   } = props;
@@ -83,7 +90,12 @@ const NavItem = (props: INavItemProps): ReactElement => {
   return (
     <>
       <Tooltip tooltip={tooltip}>
-        <div className={styles.item} data-testid={dataTestId} ref={ref} onClick={handleClick}>
+        <div
+          className={classnames(styles.item, className)}
+          data-testid={dataTestId}
+          ref={ref}
+          onClick={handleClick}
+          style={style}>
           {link ? (
             <NavLink to={link} key='link'>
               {icon && <Icon icon={icon} size={label ? '1x' : '2x'} />}
@@ -164,6 +176,21 @@ const NavItem = (props: INavItemProps): ReactElement => {
       )}
     </>
   );
+};
+
+NavItem.defaultProps = {
+  className: undefined,
+  counter: undefined,
+  customInfiniteScrollConfig: undefined,
+  customSubItem: undefined,
+  dataTestId: undefined,
+  icon: undefined,
+  label: undefined,
+  link: undefined,
+  onClick: undefined,
+  style: undefined,
+  subItems: undefined,
+  tooltip: undefined,
 };
 
 export default NavItem;

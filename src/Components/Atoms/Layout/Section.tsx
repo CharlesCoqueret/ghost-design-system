@@ -4,6 +4,7 @@ import useCollapse from 'react-collapsed';
 
 import { Icon } from '../Icon';
 import { Typography } from '../Typography';
+import Separator from './Separator';
 
 import styles from './Section.module.scss';
 
@@ -40,7 +41,7 @@ const Section = (props: PropsWithChildren<ISectionProps>): ReactElement => {
   };
 
   return (
-    <div>
+    <>
       <div
         className={classnames(styles.header, { [styles.collapsible]: collapsible })}
         onClick={handleClick}
@@ -57,8 +58,8 @@ const Section = (props: PropsWithChildren<ISectionProps>): ReactElement => {
       <div className={styles.body} {...getCollapseProps()}>
         {children}
       </div>
-      {separator && <div className={styles.footer} />}
-    </div>
+      {separator && <Separator />}
+    </>
   );
 };
 

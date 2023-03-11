@@ -1,4 +1,4 @@
-import React, { PropsWithChildren, ReactElement } from 'react';
+import React, { CSSProperties, PropsWithChildren, ReactElement } from 'react';
 import classnames from 'classnames';
 
 import NavBarBrand, { IBrandProps } from './NavBarBrand';
@@ -6,8 +6,10 @@ import NavBarBrand, { IBrandProps } from './NavBarBrand';
 import styles from './NavBar.module.scss';
 
 export interface INavBarProps extends IBrandProps {
-  /** Classname to be propagated to the top level container (options, default: undefined) */
+  /** Class for the container (optional, default: undefined) */
   className?: string;
+  /** Custom style (optional, default: undefined) */
+  style?: CSSProperties;
 }
 
 const NavBar = (props: PropsWithChildren<INavBarProps>): ReactElement => {

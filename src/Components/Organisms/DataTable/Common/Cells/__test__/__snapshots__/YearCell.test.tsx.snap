@@ -12,7 +12,7 @@ exports[`YearCell component YearCell renders 1`] = `
             class="fieldGroup"
           >
             <div
-              class="input-year-picker-wrapper-read-only table--cell-value--date-readonly"
+              class="container input-year-picker-wrapper-read-only table--cell-value--date-readonly"
             >
               <div
                 class="react-datepicker-wrapper"
@@ -54,7 +54,7 @@ exports[`YearCell component YearCell renders in edit mode and handles change 1`]
             class="fieldGroup"
           >
             <div
-              class=""
+              class="container"
             >
               <div
                 class="react-datepicker-wrapper"
@@ -95,7 +95,7 @@ exports[`YearCell component YearCell renders in edit mode via extra 1`] = `
             class="fieldGroup"
           >
             <div
-              class=""
+              class="container"
             >
               <div
                 class="react-datepicker-wrapper"
@@ -137,7 +137,7 @@ exports[`YearCell component YearCell renders when hidden 1`] = `
             class="fieldGroup"
           >
             <div
-              class="input-year-picker-wrapper-read-only table--cell-value--date-readonly"
+              class="container input-year-picker-wrapper-read-only table--cell-value--date-readonly"
             >
               <div
                 class="react-datepicker-wrapper"
@@ -179,7 +179,7 @@ exports[`YearCell component YearCell renders with forced value 1`] = `
             class="fieldGroup"
           >
             <div
-              class="input-year-picker-wrapper-read-only table--cell-value--date-readonly"
+              class="container input-year-picker-wrapper-read-only table--cell-value--date-readonly"
             >
               <div
                 class="react-datepicker-wrapper"

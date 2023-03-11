@@ -1,6 +1,7 @@
 import commonjs from '@rollup/plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
 import typescript from '@rollup/plugin-typescript';
+import terser from '@rollup/plugin-terser';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import postcss from 'rollup-plugin-postcss';
 
@@ -20,6 +21,7 @@ export default {
       format: 'cjs',
       exports: 'named',
       sourcemap: true,
+      plugins: [terser()],
     },
   ],
   onwarn: (warning) => {
@@ -27,7 +29,7 @@ export default {
       console.error(warning.message);
       return;
     }
-    throw new Error(warning.message);
+    throw new Error(warning);
   },
   plugins: [
     peerDepsExternal(),

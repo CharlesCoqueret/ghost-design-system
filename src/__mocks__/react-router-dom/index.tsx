@@ -24,10 +24,14 @@ export const NavLink = (props: PropsWithChildren<NavLinkProps> & { ['data-testid
   const { children, className, ['data-testid']: dataTestId, exact, target, to } = props;
 
   return (
-    <a href={locationString(to)} className={className as string | undefined} data-testid={dataTestId} target={target}>
+    <div
+      onClick={() => console.info('url pushed:', to)}
+      className={className as string | undefined}
+      data-testid={dataTestId}>
       {exact ? 'full url' : 'partial url'}
+      {target}
       {children}
-    </a>
+    </div>
   );
 };
 

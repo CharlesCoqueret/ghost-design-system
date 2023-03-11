@@ -3,7 +3,7 @@
 exports[`YearPickerInput Component YearPickerInput renders and changes with empty value 1`] = `
 <div>
   <div
-    class=""
+    class="container"
   >
     <div
       class="react-datepicker-wrapper"
@@ -29,7 +29,7 @@ exports[`YearPickerInput Component YearPickerInput renders and changes with empt
 exports[`YearPickerInput Component YearPickerInput renders and changes without onChange prop 1`] = `
 <div>
   <div
-    class=""
+    class="container"
   >
     <div
       class="react-datepicker-wrapper"
@@ -55,7 +55,7 @@ exports[`YearPickerInput Component YearPickerInput renders and changes without o
 exports[`YearPickerInput Component YearPickerInput renders and changes without onChange prop 2`] = `
 <div>
   <div
-    class=""
+    class="container"
   >
     <div
       class="react-datepicker-wrapper"
@@ -81,7 +81,7 @@ exports[`YearPickerInput Component YearPickerInput renders and changes without o
 exports[`YearPickerInput Component YearPickerInput renders handles changes 1`] = `
 <div>
   <div
-    class=""
+    class="container"
   >
     <div
       class="react-datepicker-wrapper"
@@ -107,7 +107,7 @@ exports[`YearPickerInput Component YearPickerInput renders handles changes 1`] =
 exports[`YearPickerInput Component YearPickerInput renders handles changes 2`] = `
 <div>
   <div
-    class=""
+    class="container"
   >
     <div
       class="react-datepicker-wrapper"
@@ -133,7 +133,7 @@ exports[`YearPickerInput Component YearPickerInput renders handles changes 2`] =
 exports[`YearPickerInput Component YearPickerInput renders in Error 1`] = `
 <div>
   <div
-    class=""
+    class="container"
   >
     <div
       class="react-datepicker-wrapper"
@@ -159,7 +159,7 @@ exports[`YearPickerInput Component YearPickerInput renders in Error 1`] = `
 exports[`YearPickerInput Component YearPickerInput renders in readOnly, highlighted without portal 1`] = `
 <div>
   <div
-    class="input-year-picker-wrapper-read-only"
+    class="container input-year-picker-wrapper-read-only"
   >
     <div
       class="react-datepicker-wrapper"

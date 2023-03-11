@@ -5,34 +5,32 @@ exports[`Form Component Form renders with description and sections 1`] = `
   <div
     class="col"
   >
-    <div>
-      <div
-        class="header collapsible"
+    <div
+      class="header collapsible"
+    >
+      <h2
+        class="typography h2"
       >
-        <h2
-          class="typography h2"
-        >
-          Title
-        </h2>
-        <i
-          class="icon icon open"
-          icon="fal,chevron-left"
-        />
-      </div>
-      <div
-        aria-hidden="false"
-        class="body"
-        id="react-collapsed-panel-1"
-        style="box-sizing: border-box; display: none; height: 0px; overflow: hidden;"
-      >
-        <div
-          class="col"
-        />
-      </div>
-      <div
-        class="footer"
+        Title
+      </h2>
+      <i
+        class="icon icon open"
+        icon="fal,chevron-left"
       />
     </div>
+    <div
+      aria-hidden="false"
+      class="body"
+      id="react-collapsed-panel-1"
+      style="box-sizing: border-box; display: none; height: 0px; overflow: hidden;"
+    >
+      <div
+        class="col"
+      />
+    </div>
+    <hr
+      class="footer"
+    />
     <div
       class="row"
     >

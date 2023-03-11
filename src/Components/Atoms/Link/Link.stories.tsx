@@ -4,7 +4,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import LinkComponent, { ILinkProps } from './Link';
 
 export default {
-  title: 'Atom',
+  title: 'Atom/Link',
   component: LinkComponent,
   parameters: { actions: { argTypesRegex: '^on.*' }, controls: { sort: 'requiredFirst' }, layout: 'centered' },
 } as ComponentMeta<typeof LinkComponent>;

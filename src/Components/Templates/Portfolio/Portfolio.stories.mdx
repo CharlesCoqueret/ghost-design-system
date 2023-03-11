@@ -23,18 +23,14 @@ export const TemplatePortfolio = (args) => {
 The Portfolio is a high order component providing a way to show a combination of elements:
 
 - <LinkTo kind='organism--filter'>Filter</LinkTo>
-- <LinkTo story='organism-datatable--static-data-table'>StaticDataTable</LinkTo>
+- <LinkTo kind='organism-datatable--static-data-table'>StaticDataTable</LinkTo>
 
 The data displayed will be requested by the component.
 The data can be filtered, thanks to the Filter capabilities.
 The data can be sorted, thanks to the StaticDataTable capabilities.
 The data can be paginated, thanks to the built-in "infinite scroll".
 
-## Props
-
 <ArgsTable of={Portfolio} sort='requiredFirst' />
-
-## Story
 
 <Canvas>
   <Story

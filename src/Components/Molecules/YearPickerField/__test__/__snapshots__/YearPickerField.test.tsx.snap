@@ -6,7 +6,7 @@ exports[`YearPickerField Component YearPickerField renders 1`] = `
     class="fieldGroup"
   >
     <div
-      class=""
+      class="container"
     >
       <div
         class="react-datepicker-wrapper"
@@ -37,7 +37,7 @@ exports[`YearPickerField Component YearPickerField renders with values in disabl
     class="fieldGroup"
   >
     <div
-      class="input-year-picker-wrapper-read-only"
+      class="container input-year-picker-wrapper-read-only"
     >
       <div
         class="react-datepicker-wrapper"
@@ -69,7 +69,7 @@ exports[`YearPickerField Component YearPickerField renders with values in readon
     class="fieldGroup"
   >
     <div
-      class="input-year-picker-wrapper-read-only"
+      class="container input-year-picker-wrapper-read-only"
     >
       <div
         class="react-datepicker-wrapper"
@@ -101,7 +101,7 @@ exports[`YearPickerField Component YearPickerField renders with values with fiel
     class="fieldGroup size-6 inline"
   >
     <div
-      class=""
+      class="container"
     >
       <div
         class="react-datepicker-wrapper"

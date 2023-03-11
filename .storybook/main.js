@@ -13,6 +13,7 @@ module.exports = {
     '@storybook/addon-a11y',
   ],
   core: {
+    disableTelemetry: true,
     builder: 'webpack5',
   },
   framework: '@storybook/react',

@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { MemoryRouter as Router } from 'react-router-dom';
 
 import { ThemeProvider, loadIcons } from '../src/Components';
 
@@ -16,6 +16,7 @@ export const parameters = {
       order: ['Atom', 'Molecule', 'Organism', 'Template'],
     },
   },
+  controls: { expanded: true },
 };
 
 export const decorators = [
@@ -24,8 +25,6 @@ export const decorators = [
       <Router>
         <ThemeProvider />
         <Story />
-        <div id='root-portal-id' />
-        <div id='toaster-portal-id' />
       </Router>
     </div>
   ),

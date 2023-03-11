@@ -311,7 +311,7 @@ describe('fileUtils', () => {
         webkitGetAsEntry: () => {
           return {
             isFile: true,
-            file: (callback: (v: any) => void) => {
+            file: (callback: (v: unknown) => void) => {
               callback({ name: 'file1.pdf', type: 'application/pdf', size: 1234 });
             },
           };
@@ -324,11 +324,11 @@ describe('fileUtils', () => {
             isDirectory: true,
             createReader: () => {
               return {
-                readEntries: (callback: (v: any) => void) => {
+                readEntries: (callback: (v: unknown) => void) => {
                   callback([
                     {
                       isFile: true,
-                      file: (callback2: (v: any) => void) => {
+                      file: (callback2: (v: unknown) => void) => {
                         callback2({ name: 'file2.jspn', type: 'application/json', size: 4321 });
                       },
                     },
@@ -352,7 +352,7 @@ describe('fileUtils', () => {
         webkitGetAsEntry: () => {
           return {
             isFile: true,
-            file: (callback: (v: any) => void) => {
+            file: (callback: (v: unknown) => void) => {
               callback({ name: 'file1.pdf', type: 'application/pdf', size: 1234 });
             },
           };
@@ -365,11 +365,11 @@ describe('fileUtils', () => {
             isDirectory: true,
             createReader: () => {
               return {
-                readEntries: (callback: (v: any) => void) => {
+                readEntries: (callback: (v: unknown) => void) => {
                   callback([
                     {
                       isFile: true,
-                      file: (callback2: (v: any) => void) => {
+                      file: (callback2: (v: unknown) => void) => {
                         callback2({ name: 'file2.jspn', type: 'application/json', size: 4321 });
                       },
                     },

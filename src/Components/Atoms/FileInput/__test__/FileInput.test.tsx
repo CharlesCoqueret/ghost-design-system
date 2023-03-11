@@ -471,7 +471,7 @@ describe('FileInput Component', () => {
             webkitGetAsEntry: () => {
               return {
                 isFile: true,
-                file: (callback: (v: any) => void) => {
+                file: (callback: (v: unknown) => void) => {
                   callback({ name: 'file1.pdf', type: 'application/pdf', size: 1234 });
                 },
               };

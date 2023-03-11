@@ -31,7 +31,7 @@ const message = (props: IGenericFieldDescriptionProps): ReactElement => {
 
   return (
     <>
-      <div className={styles.helper}>{helperText}</div>
+      {helperText && <div className={styles.helper}>{helperText}</div>}
       {!readOnly && maxLength && <div className={styles.counter}>{`${inputLength} / ${maxLength}`}</div>}
     </>
   );
@@ -41,15 +41,17 @@ const message = (props: IGenericFieldDescriptionProps): ReactElement => {
  * Generic field description
  *
  * Does nothing in inline mode.
- * Displays an error message if there is an error message and if not in read only.
+ * Does nothing in readonly or disabled when there is no helper text (max length and error are not available).
+ * Does nothing when there is no helper text, error nor max length.
+ * Displays an error message if there is an error message.
  * Displays a helper message if defined.
  * Displays a counter if the input length and max length are defined.
  *
  */
 const GenericFieldDescription = (props: IGenericFieldDescriptionProps): ReactElement => {
-  const { errorMessage, helperText, inline, invertInputDescription, maxLength } = props;
+  const { disabled, errorMessage, helperText, inline, invertInputDescription, maxLength, readOnly } = props;
 
-  if (inline || (!helperText && !maxLength && !errorMessage)) return <></>;
+  if (inline || (!helperText && !maxLength && !errorMessage) || ((disabled || readOnly) && !helperText)) return <></>;
 
   return (
     <div className={classnames(styles.message, { [styles.inverted]: invertInputDescription })}>{message(props)}</div>

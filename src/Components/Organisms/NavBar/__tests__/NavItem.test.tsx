@@ -51,6 +51,7 @@ describe('NavItem Component', () => {
 
   it('renders with subitems', () => {
     const onClickMock = jest.fn();
+    console.info = jest.fn();
 
     const { container } = render(
       <NavItem
@@ -85,6 +86,9 @@ describe('NavItem Component', () => {
     act(() => {
       userEvent.click(subitem);
     });
+
+    expect(console.info).toBeCalledTimes(1);
+    expect(console.info).toBeCalledWith('url pushed:', '#');
 
     expect(container).toMatchSnapshot();
     expect(onClickMock).toBeCalledTimes(1);

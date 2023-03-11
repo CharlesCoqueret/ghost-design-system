@@ -112,10 +112,10 @@ exports[`SwitchField Component SwitchField renders with values with fieldSize an
     class="fieldGroup size-6 inline"
   >
     <div
-      class="container"
+      class="container inlineContainer"
     >
       <label
-        class="label"
+        class="label inlineLabel"
         for="switch-4"
         tabindex="0"
       >

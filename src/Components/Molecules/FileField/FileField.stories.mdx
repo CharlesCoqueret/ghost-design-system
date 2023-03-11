@@ -1,0 +1,343 @@
+import { useState } from 'react';
+import { Canvas, Meta, ArgsTable, Story } from '@storybook/addon-docs';
+
+import { FileStatusEnum } from '../../Atoms/FileInput';
+import FileField, { IFileFieldProps } from './FileField';
+
+<Meta
+  title='Molecule/FileField'
+  component={FileField}
+  parameters={{
+    viewMode: 'docs',
+    layout: 'fullscreen',
+  }}
+  argTypes={{
+    dataTestId: {
+      table: {
+        disable: true,
+      },
+    },
+  }}
+/>
+
+# FileField
+
+export const Template = (args) => {
+  return (
+    <FileField
+      {...args}
+      onChange={(file) => {
+        if (args.onChange) {
+          args.onChange(file);
+        }
+        return Promise.resolve();
+      }}
+      onDelete={(file) => {
+        if (args.onDelete) {
+          args.onDelete(file);
+        }
+        return Promise.resolve();
+      }}
+      onDownload={(file) => {
+        if (args.onDownload) {
+          args.onDownload(file);
+        }
+        return Promise.resolve();
+      }}
+      onFailure={(file, statusText) => {
+        return { ...file, error: statusText };
+      }}
+      onSuccess={(file, serverResponse) => {
+        const response = serverResponse;
+        return { ...file, id: response.id };
+      }}
+    />
+  );
+};
+
+export const commonProps = {
+  maxFileSize: 10 * 1024 * 1024,
+  inputValue: [
+    { uid: '1', name: 'test file.png', size: 1234, type: 'image/png', status: FileStatusEnum.DONE },
+    { uid: '2', name: 'second test file.png', size: 1234, type: 'image/png', status: FileStatusEnum.DONE },
+    {
+      uid: '3',
+      name: 'third test file.png',
+      size: 1234,
+      type: 'image/png',
+      status: FileStatusEnum.ERROR,
+      error: 'Error message',
+    },
+  ],
+  onChange: () => {
+    return;
+  },
+  onDelete: () => {
+    return Promise.resolve();
+  },
+  onDownload: () => {
+    return Promise.resolve();
+  },
+  requestMethod: 'POST',
+  requestUrl: 'https://file-upload-tester.herokuapp.com/upload/file',
+  showProgressBar: true,
+};
+
+<Canvas withSource='open'>
+  <Story
+    name='FileField'
+    args={{
+      label: 'File field',
+      ...{
+        maxFileSize: 10 * 1024 * 1024,
+        inputValue: [
+          { uid: '1', name: 'test file.png', size: 1234, type: 'image/png', status: FileStatusEnum.DONE },
+          { uid: '2', name: 'second test file.png', size: 1234, type: 'image/png', status: FileStatusEnum.DONE },
+          {
+            uid: '3',
+            name: 'third test file.png',
+            size: 1234,
+            type: 'image/png',
+            status: FileStatusEnum.ERROR,
+            error: 'Error message',
+          },
+        ],
+        onChange: () => {
+          return;
+        },
+        onDelete: () => {
+          return Promise.resolve();
+        },
+        onDownload: () => {
+          return Promise.resolve();
+        },
+        requestMethod: 'POST',
+        requestUrl: 'https://file-upload-tester.herokuapp.com/upload/file',
+        showProgressBar: true,
+      },
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable of={FileField} sort='requiredFirst' exclude={['dataTestId']} />
+
+### Read Only
+
+<Canvas>
+  <Template
+    label='File field in read only'
+    maxFiles={10}
+    readOnly={true}
+    maxFileSize={10 * 1024 * 1024}
+    inputValue={[
+      { uid: '1', name: 'test file.png', size: 1234, type: 'image/png', status: FileStatusEnum.DONE },
+      { uid: '2', name: 'second test file.png', size: 1234, type: 'image/png', status: FileStatusEnum.DONE },
+      {
+        uid: '3',
+        name: 'third test file.png',
+        size: 1234,
+        type: 'image/png',
+        status: FileStatusEnum.ERROR,
+        error: 'Error message',
+      },
+    ]}
+    onChange={() => {
+      return;
+    }}
+    onDelete={() => {
+      return Promise.resolve();
+    }}
+    onDownload={() => {
+      return Promise.resolve();
+    }}
+    requestMethod='POST'
+    requestUrl='https://file-upload-tester.herokuapp.com/upload/file'
+    showProgressBar={true}
+  />
+</Canvas>
+
+### Error
+
+<Canvas>
+  <Template
+    label='File field in error with label size = 4 and field size = 4'
+    errorMessage='This file fied is on error'
+    fieldSize={4}
+    labelSize={4}
+    maxFileSize={10 * 1024 * 1024}
+    inputValue={[
+      { uid: '1', name: 'test file.png', size: 1234, type: 'image/png', status: FileStatusEnum.DONE },
+      { uid: '2', name: 'second test file.png', size: 1234, type: 'image/png', status: FileStatusEnum.DONE },
+      {
+        uid: '3',
+        name: 'third test file.png',
+        size: 1234,
+        type: 'image/png',
+        status: FileStatusEnum.ERROR,
+        error: 'Error message',
+      },
+    ]}
+    onChange={() => {
+      return;
+    }}
+    onDelete={() => {
+      return Promise.resolve();
+    }}
+    onDownload={() => {
+      return Promise.resolve();
+    }}
+    requestMethod='POST'
+    requestUrl='https://file-upload-tester.herokuapp.com/upload/file'
+    showProgressBar={true}
+  />
+</Canvas>
+
+### Helper
+
+<Canvas>
+  <Template
+    label='File field with helper'
+    helperText='Helper text'
+    additionalInfo={<div>This is addition info Element</div>}
+    mandatory={true}
+    maxFileSize={10 * 1024 * 1024}
+    inputValue={[
+      { uid: '1', name: 'test file.png', size: 1234, type: 'image/png', status: FileStatusEnum.DONE },
+      { uid: '2', name: 'second test file.png', size: 1234, type: 'image/png', status: FileStatusEnum.DONE },
+      {
+        uid: '3',
+        name: 'third test file.png',
+        size: 1234,
+        type: 'image/png',
+        status: FileStatusEnum.ERROR,
+        error: 'Error message',
+      },
+    ]}
+    onChange={() => {
+      return;
+    }}
+    onDelete={() => {
+      return Promise.resolve();
+    }}
+    onDownload={() => {
+      return Promise.resolve();
+    }}
+    requestMethod='POST'
+    requestUrl='https://file-upload-tester.herokuapp.com/upload/file'
+    showProgressBar={true}
+  />
+</Canvas>
+
+### Highlighted
+
+<Canvas>
+  <Template
+    label='File field highlighted'
+    readOnly={true}
+    highlighted={true}
+    helperText='Helper text'
+    maxFileSize={10 * 1024 * 1024}
+    inputValue={[
+      { uid: '1', name: 'test file.png', size: 1234, type: 'image/png', status: FileStatusEnum.DONE },
+      { uid: '2', name: 'second test file.png', size: 1234, type: 'image/png', status: FileStatusEnum.DONE },
+      {
+        uid: '3',
+        name: 'third test file.png',
+        size: 1234,
+        type: 'image/png',
+        status: FileStatusEnum.ERROR,
+        error: 'Error message',
+      },
+    ]}
+    onChange={() => {
+      return;
+    }}
+    onDelete={() => {
+      return Promise.resolve();
+    }}
+    onDownload={() => {
+      return Promise.resolve();
+    }}
+    requestMethod='POST'
+    requestUrl='https://file-upload-tester.herokuapp.com/upload/file'
+    showProgressBar={true}
+  />
+</Canvas>
+
+### Disabled
+
+<Canvas>
+  <Template
+    label='File field disabled'
+    disabled={true}
+    helperText='Helper text'
+    maxFileSize={10 * 1024 * 1024}
+    inputValue={[
+      { uid: '1', name: 'test file.png', size: 1234, type: 'image/png', status: FileStatusEnum.DONE },
+      { uid: '2', name: 'second test file.png', size: 1234, type: 'image/png', status: FileStatusEnum.DONE },
+      {
+        uid: '3',
+        name: 'third test file.png',
+        size: 1234,
+        type: 'image/png',
+        status: FileStatusEnum.ERROR,
+        error: 'Error message',
+      },
+    ]}
+    onChange={() => {
+      return;
+    }}
+    onDelete={() => {
+      return Promise.resolve();
+    }}
+    onDownload={() => {
+      return Promise.resolve();
+    }}
+    requestMethod='POST'
+    requestUrl='https://file-upload-tester.herokuapp.com/upload/file'
+    showProgressBar={true}
+  />
+</Canvas>
+
+### Custom Upload Message
+
+<Canvas>
+  <Template
+    label='File field disabled'
+    helperText='Helper text'
+    uploadMessage={
+      <div>
+        <div>🤓 Customize your upload message 🤓</div>
+        <div style={{ textAlign: 'center', marginTop: '20px' }}>
+          <Icon icon={['fal', 'arrow-up-from-line']} size='3x' />
+        </div>
+      </div>
+    }
+    maxFileSize={10 * 1024 * 1024}
+    inputValue={[
+      { uid: '1', name: 'test file.png', size: 1234, type: 'image/png', status: FileStatusEnum.DONE },
+      { uid: '2', name: 'second test file.png', size: 1234, type: 'image/png', status: FileStatusEnum.DONE },
+      {
+        uid: '3',
+        name: 'third test file.png',
+        size: 1234,
+        type: 'image/png',
+        status: FileStatusEnum.ERROR,
+        error: 'Error message',
+      },
+    ]}
+    onChange={() => {
+      return;
+    }}
+    onDelete={() => {
+      return Promise.resolve();
+    }}
+    onDownload={() => {
+      return Promise.resolve();
+    }}
+    requestMethod='POST'
+    requestUrl='https://file-upload-tester.herokuapp.com/upload/file'
+    showProgressBar={true}
+  />
+</Canvas>

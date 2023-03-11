@@ -5,7 +5,7 @@ import userEvent from '@testing-library/user-event';
 import Section from '../Section';
 
 describe('Section Component', () => {
-  it('Section renders', () => {
+  it('renders with separator', () => {
     const { container } = render(
       <Section collapsible={true} openInitially={true} title='TITLE' dataTestId='DATA-TEST-ID'>
         <div id='CHILD1' />
@@ -26,7 +26,7 @@ describe('Section Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('Section renders collapsible closed by default', () => {
+  it('renders collapsible closed by default without separator', () => {
     const { container } = render(
       <Section collapsible={true} openInitially={false} title='TITLE' dataTestId='DATA-TEST-ID'>
         <div id='CHILD1' />
@@ -37,7 +37,7 @@ describe('Section Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('Section renders not collapsible', () => {
+  it('renders not collapsible', () => {
     const { container } = render(
       <Section collapsible={false} openInitially={true} title='TITLE' dataTestId='DATA-TEST-ID'>
         <div id='CHILD1' />
@@ -54,7 +54,7 @@ describe('Section Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('Section renders not collapsible', () => {
+  it('renders not collapsible with open initially ignored', () => {
     const { container } = render(
       <Section collapsible={false} openInitially={false} title='TITLE' dataTestId='DATA-TEST-ID'>
         <div id='CHILD1' />

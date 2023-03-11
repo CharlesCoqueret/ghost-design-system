@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Col Component Col renders 1`] = `
+exports[`Col Component renders properly 1`] = `
 <div>
   <div
     class="col CLASSNAME"
-    style="height: 300px; width: 30%;"
+    style="width: 30%;"
   >
     <div
       id="CHILD1"

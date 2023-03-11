@@ -1,13 +1,18 @@
-<!-- Iconography.stories.mdx -->
-
-import { Meta, Title, IconGallery, IconItem } from '@storybook/addon-docs/';
+import { Meta, IconGallery, IconItem } from '@storybook/addon-docs/';
 import { library } from '@fortawesome/fontawesome-svg-core';
-
-import kebabCase from 'lodash/kebabCase';
 
 import Icon from './Icon';
 
-<Meta title='Atom/Icon' />
+<Meta
+  title='Atom/Icon'
+  component={Icon}
+  parameters={{
+    viewMode: 'docs',
+    previewTabs: {
+      canvas: { hidden: true },
+    },
+  }}
+/>
 
 # Icons
 
@@ -15,7 +20,7 @@ import Icon from './Icon';
 
 <IconGallery>
   {Object.keys(library['definitions']['fal']).map((item) => (
-    <IconItem name={item}>
+    <IconItem name={item} key={item}>
       <Icon icon={['fal', item]} />
     </IconItem>
   ))}
@@ -25,7 +30,7 @@ import Icon from './Icon';
 
 <IconGallery>
   {Object.keys(library['definitions']['far']).map((item) => (
-    <IconItem name={item}>
+    <IconItem name={item} key={item}>
       <Icon icon={['far', item]} />
     </IconItem>
   ))}
@@ -35,7 +40,7 @@ import Icon from './Icon';
 
 <IconGallery>
   {Object.keys(library['definitions']['fas']).map((item) => (
-    <IconItem name={item}>
+    <IconItem name={item} key={item}>
       <Icon icon={['fas', item]} />
     </IconItem>
   ))}

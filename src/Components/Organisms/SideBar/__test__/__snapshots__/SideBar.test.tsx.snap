@@ -18,12 +18,11 @@ exports[`SideBar Component SideBar renders 1`] = `
       <li
         class="item"
       >
-        <a
+        <div
           class=""
-          href="/link"
-          target="_blank"
         >
           full url
+          _blank
           <div
             class="label"
           >
@@ -33,14 +32,13 @@ exports[`SideBar Component SideBar renders 1`] = `
             class="icon externalLink"
             icon="fal,external-link"
           />
-        </a>
+        </div>
       </li>
       <li
         class="item disabled"
       >
-        <a
+        <div
           class="disabled"
-          href="/link"
         >
           full url
           <div
@@ -48,14 +46,13 @@ exports[`SideBar Component SideBar renders 1`] = `
           >
             DISABLED
           </div>
-        </a>
+        </div>
       </li>
       <li
         class="item"
       >
-        <a
+        <div
           class=""
-          href="/link"
         >
           full url
           <div
@@ -63,7 +60,7 @@ exports[`SideBar Component SideBar renders 1`] = `
           >
             NORMAL
           </div>
-        </a>
+        </div>
       </li>
     </ul>
   </nav>

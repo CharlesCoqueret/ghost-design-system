@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Typography.Text Component Typography.Text ellipsis with no text 1`] = `
+exports[`Typography.Text Component ellipsis with no text 1`] = `
 <div>
   <span
     class="typography ellipsis"
@@ -10,18 +10,7 @@ exports[`Typography.Text Component Typography.Text ellipsis with no text 1`] = `
 </div>
 `;
 
-exports[`Typography.Text Component Typography.Text handles click 1`] = `
-<div>
-  <span
-    class="typography link"
-    data-testid="DATA-TEST-ID"
-  >
-    TEXT
-  </span>
-</div>
-`;
-
-exports[`Typography.Text Component Typography.Text renders with all types 1`] = `
+exports[`Typography.Text Component renders with all types 1`] = `
 <div>
   <span
     class="typography error disabled helper highlighted label placeholder tiny"
@@ -31,7 +20,7 @@ exports[`Typography.Text Component Typography.Text renders with all types 1`] = 
 </div>
 `;
 
-exports[`Typography.Text Component Typography.Text renders with all types 2`] = `
+exports[`Typography.Text Component renders with eatch types 1`] = `
 <div>
   <span
     class="typography"
@@ -41,7 +30,7 @@ exports[`Typography.Text Component Typography.Text renders with all types 2`] = 
 </div>
 `;
 
-exports[`Typography.Text Component Typography.Text renders with all types 3`] = `
+exports[`Typography.Text Component renders with eatch types 2`] = `
 <div>
   <span
     class="typography disabled"
@@ -51,7 +40,7 @@ exports[`Typography.Text Component Typography.Text renders with all types 3`] = 
 </div>
 `;
 
-exports[`Typography.Text Component Typography.Text renders with all types 4`] = `
+exports[`Typography.Text Component renders with eatch types 3`] = `
 <div>
   <span
     class="typography error"
@@ -61,7 +50,7 @@ exports[`Typography.Text Component Typography.Text renders with all types 4`] = 
 </div>
 `;
 
-exports[`Typography.Text Component Typography.Text renders with all types 5`] = `
+exports[`Typography.Text Component renders with eatch types 4`] = `
 <div>
   <span
     class="typography helper"
@@ -71,7 +60,7 @@ exports[`Typography.Text Component Typography.Text renders with all types 5`] = 
 </div>
 `;
 
-exports[`Typography.Text Component Typography.Text renders with all types 6`] = `
+exports[`Typography.Text Component renders with eatch types 5`] = `
 <div>
   <span
     class="typography highlighted"
@@ -81,7 +70,7 @@ exports[`Typography.Text Component Typography.Text renders with all types 6`] = 
 </div>
 `;
 
-exports[`Typography.Text Component Typography.Text renders with all types 7`] = `
+exports[`Typography.Text Component renders with eatch types 6`] = `
 <div>
   <span
     class="typography label"
@@ -91,7 +80,7 @@ exports[`Typography.Text Component Typography.Text renders with all types 7`] = 
 </div>
 `;
 
-exports[`Typography.Text Component Typography.Text renders with all types 8`] = `
+exports[`Typography.Text Component renders with eatch types 7`] = `
 <div>
   <span
     class="typography placeholder"
@@ -101,7 +90,7 @@ exports[`Typography.Text Component Typography.Text renders with all types 8`] = 
 </div>
 `;
 
-exports[`Typography.Text Component Typography.Text renders with all types 9`] = `
+exports[`Typography.Text Component renders with eatch types 8`] = `
 <div>
   <span
     class="typography tiny"
@@ -111,7 +100,7 @@ exports[`Typography.Text Component Typography.Text renders with all types 9`] = 
 </div>
 `;
 
-exports[`Typography.Text Component Typography.Text renders with no types 1`] = `
+exports[`Typography.Text Component renders with no types 1`] = `
 <div>
   <span
     class="typography CLASSNAME ellipsis"
@@ -123,28 +112,17 @@ exports[`Typography.Text Component Typography.Text renders with no types 1`] = `
 </div>
 `;
 
-exports[`Typography.Title Component Typography.Title ellipsis with no text 1`] = `
+exports[`Typography.Title Component ellipsis with no text 1`] = `
 <div>
-  <h3
-    class="typography ellipsis h3"
+  <h2
+    class="typography ellipsis h2"
   >
     <div />
-  </h3>
+  </h2>
 </div>
 `;
 
-exports[`Typography.Title Component Typography.Title handles click 1`] = `
-<div>
-  <h1
-    class="typography h1"
-    data-testid="DATA-TEST-ID"
-  >
-    TITLE
-  </h1>
-</div>
-`;
-
-exports[`Typography.Title Component Typography.Title renders 1`] = `
+exports[`Typography.Title Component renders properly 1`] = `
 <div>
   <h2
     class="typography ellipsis h2 CLASSNAME"

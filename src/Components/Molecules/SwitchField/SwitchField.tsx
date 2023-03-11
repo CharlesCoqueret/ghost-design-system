@@ -76,6 +76,7 @@ export const SwitchField = (props: ISwitchFieldProps): ReactElement => {
         disabled={disabled}
         ellipsis={ellipsis}
         highlighted={highlighted}
+        inline={inline}
         inputValue={inputValue}
         isInError={errorMessage !== undefined}
         onChange={onChange}

@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
+import { ComponentStory } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
 import * as yup from 'yup';
 import cloneDeep from 'lodash/cloneDeep';
-import { action } from '@storybook/addon-actions';
 
 import { IToggleEntry } from '../../Atoms/CheckBoxInput/types';
 import { ColorButtonEnum } from '../../Molecules/Button';
@@ -44,7 +45,9 @@ interface IDataType {
   year: number | undefined;
 }
 
-const Template = (args: IUseFormProps<IDataType>) => {
+const Template: ComponentStory<(props: IUseFormProps<IDataType>) => ReactElement> = (
+  args: IUseFormProps<IDataType>,
+) => {
   const { formElement, getData, isModified, submit, reset } = useForm<IDataType>(args);
   return (
     <>
@@ -133,28 +136,43 @@ const initialData: IDataType = {
   year: 1984,
 };
 
-const validationSchema = yup.object({
+const validationSchema: yup.SchemaOf<IDataType> = yup.object({
   amount: yup.number().required(),
   checkbox: yup
     .array()
     .of(
       yup.object().shape({
-        checked: yup.boolean(),
-        value: yup.string(),
-        label: yup.string(),
+        checked: yup.boolean().optional(),
         highlighted: yup.boolean().optional(),
+        label: yup.mixed().required(),
+        value: yup.string().required() as yup.StringSchema<string>,
       }),
     )
     .test({
       name: 'one-true',
       message: 'At least one required',
-      test: (val) => (val ? val.some((entry) => entry.checked === true) : false),
+      test: (val) => (val ? val.some((entry) => (entry.checked || false) === true) : false),
     })
     .required(),
   date: yup.date().min(new Date('01/01/1980'), 'Date needs to be after Jan 1 1980').required(),
   description: yup.string().optional(),
   dynamicsearch: yup.mixed().optional(),
-  file: yup.array().min(1).required(),
+  file: yup
+    .array()
+    .of(
+      yup.object({
+        id: yup.string().optional(),
+        uid: yup.string().optional(),
+        name: yup.string().required(),
+        size: yup.number().required(),
+        type: yup.string().required(),
+        status: yup.mixed().optional(),
+        progress: yup.number().optional(),
+        error: yup.string().optional(),
+      }),
+    )
+    .min(1)
+    .required(),
   multiselect: yup.array().of(yup.mixed()).min(1, 'At least one item required').required(),
   number: yup.number().required('Value for number is required').min(5, 'Minimum value is 5'),
   percentage: yup.number().required(),
@@ -164,20 +182,28 @@ const validationSchema = yup.object({
     .array()
     .of(
       yup.object().shape({
-        checked: yup.boolean(),
-        value: yup.string(),
-        label: yup.string(),
+        checked: yup.boolean().optional(),
         highlighted: yup.boolean().optional(),
+        label: yup.mixed().required(),
+        value: yup.string().required() as yup.StringSchema<string>,
       }),
     )
     .test({
       name: 'one-true',
       message: 'At least one required',
-      test: (val) => (val ? val.some((entry) => entry.checked === true) : false),
+      test: (val) => (val ? val.some((entry) => (entry.checked || false) === true) : false),
     })
     .required(),
-  table: yup.array().min(1).required(),
-  fulleditabletable: yup.array().min(1).required(),
+  table: yup
+    .array()
+    .of(yup.mixed() as yup.SchemaOf<IDataTableType>)
+    .min(1)
+    .required(),
+  fulleditabletable: yup
+    .array()
+    .of(yup.mixed() as yup.SchemaOf<IDataTableType>)
+    .min(1)
+    .required(),
   text: yup
     .string()
     .required()
@@ -196,8 +222,8 @@ const fields: Array<IFieldAndLayoutProps<IDataType>> = [
     description: (
       <div>
         <Typography.Text>Any description</Typography.Text>
-        <Link link='https://hamster.dance/hamsterdance/' text='external link' />
-        <Link link='#' text='internal link' />
+        <Link to='https://hamster.dance/hamsterdance/' text='external link' />
+        <Link to='#' text='internal link' />
       </div>
     ),
     fieldType: FieldTypeEnum.DESCRIPTION,

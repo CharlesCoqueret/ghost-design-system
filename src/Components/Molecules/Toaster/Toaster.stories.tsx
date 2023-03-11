@@ -10,7 +10,7 @@ import { TextAreaField } from '../TextAreaField';
 import Section from '../../Atoms/Layout/Section';
 
 export default {
-  title: 'Molecule',
+  title: 'Molecule/Toaster',
   component: ToasterComponent,
   parameters: { actions: { argTypesRegex: '^on.*' }, controls: { sort: 'requiredFirst' } },
 } as ComponentMeta<typeof ToasterComponent>;

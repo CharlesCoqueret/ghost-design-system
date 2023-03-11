@@ -261,7 +261,7 @@ exports[`EditableDataTableCell component EditableDataTableCell renders with date
             class="fieldGroup"
           >
             <div
-              class=""
+              class="container"
             >
               <div
                 class="react-datepicker-wrapper"
@@ -905,7 +905,7 @@ exports[`EditableDataTableCell component EditableDataTableCell renders with year
             class="fieldGroup"
           >
             <div
-              class=""
+              class="container"
             >
               <div
                 class="react-datepicker-wrapper"

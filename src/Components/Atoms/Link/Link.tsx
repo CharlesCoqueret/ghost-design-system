@@ -12,7 +12,7 @@ export interface ILinkProps extends NavLinkProps {
   /** Text displayed for the link (optional, default: undefined) */
   text?: string;
   /** Url of the destination in a string or Location format */
-  to: LocationDescriptor<unknown>;
+  to: LocationDescriptor;
   /** Tooltip content of the link (optional, default: undefined) */
   tooltip?: string;
 }

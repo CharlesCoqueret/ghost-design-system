@@ -1,0 +1,226 @@
+import { useState } from 'react';
+import { Canvas, Meta, ArgsTable, Story } from '@storybook/addon-docs';
+
+import DynamicSearchField from './DynamicSearchField';
+
+<Meta
+  title='Molecule/DynamicSearchField'
+  component={DynamicSearchField}
+  parameters={{
+    viewMode: 'docs',
+    layout: 'fullscreen',
+  }}
+  argTypes={{
+    dataTestId: {
+      table: {
+        disable: true,
+      },
+    },
+  }}
+/>
+
+# DynamicSearchField
+
+export const requestInit = {
+  method: 'GET',
+};
+
+export const datasetId = 'liste_des_prenoms';
+
+export const searchRecords = async (searchTerm = '', inPage, inPageSize) => {
+  const page = inPage || 0;
+  const pageSize = inPageSize || 50;
+  const baseUrl = new URL('https://opendata.paris.fr/api/records/1.0/search/');
+  baseUrl.searchParams.append('dataset', datasetId);
+  if (searchTerm && String(searchTerm).trim().length > 0) {
+    baseUrl.searchParams.append('q', String(searchTerm).trim());
+  }
+  baseUrl.searchParams.append('facet', 'sexe');
+  baseUrl.searchParams.append('facet', 'prenoms');
+  baseUrl.searchParams.append('facet', 'annee');
+  // Add rows parameter
+  baseUrl.searchParams.append('rows', pageSize.toString());
+  // Add start row parameter
+  baseUrl.searchParams.append('start', (page * pageSize).toString());
+  return fetch(baseUrl.toString(), requestInit).then((response) => {
+    return response.json();
+  });
+};
+
+export const searchOptions = async (searchTerm = '') => {
+  return searchRecords(searchTerm).then((result) => {
+    return result.records.map((record) => {
+      return {
+        value: record.recordid,
+        label: `${record.fields.prenoms} (${record.fields.nombre} in ${record.fields.annee})`,
+      };
+    });
+  });
+};
+
+export const resolveRecord = async (value = '') => {
+  const baseUrl = new URL(`https://opendata.paris.fr/api/datasets/1.0/${datasetId}/records/${value}`);
+  return fetch(baseUrl.toString(), requestInit).then((response) => {
+    return response.json();
+  });
+};
+
+export const resolveValue = async (searchTerm = '') => {
+  return resolveRecord(String(searchTerm)).then((result) => {
+    return {
+      value: result.recordid,
+      label: `${result.fields.prenoms} (${result.fields.nombre_total_cumule})`,
+    };
+  });
+};
+
+export const Template = (args) => {
+  const [localValue, setLocalValue] = useState(args.inputValue);
+  return <DynamicSearchField {...args} inputValue={localValue || ''} onChange={setLocalValue} />;
+};
+
+<Canvas>
+  <Story
+    name='DynamicSearchField'
+    args={{
+      label: 'Dynamic Search ',
+      disabled: false,
+      fieldSize: undefined,
+      highlighted: false,
+      inputValue: '3d9265a6ddc5ed3e2550778bb3b53229b02954a9',
+      isClearable: true,
+      noOptionsMessage: (obj) => {
+        if (!obj.inputValue) return `Please type a few characters to search`;
+        return `No option found for ${obj.inputValue}`;
+      },
+      readOnly: false,
+      placeholder: 'Dynamic Search placeholder',
+      resolveValue: resolveValue,
+      searchOptions: searchOptions,
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable of={DynamicSearchField} sort='requiredFirst' exclude={['dataTestId']} />
+
+### Read Only
+
+<Canvas>
+  <Template
+    label='Dynamic Search field in read only with label size = 4 and field size = 6'
+    fieldSize={6}
+    labelSize={4}
+    readOnly={true}
+    disabled={false}
+    highlighted={false}
+    inputValue={'3d9265a6ddc5ed3e2550778bb3b53229b02954a9'}
+    isClearable={true}
+    noOptionsMessage={(obj) => {
+      if (!obj.inputValue) return `Please type a few characters to search`;
+      return `No option found for ${obj.inputValue}`;
+    }}
+    placeholder='Dynamic Search placeholder'
+    resolveValue={resolveValue}
+    searchOptions={searchOptions}
+  />
+</Canvas>
+
+### Error
+
+<Canvas>
+  <Template
+    fieldSize={6}
+    label='Dynamic Search field in error with label size = 4 and field size = 6'
+    labelSize={4}
+    errorMessage='This text is on error'
+    inputValue={'3d9265a6ddc5ed3e2550778bb3b53229b02954a9'}
+    isClearable={true}
+    noOptionsMessage={(obj) => {
+      if (!obj.inputValue) return `Please type a few characters to search`;
+      return `No option found for ${obj.inputValue}`;
+    }}
+    placeholder='Dynamic Search placeholder'
+    resolveValue={resolveValue}
+    searchOptions={searchOptions}
+  />
+</Canvas>
+
+### Helper
+
+<Canvas>
+  <Template
+    helperText='Helper text'
+    label='Dynamic Search field with helper and counter'
+    mandatory={true}
+    errorMessage='This text is on error'
+    inputValue='3d9265a6ddc5ed3e2550778bb3b53229b02954a9'
+    isClearable={true}
+    noOptionsMessage={(obj) => {
+      if (!obj.inputValue) return `Please type a few characters to search`;
+      return `No option found for ${obj.inputValue}`;
+    }}
+    placeholder='Dynamic Search placeholder'
+    resolveValue={resolveValue}
+    searchOptions={searchOptions}
+  />
+</Canvas>
+
+### Highlighted
+
+<Canvas>
+  <Template
+    helperText={'Helper text'}
+    highlighted={true}
+    label={'Dynamic Search field highlighted'}
+    readOnly={true}
+    inputValue={'3d9265a6ddc5ed3e2550778bb3b53229b02954a9'}
+    isClearable={true}
+    noOptionsMessage={(obj) => {
+      if (!obj.inputValue) return `Please type a few characters to search`;
+      return `No option found for ${obj.inputValue}`;
+    }}
+    placeholder='Dynamic Search placeholder'
+    resolveValue={resolveValue}
+    searchOptions={searchOptions}
+  />
+</Canvas>
+
+### Disabled
+
+<Canvas>
+  <Template
+    disabled={true}
+    helperText={'Helper text'}
+    label={'Dynamic Search field disabled'}
+    inputValue={'3d9265a6ddc5ed3e2550778bb3b53229b02954a9'}
+    isClearable={true}
+    noOptionsMessage={(obj) => {
+      if (!obj.inputValue) return `Please type a few characters to search`;
+      return `No option found for ${obj.inputValue}`;
+    }}
+    placeholder={'Dynamic Search placeholder'}
+    resolveValue={resolveValue}
+    searchOptions={searchOptions}
+  />
+</Canvas>
+
+### Inline
+
+<Canvas>
+  <Template
+    label='Dynamic Search in line'
+    inline={true}
+    fieldSize={6}
+    labelSize={4}
+    inputValue={'3d9265a6ddc5ed3e2550778bb3b53229b02954a9'}
+    isClearable={true}
+    noOptionsMessage={(obj) => {
+      if (!obj.inputValue) return `Please type a few characters to search`;
+      return `No option found for ${obj.inputValue}`;
+    }}
+    placeholder='Dynamic Search placeholder'
+    resolveValue={resolveValue}
+    searchOptions={searchOptions}
+  />
+</Canvas>

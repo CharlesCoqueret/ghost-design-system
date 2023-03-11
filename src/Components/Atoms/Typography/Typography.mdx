@@ -1,0 +1,66 @@
+import { Canvas, ArgsTable, Story, Typeset } from '@storybook/addon-docs';
+
+import Text from './Text';
+import Title from './Title';
+
+# Typography
+
+export const typography = {
+  type: {
+    primary: '"Montserrat", sans-serif',
+  },
+  weight: {
+    regular: '400',
+    bold: '600',
+    extrabold: '700',
+  },
+  size: {
+    tiny: 10,
+    small: 12,
+    default: 14,
+    h3: 16,
+    h2: 18,
+    h1: 22,
+  },
+};
+
+export const SampleText =
+  'Lorem ipsum dolor sit amet. Ut voluptas reiciendis vel praesentium laborum hic voluptas asperiores nam ' +
+  'rerum nihil obcaecati labore. Id praesentium porro ea placeat rerum aut tempore totam aut illum cupiditate ' +
+  'sed laborum explicabo. Hic explicabo voluptatibus qui repellat fugiat ex voluptatum fuga qui architecto atque ' +
+  'quo illum quas aut facilis nesciunt? Ut suscipit rerum ut perferendis nihil ea autem unde est enim veniam nam ' +
+  'odio tempora. Quo numquam iste est repellendus numquam et galisum omnis ad praesentium dolores aut neque saepe';
+
+- **Font:** Montserrat
+
+- **Weights:** 400(regular), 600(bold), 700(extrabold)
+
+<Typeset
+  fontSizes={[
+    Number(typography.size.tiny),
+    Number(typography.size.small),
+    Number(typography.size.default),
+    Number(typography.size.h3),
+    Number(typography.size.h2),
+    Number(typography.size.h1),
+  ]}
+  fontWeight={typography.weight.regular}
+  sampleText={SampleText}
+  fontFamily={typography.type.primary}
+/>
+
+## Title
+
+<Canvas withSource='open'>
+  <Story id='atom-typography--title' />
+</Canvas>
+
+<ArgsTable of={Title} sort='requiredFirst' exclude={['dataTestId']} />
+
+## Text
+
+<Canvas withSource='open'>
+  <Story id='atom-typography--text' />
+</Canvas>
+
+<ArgsTable of={Text} sort='requiredFirst' exclude={['dataTestId']} />

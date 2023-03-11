@@ -10,20 +10,21 @@
 ├── .storybook
 ├── src
 │   ├── Components
-|   |   ├── Atoms
+|   |   ├── Atoms or Molecules or Organisms or Templates
 |   |   |   ├── Example
 |   |   |   |   ├── __tests__
-|   |   |   |   |   ├── Example.test.tsx
+|   |   |   |   |   └── Example.test.tsx
 |   |   |   |   ├── Example.module.scss
 |   |   |   |   ├── Example.stories.mdx
 |   |   |   |   ├── Example.tsx
-|   |   |   |   ├── index.ts
-|   |   |   ├── index.ts
-|   |   ├── index.ts
-|   ├── index.ts
+|   |   |   |   └── index.ts
+|   |   |   └── index.ts
+|   |   └── index.ts
+|   └── index.ts
 ├── LICENSE
 ├── package.json
 ├── README.md
+└── tsconfig.json
 ```
 
 Once you have created your new component make sure you have exported it in the `src/components/index.ts` file. Doing so allows the component to be compiled.

@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
+import { ComponentStory } from '@storybook/react';
 
 import { ColorButtonEnum } from '../../Molecules';
 
@@ -20,7 +21,9 @@ interface IDataType {
   year: number | undefined;
 }
 
-const Template = (args: IUseFormProps<IDataType>) => {
+const Template: ComponentStory<(props: IUseFormProps<IDataType>) => ReactElement> = (
+  args: IUseFormProps<IDataType>,
+) => {
   const { formElement, getData, isModified, submit, reset } = useForm<IDataType>(args);
 
   return (

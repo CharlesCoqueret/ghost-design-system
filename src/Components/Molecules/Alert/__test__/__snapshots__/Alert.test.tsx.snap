@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Alert Component renders as error with children  1`] = `
+<div>
+  <div
+    class="container error"
+  >
+    <span
+      class="icon"
+    >
+      <i
+        class="icon"
+        icon="fal,times-circle"
+      />
+    </span>
+    <span>
+      <div
+        id="CHILD"
+      />
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Alert Component renders as information with children 1`] = `
+<div>
+  <div
+    class="container information"
+  >
+    <span
+      class="icon"
+    >
+      <i
+        class="icon"
+        icon="fal,info-circle"
+      />
+    </span>
+    <span>
+      <div
+        id="CHILD"
+      />
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Alert Component renders as warning with children  1`] = `
+<div>
+  <div
+    class="container warning"
+  >
+    <span
+      class="icon"
+    >
+      <i
+        class="icon"
+        icon="fal,warning"
+      />
+    </span>
+    <span>
+      <div
+        id="CHILD"
+      />
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Alert Component renders nothing without children 1`] = `<div />`;

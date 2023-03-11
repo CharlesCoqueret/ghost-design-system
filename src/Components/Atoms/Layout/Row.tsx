@@ -4,16 +4,17 @@ import classnames from 'classnames';
 import styles from './Row.module.scss';
 
 export interface IRowProps {
+  /** Additional class (optional, default: undefined) */
   className?: string;
+  /** Custom style (optional, default: undefined) */
   style?: CSSProperties;
-  width?: CSSProperties['width'];
 }
 
 const Row = (props: PropsWithChildren<IRowProps>): ReactElement => {
-  const { children, className, style, width } = props;
+  const { children, className, style } = props;
 
   return (
-    <div className={classnames(styles.row, className)} style={{ width: width, ...style }}>
+    <div className={classnames(styles.row, className)} style={style}>
       {children}
     </div>
   );

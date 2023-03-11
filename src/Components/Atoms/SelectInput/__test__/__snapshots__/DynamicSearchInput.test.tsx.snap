@@ -199,20 +199,26 @@ exports[`DynamicSearchInput Component DynamicSearchInput handles change 2`] = `
           </div>
         </div>
       </div>
-      <div
-        class=" css-1a09ke2-menu"
-        id="react-select-6-listbox"
-      >
+      <div>
         <div
-          class="css-bp8cua-ScrollManager"
-        />
-        <div
-          class=" css-1n6sfyn-MenuList"
+          class=" css-1yfmvl6-MenuPortal"
         >
           <div
-            class=" css-zu7x0v-LoadingMessage"
+            class=" css-1a09ke2-menu"
+            id="react-select-6-listbox"
           >
-            Loading...
+            <div
+              class="css-bp8cua-ScrollManager"
+            />
+            <div
+              class=" css-1n6sfyn-MenuList"
+            >
+              <div
+                class=" css-zu7x0v-LoadingMessage"
+              >
+                Loading...
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -559,20 +565,26 @@ exports[`DynamicSearchInput Component DynamicSearchInput handles change to undef
           </div>
         </div>
       </div>
-      <div
-        class=" css-1a09ke2-menu"
-        id="react-select-11-listbox"
-      >
+      <div>
         <div
-          class="css-bp8cua-ScrollManager"
-        />
-        <div
-          class=" css-1n6sfyn-MenuList"
+          class=" css-1yfmvl6-MenuPortal"
         >
           <div
-            class=" css-1wlit7h-NoOptionsMessage"
+            class=" css-1a09ke2-menu"
+            id="react-select-11-listbox"
           >
-            No options
+            <div
+              class="css-bp8cua-ScrollManager"
+            />
+            <div
+              class=" css-1n6sfyn-MenuList"
+            >
+              <div
+                class=" css-1wlit7h-NoOptionsMessage"
+              >
+                No options
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -782,20 +794,26 @@ exports[`DynamicSearchInput Component DynamicSearchInput handles change with no 
           </div>
         </div>
       </div>
-      <div
-        class=" css-1a09ke2-menu"
-        id="react-select-7-listbox"
-      >
+      <div>
         <div
-          class="css-bp8cua-ScrollManager"
-        />
-        <div
-          class=" css-1n6sfyn-MenuList"
+          class=" css-1yfmvl6-MenuPortal"
         >
           <div
-            class=" css-zu7x0v-LoadingMessage"
+            class=" css-1a09ke2-menu"
+            id="react-select-7-listbox"
           >
-            Loading...
+            <div
+              class="css-bp8cua-ScrollManager"
+            />
+            <div
+              class=" css-1n6sfyn-MenuList"
+            >
+              <div
+                class=" css-zu7x0v-LoadingMessage"
+              >
+                Loading...
+              </div>
+            </div>
           </div>
         </div>
       </div>

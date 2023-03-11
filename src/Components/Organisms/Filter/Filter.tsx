@@ -60,7 +60,7 @@ const Filter = <T,>(props: IFilterProps<T>): React.ReactElement => {
   };
 
   const handleAdvancedFilterReset = useCallback((): void => {
-    setCurrentModalValues(cloneDeep(cloneDeep(initialValues)));
+    setCurrentModalValues(cloneDeep(initialValues));
   }, [initialValues]);
 
   const handleReset = useCallback((): void => {

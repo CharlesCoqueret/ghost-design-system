@@ -43,9 +43,12 @@
     background-color: rgba(var(--theme-provider-chalk), 0.33);
   }
 
-  a.active {
-    background-color: rgba(var(--theme-provider-primary), 0.15);
-    color: rgb(var(--theme-provider-primary));
+  // This must stay global as it is injected by react-router
+  :global {
+    a.active {
+      background-color: rgba(var(--theme-provider-primary), 0.15);
+      color: rgb(var(--theme-provider-primary));
+    }
   }
 
   &.disabled {
@@ -56,7 +59,7 @@
 
 .back {
   box-sizing: border-box;
-  height: 32px;
+  min-height: 32px;
   margin: 10px 10px 0px 10px;
   cursor: pointer;
   display: flex;
@@ -69,6 +72,7 @@
 
   .label {
     display: flex;
+    margin: 10px 0px;
 
     .chevronLeft {
       margin: auto 10px;

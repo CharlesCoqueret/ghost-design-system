@@ -41,9 +41,7 @@ exports[`NavItem unmocked Component renders with submenu gets closed 1`] = `
             class="szh-menu__arrow szh-menu__arrow--dir-bottom"
             style="position: absolute;"
           />
-          <a
-            href="#"
-          >
+          <div>
             partial url
             <li
               class="szh-menu__item"
@@ -53,7 +51,7 @@ exports[`NavItem unmocked Component renders with submenu gets closed 1`] = `
             >
               SUBITEM
             </li>
-          </a>
+          </div>
         </ul>
       </div>
     </div>
@@ -102,9 +100,7 @@ exports[`NavItem unmocked Component renders with submenu gets closed 2`] = `
             class="szh-menu__arrow szh-menu__arrow--dir-bottom"
             style="position: absolute; left: 0px;"
           />
-          <a
-            href="#"
-          >
+          <div>
             partial url
             <li
               class="szh-menu__item"
@@ -114,7 +110,7 @@ exports[`NavItem unmocked Component renders with submenu gets closed 2`] = `
             >
               SUBITEM
             </li>
-          </a>
+          </div>
         </ul>
       </div>
     </div>
@@ -163,9 +159,7 @@ exports[`NavItem unmocked Component renders with submenu gets closed 3`] = `
             class="szh-menu__arrow szh-menu__arrow--dir-bottom"
             style="position: absolute; left: 0px;"
           />
-          <a
-            href="#"
-          >
+          <div>
             partial url
             <li
               class="szh-menu__item"
@@ -175,7 +169,7 @@ exports[`NavItem unmocked Component renders with submenu gets closed 3`] = `
             >
               SUBITEM
             </li>
-          </a>
+          </div>
         </ul>
       </div>
     </div>
@@ -224,9 +218,7 @@ exports[`NavItem unmocked Component renders with submenu gets closed 4`] = `
             class="szh-menu__arrow szh-menu__arrow--dir-bottom"
             style="position: absolute; left: 0px;"
           />
-          <a
-            href="#"
-          >
+          <div>
             partial url
             <li
               class="szh-menu__item"
@@ -236,7 +228,7 @@ exports[`NavItem unmocked Component renders with submenu gets closed 4`] = `
             >
               SUBITEM
             </li>
-          </a>
+          </div>
         </ul>
       </div>
     </div>

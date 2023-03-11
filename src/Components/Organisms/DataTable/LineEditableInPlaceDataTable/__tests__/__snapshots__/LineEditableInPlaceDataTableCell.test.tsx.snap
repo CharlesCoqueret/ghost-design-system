@@ -261,7 +261,7 @@ exports[`LineEditableInPlaceDataTableCell component LineEditableInPlaceDataTable
             class="fieldGroup"
           >
             <div
-              class=""
+              class="container"
             >
               <div
                 class="react-datepicker-wrapper"
@@ -905,7 +905,7 @@ exports[`LineEditableInPlaceDataTableCell component LineEditableInPlaceDataTable
             class="fieldGroup"
           >
             <div
-              class=""
+              class="container"
             >
               <div
                 class="react-datepicker-wrapper"

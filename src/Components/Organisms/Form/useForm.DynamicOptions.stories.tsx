@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
+import { ComponentStory } from '@storybook/react';
 import * as yup from 'yup';
 
 import { ColorButtonEnum } from '../../Molecules/Button';
@@ -19,7 +20,9 @@ interface IDataType {
   select3: string | number;
 }
 
-const Template = (args: IUseFormProps<IDataType>) => {
+const Template: ComponentStory<(props: IUseFormProps<IDataType>) => ReactElement> = (
+  args: IUseFormProps<IDataType>,
+) => {
   const { formElement, getData, isModified, submit, reset } = useForm<IDataType>(args);
   return (
     <>
@@ -100,7 +103,7 @@ const initialData: IDataType = {
   select3: option3[option2[option1[0].value][0].value][0].value,
 };
 
-const validationSchema = yup.object({
+const validationSchema: yup.SchemaOf<IDataType> = yup.object({
   select1: yup
     .mixed()
     .oneOf(option1.map((option) => option.value))

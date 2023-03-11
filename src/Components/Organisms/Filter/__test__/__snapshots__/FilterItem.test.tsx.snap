@@ -14,23 +14,21 @@ exports[`FilterItem Component FilterItem renders Column and title 1`] = `
   <div
     class="col"
   >
-    <div>
-      <div
-        class="header"
+    <div
+      class="header"
+    >
+      <h2
+        class="typography h2"
       >
-        <h2
-          class="typography h2"
-        >
-          TITLE
-        </h2>
-      </div>
-      <div
-        aria-hidden="false"
-        class="body"
-        id="react-collapsed-panel-1"
-        style="box-sizing: border-box; display: none; height: 0px; overflow: hidden;"
-      />
+        TITLE
+      </h2>
     </div>
+    <div
+      aria-hidden="false"
+      class="body"
+      id="react-collapsed-panel-1"
+      style="box-sizing: border-box; display: none; height: 0px; overflow: hidden;"
+    />
     <div>
       Mocked AmountField props: 
       {"name":"number","inline":false}

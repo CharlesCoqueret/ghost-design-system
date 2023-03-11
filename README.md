@@ -45,7 +45,7 @@
   - [YearPicker field](https://charlescoqueret.github.io/ghost-design-system/?path=/story/molecule-yearpickerfield--default)
 - Organisms:
   - [ActionBar](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/organism--action-bar)
-  - Datatable:
+  - DataTable:
     - [Generic Data Table](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/organism-datatable--data-table)
     - [Editable Data Table (full editable)](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/organism-datatable--editable-data-table)
     - [Line editable Data Table (editon in popup form with data validation)](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/organism-datatable--line-editable-data-table)
@@ -73,7 +73,7 @@ npm install ghost-design-system
 
 ```ts
 import { loadIcons, ThemeProvider } from 'ghost-design-system';
-import '~ghost-design-system/dist/ghost-design-system.min.css';
+import '~ghost-design-system/dist/ghost-design-system.css';
 
 loadIcons();
 
@@ -100,7 +100,6 @@ This react components library uses the following:
 - [@fortawesome](https://fontawesome.com/)
 - [@szhsin/react-menu](https://szhsin.github.io/react-menu/)
 - [classnames](https://github.com/JedWatson/classnames#readme)
-- [color-rgba](https://github.com/colorjs/color-rgba)
 - [date-fns](https://date-fns.org/)
 - [lodash](https://lodash.com/)
 - [numeral](http://numeraljs.com/)

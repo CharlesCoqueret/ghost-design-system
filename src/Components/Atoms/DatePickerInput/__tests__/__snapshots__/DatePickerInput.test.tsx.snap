@@ -3,7 +3,7 @@
 exports[`DatePickerInput Component DatePickerInput renders and changes without onChange prop 1`] = `
 <div>
   <div
-    class=""
+    class="container"
   >
     <div
       class="react-datepicker-wrapper"
@@ -29,7 +29,7 @@ exports[`DatePickerInput Component DatePickerInput renders and changes without o
 exports[`DatePickerInput Component DatePickerInput renders and changes without onChange prop 2`] = `
 <div>
   <div
-    class=""
+    class="container"
   >
     <div
       class="react-datepicker-wrapper"
@@ -55,7 +55,7 @@ exports[`DatePickerInput Component DatePickerInput renders and changes without o
 exports[`DatePickerInput Component DatePickerInput renders highlighted in disabled 1`] = `
 <div>
   <div
-    class="input-date-picker-wrapper-read-only"
+    class="container input-date-picker-wrapper-read-only"
   >
     <div
       class="react-datepicker-wrapper"
@@ -82,7 +82,7 @@ exports[`DatePickerInput Component DatePickerInput renders highlighted in disabl
 exports[`DatePickerInput Component DatePickerInput renders highlighted in readonly 1`] = `
 <div>
   <div
-    class="input-date-picker-wrapper-read-only"
+    class="container input-date-picker-wrapper-read-only"
   >
     <div
       class="react-datepicker-wrapper"
@@ -109,7 +109,7 @@ exports[`DatePickerInput Component DatePickerInput renders highlighted in readon
 exports[`DatePickerInput Component DatePickerInput renders in error 1`] = `
 <div>
   <div
-    class=""
+    class="container"
   >
     <div
       class="react-datepicker-wrapper"
@@ -135,7 +135,7 @@ exports[`DatePickerInput Component DatePickerInput renders in error 1`] = `
 exports[`DatePickerInput Component DatePickerInput renders in error in readonly 1`] = `
 <div>
   <div
-    class="input-date-picker-wrapper-read-only"
+    class="container input-date-picker-wrapper-read-only"
   >
     <div
       class="react-datepicker-wrapper"
@@ -162,7 +162,7 @@ exports[`DatePickerInput Component DatePickerInput renders in error in readonly 
 exports[`DatePickerInput Component DatePickerInput renders with placeholder 1`] = `
 <div>
   <div
-    class=""
+    class="container"
   >
     <div
       class="react-datepicker-wrapper"
@@ -188,7 +188,7 @@ exports[`DatePickerInput Component DatePickerInput renders with placeholder 1`] 
 exports[`DatePickerInput Component DatePickerInput renders without Portal 1`] = `
 <div>
   <div
-    class=""
+    class="container"
   >
     <div
       class="react-datepicker-wrapper"

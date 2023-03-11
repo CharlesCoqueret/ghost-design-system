@@ -24,6 +24,8 @@ export interface IRichTextFieldProps {
   fieldSize?: number;
   /** Helper text (optional, default: undefined) */
   helperText?: string;
+  /** Highlighted field (optional, default: false) */
+  highlighted?: boolean;
   /** Inline field (optional, default: false) */
   inline?: boolean;
   /** Class for the input (optional, default: undefined) */
@@ -69,6 +71,7 @@ export const RichTextField = (props: IRichTextFieldProps): ReactElement => {
     fieldClassName,
     fieldSize,
     helperText,
+    highlighted,
     inline,
     inputClassName,
     inputValue,
@@ -90,6 +93,7 @@ export const RichTextField = (props: IRichTextFieldProps): ReactElement => {
       fieldClassName={fieldClassName}
       fieldSize={fieldSize}
       helperText={helperText}
+      highlighted={highlighted}
       inline={inline}
       label={label}
       labelSize={labelSize}
@@ -125,6 +129,7 @@ RichTextField.defaultProps = {
   fieldClassName: undefined,
   fieldSize: undefined,
   helperText: undefined,
+  highlighted: false,
   inline: false,
   inputClassName: undefined,
   inputValue: undefined,

@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
+import { ComponentStory } from '@storybook/react';
 import cloneDeep from 'lodash/cloneDeep';
 
 import { IToggleEntry } from '../../Atoms/CheckBoxInput/types';
@@ -21,7 +22,9 @@ interface IDataType {
   description?: string;
 }
 
-const Template = (args: IUseFormProps<IDataType> & { title: string }) => {
+const Template: ComponentStory<(props: IUseFormProps<IDataType> & { title: string }) => ReactElement> = (
+  args: IUseFormProps<IDataType> & { title: string },
+) => {
   const { title, ...props } = args;
   const { formElement, getData, isModified, submit, reset } = useForm<IDataType>(props);
 
@@ -90,8 +93,8 @@ const fields: Array<IFieldAndLayoutProps<IDataType>> = [
     description: (
       <div>
         <Typography.Text>Any description</Typography.Text>
-        <Link link='https://hamster.dance/hamsterdance/' text='external link' />
-        <Link link='#' text='internal link' />
+        <Link to='https://hamster.dance/hamsterdance/' text='external link' />
+        <Link to='#' text='internal link' />
       </div>
     ),
     fieldType: FieldTypeEnum.DESCRIPTION,

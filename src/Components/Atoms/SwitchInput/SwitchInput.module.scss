@@ -3,6 +3,12 @@
   flex-direction: column;
 }
 
+.inlineContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
 .label {
   display: inline-flex;
   position: relative;
@@ -65,4 +71,8 @@
 }
 .silver {
   background: rgb(var(--theme-provider-silver));
+}
+
+.inlineLabel {
+  margin: auto 8px auto auto;
 }

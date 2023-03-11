@@ -53,7 +53,7 @@ describe('yupResolver', () => {
 
     expect(console.error).toBeCalledTimes(2);
     expect(console.error).toBeCalledWith('Error with incorrect type:', { inner: 5 }, 'Trying to resolve it.');
-    expect(console.error).toBeCalledWith('Error with incorrect that could not be resolved');
+    expect(console.error).toBeCalledWith('Error with incorrect type that could not be resolved');
 
     jest.resetAllMocks();
   });

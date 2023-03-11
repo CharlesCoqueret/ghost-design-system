@@ -23,172 +23,9 @@ The action bar provides to the user context and actions related to the current p
 
 Play with ActionBar live on [CodeSandbox](https://codesandbox.io/s/actionbar-demo-k8y5tr)
 
-## Title
-
-<Canvas isExpanded={true}>
-  <ActionBar title='title' />
-</Canvas>
-
-## Primary
-
-<Canvas isExpanded={true}>
-  <ActionBar title='Primary' primary={true} />
-</Canvas>
-
-<Canvas isExpanded={true}>
-  <ActionBar title='Secondary' primary={false} />
-</Canvas>
-
-## Prefix, suffix and entityId
-
-<Canvas isExpanded={true}>
-  <ActionBar title='title' entityId='entityId' prefix='prefix' suffix='suffix' />
-</Canvas>
-
-## Back
-
-<Canvas isExpanded={true}>
-  <ActionBar
-    title='title'
-    onBackClicked={() => {
-      console.log('Back clicked');
-    }}
-    backTooltip='Back'
-  />
-</Canvas>
-
-## Title edition
-
-<Canvas isExpanded={true}>
-  <ActionBar
-    title='title'
-    onTitleEdit={(newTitle) => {
-      console.log(newTitle);
-    }}
-    placeholder='placeholder'
-  />
-</Canvas>
-
-## Icon
-
-<Canvas isExpanded={true}>
-  <ActionBar title='title' icon={<Icon icon={['fal', 'question-circle']} size='lg' />} />
-</Canvas>
-
-## Indicator
-
-<Canvas isExpanded={true}>
-  <ActionBar
-    title='title'
-    indicator={
-      <Badge color={BadgeColorsEnum.HIGH} tooltip='indicator' type='notification'>
-        1
-      </Badge>
-    }
-  />
-</Canvas>
-
-## Status
-
-<Canvas isExpanded={true}>
-  <ActionBar
-    title='title'
-    status={
-      <Badge color={BadgeColorsEnum.SECONDARY} tooltip='status' type='indicator'>
-        Status
-      </Badge>
-    }
-  />
-</Canvas>
-
-## Full size action
-
-<Canvas isExpanded={true}>
-  <ActionBar
-    title='title'
-    actions={[
-      {
-        label: 'Submit',
-        icon: ['fal', 'paper-plane'],
-        color: ColorButtonEnum.PRIMARY,
-        onClick: () => {
-          console.log('Submit clicked');
-        },
-      },
-      {
-        label: 'Cancel',
-        color: ColorButtonEnum.SECONDARY,
-        onClick: () => {
-          console.log('Cancel clicked');
-        },
-      },
-    ]}
-  />
-</Canvas>
-
-## Short hand actions
-
-<Canvas isExpanded={true}>
-  <ActionBar
-    title='title'
-    basicActions={[
-      {
-        tooltip: 'Save',
-        color: ColorButtonEnum.REVERSED,
-        icon: ['fal', 'save'],
-        onClick: () => {
-          console.log('Save clicked');
-        },
-      },
-      {
-        tooltip: 'Undo',
-        icon: ['fal', 'undo'],
-        color: ColorButtonEnum.REVERSED,
-        onClick: () => {
-          console.log('Undo clicked');
-        },
-      },
-    ]}
-  />
-</Canvas>
-
-## Different types of actions
-
-<Canvas isExpanded={true}>
-  <ActionBar
-    title='title'
-    actions={[
-      {
-        label: 'Submit',
-        icon: ['fal', 'paper-plane'],
-        color: ColorButtonEnum.PRIMARY,
-        onClick: () => {
-          console.log('Submit clicked');
-        },
-      },
-    ]}
-    basicActions={[
-      {
-        tooltip: 'Save',
-        color: ColorButtonEnum.REVERSED,
-        icon: ['fal', 'save'],
-        onClick: () => {
-          console.log('Save clicked');
-        },
-      },
-    ]}
-  />
-</Canvas>
-
-## Props
-
-<ArgsTable of={ActionBar} sort='requiredFirst' />
-
 For layout management, please refer to this [example](https://codesandbox.io/s/size-management-sidebar-xtpkk0)
 
-## Story
-
-<Canvas>
+<Canvas withSource='open'>
   <Story
     name='ActionBar'
     args={{
@@ -242,16 +79,158 @@ For layout management, please refer to this [example](https://codesandbox.io/s/s
             console.log('Save clicked');
           },
         },
-        {
-          tooltip: 'Undo',
-          icon: ['fal', 'undo'],
-          color: ColorButtonEnum.REVERSED,
-          onClick: () => {
-            console.log('Undo clicked');
-          },
-        },
       ],
     }}>
     {Template.bind({})}
   </Story>
+</Canvas>
+
+<ArgsTable of={ActionBar} sort='requiredFirst' />
+
+### Title
+
+<Canvas withSource='open'>
+  <ActionBar title='title' />
+</Canvas>
+
+### Primary
+
+<Canvas withSource='open'>
+  <div>
+    <ActionBar title='Primary' primary={true} />
+    <ActionBar title='Secondary' primary={false} />
+  </div>
+</Canvas>
+
+### Prefix, suffix and entityId
+
+<Canvas withSource='open'>
+  <ActionBar title='title' entityId='entityId' prefix='prefix' suffix='suffix' />
+</Canvas>
+
+### Back
+
+<Canvas withSource='open'>
+  <ActionBar
+    title='title'
+    onBackClicked={() => {
+      console.log('Back clicked');
+    }}
+    backTooltip='Back'
+  />
+</Canvas>
+
+### Title edition
+
+<Canvas withSource='open'>
+  <ActionBar
+    title='title'
+    onTitleEdit={(newTitle) => {
+      console.log(newTitle);
+    }}
+    placeholder='placeholder'
+  />
+</Canvas>
+
+### Icon
+
+<Canvas withSource='open'>
+  <ActionBar title='title' icon={<Icon icon={['fal', 'question-circle']} size='lg' />} />
+</Canvas>
+
+### Indicator
+
+<Canvas withSource='open'>
+  <ActionBar
+    title='title'
+    indicator={
+      <Badge color={BadgeColorsEnum.HIGH} tooltip='indicator' type='notification'>
+        1
+      </Badge>
+    }
+  />
+</Canvas>
+
+### Status
+
+<Canvas withSource='open'>
+  <ActionBar
+    title='title'
+    status={
+      <Badge color={BadgeColorsEnum.SECONDARY} tooltip='status' type='indicator'>
+        Status
+      </Badge>
+    }
+  />
+</Canvas>
+
+### Full size action
+
+<Canvas withSource='open'>
+  <ActionBar
+    title='title'
+    actions={[
+      {
+        label: 'Submit',
+        icon: ['fal', 'paper-plane'],
+        color: ColorButtonEnum.PRIMARY,
+        onClick: () => {
+          console.log('Submit clicked');
+        },
+      },
+      {
+        label: 'Cancel',
+        color: ColorButtonEnum.SECONDARY,
+        onClick: () => {
+          console.log('Cancel clicked');
+        },
+      },
+    ]}
+  />
+</Canvas>
+
+### Short hand actions
+
+<Canvas withSource='open'>
+  <ActionBar
+    title='title'
+    basicActions={[
+      {
+        tooltip: 'Save',
+        color: ColorButtonEnum.REVERSED,
+        icon: ['fal', 'save'],
+        onClick: () => {
+          console.log('Save clicked');
+        },
+      },
+    ]}
+  />
+</Canvas>
+
+### Different types of actions
+
+<Canvas withSource='open'>
+  <ActionBar
+    title='title'
+    actions={[
+      {
+        label: 'Submit',
+        icon: ['fal', 'paper-plane'],
+        color: ColorButtonEnum.PRIMARY,
+        onClick: () => {
+          console.log('Submit clicked');
+        },
+      },
+    ]}
+    basicActions={[
+      {
+        tooltip: 'Save',
+        color: ColorButtonEnum.REVERSED,
+        icon: ['fal', 'save'],
+        onClick: () => {
+          console.log('Save clicked');
+        },
+      },
+    ]}
+  />
 </Canvas>

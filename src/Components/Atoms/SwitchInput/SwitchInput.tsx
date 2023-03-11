@@ -16,6 +16,8 @@ export interface ISwitchInputProps {
   ellipsis?: boolean;
   /** Highlighted field and highlight the toggle entries marked as highlight (optional, default: false) */
   highlighted?: boolean;
+  /** Inline options (optional, default: false) */
+  inline?: boolean;
   /** Error indication should be present (optional, default: false) */
   isInError?: boolean;
   /** Input value */
@@ -27,7 +29,7 @@ export interface ISwitchInputProps {
 }
 
 const SwitchInput = (props: ISwitchInputProps): ReactElement => {
-  const { className, dataTestId, disabled, highlighted, inputValue, onChange, readOnly } = props;
+  const { className, dataTestId, disabled, highlighted, inline, inputValue, onChange, readOnly } = props;
   const [ids] = useState(() => inputValue.map(() => uniqueId('switch-')));
 
   /** flip the check status of the switch that was checked */
@@ -57,11 +59,14 @@ const SwitchInput = (props: ISwitchInputProps): ReactElement => {
     };
 
   return (
-    <div className={classnames(styles.container, className)} data-testid={dataTestId}>
+    <div
+      className={classnames(styles.container, { [styles.inlineContainer]: inline }, className)}
+      data-testid={dataTestId}>
       {inputValue.map((option, index) => {
         return (
           <label
             className={classnames(styles.label, {
+              [styles.inlineLabel]: inline,
               [styles.readOnly]: readOnly,
               [styles.disabled]: disabled,
               [styles.highlighted]: (readOnly || disabled) && highlighted && option.highlighted,
@@ -106,6 +111,7 @@ SwitchInput.defaultProps = {
   disabled: false,
   ellipsis: false,
   highlighted: false,
+  inline: false,
   inputValue: [],
   isInError: false,
   onChange: undefined,

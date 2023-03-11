@@ -119,20 +119,26 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handl
           </div>
         </div>
       </div>
-      <div
-        class=" css-1a09ke2-menu"
-        id="react-select-6-listbox"
-      >
+      <div>
         <div
-          class="css-bp8cua-ScrollManager"
-        />
-        <div
-          class=" css-1n6sfyn-MenuList"
+          class=" css-1yfmvl6-MenuPortal"
         >
           <div
-            class=" css-zu7x0v-LoadingMessage"
+            class=" css-1a09ke2-menu"
+            id="react-select-6-listbox"
           >
-            Loading...
+            <div
+              class="css-bp8cua-ScrollManager"
+            />
+            <div
+              class=" css-1n6sfyn-MenuList"
+            >
+              <div
+                class=" css-zu7x0v-LoadingMessage"
+              >
+                Loading...
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -403,20 +409,26 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handl
           </div>
         </div>
       </div>
-      <div
-        class=" css-1a09ke2-menu"
-        id="react-select-10-listbox"
-      >
+      <div>
         <div
-          class="css-bp8cua-ScrollManager"
-        />
-        <div
-          class=" css-1n6sfyn-MenuList"
+          class=" css-1yfmvl6-MenuPortal"
         >
           <div
-            class=" css-1wlit7h-NoOptionsMessage"
+            class=" css-1a09ke2-menu"
+            id="react-select-10-listbox"
           >
-            No options
+            <div
+              class="css-bp8cua-ScrollManager"
+            />
+            <div
+              class=" css-1n6sfyn-MenuList"
+            >
+              <div
+                class=" css-1wlit7h-NoOptionsMessage"
+              >
+                No options
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -548,20 +560,26 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handl
           </div>
         </div>
       </div>
-      <div
-        class=" css-1a09ke2-menu"
-        id="react-select-7-listbox"
-      >
+      <div>
         <div
-          class="css-bp8cua-ScrollManager"
-        />
-        <div
-          class=" css-1n6sfyn-MenuList"
+          class=" css-1yfmvl6-MenuPortal"
         >
           <div
-            class=" css-zu7x0v-LoadingMessage"
+            class=" css-1a09ke2-menu"
+            id="react-select-7-listbox"
           >
-            Loading...
+            <div
+              class="css-bp8cua-ScrollManager"
+            />
+            <div
+              class=" css-1n6sfyn-MenuList"
+            >
+              <div
+                class=" css-zu7x0v-LoadingMessage"
+              >
+                Loading...
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -852,20 +870,26 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handl
           </div>
         </div>
       </div>
-      <div
-        class=" css-1a09ke2-menu"
-        id="react-select-12-listbox"
-      >
+      <div>
         <div
-          class="css-bp8cua-ScrollManager"
-        />
-        <div
-          class=" css-1n6sfyn-MenuList"
+          class=" css-1yfmvl6-MenuPortal"
         >
           <div
-            class=" css-zu7x0v-LoadingMessage"
+            class=" css-1a09ke2-menu"
+            id="react-select-12-listbox"
           >
-            Loading...
+            <div
+              class="css-bp8cua-ScrollManager"
+            />
+            <div
+              class=" css-1n6sfyn-MenuList"
+            >
+              <div
+                class=" css-zu7x0v-LoadingMessage"
+              >
+                Loading...
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -1285,20 +1309,26 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handl
           </div>
         </div>
       </div>
-      <div
-        class=" css-1a09ke2-menu"
-        id="react-select-13-listbox"
-      >
+      <div>
         <div
-          class="css-bp8cua-ScrollManager"
-        />
-        <div
-          class=" css-1n6sfyn-MenuList"
+          class=" css-1yfmvl6-MenuPortal"
         >
           <div
-            class=" css-zu7x0v-LoadingMessage"
+            class=" css-1a09ke2-menu"
+            id="react-select-13-listbox"
           >
-            Loading...
+            <div
+              class="css-bp8cua-ScrollManager"
+            />
+            <div
+              class=" css-1n6sfyn-MenuList"
+            >
+              <div
+                class=" css-zu7x0v-LoadingMessage"
+              >
+                Loading...
+              </div>
+            </div>
           </div>
         </div>
       </div>

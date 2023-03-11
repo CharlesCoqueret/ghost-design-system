@@ -1,0 +1,112 @@
+import { useState, useEffect } from 'react';
+import { Canvas, Meta, ArgsTable, Story } from '@storybook/addon-docs';
+
+import YearPickerField from './YearPickerField';
+import Icon from '../../Atoms/Icon/Icon';
+
+<Meta
+  title='Molecule/YearPickerField'
+  component={YearPickerField}
+  parameters={{
+    viewMode: 'docs',
+    layout: 'fullscreen',
+  }}
+  argTypes={{
+    dataTestId: {
+      table: {
+        disable: true,
+      },
+    },
+  }}
+/>
+
+# YearPickerField
+
+export const Template = (args) => {
+  const [val, setVal] = useState(args.inputValue);
+  return <YearPickerField {...args} inputValue={val} onChange={setVal} />;
+};
+
+<Canvas withSource='open'>
+  <Story
+    name='YearPickerField'
+    args={{
+      label: 'Date picker field',
+      placeholder: 'Select a date',
+      isClearable: true,
+      inputValue: new Date().getFullYear(),
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable of={YearPickerField} sort='requiredFirst' exclude={['dataTestId']} />
+
+### Read Only
+
+<Canvas>
+  <Template
+    fieldSize={6}
+    label='Date picker field in read only with label size = 4 and field size = 6, written in french'
+    labelSize={4}
+    placeholder='Date picker placeholder'
+    readOnly={true}
+    inputValue={new Date().getFullYear()}
+  />
+</Canvas>
+
+### Error
+
+<Canvas>
+  <Template
+    fieldSize={6}
+    label='Date picker field in error with label size = 4 and field size = 6'
+    labelSize={4}
+    placeholder='Date picker placeholder'
+    errorMessage='This text is on error'
+    inputValue={new Date().getFullYear()}
+  />
+</Canvas>
+
+### Helper
+
+<Canvas>
+  <Template
+    helperText='Helper text'
+    label='Date picker field with helper and counter'
+    mandatory={true}
+    placeholder='Date picker placeholder'
+    inputValue={new Date().getFullYear()}
+  />
+</Canvas>
+
+### Highlighted
+
+<Canvas>
+  <Template
+    helperText='Helper text'
+    highlighted={true}
+    readOnly={true}
+    label='Date picker field highlighted'
+    placeholder='Date picker placeholder'
+    inputValue={new Date().getFullYear()}
+  />
+</Canvas>
+
+### Disabled
+
+<Canvas>
+  <Template
+    disabled={true}
+    helperText='Helper text'
+    label='Date picker field disabled'
+    placeholder='Date picker placeholder'
+    inputValue={new Date().getFullYear()}
+  />
+</Canvas>
+
+### Inline
+
+<Canvas>
+  <Template label='Date picker inline mandatory' inline={true} mandatory={true} isClearable={true} />
+</Canvas>

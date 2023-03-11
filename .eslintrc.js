@@ -10,19 +10,7 @@ module.exports = {
     jest: true,
     node: true,
   },
-  ignorePatterns: [
-    '*.config.js',
-    'webpack.*.js',
-    'coverage/*',
-    'node_modules/*',
-    '*.test.tsx',
-    '*.spec.tsx',
-    '*.test.ts',
-    '*.spec.ts',
-    'dist/*',
-    'docs-build/*',
-    'public/*',
-  ],
+  ignorePatterns: ['coverage/*', 'node_modules/*', 'dist/*', 'docs-build/*', 'public/*'],
   parser: '@typescript-eslint/parser',
   plugins: ['react-hooks', 'prettier'],
   parserOptions: {
@@ -52,6 +40,15 @@ module.exports = {
     'react-hooks/exhaustive-deps': rules.OFF,
     'prettier/prettier': rules.ON,
   },
+  overrides: [
+    {
+      files: ['*.test.tsx', '*.test.ts'],
+      rules: {
+        '@typescript-eslint/no-var-requires': rules.OFF,
+        '@typescript-eslint/no-empty-function': rules.OFF,
+      },
+    },
+  ],
   settings: {
     react: {
       version: 'detect',

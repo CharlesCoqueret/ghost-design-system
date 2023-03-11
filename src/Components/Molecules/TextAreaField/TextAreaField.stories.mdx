@@ -1,0 +1,103 @@
+import { useState } from 'react';
+import { Canvas, Meta, ArgsTable, Story } from '@storybook/addon-docs';
+
+import TextAreaField, { ITextAreaFieldProps } from './TextAreaField';
+
+<Meta
+  title='Molecule/TextAreaField'
+  component={TextAreaField}
+  parameters={{
+    viewMode: 'docs',
+    layout: 'fullscreen',
+  }}
+  argTypes={{
+    dataTestId: {
+      table: {
+        disable: true,
+      },
+    },
+  }}
+/>
+
+# TextAreaField
+
+export const sampleText =
+  'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur fringilla sit amet odio vitae dapibus. Cras ' +
+  'ultricies lacus ac porttitor lacinia. Sed sed dapibus elit. Mauris facilisis vitae nunc ac hendrerit. Maecenas ' +
+  'sit amet leo urna. Quisque volutpat tincidunt odio, sit amet lobortis tortor aliquet quis. Proin molestie ' +
+  'rhoncus massa. Fusce sagittis urna id efficitur convallis. Nam risus velit, vulputate a lectus eget, lobortis ' +
+  'lobortis nunc. Nunc tincidunt eros vitae consectetur ultricies. Donec vel mauris tempor, lobortis massa vel, ' +
+  'consectetur elit. Curabitur dignissim quam sed odio feugiat elementum.\n' +
+  'Etiam urna leo, placerat eu pellentesque id, vestibulum vitae erat. Quisque hendrerit pharetra aliquet. ' +
+  'Vestibulum porta quis ipsum at vestibulum. Aenean ornare augue a tortor sollicitudin porttitor. Pellentesque ' +
+  'vehicula purus turpis, et ultrices leo aliquam vitae. Curabitur id convallis augue, at sollicitudin nunc. ' +
+  'Nulla porttitor, neque id hendrerit feugiat, ex ligula feugiat ligula, eget accumsan sapien felis quis eros. ' +
+  'Aliquam ac ornare sem, sit amet facilisis eros. Nulla gravida, ipsum quis convallis sodales, nibh arcu ' +
+  'venenatis quam, eu commodo leo leo vel metus. Sed vel vestibulum sapien. Vivamus eu felis eget purus ' +
+  'pellentesque maximus at quis turpis. Duis ornare venenatis turpis, vitae tempor urna mollis ac.\n';
+
+export const Template = (args) => {
+  const [val, setVal] = useState(args.inputValue);
+  return <TextAreaField {...args} inputValue={val} onChange={setVal} />;
+};
+
+<Canvas withSource='open'>
+  <Story
+    name='TextAreaField'
+    args={{
+      inputValue: sampleText,
+      label: 'Textarea field',
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable of={TextAreaField} sort='requiredFirst' exclude={['dataTestId']} />
+
+### Read Only
+
+<Canvas>
+  <Template
+    inputValue={sampleText}
+    fieldSize={6}
+    label='Textarea field in read only with label size = 4 and field size = 6'
+    labelSize={4}
+    readOnly={true}
+    placeholder='Placeholder text'
+  />
+</Canvas>
+
+### Error
+
+<Canvas>
+  <Template placeholder='Placeholder text' label='Textarea field in error' errorMessage='This text is on error' />
+</Canvas>
+
+### Helper with counter
+
+<Canvas>
+  <Template label='Textarea field with helper and counter' helperText='Helper text' mandatory={true} maxLength={20} />
+</Canvas>
+
+### Highlighted
+
+<Canvas>
+  <Template
+    label='Textarea field highlighted'
+    inputValue='This is a highlighted sample text'
+    readOnly={true}
+    highlighted={true}
+    helperText='Helper text'
+  />
+</Canvas>
+
+### Disabled
+
+<Canvas>
+  <Template
+    label='Textarea field disabled'
+    inputValue='This is a disabled sample text'
+    disabled={true}
+    helperText='Helper text'
+  />
+</Canvas>

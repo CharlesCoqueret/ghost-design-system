@@ -68,15 +68,7 @@ exports[`GenericField Component GenericField renders with error message in read 
 <div>
   <div
     class="fieldGroup"
-  >
-    <div
-      class="message"
-    >
-      <div
-        class="helper"
-      />
-    </div>
-  </div>
+  />
 </div>
 `;
 

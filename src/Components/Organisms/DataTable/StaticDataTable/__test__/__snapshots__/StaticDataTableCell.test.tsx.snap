@@ -209,7 +209,7 @@ exports[`StaticDataTableCell component StaticDataTableCell renders with date 1`]
             class="fieldGroup"
           >
             <div
-              class="input-date-picker-wrapper-read-only table--cell-value--date-readonly"
+              class="container input-date-picker-wrapper-read-only table--cell-value--date-readonly"
             >
               <div
                 class="react-datepicker-wrapper"
@@ -652,7 +652,7 @@ exports[`StaticDataTableCell component StaticDataTableCell renders with year 1`]
             class="fieldGroup"
           >
             <div
-              class="input-year-picker-wrapper-read-only table--cell-value--date-readonly"
+              class="container input-year-picker-wrapper-read-only table--cell-value--date-readonly"
             >
               <div
                 class="react-datepicker-wrapper"

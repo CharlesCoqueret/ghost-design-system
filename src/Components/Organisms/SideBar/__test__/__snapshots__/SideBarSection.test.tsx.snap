@@ -21,9 +21,8 @@ exports[`SideBarSection Component SideBarSection renders 1`] = `
       <li
         class="item"
       >
-        <a
+        <div
           class=""
-          href="/link1"
         >
           full url
           <div
@@ -31,14 +30,13 @@ exports[`SideBarSection Component SideBarSection renders 1`] = `
           >
             LINK1
           </div>
-        </a>
+        </div>
       </li>
       <li
         class="item"
       >
-        <a
+        <div
           class=""
-          href="/link2"
         >
           full url
           <div
@@ -46,7 +44,7 @@ exports[`SideBarSection Component SideBarSection renders 1`] = `
           >
             LINK2
           </div>
-        </a>
+        </div>
       </li>
     </ul>
   </nav>

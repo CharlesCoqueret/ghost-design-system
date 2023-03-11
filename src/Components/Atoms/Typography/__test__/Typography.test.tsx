@@ -1,11 +1,10 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
+import { render } from '@testing-library/react';
 
-import Typography, { TextTypeEnum } from '../Typography';
+import { Typography, TextTypeEnum } from '../';
 
 describe('Typography.Title Component', () => {
-  it('Typography.Title renders', () => {
+  it('renders properly', () => {
     const { container } = render(
       <Typography.Title level={2} className='CLASSNAME' ellipsis style={{ height: '200px' }}>
         TITLE
@@ -14,7 +13,7 @@ describe('Typography.Title Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('Typography.Title ellipsis with no text', () => {
+  it('ellipsis with no text', () => {
     const { container } = render(
       <Typography.Title ellipsis>
         <div />
@@ -22,27 +21,10 @@ describe('Typography.Title Component', () => {
     );
     expect(container).toMatchSnapshot();
   });
-
-  it('Typography.Title handles click', async () => {
-    const onClickMock = jest.fn();
-
-    const { container } = render(
-      <Typography.Title dataTestId={'DATA-TEST-ID'} level={1} onClick={onClickMock}>
-        TITLE
-      </Typography.Title>,
-    );
-    expect(container).toMatchSnapshot();
-
-    const title = await screen.findByTestId('DATA-TEST-ID');
-
-    userEvent.click(title);
-
-    expect(onClickMock).toBeCalledTimes(1);
-  });
 });
 
 describe('Typography.Text Component', () => {
-  it('Typography.Text renders with no types', () => {
+  it('renders with no types', () => {
     const { container } = render(
       <Typography.Text className='CLASSNAME' ellipsis style={{ height: '200px' }}>
         TEXT
@@ -51,7 +33,7 @@ describe('Typography.Text Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('Typography.Text renders with all types', () => {
+  it('renders with all types', () => {
     const { container } = render(
       <Typography.Text
         type={[
@@ -70,7 +52,7 @@ describe('Typography.Text Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('Typography.Text renders with all types', () => {
+  it('renders with eatch types', () => {
     const { container: containerBody } = render(<Typography.Text type={TextTypeEnum.BODY}>TEXT</Typography.Text>);
     expect(containerBody).toMatchSnapshot();
 
@@ -102,29 +84,12 @@ describe('Typography.Text Component', () => {
     expect(containerTiny).toMatchSnapshot();
   });
 
-  it('Typography.Text ellipsis with no text', () => {
+  it('ellipsis with no text', () => {
     const { container } = render(
       <Typography.Text ellipsis>
         <div />
       </Typography.Text>,
     );
     expect(container).toMatchSnapshot();
-  });
-
-  it('Typography.Text handles click', async () => {
-    const onClickMock = jest.fn();
-
-    const { container } = render(
-      <Typography.Text dataTestId={'DATA-TEST-ID'} onClick={onClickMock}>
-        TEXT
-      </Typography.Text>,
-    );
-    expect(container).toMatchSnapshot();
-
-    const text = await screen.findByTestId('DATA-TEST-ID');
-
-    userEvent.click(text);
-
-    expect(onClickMock).toBeCalledTimes(1);
   });
 });

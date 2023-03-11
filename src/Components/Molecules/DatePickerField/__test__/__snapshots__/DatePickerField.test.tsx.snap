@@ -6,7 +6,7 @@ exports[`DatePickerField Component DatePickerField renders 1`] = `
     class="fieldGroup"
   >
     <div
-      class=""
+      class="container"
     >
       <div
         class="react-datepicker-wrapper"
@@ -37,7 +37,7 @@ exports[`DatePickerField Component DatePickerField renders with values in disabl
     class="fieldGroup"
   >
     <div
-      class="input-date-picker-wrapper-read-only"
+      class="container input-date-picker-wrapper-read-only"
     >
       <div
         class="react-datepicker-wrapper"
@@ -69,7 +69,7 @@ exports[`DatePickerField Component DatePickerField renders with values in readon
     class="fieldGroup"
   >
     <div
-      class="input-date-picker-wrapper-read-only"
+      class="container input-date-picker-wrapper-read-only"
     >
       <div
         class="react-datepicker-wrapper"
@@ -101,7 +101,7 @@ exports[`DatePickerField Component DatePickerField renders with values with fiel
     class="fieldGroup size-6 inline"
   >
     <div
-      class=""
+      class="container"
     >
       <div
         class="react-datepicker-wrapper"

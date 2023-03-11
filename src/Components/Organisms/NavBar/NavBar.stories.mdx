@@ -1,4 +1,7 @@
-import { Canvas, Meta, ArgsTable, Story, Source } from '@storybook/addon-docs';
+import { Canvas, Meta, ArgsTable, Story } from '@storybook/addon-docs';
+import { MemoryRouter as Router } from 'react-router-dom';
+
+import Alert, { AlertType } from '../../Molecules/Alert/Alert';
 
 import NavBar from './NavBar';
 import NavItem from './NavItem';
@@ -6,6 +9,32 @@ import NavBarMenu from './NavBarMenu';
 import NavBarUtilities from './NavBarUtilities';
 
 import styles from './NavBar.module.scss';
+
+<Meta
+  title='Organism/NavBar'
+  component={NavBar}
+  parameters={{
+    viewMode: 'docs',
+    layout: 'fullscreen',
+  }}
+/>
+
+# NavBar
+
+NavBar provides access to destinations and is permanently on-screen.
+
+It can contain:
+
+- Five to seven main destinations (navButtons)
+- Five max transversale destinations (navIcons)
+
+Play with NavBar live on [CodeSandbox](https://codesandbox.io/s/sidebar-demo-t4s312)
+
+For layout management, please refer to this [example](https://codesandbox.io/s/size-management-sidebar-xtpkk0)
+
+<Alert type={AlertType.INFORMATION}>A Router from react-router-dom surrounding the NavBar is mandatory.</Alert>
+
+## NavBar
 
 export const Template = (args) => {
   return (
@@ -16,15 +45,9 @@ export const Template = (args) => {
           subItems={[
             {
               label: 'Label 1',
-              onClick: () => {
-                console.log('label 1 - label 1');
-              },
             },
             {
               label: 'Label 2',
-              onClick: () => {
-                console.log('label 1 - label 2');
-              },
             },
           ]}
         />
@@ -33,24 +56,13 @@ export const Template = (args) => {
           subItems={[
             {
               label: 'Label 1',
-              onClick: () => {
-                console.log('label 2 - label 1');
-              },
             },
             {
               label: 'Label 2',
-              onClick: () => {
-                console.log('label 2 - label 2');
-              },
             },
           ]}
         />
-        <NavItem
-          label='Label 3'
-          onClick={() => {
-            console.log('label 3');
-          }}
-        />
+        <NavItem label='Label 3' />
       </NavBarMenu>
       <NavBarUtilities>
         <NavItem
@@ -76,7 +88,6 @@ export const Template = (args) => {
                 padding: '0px 16px',
                 overflowX: 'hidden',
                 overflowY: 'auto',
-                backgroundColor: '#black',
               }}>
               <p>
                 Lorem ipsum dolor sit amet. Ut voluptas reiciendis vel praesentium laborum hic voluptas asperiores nam
@@ -134,31 +145,7 @@ export const Template = (args) => {
   );
 };
 
-<Meta
-  title='Organism/NavBar'
-  component={NavBar}
-  parameters={{
-    viewMode: 'docs',
-    layout: 'fullscreen',
-  }}
-/>
-
-# NavBar
-
-NavBar provides access to destinations and is permanently on-screen.
-
-It can contain:
-
-- Five to seven main destinations (navButtons)
-- Five max transversale destinations (navIcons)
-
-Play with NavBar live on [CodeSandbox](https://codesandbox.io/s/sidebar-demo-t4s312)
-
-For layout management, please refer to this [example](https://codesandbox.io/s/size-management-sidebar-xtpkk0)
-
-## Story
-
-<Canvas>
+<Canvas withSource='open'>
   <Story
     name='NavBar'
     args={{
@@ -169,22 +156,22 @@ For layout management, please refer to this [example](https://codesandbox.io/s/s
   </Story>
 </Canvas>
 
-## Props
+## NavBar Props
 
 <ArgsTable of={NavBar} sort='requiredFirst' />
 
 ## Brand
 
-<Canvas withSource={true}>
-  <Story name='Brand'>
+<Canvas withSource='open'>
+  <Router>
     <NavBar logoSource='./images/logo.svg' redirection='/' className={styles.positionRelative} />
-  </Story>
+  </Router>
 </Canvas>
 
 ## NavBarMenu
 
-<Canvas isExpanded={false}>
-  <Story name='NavBarMenu'>
+<Canvas withSource='open'>
+  <Router>
     <NavBar logoSource='./images/logo.svg' redirection='/' className={styles.positionRelative}>
       <NavBarMenu>
         <NavItem
@@ -229,13 +216,17 @@ For layout management, please refer to this [example](https://codesandbox.io/s/s
         />
       </NavBarMenu>
     </NavBar>
-  </Story>
+  </Router>
 </Canvas>
+
+## NavBarMenu Props
+
+<ArgsTable of={NavBarMenu} sort='requiredFirst' />
 
 ## NavBarUtilities
 
-<Canvas isExpanded={false}>
-  <Story name='NavBarUtilities'>
+<Canvas withSource='open'>
+  <Router>
     <NavBar logoSource='./images/logo.svg' className={styles.positionRelative}>
       <NavBarUtilities>
         <NavItem
@@ -261,7 +252,6 @@ For layout management, please refer to this [example](https://codesandbox.io/s/s
                 padding: '0px 16px',
                 overflowX: 'hidden',
                 overflowY: 'auto',
-                backgroundColor: 'black',
               }}>
               <p>
                 Lorem ipsum dolor sit amet. Ut voluptas reiciendis vel praesentium laborum hic voluptas asperiores nam
@@ -316,5 +306,13 @@ For layout management, please refer to this [example](https://codesandbox.io/s/s
         />
       </NavBarUtilities>
     </NavBar>
-  </Story>
+  </Router>
 </Canvas>
+
+## NavBarUtilities Props
+
+<ArgsTable of={NavBarUtilities} sort='requiredFirst' />
+
+## NavItem Props
+
+<ArgsTable of={NavItem} sort='requiredFirst' />

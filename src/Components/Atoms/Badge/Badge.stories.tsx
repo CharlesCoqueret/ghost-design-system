@@ -4,7 +4,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import BadgeComponent, { BadgeColorsEnum, IBadgeProps } from './Badge';
 
 export default {
-  title: 'Atom',
+  title: 'Atom/Badge',
   component: BadgeComponent,
   parameters: { actions: { argTypesRegex: '^on.*' }, controls: { sort: 'requiredFirst' } },
 } as ComponentMeta<typeof BadgeComponent>;
@@ -31,10 +31,10 @@ const Template: ComponentStory<typeof BadgeComponent> = (args: IBadgeProps) => {
           <div key={color} style={{ display: 'flex', flexDirection: 'column' }}>
             <div style={{ fontWeight: '800', fontSize: '16px', marginBottom: '5px' }}>{color}</div>
             <div>
-              <BadgeComponent type='notification' color={BadgeColorsEnum[color]}>
-                +{getRandomInt()}
+              <BadgeComponent type='notification' color={BadgeColorsEnum[color as keyof typeof BadgeColorsEnum]}>
+                {getRandomInt()}
               </BadgeComponent>
-              <BadgeComponent type='indicator' color={BadgeColorsEnum[color]}>
+              <BadgeComponent type='indicator' color={BadgeColorsEnum[color as keyof typeof BadgeColorsEnum]}>
                 STATUS
               </BadgeComponent>
             </div>
@@ -46,4 +46,3 @@ const Template: ComponentStory<typeof BadgeComponent> = (args: IBadgeProps) => {
 };
 
 export const Badge = Template.bind({});
-Badge.args = {};

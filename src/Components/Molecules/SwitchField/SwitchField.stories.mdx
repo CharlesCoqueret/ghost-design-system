@@ -1,0 +1,105 @@
+import { useState } from 'react';
+import { Canvas, Meta, ArgsTable, Story } from '@storybook/addon-docs';
+
+import SwitchField, { ISwitchFieldProps } from './SwitchField';
+
+<Meta
+  title='Molecule/SwitchField'
+  component={SwitchField}
+  parameters={{
+    viewMode: 'docs',
+    layout: 'fullscreen',
+  }}
+  argTypes={{
+    dataTestId: {
+      table: {
+        disable: true,
+      },
+    },
+  }}
+/>
+
+# SwitchField
+
+export const options = [
+  { label: 'Switch label 0', value: 'KEY_0' },
+  { label: 'Switch label 1', value: 'KEY_1', checked: true },
+  {
+    label: 'Switch label 2 - which can sometimes be ' + 'very '.repeat(10) + ' long',
+    value: 'KEY_2',
+    checked: false,
+  },
+  {
+    label: 'Switch label 3 - which can sometimes be ' + 'extremely '.repeat(50) + ' long',
+    value: 'KEY_3',
+    checked: undefined,
+  },
+  { label: 'Switch label 4 highlighted', value: 'KEY_4', highlighted: true },
+  { label: 'Switch label 5 highlighted and checked', value: 'KEY_5', highlighted: true, checked: true },
+];
+
+export const Template = (args) => {
+  const [val, setVal] = useState(args.inputValue);
+  return <SwitchField {...args} inputValue={val} onChange={setVal} />;
+};
+
+<Canvas withSource='open'>
+  <Story name='SwitchField' args={{ label: 'Switch field', inputValue: options }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable of={SwitchField} sort='requiredFirst' exclude={['dataTestId']} />
+
+### Read Only
+
+<Canvas>
+  <Template
+    fieldSize={6}
+    label='Switch field in read only with label size = 4 and field size = 6'
+    labelSize={4}
+    readOnly={true}
+    inputValue={options}
+  />
+</Canvas>
+
+### Error
+
+<Canvas>
+  <Template label='Switch field in error' errorMessage='This text is on error' inputValue={options} />
+</Canvas>
+
+### Helper
+
+<Canvas>
+  <Template
+    helperText='Helper text'
+    label='Switch field with helper and counter'
+    mandatory={true}
+    inputValue={options}
+  />
+</Canvas>
+
+### Highlighted
+
+<Canvas>
+  <Template
+    helperText='Helper text'
+    highlighted={true}
+    readOnly={true}
+    label='Switch field highlighted'
+    inputValue={options}
+  />
+</Canvas>
+
+### Disabled
+
+<Canvas>
+  <Template disabled={true} helperText='Helper text' label='Switch field disabled' inputValue={options} />
+</Canvas>
+
+### Inline
+
+<Canvas>
+  <Template label='Switch field in line' inline={true} inputValue={[options[0], options[1]]} />
+</Canvas>

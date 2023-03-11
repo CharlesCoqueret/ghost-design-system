@@ -1,0 +1,112 @@
+import { useState } from 'react';
+import { Canvas, Meta, ArgsTable, Story } from '@storybook/addon-docs';
+import { MemoryRouter as Router } from 'react-router-dom';
+
+import Alert, { AlertType } from '../Alert/Alert';
+import PercentageField from './PercentageField';
+
+<Meta
+  title='Molecule/PercentageField'
+  component={PercentageField}
+  parameters={{
+    viewMode: 'docs',
+    layout: 'fullscreen',
+  }}
+  argTypes={{
+    dataTestId: {
+      table: {
+        disable: true,
+      },
+    },
+  }}
+/>
+
+# PercentageField
+
+<Alert type={AlertType.ERROR}>
+  When defining the format for a number, please ensure <code>decimalSeparator</code> and <code>thousandSeparator</code>
+  are different.
+</Alert>
+
+export const Template = (args) => {
+  const [localValue, setLocalValue] = useState(args.inputValue);
+  return <PercentageField {...args} inputValue={localValue} onChange={setLocalValue} />;
+};
+
+<Canvas withSource='open'>
+  <Story
+    name='PercentageField'
+    args={{
+      inputValue: 1234567890,
+      label: 'Percentage field',
+      placeholder: 'Placeholder percentage',
+      suffix: '€',
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable of={PercentageField} sort='requiredFirst' exclude={['dataTestId']} />
+
+### Read only with size constraint on label and field
+
+<Canvas withSource='open'>
+  <Template
+    fieldSize={4}
+    inputValue={1234567890}
+    label='Percentage field in read only with label size = 6 and field size = 4'
+    labelSize={6}
+    readOnly
+    suffix='€'
+  />
+</Canvas>
+
+### Error
+
+<Canvas withSource='open'>
+  <Template
+    errorMessage='This percentage is on error'
+    inputValue={1234567890}
+    label='Percentage field in read only with label size = 6 and field size = 4'
+    placeholder='Placeholder percentage'
+    suffix='€'
+  />
+</Canvas>
+
+### Helper and limit
+
+<Canvas withSource='open'>
+  <Template
+    helperText='Helper text'
+    inputValue={12}
+    label='Percentage field with helper and maximum value: 100'
+    mandatory={true}
+    maxValue={100}
+    suffix='€'
+  />
+</Canvas>
+
+### Highlighted
+
+<Canvas withSource='open'>
+  <Template
+    helperText='Helper text'
+    highlighted={true}
+    inputValue={1234567890}
+    label='Percentage field highlighted'
+    readOnly={true}
+    suffix='€'
+  />
+</Canvas>
+
+### Disabled
+
+<Canvas withSource='open'>
+  <Template
+    disabled={true}
+    inputValue={1234567890}
+    label="Percentage field disabled and ' as thousand separator"
+    suffix='€'
+    thousandSeparator="'"
+  />
+</Canvas>

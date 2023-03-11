@@ -34,6 +34,10 @@
 
 .error {
   border: 1px solid rgb(var(--theme-provider-error));
+  &:focus,
+  &:hover {
+    border: 1px solid rgb(var(--theme-provider-error));
+  }
 }
 
 .highlighted {

@@ -193,20 +193,26 @@ exports[`DynamicSearchCell component DynamicSearchCell handles display of no mes
                     </div>
                   </div>
                 </div>
-                <div
-                  class=" css-1a09ke2-menu"
-                  id="react-select-3-listbox"
-                >
+                <div>
                   <div
-                    class="css-bp8cua-ScrollManager"
-                  />
-                  <div
-                    class=" css-1n6sfyn-MenuList"
+                    class=" css-1yfmvl6-MenuPortal"
                   >
                     <div
-                      class=" css-1wlit7h-NoOptionsMessage"
+                      class=" css-1a09ke2-menu"
+                      id="react-select-3-listbox"
                     >
-                      No result for 
+                      <div
+                        class="css-bp8cua-ScrollManager"
+                      />
+                      <div
+                        class=" css-1n6sfyn-MenuList"
+                      >
+                        <div
+                          class=" css-1wlit7h-NoOptionsMessage"
+                        >
+                          No result for 
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -442,31 +448,37 @@ exports[`DynamicSearchCell component DynamicSearchCell renders in edit mode and 
                     </div>
                   </div>
                 </div>
-                <div
-                  class=" css-1a09ke2-menu"
-                  id="react-select-2-listbox"
-                >
+                <div>
                   <div
-                    class="css-bp8cua-ScrollManager"
-                  />
-                  <div
-                    class=" css-1n6sfyn-MenuList"
+                    class=" css-1yfmvl6-MenuPortal"
                   >
                     <div
-                      aria-disabled="false"
-                      class=" css-1tp36n0-option"
-                      id="react-select-2-option-0"
-                      tabindex="-1"
+                      class=" css-1a09ke2-menu"
+                      id="react-select-2-listbox"
                     >
-                      Label 1
-                    </div>
-                    <div
-                      aria-disabled="false"
-                      class=" css-g999a2-option"
-                      id="react-select-2-option-1"
-                      tabindex="-1"
-                    >
-                      Label 2
+                      <div
+                        class="css-bp8cua-ScrollManager"
+                      />
+                      <div
+                        class=" css-1n6sfyn-MenuList"
+                      >
+                        <div
+                          aria-disabled="false"
+                          class=" css-1tp36n0-option"
+                          id="react-select-2-option-0"
+                          tabindex="-1"
+                        >
+                          Label 1
+                        </div>
+                        <div
+                          aria-disabled="false"
+                          class=" css-g999a2-option"
+                          id="react-select-2-option-1"
+                          tabindex="-1"
+                        >
+                          Label 2
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>

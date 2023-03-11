@@ -5,9 +5,8 @@ exports[`NavBar Component renders with menu, and utilities 1`] = `
   <nav
     class="container"
   >
-    <a
+    <div
       class="brand"
-      href="redirection"
     >
       partial url
       <img
@@ -15,7 +14,7 @@ exports[`NavBar Component renders with menu, and utilities 1`] = `
         class="brandLogo"
         src="logoSource"
       />
-    </a>
+    </div>
     <div
       class="itemsContainer"
     >
@@ -60,9 +59,8 @@ exports[`NavBar Component renders without menu nor utilities 1`] = `
   <nav
     class="container"
   >
-    <a
+    <div
       class="brand"
-      href="/"
     >
       partial url
       <img
@@ -70,7 +68,7 @@ exports[`NavBar Component renders without menu nor utilities 1`] = `
         class="brandLogo"
         src="logoSource"
       />
-    </a>
+    </div>
     <div
       class="itemsContainer"
     />

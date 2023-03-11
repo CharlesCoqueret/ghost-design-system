@@ -40,6 +40,10 @@ export interface IDatePickerFieldProps {
   locale?: string;
   /** Mandatory field (optional, default: false) */
   mandatory?: boolean;
+  /** Maximum date that can be picked (optional, default: undefined) */
+  maxDate?: Date;
+  /** Minimum date that can be picked (optional, default: undefined) */
+  minDate?: Date;
   /** Name of text field (optional, default: undefined) */
   name?: string;
   /** Handler of value changes (optional, default: undefined) */
@@ -80,6 +84,8 @@ export const DatePickerField = (props: IDatePickerFieldProps): ReactElement => {
     labelSize,
     locale,
     mandatory,
+    maxDate,
+    minDate,
     name,
     onChange,
     placeholder,
@@ -110,6 +116,8 @@ export const DatePickerField = (props: IDatePickerFieldProps): ReactElement => {
         isInError={errorMessage !== undefined}
         isClearable={isClearable}
         locale={locale}
+        maxDate={maxDate}
+        minDate={minDate}
         name={name}
         placeholder={placeholder}
         inputValue={inputValue}
@@ -135,6 +143,8 @@ DatePickerField.defaultProps = {
   label: undefined,
   labelSize: undefined,
   mandatory: false,
+  maxDate: undefined,
+  minDate: undefined,
   name: undefined,
   onChange: undefined,
   placeholder: undefined,
