@@ -26,7 +26,7 @@ const AmountCell = <T,>(props: ICellProps<T, IColumnAmount<T>>): ReactElement =>
           { 'table--cell-value--negative': isNegative && !isCurrentlyEditedRow },
           { 'table--cell-value--amount-readonly': !isCurrentlyEditedRow },
         )}
-        inputValue={displayValue}
+        input={displayValue}
         maxValue={column.maxValue}
         minValue={column.minValue}
         name={String(column.dataIndex)}

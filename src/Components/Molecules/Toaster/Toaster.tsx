@@ -14,7 +14,7 @@ import styles from './Toaster.module.scss';
  * Error toast: duration 5s with circle-xmark icon
  * Blank toast: duration 5s
  */
-export const Toaster = (): ReactElement => {
+const Toaster = (): ReactElement => {
   return (
     <Portal rootId='toaster-portal-id'>
       <HotToaster
@@ -46,7 +46,7 @@ export const Toaster = (): ReactElement => {
  *
  * @returns id of the toast
  */
-export const notify = (message: string, options?: ToastOptions): string => toast(message, options);
+const notify = (message: string, options?: ToastOptions): string => toast(message, options);
 
 /**
  * Toast a success message with default configuration (@see Toaster).
@@ -56,7 +56,7 @@ export const notify = (message: string, options?: ToastOptions): string => toast
  *
  * @returns id of the toast
  */
-export const success = (message: string, options?: ToastOptions): string => toast.success(message, options);
+const success = (message: string, options?: ToastOptions): string => toast.success(message, options);
 
 /**
  * Toast an error message with default configuration (@see Toaster).
@@ -66,7 +66,7 @@ export const success = (message: string, options?: ToastOptions): string => toas
  *
  * @returns id of the toast
  */
-export const error = (message: string, options?: ToastOptions): string => toast.error(message, options);
+const error = (message: string, options?: ToastOptions): string => toast.error(message, options);
 
 /**
  * Toast a persistent error message.
@@ -78,7 +78,7 @@ export const error = (message: string, options?: ToastOptions): string => toast.
  *
  * @returns id of the toast
  */
-export const errorPersistent = (message: string, options?: ToastOptions): string =>
+const errorPersistent = (message: string, options?: ToastOptions): string =>
   toast.error(
     (t) => (
       <>
@@ -106,8 +106,15 @@ export const errorPersistent = (message: string, options?: ToastOptions): string
  *
  * @param toastId (optional) closes the toaster identified by its id, if non provided, all are closed.
  */
-export const dismiss = (toastId?: string): void => {
+const dismiss = (toastId?: string): void => {
   toast.dismiss(toastId);
 };
 
-export default Toaster;
+export default {
+  Toaster,
+  dismiss,
+  notify,
+  success,
+  error,
+  errorPersistent,
+};

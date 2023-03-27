@@ -1,17 +1,11 @@
 import React, { ReactElement, Ref } from 'react';
 
 import { GenericField } from '../../Atoms/GenericField';
-import { IOption, MultiSelectInput } from '../../Atoms/SelectInput';
+import MultiSelectInput, { IMultiSelectInputProps } from '../../Atoms/SelectInput/MultiSelectInput';
 
-export interface IMultiSelectFieldProps {
+export interface IMultiSelectFieldProps extends Omit<IMultiSelectInputProps, 'className' | 'isInError'> {
   /** React Container ref (optional, default: undefined) */
   containerRef?: Ref<HTMLDivElement>;
-  /** For test purpose only */
-  dataTestId?: string;
-  /** Disabled field (optional, default: false) */
-  disabled?: boolean;
-  /** Ellipsis in readonly (optional, default: false) */
-  ellipsis?: boolean;
   /** Error message (optional, default: undefined) */
   errorMessage?: string;
   /** Class for the field surrounding the input (optional, default: undefined) */
@@ -20,40 +14,16 @@ export interface IMultiSelectFieldProps {
   fieldSize?: number;
   /** Helper text (optional, default: undefined) */
   helperText?: string;
-  /** Highlighted field (optional, default: false) */
-  highlighted?: boolean;
   /** Inline field (optional, default: false) */
   inline?: boolean;
   /** Class for the input (optional, default: undefined) */
   inputClassName?: string;
-  /** Input string value (optional, default: undefined) */
-  inputValue: Array<string | number> | undefined;
-  /** Provide the ability to clear the value (optional, default: false) */
-  isClearable?: boolean;
   /** Label (optional, default: undefined) */
   label?: string;
   /** Size of the field in a 12 column grid (optional, default: undefined) */
   labelSize?: number;
   /** Mandatory field (optional, default: false) */
   mandatory?: boolean;
-  /** Name of text field (optiona, default: undefined) */
-  name?: string;
-  /** Label to be used when one item is selected (example: "{} item selected")
-   * Note: the {} will be replaced by the actual number */
-  numberOfItemLabel: string;
-  /** Label to be used when more than one item is selected (example: "{} items selected")
-   * Note: the {} will be replaced by the actual number */
-  numberOfItemsLabel: string;
-  /** Handler of value changes (optional, default: undefined) */
-  onChange?: (newValue: Array<string | number> | null | undefined) => void;
-  /** Options available to be picked from */
-  options: Array<IOption>;
-  /** Placeholder value (optional, default: undefined) */
-  placeholder?: string;
-  /** Read only field (optional, default: false) */
-  readOnly?: boolean;
-  /** Use portal, it is remmended to set it to false for modal (optional, default true) */
-  usePortal?: boolean;
 }
 
 /**
@@ -77,11 +47,12 @@ export const MultiSelectField = (props: IMultiSelectFieldProps): ReactElement =>
     highlighted,
     inline,
     inputClassName,
-    inputValue,
+    input,
     isClearable,
     label,
     labelSize,
     mandatory,
+    maxMenuHeight,
     name,
     numberOfItemLabel,
     numberOfItemsLabel,
@@ -111,9 +82,10 @@ export const MultiSelectField = (props: IMultiSelectFieldProps): ReactElement =>
         disabled={disabled}
         ellipsis={ellipsis}
         highlighted={highlighted}
-        inputValue={inputValue}
+        input={input}
         isClearable={isClearable}
         isInError={errorMessage !== undefined}
+        maxMenuHeight={maxMenuHeight}
         name={name}
         numberOfItemLabel={numberOfItemLabel}
         numberOfItemsLabel={numberOfItemsLabel}
@@ -137,7 +109,7 @@ MultiSelectField.defaultProps = {
   highlighted: false,
   inline: false,
   inputClassName: undefined,
-  inputValue: undefined,
+  input: undefined,
   isClearable: false,
   label: undefined,
   labelSize: undefined,

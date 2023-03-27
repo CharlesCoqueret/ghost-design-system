@@ -32,7 +32,7 @@ describe('AmountInput Component', () => {
     const { container, rerender } = render(
       <AmountInput
         highlighted
-        inputValue={1234567890.12}
+        input={1234567890.12}
         onChange={onChangeMock}
         prefix='A'
         readOnly
@@ -48,7 +48,7 @@ describe('AmountInput Component', () => {
       <AmountInput
         decimalScale={2}
         highlighted
-        inputValue={1234567890.12}
+        input={1234567890.12}
         onChange={onChangeMock}
         prefix='A'
         readOnly
@@ -66,7 +66,7 @@ describe('AmountInput Component', () => {
     const { container } = render(
       <AmountInput
         highlighted
-        inputValue={1234567890.12}
+        input={1234567890.12}
         onChange={onChangeMock}
         prefix='A'
         readOnly
@@ -85,7 +85,7 @@ describe('AmountInput Component', () => {
     const { container } = render(
       <AmountInput
         highlighted
-        inputValue={1234567890.12}
+        input={1234567890.12}
         onChange={onChangeMock}
         readOnly
         thousandsGroupStyle={ThousandsGroupStyle.LAKH}
@@ -179,7 +179,7 @@ describe('AmountInput Component', () => {
     const onChangeMock = jest.fn();
 
     const { container } = render(
-      <AmountInput onChange={onChangeMock} dataTestId='name' inputValue='10' prefix='A' suffix='B' readOnly />,
+      <AmountInput onChange={onChangeMock} dataTestId='name' input='10' prefix='A' suffix='B' readOnly />,
     );
 
     const input = screen.getByTestId('name');
@@ -192,7 +192,7 @@ describe('AmountInput Component', () => {
     const onChangeMock = jest.fn();
 
     const { container } = render(
-      <AmountInput onChange={onChangeMock} dataTestId='name' inputValue='10' prefix='A' suffix='B' readOnly />,
+      <AmountInput onChange={onChangeMock} dataTestId='name' input='10' prefix='A' suffix='B' readOnly />,
     );
 
     const input = screen.getByTestId('name');
@@ -209,7 +209,7 @@ describe('AmountInput Component', () => {
         dataTestId='name'
         onChange={onChangeMock}
         thousandsGroupStyle={ThousandsGroupStyle.SHORTEN}
-        inputValue='1234567890.1234'
+        input='1234567890.1234'
         prefix='A'
         highlighted
         suffix='B'
@@ -231,7 +231,7 @@ describe('AmountInput Component', () => {
         dataTestId='name'
         onChange={onChangeMock}
         thousandsGroupStyle={ThousandsGroupStyle.SHORTEN}
-        inputValue='1234567890.1234'
+        input='1234567890.1234'
         readOnly={true}
         highlighted
       />,

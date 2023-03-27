@@ -22,20 +22,20 @@ export interface IDatePickerProps {
   /** Highlight value in readonly mode (optional, default: false) */
   highlighted?: boolean;
   /** Input date value (optional, default: undefined) */
-  inputValue?: Date | null;
+  input?: Date | null;
   /** Ability to clear the value (optional, default: false) */
   isClearable?: boolean;
   /** Is in Error (optional, default: false) */
   isInError?: boolean;
   /** Locale to display months and day (optional, default: undefined) */
   locale?: string;
-  /** Name of date picker input (optional, default: undefined) */
-  name?: string;
   /** Maximum date that can be picked (optional, default: undefined) */
   maxDate?: Date;
   /** Minimum date that can be picked (optional, default: undefined) */
   minDate?: Date;
   /** Handler of value changes (optional, default: undefined) */
+  /** Name of date picker input (optional, default: undefined) */
+  name?: string;
   onChange?: (date: Date | null) => void;
   /** Placeholder value (optional, default: undefined) */
   placeholder?: string;
@@ -53,7 +53,7 @@ const DatePickerInput = (props: IDatePickerProps): ReactElement => {
     dateFormat,
     disabled,
     highlighted,
-    inputValue,
+    input,
     isClearable,
     isInError,
     locale,
@@ -112,13 +112,13 @@ const DatePickerInput = (props: IDatePickerProps): ReactElement => {
         onClickOutside={(event) => {
           event.stopPropagation();
         }}
-        placeholderText={!inputValue && (readOnly || disabled) ? '-' : placeholder || localDateFormat.toUpperCase()}
+        placeholderText={!input && (readOnly || disabled) ? '-' : placeholder || localDateFormat.toUpperCase()}
         popperContainer={usePortal ? Portal : undefined}
         preventOpenOnFocus
         readOnly={readOnly}
         renderCustomHeader={DatePickerHeader(locale)}
         showPopperArrow={false}
-        selected={inputValue}
+        selected={input}
         tabIndex={readOnly || disabled ? -1 : 0}
       />
     </div>

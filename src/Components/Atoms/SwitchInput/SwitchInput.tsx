@@ -21,7 +21,9 @@ export interface ISwitchInputProps {
   /** Error indication should be present (optional, default: false) */
   isInError?: boolean;
   /** Input value */
-  inputValue: Array<IToggleEntry>;
+  input: Array<IToggleEntry>;
+  /** Base name of input (optional, default: undefined) */
+  name?: string;
   /** Handler of value changes (optional, default: undefined) */
   onChange?: (values: Array<IToggleEntry>) => void;
   /** Read only field (optional, default: false) */
@@ -29,12 +31,12 @@ export interface ISwitchInputProps {
 }
 
 const SwitchInput = (props: ISwitchInputProps): ReactElement => {
-  const { className, dataTestId, disabled, highlighted, inline, inputValue, onChange, readOnly } = props;
-  const [ids] = useState(() => inputValue.map(() => uniqueId('switch-')));
+  const { className, dataTestId, disabled, highlighted, inline, input, name, onChange, readOnly } = props;
+  const [ids] = useState(() => input.map(() => uniqueId('switch-')));
 
   /** flip the check status of the switch that was checked */
   const updateState = (optionValue: string) => {
-    const newState = inputValue.map((option) => {
+    const newState = input.map((option) => {
       if (option.value === optionValue) {
         option.checked = !option.checked;
       }
@@ -62,7 +64,7 @@ const SwitchInput = (props: ISwitchInputProps): ReactElement => {
     <div
       className={classnames(styles.container, { [styles.inlineContainer]: inline }, className)}
       data-testid={dataTestId}>
-      {inputValue.map((option, index) => {
+      {input.map((option, index) => {
         return (
           <label
             className={classnames(styles.label, {
@@ -79,11 +81,12 @@ const SwitchInput = (props: ISwitchInputProps): ReactElement => {
             tabIndex={readOnly || disabled ? -1 : 0}>
             <div className={styles.switch}>
               <input
-                type='checkbox'
                 aria-hidden
                 checked={option.checked === undefined ? false : option.checked}
                 disabled={disabled}
+                name={name !== undefined ? `${name}-${option.value}` : undefined}
                 readOnly
+                type='checkbox'
               />
               <span
                 aria-checked={option.checked}
@@ -112,8 +115,9 @@ SwitchInput.defaultProps = {
   ellipsis: false,
   highlighted: false,
   inline: false,
-  inputValue: [],
+  input: [],
   isInError: false,
+  name: undefined,
   onChange: undefined,
   readOnly: false,
 };

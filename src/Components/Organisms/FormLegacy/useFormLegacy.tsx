@@ -1,25 +1,24 @@
 import React, { useState } from 'react';
 import cloneDeep from 'lodash/cloneDeep';
 import * as yup from 'yup';
-import { AnyObject } from 'yup/lib/types';
 
-import Form from './Form';
-import { IFieldAndLayoutProps, IFormSubmitReturnedType, IUseFormReturnedType } from './types';
-import { yupResolver, FieldError } from './yupResolver';
+import FormLegacy from './FormLegacy';
+import { IFieldAndLayoutLegacyProps, IFormLegacySubmitReturnedType, IUseFormLegacyReturnedType } from './types';
+import { yupResolver } from './yupResolver';
 import { useRunAfterUpdate } from '../../../hooks';
 
-export interface IUseFormProps<T extends AnyObject> {
+export interface IUseFormProps<T extends yup.AnyObject> {
   enableOldData?: boolean;
   enableSideBySide?: boolean;
-  fields: Array<IFieldAndLayoutProps<T>>;
+  fields: Array<IFieldAndLayoutLegacyProps<T>>;
   initialData: T;
   onChangeNotification?: () => void;
   previousData?: T;
   usePortal?: boolean;
-  validationSchema?: yup.SchemaOf<T>;
+  validationSchema: yup.ObjectSchema<T>;
 }
 
-const useForm = <T extends AnyObject>(props: IUseFormProps<T>): IUseFormReturnedType<T> => {
+const useFormLegacy = <T extends yup.AnyObject>(props: IUseFormProps<T>): IUseFormLegacyReturnedType<T> => {
   const {
     enableOldData,
     enableSideBySide,
@@ -33,7 +32,7 @@ const useForm = <T extends AnyObject>(props: IUseFormProps<T>): IUseFormReturned
 
   const [currentData, setCurrentData] = useState<T>(cloneDeep(initialData));
   const [isModified, setIsModified] = useState<boolean>(false);
-  const [validationError, setValidationError] = useState<Partial<Record<keyof T, FieldError>>>();
+  const [validationError, setValidationError] = useState<Partial<Record<keyof T, string>>>();
   const runAfterUpdate = useRunAfterUpdate();
 
   const rehydrate = (newData: T): void => {
@@ -81,7 +80,7 @@ const useForm = <T extends AnyObject>(props: IUseFormProps<T>): IUseFormReturned
     error.scrollIntoView({ behavior: 'smooth', block: 'center' });
   };
 
-  const submit = (): IFormSubmitReturnedType<T> => {
+  const submit = (): IFormLegacySubmitReturnedType<T> => {
     let isValid = true;
     if (validationSchema) {
       const errors = yupResolver(validationSchema, { abortEarly: false }, currentData);
@@ -100,7 +99,7 @@ const useForm = <T extends AnyObject>(props: IUseFormProps<T>): IUseFormReturned
 
   return {
     formElement: (
-      <Form
+      <FormLegacy
         enableOldData={enableOldData}
         enableSideBySide={enableSideBySide}
         fields={fields}
@@ -131,7 +130,7 @@ const useForm = <T extends AnyObject>(props: IUseFormProps<T>): IUseFormReturned
   };
 };
 
-useForm.defaultProps = {
+useFormLegacy.defaultProps = {
   enableOldData: undefined,
   enableSideBySide: undefined,
   onChangeNotification: undefined,
@@ -140,4 +139,4 @@ useForm.defaultProps = {
   usePortal: true,
 };
 
-export default useForm;
+export default useFormLegacy;

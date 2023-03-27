@@ -9,7 +9,7 @@ describe('MultiSelectInput Component', () => {
     const { container } = render(
       <MultiSelectInput
         name='SELECT'
-        inputValue={['OPTION1']}
+        input={['OPTION1']}
         numberOfItemLabel='{} item selected'
         numberOfItemsLabel='{} items selected'
         options={[
@@ -26,7 +26,7 @@ describe('MultiSelectInput Component', () => {
     const { container } = render(
       <MultiSelectInput
         dataTestId='DATA-TEST-ID'
-        inputValue={['OPTION1', 'OPTION2']}
+        input={['OPTION1', 'OPTION2']}
         name='SELECT'
         numberOfItemLabel='{} item selected'
         numberOfItemsLabel='{} items selected'
@@ -60,7 +60,7 @@ describe('MultiSelectInput Component', () => {
     const { container } = render(
       <MultiSelectInput
         name='SELECT'
-        inputValue={['OPTION-VALUE-NOT-AVAILABLE']}
+        input={['OPTION-VALUE-NOT-AVAILABLE']}
         numberOfItemLabel='{} item selected'
         numberOfItemsLabel='{} items selected'
         options={[
@@ -130,7 +130,7 @@ describe('MultiSelectInput Component', () => {
     const { container } = render(
       <MultiSelectInput
         name='SELECT'
-        inputValue={['OPTION2']}
+        input={['OPTION2']}
         numberOfItemLabel='{} item selected'
         numberOfItemsLabel='{} items selected'
         options={[
@@ -148,7 +148,7 @@ describe('MultiSelectInput Component', () => {
       <MultiSelectInput
         dataTestId='DATA-TEST-ID'
         name='SELECT'
-        inputValue={['OPTION1']}
+        input={['OPTION1']}
         isClearable
         numberOfItemLabel='{} item selected'
         numberOfItemsLabel='{} items selected'
@@ -165,7 +165,7 @@ describe('MultiSelectInput Component', () => {
     const { container } = render(
       <MultiSelectInput
         name='SELECT'
-        inputValue={['OPTION1']}
+        input={['OPTION1']}
         isClearable
         numberOfItemLabel='{} item selected'
         numberOfItemsLabel='{} items selected'
@@ -182,7 +182,7 @@ describe('MultiSelectInput Component', () => {
     const { container } = render(
       <MultiSelectInput
         name='SELECT'
-        inputValue={['OPTION-VALUE-NOT-AVAILABLE']}
+        input={['OPTION-VALUE-NOT-AVAILABLE']}
         numberOfItemLabel='{} item selected'
         numberOfItemsLabel='{} items selected'
         options={[
@@ -215,7 +215,7 @@ describe('MultiSelectInput Component', () => {
     const { container } = render(
       <MultiSelectInput
         name='SELECT'
-        inputValue={['OPTION-VALUE-NOT-AVAILABLE']}
+        input={['OPTION-VALUE-NOT-AVAILABLE']}
         numberOfItemLabel='{} item selected'
         numberOfItemsLabel='{} items selected'
         options={[
@@ -232,7 +232,7 @@ describe('MultiSelectInput Component', () => {
     const { container } = render(
       <MultiSelectInput
         highlighted
-        inputValue={['OPTION-VALUE-NOT-AVAILABLE']}
+        input={['OPTION-VALUE-NOT-AVAILABLE']}
         name='SELECT'
         numberOfItemLabel='{} item selected'
         numberOfItemsLabel='{} items selected'
@@ -248,7 +248,7 @@ describe('MultiSelectInput Component', () => {
   it('MultiSelectInput renders inError', () => {
     const { container } = render(
       <MultiSelectInput
-        inputValue={['OPTION-VALUE-NOT-AVAILABLE']}
+        input={['OPTION-VALUE-NOT-AVAILABLE']}
         isInError
         name='SELECT'
         numberOfItemLabel='{} item selected'
@@ -266,7 +266,7 @@ describe('MultiSelectInput Component', () => {
     const { container } = render(
       <MultiSelectInput
         disabled
-        inputValue={['OPTION-VALUE-NOT-AVAILABLE']}
+        input={['OPTION-VALUE-NOT-AVAILABLE']}
         name='SELECT'
         numberOfItemLabel='{} item selected'
         numberOfItemsLabel='{} items selected'

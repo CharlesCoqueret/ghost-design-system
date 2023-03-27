@@ -9,7 +9,7 @@ describe('YearPickerInput Component', () => {
     const onChangeMock = jest.fn();
 
     const { container } = render(
-      <YearPickerInput onChange={onChangeMock} inputValue={1984} placeholder='TESTPLACEHOLDER' />,
+      <YearPickerInput onChange={onChangeMock} input={1984} placeholder='TESTPLACEHOLDER' />,
     );
 
     expect(container).toMatchSnapshot();
@@ -48,7 +48,7 @@ describe('YearPickerInput Component', () => {
     const onChangeMock = jest.fn();
 
     const { container } = render(
-      <YearPickerInput onChange={onChangeMock} inputValue={2022} placeholder='TESTPLACEHOLDER' />,
+      <YearPickerInput onChange={onChangeMock} input={2022} placeholder='TESTPLACEHOLDER' />,
     );
 
     const inputNode = await screen.findByPlaceholderText('TESTPLACEHOLDER');
@@ -65,12 +65,12 @@ describe('YearPickerInput Component', () => {
   });
 
   it('YearPickerInput renders in readOnly, highlighted without portal', () => {
-    const { container } = render(<YearPickerInput readOnly highlighted usePortal={false} inputValue={2022} />);
+    const { container } = render(<YearPickerInput readOnly highlighted usePortal={false} input={2022} />);
     expect(container).toMatchSnapshot();
   });
 
   it('YearPickerInput renders in Error', () => {
-    const { container } = render(<YearPickerInput isInError inputValue={2022} />);
+    const { container } = render(<YearPickerInput isInError input={2022} />);
     expect(container).toMatchSnapshot();
   });
 });

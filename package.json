@@ -63,7 +63,7 @@
     "suneditor": "2.44.3",
     "suneditor-react": "3.4.1",
     "tippy.js": "6.3.7",
-    "yup": "0.32.11"
+    "yup": "1.0.2"
   },
   "peerDependencies": {
     "react": "^16.14.0 || ^17.0.0",

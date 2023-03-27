@@ -1,5 +1,5 @@
 import { ReactElement } from 'react';
-import { AnyObject } from 'yup/lib/object';
+import * as yup from 'yup';
 
 import { IOption } from '../../Atoms/SelectInput';
 import { IAmountFieldProps } from '../../Molecules/AmountField/AmountField';
@@ -11,28 +11,28 @@ import { IPercentageFieldProps } from '../../Molecules/PercentageField/Percentag
 import { IRichTextFieldProps } from '../../Molecules/RichTextField/RichTextField';
 import { ISelectFieldProps } from '../../Molecules/SelectField/SelectField';
 import { ILineEditableDataTableProps } from '../DataTable/LineEditableDataTable/LineEditableDataTable';
+import { IEditableDataTableProps } from '../DataTable/EditableDataTable/EditableDataTable';
 import { ITextFieldProps } from '../../Molecules/TextField/TextField';
 import { ITextAreaFieldProps } from '../../Molecules/TextAreaField/TextAreaField';
 import { IYearPickerFieldProps } from '../../Molecules/YearPickerField/YearPickerField';
-import { IFormProps } from './Form';
-import { IEditableDataTableProps } from '../DataTable/EditableDataTable/EditableDataTable';
+import { IFormProps } from './FormLegacy';
 
-export interface IFormSubmitReturnedType<T> {
+export interface IFormLegacySubmitReturnedType<T> {
   data: T;
   valid: boolean;
 }
 
-export interface IUseFormReturnedType<T extends AnyObject> {
+export interface IUseFormLegacyReturnedType<T extends yup.AnyObject> {
   formElement: ReactElement;
   formProps: IFormProps<T>;
   getData: () => T;
   isModified: () => boolean;
   rehydrate: (data: T) => void;
   reset: () => void;
-  submit: () => IFormSubmitReturnedType<T>;
+  submit: () => IFormLegacySubmitReturnedType<T>;
 }
 
-export enum FieldTypeEnum {
+export enum FieldLegacyTypeEnum {
   AMOUNT = 'amount',
   CHECKBOX = 'checkbox',
   CUSTOM = 'custom',
@@ -54,11 +54,11 @@ export enum FieldTypeEnum {
   YEAR = 'year',
 }
 
-export type IFieldAndLayoutProps<T> = IFieldProps<T> | ILayoutProps<T>;
+export type IFieldAndLayoutLegacyProps<T> = IFieldLegacyProps<T> | ILayoutLegacyProps<T>;
 
-export type ILayoutProps<T> = IFieldSectionProps<T> | IFieldDescriptionProps<T>;
+export type ILayoutLegacyProps<T> = IFieldSectionLegacyProps<T> | IFieldDescriptionLegacyProps<T>;
 
-export type IFieldProps<T> =
+export type IFieldLegacyProps<T> =
   | IFieldAmountProps<T>
   | IFieldCheckboxProps<T>
   | IFieldCustomProps<T>
@@ -117,15 +117,15 @@ export interface IFieldAmountProps<T>
       | 'thousandSeparator'
       | 'thousandsGroupStyle'
     > {
-  fieldType: FieldTypeEnum.AMOUNT;
+  fieldType: FieldLegacyTypeEnum.AMOUNT;
 }
 
 export interface IFieldCheckboxProps<T> extends IFieldBaseProps<T> {
-  fieldType: FieldTypeEnum.CHECKBOX;
+  fieldType: FieldLegacyTypeEnum.CHECKBOX;
 }
 
 export interface IFieldCustomProps<T, U = unknown> extends IFieldBaseProps<T> {
-  fieldType: FieldTypeEnum.CUSTOM;
+  fieldType: FieldLegacyTypeEnum.CUSTOM;
   isEqual?: (previousValue: T[keyof T], currentValue: T[keyof T]) => boolean;
   data?: U;
   customField: <
@@ -133,7 +133,7 @@ export interface IFieldCustomProps<T, U = unknown> extends IFieldBaseProps<T> {
       highlighted?: boolean;
       onChange?: (value: T[keyof T]) => void;
       readOnly?: boolean;
-      inputValue?: T[keyof T];
+      input?: T[keyof T];
     },
   >(
     props: U,
@@ -143,13 +143,13 @@ export interface IFieldCustomProps<T, U = unknown> extends IFieldBaseProps<T> {
 export interface IFieldDateProps<T>
   extends IFieldBaseProps<T>,
     Pick<IDatePickerFieldProps, 'calendarStartDay' | 'dateFormat' | 'isClearable' | 'locale' | 'placeholder'> {
-  fieldType: FieldTypeEnum.DATE;
+  fieldType: FieldLegacyTypeEnum.DATE;
 }
 
-export interface IFieldDescriptionProps<T> extends Partial<IVisibilityProps<T>> {
+export interface IFieldDescriptionLegacyProps<T> extends Partial<IVisibilityProps<T>> {
   dataIndex?: keyof T;
   description: ReactElement | (<U extends { value: T[keyof T] }>(props: U) => ReactElement);
-  fieldType: FieldTypeEnum.DESCRIPTION;
+  fieldType: FieldLegacyTypeEnum.DESCRIPTION;
 }
 
 export interface IFieldFileProps<T>
@@ -174,7 +174,7 @@ export interface IFieldFileProps<T>
       | 'uploadMessage'
       | 'localization'
     > {
-  fieldType: FieldTypeEnum.FILE;
+  fieldType: FieldLegacyTypeEnum.FILE;
 }
 
 export interface IFieldDynamicSearchProps<T>
@@ -183,7 +183,7 @@ export interface IFieldDynamicSearchProps<T>
       IDynamicSearchFieldProps,
       'isClearable' | 'noOptionsMessage' | 'placeholder' | 'resolveValue' | 'searchOptions'
     > {
-  fieldType: FieldTypeEnum.DYNAMICSEARCH;
+  fieldType: FieldLegacyTypeEnum.DYNAMICSEARCH;
 }
 
 export interface IFieldMultiSelectProps<T>
@@ -191,7 +191,7 @@ export interface IFieldMultiSelectProps<T>
     Pick<IMultiSelectFieldProps, 'isClearable' | 'numberOfItemLabel' | 'numberOfItemsLabel' | 'placeholder'> {
   // When the value is not present in the options, should the value be erased (optional, default: false)
   eraseValueWhenNotInOptions?: boolean;
-  fieldType: FieldTypeEnum.MULTISELECT;
+  fieldType: FieldLegacyTypeEnum.MULTISELECT;
   options: Array<IOption> | ((data: T) => Array<IOption>);
 }
 
@@ -210,7 +210,7 @@ export interface IFieldNumberProps<T>
       | 'thousandSeparator'
       | 'thousandsGroupStyle'
     > {
-  fieldType: FieldTypeEnum.NUMBER;
+  fieldType: FieldLegacyTypeEnum.NUMBER;
 }
 
 export interface IFieldPercentageProps<T>
@@ -226,19 +226,19 @@ export interface IFieldPercentageProps<T>
       | 'thousandSeparator'
       | 'thousandsGroupStyle'
     > {
-  fieldType: FieldTypeEnum.PERCENTAGE;
+  fieldType: FieldLegacyTypeEnum.PERCENTAGE;
 }
 
 export interface IFieldRichtextProps<T>
   extends IFieldBaseProps<T>,
     Pick<IRichTextFieldProps, 'convertImagesToBase64' | 'enableImage' | 'enableLink' | 'locale' | 'maxLength'> {
-  fieldType: FieldTypeEnum.RICHTEXT;
+  fieldType: FieldLegacyTypeEnum.RICHTEXT;
 }
 
-export interface IFieldSectionProps<T> extends Partial<IVisibilityProps<T>> {
+export interface IFieldSectionLegacyProps<T> extends Partial<IVisibilityProps<T>> {
   collapsible?: boolean;
-  fieldType: FieldTypeEnum.SECTION;
-  fields: Array<IFieldProps<T>>;
+  fieldType: FieldLegacyTypeEnum.SECTION;
+  fields: Array<IFieldLegacyProps<T>>;
   label: string;
   level?: 1 | 2 | 3;
   openInitially?: boolean;
@@ -250,37 +250,37 @@ export interface IFieldSelectProps<T>
     Pick<ISelectFieldProps, 'isClearable' | 'placeholder'> {
   // When the value is not present in the options, should the value be erased (optional, default: false)
   eraseValueWhenNotInOptions?: boolean;
-  fieldType: FieldTypeEnum.SELECT;
+  fieldType: FieldLegacyTypeEnum.SELECT;
   options: Array<IOption> | ((data: T) => Array<IOption>);
 }
 
 export interface IFieldSwitchProps<T> extends IFieldBaseProps<T> {
-  fieldType: FieldTypeEnum.SWITCH;
+  fieldType: FieldLegacyTypeEnum.SWITCH;
 }
 
 export interface IFieldEditableTableProps<T, U>
   extends IFieldBaseProps<T>,
     Pick<IEditableDataTableProps<U>, 'columns' | 'extra' | 'loading' | 'onSortChange'> {
-  fieldType: FieldTypeEnum.EDITABLE_TABLE;
+  fieldType: FieldLegacyTypeEnum.EDITABLE_TABLE;
 }
 export interface IFieldLineEditableTableProps<T, U>
   extends IFieldBaseProps<T>,
     Pick<ILineEditableDataTableProps<U>, 'columns' | 'extra' | 'loading' | 'onSortChange'> {
-  fieldType: FieldTypeEnum.LINE_EDITABLE_TABLE;
+  fieldType: FieldLegacyTypeEnum.LINE_EDITABLE_TABLE;
 }
 
 export interface IFieldTextProps<T>
   extends IFieldBaseProps<T>,
     Pick<ITextFieldProps, 'maxLength' | 'minLength' | 'placeholder'> {
-  fieldType: FieldTypeEnum.TEXT;
+  fieldType: FieldLegacyTypeEnum.TEXT;
 }
 
 export interface IFieldTextAreaProps<T>
   extends IFieldBaseProps<T>,
     Pick<ITextAreaFieldProps, 'maxLength' | 'minLength' | 'placeholder'> {
-  fieldType: FieldTypeEnum.TEXTAREA;
+  fieldType: FieldLegacyTypeEnum.TEXTAREA;
 }
 
 export interface IFieldYearProps<T> extends IFieldBaseProps<T>, Pick<IYearPickerFieldProps, 'placeholder'> {
-  fieldType: FieldTypeEnum.YEAR;
+  fieldType: FieldLegacyTypeEnum.YEAR;
 }

@@ -30,7 +30,7 @@ const Portal = (props: PropsWithChildren<IPortalProps>): ReactElement => {
         container.remove();
       }
     };
-  }, [rootId]);
+  }, [finalRootId]);
 
   if (!target.current) {
     target.current = document.createElement('div');

@@ -37,7 +37,7 @@ const MultiSelectCell = <T,>(props: ICellProps<T, IColumnMultiSelect<T>>): React
       <MultiSelectField
         dataTestId={dataTestId}
         ellipsis={column.ellipsis}
-        inputValue={displayValue}
+        input={displayValue}
         isClearable={column.isClearable}
         name={column.title.toString()}
         onChange={(newValue: Array<string | number> | null | undefined) => {

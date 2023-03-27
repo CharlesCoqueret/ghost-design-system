@@ -3,11 +3,11 @@ import { act, renderHook } from '@testing-library/react-hooks';
 import { render } from '@testing-library/react';
 
 import * as yup from 'yup';
-import { FieldTypeEnum } from '../types';
+import { FieldLegacyTypeEnum } from '../types';
 
 let handleDataChangeForm: ((dataIndex: string, newValue: number | undefined) => void) | undefined;
 
-jest.mock('../Form', () => {
+jest.mock('../FormLegacy', () => {
   return {
     __esModule: true,
     default: (props: { handleDataChange: typeof handleDataChangeForm; validationError?: Record<string, unknown> }) => {
@@ -22,9 +22,9 @@ jest.mock('../Form', () => {
   };
 });
 
-import useForm from '../useForm';
+import useFormLegacy from '../useFormLegacy';
 
-describe('useForm hook', () => {
+describe('useFormLegacy hook', () => {
   it('provides the right elements', () => {
     //scrollIntoView is not implemented in jsdom
     window.HTMLElement.prototype.scrollIntoView = jest.fn();
@@ -32,9 +32,9 @@ describe('useForm hook', () => {
     console.error = jest.fn();
 
     const { result } = renderHook(() =>
-      useForm({
+      useFormLegacy({
         initialData: { number: 50 },
-        fields: [{ fieldType: FieldTypeEnum.NUMBER, dataIndex: 'number', label: 'Number' }],
+        fields: [{ fieldType: FieldLegacyTypeEnum.NUMBER, dataIndex: 'number', label: 'Number' }],
         previousData: { number: 0 },
         validationSchema: yup.object({ number: yup.number().required('Value for number is required') }),
       }),
@@ -59,9 +59,7 @@ describe('useForm hook', () => {
       expect(result.current.submit()).toEqual({ valid: false, data: { number: undefined } });
     });
     expect(console.error).toBeCalledTimes(1);
-    expect(console.error).toBeCalledWith({
-      number: { type: 'required', message: 'Value for number is required' },
-    });
+    expect(console.error).toBeCalledWith({ number: 'Value for number is required' });
 
     rerender(result.current.formElement);
     act(() => {

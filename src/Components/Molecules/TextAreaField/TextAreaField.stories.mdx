@@ -37,15 +37,15 @@ export const sampleText =
   'pellentesque maximus at quis turpis. Duis ornare venenatis turpis, vitae tempor urna mollis ac.\n';
 
 export const Template = (args) => {
-  const [val, setVal] = useState(args.inputValue);
-  return <TextAreaField {...args} inputValue={val} onChange={setVal} />;
+  const [val, setVal] = useState(args.input);
+  return <TextAreaField {...args} input={val} onChange={setVal} />;
 };
 
 <Canvas withSource='open'>
   <Story
     name='TextAreaField'
     args={{
-      inputValue: sampleText,
+      input: sampleText,
       label: 'Textarea field',
     }}>
     {Template.bind({})}
@@ -58,7 +58,7 @@ export const Template = (args) => {
 
 <Canvas>
   <Template
-    inputValue={sampleText}
+    input={sampleText}
     fieldSize={6}
     label='Textarea field in read only with label size = 4 and field size = 6'
     labelSize={4}
@@ -84,7 +84,7 @@ export const Template = (args) => {
 <Canvas>
   <Template
     label='Textarea field highlighted'
-    inputValue='This is a highlighted sample text'
+    input='This is a highlighted sample text'
     readOnly={true}
     highlighted={true}
     helperText='Helper text'
@@ -96,7 +96,7 @@ export const Template = (args) => {
 <Canvas>
   <Template
     label='Textarea field disabled'
-    inputValue='This is a disabled sample text'
+    input='This is a disabled sample text'
     disabled={true}
     helperText='Helper text'
   />

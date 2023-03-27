@@ -471,7 +471,6 @@ exports[`LineEditableInPlaceDataTableCell component LineEditableInPlaceDataTable
                   Click or drag file to upload
                   <input
                     accept="*/*"
-                    class="input"
                     multiple=""
                     tabindex="-1"
                     type="file"

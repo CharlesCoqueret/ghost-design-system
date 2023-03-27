@@ -24,14 +24,14 @@ export interface IDynamicSearchCreatableInputProps {
   /** Highlight value in readonly mode (optional, default: false) */
   highlighted?: boolean;
   /** Input string value (optional, default: undefined) */
-  inputValue?: string | number;
+  input?: string | number;
   /** Provide the ability to clear the value (optional, default: false) */
   isClearable?: boolean;
   /** Is in Error (optional, default: false) */
   isInError?: boolean;
   /** Maximum height of the menu in px (optional, default: 300) */
   maxMenuHeight?: number;
-  /** Name of select input (optional, default: undefined) */
+  /** Name of input (optional, default: undefined) */
   name?: string;
   /** No option message (dispayed when no results are available) */
   noOptionsMessage: string | ((obj: { inputValue: string }) => string);
@@ -57,7 +57,7 @@ const DynamicSearchCreatableInput = (props: IDynamicSearchCreatableInputProps): 
     ellipsis,
     handleCreate,
     highlighted,
-    inputValue,
+    input,
     isClearable,
     isInError,
     maxMenuHeight,
@@ -83,9 +83,9 @@ const DynamicSearchCreatableInput = (props: IDynamicSearchCreatableInputProps): 
   };
 
   const resolveIncomingValue = () => {
-    if (inputValue && inputValue !== currentOption?.value) {
+    if (input && input !== currentOption?.value) {
       setIsLoading(true);
-      resolveValue(inputValue)
+      resolveValue(input)
         .then((result) => {
           setCurrentOption(result);
         })
@@ -117,8 +117,8 @@ const DynamicSearchCreatableInput = (props: IDynamicSearchCreatableInputProps): 
   };
 
   useEffect(() => {
-    if (inputValue !== currentOption?.value) resolveIncomingValue();
-  }, [inputValue]);
+    if (input !== currentOption?.value) resolveIncomingValue();
+  }, [input]);
 
   if (readOnly || disabled) {
     return (
@@ -222,7 +222,7 @@ DynamicSearchCreatableInput.defaultProps = {
   disabled: false,
   ellipsis: false,
   highlighted: false,
-  inputValue: undefined,
+  input: undefined,
   isClearable: false,
   isInError: false,
   maxMenuHeight: 300,

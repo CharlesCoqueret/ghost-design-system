@@ -188,7 +188,7 @@ exports[`StaticDataTableCell component StaticDataTableCell renders with custom 1
           <span
             class="typography"
           >
-            {"inputValue":"custom","readOnly":true}
+            {"input":"custom","readOnly":true}
           </span>
         </td>
       </tr>
@@ -307,7 +307,6 @@ exports[`StaticDataTableCell component StaticDataTableCell renders with file 1`]
                   Click or drag file to upload
                   <input
                     accept="*/*"
-                    class="input"
                     multiple=""
                     readonly=""
                     tabindex="-1"

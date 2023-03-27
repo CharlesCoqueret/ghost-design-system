@@ -30,7 +30,7 @@ describe('DynamicSearchCreatableField Component', () => {
       <DynamicSearchCreatableField
         dataTestId='DATA-TEST-ID'
         handleCreate={jest.fn()}
-        inputValue={'VALUE1'}
+        input={'VALUE1'}
         name='name'
         noOptionsMessage='no options'
         readOnly
@@ -55,7 +55,7 @@ describe('DynamicSearchCreatableField Component', () => {
         disabled
         handleCreate={jest.fn()}
         highlighted
-        inputValue={'VALUE1'}
+        input={'VALUE1'}
         name='name'
         noOptionsMessage='no options'
         resolveValue={() => {
@@ -79,7 +79,7 @@ describe('DynamicSearchCreatableField Component', () => {
         fieldSize={6}
         handleCreate={jest.fn()}
         inline
-        inputValue={'VALUE1'}
+        input={'VALUE1'}
         name='name'
         noOptionsMessage='no options'
         resolveValue={() => {

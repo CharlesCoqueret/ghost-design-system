@@ -46,8 +46,8 @@ export const options = [
 ];
 
 export const Template = (args) => {
-  const [localValue, setLocalValue] = useState(args.inputValue);
-  return <MultiSelectField {...args} inputValue={localValue || ''} onChange={setLocalValue} />;
+  const [localValue, setLocalValue] = useState(args.input);
+  return <MultiSelectField {...args} input={localValue || ''} onChange={setLocalValue} />;
 };
 
 <Canvas>
@@ -79,7 +79,7 @@ export const Template = (args) => {
     options={options}
     placeholder='Multi select placeholder'
     readOnly={true}
-    inputValue={selectedOptions.map((option) => option.value)}
+    input={selectedOptions.map((option) => option.value)}
   />
 </Canvas>
 
@@ -124,7 +124,7 @@ export const Template = (args) => {
     options={options}
     placeholder='Multi select placeholder'
     readOnly={true}
-    inputValue={selectedOptions.map((option) => option.value)}
+    input={selectedOptions.map((option) => option.value)}
   />
 </Canvas>
 
@@ -139,6 +139,6 @@ export const Template = (args) => {
     numberOfItemsLabel='{} items selected'
     options={options}
     placeholder='Multi select placeholder'
-    inputValue={selectedOptions.map((option) => option.value)}
+    input={selectedOptions.map((option) => option.value)}
   />
 </Canvas>

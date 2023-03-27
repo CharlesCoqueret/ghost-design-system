@@ -17,7 +17,6 @@ exports[`FileField Component FileField renders 1`] = `
           Click or drag file to upload
           <input
             accept="*/*"
-            class="input"
             multiple=""
             tabindex="-1"
             type="file"
@@ -50,7 +49,6 @@ exports[`FileField Component FileField renders with values in disabled highligte
           Click or drag file to upload
           <input
             accept="*/*"
-            class="input"
             disabled=""
             multiple=""
             tabindex="-1"
@@ -111,7 +109,6 @@ exports[`FileField Component FileField renders with values in readonly 1`] = `
           Click or drag file to upload
           <input
             accept="*/*"
-            class="input"
             multiple=""
             readonly=""
             tabindex="-1"
@@ -172,7 +169,6 @@ exports[`FileField Component FileField renders with values with fieldSize and in
           Click or drag file to upload
           <input
             accept="*/*"
-            class="input"
             multiple=""
             tabindex="-1"
             type="file"

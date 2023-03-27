@@ -44,8 +44,8 @@ export const options = [
 ];
 
 export const Template = (args) => {
-  const [localValue, setLocalValue] = useState(args.inputValue);
-  return <SelectField {...args} inputValue={localValue || ''} onChange={setLocalValue} />;
+  const [localValue, setLocalValue] = useState(args.input);
+  return <SelectField {...args} input={localValue || ''} onChange={setLocalValue} />;
 };
 
 <Canvas>
@@ -73,7 +73,7 @@ export const Template = (args) => {
     options={options}
     placeholder='Select placeholder'
     readOnly={true}
-    inputValue={selectedOptions.value}
+    input={selectedOptions.value}
   />
 </Canvas>
 
@@ -112,7 +112,7 @@ export const Template = (args) => {
     options={options}
     placeholder='Select placeholder'
     readOnly={true}
-    inputValue={selectedOptions.value}
+    input={selectedOptions.value}
   />
 </Canvas>
 
@@ -125,6 +125,6 @@ export const Template = (args) => {
     label='Select field disabled'
     options={options}
     placeholder='Select placeholder'
-    inputValue={selectedOptions.value}
+    input={selectedOptions.value}
   />
 </Canvas>

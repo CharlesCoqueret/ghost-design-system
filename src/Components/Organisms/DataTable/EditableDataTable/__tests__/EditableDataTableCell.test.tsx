@@ -197,11 +197,11 @@ describe('EditableDataTableCell component', () => {
     const handleUpdateDataChangeMock = jest.fn();
     const customRenderMock = jest
       .fn()
-      .mockImplementation((props: { inputValue: string; onChange: (value: string) => void }) => {
+      .mockImplementation((props: { input: string; onChange: (value: string) => void }) => {
         return (
           <input
             type='text'
-            value={props.inputValue}
+            value={props.input}
             data-testid='DATA-TEST-ID'
             onChange={(e) => props.onChange(e.target.value)}
           />

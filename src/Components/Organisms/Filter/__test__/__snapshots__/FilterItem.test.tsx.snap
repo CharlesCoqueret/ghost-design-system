@@ -4,7 +4,7 @@ exports[`FilterItem Component FilterItem renders CheckboxField 1`] = `
 <div>
   <div>
     Mocked CheckboxField props: 
-    {"inputValue":[{"label":"LABEL","value":"VALUE"}],"inline":false}
+    {"input":[{"label":"LABEL","value":"VALUE"}],"inline":false}
   </div>
 </div>
 `;
@@ -41,7 +41,7 @@ exports[`FilterItem Component FilterItem renders DatePickerField 1`] = `
 <div>
   <div>
     Mocked DatePickerField props: 
-    {"name":"date","inputValue":"2022-04-10T00:00:00.000Z","inline":false}
+    {"name":"date","input":"2022-04-10T00:00:00.000Z","inline":false}
   </div>
 </div>
 `;
@@ -50,7 +50,7 @@ exports[`FilterItem Component FilterItem renders DynamicSearchField 1`] = `
 <div>
   <div>
     Mocked DynamicSearchField props: 
-    {"inputValue":"value1","name":"dynamicsearch","inline":false}
+    {"input":"value1","name":"dynamicsearch","inline":false}
   </div>
 </div>
 `;
@@ -59,7 +59,7 @@ exports[`FilterItem Component FilterItem renders MultiSelectField 1`] = `
 <div>
   <div>
     Mocked MultiSelectField props: 
-    {"inputValue":["value1"],"name":"multiselect","numberOfItemLabel":"","numberOfItemsLabel":"","options":[],"inline":false}
+    {"input":["value1"],"name":"multiselect","numberOfItemLabel":"","numberOfItemsLabel":"","options":[],"inline":false}
   </div>
 </div>
 `;
@@ -68,7 +68,7 @@ exports[`FilterItem Component FilterItem renders Number / AmountField 1`] = `
 <div>
   <div>
     Mocked AmountField props: 
-    {"name":"number","inputValue":-12.34,"inline":false}
+    {"name":"number","input":-12.34,"inline":false}
   </div>
 </div>
 `;
@@ -77,7 +77,7 @@ exports[`FilterItem Component FilterItem renders SelectField 1`] = `
 <div>
   <div>
     Mocked SelectField props: 
-    {"inputValue":"VALUE1","name":"select","options":[],"inline":false}
+    {"input":"VALUE1","name":"select","options":[],"inline":false}
   </div>
 </div>
 `;
@@ -86,7 +86,7 @@ exports[`FilterItem Component FilterItem renders TextField 1`] = `
 <div>
   <div>
     Mocked TextField props: 
-    {"inputValue":"TEXT","name":"text","inline":false}
+    {"input":"TEXT","name":"text","inline":false}
   </div>
 </div>
 `;

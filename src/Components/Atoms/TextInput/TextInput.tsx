@@ -5,6 +5,8 @@ import { Typography } from '../Typography';
 import styles from './TextInput.module.scss';
 
 export interface ITextInputProps {
+  /** Class for the input (optional, default: undefined) */
+  className?: string;
   /** For test purpose only */
   dataTestId?: string;
   /** Disabled field (optional, default: false) */
@@ -13,10 +15,8 @@ export interface ITextInputProps {
   ellipsis?: boolean;
   /** Highlight value in readonly mode (optional, default: false) */
   highlighted?: boolean;
-  /** Class for the input (optional, default: undefined) */
-  inputClassName?: string;
   /** Input string value (optional, default: '') */
-  inputValue?: string;
+  input?: string;
   /** Is in Error (optional, default: false) */
   isInError?: boolean;
   /** Maximum length of the textfield (optional, default: undefined) */
@@ -35,13 +35,13 @@ export interface ITextInputProps {
 
 const TextInput = (props: ITextInputProps): ReactElement => {
   const {
+    className,
     dataTestId,
     disabled,
     ellipsis,
     highlighted,
-    inputClassName,
     isInError,
-    inputValue,
+    input,
     maxLength,
     minLength,
     name,
@@ -58,10 +58,10 @@ const TextInput = (props: ITextInputProps): ReactElement => {
           {
             [styles.highlighted]: (readOnly || disabled) && highlighted,
           },
-          inputClassName,
+          className,
         )}
         data-testid={dataTestId}>
-        {inputValue ? inputValue : '-'}
+        {input ? input : '-'}
       </Typography.Text>
     );
 
@@ -75,7 +75,7 @@ const TextInput = (props: ITextInputProps): ReactElement => {
           [styles.disabled]: disabled,
           [styles.highlighted]: (readOnly || disabled) && highlighted,
         },
-        inputClassName,
+        className,
       )}
       data-testid={dataTestId}
       id={name}
@@ -86,17 +86,17 @@ const TextInput = (props: ITextInputProps): ReactElement => {
       minLength={minLength}
       onChange={onChange}
       disabled={disabled}
-      value={inputValue}
+      value={input}
     />
   );
 };
 
 TextInput.defaultProps = {
+  className: undefined,
   disabled: false,
   ellipsis: false,
   highlighted: false,
-  inputClassName: undefined,
-  inputValue: '',
+  input: '',
   isInError: false,
   maxLength: undefined,
   minLength: undefined,

@@ -17,18 +17,18 @@ export interface IYearPickerProps {
   /** Highlight value in readonly mode (optional, default: false) */
   highlighted?: boolean;
   /** Input year value (optional, default: undefined) */
-  inputValue?: number;
+  input?: number;
   /** Ability to clear the value (optional, default: false) */
   isClearable?: boolean;
   /** Is in Error (optional, default: false) */
   isInError?: boolean;
-  /** Name of year picker input (optional, default: undefined) */
-  name?: string;
   /** Maximum date that can be picked (optional, default: undefined) */
   maxDate?: Date;
   /** Minimum date that can be picked (optional, default: undefined) */
   minDate?: Date;
   /** Handler of value changes (optional, default: undefined) */
+  /** Name of year picker input (optional, default: undefined) */
+  name?: string;
   onChange?: (date: number | undefined) => void;
   /** Placeholder value (optional, default: undefined) */
   placeholder?: string;
@@ -44,7 +44,7 @@ const YearPickerInput = (props: IYearPickerProps): ReactElement => {
     dataTestId,
     disabled,
     highlighted,
-    inputValue,
+    input,
     isClearable,
     isInError,
     maxDate,
@@ -65,10 +65,10 @@ const YearPickerInput = (props: IYearPickerProps): ReactElement => {
   };
 
   const today = new Date();
-  if (inputValue) {
-    today.setFullYear(inputValue);
+  if (input) {
+    today.setFullYear(input);
   }
-  const selected = inputValue ? today : undefined;
+  const selected = input ? today : undefined;
 
   return (
     <div
@@ -106,7 +106,7 @@ const YearPickerInput = (props: IYearPickerProps): ReactElement => {
         onClickOutside={(event) => {
           event.stopPropagation();
         }}
-        placeholderText={!inputValue && (readOnly || disabled) ? '-' : placeholder || dateFormat.toUpperCase()}
+        placeholderText={!input && (readOnly || disabled) ? '-' : placeholder || dateFormat.toUpperCase()}
         popperContainer={usePortal ? Portal : undefined}
         preventOpenOnFocus
         readOnly={readOnly}

@@ -13,7 +13,6 @@ exports[`FileInput Component FileInput handle add file successfully through inpu
       >
         Click or drag file to upload
         <input
-          class="input"
           data-testid="TEST-ID"
           multiple=""
           tabindex="-1"
@@ -42,7 +41,6 @@ exports[`FileInput Component FileInput handle add file successfully through inpu
       >
         Click or drag file to upload
         <input
-          class="input"
           data-testid="TEST-ID"
           multiple=""
           tabindex="-1"
@@ -145,7 +143,6 @@ exports[`FileInput Component FileInput handle add file successfully through inpu
       >
         Click or drag file to upload
         <input
-          class="input"
           data-testid="TEST-ID"
           multiple=""
           tabindex="-1"
@@ -268,7 +265,6 @@ exports[`FileInput Component FileInput handle add file unsucessfully through inp
       >
         Click or drag file to upload
         <input
-          class="input"
           data-testid="TEST-ID"
           multiple=""
           tabindex="-1"
@@ -297,7 +293,6 @@ exports[`FileInput Component FileInput handle add file unsucessfully through inp
       >
         Click or drag file to upload
         <input
-          class="input"
           data-testid="TEST-ID"
           multiple=""
           tabindex="-1"
@@ -377,7 +372,6 @@ exports[`FileInput Component FileInput handle add file with timeout through inpu
       >
         Click or drag file to upload
         <input
-          class="input"
           data-testid="TEST-ID"
           multiple=""
           tabindex="-1"
@@ -406,7 +400,6 @@ exports[`FileInput Component FileInput handle add file with timeout through inpu
       >
         Click or drag file to upload
         <input
-          class="input"
           data-testid="TEST-ID"
           multiple=""
           tabindex="-1"
@@ -486,7 +479,6 @@ exports[`FileInput Component FileInput handle drag event for highlight 1`] = `
       >
         Click or drag file to upload
         <input
-          class="input"
           data-testid="TEST-ID"
           multiple=""
           tabindex="-1"
@@ -508,14 +500,13 @@ exports[`FileInput Component FileInput handle drag event for highlight 2`] = `
     class="container"
   >
     <div
-      class="droparea"
+      class="droparea highlight"
     >
       <label
         class="label"
       >
         Click or drag file to upload
         <input
-          class="input highlight"
           data-testid="TEST-ID"
           multiple=""
           tabindex="-1"
@@ -544,7 +535,6 @@ exports[`FileInput Component FileInput handle drag event for highlight 3`] = `
       >
         Click or drag file to upload
         <input
-          class="input"
           data-testid="TEST-ID"
           multiple=""
           tabindex="-1"
@@ -573,7 +563,6 @@ exports[`FileInput Component FileInput handle drop of file 1`] = `
       >
         Click or drag file to upload
         <input
-          class="input"
           data-testid="TEST-ID"
           multiple=""
           tabindex="-1"
@@ -602,7 +591,6 @@ exports[`FileInput Component FileInput handle drop of file 2`] = `
       >
         Click or drag file to upload
         <input
-          class="input"
           data-testid="TEST-ID"
           multiple=""
           tabindex="-1"
@@ -704,7 +692,6 @@ exports[`FileInput Component FileInput handle drop without dataTransfer 1`] = `
       >
         Click or drag file to upload
         <input
-          class="input"
           data-testid="TEST-ID"
           multiple=""
           tabindex="-1"
@@ -733,7 +720,6 @@ exports[`FileInput Component FileInput handle drop without dataTransfer 2`] = `
       >
         Click or drag file to upload
         <input
-          class="input"
           data-testid="TEST-ID"
           multiple=""
           tabindex="-1"
@@ -762,7 +748,6 @@ exports[`FileInput Component FileInput handle unsuccessfull add file when quota 
       >
         Click or drag file to upload
         <input
-          class="input"
           data-testid="TEST-ID"
           tabindex="-1"
           type="file"
@@ -884,7 +869,6 @@ exports[`FileInput Component FileInput handle unsuccessfull add file when quota 
       >
         Click or drag file to upload
         <input
-          class="input"
           data-testid="TEST-ID"
           tabindex="-1"
           type="file"
@@ -1056,7 +1040,6 @@ exports[`FileInput Component FileInput handles correctly deletion when no handle
       >
         Click or drag file to upload
         <input
-          class="input"
           data-testid="TEST-ID"
           tabindex="-1"
           type="file"
@@ -1178,7 +1161,6 @@ exports[`FileInput Component FileInput handles correctly deletion when no handle
       >
         Click or drag file to upload
         <input
-          class="input"
           data-testid="TEST-ID"
           multiple=""
           tabindex="-1"
@@ -1207,7 +1189,6 @@ exports[`FileInput Component FileInput handles delete rejections of a file 1`] =
       >
         Click or drag file to upload
         <input
-          class="input"
           data-testid="TEST-ID"
           tabindex="-1"
           type="file"
@@ -1329,7 +1310,6 @@ exports[`FileInput Component FileInput handles delete rejections of a file 2`] =
       >
         Click or drag file to upload
         <input
-          class="input"
           data-testid="TEST-ID"
           tabindex="-1"
           type="file"
@@ -1451,7 +1431,6 @@ exports[`FileInput Component FileInput handles download and delete of a file 1`]
       >
         Click or drag file to upload
         <input
-          class="input"
           data-testid="TEST-ID"
           tabindex="-1"
           type="file"
@@ -1573,7 +1552,6 @@ exports[`FileInput Component FileInput handles download and delete of a file 2`]
       >
         Click or drag file to upload
         <input
-          class="input"
           data-testid="TEST-ID"
           tabindex="-1"
           type="file"
@@ -1695,7 +1673,6 @@ exports[`FileInput Component FileInput handles download and delete of a file 3`]
       >
         Click or drag file to upload
         <input
-          class="input"
           data-testid="TEST-ID"
           multiple=""
           tabindex="-1"
@@ -1724,7 +1701,6 @@ exports[`FileInput Component FileInput handles download without download callbac
       >
         Click or drag file to upload
         <input
-          class="input"
           data-testid="TEST-ID"
           tabindex="-1"
           type="file"
@@ -1846,7 +1822,6 @@ exports[`FileInput Component FileInput handles download without download callbac
       >
         Click or drag file to upload
         <input
-          class="input"
           data-testid="TEST-ID"
           tabindex="-1"
           type="file"
@@ -1968,7 +1943,6 @@ exports[`FileInput Component FileInput renders 1`] = `
       >
         Click or drag file to upload
         <input
-          class="input"
           multiple=""
           tabindex="-1"
           type="file"
@@ -2086,7 +2060,6 @@ exports[`FileInput Component FileInput renders without input value 1`] = `
       >
         Click or drag file to upload
         <input
-          class="input"
           multiple=""
           tabindex="-1"
           type="file"
@@ -2114,7 +2087,6 @@ exports[`FileInput Component FileInput renders without input value 2`] = `
       >
         Click or drag file to upload
         <input
-          class="input"
           multiple=""
           tabindex="-1"
           type="file"

@@ -17,7 +17,7 @@ describe('DynamicSearchInput Component', () => {
     const { container } = render(
       <DynamicSearchInput
         dataTestId='DATA-TEST-ID'
-        inputValue={'OPTION1'}
+        input={'OPTION1'}
         name='SELECT'
         noOptionsMessage={noOptionsMessageMock}
         resolveValue={resolveValueMock}
@@ -49,7 +49,7 @@ describe('DynamicSearchInput Component', () => {
     const { container } = render(
       <DynamicSearchInput
         dataTestId='DATA-TEST-ID'
-        inputValue={'OPTION-VALUE-NOT-AVAILABLE'}
+        input={'OPTION-VALUE-NOT-AVAILABLE'}
         name='SELECT'
         noOptionsMessage={noOptionsMessageMock}
         resolveValue={resolveValueMock}
@@ -81,7 +81,7 @@ describe('DynamicSearchInput Component', () => {
     const { container } = render(
       <DynamicSearchInput
         dataTestId='DATA-TEST-ID'
-        inputValue={'OPTION1'}
+        input={'OPTION1'}
         name='SELECT'
         noOptionsMessage={noOptionsMessageMock}
         resolveValue={resolveValueMock}
@@ -131,8 +131,8 @@ describe('DynamicSearchInput Component', () => {
 
   it('DynamicSearchInput handles change', async () => {
     const resolveValueMock = jest.fn();
-    const searchOptionsMock = jest.fn().mockImplementation((inputValue: string) => {
-      if (inputValue === 'option 2') return Promise.resolve([{ value: 'OPTION2', label: 'option 2' }]);
+    const searchOptionsMock = jest.fn().mockImplementation((input: string) => {
+      if (input === 'option 2') return Promise.resolve([{ value: 'OPTION2', label: 'option 2' }]);
       return Promise.resolve([]);
     });
     const noOptionsMessageMock = jest.fn().mockImplementation(() => {
@@ -181,8 +181,8 @@ describe('DynamicSearchInput Component', () => {
     const resolveValueMock = jest.fn().mockImplementation(() => {
       return Promise.resolve({ value: 'OPTION1', label: 'option 1' });
     });
-    const searchOptionsMock = jest.fn().mockImplementation((inputValue: string) => {
-      if (inputValue === 'option 2') return Promise.resolve([{ value: 'OPTION2', label: 'option 2' }]);
+    const searchOptionsMock = jest.fn().mockImplementation((input: string) => {
+      if (input === 'option 2') return Promise.resolve([{ value: 'OPTION2', label: 'option 2' }]);
       return Promise.resolve([]);
     });
     const onChangeMock = jest.fn();
@@ -190,7 +190,7 @@ describe('DynamicSearchInput Component', () => {
     const { container } = render(
       <DynamicSearchInput
         dataTestId='DATA-TEST-ID'
-        inputValue={'OPTION1'}
+        input={'OPTION1'}
         name='SELECT'
         noOptionsMessage={'No option'}
         onChange={onChangeMock}
@@ -227,15 +227,15 @@ describe('DynamicSearchInput Component', () => {
     const resolveValueMock = jest.fn().mockImplementation(() => {
       return Promise.resolve({ value: 'OPTION1', label: 'option 1' });
     });
-    const searchOptionsMock = jest.fn().mockImplementation((inputValue: string) => {
-      if (inputValue === 'option 2') return Promise.resolve([{ value: 'OPTION2', label: 'option 2' }]);
+    const searchOptionsMock = jest.fn().mockImplementation((input: string) => {
+      if (input === 'option 2') return Promise.resolve([{ value: 'OPTION2', label: 'option 2' }]);
       return Promise.resolve([]);
     });
     const onChangeMock = jest.fn();
 
     const { container } = render(
       <DynamicSearchInput
-        inputValue={'OPTION1'}
+        input={'OPTION1'}
         isClearable
         name='SELECT'
         noOptionsMessage={'No option'}
@@ -262,7 +262,7 @@ describe('DynamicSearchInput Component', () => {
       <DynamicSearchInput
         dataTestId='DATA-TEST-ID'
         highlighted
-        inputValue={'OPTION1'}
+        input={'OPTION1'}
         name='SELECT'
         noOptionsMessage={noOptionsMessageMock}
         readOnly
@@ -293,7 +293,7 @@ describe('DynamicSearchInput Component', () => {
     const { container } = render(
       <DynamicSearchInput
         highlighted
-        inputValue={'OPTION1'}
+        input={'OPTION1'}
         name='SELECT'
         noOptionsMessage={noOptionsMessageMock}
         readOnly
@@ -329,7 +329,7 @@ describe('DynamicSearchInput Component', () => {
         dataTestId='DATA-TEST-ID'
         disabled
         isInError
-        inputValue={'OPTION1'}
+        input={'OPTION1'}
         name='SELECT'
         noOptionsMessage={noOptionsMessage}
         resolveValue={resolveValueMock}
@@ -379,7 +379,7 @@ describe('DynamicSearchInput Component', () => {
     expect(searchOptionsMock).toBeCalledWith('', expect.any(Function));
   });
 
-  it('DynamicSearchInput handles inputValue change', async () => {
+  it('DynamicSearchInput handles input change', async () => {
     const resolveValueMock = jest.fn().mockImplementation((input) => {
       if (input === 'OPTION1') return Promise.resolve({ value: 'OPTION1', label: 'option 1' });
       if (input === 'OPTION2') return Promise.resolve({ value: 'OPTION2', label: 'option 2' });
@@ -394,7 +394,7 @@ describe('DynamicSearchInput Component', () => {
     const container = render(
       <DynamicSearchInput
         dataTestId='DATA-TEST-ID'
-        inputValue={'OPTION1'}
+        input={'OPTION1'}
         name='SELECT'
         noOptionsMessage={noOptionsMessageMock}
         onChange={onChangeMock}
@@ -418,7 +418,7 @@ describe('DynamicSearchInput Component', () => {
     container.rerender(
       <DynamicSearchInput
         dataTestId='DATA-TEST-ID'
-        inputValue={'OPTION2'}
+        input={'OPTION2'}
         name='SELECT'
         noOptionsMessage={noOptionsMessageMock}
         onChange={onChangeMock}
@@ -471,7 +471,7 @@ describe('DynamicSearchInput Component', () => {
     const { container } = render(
       <DynamicSearchInput
         dataTestId='DATA-TEST-ID'
-        inputValue={'OPTION1'}
+        input={'OPTION1'}
         isClearable
         name='SELECT'
         noOptionsMessage={noOptionsMessageMock}

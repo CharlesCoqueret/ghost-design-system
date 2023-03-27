@@ -31,7 +31,7 @@ describe('CustomCell component', () => {
 
     expect(container).toMatchSnapshot();
     expect(customRenderMock).toBeCalledTimes(1);
-    expect(customRenderMock).toBeCalledWith({ onChange: undefined, readOnly: true, inputValue: 'DATA' });
+    expect(customRenderMock).toBeCalledWith({ onChange: undefined, readOnly: true, input: 'DATA' });
   });
 
   it('CustomCell renders with forced value', () => {
@@ -90,7 +90,7 @@ describe('CustomCell component', () => {
 
     expect(container).toMatchSnapshot();
     expect(customRenderMock).toBeCalledTimes(1);
-    expect(customRenderMock).toBeCalledWith({ inputValue: 'DATA', onChange: undefined, readOnly: true });
+    expect(customRenderMock).toBeCalledWith({ input: 'DATA', onChange: undefined, readOnly: true });
   });
 
   it('CustomCell renders in edit mode and handles change', () => {
@@ -126,7 +126,7 @@ describe('CustomCell component', () => {
 
     expect(container).toMatchSnapshot();
     expect(customRenderMock).toBeCalledTimes(1);
-    expect(customRenderMock).toBeCalledWith({ onChange: expect.any(Function), readOnly: false, inputValue: 'DATA' });
+    expect(customRenderMock).toBeCalledWith({ onChange: expect.any(Function), readOnly: false, input: 'DATA' });
 
     expect(customOnChangeCallback).toBeDefined();
 
@@ -166,7 +166,7 @@ describe('CustomCell component', () => {
 
     expect(container).toMatchSnapshot();
     expect(customRenderMock).toBeCalledTimes(1);
-    expect(customRenderMock).toBeCalledWith({ onChange: expect.any(Function), readOnly: false, inputValue: 'DATA' });
+    expect(customRenderMock).toBeCalledWith({ onChange: expect.any(Function), readOnly: false, input: 'DATA' });
   });
 
   it('CustomCell renders without forced value and without row', () => {
@@ -194,6 +194,6 @@ describe('CustomCell component', () => {
 
     expect(container).toMatchSnapshot();
     expect(customRenderMock).toBeCalledTimes(1);
-    expect(customRenderMock).toBeCalledWith({ onChange: undefined, readOnly: true, inputValue: undefined });
+    expect(customRenderMock).toBeCalledWith({ onChange: undefined, readOnly: true, input: undefined });
   });
 });

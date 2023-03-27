@@ -22,7 +22,7 @@ const FileCell = <T,>(props: ICellProps<T, IColumnFile<T>>): ReactElement => {
         acceptTypes={column.acceptTypes}
         additionalInfo={column.additionalInfo}
         dataTestId={dataTestId}
-        inputValue={displayValue}
+        input={displayValue}
         localization={column.localization}
         maxFiles={column.maxFiles}
         maxFileSize={column.maxFileSize}

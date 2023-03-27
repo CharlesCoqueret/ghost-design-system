@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Form Component Form renders with description and sections 1`] = `
+exports[`FormLegacy Component FormLegacy renders with description and sections 1`] = `
 <div>
   <div
     class="col"
@@ -40,7 +40,7 @@ exports[`Form Component Form renders with description and sections 1`] = `
 </div>
 `;
 
-exports[`Form Component Form renders with mandatory field 1`] = `
+exports[`FormLegacy Component FormLegacy renders with mandatory field 1`] = `
 <div>
   <div
     class="col"
@@ -71,7 +71,7 @@ exports[`Form Component Form renders with mandatory field 1`] = `
 </div>
 `;
 
-exports[`Form Component Form renders without validation schema 1`] = `
+exports[`FormLegacy Component FormLegacy renders without validation schema 1`] = `
 <div>
   <div
     class="col"

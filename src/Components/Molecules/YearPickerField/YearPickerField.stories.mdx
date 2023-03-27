@@ -23,8 +23,8 @@ import Icon from '../../Atoms/Icon/Icon';
 # YearPickerField
 
 export const Template = (args) => {
-  const [val, setVal] = useState(args.inputValue);
-  return <YearPickerField {...args} inputValue={val} onChange={setVal} />;
+  const [val, setVal] = useState(args.input);
+  return <YearPickerField {...args} input={val} onChange={setVal} />;
 };
 
 <Canvas withSource='open'>
@@ -34,7 +34,7 @@ export const Template = (args) => {
       label: 'Date picker field',
       placeholder: 'Select a date',
       isClearable: true,
-      inputValue: new Date().getFullYear(),
+      input: new Date().getFullYear(),
     }}>
     {Template.bind({})}
   </Story>
@@ -51,7 +51,7 @@ export const Template = (args) => {
     labelSize={4}
     placeholder='Date picker placeholder'
     readOnly={true}
-    inputValue={new Date().getFullYear()}
+    input={new Date().getFullYear()}
   />
 </Canvas>
 
@@ -64,7 +64,7 @@ export const Template = (args) => {
     labelSize={4}
     placeholder='Date picker placeholder'
     errorMessage='This text is on error'
-    inputValue={new Date().getFullYear()}
+    input={new Date().getFullYear()}
   />
 </Canvas>
 
@@ -76,7 +76,7 @@ export const Template = (args) => {
     label='Date picker field with helper and counter'
     mandatory={true}
     placeholder='Date picker placeholder'
-    inputValue={new Date().getFullYear()}
+    input={new Date().getFullYear()}
   />
 </Canvas>
 
@@ -89,7 +89,7 @@ export const Template = (args) => {
     readOnly={true}
     label='Date picker field highlighted'
     placeholder='Date picker placeholder'
-    inputValue={new Date().getFullYear()}
+    input={new Date().getFullYear()}
   />
 </Canvas>
 
@@ -101,7 +101,7 @@ export const Template = (args) => {
     helperText='Helper text'
     label='Date picker field disabled'
     placeholder='Date picker placeholder'
-    inputValue={new Date().getFullYear()}
+    input={new Date().getFullYear()}
   />
 </Canvas>
 

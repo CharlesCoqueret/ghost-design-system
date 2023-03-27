@@ -48,10 +48,11 @@ export const SwitchField = (props: ISwitchFieldProps): ReactElement => {
     highlighted,
     inline,
     inputClassName,
-    inputValue,
+    input,
     label,
     labelSize,
     mandatory,
+    name,
     onChange,
     readOnly,
   } = props;
@@ -77,8 +78,9 @@ export const SwitchField = (props: ISwitchFieldProps): ReactElement => {
         ellipsis={ellipsis}
         highlighted={highlighted}
         inline={inline}
-        inputValue={inputValue}
+        input={input}
         isInError={errorMessage !== undefined}
+        name={name}
         onChange={onChange}
         readOnly={readOnly}
       />
@@ -95,7 +97,7 @@ SwitchField.defaultProps = {
   highlighted: false,
   inline: false,
   inputClassName: undefined,
-  inputValue: undefined,
+  input: undefined,
   isClearable: false,
   label: undefined,
   labelSize: undefined,

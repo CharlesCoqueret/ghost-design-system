@@ -29,7 +29,7 @@ export interface IRichTextInputProps {
   /** Enable link  (optional, default: false) */
   enableLink?: boolean;
   /** Initial values for the field (optional, default: undefined or '-' when disabled or readOnly) */
-  inputValue?: string;
+  input?: string;
   /** Field is in error state (optional, default: false) */
   isInError?: boolean;
   /** Locale for tooltips (optional, default: undefined, meaning english) */
@@ -88,7 +88,7 @@ const RichTextInput = (props: IRichTextInputProps): ReactElement => {
     disabled,
     enableImage,
     enableLink,
-    inputValue,
+    input,
     isInError,
     locale,
     maxLength,
@@ -174,7 +174,7 @@ const RichTextInput = (props: IRichTextInputProps): ReactElement => {
       style={style}>
       <SunEditor
         data-testid={dataTestId}
-        defaultValue={(readOnly || disabled) && inputValue === undefined ? '-' : inputValue}
+        defaultValue={(readOnly || disabled) && input === undefined ? '-' : input}
         disable={disabled || readOnly}
         hideToolbar={readOnly || disabled}
         lang={locale}
@@ -193,7 +193,7 @@ RichTextInput.defaultProps = {
   disabled: false,
   enableImage: false,
   enableLink: false,
-  inputValue: undefined,
+  input: undefined,
   isInError: false,
   locale: undefined,
   maxLength: undefined,

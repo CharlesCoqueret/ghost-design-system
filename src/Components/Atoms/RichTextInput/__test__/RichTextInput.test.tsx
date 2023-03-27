@@ -65,11 +65,11 @@ describe('RichTextInput Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('RichTextInput renders in readOnly with inputValue', () => {
+  it('RichTextInput renders in readOnly with input', () => {
     const RichTextInput = require('../RichTextInput').default;
     const onChangeMock = jest.fn();
 
-    const { container } = render(<RichTextInput readOnly inputValue='TEST' name='SELECT' onChange={onChangeMock} />);
+    const { container } = render(<RichTextInput readOnly input='TEST' name='SELECT' onChange={onChangeMock} />);
 
     expect(container).toMatchSnapshot();
   });

@@ -25,7 +25,7 @@ import Icon from '../../Atoms/Icon/Icon';
 
 export const Template = (args) => {
   const [loading, setLoading] = useState(true);
-  const [val, setVal] = useState(args.inputValue);
+  const [val, setVal] = useState(args.input);
   useEffect(() => {
     let isUnmounting = false;
     const loadLocale = async () => {
@@ -57,7 +57,7 @@ export const Template = (args) => {
       </>
     );
   }
-  return <DatePickerField {...args} inputValue={val} onChange={setVal} />;
+  return <DatePickerField {...args} input={val} onChange={setVal} />;
 };
 
 <Canvas withSource='open'>
@@ -84,7 +84,7 @@ export const Template = (args) => {
     locale='fr'
     placeholder='Date picker placeholder'
     readOnly={true}
-    inputValue={new Date()}
+    input={new Date()}
   />
 </Canvas>
 
@@ -97,7 +97,7 @@ export const Template = (args) => {
     labelSize={4}
     placeholder='Date picker placeholder'
     errorMessage='This text is on error'
-    inputValue={new Date()}
+    input={new Date()}
   />
 </Canvas>
 
@@ -121,7 +121,7 @@ export const Template = (args) => {
     readOnly={true}
     label='Date picker field highlighted'
     placeholder='Date picker placeholder'
-    inputValue={new Date()}
+    input={new Date()}
   />
 </Canvas>
 
@@ -133,7 +133,7 @@ export const Template = (args) => {
     helperText='Helper text'
     label='Date picker field disabled'
     placeholder='Date picker placeholder'
-    inputValue={new Date()}
+    input={new Date()}
   />
 </Canvas>
 

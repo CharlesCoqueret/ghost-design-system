@@ -1,26 +1,20 @@
 import * as yup from 'yup';
-import { AnyObject } from 'yup/lib/object';
-
-export type FieldError = {
-  type?: string;
-  message: string;
-};
 
 const parseErrorSchema = <T>(error: yup.ValidationError) => {
-  return (error.inner || []).reduce<Partial<Record<keyof T, FieldError | undefined>>>((previous, error) => {
+  return (error.inner || []).reduce<Partial<Record<keyof T, string | undefined>>>((previous, error) => {
     if (error.path && !previous[error.path as keyof T]) {
-      previous[error.path as keyof T] = { type: error.type, message: error.message };
+      previous[error.path as keyof T] = error.message;
     }
 
     return previous;
   }, {});
 };
 
-export const yupResolver = <T extends AnyObject>(
-  schema: yup.SchemaOf<T>,
+export const yupResolver = <T extends yup.AnyObject>(
+  schema: yup.ObjectSchema<T>,
   schemaOptions = {},
   values: T,
-): Partial<Record<keyof T, FieldError | undefined>> | undefined => {
+): Partial<Record<keyof T, string | undefined>> | undefined => {
   try {
     schema.validateSync(values, schemaOptions);
   } catch (error) {

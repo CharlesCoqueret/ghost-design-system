@@ -23,7 +23,6 @@ exports[`FileCell component FileCell handles change 1`] = `
                   Click or drag file to upload
                   <input
                     accept="*/*"
-                    class="input"
                     multiple=""
                     tabindex="-1"
                     type="file"
@@ -115,7 +114,6 @@ exports[`FileCell component FileCell renders 1`] = `
                   Click or drag file to upload
                   <input
                     accept="*/*"
-                    class="input"
                     multiple=""
                     readonly=""
                     tabindex="-1"
@@ -190,7 +188,6 @@ exports[`FileCell component FileCell renders when hidden 1`] = `
                   Click or drag file to upload
                   <input
                     accept="*/*"
-                    class="input"
                     multiple=""
                     readonly=""
                     tabindex="-1"
@@ -264,7 +261,6 @@ exports[`FileCell component FileCell renders with forced value 1`] = `
                   Click or drag file to upload
                   <input
                     accept="*/*"
-                    class="input"
                     multiple=""
                     readonly=""
                     tabindex="-1"

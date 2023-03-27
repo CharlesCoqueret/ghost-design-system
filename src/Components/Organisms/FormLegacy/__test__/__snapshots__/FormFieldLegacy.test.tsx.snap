@@ -1,0 +1,538 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FormFieldLegacy Component FormFieldLegacy renders amount field 1`] = `
+<div>
+  <div
+    class="row"
+  >
+    <div
+      class="col"
+    >
+      <div>
+        Mocked AmountField props: 
+        {"dataIndex":"amount","fieldType":"amount","label":"amount","name":"amount","input":50,"errorMessage":"ERROR"}
+      </div>
+    </div>
+    <div
+      class="col"
+    >
+      <div>
+        Mocked AmountField props: 
+        {"dataIndex":"amount","fieldType":"amount","label":"amount","input":0,"extra":{},"highlighted":true,"data":0,"readOnly":true}
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`FormFieldLegacy Component FormFieldLegacy renders amount field 2`] = `
+<div>
+  <div>
+    Mocked AmountField props: 
+    {"dataIndex":"amount","fieldType":"amount","label":"amount","name":"amount"}
+  </div>
+</div>
+`;
+
+exports[`FormFieldLegacy Component FormFieldLegacy renders checkbox field 1`] = `
+<div>
+  <div
+    class="row"
+  >
+    <div
+      class="col"
+    >
+      <div>
+        Mocked CheckboxField props: 
+        {"dataIndex":"checkbox","fieldType":"checkbox","label":"checkbox","input":[{"value":"value1","label":"label1"},{"value":"value2","label":"label2","checked":true},{"value":"value3","label":"label3","checked":false}],"errorMessage":"ERROR"}
+      </div>
+    </div>
+    <div
+      class="col"
+    >
+      <div>
+        Mocked CheckboxField props: 
+        {"dataIndex":"checkbox","fieldType":"checkbox","label":"checkbox","input":[{"value":"value1","label":"label1","checked":true,"highlighted":true},{"value":"value2","label":"label2","checked":false,"highlighted":true},{"value":"value3","label":"label3","highlighted":true},{"value":"value4","label":"label4"}],"extra":{},"highlighted":true,"data":[{"value":"value1","label":"label1","checked":true,"highlighted":true},{"value":"value2","label":"label2","checked":false,"highlighted":true},{"value":"value3","label":"label3","highlighted":true},{"value":"value4","label":"label4"}],"readOnly":true}
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`FormFieldLegacy Component FormFieldLegacy renders checkbox field 2`] = `
+<div>
+  <div>
+    Mocked CheckboxField props: 
+    {"dataIndex":"checkbox","fieldType":"checkbox","label":"checkbox"}
+  </div>
+</div>
+`;
+
+exports[`FormFieldLegacy Component FormFieldLegacy renders custom field 1`] = `
+<div>
+  <div
+    class="row"
+  >
+    <div
+      class="col"
+    >
+      <div>
+        Mocked CustomField props: 
+        {"dataIndex":"custom","fieldType":"custom","label":"custom","input":1}
+      </div>
+    </div>
+    <div
+      class="col"
+    >
+      <div>
+        Mocked CustomField props: 
+        {"dataIndex":"custom","fieldType":"custom","label":"custom","input":0,"extra":{},"highlighted":true,"data":0,"readOnly":true}
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`FormFieldLegacy Component FormFieldLegacy renders custom field 2`] = `
+<div>
+  <div>
+    Mocked CustomField props: 
+    {"dataIndex":"custom","fieldType":"custom","label":"custom"}
+  </div>
+</div>
+`;
+
+exports[`FormFieldLegacy Component FormFieldLegacy renders date field 1`] = `
+<div>
+  <div
+    class="row"
+  >
+    <div
+      class="col"
+    >
+      <div>
+        Mocked DatePickerField props: 
+        {"dataIndex":"date","fieldType":"date","label":"date","name":"date","input":"2022-04-12T00:00:00.000Z","errorMessage":"ERROR","usePortal":true}
+      </div>
+    </div>
+    <div
+      class="col"
+    >
+      <div>
+        Mocked DatePickerField props: 
+        {"dataIndex":"date","fieldType":"date","label":"date","input":"1984-09-24T00:00:00.000Z","usePortal":true,"extra":{},"highlighted":true,"data":"1984-09-24T00:00:00.000Z","readOnly":true}
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`FormFieldLegacy Component FormFieldLegacy renders date field 2`] = `
+<div>
+  <div>
+    Mocked DatePickerField props: 
+    {"dataIndex":"date","fieldType":"date","label":"date","name":"date","usePortal":true}
+  </div>
+</div>
+`;
+
+exports[`FormFieldLegacy Component FormFieldLegacy renders dynamic search field 1`] = `
+<div>
+  <div
+    class="row"
+  >
+    <div
+      class="col"
+    >
+      <div>
+        Mocked DynamicSearchField props: 
+        {"dataIndex":"dynamicsearch","fieldType":"dynamicsearch","label":"dynamicsearch","name":"dynamicsearch","input":"value1","errorMessage":"ERROR"}
+      </div>
+    </div>
+    <div
+      class="col"
+    >
+      <div>
+        Mocked DynamicSearchField props: 
+        {"dataIndex":"dynamicsearch","fieldType":"dynamicsearch","label":"dynamicsearch","input":"value2","extra":{},"highlighted":true,"data":"value2","readOnly":true}
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`FormFieldLegacy Component FormFieldLegacy renders dynamic search field 2`] = `
+<div>
+  <div>
+    Mocked DynamicSearchField props: 
+    {"dataIndex":"dynamicsearch","fieldType":"dynamicsearch","label":"dynamicsearch","name":"dynamicsearch"}
+  </div>
+</div>
+`;
+
+exports[`FormFieldLegacy Component FormFieldLegacy renders file field 1`] = `
+<div>
+  <div
+    class="row"
+  >
+    <div
+      class="col"
+    >
+      <div>
+        Mocked FileField props: 
+        {"dataIndex":"file","fieldType":"file","label":"file","requestMethod":"POST","requestUrl":"test.url","input":[{"name":"file1","size":1,"type":"type1","status":"done"}],"errorMessage":"ERROR"}
+      </div>
+    </div>
+    <div
+      class="col"
+    >
+      <div>
+        Mocked FileField props: 
+        {"dataIndex":"file","fieldType":"file","label":"file","requestMethod":"POST","requestUrl":"test.url","input":[{"name":"file2","size":2,"type":"type2","status":"done"}],"extra":{},"highlighted":false,"data":[{"name":"file2","size":2,"type":"type2","status":"done"}],"readOnly":true}
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`FormFieldLegacy Component FormFieldLegacy renders file field 2`] = `
+<div>
+  <div>
+    Mocked FileField props: 
+    {"dataIndex":"file","fieldType":"file","label":"file","requestMethod":"POST","requestUrl":"test.url"}
+  </div>
+</div>
+`;
+
+exports[`FormFieldLegacy Component FormFieldLegacy renders multi select field 1`] = `
+<div>
+  <div
+    class="row"
+  >
+    <div
+      class="col"
+    >
+      <div>
+        Mocked MultiSelectField props: 
+        {"dataIndex":"multiselect","fieldType":"multiselect","label":"multiselect","numberOfItemLabel":"{} item selected","numberOfItemsLabel":"{} items selected","options":[{"value":"value1","label":"label1"},{"value":"value2","label":"label2"}],"name":"multiselect","input":["value1"],"errorMessage":"ERROR"}
+      </div>
+    </div>
+    <div
+      class="col"
+    >
+      <div>
+        Mocked MultiSelectField props: 
+        {"dataIndex":"multiselect","fieldType":"multiselect","label":"multiselect","numberOfItemLabel":"{} item selected","numberOfItemsLabel":"{} items selected","options":[{"value":"value1","label":"label1"},{"value":"value2","label":"label2"}],"input":["value2"],"extra":{},"highlighted":true,"data":["value2"],"readOnly":true}
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`FormFieldLegacy Component FormFieldLegacy renders multi select field 2`] = `
+<div>
+  <div>
+    Mocked MultiSelectField props: 
+    {"dataIndex":"multiselect","fieldType":"multiselect","label":"multiselect","numberOfItemLabel":"{} item selected","numberOfItemsLabel":"{} items selected","options":[{"value":"value1","label":"label1"},{"value":"value2","label":"label2"}],"name":"multiselect"}
+  </div>
+</div>
+`;
+
+exports[`FormFieldLegacy Component FormFieldLegacy renders multi select field 3`] = `
+<div>
+  <div>
+    Mocked MultiSelectField props: 
+    {"dataIndex":"multiselect","eraseValueWhenNotInOptions":true,"fieldType":"multiselect","label":"multiselect","numberOfItemLabel":"{} item selected","numberOfItemsLabel":"{} items selected","options":[{"value":"value1","label":"label1"},{"value":"value2","label":"label2"}],"name":"multiselect","input":["value-invalid"]}
+  </div>
+</div>
+`;
+
+exports[`FormFieldLegacy Component FormFieldLegacy renders number field 1`] = `
+<div>
+  <div
+    class="row"
+  >
+    <div
+      class="col"
+    >
+      <div>
+        Mocked AmountField props: 
+        {"dataIndex":"number","fieldType":"number","label":"number","name":"number","input":50,"errorMessage":"ERROR"}
+      </div>
+    </div>
+    <div
+      class="col"
+    >
+      <div>
+        Mocked AmountField props: 
+        {"dataIndex":"number","fieldType":"number","label":"number","input":"0","extra":{},"highlighted":true,"data":"0","readOnly":true}
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`FormFieldLegacy Component FormFieldLegacy renders number field 2`] = `
+<div>
+  <div>
+    Mocked AmountField props: 
+    {"dataIndex":"number","fieldType":"number","label":"number","name":"number"}
+  </div>
+</div>
+`;
+
+exports[`FormFieldLegacy Component FormFieldLegacy renders percentage field 1`] = `
+<div>
+  <div
+    class="row"
+  >
+    <div
+      class="col"
+    >
+      <div>
+        Mocked PercentageField props: 
+        {"dataIndex":"percentage","fieldType":"percentage","label":"percentage","name":"percentage","input":50,"errorMessage":"ERROR"}
+      </div>
+    </div>
+    <div
+      class="col"
+    >
+      <div>
+        Mocked PercentageField props: 
+        {"dataIndex":"percentage","fieldType":"percentage","label":"percentage","input":"0","extra":{},"highlighted":true,"data":"0","readOnly":true}
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`FormFieldLegacy Component FormFieldLegacy renders percentage field 2`] = `
+<div>
+  <div>
+    Mocked PercentageField props: 
+    {"dataIndex":"percentage","fieldType":"percentage","label":"percentage","name":"percentage"}
+  </div>
+</div>
+`;
+
+exports[`FormFieldLegacy Component FormFieldLegacy renders rich text field 1`] = `
+<div>
+  <div
+    class="row"
+  >
+    <div
+      class="col"
+    >
+      <div>
+        Mocked RichTextField props: 
+        {"dataIndex":"richtext","fieldType":"richtext","label":"richtext","name":"richtext","input":"richtext","errorMessage":"ERROR"}
+      </div>
+    </div>
+    <div
+      class="col"
+    >
+      <div>
+        Mocked RichTextField props: 
+        {"dataIndex":"richtext","fieldType":"richtext","label":"richtext","input":"old richtext","extra":{},"highlighted":true,"data":"old richtext","readOnly":true}
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`FormFieldLegacy Component FormFieldLegacy renders rich text field 2`] = `
+<div>
+  <div>
+    Mocked RichTextField props: 
+    {"dataIndex":"richtext","fieldType":"richtext","label":"richtext","name":"richtext"}
+  </div>
+</div>
+`;
+
+exports[`FormFieldLegacy Component FormFieldLegacy renders select field 1`] = `
+<div>
+  <div
+    class="row"
+  >
+    <div
+      class="col"
+    >
+      <div>
+        Mocked SelectField props: 
+        {"dataIndex":"select","fieldType":"select","label":"select","options":[{"value":"value1","label":"label1"},{"value":"value2","label":"label2"}],"name":"select","input":"value1","errorMessage":"ERROR"}
+      </div>
+    </div>
+    <div
+      class="col"
+    >
+      <div>
+        Mocked SelectField props: 
+        {"dataIndex":"select","fieldType":"select","label":"select","options":[{"value":"value1","label":"label1"},{"value":"value2","label":"label2"}],"input":"value1","extra":{},"highlighted":false,"data":"value1","readOnly":true}
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`FormFieldLegacy Component FormFieldLegacy renders select field 2`] = `
+<div>
+  <div>
+    Mocked SelectField props: 
+    {"dataIndex":"select","fieldType":"select","label":"select","options":[{"value":"value1","label":"label1"},{"value":"value2","label":"label2"}],"name":"select"}
+  </div>
+</div>
+`;
+
+exports[`FormFieldLegacy Component FormFieldLegacy renders select field 3`] = `
+<div>
+  <div>
+    Mocked SelectField props: 
+    {"dataIndex":"select","eraseValueWhenNotInOptions":true,"fieldType":"select","label":"select","options":[{"value":"value1","label":"label1"},{"value":"value2","label":"label2"}],"name":"select","input":"value-invalid"}
+  </div>
+</div>
+`;
+
+exports[`FormFieldLegacy Component FormFieldLegacy renders switch field 1`] = `
+<div>
+  <div
+    class="row"
+  >
+    <div
+      class="col"
+    >
+      <div>
+        Mocked SwitchField props: 
+        {"dataIndex":"switch","fieldType":"switch","label":"switch","input":[{"value":"value1","label":"label1"},{"value":"value2","label":"label2","checked":true},{"value":"value3","label":"label3","checked":false}],"errorMessage":"ERROR"}
+      </div>
+    </div>
+    <div
+      class="col"
+    >
+      <div>
+        Mocked SwitchField props: 
+        {"dataIndex":"switch","fieldType":"switch","label":"switch","input":[{"value":"value1","label":"label1","checked":true,"highlighted":true},{"value":"value2","label":"label2","checked":false,"highlighted":true},{"value":"value3","label":"label3","highlighted":true},{"value":"value4","label":"label4"}],"extra":{},"highlighted":true,"data":[{"value":"value1","label":"label1","checked":true,"highlighted":true},{"value":"value2","label":"label2","checked":false,"highlighted":true},{"value":"value3","label":"label3","highlighted":true},{"value":"value4","label":"label4"}],"readOnly":true}
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`FormFieldLegacy Component FormFieldLegacy renders switch field 2`] = `
+<div>
+  <div>
+    Mocked SwitchField props: 
+    {"dataIndex":"switch","fieldType":"switch","label":"switch"}
+  </div>
+</div>
+`;
+
+exports[`FormFieldLegacy Component FormFieldLegacy renders table field 1`] = `
+<div>
+  <div>
+    Mocked SwitchField props: 
+    {"columns":[{"title":"number","dataIndex":"number","type":"number"}],"dataIndex":"table","extra":{"validationSchema":{"type":"object","deps":[],"tests":[],"transforms":[],"conditions":[],"internalTests":{},"_whitelist":{},"_blacklist":{},"exclusiveTests":{},"spec":{"strip":false,"strict":false,"abortEarly":true,"recursive":true,"nullable":false,"optional":true,"coerce":true},"fields":{"number":{"type":"number","_whitelist":{},"_blacklist":{},"internalTests":{},"exclusiveTests":{},"deps":[],"conditions":[],"tests":[],"transforms":[null],"spec":{"strip":false,"strict":false,"abortEarly":true,"recursive":true,"nullable":false,"optional":false,"coerce":true}}},"_nodes":["number"],"_excludedEdges":[]}},"fieldType":"lineeditabletable","label":"table","data":[{"number":1},{"number":2},{"number":3}]}
+  </div>
+</div>
+`;
+
+exports[`FormFieldLegacy Component FormFieldLegacy renders text field 1`] = `
+<div>
+  <div
+    class="row"
+  >
+    <div
+      class="col"
+    >
+      <div>
+        Mocked TextField props: 
+        {"dataIndex":"text","fieldType":"text","label":"text","name":"text","input":"text","errorMessage":"ERROR"}
+      </div>
+    </div>
+    <div
+      class="col"
+    >
+      <div>
+        Mocked TextField props: 
+        {"dataIndex":"text","fieldType":"text","label":"text","input":"old text","extra":{},"highlighted":true,"data":"old text","readOnly":true}
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`FormFieldLegacy Component FormFieldLegacy renders text field 2`] = `
+<div>
+  <div>
+    Mocked TextField props: 
+    {"dataIndex":"text","fieldType":"text","label":"text","name":"text"}
+  </div>
+</div>
+`;
+
+exports[`FormFieldLegacy Component FormFieldLegacy renders textarea field 1`] = `
+<div>
+  <div
+    class="row"
+  >
+    <div
+      class="col"
+    >
+      <div>
+        Mocked TextAreaField props: 
+        {"dataIndex":"textarea","fieldType":"textarea","label":"textearea","name":"textarea","input":"textarea","errorMessage":"ERROR"}
+      </div>
+    </div>
+    <div
+      class="col"
+    >
+      <div>
+        Mocked TextAreaField props: 
+        {"dataIndex":"textarea","fieldType":"textarea","label":"textearea","input":"old textarea","extra":{},"highlighted":true,"data":"old textarea","readOnly":true}
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`FormFieldLegacy Component FormFieldLegacy renders textarea field 2`] = `
+<div>
+  <div>
+    Mocked TextAreaField props: 
+    {"dataIndex":"textarea","fieldType":"textarea","label":"textarea","name":"textarea"}
+  </div>
+</div>
+`;
+
+exports[`FormFieldLegacy Component FormFieldLegacy renders year field 1`] = `
+<div>
+  <div
+    class="row"
+  >
+    <div
+      class="col"
+    >
+      <div>
+        Mocked YearPickerField props: 
+        {"dataIndex":"year","fieldType":"year","label":"year","name":"year","input":2022,"errorMessage":"ERROR","usePortal":true}
+      </div>
+    </div>
+    <div
+      class="col"
+    >
+      <div>
+        Mocked YearPickerField props: 
+        {"dataIndex":"year","fieldType":"year","label":"year","input":2020,"usePortal":true,"extra":{},"highlighted":true,"data":2020,"readOnly":true}
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`FormFieldLegacy Component FormFieldLegacy renders year field 2`] = `
+<div>
+  <div>
+    Mocked YearPickerField props: 
+    {"dataIndex":"year","fieldType":"year","label":"year","name":"year","usePortal":true}
+  </div>
+</div>
+`;

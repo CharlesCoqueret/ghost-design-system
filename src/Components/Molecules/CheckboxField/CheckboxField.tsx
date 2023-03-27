@@ -7,8 +7,6 @@ import { CheckboxInput } from '../../Atoms/CheckBoxInput';
 export interface ICheckboxFieldProps extends Omit<ICheckboxInputProps, 'className' | 'isInError'> {
   /** React Container ref (optional, default: undefined) */
   containerRef?: Ref<HTMLDivElement>;
-  /** For test purpose only */
-  dataTestId?: string;
   /** Error message (optional, default: undefined) */
   errorMessage?: string;
   /** Class for the field surrounding the input (optional, default: undefined) */
@@ -48,10 +46,11 @@ export const CheckboxField = (props: ICheckboxFieldProps): ReactElement => {
     highlighted,
     inline,
     inputClassName,
-    inputValue,
+    input,
     label,
     labelSize,
     mandatory,
+    name,
     onChange,
     readOnly,
   } = props;
@@ -78,7 +77,8 @@ export const CheckboxField = (props: ICheckboxFieldProps): ReactElement => {
         highlighted={highlighted}
         inline={inline}
         isInError={errorMessage !== undefined}
-        inputValue={inputValue}
+        input={input}
+        name={name}
         onChange={onChange}
         readOnly={readOnly}
       />
@@ -96,7 +96,7 @@ CheckboxField.defaultProps = {
   highlighted: false,
   inline: false,
   inputClassName: undefined,
-  inputValue: undefined,
+  input: undefined,
   isClearable: false,
   label: undefined,
   labelSize: undefined,

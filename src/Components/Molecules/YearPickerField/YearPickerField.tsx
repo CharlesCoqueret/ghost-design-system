@@ -2,14 +2,11 @@ import React, { ReactElement, Ref } from 'react';
 
 import { GenericField } from '../../Atoms/GenericField';
 import { YearPickerInput } from '../../Atoms/DatePickerInput';
+import { IYearPickerProps } from '../../Atoms/DatePickerInput/YearPickerInput';
 
-export interface IYearPickerFieldProps {
+export interface IYearPickerFieldProps extends Omit<IYearPickerProps, 'className' | 'isInError'> {
   /** React Container ref (optional, default: undefined) */
   containerRef?: Ref<HTMLDivElement>;
-  /** For test purpose only */
-  dataTestId?: string;
-  /** Disabled field (optional, default: false) */
-  disabled?: boolean;
   /** Error message (optional, default: undefined) */
   errorMessage?: string;
   /** Class for the field surrounding the input (optional, default: undefined) */
@@ -18,36 +15,16 @@ export interface IYearPickerFieldProps {
   fieldSize?: number;
   /** Helper text (optional, default: undefined) */
   helperText?: string;
-  /** Highlighted field (optional, default: false) */
-  highlighted?: boolean;
   /** Inline field (optional, default: false) */
   inline?: boolean;
   /** Class for the input (optional, default: undefined) */
   inputClassName?: string;
-  /** Input year value (optional, default: undefined) */
-  inputValue?: number;
-  /** Provide the ability to clear the value (optional, default: false) */
-  isClearable?: boolean;
   /** Label (optional, default: undefined) */
   label?: string;
   /** Size of the field in a 12 column grid (optional, default: undefined) */
   labelSize?: number;
   /** Mandatory field (optional, default: false) */
   mandatory?: boolean;
-  /** Maximum date that can be picked (optional, default: undefined) */
-  maxDate?: Date;
-  /** Minimum date that can be picked (optional, default: undefined) */
-  minDate?: Date;
-  /** Name of text field (optional, default: false) */
-  name?: string;
-  /** Handler of value changes (optional, default: undefined) */
-  onChange?: (year: number | undefined) => void;
-  /** Placeholder value (optional, default: undefined) */
-  placeholder?: string;
-  /** Read only field (optional, default: false) */
-  readOnly?: boolean;
-  /** Use portal, it is remmended to set it to false for modal (optional, default true) */
-  usePortal?: boolean;
 }
 
 /**
@@ -70,7 +47,7 @@ export const YearPickerField = (props: IYearPickerFieldProps): ReactElement => {
     highlighted,
     inline,
     inputClassName,
-    inputValue,
+    input,
     isClearable,
     label,
     labelSize,
@@ -108,7 +85,7 @@ export const YearPickerField = (props: IYearPickerFieldProps): ReactElement => {
         maxDate={maxDate}
         minDate={minDate}
         placeholder={placeholder}
-        inputValue={inputValue}
+        input={input}
         onChange={onChange}
         readOnly={readOnly}
         usePortal={usePortal}
@@ -126,7 +103,7 @@ YearPickerField.defaultProps = {
   highlighted: false,
   inline: false,
   inputClassName: undefined,
-  inputValue: undefined,
+  input: undefined,
   isClearable: false,
   label: undefined,
   labelSize: undefined,

@@ -27,14 +27,14 @@ export interface IMultiSelectInputProps {
   /** Highlight value in readonly mode (optional, default: false) */
   highlighted?: boolean;
   /** Input string value (optional, default: undefined) */
-  inputValue?: Array<string | number>;
+  input?: Array<string | number>;
   /** Provide the ability to clear the value (optional, default: false) */
   isClearable?: boolean;
   /** Is in Error (optional, default: false) */
   isInError?: boolean;
   /** Maximum height of the menu in px (optional, default: 300) */
   maxMenuHeight?: number;
-  /** Name of select input (optional, default: undefined) */
+  /** Name of input (optional, default: undefined) */
   name?: string;
   /** Label to be used when one item is selected (example: "{} item selected")
    * Note: the {} will be replaced by the actual number */
@@ -94,7 +94,7 @@ const MultiSelectInput = (props: IMultiSelectInputProps): ReactElement => {
     disabled,
     ellipsis,
     highlighted,
-    inputValue,
+    input,
     isClearable,
     isInError,
     maxMenuHeight,
@@ -132,7 +132,7 @@ const MultiSelectInput = (props: IMultiSelectInputProps): ReactElement => {
         data-testid={dataTestId}>
         <Typography.Text ellipsis={ellipsis}>
           {options
-            .filter((option) => inputValue?.includes(option.value))
+            .filter((option) => input?.includes(option.value))
             .map((option) => option.label)
             .join(', ') || '-'}
         </Typography.Text>
@@ -189,7 +189,7 @@ const MultiSelectInput = (props: IMultiSelectInputProps): ReactElement => {
         options={options}
         placeholder={placeholder}
         styles={customStyles({ isInError: isInError && !(disabled && readOnly) })}
-        value={options.filter((option) => inputValue && inputValue.indexOf(option.value) >= 0)}
+        value={options.filter((option) => input && input.indexOf(option.value) >= 0)}
       />
     </div>
   );
@@ -200,7 +200,7 @@ MultiSelectInput.defaultProps = {
   disabled: false,
   ellipsis: false,
   highlighted: false,
-  inputValue: undefined,
+  input: undefined,
   isClearable: false,
   isInError: false,
   maxMenuHeight: 300,

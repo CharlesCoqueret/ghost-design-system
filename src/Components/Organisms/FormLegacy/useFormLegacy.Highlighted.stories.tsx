@@ -1,18 +1,19 @@
 import React, { ReactElement } from 'react';
 import { ComponentStory } from '@storybook/react';
 import cloneDeep from 'lodash/cloneDeep';
+import * as yup from 'yup';
 
 import { IToggleEntry } from '../../Atoms/CheckBoxInput/types';
 import { ColorButtonEnum } from '../../Molecules';
 
-import useForm, { IUseFormProps } from './useForm';
-import { FieldTypeEnum, IFieldAndLayoutProps } from './types';
+import useFormLegacy, { IUseFormProps } from './useFormLegacy';
+import { FieldLegacyTypeEnum, IFieldAndLayoutLegacyProps } from './types';
 import Section from '../../Atoms/Layout/Section';
 import { Link, Typography } from '../../Atoms';
 import { ActionBar } from '../ActionBar';
 
 export default {
-  title: 'Organism/useForm',
+  title: 'Organism/useFormLegacy',
 };
 
 interface IDataType {
@@ -26,7 +27,7 @@ const Template: ComponentStory<(props: IUseFormProps<IDataType> & { title: strin
   args: IUseFormProps<IDataType> & { title: string },
 ) => {
   const { title, ...props } = args;
-  const { formElement, getData, isModified, submit, reset } = useForm<IDataType>(props);
+  const { formElement, getData, isModified, submit, reset } = useFormLegacy<IDataType>(props);
 
   return (
     <>
@@ -88,49 +89,76 @@ const previousData: IDataType = {
   date: new Date('09/24/1984'),
 };
 
-const fields: Array<IFieldAndLayoutProps<IDataType>> = [
+const fields: Array<IFieldAndLayoutLegacyProps<IDataType>> = [
   {
     description: (
       <div>
         <Typography.Text>Any description</Typography.Text>
-        <Link to='https://hamster.dance/hamsterdance/' text='external link' />
+        <Link to='https://hamster.dance/hamsterdance/' text='external link' externalLink />
         <Link to='#' text='internal link' />
       </div>
     ),
-    fieldType: FieldTypeEnum.DESCRIPTION,
+    fieldType: FieldLegacyTypeEnum.DESCRIPTION,
   },
   {
     label: 'Amount',
     dataIndex: 'amount',
-    fieldType: FieldTypeEnum.AMOUNT,
+    fieldType: FieldLegacyTypeEnum.AMOUNT,
   },
-  { label: 'Checkbox', dataIndex: 'checkbox', fieldType: FieldTypeEnum.CHECKBOX },
-  { label: 'Date', dataIndex: 'date', fieldType: FieldTypeEnum.DATE },
+  { label: 'Checkbox', dataIndex: 'checkbox', fieldType: FieldLegacyTypeEnum.CHECKBOX },
+  { label: 'Date', dataIndex: 'date', fieldType: FieldLegacyTypeEnum.DATE },
 ];
+
+const validationSchema: yup.ObjectSchema<IDataType> = yup.object({
+  amount: yup.number().required('Amount is required'),
+  checkbox: yup
+    .array()
+    .of(
+      yup.object().shape({
+        checked: yup.boolean().optional(),
+        highlighted: yup.boolean().optional(),
+        label: yup.string().required(),
+        value: yup.string().required(),
+      }),
+    )
+    .test({
+      name: 'one-true',
+      message: 'At least one required',
+      test: (val) => (val ? val.some((entry) => (entry.checked || false) === true) : false),
+    })
+    .required(),
+  description: yup.string().optional(),
+  date: yup.date().required(),
+  percentage: yup.number().optional(),
+  year: yup.number().required(),
+});
 
 export const Highlighted = Template.bind({});
 Highlighted.args = {
-  title: 'Side by side enabled and highlighted',
   enableOldData: true,
   enableSideBySide: true,
-  initialData: initialData,
   fields: fields,
+  initialData: initialData,
   previousData: previousData,
+  title: 'useFormLegacy - Side by side enabled and highlighted',
+  validationSchema: validationSchema,
 };
 
 export const SideBySideEnabled = Template.bind({});
 SideBySideEnabled.args = {
-  title: 'Side by side enabled',
   enableSideBySide: true,
-  initialData: initialData,
   fields: fields,
+  initialData: initialData,
+  title: 'useFormLegacy - Side by side enabled',
+  validationSchema: validationSchema,
 };
 
 export const SideBySideDisabled = Template.bind({});
 SideBySideDisabled.args = {
-  title: 'Side by side disabled',
   enableSideBySide: false,
-  initialData: initialData,
   fields: fields,
+  initialData: initialData,
   previousData: previousData,
+  title: 'useFormLegacy - Side by side disabled',
+  validationSchema: validationSchema,
 };

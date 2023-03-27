@@ -4,7 +4,7 @@ import intersection from 'lodash/intersection';
 import isEqual from 'lodash/isEqual';
 import map from 'lodash/map';
 import sortBy from 'lodash/sortBy';
-import { AnyObject } from 'yup/lib/types';
+import * as yup from 'yup';
 
 import { IToggleEntry } from '../../Atoms/CheckBoxInput';
 import { FileStatusEnum, IFile } from '../../Atoms/FileInput';
@@ -23,24 +23,23 @@ import { TextField } from '../../Molecules/TextField';
 import { YearPickerField } from '../../Molecules/YearPickerField';
 import { EditableDataTable } from '../DataTable/EditableDataTable';
 import { LineEditableDataTable } from '../DataTable/LineEditableDataTable';
-import Highlighter from './Highlighter';
-import { FieldTypeEnum, IFieldProps } from './types';
-import { FieldError } from './yupResolver';
+import HighlighterLegacy from './HighlighterLegacy';
+import { FieldLegacyTypeEnum, IFieldLegacyProps } from './types';
 import { useRunAfterUpdate } from '../../../hooks';
 
-export interface IFormFieldProps<T> {
+export interface IFormFieldLegacyProps<T> {
   data: T;
   enableOldData?: boolean;
   enableSideBySide?: boolean;
-  field: IFieldProps<T>;
+  field: IFieldLegacyProps<T>;
   handleChange: (dataIndex: keyof T, newValue: T[keyof T]) => void;
   previousData?: T;
   requiredFromValidation?: boolean;
-  validationError?: Partial<Record<keyof T, FieldError>>;
+  validationError?: Partial<Record<keyof T, string>>;
   usePortal?: boolean;
 }
 
-const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
+const FormFieldLegacy = <T,>(props: IFormFieldLegacyProps<T>): ReactElement => {
   const {
     data,
     enableOldData,
@@ -53,35 +52,35 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
     validationError,
   } = props;
 
-  const errorMessage = validationError && validationError[field.dataIndex as keyof T]?.message;
+  const errorMessage = validationError && validationError[field.dataIndex as keyof T];
 
   const localUsePortal = usePortal === undefined ? true : usePortal;
 
   const runAfterUpdate = useRunAfterUpdate();
 
   switch (field.fieldType) {
-    case FieldTypeEnum.AMOUNT: {
+    case FieldLegacyTypeEnum.AMOUNT: {
       const shouldHighlight = previousData && previousData[field.dataIndex] !== data[field.dataIndex];
       return (
-        <Highlighter
+        <HighlighterLegacy
           enableOldData={enableOldData}
           enableSideBySide={enableSideBySide}
           oldData={previousData && previousData[field.dataIndex]}
           shouldHighlight={shouldHighlight}>
           <AmountField
             {...field}
-            mandatory={requiredFromValidation || field.mandatory}
+            mandatory={field.mandatory == undefined ? requiredFromValidation : field.mandatory}
             name={field.dataIndex.toString()}
             onChange={(newValue: number | undefined) => {
               handleChange(field.dataIndex, newValue as unknown as T[keyof T]);
             }}
-            inputValue={(data && (data[field.dataIndex] as unknown as string | number | undefined)) ?? undefined}
+            input={(data && (data[field.dataIndex] as unknown as string | number | undefined)) ?? undefined}
             errorMessage={errorMessage}
           />
-        </Highlighter>
+        </HighlighterLegacy>
       );
     }
-    case FieldTypeEnum.CHECKBOX: {
+    case FieldLegacyTypeEnum.CHECKBOX: {
       let shouldHighlight = false;
       const highlightedOldData =
         previousData &&
@@ -96,88 +95,88 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
           }
         });
       return (
-        <Highlighter
+        <HighlighterLegacy
           enableOldData={enableOldData}
           enableSideBySide={enableSideBySide}
           oldData={highlightedOldData}
           shouldHighlight={shouldHighlight}>
           <CheckboxField
             {...field}
-            mandatory={requiredFromValidation || field.mandatory}
+            mandatory={field.mandatory == undefined ? requiredFromValidation : field.mandatory}
             onChange={(newValue: Array<IToggleEntry> | undefined) => {
               handleChange(field.dataIndex, newValue as unknown as T[keyof T]);
             }}
-            inputValue={(data && (data[field.dataIndex] as unknown as Array<IToggleEntry>)) ?? undefined}
+            input={(data && (data[field.dataIndex] as unknown as Array<IToggleEntry>)) ?? undefined}
             errorMessage={errorMessage}
           />
-        </Highlighter>
+        </HighlighterLegacy>
       );
     }
-    case FieldTypeEnum.CUSTOM: {
+    case FieldLegacyTypeEnum.CUSTOM: {
       const shouldHighlight =
         previousData && field.isEqual && !field.isEqual(previousData[field.dataIndex], data[field.dataIndex]);
       return (
-        <Highlighter
+        <HighlighterLegacy
           enableOldData={enableOldData}
           enableSideBySide={enableSideBySide}
           oldData={previousData && previousData[field.dataIndex]}
           shouldHighlight={shouldHighlight}>
           <field.customField
             {...field}
-            inputValue={data[field.dataIndex]}
+            input={data[field.dataIndex]}
             onChange={(newValue: T[keyof T]) => {
               handleChange(field.dataIndex, newValue);
             }}
           />
-        </Highlighter>
+        </HighlighterLegacy>
       );
     }
-    case FieldTypeEnum.DATE: {
+    case FieldLegacyTypeEnum.DATE: {
       const shouldHighlight =
         previousData &&
         !isSameDay(previousData[field.dataIndex] as unknown as Date, data[field.dataIndex] as unknown as Date);
       return (
-        <Highlighter
+        <HighlighterLegacy
           enableOldData={enableOldData}
           enableSideBySide={enableSideBySide}
           oldData={previousData && previousData[field.dataIndex]}
           shouldHighlight={shouldHighlight}>
           <DatePickerField
             {...field}
-            mandatory={requiredFromValidation || field.mandatory}
+            mandatory={field.mandatory == undefined ? requiredFromValidation : field.mandatory}
             name={field.dataIndex.toString()}
             onChange={(newValue: Date | null) => {
               handleChange(field.dataIndex, newValue as unknown as T[keyof T]);
             }}
-            inputValue={(data && (data[field.dataIndex] as unknown as Date | null | undefined)) ?? undefined}
+            input={(data && (data[field.dataIndex] as unknown as Date | null | undefined)) ?? undefined}
             errorMessage={errorMessage}
             usePortal={localUsePortal}
           />
-        </Highlighter>
+        </HighlighterLegacy>
       );
     }
-    case FieldTypeEnum.DYNAMICSEARCH: {
+    case FieldLegacyTypeEnum.DYNAMICSEARCH: {
       const shouldHighlight = previousData && previousData[field.dataIndex] !== data[field.dataIndex];
       return (
-        <Highlighter
+        <HighlighterLegacy
           enableOldData={enableOldData}
           enableSideBySide={enableSideBySide}
           oldData={previousData && previousData[field.dataIndex]}
           shouldHighlight={shouldHighlight}>
           <DynamicSearchField
             {...field}
-            mandatory={requiredFromValidation || field.mandatory}
+            mandatory={field.mandatory == undefined ? requiredFromValidation : field.mandatory}
             name={field.dataIndex.toString()}
             onChange={(newValue: string | number | null | undefined) => {
               handleChange(field.dataIndex, newValue as unknown as T[keyof T]);
             }}
-            inputValue={(data && (data[field.dataIndex] as unknown as string | number | undefined)) ?? undefined}
+            input={(data && (data[field.dataIndex] as unknown as string | number | undefined)) ?? undefined}
             errorMessage={errorMessage}
           />
-        </Highlighter>
+        </HighlighterLegacy>
       );
     }
-    case FieldTypeEnum.FILE: {
+    case FieldLegacyTypeEnum.FILE: {
       const shouldHighlight =
         previousData &&
         ((previousData[field.dataIndex] as unknown as Array<IFile>).length !==
@@ -186,14 +185,14 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
             return (data[field.dataIndex] as unknown as Array<IFile>).includes(file);
           }));
       return (
-        <Highlighter
+        <HighlighterLegacy
           enableOldData={enableOldData}
           enableSideBySide={enableSideBySide}
           oldData={previousData && previousData[field.dataIndex]}
           shouldHighlight={shouldHighlight}>
           <FileField
             {...field}
-            mandatory={requiredFromValidation || field.mandatory}
+            mandatory={field.mandatory == undefined ? requiredFromValidation : field.mandatory}
             onChange={(newValue: Array<IFile>) => {
               handleChange(
                 field.dataIndex,
@@ -205,13 +204,13 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
             onDownload={field.onDownload}
             onFailure={field.onFailure}
             onSuccess={field.onSuccess}
-            inputValue={(data && (data[field.dataIndex] as unknown as Array<IFile>)) ?? undefined}
+            input={(data && (data[field.dataIndex] as unknown as Array<IFile>)) ?? undefined}
             errorMessage={errorMessage}
           />
-        </Highlighter>
+        </HighlighterLegacy>
       );
     }
-    case FieldTypeEnum.MULTISELECT: {
+    case FieldLegacyTypeEnum.MULTISELECT: {
       const { options, ...rest } = field;
       const localOptions = typeof options === 'function' ? options(data) : options;
       if (field.eraseValueWhenNotInOptions && data && data[field.dataIndex]) {
@@ -232,7 +231,7 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
           sortBy(data[field.dataIndex] as unknown as Array<string> | undefined),
         );
       return (
-        <Highlighter
+        <HighlighterLegacy
           enableOldData={enableOldData}
           enableSideBySide={enableSideBySide}
           oldData={previousData && (previousData[field.dataIndex] as unknown as Array<string> | undefined)}
@@ -240,81 +239,81 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
           <MultiSelectField
             {...rest}
             options={localOptions}
-            mandatory={requiredFromValidation || field.mandatory}
+            mandatory={field.mandatory == undefined ? requiredFromValidation : field.mandatory}
             name={field.dataIndex.toString()}
             onChange={(newValue: Array<string | number> | null | undefined) => {
               handleChange(field.dataIndex, newValue as unknown as T[keyof T]);
             }}
-            inputValue={(data && (data[field.dataIndex] as unknown as Array<string> | undefined)) ?? undefined}
+            input={(data && (data[field.dataIndex] as unknown as Array<string> | undefined)) ?? undefined}
             errorMessage={errorMessage}
           />
-        </Highlighter>
+        </HighlighterLegacy>
       );
     }
-    case FieldTypeEnum.NUMBER: {
+    case FieldLegacyTypeEnum.NUMBER: {
       const shouldHighlight = previousData && previousData[field.dataIndex] !== data[field.dataIndex];
       return (
-        <Highlighter
+        <HighlighterLegacy
           enableOldData={enableOldData}
           enableSideBySide={enableSideBySide}
           oldData={previousData && previousData[field.dataIndex]}
           shouldHighlight={shouldHighlight}>
           <AmountField
             {...field}
-            mandatory={requiredFromValidation || field.mandatory}
+            mandatory={field.mandatory == undefined ? requiredFromValidation : field.mandatory}
             name={field.dataIndex.toString()}
             onChange={(newValue: number | undefined) => {
               handleChange(field.dataIndex, newValue as unknown as T[keyof T]);
             }}
-            inputValue={data[field.dataIndex] as unknown as string | number | undefined}
+            input={data[field.dataIndex] as unknown as string | number | undefined}
             errorMessage={errorMessage}
           />
-        </Highlighter>
+        </HighlighterLegacy>
       );
     }
-    case FieldTypeEnum.PERCENTAGE: {
+    case FieldLegacyTypeEnum.PERCENTAGE: {
       const shouldHighlight = previousData && previousData[field.dataIndex] !== data[field.dataIndex];
       return (
-        <Highlighter
+        <HighlighterLegacy
           enableOldData={enableOldData}
           enableSideBySide={enableSideBySide}
           oldData={previousData && previousData[field.dataIndex]}
           shouldHighlight={shouldHighlight}>
           <PercentageField
             {...field}
-            mandatory={requiredFromValidation || field.mandatory}
+            mandatory={field.mandatory == undefined ? requiredFromValidation : field.mandatory}
             name={field.dataIndex.toString()}
             onChange={(newValue: number | undefined) => {
               handleChange(field.dataIndex, newValue as unknown as T[keyof T]);
             }}
-            inputValue={(data && (data[field.dataIndex] as unknown as string | number | undefined)) ?? undefined}
+            input={(data && (data[field.dataIndex] as unknown as string | number | undefined)) ?? undefined}
             errorMessage={errorMessage}
           />
-        </Highlighter>
+        </HighlighterLegacy>
       );
     }
-    case FieldTypeEnum.RICHTEXT: {
+    case FieldLegacyTypeEnum.RICHTEXT: {
       const shouldHighlight = previousData && previousData[field.dataIndex] !== data[field.dataIndex];
       return (
-        <Highlighter
+        <HighlighterLegacy
           enableOldData={enableOldData}
           enableSideBySide={enableSideBySide}
           oldData={previousData && previousData[field.dataIndex]}
           shouldHighlight={shouldHighlight}>
           <RichTextField
             {...field}
-            mandatory={requiredFromValidation || field.mandatory}
+            mandatory={field.mandatory == undefined ? requiredFromValidation : field.mandatory}
             name={field.dataIndex.toString()}
             onChange={(newValue: string) => {
               handleChange(field.dataIndex, newValue as unknown as T[keyof T]);
             }}
-            inputValue={(data && (data[field.dataIndex] as unknown as string)) ?? undefined}
+            input={(data && (data[field.dataIndex] as unknown as string)) ?? undefined}
             errorMessage={errorMessage}
           />
-        </Highlighter>
+        </HighlighterLegacy>
       );
     }
-    case FieldTypeEnum.SELECT: {
+    case FieldLegacyTypeEnum.SELECT: {
       const { options, ...rest } = field;
       const localOptions = typeof options === 'function' ? options(data) : options;
       if (field.eraseValueWhenNotInOptions && data && data[field.dataIndex]) {
@@ -326,7 +325,7 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
       }
       const shouldHighlight = previousData && previousData[field.dataIndex] !== data[field.dataIndex];
       return (
-        <Highlighter
+        <HighlighterLegacy
           enableOldData={enableOldData}
           enableSideBySide={enableSideBySide}
           oldData={previousData && previousData[field.dataIndex]}
@@ -334,18 +333,18 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
           <SelectField
             {...rest}
             options={localOptions}
-            mandatory={requiredFromValidation || field.mandatory}
+            mandatory={field.mandatory == undefined ? requiredFromValidation : field.mandatory}
             name={field.dataIndex.toString()}
             onChange={(newValue: string | number | null | undefined) => {
               handleChange(field.dataIndex, newValue as unknown as T[keyof T]);
             }}
-            inputValue={(data && (data[field.dataIndex] as unknown as string | undefined)) ?? undefined}
+            input={(data && (data[field.dataIndex] as unknown as string | undefined)) ?? undefined}
             errorMessage={errorMessage}
           />
-        </Highlighter>
+        </HighlighterLegacy>
       );
     }
-    case FieldTypeEnum.SWITCH: {
+    case FieldLegacyTypeEnum.SWITCH: {
       let shouldHighlight = false;
       const highlightedOldData =
         previousData &&
@@ -360,26 +359,26 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
           }
         });
       return (
-        <Highlighter
+        <HighlighterLegacy
           enableOldData={enableOldData}
           enableSideBySide={enableSideBySide}
           oldData={highlightedOldData}
           shouldHighlight={shouldHighlight}>
           <SwitchField
             {...field}
-            mandatory={requiredFromValidation || field.mandatory}
+            mandatory={field.mandatory == undefined ? requiredFromValidation : field.mandatory}
             onChange={(newValue: IToggleEntry[]) => {
               handleChange(field.dataIndex, newValue as unknown as T[keyof T]);
             }}
-            inputValue={(data && (data[field.dataIndex] as unknown as IToggleEntry[])) ?? undefined}
+            input={(data && (data[field.dataIndex] as unknown as IToggleEntry[])) ?? undefined}
             errorMessage={errorMessage}
           />
-        </Highlighter>
+        </HighlighterLegacy>
       );
     }
-    case FieldTypeEnum.LINE_EDITABLE_TABLE: {
+    case FieldLegacyTypeEnum.LINE_EDITABLE_TABLE: {
       return (
-        <Highlighter
+        <HighlighterLegacy
           enableOldData={enableOldData}
           enableSideBySide={enableSideBySide}
           oldData={previousData && previousData[field.dataIndex]}
@@ -397,14 +396,14 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
                 handleChange(field.dataIndex, data[field.dataIndex]);
               },
             }}
-            data={data && (data[field.dataIndex] as unknown as Array<AnyObject>)}
+            data={data && (data[field.dataIndex] as unknown as Array<yup.AnyObject>)}
           />
-        </Highlighter>
+        </HighlighterLegacy>
       );
     }
-    case FieldTypeEnum.EDITABLE_TABLE: {
+    case FieldLegacyTypeEnum.EDITABLE_TABLE: {
       return (
-        <Highlighter
+        <HighlighterLegacy
           enableOldData={enableOldData}
           enableSideBySide={enableSideBySide}
           oldData={previousData && previousData[field.dataIndex]}
@@ -425,76 +424,76 @@ const FormField = <T,>(props: IFormFieldProps<T>): ReactElement => {
                 handleChange(field.dataIndex, data[field.dataIndex] as unknown as T[keyof T]);
               },
             }}
-            data={data && (data[field.dataIndex] as unknown as Array<AnyObject>)}
+            data={data && (data[field.dataIndex] as unknown as Array<yup.AnyObject>)}
           />
-        </Highlighter>
+        </HighlighterLegacy>
       );
     }
-    case FieldTypeEnum.TEXT: {
+    case FieldLegacyTypeEnum.TEXT: {
       const shouldHighlight = previousData && previousData[field.dataIndex] !== data[field.dataIndex];
       return (
-        <Highlighter
+        <HighlighterLegacy
           enableOldData={enableOldData}
           enableSideBySide={enableSideBySide}
           oldData={previousData && previousData[field.dataIndex]}
           shouldHighlight={shouldHighlight}>
           <TextField
             {...field}
-            mandatory={requiredFromValidation || field.mandatory}
+            mandatory={field.mandatory == undefined ? requiredFromValidation : field.mandatory}
             name={field.dataIndex.toString()}
             onChange={(newValue: string) => {
               handleChange(field.dataIndex, newValue as unknown as T[keyof T]);
             }}
-            inputValue={(data && (data[field.dataIndex] as unknown as string | undefined)) ?? undefined}
+            input={(data && (data[field.dataIndex] as unknown as string | undefined)) ?? undefined}
             errorMessage={errorMessage}
           />
-        </Highlighter>
+        </HighlighterLegacy>
       );
     }
-    case FieldTypeEnum.TEXTAREA: {
+    case FieldLegacyTypeEnum.TEXTAREA: {
       const shouldHighlight = previousData && previousData[field.dataIndex] !== data[field.dataIndex];
       return (
-        <Highlighter
+        <HighlighterLegacy
           enableOldData={enableOldData}
           enableSideBySide={enableSideBySide}
           oldData={previousData && previousData[field.dataIndex]}
           shouldHighlight={shouldHighlight}>
           <TextAreaField
             {...field}
-            mandatory={requiredFromValidation || field.mandatory}
+            mandatory={field.mandatory == undefined ? requiredFromValidation : field.mandatory}
             name={field.dataIndex.toString()}
             onChange={(newValue: string) => {
               handleChange(field.dataIndex, newValue as unknown as T[keyof T]);
             }}
-            inputValue={(data && (data[field.dataIndex] as unknown as string | undefined)) ?? undefined}
+            input={(data && (data[field.dataIndex] as unknown as string | undefined)) ?? undefined}
             errorMessage={errorMessage}
           />
-        </Highlighter>
+        </HighlighterLegacy>
       );
     }
-    case FieldTypeEnum.YEAR: {
+    case FieldLegacyTypeEnum.YEAR: {
       const shouldHighlight = previousData && previousData[field.dataIndex] !== data[field.dataIndex];
       return (
-        <Highlighter
+        <HighlighterLegacy
           enableOldData={enableOldData}
           enableSideBySide={enableSideBySide}
           oldData={previousData && previousData[field.dataIndex]}
           shouldHighlight={shouldHighlight}>
           <YearPickerField
             {...field}
-            mandatory={requiredFromValidation || field.mandatory}
+            mandatory={field.mandatory == undefined ? requiredFromValidation : field.mandatory}
             name={field.dataIndex.toString()}
             onChange={(newValue: number | undefined) => {
               handleChange(field.dataIndex, newValue as unknown as T[keyof T]);
             }}
-            inputValue={(data && (data[field.dataIndex] as unknown as number | undefined)) ?? undefined}
+            input={(data && (data[field.dataIndex] as unknown as number | undefined)) ?? undefined}
             errorMessage={errorMessage}
             usePortal={localUsePortal}
           />
-        </Highlighter>
+        </HighlighterLegacy>
       );
     }
   }
 };
 
-export default memo(FormField) as typeof FormField;
+export default memo(FormFieldLegacy) as typeof FormFieldLegacy;

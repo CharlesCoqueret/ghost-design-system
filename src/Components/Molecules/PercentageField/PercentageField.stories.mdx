@@ -29,15 +29,15 @@ import PercentageField from './PercentageField';
 </Alert>
 
 export const Template = (args) => {
-  const [localValue, setLocalValue] = useState(args.inputValue);
-  return <PercentageField {...args} inputValue={localValue} onChange={setLocalValue} />;
+  const [localValue, setLocalValue] = useState(args.input);
+  return <PercentageField {...args} input={localValue} onChange={setLocalValue} />;
 };
 
 <Canvas withSource='open'>
   <Story
     name='PercentageField'
     args={{
-      inputValue: 1234567890,
+      input: 1234567890,
       label: 'Percentage field',
       placeholder: 'Placeholder percentage',
       suffix: '€',
@@ -53,7 +53,7 @@ export const Template = (args) => {
 <Canvas withSource='open'>
   <Template
     fieldSize={4}
-    inputValue={1234567890}
+    input={1234567890}
     label='Percentage field in read only with label size = 6 and field size = 4'
     labelSize={6}
     readOnly
@@ -66,7 +66,7 @@ export const Template = (args) => {
 <Canvas withSource='open'>
   <Template
     errorMessage='This percentage is on error'
-    inputValue={1234567890}
+    input={1234567890}
     label='Percentage field in read only with label size = 6 and field size = 4'
     placeholder='Placeholder percentage'
     suffix='€'
@@ -78,7 +78,7 @@ export const Template = (args) => {
 <Canvas withSource='open'>
   <Template
     helperText='Helper text'
-    inputValue={12}
+    input={12}
     label='Percentage field with helper and maximum value: 100'
     mandatory={true}
     maxValue={100}
@@ -92,7 +92,7 @@ export const Template = (args) => {
   <Template
     helperText='Helper text'
     highlighted={true}
-    inputValue={1234567890}
+    input={1234567890}
     label='Percentage field highlighted'
     readOnly={true}
     suffix='€'
@@ -104,7 +104,7 @@ export const Template = (args) => {
 <Canvas withSource='open'>
   <Template
     disabled={true}
-    inputValue={1234567890}
+    input={1234567890}
     label="Percentage field disabled and ' as thousand separator"
     suffix='€'
     thousandSeparator="'"

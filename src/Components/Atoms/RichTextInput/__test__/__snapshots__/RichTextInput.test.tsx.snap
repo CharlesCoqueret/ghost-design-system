@@ -48,7 +48,7 @@ exports[`RichTextInput Component RichTextInput renders 1`] = `
 </div>
 `;
 
-exports[`RichTextInput Component RichTextInput renders in readOnly with inputValue 1`] = `
+exports[`RichTextInput Component RichTextInput renders in readOnly with input 1`] = `
 <div>
   <div
     class="gdsRichTextInputContainer readonly"

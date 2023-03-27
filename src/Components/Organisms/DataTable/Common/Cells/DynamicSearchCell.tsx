@@ -17,7 +17,7 @@ const DynamicSearchCell = <T,>(props: ICellProps<T, IColumnDynamicSearch<T>>): R
       <DynamicSearchField
         dataTestId={dataTestId}
         ellipsis={column.ellipsis}
-        inputValue={displayValue}
+        input={displayValue}
         isClearable={column.isClearable}
         name={column.title.toString()}
         noOptionsMessage={column.noOptionsMessage}

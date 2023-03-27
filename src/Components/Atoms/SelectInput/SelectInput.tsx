@@ -21,14 +21,14 @@ export interface ISelectInputProps {
   /** Highlight value in readonly mode (optional, default: false) */
   highlighted?: boolean;
   /** Input string value (optional, default: undefined) */
-  inputValue?: string | number | null | undefined;
+  input?: string | number | null | undefined;
   /** Provide the ability to clear the value (optional, default: false) */
   isClearable?: boolean;
   /** Is in Error (optional, default: false) */
   isInError?: boolean;
   /** Maximum height of the menu in px (optional, default: 300) */
   maxMenuHeight?: number;
-  /** Name of select input (optional, default: undefined) */
+  /** Name of input (optional, default: undefined) */
   name?: string;
   /** Handler of value changes (optional, default: undefined) */
   onChange?: (selectedOption: string | number | null | undefined) => void;
@@ -49,7 +49,7 @@ const SelectInput = (props: ISelectInputProps): ReactElement => {
     disabled,
     ellipsis,
     highlighted,
-    inputValue,
+    input,
     isClearable,
     isInError,
     maxMenuHeight,
@@ -62,7 +62,7 @@ const SelectInput = (props: ISelectInputProps): ReactElement => {
   } = props;
 
   if (readOnly || disabled) {
-    const displayValue = (inputValue && options.find((option) => option.value === inputValue)?.label) || '-';
+    const displayValue = (input && options.find((option) => option.value === input)?.label) || '-';
     return (
       <div
         className={classnames(
@@ -125,7 +125,7 @@ const SelectInput = (props: ISelectInputProps): ReactElement => {
         placeholder={placeholder}
         menuPortalTarget={usePortal ? document.querySelector('body') : undefined}
         styles={customStyles({ isInError: isInError && !(disabled && readOnly) })}
-        value={options.find((option) => option.value === inputValue) || null}
+        value={options.find((option) => option.value === input) || null}
       />
     </div>
   );
@@ -136,7 +136,7 @@ SelectInput.defaultProps = {
   disabled: false,
   ellipsis: false,
   highlighted: false,
-  inputValue: undefined,
+  input: undefined,
   isClearable: false,
   isInError: false,
   maxMenuHeight: 300,

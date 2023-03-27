@@ -9,7 +9,7 @@ exports[`RichTextCell component RichTextCell handles changes 1`] = `
           class=""
         >
           <div>
-            {"dataTestId":"DATA-TEST-ID","inputValue":"text","name":"data","readOnly":false}
+            {"dataTestId":"DATA-TEST-ID","input":"text","name":"data","readOnly":false}
           </div>
         </td>
       </tr>
@@ -27,7 +27,7 @@ exports[`RichTextCell component RichTextCell handles changes 2`] = `
           class=""
         >
           <div>
-            {"dataTestId":"DATA-TEST-ID","inputValue":"text","name":"data","readOnly":false}
+            {"dataTestId":"DATA-TEST-ID","input":"text","name":"data","readOnly":false}
           </div>
         </td>
       </tr>
@@ -45,7 +45,7 @@ exports[`RichTextCell component RichTextCell renders 1`] = `
           class=""
         >
           <div>
-            {"inputValue":"text 1","name":"data","readOnly":true}
+            {"input":"text 1","name":"data","readOnly":true}
           </div>
         </td>
       </tr>
@@ -82,7 +82,7 @@ exports[`RichTextCell component RichTextCell renders hidden 1`] = `
           style="display: none;"
         >
           <div>
-            {"inputValue":"text 1","name":"data","readOnly":true}
+            {"input":"text 1","name":"data","readOnly":true}
           </div>
         </td>
       </tr>
@@ -118,7 +118,7 @@ exports[`RichTextCell component RichTextCell renders with forced value 1`] = `
           class=""
         >
           <div>
-            {"inputValue":"text 2","name":"data","readOnly":true}
+            {"input":"text 2","name":"data","readOnly":true}
           </div>
         </td>
       </tr>

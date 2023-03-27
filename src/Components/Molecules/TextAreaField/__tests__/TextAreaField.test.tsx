@@ -11,12 +11,12 @@ describe('TextAreaField Component', () => {
   });
 
   it('TextAreaField renders with error', () => {
-    const { container } = render(<TextAreaField inputValue='INPUT-VALUE' errorMessage='ERROR-MESSAGE' name='NAME' />);
+    const { container } = render(<TextAreaField input='INPUT-VALUE' errorMessage='ERROR-MESSAGE' name='NAME' />);
     expect(container).toMatchSnapshot();
   });
 
   it('TextAreaField renders in readonly', () => {
-    const { container } = render(<TextAreaField readOnly fieldSize={6} inputValue='INPUT-VALUE' name='NAME' />);
+    const { container } = render(<TextAreaField readOnly fieldSize={6} input='INPUT-VALUE' name='NAME' />);
     expect(container).toMatchSnapshot();
   });
 

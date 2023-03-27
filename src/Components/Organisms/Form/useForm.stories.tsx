@@ -1,54 +1,44 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, useState } from 'react';
 import { ComponentStory } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
 import * as yup from 'yup';
 import cloneDeep from 'lodash/cloneDeep';
 
 import { IToggleEntry } from '../../Atoms/CheckBoxInput/types';
 import { ColorButtonEnum } from '../../Molecules/Button';
-import { FileStatusEnum, IFile } from '../../Atoms/FileInput';
-import { Link } from '../../Atoms/Link';
-import { Typography } from '../../Atoms/Typography';
+import { AmountField } from '../../Molecules/AmountField/AmountField';
+import { CheckboxField } from '../../Molecules/CheckboxField/CheckboxField';
+import { DatePickerField } from '../../Molecules/DatePickerField/DatePickerField';
 
-import useForm, { IUseFormProps } from './useForm';
-import { FieldTypeEnum, IFieldAndLayoutProps, IFieldEditableTableProps, IFieldLineEditableTableProps } from './types';
-import { ColumnType } from '../DataTable/Common';
 import Section from '../../Atoms/Layout/Section';
 import { ActionBar } from '../ActionBar';
+import useForm, { IUseFormProps } from './useForm';
+import Form from './Form';
 
 export default {
   title: 'Organism/useForm',
-};
-
-type IDataTableType = {
-  number: number;
-  text: string;
 };
 
 interface IDataType {
   amount: number | undefined;
   checkbox: Array<IToggleEntry>;
   date: Date | undefined | null;
-  description?: string;
-  dynamicsearch?: string;
-  file: Array<IFile>;
-  multiselect: Array<string> | undefined;
-  number: number | undefined;
-  percentage: number | undefined;
-  richtext: string;
-  select: string | undefined;
-  switch: Array<IToggleEntry> | undefined;
-  table: Array<IDataTableType>;
-  fulleditabletable: Array<IDataTableType>;
-  text: string | undefined;
-  textarea: string | undefined;
-  year: number | undefined;
 }
 
 const Template: ComponentStory<(props: IUseFormProps<IDataType>) => ReactElement> = (
   args: IUseFormProps<IDataType>,
 ) => {
-  const { formElement, getData, isModified, submit, reset } = useForm<IDataType>(args);
+  const [values, setValues] = useState(args.values);
+
+  const { fieldsProps, handleSubmit, handleReset, hasBeenSubmitted } = useForm<IDataType>({
+    ...args,
+    values: values,
+    onChange: (key, value) => {
+      console.log(key, value);
+      setValues((prev) => {
+        return { ...prev, [key]: value };
+      });
+    },
+  });
   return (
     <>
       <ActionBar
@@ -58,29 +48,36 @@ const Template: ComponentStory<(props: IUseFormProps<IDataType>) => ReactElement
             label: 'Submit',
             color: ColorButtonEnum.PRIMARY,
             onClick: () => {
-              action(`Submit ${JSON.stringify(submit())}`);
+              console.log(`Submit ${JSON.stringify(handleSubmit())}`);
             },
           },
           {
             label: 'Reset',
             color: ColorButtonEnum.SECONDARY,
             onClick: () => {
-              action(`Reset ${JSON.stringify(reset())}`);
+              console.log(`Reset ${JSON.stringify(handleReset())}`);
             },
           },
         ]}
       />
       <Section title='Form' collapsible={false}>
-        {formElement}
-      </Section>
-      <Section title='Data' openInitially={false} separator={false}>
-        <pre>Has been modified: {isModified().toString()}</pre>
-        Current data:
-        <textarea
-          style={{ width: '100%', boxSizing: 'border-box', height: '300px' }}
-          value={JSON.stringify(getData(), null, 2)}
-          readOnly
-        />
+        <Form>
+          <AmountField
+            label='Amount'
+            {...fieldsProps.amount}
+            errorMessage={hasBeenSubmitted ? fieldsProps.amount.errorMessage : undefined}
+          />
+          <CheckboxField
+            label='Checkbox'
+            {...fieldsProps.checkbox}
+            errorMessage={hasBeenSubmitted ? fieldsProps.checkbox.errorMessage : undefined}
+          />
+          <DatePickerField
+            label='DatePicker'
+            {...fieldsProps.date}
+            errorMessage={hasBeenSubmitted ? fieldsProps.date.errorMessage : undefined}
+          />
+        </Form>
       </Section>
     </>
   );
@@ -91,61 +88,22 @@ const checkboxOption = [
   { value: 'value 2', checked: true, label: 'label 2' },
 ];
 
-const switchOption = [
-  { value: 'value 1', label: 'label 1' },
-  { value: 'value 2', checked: true, label: 'label 2' },
-];
-
-const options = [
-  { value: 'CASE', label: 'case' },
-  { value: 'CLAIM', label: 'claim' },
-  { value: 'COMPANY', label: 'company' },
-  { value: 'COUNTRY', label: 'country' },
-];
-
-const initialData: IDataType = {
+const initialValues: IDataType = {
   amount: 100000,
   checkbox: cloneDeep(checkboxOption),
   date: new Date(),
-  description: 'Description',
-  dynamicsearch: 'value1',
-  file: [{ uid: '1', name: 'test file.png', size: 1234, type: 'image/png', status: FileStatusEnum.DONE }],
-  multiselect: options.map((option) => option.value),
-  number: 10,
-  percentage: 50,
-  richtext: '<p><span style="font-size: 16px;"><strong>Test</strong></span></p><p>Test 2</p>',
-  select: options[2].value,
-  switch: cloneDeep(switchOption),
-  table: [
-    { number: 1, text: 'text 1' },
-    { number: 2, text: 'text 2' },
-    { number: 3, text: 'text 3' },
-  ],
-  fulleditabletable: [
-    { number: 1, text: 'text 1' },
-    { number: 2, text: 'text 2' },
-    { number: 3, text: 'text 3' },
-  ],
-  text: 'text',
-  textarea:
-    'Lorem ipsum dolor sit amet. Ut voluptas reiciendis vel praesentium laborum hic voluptas asperiores nam ' +
-    'rerum nihil obcaecati labore. Id praesentium porro ea placeat rerum aut tempore totam aut illum cupiditate sed ' +
-    'laborum explicabo. Hic explicabo voluptatibus qui repellat fugiat ex voluptatum fuga qui architecto atque quo ' +
-    'illum quas aut facilis nesciunt? Ut suscipit rerum ut perferendis nihil ea autem unde est enim veniam nam odio ' +
-    'tempora.',
-  year: 1984,
 };
 
-const validationSchema: yup.SchemaOf<IDataType> = yup.object({
-  amount: yup.number().required(),
+const validationSchema: yup.ObjectSchema<IDataType> = yup.object({
+  amount: yup.number().required('Amount is required'),
   checkbox: yup
     .array()
     .of(
       yup.object().shape({
         checked: yup.boolean().optional(),
         highlighted: yup.boolean().optional(),
-        label: yup.mixed().required(),
-        value: yup.string().required() as yup.StringSchema<string>,
+        label: yup.string().required(),
+        value: yup.string().required(),
       }),
     )
     .test({
@@ -154,238 +112,11 @@ const validationSchema: yup.SchemaOf<IDataType> = yup.object({
       test: (val) => (val ? val.some((entry) => (entry.checked || false) === true) : false),
     })
     .required(),
-  date: yup.date().min(new Date('01/01/1980'), 'Date needs to be after Jan 1 1980').required(),
-  description: yup.string().optional(),
-  dynamicsearch: yup.mixed().optional(),
-  file: yup
-    .array()
-    .of(
-      yup.object({
-        id: yup.string().optional(),
-        uid: yup.string().optional(),
-        name: yup.string().required(),
-        size: yup.number().required(),
-        type: yup.string().required(),
-        status: yup.mixed().optional(),
-        progress: yup.number().optional(),
-        error: yup.string().optional(),
-      }),
-    )
-    .min(1)
-    .required(),
-  multiselect: yup.array().of(yup.mixed()).min(1, 'At least one item required').required(),
-  number: yup.number().required('Value for number is required').min(5, 'Minimum value is 5'),
-  percentage: yup.number().required(),
-  richtext: yup.string().required(),
-  select: yup.string().required(),
-  switch: yup
-    .array()
-    .of(
-      yup.object().shape({
-        checked: yup.boolean().optional(),
-        highlighted: yup.boolean().optional(),
-        label: yup.mixed().required(),
-        value: yup.string().required() as yup.StringSchema<string>,
-      }),
-    )
-    .test({
-      name: 'one-true',
-      message: 'At least one required',
-      test: (val) => (val ? val.some((entry) => (entry.checked || false) === true) : false),
-    })
-    .required(),
-  table: yup
-    .array()
-    .of(yup.mixed() as yup.SchemaOf<IDataTableType>)
-    .min(1)
-    .required(),
-  fulleditabletable: yup
-    .array()
-    .of(yup.mixed() as yup.SchemaOf<IDataTableType>)
-    .min(1)
-    .required(),
-  text: yup
-    .string()
-    .required()
-    .transform((value) => value.trim())
-    .min(3, 'minimun length is 3 without spaces at the end of beginning'),
-  textarea: yup
-    .string()
-    .required()
-    .transform((value) => value.trim())
-    .min(3, 'minimun length is 10 without spaces at the end of beginning'),
-  year: yup.number().min(1984, 'Date needs to be after 1984').required(),
+  date: yup.date().required('Date is required').min(new Date('01/01/1980'), 'Date needs to be after Jan 1 1980'),
 });
-
-const fields: Array<IFieldAndLayoutProps<IDataType>> = [
-  {
-    description: (
-      <div>
-        <Typography.Text>Any description</Typography.Text>
-        <Link to='https://hamster.dance/hamsterdance/' text='external link' />
-        <Link to='#' text='internal link' />
-      </div>
-    ),
-    fieldType: FieldTypeEnum.DESCRIPTION,
-  },
-  {
-    label: 'Amount',
-    dataIndex: 'amount',
-    fieldType: FieldTypeEnum.AMOUNT,
-  },
-  { label: 'Checkbox', dataIndex: 'checkbox', fieldType: FieldTypeEnum.CHECKBOX },
-  { label: 'Date', dataIndex: 'date', fieldType: FieldTypeEnum.DATE },
-  {
-    label: 'DynamicSearch',
-    dataIndex: 'dynamicsearch',
-    fieldType: FieldTypeEnum.DYNAMICSEARCH,
-    noOptionsMessage: () => 'No option',
-    resolveValue: (value) => {
-      if (value === 'value1') return Promise.resolve({ value: 'value1', label: 'Label 1' });
-      else if (value === 'value2') return Promise.resolve({ value: 'value2', label: 'Label 2' });
-      else if (value === 'value3') return Promise.resolve({ value: 'value3', label: 'Label 3' });
-      return Promise.resolve(undefined);
-    },
-    searchOptions: () => {
-      return Promise.resolve([
-        { value: 'value1', label: 'Label 1' },
-        { value: 'value2', label: 'Label 2' },
-        { value: 'value3', label: 'Label 3' },
-      ]);
-    },
-  },
-  {
-    dataIndex: 'file',
-    fieldType: FieldTypeEnum.FILE,
-    helperText: 'does not support data reset as uploaded files are now uploaded, and deleted files are deleted',
-    label: 'File',
-    onDelete: () => {
-      return Promise.resolve();
-    },
-    requestMethod: 'POST',
-    requestUrl: 'https://file-upload-tester.herokuapp.com/upload/file',
-  },
-  {
-    label: 'Multiselect',
-    dataIndex: 'multiselect',
-    fieldType: FieldTypeEnum.MULTISELECT,
-    numberOfItemLabel: '{} item selected',
-    numberOfItemsLabel: '{} items selected',
-    options: options,
-  },
-  {
-    label: 'Number',
-    dataIndex: 'number',
-    fieldType: FieldTypeEnum.NUMBER,
-    mandatory: true,
-  },
-  {
-    label: 'Percentage',
-    dataIndex: 'percentage',
-    fieldType: FieldTypeEnum.PERCENTAGE,
-  },
-  {
-    label: 'Richtext',
-    helperText: 'does not support data reset for performance reason, reload the form if this is needed',
-    dataIndex: 'richtext',
-    fieldType: FieldTypeEnum.RICHTEXT,
-  },
-  { label: 'Select', dataIndex: 'select', fieldType: FieldTypeEnum.SELECT, options: options },
-  { label: 'Switch', dataIndex: 'switch', fieldType: FieldTypeEnum.SWITCH },
-  {
-    collapsible: false,
-    label: 'Line editable table',
-    fields: [
-      {
-        columns: [
-          {
-            dataIndex: 'number',
-            editable: true,
-            title: 'Number',
-            type: ColumnType.NUMBER,
-          },
-          {
-            dataIndex: 'text',
-            editable: true,
-            title: 'Text',
-            type: ColumnType.TEXT,
-          },
-        ],
-        dataIndex: 'table',
-        extra: {
-          validationSchema: yup.object({
-            number: yup.number().required(),
-            text: yup.string().required(),
-          }),
-          onRowDelete: () => {
-            // Enabling deletion
-            return;
-          },
-          canAddNewLine: () => {
-            // Enabling Add new line
-            return true;
-          },
-          onNewLine: () => ({ number: 100, text: 'text' }),
-        },
-        fieldType: FieldTypeEnum.LINE_EDITABLE_TABLE,
-        label: 'Line editable table',
-      } as IFieldLineEditableTableProps<IDataType, IDataTableType>,
-    ],
-    fieldType: FieldTypeEnum.SECTION,
-  },
-  {
-    collapsible: false,
-    label: 'Editable table',
-    fields: [
-      {
-        columns: [
-          {
-            dataIndex: 'number',
-            editable: true,
-            title: 'Number',
-            type: ColumnType.NUMBER,
-          },
-          {
-            dataIndex: 'text',
-            editable: true,
-            title: 'Text',
-            type: ColumnType.TEXT,
-          },
-        ],
-        dataIndex: 'fulleditabletable',
-        extra: {
-          validationSchema: yup.object({
-            number: yup.number().required(),
-            text: yup.string().required(),
-          }),
-          onEdit: () => {
-            // Enabling edition
-            return;
-          },
-          onRowDelete: () => {
-            // Enabling deletion
-            return;
-          },
-          canAddNewLine: () => {
-            // Enabling Add new line
-            return true;
-          },
-          onNewLine: () => ({ number: 100, text: 'text' }),
-        },
-        fieldType: FieldTypeEnum.EDITABLE_TABLE,
-        label: 'Editable table',
-      } as IFieldEditableTableProps<IDataType, IDataTableType>,
-    ],
-    fieldType: FieldTypeEnum.SECTION,
-  },
-  { label: 'Text', dataIndex: 'text', fieldType: FieldTypeEnum.TEXT },
-  { label: 'Textarea', dataIndex: 'textarea', fieldType: FieldTypeEnum.TEXTAREA },
-  { label: 'Year', dataIndex: 'year', fieldType: FieldTypeEnum.YEAR },
-];
 
 export const Default = Template.bind({});
 Default.args = {
-  initialData: initialData,
-  fields: fields,
+  values: initialValues,
   validationSchema: validationSchema,
 };

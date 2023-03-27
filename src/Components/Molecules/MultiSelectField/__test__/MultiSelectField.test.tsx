@@ -19,7 +19,7 @@ describe('MultiSelectField Component', () => {
   it('MultiSelectField renders with values in readonly', () => {
     const { container } = render(
       <MultiSelectField
-        inputValue={['VALUE']}
+        input={['VALUE']}
         name='name'
         numberOfItemLabel='{} item selected'
         numberOfItemsLabel='{} items selected'
@@ -33,7 +33,7 @@ describe('MultiSelectField Component', () => {
   it('MultiSelectField renders with values in disabled highligted', () => {
     const { container } = render(
       <MultiSelectField
-        inputValue={['VALUE']}
+        input={['VALUE']}
         name='name'
         numberOfItemLabel='{} item selected'
         numberOfItemsLabel='{} items selected'
@@ -48,7 +48,7 @@ describe('MultiSelectField Component', () => {
   it('MultiSelectField renders with values with fieldSize and inline', () => {
     const { container } = render(
       <MultiSelectField
-        inputValue={['VALUE']}
+        input={['VALUE']}
         name='name'
         numberOfItemLabel='{} item selected'
         numberOfItemsLabel='{} items selected'

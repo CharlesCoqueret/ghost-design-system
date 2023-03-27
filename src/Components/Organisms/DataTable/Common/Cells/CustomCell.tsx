@@ -13,7 +13,7 @@ const CustomCell = <T,>(props: ICellProps<T, IColumnCustom<T>>): ReactElement =>
   const displayValue = forcedValue
     ? forcedValue
     : column.customRender({
-        inputValue: row && row[column.dataIndex],
+        input: row && row[column.dataIndex],
         onChange: onChange,
         readOnly: !isCurrentlyEditedRow,
       });

@@ -15,7 +15,7 @@ describe('yupResolver', () => {
     const values = {};
 
     expect(yupResolver(schema, { strict: true, abortEarly: false }, values)).toStrictEqual({
-      number: { message: 'Value for number is required', type: 'required' },
+      number: 'Value for number is required',
     });
   });
 

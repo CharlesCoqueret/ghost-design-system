@@ -18,7 +18,7 @@ import { ITextFieldProps } from '../../../Molecules/TextField/TextField';
 import { ITextAreaFieldProps } from '../../../Molecules/TextAreaField/TextAreaField';
 import { IYearPickerFieldProps } from '../../../Molecules/YearPickerField/YearPickerField';
 import { IOption } from '../../../Atoms/SelectInput';
-import { IFieldSectionProps } from '../../Form/types';
+import { IFieldSectionLegacyProps } from '../../FormLegacy/types';
 
 export enum ColumnType {
   AMOUNT = 'amount',
@@ -157,7 +157,7 @@ export interface IColumnCustom<T> extends IColumn {
   customRender: <
     U extends {
       highlighted?: boolean;
-      inputValue?: T[keyof T];
+      input?: T[keyof T];
       onChange?: (value: T[keyof T]) => void;
       readOnly?: boolean;
     },
@@ -314,7 +314,7 @@ export interface IColumnRichText<T>
 
 export interface IColumnSection<T>
   extends IColumn,
-    Pick<IFieldSectionProps<T>, 'collapsible' | 'fields' | 'label' | 'openInitially'> {
+    Pick<IFieldSectionLegacyProps<T>, 'collapsible' | 'fields' | 'label' | 'openInitially'> {
   /** Entry of the value in T (type: keyof T) */
   dataIndex: keyof T;
   /** Column type */
@@ -429,7 +429,7 @@ export interface IExtraStaticDataTableProps<T> {
   };
 }
 
-export interface IExtraLineEditableDataTableProps<T> extends IExtraStaticDataTableProps<T> {
+export interface IExtraLineEditableDataTableProps<T extends yup.AnyObject> extends IExtraStaticDataTableProps<T> {
   /** Action column width (as a CSSProperty) (optional, default: undefined) */
   actionColumnWidth?: string;
   /** Disable tabbing outside modal (optional, default: true) */
@@ -470,7 +470,7 @@ export interface IExtraLineEditableDataTableProps<T> extends IExtraStaticDataTab
   /** Method used to when the new line button is clicked to get initial values (optional, default: undefined) */
   onNewLine?: () => T;
   /** Validation schema to be used in the modal (if this conditions are not met, the line cannot be updated) (optional, default: undefined) */
-  validationSchema: yup.SchemaOf<T>;
+  validationSchema: yup.ObjectSchema<T>;
   /** localization (optional, default:
    *    actionColumn: 'Actions'
    *    addRow: 'Add row'

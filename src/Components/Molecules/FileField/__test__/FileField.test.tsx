@@ -13,7 +13,7 @@ describe('FileField Component', () => {
   it('FileField renders with values in readonly', () => {
     const { container } = render(
       <FileField
-        inputValue={[{ uid: '1', name: 'file.pdf', size: 1234, type: 'application/pdf', status: FileStatusEnum.DONE }]}
+        input={[{ uid: '1', name: 'file.pdf', size: 1234, type: 'application/pdf', status: FileStatusEnum.DONE }]}
         readOnly
         requestMethod='POST'
         requestUrl='test.url'
@@ -25,7 +25,7 @@ describe('FileField Component', () => {
   it('FileField renders with values in disabled highligted', () => {
     const { container } = render(
       <FileField
-        inputValue={[{ uid: '1', name: 'file.pdf', size: 1234, type: 'application/pdf', status: FileStatusEnum.ERROR }]}
+        input={[{ uid: '1', name: 'file.pdf', size: 1234, type: 'application/pdf', status: FileStatusEnum.ERROR }]}
         disabled
         highlighted
         requestMethod='POST'
@@ -38,7 +38,7 @@ describe('FileField Component', () => {
   it('FileField renders with values with fieldSize and inline', () => {
     const { container } = render(
       <FileField
-        inputValue={[{ uid: '1', name: 'file.pdf', size: 1234, type: 'application/pdf' }]}
+        input={[{ uid: '1', name: 'file.pdf', size: 1234, type: 'application/pdf' }]}
         inline
         fieldSize={6}
         requestMethod='POST'

@@ -22,51 +22,52 @@ jest.mock('suneditor-react', () => {});
 jest.mock('suneditor-react/dist', () => {});
 jest.mock('suneditor-react/dist/types/lang', () => {});
 
-import Form from '../Form';
-import { FieldTypeEnum } from '../types';
+import FormLegacy from '../FormLegacy';
+import { FieldLegacyTypeEnum } from '../types';
 
-describe('Form Component', () => {
-  it('Form renders with description and sections', () => {
+describe('FormLegacy Component', () => {
+  it('FormLegacy renders with description and sections', () => {
     const handleDataChangeMock = jest.fn();
     const { container } = render(
-      <Form
+      <FormLegacy
         fields={[
           {
             label: 'Title',
-            fieldType: FieldTypeEnum.SECTION,
+            fieldType: FieldLegacyTypeEnum.SECTION,
             fields: [],
           },
           {
             description: <>Description</>,
-            fieldType: FieldTypeEnum.DESCRIPTION,
+            fieldType: FieldLegacyTypeEnum.DESCRIPTION,
           },
           {
             description: <>Hidden function description</>,
-            fieldType: FieldTypeEnum.DESCRIPTION,
+            fieldType: FieldLegacyTypeEnum.DESCRIPTION,
             hidden: () => true,
           },
           {
             description: <>Hidden description</>,
-            fieldType: FieldTypeEnum.DESCRIPTION,
+            fieldType: FieldLegacyTypeEnum.DESCRIPTION,
             hidden: true,
           },
         ]}
         handleDataChange={handleDataChangeMock}
         initialData={{}}
+        validationSchema={yup.object({})}
       />,
     );
 
     expect(container).toMatchSnapshot();
   });
 
-  it('Form renders with mandatory field', () => {
+  it('FormLegacy renders with mandatory field', () => {
     const handleDataChangeMock = jest.fn();
     const { container } = render(
-      <Form<{ number?: number }>
+      <FormLegacy<{ number?: number }>
         fields={[
           {
             label: 'Number',
-            fieldType: FieldTypeEnum.NUMBER,
+            fieldType: FieldLegacyTypeEnum.NUMBER,
             dataIndex: 'number',
           },
         ]}
@@ -79,26 +80,29 @@ describe('Form Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('Form renders without validation schema', () => {
+  it('FormLegacy renders without validation schema', () => {
     const handleDataChangeMock = jest.fn();
-    console.warn = jest.fn();
+    console.error = jest.fn();
 
     const { container } = render(
-      <Form<{ number?: number }>
+      <FormLegacy<{ number?: number }>
         fields={[
           {
             label: 'Number',
-            fieldType: FieldTypeEnum.NUMBER,
+            fieldType: FieldLegacyTypeEnum.NUMBER,
             dataIndex: 'number',
           },
         ]}
         handleDataChange={handleDataChangeMock}
         initialData={{ number: undefined }}
+        validationSchema={undefined as never}
       />,
     );
 
     expect(container).toMatchSnapshot();
-    expect(console.warn).toBeCalledTimes(1);
-    expect(console.warn).toBeCalledWith('could not retrieve if "number" is mandatory');
+    expect(console.error).toBeCalledTimes(1);
+    expect(console.error).toBeCalledWith(
+      'could not retrieve if "number" is mandatory. It looks like you haven\'t defined a proper validation schema.',
+    );
   });
 });

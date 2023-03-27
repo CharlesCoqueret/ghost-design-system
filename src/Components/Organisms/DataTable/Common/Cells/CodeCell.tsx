@@ -17,7 +17,7 @@ const CodeCell = <T,>(props: ICellProps<T, IColumnCode<T>>): ReactElement => {
       <TextField
         dataTestId={dataTestId}
         ellipsis={column.ellipsis}
-        inputValue={displayValue}
+        input={displayValue}
         name={String(column.dataIndex)}
         readOnly
       />

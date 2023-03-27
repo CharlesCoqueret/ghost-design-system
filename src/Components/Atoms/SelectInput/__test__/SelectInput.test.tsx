@@ -24,7 +24,7 @@ describe('SelectInput Component', () => {
 
     const { container } = render(
       <SelectInput
-        inputValue={'OPTION1'}
+        input={'OPTION1'}
         isClearable
         name='SELECT'
         onChange={onChangeMock}
@@ -50,7 +50,7 @@ describe('SelectInput Component', () => {
     const { container } = render(
       <SelectInput
         dataTestId='DATA-TEST-ID'
-        inputValue='OPTION1'
+        input='OPTION1'
         isClearable
         name='SELECT'
         onChange={onChangeMock}
@@ -94,7 +94,7 @@ describe('SelectInput Component', () => {
     const { container } = render(
       <SelectInput
         name='SELECT'
-        inputValue='OPTION2'
+        input='OPTION2'
         options={[
           { value: 'OPTION1', label: 'option 1' },
           { value: 'OPTION2', label: 'option 2' },
@@ -109,7 +109,7 @@ describe('SelectInput Component', () => {
     const { container } = render(
       <SelectInput
         name='SELECT'
-        inputValue='OPTION-VALUE-NOT-AVAILABLE'
+        input='OPTION-VALUE-NOT-AVAILABLE'
         options={[
           { value: 'OPTION1', label: 'option 1' },
           { value: 'OPTION2', label: 'option 2' },
@@ -124,7 +124,7 @@ describe('SelectInput Component', () => {
     const { container } = render(
       <SelectInput
         name='SELECT'
-        inputValue='OPTION-VALUE-NOT-AVAILABLE'
+        input='OPTION-VALUE-NOT-AVAILABLE'
         options={[
           { value: 'OPTION1', label: 'option 1' },
           { value: 'OPTION2', label: 'option 2' },
@@ -139,7 +139,7 @@ describe('SelectInput Component', () => {
     const { container } = render(
       <SelectInput
         highlighted
-        inputValue='OPTION-VALUE-NOT-AVAILABLE'
+        input='OPTION-VALUE-NOT-AVAILABLE'
         name='SELECT'
         options={[
           { value: 'OPTION1', label: 'option 1' },
@@ -154,7 +154,7 @@ describe('SelectInput Component', () => {
   it('SelectInput renders with fieldsize, inError', () => {
     const { container } = render(
       <SelectInput
-        inputValue='OPTION-VALUE-NOT-AVAILABLE'
+        input='OPTION-VALUE-NOT-AVAILABLE'
         isInError
         name='SELECT'
         options={[
@@ -170,7 +170,7 @@ describe('SelectInput Component', () => {
     const { container } = render(
       <SelectInput
         disabled
-        inputValue='OPTION-VALUE-NOT-AVAILABLE'
+        input='OPTION-VALUE-NOT-AVAILABLE'
         name='SELECT'
         options={[
           { value: 'OPTION1', label: 'option 1' },

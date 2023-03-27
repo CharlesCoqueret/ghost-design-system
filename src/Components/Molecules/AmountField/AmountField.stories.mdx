@@ -22,15 +22,15 @@ import AmountField from './AmountField';
 </Alert>
 
 export const Template = (args) => {
-  const [localValue, setLocalValue] = useState(args.inputValue);
-  return <AmountField {...args} inputValue={localValue} onChange={setLocalValue} />;
+  const [localValue, setLocalValue] = useState(args.input);
+  return <AmountField {...args} input={localValue} onChange={setLocalValue} />;
 };
 
 <Canvas withSource='open'>
   <Story
     name='AmountField'
     args={{
-      inputValue: 1234567890,
+      input: 1234567890,
       label: 'Amount field',
       placeholder: 'Placeholder amount',
       suffix: '€',
@@ -46,7 +46,7 @@ export const Template = (args) => {
 <Canvas withSource='open'>
   <Template
     fieldSize={4}
-    inputValue={1234567890}
+    input={1234567890}
     label='Amount field in read only with label size = 6 and field size = 4'
     labelSize={6}
     readOnly
@@ -59,7 +59,7 @@ export const Template = (args) => {
 <Canvas withSource='open'>
   <Template
     errorMessage='This amount is on error'
-    inputValue={1234567890}
+    input={1234567890}
     label='Amount field in read only with label size = 6 and field size = 4'
     placeholder='Placeholder amount'
     suffix='€'
@@ -71,7 +71,7 @@ export const Template = (args) => {
 <Canvas withSource='open'>
   <Template
     helperText='Helper text'
-    inputValue={12}
+    input={12}
     label='Amount field with helper and maximum value: 100'
     mandatory={true}
     maxValue={100}
@@ -85,7 +85,7 @@ export const Template = (args) => {
   <Template
     helperText='Helper text'
     highlighted={true}
-    inputValue={1234567890}
+    input={1234567890}
     label='Amount field highlighted'
     readOnly={true}
     suffix='€'
@@ -97,7 +97,7 @@ export const Template = (args) => {
 <Canvas withSource='open'>
   <Template
     disabled={true}
-    inputValue={1234567890}
+    input={1234567890}
     label="Amount field disabled and ' as thousand separator"
     suffix='€'
     thousandSeparator="'"

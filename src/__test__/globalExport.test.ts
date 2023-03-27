@@ -49,6 +49,7 @@ describe('Global export test', () => {
     expect(Global.Col).toBeDefined();
     expect(Global.Row).toBeDefined();
     expect(Global.Section).toBeDefined();
+    expect(Global.Separator).toBeDefined();
 
     expect(Global.Link).toBeDefined();
 
@@ -73,14 +74,23 @@ describe('Global export test', () => {
 
     expect(Global.TextInput).toBeDefined();
 
+    expect(Global.ThemeProvider).toBeDefined();
+
     expect(Global.Tooltip).toBeDefined();
     expect(Global.MenuDirectionEnum).toBeDefined();
 
     expect(Global.Typography).toBeDefined();
+    expect(Global.TextTypeEnum).toBeDefined();
   });
 
   it('Molecules', () => {
+    expect(Global.Alert).toBeDefined();
+    expect(Global.AlertType).toBeDefined();
+
     expect(Global.AmountField).toBeDefined();
+
+    expect(Global.Banner).toBeDefined();
+    expect(Global.BannerType).toBeDefined();
 
     expect(Global.Button).toBeDefined();
     expect(Global.ColorButtonEnum).toBeDefined();
@@ -107,6 +117,9 @@ describe('Global export test', () => {
 
     expect(Global.SwitchField).toBeDefined();
 
+    expect(Global.toast).toBeDefined();
+    expect(Global.toast.Toaster).toBeDefined();
+
     expect(Global.TextAreaField).toBeDefined();
 
     expect(Global.TextField).toBeDefined();
@@ -128,21 +141,32 @@ describe('Global export test', () => {
 
     expect(Global.StaticDataTable).toBeDefined();
 
-    expect(Global.FieldTypeEnum).toBeDefined();
     expect(Global.Form).toBeDefined();
-    expect(Global.Highlighter).toBeDefined();
     expect(Global.useForm).toBeDefined();
+    expect(Global.Highlighter).toBeDefined();
+
+    expect(Global.FieldLegacyTypeEnum).toBeDefined();
+    expect(Global.FormLegacy).toBeDefined();
+    expect(Global.HighlighterLegacy).toBeDefined();
+    expect(Global.useFormLegacy).toBeDefined();
 
     expect(Global.FilterTypeEnum).toBeDefined();
     expect(Global.Filter).toBeDefined();
     expect(Global.FilterItem).toBeDefined();
 
     expect(Global.NavBar).toBeDefined();
+    expect(Global.NavBarMenu).toBeDefined();
+    expect(Global.NavBarUtilities).toBeDefined();
     expect(Global.NavItem).toBeDefined();
 
     expect(Global.SideBarSection).toBeDefined();
     expect(Global.SideBarItem).toBeDefined();
     expect(Global.SideBar).toBeDefined();
+  });
+
+  it('Templates', () => {
+    expect(Global.Portfolio).toBeDefined();
+    expect(Global.PortfolioWrapped).toBeDefined();
   });
 
   it('hooks', () => {

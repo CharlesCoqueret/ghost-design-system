@@ -21,9 +21,11 @@ export interface ICheckboxInputProps {
   /** Inline options (optional, default: false) */
   inline?: boolean;
   /** Input value */
-  inputValue: Array<IToggleEntry>;
+  input: Array<IToggleEntry>;
   /** Error indication should be present (optional, default: undefined) */
   isInError?: boolean;
+  /** Base name of input (optional, default: undefined) */
+  name?: string;
   /** Handler of value changes (optional, default: undefined) */
   onChange?: (values: Array<IToggleEntry>) => void;
   /** Read only field (optional, default: false) */
@@ -31,12 +33,12 @@ export interface ICheckboxInputProps {
 }
 
 const CheckboxInput = (props: ICheckboxInputProps): ReactElement => {
-  const { className, dataTestId, disabled, ellipsis, highlighted, inline, inputValue, onChange, readOnly } = props;
-  const [ids] = useState(() => inputValue.map(() => uniqueId('checkbox-')));
+  const { className, dataTestId, disabled, ellipsis, highlighted, inline, input, onChange, readOnly } = props;
+  const [ids] = useState(() => input.map(() => uniqueId('checkbox-')));
 
   /** flip the check status of the checkbox that was checked */
   const updateState = (optionValue: string) => {
-    const newState = inputValue.map((option) => {
+    const newState = input.map((option) => {
       if (option.value === optionValue) {
         option.checked = !option.checked;
       }
@@ -61,7 +63,7 @@ const CheckboxInput = (props: ICheckboxInputProps): ReactElement => {
 
   return (
     <div className={classnames(styles.container, { [styles.inlineContainer]: inline }, className)}>
-      {inputValue.map((option, index) => {
+      {input.map((option, index) => {
         return (
           <label
             className={classnames(styles.label, {
@@ -86,6 +88,8 @@ const CheckboxInput = (props: ICheckboxInputProps): ReactElement => {
                 [styles.disabled]: disabled,
                 [styles.readOnly]: readOnly,
               })}
+              // TODO use input type checkbox hidden with icon to show the state instead of a div
+              // name={name !== undefined ? `${name}-${option.value}` : undefined}
               id={ids[index]}
               role='checkbox'>
               <Icon
@@ -110,7 +114,7 @@ CheckboxInput.defaultProps = {
   ellipsis: false,
   highlighted: false,
   inline: false,
-  inputValue: [],
+  input: [],
   isInError: false,
   onChange: undefined,
   readOnly: false,

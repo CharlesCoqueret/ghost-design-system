@@ -183,8 +183,8 @@ jest.mock('../../../Molecules/YearPickerField', () => {
   };
 });
 
-import FormField from '../FormField';
-import { FieldTypeEnum } from '../types';
+import FormFieldLegacy from '../FormFieldLegacy';
+import { FieldLegacyTypeEnum } from '../types';
 
 afterEach(() => {
   onChangeHandlerAmountField = undefined;
@@ -204,18 +204,18 @@ afterEach(() => {
   onChangeHandlerYearField = undefined;
 });
 
-describe('FormField Component', () => {
-  it('FormField renders amount field', () => {
+describe('FormFieldLegacy Component', () => {
+  it('FormFieldLegacy renders amount field', () => {
     const handleChangeMock = jest.fn();
     const container = render(
-      <FormField
+      <FormFieldLegacy
         enableOldData
         enableSideBySide
         data={{ amount: 50 }}
-        field={{ dataIndex: 'amount', fieldType: FieldTypeEnum.AMOUNT, label: 'amount' }}
+        field={{ dataIndex: 'amount', fieldType: FieldLegacyTypeEnum.AMOUNT, label: 'amount' }}
         handleChange={handleChangeMock}
-        previousData={{ amount: '0' }}
-        validationError={{ amount: { message: 'ERROR' } }}
+        previousData={{ amount: 0 }}
+        validationError={{ amount: 'ERROR' }}
       />,
     );
 
@@ -229,11 +229,11 @@ describe('FormField Component', () => {
     expect(handleChangeMock).toBeCalledWith('amount', 100);
 
     container.rerender(
-      <FormField
+      <FormFieldLegacy
         data={{ amount: undefined, field: 'field' }}
-        field={{ dataIndex: 'amount', fieldType: FieldTypeEnum.AMOUNT, label: 'amount' }}
+        field={{ dataIndex: 'amount', fieldType: FieldLegacyTypeEnum.AMOUNT, label: 'amount' }}
         handleChange={handleChangeMock}
-        validationError={{ field: { message: 'ERROR' } }}
+        validationError={{ field: 'ERROR' }}
       />,
     );
 
@@ -241,10 +241,10 @@ describe('FormField Component', () => {
     expect(handleChangeMock).toBeCalledTimes(1);
   });
 
-  it('FormField renders checkbox field', () => {
+  it('FormFieldLegacy renders checkbox field', () => {
     const handleChangeMock = jest.fn();
     const container = render(
-      <FormField
+      <FormFieldLegacy
         enableOldData
         enableSideBySide
         data={{
@@ -254,7 +254,7 @@ describe('FormField Component', () => {
             { value: 'value3', label: 'label3', checked: false },
           ],
         }}
-        field={{ dataIndex: 'checkbox', fieldType: FieldTypeEnum.CHECKBOX, label: 'checkbox' }}
+        field={{ dataIndex: 'checkbox', fieldType: FieldLegacyTypeEnum.CHECKBOX, label: 'checkbox' }}
         handleChange={handleChangeMock}
         previousData={{
           checkbox: [
@@ -264,7 +264,7 @@ describe('FormField Component', () => {
             { value: 'value4', label: 'label4' },
           ],
         }}
-        validationError={{ checkbox: { message: 'ERROR' } }}
+        validationError={{ checkbox: 'ERROR' }}
       />,
     );
 
@@ -286,9 +286,9 @@ describe('FormField Component', () => {
     ]);
 
     container.rerender(
-      <FormField
+      <FormFieldLegacy
         data={{ checkbox: undefined }}
-        field={{ dataIndex: 'checkbox', fieldType: FieldTypeEnum.CHECKBOX, label: 'checkbox' }}
+        field={{ dataIndex: 'checkbox', fieldType: FieldLegacyTypeEnum.CHECKBOX, label: 'checkbox' }}
         handleChange={handleChangeMock}
       />,
     );
@@ -297,12 +297,12 @@ describe('FormField Component', () => {
     expect(handleChangeMock).toBeCalledTimes(1);
   });
 
-  it('FormField renders custom field', () => {
+  it('FormFieldLegacy renders custom field', () => {
     const handleChangeMock = jest.fn();
     let onChangeHandlerCustomField: ((newValue: number) => void) | undefined;
 
     const container = render(
-      <FormField
+      <FormFieldLegacy
         enableOldData
         enableSideBySide
         data={{ custom: 1 }}
@@ -312,7 +312,7 @@ describe('FormField Component', () => {
             return <div>Mocked CustomField props: {JSON.stringify(props)}</div>;
           },
           dataIndex: 'custom',
-          fieldType: FieldTypeEnum.CUSTOM,
+          fieldType: FieldLegacyTypeEnum.CUSTOM,
           label: 'custom',
           isEqual: (previous?: number, current?: number) => {
             return previous === current;
@@ -320,7 +320,7 @@ describe('FormField Component', () => {
         }}
         handleChange={handleChangeMock}
         previousData={{ custom: 0 }}
-        validationError={{ custom: { message: 'ERROR' } }}
+        validationError={{ custom: 'ERROR' }}
       />,
     );
 
@@ -334,14 +334,14 @@ describe('FormField Component', () => {
     expect(handleChangeMock).toBeCalledWith('custom', 2);
 
     container.rerender(
-      <FormField
+      <FormFieldLegacy
         data={{ custom: undefined }}
         field={{
           customField: (props: unknown) => {
             return <div>Mocked CustomField props: {JSON.stringify(props)}</div>;
           },
           dataIndex: 'custom',
-          fieldType: FieldTypeEnum.CUSTOM,
+          fieldType: FieldLegacyTypeEnum.CUSTOM,
           label: 'custom',
           isEqual: (previous?: number, current?: number) => {
             return previous === current;
@@ -355,22 +355,22 @@ describe('FormField Component', () => {
     expect(handleChangeMock).toBeCalledTimes(1);
   });
 
-  it('FormField renders date field', () => {
+  it('FormFieldLegacy renders date field', () => {
     const handleChangeMock = jest.fn();
 
     const container = render(
-      <FormField
+      <FormFieldLegacy
         enableOldData
         enableSideBySide
         data={{ date: new Date('2022-04-12T00:00:00.000Z') }}
         field={{
           dataIndex: 'date',
-          fieldType: FieldTypeEnum.DATE,
+          fieldType: FieldLegacyTypeEnum.DATE,
           label: 'date',
         }}
         handleChange={handleChangeMock}
         previousData={{ date: new Date('1984-09-24T00:00:00.000Z') }}
-        validationError={{ date: { message: 'ERROR' } }}
+        validationError={{ date: 'ERROR' }}
       />,
     );
 
@@ -384,11 +384,11 @@ describe('FormField Component', () => {
     expect(handleChangeMock).toBeCalledWith('date', new Date('2022-04-10T00:00:00.000Z'));
 
     container.rerender(
-      <FormField
+      <FormFieldLegacy
         data={{ date: undefined }}
         field={{
           dataIndex: 'date',
-          fieldType: FieldTypeEnum.DATE,
+          fieldType: FieldLegacyTypeEnum.DATE,
           label: 'date',
         }}
         handleChange={handleChangeMock}
@@ -399,20 +399,20 @@ describe('FormField Component', () => {
     expect(handleChangeMock).toBeCalledTimes(1);
   });
 
-  it('FormField renders dynamic search field', () => {
+  it('FormFieldLegacy renders dynamic search field', () => {
     const handleChangeMock = jest.fn();
     const noOptionsMessageMock = jest.fn();
     const resolveValueMock = jest.fn();
     const searchOptionsMock = jest.fn();
 
     const container = render(
-      <FormField
+      <FormFieldLegacy
         enableOldData
         enableSideBySide
         data={{ dynamicsearch: 'value1' }}
         field={{
           dataIndex: 'dynamicsearch',
-          fieldType: FieldTypeEnum.DYNAMICSEARCH,
+          fieldType: FieldLegacyTypeEnum.DYNAMICSEARCH,
           label: 'dynamicsearch',
           noOptionsMessage: noOptionsMessageMock,
           resolveValue: resolveValueMock,
@@ -420,7 +420,7 @@ describe('FormField Component', () => {
         }}
         handleChange={handleChangeMock}
         previousData={{ dynamicsearch: 'value2' }}
-        validationError={{ dynamicsearch: { message: 'ERROR' } }}
+        validationError={{ dynamicsearch: 'ERROR' }}
       />,
     );
 
@@ -434,11 +434,11 @@ describe('FormField Component', () => {
     expect(handleChangeMock).toBeCalledWith('dynamicsearch', 'value3');
 
     container.rerender(
-      <FormField
+      <FormFieldLegacy
         data={{ dynamicsearch: undefined }}
         field={{
           dataIndex: 'dynamicsearch',
-          fieldType: FieldTypeEnum.DYNAMICSEARCH,
+          fieldType: FieldLegacyTypeEnum.DYNAMICSEARCH,
           label: 'dynamicsearch',
           noOptionsMessage: noOptionsMessageMock,
           resolveValue: resolveValueMock,
@@ -452,18 +452,18 @@ describe('FormField Component', () => {
     expect(handleChangeMock).toBeCalledTimes(1);
   });
 
-  it('FormField renders file field', () => {
+  it('FormFieldLegacy renders file field', () => {
     const handleChangeMock = jest.fn();
     const onDeleteMock = jest.fn();
 
     const container = render(
-      <FormField
+      <FormFieldLegacy
         enableOldData
         enableSideBySide
         data={{ file: [{ name: 'file1', size: 1, type: 'type1', status: FileStatusEnum.DONE }] }}
         field={{
           dataIndex: 'file',
-          fieldType: FieldTypeEnum.FILE,
+          fieldType: FieldLegacyTypeEnum.FILE,
           label: 'file',
           onDelete: onDeleteMock,
           requestMethod: 'POST',
@@ -471,7 +471,7 @@ describe('FormField Component', () => {
         }}
         handleChange={handleChangeMock}
         previousData={{ file: [{ name: 'file2', size: 2, type: 'type2', status: FileStatusEnum.DONE }] }}
-        validationError={{ file: { message: 'ERROR' } }}
+        validationError={{ file: 'ERROR' }}
       />,
     );
 
@@ -491,11 +491,11 @@ describe('FormField Component', () => {
     ]);
 
     container.rerender(
-      <FormField
+      <FormFieldLegacy
         data={{ file: undefined }}
         field={{
           dataIndex: 'file',
-          fieldType: FieldTypeEnum.FILE,
+          fieldType: FieldLegacyTypeEnum.FILE,
           label: 'file',
           onDelete: onDeleteMock,
           requestMethod: 'POST',
@@ -509,16 +509,16 @@ describe('FormField Component', () => {
     expect(handleChangeMock).toBeCalledTimes(1);
   });
 
-  it('FormField renders multi select field', () => {
+  it('FormFieldLegacy renders multi select field', () => {
     const handleChangeMock = jest.fn();
     const container = render(
-      <FormField
+      <FormFieldLegacy
         enableOldData
         enableSideBySide
         data={{ multiselect: ['value1'] }}
         field={{
           dataIndex: 'multiselect',
-          fieldType: FieldTypeEnum.MULTISELECT,
+          fieldType: FieldLegacyTypeEnum.MULTISELECT,
           label: 'multiselect',
           numberOfItemLabel: '{} item selected',
           numberOfItemsLabel: '{} items selected',
@@ -529,7 +529,7 @@ describe('FormField Component', () => {
         }}
         handleChange={handleChangeMock}
         previousData={{ multiselect: ['value2'] }}
-        validationError={{ multiselect: { message: 'ERROR' } }}
+        validationError={{ multiselect: 'ERROR' }}
       />,
     );
 
@@ -543,11 +543,11 @@ describe('FormField Component', () => {
     expect(handleChangeMock).toBeCalledWith('multiselect', ['value1', 'value2']);
 
     container.rerender(
-      <FormField
+      <FormFieldLegacy
         data={{ multiselect: undefined }}
         field={{
           dataIndex: 'multiselect',
-          fieldType: FieldTypeEnum.MULTISELECT,
+          fieldType: FieldLegacyTypeEnum.MULTISELECT,
           label: 'multiselect',
           numberOfItemLabel: '{} item selected',
           numberOfItemsLabel: '{} items selected',
@@ -564,12 +564,12 @@ describe('FormField Component', () => {
     expect(handleChangeMock).toBeCalledTimes(1);
 
     container.rerender(
-      <FormField
+      <FormFieldLegacy
         data={{ multiselect: ['value-invalid'] }}
         field={{
           dataIndex: 'multiselect',
           eraseValueWhenNotInOptions: true,
-          fieldType: FieldTypeEnum.MULTISELECT,
+          fieldType: FieldLegacyTypeEnum.MULTISELECT,
           label: 'multiselect',
           numberOfItemLabel: '{} item selected',
           numberOfItemsLabel: '{} items selected',
@@ -587,17 +587,17 @@ describe('FormField Component', () => {
     expect(handleChangeMock).toBeCalledWith('multiselect', []);
   });
 
-  it('FormField renders number field', () => {
+  it('FormFieldLegacy renders number field', () => {
     const handleChangeMock = jest.fn();
     const container = render(
-      <FormField
+      <FormFieldLegacy
         enableOldData
         enableSideBySide
         data={{ number: 50 }}
-        field={{ dataIndex: 'number', fieldType: FieldTypeEnum.NUMBER, label: 'number' }}
+        field={{ dataIndex: 'number', fieldType: FieldLegacyTypeEnum.NUMBER, label: 'number' }}
         handleChange={handleChangeMock}
         previousData={{ number: '0' }}
-        validationError={{ number: { message: 'ERROR' } }}
+        validationError={{ number: 'ERROR' }}
       />,
     );
 
@@ -611,9 +611,9 @@ describe('FormField Component', () => {
     expect(handleChangeMock).toBeCalledWith('number', 100);
 
     container.rerender(
-      <FormField
+      <FormFieldLegacy
         data={{ number: undefined }}
-        field={{ dataIndex: 'number', fieldType: FieldTypeEnum.NUMBER, label: 'number' }}
+        field={{ dataIndex: 'number', fieldType: FieldLegacyTypeEnum.NUMBER, label: 'number' }}
         handleChange={handleChangeMock}
       />,
     );
@@ -622,17 +622,17 @@ describe('FormField Component', () => {
     expect(handleChangeMock).toBeCalledTimes(1);
   });
 
-  it('FormField renders percentage field', () => {
+  it('FormFieldLegacy renders percentage field', () => {
     const handleChangeMock = jest.fn();
     const container = render(
-      <FormField
+      <FormFieldLegacy
         enableOldData
         enableSideBySide
         data={{ percentage: 50 }}
-        field={{ dataIndex: 'percentage', fieldType: FieldTypeEnum.PERCENTAGE, label: 'percentage' }}
+        field={{ dataIndex: 'percentage', fieldType: FieldLegacyTypeEnum.PERCENTAGE, label: 'percentage' }}
         handleChange={handleChangeMock}
         previousData={{ percentage: '0' }}
-        validationError={{ percentage: { message: 'ERROR' } }}
+        validationError={{ percentage: 'ERROR' }}
       />,
     );
 
@@ -646,9 +646,9 @@ describe('FormField Component', () => {
     expect(handleChangeMock).toBeCalledWith('percentage', 100);
 
     container.rerender(
-      <FormField
+      <FormFieldLegacy
         data={{ percentage: undefined }}
-        field={{ dataIndex: 'percentage', fieldType: FieldTypeEnum.PERCENTAGE, label: 'percentage' }}
+        field={{ dataIndex: 'percentage', fieldType: FieldLegacyTypeEnum.PERCENTAGE, label: 'percentage' }}
         handleChange={handleChangeMock}
       />,
     );
@@ -657,17 +657,17 @@ describe('FormField Component', () => {
     expect(handleChangeMock).toBeCalledTimes(1);
   });
 
-  it('FormField renders rich text field', () => {
+  it('FormFieldLegacy renders rich text field', () => {
     const handleChangeMock = jest.fn();
     const container = render(
-      <FormField
+      <FormFieldLegacy
         enableOldData
         enableSideBySide
         data={{ richtext: 'richtext' }}
-        field={{ dataIndex: 'richtext', fieldType: FieldTypeEnum.RICHTEXT, label: 'richtext' }}
+        field={{ dataIndex: 'richtext', fieldType: FieldLegacyTypeEnum.RICHTEXT, label: 'richtext' }}
         handleChange={handleChangeMock}
         previousData={{ richtext: 'old richtext' }}
-        validationError={{ richtext: { message: 'ERROR' } }}
+        validationError={{ richtext: 'ERROR' }}
       />,
     );
 
@@ -681,9 +681,9 @@ describe('FormField Component', () => {
     expect(handleChangeMock).toBeCalledWith('richtext', 'new richtext');
 
     container.rerender(
-      <FormField
+      <FormFieldLegacy
         data={{ richtext: undefined }}
-        field={{ dataIndex: 'richtext', fieldType: FieldTypeEnum.RICHTEXT, label: 'richtext' }}
+        field={{ dataIndex: 'richtext', fieldType: FieldLegacyTypeEnum.RICHTEXT, label: 'richtext' }}
         handleChange={handleChangeMock}
       />,
     );
@@ -692,16 +692,16 @@ describe('FormField Component', () => {
     expect(handleChangeMock).toBeCalledTimes(1);
   });
 
-  it('FormField renders select field', () => {
+  it('FormFieldLegacy renders select field', () => {
     const handleChangeMock = jest.fn();
     const container = render(
-      <FormField
+      <FormFieldLegacy
         enableOldData
         enableSideBySide
         data={{ select: 'value1' }}
         field={{
           dataIndex: 'select',
-          fieldType: FieldTypeEnum.SELECT,
+          fieldType: FieldLegacyTypeEnum.SELECT,
           label: 'select',
           options: [
             { value: 'value1', label: 'label1' },
@@ -710,7 +710,7 @@ describe('FormField Component', () => {
         }}
         handleChange={handleChangeMock}
         previousData={{ select: 'value1' }}
-        validationError={{ select: { message: 'ERROR' } }}
+        validationError={{ select: 'ERROR' }}
       />,
     );
 
@@ -724,11 +724,11 @@ describe('FormField Component', () => {
     expect(handleChangeMock).toBeCalledWith('select', 'value2');
 
     container.rerender(
-      <FormField
+      <FormFieldLegacy
         data={{ select: undefined }}
         field={{
           dataIndex: 'select',
-          fieldType: FieldTypeEnum.SELECT,
+          fieldType: FieldLegacyTypeEnum.SELECT,
           label: 'select',
           options: [
             { value: 'value1', label: 'label1' },
@@ -743,12 +743,12 @@ describe('FormField Component', () => {
     expect(handleChangeMock).toBeCalledTimes(1);
 
     container.rerender(
-      <FormField
+      <FormFieldLegacy
         data={{ select: 'value-invalid' }}
         field={{
           dataIndex: 'select',
           eraseValueWhenNotInOptions: true,
-          fieldType: FieldTypeEnum.SELECT,
+          fieldType: FieldLegacyTypeEnum.SELECT,
           label: 'select',
           options: () => [
             { value: 'value1', label: 'label1' },
@@ -764,10 +764,10 @@ describe('FormField Component', () => {
     expect(handleChangeMock).toBeCalledWith('select', undefined);
   });
 
-  it('FormField renders switch field', () => {
+  it('FormFieldLegacy renders switch field', () => {
     const handleChangeMock = jest.fn();
     const container = render(
-      <FormField
+      <FormFieldLegacy
         enableOldData
         enableSideBySide
         data={{
@@ -777,7 +777,7 @@ describe('FormField Component', () => {
             { value: 'value3', label: 'label3', checked: false },
           ],
         }}
-        field={{ dataIndex: 'switch', fieldType: FieldTypeEnum.SWITCH, label: 'switch' }}
+        field={{ dataIndex: 'switch', fieldType: FieldLegacyTypeEnum.SWITCH, label: 'switch' }}
         handleChange={handleChangeMock}
         previousData={{
           switch: [
@@ -787,7 +787,7 @@ describe('FormField Component', () => {
             { value: 'value4', label: 'label4' },
           ],
         }}
-        validationError={{ switch: { message: 'ERROR' } }}
+        validationError={{ switch: 'ERROR' }}
       />,
     );
 
@@ -809,9 +809,9 @@ describe('FormField Component', () => {
     ]);
 
     container.rerender(
-      <FormField
+      <FormFieldLegacy
         data={{ switch: undefined }}
-        field={{ dataIndex: 'switch', fieldType: FieldTypeEnum.SWITCH, label: 'switch' }}
+        field={{ dataIndex: 'switch', fieldType: FieldLegacyTypeEnum.SWITCH, label: 'switch' }}
         handleChange={handleChangeMock}
       />,
     );
@@ -820,10 +820,10 @@ describe('FormField Component', () => {
     expect(handleChangeMock).toBeCalledTimes(1);
   });
 
-  it('FormField renders table field', () => {
+  it('FormFieldLegacy renders table field', () => {
     const handleChangeMock = jest.fn();
     const container = render(
-      <FormField
+      <FormFieldLegacy
         data={{ table: [{ number: 1 }, { number: 2 }, { number: 3 }] }}
         field={{
           columns: [
@@ -839,7 +839,7 @@ describe('FormField Component', () => {
               number: yup.number().required('Value for number is required'),
             }),
           },
-          fieldType: FieldTypeEnum.LINE_EDITABLE_TABLE,
+          fieldType: FieldLegacyTypeEnum.LINE_EDITABLE_TABLE,
           label: 'table',
         }}
         handleChange={handleChangeMock}
@@ -863,17 +863,17 @@ describe('FormField Component', () => {
     expect(handleChangeMock).toBeCalledWith('table', [{ number: 2 }, { number: 3 }, { number: 4 }]);
   });
 
-  it('FormField renders text field', () => {
+  it('FormFieldLegacy renders text field', () => {
     const handleChangeMock = jest.fn();
     const container = render(
-      <FormField
+      <FormFieldLegacy
         enableOldData
         enableSideBySide
         data={{ text: 'text' }}
-        field={{ dataIndex: 'text', fieldType: FieldTypeEnum.TEXT, label: 'text' }}
+        field={{ dataIndex: 'text', fieldType: FieldLegacyTypeEnum.TEXT, label: 'text' }}
         handleChange={handleChangeMock}
         previousData={{ text: 'old text' }}
-        validationError={{ text: { message: 'ERROR' } }}
+        validationError={{ text: 'ERROR' }}
       />,
     );
 
@@ -887,9 +887,9 @@ describe('FormField Component', () => {
     expect(handleChangeMock).toBeCalledWith('text', 'new text');
 
     container.rerender(
-      <FormField
+      <FormFieldLegacy
         data={{ text: undefined }}
-        field={{ dataIndex: 'text', fieldType: FieldTypeEnum.TEXT, label: 'text' }}
+        field={{ dataIndex: 'text', fieldType: FieldLegacyTypeEnum.TEXT, label: 'text' }}
         handleChange={handleChangeMock}
       />,
     );
@@ -898,17 +898,17 @@ describe('FormField Component', () => {
     expect(handleChangeMock).toBeCalledTimes(1);
   });
 
-  it('FormField renders textarea field', () => {
+  it('FormFieldLegacy renders textarea field', () => {
     const handleChangeMock = jest.fn();
     const container = render(
-      <FormField
+      <FormFieldLegacy
         enableOldData
         enableSideBySide
         data={{ textarea: 'textarea' }}
-        field={{ dataIndex: 'textarea', fieldType: FieldTypeEnum.TEXTAREA, label: 'textearea' }}
+        field={{ dataIndex: 'textarea', fieldType: FieldLegacyTypeEnum.TEXTAREA, label: 'textearea' }}
         handleChange={handleChangeMock}
         previousData={{ textarea: 'old textarea' }}
-        validationError={{ textarea: { message: 'ERROR' } }}
+        validationError={{ textarea: 'ERROR' }}
       />,
     );
 
@@ -922,9 +922,9 @@ describe('FormField Component', () => {
     expect(handleChangeMock).toBeCalledWith('textarea', 'new textarea');
 
     container.rerender(
-      <FormField
+      <FormFieldLegacy
         data={{ textarea: undefined }}
-        field={{ dataIndex: 'textarea', fieldType: FieldTypeEnum.TEXTAREA, label: 'textarea' }}
+        field={{ dataIndex: 'textarea', fieldType: FieldLegacyTypeEnum.TEXTAREA, label: 'textarea' }}
         handleChange={handleChangeMock}
       />,
     );
@@ -933,17 +933,17 @@ describe('FormField Component', () => {
     expect(handleChangeMock).toBeCalledTimes(1);
   });
 
-  it('FormField renders year field', () => {
+  it('FormFieldLegacy renders year field', () => {
     const handleChangeMock = jest.fn();
     const container = render(
-      <FormField
+      <FormFieldLegacy
         enableOldData
         enableSideBySide
         data={{ year: 2022 }}
-        field={{ dataIndex: 'year', fieldType: FieldTypeEnum.YEAR, label: 'year' }}
+        field={{ dataIndex: 'year', fieldType: FieldLegacyTypeEnum.YEAR, label: 'year' }}
         handleChange={handleChangeMock}
         previousData={{ year: 2020 }}
-        validationError={{ year: { message: 'ERROR' } }}
+        validationError={{ year: 'ERROR' }}
       />,
     );
 
@@ -957,9 +957,9 @@ describe('FormField Component', () => {
     expect(handleChangeMock).toBeCalledWith('year', 1984);
 
     container.rerender(
-      <FormField
+      <FormFieldLegacy
         data={{ year: undefined }}
-        field={{ dataIndex: 'year', fieldType: FieldTypeEnum.YEAR, label: 'year' }}
+        field={{ dataIndex: 'year', fieldType: FieldLegacyTypeEnum.YEAR, label: 'year' }}
         handleChange={handleChangeMock}
       />,
     );

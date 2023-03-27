@@ -13,13 +13,13 @@ import { FilterTypeEnum, IFilterLayoutAndFieldsProps } from './types';
 
 export interface IFilterItemProps<T> {
   inline?: boolean;
-  inputValues?: Partial<T>;
+  inputs?: Partial<T>;
   item: IFilterLayoutAndFieldsProps<T>;
   onChange: (dataIndex: keyof T, newValue: T[keyof T] | undefined) => void;
 }
 
 const FilterItem = <T,>(props: IFilterItemProps<T>): ReactElement => {
-  const { inline, inputValues, item, onChange } = props;
+  const { inline, inputs, item, onChange } = props;
 
   switch (item.filterType) {
     case FilterTypeEnum.CHECKBOX: {
@@ -31,7 +31,7 @@ const FilterItem = <T,>(props: IFilterItemProps<T>): ReactElement => {
           helperText={item.helperText}
           inputClassName={item.inputClassName}
           label={item.label}
-          inputValue={inputValues && (inputValues[item.dataIndex] as unknown as Array<IToggleEntry> | undefined)}
+          input={inputs && (inputs[item.dataIndex] as unknown as Array<IToggleEntry> | undefined)}
           onChange={(newValue) => {
             onChange(item.dataIndex, newValue as unknown as T[keyof T]);
           }}
@@ -54,7 +54,7 @@ const FilterItem = <T,>(props: IFilterItemProps<T>): ReactElement => {
           dateFormat={item.dateFormat}
           isClearable={item.isClearable}
           locale={item.locale}
-          inputValue={inputValues && (inputValues[item.dataIndex] as unknown as Date | null | undefined)}
+          input={inputs && (inputs[item.dataIndex] as unknown as Date | null | undefined)}
           onChange={(newValue) => {
             onChange(item.dataIndex, newValue as unknown as T[keyof T]);
           }}
@@ -71,7 +71,7 @@ const FilterItem = <T,>(props: IFilterItemProps<T>): ReactElement => {
           helperText={item.helperText}
           inputClassName={item.inputClassName}
           label={item.label}
-          inputValue={inputValues && (inputValues[item.dataIndex] as unknown as string | number | undefined)}
+          input={inputs && (inputs[item.dataIndex] as unknown as string | number | undefined)}
           name={item.name || item.dataIndex.toString()}
           noOptionsMessage={item.noOptionsMessage}
           isClearable={item.isClearable}
@@ -94,7 +94,7 @@ const FilterItem = <T,>(props: IFilterItemProps<T>): ReactElement => {
           helperText={item.helperText}
           inputClassName={item.inputClassName}
           label={item.label}
-          inputValue={inputValues && (inputValues[item.dataIndex] as unknown as Array<string | number> | undefined)}
+          input={inputs && (inputs[item.dataIndex] as unknown as Array<string | number> | undefined)}
           name={item.name || item.dataIndex.toString()}
           numberOfItemLabel={item.numberOfItemLabel}
           numberOfItemsLabel={item.numberOfItemsLabel}
@@ -128,7 +128,7 @@ const FilterItem = <T,>(props: IFilterItemProps<T>): ReactElement => {
           suffix={item.suffix}
           thousandSeparator={item.thousandSeparator}
           thousandsGroupStyle={item.thousandsGroupStyle}
-          inputValue={inputValues && (inputValues[item.dataIndex] as unknown as string | undefined)}
+          input={inputs && (inputs[item.dataIndex] as unknown as string | undefined)}
           onChange={(newValue) => {
             onChange(item.dataIndex, newValue as unknown as T[keyof T]);
           }}
@@ -142,7 +142,7 @@ const FilterItem = <T,>(props: IFilterItemProps<T>): ReactElement => {
           {item.fields.map((subitem, index) => {
             return (
               <FilterItem<T>
-                inputValues={inputValues}
+                inputs={inputs}
                 item={subitem}
                 key={'dataIndex' in subitem ? subitem.dataIndex.toString() : `section-${index}`}
                 onChange={onChange}
@@ -161,7 +161,7 @@ const FilterItem = <T,>(props: IFilterItemProps<T>): ReactElement => {
           helperText={item.helperText}
           inputClassName={item.inputClassName}
           label={item.label}
-          inputValue={inputValues && (inputValues[item.dataIndex] as unknown as string | number | undefined)}
+          input={inputs && (inputs[item.dataIndex] as unknown as string | number | undefined)}
           name={item.name || item.dataIndex.toString()}
           options={item.options}
           isClearable={item.isClearable}
@@ -182,7 +182,7 @@ const FilterItem = <T,>(props: IFilterItemProps<T>): ReactElement => {
           helperText={item.helperText}
           inputClassName={item.inputClassName}
           label={item.label}
-          inputValue={inputValues && (inputValues[item.dataIndex] as unknown as string | undefined)}
+          input={inputs && (inputs[item.dataIndex] as unknown as string | undefined)}
           name={item.name || item.dataIndex.toString()}
           maxLength={item.maxLength}
           minLength={item.minLength}
@@ -202,7 +202,7 @@ const FilterItem = <T,>(props: IFilterItemProps<T>): ReactElement => {
 
 FilterItem.defaultProps = {
   inline: false,
-  inputValues: undefined,
+  inputs: undefined,
 };
 
 export default FilterItem;

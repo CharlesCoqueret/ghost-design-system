@@ -1,17 +1,11 @@
 import React, { ReactElement, Ref, useState } from 'react';
 
 import { GenericField } from '../../Atoms/GenericField';
-import { TextInput } from '../../Atoms/TextInput';
+import TextInput, { ITextInputProps } from '../../Atoms/TextInput/TextInput';
 
-export interface ITextFieldProps {
+export interface ITextFieldProps extends Omit<ITextInputProps, 'className' | 'isInError' | 'onChange'> {
   /** React Container ref (optional, default: undefined) */
   containerRef?: Ref<HTMLDivElement>;
-  /** For test purpose only */
-  dataTestId?: string;
-  /** Disabled field (optional, default: false) */
-  disabled?: boolean;
-  /** Ellipsis in readonly (optional, default: false) */
-  ellipsis?: boolean;
   /** Error message (optional, default: undefined) */
   errorMessage?: string;
   /** Class for the field surrounding the input (optional, default: undefined) */
@@ -20,32 +14,18 @@ export interface ITextFieldProps {
   fieldSize?: number;
   /** Helper text (optional, default: undefined) */
   helperText?: string;
-  /** Highlighted field (optional, default: false) */
-  highlighted?: boolean;
   /** Inline field (optional, default: false) */
   inline?: boolean;
   /** Class for the input (optional, default: undefined) */
   inputClassName?: string;
-  /** Input string value (optional, default: undefined) */
-  inputValue?: string;
   /** Label (optional, default: undefined) */
   label?: string;
   /** Size of the field in a 12 column grid (optional, default: undefined) */
   labelSize?: number;
   /** Mandatory field (optional, default: false) */
   mandatory?: boolean;
-  /** Maximum length of the textfield (optional, default: undefined) */
-  maxLength?: number;
-  /** Minimum length of textfield (optional, default: undefined) */
-  minLength?: number;
-  /** Name of text field (optional, default: undefined) */
-  name?: string;
   /** Handler of value changes (optional, default: undefined) */
   onChange?: (newValue: string) => void;
-  /** Placeholder value (optional, default: undefined) */
-  placeholder?: string;
-  /** Read only field (optional, default: false) */
-  readOnly?: boolean;
 }
 
 /**
@@ -70,7 +50,7 @@ export const TextField = (props: ITextFieldProps): ReactElement => {
     highlighted,
     inline,
     inputClassName,
-    inputValue,
+    input,
     label,
     labelSize,
     mandatory,
@@ -82,7 +62,7 @@ export const TextField = (props: ITextFieldProps): ReactElement => {
     readOnly,
   } = props;
 
-  const [inputLength, setInputLength] = useState<number>(inputValue ? inputValue.toString().length : 0);
+  const [inputLength, setInputLength] = useState<number>(input ? input.toString().length : 0);
 
   /**
    * Handler of changes
@@ -112,12 +92,12 @@ export const TextField = (props: ITextFieldProps): ReactElement => {
       maxLength={maxLength}
       inputLength={inputLength}>
       <TextInput
+        className={inputClassName}
         dataTestId={dataTestId}
         disabled={disabled}
         ellipsis={ellipsis}
         highlighted={highlighted}
-        inputClassName={inputClassName}
-        inputValue={inputValue}
+        input={input}
         isInError={errorMessage !== undefined}
         maxLength={maxLength}
         minLength={minLength}
@@ -140,7 +120,7 @@ TextField.defaultProps = {
   highlighted: false,
   inline: false,
   inputClassName: undefined,
-  inputValue: undefined,
+  input: undefined,
   label: undefined,
   labelSize: undefined,
   mandatory: false,

@@ -39,12 +39,12 @@ export const options = [
 ];
 
 export const Template = (args) => {
-  const [val, setVal] = useState(args.inputValue);
-  return <SwitchField {...args} inputValue={val} onChange={setVal} />;
+  const [val, setVal] = useState(args.input);
+  return <SwitchField {...args} input={val} onChange={setVal} />;
 };
 
 <Canvas withSource='open'>
-  <Story name='SwitchField' args={{ label: 'Switch field', inputValue: options }}>
+  <Story name='SwitchField' args={{ label: 'Switch field', input: options }}>
     {Template.bind({})}
   </Story>
 </Canvas>
@@ -59,25 +59,20 @@ export const Template = (args) => {
     label='Switch field in read only with label size = 4 and field size = 6'
     labelSize={4}
     readOnly={true}
-    inputValue={options}
+    input={options}
   />
 </Canvas>
 
 ### Error
 
 <Canvas>
-  <Template label='Switch field in error' errorMessage='This text is on error' inputValue={options} />
+  <Template label='Switch field in error' errorMessage='This text is on error' input={options} />
 </Canvas>
 
 ### Helper
 
 <Canvas>
-  <Template
-    helperText='Helper text'
-    label='Switch field with helper and counter'
-    mandatory={true}
-    inputValue={options}
-  />
+  <Template helperText='Helper text' label='Switch field with helper and counter' mandatory={true} input={options} />
 </Canvas>
 
 ### Highlighted
@@ -88,18 +83,18 @@ export const Template = (args) => {
     highlighted={true}
     readOnly={true}
     label='Switch field highlighted'
-    inputValue={options}
+    input={options}
   />
 </Canvas>
 
 ### Disabled
 
 <Canvas>
-  <Template disabled={true} helperText='Helper text' label='Switch field disabled' inputValue={options} />
+  <Template disabled={true} helperText='Helper text' label='Switch field disabled' input={options} />
 </Canvas>
 
 ### Inline
 
 <Canvas>
-  <Template label='Switch field in line' inline={true} inputValue={[options[0], options[1]]} />
+  <Template label='Switch field in line' inline={true} input={[options[0], options[1]]} />
 </Canvas>

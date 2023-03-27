@@ -23,8 +23,8 @@ import RichTextField from './RichTextField';
 # RichTextField
 
 export const Template = (args) => {
-  const [localValue, setLocalValue] = useState(args.inputValue);
-  return <RichTextField {...args} inputValue={localValue} onChange={setLocalValue} />;
+  const [localValue, setLocalValue] = useState(args.input);
+  return <RichTextField {...args} input={localValue} onChange={setLocalValue} />;
 };
 
 <Canvas withSource='open'>
@@ -34,7 +34,7 @@ export const Template = (args) => {
       label: 'Rich text field',
       enableImage: true,
       enableLink: true,
-      inputValue:
+      input:
         '<h1>Lorem ipsum</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin consectetur ' +
         'tortor nec lorem euismod imperdiet quis vel turpis. Phasellus ultricies nibh vitae laoreet tempus. ' +
         'Quisque vel dolor id arcu dignissim condimentum eu vel purus. Donec auctor, ipsum vel hendrerit ' +
@@ -57,7 +57,7 @@ export const Template = (args) => {
     label='Rich text field read only'
     enableImage={true}
     enableLink={true}
-    inputValue={
+    input={
       '<h1>Lorem ipsum</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin consectetur ' +
       'tortor nec lorem euismod imperdiet quis vel turpis. Phasellus ultricies nibh vitae laoreet tempus. ' +
       'Quisque vel dolor id arcu dignissim condimentum eu vel purus. Donec auctor, ipsum vel hendrerit ' +
@@ -78,7 +78,7 @@ export const Template = (args) => {
     fieldSize={4}
     labelSize={4}
     label='Rich text field in error with label size = 4 and field size = 4'
-    inputValue={
+    input={
       '<h1>Lorem ipsum</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin consectetur ' +
       'tortor nec lorem euismod imperdiet quis vel turpis. Phasellus ultricies nibh vitae laoreet tempus. ' +
       'Quisque vel dolor id arcu dignissim condimentum eu vel purus. Donec auctor, ipsum vel hendrerit ' +
@@ -98,7 +98,7 @@ export const Template = (args) => {
     mandatory={true}
     maxLength={1000}
     label='Rich text field with helper'
-    inputValue={
+    input={
       '<h1>Lorem ipsum</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin consectetur ' +
       'tortor nec lorem euismod imperdiet quis vel turpis. Phasellus ultricies nibh vitae laoreet tempus. ' +
       'Quisque vel dolor id arcu dignissim condimentum eu vel purus. Donec auctor, ipsum vel hendrerit ' +
@@ -118,7 +118,7 @@ export const Template = (args) => {
     highlighted={true}
     maxLength={1000}
     label='Rich text field with helper'
-    inputValue={
+    input={
       '<h1>Lorem ipsum</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin consectetur ' +
       'tortor nec lorem euismod imperdiet quis vel turpis. Phasellus ultricies nibh vitae laoreet tempus. ' +
       'Quisque vel dolor id arcu dignissim condimentum eu vel purus. Donec auctor, ipsum vel hendrerit ' +
@@ -137,7 +137,7 @@ export const Template = (args) => {
   <Template
     disabled={true}
     label='Rich text field disabled'
-    inputValue={
+    input={
       '<h1>Lorem ipsum</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin consectetur ' +
       'tortor nec lorem euismod imperdiet quis vel turpis. Phasellus ultricies nibh vitae laoreet tempus. ' +
       'Quisque vel dolor id arcu dignissim condimentum eu vel purus. Donec auctor, ipsum vel hendrerit ' +

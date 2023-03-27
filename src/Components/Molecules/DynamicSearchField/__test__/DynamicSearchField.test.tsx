@@ -28,7 +28,7 @@ describe('DynamicSearchField Component', () => {
     const { container } = render(
       <DynamicSearchField
         dataTestId='DATA-TEST-ID'
-        inputValue={'VALUE1'}
+        input={'VALUE1'}
         name='name'
         noOptionsMessage='no options'
         readOnly
@@ -52,7 +52,7 @@ describe('DynamicSearchField Component', () => {
         dataTestId='DATA-TEST-ID'
         disabled
         highlighted
-        inputValue={'VALUE1'}
+        input={'VALUE1'}
         name='name'
         noOptionsMessage='no options'
         resolveValue={() => {
@@ -75,7 +75,7 @@ describe('DynamicSearchField Component', () => {
         dataTestId='DATA-TEST-ID'
         fieldSize={6}
         inline
-        inputValue={'VALUE1'}
+        input={'VALUE1'}
         name='name'
         noOptionsMessage='no options'
         resolveValue={() => {

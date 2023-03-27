@@ -1,8 +1,6 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 
-// Disabling typescript for this file, as not all component have the exact same interface
-
 import React, { memo, PropsWithChildren, ReactElement } from 'react';
 
 import { Col, Row } from '../../Atoms/Layout';
@@ -29,28 +27,8 @@ const Highlighter = (props: PropsWithChildren<IHighlighterProps>): ReactElement 
             <Col>
               {enableOldData &&
                 React.cloneElement(child, {
-                  disabled: undefined,
-                  errorMessage: undefined,
-                  extra: {
-                    ...child.props?.extra,
-                    // For table use case
-                    onEdit: undefined,
-                    onRowEdit: undefined,
-                    onRowSubmit: undefined,
-                    onRowDelete: undefined,
-                    isEditable: () => false,
-                    isDeletable: () => false,
-                    canAddNewLine: () => false,
-                  },
-                  helperText: undefined,
                   highlighted: shouldHighlight,
-                  id: undefined,
-                  inputValue: oldData, // For fields
-                  data: oldData || [], // For table use case
-                  maxLength: undefined,
-                  name: undefined,
-                  onChange: undefined,
-                  placeholder: undefined,
+                  input: oldData,
                   readOnly: true,
                 })}
             </Col>

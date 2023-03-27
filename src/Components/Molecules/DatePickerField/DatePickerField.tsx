@@ -1,19 +1,12 @@
 import React, { ReactElement, Ref } from 'react';
 
 import { GenericField } from '../../Atoms/GenericField';
-import { DatePickerInput, WeekDayEnum, DateFormat } from '../../Atoms/DatePickerInput';
+import { DatePickerInput } from '../../Atoms/DatePickerInput';
+import { IDatePickerProps } from '../../Atoms/DatePickerInput/DatePickerInput';
 
-export interface IDatePickerFieldProps {
-  /** Calendar start week day (optional: default: WeekDayEnum.MONDAY )  */
-  calendarStartDay?: WeekDayEnum;
+export interface IDatePickerFieldProps extends Omit<IDatePickerProps, 'className' | 'isInError'> {
   /** React Container ref (optional, default: undefined) */
   containerRef?: Ref<HTMLDivElement>;
-  /** For test purpose only */
-  dataTestId?: string;
-  /** Date format */
-  dateFormat?: DateFormat;
-  /** Disabled field (optional, default: false) */
-  disabled?: boolean;
   /** Error message (optional, default: undefined) */
   errorMessage?: string;
   /** Class for the field surrounding the input (optional, default: undefined) */
@@ -22,38 +15,16 @@ export interface IDatePickerFieldProps {
   fieldSize?: number;
   /** Helper text (optional, default: undefined) */
   helperText?: string;
-  /** Highlighted field (optional, default: false) */
-  highlighted?: boolean;
   /** Inline field (optional, default: false) */
   inline?: boolean;
   /** Class for the input (optional, default: undefined) */
   inputClassName?: string;
-  /** Input date value (optional, default: undefined) */
-  inputValue?: Date | null;
-  /** Provide the ability to clear the value (optional, default: false) */
-  isClearable?: boolean;
   /** Label (optional, default: undefined) */
   label?: string;
   /** Size of the field in a 12 column grid (optional, default: undefined) */
   labelSize?: number;
-  /** Locale to display months and day (optional, default: undefined) */
-  locale?: string;
   /** Mandatory field (optional, default: false) */
   mandatory?: boolean;
-  /** Maximum date that can be picked (optional, default: undefined) */
-  maxDate?: Date;
-  /** Minimum date that can be picked (optional, default: undefined) */
-  minDate?: Date;
-  /** Name of text field (optional, default: undefined) */
-  name?: string;
-  /** Handler of value changes (optional, default: undefined) */
-  onChange?: (date: Date | null) => void;
-  /** Placeholder value (optional, default: undefined) */
-  placeholder?: string;
-  /** Read only field (optional, default: false) */
-  readOnly?: boolean;
-  /** Use portal, it is remmended to set it to false for modal (optional, default true) */
-  usePortal?: boolean;
 }
 
 /**
@@ -78,7 +49,7 @@ export const DatePickerField = (props: IDatePickerFieldProps): ReactElement => {
     highlighted,
     inline,
     inputClassName,
-    inputValue,
+    input,
     isClearable,
     label,
     labelSize,
@@ -120,7 +91,7 @@ export const DatePickerField = (props: IDatePickerFieldProps): ReactElement => {
         minDate={minDate}
         name={name}
         placeholder={placeholder}
-        inputValue={inputValue}
+        input={input}
         onChange={onChange}
         readOnly={readOnly}
         usePortal={usePortal}
@@ -138,7 +109,7 @@ DatePickerField.defaultProps = {
   highlighted: false,
   inline: false,
   inputClassName: undefined,
-  inputValue: undefined,
+  input: undefined,
   isClearable: false,
   label: undefined,
   labelSize: undefined,

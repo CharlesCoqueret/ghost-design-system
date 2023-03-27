@@ -92,7 +92,7 @@ describe('FilterItem Component', () => {
 
     const { container } = render(
       <FilterItem<{ checkbox: Array<IToggleEntry> }>
-        inputValues={{ checkbox: [{ label: 'LABEL', value: 'VALUE' }] }}
+        inputs={{ checkbox: [{ label: 'LABEL', value: 'VALUE' }] }}
         item={{ dataIndex: 'checkbox', filterType: FilterTypeEnum.CHECKBOX }}
         onChange={onChangeMock}
       />,
@@ -113,7 +113,7 @@ describe('FilterItem Component', () => {
 
     const { container } = render(
       <FilterItem<{ date: Date | undefined | null }>
-        inputValues={{ date: new Date('2022-04-10T00:00:00.000Z') }}
+        inputs={{ date: new Date('2022-04-10T00:00:00.000Z') }}
         item={{ dataIndex: 'date', filterType: FilterTypeEnum.DATE }}
         onChange={onChangeMock}
       />,
@@ -134,7 +134,7 @@ describe('FilterItem Component', () => {
 
     const { container } = render(
       <FilterItem<{ dynamicsearch: string | undefined }>
-        inputValues={{ dynamicsearch: 'value1' }}
+        inputs={{ dynamicsearch: 'value1' }}
         item={{
           dataIndex: 'dynamicsearch',
           filterType: FilterTypeEnum.DYNAMICSEARCH,
@@ -167,7 +167,7 @@ describe('FilterItem Component', () => {
 
     const { container } = render(
       <FilterItem<{ multiselect: Array<string | number> | undefined }>
-        inputValues={{ multiselect: ['value1'] }}
+        inputs={{ multiselect: ['value1'] }}
         item={{
           dataIndex: 'multiselect',
           filterType: FilterTypeEnum.MULTISELECT,
@@ -194,7 +194,7 @@ describe('FilterItem Component', () => {
 
     const { container } = render(
       <FilterItem<{ number: number | undefined }>
-        inputValues={{ number: -12.34 }}
+        inputs={{ number: -12.34 }}
         item={{
           dataIndex: 'number',
           filterType: FilterTypeEnum.NUMBER,
@@ -218,7 +218,7 @@ describe('FilterItem Component', () => {
 
     const { container } = render(
       <FilterItem<{ select: string | number | undefined }>
-        inputValues={{ select: 'VALUE1' }}
+        inputs={{ select: 'VALUE1' }}
         item={{
           dataIndex: 'select',
           filterType: FilterTypeEnum.SELECT,
@@ -243,7 +243,7 @@ describe('FilterItem Component', () => {
 
     const { container } = render(
       <FilterItem<{ text: string | undefined }>
-        inputValues={{ text: 'TEXT' }}
+        inputs={{ text: 'TEXT' }}
         item={{
           dataIndex: 'text',
           filterType: FilterTypeEnum.TEXT,

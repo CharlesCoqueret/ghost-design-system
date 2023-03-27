@@ -41,15 +41,15 @@ export interface IAmountInputProps {
   /** Highlighted field (optional, default: false) */
   highlighted?: boolean;
   /** Input or number string value (optional, default: '') */
-  /** Note: '' is used as default to ensure update of the underlaying component */
-  inputValue?: string | number;
+  /** Note: '' is used as default to ensure update of the underlying component */
+  input?: string | number;
   /** Error indication should be present (optional, default: undefined) */
   isInError?: boolean;
   /** Max value (optional, default: undefined) */
   maxValue?: number;
   /** Min value (optional, default: undefined) */
   minValue?: number;
-  /** Name of select input (optional, default: undefined) */
+  /** Name of input (optional, default: undefined) */
   name?: string;
   /** Handler of value changes (optional, default: undefined) */
   onChange?: (value: number | undefined) => void;
@@ -77,7 +77,7 @@ const AmountInput = (props: IAmountInputProps): ReactElement => {
     disabled,
     ellipsis,
     highlighted,
-    inputValue,
+    input,
     isInError,
     maxValue,
     minValue,
@@ -110,7 +110,7 @@ const AmountInput = (props: IAmountInputProps): ReactElement => {
    * Read only case
    */
   if (readOnly) {
-    if (inputValue === undefined || inputValue === null || inputValue === '' || !Number.isFinite(Number(inputValue))) {
+    if (input === undefined || input === null || input === '' || !Number.isFinite(Number(input))) {
       return (
         <div
           className={classnames(
@@ -141,7 +141,7 @@ const AmountInput = (props: IAmountInputProps): ReactElement => {
           <Typography.Text ellipsis={ellipsis}>
             {compact([
               prefix,
-              Numeral(inputValue).format('0.' + '0'.repeat(Math.abs(decimalScale ?? 2)) + ' a'),
+              Numeral(input).format('0.' + '0'.repeat(Math.abs(decimalScale ?? 2)) + ' a'),
               suffix,
             ]).join(' ')}
           </Typography.Text>
@@ -165,13 +165,13 @@ const AmountInput = (props: IAmountInputProps): ReactElement => {
         decimalSeparator={decimalSeparator}
         displayType={'text'}
         id={name}
-        isNumericString={typeof inputValue === 'string'}
+        isNumericString={typeof input === 'string'}
         name={name}
         prefix={prefix ? `${prefix} ` : undefined}
         suffix={suffix ? ` ${suffix}` : undefined}
         thousandSeparator={numberFormatThousandSeparator}
         thousandsGroupStyle={numberFormatThousandGroupStyle}
-        value={inputValue}
+        value={input}
       />
     );
   }
@@ -195,11 +195,11 @@ const AmountInput = (props: IAmountInputProps): ReactElement => {
       decimalSeparator={decimalSeparator}
       disabled={disabled}
       isAllowed={(newValue: NumberFormatValues): boolean => {
-        if (minValue && newValue.floatValue && newValue.floatValue < minValue) return false;
-        if (maxValue && newValue.floatValue && newValue.floatValue > maxValue) return false;
+        if (minValue !== undefined && newValue.floatValue && newValue.floatValue < minValue) return false;
+        if (maxValue !== undefined && newValue.floatValue && newValue.floatValue > maxValue) return false;
         return true;
       }}
-      isNumericString={typeof inputValue === 'string'}
+      isNumericString={typeof input === 'string'}
       name={name}
       onValueChange={onValueChange}
       placeholder={placeholder}
@@ -207,7 +207,7 @@ const AmountInput = (props: IAmountInputProps): ReactElement => {
       suffix={suffix ? ` ${suffix}` : undefined}
       thousandSeparator={numberFormatThousandSeparator}
       thousandsGroupStyle={numberFormatThousandGroupStyle}
-      value={inputValue}
+      value={input}
     />
   );
 };
@@ -216,7 +216,7 @@ AmountInput.defaultProps = {
   allowNegative: true,
   decimalSeparator: '.',
   ellipsis: false,
-  inputValue: '',
+  input: '',
   name: undefined,
   placeholder: undefined,
   prefix: undefined,

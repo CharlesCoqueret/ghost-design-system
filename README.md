@@ -8,21 +8,22 @@
 ## Available components:
 
 - Atoms:
-  - [Badge (notification and indicator)](https://charlescoqueret.github.io/ghost-design-system/?path=/story/atom-badge--default)
-  - [Colors](https://charlescoqueret.github.io/ghost-design-system/?path=/story/atom-colors--brand-palette)
-  - [Icons](https://charlescoqueret.github.io/ghost-design-system/?path=/story/atom-icon--list)
+  - [Badge (notification and indicator)](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/atom-badge--badge)
+  - [Icons](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/atom-icon--page)
   - Layout
-    - [Row](https://charlescoqueret.github.io/ghost-design-system/?path=/story/atom-layout-row--default)
-    - [Col](https://charlescoqueret.github.io/ghost-design-system/?path=/story/atom-layout-col--default)
-    - [Collapsible section](https://charlescoqueret.github.io/ghost-design-system/?path=/story/atom-layout-section--default)
-  - [Link](https://charlescoqueret.github.io/ghost-design-system/?path=/story/atom-link--default)
-  - [Modal](https://charlescoqueret.github.io/ghost-design-system/?path=/story/atom-modal--default)
+    - [Col](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/atom-layout--col)
+    - [Row](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/atom-layout--row)
+    - [Section](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/atom-layout--section)
+    - [Separator](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/atom-layout--separator)
+  - [Link](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/atom-link--link)
+  - [Modal](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/atom-modal--default)
   - Portal
-  - [Pulsar](https://charlescoqueret.github.io/ghost-design-system/?path=/story/atom-pulsar--default)
-  - [Tooltip](https://charlescoqueret.github.io/ghost-design-system/?path=/story/atom-tooltip--default)
+  - [Pulsar](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/atom-pulsar--pulsar)
+  - [Theme](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/atom-theme--page)
+  - [Tooltip](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/atom-tooltip--tooltip)
   - Typography
-    - [Text](https://charlescoqueret.github.io/ghost-design-system/?path=/story/atom-typography-text--default)
-    - [Title](https://charlescoqueret.github.io/ghost-design-system/?path=/story/atom-typography-title--default)
+    - [Text](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/atom-typography--text)
+    - [Title](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/atom-typography--title)
 - Molecules:
   - [Amount field](https://charlescoqueret.github.io/ghost-design-system/?path=/story/molecule-amountfield--default)
   - [Banner](https://charlescoqueret.github.io/ghost-design-system/?path=/story/molecule--banner)

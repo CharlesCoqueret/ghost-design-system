@@ -1,17 +1,11 @@
 import React, { ReactElement, Ref } from 'react';
 
 import { GenericField } from '../../Atoms/GenericField';
-import { SelectInput, IOption } from '../../Atoms/SelectInput';
+import SelectInput, { ISelectInputProps } from '../../Atoms/SelectInput/SelectInput';
 
-export interface ISelectFieldProps {
+export interface ISelectFieldProps extends Omit<ISelectInputProps, 'className' | 'isInError'> {
   /** React Container ref (optional, default: undefined) */
   containerRef?: Ref<HTMLDivElement>;
-  /** For test purpose only */
-  dataTestId?: string;
-  /** Disabled field (optional, default: false) */
-  disabled?: boolean;
-  /** Ellipsis in readonly (optional, default: false) */
-  ellipsis?: boolean;
   /** Error message (optional, default: undefined) */
   errorMessage?: string;
   /** Class for the field surrounding the input (optional, default: undefined) */
@@ -20,34 +14,16 @@ export interface ISelectFieldProps {
   fieldSize?: number;
   /** Helper text (optional, default: undefined) */
   helperText?: string;
-  /** Highlighted field (optional, default: false) */
-  highlighted?: boolean;
   /** Inline field (optional, default: false) */
   inline?: boolean;
   /** Class for the input (optional, default: undefined) */
   inputClassName?: string;
-  /** Input string value (optional, default: undefined) */
-  inputValue: string | number | undefined;
-  /** Provide the ability to clear the value (optional, default: false) */
-  isClearable?: boolean;
   /** Label (optional, default: undefined) */
   label?: string;
   /** Size of the field in a 12 column grid (optional, default: undefined) */
   labelSize?: number;
   /** Mandatory field (optional, default: false) */
   mandatory?: boolean;
-  /** Name of text field (optional, default: undefined) */
-  name?: string;
-  /** Handler of value changes (optional, default: undefined) */
-  onChange?: (newValue: string | number | null | undefined) => void;
-  /** Options available to be picked from */
-  options: Array<IOption>;
-  /** Placeholder value (optional, default: undefined) */
-  placeholder?: string;
-  /** Read only field (optional, default: false) */
-  readOnly?: boolean;
-  /** Use portal, it is remmended to set it to false for modal (optional, default true) */
-  usePortal?: boolean;
 }
 
 /**
@@ -71,11 +47,12 @@ export const SelectField = (props: ISelectFieldProps): ReactElement => {
     highlighted,
     inline,
     inputClassName,
-    inputValue,
+    input,
     isClearable,
     label,
     labelSize,
     mandatory,
+    maxMenuHeight,
     name,
     onChange,
     options,
@@ -105,10 +82,11 @@ export const SelectField = (props: ISelectFieldProps): ReactElement => {
         isInError={errorMessage !== undefined}
         isClearable={isClearable}
         name={name}
+        maxMenuHeight={maxMenuHeight}
         placeholder={placeholder}
         options={options}
         disabled={disabled}
-        inputValue={inputValue}
+        input={input}
         onChange={onChange}
         readOnly={readOnly}
         usePortal={usePortal}
@@ -127,7 +105,7 @@ SelectField.defaultProps = {
   highlighted: false,
   inline: false,
   inputClassName: undefined,
-  inputValue: undefined,
+  input: undefined,
   isClearable: false,
   label: undefined,
   labelSize: undefined,

@@ -20,7 +20,7 @@ const CheckboxCell = <T,>(props: ICellProps<T, IColumnCheckbox<T>>): ReactElemen
       <CheckboxField
         dataTestId={dataTestId}
         ellipsis={column.ellipsis}
-        inputValue={displayValue}
+        input={displayValue}
         onChange={(newValue: Array<IToggleEntry>) => {
           if (onChange) {
             onChange(newValue as unknown as T[keyof T]);

@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`useFormLegacy hook provides the right elements 1`] = `
+<div>
+  <div>
+    Mocked Form props: 
+    {"fields":[{"fieldType":"number","dataIndex":"number","label":"Number"}],"initialData":{"number":50},"previousData":{"number":0},"validationSchema":{"type":"object","deps":[],"tests":[],"transforms":[],"conditions":[],"internalTests":{},"_whitelist":{},"_blacklist":{},"exclusiveTests":{},"spec":{"strip":false,"strict":false,"abortEarly":true,"recursive":true,"nullable":false,"optional":true,"coerce":true},"fields":{"number":{"type":"number","_whitelist":{},"_blacklist":{},"internalTests":{},"exclusiveTests":{},"deps":[],"conditions":[],"tests":[],"transforms":[null],"spec":{"strip":false,"strict":false,"abortEarly":true,"recursive":true,"nullable":false,"optional":false,"coerce":true}}},"_nodes":["number"],"_excludedEdges":[]}}
+  </div>
+</div>
+`;
+
+exports[`useFormLegacy hook provides the right elements 2`] = `
+<div>
+  <div>
+    Mocked Form props: 
+    {"fields":[{"fieldType":"number","dataIndex":"number","label":"Number"}],"initialData":{},"previousData":{"number":0},"validationSchema":{"type":"object","deps":[],"tests":[],"transforms":[],"conditions":[],"internalTests":{},"_whitelist":{},"_blacklist":{},"exclusiveTests":{},"spec":{"strip":false,"strict":false,"abortEarly":true,"recursive":true,"nullable":false,"optional":true,"coerce":true},"fields":{"number":{"type":"number","_whitelist":{},"_blacklist":{},"internalTests":{},"exclusiveTests":{},"deps":[],"conditions":[],"tests":[],"transforms":[null],"spec":{"strip":false,"strict":false,"abortEarly":true,"recursive":true,"nullable":false,"optional":false,"coerce":true}}},"_nodes":["number"],"_excludedEdges":[]}}
+  </div>
+</div>
+`;
+
+exports[`useFormLegacy hook provides the right elements 3`] = `
+<div>
+  <div>
+    Mocked Form props: 
+    {"fields":[{"fieldType":"number","dataIndex":"number","label":"Number"}],"initialData":{},"validationError":{"number":"Value for number is required"},"previousData":{"number":0},"validationSchema":{"type":"object","deps":[],"tests":[],"transforms":[],"conditions":[],"internalTests":{},"_whitelist":{},"_blacklist":{},"exclusiveTests":{},"spec":{"strip":false,"strict":false,"abortEarly":true,"recursive":true,"nullable":false,"optional":true,"coerce":true},"fields":{"number":{"type":"number","_whitelist":{},"_blacklist":{},"internalTests":{},"exclusiveTests":{},"deps":[],"conditions":[],"tests":[],"transforms":[null],"spec":{"strip":false,"strict":false,"abortEarly":true,"recursive":true,"nullable":false,"optional":false,"coerce":true}}},"_nodes":["number"],"_excludedEdges":[]}}
+  </div>
+  <div
+    class="field-error"
+  />
+</div>
+`;
+
+exports[`useFormLegacy hook provides the right elements 4`] = `
+<div>
+  <div>
+    Mocked Form props: 
+    {"fields":[{"fieldType":"number","dataIndex":"number","label":"Number"}],"initialData":{"number":100},"validationError":{},"previousData":{"number":0},"validationSchema":{"type":"object","deps":[],"tests":[],"transforms":[],"conditions":[],"internalTests":{},"_whitelist":{},"_blacklist":{},"exclusiveTests":{},"spec":{"strip":false,"strict":false,"abortEarly":true,"recursive":true,"nullable":false,"optional":true,"coerce":true},"fields":{"number":{"type":"number","_whitelist":{},"_blacklist":{},"internalTests":{},"exclusiveTests":{},"deps":[],"conditions":[],"tests":[],"transforms":[null],"spec":{"strip":false,"strict":false,"abortEarly":true,"recursive":true,"nullable":false,"optional":false,"coerce":true}}},"_nodes":["number"],"_excludedEdges":[]}}
+  </div>
+  <div
+    class="field-error"
+  />
+</div>
+`;
+
+exports[`useFormLegacy hook provides the right elements 5`] = `
+<div>
+  <div>
+    Mocked Form props: 
+    {"fields":[{"fieldType":"number","dataIndex":"number","label":"Number"}],"initialData":{"number":100},"previousData":{"number":0},"validationSchema":{"type":"object","deps":[],"tests":[],"transforms":[],"conditions":[],"internalTests":{},"_whitelist":{},"_blacklist":{},"exclusiveTests":{},"spec":{"strip":false,"strict":false,"abortEarly":true,"recursive":true,"nullable":false,"optional":true,"coerce":true},"fields":{"number":{"type":"number","_whitelist":{},"_blacklist":{},"internalTests":{},"exclusiveTests":{},"deps":[],"conditions":[],"tests":[],"transforms":[null],"spec":{"strip":false,"strict":false,"abortEarly":true,"recursive":true,"nullable":false,"optional":false,"coerce":true}}},"_nodes":["number"],"_excludedEdges":[]}}
+  </div>
+</div>
+`;
+
+exports[`useFormLegacy hook provides the right elements 6`] = `
+<div>
+  <div>
+    Mocked Form props: 
+    {"fields":[{"fieldType":"number","dataIndex":"number","label":"Number"}],"initialData":{"number":50},"previousData":{"number":0},"validationSchema":{"type":"object","deps":[],"tests":[],"transforms":[],"conditions":[],"internalTests":{},"_whitelist":{},"_blacklist":{},"exclusiveTests":{},"spec":{"strip":false,"strict":false,"abortEarly":true,"recursive":true,"nullable":false,"optional":true,"coerce":true},"fields":{"number":{"type":"number","_whitelist":{},"_blacklist":{},"internalTests":{},"exclusiveTests":{},"deps":[],"conditions":[],"tests":[],"transforms":[null],"spec":{"strip":false,"strict":false,"abortEarly":true,"recursive":true,"nullable":false,"optional":false,"coerce":true}}},"_nodes":["number"],"_excludedEdges":[]}}
+  </div>
+</div>
+`;

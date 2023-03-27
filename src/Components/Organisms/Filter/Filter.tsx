@@ -97,7 +97,7 @@ const Filter = <T,>(props: IFilterProps<T>): React.ReactElement => {
           {searchBarItems.map((item) => {
             return (
               <FilterItem<T>
-                inputValues={currentSearchBarValues}
+                inputs={currentSearchBarValues}
                 item={item}
                 key={item.dataIndex.toString()}
                 inline
@@ -139,7 +139,7 @@ const Filter = <T,>(props: IFilterProps<T>): React.ReactElement => {
                 return (
                   <FilterItem<T>
                     key={'dataIndex' in item ? item.dataIndex.toString() : `section-${index}`}
-                    inputValues={currentModalValues}
+                    inputs={currentModalValues}
                     item={item}
                     onChange={onChangeAdvancedFilterValue}
                   />

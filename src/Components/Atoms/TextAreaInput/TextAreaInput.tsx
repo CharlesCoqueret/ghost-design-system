@@ -5,16 +5,16 @@ import TextareaAutosize from 'react-textarea-autosize';
 import styles from './TextAreaInput.module.scss';
 
 export interface ITextAreaInputProps {
+  /** Class for the input (optional, default: undefined) */
+  className?: string;
   /** For test purpose only */
   dataTestId?: string;
   /** Disabled field (optional, default: false) */
   disabled?: boolean;
   /** Highlighted field (optional, default: false) */
   highlighted?: boolean;
-  /** Class for the input (optional, default: undefined) */
-  inputClassName?: string;
   /** Input string value (optional, default: '') */
-  inputValue?: string;
+  input?: string;
   /** Is in Error (optional, default: false) */
   isInError?: boolean;
   /** Maximum length of the textfield (optional, default: undefined) */
@@ -33,12 +33,12 @@ export interface ITextAreaInputProps {
 
 const TextAreaInput = (props: ITextAreaInputProps): ReactElement => {
   const {
+    className,
     dataTestId,
     disabled,
     isInError,
     highlighted,
-    inputClassName,
-    inputValue,
+    input,
     maxLength,
     minLength,
     name,
@@ -70,29 +70,29 @@ const TextAreaInput = (props: ITextAreaInputProps): ReactElement => {
             [styles.error]: isInError && !(disabled || readOnly),
             [styles.highlighted]: (readOnly || disabled) && highlighted,
           },
-          inputClassName,
+          className,
         )}
         data-testid={dataTestId}
         id={name}
         name={name}
-        placeholder={!inputValue && (readOnly || disabled) ? '-' : placeholder}
+        placeholder={!input && (readOnly || disabled) ? '-' : placeholder}
         minRows={3}
         maxRows={10}
         maxLength={maxLength}
         minLength={minLength}
         disabled={disabled}
         readOnly={readOnly}
-        value={inputValue}
+        value={input}
       />
     </div>
   );
 };
 
 TextAreaInput.defaultProps = {
+  className: undefined,
   disabled: false,
   highlighted: false,
-  inputClassName: undefined,
-  inputValue: '',
+  input: '',
   isInError: false,
   maxLength: undefined,
   minLength: undefined,

@@ -17,7 +17,7 @@ const TextCell = <T,>(props: ICellProps<T, IColumnText<T>>): ReactElement => {
       <TextField
         dataTestId={dataTestId}
         ellipsis={column.ellipsis}
-        inputValue={displayValue}
+        input={displayValue}
         maxLength={column.maxLength}
         minLength={column.minLength}
         name={String(column.dataIndex)}
