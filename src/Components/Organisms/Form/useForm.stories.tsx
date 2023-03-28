@@ -4,13 +4,13 @@ import * as yup from 'yup';
 import cloneDeep from 'lodash/cloneDeep';
 
 import { IToggleEntry } from '../../Atoms/CheckBoxInput/types';
+import Section from '../../Atoms/Layout/Section';
 import { ColorButtonEnum } from '../../Molecules/Button';
 import { AmountField } from '../../Molecules/AmountField/AmountField';
 import { CheckboxField } from '../../Molecules/CheckboxField/CheckboxField';
 import { DatePickerField } from '../../Molecules/DatePickerField/DatePickerField';
-
-import Section from '../../Atoms/Layout/Section';
 import { ActionBar } from '../ActionBar';
+
 import useForm, { IUseFormProps } from './useForm';
 import Form from './Form';
 
@@ -27,7 +27,7 @@ interface IDataType {
 const Template: ComponentStory<(props: IUseFormProps<IDataType>) => ReactElement> = (
   args: IUseFormProps<IDataType>,
 ) => {
-  const [values, setValues] = useState(args.values);
+  const [values, setValues] = useState(cloneDeep(args.values));
 
   const { fieldsProps, handleSubmit, handleReset, hasBeenSubmitted } = useForm<IDataType>({
     ...args,
@@ -56,11 +56,12 @@ const Template: ComponentStory<(props: IUseFormProps<IDataType>) => ReactElement
             color: ColorButtonEnum.SECONDARY,
             onClick: () => {
               console.log(`Reset ${JSON.stringify(handleReset())}`);
+              setValues(args.values);
             },
           },
         ]}
       />
-      <Section title='Form' collapsible={false}>
+      <Section title='Form' collapsible={false} separator={false}>
         <Form>
           <AmountField
             label='Amount'
@@ -83,14 +84,12 @@ const Template: ComponentStory<(props: IUseFormProps<IDataType>) => ReactElement
   );
 };
 
-const checkboxOption = [
-  { value: 'value 1', label: 'label 1' },
-  { value: 'value 2', checked: true, label: 'label 2' },
-];
-
 const initialValues: IDataType = {
   amount: 100000,
-  checkbox: cloneDeep(checkboxOption),
+  checkbox: [
+    { value: 'value 1', label: 'label 1' },
+    { value: 'value 2', checked: true, label: 'label 2' },
+  ],
   date: new Date(),
 };
 
@@ -115,8 +114,8 @@ const validationSchema: yup.ObjectSchema<IDataType> = yup.object({
   date: yup.date().required('Date is required').min(new Date('01/01/1980'), 'Date needs to be after Jan 1 1980'),
 });
 
-export const Default = Template.bind({});
-Default.args = {
+export const Basic = Template.bind({});
+Basic.args = {
   values: initialValues,
   validationSchema: validationSchema,
 };
