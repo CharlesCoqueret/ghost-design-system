@@ -71,7 +71,7 @@
     "react-router-dom": "5.3.4"
   },
   "engines": {
-    "node": ">=16.8.0"
+    "node": ">=16.10.0"
   },
   "devDependencies": {
     "@babel/core": "7.21.0",
