@@ -1,4 +1,4 @@
-import React, { PropsWithChildren, ReactElement, useEffect, useRef, useState } from 'react';
+import React, { CSSProperties, PropsWithChildren, ReactElement, useEffect, useRef, useState } from 'react';
 import classnames from 'classnames';
 
 import { useOnClickOutside, useOnEscapePressed } from '../../../hooks';
@@ -8,6 +8,8 @@ import { Icon } from '../Icon';
 import styles from './Modal.module.scss';
 
 export interface IModalProps {
+  /** Additional class (optional, default: undefined) */
+  className?: string;
   /** Show the close icon (optional, default: false) */
   closeIcon?: boolean;
   /** Enable closing the dialog by pressing the escape key (optional, default: false) */
@@ -24,12 +26,15 @@ export interface IModalProps {
   show: boolean;
   /** Dialog window size: sm: 300px, lg: 800px (optionsl, default: 'sm')  */
   size?: 'sm' | 'lg';
+  /** Custom style (optional, default: undefined) */
+  style?: CSSProperties;
   /** Title of the modal (optional, default undefined) */
   title?: string;
 }
 
 const Modal = (props: PropsWithChildren<IModalProps>): ReactElement => {
   const {
+    className,
     children,
     closeIcon,
     closeOnPressEscape,
@@ -39,6 +44,7 @@ const Modal = (props: PropsWithChildren<IModalProps>): ReactElement => {
     onHide,
     show,
     size,
+    style,
     title,
   } = props;
 
@@ -130,12 +136,17 @@ const Modal = (props: PropsWithChildren<IModalProps>): ReactElement => {
       <Portal>
         <div className={styles.overlay}>
           <div
-            className={classnames(styles.container, {
-              [styles.small]: size === 'sm',
-              [styles.large]: size === 'lg',
-              [styles.shake]: isShaking,
-            })}
-            ref={contentRef}>
+            className={classnames(
+              styles.container,
+              {
+                [styles.small]: size === 'sm',
+                [styles.large]: size === 'lg',
+                [styles.shake]: isShaking,
+              },
+              className,
+            )}
+            ref={contentRef}
+            style={style}>
             {(closeIcon || title) && (
               <div className={styles.header}>
                 <div className={styles.title}>{title}</div>
@@ -163,11 +174,16 @@ const Modal = (props: PropsWithChildren<IModalProps>): ReactElement => {
 };
 
 Modal.defaultProps = {
+  classname: undefined,
   closeIcon: false,
+  closeOnPressEscape: false,
+  closeOnClickOutside: false,
+  dataTestId: undefined,
   disableTabOutside: true,
   enableClickOutside: false,
   onHide: undefined,
   size: 'sm',
+  style: undefined,
   title: undefined,
 };
 
