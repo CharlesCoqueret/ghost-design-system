@@ -29,7 +29,7 @@ export interface IYearPickerProps {
   /** Handler of value changes (optional, default: undefined) */
   /** Name of year picker input (optional, default: undefined) */
   name?: string;
-  onChange?: (date: number | undefined) => void;
+  onChange?: (date?: number) => void;
   /** Placeholder value (optional, default: undefined) */
   placeholder?: string;
   /** Read only input (optional, default: false) */
@@ -60,7 +60,7 @@ const YearPickerInput = (props: IYearPickerProps): ReactElement => {
 
   const handleChange = (date: Date | undefined | null) => {
     if (onChange) {
-      onChange(date?.getFullYear());
+      onChange(date?.getFullYear() || undefined);
     }
   };
 

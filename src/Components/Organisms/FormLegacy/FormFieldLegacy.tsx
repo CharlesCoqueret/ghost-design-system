@@ -145,10 +145,10 @@ const FormFieldLegacy = <T,>(props: IFormFieldLegacyProps<T>): ReactElement => {
             {...field}
             mandatory={field.mandatory == undefined ? requiredFromValidation : field.mandatory}
             name={field.dataIndex.toString()}
-            onChange={(newValue: Date | null) => {
+            onChange={(newValue: Date | undefined) => {
               handleChange(field.dataIndex, newValue as unknown as T[keyof T]);
             }}
-            input={(data && (data[field.dataIndex] as unknown as Date | null | undefined)) ?? undefined}
+            input={(data && (data[field.dataIndex] as unknown as Date | undefined)) ?? undefined}
             errorMessage={errorMessage}
             usePortal={localUsePortal}
           />

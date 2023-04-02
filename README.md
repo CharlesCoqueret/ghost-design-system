@@ -25,25 +25,25 @@
     - [Text](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/atom-typography--text)
     - [Title](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/atom-typography--title)
 - Molecules:
-  - [Amount field](https://charlescoqueret.github.io/ghost-design-system/?path=/story/molecule-amountfield--default)
-  - [Banner](https://charlescoqueret.github.io/ghost-design-system/?path=/story/molecule--banner)
-  - [Button](https://charlescoqueret.github.io/ghost-design-system/?path=/story/molecule-button--simple)
-  - [Checkbox field](https://charlescoqueret.github.io/ghost-design-system/?path=/story/molecule-checkboxfield--default)
-  - [Datepicker field](https://charlescoqueret.github.io/ghost-design-system/?path=/story/molecule-datepickerfield--default)
-  - [File field](https://charlescoqueret.github.io/ghost-design-system/?path=/story/molecule-filefield--default)
-  - [Percentage field](https://charlescoqueret.github.io/ghost-design-system/?path=/story/molecule-percentagefield--default)
-  - [Popover](https://charlescoqueret.github.io/ghost-design-system/?path=/story/molecule-popover--default)
-  - [Rich Text field](https://charlescoqueret.github.io/ghost-design-system/?path=/story/molecule-richtextfield--default)
+  - [Amount field](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/molecule-amountfield--amount-field)
+  - [Banner](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/molecule-banner--banner)
+  - [Button](https://charlescoqueret.github.io/ghost-design-system?path=/docs/molecule-button--button)
+  - [Checkbox field](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/molecule-checkboxfield--checkbox-field)
+  - [Datepicker field](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/molecule-datepickerfield--date-picker-field)
+  - [File field](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/molecule-filefield--file-field)
+  - [Percentage field](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/molecule-percentagefield--percentage-field)
+  - [Popover](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/molecule-popover--popover)
+  - [Rich Text field](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/molecule-richtextfield--rich-text-field)
   - Select field:
-    - [Single](https://charlescoqueret.github.io/ghost-design-system/?path=/story/molecule-selectfield--default)
-    - [Multi](https://charlescoqueret.github.io/ghost-design-system/?path=/story/molecule-multiselectfield--default)
-    - [Autocomplete (aka Dynamic Search)](https://charlescoqueret.github.io/ghost-design-system/?path=/story/molecule-dynamicsearchfield--default)
-    - [Autocomplete creatable (aka Dynamic Search Creatable)](https://charlescoqueret.github.io/ghost-design-system/?path=/story/molecule-dynamicsearchcreatablefield--default)
-  - [Switch field](https://charlescoqueret.github.io/ghost-design-system/?path=/story/molecule-switchfield--default)
-  - [Textarea field](https://charlescoqueret.github.io/ghost-design-system/?path=/story/molecule-textareafield--default)
-  - [Text field](https://charlescoqueret.github.io/ghost-design-system/?path=/story/molecule-textfield--default)
-  - [Toaster](https://charlescoqueret.github.io/ghost-design-system/?path=/story/molecule--toaster)
-  - [YearPicker field](https://charlescoqueret.github.io/ghost-design-system/?path=/story/molecule-yearpickerfield--default)
+    - [Single](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/molecule-selectfield--select-field)
+    - [Multi](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/molecule-multiselectfield--multi-select-field)
+    - [Autocomplete (aka Dynamic Search)](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/molecule-dynamicsearchfield--dynamic-search-field)
+    - [Autocomplete creatable (aka Dynamic Search Creatable)](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/molecule-dynamicsearchcreatablefield--dynamic-search-creatable-field)
+  - [Switch field](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/molecule-switchfield--switch-field)
+  - [Textarea field](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/molecule-textareafield--text-area-field)
+  - [Text field](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/molecule-textfield--text-field)
+  - [Toaster](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/molecule-toaster--toaster)
+  - [YearPicker field](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/molecule-yearpickerfield--year-picker-field)
 - Organisms:
   - [ActionBar](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/organism--action-bar)
   - DataTable:
@@ -56,9 +56,10 @@
   - [Filter](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/organism--filter)
   - Form:
     - Form component
-    - [useForm hook](https://charlescoqueret.github.io/ghost-design-system/?path=/story/organism-useform--default)
-  - [NavBar](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/organism--nav-bar)
-  - [SideBar](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/organism--side-bar)
+    - [useForm hook](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/organism-useform--basic)
+    - [useFormLegacy hook](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/organism-useformlegacy--default)
+  - [NavBar](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/organism-navbar--nav-bar)
+  - [SideBar](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/organism-sidebar--side-bar)
 - Templates:
   - [Portfolio](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/template-portfolio--portfolio)
 
@@ -72,7 +73,7 @@ npm install ghost-design-system
 
 3. Load the required icon set and initialize the ThemeProvider, for example in your `index.tsx` :
 
-```ts
+```tsx
 import { loadIcons, ThemeProvider } from 'ghost-design-system';
 import '~ghost-design-system/dist/ghost-design-system.css';
 
@@ -80,12 +81,9 @@ loadIcons();
 
 const App = () => {
   return (
-    <>
-      <ThemeProvider />
+    <ThemeProvider>
       <RestOfYourApp />
-      <div id='root-portal-id' />
-      <div id='toaster-portal-id' />
-    </>
+    </ThemeProvider>
   );
 };
 ```

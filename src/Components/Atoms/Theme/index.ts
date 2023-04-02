@@ -1,2 +1,2 @@
-export { default as ThemeProvider } from './ThemeProvider';
-export type { ITheme } from './ThemeProvider';
+export { default as ThemeProvider, defaultTheme } from './ThemeProvider';
+export type { ITheme, RGB } from './ThemeProvider';

@@ -21,25 +21,51 @@ import { IOption } from '../../../Atoms/SelectInput';
 import { IFieldSectionLegacyProps } from '../../FormLegacy/types';
 
 export enum ColumnType {
+  /** Amount column */
   AMOUNT = 'amount',
+  /** Badge column */
   BADGE = 'badge',
+  /** Button column */
   BUTTON = 'button',
+  /** Checkbox column */
   CHECKBOX = 'checkbox',
+  /** Code column */
   CODE = 'code',
+  /**
+   * Custom column
+   * @deprecated will be removed in version 2.1
+   */
   CUSTOM = 'custom',
+  /** Date column */
   DATE = 'date',
+  /** Description column */
   DESCRIPTION = 'description',
+  /** Dynamic search column */
   DYNAMICSEARCH = 'dynamicsearch',
+  /** File column */
   FILE = 'file',
+  /** Multiselect column */
   MULTISELECT = 'multiselect',
+  /** Number column */
   NUMBER = 'number',
+  /** Percentage column */
   PERCENTAGE = 'percentage',
+  /** Rich text column */
   RICHTEXT = 'richtext',
+  /** Section column */
   SECTION = 'section',
+  /** Switch column */
   SWITCH = 'switch',
+  /**
+   * Table column
+   * @deprecated will be removed in version 2.1
+   */
   TABLE = 'table',
+  /** Text column */
   TEXT = 'text',
+  /** Text area column */
   TEXTAREA = 'textarea',
+  /** Year column */
   YEAR = 'year',
 }
 

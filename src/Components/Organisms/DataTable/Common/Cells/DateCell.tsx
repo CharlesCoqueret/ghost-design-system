@@ -8,7 +8,7 @@ import { DatePickerField } from '../../../../Molecules/DatePickerField';
 const DateCell = <T,>(props: ICellProps<T, IColumnDate<T>>): ReactElement => {
   const { column, dataTestId, editing, extra, forcedValue, onChange, row, rowIndex } = props;
 
-  const displayValue = (forcedValue || (row && row[column.dataIndex])) as Date | null | undefined;
+  const displayValue = (forcedValue || (row && row[column.dataIndex])) as Date | undefined;
   const dateFormat = column.dateFormat || extra?.dateFormat;
   const isCurrentlyEditedRow =
     editing || (extra && 'editedRowIndex' in extra ? extra.editedRowIndex === rowIndex && column.editable : false);
@@ -25,7 +25,7 @@ const DateCell = <T,>(props: ICellProps<T, IColumnDate<T>>): ReactElement => {
         input={displayValue}
         isClearable={column.isClearable}
         locale={column.locale}
-        onChange={(newValue: Date | null) => {
+        onChange={(newValue: Date | undefined) => {
           if (onChange) {
             onChange(newValue as unknown as T[keyof T]);
           }

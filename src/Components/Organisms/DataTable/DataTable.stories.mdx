@@ -8,8 +8,6 @@ import { ColumnType } from './Common/types';
 import FakeExtraStaticDataTable from './Common/FakeComponents/FakeExtraStaticDataTable';
 import { Icon } from '../../Atoms';
 
-import dataTableStyle from '../../../assets/_datatable.scss?raw';
-
 export const TemplateStaticDataTable = (args) => {
   return <StaticDataTable {...args} />;
 };
@@ -744,9 +742,3 @@ Especially usefull when having to display 2 tables side by side.
     {TemplateStaticDataTable.bind({})}
   </Story>
 </Canvas>
-
-## Style
-
-[source](https://github.com/CharlesCoqueret/ghost-design-system/blob/main/src/assets/_datatable.scss)
-
-<Source language='css' dark format={true} code={dataTableStyle} />

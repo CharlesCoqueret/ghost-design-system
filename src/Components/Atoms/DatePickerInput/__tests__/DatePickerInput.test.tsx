@@ -16,7 +16,7 @@ describe('DatePickerInput Component', () => {
     // Using dynamic date instead of static value to ensure local time is taken into consideration.
     const expectedDate = new Date('Wed Mar 02 2022');
 
-    expect(onChangeMock).toHaveBeenLastCalledWith(expectedDate, expect.anything());
+    expect(onChangeMock).toHaveBeenLastCalledWith(expectedDate);
   });
 
   it('DatePickerInput renders and changes without onChange prop', async () => {

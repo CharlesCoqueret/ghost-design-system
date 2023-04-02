@@ -3,14 +3,14 @@ import * as yup from 'yup';
 import { yupResolver } from '../yupResolver';
 
 describe('yupResolver', () => {
-  it('yupResolver validates without errors', () => {
+  it('validates without errors', () => {
     const schema = yup.object({ number: yup.number().required() });
     const values = { number: 10 };
 
     expect(yupResolver(schema, undefined, values)).toStrictEqual(undefined);
   });
 
-  it('yupResolver validates with errors', () => {
+  it('validates with errors', () => {
     const schema = yup.object({ number: yup.number().required('Value for number is required') });
     const values = {};
 
@@ -19,7 +19,7 @@ describe('yupResolver', () => {
     });
   });
 
-  it('yupResolver validates with unconventional errors', () => {
+  it('validates with unconventional errors', () => {
     console.error = jest.fn();
 
     const schema = yup.object({ number: yup.number().required('Value for number is required') });
@@ -38,7 +38,7 @@ describe('yupResolver', () => {
     jest.clearAllMocks();
   });
 
-  it('yupResolver validates with unusable errors', () => {
+  it('validates with unusable errors', () => {
     console.error = jest.fn();
 
     const schema = yup.object({ number: yup.number().required('Value for number is required') });

@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useEffect, useState } from 'react';
 import * as yup from 'yup';
 
 import { useRunAfterUpdate } from '../../../hooks';
@@ -8,7 +8,7 @@ type FieldProps<K extends keyof T, T> = {
     /** Current value of the field */
     input: T[key];
     /** Callback on change of the field */
-    onChange: (value: T[key]) => void;
+    onChange: (value?: T[key]) => void;
     /** Error message */
     errorMessage?: string;
     /** Indicator when the field has been modified by the user */
@@ -20,9 +20,9 @@ export interface IFormReturnedValues<T> {
   /** Object containing for each entry of the form object, the props for the field */
   fieldsProps: FieldProps<keyof T, T>;
   /** Handler for the submit, if there is no error, the onSubmit callback will be called it the form is valid. */
-  handleSubmit: (event?: React.FormEvent<HTMLFormElement>) => void;
+  submit: (event?: React.FormEvent<HTMLFormElement>) => void;
   /** Handler for the reset of the form, especially the touched, hasBeenSubmitted and the errors. */
-  handleReset: () => void;
+  reset: () => void;
   /** Indicator when the form has already been submitted by the user */
   hasBeenSubmitted: boolean;
 }
@@ -69,10 +69,12 @@ const yupMandatoryResolver = <T extends yup.AnyObject>(
       const fieldDescriptor = descriptor.fields[dataIndex] as yup.SchemaDescription;
       newErrors[dataIndex as keyof T] = !fieldDescriptor.optional && !fieldDescriptor.nullable;
     } catch (error) {
-      console.error(
-        `could not retrieve if ${dataIndex} is mandatory.` +
-          ` It looks like you haven't defined a proper validation schema.`,
-      );
+      if (process.env.NODE_ENV === 'development') {
+        console.error(
+          `could not retrieve if ${dataIndex} is mandatory.` +
+            ` It looks like you haven't defined a proper validation schema.`,
+        );
+      }
     }
   }
   return newErrors;
@@ -109,29 +111,29 @@ const useForm = <T extends yup.AnyObject>(props: IUseFormProps<T>): IFormReturne
 
   const runAfterUpdate = useRunAfterUpdate();
 
-  const validate = useCallback(() => {
-    setErrors(yupErrorResolver(validationSchema, values));
-    setMandatory(yupMandatoryResolver(validationSchema, values));
-  }, [validationSchema, values]);
-
-  /**
-   * Validate the form whenever the incoming values are passed.
-   */
+  /** Ensures the mandatory marker and errors are defined whenever the values change */
   useEffect(() => {
     validate();
-  }, [validate]);
+  }, [values]);
+
+  const validate = () => {
+    setErrors(yupErrorResolver(validationSchema, values));
+    setMandatory(yupMandatoryResolver(validationSchema, values));
+  };
 
   const handleChange =
     <K extends keyof T>(fieldName: K) =>
     (value: T[K]) => {
+      validate();
       setTouched((prev) => {
         return { ...prev, [fieldName]: true };
       });
       onChange(fieldName, value);
     };
 
-  const handleSubmit = (event?: React.FormEvent<HTMLFormElement>) => {
+  const submit = (event?: React.FormEvent<HTMLFormElement>) => {
     event?.preventDefault();
+    validate();
     setHasBeenSubmitted(true);
     if (onSubmit && Object.keys(errors).length === 0) {
       onSubmit(values);
@@ -140,7 +142,7 @@ const useForm = <T extends yup.AnyObject>(props: IUseFormProps<T>): IFormReturne
     }
   };
 
-  const handleReset = () => {
+  const reset = () => {
     setHasBeenSubmitted(false);
     setTouched({} as Record<keyof T, boolean>);
     setErrors({} as Record<keyof T, string>);
@@ -153,16 +155,16 @@ const useForm = <T extends yup.AnyObject>(props: IUseFormProps<T>): IFormReturne
         input: value,
         onChange: handleChange(fieldName),
         errorMessage: errors[fieldName],
-        touched: touched[fieldName],
-        mandatory: mandatory[fieldName],
+        touched: touched[fieldName] || false,
+        mandatory: mandatory[fieldName] || false,
       },
     };
   }, {} as FieldProps<keyof T, T>);
 
   return {
     fieldsProps,
-    handleSubmit,
-    handleReset,
+    submit,
+    reset,
     hasBeenSubmitted,
   };
 };

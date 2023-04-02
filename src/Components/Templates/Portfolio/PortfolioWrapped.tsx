@@ -21,11 +21,9 @@ export interface IPortfolioProps<FilterType, PortfolioType, ResponseType, Pagina
   convertData: (response: ResponseType) => Array<PortfolioType>;
   /**
    * Description of the filter
+   * When set to undefined, filter will not be rendered.
    */
-  filter?: Pick<
-    IFilterProps<FilterType>,
-    'advancedSearchItems' | 'disableTabOutside' | 'initialValues' | 'localization' | 'searchBarItems'
-  >;
+  filter?: Omit<IFilterProps<FilterType>, 'onChange'>;
   /** Custom filter className (optional, default: undefined) */
   filterClassName?: string;
   /**
@@ -51,7 +49,7 @@ export interface IPortfolioProps<FilterType, PortfolioType, ResponseType, Pagina
   /**
    * Description of the static data table
    */
-  table: Pick<IStaticDataTableProps<PortfolioType>, 'columns' | 'extra' | 'stickyHeader'>;
+  table: Omit<IStaticDataTableProps<PortfolioType>, 'data' | 'loading' | 'onSortChange'>;
   /** Custom table className (optional, default: undefined) */
   tableClassName?: string;
 }

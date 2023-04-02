@@ -22,7 +22,7 @@ export interface IDatePickerProps {
   /** Highlight value in readonly mode (optional, default: false) */
   highlighted?: boolean;
   /** Input date value (optional, default: undefined) */
-  input?: Date | null;
+  input?: Date;
   /** Ability to clear the value (optional, default: false) */
   isClearable?: boolean;
   /** Is in Error (optional, default: false) */
@@ -36,7 +36,7 @@ export interface IDatePickerProps {
   /** Handler of value changes (optional, default: undefined) */
   /** Name of date picker input (optional, default: undefined) */
   name?: string;
-  onChange?: (date: Date | null) => void;
+  onChange?: (date?: Date) => void;
   /** Placeholder value (optional, default: undefined) */
   placeholder?: string;
   /** Read only input (optional, default: false) */
@@ -103,12 +103,11 @@ const DatePickerInput = (props: IDatePickerProps): ReactElement => {
         maxDate={maxDate}
         minDate={minDate}
         name={name}
-        onChange={
-          onChange ||
-          (() => {
-            return;
-          })
-        }
+        onChange={(value) => {
+          if (onChange) {
+            onChange(value || undefined);
+          }
+        }}
         onClickOutside={(event) => {
           event.stopPropagation();
         }}
@@ -118,7 +117,7 @@ const DatePickerInput = (props: IDatePickerProps): ReactElement => {
         readOnly={readOnly}
         renderCustomHeader={DatePickerHeader(locale)}
         showPopperArrow={false}
-        selected={input}
+        selected={input || null}
         tabIndex={readOnly || disabled ? -1 : 0}
       />
     </div>

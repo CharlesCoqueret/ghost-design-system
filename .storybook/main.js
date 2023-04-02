@@ -18,24 +18,16 @@ module.exports = {
   },
   framework: '@storybook/react',
   webpackFinal: async (config) => {
-    config.module.rules.unshift({
-      test: /\.scss$/i,
-      resourceQuery: /raw/,
-      type: 'asset/source',
-    });
-
-    // SCSS ALL EXCEPT local
+    // ALL MODULE SCSS
     config.module.rules.push({
       test: /\.module\.scss$/i,
-      resourceQuery: { not: [/raw/] },
       use: ['style-loader', 'css-loader', 'sass-loader'],
     });
 
-    // SCSS local
+    // ALL NON MODULE SCSS
     config.module.rules.push({
       test: /\.scss$/i,
       exclude: /\.module\.scss$/i,
-      resourceQuery: { not: [/raw/] },
       use: ['style-loader', 'css-loader', 'sass-loader'],
       include: path.resolve(__dirname, '../'),
     });

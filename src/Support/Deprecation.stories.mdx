@@ -1,0 +1,44 @@
+import { Canvas, Meta, ArgsTable, Story, Source } from '@storybook/addon-docs';
+import LinkTo from '@storybook/addon-links/react';
+
+<Meta
+  title='Support/Upcoming deprecation'
+  parameters={{
+    viewMode: 'docs',
+    layout: 'fullscreen',
+  }}
+/>
+
+# Upcoming deprecation in V2.1
+
+## ColumnType deprecation
+
+- `ColumnType.CUSTOM`
+- `ColumnType.TABLE`
+
+used in
+
+- <LinkTo kind='Organism/DataTable' story='StaticDataTable'>
+    StaticDataTable
+  </LinkTo>
+- <LinkTo kind='Organism/DataTable' story='EditableDataTable'>
+    EditableDataTable
+  </LinkTo>
+- <LinkTo kind='Organism/DataTable' story='LineEditableInPlaceDataTable'>
+    LineEditableInPlaceDataTable
+  </LinkTo>
+- <LinkTo kind='Organism/DataTable' story='LineEditableDataTable'>
+    LineEditableDataTable
+  </LinkTo>
+
+## FieldLegacyTypeEnum deprecation
+
+- `FieldLegacyTypeEnum.CUSTOM`
+- `FieldLegacyTypeEnum.LINE_EDITABLE_TABLE`
+- `FieldLegacyTypeEnum.EDITABLE_TABLE`
+
+used in
+
+- <LinkTo kind='Organism/useFormLegacy' story='Default'>
+    useFormLegacy
+  </LinkTo>

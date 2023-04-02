@@ -21,7 +21,7 @@ export default {
 interface IDataType {
   amount: number | undefined;
   checkbox: Array<IToggleEntry>;
-  date: Date | undefined | null;
+  date: Date | undefined;
 }
 
 const Template: ComponentStory<(props: IUseFormProps<IDataType>) => ReactElement> = (
@@ -29,7 +29,7 @@ const Template: ComponentStory<(props: IUseFormProps<IDataType>) => ReactElement
 ) => {
   const [values, setValues] = useState(cloneDeep(args.values));
 
-  const { fieldsProps, handleSubmit, handleReset, hasBeenSubmitted } = useForm<IDataType>({
+  const { fieldsProps, submit, reset, hasBeenSubmitted } = useForm<IDataType>({
     ...args,
     values: values,
     onChange: (key, value) => {
@@ -48,14 +48,14 @@ const Template: ComponentStory<(props: IUseFormProps<IDataType>) => ReactElement
             label: 'Submit',
             color: ColorButtonEnum.PRIMARY,
             onClick: () => {
-              console.log(`Submit ${JSON.stringify(handleSubmit())}`);
+              console.log(`Submit ${JSON.stringify(submit())}`);
             },
           },
           {
             label: 'Reset',
             color: ColorButtonEnum.SECONDARY,
             onClick: () => {
-              console.log(`Reset ${JSON.stringify(handleReset())}`);
+              console.log(`Reset ${JSON.stringify(reset())}`);
               setValues(args.values);
             },
           },
@@ -111,7 +111,11 @@ const validationSchema: yup.ObjectSchema<IDataType> = yup.object({
       test: (val) => (val ? val.some((entry) => (entry.checked || false) === true) : false),
     })
     .required(),
-  date: yup.date().required('Date is required').min(new Date('01/01/1980'), 'Date needs to be after Jan 1 1980'),
+  date: yup
+    .date()
+    .required('Date is required')
+    .default(undefined)
+    .min('01/01/1980', 'Date needs to be after Jan 1 1980'),
 });
 
 export const Basic = Template.bind({});

@@ -1,0 +1,234 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PortfolioWrapped should not render filter component when filter prop is not provided 1`] = `
+<div>
+  <div
+    class="table test-table-classname"
+  >
+    <table
+      class="gds-table"
+    >
+      <thead>
+        <tr>
+          <th
+            class=""
+          >
+            <div
+              class="table--header-value table--header-value--sortable"
+              tabindex="0"
+            >
+              <span
+                class="typography table--header-value--title right ellipsis"
+                title="Number"
+              >
+                Number
+              </span>
+              <span
+                class="table--header-value--sorter"
+              >
+                <i
+                  class="icon"
+                  icon="fas,sort"
+                />
+              </span>
+            </div>
+            <div>
+              Click to sort
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          class="no-data"
+        >
+          <td
+            colspan="1"
+          >
+            <svg
+              aria-hidden="true"
+              class="icon size-3x"
+              focusable="false"
+              height="50"
+              preserveAspectRatio="xMidYMid"
+              role="img"
+              style="background: transparent;"
+              viewBox="0 0 100 100"
+              width="50"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="50"
+                cy="50"
+                fill="transparent"
+                r="30"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-width="10"
+              >
+                <animatetransform
+                  attributeName="transform"
+                  dur="2s"
+                  keyTimes="0;0.5;1"
+                  repeatCount="indefinite"
+                  type="rotate"
+                  values="0 50 50;180 50 50;720 50 50"
+                />
+                <animate
+                  attributeName="stroke-dasharray"
+                  dur="2s"
+                  keyTimes="0;0.5;1"
+                  repeatCount="indefinite"
+                  values="20 150; 150 20; 20 150"
+                />
+              </circle>
+            </svg>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div
+      class="ref"
+    />
+  </div>
+</div>
+`;
+
+exports[`PortfolioWrapped should render filter component when filter prop is provided 1`] = `
+<div>
+  <div
+    class="filter test-filter-classname"
+  >
+    <div
+      class="container"
+    >
+      <div
+        class="bar"
+      >
+        <div
+          class="fields"
+        >
+          <div
+            class="fieldGroup inline"
+          >
+            <input
+              autocomplete="off"
+              class="default"
+              inputmode="numeric"
+              name="number"
+              placeholder="Number"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          class="actions"
+        >
+          <button
+            class="button"
+            color="reversed"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="label"
+            >
+              Reset
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="table test-table-classname"
+  >
+    <table
+      class="gds-table"
+    >
+      <thead>
+        <tr>
+          <th
+            class=""
+          >
+            <div
+              class="table--header-value table--header-value--sortable"
+              tabindex="0"
+            >
+              <span
+                class="typography table--header-value--title right ellipsis"
+                title="Number"
+              >
+                Number
+              </span>
+              <span
+                class="table--header-value--sorter"
+              >
+                <i
+                  class="icon"
+                  icon="fas,sort"
+                />
+              </span>
+            </div>
+            <div>
+              Click to sort
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          class="no-data"
+        >
+          <td
+            colspan="1"
+          >
+            <svg
+              aria-hidden="true"
+              class="icon size-3x"
+              focusable="false"
+              height="50"
+              preserveAspectRatio="xMidYMid"
+              role="img"
+              style="background: transparent;"
+              viewBox="0 0 100 100"
+              width="50"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="50"
+                cy="50"
+                fill="transparent"
+                r="30"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-width="10"
+              >
+                <animatetransform
+                  attributeName="transform"
+                  dur="2s"
+                  keyTimes="0;0.5;1"
+                  repeatCount="indefinite"
+                  type="rotate"
+                  values="0 50 50;180 50 50;720 50 50"
+                />
+                <animate
+                  attributeName="stroke-dasharray"
+                  dur="2s"
+                  keyTimes="0;0.5;1"
+                  repeatCount="indefinite"
+                  values="20 150; 150 20; 20 150"
+                />
+              </circle>
+            </svg>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div
+      class="ref"
+    />
+  </div>
+</div>
+`;

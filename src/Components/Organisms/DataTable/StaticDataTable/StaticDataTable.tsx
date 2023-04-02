@@ -7,6 +7,8 @@ import StaticDataTableFooter from './StaticDataTableFooter';
 import StaticDataTableHeader from './StaticDataTableHeader';
 import { IColumnType, IExtraStaticDataTableProps, SortDirectionEnum } from '../Common/types';
 
+import '../DataTable.module.scss';
+
 export interface IStaticDataTableProps<T> {
   /** Data to be displayed in the table */
   data: Array<T>;

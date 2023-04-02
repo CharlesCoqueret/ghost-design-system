@@ -10,6 +10,8 @@ import StaticDataTableHeader from '../StaticDataTable/StaticDataTableHeader';
 import { ColumnType, IColumnType, IExtraLineEditableDataTableProps, SortDirectionEnum } from '../Common/types';
 import LineEditableModal from './LineEditableModal';
 
+import '../DataTable.module.scss';
+
 export interface ILineEditableDataTableProps<T> {
   columns: Array<IColumnType<T>>;
   data: Array<T>;

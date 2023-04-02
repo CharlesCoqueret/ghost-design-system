@@ -54,7 +54,7 @@ const FilterItem = <T,>(props: IFilterItemProps<T>): ReactElement => {
           dateFormat={item.dateFormat}
           isClearable={item.isClearable}
           locale={item.locale}
-          input={inputs && (inputs[item.dataIndex] as unknown as Date | null | undefined)}
+          input={inputs && (inputs[item.dataIndex] as unknown as Date | undefined)}
           onChange={(newValue) => {
             onChange(item.dataIndex, newValue as unknown as T[keyof T]);
           }}

@@ -10,13 +10,7 @@ import { Link } from '../../Atoms/Link';
 import { Typography } from '../../Atoms/Typography';
 
 import useFormLegacy, { IUseFormProps } from './useFormLegacy';
-import {
-  FieldLegacyTypeEnum,
-  IFieldAndLayoutLegacyProps,
-  IFieldEditableTableProps,
-  IFieldLineEditableTableProps,
-} from './types';
-import { ColumnType } from '../DataTable/Common';
+import { FieldLegacyTypeEnum, IFieldAndLayoutLegacyProps } from './types';
 import Section from '../../Atoms/Layout/Section';
 import { ActionBar } from '../ActionBar';
 
@@ -42,8 +36,6 @@ interface IDataType {
   richtext: string;
   select: string | undefined;
   switch: Array<IToggleEntry> | undefined;
-  table: Array<IDataTableType>;
-  fulleditabletable: Array<IDataTableType>;
   text: string | undefined;
   textarea: string | undefined;
   year: number | undefined;
@@ -120,16 +112,6 @@ const initialData: IDataType = {
   richtext: '<p><span style="font-size: 16px;"><strong>Test</strong></span></p><p>Test 2</p>',
   select: options[2].value,
   switch: cloneDeep(switchOption),
-  table: [
-    { number: 1, text: 'text 1' },
-    { number: 2, text: 'text 2' },
-    { number: 3, text: 'text 3' },
-  ],
-  fulleditabletable: [
-    { number: 1, text: 'text 1' },
-    { number: 2, text: 'text 2' },
-    { number: 3, text: 'text 3' },
-  ],
   text: 'text',
   textarea:
     'Lorem ipsum dolor sit amet. Ut voluptas reiciendis vel praesentium laborum hic voluptas asperiores nam ' +
@@ -296,92 +278,6 @@ const fields: Array<IFieldAndLayoutLegacyProps<IDataType>> = [
   },
   { label: 'Select', dataIndex: 'select', fieldType: FieldLegacyTypeEnum.SELECT, options: options },
   { label: 'Switch', dataIndex: 'switch', fieldType: FieldLegacyTypeEnum.SWITCH },
-  {
-    collapsible: false,
-    label: 'Line editable table',
-    fields: [
-      {
-        columns: [
-          {
-            dataIndex: 'number',
-            editable: true,
-            title: 'Number',
-            type: ColumnType.NUMBER,
-          },
-          {
-            dataIndex: 'text',
-            editable: true,
-            title: 'Text',
-            type: ColumnType.TEXT,
-          },
-        ],
-        dataIndex: 'table',
-        extra: {
-          validationSchema: yup.object({
-            number: yup.number().required(),
-            text: yup.string().required(),
-          }),
-          onRowDelete: () => {
-            // Enabling deletion
-            return;
-          },
-          canAddNewLine: () => {
-            // Enabling Add new line
-            return true;
-          },
-          onNewLine: () => ({ number: 100, text: 'text' }),
-        },
-        fieldType: FieldLegacyTypeEnum.LINE_EDITABLE_TABLE,
-        label: 'Line editable table',
-      } as IFieldLineEditableTableProps<IDataType, IDataTableType>,
-    ],
-    fieldType: FieldLegacyTypeEnum.SECTION,
-  },
-  {
-    collapsible: false,
-    label: 'Editable table',
-    fields: [
-      {
-        columns: [
-          {
-            dataIndex: 'number',
-            editable: true,
-            title: 'Number',
-            type: ColumnType.NUMBER,
-          },
-          {
-            dataIndex: 'text',
-            editable: true,
-            title: 'Text',
-            type: ColumnType.TEXT,
-          },
-        ],
-        dataIndex: 'fulleditabletable',
-        extra: {
-          validationSchema: yup.object({
-            number: yup.number().required(),
-            text: yup.string().required(),
-          }),
-          onEdit: () => {
-            // Enabling edition
-            return;
-          },
-          onRowDelete: () => {
-            // Enabling deletion
-            return;
-          },
-          canAddNewLine: () => {
-            // Enabling Add new line
-            return true;
-          },
-          onNewLine: () => ({ number: 100, text: 'text' }),
-        },
-        fieldType: FieldLegacyTypeEnum.EDITABLE_TABLE,
-        label: 'Editable table',
-      } as IFieldEditableTableProps<IDataType, IDataTableType>,
-    ],
-    fieldType: FieldLegacyTypeEnum.SECTION,
-  },
   { label: 'Text', dataIndex: 'text', fieldType: FieldLegacyTypeEnum.TEXT },
   { label: 'Textarea', dataIndex: 'textarea', fieldType: FieldLegacyTypeEnum.TEXTAREA },
   { label: 'Year', dataIndex: 'year', fieldType: FieldLegacyTypeEnum.YEAR },

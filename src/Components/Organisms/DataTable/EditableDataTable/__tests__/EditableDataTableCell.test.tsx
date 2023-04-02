@@ -279,7 +279,7 @@ describe('EditableDataTableCell component', () => {
     });
 
     expect(handleUpdateDataChangeMock).toBeCalledTimes(1);
-    expect(handleUpdateDataChangeMock).toBeCalledWith(0, 'date', null);
+    expect(handleUpdateDataChangeMock).toBeCalledWith(0, 'date', undefined);
   });
 
   it('EditableDataTableCell renders with description', async () => {

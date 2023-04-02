@@ -13,10 +13,9 @@ export const parameters = {
   options: {
     storySort: {
       method: 'alphabetical',
-      order: ['Atom', 'Molecule', 'Organism', 'Template'],
+      order: ['Atom', 'Molecule', 'Organism', 'Template', 'Support'],
     },
   },
-  controls: { expanded: true },
 };
 
 export const decorators = [

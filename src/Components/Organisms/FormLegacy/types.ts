@@ -33,24 +33,52 @@ export interface IUseFormLegacyReturnedType<T extends yup.AnyObject> {
 }
 
 export enum FieldLegacyTypeEnum {
+  /** Amount field */
   AMOUNT = 'amount',
+  /** Checkbox field */
   CHECKBOX = 'checkbox',
+  /**
+   * Custom field
+   * @deprecated will be removed in version 2.1, please use useForm for custom fields
+   */
   CUSTOM = 'custom',
+  /** Date field */
   DATE = 'date',
+  /** Description field */
   DESCRIPTION = 'description',
+  /** Dynamic search field */
   DYNAMICSEARCH = 'dynamicsearch',
+  /** File field */
   FILE = 'file',
+  /** Multi select field */
   MULTISELECT = 'multiselect',
+  /** Number field */
   NUMBER = 'number',
+  /** Percentage field */
   PERCENTAGE = 'percentage',
+  /** Rich text field */
   RICHTEXT = 'richtext',
+  /** Section field */
   SECTION = 'section',
+  /** Select field */
   SELECT = 'select',
+  /** Switch field */
   SWITCH = 'switch',
+  /**
+   * Line editable table
+   * @deprecated will be removed in version 2.1, please use useForm for line editable table
+   */
   LINE_EDITABLE_TABLE = 'lineeditabletable',
+  /**
+   * Editable table
+   * @deprecated will be removed in version 2.1, please use useForm for line editable table
+   */
   EDITABLE_TABLE = 'editabletable',
+  /** Text field */
   TEXT = 'text',
+  /** Text area field */
   TEXTAREA = 'textarea',
+  /** Year field */
   YEAR = 'year',
 }
 

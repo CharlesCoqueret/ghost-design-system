@@ -1,6 +1,6 @@
-import React, { createContext, PropsWithChildren, useEffect, useState } from 'react';
+import React, { PropsWithChildren, useEffect, useState } from 'react';
 
-type RGB = `${number}, ${number}, ${number}`;
+export type RGB = `${number}, ${number}, ${number}`;
 
 type Color = RGB;
 
@@ -80,26 +80,14 @@ export const defaultTheme: ITheme = {
   fontFamily,
 };
 
-export interface IThemeContext {
-  theme: ITheme;
-  setCurrentTheme: (theme: ITheme) => void;
-}
-
-export const ThemeContext = createContext<IThemeContext>({
-  theme: defaultTheme,
-  setCurrentTheme: () => {
-    return;
-  },
-});
-
 export interface IThemeProvider {
-  theme?: ITheme;
+  theme?: Partial<ITheme>;
 }
 
 const ThemeProvider = (props: PropsWithChildren<IThemeProvider>) => {
   const { children, theme } = props;
 
-  const [currentTheme, setCurrentTheme] = useState(theme || defaultTheme);
+  const [currentTheme] = useState({ ...defaultTheme, ...theme });
 
   useEffect(() => {
     const rootDocumentStyle = document.documentElement.style;
@@ -129,7 +117,7 @@ const ThemeProvider = (props: PropsWithChildren<IThemeProvider>) => {
     rootDocumentStyle.setProperty('--theme-provider-font-family', currentTheme.fontFamily);
   }, [currentTheme]);
 
-  return <ThemeContext.Provider value={{ theme: currentTheme, setCurrentTheme }}>{children}</ThemeContext.Provider>;
+  return <>{children}</>;
 };
 
 ThemeProvider.defaultProps = {
