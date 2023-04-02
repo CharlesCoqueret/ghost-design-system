@@ -8,24 +8,26 @@ module.exports = {
   env: {
     browser: true,
     jest: true,
+    es2022: true,
     node: true,
   },
   ignorePatterns: ['coverage/*', 'node_modules/*', 'dist/*', 'docs-build/*', 'public/*'],
   parser: '@typescript-eslint/parser',
-  plugins: ['react-hooks', 'prettier'],
+  plugins: ['react', 'react-hooks', '@typescript-eslint', 'prettier'],
   parserOptions: {
-    ecmaVersion: 2018,
+    ecmaVersion: 6,
     ecmaFeatures: {
       jsx: true,
+      impliedStrict: true,
     },
     sourceType: 'module',
   },
   extends: [
-    'plugin:@typescript-eslint/recommended',
-    'plugin:react/recommended',
-    'eslint-config-prettier',
-    'prettier',
     'plugin:storybook/recommended',
+    'eslint:recommended',
+    'plugin:react/recommended',
+    'plugin:@typescript-eslint/recommended',
+    'prettier',
   ],
   rules: {
     '@typescript-eslint/naming-convention': [
@@ -36,6 +38,7 @@ module.exports = {
         selector: 'interface',
       },
     ],
+    'no-duplicate-imports': rules.ON,
     'react-hooks/rules-of-hooks': rules.ON,
     'react-hooks/exhaustive-deps': rules.OFF,
     'prettier/prettier': rules.ON,
