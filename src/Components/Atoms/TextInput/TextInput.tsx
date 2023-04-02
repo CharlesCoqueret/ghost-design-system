@@ -68,6 +68,7 @@ const TextInput = (props: ITextInputProps): ReactElement => {
   return (
     <input
       autoComplete='off'
+      autoCorrect='off'
       className={classnames(
         styles.container,
         {

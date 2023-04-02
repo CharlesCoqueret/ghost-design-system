@@ -18,6 +18,8 @@
 - Atoms/SwitchInput Provide a way to get inline input
 - Atoms/Theme Add theme provide, and referencing all colors through that theme.
 - Atoms/Theme Introducing high colors for Alert and Banner
+- Atoms/TextAreaInput disable autocomplete and autocorrect
+- Atoms/TextInput disable autocomplete and autocorrect
 - Atoms/Typography set default font-size to 14px
 - Inputs and Fields now have name as optional props
 - Molecules/Alert Component creation

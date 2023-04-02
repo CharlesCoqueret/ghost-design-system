@@ -61,6 +61,8 @@ const TextAreaInput = (props: ITextAreaInputProps): ReactElement => {
   return (
     <div className={styles.container}>
       <TextareaAutosize
+        autoComplete='off'
+        autoCorrect='off'
         onChange={onChangeHandler}
         className={classnames(
           styles.textarea,
