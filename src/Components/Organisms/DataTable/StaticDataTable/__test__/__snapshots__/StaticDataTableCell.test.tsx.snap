@@ -623,6 +623,8 @@ exports[`StaticDataTableCell component StaticDataTableCell renders with textarea
               class="container"
             >
               <textarea
+                autocomplete="off"
+                autocorrect="off"
                 class="textarea readOnly"
                 id="textarea"
                 name="textarea"

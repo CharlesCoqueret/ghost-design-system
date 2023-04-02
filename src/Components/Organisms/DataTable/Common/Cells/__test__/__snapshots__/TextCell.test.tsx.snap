@@ -13,6 +13,7 @@ exports[`TextCell component TextCell handles changes 1`] = `
           >
             <input
               autocomplete="off"
+              autocorrect="off"
               class="container"
               data-testid="DATA-TEST-ID"
               id="data"
@@ -41,6 +42,7 @@ exports[`TextCell component TextCell handles changes 2`] = `
           >
             <input
               autocomplete="off"
+              autocorrect="off"
               class="container"
               data-testid="DATA-TEST-ID"
               id="data"
@@ -93,6 +95,7 @@ exports[`TextCell component TextCell renders cell editing with no row input 1`] 
           >
             <input
               autocomplete="off"
+              autocorrect="off"
               class="container"
               id="data"
               name="data"
@@ -145,6 +148,7 @@ exports[`TextCell component TextCell renders row editing with no row input 1`] =
           >
             <input
               autocomplete="off"
+              autocorrect="off"
               class="container"
               id="data"
               name="data"

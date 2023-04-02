@@ -9,6 +9,8 @@ exports[`TextAreaField Component TextAreaField renders 1`] = `
       class="container"
     >
       <textarea
+        autocomplete="off"
+        autocorrect="off"
         class="textarea"
         id="NAME"
         name="NAME"
@@ -27,6 +29,8 @@ exports[`TextAreaField Component TextAreaField renders handles changes 1`] = `
       class="container"
     >
       <textarea
+        autocomplete="off"
+        autocorrect="off"
         class="textarea"
         data-testid="DATA-TEST-ID"
         id="NAME"
@@ -46,6 +50,8 @@ exports[`TextAreaField Component TextAreaField renders in readonly 1`] = `
       class="container"
     >
       <textarea
+        autocomplete="off"
+        autocorrect="off"
         class="textarea readOnly"
         id="NAME"
         name="NAME"
@@ -67,6 +73,8 @@ exports[`TextAreaField Component TextAreaField renders in readonly highlighted 1
       class="container"
     >
       <textarea
+        autocomplete="off"
+        autocorrect="off"
         class="textarea readOnly highlighted"
         id="NAME"
         name="NAME"
@@ -87,6 +95,8 @@ exports[`TextAreaField Component TextAreaField renders with error 1`] = `
       class="container"
     >
       <textarea
+        autocomplete="off"
+        autocorrect="off"
         class="textarea error"
         id="NAME"
         name="NAME"

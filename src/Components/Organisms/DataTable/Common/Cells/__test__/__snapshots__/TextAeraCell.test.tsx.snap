@@ -15,6 +15,8 @@ exports[`TextAreaCell component TextAreaCell handles changes 1`] = `
               class="container"
             >
               <textarea
+                autocomplete="off"
+                autocorrect="off"
                 class="textarea"
                 data-testid="DATA-TEST-ID"
                 id="data"
@@ -46,6 +48,8 @@ exports[`TextAreaCell component TextAreaCell handles changes 2`] = `
               class="container"
             >
               <textarea
+                autocomplete="off"
+                autocorrect="off"
                 class="textarea"
                 data-testid="DATA-TEST-ID"
                 id="data"
@@ -77,6 +81,8 @@ exports[`TextAreaCell component TextAreaCell renders 1`] = `
               class="container"
             >
               <textarea
+                autocomplete="off"
+                autocorrect="off"
                 class="textarea readOnly"
                 id="data"
                 name="data"
@@ -108,6 +114,8 @@ exports[`TextAreaCell component TextAreaCell renders cell editing with no row in
               class="container"
             >
               <textarea
+                autocomplete="off"
+                autocorrect="off"
                 class="textarea"
                 id="data"
                 name="data"
@@ -137,6 +145,8 @@ exports[`TextAreaCell component TextAreaCell renders hidden 1`] = `
               class="container"
             >
               <textarea
+                autocomplete="off"
+                autocorrect="off"
                 class="textarea readOnly"
                 id="data"
                 name="data"
@@ -168,6 +178,8 @@ exports[`TextAreaCell component TextAreaCell renders row editing with no row inp
               class="container"
             >
               <textarea
+                autocomplete="off"
+                autocorrect="off"
                 class="textarea"
                 id="data"
                 name="data"
@@ -196,6 +208,8 @@ exports[`TextAreaCell component TextAreaCell renders with forced value 1`] = `
               class="container"
             >
               <textarea
+                autocomplete="off"
+                autocorrect="off"
                 class="textarea readOnly"
                 id="data"
                 name="data"

@@ -7,6 +7,7 @@ exports[`TextField Component TextField renders 1`] = `
   >
     <input
       autocomplete="off"
+      autocorrect="off"
       class="container"
       id="NAME"
       name="NAME"
@@ -24,6 +25,7 @@ exports[`TextField Component TextField renders handles changes 1`] = `
   >
     <input
       autocomplete="off"
+      autocorrect="off"
       class="container"
       data-testid="DATA-TEST-ID"
       id="NAME"
@@ -70,6 +72,7 @@ exports[`TextField Component TextField renders with error 1`] = `
   >
     <input
       autocomplete="off"
+      autocorrect="off"
       class="container error"
       id="NAME"
       name="NAME"

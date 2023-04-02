@@ -848,6 +848,7 @@ exports[`LineEditableInPlaceDataTableCell component LineEditableInPlaceDataTable
           >
             <input
               autocomplete="off"
+              autocorrect="off"
               class="container"
               id="text"
               name="text"
@@ -877,6 +878,8 @@ exports[`LineEditableInPlaceDataTableCell component LineEditableInPlaceDataTable
               class="container"
             >
               <textarea
+                autocomplete="off"
+                autocorrect="off"
                 class="textarea"
                 id="textarea"
                 name="textarea"
