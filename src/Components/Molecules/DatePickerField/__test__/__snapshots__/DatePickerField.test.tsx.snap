@@ -12,8 +12,13 @@ exports[`DatePickerField Component DatePickerField renders 1`] = `
         class="react-datepicker-wrapper"
       >
         <div
-          class="react-datepicker__input-container"
+          class="react-datepicker__input-container "
         >
+          <span
+            aria-live="polite"
+            class="react-datepicker__aria-live"
+            role="alert"
+          />
           <input
             autocomplete="off"
             class="input-date-picker-input"
@@ -43,8 +48,13 @@ exports[`DatePickerField Component DatePickerField renders with values in disabl
         class="react-datepicker-wrapper"
       >
         <div
-          class="react-datepicker__input-container"
+          class="react-datepicker__input-container "
         >
+          <span
+            aria-live="polite"
+            class="react-datepicker__aria-live"
+            role="alert"
+          />
           <input
             autocomplete="off"
             class="input-date-picker-input-read-only input-date-picker-input highlighted"
@@ -75,8 +85,13 @@ exports[`DatePickerField Component DatePickerField renders with values in readon
         class="react-datepicker-wrapper"
       >
         <div
-          class="react-datepicker__input-container"
+          class="react-datepicker__input-container "
         >
+          <span
+            aria-live="polite"
+            class="react-datepicker__aria-live"
+            role="alert"
+          />
           <input
             autocomplete="off"
             class="input-date-picker-input-read-only"
@@ -107,8 +122,13 @@ exports[`DatePickerField Component DatePickerField renders with values with fiel
         class="react-datepicker-wrapper"
       >
         <div
-          class="react-datepicker__input-container"
+          class="react-datepicker__input-container "
         >
+          <span
+            aria-live="polite"
+            class="react-datepicker__aria-live"
+            role="alert"
+          />
           <input
             autocomplete="off"
             class="input-date-picker-input input-error"

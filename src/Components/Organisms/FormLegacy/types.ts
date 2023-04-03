@@ -286,12 +286,12 @@ export interface IFieldSwitchProps<T> extends IFieldBaseProps<T> {
   fieldType: FieldLegacyTypeEnum.SWITCH;
 }
 
-export interface IFieldEditableTableProps<T, U>
+export interface IFieldEditableTableProps<T, U extends yup.AnyObject>
   extends IFieldBaseProps<T>,
     Pick<IEditableDataTableProps<U>, 'columns' | 'extra' | 'loading' | 'onSortChange'> {
   fieldType: FieldLegacyTypeEnum.EDITABLE_TABLE;
 }
-export interface IFieldLineEditableTableProps<T, U>
+export interface IFieldLineEditableTableProps<T, U extends yup.AnyObject>
   extends IFieldBaseProps<T>,
     Pick<ILineEditableDataTableProps<U>, 'columns' | 'extra' | 'loading' | 'onSortChange'> {
   fieldType: FieldLegacyTypeEnum.LINE_EDITABLE_TABLE;

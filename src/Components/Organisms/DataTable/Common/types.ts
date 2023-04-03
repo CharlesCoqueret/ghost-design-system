@@ -356,7 +356,7 @@ export interface IColumnSwitch<T> extends IColumn {
   type: ColumnType.SWITCH;
 }
 
-export interface IColumnTable<T, U>
+export interface IColumnTable<T, U extends yup.AnyObject>
   extends IColumn,
     Pick<ILineEditableDataTableProps<U>, 'columns' | 'extra' | 'loading' | 'onSortChange'> {
   /** Entry of the value in T (type: keyof T) */

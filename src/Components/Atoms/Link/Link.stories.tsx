@@ -16,7 +16,7 @@ const Template: ComponentStory<typeof LinkComponent> = (args: ILinkProps) => {
 export const Link = Template.bind({});
 Link.args = {
   text: ' Link Text',
-  to: 'https://hamster.dance/hamsterdance/',
+  to: { pathname: 'https://google.com' },
   tooltip: 'Information about the link in a tooltip',
   externalLink: true,
 };

@@ -19,6 +19,6 @@ export default {
       statements: 90,
     },
   },
-  setupFiles: ['<rootDir>/.jest/setEnvVars.ts'],
+  setupFiles: ['<rootDir>/.jest/setJestEnv.ts'],
   testEnvironment: 'jest-environment-jsdom',
 };

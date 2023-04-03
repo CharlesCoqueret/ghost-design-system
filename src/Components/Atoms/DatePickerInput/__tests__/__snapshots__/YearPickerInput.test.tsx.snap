@@ -9,8 +9,13 @@ exports[`YearPickerInput Component YearPickerInput renders and changes with empt
       class="react-datepicker-wrapper"
     >
       <div
-        class="react-datepicker__input-container"
+        class="react-datepicker__input-container "
       >
+        <span
+          aria-live="polite"
+          class="react-datepicker__aria-live"
+          role="alert"
+        />
         <input
           autocomplete="off"
           class="input-year-picker-input"
@@ -35,8 +40,13 @@ exports[`YearPickerInput Component YearPickerInput renders and changes without o
       class="react-datepicker-wrapper"
     >
       <div
-        class="react-datepicker__input-container"
+        class="react-datepicker__input-container "
       >
+        <span
+          aria-live="polite"
+          class="react-datepicker__aria-live"
+          role="alert"
+        />
         <input
           autocomplete="off"
           class="input-year-picker-input"
@@ -61,8 +71,13 @@ exports[`YearPickerInput Component YearPickerInput renders and changes without o
       class="react-datepicker-wrapper"
     >
       <div
-        class="react-datepicker__input-container"
+        class="react-datepicker__input-container "
       >
+        <span
+          aria-live="polite"
+          class="react-datepicker__aria-live"
+          role="alert"
+        />
         <input
           autocomplete="off"
           class="input-year-picker-input"
@@ -87,8 +102,13 @@ exports[`YearPickerInput Component YearPickerInput renders handles changes 1`] =
       class="react-datepicker-wrapper"
     >
       <div
-        class="react-datepicker__input-container"
+        class="react-datepicker__input-container "
       >
+        <span
+          aria-live="polite"
+          class="react-datepicker__aria-live"
+          role="alert"
+        />
         <input
           autocomplete="off"
           class="input-year-picker-input"
@@ -113,8 +133,13 @@ exports[`YearPickerInput Component YearPickerInput renders handles changes 2`] =
       class="react-datepicker-wrapper"
     >
       <div
-        class="react-datepicker__input-container"
+        class="react-datepicker__input-container "
       >
+        <span
+          aria-live="polite"
+          class="react-datepicker__aria-live"
+          role="alert"
+        />
         <input
           autocomplete="off"
           class="input-year-picker-input"
@@ -139,8 +164,13 @@ exports[`YearPickerInput Component YearPickerInput renders in Error 1`] = `
       class="react-datepicker-wrapper"
     >
       <div
-        class="react-datepicker__input-container"
+        class="react-datepicker__input-container "
       >
+        <span
+          aria-live="polite"
+          class="react-datepicker__aria-live"
+          role="alert"
+        />
         <input
           autocomplete="off"
           class="input-year-picker-input input-error"
@@ -165,8 +195,13 @@ exports[`YearPickerInput Component YearPickerInput renders in readOnly, highligh
       class="react-datepicker-wrapper"
     >
       <div
-        class="react-datepicker__input-container"
+        class="react-datepicker__input-container "
       >
+        <span
+          aria-live="polite"
+          class="react-datepicker__aria-live"
+          role="alert"
+        />
         <input
           autocomplete="off"
           class="input-year-picker-input-read-only field-highlighted"

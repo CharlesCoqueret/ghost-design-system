@@ -75,6 +75,7 @@ describe('Global export test', () => {
     expect(Global.TextInput).toBeDefined();
 
     expect(Global.ThemeProvider).toBeDefined();
+    expect(Global.defaultTheme).toBeDefined();
 
     expect(Global.Tooltip).toBeDefined();
     expect(Global.MenuDirectionEnum).toBeDefined();

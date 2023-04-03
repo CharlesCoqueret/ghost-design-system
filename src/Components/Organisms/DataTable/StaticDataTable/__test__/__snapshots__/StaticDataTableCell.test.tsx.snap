@@ -215,8 +215,13 @@ exports[`StaticDataTableCell component StaticDataTableCell renders with date 1`]
                 class="react-datepicker-wrapper"
               >
                 <div
-                  class="react-datepicker__input-container"
+                  class="react-datepicker__input-container "
                 >
+                  <span
+                    aria-live="polite"
+                    class="react-datepicker__aria-live"
+                    role="alert"
+                  />
                   <input
                     autocomplete="off"
                     class="input-date-picker-input-read-only"
@@ -659,8 +664,13 @@ exports[`StaticDataTableCell component StaticDataTableCell renders with year 1`]
                 class="react-datepicker-wrapper"
               >
                 <div
-                  class="react-datepicker__input-container"
+                  class="react-datepicker__input-container "
                 >
+                  <span
+                    aria-live="polite"
+                    class="react-datepicker__aria-live"
+                    role="alert"
+                  />
                   <input
                     autocomplete="off"
                     class="input-year-picker-input-read-only"

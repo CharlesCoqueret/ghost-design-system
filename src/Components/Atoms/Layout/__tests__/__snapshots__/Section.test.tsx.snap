@@ -19,7 +19,8 @@ exports[`Section Component renders collapsible closed by default without separat
   <div
     aria-hidden="true"
     class="body"
-    id="react-collapsed-panel-5"
+    id="react-collapsed-panel-"
+    role="region"
     style="box-sizing: border-box; display: none; height: 0px; overflow: hidden;"
   >
     <div
@@ -50,8 +51,9 @@ exports[`Section Component renders not collapsible 1`] = `
   <div
     aria-hidden="false"
     class="body"
-    id="react-collapsed-panel-6"
-    style="box-sizing: border-box; display: none; height: 0px; overflow: hidden;"
+    id="react-collapsed-panel-"
+    role="region"
+    style="box-sizing: border-box;"
   >
     <div
       id="CHILD1"
@@ -81,8 +83,9 @@ exports[`Section Component renders not collapsible 2`] = `
   <div
     aria-hidden="false"
     class="body"
-    id="react-collapsed-panel-6"
-    style="box-sizing: border-box; display: none; height: 0px; overflow: hidden;"
+    id="react-collapsed-panel-"
+    role="region"
+    style="box-sizing: border-box;"
   >
     <div
       id="CHILD1"
@@ -112,8 +115,9 @@ exports[`Section Component renders not collapsible with open initially ignored 1
   <div
     aria-hidden="false"
     class="body"
-    id="react-collapsed-panel-8"
-    style="box-sizing: border-box; display: none; height: 0px; overflow: hidden;"
+    id="react-collapsed-panel-"
+    role="region"
+    style="box-sizing: border-box;"
   >
     <div
       id="CHILD1"
@@ -147,8 +151,9 @@ exports[`Section Component renders with separator 1`] = `
   <div
     aria-hidden="false"
     class="body"
-    id="react-collapsed-panel-1"
-    style="box-sizing: border-box; display: none; height: 0px; overflow: hidden;"
+    id="react-collapsed-panel-"
+    role="region"
+    style="box-sizing: border-box;"
   >
     <div
       id="CHILD1"
@@ -182,8 +187,9 @@ exports[`Section Component renders with separator 2`] = `
   <div
     aria-hidden="true"
     class="body"
-    id="react-collapsed-panel-1"
-    style="box-sizing: border-box; display: none; height: 0px; overflow: hidden;"
+    id="react-collapsed-panel-"
+    role="region"
+    style="box-sizing: border-box;"
   >
     <div
       id="CHILD1"
@@ -217,8 +223,9 @@ exports[`Section Component renders with separator 3`] = `
   <div
     aria-hidden="false"
     class="body"
-    id="react-collapsed-panel-1"
-    style="box-sizing: border-box; display: none; height: 0px; overflow: hidden;"
+    id="react-collapsed-panel-"
+    role="region"
+    style="box-sizing: border-box;"
   >
     <div
       id="CHILD1"

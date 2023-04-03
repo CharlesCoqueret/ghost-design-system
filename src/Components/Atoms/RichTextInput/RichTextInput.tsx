@@ -107,6 +107,7 @@ const RichTextInput = (props: IRichTextInputProps): ReactElement => {
       enableLink && enableImage ? ['link', 'image'] : enableImage ? ['image'] : enableLink ? ['link'] : [],
     ],
     // Do not replace <i></i> by <i /> as it breaks ol ul alignment
+    // Do not replace <Icon /> as it must be html only
     icons: {
       bold: '<i class="far fa-bold"></i>',
       delete: '<i class="fal fa-trash-alt"></i>',
@@ -137,6 +138,7 @@ const RichTextInput = (props: IRichTextInputProps): ReactElement => {
     videoFileInput: false,
     resizingBar: maxLength !== undefined && !(readOnly || disabled) ? true : false,
     charCounter: maxLength !== undefined && !(readOnly || disabled) ? true : false,
+    charCounterType: maxLength !== undefined && !(readOnly || disabled) ? 'byte-html' : undefined,
     maxCharCount: readOnly || disabled ? undefined : maxLength,
     minHeight: readOnly || disabled ? undefined : '250px',
     maxHeight: readOnly || disabled ? undefined : '600px',

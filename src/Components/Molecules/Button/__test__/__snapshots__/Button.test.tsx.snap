@@ -136,8 +136,10 @@ exports[`Button Component Button renders with list and handle open menu and clic
           style="margin: 0px; display: none; position: absolute; left: 0px; top: 0px;"
           tabindex="-1"
         >
-          <div
-            style="position: absolute; left: 0px; top: 0px;"
+          <li
+            aria-hidden="true"
+            role="menuitem"
+            style="position: absolute; left: 0px; top: 0px; display: block; outline: none;"
             tabindex="-1"
           />
           <li
@@ -211,8 +213,10 @@ exports[`Button Component Button renders with list and handle open menu and clic
           style="margin: 0px; position: absolute; left: 0px; top: 0px;"
           tabindex="-1"
         >
-          <div
-            style="position: absolute; left: 0px; top: 0px;"
+          <li
+            aria-hidden="true"
+            role="menuitem"
+            style="position: absolute; left: 0px; top: 0px; display: block; outline: none;"
             tabindex="-1"
           />
           <li
@@ -286,8 +290,10 @@ exports[`Button Component Button renders with list and handle open menu and clic
           style="margin: 0px; position: absolute; left: 0px; top: 0px; display: none;"
           tabindex="-1"
         >
-          <div
-            style="position: absolute; left: 0px; top: 0px;"
+          <li
+            aria-hidden="true"
+            role="menuitem"
+            style="position: absolute; left: 0px; top: 0px; display: block; outline: none;"
             tabindex="-1"
           />
           <li
@@ -361,8 +367,10 @@ exports[`Button Component Button renders with list and handle open menu and clos
           style="margin: 0px; display: none; position: absolute; left: 0px; top: 0px;"
           tabindex="-1"
         >
-          <div
-            style="position: absolute; left: 0px; top: 0px;"
+          <li
+            aria-hidden="true"
+            role="menuitem"
+            style="position: absolute; left: 0px; top: 0px; display: block; outline: none;"
             tabindex="-1"
           />
           <li
@@ -434,8 +442,10 @@ exports[`Button Component Button renders with list and handle open menu and clos
           style="margin: 0px; position: absolute; left: 0px; top: 0px;"
           tabindex="-1"
         >
-          <div
-            style="position: absolute; left: 0px; top: 0px;"
+          <li
+            aria-hidden="true"
+            role="menuitem"
+            style="position: absolute; left: 0px; top: 0px; display: block; outline: none;"
             tabindex="-1"
           />
           <li
@@ -507,8 +517,10 @@ exports[`Button Component Button renders with list and handle open menu and clos
           style="margin: 0px; position: absolute; left: 0px; top: 0px;"
           tabindex="-1"
         >
-          <div
-            style="position: absolute; left: 0px; top: 0px;"
+          <li
+            aria-hidden="true"
+            role="menuitem"
+            style="position: absolute; left: 0px; top: 0px; display: block; outline: none;"
             tabindex="-1"
           />
           <li
@@ -568,13 +580,17 @@ exports[`Button Component Button renders with popover 1`] = `
           style="margin: 0px; display: none; position: absolute; left: 0px; top: 0px;"
           tabindex="-1"
         >
-          <div
-            style="position: absolute; left: 0px; top: 0px;"
+          <li
+            aria-hidden="true"
+            role="menuitem"
+            style="position: absolute; left: 0px; top: 0px; display: block; outline: none;"
             tabindex="-1"
           />
-          <div
+          <li
+            aria-hidden="true"
             class="szh-menu__arrow szh-menu__arrow--dir-top"
-            style="position: absolute;"
+            role="menuitem"
+            style="display: block; position: absolute;"
           />
           <div
             class="container"
@@ -662,13 +678,17 @@ exports[`Button Component Button renders with popover 2`] = `
           style="margin: 0px; position: absolute; left: 0px; top: 0px;"
           tabindex="-1"
         >
-          <div
-            style="position: absolute; left: 0px; top: 0px;"
+          <li
+            aria-hidden="true"
+            role="menuitem"
+            style="position: absolute; left: 0px; top: 0px; display: block; outline: none;"
             tabindex="-1"
           />
-          <div
+          <li
+            aria-hidden="true"
             class="szh-menu__arrow szh-menu__arrow--dir-top"
-            style="position: absolute; left: 0px;"
+            role="menuitem"
+            style="display: block; position: absolute; left: 0px;"
           />
           <div
             class="container"
@@ -756,13 +776,17 @@ exports[`Button Component Button renders with popover 3`] = `
           style="margin: 0px; position: absolute; left: 0px; top: 0px; display: none;"
           tabindex="-1"
         >
-          <div
-            style="position: absolute; left: 0px; top: 0px;"
+          <li
+            aria-hidden="true"
+            role="menuitem"
+            style="position: absolute; left: 0px; top: 0px; display: block; outline: none;"
             tabindex="-1"
           />
-          <div
+          <li
+            aria-hidden="true"
             class="szh-menu__arrow szh-menu__arrow--dir-top"
-            style="position: absolute; left: 0px;"
+            role="menuitem"
+            style="display: block; position: absolute; left: 0px;"
           />
           <div
             class="container"
@@ -850,13 +874,17 @@ exports[`Button Component Button renders with popover without buttons 1`] = `
           style="margin: 0px; display: none; position: absolute; left: 0px; top: 0px;"
           tabindex="-1"
         >
-          <div
-            style="position: absolute; left: 0px; top: 0px;"
+          <li
+            aria-hidden="true"
+            role="menuitem"
+            style="position: absolute; left: 0px; top: 0px; display: block; outline: none;"
             tabindex="-1"
           />
-          <div
+          <li
+            aria-hidden="true"
             class="szh-menu__arrow szh-menu__arrow--dir-top"
-            style="position: absolute;"
+            role="menuitem"
+            style="display: block; position: absolute;"
           />
           <div
             class="container"
@@ -909,13 +937,17 @@ exports[`Button Component Button renders with popover without buttons 2`] = `
           style="margin: 0px; position: absolute; left: 0px; top: 0px;"
           tabindex="-1"
         >
-          <div
-            style="position: absolute; left: 0px; top: 0px;"
+          <li
+            aria-hidden="true"
+            role="menuitem"
+            style="position: absolute; left: 0px; top: 0px; display: block; outline: none;"
             tabindex="-1"
           />
-          <div
+          <li
+            aria-hidden="true"
             class="szh-menu__arrow szh-menu__arrow--dir-top"
-            style="position: absolute; left: 0px;"
+            role="menuitem"
+            style="display: block; position: absolute; left: 0px;"
           />
           <div
             class="container"
@@ -968,13 +1000,17 @@ exports[`Button Component Button renders with popover without buttons 3`] = `
           style="margin: 0px; position: absolute; left: 0px; top: 0px; display: none;"
           tabindex="-1"
         >
-          <div
-            style="position: absolute; left: 0px; top: 0px;"
+          <li
+            aria-hidden="true"
+            role="menuitem"
+            style="position: absolute; left: 0px; top: 0px; display: block; outline: none;"
             tabindex="-1"
           />
-          <div
+          <li
+            aria-hidden="true"
             class="szh-menu__arrow szh-menu__arrow--dir-top"
-            style="position: absolute; left: 0px;"
+            role="menuitem"
+            style="display: block; position: absolute; left: 0px;"
           />
           <div
             class="container"

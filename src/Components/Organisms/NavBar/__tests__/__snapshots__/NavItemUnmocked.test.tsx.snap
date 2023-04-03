@@ -33,13 +33,17 @@ exports[`NavItem unmocked Component renders with submenu gets closed 1`] = `
           style="position: absolute; margin: 0px; display: none; left: 0px; top: 0px;"
           tabindex="-1"
         >
-          <div
-            style="position: absolute; left: 0px; top: 0px;"
+          <li
+            aria-hidden="true"
+            role="menuitem"
+            style="position: absolute; left: 0px; top: 0px; display: block; outline: none;"
             tabindex="-1"
           />
-          <div
+          <li
+            aria-hidden="true"
             class="szh-menu__arrow szh-menu__arrow--dir-bottom"
-            style="position: absolute;"
+            role="menuitem"
+            style="display: block; position: absolute;"
           />
           <div>
             partial url
@@ -92,13 +96,17 @@ exports[`NavItem unmocked Component renders with submenu gets closed 2`] = `
           style="position: absolute; margin: 0px; left: 0px; top: 0px;"
           tabindex="-1"
         >
-          <div
-            style="position: absolute; left: 0px; top: 0px;"
+          <li
+            aria-hidden="true"
+            role="menuitem"
+            style="position: absolute; left: 0px; top: 0px; display: block; outline: none;"
             tabindex="-1"
           />
-          <div
+          <li
+            aria-hidden="true"
             class="szh-menu__arrow szh-menu__arrow--dir-bottom"
-            style="position: absolute; left: 0px;"
+            role="menuitem"
+            style="display: block; position: absolute; left: 0px;"
           />
           <div>
             partial url
@@ -151,13 +159,17 @@ exports[`NavItem unmocked Component renders with submenu gets closed 3`] = `
           style="position: absolute; margin: 0px; left: 0px; top: 0px; display: none;"
           tabindex="-1"
         >
-          <div
-            style="position: absolute; left: 0px; top: 0px;"
+          <li
+            aria-hidden="true"
+            role="menuitem"
+            style="position: absolute; left: 0px; top: 0px; display: block; outline: none;"
             tabindex="-1"
           />
-          <div
+          <li
+            aria-hidden="true"
             class="szh-menu__arrow szh-menu__arrow--dir-bottom"
-            style="position: absolute; left: 0px;"
+            role="menuitem"
+            style="display: block; position: absolute; left: 0px;"
           />
           <div>
             partial url
@@ -210,13 +222,17 @@ exports[`NavItem unmocked Component renders with submenu gets closed 4`] = `
           style="position: absolute; margin: 0px; left: 0px; top: 0px;"
           tabindex="-1"
         >
-          <div
-            style="position: absolute; left: 0px; top: 0px;"
+          <li
+            aria-hidden="true"
+            role="menuitem"
+            style="position: absolute; left: 0px; top: 0px; display: block; outline: none;"
             tabindex="-1"
           />
-          <div
+          <li
+            aria-hidden="true"
             class="szh-menu__arrow szh-menu__arrow--dir-bottom"
-            style="position: absolute; left: 0px;"
+            role="menuitem"
+            style="display: block; position: absolute; left: 0px;"
           />
           <div>
             partial url

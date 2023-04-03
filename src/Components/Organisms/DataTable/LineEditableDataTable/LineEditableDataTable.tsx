@@ -12,7 +12,7 @@ import LineEditableModal from './LineEditableModal';
 
 import '../DataTable.module.scss';
 
-export interface ILineEditableDataTableProps<T> {
+export interface ILineEditableDataTableProps<T extends yup.AnyObject> {
   columns: Array<IColumnType<T>>;
   data: Array<T>;
   extra: IExtraLineEditableDataTableProps<T>;

@@ -9,8 +9,13 @@ exports[`DatePickerInput Component DatePickerInput renders and changes without o
       class="react-datepicker-wrapper"
     >
       <div
-        class="react-datepicker__input-container"
+        class="react-datepicker__input-container "
       >
+        <span
+          aria-live="polite"
+          class="react-datepicker__aria-live"
+          role="alert"
+        />
         <input
           autocomplete="off"
           class="input-date-picker-input"
@@ -35,8 +40,13 @@ exports[`DatePickerInput Component DatePickerInput renders and changes without o
       class="react-datepicker-wrapper"
     >
       <div
-        class="react-datepicker__input-container"
+        class="react-datepicker__input-container "
       >
+        <span
+          aria-live="polite"
+          class="react-datepicker__aria-live"
+          role="alert"
+        />
         <input
           autocomplete="off"
           class="input-date-picker-input"
@@ -61,8 +71,13 @@ exports[`DatePickerInput Component DatePickerInput renders highlighted in disabl
       class="react-datepicker-wrapper"
     >
       <div
-        class="react-datepicker__input-container"
+        class="react-datepicker__input-container "
       >
+        <span
+          aria-live="polite"
+          class="react-datepicker__aria-live"
+          role="alert"
+        />
         <input
           autocomplete="off"
           class="input-date-picker-input-read-only input-date-picker-input highlighted"
@@ -88,8 +103,13 @@ exports[`DatePickerInput Component DatePickerInput renders highlighted in readon
       class="react-datepicker-wrapper"
     >
       <div
-        class="react-datepicker__input-container"
+        class="react-datepicker__input-container "
       >
+        <span
+          aria-live="polite"
+          class="react-datepicker__aria-live"
+          role="alert"
+        />
         <input
           autocomplete="off"
           class="input-date-picker-input-read-only highlighted"
@@ -115,8 +135,13 @@ exports[`DatePickerInput Component DatePickerInput renders in error 1`] = `
       class="react-datepicker-wrapper"
     >
       <div
-        class="react-datepicker__input-container"
+        class="react-datepicker__input-container "
       >
+        <span
+          aria-live="polite"
+          class="react-datepicker__aria-live"
+          role="alert"
+        />
         <input
           autocomplete="off"
           class="input-date-picker-input input-error"
@@ -141,8 +166,13 @@ exports[`DatePickerInput Component DatePickerInput renders in error in readonly 
       class="react-datepicker-wrapper"
     >
       <div
-        class="react-datepicker__input-container"
+        class="react-datepicker__input-container "
       >
+        <span
+          aria-live="polite"
+          class="react-datepicker__aria-live"
+          role="alert"
+        />
         <input
           autocomplete="off"
           class="input-date-picker-input-read-only"
@@ -168,8 +198,13 @@ exports[`DatePickerInput Component DatePickerInput renders with placeholder 1`] 
       class="react-datepicker-wrapper"
     >
       <div
-        class="react-datepicker__input-container"
+        class="react-datepicker__input-container "
       >
+        <span
+          aria-live="polite"
+          class="react-datepicker__aria-live"
+          role="alert"
+        />
         <input
           autocomplete="off"
           class="input-date-picker-input"
@@ -194,8 +229,13 @@ exports[`DatePickerInput Component DatePickerInput renders without Portal 1`] = 
       class="react-datepicker-wrapper"
     >
       <div
-        class="react-datepicker__input-container"
+        class="react-datepicker__input-container "
       >
+        <span
+          aria-live="polite"
+          class="react-datepicker__aria-live"
+          role="alert"
+        />
         <input
           autocomplete="off"
           class="input-date-picker-input"

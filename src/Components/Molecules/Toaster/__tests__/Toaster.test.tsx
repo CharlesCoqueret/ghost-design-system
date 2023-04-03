@@ -3,36 +3,22 @@ import toast from '../Toaster';
 import { act, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-// Use fake time for animation
-jest.useFakeTimers();
-
-beforeAll(() => {
-  // ensure the window.matchMedia is responsive for Toaster
-  Object.defineProperty(window, 'matchMedia', {
-    writable: true,
-    value: jest.fn().mockImplementation((query) => ({
-      matches: false,
-      media: query,
-      onchange: null,
-      addListener: jest.fn(),
-      removeListener: jest.fn(),
-      addEventListener: jest.fn(),
-      removeEventListener: jest.fn(),
-      dispatchEvent: jest.fn(),
-    })),
-  });
-});
-
-afterEach(() => {
-  // dismiss all toaster
-  toast.dismiss();
-  act(() => {
-    // Run all timers to ensure all animations are over
-    jest.runAllTimers();
-  });
-});
-
 describe('Toaster Component', () => {
+  beforeAll(() => {
+    // Use fake time for animation
+    jest.useFakeTimers();
+  });
+
+  afterEach(() => {
+    act(() => {
+      // Dismiss all toaster
+      toast.dismiss();
+
+      // Run all timers to ensure all animations are over
+      jest.runAllTimers();
+    });
+  });
+
   it('Toaster contrainer renders', () => {
     const { container } = render(<toast.Toaster />);
     expect(container).toMatchSnapshot();
@@ -139,9 +125,9 @@ describe('Toaster Component', () => {
 
     const closeButton = await screen.findByRole('button');
 
-    userEvent.click(closeButton);
-
     act(() => {
+      userEvent.click(closeButton);
+
       // Run all timers to ensure all animations are over
       jest.runAllTimers();
     });

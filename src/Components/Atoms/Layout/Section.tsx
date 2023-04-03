@@ -1,6 +1,6 @@
 import React, { PropsWithChildren, ReactElement, useEffect } from 'react';
 import classnames from 'classnames';
-import useCollapse from 'react-collapsed';
+import { useCollapse } from 'react-collapsed';
 
 import { Icon } from '../Icon';
 import { Typography } from '../Typography';

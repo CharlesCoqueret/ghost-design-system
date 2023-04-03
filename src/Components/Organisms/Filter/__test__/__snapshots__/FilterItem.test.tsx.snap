@@ -26,8 +26,9 @@ exports[`FilterItem Component FilterItem renders Column and title 1`] = `
     <div
       aria-hidden="false"
       class="body"
-      id="react-collapsed-panel-1"
-      style="box-sizing: border-box; display: none; height: 0px; overflow: hidden;"
+      id="react-collapsed-panel-"
+      role="region"
+      style="box-sizing: border-box;"
     />
     <div>
       Mocked AmountField props: 
