@@ -1,0 +1,23 @@
+.container {
+  width: 100%;
+}
+
+.spinner {
+  display: block;
+  margin: auto 8px auto 0px;
+  color: rgb(var(--theme-provider-silver));
+}
+
+.icon {
+  display: block;
+  margin: 8px;
+  color: rgb(var(--theme-provider-silver));
+
+  &:hover {
+    color: rgb(var(--theme-provider-charcoal));
+  }
+}
+
+.highlighted {
+  color: rgb(var(--theme-provider-tangerine));
+}

@@ -1,9 +1,12 @@
 import React, { PropsWithChildren, ReactElement, useEffect } from 'react';
 import classnames from 'classnames';
-import useCollapse from 'react-collapsed';
+import { useCollapse } from 'react-collapsed';
 
 import { Icon } from '../Icon';
 import { Typography } from '../Typography';
+import Separator from './Separator';
+
+import styles from './Section.module.scss';
 
 export interface ISectionProps {
   /** When set the section gets collapsible ability (optional, default true) */
@@ -23,7 +26,9 @@ export interface ISectionProps {
 const Section = (props: PropsWithChildren<ISectionProps>): ReactElement => {
   const { children, collapsible, dataTestId, level, openInitially, separator, title } = props;
 
-  const { getCollapseProps, setExpanded, isExpanded } = useCollapse({ duration: 500 });
+  const { getCollapseProps, setExpanded, isExpanded } = useCollapse({
+    duration: 500,
+  });
 
   useEffect(() => {
     setExpanded(collapsible ? openInitially === true : true);
@@ -36,9 +41,9 @@ const Section = (props: PropsWithChildren<ISectionProps>): ReactElement => {
   };
 
   return (
-    <div className='gds-layout-section-container'>
+    <>
       <div
-        className={classnames('section-header', { collapsible: collapsible })}
+        className={classnames(styles.header, { [styles.collapsible]: collapsible })}
         onClick={handleClick}
         data-testid={dataTestId}>
         <Typography.Title level={level || 2}>{title}</Typography.Title>
@@ -46,15 +51,15 @@ const Section = (props: PropsWithChildren<ISectionProps>): ReactElement => {
           <Icon
             icon={['fal', 'chevron-left']}
             size='xs'
-            className={classnames('collapse-icon', { open: isExpanded })}
+            className={classnames(styles.icon, { [styles.open]: isExpanded })}
           />
         )}
       </div>
-      <div className='section-body' {...getCollapseProps()}>
+      <div className={styles.body} {...getCollapseProps()}>
         {children}
       </div>
-      {separator && <div className='section-footer' />}
-    </div>
+      {separator && <Separator />}
+    </>
   );
 };
 

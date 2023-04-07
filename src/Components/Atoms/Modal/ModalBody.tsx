@@ -1,9 +1,28 @@
-import React, { PropsWithChildren, ReactElement } from 'react';
+import React, { CSSProperties, PropsWithChildren, ReactElement } from 'react';
+import classnames from 'classnames';
 
-const ModalBody = (props: PropsWithChildren<unknown>): ReactElement => {
-  const { children } = props;
+import styles from './ModalBody.module.scss';
 
-  return <div className='modal-body'>{children}</div>;
+export interface IModalBodyProps {
+  /** Additional class (optional, default: undefined) */
+  className?: string;
+  /** Custom style (optional, default: undefined) */
+  style?: CSSProperties;
+}
+
+const ModalBody = (props: PropsWithChildren<IModalBodyProps>): ReactElement => {
+  const { children, className, style } = props;
+
+  return (
+    <div className={classnames(styles.container, className)} style={style}>
+      {children}
+    </div>
+  );
+};
+
+ModalBody.defaultProps = {
+  className: undefined,
+  style: undefined,
 };
 
 export default ModalBody;

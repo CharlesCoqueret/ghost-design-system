@@ -3,7 +3,7 @@
 exports[`ModalFooter Component ModalFooter renders 1`] = `
 <div>
   <div
-    class="modal-footer"
+    class="container"
   >
     <div
       id="CHILD1"

@@ -5,6 +5,8 @@ import uniqueId from 'lodash/uniqueId';
 import { IToggleEntry } from './types';
 import { Icon } from '../Icon';
 
+import styles from './CheckboxInput.module.scss';
+
 export interface ICheckboxInputProps {
   /** Additional class names to be added (optional, default: undefined) */
   className?: string;
@@ -12,14 +14,18 @@ export interface ICheckboxInputProps {
   dataTestId?: string;
   /** Disabled field (optional, default: false) */
   disabled?: boolean;
+  /** Ellipse text when it overflows, or wrap (optional, default: false) */
+  ellipsis?: boolean;
   /** Highlighted field (optional, default: false) */
   highlighted?: boolean;
   /** Inline options (optional, default: false) */
   inline?: boolean;
+  /** Input value */
+  input: Array<IToggleEntry>;
   /** Error indication should be present (optional, default: undefined) */
   isInError?: boolean;
-  /** Input value */
-  options: Array<IToggleEntry>;
+  /** Base name of input (optional, default: undefined) */
+  name?: string;
   /** Handler of value changes (optional, default: undefined) */
   onChange?: (values: Array<IToggleEntry>) => void;
   /** Read only field (optional, default: false) */
@@ -27,12 +33,12 @@ export interface ICheckboxInputProps {
 }
 
 const CheckboxInput = (props: ICheckboxInputProps): ReactElement => {
-  const { className, dataTestId, disabled, highlighted, inline, isInError, options, onChange, readOnly } = props;
-  const [ids] = useState(() => options.map(() => uniqueId('checkbox-')));
+  const { className, dataTestId, disabled, ellipsis, highlighted, inline, input, onChange, readOnly } = props;
+  const [ids] = useState(() => input.map(() => uniqueId('checkbox-')));
 
   /** flip the check status of the checkbox that was checked */
   const updateState = (optionValue: string) => {
-    const newState = options.map((option) => {
+    const newState = input.map((option) => {
       if (option.value === optionValue) {
         option.checked = !option.checked;
       }
@@ -56,17 +62,17 @@ const CheckboxInput = (props: ICheckboxInputProps): ReactElement => {
     };
 
   return (
-    <div className={classnames('field', 'gds-checkbox-container', { inline: inline }, className)}>
-      {options.map((option, index) => {
+    <div className={classnames(styles.container, { [styles.inlineContainer]: inline }, className)}>
+      {input.map((option, index) => {
         return (
           <label
-            className={classnames({
-              'input-checkbox-field-read-only': readOnly,
-              'input-checkbox-field-disabled': disabled,
-              'input-checkbox-field-error': !readOnly && !disabled && isInError,
-              'field-highlighted': (readOnly || disabled) && highlighted && option.highlighted,
-              'input-checkbox-field-checked': option.checked,
-              inline: inline,
+            className={classnames(styles.label, {
+              [styles.inlineLabel]: inline,
+              [styles.readOnly]: readOnly,
+              [styles.disabled]: disabled,
+              [styles.highlighted]: (readOnly || disabled) && highlighted && option.highlighted,
+              [styles.checked]: option.checked,
+              [styles.ellipsis]: ellipsis,
             })}
             data-testid={dataTestId ? `${dataTestId}-${index}` : undefined}
             htmlFor={ids[index]}
@@ -77,7 +83,13 @@ const CheckboxInput = (props: ICheckboxInputProps): ReactElement => {
             <div
               aria-checked={option.checked}
               aria-label={option.label.toString()}
-              className='checkbox-marker'
+              className={classnames(styles.checkboxMarker, {
+                [styles.checked]: option.checked,
+                [styles.disabled]: disabled,
+                [styles.readOnly]: readOnly,
+              })}
+              // TODO use input type checkbox hidden with icon to show the state instead of a div
+              // name={name !== undefined ? `${name}-${option.value}` : undefined}
               id={ids[index]}
               role='checkbox'>
               <Icon
@@ -99,11 +111,12 @@ const CheckboxInput = (props: ICheckboxInputProps): ReactElement => {
 CheckboxInput.defaultProps = {
   classname: undefined,
   disabled: false,
+  ellipsis: false,
   highlighted: false,
   inline: false,
+  input: [],
   isInError: false,
   onChange: undefined,
-  options: [],
   readOnly: false,
 };
 

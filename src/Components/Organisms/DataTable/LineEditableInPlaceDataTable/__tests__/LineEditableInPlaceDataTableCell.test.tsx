@@ -123,7 +123,7 @@ describe('LineEditableInPlaceDataTableCell component', () => {
                 title: 'Button',
                 type: ColumnType.BUTTON,
                 moreActionsMessage: 'More actions',
-                buttons: [{ label: 'label', icon: ['fal', 'cog'] }],
+                buttons: [{ label: 'label', icon: ['fal', 'gear'] }],
               }}
               extra={{
                 editedRowIndex: 0,
@@ -208,11 +208,11 @@ describe('LineEditableInPlaceDataTableCell component', () => {
     const handleUpdateDataChangeMock = jest.fn();
     const customRenderMock = jest
       .fn()
-      .mockImplementation((props: { inputValue: string; onChange: (value: string) => void }) => {
+      .mockImplementation((props: { input: string; onChange: (value: string) => void }) => {
         return (
           <input
             type='text'
-            value={props.inputValue}
+            value={props.input}
             data-testid='DATA-TEST-ID'
             onChange={(e) => props.onChange(e.target.value)}
           />
@@ -294,7 +294,7 @@ describe('LineEditableInPlaceDataTableCell component', () => {
     });
 
     expect(handleUpdateDataChangeMock).toBeCalledTimes(1);
-    expect(handleUpdateDataChangeMock).toBeCalledWith(0, 'date', null);
+    expect(handleUpdateDataChangeMock).toBeCalledWith(0, 'date', undefined);
   });
 
   it('LineEditableInPlaceDataTableCell renders with description', async () => {

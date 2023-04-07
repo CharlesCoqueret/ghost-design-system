@@ -8,6 +8,8 @@ import StaticDataTableHeader from '../StaticDataTable/StaticDataTableHeader';
 import { ColumnType, IColumnType, IExtraEditableDataTableProps, SortDirectionEnum } from '../Common/types';
 import EditableDataTableBody from './EditableDataTableBody';
 
+import '../DataTable.module.scss';
+
 export interface IEditableDataTableProps<T> {
   columns: Array<IColumnType<T>>;
   data: Array<T>;

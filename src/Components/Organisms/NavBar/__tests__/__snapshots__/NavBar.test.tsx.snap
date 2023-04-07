@@ -3,30 +3,29 @@
 exports[`NavBar Component renders with menu, and utilities 1`] = `
 <div>
   <nav
-    class="gds-nav-bar-container noselect"
+    class="container"
   >
-    <a
-      class="nav-bar-brand"
-      href="redirection"
+    <div
+      class="brand"
     >
       partial url
       <img
         alt="alt"
-        class="nav-bar-brand-image"
+        class="brandLogo"
         src="logoSource"
       />
-    </a>
+    </div>
     <div
-      class="nav-bar-items-container"
+      class="itemsContainer"
     >
       <div
-        class="nav-bar-items-group"
+        class="group"
       >
         <div
-          class="nav-bar-menu-item"
+          class="item"
         >
           <div
-            class="nav-bar-menu-label"
+            class="label"
           >
             button
           </div>
@@ -34,17 +33,17 @@ exports[`NavBar Component renders with menu, and utilities 1`] = `
       </div>
       <div />
       <div
-        class="nav-bar-items-group"
+        class="group"
       >
         <div
-          class="nav-bar-menu-item"
+          class="item"
         >
           <i
             class="icon"
             icon="fal,icons"
           />
           <div
-            class="nav-bar-menu-label"
+            class="label"
           >
             button
           </div>
@@ -58,21 +57,20 @@ exports[`NavBar Component renders with menu, and utilities 1`] = `
 exports[`NavBar Component renders without menu nor utilities 1`] = `
 <div>
   <nav
-    class="gds-nav-bar-container noselect"
+    class="container"
   >
-    <a
-      class="nav-bar-brand"
-      href="redirection"
+    <div
+      class="brand"
     >
       partial url
       <img
-        alt="alt"
-        class="nav-bar-brand-image"
+        alt="logo"
+        class="brandLogo"
         src="logoSource"
       />
-    </a>
+    </div>
     <div
-      class="nav-bar-items-container"
+      class="itemsContainer"
     />
   </nav>
 </div>

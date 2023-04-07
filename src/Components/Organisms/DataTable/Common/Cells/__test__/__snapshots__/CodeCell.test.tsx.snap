@@ -9,17 +9,13 @@ exports[`CodeCell component CodeCell renders 1`] = `
           class="table--cell--code"
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
-            <div
-              class="field input-text-field-read-only gds-typography"
+            <span
+              class="typography"
             >
-              <span
-                class="gds-typography"
-              >
-                DATA
-              </span>
-            </div>
+              DATA
+            </span>
           </div>
         </td>
       </tr>
@@ -38,17 +34,13 @@ exports[`CodeCell component CodeCell renders when hidden 1`] = `
           style="display: none;"
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
-            <div
-              class="field input-text-field-read-only gds-typography"
+            <span
+              class="typography"
             >
-              <span
-                class="gds-typography"
-              >
-                DATA
-              </span>
-            </div>
+              DATA
+            </span>
           </div>
         </td>
       </tr>
@@ -66,18 +58,14 @@ exports[`CodeCell component CodeCell renders with forced value 1`] = `
           class="ellipsis table--cell--code"
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
-            <div
-              class="field input-text-field-read-only gds-typography ellipsis"
+            <span
+              class="typography ellipsis"
+              title="FORCEDVALUE"
             >
-              <span
-                class="gds-typography ellipsis"
-                title="FORCEDVALUE"
-              >
-                FORCEDVALUE
-              </span>
-            </div>
+              FORCEDVALUE
+            </span>
           </div>
         </td>
       </tr>

@@ -65,11 +65,11 @@ describe('RichTextInput Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('RichTextInput renders in readOnly with inputValue', () => {
+  it('RichTextInput renders in readOnly with input', () => {
     const RichTextInput = require('../RichTextInput').default;
     const onChangeMock = jest.fn();
 
-    const { container } = render(<RichTextInput readOnly inputValue='TEST' name='SELECT' onChange={onChangeMock} />);
+    const { container } = render(<RichTextInput readOnly input='TEST' name='SELECT' onChange={onChangeMock} />);
 
     expect(container).toMatchSnapshot();
   });
@@ -79,10 +79,15 @@ describe('RichTextInput Component', () => {
     let onBlurCallback: (event: FocusEvent, newValue: string) => void = () => {
       return;
     };
-    jest.mock('suneditor-react', () => (props: { onBlur: typeof onBlurCallback }): ReactElement => {
-      onBlurCallback = props.onBlur;
-      return <div>{JSON.stringify(props)}</div>;
-    });
+    jest.mock('suneditor-react', () =>
+      Object.assign(
+        (props: { onBlur: typeof onBlurCallback }): ReactElement => {
+          onBlurCallback = props.onBlur;
+          return <div>{JSON.stringify(props)}</div>;
+        },
+        { displayName: 'MockSunEditorReact' },
+      ),
+    );
 
     const RichTextInput = require('../RichTextInput').default;
     const onChangeMock = jest.fn();
@@ -114,10 +119,15 @@ describe('RichTextInput Component', () => {
     let onBlurCallback: (event: FocusEvent, newValue: string) => void = () => {
       return;
     };
-    jest.mock('suneditor-react', () => (props: { onBlur: typeof onBlurCallback }): ReactElement => {
-      onBlurCallback = props.onBlur;
-      return <div>{JSON.stringify(props)}</div>;
-    });
+    jest.mock('suneditor-react', () =>
+      Object.assign(
+        (props: { onBlur: typeof onBlurCallback }): ReactElement => {
+          onBlurCallback = props.onBlur;
+          return <div>{JSON.stringify(props)}</div>;
+        },
+        { displayName: 'MockSunEditorReact' },
+      ),
+    );
 
     const RichTextInput = require('../RichTextInput').default;
     const onChangeMock = jest.fn();
@@ -144,10 +154,15 @@ describe('RichTextInput Component', () => {
     let onBlurCallback: (event: FocusEvent, newValue: string) => void = () => {
       return;
     };
-    jest.mock('suneditor-react', () => (props: { onBlur: typeof onBlurCallback }): ReactElement => {
-      onBlurCallback = props.onBlur;
-      return <div>{JSON.stringify(props)}</div>;
-    });
+    jest.mock('suneditor-react', () =>
+      Object.assign(
+        (props: { onBlur: typeof onBlurCallback }): ReactElement => {
+          onBlurCallback = props.onBlur;
+          return <div>{JSON.stringify(props)}</div>;
+        },
+        { displayName: 'MockSunEditorReact' },
+      ),
+    );
 
     const RichTextInput = require('../RichTextInput').default;
 

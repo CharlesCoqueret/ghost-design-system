@@ -12,10 +12,11 @@ exports[`EditableDataTableCell component EditableDataTableCell handles iseditabl
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <span
-              class="gds-amount-field amount-field-read-only table--cell-value--number-readonly"
+              autocomplete="off"
+              class="default readOnly table--cell-value--number-readonly"
               id="number"
               name="number"
             >
@@ -48,7 +49,7 @@ exports[`EditableDataTableCell component EditableDataTableCell handles iseditabl
               Nothing
             </div>
             <i
-              class="no-data-icon icon"
+              class="icon no-data-icon"
               icon="fal,inbox"
             />
           </div>
@@ -84,10 +85,11 @@ exports[`EditableDataTableCell component EditableDataTableCell handles iseditabl
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <span
-              class="gds-amount-field amount-field-read-only table--cell-value--number-readonly"
+              autocomplete="off"
+              class="default readOnly table--cell-value--number-readonly"
               id="number"
               name="number"
             >
@@ -122,10 +124,11 @@ exports[`EditableDataTableCell component EditableDataTableCell handles row click
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <span
-              class="gds-amount-field amount-field-read-only table--cell-value--number-readonly"
+              autocomplete="off"
+              class="default readOnly table--cell-value--number-readonly"
               id="number"
               name="number"
             >
@@ -164,10 +167,11 @@ exports[`EditableDataTableCell component EditableDataTableCell handles row selec
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <span
-              class="gds-amount-field amount-field-read-only table--cell-value--number-readonly"
+              autocomplete="off"
+              class="default readOnly table--cell-value--number-readonly"
               id="number"
               name="number"
             >
@@ -193,10 +197,11 @@ exports[`EditableDataTableCell component EditableDataTableCell renders 1`] = `
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <span
-              class="gds-amount-field amount-field-read-only table--cell-value--number-readonly"
+              autocomplete="off"
+              class="default readOnly table--cell-value--number-readonly"
               id="number"
               name="number"
             >
@@ -222,10 +227,11 @@ exports[`EditableDataTableCell component EditableDataTableCell renders 2`] = `
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <span
-              class="gds-amount-field amount-field-read-only table--cell-value--number-readonly"
+              autocomplete="off"
+              class="default readOnly table--cell-value--number-readonly"
               id="number"
               name="number"
             >
@@ -267,7 +273,7 @@ exports[`EditableDataTableCell component EditableDataTableCell renders 3`] = `
               No data
             </div>
             <i
-              class="no-data-icon icon"
+              class="icon no-data-icon"
               icon="fal,inbox"
             />
           </div>

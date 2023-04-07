@@ -1,17 +1,20 @@
 import React, { CSSProperties, PropsWithChildren, ReactElement } from 'react';
 import classnames from 'classnames';
 
+import styles from './Col.module.scss';
+
 export interface IColProps {
+  /** Additional class (optional, default: undefined) */
   className?: string;
-  height?: CSSProperties['height'];
+  /** Custom style (optional, default: undefined) */
   style?: CSSProperties;
 }
 
 const Col = (props: PropsWithChildren<IColProps>): ReactElement => {
-  const { children, className, height, style } = props;
+  const { children, className, style } = props;
 
   return (
-    <div className={classnames(className, 'gds-layout-col')} style={{ height: height, ...style }}>
+    <div className={classnames(styles.col, className)} style={style}>
       {children}
     </div>
   );

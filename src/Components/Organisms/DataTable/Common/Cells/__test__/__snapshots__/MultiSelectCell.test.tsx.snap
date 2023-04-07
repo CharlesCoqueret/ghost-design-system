@@ -9,10 +9,10 @@ exports[`MultiSelectCell component BadgeCell handles changes 1`] = `
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <div
-              class="field gds-select-container input-select-field input-select-field"
+              class="container"
             >
               <div
                 class=" css-1959ul7-container"
@@ -28,14 +28,14 @@ exports[`MultiSelectCell component BadgeCell handles changes 1`] = `
                   class="css-1f43avz-a11yText-A11yText"
                 />
                 <div
-                  class=" css-1l9db9l-control"
+                  class=" css-1iiyd84-control"
                 >
                   <div
-                    class=" css-1xxnwvf-ValueContainer"
+                    class=" css-16ryfrw-ValueContainer"
                   >
                     numberOfItemLabel
                     <div
-                      class=" css-g5g4gj-Input"
+                      class=" css-qwwk3k-Input"
                       data-value=""
                     >
                       <input
@@ -60,13 +60,13 @@ exports[`MultiSelectCell component BadgeCell handles changes 1`] = `
                     class=" css-1hb7zxy-IndicatorsContainer"
                   >
                     <span
-                      class=" css-1okebmr-indicatorSeparator"
+                      class=" css-1u9des2-indicatorSeparator"
                     />
                     <div
                       aria-hidden="true"
                     >
                       <i
-                        class="dynamic-search-icon icon"
+                        class="icon icon"
                         icon="fal,chevron-down"
                       />
                     </div>
@@ -98,10 +98,10 @@ exports[`MultiSelectCell component BadgeCell handles changes 2`] = `
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <div
-              class="field gds-select-container input-select-field input-select-field"
+              class="container"
             >
               <div
                 class=" css-1959ul7-container"
@@ -117,14 +117,14 @@ exports[`MultiSelectCell component BadgeCell handles changes 2`] = `
                   class="css-1f43avz-a11yText-A11yText"
                 />
                 <div
-                  class=" css-1l9db9l-control"
+                  class=" css-1iiyd84-control"
                 >
                   <div
-                    class=" css-1xxnwvf-ValueContainer"
+                    class=" css-16ryfrw-ValueContainer"
                   >
                     numberOfItemLabel
                     <div
-                      class=" css-g5g4gj-Input"
+                      class=" css-qwwk3k-Input"
                       data-value=""
                     >
                       <input
@@ -149,13 +149,13 @@ exports[`MultiSelectCell component BadgeCell handles changes 2`] = `
                     class=" css-1hb7zxy-IndicatorsContainer"
                   >
                     <span
-                      class=" css-1okebmr-indicatorSeparator"
+                      class=" css-1u9des2-indicatorSeparator"
                     />
                     <div
                       aria-hidden="true"
                     >
                       <i
-                        class="dynamic-search-icon icon"
+                        class="icon icon"
                         icon="fal,chevron-down"
                       />
                     </div>
@@ -187,13 +187,13 @@ exports[`MultiSelectCell component BadgeCell renders with erase value when not i
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <div
-              class="field gds-select-container input-select-field-read-only input-select-field"
+              class="container"
             >
               <span
-                class="gds-typography"
+                class="typography"
               >
                 -
               </span>
@@ -215,13 +215,13 @@ exports[`MultiSelectCell component MultiSelectCell renders 1`] = `
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <div
-              class="field gds-select-container input-select-field-read-only input-select-field"
+              class="container"
             >
               <span
-                class="gds-typography"
+                class="typography"
               >
                 label 1
               </span>
@@ -243,10 +243,10 @@ exports[`MultiSelectCell component MultiSelectCell renders cell editing with no 
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <div
-              class="field gds-select-container input-select-field input-select-field"
+              class="container"
             >
               <div
                 class=" css-1959ul7-container"
@@ -262,19 +262,19 @@ exports[`MultiSelectCell component MultiSelectCell renders cell editing with no 
                   class="css-1f43avz-a11yText-A11yText"
                 />
                 <div
-                  class=" css-1l9db9l-control"
+                  class=" css-1iiyd84-control"
                 >
                   <div
-                    class=" css-9plg90-ValueContainer"
+                    class=" css-yhb162-ValueContainer"
                   >
                     <div
-                      class=" css-14el2xx-placeholder"
+                      class=" css-1jqq78o-placeholder"
                       id="react-select-3-placeholder"
                     >
                       Select...
                     </div>
                     <div
-                      class=" css-6j8wv5-Input"
+                      class=" css-qbdosj-Input"
                       data-value=""
                     >
                       <input
@@ -300,13 +300,13 @@ exports[`MultiSelectCell component MultiSelectCell renders cell editing with no 
                     class=" css-1hb7zxy-IndicatorsContainer"
                   >
                     <span
-                      class=" css-1okebmr-indicatorSeparator"
+                      class=" css-1u9des2-indicatorSeparator"
                     />
                     <div
                       aria-hidden="true"
                     >
                       <i
-                        class="dynamic-search-icon icon"
+                        class="icon icon"
                         icon="fal,chevron-down"
                       />
                     </div>
@@ -339,13 +339,13 @@ exports[`MultiSelectCell component MultiSelectCell renders hidden 1`] = `
           style="display: none;"
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <div
-              class="field gds-select-container input-select-field-read-only input-select-field"
+              class="container"
             >
               <span
-                class="gds-typography"
+                class="typography"
               >
                 label 1
               </span>
@@ -367,10 +367,10 @@ exports[`MultiSelectCell component MultiSelectCell renders row editing with no r
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <div
-              class="field gds-select-container input-select-field input-select-field"
+              class="container"
             >
               <div
                 class=" css-1959ul7-container"
@@ -386,19 +386,19 @@ exports[`MultiSelectCell component MultiSelectCell renders row editing with no r
                   class="css-1f43avz-a11yText-A11yText"
                 />
                 <div
-                  class=" css-1l9db9l-control"
+                  class=" css-1iiyd84-control"
                 >
                   <div
-                    class=" css-9plg90-ValueContainer"
+                    class=" css-yhb162-ValueContainer"
                   >
                     <div
-                      class=" css-14el2xx-placeholder"
+                      class=" css-1jqq78o-placeholder"
                       id="react-select-2-placeholder"
                     >
                       Select...
                     </div>
                     <div
-                      class=" css-6j8wv5-Input"
+                      class=" css-qbdosj-Input"
                       data-value=""
                     >
                       <input
@@ -424,13 +424,13 @@ exports[`MultiSelectCell component MultiSelectCell renders row editing with no r
                     class=" css-1hb7zxy-IndicatorsContainer"
                   >
                     <span
-                      class=" css-1okebmr-indicatorSeparator"
+                      class=" css-1u9des2-indicatorSeparator"
                     />
                     <div
                       aria-hidden="true"
                     >
                       <i
-                        class="dynamic-search-icon icon"
+                        class="icon icon"
                         icon="fal,chevron-down"
                       />
                     </div>
@@ -462,13 +462,13 @@ exports[`MultiSelectCell component MultiSelectCell renders with forced value 1`]
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <div
-              class="field gds-select-container input-select-field-read-only input-select-field"
+              class="container"
             >
               <span
-                class="gds-typography"
+                class="typography"
               >
                 label 2
               </span>

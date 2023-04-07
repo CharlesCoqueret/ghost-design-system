@@ -35,8 +35,7 @@ const BadgeCell = <T,>(props: ICellProps<T, IColumnBadge<T>>): ReactElement => {
     <td className={classnames({ ellipsis: column.ellipsis })} style={{ display: column.hidden ? 'none' : undefined }}>
       {isCurrentlyEditedRow ? (
         <SelectField
-          colors={column.colors}
-          inputValue={displayValue}
+          input={displayValue}
           isClearable={column.isClearable}
           name={column.title.toString()}
           onChange={(newValue: string | number | null | undefined) => {

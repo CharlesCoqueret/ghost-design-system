@@ -7,8 +7,7 @@ describe('Banner Component', () => {
   it('renders with children', () => {
     const { container } = render(
       <Banner>
-        <div id='CHILD1' />
-        <div id='CHILD2' />
+        <div id='CHILD' />
       </Banner>,
     );
 

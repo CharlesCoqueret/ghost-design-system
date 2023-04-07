@@ -1,31 +1,31 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Highlighter Component Highlighter renders 1`] = `
+exports[`Highlighter Component renders properly 1`] = `
 <div>
   <div />
 </div>
 `;
 
-exports[`Highlighter Component Highlighter renders with highlight 1`] = `
+exports[`Highlighter Component renders with highlight and side by side 1`] = `
 <div>
   <div
-    class="gds-layout-row"
+    class="row"
   >
     <div
-      class="gds-layout-col"
+      class="col"
     >
       {}
     </div>
     <div
-      class="gds-layout-col"
+      class="col"
     >
-      {"extra":{},"highlighted":true,"inputValue":"OLDDATA","data":"OLDDATA","readOnly":true}
+      {"highlighted":true,"input":"OLDDATA","readOnly":true}
     </div>
   </div>
 </div>
 `;
 
-exports[`Highlighter Component Highlighter renders with highlight and inValidElement 1`] = `
+exports[`Highlighter Component renders with highlight and side by side with invalid Element 1`] = `
 <div>
   
 </div>

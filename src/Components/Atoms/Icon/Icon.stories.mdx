@@ -1,0 +1,47 @@
+import { Meta, IconGallery, IconItem } from '@storybook/addon-docs/';
+import { library } from '@fortawesome/fontawesome-svg-core';
+
+import Icon from './Icon';
+
+<Meta
+  title='Atom/Icon'
+  component={Icon}
+  parameters={{
+    viewMode: 'docs',
+    previewTabs: {
+      canvas: { hidden: true },
+    },
+  }}
+/>
+
+# Icons
+
+## fal prefix ['fal', icon name]
+
+<IconGallery>
+  {Object.keys(library['definitions']['fal']).map((item) => (
+    <IconItem name={item} key={item}>
+      <Icon icon={['fal', item]} />
+    </IconItem>
+  ))}
+</IconGallery>
+
+## far prefix ['far', icon name]
+
+<IconGallery>
+  {Object.keys(library['definitions']['far']).map((item) => (
+    <IconItem name={item} key={item}>
+      <Icon icon={['far', item]} />
+    </IconItem>
+  ))}
+</IconGallery>
+
+## fas prefix ['fas', icon name]
+
+<IconGallery>
+  {Object.keys(library['definitions']['fas']).map((item) => (
+    <IconItem name={item} key={item}>
+      <Icon icon={['fas', item]} />
+    </IconItem>
+  ))}
+</IconGallery>

@@ -7,33 +7,33 @@ exports[`YearPickerHeader Component YearPickerHeader renders handles changes 1`]
       style="display: flex; justify-content: space-evenly;"
     >
       <button
-        class="gds-button-content"
+        class="button"
         color="reversed"
         data-testid="TESTID-decreaseYear"
         tabindex="0"
         type="button"
       >
         <div
-          class="button-icon-container"
+          class="icon"
         >
           <i
-            class="button-icon icon"
+            class="icon"
             icon="fal,chevron-left"
           />
         </div>
       </button>
       <button
-        class="gds-button-content"
+        class="button"
         color="reversed"
         data-testid="TESTID-increaseYear"
         tabindex="0"
         type="button"
       >
         <div
-          class="button-icon-container"
+          class="icon"
         >
           <i
-            class="button-icon icon"
+            class="icon"
             icon="fal,chevron-right"
           />
         </div>
@@ -50,31 +50,31 @@ exports[`YearPickerHeader Component YearPickerHeader renders without data-testid
       style="display: flex; justify-content: space-evenly;"
     >
       <button
-        class="gds-button-content"
+        class="button"
         color="reversed"
         tabindex="0"
         type="button"
       >
         <div
-          class="button-icon-container"
+          class="icon"
         >
           <i
-            class="button-icon icon"
+            class="icon"
             icon="fal,chevron-left"
           />
         </div>
       </button>
       <button
-        class="gds-button-content"
+        class="button"
         color="reversed"
         tabindex="0"
         type="button"
       >
         <div
-          class="button-icon-container"
+          class="icon"
         >
           <i
-            class="button-icon icon"
+            class="icon"
             icon="fal,chevron-right"
           />
         </div>

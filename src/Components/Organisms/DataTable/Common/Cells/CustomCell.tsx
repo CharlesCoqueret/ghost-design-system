@@ -5,6 +5,9 @@ import { ICellProps } from './types';
 import { IColumnCustom } from '../types';
 import { Typography } from '../../../../Atoms/Typography';
 
+/**
+ * @deprecated will be removed in version 2.1
+ */
 const CustomCell = <T,>(props: ICellProps<T, IColumnCustom<T>>): ReactElement => {
   const { column, editing, extra, forcedValue, onChange, row, rowIndex } = props;
 
@@ -13,7 +16,7 @@ const CustomCell = <T,>(props: ICellProps<T, IColumnCustom<T>>): ReactElement =>
   const displayValue = forcedValue
     ? forcedValue
     : column.customRender({
-        inputValue: row && row[column.dataIndex],
+        input: row && row[column.dataIndex],
         onChange: onChange,
         readOnly: !isCurrentlyEditedRow,
       });

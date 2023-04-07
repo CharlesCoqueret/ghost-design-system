@@ -3,7 +3,7 @@
 exports[`MultiSelectInput Component MultiSelectInput handles change 1`] = `
 <div>
   <div
-    class="field gds-select-container input-select-field"
+    class="container"
   >
     <div
       class=" css-1959ul7-container"
@@ -19,19 +19,19 @@ exports[`MultiSelectInput Component MultiSelectInput handles change 1`] = `
         class="css-1f43avz-a11yText-A11yText"
       />
       <div
-        class=" css-1l9db9l-control"
+        class=" css-1iiyd84-control"
       >
         <div
-          class=" css-9plg90-ValueContainer"
+          class=" css-yhb162-ValueContainer"
         >
           <div
-            class=" css-14el2xx-placeholder"
+            class=" css-1jqq78o-placeholder"
             id="react-select-6-placeholder"
           >
             Select...
           </div>
           <div
-            class=" css-6j8wv5-Input"
+            class=" css-qbdosj-Input"
             data-value=""
           >
             <input
@@ -57,13 +57,13 @@ exports[`MultiSelectInput Component MultiSelectInput handles change 1`] = `
           class=" css-1hb7zxy-IndicatorsContainer"
         >
           <span
-            class=" css-1okebmr-indicatorSeparator"
+            class=" css-1u9des2-indicatorSeparator"
           />
           <div
             aria-hidden="true"
           >
             <i
-              class="dynamic-search-icon icon"
+              class="icon icon"
               icon="fal,chevron-down"
             />
           </div>
@@ -84,7 +84,7 @@ exports[`MultiSelectInput Component MultiSelectInput handles change 1`] = `
 exports[`MultiSelectInput Component MultiSelectInput handles change with empty value when clearable 1`] = `
 <div>
   <div
-    class="field gds-select-container input-select-field"
+    class="container"
   >
     <div
       class=" css-1959ul7-container"
@@ -100,19 +100,19 @@ exports[`MultiSelectInput Component MultiSelectInput handles change with empty v
         class="css-1f43avz-a11yText-A11yText"
       />
       <div
-        class=" css-1l9db9l-control"
+        class=" css-1iiyd84-control"
       >
         <div
-          class=" css-9plg90-ValueContainer"
+          class=" css-yhb162-ValueContainer"
         >
           <div
-            class=" css-14el2xx-placeholder"
+            class=" css-1jqq78o-placeholder"
             id="react-select-7-placeholder"
           >
             Select...
           </div>
           <div
-            class=" css-6j8wv5-Input"
+            class=" css-qbdosj-Input"
             data-value=""
           >
             <input
@@ -138,13 +138,13 @@ exports[`MultiSelectInput Component MultiSelectInput handles change with empty v
           class=" css-1hb7zxy-IndicatorsContainer"
         >
           <span
-            class=" css-1okebmr-indicatorSeparator"
+            class=" css-1u9des2-indicatorSeparator"
           />
           <div
             aria-hidden="true"
           >
             <i
-              class="dynamic-search-icon icon"
+              class="icon icon"
               icon="fal,chevron-down"
             />
           </div>
@@ -165,7 +165,7 @@ exports[`MultiSelectInput Component MultiSelectInput handles change with empty v
 exports[`MultiSelectInput Component MultiSelectInput renders 1`] = `
 <div>
   <div
-    class="field gds-select-container input-select-field"
+    class="container"
   >
     <div
       class=" css-1959ul7-container"
@@ -181,14 +181,14 @@ exports[`MultiSelectInput Component MultiSelectInput renders 1`] = `
         class="css-1f43avz-a11yText-A11yText"
       />
       <div
-        class=" css-1l9db9l-control"
+        class=" css-1iiyd84-control"
       >
         <div
-          class=" css-1xxnwvf-ValueContainer"
+          class=" css-16ryfrw-ValueContainer"
         >
           1 item selected
           <div
-            class=" css-g5g4gj-Input"
+            class=" css-qwwk3k-Input"
             data-value=""
           >
             <input
@@ -213,13 +213,13 @@ exports[`MultiSelectInput Component MultiSelectInput renders 1`] = `
           class=" css-1hb7zxy-IndicatorsContainer"
         >
           <span
-            class=" css-1okebmr-indicatorSeparator"
+            class=" css-1u9des2-indicatorSeparator"
           />
           <div
             aria-hidden="true"
           >
             <i
-              class="dynamic-search-icon icon"
+              class="icon icon"
               icon="fal,chevron-down"
             />
           </div>
@@ -240,10 +240,10 @@ exports[`MultiSelectInput Component MultiSelectInput renders 1`] = `
 exports[`MultiSelectInput Component MultiSelectInput renders disabled 1`] = `
 <div>
   <div
-    class="field gds-select-container input-select-field-read-only"
+    class="container"
   >
     <span
-      class="gds-typography"
+      class="typography"
     >
       -
     </span>
@@ -254,10 +254,10 @@ exports[`MultiSelectInput Component MultiSelectInput renders disabled 1`] = `
 exports[`MultiSelectInput Component MultiSelectInput renders highlight in readOnly 1`] = `
 <div>
   <div
-    class="field gds-select-container input-select-field-read-only field-highlighted"
+    class="container highlighted"
   >
     <span
-      class="gds-typography"
+      class="typography"
     >
       -
     </span>
@@ -268,10 +268,10 @@ exports[`MultiSelectInput Component MultiSelectInput renders highlight in readOn
 exports[`MultiSelectInput Component MultiSelectInput renders in readOnly 1`] = `
 <div>
   <div
-    class="field gds-select-container input-select-field-read-only"
+    class="container"
   >
     <span
-      class="gds-typography"
+      class="typography"
     >
       option 2
     </span>
@@ -282,10 +282,10 @@ exports[`MultiSelectInput Component MultiSelectInput renders in readOnly 1`] = `
 exports[`MultiSelectInput Component MultiSelectInput renders in readOnly with invalid value 1`] = `
 <div>
   <div
-    class="field gds-select-container input-select-field-read-only"
+    class="container"
   >
     <span
-      class="gds-typography"
+      class="typography"
     >
       -
     </span>
@@ -296,10 +296,10 @@ exports[`MultiSelectInput Component MultiSelectInput renders in readOnly with in
 exports[`MultiSelectInput Component MultiSelectInput renders in readOnly without input value 1`] = `
 <div>
   <div
-    class="field gds-select-container input-select-field-read-only"
+    class="container"
   >
     <span
-      class="gds-typography"
+      class="typography"
     >
       -
     </span>
@@ -310,7 +310,7 @@ exports[`MultiSelectInput Component MultiSelectInput renders in readOnly without
 exports[`MultiSelectInput Component MultiSelectInput renders inError 1`] = `
 <div>
   <div
-    class="field gds-select-container input-select-field input-error"
+    class="container"
   >
     <div
       class=" css-1959ul7-container"
@@ -326,19 +326,19 @@ exports[`MultiSelectInput Component MultiSelectInput renders inError 1`] = `
         class="css-1f43avz-a11yText-A11yText"
       />
       <div
-        class=" css-ocyqvw-control"
+        class=" css-d83tmf-control"
       >
         <div
-          class=" css-9plg90-ValueContainer"
+          class=" css-yhb162-ValueContainer"
         >
           <div
-            class=" css-14el2xx-placeholder"
+            class=" css-1jqq78o-placeholder"
             id="react-select-11-placeholder"
           >
             Select...
           </div>
           <div
-            class=" css-6j8wv5-Input"
+            class=" css-qbdosj-Input"
             data-value=""
           >
             <input
@@ -364,13 +364,13 @@ exports[`MultiSelectInput Component MultiSelectInput renders inError 1`] = `
           class=" css-1hb7zxy-IndicatorsContainer"
         >
           <span
-            class=" css-1okebmr-indicatorSeparator"
+            class=" css-1u9des2-indicatorSeparator"
           />
           <div
             aria-hidden="true"
           >
             <i
-              class="dynamic-search-icon icon"
+              class="icon icon"
               icon="fal,chevron-down"
             />
           </div>
@@ -391,7 +391,7 @@ exports[`MultiSelectInput Component MultiSelectInput renders inError 1`] = `
 exports[`MultiSelectInput Component MultiSelectInput renders with invalid input value 1`] = `
 <div>
   <div
-    class="field gds-select-container input-select-field"
+    class="container"
   >
     <div
       class=" css-1959ul7-container"
@@ -407,19 +407,19 @@ exports[`MultiSelectInput Component MultiSelectInput renders with invalid input 
         class="css-1f43avz-a11yText-A11yText"
       />
       <div
-        class=" css-1l9db9l-control"
+        class=" css-1iiyd84-control"
       >
         <div
-          class=" css-9plg90-ValueContainer"
+          class=" css-yhb162-ValueContainer"
         >
           <div
-            class=" css-14el2xx-placeholder"
+            class=" css-1jqq78o-placeholder"
             id="react-select-5-placeholder"
           >
             Select...
           </div>
           <div
-            class=" css-6j8wv5-Input"
+            class=" css-qbdosj-Input"
             data-value=""
           >
             <input
@@ -445,13 +445,13 @@ exports[`MultiSelectInput Component MultiSelectInput renders with invalid input 
           class=" css-1hb7zxy-IndicatorsContainer"
         >
           <span
-            class=" css-1okebmr-indicatorSeparator"
+            class=" css-1u9des2-indicatorSeparator"
           />
           <div
             aria-hidden="true"
           >
             <i
-              class="dynamic-search-icon icon"
+              class="icon icon"
               icon="fal,chevron-down"
             />
           </div>
@@ -472,7 +472,7 @@ exports[`MultiSelectInput Component MultiSelectInput renders with invalid input 
 exports[`MultiSelectInput Component MultiSelectInput renders with multiple input values 1`] = `
 <div>
   <div
-    class="field gds-select-container input-select-field"
+    class="container"
   >
     <div
       class=" css-1959ul7-container"
@@ -488,14 +488,14 @@ exports[`MultiSelectInput Component MultiSelectInput renders with multiple input
         class="css-1f43avz-a11yText-A11yText"
       />
       <div
-        class=" css-1l9db9l-control"
+        class=" css-1iiyd84-control"
       >
         <div
-          class=" css-1xxnwvf-ValueContainer"
+          class=" css-16ryfrw-ValueContainer"
         >
           2 items selected
           <div
-            class=" css-g5g4gj-Input"
+            class=" css-qwwk3k-Input"
             data-value=""
           >
             <input
@@ -520,13 +520,13 @@ exports[`MultiSelectInput Component MultiSelectInput renders with multiple input
           class=" css-1hb7zxy-IndicatorsContainer"
         >
           <span
-            class=" css-1okebmr-indicatorSeparator"
+            class=" css-1u9des2-indicatorSeparator"
           />
           <div
             aria-hidden="true"
           >
             <i
-              class="dynamic-search-icon icon"
+              class="icon icon"
               data-testid="DATA-TEST-ID-magnifier"
               icon="fal,chevron-down"
             />
@@ -553,7 +553,7 @@ exports[`MultiSelectInput Component MultiSelectInput renders with multiple input
 exports[`MultiSelectInput Component MultiSelectInput renders with valid value and clearable 1`] = `
 <div>
   <div
-    class="field gds-select-container input-select-field"
+    class="container"
   >
     <div
       class=" css-1959ul7-container"
@@ -569,14 +569,14 @@ exports[`MultiSelectInput Component MultiSelectInput renders with valid value an
         class="css-1f43avz-a11yText-A11yText"
       />
       <div
-        class=" css-1l9db9l-control"
+        class=" css-1iiyd84-control"
       >
         <div
-          class=" css-1xxnwvf-ValueContainer"
+          class=" css-16ryfrw-ValueContainer"
         >
           1 item selected
           <div
-            class=" css-g5g4gj-Input"
+            class=" css-qwwk3k-Input"
             data-value=""
           >
             <input
@@ -604,19 +604,19 @@ exports[`MultiSelectInput Component MultiSelectInput renders with valid value an
             aria-hidden="true"
           >
             <i
-              class="dynamic-search-icon icon"
+              class="icon icon"
               data-testid="DATA-TEST-ID-clear"
               icon="fal,xmark"
             />
           </div>
           <span
-            class=" css-1okebmr-indicatorSeparator"
+            class=" css-1u9des2-indicatorSeparator"
           />
           <div
             aria-hidden="true"
           >
             <i
-              class="dynamic-search-icon icon"
+              class="icon icon"
               data-testid="DATA-TEST-ID-magnifier"
               icon="fal,chevron-down"
             />
@@ -638,7 +638,7 @@ exports[`MultiSelectInput Component MultiSelectInput renders with valid value an
 exports[`MultiSelectInput Component MultiSelectInput renders with valid value and clearable without data-test-id 1`] = `
 <div>
   <div
-    class="field gds-select-container input-select-field"
+    class="container"
   >
     <div
       class=" css-1959ul7-container"
@@ -654,14 +654,14 @@ exports[`MultiSelectInput Component MultiSelectInput renders with valid value an
         class="css-1f43avz-a11yText-A11yText"
       />
       <div
-        class=" css-1l9db9l-control"
+        class=" css-1iiyd84-control"
       >
         <div
-          class=" css-1xxnwvf-ValueContainer"
+          class=" css-16ryfrw-ValueContainer"
         >
           1 item selected
           <div
-            class=" css-g5g4gj-Input"
+            class=" css-qwwk3k-Input"
             data-value=""
           >
             <input
@@ -689,18 +689,18 @@ exports[`MultiSelectInput Component MultiSelectInput renders with valid value an
             aria-hidden="true"
           >
             <i
-              class="dynamic-search-icon icon"
+              class="icon icon"
               icon="fal,xmark"
             />
           </div>
           <span
-            class=" css-1okebmr-indicatorSeparator"
+            class=" css-1u9des2-indicatorSeparator"
           />
           <div
             aria-hidden="true"
           >
             <i
-              class="dynamic-search-icon icon"
+              class="icon icon"
               icon="fal,chevron-down"
             />
           </div>
@@ -721,7 +721,7 @@ exports[`MultiSelectInput Component MultiSelectInput renders with valid value an
 exports[`MultiSelectInput Component MultiSelectInput renders without input value 1`] = `
 <div>
   <div
-    class="field gds-select-container input-select-field"
+    class="container"
   >
     <div
       class=" css-1959ul7-container"
@@ -737,19 +737,19 @@ exports[`MultiSelectInput Component MultiSelectInput renders without input value
         class="css-1f43avz-a11yText-A11yText"
       />
       <div
-        class=" css-1l9db9l-control"
+        class=" css-1iiyd84-control"
       >
         <div
-          class=" css-9plg90-ValueContainer"
+          class=" css-yhb162-ValueContainer"
         >
           <div
-            class=" css-14el2xx-placeholder"
+            class=" css-1jqq78o-placeholder"
             id="react-select-4-placeholder"
           >
             Select...
           </div>
           <div
-            class=" css-6j8wv5-Input"
+            class=" css-qbdosj-Input"
             data-value=""
           >
             <input
@@ -775,13 +775,13 @@ exports[`MultiSelectInput Component MultiSelectInput renders without input value
           class=" css-1hb7zxy-IndicatorsContainer"
         >
           <span
-            class=" css-1okebmr-indicatorSeparator"
+            class=" css-1u9des2-indicatorSeparator"
           />
           <div
             aria-hidden="true"
           >
             <i
-              class="dynamic-search-icon icon"
+              class="icon icon"
               icon="fal,chevron-down"
             />
           </div>
@@ -802,7 +802,7 @@ exports[`MultiSelectInput Component MultiSelectInput renders without input value
 exports[`MultiSelectInput Component MultiSelectInput renders without portal 1`] = `
 <div>
   <div
-    class="field gds-select-container input-select-field"
+    class="container"
   >
     <div
       class=" css-1959ul7-container"
@@ -818,19 +818,19 @@ exports[`MultiSelectInput Component MultiSelectInput renders without portal 1`] 
         class="css-1f43avz-a11yText-A11yText"
       />
       <div
-        class=" css-1l9db9l-control"
+        class=" css-1iiyd84-control"
       >
         <div
-          class=" css-9plg90-ValueContainer"
+          class=" css-yhb162-ValueContainer"
         >
           <div
-            class=" css-14el2xx-placeholder"
+            class=" css-1jqq78o-placeholder"
             id="react-select-10-placeholder"
           >
             Select...
           </div>
           <div
-            class=" css-6j8wv5-Input"
+            class=" css-qbdosj-Input"
             data-value=""
           >
             <input
@@ -856,13 +856,13 @@ exports[`MultiSelectInput Component MultiSelectInput renders without portal 1`] 
           class=" css-1hb7zxy-IndicatorsContainer"
         >
           <span
-            class=" css-1okebmr-indicatorSeparator"
+            class=" css-1u9des2-indicatorSeparator"
           />
           <div
             aria-hidden="true"
           >
             <i
-              class="dynamic-search-icon icon"
+              class="icon icon"
               icon="fal,chevron-down"
             />
           </div>

@@ -9,10 +9,12 @@ exports[`TextCell component TextCell handles changes 1`] = `
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <input
-              class="field gds-input-text-field gds-typography"
+              autocomplete="off"
+              autocorrect="off"
+              class="container"
               data-testid="DATA-TEST-ID"
               id="data"
               name="data"
@@ -36,10 +38,12 @@ exports[`TextCell component TextCell handles changes 2`] = `
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <input
-              class="field gds-input-text-field gds-typography"
+              autocomplete="off"
+              autocorrect="off"
+              class="container"
               data-testid="DATA-TEST-ID"
               id="data"
               name="data"
@@ -63,17 +67,13 @@ exports[`TextCell component TextCell renders 1`] = `
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
-            <div
-              class="field input-text-field-read-only gds-typography"
+            <span
+              class="typography"
             >
-              <span
-                class="gds-typography"
-              >
-                text 1
-              </span>
-            </div>
+              text 1
+            </span>
           </div>
         </td>
       </tr>
@@ -91,10 +91,12 @@ exports[`TextCell component TextCell renders cell editing with no row input 1`] 
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <input
-              class="field gds-input-text-field gds-typography"
+              autocomplete="off"
+              autocorrect="off"
+              class="container"
               id="data"
               name="data"
               type="text"
@@ -118,17 +120,13 @@ exports[`TextCell component TextCell renders hidden 1`] = `
           style="display: none;"
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
-            <div
-              class="field input-text-field-read-only gds-typography"
+            <span
+              class="typography"
             >
-              <span
-                class="gds-typography"
-              >
-                text 1
-              </span>
-            </div>
+              text 1
+            </span>
           </div>
         </td>
       </tr>
@@ -146,10 +144,12 @@ exports[`TextCell component TextCell renders row editing with no row input 1`] =
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <input
-              class="field gds-input-text-field gds-typography"
+              autocomplete="off"
+              autocorrect="off"
+              class="container"
               id="data"
               name="data"
               type="text"
@@ -172,17 +172,13 @@ exports[`TextCell component TextCell renders with forced value 1`] = `
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
-            <div
-              class="field input-text-field-read-only gds-typography"
+            <span
+              class="typography"
             >
-              <span
-                class="gds-typography"
-              >
-                text 2
-              </span>
-            </div>
+              text 2
+            </span>
           </div>
         </td>
       </tr>

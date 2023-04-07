@@ -1,4 +1,4 @@
-import React, { Fragment, ReactElement, useRef, useState } from 'react';
+import React, { CSSProperties, Fragment, ReactElement, useRef, useState } from 'react';
 import { ControlledMenu, MenuDivider, MenuHeader, MenuItem } from '@szhsin/react-menu';
 import { NavLink } from 'react-router-dom';
 import InfiniteScroll from 'react-infinite-scroller';
@@ -8,7 +8,12 @@ import { Badge, BadgeColorsEnum } from '../../Atoms/Badge';
 import { Portal } from '../../Atoms/Portal';
 import { Tooltip } from '../../Atoms/Tooltip';
 
+import styles from './NavItem.module.scss';
+import classnames from 'classnames';
+
 export interface INavItemProps {
+  /** Class for the container (optional, default: undefined) */
+  className?: string;
   /** Counter in a badge floating above the NavItem (optional, default: undefined) */
   counter?: string | number;
   /** custom infinite scroll config (optional, default: undefined) */
@@ -33,6 +38,8 @@ export interface INavItemProps {
   link?: string;
   /** On Click handler (optional, default: undefined) */
   onClick?: () => void;
+  /** Custom style (optional, default: undefined) */
+  style?: CSSProperties;
   /** Submenu items (optional, default: undefined) */
   subItems?: Array<INavItemProps>;
   /** Tooltip (optional, default: undefined) */
@@ -41,6 +48,7 @@ export interface INavItemProps {
 
 const NavItem = (props: INavItemProps): ReactElement => {
   const {
+    className,
     counter,
     customInfiniteScrollConfig,
     customSubItem,
@@ -49,6 +57,7 @@ const NavItem = (props: INavItemProps): ReactElement => {
     label,
     link,
     onClick,
+    style,
     subItems,
     tooltip,
   } = props;
@@ -81,29 +90,32 @@ const NavItem = (props: INavItemProps): ReactElement => {
   return (
     <>
       <Tooltip tooltip={tooltip}>
-        <div className='nav-bar-menu-item' data-testid={dataTestId} ref={ref} onClick={handleClick}>
+        <div
+          className={classnames(styles.item, className)}
+          data-testid={dataTestId}
+          ref={ref}
+          onClick={handleClick}
+          style={style}>
           {link ? (
             <NavLink to={link} key='link'>
               {icon && <Icon icon={icon} size={label ? '1x' : '2x'} />}
-              {label && <div className='nav-bar-menu-label'>{label}</div>}
+              {label && <div className={styles.label}>{label}</div>}
             </NavLink>
           ) : (
             <Fragment key='icon'>
               {icon && <Icon icon={icon} size={label ? '1x' : '2x'} />}
-              {label && <div className='nav-bar-menu-label'>{label}</div>}
+              {label && <div className={styles.label}>{label}</div>}
             </Fragment>
           )}
           {counter && (
-            <Badge color={BadgeColorsEnum.DANGER} type='notification' className='counter' key='counter'>
-              {counter}
+            <Badge color={BadgeColorsEnum.DANGER} type='notification' className={styles.counter}>
+              {isFinite(Number(counter)) && Number(counter) > 99 ? '+99' : counter}
             </Badge>
           )}
-          {hasMenu && label && (
-            <Icon icon={['fas', 'caret-down']} size='lg' className='nav-bar-menu-caret' key='caret' />
-          )}
+          {hasMenu && label && <Icon icon={['fas', 'caret-down']} size='lg' className={styles.caret} />}
         </div>
       </Tooltip>
-      {hasMenu ? (
+      {hasMenu && (
         <Portal key='portal'>
           <ControlledMenu
             align={customInfiniteScrollConfig ? 'end' : 'center'}
@@ -149,10 +161,10 @@ const NavItem = (props: INavItemProps): ReactElement => {
                       <MenuHeader key='header-noitem'>{customInfiniteScrollConfig.noItems}</MenuHeader>
                     ) : (
                       customInfiniteScrollConfig.items.map((item, index) => (
-                        <React.Fragment key={`notification-${index}`}>
+                        <Fragment key={`notification-${index}`}>
                           <MenuItem>{customInfiniteScrollConfig.renderItem(item)}</MenuItem>
                           <MenuDivider />
-                        </React.Fragment>
+                        </Fragment>
                       ))
                     )}
                   </InfiniteScroll>
@@ -161,11 +173,24 @@ const NavItem = (props: INavItemProps): ReactElement => {
             )}
           </ControlledMenu>
         </Portal>
-      ) : (
-        <></>
       )}
     </>
   );
+};
+
+NavItem.defaultProps = {
+  className: undefined,
+  counter: undefined,
+  customInfiniteScrollConfig: undefined,
+  customSubItem: undefined,
+  dataTestId: undefined,
+  icon: undefined,
+  label: undefined,
+  link: undefined,
+  onClick: undefined,
+  style: undefined,
+  subItems: undefined,
+  tooltip: undefined,
 };
 
 export default NavItem;

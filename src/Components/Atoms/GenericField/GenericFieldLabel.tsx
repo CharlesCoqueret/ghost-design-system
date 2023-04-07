@@ -1,6 +1,8 @@
 import React, { ReactElement } from 'react';
 import classNames from 'classnames';
 
+import styles from './GenericFieldLabel.module.scss';
+
 interface IGenericFieldLabelProps {
   /** Additional class name (optional, default: undefined) */
   className?: string;
@@ -28,9 +30,9 @@ const GenericFieldLabel = (props: IGenericFieldLabelProps): ReactElement => {
   if (label === undefined || label === '') return <></>;
 
   return (
-    <label className={classNames(size && `field-label-size-${size}`, 'field-label', className)}>
+    <label className={classNames(styles.label, size && styles[`size-${size}`], className)}>
       {label}
-      {!readOnly && mandatory && <span className='field-label-mandatory'>*</span>}
+      {!readOnly && mandatory && <span className={styles.mandatory}>*</span>}
     </label>
   );
 };

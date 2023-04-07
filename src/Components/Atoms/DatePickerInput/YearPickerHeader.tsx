@@ -24,8 +24,8 @@ const YearPickerHeader = (props: ReactDatePickerCustomHeaderProps & { dataTestId
           color={ColorButtonEnum.REVERSED}
           dataTestId={dataTestId ? `${dataTestId}-increaseYear` : undefined}
           disabled={nextYearButtonDisabled}
-          onClick={increaseYear}
           icon={['fal', 'chevron-right']}
+          onClick={increaseYear}
         />
       </div>
     </div>

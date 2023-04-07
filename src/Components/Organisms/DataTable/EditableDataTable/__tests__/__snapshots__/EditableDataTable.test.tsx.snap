@@ -16,7 +16,7 @@ exports[`EditableDataTable component EditableDataTable handles canAddNewLine wit
               tabindex="-1"
             >
               <span
-                class="gds-typography table--header-value--title right ellipsis"
+                class="typography table--header-value--title right ellipsis"
                 title="Number"
               >
                 Number
@@ -34,10 +34,11 @@ exports[`EditableDataTable component EditableDataTable handles canAddNewLine wit
             class=""
           >
             <div
-              class="gds-field-group"
+              class="fieldGroup"
             >
               <span
-                class="gds-amount-field amount-field-read-only table--cell-value--number-readonly"
+                autocomplete="off"
+                class="default readOnly table--cell-value--number-readonly"
                 id="number"
                 name="number"
               >
@@ -49,13 +50,13 @@ exports[`EditableDataTable component EditableDataTable handles canAddNewLine wit
       </tbody>
     </table>
     <button
-      class="gds-button-content gds-table-new-line"
+      class="button gds-table-new-line"
       color="primary"
       tabindex="0"
       type="button"
     >
       <div
-        class="button-label-container"
+        class="label"
       >
         Add row
       </div>
@@ -80,7 +81,7 @@ exports[`EditableDataTable component EditableDataTable handles canAddNewLine wit
               tabindex="-1"
             >
               <span
-                class="gds-typography table--header-value--title right ellipsis"
+                class="typography table--header-value--title right ellipsis"
                 title="Number"
               >
                 Number
@@ -98,10 +99,11 @@ exports[`EditableDataTable component EditableDataTable handles canAddNewLine wit
             class=""
           >
             <div
-              class="gds-field-group"
+              class="fieldGroup"
             >
               <span
-                class="gds-amount-field amount-field-read-only table--cell-value--number-readonly"
+                autocomplete="off"
+                class="default readOnly table--cell-value--number-readonly"
                 id="number"
                 name="number"
               >
@@ -113,13 +115,13 @@ exports[`EditableDataTable component EditableDataTable handles canAddNewLine wit
       </tbody>
     </table>
     <button
-      class="gds-button-content gds-table-new-line"
+      class="button gds-table-new-line"
       color="primary"
       tabindex="0"
       type="button"
     >
       <div
-        class="button-label-container"
+        class="label"
       >
         Add row
       </div>
@@ -144,7 +146,7 @@ exports[`EditableDataTable component EditableDataTable handles change, onRowDele
               tabindex="-1"
             >
               <span
-                class="gds-typography table--header-value--title right ellipsis"
+                class="typography table--header-value--title right ellipsis"
                 title="Number"
               >
                 Number
@@ -159,7 +161,7 @@ exports[`EditableDataTable component EditableDataTable handles change, onRowDele
               tabindex="-1"
             >
               <span
-                class="gds-typography table--header-value--title center ellipsis"
+                class="typography table--header-value--title center ellipsis"
                 title="Actions"
               >
                 Actions
@@ -177,10 +179,11 @@ exports[`EditableDataTable component EditableDataTable handles change, onRowDele
             class=""
           >
             <div
-              class="gds-field-group"
+              class="fieldGroup"
             >
               <input
-                class="gds-amount-field"
+                autocomplete="off"
+                class="default"
                 data-testid="DATA-TEST-ID-Number-0"
                 inputmode="numeric"
                 name="number"
@@ -196,17 +199,17 @@ exports[`EditableDataTable component EditableDataTable handles change, onRowDele
               class="table--cell--value--button"
             >
               <button
-                class="gds-button-content"
+                class="button"
                 color="reversed"
                 data-testid="DATA-TEST-ID-delete"
                 tabindex="0"
                 type="button"
               >
                 <div
-                  class="button-icon-container"
+                  class="icon"
                 >
                   <i
-                    class="button-icon icon"
+                    class="icon"
                     icon="fal,trash-alt"
                   />
                 </div>
@@ -219,38 +222,38 @@ exports[`EditableDataTable component EditableDataTable handles change, onRowDele
                   ControlleMenu
                   closed
                   <div
-                    class="gds-popover-container"
+                    class="container"
                   >
                     <div
-                      class="popover-title"
+                      class="title"
                     >
                       Delete?
                     </div>
                     <div
-                      class="popover-buttons"
+                      class="buttons"
                     >
                       <button
-                        class="gds-button-content"
+                        class="button"
                         color="secondary"
                         data-testid="cancel"
                         tabindex="0"
                         type="button"
                       >
                         <div
-                          class="button-label-container"
+                          class="label"
                         >
                           Cancel
                         </div>
                       </button>
                       <button
-                        class="gds-button-content"
+                        class="button"
                         color="primary"
                         data-testid="confirm"
                         tabindex="0"
                         type="button"
                       >
                         <div
-                          class="button-label-container"
+                          class="label"
                         >
                           Confirm
                         </div>
@@ -261,17 +264,17 @@ exports[`EditableDataTable component EditableDataTable handles change, onRowDele
                 </div>
               </div>
               <button
-                class="gds-button-content"
+                class="button"
                 color="reversed"
                 data-testid="DATA-TEST-ID-download"
                 tabindex="0"
                 type="button"
               >
                 <div
-                  class="button-icon-container"
+                  class="icon"
                 >
                   <i
-                    class="button-icon icon"
+                    class="icon"
                     icon="fal,arrow-down-to-line"
                   />
                 </div>
@@ -304,7 +307,7 @@ exports[`EditableDataTable component EditableDataTable handles onRowDelete and o
               tabindex="-1"
             >
               <span
-                class="gds-typography table--header-value--title right ellipsis"
+                class="typography table--header-value--title right ellipsis"
                 title="Number"
               >
                 Number
@@ -319,7 +322,7 @@ exports[`EditableDataTable component EditableDataTable handles onRowDelete and o
               tabindex="-1"
             >
               <span
-                class="gds-typography table--header-value--title center ellipsis"
+                class="typography table--header-value--title center ellipsis"
                 title="actionColumn"
               >
                 actionColumn
@@ -337,10 +340,11 @@ exports[`EditableDataTable component EditableDataTable handles onRowDelete and o
             class=""
           >
             <div
-              class="gds-field-group"
+              class="fieldGroup"
             >
               <input
-                class="gds-amount-field"
+                autocomplete="off"
+                class="default"
                 inputmode="numeric"
                 name="number"
                 type="text"
@@ -359,13 +363,13 @@ exports[`EditableDataTable component EditableDataTable handles onRowDelete and o
       </tbody>
     </table>
     <button
-      class="gds-button-content gds-table-new-line"
+      class="button gds-table-new-line"
       color="primary"
       tabindex="0"
       type="button"
     >
       <div
-        class="button-label-container"
+        class="label"
       >
         addRow
       </div>
@@ -390,7 +394,7 @@ exports[`EditableDataTable component EditableDataTable handles sort 1`] = `
               tabindex="0"
             >
               <span
-                class="gds-typography table--header-value--title right ellipsis"
+                class="typography table--header-value--title right ellipsis"
                 title="Number"
               >
                 Number
@@ -419,10 +423,11 @@ exports[`EditableDataTable component EditableDataTable handles sort 1`] = `
             class=""
           >
             <div
-              class="gds-field-group"
+              class="fieldGroup"
             >
               <span
-                class="gds-amount-field amount-field-read-only table--cell-value--number-readonly"
+                autocomplete="off"
+                class="default readOnly table--cell-value--number-readonly"
                 id="number"
                 name="number"
               >
@@ -453,7 +458,7 @@ exports[`EditableDataTable component EditableDataTable renders 1`] = `
               tabindex="-1"
             >
               <span
-                class="gds-typography table--header-value--title right ellipsis"
+                class="typography table--header-value--title right ellipsis"
                 title="Number"
               >
                 Number
@@ -471,10 +476,11 @@ exports[`EditableDataTable component EditableDataTable renders 1`] = `
             class=""
           >
             <div
-              class="gds-field-group"
+              class="fieldGroup"
             >
               <span
-                class="gds-amount-field amount-field-read-only table--cell-value--number-readonly"
+                autocomplete="off"
+                class="default readOnly table--cell-value--number-readonly"
                 id="number"
                 name="number"
               >

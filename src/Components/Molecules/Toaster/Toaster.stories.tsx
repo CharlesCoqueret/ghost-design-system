@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { dismiss, error, errorPersistent, notify, success, Toaster as ToasterComponent } from './Toaster';
+import toast from './Toaster';
 import { Button, ColorButtonEnum } from '../Button';
 import Modal from '../../Atoms/Modal/Modal';
 import ModalBody from '../../Atoms/Modal/ModalBody';
@@ -10,12 +10,12 @@ import { TextAreaField } from '../TextAreaField';
 import Section from '../../Atoms/Layout/Section';
 
 export default {
-  title: 'Molecule',
-  component: ToasterComponent,
+  title: 'Molecule/Toaster',
+  component: toast.Toaster,
   parameters: { actions: { argTypesRegex: '^on.*' }, controls: { sort: 'requiredFirst' } },
-} as ComponentMeta<typeof ToasterComponent>;
+} as ComponentMeta<typeof toast.Toaster>;
 
-const Template: ComponentStory<typeof ToasterComponent> = () => {
+const Template: ComponentStory<typeof toast.Toaster> = () => {
   const [show, setShow] = useState(false);
   const [message, setMessage] = useState('Toast message');
 
@@ -28,7 +28,7 @@ const Template: ComponentStory<typeof ToasterComponent> = () => {
 
   return (
     <>
-      <ToasterComponent />
+      <toast.Toaster />
       <Section title='Toast' collapsible={false}>
         <div
           style={{
@@ -36,16 +36,16 @@ const Template: ComponentStory<typeof ToasterComponent> = () => {
             gridTemplateColumns: 'repeat(2, 1fr)',
             gridGap: '20px',
           }}>
-          <Button label='Notify' onClick={() => notify(message)} />
-          <Button label='Success' onClick={() => success(message)} />
-          <Button label='Error' onClick={() => error(message)} />
-          <Button label='Persistent error' onClick={() => errorPersistent(message)} />
-          <Button label='Dismiss all toasts' onClick={() => dismiss()} />
+          <Button label='Notify' onClick={() => toast.notify(message)} />
+          <Button label='Success' onClick={() => toast.success(message)} />
+          <Button label='Error' onClick={() => toast.error(message)} />
+          <Button label='Persistent error' onClick={() => toast.errorPersistent(message)} />
+          <Button label='Dismiss all toasts' onClick={() => toast.dismiss()} />
         </div>
       </Section>
 
       <Section title='Toast message' collapsible={false}>
-        <TextAreaField inputValue={message} onChange={setMessage} label='Toast' name='toast-message' />
+        <TextAreaField input={message} onChange={setMessage} label='Toast' name='toast-message' />
       </Section>
 
       <Section title='With modal' collapsible={false}>

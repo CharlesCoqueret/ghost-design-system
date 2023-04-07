@@ -3,10 +3,10 @@
 exports[`AmountInput Component AmountInput renders 1`] = `
 <div>
   <input
-    class="gds-amount-field"
+    autocomplete="off"
+    class="default"
     data-testid="name"
     inputmode="numeric"
-    name="name"
     type="text"
     value=""
   />
@@ -16,9 +16,9 @@ exports[`AmountInput Component AmountInput renders 1`] = `
 exports[`AmountInput Component AmountInput renders groupint style NONE 1`] = `
 <div>
   <input
-    class="gds-amount-field"
+    autocomplete="off"
+    class="default"
     inputmode="numeric"
-    name="name"
     type="text"
     value=""
   />
@@ -28,10 +28,10 @@ exports[`AmountInput Component AmountInput renders groupint style NONE 1`] = `
 exports[`AmountInput Component AmountInput renders in readonly with no value, highlighted 1`] = `
 <div>
   <div
-    class="gds-amount-field amount-field-read-only field-highlighted"
+    class="default readOnly highlighted"
   >
     <span
-      class="gds-typography ellipsis"
+      class="typography ellipsis"
       title="A - B"
     >
       A - B
@@ -43,9 +43,8 @@ exports[`AmountInput Component AmountInput renders in readonly with no value, hi
 exports[`AmountInput Component AmountInput renders in readonly with value LAKH fornat 1`] = `
 <div>
   <span
-    class="gds-amount-field amount-field-read-only field-highlighted"
-    id="name"
-    name="name"
+    autocomplete="off"
+    class="default readOnly highlighted"
   >
     A 1,23,45,67,890.12 B
   </span>
@@ -55,9 +54,8 @@ exports[`AmountInput Component AmountInput renders in readonly with value LAKH f
 exports[`AmountInput Component AmountInput renders in readonly with value LAKH fornat without prefix and suffix 1`] = `
 <div>
   <span
-    class="gds-amount-field amount-field-read-only field-highlighted"
-    id="name"
-    name="name"
+    autocomplete="off"
+    class="default readOnly highlighted"
   >
     1,23,45,67,890.12
   </span>
@@ -67,10 +65,10 @@ exports[`AmountInput Component AmountInput renders in readonly with value LAKH f
 exports[`AmountInput Component AmountInput renders in readonly with value shotern 1`] = `
 <div>
   <div
-    class="gds-amount-field amount-field-read-only field-highlighted"
+    class="default readOnly highlighted"
   >
     <span
-      class="gds-typography"
+      class="typography"
     >
       A 1.23 b B
     </span>
@@ -81,10 +79,10 @@ exports[`AmountInput Component AmountInput renders in readonly with value shoter
 exports[`AmountInput Component AmountInput renders in readonly with value shotern 2`] = `
 <div>
   <div
-    class="gds-amount-field amount-field-read-only field-highlighted"
+    class="default readOnly highlighted"
   >
     <span
-      class="gds-typography"
+      class="typography"
     >
       A 1.23 b B
     </span>
@@ -95,10 +93,10 @@ exports[`AmountInput Component AmountInput renders in readonly with value shoter
 exports[`AmountInput Component AmountInput renders triggers onChange 1`] = `
 <div>
   <input
-    class="gds-amount-field"
+    autocomplete="off"
+    class="default"
     data-testid="name"
     inputmode="numeric"
-    name="name"
     type="text"
     value="A 123,456,789 B"
   />
@@ -108,10 +106,10 @@ exports[`AmountInput Component AmountInput renders triggers onChange 1`] = `
 exports[`AmountInput Component AmountInput renders triggers onChange with min and max 1`] = `
 <div>
   <input
-    class="gds-amount-field"
+    autocomplete="off"
+    class="default"
     data-testid="name"
     inputmode="numeric"
-    name="name"
     type="text"
     value="12"
   />
@@ -121,10 +119,10 @@ exports[`AmountInput Component AmountInput renders triggers onChange with min an
 exports[`AmountInput Component AmountInput renders triggers onChange with min and max 2`] = `
 <div>
   <input
-    class="gds-amount-field"
+    autocomplete="off"
+    class="default"
     data-testid="name"
     inputmode="numeric"
-    name="name"
     type="text"
     value="-12"
   />
@@ -134,11 +132,11 @@ exports[`AmountInput Component AmountInput renders triggers onChange with min an
 exports[`AmountInput Component AmountInput renders with empty input in read only 1`] = `
 <div>
   <div
-    class="gds-amount-field amount-field-read-only"
+    class="default readOnly"
     data-testid="name"
   >
     <span
-      class="gds-typography"
+      class="typography"
     >
       -
     </span>
@@ -149,11 +147,11 @@ exports[`AmountInput Component AmountInput renders with empty input in read only
 exports[`AmountInput Component AmountInput renders with empty input in read only prefix and suffix 1`] = `
 <div>
   <div
-    class="gds-amount-field amount-field-read-only"
+    class="default readOnly"
     data-testid="name"
   >
     <span
-      class="gds-typography"
+      class="typography"
     >
       A - B
     </span>
@@ -164,10 +162,9 @@ exports[`AmountInput Component AmountInput renders with empty input in read only
 exports[`AmountInput Component AmountInput renders with empty input in read only prefix and suffix shorten 1`] = `
 <div>
   <span
-    class="gds-amount-field amount-field-read-only"
+    autocomplete="off"
+    class="default readOnly"
     data-testid="name"
-    id="name"
-    name="name"
   >
     A 10 B
   </span>
@@ -177,10 +174,9 @@ exports[`AmountInput Component AmountInput renders with empty input in read only
 exports[`AmountInput Component AmountInput renders with empty input in read only prefix and suffix shorten 2`] = `
 <div>
   <span
-    class="gds-amount-field amount-field-read-only"
+    autocomplete="off"
+    class="default readOnly"
     data-testid="name"
-    id="name"
-    name="name"
   >
     A 10 B
   </span>
@@ -190,11 +186,11 @@ exports[`AmountInput Component AmountInput renders with empty input in read only
 exports[`AmountInput Component AmountInput renders with in read only shorten highlighted prefix and suffix shorten 1`] = `
 <div>
   <div
-    class="gds-amount-field amount-field-read-only field-highlighted"
+    class="default readOnly highlighted"
     data-testid="name"
   >
     <span
-      class="gds-typography"
+      class="typography"
     >
       A 1.23 b B
     </span>
@@ -205,11 +201,11 @@ exports[`AmountInput Component AmountInput renders with in read only shorten hig
 exports[`AmountInput Component AmountInput renders with input in readonly highlighted shorten 1`] = `
 <div>
   <div
-    class="gds-amount-field amount-field-read-only field-highlighted"
+    class="default readOnly highlighted"
     data-testid="name"
   >
     <span
-      class="gds-typography"
+      class="typography"
     >
       1.23 b
     </span>

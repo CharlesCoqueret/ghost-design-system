@@ -13,7 +13,7 @@ describe('FileInput Component', () => {
 
     const { container } = render(
       <FileInput
-        inputValue={[{ uid: '1', name: 'NAME', size: 1234, type: 'image/png' }]}
+        input={[{ uid: '1', name: 'NAME', size: 1234, type: 'image/png' }]}
         onChange={onChangeMock}
         onDelete={onDeleteMock}
         onDownload={onDownloadMock}
@@ -42,7 +42,7 @@ describe('FileInput Component', () => {
 
     rerender(
       <FileInput
-        inputValue={[{ uid: '1', name: 'NAME', size: 1234, type: 'image/png' }]}
+        input={[{ uid: '1', name: 'NAME', size: 1234, type: 'image/png' }]}
         onChange={onChangeMock}
         onDelete={onDeleteMock}
         onDownload={onDownloadMock}
@@ -92,7 +92,7 @@ describe('FileInput Component', () => {
     const { container } = render(
       <FileInput
         dataTestId='TEST-ID'
-        inputValue={[]}
+        input={[]}
         onChange={onChangeMock}
         onDelete={onDeleteMock}
         onDownload={onDownloadMock}
@@ -175,7 +175,7 @@ describe('FileInput Component', () => {
     const { container } = render(
       <FileInput
         dataTestId='TEST-ID'
-        inputValue={[{ uid: '1', name: 'AME', size: 1234, type: 'image/png' }]}
+        input={[{ uid: '1', name: 'AME', size: 1234, type: 'image/png' }]}
         maxFiles={1}
         onChange={onChangeMock}
         onDelete={onDeleteMock}
@@ -253,7 +253,7 @@ describe('FileInput Component', () => {
     const { container } = render(
       <FileInput
         dataTestId='TEST-ID'
-        inputValue={[]}
+        input={[]}
         onChange={onChangeMock}
         onDelete={onDeleteMock}
         onDownload={onDownloadMock}
@@ -343,7 +343,7 @@ describe('FileInput Component', () => {
     const { container } = render(
       <FileInput
         dataTestId='TEST-ID'
-        inputValue={[]}
+        input={[]}
         onChange={onChangeMock}
         onDelete={onDeleteMock}
         onDownload={onDownloadMock}
@@ -402,7 +402,7 @@ describe('FileInput Component', () => {
     const { container } = render(
       <FileInput
         dataTestId='TEST-ID'
-        inputValue={[]}
+        input={[]}
         onChange={onChangeMock}
         onDelete={onDeleteMock}
         onDownload={onDownloadMock}
@@ -450,7 +450,7 @@ describe('FileInput Component', () => {
     const { container } = render(
       <FileInput
         dataTestId='TEST-ID'
-        inputValue={[]}
+        input={[]}
         onChange={onChangeMock}
         onDelete={onDeleteMock}
         onDownload={onDownloadMock}
@@ -471,7 +471,7 @@ describe('FileInput Component', () => {
             webkitGetAsEntry: () => {
               return {
                 isFile: true,
-                file: (callback: (v: any) => void) => {
+                file: (callback: (v: unknown) => void) => {
                   callback({ name: 'file1.pdf', type: 'application/pdf', size: 1234 });
                 },
               };
@@ -506,7 +506,7 @@ describe('FileInput Component', () => {
     const { container } = render(
       <FileInput
         dataTestId='TEST-ID'
-        inputValue={[]}
+        input={[]}
         onChange={onChangeMock}
         onDelete={onDeleteMock}
         onDownload={onDownloadMock}
@@ -538,7 +538,7 @@ describe('FileInput Component', () => {
     const { container } = render(
       <FileInput
         dataTestId='TEST-ID'
-        inputValue={[{ uid: '1', name: 'AME', size: 1234, type: 'image/png' }]}
+        input={[{ uid: '1', name: 'AME', size: 1234, type: 'image/png' }]}
         maxFiles={1}
         onChange={onChangeMock}
         onDelete={onDeleteMock}
@@ -585,7 +585,7 @@ describe('FileInput Component', () => {
     const { container } = render(
       <FileInput
         dataTestId='TEST-ID'
-        inputValue={[{ uid: '1', name: 'AME', size: 1234, type: 'image/png' }]}
+        input={[{ uid: '1', name: 'AME', size: 1234, type: 'image/png' }]}
         maxFiles={1}
         onChange={onChangeMock}
         onDownload={onDownloadMock}
@@ -624,7 +624,7 @@ describe('FileInput Component', () => {
     const { container } = render(
       <FileInput
         dataTestId='TEST-ID'
-        inputValue={[{ uid: '1', name: 'AME', size: 1234, type: 'image/png' }]}
+        input={[{ uid: '1', name: 'AME', size: 1234, type: 'image/png' }]}
         maxFiles={1}
         onChange={onChangeMock}
         onDelete={onDeleteMock}
@@ -659,7 +659,7 @@ describe('FileInput Component', () => {
     const { container } = render(
       <FileInput
         dataTestId='TEST-ID'
-        inputValue={[{ uid: '1', name: 'AME', size: 1234, type: 'image/png' }]}
+        input={[{ uid: '1', name: 'AME', size: 1234, type: 'image/png' }]}
         maxFiles={1}
         onChange={onChangeMock}
         onDelete={onDeleteMock}

@@ -1,5 +1,5 @@
 import React, { ReactElement, useCallback, useState } from 'react';
-import { AnyObject } from 'yup/lib/object';
+import * as yup from 'yup';
 
 import { Button, ColorButtonEnum } from '../../../Molecules/Button';
 import usePropState from '../../../../hooks/use-prop-state';
@@ -10,7 +10,9 @@ import StaticDataTableHeader from '../StaticDataTable/StaticDataTableHeader';
 import { ColumnType, IColumnType, IExtraLineEditableDataTableProps, SortDirectionEnum } from '../Common/types';
 import LineEditableModal from './LineEditableModal';
 
-export interface ILineEditableDataTableProps<T> {
+import '../DataTable.module.scss';
+
+export interface ILineEditableDataTableProps<T extends yup.AnyObject> {
   columns: Array<IColumnType<T>>;
   data: Array<T>;
   extra: IExtraLineEditableDataTableProps<T>;
@@ -20,7 +22,7 @@ export interface ILineEditableDataTableProps<T> {
   stickyHeader?: boolean;
 }
 
-const LineEditableDataTable = <T extends AnyObject>(props: ILineEditableDataTableProps<T>): ReactElement => {
+const LineEditableDataTable = <T extends yup.AnyObject>(props: ILineEditableDataTableProps<T>): ReactElement => {
   const { data, columns, extra, loading, onSortChange, stickyHeader } = props;
 
   const [currentData, setCurrentData] = usePropState<Array<T>>(data);
@@ -52,7 +54,7 @@ const LineEditableDataTable = <T extends AnyObject>(props: ILineEditableDataTabl
                   }
                   return true;
                 },
-                icon: ['fal', 'edit'],
+                icon: ['fal', 'pen'],
                 label: extra.localization?.editButton ?? 'Edit',
                 onClick: (row, rowIndex) => {
                   if (extra.onRowEdit) {

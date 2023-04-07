@@ -1,8 +1,9 @@
-import React, { CSSProperties, ReactElement } from 'react';
-
+import React, { ReactElement } from 'react';
 import Tippy from '@tippyjs/react';
 
 import { MenuDirectionEnum } from './types';
+
+import './Tooltip.module.scss';
 
 export interface ITooltipProps {
   /** Tooltip has arrow (optional, default: true) */
@@ -19,11 +20,6 @@ export interface ITooltipProps {
   tooltip?: string | ReactElement;
 }
 
-export interface ITooltipStates {
-  visible: boolean;
-  style?: CSSProperties;
-}
-
 const Tooltip = (props: ITooltipProps) => {
   const { arrow, children, delay, direction, disabled, tooltip } = props;
 
@@ -32,7 +28,7 @@ const Tooltip = (props: ITooltipProps) => {
   if (!tooltip || disabled) return <>{children}</>;
 
   return (
-    <Tippy content={tooltip} placement={direction} arrow={arrow} animation='fade' delay={delay}>
+    <Tippy animation='fade' arrow={arrow} content={tooltip} delay={delay} placement={direction}>
       {children}
     </Tippy>
   );

@@ -2,148 +2,183 @@
 
 exports[`Title Component Title renders 1`] = `
 <div>
-  <h1
-    class="gds-typography ellipsis align-edit"
-    title="PREFIX"
+  <div
+    class="container"
   >
-    PREFIX
-  </h1>
-  <span
-    class="title-edit-hidden"
-  >
-    TITLE
-  </span>
-  <input
-    autocomplete="off"
-    class="title-edit"
-    placeholder="PLACEHOLDED"
-    style="display: flex; margin: auto;"
-    tabindex="0"
-    type="text"
-    value="TITLE"
-  />
-  <div>
-    TOOLTIP
+    <h1
+      class="typography ellipsis h1 prefix"
+      title="PREFIX"
+    >
+      PREFIX
+    </h1>
+    <span
+      class="hiddenTitle"
+    >
+      TITLE
+    </span>
+    <input
+      autocomplete="off"
+      class="title"
+      placeholder="PLACEHOLDED"
+      style=""
+      tabindex="0"
+      title="TITLE"
+      type="text"
+      value="TITLE"
+    />
+    <div>
+      TOOLTIP
+    </div>
+    <h1
+      class="typography h1 entity"
+    >
+      - 
+    </h1>
+    <h1
+      class="typography ellipsis h1 entity"
+      title="ENTITYID"
+    >
+      ENTITYID
+    </h1>
+    <h1
+      class="typography ellipsis h1 suffix"
+      title="SUFFIX"
+    >
+      SUFFIX
+    </h1>
   </div>
-  <h1
-    class="gds-typography ellipsis align-edit"
-  >
-    - 
-    ENTITYID
-  </h1>
-  <h1
-    class="gds-typography ellipsis align-edit"
-    title="SUFFIX"
-  >
-    SUFFIX
-  </h1>
 </div>
 `;
 
 exports[`Title Component Title renders and blurs on enter 1`] = `
 <div>
-  <span
-    class="title-edit-hidden"
+  <div
+    class="container"
   >
-    ABCDE
-  </span>
-  <input
-    autocomplete="off"
-    class="title-edit"
-    data-testid="DATA-TEST-ID"
-    style="display: flex; margin: auto;"
-    tabindex="0"
-    type="text"
-    value="ABCDE"
-  />
-  <div>
-    Rename
+    <span
+      class="hiddenTitle"
+    >
+      ABCDE
+    </span>
+    <input
+      autocomplete="off"
+      class="title"
+      data-testid="DATA-TEST-ID"
+      style=""
+      tabindex="0"
+      title="ABCDE"
+      type="text"
+      value="ABCDE"
+    />
+    <div>
+      Rename
+    </div>
   </div>
 </div>
 `;
 
 exports[`Title Component Title renders and blurs on tab 1`] = `
 <div>
-  <span
-    class="title-edit-hidden"
+  <div
+    class="container"
   >
-    ABCDE
-  </span>
-  <input
-    autocomplete="off"
-    class="title-edit"
-    data-testid="DATA-TEST-ID"
-    style="display: flex; margin: auto;"
-    tabindex="0"
-    type="text"
-    value="ABCDE"
-  />
-  <div>
-    Rename
+    <span
+      class="hiddenTitle"
+    >
+      ABCDE
+    </span>
+    <input
+      autocomplete="off"
+      class="title"
+      data-testid="DATA-TEST-ID"
+      style=""
+      tabindex="0"
+      title="ABCDE"
+      type="text"
+      value="ABCDE"
+    />
+    <div>
+      Rename
+    </div>
   </div>
 </div>
 `;
 
 exports[`Title Component Title renders and handles changes 1`] = `
 <div>
-  <span
-    class="title-edit-hidden"
+  <div
+    class="container"
   >
-    ABCDE
-  </span>
-  <input
-    autocomplete="off"
-    class="title-edit"
-    data-testid="DATA-TEST-ID"
-    style="display: flex; margin: auto;"
-    tabindex="0"
-    type="text"
-    value="ABCDE"
-  />
-  <div>
-    Rename
+    <span
+      class="hiddenTitle"
+    >
+      ABCDE
+    </span>
+    <input
+      autocomplete="off"
+      class="title"
+      data-testid="DATA-TEST-ID"
+      style=""
+      tabindex="0"
+      title="ABCDE"
+      type="text"
+      value="ABCDE"
+    />
+    <div>
+      Rename
+    </div>
   </div>
 </div>
 `;
 
 exports[`Title Component Title renders not editable 1`] = `
 <div>
-  <span
-    class="title-edit-hidden"
+  <div
+    class="container"
   >
-    TITLE
-  </span>
-  <input
-    autocomplete="off"
-    class="title-edit"
-    data-testid="DATA-TEST-ID"
-    readonly=""
-    style="display: flex; margin: auto;"
-    tabindex="-1"
-    type="text"
-    value="TITLE"
-  />
+    <span
+      class="hiddenTitle"
+    >
+      TITLE
+    </span>
+    <input
+      autocomplete="off"
+      class="title"
+      data-testid="DATA-TEST-ID"
+      readonly=""
+      style=""
+      tabindex="-1"
+      title="TITLE"
+      type="text"
+      value="TITLE"
+    />
+  </div>
 </div>
 `;
 
 exports[`Title Component Title renders restores title when too short 1`] = `
 <div>
-  <span
-    class="title-edit-hidden"
+  <div
+    class="container"
   >
-    TITLE
-  </span>
-  <input
-    autocomplete="off"
-    class="title-edit"
-    data-testid="DATA-TEST-ID"
-    style="display: flex; margin: auto;"
-    tabindex="0"
-    type="text"
-    value="TITLE"
-  />
-  <div>
-    Rename
+    <span
+      class="hiddenTitle"
+    >
+      TITLE
+    </span>
+    <input
+      autocomplete="off"
+      class="title"
+      data-testid="DATA-TEST-ID"
+      style=""
+      tabindex="0"
+      title="TITLE"
+      type="text"
+      value="TITLE"
+    />
+    <div>
+      Rename
+    </div>
   </div>
 </div>
 `;

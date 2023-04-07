@@ -9,7 +9,7 @@ exports[`StaticDataTableCell richtext case StaticDataTableCell renders with rich
           class=""
         >
           <div>
-            {"inputClassName":"gds-typography","inputValue":"richtext","name":"richtext","readOnly":true}
+            {"input":"richtext","name":"richtext","readOnly":true}
           </div>
         </td>
       </tr>

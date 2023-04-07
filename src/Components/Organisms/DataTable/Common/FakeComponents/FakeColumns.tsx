@@ -37,6 +37,10 @@ export const FakeColumnCheckbox = <T,>(props: IColumnCheckbox<T>): ReactElement 
 export const FakeColumnCode = <T,>(props: IColumnCode<T>): ReactElement => {
   return <>{JSON.stringify(props)}</>;
 };
+
+/**
+ * @deprecated will be remove in version 2.1
+ */
 export const FakeColumnCustom = <T,>(props: IColumnCustom<T>): ReactElement => {
   return <>{JSON.stringify(props)}</>;
 };
@@ -70,6 +74,10 @@ export const FakeColumnSection = <T,>(props: IColumnSection<T>): ReactElement =>
 export const FakeColumnSwitch = <T,>(props: IColumnSwitch<T>): ReactElement => {
   return <>{JSON.stringify(props)}</>;
 };
+
+/**
+ * @deprecated will be remove in version 2.1
+ */
 export const FakeColumnTable = <T, U>(props: IColumnTable<T, U>): ReactElement => {
   return <>{JSON.stringify(props)}</>;
 };

@@ -105,7 +105,7 @@ describe('StaticDataTableCell component', () => {
                 title: 'Button',
                 type: ColumnType.BUTTON,
                 moreActionsMessage: 'More actions',
-                buttons: [{ label: 'label', icon: ['fal', 'cog'] }],
+                buttons: [{ label: 'label', icon: ['fal', 'gear'] }],
               }}
               row={{ number: 1 }}
               rowIndex={0}

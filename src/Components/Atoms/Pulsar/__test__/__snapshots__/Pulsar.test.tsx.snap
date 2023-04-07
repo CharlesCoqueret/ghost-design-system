@@ -3,7 +3,7 @@
 exports[`Pulsar Component Pulsar renders 1`] = `
 <div>
   <span
-    class="gds-pulsar"
+    class="pulsar"
   />
 </div>
 `;

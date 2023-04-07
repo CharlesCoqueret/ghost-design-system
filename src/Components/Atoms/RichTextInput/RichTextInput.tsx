@@ -13,6 +13,8 @@ import table from 'suneditor/src/plugins/submenu/table';
 import { SunEditorOptions } from 'suneditor/src/options';
 import classnames from 'classnames';
 
+import './RichTextInput.module.scss';
+
 export interface IRichTextInputProps {
   /** Class for the input (optional, default: undefined) */
   className?: string;
@@ -27,7 +29,7 @@ export interface IRichTextInputProps {
   /** Enable link  (optional, default: false) */
   enableLink?: boolean;
   /** Initial values for the field (optional, default: undefined or '-' when disabled or readOnly) */
-  inputValue?: string;
+  input?: string;
   /** Field is in error state (optional, default: false) */
   isInError?: boolean;
   /** Locale for tooltips (optional, default: undefined, meaning english) */
@@ -86,7 +88,7 @@ const RichTextInput = (props: IRichTextInputProps): ReactElement => {
     disabled,
     enableImage,
     enableLink,
-    inputValue,
+    input,
     isInError,
     locale,
     maxLength,
@@ -105,6 +107,7 @@ const RichTextInput = (props: IRichTextInputProps): ReactElement => {
       enableLink && enableImage ? ['link', 'image'] : enableImage ? ['image'] : enableLink ? ['link'] : [],
     ],
     // Do not replace <i></i> by <i /> as it breaks ol ul alignment
+    // Do not replace <Icon /> as it must be html only
     icons: {
       bold: '<i class="far fa-bold"></i>',
       delete: '<i class="fal fa-trash-alt"></i>',
@@ -133,9 +136,10 @@ const RichTextInput = (props: IRichTextInputProps): ReactElement => {
     imageUploadUrl: undefined,
     imageUrlInput: false,
     videoFileInput: false,
-    resizingBar: maxLength !== undefined ? true : false,
-    charCounter: maxLength !== undefined ? true : false,
-    maxCharCount: maxLength,
+    resizingBar: maxLength !== undefined && !(readOnly || disabled) ? true : false,
+    charCounter: maxLength !== undefined && !(readOnly || disabled) ? true : false,
+    charCounterType: maxLength !== undefined && !(readOnly || disabled) ? 'byte-html' : undefined,
+    maxCharCount: readOnly || disabled ? undefined : maxLength,
     minHeight: readOnly || disabled ? undefined : '250px',
     maxHeight: readOnly || disabled ? undefined : '600px',
     tabDisable: true,
@@ -164,7 +168,7 @@ const RichTextInput = (props: IRichTextInputProps): ReactElement => {
 
   return (
     <div
-      className={classnames('field', 'gds-rich-text-container', {
+      className={classnames('gdsRichTextInputContainer', {
         disabled: disabled,
         readonly: readOnly,
         error: !disabled && !readOnly && isInError,
@@ -172,7 +176,7 @@ const RichTextInput = (props: IRichTextInputProps): ReactElement => {
       style={style}>
       <SunEditor
         data-testid={dataTestId}
-        defaultValue={(readOnly || disabled) && inputValue === undefined ? '-' : inputValue}
+        defaultValue={(readOnly || disabled) && input === undefined ? '-' : input}
         disable={disabled || readOnly}
         hideToolbar={readOnly || disabled}
         lang={locale}
@@ -191,7 +195,7 @@ RichTextInput.defaultProps = {
   disabled: false,
   enableImage: false,
   enableLink: false,
-  inputValue: undefined,
+  input: undefined,
   isInError: false,
   locale: undefined,
   maxLength: undefined,

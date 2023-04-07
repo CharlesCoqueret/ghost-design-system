@@ -5,13 +5,10 @@ exports[`Banner Component renders nothing without children 1`] = `<div />`;
 exports[`Banner Component renders with children 1`] = `
 <div>
   <div
-    class="gds-banner-container information"
+    class="container information"
   >
     <div
-      id="CHILD1"
-    />
-    <div
-      id="CHILD2"
+      id="CHILD"
     />
   </div>
 </div>

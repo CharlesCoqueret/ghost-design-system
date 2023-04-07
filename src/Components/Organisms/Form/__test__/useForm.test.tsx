@@ -1,101 +1,168 @@
-import React from 'react';
-import { act, renderHook } from '@testing-library/react-hooks';
-import { render } from '@testing-library/react';
+import { act, renderHook } from '@testing-library/react-hooks/dom';
 
 import * as yup from 'yup';
-import { FieldTypeEnum } from '../types';
-
-let handleDataChangeForm: ((dataIndex: string, newValue: number | undefined) => void) | undefined;
-
-jest.mock('../Form', () => {
-  return {
-    __esModule: true,
-    default: (props: { handleDataChange: typeof handleDataChangeForm; validationError?: Record<string, unknown> }) => {
-      if (props.handleDataChange) handleDataChangeForm = props.handleDataChange;
-      return (
-        <>
-          <div>Mocked Form props: {JSON.stringify(props)}</div>
-          {props.validationError && <div className='field-error-message' />}
-        </>
-      );
-    },
-  };
-});
 
 import useForm from '../useForm';
 
 describe('useForm hook', () => {
-  it('provides the right elements', () => {
+  it('provides the right properties', () => {
     //scrollIntoView is not implemented in jsdom
     window.HTMLElement.prototype.scrollIntoView = jest.fn();
 
-    console.error = jest.fn();
+    const onChangeMock = jest.fn();
+    const onSubmitMock = jest.fn();
 
-    const { result } = renderHook(() =>
-      useForm({
-        initialData: { number: 50 },
-        fields: [{ fieldType: FieldTypeEnum.NUMBER, dataIndex: 'number', label: 'Number' }],
-        previousData: { number: 0 },
-        validationSchema: yup.object({ number: yup.number().required('Value for number is required') }),
-      }),
+    const values: { number?: number } = { number: 50 };
+
+    const { result } = renderHook(
+      (initialValue: { number?: number }) =>
+        useForm<{ number?: number }>({
+          values: initialValue,
+          validationSchema: yup.object({ number: yup.number().required('Value for number is required') }),
+          onChange: onChangeMock,
+          onSubmit: onSubmitMock,
+        }),
+      { initialProps: { number: 50 } },
     );
 
-    const { container, rerender } = render(result.current.formElement);
-    expect(container).toMatchSnapshot();
-    expect(result.current.getData()).toEqual({ number: 50 });
-    expect(result.current.isModified()).toEqual(false);
-
-    act(() => {
-      if (handleDataChangeForm) {
-        handleDataChangeForm('number', undefined);
-      }
+    expect(result.current.fieldsProps.number).toEqual({
+      errorMessage: undefined,
+      input: values.number,
+      mandatory: true,
+      onChange: expect.any(Function),
+      touched: false,
     });
-    rerender(result.current.formElement);
-    expect(result.current.getData()).toEqual({ number: undefined });
-    expect(result.current.isModified()).toEqual(true);
-    expect(container).toMatchSnapshot();
+    expect(result.current.hasBeenSubmitted).toEqual(false);
+  });
 
-    act(() => {
-      expect(result.current.submit()).toEqual({ valid: false, data: { number: undefined } });
-    });
-    expect(console.error).toBeCalledTimes(1);
-    expect(console.error).toBeCalledWith({
-      number: { type: 'required', message: 'Value for number is required' },
-    });
+  it('handles Submit', () => {
+    //scrollIntoView is not implemented in jsdom
+    window.HTMLElement.prototype.scrollIntoView = jest.fn();
 
-    rerender(result.current.formElement);
+    const onChangeMock = jest.fn();
+    const onSubmitMock = jest.fn();
+
+    const values: { number?: number } = { number: 50 };
+
+    const { result } = renderHook(
+      (initialValue: { number?: number }) =>
+        useForm<{ number?: number }>({
+          values: initialValue,
+          validationSchema: yup.object({ number: yup.number().required('Value for number is required') }),
+          onChange: onChangeMock,
+          onSubmit: onSubmitMock,
+        }),
+      { initialProps: values },
+    );
+
+    // Simulate submit
     act(() => {
-      // Running once more as the rerender is managed manually.
       result.current.submit();
     });
-    expect(window.HTMLElement.prototype.scrollIntoView).toBeCalledTimes(1);
-    expect(container).toMatchSnapshot();
-    expect(console.error).toBeCalledTimes(2);
 
+    expect(result.current.hasBeenSubmitted).toEqual(true);
+    expect(onSubmitMock).toBeCalledTimes(1);
+    expect(onSubmitMock).toBeCalledWith({ number: values.number });
+  });
+
+  it('handles Changes with error', () => {
+    const onChangeMock = jest.fn();
+    const onSubmitMock = jest.fn();
+
+    let values: { number?: number } = { number: 50 };
+
+    const { result, rerender } = renderHook(
+      (initialValue: { number?: number }) =>
+        useForm<{ number?: number }>({
+          values: initialValue,
+          validationSchema: yup.object({ number: yup.number().required('Value for number is required') }),
+          onChange: onChangeMock,
+          onSubmit: onSubmitMock,
+        }),
+      { initialProps: values },
+    );
+
+    // Simulate changes
     act(() => {
-      if (handleDataChangeForm) {
-        handleDataChangeForm('number', 100);
-      }
+      result.current.fieldsProps.number?.onChange(undefined);
     });
-    rerender(result.current.formElement);
-    expect(container).toMatchSnapshot();
-    expect(result.current.getData()).toEqual({ number: 100 });
-    expect(result.current.isModified()).toEqual(true);
 
+    expect(onChangeMock).toBeCalledTimes(1);
+    expect(onChangeMock).toBeCalledWith('number', undefined);
+
+    values = { number: undefined };
+    rerender(values);
+
+    // Simulate submit to get the error
     act(() => {
-      expect(result.current.submit()).toEqual({ valid: true, data: { number: 100 } });
+      result.current.submit();
     });
-    rerender(result.current.formElement);
-    expect(container).toMatchSnapshot();
-    expect(result.current.getData()).toEqual({ number: 100 });
-    expect(result.current.isModified()).toEqual(true);
 
+    expect(result.current.fieldsProps.number).toEqual({
+      errorMessage: 'Value for number is required',
+      input: undefined,
+      mandatory: true,
+      onChange: expect.any(Function),
+      touched: true,
+    });
+  });
+
+  it('handles Reset', () => {
+    const onChangeMock = jest.fn();
+    const onSubmitMock = jest.fn();
+
+    let values: { number?: number } = { number: 50 };
+
+    const { result, rerender } = renderHook(
+      (initialValue: { number?: number }) =>
+        useForm<{ number?: number }>({
+          values: initialValue,
+          validationSchema: yup.object({ number: yup.number().required('Value for number is required') }),
+          onChange: onChangeMock,
+          onSubmit: onSubmitMock,
+        }),
+      { initialProps: values },
+    );
+
+    // Simulate changes
+    act(() => {
+      result.current.fieldsProps.number?.onChange(undefined);
+    });
+
+    expect(onChangeMock).toBeCalledTimes(1);
+    expect(onChangeMock).toBeCalledWith('number', undefined);
+
+    values = { number: undefined };
+    rerender(values);
+
+    // Simulate submit to get the error
+    act(() => {
+      result.current.submit();
+    });
+
+    expect(result.current.hasBeenSubmitted).toEqual(true);
+    expect(result.current.fieldsProps.number).toEqual({
+      errorMessage: 'Value for number is required',
+      input: undefined,
+      mandatory: true,
+      onChange: expect.any(Function),
+      touched: true,
+    });
+
+    // Simulate reset
     act(() => {
       result.current.reset();
     });
-    rerender(result.current.formElement);
-    expect(container).toMatchSnapshot();
-    expect(result.current.getData()).toEqual({ number: 50 });
-    expect(result.current.isModified()).toEqual(false);
+
+    expect(onChangeMock).toBeCalledTimes(1);
+
+    expect(result.current.hasBeenSubmitted).toEqual(false);
+    expect(result.current.fieldsProps.number).toEqual({
+      errorMessage: undefined,
+      input: undefined,
+      mandatory: true,
+      onChange: expect.any(Function),
+      touched: false,
+    });
   });
 });

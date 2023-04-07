@@ -19,8 +19,8 @@ const CheckboxCell = <T,>(props: ICellProps<T, IColumnCheckbox<T>>): ReactElemen
       style={{ display: column.hidden ? 'none' : undefined }}>
       <CheckboxField
         dataTestId={dataTestId}
-        inputClassName={classnames('gds-typography', { ellipsis: column.ellipsis })}
-        inputValue={displayValue}
+        ellipsis={column.ellipsis}
+        input={displayValue}
         onChange={(newValue: Array<IToggleEntry>) => {
           if (onChange) {
             onChange(newValue as unknown as T[keyof T]);

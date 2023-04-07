@@ -203,6 +203,7 @@ describe('Button Component', () => {
         label='Tooltip button'
         popover={{
           title: 'POPOVER',
+          buttons: [],
         }}
       />,
     );

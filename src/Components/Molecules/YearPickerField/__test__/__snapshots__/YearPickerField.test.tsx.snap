@@ -3,20 +3,25 @@
 exports[`YearPickerField Component YearPickerField renders 1`] = `
 <div>
   <div
-    class="gds-field-group"
+    class="fieldGroup"
   >
     <div
-      class="field input-year-picker-field"
+      class="container"
     >
       <div
         class="react-datepicker-wrapper"
       >
         <div
-          class="react-datepicker__input-container"
+          class="react-datepicker__input-container "
         >
+          <span
+            aria-live="polite"
+            class="react-datepicker__aria-live"
+            role="alert"
+          />
           <input
             autocomplete="off"
-            class="field input-year-picker-input"
+            class="input-year-picker-input"
             name="name"
             placeholder="YYYY"
             tabindex="0"
@@ -34,20 +39,25 @@ exports[`YearPickerField Component YearPickerField renders 1`] = `
 exports[`YearPickerField Component YearPickerField renders with values in disabled highligted 1`] = `
 <div>
   <div
-    class="gds-field-group"
+    class="fieldGroup"
   >
     <div
-      class="field input-year-picker-field"
+      class="container input-year-picker-wrapper-read-only"
     >
       <div
         class="react-datepicker-wrapper"
       >
         <div
-          class="react-datepicker__input-container"
+          class="react-datepicker__input-container "
         >
+          <span
+            aria-live="polite"
+            class="react-datepicker__aria-live"
+            role="alert"
+          />
           <input
             autocomplete="off"
-            class="field input-year-picker-input"
+            class="input-year-picker-input"
             disabled=""
             name="name"
             placeholder="YYYY"
@@ -66,20 +76,25 @@ exports[`YearPickerField Component YearPickerField renders with values in disabl
 exports[`YearPickerField Component YearPickerField renders with values in readonly 1`] = `
 <div>
   <div
-    class="gds-field-group"
+    class="fieldGroup"
   >
     <div
-      class="field input-year-picker-field"
+      class="container input-year-picker-wrapper-read-only"
     >
       <div
         class="react-datepicker-wrapper"
       >
         <div
-          class="react-datepicker__input-container"
+          class="react-datepicker__input-container "
         >
+          <span
+            aria-live="polite"
+            class="react-datepicker__aria-live"
+            role="alert"
+          />
           <input
             autocomplete="off"
-            class="field input-year-picker-input-read-only"
+            class="input-year-picker-input-read-only"
             name="name"
             placeholder="YYYY"
             readonly=""
@@ -98,20 +113,25 @@ exports[`YearPickerField Component YearPickerField renders with values in readon
 exports[`YearPickerField Component YearPickerField renders with values with fieldSize and inline 1`] = `
 <div>
   <div
-    class="gds-field-group field-size-6 field-inline"
+    class="fieldGroup size-6 inline"
   >
     <div
-      class="field input-year-picker-field"
+      class="container"
     >
       <div
         class="react-datepicker-wrapper"
       >
         <div
-          class="react-datepicker__input-container"
+          class="react-datepicker__input-container "
         >
+          <span
+            aria-live="polite"
+            class="react-datepicker__aria-live"
+            role="alert"
+          />
           <input
             autocomplete="off"
-            class="field input-year-picker-input"
+            class="input-year-picker-input"
             name="name"
             placeholder="YYYY"
             tabindex="0"

@@ -3,22 +3,20 @@
 exports[`Link Component Link renders external link with tooltip 1`] = `
 <div>
   <div
-    class="gds-link-container"
+    class="container"
   >
-    <a
-      href="http://www.link.com"
-      rel="noreferrer"
-      target="_blank"
-    >
+    <div>
+      partial url
+      _blank
       TEXT
       <div>
         TOOLTIP
       </div>
-    </a>
-    <i
-      class="icon"
-      icon="fal,external-link"
-    />
+      <i
+        class="icon icon"
+        icon="fal,external-link"
+      />
+    </div>
   </div>
 </div>
 `;
@@ -26,13 +24,12 @@ exports[`Link Component Link renders external link with tooltip 1`] = `
 exports[`Link Component Link renders internal link 1`] = `
 <div>
   <div
-    class="gds-link-container"
+    class="container"
   >
-    <a
-      href="/link"
-    >
+    <div>
+      partial url
       TEXT
-    </a>
+    </div>
   </div>
 </div>
 `;

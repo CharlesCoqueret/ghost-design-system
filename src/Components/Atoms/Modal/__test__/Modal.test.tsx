@@ -80,7 +80,6 @@ describe('Modal Component', () => {
     });
 
     expect(container).toMatchSnapshot();
-
     expect(onHideMock).toHaveBeenCalledTimes(0);
   });
 

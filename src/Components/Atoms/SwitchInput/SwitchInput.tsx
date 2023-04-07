@@ -4,18 +4,26 @@ import uniqueId from 'lodash/uniqueId';
 
 import { IToggleEntry } from '../CheckBoxInput/types';
 
+import styles from './SwitchInput.module.scss';
+
 export interface ISwitchInputProps {
   className?: string;
   /** For test purpose only */
   dataTestId?: string;
   /** Disabled field (optional, default: false) */
   disabled?: boolean;
-  /** Highlighted field (optional, default: false) */
+  /** Ellipse text when it overflows, or wrap (optional, default: false) */
+  ellipsis?: boolean;
+  /** Highlighted field and highlight the toggle entries marked as highlight (optional, default: false) */
   highlighted?: boolean;
+  /** Inline options (optional, default: false) */
+  inline?: boolean;
   /** Error indication should be present (optional, default: false) */
   isInError?: boolean;
   /** Input value */
-  options: Array<IToggleEntry>;
+  input: Array<IToggleEntry>;
+  /** Base name of input (optional, default: undefined) */
+  name?: string;
   /** Handler of value changes (optional, default: undefined) */
   onChange?: (values: Array<IToggleEntry>) => void;
   /** Read only field (optional, default: false) */
@@ -23,12 +31,12 @@ export interface ISwitchInputProps {
 }
 
 const SwitchInput = (props: ISwitchInputProps): ReactElement => {
-  const { className, dataTestId, disabled, highlighted, isInError, options, onChange, readOnly } = props;
-  const [ids] = useState(() => options.map(() => uniqueId('switch-')));
+  const { className, dataTestId, disabled, highlighted, inline, input, name, onChange, readOnly } = props;
+  const [ids] = useState(() => input.map(() => uniqueId('switch-')));
 
   /** flip the check status of the switch that was checked */
   const updateState = (optionValue: string) => {
-    const newState = options.map((option) => {
+    const newState = input.map((option) => {
       if (option.value === optionValue) {
         option.checked = !option.checked;
       }
@@ -53,16 +61,17 @@ const SwitchInput = (props: ISwitchInputProps): ReactElement => {
     };
 
   return (
-    <div className={classnames('field', 'gds-switch-container', className)} data-testid={dataTestId}>
-      {options.map((option, index) => {
+    <div
+      className={classnames(styles.container, { [styles.inlineContainer]: inline }, className)}
+      data-testid={dataTestId}>
+      {input.map((option, index) => {
         return (
           <label
-            className={classnames({
-              'input-switch-field-read-only': readOnly,
-              'input-switch-field-disabled': disabled,
-              'input-switch-field-error': !readOnly && !disabled && isInError,
-              'field-highlighted': (readOnly || disabled) && highlighted && option.highlighted,
-              'input-switch-field-checked': option.checked,
+            className={classnames(styles.label, {
+              [styles.inlineLabel]: inline,
+              [styles.readOnly]: readOnly,
+              [styles.disabled]: disabled,
+              [styles.highlighted]: (readOnly || disabled) && highlighted && option.highlighted,
             })}
             data-testid={dataTestId ? `${dataTestId}-${index}` : undefined}
             htmlFor={ids[index]}
@@ -70,21 +79,22 @@ const SwitchInput = (props: ISwitchInputProps): ReactElement => {
             onClick={handleChange(option.value)}
             onKeyUp={handleChange(option.value)}
             tabIndex={readOnly || disabled ? -1 : 0}>
-            <div className='switch-marker'>
+            <div className={styles.switch}>
               <input
-                type='checkbox'
                 aria-hidden
                 checked={option.checked === undefined ? false : option.checked}
                 disabled={disabled}
+                name={name !== undefined ? `${name}-${option.value}` : undefined}
                 readOnly
+                type='checkbox'
               />
               <span
                 aria-checked={option.checked}
                 aria-label={option.label.toString()}
                 className={classnames({
-                  primary: option.checked && !readOnly && !disabled,
-                  pebble: !option.checked && !readOnly && !disabled,
-                  silver: readOnly || disabled,
+                  [styles.primary]: option.checked && !(readOnly || disabled),
+                  [styles.pebble]: !option.checked && !(readOnly || disabled),
+                  [styles.silver]: readOnly || disabled,
                 })}
                 id={ids[index]}
                 role='checkbox'
@@ -102,10 +112,13 @@ SwitchInput.defaultProps = {
   className: undefined,
   dataTestId: undefined,
   disabled: false,
+  ellipsis: false,
   highlighted: false,
+  inline: false,
+  input: [],
   isInError: false,
+  name: undefined,
   onChange: undefined,
-  options: [],
   readOnly: false,
 };
 

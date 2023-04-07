@@ -3,17 +3,22 @@
 exports[`DatePickerField Component DatePickerField renders 1`] = `
 <div>
   <div
-    class="gds-field-group"
+    class="fieldGroup"
   >
     <div
-      class="field input-date-picker-field"
+      class="container"
     >
       <div
         class="react-datepicker-wrapper"
       >
         <div
-          class="react-datepicker__input-container"
+          class="react-datepicker__input-container "
         >
+          <span
+            aria-live="polite"
+            class="react-datepicker__aria-live"
+            role="alert"
+          />
           <input
             autocomplete="off"
             class="input-date-picker-input"
@@ -34,20 +39,25 @@ exports[`DatePickerField Component DatePickerField renders 1`] = `
 exports[`DatePickerField Component DatePickerField renders with values in disabled highligted 1`] = `
 <div>
   <div
-    class="gds-field-group"
+    class="fieldGroup"
   >
     <div
-      class="field input-date-picker-field"
+      class="container input-date-picker-wrapper-read-only"
     >
       <div
         class="react-datepicker-wrapper"
       >
         <div
-          class="react-datepicker__input-container"
+          class="react-datepicker__input-container "
         >
+          <span
+            aria-live="polite"
+            class="react-datepicker__aria-live"
+            role="alert"
+          />
           <input
             autocomplete="off"
-            class="input-date-picker-input field-highlighted"
+            class="input-date-picker-input-read-only input-date-picker-input highlighted"
             disabled=""
             name="name"
             placeholder="MMM DD, YYYY"
@@ -66,17 +76,22 @@ exports[`DatePickerField Component DatePickerField renders with values in disabl
 exports[`DatePickerField Component DatePickerField renders with values in readonly 1`] = `
 <div>
   <div
-    class="gds-field-group"
+    class="fieldGroup"
   >
     <div
-      class="field input-date-picker-field"
+      class="container input-date-picker-wrapper-read-only"
     >
       <div
         class="react-datepicker-wrapper"
       >
         <div
-          class="react-datepicker__input-container"
+          class="react-datepicker__input-container "
         >
+          <span
+            aria-live="polite"
+            class="react-datepicker__aria-live"
+            role="alert"
+          />
           <input
             autocomplete="off"
             class="input-date-picker-input-read-only"
@@ -98,17 +113,22 @@ exports[`DatePickerField Component DatePickerField renders with values in readon
 exports[`DatePickerField Component DatePickerField renders with values with fieldSize and inline 1`] = `
 <div>
   <div
-    class="gds-field-group field-size-6 field-inline"
+    class="fieldGroup size-6 inline"
   >
     <div
-      class="field input-date-picker-field"
+      class="container"
     >
       <div
         class="react-datepicker-wrapper"
       >
         <div
-          class="react-datepicker__input-container"
+          class="react-datepicker__input-container "
         >
+          <span
+            aria-live="polite"
+            class="react-datepicker__aria-live"
+            role="alert"
+          />
           <input
             autocomplete="off"
             class="input-date-picker-input input-error"

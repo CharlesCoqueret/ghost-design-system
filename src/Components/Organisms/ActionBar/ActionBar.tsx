@@ -5,6 +5,8 @@ import { Button, ColorButtonEnum, IButtonProps } from '../../Molecules/Button';
 import { Icon } from '../../Atoms/Icon';
 import Title from './Title';
 
+import styles from './Actionbar.module.scss';
+
 export interface IActionBarProps {
   /** Main actions (optional, default: undefined) */
   actions?: Array<IButtonProps>;
@@ -64,10 +66,11 @@ const ActionBar = (props: IActionBarProps): ReactElement => {
   } = props;
 
   return (
-    <div className={classnames('gds-action-bar', { primary: primary }, className)}>
-      <div className='left-side'>
+    <div
+      className={classnames(styles.container, { [styles.primary]: primary, [styles.secondary]: !primary }, className)}>
+      <div className={styles.left}>
         {onBackClicked && (
-          <div className='back-icon'>
+          <div className={styles.back}>
             <Button
               icon={['fal', 'arrow-left']}
               onClick={onBackClicked}
@@ -76,40 +79,38 @@ const ActionBar = (props: IActionBarProps): ReactElement => {
             />
           </div>
         )}
-        <div className='title'>
-          <Title
-            entityId={entityId}
-            onTitleEdit={onTitleEdit}
-            placeholder={placeholder}
-            prefix={prefix}
-            renameTooltip={renameTooltip}
-            suffix={suffix}
-            title={title}
-          />
-        </div>
+        <Title
+          entityId={entityId}
+          onTitleEdit={onTitleEdit}
+          placeholder={placeholder}
+          prefix={prefix}
+          renameTooltip={renameTooltip}
+          suffix={suffix}
+          title={title}
+        />
         {(icon || indicator || status) && (
-          <div className='badges'>
+          <div className={styles.badges}>
             {icon}
             {indicator}
             {status}
           </div>
         )}
       </div>
-      <div className='right-side'>
+      <div className={styles.right}>
         {actions && actions.length > 0 && (
-          <div className='actions'>
+          <div className={styles.actions}>
             {actions.map((action) => {
               return <Button key={action.label || action.tooltip} {...action} />;
             })}
           </div>
         )}
         {actions && actions.length > 0 && basicActions && basicActions.length > 0 && (
-          <div className='separator'>
+          <div className={styles.separator}>
             <Icon icon={['fal', 'pipe']} size='lg' />
           </div>
         )}
         {basicActions && basicActions.length > 0 && (
-          <div className='basic-actions'>
+          <div className={styles.basicActions}>
             {basicActions.map((basicAction) => {
               return (
                 <Button

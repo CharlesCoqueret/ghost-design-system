@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ThemeProvider Component renders with default theme 1`] = `
+<div>
+  <div>
+    CHILDREN
+  </div>
+</div>
+`;
+
+exports[`ThemeProvider Component renders with specific theme 1`] = `
+<div>
+  <div>
+    CHILDREN
+  </div>
+</div>
+`;

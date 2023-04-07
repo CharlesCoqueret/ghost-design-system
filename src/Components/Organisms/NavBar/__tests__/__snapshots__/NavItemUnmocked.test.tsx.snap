@@ -4,16 +4,16 @@ exports[`NavItem unmocked Component renders with submenu gets closed 1`] = `
 <body>
   <div>
     <div
-      class="nav-bar-menu-item"
+      class="item"
       data-testid="DATA-TEST-ID"
     >
       <div
-        class="nav-bar-menu-label"
+        class="label"
       >
         ITEM
       </div>
       <i
-        class="nav-bar-menu-caret icon"
+        class="icon caret"
         icon="fas,caret-down"
       />
     </div>
@@ -24,7 +24,7 @@ exports[`NavItem unmocked Component renders with submenu gets closed 1`] = `
     <div>
       <div
         class="szh-menu-container"
-        style="position: relative;"
+        style="position: absolute;"
       >
         <ul
           aria-label="Menu"
@@ -33,17 +33,19 @@ exports[`NavItem unmocked Component renders with submenu gets closed 1`] = `
           style="position: absolute; margin: 0px; display: none; left: 0px; top: 0px;"
           tabindex="-1"
         >
-          <div
-            style="position: absolute; left: 0px; top: 0px;"
+          <li
+            aria-hidden="true"
+            role="menuitem"
+            style="position: absolute; left: 0px; top: 0px; display: block; outline: none;"
             tabindex="-1"
           />
-          <div
+          <li
+            aria-hidden="true"
             class="szh-menu__arrow szh-menu__arrow--dir-bottom"
-            style="position: absolute;"
+            role="menuitem"
+            style="display: block; position: absolute;"
           />
-          <a
-            href="#"
-          >
+          <div>
             partial url
             <li
               class="szh-menu__item"
@@ -53,7 +55,7 @@ exports[`NavItem unmocked Component renders with submenu gets closed 1`] = `
             >
               SUBITEM
             </li>
-          </a>
+          </div>
         </ul>
       </div>
     </div>
@@ -65,16 +67,16 @@ exports[`NavItem unmocked Component renders with submenu gets closed 2`] = `
 <body>
   <div>
     <div
-      class="nav-bar-menu-item"
+      class="item"
       data-testid="DATA-TEST-ID"
     >
       <div
-        class="nav-bar-menu-label"
+        class="label"
       >
         ITEM
       </div>
       <i
-        class="nav-bar-menu-caret icon"
+        class="icon caret"
         icon="fas,caret-down"
       />
     </div>
@@ -85,7 +87,7 @@ exports[`NavItem unmocked Component renders with submenu gets closed 2`] = `
     <div>
       <div
         class="szh-menu-container"
-        style="position: relative;"
+        style="position: absolute;"
       >
         <ul
           aria-label="Menu"
@@ -94,17 +96,19 @@ exports[`NavItem unmocked Component renders with submenu gets closed 2`] = `
           style="position: absolute; margin: 0px; left: 0px; top: 0px;"
           tabindex="-1"
         >
-          <div
-            style="position: absolute; left: 0px; top: 0px;"
+          <li
+            aria-hidden="true"
+            role="menuitem"
+            style="position: absolute; left: 0px; top: 0px; display: block; outline: none;"
             tabindex="-1"
           />
-          <div
+          <li
+            aria-hidden="true"
             class="szh-menu__arrow szh-menu__arrow--dir-bottom"
-            style="position: absolute; left: 0px;"
+            role="menuitem"
+            style="display: block; position: absolute; left: 0px;"
           />
-          <a
-            href="#"
-          >
+          <div>
             partial url
             <li
               class="szh-menu__item"
@@ -114,7 +118,7 @@ exports[`NavItem unmocked Component renders with submenu gets closed 2`] = `
             >
               SUBITEM
             </li>
-          </a>
+          </div>
         </ul>
       </div>
     </div>
@@ -126,16 +130,16 @@ exports[`NavItem unmocked Component renders with submenu gets closed 3`] = `
 <body>
   <div>
     <div
-      class="nav-bar-menu-item"
+      class="item"
       data-testid="DATA-TEST-ID"
     >
       <div
-        class="nav-bar-menu-label"
+        class="label"
       >
         ITEM
       </div>
       <i
-        class="nav-bar-menu-caret icon"
+        class="icon caret"
         icon="fas,caret-down"
       />
     </div>
@@ -146,7 +150,7 @@ exports[`NavItem unmocked Component renders with submenu gets closed 3`] = `
     <div>
       <div
         class="szh-menu-container"
-        style="position: relative;"
+        style="position: absolute;"
       >
         <ul
           aria-label="Menu"
@@ -155,17 +159,19 @@ exports[`NavItem unmocked Component renders with submenu gets closed 3`] = `
           style="position: absolute; margin: 0px; left: 0px; top: 0px; display: none;"
           tabindex="-1"
         >
-          <div
-            style="position: absolute; left: 0px; top: 0px;"
+          <li
+            aria-hidden="true"
+            role="menuitem"
+            style="position: absolute; left: 0px; top: 0px; display: block; outline: none;"
             tabindex="-1"
           />
-          <div
+          <li
+            aria-hidden="true"
             class="szh-menu__arrow szh-menu__arrow--dir-bottom"
-            style="position: absolute; left: 0px;"
+            role="menuitem"
+            style="display: block; position: absolute; left: 0px;"
           />
-          <a
-            href="#"
-          >
+          <div>
             partial url
             <li
               class="szh-menu__item"
@@ -175,7 +181,7 @@ exports[`NavItem unmocked Component renders with submenu gets closed 3`] = `
             >
               SUBITEM
             </li>
-          </a>
+          </div>
         </ul>
       </div>
     </div>
@@ -187,16 +193,16 @@ exports[`NavItem unmocked Component renders with submenu gets closed 4`] = `
 <body>
   <div>
     <div
-      class="nav-bar-menu-item"
+      class="item"
       data-testid="DATA-TEST-ID"
     >
       <div
-        class="nav-bar-menu-label"
+        class="label"
       >
         ITEM
       </div>
       <i
-        class="nav-bar-menu-caret icon"
+        class="icon caret"
         icon="fas,caret-down"
       />
     </div>
@@ -207,7 +213,7 @@ exports[`NavItem unmocked Component renders with submenu gets closed 4`] = `
     <div>
       <div
         class="szh-menu-container"
-        style="position: relative;"
+        style="position: absolute;"
       >
         <ul
           aria-label="Menu"
@@ -216,17 +222,19 @@ exports[`NavItem unmocked Component renders with submenu gets closed 4`] = `
           style="position: absolute; margin: 0px; left: 0px; top: 0px;"
           tabindex="-1"
         >
-          <div
-            style="position: absolute; left: 0px; top: 0px;"
+          <li
+            aria-hidden="true"
+            role="menuitem"
+            style="position: absolute; left: 0px; top: 0px; display: block; outline: none;"
             tabindex="-1"
           />
-          <div
+          <li
+            aria-hidden="true"
             class="szh-menu__arrow szh-menu__arrow--dir-bottom"
-            style="position: absolute; left: 0px;"
+            role="menuitem"
+            style="display: block; position: absolute; left: 0px;"
           />
-          <a
-            href="#"
-          >
+          <div>
             partial url
             <li
               class="szh-menu__item"
@@ -236,7 +244,7 @@ exports[`NavItem unmocked Component renders with submenu gets closed 4`] = `
             >
               SUBITEM
             </li>
-          </a>
+          </div>
         </ul>
       </div>
     </div>

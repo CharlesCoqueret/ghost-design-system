@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`NavItem Component renders as basic label 1`] = `
+exports[`NavItem Component renders alone 1`] = `
 <div>
   <div
-    class="nav-bar-menu-item"
+    class="item"
     data-testid="DATA-TEST-ID"
   >
     <i
@@ -11,17 +11,17 @@ exports[`NavItem Component renders as basic label 1`] = `
       icon="fal,icons"
     />
     <div
-      class="nav-bar-menu-label"
+      class="label"
     >
       LABEL
     </div>
     <span
-      class="gds-badge pill danger counter"
+      class="default pill danger counter"
     >
       1
     </span>
     <i
-      class="nav-bar-menu-caret icon"
+      class="icon caret"
       icon="fas,caret-down"
     />
   </div>
@@ -38,10 +38,10 @@ exports[`NavItem Component renders as basic label 1`] = `
 </div>
 `;
 
-exports[`NavItem Component renders as basic label 2`] = `
+exports[`NavItem Component renders alone 2`] = `
 <div>
   <div
-    class="nav-bar-menu-item"
+    class="item"
     data-testid="DATA-TEST-ID"
   >
     <i
@@ -49,17 +49,17 @@ exports[`NavItem Component renders as basic label 2`] = `
       icon="fal,icons"
     />
     <div
-      class="nav-bar-menu-label"
+      class="label"
     >
       LABEL
     </div>
     <span
-      class="gds-badge pill danger counter"
+      class="default pill danger counter"
     >
       1
     </span>
     <i
-      class="nav-bar-menu-caret icon"
+      class="icon caret"
       icon="fas,caret-down"
     />
   </div>
@@ -76,10 +76,10 @@ exports[`NavItem Component renders as basic label 2`] = `
 </div>
 `;
 
-exports[`NavItem Component renders as basic label 3`] = `
+exports[`NavItem Component renders alone 3`] = `
 <div>
   <div
-    class="nav-bar-menu-item"
+    class="item"
     data-testid="DATA-TEST-ID"
   >
     <i
@@ -87,17 +87,17 @@ exports[`NavItem Component renders as basic label 3`] = `
       icon="fal,icons"
     />
     <div
-      class="nav-bar-menu-label"
+      class="label"
     >
       LABEL
     </div>
     <span
-      class="gds-badge pill danger counter"
+      class="default pill danger counter"
     >
       1
     </span>
     <i
-      class="nav-bar-menu-caret icon"
+      class="icon caret"
       icon="fas,caret-down"
     />
   </div>
@@ -114,19 +114,65 @@ exports[`NavItem Component renders as basic label 3`] = `
 </div>
 `;
 
-exports[`NavItem Component renders with interactive subitems 1`] = `
+exports[`NavItem Component renders handles counter as digits 1`] = `
 <div>
   <div
-    class="nav-bar-menu-item"
+    class="item"
+  >
+    <i
+      class="icon"
+      icon="fal,icons"
+    />
+    <div
+      class="label"
+    >
+      LABEL
+    </div>
+    <span
+      class="default pill danger counter"
+    >
+      +99
+    </span>
+  </div>
+</div>
+`;
+
+exports[`NavItem Component renders handles counter as string 1`] = `
+<div>
+  <div
+    class="item"
+  >
+    <i
+      class="icon"
+      icon="fal,icons"
+    />
+    <div
+      class="label"
+    >
+      LABEL
+    </div>
+    <span
+      class="default pill danger counter"
+    >
+      test
+    </span>
+  </div>
+</div>
+`;
+
+exports[`NavItem Component renders with subitems 1`] = `
+<div>
+  <div
+    class="item"
     data-testid="DATA-TEST-ID"
   >
     <div
-      class="nav-bar-menu-label"
+      class="label"
     >
       ITEM
     </div>
     <i
-      class="nav-bar-menu-caret icon"
+      class="icon caret"
       icon="fas,caret-down"
     />
   </div>
@@ -134,9 +180,7 @@ exports[`NavItem Component renders with interactive subitems 1`] = `
     <div>
       ControlleMenu
       closed
-      <a
-        href="#"
-      >
+      <div>
         partial url
         <div
           data-testid="SUBITEMDATA-TEST-ID"
@@ -144,26 +188,26 @@ exports[`NavItem Component renders with interactive subitems 1`] = `
           MenuItem
           SUBITEM
         </div>
-      </a>
+      </div>
       has no ref
     </div>
   </div>
 </div>
 `;
 
-exports[`NavItem Component renders with interactive subitems 2`] = `
+exports[`NavItem Component renders with subitems 2`] = `
 <div>
   <div
-    class="nav-bar-menu-item"
+    class="item"
     data-testid="DATA-TEST-ID"
   >
     <div
-      class="nav-bar-menu-label"
+      class="label"
     >
       ITEM
     </div>
     <i
-      class="nav-bar-menu-caret icon"
+      class="icon caret"
       icon="fas,caret-down"
     />
   </div>
@@ -171,9 +215,7 @@ exports[`NavItem Component renders with interactive subitems 2`] = `
     <div>
       ControlleMenu
       open
-      <a
-        href="#"
-      >
+      <div>
         partial url
         <div
           data-testid="SUBITEMDATA-TEST-ID"
@@ -181,26 +223,26 @@ exports[`NavItem Component renders with interactive subitems 2`] = `
           MenuItem
           SUBITEM
         </div>
-      </a>
+      </div>
       has no ref
     </div>
   </div>
 </div>
 `;
 
-exports[`NavItem Component renders with interactive subitems 3`] = `
+exports[`NavItem Component renders with subitems 3`] = `
 <div>
   <div
-    class="nav-bar-menu-item"
+    class="item"
     data-testid="DATA-TEST-ID"
   >
     <div
-      class="nav-bar-menu-label"
+      class="label"
     >
       ITEM
     </div>
     <i
-      class="nav-bar-menu-caret icon"
+      class="icon caret"
       icon="fas,caret-down"
     />
   </div>
@@ -208,9 +250,7 @@ exports[`NavItem Component renders with interactive subitems 3`] = `
     <div>
       ControlleMenu
       open
-      <a
-        href="#"
-      >
+      <div>
         partial url
         <div
           data-testid="SUBITEMDATA-TEST-ID"
@@ -218,26 +258,26 @@ exports[`NavItem Component renders with interactive subitems 3`] = `
           MenuItem
           SUBITEM
         </div>
-      </a>
+      </div>
       has no ref
     </div>
   </div>
 </div>
 `;
 
-exports[`NavItem Component renders with interactive subitems 4`] = `
+exports[`NavItem Component renders with subitems 4`] = `
 <div>
   <div
-    class="nav-bar-menu-item"
+    class="item"
     data-testid="DATA-TEST-ID"
   >
     <div
-      class="nav-bar-menu-label"
+      class="label"
     >
       ITEM
     </div>
     <i
-      class="nav-bar-menu-caret icon"
+      class="icon caret"
       icon="fas,caret-down"
     />
   </div>
@@ -245,9 +285,7 @@ exports[`NavItem Component renders with interactive subitems 4`] = `
     <div>
       ControlleMenu
       closed
-      <a
-        href="#"
-      >
+      <div>
         partial url
         <div
           data-testid="SUBITEMDATA-TEST-ID"
@@ -255,7 +293,7 @@ exports[`NavItem Component renders with interactive subitems 4`] = `
           MenuItem
           SUBITEM
         </div>
-      </a>
+      </div>
       has no ref
     </div>
   </div>

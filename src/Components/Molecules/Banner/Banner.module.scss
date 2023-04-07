@@ -1,0 +1,19 @@
+.container {
+  position: relative;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px auto;
+  background-color: rgb(var(--theme-provider-skyhigh));
+
+  &.information {
+    background-color: rgb(var(--theme-provider-skyhigh));
+  }
+
+  &.warning {
+    background-color: rgb(var(--theme-provider-buttercuphigh));
+  }
+
+  &.error {
+    background-color: rgb(var(--theme-provider-cinnabarhigh));
+  }
+}

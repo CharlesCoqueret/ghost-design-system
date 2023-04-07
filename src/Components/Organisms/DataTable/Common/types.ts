@@ -18,28 +18,54 @@ import { ITextFieldProps } from '../../../Molecules/TextField/TextField';
 import { ITextAreaFieldProps } from '../../../Molecules/TextAreaField/TextAreaField';
 import { IYearPickerFieldProps } from '../../../Molecules/YearPickerField/YearPickerField';
 import { IOption } from '../../../Atoms/SelectInput';
-import { IFieldSectionProps } from '../../Form/types';
+import { IFieldSectionLegacyProps } from '../../FormLegacy/types';
 
 export enum ColumnType {
+  /** Amount column */
   AMOUNT = 'amount',
+  /** Badge column */
   BADGE = 'badge',
+  /** Button column */
   BUTTON = 'button',
+  /** Checkbox column */
   CHECKBOX = 'checkbox',
+  /** Code column */
   CODE = 'code',
+  /**
+   * Custom column
+   * @deprecated will be removed in version 2.1
+   */
   CUSTOM = 'custom',
+  /** Date column */
   DATE = 'date',
+  /** Description column */
   DESCRIPTION = 'description',
+  /** Dynamic search column */
   DYNAMICSEARCH = 'dynamicsearch',
+  /** File column */
   FILE = 'file',
+  /** Multiselect column */
   MULTISELECT = 'multiselect',
+  /** Number column */
   NUMBER = 'number',
+  /** Percentage column */
   PERCENTAGE = 'percentage',
+  /** Rich text column */
   RICHTEXT = 'richtext',
+  /** Section column */
   SECTION = 'section',
+  /** Switch column */
   SWITCH = 'switch',
+  /**
+   * Table column
+   * @deprecated will be removed in version 2.1
+   */
   TABLE = 'table',
+  /** Text column */
   TEXT = 'text',
+  /** Text area column */
   TEXTAREA = 'textarea',
+  /** Year column */
   YEAR = 'year',
 }
 
@@ -113,7 +139,7 @@ export interface IColumnAmount<T>
 
 export interface IColumnBadge<T>
   extends IColumn,
-    Pick<ISelectFieldProps, 'isClearable' | 'colors' | 'placeholder' | 'usePortal'>,
+    Pick<ISelectFieldProps, 'isClearable' | 'placeholder' | 'usePortal'>,
     Pick<IBadgeProps, 'color'> {
   /** Entry of the value in T (type: keyof T) */
   dataIndex: keyof T;
@@ -157,7 +183,7 @@ export interface IColumnCustom<T> extends IColumn {
   customRender: <
     U extends {
       highlighted?: boolean;
-      inputValue?: T[keyof T];
+      input?: T[keyof T];
       onChange?: (value: T[keyof T]) => void;
       readOnly?: boolean;
     },
@@ -199,7 +225,7 @@ export interface IColumnDynamicSearch<T>
   extends IColumn,
     Pick<
       IDynamicSearchFieldProps,
-      'colors' | 'isClearable' | 'noOptionsMessage' | 'placeholder' | 'resolveValue' | 'searchOptions' | 'usePortal'
+      'isClearable' | 'noOptionsMessage' | 'placeholder' | 'resolveValue' | 'searchOptions' | 'usePortal'
     > {
   /** Entry of the value in T (type: keyof T) */
   dataIndex: keyof T;
@@ -243,7 +269,7 @@ export interface IColumnMultiSelect<T>
   extends IColumn,
     Pick<
       IMultiSelectFieldProps,
-      'isClearable' | 'numberOfItemLabel' | 'numberOfItemsLabel' | 'placeholder' | 'colors' | 'usePortal'
+      'isClearable' | 'numberOfItemLabel' | 'numberOfItemsLabel' | 'placeholder' | 'usePortal'
     > {
   /** Entry of the value in T (type: keyof T) */
   dataIndex: keyof T;
@@ -314,7 +340,7 @@ export interface IColumnRichText<T>
 
 export interface IColumnSection<T>
   extends IColumn,
-    Pick<IFieldSectionProps<T>, 'collapsible' | 'fields' | 'label' | 'openInitially'> {
+    Pick<IFieldSectionLegacyProps<T>, 'collapsible' | 'fields' | 'label' | 'openInitially'> {
   /** Entry of the value in T (type: keyof T) */
   dataIndex: keyof T;
   /** Column type */
@@ -330,7 +356,7 @@ export interface IColumnSwitch<T> extends IColumn {
   type: ColumnType.SWITCH;
 }
 
-export interface IColumnTable<T, U>
+export interface IColumnTable<T, U extends yup.AnyObject>
   extends IColumn,
     Pick<ILineEditableDataTableProps<U>, 'columns' | 'extra' | 'loading' | 'onSortChange'> {
   /** Entry of the value in T (type: keyof T) */
@@ -429,7 +455,7 @@ export interface IExtraStaticDataTableProps<T> {
   };
 }
 
-export interface IExtraLineEditableDataTableProps<T> extends IExtraStaticDataTableProps<T> {
+export interface IExtraLineEditableDataTableProps<T extends yup.AnyObject> extends IExtraStaticDataTableProps<T> {
   /** Action column width (as a CSSProperty) (optional, default: undefined) */
   actionColumnWidth?: string;
   /** Disable tabbing outside modal (optional, default: true) */
@@ -470,7 +496,7 @@ export interface IExtraLineEditableDataTableProps<T> extends IExtraStaticDataTab
   /** Method used to when the new line button is clicked to get initial values (optional, default: undefined) */
   onNewLine?: () => T;
   /** Validation schema to be used in the modal (if this conditions are not met, the line cannot be updated) (optional, default: undefined) */
-  validationSchema: yup.SchemaOf<T>;
+  validationSchema: yup.ObjectSchema<T>;
   /** localization (optional, default:
    *    actionColumn: 'Actions'
    *    addRow: 'Add row'

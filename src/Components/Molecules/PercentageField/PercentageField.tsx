@@ -33,7 +33,7 @@ export interface IPercentageFieldProps {
   /** Class for the input (optional, default: undefined) */
   inputClassName?: string;
   /** Input number value (optional, default: undefined) */
-  inputValue?: string | number;
+  input?: string | number;
   /** Label (optional, default: undefined) */
   label?: string;
   /** Size of the field in a 12 column grid (optional, default: undefined) */
@@ -44,8 +44,8 @@ export interface IPercentageFieldProps {
   maxValue?: number;
   /** Min value (optional, default: undefined) */
   minValue?: number;
-  /** Name of text field */
-  name: string;
+  /** Name of text field (optional, default: undefined) */
+  name?: string;
   /** Handler of value changes (optional, default: undefined) */
   onChange?: (value: number | undefined) => void;
   /** Placeholder value (optional, default: undefined) */
@@ -82,7 +82,7 @@ export const PercentageField = (props: IPercentageFieldProps): ReactElement => {
     highlighted,
     inline,
     inputClassName,
-    inputValue,
+    input,
     label,
     labelSize,
     mandatory,
@@ -129,13 +129,7 @@ export const PercentageField = (props: IPercentageFieldProps): ReactElement => {
         disabled={disabled}
         ellipsis={ellipsis}
         highlighted={highlighted}
-        inputValue={
-          typeof inputValue === 'string'
-            ? parseFloat(inputValue) * 100
-            : typeof inputValue === 'number'
-            ? inputValue * 100
-            : inputValue
-        }
+        input={typeof input === 'string' ? parseFloat(input) * 100 : typeof input === 'number' ? input * 100 : input}
         isInError={errorMessage !== undefined}
         maxValue={maxValue}
         minValue={minValue}
@@ -164,12 +158,13 @@ PercentageField.defaultProps = {
   highlighted: false,
   inline: false,
   inputClassName: undefined,
-  inputValue: undefined,
+  input: undefined,
   label: undefined,
   labelSize: undefined,
   mandatory: false,
   maxValue: undefined,
   minValue: undefined,
+  name: undefined,
   onChange: undefined,
   placeholder: undefined,
   readOnly: false,

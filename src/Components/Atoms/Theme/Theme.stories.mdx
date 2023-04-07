@@ -1,0 +1,47 @@
+import { Meta, ColorPalette, ColorItem } from '@storybook/addon-docs';
+import { defaultTheme } from './ThemeProvider';
+
+<Meta title='Atom/Theme' />
+
+<ColorPalette>
+  <ColorItem title='COLORSENUM.PRIMARY' colors={{ Scooter: `rgb(${defaultTheme.primary})` }} />
+  <ColorItem title='COLORSENUM.SECONDARY' colors={{ Pebble: `rgb(${defaultTheme.secondary})` }} />
+  <ColorItem title='COLORSENUM.TERTIARY' colors={{ Charcoal: `rgb(${defaultTheme.tertiary})` }} />
+  <ColorItem
+    title='Neutral palette - dark'
+    colors={{
+      Black: `rgb(${defaultTheme.black})`,
+      Charcoal: `rgb(${defaultTheme.charcoal})`,
+      Pebble: `rgb(${defaultTheme.pebble})`,
+      Silver: `rgb(${defaultTheme.silver})`,
+    }}
+  />
+  <ColorItem
+    title='Neutral palette - light'
+    colors={{
+      Chalk: `rgb(${defaultTheme.chalk})`,
+      Smoke: `rgb(${defaultTheme.smoke})`,
+      White: `rgb(${defaultTheme.white})`,
+    }}
+  />
+  <ColorItem
+    title='Extended palette'
+    colors={{
+      Sky: `rgb(${defaultTheme.sky})`,
+      Fern: `rgb(${defaultTheme.fern})`,
+      Buttercup: `rgb(${defaultTheme.buttercup})`,
+      Tangerine: `rgb(${defaultTheme.tangerine})`,
+      Cinnabar: `rgb(${defaultTheme.cinnabar})`,
+    }}
+  />
+  <ColorItem
+    title='Extended palette high'
+    colors={{
+      Skyhigh: `rgb(${defaultTheme.skyhigh})`,
+      Fernhigh: `rgb(${defaultTheme.fernhigh})`,
+      Buttercuphigh: `rgb(${defaultTheme.buttercuphigh})`,
+      Tangerinehigh: `rgb(${defaultTheme.tangerinehigh})`,
+      Cinnabarhigh: `rgb(${defaultTheme.cinnabarhigh})`,
+    }}
+  />
+</ColorPalette>

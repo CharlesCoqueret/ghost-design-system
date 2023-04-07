@@ -7,7 +7,7 @@ describe('DatePickerInput Component', () => {
   it('DatePickerInput renders handles changes', async () => {
     const onChangeMock = jest.fn();
 
-    render(<DatePickerInput onChange={onChangeMock} name='NAME' placeholder='TESTPLACEHOLDER' />);
+    render(<DatePickerInput onChange={onChangeMock} placeholder='TESTPLACEHOLDER' />);
 
     const inputNode = await screen.findByPlaceholderText('TESTPLACEHOLDER');
 
@@ -16,11 +16,11 @@ describe('DatePickerInput Component', () => {
     // Using dynamic date instead of static value to ensure local time is taken into consideration.
     const expectedDate = new Date('Wed Mar 02 2022');
 
-    expect(onChangeMock).toHaveBeenLastCalledWith(expectedDate, expect.anything());
+    expect(onChangeMock).toHaveBeenLastCalledWith(expectedDate);
   });
 
   it('DatePickerInput renders and changes without onChange prop', async () => {
-    const { container } = render(<DatePickerInput name='NAME' placeholder='TESTPLACEHOLDER' />);
+    const { container } = render(<DatePickerInput placeholder='TESTPLACEHOLDER' />);
     expect(container).toMatchSnapshot();
 
     const inputNode = await screen.findByPlaceholderText('TESTPLACEHOLDER');
@@ -30,32 +30,32 @@ describe('DatePickerInput Component', () => {
   });
 
   it('DatePickerInput renders highlighted in readonly', () => {
-    const { container } = render(<DatePickerInput name='NAME' highlighted readOnly dateFormat={''} />);
+    const { container } = render(<DatePickerInput highlighted readOnly dateFormat={''} />);
     expect(container).toMatchSnapshot();
   });
 
   it('DatePickerInput renders with placeholder', () => {
-    const { container } = render(<DatePickerInput name='NAME' placeholder='TESTPLACEHOLDER' />);
+    const { container } = render(<DatePickerInput placeholder='TESTPLACEHOLDER' />);
     expect(container).toMatchSnapshot();
   });
 
   it('DatePickerInput renders without Portal', () => {
-    const { container } = render(<DatePickerInput usePortal={false} name='NAME' />);
+    const { container } = render(<DatePickerInput usePortal={false} />);
     expect(container).toMatchSnapshot();
   });
 
   it('DatePickerInput renders highlighted in disabled', () => {
-    const { container } = render(<DatePickerInput name='NAME' highlighted disabled />);
+    const { container } = render(<DatePickerInput highlighted disabled />);
     expect(container).toMatchSnapshot();
   });
 
   it('DatePickerInput renders in error in readonly', () => {
-    const { container } = render(<DatePickerInput name='NAME' readOnly isInError />);
+    const { container } = render(<DatePickerInput readOnly isInError />);
     expect(container).toMatchSnapshot();
   });
 
   it('DatePickerInput renders in error', () => {
-    const { container } = render(<DatePickerInput name='NAME' isInError />);
+    const { container } = render(<DatePickerInput isInError />);
     expect(container).toMatchSnapshot();
   });
 });

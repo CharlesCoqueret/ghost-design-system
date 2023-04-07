@@ -11,32 +11,32 @@ describe('PercentageField Component', () => {
   });
 
   it('PercentageField renders with values in readonly', () => {
-    const { container } = render(<PercentageField inputValue={12.34} name='name' readOnly />);
+    const { container } = render(<PercentageField input={12.34} name='name' readOnly />);
     expect(container).toMatchSnapshot();
   });
 
   it('PercentageField renders with values in disabled highligted', () => {
-    const { container } = render(<PercentageField inputValue={12345.67} name='name' disabled highlighted />);
+    const { container } = render(<PercentageField input={12345.67} name='name' disabled highlighted />);
     expect(container).toMatchSnapshot();
   });
 
   it('PercentageField renders with values with fieldSize and inline', () => {
-    const { container } = render(<PercentageField inputValue={1.23} name='name' inline fieldSize={6} />);
+    const { container } = render(<PercentageField input={1.23} name='name' inline fieldSize={6} />);
     expect(container).toMatchSnapshot();
   });
 
   it('PercentageField renders with values set as string', () => {
-    const { container } = render(<PercentageField inputValue={'1.23'} name='name' />);
+    const { container } = render(<PercentageField input={'1.23'} name='name' />);
     expect(container).toMatchSnapshot();
   });
 
   it('PercentageField renders with values set as undefined', () => {
-    const { container } = render(<PercentageField inputValue={undefined} name='name' />);
+    const { container } = render(<PercentageField input={undefined} name='name' />);
     expect(container).toMatchSnapshot();
   });
 
   it('PercentageField does nothing when onChange is not defined', () => {
-    const { container } = render(<PercentageField inputValue={1.23} name='name' dataTestId='DATA-TEST-ID' />);
+    const { container } = render(<PercentageField input={1.23} name='name' dataTestId='DATA-TEST-ID' />);
     expect(container).toMatchSnapshot();
 
     const inputNode = screen.getByTestId('DATA-TEST-ID');
@@ -50,7 +50,7 @@ describe('PercentageField Component', () => {
     const onChangeMock = jest.fn().mockImplementation(() => {});
 
     const { container } = render(
-      <PercentageField inputValue={1.23} name='name' onChange={onChangeMock} dataTestId='DATA-TEST-ID' />,
+      <PercentageField input={1.23} name='name' onChange={onChangeMock} dataTestId='DATA-TEST-ID' />,
     );
     expect(container).toMatchSnapshot();
 

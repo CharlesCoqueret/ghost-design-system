@@ -3,7 +3,7 @@
 exports[`ModalBody Component ModalBody renders 1`] = `
 <div>
   <div
-    class="modal-body"
+    class="container"
   >
     <div
       id="CHILD1"

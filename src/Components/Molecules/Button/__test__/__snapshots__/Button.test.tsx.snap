@@ -4,22 +4,22 @@ exports[`Button Component Button renders and handle click 1`] = `
 <body>
   <div>
     <button
-      class="gds-button-content"
+      class="button"
       color="secondary"
       data-testid="DATA-TEST-ID"
       tabindex="0"
       type="submit"
     >
       <div
-        class="button-icon-container"
+        class="icon"
       >
         <i
-          class="button-icon icon"
+          class="icon"
           icon="fal,paper-plane"
         />
       </div>
       <div
-        class="button-label-container"
+        class="label"
       >
         LABEL
       </div>
@@ -32,7 +32,7 @@ exports[`Button Component Button renders when loading 1`] = `
 <body>
   <div>
     <button
-      class="gds-button-content"
+      class="button"
       color="primary"
       data-testid="DATA-TEST-ID"
       disabled=""
@@ -40,11 +40,11 @@ exports[`Button Component Button renders when loading 1`] = `
       type="button"
     >
       <div
-        class="button-icon-container"
+        class="icon"
       >
         <svg
           aria-hidden="true"
-          class="icon gds-loader size-lg button-icon"
+          class="icon size-lg"
           focusable="false"
           height="50"
           icon="fal,spinner"
@@ -83,7 +83,7 @@ exports[`Button Component Button renders when loading 1`] = `
         </svg>
       </div>
       <div
-        class="button-label-container"
+        class="label"
       >
         LABEL
       </div>
@@ -96,26 +96,26 @@ exports[`Button Component Button renders with list and handle open menu and clic
 <body>
   <div>
     <button
-      class="gds-button-content"
+      class="button"
       color="secondary"
       data-testid="MAIN-BUTTON"
       tabindex="0"
       type="button"
     >
       <div
-        class="button-label-container"
+        class="label"
       >
         Menu button
       </div>
       <div
-        class="button-menu-control-container"
+        class="menuControl"
       >
         <i
-          class="button-icon icon"
+          class="icon"
           icon="fal,pipe"
         />
         <i
-          class="button-icon icon"
+          class="icon"
           icon="fas,caret-down"
         />
       </div>
@@ -127,17 +127,19 @@ exports[`Button Component Button renders with list and handle open menu and clic
     <div>
       <div
         class="szh-menu-container"
-        style="position: relative;"
+        style="position: absolute;"
       >
         <ul
           aria-label="Menu"
-          class="szh-menu szh-menu--state-closed szh-menu--dir-bottom button-menu"
+          class="szh-menu szh-menu--state-closed szh-menu--dir-bottom"
           role="menu"
           style="margin: 0px; display: none; position: absolute; left: 0px; top: 0px;"
           tabindex="-1"
         >
-          <div
-            style="position: absolute; left: 0px; top: 0px;"
+          <li
+            aria-hidden="true"
+            role="menuitem"
+            style="position: absolute; left: 0px; top: 0px; display: block; outline: none;"
             tabindex="-1"
           />
           <li
@@ -171,26 +173,26 @@ exports[`Button Component Button renders with list and handle open menu and clic
 <body>
   <div>
     <button
-      class="gds-button-content"
+      class="button"
       color="secondary"
       data-testid="MAIN-BUTTON"
       tabindex="0"
       type="button"
     >
       <div
-        class="button-label-container"
+        class="label"
       >
         Menu button
       </div>
       <div
-        class="button-menu-control-container"
+        class="menuControl"
       >
         <i
-          class="button-icon icon"
+          class="icon"
           icon="fal,pipe"
         />
         <i
-          class="button-icon icon"
+          class="icon"
           icon="fas,caret-down"
         />
       </div>
@@ -202,17 +204,19 @@ exports[`Button Component Button renders with list and handle open menu and clic
     <div>
       <div
         class="szh-menu-container"
-        style="position: relative;"
+        style="position: absolute;"
       >
         <ul
           aria-label="Menu"
-          class="szh-menu szh-menu--state-open szh-menu--dir-bottom button-menu"
+          class="szh-menu szh-menu--state-open szh-menu--dir-bottom"
           role="menu"
           style="margin: 0px; position: absolute; left: 0px; top: 0px;"
           tabindex="-1"
         >
-          <div
-            style="position: absolute; left: 0px; top: 0px;"
+          <li
+            aria-hidden="true"
+            role="menuitem"
+            style="position: absolute; left: 0px; top: 0px; display: block; outline: none;"
             tabindex="-1"
           />
           <li
@@ -246,26 +250,26 @@ exports[`Button Component Button renders with list and handle open menu and clic
 <body>
   <div>
     <button
-      class="gds-button-content"
+      class="button"
       color="secondary"
       data-testid="MAIN-BUTTON"
       tabindex="0"
       type="button"
     >
       <div
-        class="button-label-container"
+        class="label"
       >
         Menu button
       </div>
       <div
-        class="button-menu-control-container"
+        class="menuControl"
       >
         <i
-          class="button-icon icon"
+          class="icon"
           icon="fal,pipe"
         />
         <i
-          class="button-icon icon"
+          class="icon"
           icon="fas,caret-down"
         />
       </div>
@@ -277,17 +281,19 @@ exports[`Button Component Button renders with list and handle open menu and clic
     <div>
       <div
         class="szh-menu-container"
-        style="position: relative;"
+        style="position: absolute;"
       >
         <ul
           aria-label="Menu"
-          class="szh-menu szh-menu--state-closed szh-menu--dir-bottom button-menu"
+          class="szh-menu szh-menu--state-closed szh-menu--dir-bottom"
           role="menu"
           style="margin: 0px; position: absolute; left: 0px; top: 0px; display: none;"
           tabindex="-1"
         >
-          <div
-            style="position: absolute; left: 0px; top: 0px;"
+          <li
+            aria-hidden="true"
+            role="menuitem"
+            style="position: absolute; left: 0px; top: 0px; display: block; outline: none;"
             tabindex="-1"
           />
           <li
@@ -321,26 +327,26 @@ exports[`Button Component Button renders with list and handle open menu and clos
 <body>
   <div>
     <button
-      class="gds-button-content"
+      class="button"
       color="secondary"
       data-testid="MAIN-BUTTON"
       tabindex="0"
       type="button"
     >
       <div
-        class="button-label-container"
+        class="label"
       >
         Menu button
       </div>
       <div
-        class="button-menu-control-container"
+        class="menuControl"
       >
         <i
-          class="button-icon icon"
+          class="icon"
           icon="fal,pipe"
         />
         <i
-          class="button-icon icon"
+          class="icon"
           icon="fas,caret-down"
         />
       </div>
@@ -352,17 +358,19 @@ exports[`Button Component Button renders with list and handle open menu and clos
     <div>
       <div
         class="szh-menu-container"
-        style="position: relative;"
+        style="position: absolute;"
       >
         <ul
           aria-label="Menu"
-          class="szh-menu szh-menu--state-closed szh-menu--dir-bottom button-menu"
+          class="szh-menu szh-menu--state-closed szh-menu--dir-bottom"
           role="menu"
           style="margin: 0px; display: none; position: absolute; left: 0px; top: 0px;"
           tabindex="-1"
         >
-          <div
-            style="position: absolute; left: 0px; top: 0px;"
+          <li
+            aria-hidden="true"
+            role="menuitem"
+            style="position: absolute; left: 0px; top: 0px; display: block; outline: none;"
             tabindex="-1"
           />
           <li
@@ -394,26 +402,26 @@ exports[`Button Component Button renders with list and handle open menu and clos
 <body>
   <div>
     <button
-      class="gds-button-content"
+      class="button"
       color="secondary"
       data-testid="MAIN-BUTTON"
       tabindex="0"
       type="button"
     >
       <div
-        class="button-label-container"
+        class="label"
       >
         Menu button
       </div>
       <div
-        class="button-menu-control-container"
+        class="menuControl"
       >
         <i
-          class="button-icon icon"
+          class="icon"
           icon="fal,pipe"
         />
         <i
-          class="button-icon icon"
+          class="icon"
           icon="fas,caret-down"
         />
       </div>
@@ -425,17 +433,19 @@ exports[`Button Component Button renders with list and handle open menu and clos
     <div>
       <div
         class="szh-menu-container"
-        style="position: relative;"
+        style="position: absolute;"
       >
         <ul
           aria-label="Menu"
-          class="szh-menu szh-menu--state-open szh-menu--dir-bottom button-menu"
+          class="szh-menu szh-menu--state-open szh-menu--dir-bottom"
           role="menu"
           style="margin: 0px; position: absolute; left: 0px; top: 0px;"
           tabindex="-1"
         >
-          <div
-            style="position: absolute; left: 0px; top: 0px;"
+          <li
+            aria-hidden="true"
+            role="menuitem"
+            style="position: absolute; left: 0px; top: 0px; display: block; outline: none;"
             tabindex="-1"
           />
           <li
@@ -467,26 +477,26 @@ exports[`Button Component Button renders with list and handle open menu and clos
 <body>
   <div>
     <button
-      class="gds-button-content"
+      class="button"
       color="secondary"
       data-testid="MAIN-BUTTON"
       tabindex="0"
       type="button"
     >
       <div
-        class="button-label-container"
+        class="label"
       >
         Menu button
       </div>
       <div
-        class="button-menu-control-container"
+        class="menuControl"
       >
         <i
-          class="button-icon icon"
+          class="icon"
           icon="fal,pipe"
         />
         <i
-          class="button-icon icon"
+          class="icon"
           icon="fas,caret-down"
         />
       </div>
@@ -498,17 +508,19 @@ exports[`Button Component Button renders with list and handle open menu and clos
     <div>
       <div
         class="szh-menu-container"
-        style="position: relative;"
+        style="position: absolute;"
       >
         <ul
           aria-label="Menu"
-          class="szh-menu szh-menu--state-open szh-menu--dir-bottom button-menu"
+          class="szh-menu szh-menu--state-open szh-menu--dir-bottom"
           role="menu"
           style="margin: 0px; position: absolute; left: 0px; top: 0px;"
           tabindex="-1"
         >
-          <div
-            style="position: absolute; left: 0px; top: 0px;"
+          <li
+            aria-hidden="true"
+            role="menuitem"
+            style="position: absolute; left: 0px; top: 0px; display: block; outline: none;"
             tabindex="-1"
           />
           <li
@@ -540,14 +552,14 @@ exports[`Button Component Button renders with popover 1`] = `
 <body>
   <div>
     <button
-      class="gds-button-content"
+      class="button"
       color="secondary"
       data-testid="MAIN-BUTTON"
       tabindex="0"
       type="button"
     >
       <div
-        class="button-label-container"
+        class="label"
       >
         Tooltip button
       </div>
@@ -559,7 +571,7 @@ exports[`Button Component Button renders with popover 1`] = `
     <div>
       <div
         class="szh-menu-container"
-        style="position: relative;"
+        style="position: absolute;"
       >
         <ul
           aria-label="Menu"
@@ -568,55 +580,59 @@ exports[`Button Component Button renders with popover 1`] = `
           style="margin: 0px; display: none; position: absolute; left: 0px; top: 0px;"
           tabindex="-1"
         >
-          <div
-            style="position: absolute; left: 0px; top: 0px;"
+          <li
+            aria-hidden="true"
+            role="menuitem"
+            style="position: absolute; left: 0px; top: 0px; display: block; outline: none;"
             tabindex="-1"
           />
-          <div
+          <li
+            aria-hidden="true"
             class="szh-menu__arrow szh-menu__arrow--dir-top"
-            style="position: absolute;"
+            role="menuitem"
+            style="display: block; position: absolute;"
           />
           <div
-            class="gds-popover-container"
+            class="container"
           >
             <div
-              class="popover-title"
+              class="title"
             >
               POPOVER
             </div>
             <div
-              class="popover-buttons"
+              class="buttons"
             >
               <button
-                class="gds-button-content"
+                class="button"
                 color="primary"
                 data-testid="BUTTON1"
                 tabindex="0"
                 type="button"
               >
                 <div
-                  class="button-icon-container"
+                  class="icon"
                 >
                   <i
-                    class="button-icon icon"
+                    class="icon"
                     icon="fal,paper-plane"
                   />
                 </div>
                 <div
-                  class="button-label-container"
+                  class="label"
                 >
                   Button 1
                 </div>
               </button>
               <button
-                class="gds-button-content"
+                class="button"
                 color="secondary"
                 data-testid="BUTTON2"
                 tabindex="0"
                 type="button"
               >
                 <div
-                  class="button-label-container"
+                  class="label"
                 >
                   Button 2
                 </div>
@@ -634,14 +650,14 @@ exports[`Button Component Button renders with popover 2`] = `
 <body>
   <div>
     <button
-      class="gds-button-content"
+      class="button"
       color="secondary"
       data-testid="MAIN-BUTTON"
       tabindex="0"
       type="button"
     >
       <div
-        class="button-label-container"
+        class="label"
       >
         Tooltip button
       </div>
@@ -653,7 +669,7 @@ exports[`Button Component Button renders with popover 2`] = `
     <div>
       <div
         class="szh-menu-container"
-        style="position: relative;"
+        style="position: absolute;"
       >
         <ul
           aria-label="Menu"
@@ -662,55 +678,59 @@ exports[`Button Component Button renders with popover 2`] = `
           style="margin: 0px; position: absolute; left: 0px; top: 0px;"
           tabindex="-1"
         >
-          <div
-            style="position: absolute; left: 0px; top: 0px;"
+          <li
+            aria-hidden="true"
+            role="menuitem"
+            style="position: absolute; left: 0px; top: 0px; display: block; outline: none;"
             tabindex="-1"
           />
-          <div
+          <li
+            aria-hidden="true"
             class="szh-menu__arrow szh-menu__arrow--dir-top"
-            style="position: absolute; left: 0px;"
+            role="menuitem"
+            style="display: block; position: absolute; left: 0px;"
           />
           <div
-            class="gds-popover-container"
+            class="container"
           >
             <div
-              class="popover-title"
+              class="title"
             >
               POPOVER
             </div>
             <div
-              class="popover-buttons"
+              class="buttons"
             >
               <button
-                class="gds-button-content"
+                class="button"
                 color="primary"
                 data-testid="BUTTON1"
                 tabindex="0"
                 type="button"
               >
                 <div
-                  class="button-icon-container"
+                  class="icon"
                 >
                   <i
-                    class="button-icon icon"
+                    class="icon"
                     icon="fal,paper-plane"
                   />
                 </div>
                 <div
-                  class="button-label-container"
+                  class="label"
                 >
                   Button 1
                 </div>
               </button>
               <button
-                class="gds-button-content"
+                class="button"
                 color="secondary"
                 data-testid="BUTTON2"
                 tabindex="0"
                 type="button"
               >
                 <div
-                  class="button-label-container"
+                  class="label"
                 >
                   Button 2
                 </div>
@@ -728,14 +748,14 @@ exports[`Button Component Button renders with popover 3`] = `
 <body>
   <div>
     <button
-      class="gds-button-content"
+      class="button"
       color="secondary"
       data-testid="MAIN-BUTTON"
       tabindex="0"
       type="button"
     >
       <div
-        class="button-label-container"
+        class="label"
       >
         Tooltip button
       </div>
@@ -747,7 +767,7 @@ exports[`Button Component Button renders with popover 3`] = `
     <div>
       <div
         class="szh-menu-container"
-        style="position: relative;"
+        style="position: absolute;"
       >
         <ul
           aria-label="Menu"
@@ -756,55 +776,59 @@ exports[`Button Component Button renders with popover 3`] = `
           style="margin: 0px; position: absolute; left: 0px; top: 0px; display: none;"
           tabindex="-1"
         >
-          <div
-            style="position: absolute; left: 0px; top: 0px;"
+          <li
+            aria-hidden="true"
+            role="menuitem"
+            style="position: absolute; left: 0px; top: 0px; display: block; outline: none;"
             tabindex="-1"
           />
-          <div
+          <li
+            aria-hidden="true"
             class="szh-menu__arrow szh-menu__arrow--dir-top"
-            style="position: absolute; left: 0px;"
+            role="menuitem"
+            style="display: block; position: absolute; left: 0px;"
           />
           <div
-            class="gds-popover-container"
+            class="container"
           >
             <div
-              class="popover-title"
+              class="title"
             >
               POPOVER
             </div>
             <div
-              class="popover-buttons"
+              class="buttons"
             >
               <button
-                class="gds-button-content"
+                class="button"
                 color="primary"
                 data-testid="BUTTON1"
                 tabindex="0"
                 type="button"
               >
                 <div
-                  class="button-icon-container"
+                  class="icon"
                 >
                   <i
-                    class="button-icon icon"
+                    class="icon"
                     icon="fal,paper-plane"
                   />
                 </div>
                 <div
-                  class="button-label-container"
+                  class="label"
                 >
                   Button 1
                 </div>
               </button>
               <button
-                class="gds-button-content"
+                class="button"
                 color="secondary"
                 data-testid="BUTTON2"
                 tabindex="0"
                 type="button"
               >
                 <div
-                  class="button-label-container"
+                  class="label"
                 >
                   Button 2
                 </div>
@@ -822,14 +846,14 @@ exports[`Button Component Button renders with popover without buttons 1`] = `
 <body>
   <div>
     <button
-      class="gds-button-content"
+      class="button"
       color="secondary"
       data-testid="MAIN-BUTTON"
       tabindex="0"
       type="button"
     >
       <div
-        class="button-label-container"
+        class="label"
       >
         Tooltip button
       </div>
@@ -841,7 +865,7 @@ exports[`Button Component Button renders with popover without buttons 1`] = `
     <div>
       <div
         class="szh-menu-container"
-        style="position: relative;"
+        style="position: absolute;"
       >
         <ul
           aria-label="Menu"
@@ -850,24 +874,28 @@ exports[`Button Component Button renders with popover without buttons 1`] = `
           style="margin: 0px; display: none; position: absolute; left: 0px; top: 0px;"
           tabindex="-1"
         >
-          <div
-            style="position: absolute; left: 0px; top: 0px;"
+          <li
+            aria-hidden="true"
+            role="menuitem"
+            style="position: absolute; left: 0px; top: 0px; display: block; outline: none;"
             tabindex="-1"
           />
-          <div
+          <li
+            aria-hidden="true"
             class="szh-menu__arrow szh-menu__arrow--dir-top"
-            style="position: absolute;"
+            role="menuitem"
+            style="display: block; position: absolute;"
           />
           <div
-            class="gds-popover-container"
+            class="container"
           >
             <div
-              class="popover-title"
+              class="title"
             >
               POPOVER
             </div>
             <div
-              class="popover-buttons"
+              class="buttons"
             />
           </div>
         </ul>
@@ -881,14 +909,14 @@ exports[`Button Component Button renders with popover without buttons 2`] = `
 <body>
   <div>
     <button
-      class="gds-button-content"
+      class="button"
       color="secondary"
       data-testid="MAIN-BUTTON"
       tabindex="0"
       type="button"
     >
       <div
-        class="button-label-container"
+        class="label"
       >
         Tooltip button
       </div>
@@ -900,7 +928,7 @@ exports[`Button Component Button renders with popover without buttons 2`] = `
     <div>
       <div
         class="szh-menu-container"
-        style="position: relative;"
+        style="position: absolute;"
       >
         <ul
           aria-label="Menu"
@@ -909,24 +937,28 @@ exports[`Button Component Button renders with popover without buttons 2`] = `
           style="margin: 0px; position: absolute; left: 0px; top: 0px;"
           tabindex="-1"
         >
-          <div
-            style="position: absolute; left: 0px; top: 0px;"
+          <li
+            aria-hidden="true"
+            role="menuitem"
+            style="position: absolute; left: 0px; top: 0px; display: block; outline: none;"
             tabindex="-1"
           />
-          <div
+          <li
+            aria-hidden="true"
             class="szh-menu__arrow szh-menu__arrow--dir-top"
-            style="position: absolute; left: 0px;"
+            role="menuitem"
+            style="display: block; position: absolute; left: 0px;"
           />
           <div
-            class="gds-popover-container"
+            class="container"
           >
             <div
-              class="popover-title"
+              class="title"
             >
               POPOVER
             </div>
             <div
-              class="popover-buttons"
+              class="buttons"
             />
           </div>
         </ul>
@@ -940,14 +972,14 @@ exports[`Button Component Button renders with popover without buttons 3`] = `
 <body>
   <div>
     <button
-      class="gds-button-content"
+      class="button"
       color="secondary"
       data-testid="MAIN-BUTTON"
       tabindex="0"
       type="button"
     >
       <div
-        class="button-label-container"
+        class="label"
       >
         Tooltip button
       </div>
@@ -959,7 +991,7 @@ exports[`Button Component Button renders with popover without buttons 3`] = `
     <div>
       <div
         class="szh-menu-container"
-        style="position: relative;"
+        style="position: absolute;"
       >
         <ul
           aria-label="Menu"
@@ -968,24 +1000,28 @@ exports[`Button Component Button renders with popover without buttons 3`] = `
           style="margin: 0px; position: absolute; left: 0px; top: 0px; display: none;"
           tabindex="-1"
         >
-          <div
-            style="position: absolute; left: 0px; top: 0px;"
+          <li
+            aria-hidden="true"
+            role="menuitem"
+            style="position: absolute; left: 0px; top: 0px; display: block; outline: none;"
             tabindex="-1"
           />
-          <div
+          <li
+            aria-hidden="true"
             class="szh-menu__arrow szh-menu__arrow--dir-top"
-            style="position: absolute; left: 0px;"
+            role="menuitem"
+            style="display: block; position: absolute; left: 0px;"
           />
           <div
-            class="gds-popover-container"
+            class="container"
           >
             <div
-              class="popover-title"
+              class="title"
             >
               POPOVER
             </div>
             <div
-              class="popover-buttons"
+              class="buttons"
             />
           </div>
         </ul>
@@ -999,13 +1035,13 @@ exports[`Button Component Button renders with tooltip 1`] = `
 <body>
   <div>
     <button
-      class="gds-button-content"
+      class="button"
       color="secondary"
       tabindex="0"
       type="button"
     >
       <div
-        class="button-label-container"
+        class="label"
       >
         Tooltip button
       </div>

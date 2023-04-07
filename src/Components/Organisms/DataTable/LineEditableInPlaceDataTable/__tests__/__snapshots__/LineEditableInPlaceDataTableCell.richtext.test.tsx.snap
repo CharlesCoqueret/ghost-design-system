@@ -9,7 +9,7 @@ exports[`LineEditableInPlaceDataTableCell richtext case LineEditableInPlaceDataT
           class=""
         >
           <div>
-            {"inputClassName":"gds-typography","inputValue":"richtext","name":"richtext","readOnly":false}
+            {"input":"richtext","name":"richtext","readOnly":false}
           </div>
         </td>
       </tr>

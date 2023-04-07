@@ -8,17 +8,11 @@ import { IOption } from './types';
 import { Icon } from '../Icon';
 import { Typography } from '../Typography';
 
+import styles from './SelectInput.module.scss';
+
 export interface IDynamicSearchInputProps {
   /** Class for the input (optional, default: undefined) */
   className?: string;
-  /** Custom colors settings */
-  colors?: {
-    controlErrorColor: string; // colors.error,
-    controlFocusColor: string; // colors.primary,
-    fontColor: string; // 'rgb(0, 0, 0)',
-    optionFocusColor: string; // colors.chalk,
-    optionSelectedColor: string; // colors.primary,
-  };
   /** For test purpose only */
   dataTestId?: string;
   /** Disabled field (optional, default: false) */
@@ -28,15 +22,15 @@ export interface IDynamicSearchInputProps {
   /** Highlight value in readonly mode (optional, default: false) */
   highlighted?: boolean;
   /** Input string value (optional, default: undefined) */
-  inputValue?: string | number;
+  input?: string | number;
   /** Provide the ability to clear the value (optional, default: false) */
   isClearable?: boolean;
   /** Is in Error (optional, default: false) */
   isInError?: boolean;
   /** Maximum height of the menu in px (optional, default: 300) */
   maxMenuHeight?: number;
-  /** Name of select input */
-  name: string;
+  /** Name of input (optional, default: undefined) */
+  name?: string;
   /** No option message (dispayed when no results are available) */
   noOptionsMessage: string | ((obj: { inputValue: string }) => string);
   /** Handler of value changes (optional, default: undefined) */
@@ -56,12 +50,11 @@ export interface IDynamicSearchInputProps {
 const DynamicSearchInput = (props: IDynamicSearchInputProps): ReactElement => {
   const {
     className,
-    colors,
     dataTestId,
     disabled,
     ellipsis,
     highlighted,
-    inputValue,
+    input,
     isClearable,
     isInError,
     maxMenuHeight,
@@ -86,9 +79,9 @@ const DynamicSearchInput = (props: IDynamicSearchInputProps): ReactElement => {
   };
 
   const resolveIncomingValue = () => {
-    if (inputValue && inputValue !== currentOption?.value) {
+    if (input && input !== currentOption?.value) {
       setIsLoading(true);
-      resolveValue(inputValue)
+      resolveValue(input)
         .then((result) => {
           setCurrentOption(result);
         })
@@ -104,18 +97,16 @@ const DynamicSearchInput = (props: IDynamicSearchInputProps): ReactElement => {
   };
 
   useEffect(() => {
-    if (inputValue !== currentOption?.value) resolveIncomingValue();
-  }, [inputValue]);
+    if (input !== currentOption?.value) resolveIncomingValue();
+  }, [input]);
 
   if (readOnly || disabled) {
     return (
       <div
         className={classnames(
-          'field',
-          'gds-select-container',
-          'input-select-field-read-only',
+          styles.container,
           {
-            'field-highlighted': highlighted,
+            [styles.highlighted]: (readOnly || disabled) && highlighted,
           },
           className,
         )}
@@ -132,16 +123,7 @@ const DynamicSearchInput = (props: IDynamicSearchInputProps): ReactElement => {
   }
 
   return (
-    <div
-      className={classnames(
-        'field',
-        'gds-select-container',
-        'input-select-field',
-        {
-          'input-error': isInError && !disabled,
-        },
-        className,
-      )}>
+    <div className={classnames(styles.container, className)}>
       <ReactSelectAsync<IOption, false>
         backspaceRemovesValue={isClearable}
         closeMenuOnSelect={true}
@@ -152,7 +134,7 @@ const DynamicSearchInput = (props: IDynamicSearchInputProps): ReactElement => {
               <div {...innerProps}>
                 <Icon
                   icon={['fal', 'spinner']}
-                  className='dynamic-search-spinner'
+                  className={styles.spinner}
                   data-testid={dataTestId ? `${dataTestId}-spinner` : undefined}
                 />
               </div>
@@ -164,7 +146,7 @@ const DynamicSearchInput = (props: IDynamicSearchInputProps): ReactElement => {
               <div {...innerProps}>
                 <Icon
                   icon={['fal', 'magnifying-glass']}
-                  className='dynamic-search-icon'
+                  className={styles.icon}
                   data-testid={dataTestId ? `${dataTestId}-magnifier` : undefined}
                 />
               </div>
@@ -176,7 +158,7 @@ const DynamicSearchInput = (props: IDynamicSearchInputProps): ReactElement => {
               <div {...innerProps}>
                 <Icon
                   icon={['fal', 'xmark']}
-                  className='dynamic-search-icon'
+                  className={styles.icon}
                   data-testid={dataTestId ? `${dataTestId}-clear` : undefined}
                 />
               </div>
@@ -208,7 +190,7 @@ const DynamicSearchInput = (props: IDynamicSearchInputProps): ReactElement => {
           setIsLoading(false);
         }}
         placeholder={placeholder}
-        styles={customStyles({ ...colors, isInError })}
+        styles={customStyles({ isInError: isInError && !(disabled && readOnly) })}
         value={currentOption === undefined ? null : currentOption}
       />
     </div>
@@ -217,20 +199,14 @@ const DynamicSearchInput = (props: IDynamicSearchInputProps): ReactElement => {
 
 DynamicSearchInput.defaultProps = {
   className: undefined,
-  colors: {
-    controlErrorColor: 'rgb(255, 52, 24)',
-    controlFocusColor: 'rgb(38, 186, 212)',
-    fontColor: 'rgb(0, 0, 0)',
-    optionFocusColor: 'rgb(228, 228, 228)',
-    optionSelectedColor: 'rgb(38, 186, 212)',
-  },
   disabled: false,
   ellipsis: false,
   highlighted: false,
-  inputValue: undefined,
+  input: undefined,
   isClearable: false,
   isInError: false,
   maxMenuHeight: 300,
+  name: undefined,
   noOptionsMessage: 'No options',
   onChange: undefined,
   options: undefined,

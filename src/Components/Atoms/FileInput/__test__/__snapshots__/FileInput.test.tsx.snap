@@ -3,7 +3,7 @@
 exports[`FileInput Component FileInput handle add file successfully through input 1`] = `
 <div>
   <div
-    class="field gds-file-input-container"
+    class="container"
   >
     <div
       class="droparea"
@@ -13,7 +13,6 @@ exports[`FileInput Component FileInput handle add file successfully through inpu
       >
         Click or drag file to upload
         <input
-          class="input"
           data-testid="TEST-ID"
           multiple=""
           tabindex="-1"
@@ -32,7 +31,7 @@ exports[`FileInput Component FileInput handle add file successfully through inpu
 exports[`FileInput Component FileInput handle add file successfully through input 2`] = `
 <div>
   <div
-    class="field gds-file-input-container"
+    class="container"
   >
     <div
       class="droparea"
@@ -42,7 +41,6 @@ exports[`FileInput Component FileInput handle add file successfully through inpu
       >
         Click or drag file to upload
         <input
-          class="input"
           data-testid="TEST-ID"
           multiple=""
           tabindex="-1"
@@ -55,13 +53,13 @@ exports[`FileInput Component FileInput handle add file successfully through inpu
       class="gallery"
     >
       <div
-        class="item-container"
+        class="container"
       >
         <div
           class="left"
         >
           <div
-            class="paperclip-icon"
+            class="paperclipIcon"
           >
             <i
               class="icon"
@@ -87,7 +85,7 @@ exports[`FileInput Component FileInput handle add file successfully through inpu
           />
           <svg
             aria-hidden="true"
-            class="icon gds-loader size-1x spinner-icon"
+            class="icon size-1x spinnerIcon"
             data-testid="TEST-ID-spinner"
             focusable="false"
             height="50"
@@ -135,7 +133,7 @@ exports[`FileInput Component FileInput handle add file successfully through inpu
 exports[`FileInput Component FileInput handle add file successfully through input 3`] = `
 <div>
   <div
-    class="field gds-file-input-container"
+    class="container"
   >
     <div
       class="droparea"
@@ -145,7 +143,6 @@ exports[`FileInput Component FileInput handle add file successfully through inpu
       >
         Click or drag file to upload
         <input
-          class="input"
           data-testid="TEST-ID"
           multiple=""
           tabindex="-1"
@@ -158,13 +155,13 @@ exports[`FileInput Component FileInput handle add file successfully through inpu
       class="gallery"
     >
       <div
-        class="item-container"
+        class="container"
       >
         <div
           class="left"
         >
           <div
-            class="paperclip-icon"
+            class="paperclipIcon"
           >
             <i
               class="icon"
@@ -184,17 +181,17 @@ exports[`FileInput Component FileInput handle add file successfully through inpu
           class="right"
         >
           <button
-            class="gds-button-content delete-icon"
+            class="button deleteIcon"
             color="reversed"
             data-testid="TEST-ID-delete"
             tabindex="0"
             type="button"
           >
             <div
-              class="button-icon-container"
+              class="icon"
             >
               <i
-                class="button-icon icon"
+                class="icon"
                 icon="fal,trash-alt"
               />
             </div>
@@ -207,38 +204,38 @@ exports[`FileInput Component FileInput handle add file successfully through inpu
               ControlleMenu
               closed
               <div
-                class="gds-popover-container"
+                class="container"
               >
                 <div
-                  class="popover-title"
+                  class="title"
                 >
                   Delete?
                 </div>
                 <div
-                  class="popover-buttons"
+                  class="buttons"
                 >
                   <button
-                    class="gds-button-content"
+                    class="button"
                     color="secondary"
                     data-testid="TEST-ID-cancel"
                     tabindex="0"
                     type="button"
                   >
                     <div
-                      class="button-label-container"
+                      class="label"
                     >
                       Cancel
                     </div>
                   </button>
                   <button
-                    class="gds-button-content"
+                    class="button"
                     color="primary"
                     data-testid="TEST-ID-confirm"
                     tabindex="0"
                     type="button"
                   >
                     <div
-                      class="button-label-container"
+                      class="label"
                     >
                       Confirm
                     </div>
@@ -258,7 +255,7 @@ exports[`FileInput Component FileInput handle add file successfully through inpu
 exports[`FileInput Component FileInput handle add file unsucessfully through input 1`] = `
 <div>
   <div
-    class="field gds-file-input-container"
+    class="container"
   >
     <div
       class="droparea"
@@ -268,7 +265,6 @@ exports[`FileInput Component FileInput handle add file unsucessfully through inp
       >
         Click or drag file to upload
         <input
-          class="input"
           data-testid="TEST-ID"
           multiple=""
           tabindex="-1"
@@ -287,7 +283,7 @@ exports[`FileInput Component FileInput handle add file unsucessfully through inp
 exports[`FileInput Component FileInput handle add file unsucessfully through input 2`] = `
 <div>
   <div
-    class="field gds-file-input-container"
+    class="container"
   >
     <div
       class="droparea"
@@ -297,7 +293,6 @@ exports[`FileInput Component FileInput handle add file unsucessfully through inp
       >
         Click or drag file to upload
         <input
-          class="input"
           data-testid="TEST-ID"
           multiple=""
           tabindex="-1"
@@ -310,13 +305,13 @@ exports[`FileInput Component FileInput handle add file unsucessfully through inp
       class="gallery"
     >
       <div
-        class="item-container error"
+        class="container error"
       >
         <div
           class="left"
         >
           <div
-            class="paperclip-icon"
+            class="paperclipIcon"
           >
             <i
               class="icon"
@@ -336,17 +331,17 @@ exports[`FileInput Component FileInput handle add file unsucessfully through inp
           class="right"
         >
           <button
-            class="gds-button-content delete-icon"
+            class="button deleteIcon"
             color="reversed"
             data-testid="TEST-ID-delete"
             tabindex="0"
             type="button"
           >
             <div
-              class="button-icon-container"
+              class="icon"
             >
               <i
-                class="button-icon icon"
+                class="icon"
                 icon="fal,trash-alt"
               />
             </div>
@@ -367,7 +362,7 @@ exports[`FileInput Component FileInput handle add file unsucessfully through inp
 exports[`FileInput Component FileInput handle add file with timeout through input 1`] = `
 <div>
   <div
-    class="field gds-file-input-container"
+    class="container"
   >
     <div
       class="droparea"
@@ -377,7 +372,6 @@ exports[`FileInput Component FileInput handle add file with timeout through inpu
       >
         Click or drag file to upload
         <input
-          class="input"
           data-testid="TEST-ID"
           multiple=""
           tabindex="-1"
@@ -396,7 +390,7 @@ exports[`FileInput Component FileInput handle add file with timeout through inpu
 exports[`FileInput Component FileInput handle add file with timeout through input 2`] = `
 <div>
   <div
-    class="field gds-file-input-container"
+    class="container"
   >
     <div
       class="droparea"
@@ -406,7 +400,6 @@ exports[`FileInput Component FileInput handle add file with timeout through inpu
       >
         Click or drag file to upload
         <input
-          class="input"
           data-testid="TEST-ID"
           multiple=""
           tabindex="-1"
@@ -419,13 +412,13 @@ exports[`FileInput Component FileInput handle add file with timeout through inpu
       class="gallery"
     >
       <div
-        class="item-container error"
+        class="container error"
       >
         <div
           class="left"
         >
           <div
-            class="paperclip-icon"
+            class="paperclipIcon"
           >
             <i
               class="icon"
@@ -445,17 +438,17 @@ exports[`FileInput Component FileInput handle add file with timeout through inpu
           class="right"
         >
           <button
-            class="gds-button-content delete-icon"
+            class="button deleteIcon"
             color="reversed"
             data-testid="TEST-ID-delete"
             tabindex="0"
             type="button"
           >
             <div
-              class="button-icon-container"
+              class="icon"
             >
               <i
-                class="button-icon icon"
+                class="icon"
                 icon="fal,trash-alt"
               />
             </div>
@@ -476,7 +469,7 @@ exports[`FileInput Component FileInput handle add file with timeout through inpu
 exports[`FileInput Component FileInput handle drag event for highlight 1`] = `
 <div>
   <div
-    class="field gds-file-input-container"
+    class="container"
   >
     <div
       class="droparea"
@@ -486,7 +479,6 @@ exports[`FileInput Component FileInput handle drag event for highlight 1`] = `
       >
         Click or drag file to upload
         <input
-          class="input"
           data-testid="TEST-ID"
           multiple=""
           tabindex="-1"
@@ -505,17 +497,16 @@ exports[`FileInput Component FileInput handle drag event for highlight 1`] = `
 exports[`FileInput Component FileInput handle drag event for highlight 2`] = `
 <div>
   <div
-    class="field gds-file-input-container"
+    class="container"
   >
     <div
-      class="droparea"
+      class="droparea highlight"
     >
       <label
         class="label"
       >
         Click or drag file to upload
         <input
-          class="input highlight"
           data-testid="TEST-ID"
           multiple=""
           tabindex="-1"
@@ -534,7 +525,7 @@ exports[`FileInput Component FileInput handle drag event for highlight 2`] = `
 exports[`FileInput Component FileInput handle drag event for highlight 3`] = `
 <div>
   <div
-    class="field gds-file-input-container"
+    class="container"
   >
     <div
       class="droparea"
@@ -544,7 +535,6 @@ exports[`FileInput Component FileInput handle drag event for highlight 3`] = `
       >
         Click or drag file to upload
         <input
-          class="input"
           data-testid="TEST-ID"
           multiple=""
           tabindex="-1"
@@ -563,7 +553,7 @@ exports[`FileInput Component FileInput handle drag event for highlight 3`] = `
 exports[`FileInput Component FileInput handle drop of file 1`] = `
 <div>
   <div
-    class="field gds-file-input-container"
+    class="container"
   >
     <div
       class="droparea"
@@ -573,7 +563,6 @@ exports[`FileInput Component FileInput handle drop of file 1`] = `
       >
         Click or drag file to upload
         <input
-          class="input"
           data-testid="TEST-ID"
           multiple=""
           tabindex="-1"
@@ -592,7 +581,7 @@ exports[`FileInput Component FileInput handle drop of file 1`] = `
 exports[`FileInput Component FileInput handle drop of file 2`] = `
 <div>
   <div
-    class="field gds-file-input-container"
+    class="container"
   >
     <div
       class="droparea"
@@ -602,7 +591,6 @@ exports[`FileInput Component FileInput handle drop of file 2`] = `
       >
         Click or drag file to upload
         <input
-          class="input"
           data-testid="TEST-ID"
           multiple=""
           tabindex="-1"
@@ -615,13 +603,13 @@ exports[`FileInput Component FileInput handle drop of file 2`] = `
       class="gallery"
     >
       <div
-        class="item-container"
+        class="container"
       >
         <div
           class="left"
         >
           <div
-            class="paperclip-icon"
+            class="paperclipIcon"
           >
             <i
               class="icon"
@@ -646,7 +634,7 @@ exports[`FileInput Component FileInput handle drop of file 2`] = `
           />
           <svg
             aria-hidden="true"
-            class="icon gds-loader size-1x spinner-icon"
+            class="icon size-1x spinnerIcon"
             data-testid="TEST-ID-spinner"
             focusable="false"
             height="50"
@@ -694,7 +682,7 @@ exports[`FileInput Component FileInput handle drop of file 2`] = `
 exports[`FileInput Component FileInput handle drop without dataTransfer 1`] = `
 <div>
   <div
-    class="field gds-file-input-container"
+    class="container"
   >
     <div
       class="droparea"
@@ -704,7 +692,6 @@ exports[`FileInput Component FileInput handle drop without dataTransfer 1`] = `
       >
         Click or drag file to upload
         <input
-          class="input"
           data-testid="TEST-ID"
           multiple=""
           tabindex="-1"
@@ -723,7 +710,7 @@ exports[`FileInput Component FileInput handle drop without dataTransfer 1`] = `
 exports[`FileInput Component FileInput handle drop without dataTransfer 2`] = `
 <div>
   <div
-    class="field gds-file-input-container"
+    class="container"
   >
     <div
       class="droparea"
@@ -733,7 +720,6 @@ exports[`FileInput Component FileInput handle drop without dataTransfer 2`] = `
       >
         Click or drag file to upload
         <input
-          class="input"
           data-testid="TEST-ID"
           multiple=""
           tabindex="-1"
@@ -752,17 +738,16 @@ exports[`FileInput Component FileInput handle drop without dataTransfer 2`] = `
 exports[`FileInput Component FileInput handle unsuccessfull add file when quota reached 1`] = `
 <div>
   <div
-    class="field gds-file-input-container"
+    class="container"
   >
     <div
-      class="droparea"
+      class="droparea maxFileReached"
     >
       <label
         class="label"
       >
         Click or drag file to upload
         <input
-          class="input"
           data-testid="TEST-ID"
           tabindex="-1"
           type="file"
@@ -774,13 +759,13 @@ exports[`FileInput Component FileInput handle unsuccessfull add file when quota 
       class="gallery"
     >
       <div
-        class="item-container"
+        class="container"
       >
         <div
           class="left"
         >
           <div
-            class="paperclip-icon"
+            class="paperclipIcon"
           >
             <i
               class="icon"
@@ -800,17 +785,17 @@ exports[`FileInput Component FileInput handle unsuccessfull add file when quota 
           class="right"
         >
           <button
-            class="gds-button-content delete-icon"
+            class="button deleteIcon"
             color="reversed"
             data-testid="TEST-ID-delete"
             tabindex="0"
             type="button"
           >
             <div
-              class="button-icon-container"
+              class="icon"
             >
               <i
-                class="button-icon icon"
+                class="icon"
                 icon="fal,trash-alt"
               />
             </div>
@@ -823,38 +808,38 @@ exports[`FileInput Component FileInput handle unsuccessfull add file when quota 
               ControlleMenu
               closed
               <div
-                class="gds-popover-container"
+                class="container"
               >
                 <div
-                  class="popover-title"
+                  class="title"
                 >
                   Delete?
                 </div>
                 <div
-                  class="popover-buttons"
+                  class="buttons"
                 >
                   <button
-                    class="gds-button-content"
+                    class="button"
                     color="secondary"
                     data-testid="TEST-ID-cancel"
                     tabindex="0"
                     type="button"
                   >
                     <div
-                      class="button-label-container"
+                      class="label"
                     >
                       Cancel
                     </div>
                   </button>
                   <button
-                    class="gds-button-content"
+                    class="button"
                     color="primary"
                     data-testid="TEST-ID-confirm"
                     tabindex="0"
                     type="button"
                   >
                     <div
-                      class="button-label-container"
+                      class="label"
                     >
                       Confirm
                     </div>
@@ -874,17 +859,16 @@ exports[`FileInput Component FileInput handle unsuccessfull add file when quota 
 exports[`FileInput Component FileInput handle unsuccessfull add file when quota reached 2`] = `
 <div>
   <div
-    class="field gds-file-input-container"
+    class="container"
   >
     <div
-      class="droparea"
+      class="droparea maxFileReached"
     >
       <label
         class="label"
       >
         Click or drag file to upload
         <input
-          class="input"
           data-testid="TEST-ID"
           tabindex="-1"
           type="file"
@@ -896,13 +880,13 @@ exports[`FileInput Component FileInput handle unsuccessfull add file when quota 
       class="gallery"
     >
       <div
-        class="item-container"
+        class="container"
       >
         <div
           class="left"
         >
           <div
-            class="paperclip-icon"
+            class="paperclipIcon"
           >
             <i
               class="icon"
@@ -922,17 +906,17 @@ exports[`FileInput Component FileInput handle unsuccessfull add file when quota 
           class="right"
         >
           <button
-            class="gds-button-content delete-icon"
+            class="button deleteIcon"
             color="reversed"
             data-testid="TEST-ID-delete"
             tabindex="0"
             type="button"
           >
             <div
-              class="button-icon-container"
+              class="icon"
             >
               <i
-                class="button-icon icon"
+                class="icon"
                 icon="fal,trash-alt"
               />
             </div>
@@ -945,38 +929,38 @@ exports[`FileInput Component FileInput handle unsuccessfull add file when quota 
               ControlleMenu
               closed
               <div
-                class="gds-popover-container"
+                class="container"
               >
                 <div
-                  class="popover-title"
+                  class="title"
                 >
                   Delete?
                 </div>
                 <div
-                  class="popover-buttons"
+                  class="buttons"
                 >
                   <button
-                    class="gds-button-content"
+                    class="button"
                     color="secondary"
                     data-testid="TEST-ID-cancel"
                     tabindex="0"
                     type="button"
                   >
                     <div
-                      class="button-label-container"
+                      class="label"
                     >
                       Cancel
                     </div>
                   </button>
                   <button
-                    class="gds-button-content"
+                    class="button"
                     color="primary"
                     data-testid="TEST-ID-confirm"
                     tabindex="0"
                     type="button"
                   >
                     <div
-                      class="button-label-container"
+                      class="label"
                     >
                       Confirm
                     </div>
@@ -989,13 +973,13 @@ exports[`FileInput Component FileInput handle unsuccessfull add file when quota 
         </div>
       </div>
       <div
-        class="item-container error"
+        class="container error"
       >
         <div
           class="left"
         >
           <div
-            class="paperclip-icon"
+            class="paperclipIcon"
           >
             <i
               class="icon"
@@ -1015,17 +999,17 @@ exports[`FileInput Component FileInput handle unsuccessfull add file when quota 
           class="right"
         >
           <button
-            class="gds-button-content delete-icon"
+            class="button deleteIcon"
             color="reversed"
             data-testid="TEST-ID-delete"
             tabindex="0"
             type="button"
           >
             <div
-              class="button-icon-container"
+              class="icon"
             >
               <i
-                class="button-icon icon"
+                class="icon"
                 icon="fal,trash-alt"
               />
             </div>
@@ -1046,17 +1030,16 @@ exports[`FileInput Component FileInput handle unsuccessfull add file when quota 
 exports[`FileInput Component FileInput handles correctly deletion when no handler defined 1`] = `
 <div>
   <div
-    class="field gds-file-input-container"
+    class="container"
   >
     <div
-      class="droparea"
+      class="droparea maxFileReached"
     >
       <label
         class="label"
       >
         Click or drag file to upload
         <input
-          class="input"
           data-testid="TEST-ID"
           tabindex="-1"
           type="file"
@@ -1068,13 +1051,13 @@ exports[`FileInput Component FileInput handles correctly deletion when no handle
       class="gallery"
     >
       <div
-        class="item-container"
+        class="container"
       >
         <div
           class="left"
         >
           <div
-            class="paperclip-icon"
+            class="paperclipIcon"
           >
             <i
               class="icon"
@@ -1094,17 +1077,17 @@ exports[`FileInput Component FileInput handles correctly deletion when no handle
           class="right"
         >
           <button
-            class="gds-button-content delete-icon"
+            class="button deleteIcon"
             color="reversed"
             data-testid="TEST-ID-delete"
             tabindex="0"
             type="button"
           >
             <div
-              class="button-icon-container"
+              class="icon"
             >
               <i
-                class="button-icon icon"
+                class="icon"
                 icon="fal,trash-alt"
               />
             </div>
@@ -1117,38 +1100,38 @@ exports[`FileInput Component FileInput handles correctly deletion when no handle
               ControlleMenu
               closed
               <div
-                class="gds-popover-container"
+                class="container"
               >
                 <div
-                  class="popover-title"
+                  class="title"
                 >
                   Delete?
                 </div>
                 <div
-                  class="popover-buttons"
+                  class="buttons"
                 >
                   <button
-                    class="gds-button-content"
+                    class="button"
                     color="secondary"
                     data-testid="TEST-ID-cancel"
                     tabindex="0"
                     type="button"
                   >
                     <div
-                      class="button-label-container"
+                      class="label"
                     >
                       Cancel
                     </div>
                   </button>
                   <button
-                    class="gds-button-content"
+                    class="button"
                     color="primary"
                     data-testid="TEST-ID-confirm"
                     tabindex="0"
                     type="button"
                   >
                     <div
-                      class="button-label-container"
+                      class="label"
                     >
                       Confirm
                     </div>
@@ -1168,7 +1151,7 @@ exports[`FileInput Component FileInput handles correctly deletion when no handle
 exports[`FileInput Component FileInput handles correctly deletion when no handler defined 2`] = `
 <div>
   <div
-    class="field gds-file-input-container"
+    class="container"
   >
     <div
       class="droparea"
@@ -1178,7 +1161,6 @@ exports[`FileInput Component FileInput handles correctly deletion when no handle
       >
         Click or drag file to upload
         <input
-          class="input"
           data-testid="TEST-ID"
           multiple=""
           tabindex="-1"
@@ -1197,17 +1179,16 @@ exports[`FileInput Component FileInput handles correctly deletion when no handle
 exports[`FileInput Component FileInput handles delete rejections of a file 1`] = `
 <div>
   <div
-    class="field gds-file-input-container"
+    class="container"
   >
     <div
-      class="droparea"
+      class="droparea maxFileReached"
     >
       <label
         class="label"
       >
         Click or drag file to upload
         <input
-          class="input"
           data-testid="TEST-ID"
           tabindex="-1"
           type="file"
@@ -1219,13 +1200,13 @@ exports[`FileInput Component FileInput handles delete rejections of a file 1`] =
       class="gallery"
     >
       <div
-        class="item-container"
+        class="container"
       >
         <div
           class="left"
         >
           <div
-            class="paperclip-icon"
+            class="paperclipIcon"
           >
             <i
               class="icon"
@@ -1245,17 +1226,17 @@ exports[`FileInput Component FileInput handles delete rejections of a file 1`] =
           class="right"
         >
           <button
-            class="gds-button-content delete-icon"
+            class="button deleteIcon"
             color="reversed"
             data-testid="TEST-ID-delete"
             tabindex="0"
             type="button"
           >
             <div
-              class="button-icon-container"
+              class="icon"
             >
               <i
-                class="button-icon icon"
+                class="icon"
                 icon="fal,trash-alt"
               />
             </div>
@@ -1268,38 +1249,38 @@ exports[`FileInput Component FileInput handles delete rejections of a file 1`] =
               ControlleMenu
               closed
               <div
-                class="gds-popover-container"
+                class="container"
               >
                 <div
-                  class="popover-title"
+                  class="title"
                 >
                   Delete?
                 </div>
                 <div
-                  class="popover-buttons"
+                  class="buttons"
                 >
                   <button
-                    class="gds-button-content"
+                    class="button"
                     color="secondary"
                     data-testid="TEST-ID-cancel"
                     tabindex="0"
                     type="button"
                   >
                     <div
-                      class="button-label-container"
+                      class="label"
                     >
                       Cancel
                     </div>
                   </button>
                   <button
-                    class="gds-button-content"
+                    class="button"
                     color="primary"
                     data-testid="TEST-ID-confirm"
                     tabindex="0"
                     type="button"
                   >
                     <div
-                      class="button-label-container"
+                      class="label"
                     >
                       Confirm
                     </div>
@@ -1319,17 +1300,16 @@ exports[`FileInput Component FileInput handles delete rejections of a file 1`] =
 exports[`FileInput Component FileInput handles delete rejections of a file 2`] = `
 <div>
   <div
-    class="field gds-file-input-container"
+    class="container"
   >
     <div
-      class="droparea"
+      class="droparea maxFileReached"
     >
       <label
         class="label"
       >
         Click or drag file to upload
         <input
-          class="input"
           data-testid="TEST-ID"
           tabindex="-1"
           type="file"
@@ -1341,13 +1321,13 @@ exports[`FileInput Component FileInput handles delete rejections of a file 2`] =
       class="gallery"
     >
       <div
-        class="item-container"
+        class="container"
       >
         <div
           class="left"
         >
           <div
-            class="paperclip-icon"
+            class="paperclipIcon"
           >
             <i
               class="icon"
@@ -1367,17 +1347,17 @@ exports[`FileInput Component FileInput handles delete rejections of a file 2`] =
           class="right"
         >
           <button
-            class="gds-button-content delete-icon"
+            class="button deleteIcon"
             color="reversed"
             data-testid="TEST-ID-delete"
             tabindex="0"
             type="button"
           >
             <div
-              class="button-icon-container"
+              class="icon"
             >
               <i
-                class="button-icon icon"
+                class="icon"
                 icon="fal,trash-alt"
               />
             </div>
@@ -1390,38 +1370,38 @@ exports[`FileInput Component FileInput handles delete rejections of a file 2`] =
               ControlleMenu
               closed
               <div
-                class="gds-popover-container"
+                class="container"
               >
                 <div
-                  class="popover-title"
+                  class="title"
                 >
                   Delete?
                 </div>
                 <div
-                  class="popover-buttons"
+                  class="buttons"
                 >
                   <button
-                    class="gds-button-content"
+                    class="button"
                     color="secondary"
                     data-testid="TEST-ID-cancel"
                     tabindex="0"
                     type="button"
                   >
                     <div
-                      class="button-label-container"
+                      class="label"
                     >
                       Cancel
                     </div>
                   </button>
                   <button
-                    class="gds-button-content"
+                    class="button"
                     color="primary"
                     data-testid="TEST-ID-confirm"
                     tabindex="0"
                     type="button"
                   >
                     <div
-                      class="button-label-container"
+                      class="label"
                     >
                       Confirm
                     </div>
@@ -1441,17 +1421,16 @@ exports[`FileInput Component FileInput handles delete rejections of a file 2`] =
 exports[`FileInput Component FileInput handles download and delete of a file 1`] = `
 <div>
   <div
-    class="field gds-file-input-container"
+    class="container"
   >
     <div
-      class="droparea"
+      class="droparea maxFileReached"
     >
       <label
         class="label"
       >
         Click or drag file to upload
         <input
-          class="input"
           data-testid="TEST-ID"
           tabindex="-1"
           type="file"
@@ -1463,13 +1442,13 @@ exports[`FileInput Component FileInput handles download and delete of a file 1`]
       class="gallery"
     >
       <div
-        class="item-container"
+        class="container"
       >
         <div
           class="left"
         >
           <div
-            class="paperclip-icon"
+            class="paperclipIcon"
           >
             <i
               class="icon"
@@ -1489,17 +1468,17 @@ exports[`FileInput Component FileInput handles download and delete of a file 1`]
           class="right"
         >
           <button
-            class="gds-button-content delete-icon"
+            class="button deleteIcon"
             color="reversed"
             data-testid="TEST-ID-delete"
             tabindex="0"
             type="button"
           >
             <div
-              class="button-icon-container"
+              class="icon"
             >
               <i
-                class="button-icon icon"
+                class="icon"
                 icon="fal,trash-alt"
               />
             </div>
@@ -1512,38 +1491,38 @@ exports[`FileInput Component FileInput handles download and delete of a file 1`]
               ControlleMenu
               closed
               <div
-                class="gds-popover-container"
+                class="container"
               >
                 <div
-                  class="popover-title"
+                  class="title"
                 >
                   Delete?
                 </div>
                 <div
-                  class="popover-buttons"
+                  class="buttons"
                 >
                   <button
-                    class="gds-button-content"
+                    class="button"
                     color="secondary"
                     data-testid="TEST-ID-cancel"
                     tabindex="0"
                     type="button"
                   >
                     <div
-                      class="button-label-container"
+                      class="label"
                     >
                       Cancel
                     </div>
                   </button>
                   <button
-                    class="gds-button-content"
+                    class="button"
                     color="primary"
                     data-testid="TEST-ID-confirm"
                     tabindex="0"
                     type="button"
                   >
                     <div
-                      class="button-label-container"
+                      class="label"
                     >
                       Confirm
                     </div>
@@ -1563,17 +1542,16 @@ exports[`FileInput Component FileInput handles download and delete of a file 1`]
 exports[`FileInput Component FileInput handles download and delete of a file 2`] = `
 <div>
   <div
-    class="field gds-file-input-container"
+    class="container"
   >
     <div
-      class="droparea"
+      class="droparea maxFileReached"
     >
       <label
         class="label"
       >
         Click or drag file to upload
         <input
-          class="input"
           data-testid="TEST-ID"
           tabindex="-1"
           type="file"
@@ -1585,13 +1563,13 @@ exports[`FileInput Component FileInput handles download and delete of a file 2`]
       class="gallery"
     >
       <div
-        class="item-container"
+        class="container"
       >
         <div
           class="left"
         >
           <div
-            class="paperclip-icon"
+            class="paperclipIcon"
           >
             <i
               class="icon"
@@ -1611,17 +1589,17 @@ exports[`FileInput Component FileInput handles download and delete of a file 2`]
           class="right"
         >
           <button
-            class="gds-button-content delete-icon"
+            class="button deleteIcon"
             color="reversed"
             data-testid="TEST-ID-delete"
             tabindex="0"
             type="button"
           >
             <div
-              class="button-icon-container"
+              class="icon"
             >
               <i
-                class="button-icon icon"
+                class="icon"
                 icon="fal,trash-alt"
               />
             </div>
@@ -1634,38 +1612,38 @@ exports[`FileInput Component FileInput handles download and delete of a file 2`]
               ControlleMenu
               closed
               <div
-                class="gds-popover-container"
+                class="container"
               >
                 <div
-                  class="popover-title"
+                  class="title"
                 >
                   Delete?
                 </div>
                 <div
-                  class="popover-buttons"
+                  class="buttons"
                 >
                   <button
-                    class="gds-button-content"
+                    class="button"
                     color="secondary"
                     data-testid="TEST-ID-cancel"
                     tabindex="0"
                     type="button"
                   >
                     <div
-                      class="button-label-container"
+                      class="label"
                     >
                       Cancel
                     </div>
                   </button>
                   <button
-                    class="gds-button-content"
+                    class="button"
                     color="primary"
                     data-testid="TEST-ID-confirm"
                     tabindex="0"
                     type="button"
                   >
                     <div
-                      class="button-label-container"
+                      class="label"
                     >
                       Confirm
                     </div>
@@ -1685,7 +1663,7 @@ exports[`FileInput Component FileInput handles download and delete of a file 2`]
 exports[`FileInput Component FileInput handles download and delete of a file 3`] = `
 <div>
   <div
-    class="field gds-file-input-container"
+    class="container"
   >
     <div
       class="droparea"
@@ -1695,7 +1673,6 @@ exports[`FileInput Component FileInput handles download and delete of a file 3`]
       >
         Click or drag file to upload
         <input
-          class="input"
           data-testid="TEST-ID"
           multiple=""
           tabindex="-1"
@@ -1714,17 +1691,16 @@ exports[`FileInput Component FileInput handles download and delete of a file 3`]
 exports[`FileInput Component FileInput handles download without download callback 1`] = `
 <div>
   <div
-    class="field gds-file-input-container"
+    class="container"
   >
     <div
-      class="droparea"
+      class="droparea maxFileReached"
     >
       <label
         class="label"
       >
         Click or drag file to upload
         <input
-          class="input"
           data-testid="TEST-ID"
           tabindex="-1"
           type="file"
@@ -1736,13 +1712,13 @@ exports[`FileInput Component FileInput handles download without download callbac
       class="gallery"
     >
       <div
-        class="item-container"
+        class="container"
       >
         <div
           class="left"
         >
           <div
-            class="paperclip-icon"
+            class="paperclipIcon"
           >
             <i
               class="icon"
@@ -1762,17 +1738,17 @@ exports[`FileInput Component FileInput handles download without download callbac
           class="right"
         >
           <button
-            class="gds-button-content delete-icon"
+            class="button deleteIcon"
             color="reversed"
             data-testid="TEST-ID-delete"
             tabindex="0"
             type="button"
           >
             <div
-              class="button-icon-container"
+              class="icon"
             >
               <i
-                class="button-icon icon"
+                class="icon"
                 icon="fal,trash-alt"
               />
             </div>
@@ -1785,38 +1761,38 @@ exports[`FileInput Component FileInput handles download without download callbac
               ControlleMenu
               closed
               <div
-                class="gds-popover-container"
+                class="container"
               >
                 <div
-                  class="popover-title"
+                  class="title"
                 >
                   Delete?
                 </div>
                 <div
-                  class="popover-buttons"
+                  class="buttons"
                 >
                   <button
-                    class="gds-button-content"
+                    class="button"
                     color="secondary"
                     data-testid="TEST-ID-cancel"
                     tabindex="0"
                     type="button"
                   >
                     <div
-                      class="button-label-container"
+                      class="label"
                     >
                       Cancel
                     </div>
                   </button>
                   <button
-                    class="gds-button-content"
+                    class="button"
                     color="primary"
                     data-testid="TEST-ID-confirm"
                     tabindex="0"
                     type="button"
                   >
                     <div
-                      class="button-label-container"
+                      class="label"
                     >
                       Confirm
                     </div>
@@ -1836,17 +1812,16 @@ exports[`FileInput Component FileInput handles download without download callbac
 exports[`FileInput Component FileInput handles download without download callback 2`] = `
 <div>
   <div
-    class="field gds-file-input-container"
+    class="container"
   >
     <div
-      class="droparea"
+      class="droparea maxFileReached"
     >
       <label
         class="label"
       >
         Click or drag file to upload
         <input
-          class="input"
           data-testid="TEST-ID"
           tabindex="-1"
           type="file"
@@ -1858,13 +1833,13 @@ exports[`FileInput Component FileInput handles download without download callbac
       class="gallery"
     >
       <div
-        class="item-container"
+        class="container"
       >
         <div
           class="left"
         >
           <div
-            class="paperclip-icon"
+            class="paperclipIcon"
           >
             <i
               class="icon"
@@ -1884,17 +1859,17 @@ exports[`FileInput Component FileInput handles download without download callbac
           class="right"
         >
           <button
-            class="gds-button-content delete-icon"
+            class="button deleteIcon"
             color="reversed"
             data-testid="TEST-ID-delete"
             tabindex="0"
             type="button"
           >
             <div
-              class="button-icon-container"
+              class="icon"
             >
               <i
-                class="button-icon icon"
+                class="icon"
                 icon="fal,trash-alt"
               />
             </div>
@@ -1907,38 +1882,38 @@ exports[`FileInput Component FileInput handles download without download callbac
               ControlleMenu
               closed
               <div
-                class="gds-popover-container"
+                class="container"
               >
                 <div
-                  class="popover-title"
+                  class="title"
                 >
                   Delete?
                 </div>
                 <div
-                  class="popover-buttons"
+                  class="buttons"
                 >
                   <button
-                    class="gds-button-content"
+                    class="button"
                     color="secondary"
                     data-testid="TEST-ID-cancel"
                     tabindex="0"
                     type="button"
                   >
                     <div
-                      class="button-label-container"
+                      class="label"
                     >
                       Cancel
                     </div>
                   </button>
                   <button
-                    class="gds-button-content"
+                    class="button"
                     color="primary"
                     data-testid="TEST-ID-confirm"
                     tabindex="0"
                     type="button"
                   >
                     <div
-                      class="button-label-container"
+                      class="label"
                     >
                       Confirm
                     </div>
@@ -1958,7 +1933,7 @@ exports[`FileInput Component FileInput handles download without download callbac
 exports[`FileInput Component FileInput renders 1`] = `
 <div>
   <div
-    class="field gds-file-input-container"
+    class="container"
   >
     <div
       class="droparea"
@@ -1968,7 +1943,6 @@ exports[`FileInput Component FileInput renders 1`] = `
       >
         Click or drag file to upload
         <input
-          class="input"
           multiple=""
           tabindex="-1"
           type="file"
@@ -1980,13 +1954,13 @@ exports[`FileInput Component FileInput renders 1`] = `
       class="gallery"
     >
       <div
-        class="item-container"
+        class="container"
       >
         <div
           class="left"
         >
           <div
-            class="paperclip-icon"
+            class="paperclipIcon"
           >
             <i
               class="icon"
@@ -2005,16 +1979,16 @@ exports[`FileInput Component FileInput renders 1`] = `
           class="right"
         >
           <button
-            class="gds-button-content delete-icon"
+            class="button deleteIcon"
             color="reversed"
             tabindex="0"
             type="button"
           >
             <div
-              class="button-icon-container"
+              class="icon"
             >
               <i
-                class="button-icon icon"
+                class="icon"
                 icon="fal,trash-alt"
               />
             </div>
@@ -2027,36 +2001,36 @@ exports[`FileInput Component FileInput renders 1`] = `
               ControlleMenu
               closed
               <div
-                class="gds-popover-container"
+                class="container"
               >
                 <div
-                  class="popover-title"
+                  class="title"
                 >
                   Delete?
                 </div>
                 <div
-                  class="popover-buttons"
+                  class="buttons"
                 >
                   <button
-                    class="gds-button-content"
+                    class="button"
                     color="secondary"
                     tabindex="0"
                     type="button"
                   >
                     <div
-                      class="button-label-container"
+                      class="label"
                     >
                       Cancel
                     </div>
                   </button>
                   <button
-                    class="gds-button-content"
+                    class="button"
                     color="primary"
                     tabindex="0"
                     type="button"
                   >
                     <div
-                      class="button-label-container"
+                      class="label"
                     >
                       Confirm
                     </div>
@@ -2076,7 +2050,7 @@ exports[`FileInput Component FileInput renders 1`] = `
 exports[`FileInput Component FileInput renders without input value 1`] = `
 <div>
   <div
-    class="field gds-file-input-container"
+    class="container"
   >
     <div
       class="droparea"
@@ -2086,7 +2060,6 @@ exports[`FileInput Component FileInput renders without input value 1`] = `
       >
         Click or drag file to upload
         <input
-          class="input"
           multiple=""
           tabindex="-1"
           type="file"
@@ -2104,7 +2077,7 @@ exports[`FileInput Component FileInput renders without input value 1`] = `
 exports[`FileInput Component FileInput renders without input value 2`] = `
 <div>
   <div
-    class="field gds-file-input-container"
+    class="container"
   >
     <div
       class="droparea"
@@ -2114,7 +2087,6 @@ exports[`FileInput Component FileInput renders without input value 2`] = `
       >
         Click or drag file to upload
         <input
-          class="input"
           multiple=""
           tabindex="-1"
           type="file"

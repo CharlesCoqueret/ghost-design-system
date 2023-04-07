@@ -16,7 +16,7 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
               tabindex="-1"
             >
               <span
-                class="gds-typography table--header-value--title right ellipsis"
+                class="typography table--header-value--title right ellipsis"
                 title="Number"
               >
                 Number
@@ -34,10 +34,11 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
             class=""
           >
             <div
-              class="gds-field-group"
+              class="fieldGroup"
             >
               <span
-                class="gds-amount-field amount-field-read-only table--cell-value--number-readonly"
+                autocomplete="off"
+                class="default readOnly table--cell-value--number-readonly"
                 id="number"
                 name="number"
               >
@@ -49,13 +50,13 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
       </tbody>
     </table>
     <button
-      class="gds-button-content gds-table-new-line"
+      class="button gds-table-new-line"
       color="primary"
       tabindex="0"
       type="button"
     >
       <div
-        class="button-label-container"
+        class="label"
       >
         Add row
       </div>
@@ -80,7 +81,7 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
               tabindex="-1"
             >
               <span
-                class="gds-typography table--header-value--title right ellipsis"
+                class="typography table--header-value--title right ellipsis"
                 title="Number"
               >
                 Number
@@ -98,10 +99,11 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
             class=""
           >
             <div
-              class="gds-field-group"
+              class="fieldGroup"
             >
               <span
-                class="gds-amount-field amount-field-read-only table--cell-value--number-readonly"
+                autocomplete="off"
+                class="default readOnly table--cell-value--number-readonly"
                 id="number"
                 name="number"
               >
@@ -113,13 +115,13 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
       </tbody>
     </table>
     <button
-      class="gds-button-content gds-table-new-line"
+      class="button gds-table-new-line"
       color="primary"
       tabindex="0"
       type="button"
     >
       <div
-        class="button-label-container"
+        class="label"
       >
         Add row
       </div>
@@ -144,7 +146,7 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
               tabindex="-1"
             >
               <span
-                class="gds-typography table--header-value--title right ellipsis"
+                class="typography table--header-value--title right ellipsis"
                 title="Number"
               >
                 Number
@@ -159,7 +161,7 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
               tabindex="-1"
             >
               <span
-                class="gds-typography table--header-value--title center ellipsis"
+                class="typography table--header-value--title center ellipsis"
                 title="Actions"
               >
                 Actions
@@ -177,10 +179,11 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
             class=""
           >
             <div
-              class="gds-field-group"
+              class="fieldGroup"
             >
               <span
-                class="gds-amount-field amount-field-read-only table--cell-value--number-readonly"
+                autocomplete="off"
+                class="default readOnly table--cell-value--number-readonly"
                 id="number"
                 name="number"
               >
@@ -195,18 +198,18 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
               class="table--cell--value--button"
             >
               <button
-                class="gds-button-content"
+                class="button"
                 color="reversed"
                 data-testid="DATA-TEST-ID-edit"
                 tabindex="0"
                 type="button"
               >
                 <div
-                  class="button-icon-container"
+                  class="icon"
                 >
                   <i
-                    class="button-icon icon"
-                    icon="fal,edit"
+                    class="icon"
+                    icon="fal,pen"
                   />
                 </div>
               </button>
@@ -238,7 +241,7 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
               tabindex="-1"
             >
               <span
-                class="gds-typography table--header-value--title right ellipsis"
+                class="typography table--header-value--title right ellipsis"
                 title="Number"
               >
                 Number
@@ -253,7 +256,7 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
               tabindex="-1"
             >
               <span
-                class="gds-typography table--header-value--title center ellipsis"
+                class="typography table--header-value--title center ellipsis"
                 title="Actions"
               >
                 Actions
@@ -271,10 +274,11 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
             class=""
           >
             <div
-              class="gds-field-group"
+              class="fieldGroup"
             >
               <input
-                class="gds-amount-field"
+                autocomplete="off"
+                class="default"
                 inputmode="numeric"
                 name="number"
                 placeholder="PLACEHOLDER"
@@ -290,17 +294,17 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
               class="table--cell--value--button"
             >
               <button
-                class="gds-button-content"
+                class="button"
                 color="reversed"
                 data-testid="DATA-TEST-ID-submit"
                 tabindex="0"
                 type="button"
               >
                 <div
-                  class="button-icon-container"
+                  class="icon"
                 >
                   <i
-                    class="button-icon icon"
+                    class="icon"
                     icon="fal,check"
                   />
                 </div>
@@ -309,17 +313,17 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
                 Submit
               </div>
               <button
-                class="gds-button-content"
+                class="button"
                 color="reversed"
                 data-testid="DATA-TEST-ID-cancel"
                 tabindex="0"
                 type="button"
               >
                 <div
-                  class="button-icon-container"
+                  class="icon"
                 >
                   <i
-                    class="button-icon icon"
+                    class="icon"
                     icon="fal,times"
                   />
                 </div>
@@ -352,7 +356,7 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
               tabindex="-1"
             >
               <span
-                class="gds-typography table--header-value--title right ellipsis"
+                class="typography table--header-value--title right ellipsis"
                 title="Number"
               >
                 Number
@@ -367,7 +371,7 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
               tabindex="-1"
             >
               <span
-                class="gds-typography table--header-value--title center ellipsis"
+                class="typography table--header-value--title center ellipsis"
                 title="Actions"
               >
                 Actions
@@ -385,10 +389,11 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
             class=""
           >
             <div
-              class="gds-field-group"
+              class="fieldGroup"
             >
               <input
-                class="gds-amount-field"
+                autocomplete="off"
+                class="default"
                 inputmode="numeric"
                 name="number"
                 placeholder="PLACEHOLDER"
@@ -404,17 +409,17 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
               class="table--cell--value--button"
             >
               <button
-                class="gds-button-content"
+                class="button"
                 color="reversed"
                 data-testid="DATA-TEST-ID-submit"
                 tabindex="0"
                 type="button"
               >
                 <div
-                  class="button-icon-container"
+                  class="icon"
                 >
                   <i
-                    class="button-icon icon"
+                    class="icon"
                     icon="fal,check"
                   />
                 </div>
@@ -423,17 +428,17 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
                 Submit
               </div>
               <button
-                class="gds-button-content"
+                class="button"
                 color="reversed"
                 data-testid="DATA-TEST-ID-cancel"
                 tabindex="0"
                 type="button"
               >
                 <div
-                  class="button-icon-container"
+                  class="icon"
                 >
                   <i
-                    class="button-icon icon"
+                    class="icon"
                     icon="fal,times"
                   />
                 </div>
@@ -466,7 +471,7 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
               tabindex="-1"
             >
               <span
-                class="gds-typography table--header-value--title right ellipsis"
+                class="typography table--header-value--title right ellipsis"
                 title="Number"
               >
                 Number
@@ -481,7 +486,7 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
               tabindex="-1"
             >
               <span
-                class="gds-typography table--header-value--title center ellipsis"
+                class="typography table--header-value--title center ellipsis"
                 title="Actions"
               >
                 Actions
@@ -499,10 +504,11 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
             class=""
           >
             <div
-              class="gds-field-group"
+              class="fieldGroup"
             >
               <span
-                class="gds-amount-field amount-field-read-only table--cell-value--number-readonly"
+                autocomplete="off"
+                class="default readOnly table--cell-value--number-readonly"
                 id="number"
                 name="number"
               >
@@ -517,18 +523,18 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
               class="table--cell--value--button"
             >
               <button
-                class="gds-button-content"
+                class="button"
                 color="reversed"
                 data-testid="DATA-TEST-ID-edit"
                 tabindex="0"
                 type="button"
               >
                 <div
-                  class="button-icon-container"
+                  class="icon"
                 >
                   <i
-                    class="button-icon icon"
-                    icon="fal,edit"
+                    class="icon"
+                    icon="fal,pen"
                   />
                 </div>
               </button>
@@ -560,7 +566,7 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
               tabindex="-1"
             >
               <span
-                class="gds-typography table--header-value--title right ellipsis"
+                class="typography table--header-value--title right ellipsis"
                 title="Number"
               >
                 Number
@@ -575,7 +581,7 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
               tabindex="-1"
             >
               <span
-                class="gds-typography table--header-value--title center ellipsis"
+                class="typography table--header-value--title center ellipsis"
                 title="Actions"
               >
                 Actions
@@ -593,10 +599,11 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
             class=""
           >
             <div
-              class="gds-field-group"
+              class="fieldGroup"
             >
               <span
-                class="gds-amount-field amount-field-read-only table--cell-value--number-readonly"
+                autocomplete="off"
+                class="default readOnly table--cell-value--number-readonly"
                 id="number"
                 name="number"
               >
@@ -611,18 +618,18 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
               class="table--cell--value--button"
             >
               <button
-                class="gds-button-content"
+                class="button"
                 color="reversed"
                 data-testid="DATA-TEST-ID-edit"
                 tabindex="0"
                 type="button"
               >
                 <div
-                  class="button-icon-container"
+                  class="icon"
                 >
                   <i
-                    class="button-icon icon"
-                    icon="fal,edit"
+                    class="icon"
+                    icon="fal,pen"
                   />
                 </div>
               </button>
@@ -654,7 +661,7 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
               tabindex="-1"
             >
               <span
-                class="gds-typography table--header-value--title right ellipsis"
+                class="typography table--header-value--title right ellipsis"
                 title="Number"
               >
                 Number
@@ -669,7 +676,7 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
               tabindex="-1"
             >
               <span
-                class="gds-typography table--header-value--title center ellipsis"
+                class="typography table--header-value--title center ellipsis"
                 title="Actions"
               >
                 Actions
@@ -687,10 +694,11 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
             class=""
           >
             <div
-              class="gds-field-group"
+              class="fieldGroup"
             >
               <input
-                class="gds-amount-field"
+                autocomplete="off"
+                class="default"
                 inputmode="numeric"
                 name="number"
                 placeholder="PLACEHOLDER"
@@ -706,17 +714,17 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
               class="table--cell--value--button"
             >
               <button
-                class="gds-button-content"
+                class="button"
                 color="reversed"
                 data-testid="DATA-TEST-ID-submit"
                 tabindex="0"
                 type="button"
               >
                 <div
-                  class="button-icon-container"
+                  class="icon"
                 >
                   <i
-                    class="button-icon icon"
+                    class="icon"
                     icon="fal,check"
                   />
                 </div>
@@ -725,17 +733,17 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
                 Submit
               </div>
               <button
-                class="gds-button-content"
+                class="button"
                 color="reversed"
                 data-testid="DATA-TEST-ID-cancel"
                 tabindex="0"
                 type="button"
               >
                 <div
-                  class="button-icon-container"
+                  class="icon"
                 >
                   <i
-                    class="button-icon icon"
+                    class="icon"
                     icon="fal,times"
                   />
                 </div>
@@ -768,7 +776,7 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
               tabindex="-1"
             >
               <span
-                class="gds-typography table--header-value--title right ellipsis"
+                class="typography table--header-value--title right ellipsis"
                 title="Number"
               >
                 Number
@@ -783,7 +791,7 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
               tabindex="-1"
             >
               <span
-                class="gds-typography table--header-value--title center ellipsis"
+                class="typography table--header-value--title center ellipsis"
                 title="Actions"
               >
                 Actions
@@ -801,13 +809,13 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
             class=""
           >
             <div
-              class="gds-field-group"
+              class="fieldGroup"
             >
               <div
-                class="gds-amount-field amount-field-read-only table--cell-value--number-readonly"
+                class="default readOnly table--cell-value--number-readonly"
               >
                 <span
-                  class="gds-typography"
+                  class="typography"
                 >
                   -
                 </span>
@@ -821,18 +829,18 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
               class="table--cell--value--button"
             >
               <button
-                class="gds-button-content"
+                class="button"
                 color="reversed"
                 data-testid="DATA-TEST-ID-edit"
                 tabindex="0"
                 type="button"
               >
                 <div
-                  class="button-icon-container"
+                  class="icon"
                 >
                   <i
-                    class="button-icon icon"
-                    icon="fal,edit"
+                    class="icon"
+                    icon="fal,pen"
                   />
                 </div>
               </button>
@@ -864,7 +872,7 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
               tabindex="-1"
             >
               <span
-                class="gds-typography table--header-value--title right ellipsis"
+                class="typography table--header-value--title right ellipsis"
                 title="Number"
               >
                 Number
@@ -879,7 +887,7 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
               tabindex="-1"
             >
               <span
-                class="gds-typography table--header-value--title center ellipsis"
+                class="typography table--header-value--title center ellipsis"
                 title="Actions"
               >
                 Actions
@@ -897,10 +905,11 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
             class=""
           >
             <div
-              class="gds-field-group"
+              class="fieldGroup"
             >
               <span
-                class="gds-amount-field amount-field-read-only table--cell-value--number-readonly"
+                autocomplete="off"
+                class="default readOnly table--cell-value--number-readonly"
                 id="number"
                 name="number"
               >
@@ -938,7 +947,7 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
               tabindex="-1"
             >
               <span
-                class="gds-typography table--header-value--title right ellipsis"
+                class="typography table--header-value--title right ellipsis"
                 title="Number"
               >
                 Number
@@ -953,7 +962,7 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
               tabindex="-1"
             >
               <span
-                class="gds-typography table--header-value--title center ellipsis"
+                class="typography table--header-value--title center ellipsis"
                 title="Actions"
               >
                 Actions
@@ -971,10 +980,11 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
             class=""
           >
             <div
-              class="gds-field-group"
+              class="fieldGroup"
             >
               <span
-                class="gds-amount-field amount-field-read-only table--cell-value--number-readonly"
+                autocomplete="off"
+                class="default readOnly table--cell-value--number-readonly"
                 id="number"
                 name="number"
               >
@@ -989,17 +999,17 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
               class="table--cell--value--button"
             >
               <button
-                class="gds-button-content"
+                class="button"
                 color="reversed"
                 data-testid="DATA-TEST-ID-delete"
                 tabindex="0"
                 type="button"
               >
                 <div
-                  class="button-icon-container"
+                  class="icon"
                 >
                   <i
-                    class="button-icon icon"
+                    class="icon"
                     icon="fal,trash-alt"
                   />
                 </div>
@@ -1012,38 +1022,38 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
                   ControlleMenu
                   closed
                   <div
-                    class="gds-popover-container"
+                    class="container"
                   >
                     <div
-                      class="popover-title"
+                      class="title"
                     >
                       Delete?
                     </div>
                     <div
-                      class="popover-buttons"
+                      class="buttons"
                     >
                       <button
-                        class="gds-button-content"
+                        class="button"
                         color="secondary"
                         data-testid="cancel"
                         tabindex="0"
                         type="button"
                       >
                         <div
-                          class="button-label-container"
+                          class="label"
                         >
                           Cancel
                         </div>
                       </button>
                       <button
-                        class="gds-button-content"
+                        class="button"
                         color="primary"
                         data-testid="confirm"
                         tabindex="0"
                         type="button"
                       >
                         <div
-                          class="button-label-container"
+                          class="label"
                         >
                           Confirm
                         </div>
@@ -1054,17 +1064,17 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
                 </div>
               </div>
               <button
-                class="gds-button-content"
+                class="button"
                 color="reversed"
                 data-testid="DATA-TEST-ID-download"
                 tabindex="0"
                 type="button"
               >
                 <div
-                  class="button-icon-container"
+                  class="icon"
                 >
                   <i
-                    class="button-icon icon"
+                    class="icon"
                     icon="fal,arrow-down-to-line"
                   />
                 </div>
@@ -1083,10 +1093,11 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
             class=""
           >
             <div
-              class="gds-field-group"
+              class="fieldGroup"
             >
               <input
-                class="gds-amount-field"
+                autocomplete="off"
+                class="default"
                 inputmode="numeric"
                 name="number"
                 type="text"
@@ -1101,17 +1112,17 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
               class="table--cell--value--button"
             >
               <button
-                class="gds-button-content"
+                class="button"
                 color="reversed"
                 data-testid="DATA-TEST-ID-submit"
                 tabindex="0"
                 type="button"
               >
                 <div
-                  class="button-icon-container"
+                  class="icon"
                 >
                   <i
-                    class="button-icon icon"
+                    class="icon"
                     icon="fal,check"
                   />
                 </div>
@@ -1120,17 +1131,17 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
                 Submit
               </div>
               <button
-                class="gds-button-content"
+                class="button"
                 color="reversed"
                 data-testid="DATA-TEST-ID-cancel"
                 tabindex="0"
                 type="button"
               >
                 <div
-                  class="button-icon-container"
+                  class="icon"
                 >
                   <i
-                    class="button-icon icon"
+                    class="icon"
                     icon="fal,times"
                   />
                 </div>
@@ -1163,7 +1174,7 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
               tabindex="-1"
             >
               <span
-                class="gds-typography table--header-value--title right ellipsis"
+                class="typography table--header-value--title right ellipsis"
                 title="Number"
               >
                 Number
@@ -1178,7 +1189,7 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
               tabindex="-1"
             >
               <span
-                class="gds-typography table--header-value--title center ellipsis"
+                class="typography table--header-value--title center ellipsis"
                 title="actionColumn"
               >
                 actionColumn
@@ -1196,10 +1207,11 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
             class=""
           >
             <div
-              class="gds-field-group"
+              class="fieldGroup"
             >
               <span
-                class="gds-amount-field amount-field-read-only table--cell-value--number-readonly"
+                autocomplete="off"
+                class="default readOnly table--cell-value--number-readonly"
                 id="number"
                 name="number"
               >
@@ -1218,13 +1230,13 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
       </tbody>
     </table>
     <button
-      class="gds-button-content gds-table-new-line"
+      class="button gds-table-new-line"
       color="primary"
       tabindex="0"
       type="button"
     >
       <div
-        class="button-label-container"
+        class="label"
       >
         addRow
       </div>
@@ -1249,7 +1261,7 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
               tabindex="0"
             >
               <span
-                class="gds-typography table--header-value--title right ellipsis"
+                class="typography table--header-value--title right ellipsis"
                 title="Number"
               >
                 Number
@@ -1278,10 +1290,11 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
             class=""
           >
             <div
-              class="gds-field-group"
+              class="fieldGroup"
             >
               <span
-                class="gds-amount-field amount-field-read-only table--cell-value--number-readonly"
+                autocomplete="off"
+                class="default readOnly table--cell-value--number-readonly"
                 id="number"
                 name="number"
               >
@@ -1312,7 +1325,7 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable ren
               tabindex="-1"
             >
               <span
-                class="gds-typography table--header-value--title right ellipsis"
+                class="typography table--header-value--title right ellipsis"
                 title="Number"
               >
                 Number
@@ -1330,10 +1343,11 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable ren
             class=""
           >
             <div
-              class="gds-field-group"
+              class="fieldGroup"
             >
               <span
-                class="gds-amount-field amount-field-read-only table--cell-value--number-readonly"
+                autocomplete="off"
+                class="default readOnly table--cell-value--number-readonly"
                 id="number"
                 name="number"
               >

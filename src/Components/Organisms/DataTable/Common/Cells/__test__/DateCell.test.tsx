@@ -105,7 +105,7 @@ describe('DateCell component', () => {
     userEvent.clear(dateInput);
 
     expect(onChangeMock).toBeCalledTimes(1);
-    expect(onChangeMock).toBeCalledWith(null);
+    expect(onChangeMock).toBeCalledWith(undefined);
 
     userEvent.type(dateInput, '01/01/2000{enter}');
 

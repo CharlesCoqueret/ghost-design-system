@@ -31,7 +31,7 @@ jest.mock('suneditor-react', () => ({
 import LineEditableModal, { columnToFieldMapper } from '../LineEditableModal';
 import { ColumnType } from '../../Common/types';
 import { IToggleEntry } from '../../../../Atoms/CheckBoxInput';
-import { FieldTypeEnum } from '../../../Form/types';
+import { FieldLegacyTypeEnum } from '../../../FormLegacy/types';
 import { IFile } from '../../../../Atoms/FileInput';
 
 describe('LineEditableModal component', () => {
@@ -99,7 +99,7 @@ describe('LineEditableModal component', () => {
   });
 
   it('LineEditableModal renders with amount and cancelling', () => {
-    console.warn = jest.fn();
+    console.error = jest.fn();
     const onCancelMock = jest.fn();
     const onCloseMock = jest.fn();
     const onSubmitMock = jest.fn();
@@ -113,6 +113,11 @@ describe('LineEditableModal component', () => {
         onSubmit={onSubmitMock}
         onClose={onCloseMock}
         columns={[{ dataIndex: 'amount', editable: true, title: 'Amount', type: ColumnType.AMOUNT }]}
+        extra={{
+          // eslint-disable-next-line
+          // @ts-ignore
+          validationSchema: undefined,
+        }}
       />,
     );
 
@@ -123,8 +128,10 @@ describe('LineEditableModal component', () => {
 
     expect(onCancelMock).toBeCalledTimes(1);
     expect(onCancelMock).toBeCalledWith({ amount: 1 });
-    expect(console.warn).toBeCalledTimes(1);
-    expect(console.warn).toBeCalledWith('could not retrieve if "amount" is mandatory');
+    expect(console.error).toBeCalledTimes(1);
+    expect(console.error).toBeCalledWith(
+      'could not retrieve if "amount" is mandatory. It looks like you haven\'t defined a proper validation schema.',
+    );
   });
 
   it('LineEditableModal renders with amount and submitting with invalid value', () => {
@@ -164,7 +171,7 @@ describe('LineEditableModal component', () => {
 
     expect(onSubmitMock).toBeCalledTimes(0);
     expect(console.error).toBeCalledTimes(1);
-    expect(console.error).toBeCalledWith({ amount: { type: 'required', message: 'amount is a required field' } });
+    expect(console.error).toBeCalledWith({ amount: 'amount is a required field' });
   });
 
   it('LineEditableModal renders with amount and custon button', async () => {
@@ -247,7 +254,7 @@ describe('columnToFieldMapper helper', () => {
           type: ColumnType.BADGE,
         },
         {
-          buttons: [{ label: 'Button', icon: ['fal', 'cog'] }],
+          buttons: [{ label: 'Button', icon: ['fal', 'gear'] }],
           moreActionsMessage: 'moreActionsMessage',
           title: 'Button',
           type: ColumnType.BUTTON,
@@ -375,7 +382,7 @@ describe('columnToFieldMapper helper', () => {
         dataIndex: 'amount',
         decimalScale: undefined,
         decimalSeparator: undefined,
-        fieldType: FieldTypeEnum.AMOUNT,
+        fieldType: FieldLegacyTypeEnum.AMOUNT,
         label: 'Amount',
         maxValue: undefined,
         minValue: undefined,
@@ -387,9 +394,8 @@ describe('columnToFieldMapper helper', () => {
         thousandsGroupStyle: undefined,
       },
       {
-        colors: undefined,
         dataIndex: 'badge',
-        fieldType: FieldTypeEnum.SELECT,
+        fieldType: FieldLegacyTypeEnum.SELECT,
         isClearable: undefined,
         label: 'Badge',
         options: [
@@ -402,12 +408,12 @@ describe('columnToFieldMapper helper', () => {
         readOnly: true,
         usePortal: undefined,
       },
-      { dataIndex: 'checkbox', fieldType: FieldTypeEnum.CHECKBOX, label: 'Checkbox', readOnly: true },
-      { dataIndex: 'code', fieldType: FieldTypeEnum.TEXT, label: 'Code', readOnly: true },
+      { dataIndex: 'checkbox', fieldType: FieldLegacyTypeEnum.CHECKBOX, label: 'Checkbox', readOnly: true },
+      { dataIndex: 'code', fieldType: FieldLegacyTypeEnum.TEXT, label: 'Code', readOnly: true },
       {
         customField: expect.any(Function),
         dataIndex: 'custom',
-        fieldType: FieldTypeEnum.CUSTOM,
+        fieldType: FieldLegacyTypeEnum.CUSTOM,
         label: 'Custom',
         readOnly: true,
       },
@@ -415,7 +421,7 @@ describe('columnToFieldMapper helper', () => {
         calendarStartDay: undefined,
         dataIndex: 'date',
         dateFormat: undefined,
-        fieldType: FieldTypeEnum.DATE,
+        fieldType: FieldLegacyTypeEnum.DATE,
         isClearable: undefined,
         label: 'Date',
         locale: undefined,
@@ -429,7 +435,6 @@ describe('columnToFieldMapper helper', () => {
         label: 'Description',
       },
       {
-        colors: undefined,
         dataIndex: 'dynamicsearch',
         fieldType: 'dynamicsearch',
         isClearable: undefined,
@@ -465,7 +470,6 @@ describe('columnToFieldMapper helper', () => {
         uploadMessage: undefined,
       },
       {
-        colors: undefined,
         dataIndex: 'multiselect',
         eraseValueWhenNotInOptions: undefined,
         fieldType: 'multiselect',

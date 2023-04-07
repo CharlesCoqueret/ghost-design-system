@@ -1,102 +1,17 @@
-import { Canvas, Meta, ArgsTable, Story, Source } from '@storybook/addon-docs';
+import { Canvas, Meta, ArgsTable, Story } from '@storybook/addon-docs';
 import { MemoryRouter as Router } from 'react-router-dom';
+
+import Alert, { AlertType } from '../../Molecules/Alert/Alert';
 
 import NavBar from './NavBar';
 import NavItem from './NavItem';
 import NavBarMenu from './NavBarMenu';
 import NavBarUtilities from './NavBarUtilities';
 
-import navbarStyle from '../../../assets/_navbar.scss?raw';
-
-export const Template = (args) => {
-  return (
-    <Router>
-      <NavBar className='positionRelative' {...args}>
-        <NavBarMenu>
-          <NavItem
-            label='Label 1'
-            subItems={[
-              {
-                label: 'Label 1',
-                onClick: () => {
-                  console.log('label 1 - label 1');
-                },
-              },
-              {
-                label: 'Label 2',
-                onClick: () => {
-                  console.log('label 1 - label 2');
-                },
-              },
-            ]}
-          />
-          <NavItem
-            label='Label 2'
-            subItems={[
-              {
-                label: 'Label 1',
-                onClick: () => {
-                  console.log('label 2 - label 1');
-                },
-              },
-              {
-                label: 'Label 2',
-                onClick: () => {
-                  console.log('label 2 - label 2');
-                },
-              },
-            ]}
-          />
-          <NavItem
-            label='Label 3'
-            onClick={() => {
-              console.log('label 3');
-            }}
-          />
-        </NavBarMenu>
-        <NavBarUtilities>
-          <NavItem
-            icon={['fal', 'ballot-check']}
-            counter={2}
-            subItems={[
-              {
-                label: 'Label 1',
-              },
-              {
-                label: 'Label 2',
-              },
-            ]}
-          />
-          <NavItem
-            icon={['fal', 'cog']}
-            subItems={[
-              {
-                label: 'Label 1',
-              },
-              {
-                label: 'Label 2',
-              },
-            ]}
-          />
-          <NavItem
-            icon={['fal', 'user-circle']}
-            subItems={[
-              {
-                label: 'Label 1',
-              },
-              {
-                label: 'Label 2',
-              },
-            ]}
-          />
-        </NavBarUtilities>
-      </NavBar>
-    </Router>
-  );
-};
+import styles from './NavBar.module.scss';
 
 <Meta
-  title='Organism'
+  title='Organism/NavBar'
   component={NavBar}
   parameters={{
     viewMode: 'docs',
@@ -115,19 +30,149 @@ It can contain:
 
 Play with NavBar live on [CodeSandbox](https://codesandbox.io/s/sidebar-demo-t4s312)
 
+For layout management, please refer to this [example](https://codesandbox.io/s/size-management-sidebar-xtpkk0)
+
+<Alert type={AlertType.INFORMATION}>A Router from react-router-dom surrounding the NavBar is mandatory.</Alert>
+
+## NavBar
+
+export const Template = (args) => {
+  return (
+    <NavBar {...args} className={styles.positionRelative}>
+      <NavBarMenu>
+        <NavItem
+          label='Label 1'
+          subItems={[
+            {
+              label: 'Label 1',
+            },
+            {
+              label: 'Label 2',
+            },
+          ]}
+        />
+        <NavItem
+          label='Label 2'
+          subItems={[
+            {
+              label: 'Label 1',
+            },
+            {
+              label: 'Label 2',
+            },
+          ]}
+        />
+        <NavItem label='Label 3' />
+      </NavBarMenu>
+      <NavBarUtilities>
+        <NavItem
+          icon={['fal', 'ballot-check']}
+          counter={2}
+          subItems={[
+            {
+              label: 'Label 1',
+            },
+            {
+              label: 'Label 2',
+            },
+          ]}
+        />
+        <NavItem
+          icon={['fal', 'bell']}
+          counter='+99'
+          customSubItem={
+            <div
+              style={{
+                maxWidth: '500px',
+                height: '300px',
+                padding: '0px 16px',
+                overflowX: 'hidden',
+                overflowY: 'auto',
+              }}>
+              <p>
+                Lorem ipsum dolor sit amet. Ut voluptas reiciendis vel praesentium laborum hic voluptas asperiores nam
+                rerum nihil obcaecati labore. Id praesentium porro ea placeat rerum aut tempore totam aut illum
+                cupiditate sed laborum explicabo. Hic explicabo voluptatibus qui repellat fugiat ex voluptatum fuga qui
+                architecto atque quo illum quas aut facilis nesciunt? Ut suscipit rerum ut perferendis nihil ea autem
+                unde est enim veniam nam odio tempora.
+              </p>
+              <p>
+                Quo numquam iste est repellendus numquam et galisum omnis ad praesentium dolores aut neque saepe vel
+                consectetur enim aut cumque neque. Et voluptate sapiente quisquam quasi eum beatae voluptas rem iure
+                velit. Sed impedit eaque 33 natus nihil est quaerat porro est quia nisi qui doloribus aperiam. Sit culpa
+                illum ea consectetur perspiciatis ex veritatis dolorem id velit sequi qui maiores asperiores!
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet. Ut voluptas reiciendis vel praesentium laborum hic voluptas asperiores nam
+                rerum nihil obcaecati labore. Id praesentium porro ea placeat rerum aut tempore totam aut illum
+                cupiditate sed laborum explicabo. Hic explicabo voluptatibus qui repellat fugiat ex voluptatum fuga qui
+                architecto atque quo illum quas aut facilis nesciunt? Ut suscipit rerum ut perferendis nihil ea autem
+                unde est enim veniam nam odio tempora.
+              </p>
+              <p>
+                Quo numquam iste est repellendus numquam et galisum omnis ad praesentium dolores aut neque saepe vel
+                consectetur enim aut cumque neque. Et voluptate sapiente quisquam quasi eum beatae voluptas rem iure
+                velit. Sed impedit eaque 33 natus nihil est quaerat porro est quia nisi qui doloribus aperiam. Sit culpa
+                illum ea consectetur perspiciatis ex veritatis dolorem id velit sequi qui maiores asperiores!
+              </p>
+            </div>
+          }
+        />
+        <NavItem
+          icon={['fal', 'cog']}
+          subItems={[
+            {
+              label: 'Label 1',
+            },
+            {
+              label: 'Label 2',
+            },
+          ]}
+        />
+        <NavItem
+          icon={['fal', 'user-circle']}
+          subItems={[
+            {
+              label: 'Label 1',
+            },
+            {
+              label: 'Label 2',
+            },
+          ]}
+        />
+      </NavBarUtilities>
+    </NavBar>
+  );
+};
+
+<Canvas withSource='open'>
+  <Story
+    name='NavBar'
+    args={{
+      logoSource: './images/logo.svg',
+      redirection: '/',
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## NavBar Props
+
+<ArgsTable of={NavBar} sort='requiredFirst' />
+
 ## Brand
 
-<Canvas isExpanded={true}>
+<Canvas withSource='open'>
   <Router>
-    <NavBar logoSource='./images/logo.svg' redirection='/' className='positionRelative' />
+    <NavBar logoSource='./images/logo.svg' redirection='/' className={styles.positionRelative} />
   </Router>
 </Canvas>
 
-## Navigation buttons
+## NavBarMenu
 
-<Canvas isExpanded={false}>
+<Canvas withSource='open'>
   <Router>
-    <NavBar logoSource='./images/logo.svg' redirection='/' className='positionRelative'>
+    <NavBar logoSource='./images/logo.svg' redirection='/' className={styles.positionRelative}>
       <NavBarMenu>
         <NavItem
           label='Label 1'
@@ -174,12 +219,15 @@ Play with NavBar live on [CodeSandbox](https://codesandbox.io/s/sidebar-demo-t4s
   </Router>
 </Canvas>
 
-## NavIcons
+## NavBarMenu Props
 
-<Canvas isExpanded={false}>
+<ArgsTable of={NavBarMenu} sort='requiredFirst' />
+
+## NavBarUtilities
+
+<Canvas withSource='open'>
   <Router>
-    <NavBar logoSource='./images/logo.svg'>
-      className='positionRelative'>
+    <NavBar logoSource='./images/logo.svg' className={styles.positionRelative}>
       <NavBarUtilities>
         <NavItem
           icon={['fal', 'ballot-check']}
@@ -204,7 +252,6 @@ Play with NavBar live on [CodeSandbox](https://codesandbox.io/s/sidebar-demo-t4s
                 padding: '0px 16px',
                 overflowX: 'hidden',
                 overflowY: 'auto',
-                backgroundColor: '#FFF',
               }}>
               <p>
                 Lorem ipsum dolor sit amet. Ut voluptas reiciendis vel praesentium laborum hic voluptas asperiores nam
@@ -262,27 +309,10 @@ Play with NavBar live on [CodeSandbox](https://codesandbox.io/s/sidebar-demo-t4s
   </Router>
 </Canvas>
 
-## Props
+## NavBarUtilities Props
 
-<ArgsTable of={NavBar} sort='requiredFirst' />
+<ArgsTable of={NavBarUtilities} sort='requiredFirst' />
 
-For layout management, please refer to this [example](https://codesandbox.io/s/size-management-sidebar-xtpkk0)
+## NavItem Props
 
-## Story
-
-<Canvas>
-  <Story
-    name='NavBar'
-    args={{
-      logoSource: './images/logo.svg',
-      redirection: '/',
-    }}>
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-## Style
-
-[source](https://github.com/CharlesCoqueret/ghost-design-system/blob/main/src/assets/_navbar.scss)
-
-<Source language='css' dark format={true} code={navbarStyle} />
+<ArgsTable of={NavItem} sort='requiredFirst' />

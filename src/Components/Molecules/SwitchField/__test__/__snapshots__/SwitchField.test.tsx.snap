@@ -3,18 +3,18 @@
 exports[`SwitchField Component SwitchField renders 1`] = `
 <div>
   <div
-    class="gds-field-group"
+    class="fieldGroup"
   >
     <div
-      class="field gds-switch-container input-switch-field"
+      class="container"
     >
       <label
-        class=""
+        class="label"
         for="switch-1"
         tabindex="0"
       >
         <div
-          class="switch-marker"
+          class="switch"
         >
           <input
             aria-hidden="true"
@@ -38,18 +38,18 @@ exports[`SwitchField Component SwitchField renders 1`] = `
 exports[`SwitchField Component SwitchField renders with values in disabled highligted 1`] = `
 <div>
   <div
-    class="gds-field-group"
+    class="fieldGroup"
   >
     <div
-      class="field gds-switch-container input-switch-field"
+      class="container"
     >
       <label
-        class="input-switch-field-disabled"
+        class="label disabled"
         for="switch-3"
         tabindex="-1"
       >
         <div
-          class="switch-marker"
+          class="switch"
         >
           <input
             aria-hidden="true"
@@ -74,18 +74,18 @@ exports[`SwitchField Component SwitchField renders with values in disabled highl
 exports[`SwitchField Component SwitchField renders with values in readonly 1`] = `
 <div>
   <div
-    class="gds-field-group"
+    class="fieldGroup"
   >
     <div
-      class="field gds-switch-container input-switch-field"
+      class="container"
     >
       <label
-        class="input-switch-field-read-only"
+        class="label readOnly"
         for="switch-2"
         tabindex="-1"
       >
         <div
-          class="switch-marker"
+          class="switch"
         >
           <input
             aria-hidden="true"
@@ -109,18 +109,18 @@ exports[`SwitchField Component SwitchField renders with values in readonly 1`] =
 exports[`SwitchField Component SwitchField renders with values with fieldSize and inline 1`] = `
 <div>
   <div
-    class="gds-field-group field-size-6 field-inline"
+    class="fieldGroup size-6 inline"
   >
     <div
-      class="field gds-switch-container input-switch-field"
+      class="container inlineContainer"
     >
       <label
-        class=""
+        class="label inlineLabel"
         for="switch-4"
         tabindex="0"
       >
         <div
-          class="switch-marker"
+          class="switch"
         >
           <input
             aria-hidden="true"

@@ -1,0 +1,105 @@
+import { useState } from 'react';
+import { Canvas, Meta, ArgsTable, Story } from '@storybook/addon-docs';
+import { MemoryRouter as Router } from 'react-router-dom';
+
+import Alert, { AlertType } from '../Alert/Alert';
+import AmountField from './AmountField';
+
+<Meta
+  title='Molecule/AmountField'
+  component={AmountField}
+  parameters={{
+    viewMode: 'docs',
+    layout: 'fullscreen',
+  }}
+/>
+
+# AmountField
+
+<Alert type={AlertType.ERROR}>
+  When defining the format for a number, please ensure <code>decimalSeparator</code> and <code>thousandSeparator</code>
+  are different.
+</Alert>
+
+export const Template = (args) => {
+  const [localValue, setLocalValue] = useState(args.input);
+  return <AmountField {...args} input={localValue} onChange={setLocalValue} />;
+};
+
+<Canvas withSource='open'>
+  <Story
+    name='AmountField'
+    args={{
+      input: 1234567890,
+      label: 'Amount field',
+      placeholder: 'Placeholder amount',
+      suffix: '€',
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable of={AmountField} sort='requiredFirst' exclude={['dataTestId']} />
+
+### Read only with size constraint on label and field
+
+<Canvas withSource='open'>
+  <Template
+    fieldSize={4}
+    input={1234567890}
+    label='Amount field in read only with label size = 6 and field size = 4'
+    labelSize={6}
+    readOnly
+    suffix='€'
+  />
+</Canvas>
+
+### Error
+
+<Canvas withSource='open'>
+  <Template
+    errorMessage='This amount is on error'
+    input={1234567890}
+    label='Amount field in read only with label size = 6 and field size = 4'
+    placeholder='Placeholder amount'
+    suffix='€'
+  />
+</Canvas>
+
+### Helper and limit
+
+<Canvas withSource='open'>
+  <Template
+    helperText='Helper text'
+    input={12}
+    label='Amount field with helper and maximum value: 100'
+    mandatory={true}
+    maxValue={100}
+    suffix='€'
+  />
+</Canvas>
+
+### Highlighted
+
+<Canvas withSource='open'>
+  <Template
+    helperText='Helper text'
+    highlighted={true}
+    input={1234567890}
+    label='Amount field highlighted'
+    readOnly={true}
+    suffix='€'
+  />
+</Canvas>
+
+### Disabled
+
+<Canvas withSource='open'>
+  <Template
+    disabled={true}
+    input={1234567890}
+    label="Amount field disabled and ' as thousand separator"
+    suffix='€'
+    thousandSeparator="'"
+  />
+</Canvas>

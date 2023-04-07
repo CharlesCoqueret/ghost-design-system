@@ -16,7 +16,7 @@ exports[`StaticDataTable component StaticDataTable renders and handles sort 1`] 
             tabindex="0"
           >
             <span
-              class="gds-typography table--header-value--title right ellipsis"
+              class="typography table--header-value--title right ellipsis"
               title="Number"
             >
               Number
@@ -45,10 +45,11 @@ exports[`StaticDataTable component StaticDataTable renders and handles sort 1`] 
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <span
-              class="gds-amount-field amount-field-read-only table--cell-value--number-readonly"
+              autocomplete="off"
+              class="default readOnly table--cell-value--number-readonly"
               id="number"
               name="number"
             >
@@ -78,7 +79,7 @@ exports[`StaticDataTable component StaticDataTable renders and handles sort 2`] 
             tabindex="0"
           >
             <span
-              class="gds-typography table--header-value--title right ellipsis"
+              class="typography table--header-value--title right ellipsis"
               title="Number"
             >
               Number
@@ -107,10 +108,11 @@ exports[`StaticDataTable component StaticDataTable renders and handles sort 2`] 
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <span
-              class="gds-amount-field amount-field-read-only table--cell-value--number-readonly"
+              autocomplete="off"
+              class="default readOnly table--cell-value--number-readonly"
               id="number"
               name="number"
             >
@@ -140,7 +142,7 @@ exports[`StaticDataTable component StaticDataTable renders and handles sort 3`] 
             tabindex="0"
           >
             <span
-              class="gds-typography table--header-value--title right ellipsis"
+              class="typography table--header-value--title right ellipsis"
               title="Number"
             >
               Number
@@ -169,10 +171,11 @@ exports[`StaticDataTable component StaticDataTable renders and handles sort 3`] 
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <span
-              class="gds-amount-field amount-field-read-only table--cell-value--number-readonly"
+              autocomplete="off"
+              class="default readOnly table--cell-value--number-readonly"
               id="number"
               name="number"
             >
@@ -202,7 +205,7 @@ exports[`StaticDataTable component StaticDataTable renders and handles sort 4`] 
             tabindex="0"
           >
             <span
-              class="gds-typography table--header-value--title right ellipsis"
+              class="typography table--header-value--title right ellipsis"
               title="Number"
             >
               Number
@@ -231,10 +234,11 @@ exports[`StaticDataTable component StaticDataTable renders and handles sort 4`] 
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <span
-              class="gds-amount-field amount-field-read-only table--cell-value--number-readonly"
+              autocomplete="off"
+              class="default readOnly table--cell-value--number-readonly"
               id="number"
               name="number"
             >

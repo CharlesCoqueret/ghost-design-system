@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SideBarItem Component SideBarItem handles click on entry in main menu and handles click on submenu 1`] = `
+exports[`SideBarItem Component handles click on entry in main menu and handles click on submenu 1`] = `
 <div>
   <nav
-    class="gds-sidebar-container"
+    class="container"
     style="height: 600px; width: 270px;"
   >
     <ul
@@ -13,11 +13,9 @@ exports[`SideBarItem Component SideBarItem handles click on entry in main menu a
       <li
         class="item"
       >
-        <a
+        <div
           class=""
           data-testid="PARENT-TEST-ID"
-          href="/link"
-          target="_blank"
         >
           partial url
           <div
@@ -26,10 +24,10 @@ exports[`SideBarItem Component SideBarItem handles click on entry in main menu a
             LABEL
           </div>
           <i
-            class="chevron-right icon"
+            class="icon chevronRight"
             icon="fal,chevron-right"
           />
-        </a>
+        </div>
       </li>
       <ul
         class="submenu"
@@ -42,23 +40,21 @@ exports[`SideBarItem Component SideBarItem handles click on entry in main menu a
             class="label"
           >
             <i
-              class="chevron-left icon"
+              class="icon chevronLeft"
               icon="fal,chevron-left"
             />
             Back to menu
           </div>
         </li>
         <div
-          class="sidebar-divider"
+          class="divider"
         />
         <li
           class="item"
         >
-          <a
+          <div
             class=""
             data-testid="CHILD-TEST-ID"
-            href="/link/link1"
-            target="_blank"
           >
             full url
             <div
@@ -66,15 +62,13 @@ exports[`SideBarItem Component SideBarItem handles click on entry in main menu a
             >
               LINK1
             </div>
-          </a>
+          </div>
         </li>
         <li
           class="item"
         >
-          <a
+          <div
             class=""
-            href="/link/link2"
-            target="_blank"
           >
             full url
             <div
@@ -82,7 +76,7 @@ exports[`SideBarItem Component SideBarItem handles click on entry in main menu a
             >
               LINK2
             </div>
-          </a>
+          </div>
         </li>
       </ul>
     </ul>
@@ -90,24 +84,22 @@ exports[`SideBarItem Component SideBarItem handles click on entry in main menu a
 </div>
 `;
 
-exports[`SideBarItem Component SideBarItem handles click on entry in main menu and handles click on submenu 2`] = `
+exports[`SideBarItem Component handles click on entry in main menu and handles click on submenu 2`] = `
 <div>
   <nav
-    class="gds-sidebar-container submenu"
+    class="container"
     style="height: 600px; width: 270px;"
   >
     <ul
-      class="sidebar"
+      class="sidebar sidebarHidden"
       style="width: 270px; left: -270px;"
     >
       <li
         class="item"
       >
-        <a
+        <div
           class=""
           data-testid="PARENT-TEST-ID"
-          href="/link"
-          target="_blank"
         >
           partial url
           <div
@@ -116,10 +108,10 @@ exports[`SideBarItem Component SideBarItem handles click on entry in main menu a
             LABEL
           </div>
           <i
-            class="chevron-right icon"
+            class="icon chevronRight"
             icon="fal,chevron-right"
           />
-        </a>
+        </div>
       </li>
       <ul
         class="submenu visible"
@@ -132,23 +124,21 @@ exports[`SideBarItem Component SideBarItem handles click on entry in main menu a
             class="label"
           >
             <i
-              class="chevron-left icon"
+              class="icon chevronLeft"
               icon="fal,chevron-left"
             />
             Back to menu
           </div>
         </li>
         <div
-          class="sidebar-divider"
+          class="divider"
         />
         <li
           class="item"
         >
-          <a
+          <div
             class=""
             data-testid="CHILD-TEST-ID"
-            href="/link/link1"
-            target="_blank"
           >
             full url
             <div
@@ -156,15 +146,13 @@ exports[`SideBarItem Component SideBarItem handles click on entry in main menu a
             >
               LINK1
             </div>
-          </a>
+          </div>
         </li>
         <li
           class="item"
         >
-          <a
+          <div
             class=""
-            href="/link/link2"
-            target="_blank"
           >
             full url
             <div
@@ -172,7 +160,7 @@ exports[`SideBarItem Component SideBarItem handles click on entry in main menu a
             >
               LINK2
             </div>
-          </a>
+          </div>
         </li>
       </ul>
     </ul>
@@ -180,24 +168,22 @@ exports[`SideBarItem Component SideBarItem handles click on entry in main menu a
 </div>
 `;
 
-exports[`SideBarItem Component SideBarItem handles click on entry in main menu and handles click on submenu 3`] = `
+exports[`SideBarItem Component handles click on entry in main menu and handles click on submenu 3`] = `
 <div>
   <nav
-    class="gds-sidebar-container submenu"
+    class="container"
     style="height: 600px; width: 270px;"
   >
     <ul
-      class="sidebar"
+      class="sidebar sidebarHidden"
       style="width: 270px; left: -270px;"
     >
       <li
         class="item"
       >
-        <a
+        <div
           class=""
           data-testid="PARENT-TEST-ID"
-          href="/link"
-          target="_blank"
         >
           partial url
           <div
@@ -206,10 +192,10 @@ exports[`SideBarItem Component SideBarItem handles click on entry in main menu a
             LABEL
           </div>
           <i
-            class="chevron-right icon"
+            class="icon chevronRight"
             icon="fal,chevron-right"
           />
-        </a>
+        </div>
       </li>
       <ul
         class="submenu visible"
@@ -222,23 +208,21 @@ exports[`SideBarItem Component SideBarItem handles click on entry in main menu a
             class="label"
           >
             <i
-              class="chevron-left icon"
+              class="icon chevronLeft"
               icon="fal,chevron-left"
             />
             Back to menu
           </div>
         </li>
         <div
-          class="sidebar-divider"
+          class="divider"
         />
         <li
           class="item"
         >
-          <a
+          <div
             class=""
             data-testid="CHILD-TEST-ID"
-            href="/link/link1"
-            target="_blank"
           >
             full url
             <div
@@ -246,15 +230,13 @@ exports[`SideBarItem Component SideBarItem handles click on entry in main menu a
             >
               LINK1
             </div>
-          </a>
+          </div>
         </li>
         <li
           class="item"
         >
-          <a
+          <div
             class=""
-            href="/link/link2"
-            target="_blank"
           >
             full url
             <div
@@ -262,7 +244,7 @@ exports[`SideBarItem Component SideBarItem handles click on entry in main menu a
             >
               LINK2
             </div>
-          </a>
+          </div>
         </li>
       </ul>
     </ul>
@@ -270,10 +252,10 @@ exports[`SideBarItem Component SideBarItem handles click on entry in main menu a
 </div>
 `;
 
-exports[`SideBarItem Component SideBarItem renders 1`] = `
+exports[`SideBarItem Component renders properly 1`] = `
 <div>
   <nav
-    class="gds-sidebar-container"
+    class="container"
     style="height: 600px; width: 400px;"
   >
     <ul
@@ -283,10 +265,8 @@ exports[`SideBarItem Component SideBarItem renders 1`] = `
       <li
         class="item"
       >
-        <a
+        <div
           class=""
-          href="/link"
-          target="_blank"
         >
           partial url
           <div
@@ -295,10 +275,10 @@ exports[`SideBarItem Component SideBarItem renders 1`] = `
             LABEL
           </div>
           <i
-            class="chevron-right icon"
+            class="icon chevronRight"
             icon="fal,chevron-right"
           />
-        </a>
+        </div>
       </li>
       <ul
         class="submenu"
@@ -311,42 +291,39 @@ exports[`SideBarItem Component SideBarItem renders 1`] = `
             class="label"
           >
             <i
-              class="chevron-left icon"
+              class="icon chevronLeft"
               icon="fal,chevron-left"
             />
             Back to menu
           </div>
         </li>
         <div
-          class="sidebar-divider"
+          class="divider"
         />
         <li
           class="item"
         >
-          <a
+          <div
             class=""
-            href="/link"
-            target="_blank"
           >
             full url
+            _blank
             <div
               class="label"
             >
               EXTERNAL
             </div>
             <i
-              class="external-link icon"
+              class="icon externalLink"
               icon="fal,external-link"
             />
-          </a>
+          </div>
         </li>
         <li
           class="item disabled"
         >
-          <a
+          <div
             class="disabled"
-            href="/link"
-            target="_blank"
           >
             full url
             <div
@@ -354,15 +331,13 @@ exports[`SideBarItem Component SideBarItem renders 1`] = `
             >
               DISABLED
             </div>
-          </a>
+          </div>
         </li>
         <li
           class="item"
         >
-          <a
+          <div
             class=""
-            href="/link"
-            target="_blank"
           >
             full url
             <div
@@ -370,7 +345,7 @@ exports[`SideBarItem Component SideBarItem renders 1`] = `
             >
               NORMAL
             </div>
-          </a>
+          </div>
         </li>
       </ul>
     </ul>
@@ -378,10 +353,10 @@ exports[`SideBarItem Component SideBarItem renders 1`] = `
 </div>
 `;
 
-exports[`SideBarItem Component SideBarItem renders unfixed 1`] = `
+exports[`SideBarItem Component renders unfixed 1`] = `
 <div>
   <nav
-    class="gds-sidebar-container unfixed"
+    class="container unfixed"
     style="height: 600px; width: 400px;"
   >
     <ul
@@ -391,10 +366,8 @@ exports[`SideBarItem Component SideBarItem renders unfixed 1`] = `
       <li
         class="item"
       >
-        <a
+        <div
           class=""
-          href="/link"
-          target="_blank"
         >
           partial url
           <div
@@ -403,13 +376,13 @@ exports[`SideBarItem Component SideBarItem renders unfixed 1`] = `
             LABEL
           </div>
           <i
-            class="chevron-right icon"
+            class="icon chevronRight"
             icon="fal,chevron-right"
           />
-        </a>
+        </div>
       </li>
       <ul
-        class="submenu"
+        class="submenu unfixed"
         style="width: 400px; left: 400px;"
       >
         <li
@@ -419,42 +392,39 @@ exports[`SideBarItem Component SideBarItem renders unfixed 1`] = `
             class="label"
           >
             <i
-              class="chevron-left icon"
+              class="icon chevronLeft"
               icon="fal,chevron-left"
             />
             Back to menu
           </div>
         </li>
         <div
-          class="sidebar-divider"
+          class="divider"
         />
         <li
           class="item"
         >
-          <a
+          <div
             class=""
-            href="/link"
-            target="_blank"
           >
             full url
+            _blank
             <div
               class="label"
             >
               EXTERNAL
             </div>
             <i
-              class="external-link icon"
+              class="icon externalLink"
               icon="fal,external-link"
             />
-          </a>
+          </div>
         </li>
         <li
           class="item disabled"
         >
-          <a
+          <div
             class="disabled"
-            href="/link"
-            target="_blank"
           >
             full url
             <div
@@ -462,15 +432,13 @@ exports[`SideBarItem Component SideBarItem renders unfixed 1`] = `
             >
               DISABLED
             </div>
-          </a>
+          </div>
         </li>
         <li
           class="item"
         >
-          <a
+          <div
             class=""
-            href="/link"
-            target="_blank"
           >
             full url
             <div
@@ -478,7 +446,7 @@ exports[`SideBarItem Component SideBarItem renders unfixed 1`] = `
             >
               NORMAL
             </div>
-          </a>
+          </div>
         </li>
       </ul>
     </ul>
@@ -486,10 +454,10 @@ exports[`SideBarItem Component SideBarItem renders unfixed 1`] = `
 </div>
 `;
 
-exports[`SideBarItem Component SideBarItem renders with only one subitem visible 1`] = `
+exports[`SideBarItem Component renders with only one subitem visible 1`] = `
 <div>
   <nav
-    class="gds-sidebar-container"
+    class="container"
     style="height: 600px; width: 270px;"
   >
     <ul
@@ -499,10 +467,8 @@ exports[`SideBarItem Component SideBarItem renders with only one subitem visible
       <li
         class="item"
       >
-        <a
+        <div
           class=""
-          href="/link"
-          target="_blank"
         >
           partial url
           <div
@@ -510,17 +476,17 @@ exports[`SideBarItem Component SideBarItem renders with only one subitem visible
           >
             LABEL
           </div>
-        </a>
+        </div>
       </li>
     </ul>
   </nav>
 </div>
 `;
 
-exports[`SideBarItem Component SideBarItem renders with url as Location 1`] = `
+exports[`SideBarItem Component renders with url as Location 1`] = `
 <div>
   <nav
-    class="gds-sidebar-container"
+    class="container"
     style="height: 600px; width: 270px;"
   >
     <ul
@@ -530,10 +496,8 @@ exports[`SideBarItem Component SideBarItem renders with url as Location 1`] = `
       <li
         class="item"
       >
-        <a
+        <div
           class=""
-          href="/link"
-          target="_blank"
         >
           partial url
           <div
@@ -542,10 +506,10 @@ exports[`SideBarItem Component SideBarItem renders with url as Location 1`] = `
             LABEL
           </div>
           <i
-            class="chevron-right icon"
+            class="icon chevronRight"
             icon="fal,chevron-right"
           />
-        </a>
+        </div>
       </li>
       <ul
         class="submenu"
@@ -558,22 +522,20 @@ exports[`SideBarItem Component SideBarItem renders with url as Location 1`] = `
             class="label"
           >
             <i
-              class="chevron-left icon"
+              class="icon chevronLeft"
               icon="fal,chevron-left"
             />
             Back to menu
           </div>
         </li>
         <div
-          class="sidebar-divider"
+          class="divider"
         />
         <li
           class="item"
         >
-          <a
+          <div
             class=""
-            href="PATHNAME"
-            target="_blank"
           >
             full url
             <div
@@ -581,15 +543,13 @@ exports[`SideBarItem Component SideBarItem renders with url as Location 1`] = `
             >
               LINK
             </div>
-          </a>
+          </div>
         </li>
         <li
           class="item"
         >
-          <a
+          <div
             class=""
-            href="/link2"
-            target="_blank"
           >
             full url
             <div
@@ -597,7 +557,7 @@ exports[`SideBarItem Component SideBarItem renders with url as Location 1`] = `
             >
               Link2
             </div>
-          </a>
+          </div>
         </li>
       </ul>
     </ul>
@@ -605,15 +565,13 @@ exports[`SideBarItem Component SideBarItem renders with url as Location 1`] = `
 </div>
 `;
 
-exports[`SideBarItem Component SideBarItem should generate an error when not in a SideBar component 1`] = `
+exports[`SideBarItem Component should generate an error when not in a SideBar component 1`] = `
 <div>
   <li
     class="item"
   >
-    <a
+    <div
       class=""
-      href="/link"
-      target="_blank"
     >
       partial url
       <div
@@ -621,9 +579,9 @@ exports[`SideBarItem Component SideBarItem should generate an error when not in 
       >
         LABEL
       </div>
-    </a>
+    </div>
   </li>
 </div>
 `;
 
-exports[`SideBarItem Component SideBarItem should generate an error when not in a SideBar component 2`] = `<div />`;
+exports[`SideBarItem Component should generate an error when not in a SideBar component 2`] = `<div />`;

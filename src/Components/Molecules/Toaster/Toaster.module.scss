@@ -1,0 +1,18 @@
+.container {
+  max-width: 50%;
+  box-shadow: 0px 2px 10px 0px rgba(var(--theme-provider-black), 0.25);
+}
+
+.icon {
+  cursor: pointer;
+  margin: auto 0px auto 10px;
+  vertical-align: middle;
+}
+
+.success {
+  color: rgb(var(--theme-provider-fern));
+}
+
+.error {
+  color: rgb(var(--theme-provider-cinnabar));
+}

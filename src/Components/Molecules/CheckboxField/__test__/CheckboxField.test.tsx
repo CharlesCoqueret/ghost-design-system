@@ -11,7 +11,7 @@ describe('CheckboxField Component', () => {
     const { container } = render(
       <CheckboxField
         dataTestId={'DATA-TEST-ID'}
-        inputValue={[
+        input={[
           {
             label: 'Label 1',
             value: 'VALUE1',
@@ -39,7 +39,7 @@ describe('CheckboxField Component', () => {
   it('CheckboxField renders with values in readonly', () => {
     const { container } = render(
       <CheckboxField
-        inputValue={[
+        input={[
           {
             label: 'Label 1',
             value: 'VALUE1',
@@ -54,7 +54,7 @@ describe('CheckboxField Component', () => {
   it('CheckboxField renders with values in disabled highligted', () => {
     const { container } = render(
       <CheckboxField
-        inputValue={[
+        input={[
           {
             label: 'Label 1',
             value: 'VALUE1',
@@ -80,7 +80,7 @@ describe('CheckboxField Component', () => {
   it('CheckboxField renders with values with fieldSize and inline', () => {
     const { container } = render(
       <CheckboxField
-        inputValue={[
+        input={[
           {
             label: 'Label 1',
             value: 'VALUE1',

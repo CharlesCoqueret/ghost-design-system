@@ -1,0 +1,22 @@
+.container {
+  width: fit-content;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: center;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+
+  & > * {
+    margin: auto 4px;
+  }
+}

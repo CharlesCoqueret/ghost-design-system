@@ -13,17 +13,11 @@ import { IOption } from './types';
 import { Icon } from '../Icon';
 import { Typography } from '../Typography';
 
+import styles from './SelectInput.module.scss';
+
 export interface IMultiSelectInputProps {
   /** Class for the input (optional, default: undefined) */
   className?: string;
-  /** Custom colors settings */
-  colors?: {
-    controlErrorColor: string; // colors.error,
-    controlFocusColor: string; // colors.primary,
-    fontColor: string; // 'rgb(0, 0, 0)',
-    optionFocusColor: string; // colors.chalk,
-    optionSelectedColor: string; // colors.primary,
-  };
   /** For test purpose only */
   dataTestId?: string;
   /** Disabled field (optional, default: false) */
@@ -33,15 +27,15 @@ export interface IMultiSelectInputProps {
   /** Highlight value in readonly mode (optional, default: false) */
   highlighted?: boolean;
   /** Input string value (optional, default: undefined) */
-  inputValue?: Array<string | number>;
+  input?: Array<string | number>;
   /** Provide the ability to clear the value (optional, default: false) */
   isClearable?: boolean;
   /** Is in Error (optional, default: false) */
   isInError?: boolean;
   /** Maximum height of the menu in px (optional, default: 300) */
   maxMenuHeight?: number;
-  /** Name of select input */
-  name: string;
+  /** Name of input (optional, default: undefined) */
+  name?: string;
   /** Label to be used when one item is selected (example: "{} item selected")
    * Note: the {} will be replaced by the actual number */
   numberOfItemLabel: string;
@@ -96,12 +90,11 @@ const CustomValueContainer = ({
 const MultiSelectInput = (props: IMultiSelectInputProps): ReactElement => {
   const {
     className,
-    colors,
     dataTestId,
     disabled,
     ellipsis,
     highlighted,
-    inputValue,
+    input,
     isClearable,
     isInError,
     maxMenuHeight,
@@ -130,18 +123,16 @@ const MultiSelectInput = (props: IMultiSelectInputProps): ReactElement => {
     return (
       <div
         className={classnames(
-          'field',
-          'gds-select-container',
-          'input-select-field-read-only',
+          styles.container,
           {
-            'field-highlighted': highlighted,
+            [styles.highlighted]: (readOnly || disabled) && highlighted,
           },
           className,
         )}
         data-testid={dataTestId}>
         <Typography.Text ellipsis={ellipsis}>
           {options
-            .filter((option) => inputValue?.includes(option.value))
+            .filter((option) => input?.includes(option.value))
             .map((option) => option.label)
             .join(', ') || '-'}
         </Typography.Text>
@@ -150,16 +141,7 @@ const MultiSelectInput = (props: IMultiSelectInputProps): ReactElement => {
   }
 
   return (
-    <div
-      className={classnames(
-        'field',
-        'gds-select-container',
-        'input-select-field',
-        {
-          'input-error': isInError && !disabled,
-        },
-        className,
-      )}>
+    <div className={classnames(styles.container, className)}>
       <ReactSelect<IOption, true>
         closeMenuOnSelect={false}
         components={{
@@ -169,7 +151,7 @@ const MultiSelectInput = (props: IMultiSelectInputProps): ReactElement => {
               <div {...innerProps}>
                 <Icon
                   icon={['fal', 'chevron-down']}
-                  className='dynamic-search-icon'
+                  className={styles.icon}
                   data-testid={dataTestId ? `${dataTestId}-magnifier` : undefined}
                 />
               </div>
@@ -181,7 +163,7 @@ const MultiSelectInput = (props: IMultiSelectInputProps): ReactElement => {
               <div {...innerProps}>
                 <Icon
                   icon={['fal', 'xmark']}
-                  className='dynamic-search-icon'
+                  className={styles.icon}
                   data-testid={dataTestId ? `${dataTestId}-clear` : undefined}
                 />
               </div>
@@ -206,8 +188,8 @@ const MultiSelectInput = (props: IMultiSelectInputProps): ReactElement => {
         }}
         options={options}
         placeholder={placeholder}
-        styles={customStyles({ ...colors, isInError })}
-        value={options.filter((option) => inputValue && inputValue.indexOf(option.value) >= 0)}
+        styles={customStyles({ isInError: isInError && !(disabled && readOnly) })}
+        value={options.filter((option) => input && input.indexOf(option.value) >= 0)}
       />
     </div>
   );
@@ -215,20 +197,14 @@ const MultiSelectInput = (props: IMultiSelectInputProps): ReactElement => {
 
 MultiSelectInput.defaultProps = {
   className: undefined,
-  colors: {
-    controlErrorColor: 'rgb(255, 52, 24)',
-    controlFocusColor: 'rgb(38, 186, 212)',
-    fontColor: 'rgb(0, 0, 0)',
-    optionFocusColor: 'rgb(228, 228, 228)',
-    optionSelectedColor: 'rgb(38, 186, 212)',
-  },
   disabled: false,
   ellipsis: false,
   highlighted: false,
-  inputValue: undefined,
+  input: undefined,
   isClearable: false,
   isInError: false,
   maxMenuHeight: 300,
+  name: undefined,
   numberOfItemLabel: '{} item selected',
   numberOfItemsLabel: '{} items selected',
   onChange: undefined,

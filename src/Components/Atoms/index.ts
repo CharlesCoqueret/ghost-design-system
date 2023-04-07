@@ -15,5 +15,6 @@ export * from './SelectInput';
 export * from './SwitchInput';
 export * from './TextAreaInput';
 export * from './TextInput';
+export * from './Theme';
 export * from './Tooltip';
 export * from './Typography';

@@ -5,6 +5,7 @@ import classnames from 'classnames';
 import compact from 'lodash/compact';
 
 import { Typography } from '../Typography';
+import styles from './AmountInput.module.scss';
 
 /**
  * Numeral Options:
@@ -40,16 +41,16 @@ export interface IAmountInputProps {
   /** Highlighted field (optional, default: false) */
   highlighted?: boolean;
   /** Input or number string value (optional, default: '') */
-  /** Note: '' is used as default to ensure update of the underlaying component */
-  inputValue?: string | number;
+  /** Note: '' is used as default to ensure update of the underlying component */
+  input?: string | number;
   /** Error indication should be present (optional, default: undefined) */
   isInError?: boolean;
   /** Max value (optional, default: undefined) */
   maxValue?: number;
   /** Min value (optional, default: undefined) */
   minValue?: number;
-  /** Name of select input */
-  name: string;
+  /** Name of input (optional, default: undefined) */
+  name?: string;
   /** Handler of value changes (optional, default: undefined) */
   onChange?: (value: number | undefined) => void;
   /** Placeholder value (optional, default: undefined) */
@@ -76,7 +77,7 @@ const AmountInput = (props: IAmountInputProps): ReactElement => {
     disabled,
     ellipsis,
     highlighted,
-    inputValue,
+    input,
     isInError,
     maxValue,
     minValue,
@@ -109,13 +110,15 @@ const AmountInput = (props: IAmountInputProps): ReactElement => {
    * Read only case
    */
   if (readOnly) {
-    if (inputValue === undefined || inputValue === null || inputValue === '' || !Number.isFinite(Number(inputValue))) {
+    if (input === undefined || input === null || input === '' || !Number.isFinite(Number(input))) {
       return (
         <div
           className={classnames(
-            'gds-amount-field',
-            'amount-field-read-only',
-            { 'field-highlighted': readOnly && highlighted },
+            styles.default,
+            styles.readOnly,
+            {
+              [styles.highlighted]: (readOnly || disabled) && highlighted,
+            },
             className,
           )}
           data-testid={dataTestId}>
@@ -127,16 +130,18 @@ const AmountInput = (props: IAmountInputProps): ReactElement => {
       return (
         <div
           className={classnames(
-            'gds-amount-field',
-            'amount-field-read-only',
-            { 'field-highlighted': readOnly && highlighted },
+            styles.default,
+            styles.readOnly,
+            {
+              [styles.highlighted]: (readOnly || disabled) && highlighted,
+            },
             className,
           )}
           data-testid={dataTestId}>
           <Typography.Text ellipsis={ellipsis}>
             {compact([
               prefix,
-              Numeral(inputValue).format('0.' + '0'.repeat(Math.abs(decimalScale ?? 2)) + ' a'),
+              Numeral(input).format('0.' + '0'.repeat(Math.abs(decimalScale ?? 2)) + ' a'),
               suffix,
             ]).join(' ')}
           </Typography.Text>
@@ -145,25 +150,28 @@ const AmountInput = (props: IAmountInputProps): ReactElement => {
     }
     return (
       <NumberFormat
-        thousandSeparator={numberFormatThousandSeparator}
-        decimalSeparator={decimalSeparator}
-        thousandsGroupStyle={numberFormatThousandGroupStyle}
-        data-testid={dataTestId}
-        decimalScale={decimalScale}
-        id={name}
-        name={name}
-        value={inputValue}
+        allowEmptyFormatting
+        autoComplete='off'
         className={classnames(
-          'gds-amount-field',
-          'amount-field-read-only',
-          { 'field-highlighted': readOnly && highlighted },
+          styles.default,
+          styles.readOnly,
+          {
+            [styles.highlighted]: (readOnly || disabled) && highlighted,
+          },
           className,
         )}
-        allowEmptyFormatting
+        data-testid={dataTestId}
+        decimalScale={decimalScale}
+        decimalSeparator={decimalSeparator}
         displayType={'text'}
-        isNumericString={typeof inputValue === 'string'}
+        id={name}
+        isNumericString={typeof input === 'string'}
+        name={name}
         prefix={prefix ? `${prefix} ` : undefined}
         suffix={suffix ? ` ${suffix}` : undefined}
+        thousandSeparator={numberFormatThousandSeparator}
+        thousandsGroupStyle={numberFormatThousandGroupStyle}
+        value={input}
       />
     );
   }
@@ -173,31 +181,33 @@ const AmountInput = (props: IAmountInputProps): ReactElement => {
    */
   return (
     <NumberFormat
-      thousandSeparator={numberFormatThousandSeparator}
-      decimalSeparator={decimalSeparator}
-      thousandsGroupStyle={numberFormatThousandGroupStyle}
-      data-testid={dataTestId}
-      decimalScale={decimalScale}
+      allowEmptyFormatting
       allowNegative={allowNegative}
-      name={name}
+      autoComplete='off'
       className={classnames(
-        'gds-amount-field',
-        { 'amount-field-error': !readOnly && !disabled && isInError },
+        styles.default,
+        { [styles.disabled]: disabled },
+        { [styles.error]: !readOnly && !disabled && isInError },
         className,
       )}
+      data-testid={dataTestId}
+      decimalScale={decimalScale}
+      decimalSeparator={decimalSeparator}
+      disabled={disabled}
       isAllowed={(newValue: NumberFormatValues): boolean => {
-        if (minValue && newValue.floatValue && newValue.floatValue < minValue) return false;
-        if (maxValue && newValue.floatValue && newValue.floatValue > maxValue) return false;
+        if (minValue !== undefined && newValue.floatValue && newValue.floatValue < minValue) return false;
+        if (maxValue !== undefined && newValue.floatValue && newValue.floatValue > maxValue) return false;
         return true;
       }}
-      allowEmptyFormatting
-      value={inputValue}
-      placeholder={placeholder}
+      isNumericString={typeof input === 'string'}
+      name={name}
       onValueChange={onValueChange}
-      disabled={disabled}
-      isNumericString={typeof inputValue === 'string'}
+      placeholder={placeholder}
       prefix={prefix ? `${prefix} ` : undefined}
       suffix={suffix ? ` ${suffix}` : undefined}
+      thousandSeparator={numberFormatThousandSeparator}
+      thousandsGroupStyle={numberFormatThousandGroupStyle}
+      value={input}
     />
   );
 };
@@ -206,7 +216,8 @@ AmountInput.defaultProps = {
   allowNegative: true,
   decimalSeparator: '.',
   ellipsis: false,
-  inputValue: '',
+  input: '',
+  name: undefined,
   placeholder: undefined,
   prefix: undefined,
   suffix: undefined,

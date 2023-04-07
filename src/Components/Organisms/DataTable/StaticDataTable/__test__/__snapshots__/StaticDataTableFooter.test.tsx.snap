@@ -15,13 +15,13 @@ exports[`StaticDataTableFooter component StaticDataTableFooter renders with comp
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <div
-              class="gds-amount-field amount-field-read-only table--cell-value--number-readonly"
+              class="default readOnly table--cell-value--number-readonly"
             >
               <span
-                class="gds-typography"
+                class="typography"
               >
                 -
               </span>
@@ -49,13 +49,13 @@ exports[`StaticDataTableFooter component StaticDataTableFooter renders with comp
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <div
-              class="gds-amount-field amount-field-read-only table--cell-value--number-readonly"
+              class="default readOnly table--cell-value--number-readonly"
             >
               <span
-                class="gds-typography"
+                class="typography"
               >
                 -
               </span>

@@ -1,0 +1,19 @@
+.pulsar {
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(var(--theme-provider-error), 1);
+  animation: pulsar 2s infinite;
+}
+
+:global {
+  @keyframes pulsar {
+    0% {
+      box-shadow: 0 0 0 0 rgba(var(--theme-provider-error), 0.4);
+    }
+    100% {
+      box-shadow: 0 0 0 10px rgba(var(--theme-provider-error), 0);
+    }
+  }
+}

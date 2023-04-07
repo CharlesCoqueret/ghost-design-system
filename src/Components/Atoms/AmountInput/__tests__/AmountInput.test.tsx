@@ -9,7 +9,7 @@ describe('AmountInput Component', () => {
   it('AmountInput renders', () => {
     const onChangeMock = jest.fn();
 
-    const { container } = render(<AmountInput name='name' dataTestId='name' onChange={onChangeMock} />);
+    const { container } = render(<AmountInput dataTestId='name' onChange={onChangeMock} />);
     expect(onChangeMock).toBeCalledTimes(0);
 
     expect(container).toMatchSnapshot();
@@ -19,7 +19,7 @@ describe('AmountInput Component', () => {
     const onChangeMock = jest.fn();
 
     const { container } = render(
-      <AmountInput highlighted name='name' ellipsis onChange={onChangeMock} prefix='A' readOnly suffix='B' />,
+      <AmountInput highlighted ellipsis onChange={onChangeMock} prefix='A' readOnly suffix='B' />,
     );
     expect(onChangeMock).toBeCalledTimes(0);
 
@@ -32,8 +32,7 @@ describe('AmountInput Component', () => {
     const { container, rerender } = render(
       <AmountInput
         highlighted
-        inputValue={1234567890.12}
-        name='name'
+        input={1234567890.12}
         onChange={onChangeMock}
         prefix='A'
         readOnly
@@ -49,8 +48,7 @@ describe('AmountInput Component', () => {
       <AmountInput
         decimalScale={2}
         highlighted
-        inputValue={1234567890.12}
-        name='name'
+        input={1234567890.12}
         onChange={onChangeMock}
         prefix='A'
         readOnly
@@ -68,8 +66,7 @@ describe('AmountInput Component', () => {
     const { container } = render(
       <AmountInput
         highlighted
-        inputValue={1234567890.12}
-        name='name'
+        input={1234567890.12}
         onChange={onChangeMock}
         prefix='A'
         readOnly
@@ -88,8 +85,7 @@ describe('AmountInput Component', () => {
     const { container } = render(
       <AmountInput
         highlighted
-        inputValue={1234567890.12}
-        name='name'
+        input={1234567890.12}
         onChange={onChangeMock}
         readOnly
         thousandsGroupStyle={ThousandsGroupStyle.LAKH}
@@ -105,7 +101,6 @@ describe('AmountInput Component', () => {
 
     const { container } = render(
       <AmountInput
-        name='name'
         dataTestId='name'
         maxValue={9999999999}
         minValue={-10}
@@ -128,7 +123,7 @@ describe('AmountInput Component', () => {
     const onChangeMock = jest.fn();
 
     const { container } = render(
-      <AmountInput name='name' dataTestId='name' maxValue={100} minValue={-100} onChange={onChangeMock} />,
+      <AmountInput dataTestId='name' maxValue={100} minValue={-100} onChange={onChangeMock} />,
     );
 
     const input = screen.getByTestId('name');
@@ -149,7 +144,7 @@ describe('AmountInput Component', () => {
   it('AmountInput renders with empty input in read only', () => {
     const onChangeMock = jest.fn();
 
-    const { container } = render(<AmountInput name='name' dataTestId='name' onChange={onChangeMock} readOnly />);
+    const { container } = render(<AmountInput dataTestId='name' onChange={onChangeMock} readOnly />);
 
     const input = screen.getByTestId('name');
     userEvent.type(input, '123456789');
@@ -161,7 +156,7 @@ describe('AmountInput Component', () => {
     const onChangeMock = jest.fn();
 
     const { container } = render(
-      <AmountInput name='name' onChange={onChangeMock} thousandsGroupStyle={ThousandsGroupStyle.NONE} />,
+      <AmountInput onChange={onChangeMock} thousandsGroupStyle={ThousandsGroupStyle.NONE} />,
     );
 
     expect(container).toMatchSnapshot();
@@ -171,7 +166,7 @@ describe('AmountInput Component', () => {
     const onChangeMock = jest.fn();
 
     const { container } = render(
-      <AmountInput name='name' dataTestId='name' onChange={onChangeMock} prefix='A' suffix='B' readOnly />,
+      <AmountInput dataTestId='name' onChange={onChangeMock} prefix='A' suffix='B' readOnly />,
     );
 
     const input = screen.getByTestId('name');
@@ -184,15 +179,7 @@ describe('AmountInput Component', () => {
     const onChangeMock = jest.fn();
 
     const { container } = render(
-      <AmountInput
-        name='name'
-        onChange={onChangeMock}
-        dataTestId='name'
-        inputValue='10'
-        prefix='A'
-        suffix='B'
-        readOnly
-      />,
+      <AmountInput onChange={onChangeMock} dataTestId='name' input='10' prefix='A' suffix='B' readOnly />,
     );
 
     const input = screen.getByTestId('name');
@@ -205,15 +192,7 @@ describe('AmountInput Component', () => {
     const onChangeMock = jest.fn();
 
     const { container } = render(
-      <AmountInput
-        name='name'
-        onChange={onChangeMock}
-        dataTestId='name'
-        inputValue='10'
-        prefix='A'
-        suffix='B'
-        readOnly
-      />,
+      <AmountInput onChange={onChangeMock} dataTestId='name' input='10' prefix='A' suffix='B' readOnly />,
     );
 
     const input = screen.getByTestId('name');
@@ -227,11 +206,10 @@ describe('AmountInput Component', () => {
 
     const { container } = render(
       <AmountInput
-        name='name'
         dataTestId='name'
         onChange={onChangeMock}
         thousandsGroupStyle={ThousandsGroupStyle.SHORTEN}
-        inputValue='1234567890.1234'
+        input='1234567890.1234'
         prefix='A'
         highlighted
         suffix='B'
@@ -250,11 +228,10 @@ describe('AmountInput Component', () => {
 
     const { container } = render(
       <AmountInput
-        name='name'
         dataTestId='name'
         onChange={onChangeMock}
         thousandsGroupStyle={ThousandsGroupStyle.SHORTEN}
-        inputValue='1234567890.1234'
+        input='1234567890.1234'
         readOnly={true}
         highlighted
       />,

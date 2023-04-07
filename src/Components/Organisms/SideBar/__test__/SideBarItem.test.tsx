@@ -5,22 +5,8 @@ import userEvent from '@testing-library/user-event';
 import SideBar from '../SideBar';
 import SideBarItem from '../SideBarItem';
 
-const assign = window.location.assign;
-
-beforeAll(() => {
-  Object.defineProperty(window, 'location', {
-    value: {
-      assign: jest.fn(),
-    },
-  });
-});
-
-afterAll(() => {
-  window.location.assign = assign;
-});
-
 describe('SideBarItem Component', () => {
-  it('SideBarItem renders', () => {
+  it('renders properly', () => {
     const { container } = render(
       <SideBar backToMenu={'Back to menu'} height='600px' width='400px'>
         <SideBarItem label='LABEL' to='/link'>
@@ -35,7 +21,7 @@ describe('SideBarItem Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('SideBarItem renders unfixed', () => {
+  it('renders unfixed', () => {
     const { container } = render(
       <SideBar backToMenu={'Back to menu'} height='600px' width='400px' unfixed>
         <SideBarItem label='LABEL' to='/link'>
@@ -50,7 +36,7 @@ describe('SideBarItem Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('SideBarItem renders with only one subitem visible', () => {
+  it('renders with only one subitem visible', () => {
     const { container } = render(
       <SideBar backToMenu={'Back to menu'} style={{ height: '600px' }}>
         <SideBarItem label='LABEL' to='/link'>
@@ -63,7 +49,7 @@ describe('SideBarItem Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('SideBarItem handles click on entry in main menu and handles click on submenu', async () => {
+  it('handles click on entry in main menu and handles click on submenu', async () => {
     console.info = jest.fn();
 
     const { container } = render(
@@ -80,17 +66,21 @@ describe('SideBarItem Component', () => {
     const parentEntry = await screen.findByTestId('PARENT-TEST-ID');
 
     userEvent.click(parentEntry);
+
     expect(container).toMatchSnapshot();
 
-    expect(console.info).toBeCalledTimes(1);
+    expect(console.info).toBeCalledTimes(2);
+    expect(console.info).toBeCalledWith('url pushed:', '/link');
     expect(console.info).toBeCalledWith('url pushed:', '/link/link1');
 
     const childEntry = await screen.findByTestId('CHILD-TEST-ID');
+
     userEvent.click(childEntry);
+
     expect(container).toMatchSnapshot();
   });
 
-  it('SideBarItem renders with url as Location', () => {
+  it('renders with url as Location', () => {
     const { container } = render(
       <SideBar backToMenu={'Back to menu'} style={{ height: '600px' }}>
         <SideBarItem label='LABEL' to='/link'>
@@ -112,7 +102,7 @@ describe('SideBarItem Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('SideBarItem should generate an error when not in a SideBar component', () => {
+  it('should generate an error when not in a SideBar component', () => {
     console.error = jest.fn();
 
     const { unmount, container } = render(

@@ -13,7 +13,7 @@ exports[`StaticDataTableHeader component StaticDataTableHeader disables sort whe
             tabindex="0"
           >
             <span
-              class="gds-typography table--header-value--title right ellipsis"
+              class="typography table--header-value--title right ellipsis"
               title="Number"
             >
               Number
@@ -40,7 +40,7 @@ exports[`StaticDataTableHeader component StaticDataTableHeader handles sort chan
             tabindex="0"
           >
             <span
-              class="gds-typography table--header-value--title right ellipsis"
+              class="typography table--header-value--title right ellipsis"
               title="Number"
             >
               Number
@@ -78,7 +78,7 @@ exports[`StaticDataTableHeader component StaticDataTableHeader handles sort chan
             tabindex="0"
           >
             <span
-              class="gds-typography table--header-value--title right ellipsis"
+              class="typography table--header-value--title right ellipsis"
               title="Number"
             >
               Number
@@ -116,7 +116,7 @@ exports[`StaticDataTableHeader component StaticDataTableHeader handles sort chan
             tabindex="0"
           >
             <span
-              class="gds-typography table--header-value--title right ellipsis"
+              class="typography table--header-value--title right ellipsis"
               title="Number"
             >
               Number
@@ -154,7 +154,7 @@ exports[`StaticDataTableHeader component StaticDataTableHeader handles sort chan
             tabindex="0"
           >
             <span
-              class="gds-typography table--header-value--title right ellipsis"
+              class="typography table--header-value--title right ellipsis"
               title="Number"
             >
               Number
@@ -191,7 +191,7 @@ exports[`StaticDataTableHeader component StaticDataTableHeader renders without s
             tabindex="-1"
           >
             <span
-              class="gds-typography table--header-value--title right ellipsis"
+              class="typography table--header-value--title right ellipsis"
               title="Number"
             >
               Number
@@ -220,7 +220,7 @@ exports[`StaticDataTableHeader component StaticDataTableHeader with Total 1`] = 
             tabindex="-1"
           >
             <span
-              class="gds-typography table--header-value--title right ellipsis"
+              class="typography table--header-value--title right ellipsis"
               title="Number"
             >
               Number
@@ -246,7 +246,7 @@ exports[`StaticDataTableHeader component StaticDataTableHeader with custom sort 
             tabindex="0"
           >
             <span
-              class="gds-typography table--header-value--title right ellipsis"
+              class="typography table--header-value--title right ellipsis"
               title="Number"
             >
               Number
@@ -284,7 +284,7 @@ exports[`StaticDataTableHeader component StaticDataTableHeader with hidden colum
             tabindex="-1"
           >
             <span
-              class="gds-typography table--header-value--title right ellipsis"
+              class="typography table--header-value--title right ellipsis"
               title="Number"
             >
               Number
@@ -313,7 +313,7 @@ exports[`StaticDataTableHeader component StaticDataTableHeader with row selectio
             tabindex="0"
           >
             <span
-              class="gds-typography table--header-value--title right ellipsis"
+              class="typography table--header-value--title right ellipsis"
               title="Number"
             >
               Number

@@ -1,0 +1,67 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.inlineContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.checkboxMarker {
+  display: inline;
+  padding: 0px 8px;
+  color: rgb(var(--theme-provider-pebble));
+  &:not(.disabled, .readOnly):hover {
+    color: rgb(var(--theme-provider-primary));
+  }
+  &:not(.disabled, .readOnly).checked,
+  &:not(.disabled, .readOnly).checked:hover {
+    color: rgb(var(--theme-provider-primary));
+  }
+  &.readOnly,
+  &.readOnly:hover,
+  &.disabled,
+  &.disabled:hover {
+    cursor: default;
+    color: rgb(var(--theme-provider-silver));
+  }
+}
+
+.label {
+  display: inline-flex;
+  margin-bottom: 8px;
+  width: fit-content;
+  cursor: pointer;
+  user-select: none;
+
+  &:last-child {
+    margin-bottom: 0px;
+  }
+  &.readOnly,
+  &.disabled {
+    cursor: default;
+    color: rgb(var(--theme-provider-pebble));
+  }
+  &.highlighted {
+    color: rgb(var(--theme-provider-tangerine));
+  }
+  &.ellipsis {
+    display: inline;
+    max-width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}
+
+.inlineLabel {
+  display: inline;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding-bottom: 0px;
+  margin: auto 0px;
+  width: unset;
+}

@@ -2,7 +2,11 @@ import React, { ReactElement } from 'react';
 import classnames from 'classnames';
 import { Typography } from '../Typography';
 
+import styles from './TextInput.module.scss';
+
 export interface ITextInputProps {
+  /** Class for the input (optional, default: undefined) */
+  className?: string;
   /** For test purpose only */
   dataTestId?: string;
   /** Disabled field (optional, default: false) */
@@ -11,18 +15,16 @@ export interface ITextInputProps {
   ellipsis?: boolean;
   /** Highlight value in readonly mode (optional, default: false) */
   highlighted?: boolean;
-  /** Class for the input (optional, default: undefined) */
-  inputClassName?: string;
   /** Input string value (optional, default: '') */
-  inputValue?: string;
+  input?: string;
   /** Is in Error (optional, default: false) */
   isInError?: boolean;
   /** Maximum length of the textfield (optional, default: undefined) */
   maxLength?: number;
   /** Minimum length of textfield (optional, default: undefined) */
   minLength?: number;
-  /** Name of text field */
-  name: string;
+  /** Name of text field (optional, default: undefined) */
+  name?: string;
   /** Handler of value changes (optional, default: undefined) */
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   /** Placeholder value (optional, default: undefined) */
@@ -33,13 +35,13 @@ export interface ITextInputProps {
 
 const TextInput = (props: ITextInputProps): ReactElement => {
   const {
+    className,
     dataTestId,
     disabled,
     ellipsis,
     highlighted,
-    inputClassName,
     isInError,
-    inputValue,
+    input,
     maxLength,
     minLength,
     name,
@@ -50,29 +52,31 @@ const TextInput = (props: ITextInputProps): ReactElement => {
 
   if (readOnly || disabled)
     return (
-      <div
+      <Typography.Text
+        ellipsis={ellipsis}
         className={classnames(
-          'field',
-          'input-text-field-read-only',
           {
-            'field-highlighted': highlighted,
+            [styles.highlighted]: (readOnly || disabled) && highlighted,
           },
-          inputClassName,
+          className,
         )}
         data-testid={dataTestId}>
-        <Typography.Text ellipsis={ellipsis}>{inputValue ? inputValue : '-'}</Typography.Text>
-      </div>
+        {input ? input : '-'}
+      </Typography.Text>
     );
 
   return (
     <input
+      autoComplete='off'
+      autoCorrect='off'
       className={classnames(
-        'field',
-        'gds-input-text-field',
+        styles.container,
         {
-          'input-error': isInError && !disabled,
+          [styles.error]: isInError && !disabled,
+          [styles.disabled]: disabled,
+          [styles.highlighted]: (readOnly || disabled) && highlighted,
         },
-        inputClassName,
+        className,
       )}
       data-testid={dataTestId}
       id={name}
@@ -83,21 +87,21 @@ const TextInput = (props: ITextInputProps): ReactElement => {
       minLength={minLength}
       onChange={onChange}
       disabled={disabled}
-      readOnly={readOnly}
-      value={inputValue}
+      value={input}
     />
   );
 };
 
 TextInput.defaultProps = {
+  className: undefined,
   disabled: false,
   ellipsis: false,
   highlighted: false,
-  inputClassName: undefined,
-  inputValue: '',
+  input: '',
   isInError: false,
   maxLength: undefined,
   minLength: undefined,
+  name: undefined,
   onChange: undefined,
   placeholder: undefined,
   readOnly: false,

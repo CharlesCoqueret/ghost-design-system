@@ -1,15 +1,15 @@
 import React, { ReactElement } from 'react';
 import compact from 'lodash/compact';
 import cloneDeep from 'lodash/cloneDeep';
-import { AnyObject } from 'yup/lib/object';
+import * as yup from 'yup';
 
 import { Modal, ModalBody, ModalFooter } from '../../../Atoms/Modal';
 import { Button, ColorButtonEnum } from '../../../Molecules/Button';
-import { FieldTypeEnum, IFieldAndLayoutProps } from '../../Form/types';
-import useForm from '../../Form/useForm';
+import { FieldLegacyTypeEnum, IFieldAndLayoutLegacyProps } from '../../FormLegacy/types';
+import useFormLegacy from '../../FormLegacy/useFormLegacy';
 import { ColumnType, IColumnType, IExtraLineEditableDataTableProps } from '../Common/types';
 
-export interface ILineEditableModalProps<T> {
+export interface ILineEditableModalProps<T extends yup.AnyObject> {
   title: string;
   showChanges?: boolean;
   row: T;
@@ -18,10 +18,10 @@ export interface ILineEditableModalProps<T> {
   onClose: () => void;
   onSubmit: (updatedRow: T) => void;
   columns: Array<IColumnType<T>>;
-  extra?: IExtraLineEditableDataTableProps<T>;
+  extra: IExtraLineEditableDataTableProps<T>;
 }
 
-export const columnToFieldMapper = <T,>(columns: Array<IColumnType<T>>): Array<IFieldAndLayoutProps<T>> => {
+export const columnToFieldMapper = <T,>(columns: Array<IColumnType<T>>): Array<IFieldAndLayoutLegacyProps<T>> => {
   return compact(
     columns.map((column) => {
       // Manage the case of hidden field in form
@@ -34,7 +34,7 @@ export const columnToFieldMapper = <T,>(columns: Array<IColumnType<T>>): Array<I
             dataIndex: column.dataIndex,
             decimalScale: column.decimalScale,
             decimalSeparator: column.decimalSeparator,
-            fieldType: FieldTypeEnum.AMOUNT,
+            fieldType: FieldLegacyTypeEnum.AMOUNT,
             label: column.title,
             maxValue: column.maxValue,
             minValue: column.minValue,
@@ -48,9 +48,8 @@ export const columnToFieldMapper = <T,>(columns: Array<IColumnType<T>>): Array<I
         }
         case ColumnType.BADGE: {
           return {
-            colors: column.colors,
             dataIndex: column.dataIndex,
-            fieldType: FieldTypeEnum.SELECT,
+            fieldType: FieldLegacyTypeEnum.SELECT,
             isClearable: column.isClearable,
             label: column.title,
             options: column.options,
@@ -65,7 +64,7 @@ export const columnToFieldMapper = <T,>(columns: Array<IColumnType<T>>): Array<I
         case ColumnType.CHECKBOX: {
           return {
             dataIndex: column.dataIndex,
-            fieldType: FieldTypeEnum.CHECKBOX,
+            fieldType: FieldLegacyTypeEnum.CHECKBOX,
             label: column.title,
             readOnly: !column.editable,
           };
@@ -73,7 +72,7 @@ export const columnToFieldMapper = <T,>(columns: Array<IColumnType<T>>): Array<I
         case ColumnType.CODE: {
           return {
             dataIndex: column.dataIndex,
-            fieldType: FieldTypeEnum.TEXT,
+            fieldType: FieldLegacyTypeEnum.TEXT,
             label: column.title,
             readOnly: true,
           };
@@ -82,7 +81,7 @@ export const columnToFieldMapper = <T,>(columns: Array<IColumnType<T>>): Array<I
           return {
             customField: column.customRender,
             dataIndex: column.dataIndex,
-            fieldType: FieldTypeEnum.CUSTOM,
+            fieldType: FieldLegacyTypeEnum.CUSTOM,
             label: column.title,
             readOnly: !column.editable,
           };
@@ -92,7 +91,7 @@ export const columnToFieldMapper = <T,>(columns: Array<IColumnType<T>>): Array<I
             calendarStartDay: column.calendarStartDay,
             dataIndex: column.dataIndex,
             dateFormat: column.dateFormat,
-            fieldType: FieldTypeEnum.DATE,
+            fieldType: FieldLegacyTypeEnum.DATE,
             fieldClassName: column.fieldClassName,
             isClearable: column.isClearable,
             label: column.title,
@@ -106,14 +105,13 @@ export const columnToFieldMapper = <T,>(columns: Array<IColumnType<T>>): Array<I
             dataIndex: column.dataIndex,
             description: column.description,
             label: column.title,
-            fieldType: FieldTypeEnum.DESCRIPTION,
+            fieldType: FieldLegacyTypeEnum.DESCRIPTION,
           };
         }
         case ColumnType.DYNAMICSEARCH: {
           return {
-            colors: column.colors,
             dataIndex: column.dataIndex,
-            fieldType: FieldTypeEnum.DYNAMICSEARCH,
+            fieldType: FieldLegacyTypeEnum.DYNAMICSEARCH,
             isClearable: column.isClearable,
             label: column.title,
             noOptionsMessage: column.noOptionsMessage,
@@ -129,7 +127,7 @@ export const columnToFieldMapper = <T,>(columns: Array<IColumnType<T>>): Array<I
             acceptTypes: column.acceptTypes,
             additionalInfo: column.additionalInfo,
             dataIndex: column.dataIndex,
-            fieldType: FieldTypeEnum.FILE,
+            fieldType: FieldLegacyTypeEnum.FILE,
             label: column.title,
             readOnly: !column.editable,
             maxFiles: column.maxFiles,
@@ -151,10 +149,9 @@ export const columnToFieldMapper = <T,>(columns: Array<IColumnType<T>>): Array<I
         }
         case ColumnType.MULTISELECT: {
           return {
-            colors: column.colors,
             dataIndex: column.dataIndex,
             eraseValueWhenNotInOptions: column.eraseValueWhenNotInOptions,
-            fieldType: FieldTypeEnum.MULTISELECT,
+            fieldType: FieldLegacyTypeEnum.MULTISELECT,
             isClearable: column.isClearable,
             label: column.title,
             numberOfItemLabel: column.numberOfItemLabel,
@@ -171,7 +168,7 @@ export const columnToFieldMapper = <T,>(columns: Array<IColumnType<T>>): Array<I
             dataIndex: column.dataIndex,
             decimalScale: column.decimalScale,
             decimalSeparator: column.decimalSeparator,
-            fieldType: FieldTypeEnum.NUMBER,
+            fieldType: FieldLegacyTypeEnum.NUMBER,
             label: column.title,
             maxValue: column.maxValue,
             minValue: column.minValue,
@@ -189,7 +186,7 @@ export const columnToFieldMapper = <T,>(columns: Array<IColumnType<T>>): Array<I
             dataIndex: column.dataIndex,
             decimalScale: column.decimalScale,
             decimalSeparator: column.decimalSeparator,
-            fieldType: FieldTypeEnum.PERCENTAGE,
+            fieldType: FieldLegacyTypeEnum.PERCENTAGE,
             label: column.title,
             maxValue: column.maxValue,
             minValue: column.minValue,
@@ -206,7 +203,7 @@ export const columnToFieldMapper = <T,>(columns: Array<IColumnType<T>>): Array<I
             enableImage: column.enableImage,
             enableLink: column.enableLink,
             locale: column.locale,
-            fieldType: FieldTypeEnum.RICHTEXT,
+            fieldType: FieldLegacyTypeEnum.RICHTEXT,
             label: column.title,
             maxLength: column.maxLength,
             readOnly: !column.editable,
@@ -218,14 +215,14 @@ export const columnToFieldMapper = <T,>(columns: Array<IColumnType<T>>): Array<I
             dataIndex: column.dataIndex,
             fields: column.fields,
             openInitially: column.openInitially,
-            fieldType: FieldTypeEnum.SWITCH,
+            fieldType: FieldLegacyTypeEnum.SWITCH,
             label: column.title,
           };
         }
         case ColumnType.SWITCH: {
           return {
             dataIndex: column.dataIndex,
-            fieldType: FieldTypeEnum.SWITCH,
+            fieldType: FieldLegacyTypeEnum.SWITCH,
             label: column.title,
             readOnly: !column.editable,
           };
@@ -236,7 +233,7 @@ export const columnToFieldMapper = <T,>(columns: Array<IColumnType<T>>): Array<I
             extra: column.extra,
             loading: column.loading,
             onSortChange: column.onSortChange,
-            fieldType: FieldTypeEnum.LINE_EDITABLE_TABLE,
+            fieldType: FieldLegacyTypeEnum.LINE_EDITABLE_TABLE,
             label: column.title,
             dataIndex: column.dataIndex,
             readOnly: !column.editable,
@@ -246,7 +243,7 @@ export const columnToFieldMapper = <T,>(columns: Array<IColumnType<T>>): Array<I
           return {
             maxLength: column.maxLength,
             minLendth: column.minLength,
-            fieldType: FieldTypeEnum.TEXT,
+            fieldType: FieldLegacyTypeEnum.TEXT,
             label: column.title,
             dataIndex: column.dataIndex,
             readOnly: !column.editable,
@@ -256,7 +253,7 @@ export const columnToFieldMapper = <T,>(columns: Array<IColumnType<T>>): Array<I
           return {
             maxLength: column.maxLength,
             minLendth: column.minLength,
-            fieldType: FieldTypeEnum.TEXTAREA,
+            fieldType: FieldLegacyTypeEnum.TEXTAREA,
             label: column.title,
             dataIndex: column.dataIndex,
             readOnly: !column.editable,
@@ -265,7 +262,7 @@ export const columnToFieldMapper = <T,>(columns: Array<IColumnType<T>>): Array<I
         case ColumnType.YEAR: {
           return {
             dataIndex: column.dataIndex,
-            fieldType: FieldTypeEnum.YEAR,
+            fieldType: FieldLegacyTypeEnum.YEAR,
             label: column.title,
             readOnly: !column.editable,
             usePortal: column.usePortal,
@@ -276,16 +273,16 @@ export const columnToFieldMapper = <T,>(columns: Array<IColumnType<T>>): Array<I
   );
 };
 
-const LineEditableModal = <T extends AnyObject>(props: ILineEditableModalProps<T>): ReactElement => {
+const LineEditableModal = <T extends yup.AnyObject>(props: ILineEditableModalProps<T>): ReactElement => {
   const { columns, extra, onCancel, onClose, onSubmit, showChanges, row, rowIndex, title } = props;
 
-  const { formElement, getData, submit } = useForm<T>({
+  const { formElement, getData, submit } = useFormLegacy<T>({
     enableOldData: showChanges,
     enableSideBySide: showChanges,
     initialData: row,
     previousData: showChanges ? cloneDeep(row) : undefined,
     fields: columnToFieldMapper(columns),
-    validationSchema: extra?.validationSchema,
+    validationSchema: extra.validationSchema,
     usePortal: false,
   });
 

@@ -1,27 +1,32 @@
 name: test
 
 on:
-  push:
-    branches:
-      - "*"
   pull_request:
     branches:
       - "*"
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-    
+    strategy:
+      matrix:
+        node: [ 16 ]
     steps:
-    - uses: actions/checkout@v3
-    - name: Use Node.js ${{ matrix.node-version }}
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Use Node.js ${{ matrix.node }}
       uses: actions/setup-node@v3
       with:
-        node-version: ${{ matrix.node-version }}
-    - run : |
+        node-version: ${{ matrix.node }}
+
+    - name: Configure npm
+      run : |
           npm config set "@fortawesome:registry" https://npm.fontawesome.com/
           npm config set "//npm.fontawesome.com/:_authToken" ${{ secrets.FONTAWESOME_NPM_AUTH_TOKEN }}
+
+    - name: Install, lint and test
+      run: |
           npm ci
           npm run lint
           npm run test

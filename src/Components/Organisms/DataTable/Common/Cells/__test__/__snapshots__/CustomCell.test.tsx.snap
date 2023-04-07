@@ -9,7 +9,7 @@ exports[`CustomCell component CustomCell renders 1`] = `
           class=""
         >
           <span
-            class="gds-typography"
+            class="typography"
           >
             customRender
           </span>
@@ -29,7 +29,7 @@ exports[`CustomCell component CustomCell renders in edit mode and handles change
           class=""
         >
           <span
-            class="gds-typography"
+            class="typography"
           >
             customRender
           </span>
@@ -49,7 +49,7 @@ exports[`CustomCell component CustomCell renders in edit mode via extra 1`] = `
           class=""
         >
           <span
-            class="gds-typography"
+            class="typography"
           >
             customRender
           </span>
@@ -70,7 +70,7 @@ exports[`CustomCell component CustomCell renders when hidden 1`] = `
           style="display: none;"
         >
           <span
-            class="gds-typography"
+            class="typography"
           >
             customRender
           </span>
@@ -90,7 +90,7 @@ exports[`CustomCell component CustomCell renders with forced value 1`] = `
           class=""
         >
           <span
-            class="gds-typography"
+            class="typography"
           >
             FORCEDVALUE
           </span>
@@ -110,7 +110,7 @@ exports[`CustomCell component CustomCell renders without forced value and withou
           class=""
         >
           <span
-            class="gds-typography"
+            class="typography"
           >
             customRender
           </span>

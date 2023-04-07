@@ -15,10 +15,9 @@ const DynamicSearchCell = <T,>(props: ICellProps<T, IColumnDynamicSearch<T>>): R
   return (
     <td className={classnames({ ellipsis: column.ellipsis })} style={{ display: column.hidden ? 'none' : undefined }}>
       <DynamicSearchField
-        colors={column.colors}
         dataTestId={dataTestId}
         ellipsis={column.ellipsis}
-        inputValue={displayValue}
+        input={displayValue}
         isClearable={column.isClearable}
         name={column.title.toString()}
         noOptionsMessage={column.noOptionsMessage}

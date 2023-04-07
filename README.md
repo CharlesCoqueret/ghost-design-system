@@ -8,44 +8,45 @@
 ## Available components:
 
 - Atoms:
-  - [Badge (notification and indicator)](https://charlescoqueret.github.io/ghost-design-system/?path=/story/atom-badge--default)
-  - [Colors](https://charlescoqueret.github.io/ghost-design-system/?path=/story/atom-colors--brand-palette)
-  - [Icons](https://charlescoqueret.github.io/ghost-design-system/?path=/story/atom-icon--list)
+  - [Badge (notification and indicator)](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/atom-badge--badge)
+  - [Icons](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/atom-icon--page)
   - Layout
-    - [Row](https://charlescoqueret.github.io/ghost-design-system/?path=/story/atom-layout-row--default)
-    - [Col](https://charlescoqueret.github.io/ghost-design-system/?path=/story/atom-layout-col--default)
-    - [Collapsible section](https://charlescoqueret.github.io/ghost-design-system/?path=/story/atom-layout-section--default)
-  - [Link](https://charlescoqueret.github.io/ghost-design-system/?path=/story/atom-link--default)
-  - [Modal](https://charlescoqueret.github.io/ghost-design-system/?path=/story/atom-modal--default)
+    - [Col](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/atom-layout--col)
+    - [Row](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/atom-layout--row)
+    - [Section](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/atom-layout--section)
+    - [Separator](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/atom-layout--separator)
+  - [Link](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/atom-link--link)
+  - [Modal](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/atom-modal--default)
   - Portal
-  - [Pulsar](https://charlescoqueret.github.io/ghost-design-system/?path=/story/atom-pulsar--default)
-  - [Tooltip](https://charlescoqueret.github.io/ghost-design-system/?path=/story/atom-tooltip--default)
+  - [Pulsar](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/atom-pulsar--pulsar)
+  - [Theme](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/atom-theme--page)
+  - [Tooltip](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/atom-tooltip--tooltip)
   - Typography
-    - [Text](https://charlescoqueret.github.io/ghost-design-system/?path=/story/atom-typography-text--default)
-    - [Title](https://charlescoqueret.github.io/ghost-design-system/?path=/story/atom-typography-title--default)
+    - [Text](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/atom-typography--text)
+    - [Title](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/atom-typography--title)
 - Molecules:
-  - [Amount field](https://charlescoqueret.github.io/ghost-design-system/?path=/story/molecule-amountfield--default)
-  - [Banner](https://charlescoqueret.github.io/ghost-design-system/?path=/story/molecule--banner)
-  - [Button](https://charlescoqueret.github.io/ghost-design-system/?path=/story/molecule-button--simple)
-  - [Checkbox field](https://charlescoqueret.github.io/ghost-design-system/?path=/story/molecule-checkboxfield--default)
-  - [Datepicker field](https://charlescoqueret.github.io/ghost-design-system/?path=/story/molecule-datepickerfield--default)
-  - [File field](https://charlescoqueret.github.io/ghost-design-system/?path=/story/molecule-filefield--default)
-  - [Percentage field](https://charlescoqueret.github.io/ghost-design-system/?path=/story/molecule-percentagefield--default)
-  - [Popover](https://charlescoqueret.github.io/ghost-design-system/?path=/story/molecule-popover--default)
-  - [Rich Text field](https://charlescoqueret.github.io/ghost-design-system/?path=/story/molecule-richtextfield--default)
+  - [Amount field](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/molecule-amountfield--amount-field)
+  - [Banner](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/molecule-banner--banner)
+  - [Button](https://charlescoqueret.github.io/ghost-design-system?path=/docs/molecule-button--button)
+  - [Checkbox field](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/molecule-checkboxfield--checkbox-field)
+  - [Datepicker field](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/molecule-datepickerfield--date-picker-field)
+  - [File field](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/molecule-filefield--file-field)
+  - [Percentage field](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/molecule-percentagefield--percentage-field)
+  - [Popover](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/molecule-popover--popover)
+  - [Rich Text field](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/molecule-richtextfield--rich-text-field)
   - Select field:
-    - [Single](https://charlescoqueret.github.io/ghost-design-system/?path=/story/molecule-selectfield--default)
-    - [Multi](https://charlescoqueret.github.io/ghost-design-system/?path=/story/molecule-multiselectfield--default)
-    - [Autocomplete (aka Dynamic Search)](https://charlescoqueret.github.io/ghost-design-system/?path=/story/molecule-dynamicsearchfield--default)
-    - [Autocomplete creatable (aka Dynamic Search Creatable)](https://charlescoqueret.github.io/ghost-design-system/?path=/story/molecule-dynamicsearchcreatablefield--default)
-  - [Switch field](https://charlescoqueret.github.io/ghost-design-system/?path=/story/molecule-switchfield--default)
-  - [Textarea field](https://charlescoqueret.github.io/ghost-design-system/?path=/story/molecule-textareafield--default)
-  - [Text field](https://charlescoqueret.github.io/ghost-design-system/?path=/story/molecule-textfield--default)
-  - [Toaster](https://charlescoqueret.github.io/ghost-design-system/?path=/story/molecule--toaster)
-  - [YearPicker field](https://charlescoqueret.github.io/ghost-design-system/?path=/story/molecule-yearpickerfield--default)
+    - [Single](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/molecule-selectfield--select-field)
+    - [Multi](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/molecule-multiselectfield--multi-select-field)
+    - [Autocomplete (aka Dynamic Search)](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/molecule-dynamicsearchfield--dynamic-search-field)
+    - [Autocomplete creatable (aka Dynamic Search Creatable)](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/molecule-dynamicsearchcreatablefield--dynamic-search-creatable-field)
+  - [Switch field](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/molecule-switchfield--switch-field)
+  - [Textarea field](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/molecule-textareafield--text-area-field)
+  - [Text field](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/molecule-textfield--text-field)
+  - [Toaster](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/molecule-toaster--toaster)
+  - [YearPicker field](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/molecule-yearpickerfield--year-picker-field)
 - Organisms:
   - [ActionBar](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/organism--action-bar)
-  - Datatable:
+  - DataTable:
     - [Generic Data Table](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/organism-datatable--data-table)
     - [Editable Data Table (full editable)](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/organism-datatable--editable-data-table)
     - [Line editable Data Table (editon in popup form with data validation)](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/organism-datatable--line-editable-data-table)
@@ -55,9 +56,10 @@
   - [Filter](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/organism--filter)
   - Form:
     - Form component
-    - [useForm hook](https://charlescoqueret.github.io/ghost-design-system/?path=/story/organism-useform--default)
-  - [NavBar](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/organism--nav-bar)
-  - [SideBar](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/organism--side-bar)
+    - [useForm hook](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/organism-useform--basic)
+    - [useFormLegacy hook](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/organism-useformlegacy--default)
+  - [NavBar](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/organism-navbar--nav-bar)
+  - [SideBar](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/organism-sidebar--side-bar)
 - Templates:
   - [Portfolio](https://charlescoqueret.github.io/ghost-design-system/?path=/docs/template-portfolio--portfolio)
 
@@ -69,50 +71,21 @@
 npm install ghost-design-system
 ```
 
-2. Define the set of colors by copying the file: ~ghost-design-system/dist/assets/\_colors.scss)
+3. Load the required icon set and initialize the ThemeProvider, for example in your `index.tsx` :
 
-```scss
-// Neutral pallet
-$chalk: rgb(228, 228, 228);
-$charcoal: rgb(51, 51, 51);
-$pebble: rgb(117, 117, 117);
-$silver: rgb(196, 196, 196);
-$smoke: rgb(248, 248, 248);
-$white: rgb(255, 255, 255);
-
-// Additional pallet
-$scooter: rgb(38, 186, 212);
-$buttercup: rgb(244, 174, 38);
-$cerulean: rgb(1, 82, 129);
-$cinnabar: rgb(232, 61, 71);
-$fern: rgb(92, 184, 92);
-$sky: rgb(16, 156, 241);
-$skyhigh: rgb(206 228 255);
-$tangerine: rgb(229, 114, 0);
-
-$error: rgb(255, 52, 24);
-
-$primary: $scooter;
-$secondary: $pebble;
-$tertiary: $charcoal;
-
-$fontfamily: 'Montserrat', sans-serif;
-```
-
-3. Create your `index.scss` file:
-
-```scss
-@import 'colors.scss';
-@import '~ghost-design-system/dist/assets/_global.scss';
-@import '~ghost-design-system/dist/assets/_general.scss'; // Optional
-```
-
-4. Load the required icon set, for example in your `index.tsx` :
-
-```ts
-import { loadIcons } from 'ghost-design-system';
+```tsx
+import { loadIcons, ThemeProvider } from 'ghost-design-system';
+import '~ghost-design-system/dist/ghost-design-system.css';
 
 loadIcons();
+
+const App = () => {
+  return (
+    <ThemeProvider>
+      <RestOfYourApp />
+    </ThemeProvider>
+  );
+};
 ```
 
 5. You should be ready to use any of the components of the library.
@@ -126,13 +99,12 @@ This react components library uses the following:
 - [@fortawesome](https://fontawesome.com/)
 - [@szhsin/react-menu](https://szhsin.github.io/react-menu/)
 - [classnames](https://github.com/JedWatson/classnames#readme)
-- [color-alpha](https://github.com/colorjs/color-alpha)
-- [color-rgba](https://github.com/colorjs/color-rgba)
 - [date-fns](https://date-fns.org/)
 - [lodash](https://lodash.com/)
 - [numeral](http://numeraljs.com/)
 - [react-collapsed](https://github.com/roginfarrer/react-collapsed#react-collapsed-usecollapse)
 - [react-datepicker](https://reactdatepicker.com/)
+- [react-hot-toast](https://react-hot-toast.com/)
 - [react-infinite-scroller](https://github.com/danbovey/react-infinite-scroller)
 - [react-intersection-observer](https://react-intersection-observer.vercel.app/?path=/story/introduction--page)
 - [react-number-format](https://github.com/s-yadav/react-number-format#readme)
@@ -145,10 +117,9 @@ This react components library uses the following:
 
 Peer dependencies:
 
-- [react](https://fr.reactjs.org/)
-- [react-dom](https://fr.reactjs.org/docs/react-dom.html)
-- [suneditor](http://suneditor.com/) - for SCSS import
-- [tippyjs](https://atomiks.github.io/tippyjs/) - for SCSS import
+- [react](https://reactjs.org/)
+- [react-dom](https://reactjs.org/docs/react-dom.html)
+- [react-router-dom](https://v5.reactrouter.com/)
 
 Dev dependencies:
 
@@ -156,7 +127,7 @@ Dev dependencies:
 - [Jest](https://jestjs.io/)
 - [Prettier](https://prettier.io/)
 - [Rollup](https://rollupjs.org/)
-- [SCSS](https://sass-lang.com/)
+- [SASS](https://sass-lang.com/)
 - [Storybook](https://storybook.js.org/)
 - [Testing-library](https://testing-library.com/)
 - [Typescript](https://www.typescriptlang.org/)

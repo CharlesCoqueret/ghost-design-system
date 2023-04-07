@@ -7,6 +7,8 @@ import { ColumnType, IColumnType, IExtraLineEditableInPlaceDataTableProps, SortD
 import LineEditableInPlaceDataTableBody from './LineEditableInPlaceDataTableBody';
 import usePropState from '../../../../hooks/use-prop-state';
 
+import '../DataTable.module.scss';
+
 export interface ILineEditableInPlaceDataTableProps<T> {
   columns: Array<IColumnType<T>>;
   data: Array<T>;
@@ -49,7 +51,7 @@ const LineEditableInPlaceDataTable = <T,>(props: ILineEditableInPlaceDataTablePr
                   }
                   return true;
                 },
-                icon: ['fal', 'edit'],
+                icon: ['fal', 'pen'],
                 label: extra.localization?.editButton ?? 'Edit',
                 onClick: (row, rowIndex) => {
                   if (extra.onRowEdit) {

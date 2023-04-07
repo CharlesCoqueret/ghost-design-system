@@ -2,8 +2,8 @@ import React, { ReactElement, useRef } from 'react';
 import { render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
+import Popover from '../Popover';
 jest.unmock('@szhsin/react-menu');
-import { Popover } from '..';
 
 // Creating wrapper component to be able to access useRef
 const MockComponent = ({ onCloseMock, open }: { onCloseMock: () => void; open: boolean }): ReactElement => {
@@ -11,10 +11,7 @@ const MockComponent = ({ onCloseMock, open }: { onCloseMock: () => void; open: b
   return (
     <>
       <div ref={ref} />
-      <Popover anchorRef={ref} onClose={onCloseMock} open={open}>
-        CONTENT
-      </Popover>
-      ,
+      <Popover anchorRef={ref} buttons={[]} onClose={onCloseMock} open={open} title='' />
     </>
   );
 };

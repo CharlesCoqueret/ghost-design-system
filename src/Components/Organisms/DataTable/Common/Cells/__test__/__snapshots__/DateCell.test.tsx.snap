@@ -9,17 +9,22 @@ exports[`DateCell component DateCell renders 1`] = `
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <div
-              class="field input-date-picker-field table--cell-value--date-readonly"
+              class="container input-date-picker-wrapper-read-only table--cell-value--date-readonly"
             >
               <div
                 class="react-datepicker-wrapper"
               >
                 <div
-                  class="react-datepicker__input-container"
+                  class="react-datepicker__input-container "
                 >
+                  <span
+                    aria-live="polite"
+                    class="react-datepicker__aria-live"
+                    role="alert"
+                  />
                   <input
                     autocomplete="off"
                     class="input-date-picker-input-read-only"
@@ -51,17 +56,22 @@ exports[`DateCell component DateCell renders in edit mode and handles change 1`]
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <div
-              class="field input-date-picker-field"
+              class="container"
             >
               <div
                 class="react-datepicker-wrapper"
               >
                 <div
-                  class="react-datepicker__input-container"
+                  class="react-datepicker__input-container "
                 >
+                  <span
+                    aria-live="polite"
+                    class="react-datepicker__aria-live"
+                    role="alert"
+                  />
                   <input
                     autocomplete="off"
                     class="input-date-picker-input"
@@ -92,17 +102,22 @@ exports[`DateCell component DateCell renders in edit mode via extra 1`] = `
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <div
-              class="field input-date-picker-field"
+              class="container"
             >
               <div
                 class="react-datepicker-wrapper"
               >
                 <div
-                  class="react-datepicker__input-container"
+                  class="react-datepicker__input-container "
                 >
+                  <span
+                    aria-live="polite"
+                    class="react-datepicker__aria-live"
+                    role="alert"
+                  />
                   <input
                     autocomplete="off"
                     class="input-date-picker-input"
@@ -134,17 +149,22 @@ exports[`DateCell component DateCell renders when hidden 1`] = `
           style="display: none;"
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <div
-              class="field input-date-picker-field table--cell-value--date-readonly"
+              class="container input-date-picker-wrapper-read-only table--cell-value--date-readonly"
             >
               <div
                 class="react-datepicker-wrapper"
               >
                 <div
-                  class="react-datepicker__input-container"
+                  class="react-datepicker__input-container "
                 >
+                  <span
+                    aria-live="polite"
+                    class="react-datepicker__aria-live"
+                    role="alert"
+                  />
                   <input
                     autocomplete="off"
                     class="input-date-picker-input-read-only"
@@ -176,17 +196,22 @@ exports[`DateCell component DateCell renders with forced value 1`] = `
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <div
-              class="field input-date-picker-field table--cell-value--date-readonly"
+              class="container input-date-picker-wrapper-read-only table--cell-value--date-readonly"
             >
               <div
                 class="react-datepicker-wrapper"
               >
                 <div
-                  class="react-datepicker__input-container"
+                  class="react-datepicker__input-container "
                 >
+                  <span
+                    aria-live="polite"
+                    class="react-datepicker__aria-live"
+                    role="alert"
+                  />
                   <input
                     autocomplete="off"
                     class="input-date-picker-input-read-only"

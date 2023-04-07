@@ -1,15 +1,11 @@
 import React, { ReactElement, Ref, useState } from 'react';
 
 import { GenericField } from '../../Atoms/GenericField';
-import { TextAreaInput } from '../../Atoms/TextAreaInput';
+import TextAreaInput, { ITextAreaInputProps } from '../../Atoms/TextAreaInput/TextAreaInput';
 
-export interface ITextAreaFieldProps {
+export interface ITextAreaFieldProps extends Omit<ITextAreaInputProps, 'className' | 'isInError' | 'onChange'> {
   /** React Container ref (optional, default: undefined) */
   containerRef?: Ref<HTMLDivElement>;
-  /** For test purpose only */
-  dataTestId?: string;
-  /** Disabled field (optional, default: false) */
-  disabled?: boolean;
   /** Error message (optional, default: undefined) */
   errorMessage?: string;
   /** Class for the field surrounding the input (optional, default: undefined) */
@@ -18,30 +14,16 @@ export interface ITextAreaFieldProps {
   fieldSize?: number;
   /** Helper text (optional, default: undefined) */
   helperText?: string;
-  /** Highlighted field (optional, default: false) */
-  highlighted?: boolean;
   /** Class for the input (optional, default: undefined) */
   inputClassName?: string;
-  /** Input string value (optional, default: undefined) */
-  inputValue?: string;
   /** Label (optional, default: undefined) */
   label?: string;
   /** Size of the field in a 12 column grid (optional, default: undefined) */
   labelSize?: number;
   /** Mandatory field (optional, default: false) */
   mandatory?: boolean;
-  /** Maximum length of the textAreafield (optional, default: undefined) */
-  maxLength?: number;
-  /** Minimum length of textAreafield (optional, default: undefined) */
-  minLength?: number;
-  /** Name of text field */
-  name: string;
   /** Handler of value changes (optional, default: undefined) */
   onChange?: (newValue: string) => void;
-  /** Placeholder value (optional, default: undefined) */
-  placeholder?: string;
-  /** Read only field (optional, default: false) */
-  readOnly?: boolean;
 }
 
 /**
@@ -63,7 +45,7 @@ export const TextAreaField = (props: ITextAreaFieldProps): ReactElement => {
     helperText,
     highlighted,
     inputClassName,
-    inputValue,
+    input,
     label,
     labelSize,
     mandatory,
@@ -75,7 +57,7 @@ export const TextAreaField = (props: ITextAreaFieldProps): ReactElement => {
     readOnly,
   } = props;
 
-  const [inputLength, setInputLength] = useState<number>(inputValue ? inputValue.toString().length : 0);
+  const [inputLength, setInputLength] = useState<number>(input ? input.toString().length : 0);
 
   /**
    * Handler of changes
@@ -107,8 +89,8 @@ export const TextAreaField = (props: ITextAreaFieldProps): ReactElement => {
         dataTestId={dataTestId}
         disabled={disabled}
         highlighted={highlighted}
-        inputClassName={inputClassName}
-        inputValue={inputValue}
+        className={inputClassName}
+        input={input}
         isInError={errorMessage !== undefined}
         maxLength={maxLength}
         minLength={minLength}
@@ -130,12 +112,13 @@ TextAreaField.defaultProps = {
   highlighted: false,
   inline: false,
   inputClassName: undefined,
-  inputValue: undefined,
+  input: undefined,
   label: undefined,
   labelSize: undefined,
   mandatory: false,
   maxLength: undefined,
   minLength: undefined,
+  name: undefined,
   onChange: undefined,
   placeholder: undefined,
   readOnly: false,

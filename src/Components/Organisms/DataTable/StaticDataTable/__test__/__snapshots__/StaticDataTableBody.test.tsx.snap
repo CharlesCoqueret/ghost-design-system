@@ -19,7 +19,7 @@ exports[`StaticDataTableBody component StaticDataTableBody renders with number a
               No data
             </div>
             <i
-              class="no-data-icon icon"
+              class="icon no-data-icon"
               icon="fal,inbox"
             />
           </div>
@@ -49,7 +49,7 @@ exports[`StaticDataTableBody component StaticDataTableBody renders with number a
               No data
             </div>
             <i
-              class="no-data-icon icon"
+              class="icon no-data-icon"
               icon="fal,inbox"
             />
           </div>
@@ -79,7 +79,7 @@ exports[`StaticDataTableBody component StaticDataTableBody renders with number a
               No data
             </div>
             <i
-              class="no-data-icon icon"
+              class="icon no-data-icon"
               icon="fal,inbox"
             />
           </div>
@@ -109,7 +109,7 @@ exports[`StaticDataTableBody component StaticDataTableBody renders with number a
               No data
             </div>
             <i
-              class="no-data-icon icon"
+              class="icon no-data-icon"
               icon="fal,inbox"
             />
           </div>
@@ -139,7 +139,7 @@ exports[`StaticDataTableBody component StaticDataTableBody renders with number a
               No data
             </div>
             <i
-              class="no-data-icon icon"
+              class="icon no-data-icon"
               icon="fal,inbox"
             />
           </div>
@@ -163,10 +163,11 @@ exports[`StaticDataTableBody component StaticDataTableBody renders with number h
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <span
-              class="gds-amount-field amount-field-read-only table--cell-value--number-readonly"
+              autocomplete="off"
+              class="default readOnly table--cell-value--number-readonly"
               id="number"
               name="number"
             >
@@ -193,10 +194,11 @@ exports[`StaticDataTableBody component StaticDataTableBody renders with number h
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <span
-              class="gds-amount-field amount-field-read-only table--cell-value--number-readonly"
+              autocomplete="off"
+              class="default readOnly table--cell-value--number-readonly"
               id="number"
               name="number"
             >
@@ -223,10 +225,11 @@ exports[`StaticDataTableBody component StaticDataTableBody renders with number h
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <span
-              class="gds-amount-field amount-field-read-only table--cell-value--number-readonly"
+              autocomplete="off"
+              class="default readOnly table--cell-value--number-readonly"
               id="number"
               name="number"
             >
@@ -307,10 +310,11 @@ exports[`StaticDataTableBody component StaticDataTableBody renders with number s
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <span
-              class="gds-amount-field amount-field-read-only table--cell-value--number-readonly"
+              autocomplete="off"
+              class="default readOnly table--cell-value--number-readonly"
               id="number"
               name="number"
             >
@@ -351,10 +355,11 @@ exports[`StaticDataTableBody component StaticDataTableBody renders with number s
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <span
-              class="gds-amount-field amount-field-read-only table--cell-value--number-readonly"
+              autocomplete="off"
+              class="default readOnly table--cell-value--number-readonly"
               id="number"
               name="number"
             >
@@ -395,10 +400,11 @@ exports[`StaticDataTableBody component StaticDataTableBody renders with number s
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <span
-              class="gds-amount-field amount-field-read-only table--cell-value--number-readonly"
+              autocomplete="off"
+              class="default readOnly table--cell-value--number-readonly"
               id="number"
               name="number"
             >
@@ -439,10 +445,11 @@ exports[`StaticDataTableBody component StaticDataTableBody renders with number s
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <span
-              class="gds-amount-field amount-field-read-only table--cell-value--number-readonly"
+              autocomplete="off"
+              class="default readOnly table--cell-value--number-readonly"
               id="number"
               name="number"
             >
@@ -469,10 +476,11 @@ exports[`StaticDataTableBody component StaticDataTableBody renders with number w
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <span
-              class="gds-amount-field amount-field-read-only table--cell-value--number-readonly"
+              autocomplete="off"
+              class="default readOnly table--cell-value--number-readonly"
               id="number"
               name="number"
             >

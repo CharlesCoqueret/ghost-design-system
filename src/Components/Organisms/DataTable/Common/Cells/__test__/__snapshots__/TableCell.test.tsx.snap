@@ -21,7 +21,7 @@ exports[`TableCell component TableCell renders 1`] = `
                     tabindex="-1"
                   >
                     <span
-                      class="gds-typography table--header-value--title right ellipsis"
+                      class="typography table--header-value--title right ellipsis"
                       title="Number"
                     >
                       Number
@@ -39,10 +39,11 @@ exports[`TableCell component TableCell renders 1`] = `
                   class=""
                 >
                   <div
-                    class="gds-field-group"
+                    class="fieldGroup"
                   >
                     <span
-                      class="gds-amount-field amount-field-read-only table--cell-value--number-readonly"
+                      autocomplete="off"
+                      class="default readOnly table--cell-value--number-readonly"
                       id="number"
                       name="number"
                     >
@@ -59,10 +60,11 @@ exports[`TableCell component TableCell renders 1`] = `
                   class=""
                 >
                   <div
-                    class="gds-field-group"
+                    class="fieldGroup"
                   >
                     <span
-                      class="gds-amount-field amount-field-read-only table--cell-value--number-readonly"
+                      autocomplete="off"
+                      class="default readOnly table--cell-value--number-readonly"
                       id="number"
                       name="number"
                     >
@@ -102,7 +104,7 @@ exports[`TableCell component TableCell renders when hidden 1`] = `
                     tabindex="-1"
                   >
                     <span
-                      class="gds-typography table--header-value--title right ellipsis"
+                      class="typography table--header-value--title right ellipsis"
                       title="Number"
                     >
                       Number
@@ -120,10 +122,11 @@ exports[`TableCell component TableCell renders when hidden 1`] = `
                   class=""
                 >
                   <div
-                    class="gds-field-group"
+                    class="fieldGroup"
                   >
                     <span
-                      class="gds-amount-field amount-field-read-only table--cell-value--number-readonly"
+                      autocomplete="off"
+                      class="default readOnly table--cell-value--number-readonly"
                       id="number"
                       name="number"
                     >
@@ -140,10 +143,11 @@ exports[`TableCell component TableCell renders when hidden 1`] = `
                   class=""
                 >
                   <div
-                    class="gds-field-group"
+                    class="fieldGroup"
                   >
                     <span
-                      class="gds-amount-field amount-field-read-only table--cell-value--number-readonly"
+                      autocomplete="off"
+                      class="default readOnly table--cell-value--number-readonly"
                       id="number"
                       name="number"
                     >
@@ -182,7 +186,7 @@ exports[`TableCell component TableCell renders with forced value 1`] = `
                     tabindex="-1"
                   >
                     <span
-                      class="gds-typography table--header-value--title right ellipsis"
+                      class="typography table--header-value--title right ellipsis"
                       title="Number"
                     >
                       Number
@@ -200,10 +204,11 @@ exports[`TableCell component TableCell renders with forced value 1`] = `
                   class=""
                 >
                   <div
-                    class="gds-field-group"
+                    class="fieldGroup"
                   >
                     <span
-                      class="gds-amount-field amount-field-read-only table--cell-value--number-readonly"
+                      autocomplete="off"
+                      class="default readOnly table--cell-value--number-readonly"
                       id="number"
                       name="number"
                     >

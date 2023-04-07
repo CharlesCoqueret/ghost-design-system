@@ -1,21 +1,22 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import Link, { ILinkProps } from './Link';
+import LinkComponent, { ILinkProps } from './Link';
 
 export default {
   title: 'Atom/Link',
-  component: Link,
+  component: LinkComponent,
   parameters: { actions: { argTypesRegex: '^on.*' }, controls: { sort: 'requiredFirst' }, layout: 'centered' },
-} as ComponentMeta<typeof Link>;
+} as ComponentMeta<typeof LinkComponent>;
 
-const Template: ComponentStory<typeof Link> = (args: ILinkProps) => {
-  return <Link {...args} />;
+const Template: ComponentStory<typeof LinkComponent> = (args: ILinkProps) => {
+  return <LinkComponent {...args} />;
 };
 
-export const Default = Template.bind({});
-Default.args = {
+export const Link = Template.bind({});
+Link.args = {
   text: ' Link Text',
-  link: 'https://hamster.dance/hamsterdance/',
+  to: { pathname: 'https://google.com' },
   tooltip: 'Information about the link in a tooltip',
+  externalLink: true,
 };

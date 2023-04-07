@@ -1,0 +1,25 @@
+import { useState } from 'react';
+import { Canvas, Meta, ArgsTable, Story } from '@storybook/addon-docs';
+
+import Pulsar from './Pulsar';
+
+<Meta
+  title='Atom/Pulsar'
+  component={Pulsar}
+  parameters={{
+    viewMode: 'docs',
+    layout: 'centered',
+  }}
+/>
+
+# Pulsar
+
+export const Template = () => {
+  return <Pulsar />;
+};
+
+<Canvas withSource='open'>
+  <Story name='Pulsar' args={{}}>
+    {Template.bind({})}
+  </Story>
+</Canvas>

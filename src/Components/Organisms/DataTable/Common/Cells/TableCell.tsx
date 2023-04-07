@@ -7,6 +7,9 @@ import { StaticDataTable } from '../../StaticDataTable';
 
 // TODO investigate type resolution
 // Using any to avoid circular type definition for now, until there is a way to get the type of an item of T[keyof T]
+/**
+ * @deprecated will be removed in version 2.1
+ */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const TableCell = <T,>(props: ICellProps<T, IColumnTable<T, any>>): ReactElement => {
   const { column, forcedValue, row } = props;

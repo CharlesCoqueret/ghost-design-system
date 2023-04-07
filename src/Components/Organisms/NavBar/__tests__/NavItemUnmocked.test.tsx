@@ -9,6 +9,7 @@ jest.unmock('react-dom');
 describe('NavItem unmocked Component', () => {
   it('renders with submenu gets closed', () => {
     const onClickMock = jest.fn();
+    console.info = jest.fn();
 
     const { baseElement } = render(
       <NavItem
@@ -43,6 +44,9 @@ describe('NavItem unmocked Component', () => {
     act(() => {
       userEvent.click(subitem);
     });
+
+    expect(console.info).toBeCalledTimes(1);
+    expect(console.info).toBeCalledWith('url pushed:', '#');
 
     expect(baseElement).toMatchSnapshot();
     expect(onClickMock).toBeCalledTimes(1);

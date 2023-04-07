@@ -7,17 +7,11 @@ import { customStyles } from './selectStyles';
 import { Icon } from '../Icon';
 import { Typography } from '../Typography';
 
+import styles from './SelectInput.module.scss';
+
 export interface ISelectInputProps {
   /** Class for the input (optional, default: undefined) */
   className?: string;
-  /** Custom colors settings */
-  colors?: {
-    controlErrorColor: string; // colors.error,
-    controlFocusColor: string; // colors.primary,
-    fontColor: string; // 'rgb(0, 0, 0)',
-    optionFocusColor: string; // colors.chalk,
-    optionSelectedColor: string; // colors.primary,
-  };
   /** For test purpose only */
   dataTestId?: string;
   /** Disabled field (optional, default: false) */
@@ -27,15 +21,15 @@ export interface ISelectInputProps {
   /** Highlight value in readonly mode (optional, default: false) */
   highlighted?: boolean;
   /** Input string value (optional, default: undefined) */
-  inputValue?: string | number | null | undefined;
+  input?: string | number | null | undefined;
   /** Provide the ability to clear the value (optional, default: false) */
   isClearable?: boolean;
   /** Is in Error (optional, default: false) */
   isInError?: boolean;
   /** Maximum height of the menu in px (optional, default: 300) */
   maxMenuHeight?: number;
-  /** Name of select input */
-  name: string;
+  /** Name of input (optional, default: undefined) */
+  name?: string;
   /** Handler of value changes (optional, default: undefined) */
   onChange?: (selectedOption: string | number | null | undefined) => void;
   /** Options to be displayed */
@@ -51,12 +45,11 @@ export interface ISelectInputProps {
 const SelectInput = (props: ISelectInputProps): ReactElement => {
   const {
     className,
-    colors,
     dataTestId,
     disabled,
     ellipsis,
     highlighted,
-    inputValue,
+    input,
     isClearable,
     isInError,
     maxMenuHeight,
@@ -69,15 +62,13 @@ const SelectInput = (props: ISelectInputProps): ReactElement => {
   } = props;
 
   if (readOnly || disabled) {
-    const displayValue = (inputValue && options.find((option) => option.value === inputValue)?.label) || '-';
+    const displayValue = (input && options.find((option) => option.value === input)?.label) || '-';
     return (
       <div
         className={classnames(
-          'field',
-          'gds-select-container',
-          'input-select-field-read-only',
+          styles.container,
           {
-            'field-highlighted': highlighted,
+            [styles.highlighted]: (readOnly || disabled) && highlighted,
           },
           className,
         )}
@@ -88,16 +79,7 @@ const SelectInput = (props: ISelectInputProps): ReactElement => {
   }
 
   return (
-    <div
-      className={classnames(
-        'field',
-        'gds-select-container',
-        'input-select-field',
-        {
-          'input-error': isInError && !disabled,
-        },
-        className,
-      )}>
+    <div className={classnames(styles.container, className)}>
       <ReactSelect<IOption, false>
         components={{
           DropdownIndicator: (props: DropdownIndicatorProps<IOption, false>) => {
@@ -106,7 +88,7 @@ const SelectInput = (props: ISelectInputProps): ReactElement => {
               <div {...innerProps}>
                 <Icon
                   icon={['fal', 'chevron-down']}
-                  className='dynamic-search-icon'
+                  className={styles.icon}
                   data-testid={dataTestId ? `${dataTestId}-magnifier` : undefined}
                 />
               </div>
@@ -118,7 +100,7 @@ const SelectInput = (props: ISelectInputProps): ReactElement => {
               <div {...innerProps}>
                 <Icon
                   icon={['fal', 'xmark']}
-                  className='dynamic-search-icon'
+                  className={styles.icon}
                   data-testid={dataTestId ? `${dataTestId}-clear` : undefined}
                 />
               </div>
@@ -142,8 +124,8 @@ const SelectInput = (props: ISelectInputProps): ReactElement => {
         options={options}
         placeholder={placeholder}
         menuPortalTarget={usePortal ? document.querySelector('body') : undefined}
-        styles={customStyles({ ...colors, isInError })}
-        value={options.find((option) => option.value === inputValue) || null}
+        styles={customStyles({ isInError: isInError && !(disabled && readOnly) })}
+        value={options.find((option) => option.value === input) || null}
       />
     </div>
   );
@@ -151,20 +133,14 @@ const SelectInput = (props: ISelectInputProps): ReactElement => {
 
 SelectInput.defaultProps = {
   className: undefined,
-  colors: {
-    controlErrorColor: 'rgb(255, 52, 24)',
-    controlFocusColor: 'rgb(38, 186, 212)',
-    fontColor: 'rgb(0, 0, 0)',
-    optionFocusColor: 'rgb(228, 228, 228)',
-    optionSelectedColor: 'rgb(38, 186, 212)',
-  },
   disabled: false,
   ellipsis: false,
   highlighted: false,
-  inputValue: undefined,
+  input: undefined,
   isClearable: false,
   isInError: false,
   maxMenuHeight: 300,
+  name: undefined,
   onChange: undefined,
   placeholder: undefined,
   readOnly: false,

@@ -18,7 +18,7 @@ const YearCell = <T,>(props: ICellProps<T, IColumnYear<T>>): ReactElement => {
         dataTestId={dataTestId}
         name={String(column.dataIndex)}
         inputClassName={classnames({ 'table--cell-value--date-readonly': !isCurrentlyEditedRow })}
-        inputValue={displayValue}
+        input={displayValue}
         onChange={(newValue: number | undefined) => {
           if (onChange) {
             onChange(newValue as unknown as T[keyof T]);

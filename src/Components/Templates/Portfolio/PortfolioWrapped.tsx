@@ -9,6 +9,8 @@ import { SortDirectionEnum } from '../../Organisms/DataTable/Common/types';
 import { StaticDataTable } from '../../Organisms/DataTable/StaticDataTable';
 import { IStaticDataTableProps } from '../../Organisms/DataTable/StaticDataTable/StaticDataTable';
 
+import styles from './PortfolioWrapped.module.scss';
+
 export interface IPortfolioProps<FilterType, PortfolioType, ResponseType, PaginationType> {
   /**
    * Converts data synchronously.
@@ -19,11 +21,9 @@ export interface IPortfolioProps<FilterType, PortfolioType, ResponseType, Pagina
   convertData: (response: ResponseType) => Array<PortfolioType>;
   /**
    * Description of the filter
+   * When set to undefined, filter will not be rendered.
    */
-  filter?: Pick<
-    IFilterProps<FilterType>,
-    'advancedSearchItems' | 'disableTabOutside' | 'initialValues' | 'localization' | 'searchBarItems'
-  >;
+  filter?: Omit<IFilterProps<FilterType>, 'onChange'>;
   /** Custom filter className (optional, default: undefined) */
   filterClassName?: string;
   /**
@@ -49,7 +49,7 @@ export interface IPortfolioProps<FilterType, PortfolioType, ResponseType, Pagina
   /**
    * Description of the static data table
    */
-  table: Pick<IStaticDataTableProps<PortfolioType>, 'columns' | 'extra' | 'stickyHeader'>;
+  table: Omit<IStaticDataTableProps<PortfolioType>, 'data' | 'loading' | 'onSortChange'>;
   /** Custom table className (optional, default: undefined) */
   tableClassName?: string;
 }
@@ -100,19 +100,19 @@ const PortfolioWrapped = <FilterType, PortfolioType, ResponseType, PaginationTyp
   return (
     <>
       {filter && (
-        <div className={classnames('gds-portfolio-filter', filterClassName)}>
+        <div className={classnames(styles.filter, filterClassName)}>
           <Filter {...filter} onChange={onFilterChange} />
         </div>
       )}
 
-      <div className={classnames('gds-portfolio-table', tableClassName)}>
+      <div className={classnames(styles.table, tableClassName)}>
         <StaticDataTable<PortfolioType>
           {...table}
           data={data?.pages.map(convertData).flat()}
           onSortChange={onSortChange}
           loading={isFetching ? <Loader size='3x' /> : undefined}
         />
-        <div ref={ref} style={{ height: '20px' }} />
+        <div ref={ref} className={styles.ref} />
       </div>
     </>
   );

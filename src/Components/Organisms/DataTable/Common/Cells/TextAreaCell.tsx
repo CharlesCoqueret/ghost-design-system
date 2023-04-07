@@ -16,8 +16,7 @@ const TextAreaCell = <T,>(props: ICellProps<T, IColumnTextArea<T>>): ReactElemen
     <td className={classnames({ ellipsis: column.ellipsis })} style={{ display: column.hidden ? 'none' : undefined }}>
       <TextAreaField
         dataTestId={dataTestId}
-        inputClassName={classnames('gds-typography', { ellipsis: column.ellipsis })}
-        inputValue={displayValue}
+        input={displayValue}
         maxLength={column.maxLength}
         minLength={column.minLength}
         name={String(column.dataIndex)}

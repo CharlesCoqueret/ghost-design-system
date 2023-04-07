@@ -3,10 +3,10 @@
 exports[`MultiSelectField Component MultiSelectField renders 1`] = `
 <div>
   <div
-    class="gds-field-group"
+    class="fieldGroup"
   >
     <div
-      class="field gds-select-container input-select-field input-select-field"
+      class="container"
     >
       <div
         class=" css-1959ul7-container"
@@ -22,19 +22,19 @@ exports[`MultiSelectField Component MultiSelectField renders 1`] = `
           class="css-1f43avz-a11yText-A11yText"
         />
         <div
-          class=" css-1l9db9l-control"
+          class=" css-1iiyd84-control"
         >
           <div
-            class=" css-9plg90-ValueContainer"
+            class=" css-yhb162-ValueContainer"
           >
             <div
-              class=" css-14el2xx-placeholder"
+              class=" css-1jqq78o-placeholder"
               id="react-select-2-placeholder"
             >
               Select...
             </div>
             <div
-              class=" css-6j8wv5-Input"
+              class=" css-qbdosj-Input"
               data-value=""
             >
               <input
@@ -60,13 +60,13 @@ exports[`MultiSelectField Component MultiSelectField renders 1`] = `
             class=" css-1hb7zxy-IndicatorsContainer"
           >
             <span
-              class=" css-1okebmr-indicatorSeparator"
+              class=" css-1u9des2-indicatorSeparator"
             />
             <div
               aria-hidden="true"
             >
               <i
-                class="dynamic-search-icon icon"
+                class="icon icon"
                 icon="fal,chevron-down"
               />
             </div>
@@ -88,13 +88,13 @@ exports[`MultiSelectField Component MultiSelectField renders 1`] = `
 exports[`MultiSelectField Component MultiSelectField renders with values in disabled highligted 1`] = `
 <div>
   <div
-    class="gds-field-group"
+    class="fieldGroup"
   >
     <div
-      class="field gds-select-container input-select-field-read-only field-highlighted input-select-field"
+      class="container highlighted"
     >
       <span
-        class="gds-typography"
+        class="typography"
       >
         Label
       </span>
@@ -106,13 +106,13 @@ exports[`MultiSelectField Component MultiSelectField renders with values in disa
 exports[`MultiSelectField Component MultiSelectField renders with values in readonly 1`] = `
 <div>
   <div
-    class="gds-field-group"
+    class="fieldGroup"
   >
     <div
-      class="field gds-select-container input-select-field-read-only input-select-field"
+      class="container"
     >
       <span
-        class="gds-typography"
+        class="typography"
       >
         Label
       </span>
@@ -124,10 +124,10 @@ exports[`MultiSelectField Component MultiSelectField renders with values in read
 exports[`MultiSelectField Component MultiSelectField renders with values with fieldSize and inline 1`] = `
 <div>
   <div
-    class="gds-field-group field-size-6 field-inline"
+    class="fieldGroup size-6 inline"
   >
     <div
-      class="field gds-select-container input-select-field input-select-field"
+      class="container"
     >
       <div
         class=" css-1959ul7-container"
@@ -143,14 +143,14 @@ exports[`MultiSelectField Component MultiSelectField renders with values with fi
           class="css-1f43avz-a11yText-A11yText"
         />
         <div
-          class=" css-1l9db9l-control"
+          class=" css-1iiyd84-control"
         >
           <div
-            class=" css-1xxnwvf-ValueContainer"
+            class=" css-16ryfrw-ValueContainer"
           >
             1 item selected
             <div
-              class=" css-g5g4gj-Input"
+              class=" css-qwwk3k-Input"
               data-value=""
             >
               <input
@@ -175,13 +175,13 @@ exports[`MultiSelectField Component MultiSelectField renders with values with fi
             class=" css-1hb7zxy-IndicatorsContainer"
           >
             <span
-              class=" css-1okebmr-indicatorSeparator"
+              class=" css-1u9des2-indicatorSeparator"
             />
             <div
               aria-hidden="true"
             >
               <i
-                class="dynamic-search-icon icon"
+                class="icon icon"
                 icon="fal,chevron-down"
               />
             </div>

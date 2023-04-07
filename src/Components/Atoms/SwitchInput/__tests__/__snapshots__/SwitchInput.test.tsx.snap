@@ -3,15 +3,15 @@
 exports[`SwitchInput Component SwitchInput renders highlighted 1`] = `
 <div>
   <div
-    class="field gds-switch-container"
+    class="container"
   >
     <label
-      class="input-switch-field-read-only"
+      class="label readOnly"
       for="switch-31"
       tabindex="-1"
     >
       <div
-        class="switch-marker"
+        class="switch"
       >
         <input
           aria-hidden="true"
@@ -29,12 +29,12 @@ exports[`SwitchInput Component SwitchInput renders highlighted 1`] = `
       Switch label 0
     </label>
     <label
-      class="input-switch-field-read-only input-switch-field-checked"
+      class="label readOnly"
       for="switch-32"
       tabindex="-1"
     >
       <div
-        class="switch-marker"
+        class="switch"
       >
         <input
           aria-hidden="true"
@@ -53,12 +53,12 @@ exports[`SwitchInput Component SwitchInput renders highlighted 1`] = `
       Switch label 1
     </label>
     <label
-      class="input-switch-field-read-only"
+      class="label readOnly"
       for="switch-33"
       tabindex="-1"
     >
       <div
-        class="switch-marker"
+        class="switch"
       >
         <input
           aria-hidden="true"
@@ -76,12 +76,12 @@ exports[`SwitchInput Component SwitchInput renders highlighted 1`] = `
       Switch label 2
     </label>
     <label
-      class="input-switch-field-read-only"
+      class="label readOnly"
       for="switch-34"
       tabindex="-1"
     >
       <div
-        class="switch-marker"
+        class="switch"
       >
         <input
           aria-hidden="true"
@@ -98,12 +98,12 @@ exports[`SwitchInput Component SwitchInput renders highlighted 1`] = `
       Switch label 3
     </label>
     <label
-      class="input-switch-field-read-only field-highlighted"
+      class="label readOnly highlighted"
       for="switch-35"
       tabindex="-1"
     >
       <div
-        class="switch-marker"
+        class="switch"
       >
         <input
           aria-hidden="true"
@@ -120,12 +120,12 @@ exports[`SwitchInput Component SwitchInput renders highlighted 1`] = `
       Switch label 4
     </label>
     <label
-      class="input-switch-field-read-only"
+      class="label readOnly"
       for="switch-36"
       tabindex="-1"
     >
       <div
-        class="switch-marker"
+        class="switch"
       >
         <input
           aria-hidden="true"
@@ -148,15 +148,15 @@ exports[`SwitchInput Component SwitchInput renders highlighted 1`] = `
 exports[`SwitchInput Component SwitchInput renders with input 1`] = `
 <div>
   <div
-    class="field gds-switch-container"
+    class="container"
   >
     <label
-      class=""
+      class="label"
       for="switch-1"
       tabindex="0"
     >
       <div
-        class="switch-marker"
+        class="switch"
       >
         <input
           aria-hidden="true"
@@ -173,12 +173,12 @@ exports[`SwitchInput Component SwitchInput renders with input 1`] = `
       Switch label 0
     </label>
     <label
-      class="input-switch-field-checked"
+      class="label"
       for="switch-2"
       tabindex="0"
     >
       <div
-        class="switch-marker"
+        class="switch"
       >
         <input
           aria-hidden="true"
@@ -197,12 +197,12 @@ exports[`SwitchInput Component SwitchInput renders with input 1`] = `
       Switch label 1
     </label>
     <label
-      class=""
+      class="label"
       for="switch-3"
       tabindex="0"
     >
       <div
-        class="switch-marker"
+        class="switch"
       >
         <input
           aria-hidden="true"
@@ -220,12 +220,12 @@ exports[`SwitchInput Component SwitchInput renders with input 1`] = `
       Switch label 2
     </label>
     <label
-      class=""
+      class="label"
       for="switch-4"
       tabindex="0"
     >
       <div
-        class="switch-marker"
+        class="switch"
       >
         <input
           aria-hidden="true"
@@ -242,12 +242,12 @@ exports[`SwitchInput Component SwitchInput renders with input 1`] = `
       Switch label 3
     </label>
     <label
-      class=""
+      class="label"
       for="switch-5"
       tabindex="0"
     >
       <div
-        class="switch-marker"
+        class="switch"
       >
         <input
           aria-hidden="true"
@@ -264,12 +264,12 @@ exports[`SwitchInput Component SwitchInput renders with input 1`] = `
       Switch label 4
     </label>
     <label
-      class=""
+      class="label"
       for="switch-6"
       tabindex="0"
     >
       <div
-        class="switch-marker"
+        class="switch"
       >
         <input
           aria-hidden="true"
@@ -292,7 +292,7 @@ exports[`SwitchInput Component SwitchInput renders with input 1`] = `
 exports[`SwitchInput Component SwitchInput renders with no options 1`] = `
 <div>
   <div
-    class="field gds-switch-container"
+    class="container"
   />
 </div>
 `;

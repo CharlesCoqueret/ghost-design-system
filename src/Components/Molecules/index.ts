@@ -1,3 +1,4 @@
+export * from './Alert';
 export * from './AmountField';
 export * from './Button';
 export * from './Banner';

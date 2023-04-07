@@ -1,0 +1,31 @@
+.item {
+  margin: 0 12px;
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  a {
+    all: unset;
+    display: flex;
+    align-items: center;
+  }
+
+  &:hover {
+    color: rgb(var(--theme-provider-primary));
+    cursor: pointer;
+  }
+}
+
+.counter {
+  position: absolute;
+  transform: translateX(12px) translateY(10px);
+}
+
+.label {
+  margin-left: 8px;
+  white-space: nowrap;
+}
+
+.caret {
+  margin-left: 8px;
+}

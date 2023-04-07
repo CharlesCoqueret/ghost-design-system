@@ -1,11 +1,13 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import cloneDeep from 'lodash/cloneDeep';
 
-import { Container, Row } from '../../Atoms/Layout';
+import { Row } from '../../Atoms/Layout';
 import { Modal, ModalBody, ModalFooter } from '../../Atoms/Modal';
 import { Button, ColorButtonEnum } from '../../Molecules/Button';
 import { IFilterFieldsProps, IFilterLayoutAndFieldsProps } from './types';
 import FilterItem from './FilterItem';
+
+import styles from './Filter.module.scss';
 
 export interface IFilterProps<T> {
   /** List of filter items shown in advanced search (optional, default: undefined) */
@@ -58,7 +60,7 @@ const Filter = <T,>(props: IFilterProps<T>): React.ReactElement => {
   };
 
   const handleAdvancedFilterReset = useCallback((): void => {
-    setCurrentModalValues(cloneDeep(cloneDeep(initialValues)));
+    setCurrentModalValues(cloneDeep(initialValues));
   }, [initialValues]);
 
   const handleReset = useCallback((): void => {
@@ -89,13 +91,13 @@ const Filter = <T,>(props: IFilterProps<T>): React.ReactElement => {
   const hasAdvancedSearch = advancedSearchItems && advancedSearchItems.length > 0;
 
   return (
-    <div className='gds-filter-container'>
-      <div className='searchbar'>
-        <div className='search-field'>
+    <div className={styles.container}>
+      <div className={styles.bar}>
+        <div className={styles.fields}>
           {searchBarItems.map((item) => {
             return (
               <FilterItem<T>
-                inputValues={currentSearchBarValues}
+                inputs={currentSearchBarValues}
                 item={item}
                 key={item.dataIndex.toString()}
                 inline
@@ -104,7 +106,7 @@ const Filter = <T,>(props: IFilterProps<T>): React.ReactElement => {
             );
           })}
         </div>
-        <div className='search-actions'>
+        <div className={styles.actions}>
           <Button
             color={ColorButtonEnum.REVERSED}
             dataTestId={dataTestId ? `${dataTestId}-reset` : undefined}
@@ -132,20 +134,18 @@ const Filter = <T,>(props: IFilterProps<T>): React.ReactElement => {
           size={'lg'}
           title={localization.advancedSearchTitle}>
           <ModalBody>
-            <Container>
-              <Row>
-                {advancedSearchItems.map((item, index) => {
-                  return (
-                    <FilterItem<T>
-                      key={'dataIndex' in item ? item.dataIndex.toString() : `section-${index}`}
-                      inputValues={currentModalValues}
-                      item={item}
-                      onChange={onChangeAdvancedFilterValue}
-                    />
-                  );
-                })}
-              </Row>
-            </Container>
+            <Row>
+              {advancedSearchItems.map((item, index) => {
+                return (
+                  <FilterItem<T>
+                    key={'dataIndex' in item ? item.dataIndex.toString() : `section-${index}`}
+                    inputs={currentModalValues}
+                    item={item}
+                    onChange={onChangeAdvancedFilterValue}
+                  />
+                );
+              })}
+            </Row>
           </ModalBody>
           <ModalFooter>
             <Button

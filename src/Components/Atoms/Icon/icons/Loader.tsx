@@ -2,6 +2,8 @@ import React from 'react';
 import classnames from 'classnames';
 import { SizeProp } from '@fortawesome/fontawesome-svg-core';
 
+import styles from './Loader.module.scss';
+
 export interface ILoaderProps {
   className?: string;
   size?: SizeProp;
@@ -17,7 +19,7 @@ const Loader = (props: ILoaderProps) => {
       aria-hidden='true'
       focusable='false'
       role='img'
-      className={classnames('icon', 'gds-loader', `size-${size}`, className)}
+      className={classnames(styles.icon, styles[`size-${size}`], className)}
       viewBox='0 0 100 100'
       width='50'
       height='50'

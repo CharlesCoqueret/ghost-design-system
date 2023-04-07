@@ -1,9 +1,28 @@
-import React, { PropsWithChildren, ReactElement } from 'react';
+import React, { CSSProperties, PropsWithChildren, ReactElement } from 'react';
+import classnames from 'classnames';
 
-const ModalFooter = (props: PropsWithChildren<unknown>): ReactElement => {
-  const { children } = props;
+import styles from './ModalFooter.module.scss';
 
-  return <div className='modal-footer'>{children}</div>;
+export interface IModalFooterProps {
+  /** Additional class (optional, default: undefined) */
+  className?: string;
+  /** Custom style (optional, default: undefined) */
+  style?: CSSProperties;
+}
+
+const ModalFooter = (props: PropsWithChildren<IModalFooterProps>): ReactElement => {
+  const { children, className, style } = props;
+
+  return (
+    <div className={classnames(styles.container, className)} style={style}>
+      {children}
+    </div>
+  );
+};
+
+ModalFooter.defaultProps = {
+  className: undefined,
+  style: undefined,
 };
 
 export default ModalFooter;

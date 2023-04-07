@@ -2,25 +2,27 @@ import React, { ReactElement } from 'react';
 import classnames from 'classnames';
 import TextareaAutosize from 'react-textarea-autosize';
 
+import styles from './TextAreaInput.module.scss';
+
 export interface ITextAreaInputProps {
+  /** Class for the input (optional, default: undefined) */
+  className?: string;
   /** For test purpose only */
   dataTestId?: string;
   /** Disabled field (optional, default: false) */
   disabled?: boolean;
   /** Highlighted field (optional, default: false) */
   highlighted?: boolean;
-  /** Class for the input (optional, default: undefined) */
-  inputClassName?: string;
   /** Input string value (optional, default: '') */
-  inputValue?: string;
+  input?: string;
   /** Is in Error (optional, default: false) */
   isInError?: boolean;
   /** Maximum length of the textfield (optional, default: undefined) */
   maxLength?: number;
   /** Minimum length of textfield (optional, default: undefined) */
   minLength?: number;
-  /** Name of text field */
-  name: string;
+  /** Name of text field (optional, default: undefined) */
+  name?: string;
   /** Handler of value changes (optional, default: undefined) */
   onChange?: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
   /** Placeholder value (optional, default: undefined) */
@@ -31,12 +33,12 @@ export interface ITextAreaInputProps {
 
 const TextAreaInput = (props: ITextAreaInputProps): ReactElement => {
   const {
+    className,
     dataTestId,
     disabled,
     isInError,
     highlighted,
-    inputClassName,
-    inputValue,
+    input,
     maxLength,
     minLength,
     name,
@@ -57,44 +59,46 @@ const TextAreaInput = (props: ITextAreaInputProps): ReactElement => {
   };
 
   return (
-    <div className={classnames('field', 'gds-input-textarea-parent')}>
+    <div className={styles.container}>
       <TextareaAutosize
+        autoComplete='off'
+        autoCorrect='off'
         onChange={onChangeHandler}
         className={classnames(
-          { 'input-textarea-field': !readOnly },
-          { 'input-textarea-field-read-only': readOnly },
+          styles.textarea,
           {
-            'input-error': isInError && !disabled,
+            [styles.readOnly]: readOnly,
+            [styles.disabled]: disabled,
+            [styles.error]: isInError && !(disabled || readOnly),
+            [styles.highlighted]: (readOnly || disabled) && highlighted,
           },
-          {
-            'field-highlighted': highlighted,
-          },
-          inputClassName,
+          className,
         )}
         data-testid={dataTestId}
         id={name}
         name={name}
-        placeholder={!inputValue && (readOnly || disabled) ? '-' : placeholder}
+        placeholder={!input && (readOnly || disabled) ? '-' : placeholder}
         minRows={3}
         maxRows={10}
         maxLength={maxLength}
         minLength={minLength}
         disabled={disabled}
         readOnly={readOnly}
-        value={inputValue}
+        value={input}
       />
     </div>
   );
 };
 
 TextAreaInput.defaultProps = {
+  className: undefined,
   disabled: false,
   highlighted: false,
-  inputClassName: undefined,
-  inputValue: '',
+  input: '',
   isInError: false,
   maxLength: undefined,
   minLength: undefined,
+  name: undefined,
   onChange: undefined,
   placeholder: undefined,
   readOnly: false,

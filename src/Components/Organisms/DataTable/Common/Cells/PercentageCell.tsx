@@ -24,7 +24,7 @@ const PercentageCell = <T,>(props: ICellProps<T, IColumnPercentage<T>>): ReactEl
           { 'table--cell-value--negative': isNegative && !isCurrentlyEditedRow },
           { 'table--cell-value--percentage-readonly': !isCurrentlyEditedRow },
         )}
-        inputValue={displayValue}
+        input={displayValue}
         maxValue={column.maxValue}
         minValue={column.minValue}
         name={String(column.dataIndex)}

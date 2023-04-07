@@ -1,12 +1,11 @@
 import { Canvas, Meta, ArgsTable, Story, Source } from '@storybook/addon-docs';
 
 import Filter from './Filter';
+import { Alert, AlertType } from '../../Molecules/Alert';
 import { FilterTypeEnum } from './types';
 import { IToggleEntry } from '../../Atoms/CheckBoxInput';
 import { IOption } from '../../Atoms/SelectInput';
 import { Icon } from '../../Atoms';
-
-import filterStyle from '../../../assets/_filter.scss?raw';
 
 export const Template = (args) => {
   return <Filter {...args} />;
@@ -28,25 +27,151 @@ As a developper, it is your responsibility to build the search criteria based on
 
 Play with Filter live on [CodeSandbox](https://codesandbox.io/s/filter-demo-hi6upd)
 
-## Search bar items
+For layout management, please refer to this [example](https://codesandbox.io/s/size-management-sidebar-xtpkk0)
 
-<div
-  style={{
-    border: '1px solid red',
-    borderRadius: '4px',
-    padding: '1rem',
-    color: 'red',
-  }}>
-  <div
-    style={{
-      top: '50%',
-      left: '50%',
+<Canvas>
+  <Story
+    name='Filter'
+    args={{
+      advancedSearchItems: [
+        {
+          filterType: FilterTypeEnum.COLUMN,
+          fields: [
+            {
+              filterType: FilterTypeEnum.TITLE,
+              label: 'Section #1',
+            },
+            {
+              dataIndex: 'number',
+              filterType: FilterTypeEnum.NUMBER,
+              label: 'Number',
+              placeholder: 'Search number',
+            },
+            {
+              dataIndex: 'checkbox',
+              filterType: FilterTypeEnum.CHECKBOX,
+              label: 'Checkbox',
+            },
+            {
+              dataIndex: 'select',
+              filterType: FilterTypeEnum.SELECT,
+              isClearable: true,
+              label: 'Select',
+              options: [
+                { value: 'SELECT1', label: 'Option #1' },
+                { value: 'SELECT2', label: 'Option #2' },
+                { value: 'SELECT3', label: 'Option #3' },
+                { value: 'SELECT4', label: 'Option #4' },
+                { value: 'SELECT5', label: 'Option #5' },
+              ],
+              placeholder: 'Select an option',
+            },
+          ],
+        },
+        {
+          filterType: FilterTypeEnum.COLUMN,
+          fields: [
+            {
+              filterType: FilterTypeEnum.TITLE,
+              label: 'Section #2',
+            },
+            {
+              dataIndex: 'text',
+              filterType: FilterTypeEnum.TEXT,
+              label: 'Text',
+              placeholder: 'Search text',
+            },
+            {
+              dataIndex: 'dateFrom',
+              filterType: FilterTypeEnum.DATE,
+              isClearable: true,
+              label: 'From',
+            },
+            {
+              dataIndex: 'dateTo',
+              filterType: FilterTypeEnum.DATE,
+              isClearable: true,
+              label: 'To',
+            },
+            {
+              dataIndex: 'multiselect',
+              filterType: FilterTypeEnum.MULTISELECT,
+              isClearable: true,
+              label: 'Multiselect',
+              numberOfItemLabel: '{} item selected',
+              numberOfItemsLabel: '{} items selected',
+              options: [
+                { value: 'SELECT1', label: 'Option #1' },
+                { value: 'SELECT2', label: 'Option #2' },
+                { value: 'SELECT3', label: 'Option #3' },
+                { value: 'SELECT4', label: 'Option #4' },
+              ],
+              placeholder: 'Select options',
+            },
+          ],
+        },
+      ],
+      searchBarItems: [
+        {
+          dataIndex: 'dateFrom',
+          filterType: FilterTypeEnum.DATE,
+          isClearable: true,
+          label: 'From',
+        },
+        {
+          dataIndex: 'dateTo',
+          filterType: FilterTypeEnum.DATE,
+          isClearable: true,
+          label: 'To',
+        },
+        {
+          dataIndex: 'multiselect',
+          filterType: FilterTypeEnum.MULTISELECT,
+          fieldSize: 4,
+          isClearable: true,
+          numberOfItemLabel: '{} item selected',
+          numberOfItemsLabel: '{} items selected',
+          options: [
+            { value: 'SELECT1', label: 'Option #1' },
+            { value: 'SELECT2', label: 'Option #2' },
+            { value: 'SELECT3', label: 'Option #3' },
+            { value: 'SELECT4', label: 'Option #4' },
+          ],
+          placeholder: 'Select options',
+        },
+      ],
+      initialValues: {
+        checkbox: [
+          {
+            value: 'CHECKBOX1',
+            label: 'Checkbox #1',
+          },
+          {
+            value: 'CHECKBOX2',
+            label: 'Checkbox #2',
+          },
+        ],
+        dateFrom: new Date(),
+      },
+      localization: {
+        advancedSearch: 'Advanced search',
+        advancedSearchTitle: 'Advanced search',
+        search: 'Search',
+        reset: 'Reset',
+      },
+      onChange: console.log,
     }}>
-    <Icon icon={['fal', 'exclamation-triangle']} size='lg' /> The search bar items should never exceed 5 items.
-  </div>
-</div>
+    {Template.bind({})}
+  </Story>
+</Canvas>
 
-<Canvas isExpanded={true}>
+<ArgsTable of={Filter} sort='requiredFirst' exclude={['dataTestId']} />
+
+### Search bar items
+
+<Alert type={AlertType.ERROR}>The search bar items should never exceed 5 items.</Alert>
+
+<Canvas>
   <Filter
     searchBarItems={[
       {
@@ -71,25 +196,19 @@ Play with Filter live on [CodeSandbox](https://codesandbox.io/s/filter-demo-hi6u
   />
 </Canvas>
 
-## Advanced search items
+### Advanced search items
 
-<div
-  style={{
-    border: '1px solid deepskyblue',
-    borderRadius: '4px',
-    padding: '1rem',
-  }}>
-  <div
-    style={{
-      top: '50%',
-      left: '50%',
-    }}>
-    <Icon style={{ color: 'deepskyblue' }} icon={['fal', 'exclamation-circle']} size='lg' /> It is recommended to set
-    the fieldSize of select, multiselect, dynamic search and dynamic search creatable when inline.
-  </div>
-</div>
+<Alert type={AlertType.INFORMATION}>
+  It is recommended to set the fieldSize for the following components when in line:
+  <ul>
+    <li>select</li>
+    <li>multiselect</li>
+    <li>dynamic search</li>
+    <li>dynamic search creatable</li>
+  </ul>
+</Alert>
 
-<Canvas isExpanded={false}>
+<Canvas>
   <Filter
     advancedSearchItems={[
       {
@@ -188,9 +307,9 @@ Play with Filter live on [CodeSandbox](https://codesandbox.io/s/filter-demo-hi6u
   />
 </Canvas>
 
-## Localization
+### Localization
 
-<Canvas isExpanded={false}>
+<Canvas>
   <Filter
     advancedSearchItems={[
       {
@@ -242,9 +361,9 @@ Play with Filter live on [CodeSandbox](https://codesandbox.io/s/filter-demo-hi6u
   />
 </Canvas>
 
-## Initial value
+### Initial value
 
-<Canvas isExpanded={false}>
+<Canvas>
   <Filter
     advancedSearchItems={[
       {
@@ -285,152 +404,3 @@ Play with Filter live on [CodeSandbox](https://codesandbox.io/s/filter-demo-hi6u
     onChange={console.log}
   />
 </Canvas>
-
-## Props
-
-<ArgsTable of={Filter} sort='requiredFirst' />
-
-For layout management, please refer to this [example](https://codesandbox.io/s/size-management-sidebar-xtpkk0)
-
-## Story
-
-<Canvas>
-  <Story
-    name='Filter'
-    args={{
-      advancedSearchItems: [
-        {
-          filterType: FilterTypeEnum.COLUMN,
-          fields: [
-            {
-              filterType: FilterTypeEnum.TITLE,
-              label: 'Section #1',
-            },
-            {
-              dataIndex: 'number',
-              filterType: FilterTypeEnum.NUMBER,
-              label: 'Number',
-              placeholder: 'Search number',
-            },
-            {
-              dataIndex: 'checkbox',
-              filterType: FilterTypeEnum.CHECKBOX,
-              label: 'Checkbox',
-            },
-            {
-              dataIndex: 'select',
-              filterType: FilterTypeEnum.SELECT,
-              isClearable: true,
-              label: 'Select',
-              options: [
-                { value: 'SELECT1', label: 'Option #1' },
-                { value: 'SELECT2', label: 'Option #2' },
-                { value: 'SELECT3', label: 'Option #3' },
-                { value: 'SELECT4', label: 'Option #4' },
-              ],
-              placeholder: 'Select an option',
-            },
-          ],
-        },
-        {
-          filterType: FilterTypeEnum.COLUMN,
-          fields: [
-            {
-              filterType: FilterTypeEnum.TITLE,
-              label: 'Section #2',
-            },
-            {
-              dataIndex: 'text',
-              filterType: FilterTypeEnum.TEXT,
-              label: 'Text',
-              placeholder: 'Search text',
-            },
-            {
-              dataIndex: 'dateFrom',
-              filterType: FilterTypeEnum.DATE,
-              isClearable: true,
-              label: 'From',
-            },
-            {
-              dataIndex: 'dateTo',
-              filterType: FilterTypeEnum.DATE,
-              isClearable: true,
-              label: 'To',
-            },
-            {
-              dataIndex: 'multiselect',
-              filterType: FilterTypeEnum.MULTISELECT,
-              isClearable: true,
-              label: 'Multiselect',
-              numberOfItemLabel: '{} item selected',
-              numberOfItemsLabel: '{} items selected',
-              options: [
-                { value: 'SELECT1', label: 'Option #1' },
-                { value: 'SELECT2', label: 'Option #2' },
-                { value: 'SELECT3', label: 'Option #3' },
-                { value: 'SELECT4', label: 'Option #4' },
-              ],
-              placeholder: 'Select options',
-            },
-          ],
-        },
-      ],
-      searchBarItems: [
-        {
-          dataIndex: 'dateFrom',
-          filterType: FilterTypeEnum.DATE,
-          isClearable: true,
-          label: 'From',
-        },
-        {
-          dataIndex: 'dateTo',
-          filterType: FilterTypeEnum.DATE,
-          isClearable: true,
-          label: 'To',
-        },
-        {
-          dataIndex: 'multiselect',
-          filterType: FilterTypeEnum.MULTISELECT,
-          fieldSize: 3,
-          isClearable: true,
-          numberOfItemLabel: '{} item selected',
-          numberOfItemsLabel: '{} items selected',
-          options: [
-            { value: 'SELECT1', label: 'Option #1' },
-            { value: 'SELECT2', label: 'Option #2' },
-            { value: 'SELECT3', label: 'Option #3' },
-            { value: 'SELECT4', label: 'Option #4' },
-          ],
-          placeholder: 'Select options',
-        },
-      ],
-      initialValues: {
-        checkbox: [
-          {
-            value: 'CHECKBOX1',
-            label: 'Checkbox #1',
-          },
-          {
-            value: 'CHECKBOX2',
-            label: 'Checkbox #2',
-          },
-        ],
-        dateFrom: new Date(),
-      },
-      localization: {
-        advancedSearch: 'Advanced search',
-        advancedSearchTitle: 'Advanced search',
-        search: 'Search',
-        reset: 'Reset',
-      },
-      onChange: console.log,
-    }}>
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-## Style
-
-[source](https://github.com/CharlesCoqueret/ghost-design-system/blob/main/src/assets/_filter.scss)
-
-<Source language='css' dark format={true} code={filterStyle} />

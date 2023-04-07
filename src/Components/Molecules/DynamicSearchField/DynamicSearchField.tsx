@@ -1,26 +1,11 @@
 import React, { ReactElement, Ref } from 'react';
-import classnames from 'classnames';
 
 import { GenericField } from '../../Atoms/GenericField';
-import { DynamicSearchInput, IOption } from '../../Atoms/SelectInput';
+import DynamicSearchInput, { IDynamicSearchInputProps } from '../../Atoms/SelectInput/DynamicSearchInput';
 
-export interface IDynamicSearchFieldProps {
-  /** Custom colors settings */
-  colors?: {
-    controlErrorColor: string; // colors.error,
-    controlFocusColor: string; // colors.primary,
-    fontColor: string; // 'rgb(0, 0, 0)',
-    optionFocusColor: string; // colors.chalk,
-    optionSelectedColor: string; // colors.primary,
-  };
+export interface IDynamicSearchFieldProps extends Omit<IDynamicSearchInputProps, 'className' | 'isInError'> {
   /** React Container ref (optional, default: undefined) */
   containerRef?: Ref<HTMLDivElement>;
-  /** For test purpose only */
-  dataTestId?: string;
-  /** Disabled field (optional, default: false) */
-  disabled?: boolean;
-  /** Ellipsis in readonly (optional, default: false) */
-  ellipsis?: boolean;
   /** Error message (optional, default: undefined) */
   errorMessage?: string;
   /** Class for the field surrounding the input (optional, default: undefined) */
@@ -29,38 +14,16 @@ export interface IDynamicSearchFieldProps {
   fieldSize?: number;
   /** Helper text (optional, default: undefined) */
   helperText?: string;
-  /** Highlighted field (optional, default: false) */
-  highlighted?: boolean;
   /** Inline field (optional, default: false) */
   inline?: boolean;
   /** Class for the input (optional, default: undefined) */
   inputClassName?: string;
-  /** Input string value (optional, default: undefined) */
-  inputValue: string | number | undefined;
-  /** Provide the ability to clear the value (optional, default: false) */
-  isClearable?: boolean;
   /** Label (optional, default: undefined) */
   label?: string;
   /** Size of the field in a 12 column grid (optional, default: undefined) */
   labelSize?: number;
   /** Mandatory field (optional, default: false) */
   mandatory?: boolean;
-  /** Name of text field */
-  name: string;
-  /** No option message (dispayed when no results are available) */
-  noOptionsMessage: string | ((obj: { inputValue: string }) => string);
-  /** Handler of value changes (optional, default: undefined) */
-  onChange?: (newValue: string | number | null | undefined) => void;
-  /** Placeholder value (optional, default: undefined) */
-  placeholder?: string;
-  /** Read only field (optional, default: false) */
-  readOnly?: boolean;
-  /** Resolved the value from the provided input (value of the {value, label} object) */
-  resolveValue: (value: string | number) => Promise<IOption | undefined>;
-  /** Search for different options based on the term provided by the user */
-  searchOptions: (searchTerm: string) => Promise<Array<IOption>>;
-  /** Use portal, it is remmended to set it to false for modal (optional, default true) */
-  usePortal?: boolean;
 }
 
 /**
@@ -73,7 +36,6 @@ export interface IDynamicSearchFieldProps {
  */
 export const DynamicSearchField = (props: IDynamicSearchFieldProps): ReactElement => {
   const {
-    colors,
     containerRef,
     dataTestId,
     disabled,
@@ -85,11 +47,12 @@ export const DynamicSearchField = (props: IDynamicSearchFieldProps): ReactElemen
     highlighted,
     inline,
     inputClassName,
-    inputValue,
+    input,
     isClearable,
     label,
     labelSize,
     mandatory,
+    maxMenuHeight,
     name,
     noOptionsMessage,
     onChange,
@@ -114,18 +77,18 @@ export const DynamicSearchField = (props: IDynamicSearchFieldProps): ReactElemen
       mandatory={mandatory}
       readOnly={readOnly}>
       <DynamicSearchInput
-        colors={colors}
-        className={classnames(inputClassName, 'input-select-field')}
+        className={inputClassName}
         dataTestId={dataTestId}
         ellipsis={ellipsis}
         highlighted={highlighted}
         isInError={errorMessage !== undefined}
         isClearable={isClearable}
+        maxMenuHeight={maxMenuHeight}
         name={name}
         noOptionsMessage={noOptionsMessage}
         placeholder={placeholder}
         disabled={disabled}
-        inputValue={inputValue}
+        input={input}
         onChange={onChange}
         readOnly={readOnly}
         resolveValue={resolveValue}
@@ -137,13 +100,6 @@ export const DynamicSearchField = (props: IDynamicSearchFieldProps): ReactElemen
 };
 
 DynamicSearchField.defaultProps = {
-  colors: {
-    controlErrorColor: 'rgb(255, 52, 24)',
-    controlFocusColor: 'rgb(38, 186, 212)',
-    fontColor: 'rgb(0, 0, 0)',
-    optionFocusColor: 'rgb(228, 228, 228)',
-    optionSelectedColor: 'rgb(38, 186, 212)',
-  },
   disabled: false,
   ellipsis: false,
   errorMessage: undefined,
@@ -153,11 +109,12 @@ DynamicSearchField.defaultProps = {
   highlighted: false,
   inline: false,
   inputClassName: undefined,
-  inputValue: undefined,
+  input: undefined,
   isClearable: false,
   label: undefined,
   labelSize: undefined,
   mandatory: false,
+  name: undefined,
   onChange: undefined,
   placeholder: undefined,
   readOnly: false,

@@ -3,10 +3,12 @@
 exports[`TextField Component TextField renders 1`] = `
 <div>
   <div
-    class="gds-field-group field-size-2"
+    class="fieldGroup size-2"
   >
     <input
-      class="field gds-input-text-field"
+      autocomplete="off"
+      autocorrect="off"
+      class="container"
       id="NAME"
       name="NAME"
       type="text"
@@ -19,10 +21,12 @@ exports[`TextField Component TextField renders 1`] = `
 exports[`TextField Component TextField renders handles changes 1`] = `
 <div>
   <div
-    class="gds-field-group"
+    class="fieldGroup"
   >
     <input
-      class="field gds-input-text-field"
+      autocomplete="off"
+      autocorrect="off"
+      class="container"
       data-testid="DATA-TEST-ID"
       id="NAME"
       name="NAME"
@@ -36,17 +40,13 @@ exports[`TextField Component TextField renders handles changes 1`] = `
 exports[`TextField Component TextField renders in readonly 1`] = `
 <div>
   <div
-    class="gds-field-group field-size-6"
+    class="fieldGroup size-6"
   >
-    <div
-      class="field input-text-field-read-only"
+    <span
+      class="typography"
     >
-      <span
-        class="gds-typography"
-      >
-        INPUT-VALUE
-      </span>
-    </div>
+      INPUT-VALUE
+    </span>
   </div>
 </div>
 `;
@@ -54,17 +54,13 @@ exports[`TextField Component TextField renders in readonly 1`] = `
 exports[`TextField Component TextField renders in readonly highlighted 1`] = `
 <div>
   <div
-    class="gds-field-group"
+    class="fieldGroup"
   >
-    <div
-      class="field input-text-field-read-only field-highlighted"
+    <span
+      class="typography highlighted"
     >
-      <span
-        class="gds-typography"
-      >
-        -
-      </span>
-    </div>
+      -
+    </span>
   </div>
 </div>
 `;
@@ -72,20 +68,22 @@ exports[`TextField Component TextField renders in readonly highlighted 1`] = `
 exports[`TextField Component TextField renders with error 1`] = `
 <div>
   <div
-    class="gds-field-group"
+    class="fieldGroup"
   >
     <input
-      class="field gds-input-text-field input-error"
+      autocomplete="off"
+      autocorrect="off"
+      class="container error"
       id="NAME"
       name="NAME"
       type="text"
       value="INPUT-VALUE"
     />
     <div
-      class="field-message"
+      class="message"
     >
       <div
-        class="field-error-message"
+        class="error field-error"
       >
         ERROR-MESSAGE
       </div>

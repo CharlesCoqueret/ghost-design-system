@@ -1,0 +1,230 @@
+import { Canvas, Meta, ArgsTable, Story, Source } from '@storybook/addon-docs';
+import LinkTo from '@storybook/addon-links/react';
+
+import { Col, Row } from '../Components/Atoms/Layout';
+import { Alert, AlertType } from '../Components/Molecules/Alert';
+import { ThemeProvider } from '../Components/Atoms/Theme';
+
+<ThemeProvider />
+
+<Meta
+  title='Support/Migration to version 2'
+  parameters={{
+    viewMode: 'docs',
+    layout: 'fullscreen',
+  }}
+/>
+
+# Migrating to V2
+
+With version 2, some breaking changes were introduced.
+
+## Theming
+
+Theme is no longer defined in SASS but via the `ThemeProvider` Component.
+
+<Source
+  code={`// styles.scss\n
+// Neutral pallet
+$chalk: rgb(228, 228, 228);
+$charcoal: rgb(51, 51, 51);
+$pebble: rgb(117, 117, 117);
+$silver: rgb(196, 196, 196);
+$smoke: rgb(248, 248, 248);
+$white: rgb(255, 255, 255);\n
+// Additional pallet
+$scooter: rgb(38, 186, 212);
+$buttercup: rgb(244, 174, 38);
+$cerulean: rgb(1, 82, 129);
+$cinnabar: rgb(232, 61, 71);
+$fern: rgb(92, 184, 92);
+$sky: rgb(16, 156, 241);
+$skyhigh: rgb(206 228 255);
+$tangerine: rgb(229, 114, 0);
+$error: rgb(255, 52, 24);\n
+$primary: $scooter;
+$secondary: $pebble;
+$tertiary: $charcoal;\n
+$fontfamily: 'Montserrat', sans-serif;\n
+@import '~ghost-design-system/dist/assets/_global.scss';
+@import '~ghost-design-system/dist/assets/_general.scss';
+`}
+/>
+
+should be replaced by
+
+<Source
+  code={`import { ThemeProvider } from 'ghost-design-system';\n
+import '~ghost-design-system/dist/ghost-design-system.css';\n
+const theme = {
+  black:'0, 0, 0',
+  buttercup : '244, 174, 38',
+  buttercuphigh : '255, 243, 205',
+  cerulean : '1, 82, 129',
+  chalk : '228, 228, 228',
+  charcoal : '51, 51, 51',
+  cinnabar : '232, 61, 71',
+  cinnabarhigh : '248, 215, 218',
+  error : '255, 52, 24',
+  fern : '92, 184, 92',
+  fernhigh : '209, 231, 222',
+  pebble : '117, 117, 117',
+  primary : '38, 186, 212',
+  scooter : '38, 186, 212',
+  secondary : '117, 117, 117',
+  silver : '196, 196, 196',
+  sky : '16, 156, 241',
+  skyhigh : '206, 228, 255',
+  smoke : '248, 248, 248',
+  tangerine : '229, 114, 0',
+  tangerinehigh : '255, 230, 210',
+  tertiary : '51, 51, 51',
+  white : '255, 255, 255',
+  fontFamily : 'Montserrat, Arial, sans-serif',
+}\n
+...
+<ThemeProvider theme={theme}>
+  <App />
+</ThemeProvider>
+...\n `}
+/>
+
+## Typography.Text
+
+Typography.Text no longer supports type `Link`.
+
+<Source
+  code={`const { Typography, TextTypeEnum } from 'ghost-design-system';\n
+<Typography.Text
+  type={TextTypeEnum.Link}
+  onClick={() => {
+    history.push('https://some.link');
+  }}>
+  Link
+</Typography.Text>
+`}
+/>
+
+should be replaced by
+
+<Source
+  code={`const { Link } from 'ghost-design-system';\n
+<Link
+  text=" Link"
+  to="https://some.link"
+/>\n
+`}
+/>
+
+## Toaster
+
+Toaster is no longer available as a global export.
+
+<Source
+  code={`const { Toaster, success } from 'ghost-design-system';\n
+...\n
+<Toaster />\n
+...\n
+success('success');\n
+...\n
+`}
+/>
+
+should be replaced by
+
+<Source
+  code={`const { toast } from 'ghost-design-system';\n
+...\n
+<toast.Toaster />\n
+...\n
+toast.success('Success');\n
+...\n
+`}
+/>
+
+## Inputs and Fields now use `input` instead of `inputValue`
+
+<Row>
+  <Col>
+    <ul>
+      <li>AmountInput</li>
+      <li>CheckBoxInput</li>
+      <li>DatePickerInput</li>
+      <li>DynamicSearchCreateableInput</li>
+      <li>DynamicSearchInput</li>
+      <li>FileInput</li>
+      <li>MultiSelectInput</li>
+      <li>RichTextInput</li>
+      <li>SelectInput</li>
+      <li>SwitchInput</li>
+      <li>TextAreaInput</li>
+      <li>TextInput</li>
+      <li>YearPickerInput</li>
+    </ul>
+  </Col>
+  <Col>
+    <ul>
+      <li>AmountField</li>
+      <li>CheckBoxField</li>
+      <li>DatePickerField</li>
+      <li>DynamicSearchCreateableField</li>
+      <li>DynamicSearchField</li>
+      <li>FileField</li>
+      <li>MultiSelectField</li>
+      <li>PercentageField</li>
+      <li>RichTextField</li>
+      <li>SelectField</li>
+      <li>SwitchField</li>
+      <li>TextAreaField</li>
+      <li>TextField</li>
+      <li>YearPickerField</li>
+    </ul>
+  </Col>
+</Row>
+
+take `input` instead of `inputValue` as input value to be rendered.
+
+<Source
+  code={`const { AmountField } from 'ghost-design-system';\n
+...\n
+<AmountField inputValue={1234} readOnly />\n
+...\n
+`}
+/>
+
+should be replaced by
+
+<Source
+  code={`const { AmountField } from 'ghost-design-system';\n
+...\n
+<AmountField input={1234} readOnly />\n
+...\n
+`}
+/>
+
+## Container
+
+Replace all occurences of `Container` by a `div`.
+
+## useForm from v1 to useFormLegacy from V2
+
+As `useForm` has been fully rewritten to be more flexible and support layout variations.
+
+<Alert type={AlertType.WARNING}>
+  It is highly recommended to migrate to useForm from V2, as useFormLegacy will only be maintained until V3.
+</Alert>
+
+If you wish to preserve the behavior of `useForm` from V1, please migrate to `useFormLegacy` from V2, but consider migrating to `useForm` from V2 in a close future.
+
+- Replace all occurences of `useForm` by `useFormLegacy`
+- Replace all occurences of `FieldTypeEnum` by `FieldLegacyTypeEnum`
+- Replace all occurences of `IUseFormReturnedType` by `IUseFormLegacyReturnedType`
+- Replace all occurences of `IFormSubmitReturnedType` by `IFormLegacySubmitReturnedType`
+- Replace all occurences of `IFieldAndLayoutProps` by `IFieldAndLayoutLegacyProps`
+- Replace all occurences of `IFieldProps` by `IFieldLegacyProps`
+- Replace all occurences of `ILayoutProps` by `ILayoutLegacyProps`
+- Replace all occurences of `IFieldSectionProps` by `IFieldSectionLegacyProps`
+- Replace all occurences of `IFieldDescriptionProps` by `IFieldDescriptionLegacyProps`
+- Replace all occurences of `Highlighter` by `HighlighterLegacy`
+- Replace all occurences of `inputValue` in custom components of forms by `input`
+- Define the validation schema as it is no longer optional (ensure the version of yup you are using is compatible)

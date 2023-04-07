@@ -4,7 +4,7 @@ import { render } from '@testing-library/react';
 import Highlighter from '../Highlighter';
 
 describe('Highlighter Component', () => {
-  it('Highlighter renders', () => {
+  it('renders properly', () => {
     const { container } = render(
       <Highlighter>
         <div />
@@ -14,7 +14,7 @@ describe('Highlighter Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('Highlighter renders with highlight', () => {
+  it('renders with highlight and side by side', () => {
     const Element = jest.fn().mockImplementation((props: unknown) => {
       return <>{JSON.stringify(props)}</>;
     });
@@ -28,7 +28,7 @@ describe('Highlighter Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('Highlighter renders with highlight and inValidElement', () => {
+  it('renders with highlight and side by side with invalid Element', () => {
     const { container } = render(
       <Highlighter enableOldData enableSideBySide oldData='OLDDATA' shouldHighlight>
         {''}

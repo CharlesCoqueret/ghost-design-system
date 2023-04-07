@@ -12,6 +12,8 @@ import React, {
 import { Tooltip } from '../../Atoms/Tooltip';
 import { Typography } from '../../Atoms/Typography';
 
+import styles from './Title.module.scss';
+
 export interface ITitleProps {
   dataTestId?: string;
   entityId?: string;
@@ -35,11 +37,9 @@ const Title = (props: ITitleProps): ReactElement => {
 
   const updateInputWidth = () => {
     setCurrentInputStyle({
-      display: 'flex',
-      margin: 'auto',
       width:
         spanRef.current?.offsetWidth && Number.isFinite(spanRef.current.offsetWidth)
-          ? spanRef.current.offsetWidth + 10 + 'px'
+          ? spanRef.current.offsetWidth + 3 + 'px'
           : undefined,
     });
   };
@@ -74,20 +74,20 @@ const Title = (props: ITitleProps): ReactElement => {
   }, [title]);
 
   return (
-    <>
+    <div className={styles.container}>
       {prefix && (
-        <Typography.Title level={1} ellipsis className='align-edit'>
+        <Typography.Title level={1} ellipsis className={styles.prefix}>
           {prefix}
         </Typography.Title>
       )}
-      <span ref={spanRef} className={'title-edit-hidden'}>
+      <span ref={spanRef} className={styles.hiddenTitle}>
         {currentTitle || placeholder}
       </span>
       <Tooltip tooltip={isEditable ? renameTooltip : undefined}>
         <input
           autoComplete='off'
           autoFocus={false}
-          className='title-edit'
+          className={styles.title}
           data-testid={dataTestId}
           onBlur={handleBlur}
           onChange={handleChange}
@@ -96,22 +96,28 @@ const Title = (props: ITitleProps): ReactElement => {
           readOnly={!isEditable}
           ref={inputRef}
           style={currentInputStyle}
+          title={currentTitle}
           type='text'
           tabIndex={isEditable ? 0 : -1}
           value={currentTitle}
         />
       </Tooltip>
       {entityId && (
-        <Typography.Title level={1} ellipsis className='align-edit'>
-          - {entityId}
-        </Typography.Title>
+        <>
+          <Typography.Title level={1} className={styles.entity}>
+            {'- '}
+          </Typography.Title>
+          <Typography.Title level={1} ellipsis className={styles.entity}>
+            {entityId}
+          </Typography.Title>
+        </>
       )}
       {suffix && (
-        <Typography.Title level={1} ellipsis className='align-edit'>
+        <Typography.Title level={1} ellipsis className={styles.suffix}>
           {suffix}
         </Typography.Title>
       )}
-    </>
+    </div>
   );
 };
 

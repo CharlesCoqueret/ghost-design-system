@@ -1,17 +1,12 @@
 import React, { ReactElement, Ref } from 'react';
-import classnames from 'classnames';
 
 import { GenericField } from '../../Atoms/GenericField';
-import { IToggleEntry } from '../../Atoms/CheckBoxInput';
 import { SwitchInput } from '../../Atoms/SwitchInput';
+import { ISwitchInputProps } from '../../Atoms/SwitchInput/SwitchInput';
 
-export interface ISwitchFieldProps {
+export interface ISwitchFieldProps extends Omit<ISwitchInputProps, 'className' | 'isInError'> {
   /** React Container ref (optional, default: undefined) */
   containerRef?: Ref<HTMLDivElement>;
-  /** For test purpose only */
-  dataTestId?: string;
-  /** Disabled field (optional, default: false) */
-  disabled?: boolean;
   /** Error message (optional, default: undefined) */
   errorMessage?: string;
   /** Class for the field surrounding the input (optional, default: undefined) */
@@ -20,24 +15,16 @@ export interface ISwitchFieldProps {
   fieldSize?: number;
   /** Helper text (optional, default: undefined) */
   helperText?: string;
-  /** Highlighted field and highlight the toggle entries marked as highlight (optional, default: false) */
-  highlighted?: boolean;
   /** Inline field (optional, default: false) */
   inline?: boolean;
   /** Class for the input (optional, default: undefined) */
   inputClassName?: string;
-  /** Input value */
-  inputValue: Array<IToggleEntry>;
   /** Label (optional, default: undefined) */
   label?: string;
   /** Size of the field in a 12 column grid (optional, default: undefined) */
   labelSize?: number;
   /** Mandatory field (optional, default: false) */
   mandatory?: boolean;
-  /** Handler of value changes (optional, default: undefined) */
-  onChange?: (values: Array<IToggleEntry>) => void;
-  /** Read only field (optional, default: false) */
-  readOnly?: boolean;
 }
 
 /**
@@ -53,6 +40,7 @@ export const SwitchField = (props: ISwitchFieldProps): ReactElement => {
     containerRef,
     dataTestId,
     disabled,
+    ellipsis,
     errorMessage,
     fieldClassName,
     fieldSize,
@@ -60,10 +48,11 @@ export const SwitchField = (props: ISwitchFieldProps): ReactElement => {
     highlighted,
     inline,
     inputClassName,
-    inputValue,
+    input,
     label,
     labelSize,
     mandatory,
+    name,
     onChange,
     readOnly,
   } = props;
@@ -83,12 +72,15 @@ export const SwitchField = (props: ISwitchFieldProps): ReactElement => {
       mandatory={mandatory}
       readOnly={readOnly}>
       <SwitchInput
-        className={classnames('input-switch-field', inputClassName)}
+        className={inputClassName}
         dataTestId={dataTestId}
         disabled={disabled}
+        ellipsis={ellipsis}
         highlighted={highlighted}
+        inline={inline}
+        input={input}
         isInError={errorMessage !== undefined}
-        options={inputValue}
+        name={name}
         onChange={onChange}
         readOnly={readOnly}
       />
@@ -105,7 +97,7 @@ SwitchField.defaultProps = {
   highlighted: false,
   inline: false,
   inputClassName: undefined,
-  inputValue: undefined,
+  input: undefined,
   isClearable: false,
   label: undefined,
   labelSize: undefined,

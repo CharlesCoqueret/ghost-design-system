@@ -9,10 +9,11 @@ exports[`AmountCell component AmountCell handles changes 1`] = `
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <input
-              class="gds-amount-field"
+              autocomplete="off"
+              class="default"
               inputmode="numeric"
               name="data"
               type="text"
@@ -35,10 +36,11 @@ exports[`AmountCell component AmountCell handles changes 2`] = `
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <input
-              class="gds-amount-field"
+              autocomplete="off"
+              class="default"
               inputmode="numeric"
               name="data"
               type="text"
@@ -61,10 +63,11 @@ exports[`AmountCell component AmountCell renders 1`] = `
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <span
-              class="gds-amount-field amount-field-read-only table--cell-value--amount-readonly"
+              autocomplete="off"
+              class="default readOnly table--cell-value--amount-readonly"
               id="data"
               name="data"
             >
@@ -87,10 +90,11 @@ exports[`AmountCell component AmountCell renders cell editing with no row input 
           class="ellipsis"
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <input
-              class="gds-amount-field"
+              autocomplete="off"
+              class="default"
               inputmode="numeric"
               name="data"
               type="text"
@@ -114,10 +118,11 @@ exports[`AmountCell component AmountCell renders hidden 1`] = `
           style="display: none;"
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <span
-              class="gds-amount-field amount-field-read-only table--cell-value--amount-readonly"
+              autocomplete="off"
+              class="default readOnly table--cell-value--amount-readonly"
               id="data"
               name="data"
             >
@@ -140,10 +145,11 @@ exports[`AmountCell component AmountCell renders row editing with no row input 1
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <input
-              class="gds-amount-field"
+              autocomplete="off"
+              class="default"
               inputmode="numeric"
               name="data"
               type="text"
@@ -166,10 +172,11 @@ exports[`AmountCell component AmountCell renders with forced value 1`] = `
           class=""
         >
           <div
-            class="gds-field-group"
+            class="fieldGroup"
           >
             <span
-              class="gds-amount-field amount-field-read-only table--cell-value--negative table--cell-value--amount-readonly"
+              autocomplete="off"
+              class="default readOnly table--cell-value--negative table--cell-value--amount-readonly"
               id="data"
               name="data"
             >

@@ -1,19 +1,14 @@
-import React, { CSSProperties, ReactElement, Ref, useState } from 'react';
+import React, { ReactElement, Ref, useState } from 'react';
 
 import { GenericField } from '../../Atoms/GenericField';
 import { FileInput, IFile, FileStatusEnum } from '../../Atoms/FileInput';
+import { IFileInputProps } from '../../Atoms/FileInput/FileInput';
 
-export interface IFileFieldProps {
-  /** Accepted types (optional, default: '\*\/\*') */
-  acceptTypes?: string;
+export interface IFileFieldProps extends Omit<IFileInputProps, 'className' | 'isInError'> {
   /** Additional information (options, default: undefined) */
   additionalInfo?: string | ReactElement;
   /** React Container ref (optional, default: undefined) */
   containerRef?: Ref<HTMLDivElement>;
-  /** For test purpose only */
-  dataTestId?: string;
-  /** Disabled field (optional, default: false) */
-  disabled?: boolean;
   /** Error message (optional, default: undefined) */
   errorMessage?: string;
   /** Class for the field surrounding the input (optional, default: undefined) */
@@ -28,73 +23,12 @@ export interface IFileFieldProps {
   inline?: boolean;
   /** Class for the input (optional, default: undefined) */
   inputClassName?: string;
-  /** Input number value (optional, default: undefined) */
-  inputValue?: Array<IFile>;
   /** Label (optional, default: undefined) */
   label?: string;
   /** Size of the field in a 12 column grid (optional, default: undefined) */
   labelSize?: number;
   /** Mandatory field (optional, default: false) */
   mandatory?: boolean;
-  /** Maximum number of files, if undefined: unlimited (optional, default: undefined) */
-  maxFiles?: number;
-  /** Maximum file size allowed in bytes, if undefined: unlimited (optional, default: undefined) */
-  maxFileSize?: number;
-  /** Maximum folder depth scanned when dropping a folder (optional, default: 2) */
-  maxFolderDepth?: number;
-  /** handler of changes, notifying any files changes (including new files, states changes, deleted files...)
-   * To retrieve the up to date files, simply filter the files on the status FileStatusEnum.DONE */
-  onChange?: (files: Array<IFile>) => void;
-  /** Handler of the download request
-   * The promise should reject if the deletion fails. */
-  onDelete?: (file: IFile) => Promise<void>;
-  /** Handler of download request
-   * The client should let the user know if the download fails.
-   * Promise resolution or rejection will only prevent multiple downloads of the same file. */
-  onDownload?: (file: IFile) => Promise<void>;
-  /** Handler of the upload failing, use this method to update the error message if needed (optional, default: undefined) */
-  onFailure?: (file: IFile, statusText: string) => IFile;
-  /** Handler of the upload succeeding, use this method to update the id if needed (optional, default: undefined) */
-  onSuccess?: (file: IFile, serverResponse: unknown) => IFile;
-  /** Read only field (optional, default: false) */
-  readOnly?: boolean;
-  /** Extra header (optional, default: undefined) */
-  requestHeaders?: Record<string, string>;
-  /** HTTP method used for the upload (optional, default: 'POST' ) */
-  requestMethod?: 'POST' | 'PUT';
-  /** Url of the request (optional, default: undefined) */
-  requestUrl?: string;
-  /** Enable withCredentials on the request (optional, default: undefined) */
-  requestWithCredentials?: boolean;
-  /** Show file size in the gallery (optional, default: true) */
-  showFileSize?: boolean;
-  /** Show progress bar in file gallery (optional, default: true) */
-  showProgressBar?: boolean;
-  /** Custom style (optional, default: undefined) */
-  style?: CSSProperties;
-  /** Message present inside the drop zome (optional, default: 'Click or drag file to upload' ) */
-  uploadMessage?: string | ReactElement;
-  /** Localization of related to deletion and errors */
-  localization?: {
-    // Delete tooltip (optional, default: 'Delete')
-    delete?: string;
-    // Delete popover title (optional, default: 'Confirm')
-    popoverConfirm?: string;
-    // Delete popover cancel button (optional, default: 'Cancel')
-    popoverCancel?: string;
-    // Delete popover confirm button (optional, default: 'Delete?')
-    popoverTitle?: string;
-    // Invalid type error (optional, default: 'Invalid type: {type}, expected {expectedType}',
-    // with {type} which will be automatically replaced by the current type,
-    // and {expectedtype} which will be automatically replaced by the expected type)
-    invalidType?: string;
-    // Quota exceeded error (optional, default: 'Quota exceeded: Maximum number of files reached')
-    quotaExceeded?: string;
-    // Size exceeded error (optional, default: 'Size exceeded: {size}, expected {maxSize}'
-    // with {size} which will be automatically replaced by the actual size of the file,
-    // and {maxSize} which will be automatically replaced by the expected size)
-    sizeExceeded?: string;
-  };
 }
 
 /**
@@ -119,7 +53,7 @@ export const FileField = (props: IFileFieldProps): ReactElement => {
     highlighted,
     inline,
     inputClassName,
-    inputValue,
+    input,
     label,
     labelSize,
     localization,
@@ -144,7 +78,7 @@ export const FileField = (props: IFileFieldProps): ReactElement => {
   } = props;
 
   const [inputLength, setInputLength] = useState(
-    inputValue?.filter((file) => {
+    input?.filter((file) => {
       if (!file.status) return false;
       return [FileStatusEnum.DONE, FileStatusEnum.UPLOADING].includes(file.status);
     }).length,
@@ -184,7 +118,7 @@ export const FileField = (props: IFileFieldProps): ReactElement => {
         className={inputClassName}
         dataTestId={dataTestId}
         disabled={disabled}
-        inputValue={inputValue}
+        input={input}
         isInError={errorMessage !== undefined}
         localization={localization}
         maxFiles={maxFiles}
@@ -220,7 +154,7 @@ FileField.defaultProps = {
   highlighted: false,
   inline: false,
   inputClassName: undefined,
-  inputValue: undefined,
+  input: undefined,
   label: undefined,
   labelSize: undefined,
   mandatory: false,

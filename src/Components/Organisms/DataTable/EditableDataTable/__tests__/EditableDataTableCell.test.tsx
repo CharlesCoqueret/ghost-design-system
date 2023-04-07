@@ -119,7 +119,7 @@ describe('EditableDataTableCell component', () => {
                 title: 'Button',
                 type: ColumnType.BUTTON,
                 moreActionsMessage: 'More actions',
-                buttons: [{ label: 'label', icon: ['fal', 'cog'] }],
+                buttons: [{ label: 'label', icon: ['fal', 'gear'] }],
               }}
               handleUpdateDataChange={handleUpdateDataChangeMock}
               row={{ number: 1 }}
@@ -197,11 +197,11 @@ describe('EditableDataTableCell component', () => {
     const handleUpdateDataChangeMock = jest.fn();
     const customRenderMock = jest
       .fn()
-      .mockImplementation((props: { inputValue: string; onChange: (value: string) => void }) => {
+      .mockImplementation((props: { input: string; onChange: (value: string) => void }) => {
         return (
           <input
             type='text'
-            value={props.inputValue}
+            value={props.input}
             data-testid='DATA-TEST-ID'
             onChange={(e) => props.onChange(e.target.value)}
           />
@@ -279,7 +279,7 @@ describe('EditableDataTableCell component', () => {
     });
 
     expect(handleUpdateDataChangeMock).toBeCalledTimes(1);
-    expect(handleUpdateDataChangeMock).toBeCalledWith(0, 'date', null);
+    expect(handleUpdateDataChangeMock).toBeCalledWith(0, 'date', undefined);
   });
 
   it('EditableDataTableCell renders with description', async () => {

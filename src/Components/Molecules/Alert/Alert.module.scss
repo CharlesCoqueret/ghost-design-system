@@ -1,0 +1,37 @@
+.container {
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px auto;
+  border: 1px solid rgb(var(--theme-provider-sky));
+  color: rgb(var(--theme-provider-sky));
+
+  &.information {
+    border: 1px solid rgb(var(--theme-provider-sky));
+    color: rgb(var(--theme-provider-sky));
+    * {
+      color: inherit;
+    }
+  }
+
+  &.warning {
+    border: 1px solid rgb(var(--theme-provider-buttercup));
+    color: rgb(var(--theme-provider-buttercup));
+    * {
+      color: inherit;
+    }
+  }
+
+  &.error {
+    border: 1px solid rgb(var(--theme-provider-cinnabar));
+    color: rgb(var(--theme-provider-cinnabar));
+    * {
+      color: inherit;
+    }
+  }
+
+  .icon {
+    margin-right: 20px;
+  }
+}

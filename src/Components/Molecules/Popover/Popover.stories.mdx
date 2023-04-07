@@ -1,0 +1,70 @@
+import { useState, useRef } from 'react';
+import { Canvas, Meta, ArgsTable, Story } from '@storybook/addon-docs';
+
+import Popover from './Popover';
+import Button, { ColorButtonEnum } from '../Button/Button';
+
+<Meta
+  title='Molecule/Popover'
+  component={Popover}
+  parameters={{
+    viewMode: 'docs',
+    layout: 'centered',
+  }}
+  argTypes={{
+    dataTestId: {
+      table: {
+        disable: true,
+      },
+    },
+  }}
+/>
+
+# Popover
+
+export const Template = () => {
+  const [open, setOpen] = useState(false);
+  const ref = useRef(null);
+  return (
+    <div ref={ref}>
+      <Button
+        label='Click me to see the popover'
+        icon={['fal', 'trash-alt']}
+        onClick={() => {
+          setOpen(true);
+        }}
+        color={ColorButtonEnum.REVERSED}
+      />
+      <Popover
+        anchorRef={ref}
+        buttons={[
+          {
+            label: 'Cancel',
+            color: ColorButtonEnum.SECONDARY,
+            onClick: () => {
+              setOpen(false);
+            },
+          },
+          {
+            label: 'Confirm',
+            color: ColorButtonEnum.PRIMARY,
+            onClick: () => {
+              setOpen(false);
+            },
+          },
+        ]}
+        open={open}
+        onClose={() => {
+          setOpen(false);
+        }}
+        title='Delete?'
+      />
+    </div>
+  );
+};
+
+<Canvas withSource='open'>
+  <Story name='Popover'>{Template.bind({})}</Story>
+</Canvas>
+
+<ArgsTable of={Popover} sort='requiredFirst' exclude={['dataTestId']} />

@@ -6,6 +6,8 @@ import { FileStatusEnum, IFile } from './types';
 import { getFilesWebkitDataTransferItems, initializeIFile, injectDoneStatus, injectUid } from './fileUtils';
 import FileGallery from './FileGallery';
 
+import styles from './FileInput.module.scss';
+
 export interface IFileInputProps {
   /** Accepted types (optional, default: '\*\/\*') */
   acceptTypes?: string;
@@ -16,7 +18,7 @@ export interface IFileInputProps {
   /** Disabled field (optional, default: false) */
   disabled?: boolean;
   /** Initial values for the field (optional, default: []) */
-  inputValue?: Array<IFile>;
+  input?: Array<IFile>;
   /** Field is in error state (optional, default: false) */
   isInError?: boolean;
   /** Maximum number of files, if undefined: unlimited (optional, default: undefined) */
@@ -25,6 +27,8 @@ export interface IFileInputProps {
   maxFileSize?: number;
   /** Maximum folder depth scanned when dropping a folder (optional, default: 2) */
   maxFolderDepth?: number;
+  /** Name of input (optional, default: undefined) */
+  name?: string;
   /** handler of changes, notifying any files changes (including new files, states changes, deleted files...)
    * To retrieve the up to date files, simply filter the files on the status FileStatusEnum.DONE */
   onChange?: (files: Array<IFile>) => void;
@@ -44,7 +48,7 @@ export interface IFileInputProps {
   /** Extra header (optional, default: undefined) */
   requestHeaders?: Record<string, string>;
   /** HTTP method used for the upload (optional, default: 'POST' ) */
-  requestMethod: 'POST' | 'PUT';
+  requestMethod?: 'POST' | 'PUT';
   /** Url of the request */
   requestUrl?: string;
   /** Enable withCredentials on the request (optional, default: undefined) */
@@ -85,14 +89,6 @@ const preventDefaults = (event: DragEvent) => {
   event.stopPropagation();
 };
 
-const highlight = (event: DragEvent) => {
-  (event.target as HTMLElement).classList.add('highlight');
-};
-
-const unhighlight = (event: DragEvent) => {
-  (event.target as HTMLElement).classList.remove('highlight');
-};
-
 /**
  * File input component managing the upload
  */
@@ -102,12 +98,13 @@ const FileInput = (props: IFileInputProps): ReactElement => {
     className,
     dataTestId,
     disabled,
-    inputValue,
+    input,
     isInError,
     localization,
     maxFiles,
     maxFileSize,
     maxFolderDepth,
+    name,
     onChange,
     onDelete,
     onDownload,
@@ -124,11 +121,18 @@ const FileInput = (props: IFileInputProps): ReactElement => {
     uploadMessage,
   } = props;
 
-  const [localItems, setLocalItems] = useState<Array<IFile>>(inputValue?.map(injectUid).map(injectDoneStatus) || []);
+  const [localItems, setLocalItems] = useState<Array<IFile>>(input?.map(injectUid).map(injectDoneStatus) || []);
   const [progress, setProgress] = useState<Record<string, number>>({});
   const dropArea = useRef<HTMLDivElement>(null);
-  const input = useRef<HTMLInputElement>(null);
   const initialLocalItemsDefinition = useRef(true);
+
+  const highlight = () => {
+    dropArea.current?.classList.add(styles.highlight);
+  };
+
+  const unhighlight = () => {
+    dropArea.current?.classList.remove(styles.highlight);
+  };
 
   /**
    * Updates the progress for the file
@@ -287,7 +291,7 @@ const FileInput = (props: IFileInputProps): ReactElement => {
       xhr.withCredentials = requestWithCredentials;
     }
 
-    xhr.open(requestMethod, requestUrl, true);
+    xhr.open(requestMethod || 'POST', requestUrl, true);
 
     if (requestHeaders) {
       for (const headerKey in requestHeaders) {
@@ -303,7 +307,7 @@ const FileInput = (props: IFileInputProps): ReactElement => {
       if (xhr.readyState === 4 && xhr.status === 200) {
         updateFileUploaded(file, xhr.response);
       } else if (xhr.readyState === 4 && xhr.status !== 200) {
-        updateFileError(file, xhr.statusText);
+        updateFileError(file, xhr.statusText || 'Error');
       }
     });
 
@@ -401,29 +405,37 @@ const FileInput = (props: IFileInputProps): ReactElement => {
   }, [localItems]);
 
   return (
-    <div className={classnames('field', 'gds-file-input-container', className)} style={style}>
+    <div className={classnames(styles.container, className)} style={style}>
       <div
         key='droparea'
         ref={dropArea}
-        className={classnames('droparea', { disabled: disabled, readonly: readOnly, error: isInError })}>
-        <label className='label'>
+        className={classnames(styles.droparea, {
+          [styles.disabled]: disabled,
+          [styles.readonly]: readOnly,
+          [styles.maxFileReached]:
+            maxFiles !== undefined &&
+            localItems.filter((file) => {
+              return file.status && [FileStatusEnum.DONE, FileStatusEnum.UPLOADING].includes(file.status);
+            }).length >= maxFiles,
+          [styles.error]: isInError,
+        })}>
+        <label className={styles.label}>
           {uploadMessage}
           <input
             accept={acceptTypes}
-            className='input'
             data-testid={dataTestId}
             disabled={disabled}
             multiple={maxFiles ? localItems.length < maxFiles : true}
+            name={name}
             onChange={handleOnChange}
             readOnly={readOnly}
-            ref={input}
             tabIndex={-1}
             type='file'
             value={[]}
           />
         </label>
       </div>
-      <div key='gallery' className='gallery'>
+      <div key='gallery' className={styles.gallery}>
         {readOnly && localItems.length === 0 && '-'}
         {localItems.map((item) => {
           return (
@@ -460,9 +472,9 @@ FileInput.defaultProps = {
   maxFiles: undefined,
   maxFileSize: undefined,
   maxFolderDepth: 2,
+  name: undefined,
   readOnly: false,
   requestHeaders: undefined,
-  requestMethod: 'POST',
   requestWithCredentials: undefined,
   showFileSize: true,
   showProgressBar: true,

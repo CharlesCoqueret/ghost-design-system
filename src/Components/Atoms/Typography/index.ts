@@ -1,1 +1,2 @@
-export { default as Typography, TextTypeEnum } from './Typography';
+export { TextTypeEnum } from './Text';
+export { default as Typography } from './Typography';

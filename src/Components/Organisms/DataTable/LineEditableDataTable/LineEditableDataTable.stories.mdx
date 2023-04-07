@@ -6,8 +6,6 @@ import { ColumnType } from '../Common/types';
 import FakeExtraLineEditableDataTable from '../Common/FakeComponents/FakeExtraLineEditableDataTable';
 import { Icon } from '../../../Atoms';
 
-import dataTableStyle from '../../../../assets/_datatable.scss?raw';
-
 export const TemplateLineEditableDataTable = (args) => {
   return <LineEditableDataTable {...args} />;
 };
@@ -473,6 +471,7 @@ Reminder, you might `onRowEdit`, `onRowSubmit`, `onRowCancelEdit` to capture the
         {
           title: 'Date',
           dataIndex: 'startDate',
+          editable: true,
           sorter: true,
           type: ColumnType.DATE,
         },
