@@ -1,18 +1,20 @@
 .DS_STORE
-.eslintrc.js
+.jest/
 .github/
+.storybook/
+.eslintrc.js
+coverage/
+node_modules/
+static/
+src/
 .nvmrc
 .prettierrc
-.storybook/
 tsconfig.json
-
-coverage
-node_modules
-public
-src
-static
+*.md
+THIRD-PARTY.txt
 
 *.config.js
+*.config.mjs
 *.config.ts
 
 .rpt2_cache

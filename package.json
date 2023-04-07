@@ -1,7 +1,7 @@
 {
   "name": "ghost-design-system",
   "license": "MIT",
-  "version": "2.0.0-next.0",
+  "version": "2.0.0-next.1",
   "description": "Ghost design system - React Component Library",
   "author": {
     "name": "Charles Coqueret",
@@ -40,7 +40,7 @@
   },
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
-  "types": "types/index.d.ts",
+  "types": "dist/types/index.d.ts",
   "style": "dist/ghost-design-system.css",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "6.4.0",
