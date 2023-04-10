@@ -2,30 +2,6 @@ import React, { ReactElement } from 'react';
 import { render, waitFor } from '@testing-library/react';
 import 'jest-canvas-mock';
 
-// Mocking suneditor
-jest.mock('suneditor');
-jest.mock('suneditor/src/plugins', () => ({}));
-jest.mock('suneditor/src/plugins/submenu/align', () => ({ name: 'align' }));
-jest.mock('suneditor/src/plugins/command/blockquote', () => ({ name: 'blockquote' }));
-jest.mock('suneditor/src/plugins/submenu/fontColor', () => ({ name: 'fontColor' }));
-jest.mock('suneditor/src/plugins/submenu/fontSize', () => ({ name: 'fontSize' }));
-jest.mock('suneditor/src/plugins/submenu/formatBlock', () => ({ name: 'formatBlock' }));
-jest.mock('suneditor/src/plugins/submenu/hiliteColor', () => ({ name: 'hiliteColor' }));
-jest.mock('suneditor/src/plugins/submenu/horizontalRule', () => ({ name: 'horizontalRule' }));
-jest.mock('suneditor/src/plugins/dialog/image', () => ({ name: 'image' }));
-jest.mock('suneditor/src/plugins/dialog/link', () => ({ name: 'link' }));
-jest.mock('suneditor/src/plugins/submenu/lineHeight', () => ({ name: 'lineHeight' }));
-jest.mock('suneditor/src/plugins/submenu/list', () => ({ name: 'list' }));
-jest.mock('suneditor/src/plugins/submenu/paragraphStyle', () => ({ name: 'paragraphStyle' }));
-jest.mock('suneditor/src/plugins/submenu/table', () => ({ name: 'table' }));
-
-jest.mock('suneditor-react', () => ({
-  __esModule: true,
-  default: (props: unknown): ReactElement => {
-    return <div>{JSON.stringify(props)}</div>;
-  },
-}));
-
 describe('RichTextInput Component', () => {
   it('RichTextInput renders', () => {
     const RichTextInput = require('../RichTextInput').default;

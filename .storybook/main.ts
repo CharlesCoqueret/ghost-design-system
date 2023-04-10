@@ -1,22 +1,21 @@
-const path = require('path');
+import path from 'path';
 
 const maxAssetSize = 250 * 1024;
-
 module.exports = {
   stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
   addons: [
     '@storybook/addon-essentials',
-    '@storybook/addon-actions',
     '@storybook/addon-storysource',
     '@storybook/addon-interactions',
-    '@storybook/addon-postcss',
     '@storybook/addon-a11y',
   ],
   core: {
     disableTelemetry: true,
-    builder: 'webpack5',
   },
-  framework: '@storybook/react',
+  framework: {
+    name: '@storybook/react-webpack5',
+    options: {},
+  },
   webpackFinal: async (config) => {
     // ALL MODULE SCSS
     config.module.rules.push({
@@ -47,7 +46,6 @@ module.exports = {
       maxAssetSize: maxAssetSize,
       hints: false,
     };
-
     return config;
   },
   staticDirs: ['../static'],
@@ -62,4 +60,7 @@ module.exports = {
   
     gtag('config', 'G-LXDCMHQK8V');
   </script>`,
+  docs: {
+    autodocs: true,
+  },
 };
