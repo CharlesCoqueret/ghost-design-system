@@ -160,7 +160,7 @@ describe('RichTextCell component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('RichTextCell handles changes', async () => {
+  it('RichTextCell handles changes', () => {
     jest.resetModules();
     let onChangeCallback: (newValue: string) => void = () => {
       return;

@@ -2,6 +2,7 @@ import React, { PropsWithChildren, ReactElement, useContext, useEffect, useState
 import classnames from 'classnames';
 import { LocationDescriptor } from 'history';
 import { NavLink, useHistory } from 'react-router-dom';
+import get from 'lodash/get';
 
 import { Icon } from '../../Atoms/Icon';
 import { SideBarContext } from './SideBarContext';
@@ -35,7 +36,7 @@ const SideBarItem = (props: PropsWithChildren<ISideBarItemProps>): ReactElement 
   const [hasSubMenu, setHasSubMenu] = useState(false);
   const [subMenuEntries, setSubMenuEntries] = useState(0);
   const [singleTo, setSingleTo] = useState(to);
-  const [firstTo, setFirstTo] = useState<Location | undefined>(undefined);
+  const [firstTo, setFirstTo] = useState<LocationDescriptor | undefined>(undefined);
 
   useEffect(() => {
     let localHasSubMenu = false;
@@ -45,15 +46,15 @@ const SideBarItem = (props: PropsWithChildren<ISideBarItemProps>): ReactElement 
     React.Children.forEach(children, (child) => {
       if (React.isValidElement(child)) {
         if (
-          (!('hidden' in child.props) || child.props.hidden === false) &&
-          (!('disabled' in child.props) || child.props.disabled === false)
+          (!('hidden' in child.props) || get(child.props, 'hidden', true) === false) &&
+          (!('disabled' in child.props) || get(child.props, 'disabled', true) === false)
         ) {
           localHasSubMenu = true;
           localSubMenuEntries += 1;
           if ('to' in child.props) {
-            localSingleTo = child.props.to;
+            localSingleTo = get(child.props, 'to', '') as string;
             if (localFirstTo === undefined) {
-              localFirstTo = child.props.to;
+              localFirstTo = get(child.props, 'to', '') as string;
             }
           }
           return;
@@ -130,6 +131,6 @@ SideBarItem.defaultProps = {
   disabled: false,
   externalLink: false,
   hidden: false,
-};
+} as Partial<ISideBarItemProps>;
 
 export default SideBarItem;

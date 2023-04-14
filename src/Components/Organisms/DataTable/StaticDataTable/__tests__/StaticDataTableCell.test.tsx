@@ -189,7 +189,7 @@ describe('StaticDataTableCell component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('StaticDataTableCell renders with description', async () => {
+  it('StaticDataTableCell renders with description', () => {
     const { container } = render(
       <table>
         <tbody>
@@ -247,7 +247,7 @@ describe('StaticDataTableCell component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('StaticDataTableCell renders with file', async () => {
+  it('StaticDataTableCell renders with file', () => {
     const onDeleteMock = jest.fn().mockImplementation(() => {
       return Promise.resolve();
     });
@@ -287,7 +287,7 @@ describe('StaticDataTableCell component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('StaticDataTableCell renders with multiselect', async () => {
+  it('StaticDataTableCell renders with multiselect', () => {
     const { container } = render(
       <table>
         <tbody>
@@ -362,7 +362,7 @@ describe('StaticDataTableCell component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('StaticDataTableCell renders with section', async () => {
+  it('StaticDataTableCell renders with section', () => {
     const { container } = render(
       <table>
         <tbody>
@@ -408,7 +408,7 @@ describe('StaticDataTableCell component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('StaticDataTableCell renders with table', async () => {
+  it('StaticDataTableCell renders with table', () => {
     const { container } = render(
       <table>
         <tbody>

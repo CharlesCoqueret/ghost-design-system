@@ -74,6 +74,7 @@ describe('Global export test', () => {
     expect(Global.BannerType).toBeDefined();
 
     expect(Global.Button).toBeDefined();
+    expect(Global.ButtonColorEnum).toBeDefined();
     expect(Global.ColorButtonEnum).toBeDefined();
 
     expect(Global.CheckboxField).toBeDefined();

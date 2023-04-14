@@ -1,9 +1,17 @@
 import React, { ReactElement } from 'react';
 import { ReactDatePickerCustomHeaderProps } from 'react-datepicker';
-import { Button, ColorButtonEnum } from '../../Molecules/Button';
+import { Button, ButtonColorEnum } from '../../Molecules/Button';
 
 const YearPickerHeader = (props: ReactDatePickerCustomHeaderProps & { dataTestId?: string }): ReactElement => {
-  const { dataTestId, decreaseYear, increaseYear, prevYearButtonDisabled, nextYearButtonDisabled } = props;
+  const {
+    dataTestId,
+    // eslint-disable-next-line @typescript-eslint/unbound-method
+    decreaseYear,
+    // eslint-disable-next-line @typescript-eslint/unbound-method
+    increaseYear,
+    prevYearButtonDisabled,
+    nextYearButtonDisabled,
+  } = props;
 
   return (
     <div>
@@ -13,7 +21,7 @@ const YearPickerHeader = (props: ReactDatePickerCustomHeaderProps & { dataTestId
           justifyContent: 'space-evenly',
         }}>
         <Button
-          color={ColorButtonEnum.REVERSED}
+          color={ButtonColorEnum.REVERSED}
           dataTestId={dataTestId ? `${dataTestId}-decreaseYear` : undefined}
           disabled={prevYearButtonDisabled}
           icon={['fal', 'chevron-left']}
@@ -21,7 +29,7 @@ const YearPickerHeader = (props: ReactDatePickerCustomHeaderProps & { dataTestId
         />
 
         <Button
-          color={ColorButtonEnum.REVERSED}
+          color={ButtonColorEnum.REVERSED}
           dataTestId={dataTestId ? `${dataTestId}-increaseYear` : undefined}
           disabled={nextYearButtonDisabled}
           icon={['fal', 'chevron-right']}

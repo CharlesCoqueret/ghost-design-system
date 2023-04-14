@@ -198,7 +198,7 @@ describe('Filter Component', () => {
     expect(baseElement).toMatchSnapshot();
   });
 
-  it('Filter renders with no item in the filter bar', async () => {
+  it('Filter renders with no item in the filter bar', () => {
     const Filter = require('../Filter').default;
 
     const onChangeMock = jest.fn();

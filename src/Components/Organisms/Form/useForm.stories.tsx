@@ -5,7 +5,7 @@ import cloneDeep from 'lodash/cloneDeep';
 
 import { IToggleEntry } from '../../Atoms/CheckBoxInput/types';
 import Section from '../../Atoms/Layout/Section';
-import { ColorButtonEnum } from '../../Molecules/Button';
+import { ButtonColorEnum } from '../../Molecules/Button';
 import { AmountField } from '../../Molecules/AmountField/AmountField';
 import { CheckboxField } from '../../Molecules/CheckboxField/CheckboxField';
 import { DatePickerField } from '../../Molecules/DatePickerField/DatePickerField';
@@ -46,14 +46,14 @@ const Template: ComponentStory<(props: IUseFormProps<IDataType>) => ReactElement
         actions={[
           {
             label: 'Submit',
-            color: ColorButtonEnum.PRIMARY,
+            color: ButtonColorEnum.PRIMARY,
             onClick: () => {
               console.log(`Submit ${JSON.stringify(submit())}`);
             },
           },
           {
             label: 'Reset',
-            color: ColorButtonEnum.SECONDARY,
+            color: ButtonColorEnum.SECONDARY,
             onClick: () => {
               console.log(`Reset ${JSON.stringify(reset())}`);
               setValues(args.values);

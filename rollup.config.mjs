@@ -40,6 +40,6 @@ export default {
       autoModules: true,
       use: ['sass'],
     }),
-    typescript({ exclude: ['**/__tests__', '**/*.test.ts', '**/Fake*'] }),
+    typescript({ exclude: ['**/__mocks__/**', '**/__tests__/**', '**/Fake*'] }),
   ],
 };

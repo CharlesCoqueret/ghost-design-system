@@ -87,7 +87,7 @@ describe('FileGallery Component', () => {
     expect(updateFileDeleteMock).toBeCalledWith(file);
   });
 
-  it('FileGallery renders and handles delete of uploading files', async () => {
+  it('FileGallery renders and handles delete of uploading files', () => {
     const updateFileDeleteMock = jest.fn();
     const updateFileDownloadMock = jest.fn();
 
@@ -228,7 +228,7 @@ describe('FileGallery Component', () => {
     });
   });
 
-  it('FileGallery handles uploading state without datatestid', async () => {
+  it('FileGallery handles uploading state without datatestid', () => {
     const updateFileDeleteMock = jest.fn();
     const updateFileDownloadMock = jest.fn();
 

@@ -64,7 +64,7 @@ const getDataUrl = (img: HTMLImageElement): string => {
   return dataUrl === 'data:' ? img.src : dataUrl;
 };
 
-const processImages = async (html: string): Promise<string> => {
+const processImages = (html: string): string => {
   const htmlDoc = new DOMParser().parseFromString(html, 'text/html');
 
   const images = htmlDoc.getElementsByTagName('img');
@@ -156,10 +156,10 @@ const RichTextInput = (props: IRichTextInputProps): ReactElement => {
    * @param _event Focus event
    * @param newValue new value
    */
-  const blurHandler = async (_event: FocusEvent, newValue: string): Promise<void> => {
+  const blurHandler = (_event: FocusEvent, newValue: string): void => {
     if (onChange) {
       if (convertImagesToBase64) {
-        onChange(await processImages(newValue));
+        onChange(processImages(newValue));
       } else {
         onChange(newValue);
       }

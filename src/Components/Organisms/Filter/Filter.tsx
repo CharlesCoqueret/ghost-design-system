@@ -3,7 +3,7 @@ import cloneDeep from 'lodash/cloneDeep';
 
 import { Row } from '../../Atoms/Layout';
 import { Modal, ModalBody, ModalFooter } from '../../Atoms/Modal';
-import { Button, ColorButtonEnum } from '../../Molecules/Button';
+import { Button, ButtonColorEnum } from '../../Molecules/Button';
 import { IFilterFieldsProps, IFilterLayoutAndFieldsProps } from './types';
 import FilterItem from './FilterItem';
 
@@ -108,14 +108,14 @@ const Filter = <T,>(props: IFilterProps<T>): React.ReactElement => {
         </div>
         <div className={styles.actions}>
           <Button
-            color={ColorButtonEnum.REVERSED}
+            color={ButtonColorEnum.REVERSED}
             dataTestId={dataTestId ? `${dataTestId}-reset` : undefined}
             label={localization.reset}
             onClick={handleReset}
           />
           {hasAdvancedSearch && (
             <Button
-              color={ColorButtonEnum.REVERSED}
+              color={ButtonColorEnum.REVERSED}
               dataTestId={dataTestId ? `${dataTestId}-open-advanced` : undefined}
               label={localization.advancedSearch}
               onClick={handleOpenAdvancedSearch}
@@ -149,13 +149,13 @@ const Filter = <T,>(props: IFilterProps<T>): React.ReactElement => {
           </ModalBody>
           <ModalFooter>
             <Button
-              color={ColorButtonEnum.SECONDARY}
+              color={ButtonColorEnum.SECONDARY}
               dataTestId={dataTestId ? `${dataTestId}-advanced-reset` : undefined}
               label={localization.reset}
               onClick={handleAdvancedFilterReset}
             />
             <Button
-              color={ColorButtonEnum.PRIMARY}
+              color={ButtonColorEnum.PRIMARY}
               dataTestId={dataTestId ? `${dataTestId}-advanced-submit` : undefined}
               label={localization.search}
               onClick={handleSubmitSearch}

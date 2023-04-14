@@ -214,7 +214,7 @@ describe('FileInput Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('FileInput handle add file unsucessfully through input', async () => {
+  it('FileInput handle add file unsucessfully through input', () => {
     let timeoutCallback: (() => void) | undefined = undefined;
     let progressCallback: ((event: ProgressEvent<XMLHttpRequestEventTarget>) => void) | undefined = undefined;
     let readystatechangeCallback: ((event: ProgressEvent<XMLHttpRequestEventTarget>) => void) | undefined = undefined;

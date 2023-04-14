@@ -3,8 +3,7 @@ import { ControlledMenu } from '@szhsin/react-menu';
 
 import { useOnClickOutside } from '../../../hooks';
 import { Portal } from '../../Atoms/Portal';
-import Button from '../Button/Button';
-import { IButtonProps } from '../Button/Button.props';
+import Button, { IButtonProps } from '../Button/Button';
 
 import styles from './Popover.module.scss';
 
@@ -56,7 +55,7 @@ const Popover = (props: IPopoverProps): ReactElement => {
           </div>
           <div key='buttons' className={styles.buttons}>
             {buttons.map((button) => (
-              <Button key={`${button.label}-${button.icon?.toString()}`} {...button} />
+              <Button key={`button-${button.label || button.icon?.toString() || button.tooltip || ''}`} {...button} />
             ))}
           </div>
         </div>

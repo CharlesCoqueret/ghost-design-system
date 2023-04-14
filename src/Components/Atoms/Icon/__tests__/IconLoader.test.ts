@@ -1,5 +1,5 @@
 describe('iconLoader', () => {
-  it('FileInput renders', async () => {
+  it('FileInput renders', () => {
     const domWatchMock = jest.fn();
     const libraryAddMock = jest.fn();
 
@@ -14,7 +14,7 @@ describe('iconLoader', () => {
       };
     });
 
-    const loadIcons = require('../iconLoader').default;
+    const loadIcons = require('../iconLoader').default as () => void;
 
     loadIcons();
 

@@ -122,7 +122,7 @@ describe('StaticDataTableBody component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('StaticDataTableBody renders with number selectable and handles selection', async () => {
+  it('StaticDataTableBody renders with number selectable and handles selection', () => {
     const onRowSelectMock = jest.fn();
 
     const { container } = render(
@@ -154,7 +154,7 @@ describe('StaticDataTableBody component', () => {
     expect(onRowSelectMock).toBeCalledWith([], { number: 1 }, 0);
   });
 
-  it('StaticDataTableBody renders with number selectable row', async () => {
+  it('StaticDataTableBody renders with number selectable row', () => {
     const onRowSelectMock = jest.fn();
     const isSelectableMock = jest.fn().mockImplementation(() => {
       return true;
@@ -174,7 +174,7 @@ describe('StaticDataTableBody component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('StaticDataTableBody renders with number handles row click and row enter', async () => {
+  it('StaticDataTableBody renders with number handles row click and row enter', () => {
     const onRowClickMock = jest.fn();
 
     const { container } = render(

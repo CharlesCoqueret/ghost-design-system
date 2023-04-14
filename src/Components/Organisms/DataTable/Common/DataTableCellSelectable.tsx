@@ -47,7 +47,9 @@ class DataTableCellSelectable extends React.Component<IDataTableCellSelectablePr
       <td
         key='cell-selectable'
         className={this.props.selectable ? 'table--value--selectable' : 'table--value--selectable-disabled'}
+        // eslint-disable-next-line @typescript-eslint/unbound-method
         onClick={this.props.selectable ? this.onSelect : undefined}
+        // eslint-disable-next-line @typescript-eslint/unbound-method
         onKeyUp={this.props.selectable ? this.onSelect : undefined}
         tabIndex={this.props.selectable ? 0 : -1}>
         <div className={classnames('checkbox-marker', { selected: this.props.selected })}>

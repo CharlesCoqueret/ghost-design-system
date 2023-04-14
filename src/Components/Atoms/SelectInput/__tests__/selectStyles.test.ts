@@ -2,7 +2,7 @@ import { GroupBase, OptionProps } from 'react-select';
 import { customStyles } from '../selectStyles';
 
 describe('customStyles method', () => {
-  it('customStyles provides object', async () => {
+  it('customStyles provides object', () => {
     const styles = customStyles();
 
     expect(styles.control).toBeDefined();
@@ -12,7 +12,7 @@ describe('customStyles method', () => {
     expect(styles.container).toBeDefined();
   });
 
-  it('customStyles option', async () => {
+  it('customStyles option', () => {
     const styles = customStyles();
 
     expect(styles.option).not.toBeUndefined();

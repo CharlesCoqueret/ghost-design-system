@@ -277,7 +277,7 @@ describe('LineEditableInPlaceDataTableCell component', () => {
     expect(handleUpdateDataChangeMock).toBeCalledWith(0, 'date', undefined);
   });
 
-  it('LineEditableInPlaceDataTableCell renders with description', async () => {
+  it('LineEditableInPlaceDataTableCell renders with description', () => {
     const handleUpdateDataChangeMock = jest.fn();
 
     const { container } = render(
@@ -429,7 +429,7 @@ describe('LineEditableInPlaceDataTableCell component', () => {
     expect(handleUpdateDataChangeMock).toBeCalledWith(0, 'file', []);
   });
 
-  it('LineEditableInPlaceDataTableCell renders with multiselect', async () => {
+  it('LineEditableInPlaceDataTableCell renders with multiselect', () => {
     const handleUpdateDataChangeMock = jest.fn();
 
     const { container } = render(
@@ -547,7 +547,7 @@ describe('LineEditableInPlaceDataTableCell component', () => {
     expect(handleUpdateDataChangeMock).toBeCalledWith(0, 'percentage', undefined);
   });
 
-  it('LineEditableInPlaceDataTableCell renders with section', async () => {
+  it('LineEditableInPlaceDataTableCell renders with section', () => {
     const handleUpdateDataChangeMock = jest.fn();
 
     const { container } = render(
@@ -613,7 +613,7 @@ describe('LineEditableInPlaceDataTableCell component', () => {
     ]);
   });
 
-  it('LineEditableInPlaceDataTableCell renders with table', async () => {
+  it('LineEditableInPlaceDataTableCell renders with table', () => {
     const handleUpdateDataChangeMock = jest.fn();
 
     const { container } = render(

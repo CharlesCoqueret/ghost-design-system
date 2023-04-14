@@ -152,6 +152,7 @@ const useForm = <T extends yup.AnyObject>(props: IUseFormProps<T>): IFormReturne
     return {
       ...acc,
       [fieldName]: {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         input: value,
         onChange: handleChange(fieldName),
         errorMessage: errors[fieldName],

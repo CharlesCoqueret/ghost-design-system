@@ -10,14 +10,14 @@ import {
 import { FileStatusEnum } from '../types';
 
 describe('fileUtils', () => {
-  it('uid to return valid string', async () => {
+  it('uid to return valid string', () => {
     const uuid = uid();
 
     expect(uuid).not.toBeUndefined();
     expect(typeof uuid).toEqual('string');
   });
 
-  it('initializeIFile to run initialize properly', async () => {
+  it('initializeIFile to run initialize properly', () => {
     // Main use case without errors
     expect(
       initializeIFile(
@@ -202,7 +202,7 @@ describe('fileUtils', () => {
     });
   });
 
-  it('injectUid', async () => {
+  it('injectUid', () => {
     // Maintain existing uid
     expect(
       injectUid({
@@ -233,7 +233,7 @@ describe('fileUtils', () => {
     });
   });
 
-  it('injectDoneStatus', async () => {
+  it('injectDoneStatus', () => {
     // Maintain existing status
     expect(
       injectDoneStatus({
@@ -268,7 +268,7 @@ describe('fileUtils', () => {
     });
   });
 
-  it('formatBytes', async () => {
+  it('formatBytes', () => {
     expect(formatBytes(123456789, 2)).toEqual('117.74 MB');
     expect(formatBytes('test')).toEqual('undefined');
     expect(formatBytes('0')).toEqual('0 Bytes');
@@ -276,7 +276,7 @@ describe('fileUtils', () => {
     expect(formatBytes('1234', -4)).toEqual('1 kB');
   });
 
-  it('isValidType', async () => {
+  it('isValidType', () => {
     // Accepts any
     expect(isValidType({ name: '', type: '' } as File)).toBeTruthy();
     expect(isValidType({ name: '', type: '' } as File, '*/*')).toBeTruthy();

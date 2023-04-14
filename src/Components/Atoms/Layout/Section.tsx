@@ -26,7 +26,12 @@ export interface ISectionProps {
 const Section = (props: PropsWithChildren<ISectionProps>): ReactElement => {
   const { children, collapsible, dataTestId, level, openInitially, separator, title } = props;
 
-  const { getCollapseProps, setExpanded, isExpanded } = useCollapse({
+  const {
+    // eslint-disable-next-line @typescript-eslint/unbound-method
+    getCollapseProps,
+    setExpanded,
+    isExpanded,
+  } = useCollapse({
     duration: 500,
   });
 

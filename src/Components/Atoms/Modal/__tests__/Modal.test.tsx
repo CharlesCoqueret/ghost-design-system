@@ -144,7 +144,7 @@ describe('Modal Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('Modal renders handles tabbing', async () => {
+  it('Modal renders handles tabbing', () => {
     const onHideMock = jest.fn();
 
     const { container, rerender } = render(

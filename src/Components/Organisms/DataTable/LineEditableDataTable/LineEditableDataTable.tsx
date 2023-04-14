@@ -1,7 +1,7 @@
 import React, { ReactElement, useCallback, useState } from 'react';
 import * as yup from 'yup';
 
-import { Button, ColorButtonEnum } from '../../../Molecules/Button';
+import { Button, ButtonColorEnum } from '../../../Molecules/Button';
 import usePropState from '../../../../hooks/use-prop-state';
 
 import StaticDataTableBody from '../StaticDataTable/StaticDataTableBody';
@@ -152,7 +152,7 @@ const LineEditableDataTable = <T extends yup.AnyObject>(props: ILineEditableData
       {extra.canAddNewLine && extra.canAddNewLine() && (
         <Button
           className='gds-table-new-line'
-          color={ColorButtonEnum.PRIMARY}
+          color={ButtonColorEnum.PRIMARY}
           label={extra.localization?.addRow ?? 'Add row'}
           onClick={addNewLine}
           disabled={editedRowIndex !== undefined}

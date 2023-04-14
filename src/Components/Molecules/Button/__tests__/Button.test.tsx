@@ -3,7 +3,7 @@ import { act, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { Button } from '..';
-import { ColorButtonEnum } from '../Button';
+import { ButtonColorEnum } from '../Button';
 import { MenuDirectionEnum } from '../../../Atoms/Tooltip';
 
 jest.unmock('@szhsin/react-menu');
@@ -20,7 +20,7 @@ describe('Button Component', () => {
     const onClickMock = jest.fn();
     const { baseElement } = render(
       <Button
-        color={ColorButtonEnum.PRIMARY}
+        color={ButtonColorEnum.PRIMARY}
         dataTestId='DATA-TEST-ID'
         onClick={onClickMock}
         label='LABEL'
@@ -159,14 +159,14 @@ describe('Button Component', () => {
           title: 'POPOVER',
           buttons: [
             {
-              color: ColorButtonEnum.PRIMARY,
+              color: ButtonColorEnum.PRIMARY,
               dataTestId: 'BUTTON1',
               icon: ['fal', 'paper-plane'],
               label: 'Button 1',
               onClick: button1ClickMock,
             },
             {
-              color: ColorButtonEnum.SECONDARY,
+              color: ButtonColorEnum.SECONDARY,
               dataTestId: 'BUTTON2',
               label: 'Button 2',
               onClick: button2ClickMock,

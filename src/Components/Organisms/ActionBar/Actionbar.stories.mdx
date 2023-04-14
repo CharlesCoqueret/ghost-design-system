@@ -1,7 +1,7 @@
 import { Canvas, Meta, ArgsTable, Story, Source } from '@storybook/addon-docs';
 
 import ActionBar from './ActionBar';
-import { ColorButtonEnum } from '../../Molecules';
+import { ButtonColorEnum } from '../../Molecules';
 import { Badge, BadgeColorsEnum, Icon, Tooltip } from '../../Atoms';
 
 export const Template = (args) => {
@@ -57,14 +57,14 @@ For layout management, please refer to this [example](https://codesandbox.io/s/s
         {
           label: 'Submit',
           icon: ['fal', 'paper-plane'],
-          color: ColorButtonEnum.PRIMARY,
+          color: ButtonColorEnum.PRIMARY,
           onClick: () => {
             console.log('Submit clicked');
           },
         },
         {
           label: 'Cancel',
-          color: ColorButtonEnum.SECONDARY,
+          color: ButtonColorEnum.SECONDARY,
           onClick: () => {
             console.log('Cancel clicked');
           },
@@ -73,7 +73,7 @@ For layout management, please refer to this [example](https://codesandbox.io/s/s
       basicActions: [
         {
           tooltip: 'Save',
-          color: ColorButtonEnum.REVERSED,
+          color: ButtonColorEnum.REVERSED,
           icon: ['fal', 'save'],
           onClick: () => {
             console.log('Save clicked');
@@ -173,14 +173,14 @@ For layout management, please refer to this [example](https://codesandbox.io/s/s
       {
         label: 'Submit',
         icon: ['fal', 'paper-plane'],
-        color: ColorButtonEnum.PRIMARY,
+        color: ButtonColorEnum.PRIMARY,
         onClick: () => {
           console.log('Submit clicked');
         },
       },
       {
         label: 'Cancel',
-        color: ColorButtonEnum.SECONDARY,
+        color: ButtonColorEnum.SECONDARY,
         onClick: () => {
           console.log('Cancel clicked');
         },
@@ -197,7 +197,7 @@ For layout management, please refer to this [example](https://codesandbox.io/s/s
     basicActions={[
       {
         tooltip: 'Save',
-        color: ColorButtonEnum.REVERSED,
+        color: ButtonColorEnum.REVERSED,
         icon: ['fal', 'save'],
         onClick: () => {
           console.log('Save clicked');
@@ -216,7 +216,7 @@ For layout management, please refer to this [example](https://codesandbox.io/s/s
       {
         label: 'Submit',
         icon: ['fal', 'paper-plane'],
-        color: ColorButtonEnum.PRIMARY,
+        color: ButtonColorEnum.PRIMARY,
         onClick: () => {
           console.log('Submit clicked');
         },
@@ -225,7 +225,7 @@ For layout management, please refer to this [example](https://codesandbox.io/s/s
     basicActions={[
       {
         tooltip: 'Save',
-        color: ColorButtonEnum.REVERSED,
+        color: ButtonColorEnum.REVERSED,
         icon: ['fal', 'save'],
         onClick: () => {
           console.log('Save clicked');

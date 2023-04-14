@@ -125,7 +125,7 @@ describe('RichTextInput Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('RichTextInput handles changes without onChange', async () => {
+  it('RichTextInput handles changes without onChange', () => {
     jest.resetModules();
     let onBlurCallback: (event: FocusEvent, newValue: string) => void = () => {
       return;

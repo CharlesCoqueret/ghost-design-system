@@ -107,7 +107,7 @@ export const formatBytes = (bytes: number | string, decimals = 2) => {
 
   const i = Math.floor(Math.log(localBytes) / Math.log(k));
 
-  return parseFloat((localBytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
+  return `${parseFloat((localBytes / Math.pow(k, i)).toFixed(dm))} ${sizes[i]}`;
 };
 
 /**
@@ -184,7 +184,7 @@ export const getFilesWebkitDataTransferItems = async (
         entriesPromises.push(traverseFileTreePromise(entry, 0));
       }
     }
-    Promise.all(entriesPromises).then(() => {
+    void Promise.all(entriesPromises).then(() => {
       resolve(files);
     });
   });

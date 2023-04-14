@@ -66,6 +66,8 @@ describe('useFormLegacy hook', () => {
       // Running once more as the rerender is managed manually.
       result.current.submit();
     });
+
+    // eslint-disable-next-line @typescript-eslint/unbound-method
     expect(window.HTMLElement.prototype.scrollIntoView).toBeCalledTimes(1);
     expect(container).toMatchSnapshot();
     expect(console.error).toBeCalledTimes(2);

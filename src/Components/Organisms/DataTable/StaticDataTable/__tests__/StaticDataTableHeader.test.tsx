@@ -182,7 +182,7 @@ describe('StaticDataTableHeader component', () => {
 
     expect(container).toMatchSnapshot();
   });
-  it('StaticDataTableHeader with row selection', async () => {
+  it('StaticDataTableHeader with row selection', () => {
     const onSortChangeMock = jest.fn();
     const onRowSelectMock = jest.fn();
 
@@ -206,7 +206,7 @@ describe('StaticDataTableHeader component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('StaticDataTableHeader with Total', async () => {
+  it('StaticDataTableHeader with Total', () => {
     const onSortChangeMock = jest.fn();
     const computeTotalMock = jest.fn();
 
@@ -229,7 +229,7 @@ describe('StaticDataTableHeader component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('StaticDataTableHeader with hidden column', async () => {
+  it('StaticDataTableHeader with hidden column', () => {
     const onSortChangeMock = jest.fn();
 
     const { container } = render(
