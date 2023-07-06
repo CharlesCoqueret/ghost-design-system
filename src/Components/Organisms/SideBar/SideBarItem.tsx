@@ -23,12 +23,14 @@ export interface ISideBarItemProps {
   hidden?: boolean;
   /** Label of the item */
   label: string;
-  /** Redicrection applied on click on item */
+  /** Redirection applied on click on item */
   to: LocationDescriptor;
+  /** Route should be exact for this item (optional, default: true)  */
+  exact?: boolean;
 }
 
 const SideBarItem = (props: PropsWithChildren<ISideBarItemProps>): ReactElement => {
-  const { children, dataTestId, disabled, externalLink, hidden, label, to } = props;
+  const { children, dataTestId, disabled, externalLink, hidden, label, to, exact } = props;
   const { isInSubMenu, setIsInSubMenu, backToMenu, unfixed, width } = useContext(SideBarContext);
   const [subMenuActive, setSubMenuActive] = useState(false);
   const history = useHistory();
@@ -98,7 +100,7 @@ const SideBarItem = (props: PropsWithChildren<ISideBarItemProps>): ReactElement 
         <NavLink
           className={classnames({ [styles.disabled]: disabled })}
           data-testid={dataTestId}
-          exact={!hasSubMenu}
+          exact={exact && !hasSubMenu}
           target={targetType}
           to={children && subMenuEntries === 1 ? singleTo : to}>
           <div className={styles.label}>{label}</div>
@@ -131,6 +133,7 @@ SideBarItem.defaultProps = {
   disabled: false,
   externalLink: false,
   hidden: false,
+  exact: true,
 } as Partial<ISideBarItemProps>;
 
 export default SideBarItem;
