@@ -119,7 +119,7 @@ describe('NumberCell component', () => {
 
     const NUMBER = await screen.findByDisplayValue('12.34');
 
-    userEvent.clear(NUMBER);
+    await userEvent.clear(NUMBER);
 
     expect(container).toMatchSnapshot();
     expect(onChangeMock).toBeCalledTimes(1);

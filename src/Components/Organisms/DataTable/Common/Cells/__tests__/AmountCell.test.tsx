@@ -120,7 +120,7 @@ describe('AmountCell component', () => {
 
     const amount = await screen.findByDisplayValue('1,234');
 
-    userEvent.clear(amount);
+    await userEvent.clear(amount);
 
     expect(container).toMatchSnapshot();
     expect(onChangeMock).toBeCalledTimes(1);

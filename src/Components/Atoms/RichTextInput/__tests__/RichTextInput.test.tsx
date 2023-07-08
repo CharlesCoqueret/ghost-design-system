@@ -50,7 +50,7 @@ describe('RichTextInput Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('RichTextInput handles changes', async () => {
+  it('RichTextInput handles changes', () => {
     jest.resetModules();
     let onBlurCallback: (event: FocusEvent, newValue: string) => void = () => {
       return;
@@ -88,7 +88,7 @@ describe('RichTextInput Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('RichTextInput handles changes without IconvertImagesToBase64', async () => {
+  it('RichTextInput handles changes without IconvertImagesToBase64', () => {
     jest.resetModules();
     let onBlurCallback: (event: FocusEvent, newValue: string) => void = () => {
       return;
