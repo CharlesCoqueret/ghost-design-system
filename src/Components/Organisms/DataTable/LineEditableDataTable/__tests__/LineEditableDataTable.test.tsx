@@ -7,7 +7,7 @@ import LineEditableDataTable from '../LineEditableDataTable';
 import { ColumnType, SortDirectionEnum } from '../../Common';
 
 describe('LineEditableDataTable component', () => {
-  it('LineEditableDataTable renders', () => {
+  it('renders', () => {
     const { container } = render(
       <LineEditableDataTable<{ number: number }>
         columns={[{ dataIndex: 'number', title: 'Number', type: ColumnType.NUMBER }]}
@@ -23,7 +23,7 @@ describe('LineEditableDataTable component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('LineEditableDataTable handles edit and submit', () => {
+  it('handles edit and submit', async () => {
     const onRowEditMock = jest.fn();
     const onRowSubmitMock = jest.fn();
 
@@ -46,24 +46,24 @@ describe('LineEditableDataTable component', () => {
 
     expect(container).toMatchSnapshot();
 
-    userEvent.tab();
-    userEvent.keyboard('{Enter}');
+    await userEvent.tab();
+    await userEvent.keyboard('{Enter}');
 
     expect(onRowEditMock).toBeCalledTimes(1);
     expect(onRowEditMock).toBeCalledWith({ number: 1 }, 0);
 
     const input = screen.getByPlaceholderText('NUMBER');
-    userEvent.clear(input);
-    userEvent.type(input, '2');
-    userEvent.tab();
-    userEvent.tab();
-    userEvent.keyboard('{Enter}');
+    await userEvent.clear(input);
+    await userEvent.type(input, '2');
+    await userEvent.tab();
+    await userEvent.tab();
+    await userEvent.keyboard('{Enter}');
 
     expect(onRowSubmitMock).toBeCalledTimes(1);
     expect(onRowSubmitMock).toBeCalledWith({ number: 2 }, 0);
   });
 
-  it('LineEditableDataTable handles non editable content', () => {
+  it('handles non editable content', () => {
     const onRowEditMock = jest.fn();
     const onRowSubmitMock = jest.fn();
 
@@ -93,7 +93,7 @@ describe('LineEditableDataTable component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('LineEditableDataTable handles delete', () => {
+  it('handles delete', async () => {
     const onRowDeleteMock = jest.fn();
 
     const { container } = render(
@@ -114,17 +114,17 @@ describe('LineEditableDataTable component', () => {
 
     expect(container).toMatchSnapshot();
 
-    userEvent.tab();
-    userEvent.keyboard('{Enter}');
+    await userEvent.tab();
+    await userEvent.keyboard('{Enter}');
 
-    userEvent.tab();
-    userEvent.tab();
-    userEvent.keyboard('{Enter}');
+    await userEvent.tab();
+    await userEvent.tab();
+    await userEvent.keyboard('{Enter}');
 
     expect(onRowDeleteMock).toBeCalledTimes(1);
     expect(onRowDeleteMock).toBeCalledWith({ number: 1 }, 0);
   });
-  it('LineEditableDataTable handles delete with previous defined editedrowindex', () => {
+  it('handles delete with previous defined editedrowindex', () => {
     const onRowDeleteMock = jest.fn();
 
     const { container } = render(
@@ -147,7 +147,7 @@ describe('LineEditableDataTable component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('LineEditableDataTable handles non deletable', () => {
+  it('handles non deletable', () => {
     const onRowDeleteMock = jest.fn();
 
     const { container } = render(
@@ -175,7 +175,7 @@ describe('LineEditableDataTable component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('LineEditableDataTable handles download', () => {
+  it('handles download', async () => {
     const onRowDownloadMock = jest.fn();
 
     const { container } = render(
@@ -194,14 +194,14 @@ describe('LineEditableDataTable component', () => {
 
     expect(container).toMatchSnapshot();
 
-    userEvent.tab();
-    userEvent.keyboard('{Enter}');
+    await userEvent.tab();
+    await userEvent.keyboard('{Enter}');
 
     expect(onRowDownloadMock).toBeCalledTimes(1);
     expect(onRowDownloadMock).toBeCalledWith({ number: 1 }, 0);
   });
 
-  it('LineEditableDataTable handles non downloadable', () => {
+  it('handles non downloadable', () => {
     const onRowDownloadMock = jest.fn();
 
     const { container } = render(
@@ -224,7 +224,7 @@ describe('LineEditableDataTable component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('LineEditableDataTable renders with no data', () => {
+  it('renders with no data', () => {
     const { container } = render(
       <LineEditableDataTable<{ number: number }>
         columns={[{ dataIndex: 'number', title: 'Number', type: ColumnType.NUMBER }]}
@@ -240,7 +240,7 @@ describe('LineEditableDataTable component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('LineEditableDataTable renders while loading', () => {
+  it('renders while loading', () => {
     const { container } = render(
       <LineEditableDataTable<{ number: number }>
         columns={[{ dataIndex: 'number', title: 'Number', type: ColumnType.NUMBER }]}
@@ -257,7 +257,7 @@ describe('LineEditableDataTable component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('LineEditableDataTable handles sort', () => {
+  it('handles sort', async () => {
     const onSortChangeMock = jest.fn();
 
     const { container } = render(
@@ -276,24 +276,24 @@ describe('LineEditableDataTable component', () => {
 
     expect(container).toMatchSnapshot();
 
-    userEvent.tab();
-    userEvent.keyboard('{Enter}');
+    await userEvent.tab();
+    await userEvent.keyboard('{Enter}');
 
     expect(onSortChangeMock).toBeCalledTimes(1);
     expect(onSortChangeMock).toBeCalledWith('number', SortDirectionEnum.DESC);
 
-    userEvent.keyboard('{Enter}');
+    await userEvent.keyboard('{Enter}');
 
     expect(onSortChangeMock).toBeCalledTimes(2);
     expect(onSortChangeMock).toBeCalledWith('number', SortDirectionEnum.ASC);
 
-    userEvent.keyboard('{Enter}');
+    await userEvent.keyboard('{Enter}');
 
     expect(onSortChangeMock).toBeCalledTimes(3);
     expect(onSortChangeMock).toBeCalledWith();
   });
 
-  it('LineEditableDataTable handles add new line with onNewLine', () => {
+  it('handles add new line with onNewLine', async () => {
     const onNewLineMock = jest.fn().mockImplementation(() => {
       return { number: 0 };
     });
@@ -322,21 +322,21 @@ describe('LineEditableDataTable component', () => {
 
     expect(container).toMatchSnapshot();
 
-    userEvent.tab();
-    userEvent.keyboard('{Enter}');
+    await userEvent.tab();
+    await userEvent.keyboard('{Enter}');
 
     expect(onNewLineMock).toBeCalledTimes(1);
     expect(onNewLineMock).toBeCalledWith();
 
     const input = screen.getByPlaceholderText('PLACEHOLDER');
-    userEvent.click(input);
-    userEvent.tab();
-    userEvent.keyboard('{Enter}');
+    await userEvent.click(input);
+    await userEvent.tab();
+    await userEvent.keyboard('{Enter}');
 
     expect(onRowCancelEditMock).toBeCalledTimes(1);
   });
 
-  it('LineEditableDataTable handles add new line without onNewLine', () => {
+  it('handles add new line without onNewLine', async () => {
     const onRowCancelEditMock = jest.fn();
     console.error = jest.fn();
 
@@ -358,14 +358,14 @@ describe('LineEditableDataTable component', () => {
 
     expect(container).toMatchSnapshot();
 
-    userEvent.tab();
-    userEvent.keyboard('{Enter}');
+    await userEvent.tab();
+    await userEvent.keyboard('{Enter}');
 
     expect(console.error).toBeCalledTimes(1);
     expect(console.error).toBeCalledWith('Missing onNewLine function');
   });
 
-  it('LineEditableDataTable with custom modal button', () => {
+  it('with custom modal button', async () => {
     const onClickMock = jest.fn().mockImplementation(async () => {
       return Promise.resolve();
     });
@@ -400,16 +400,16 @@ describe('LineEditableDataTable component', () => {
 
     expect(container).toMatchSnapshot();
 
-    userEvent.tab();
-    userEvent.keyboard('{Enter}');
+    await userEvent.tab();
+    await userEvent.keyboard('{Enter}');
 
     expect(onNewLineMock).toBeCalledTimes(1);
     expect(onNewLineMock).toBeCalledWith();
 
     const input = screen.getByPlaceholderText('PLACEHOLDER');
-    userEvent.click(input);
-    userEvent.tab();
-    userEvent.keyboard('{Enter}');
+    await userEvent.click(input);
+    await userEvent.tab();
+    await userEvent.keyboard('{Enter}');
 
     expect(onClickMock).toBeCalledTimes(1);
   });

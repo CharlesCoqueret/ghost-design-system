@@ -71,7 +71,6 @@ const Button = (props: IButtonProps): ReactElement => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const [isPopoverOpen, setIsPopoverOpen] = useState<boolean>(false);
 
-  const skipOpen = useRef(false);
   const ref = useRef<HTMLButtonElement>(null);
 
   const hasMenu = itemList && itemList.length > 0;
@@ -91,7 +90,7 @@ const Button = (props: IButtonProps): ReactElement => {
               onClick(event);
             }
             if (hasMenu && !disabled) {
-              if (!skipOpen.current) setIsMenuOpen((prev) => !prev);
+              setIsMenuOpen((prev) => !prev);
             }
             if (popover && !disabled) {
               setIsPopoverOpen(true);
@@ -139,7 +138,6 @@ const Button = (props: IButtonProps): ReactElement => {
             state={isMenuOpen ? 'open' : 'closed'}
             align={dropdownAlign}
             anchorRef={ref}
-            skipOpen={skipOpen}
             onClose={() => setIsMenuOpen(false)}>
             {itemList.map((item): ReactElement => {
               if (item.hidden) return <Fragment key={item.itemId}></Fragment>;

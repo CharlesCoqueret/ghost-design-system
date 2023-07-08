@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`FileInput Component FileInput handle add file successfully through input 1`] = `
+exports[`FileInput Component handle add file successfully through input 1`] = `
 <div>
   <div
     class="container"
@@ -28,7 +28,7 @@ exports[`FileInput Component FileInput handle add file successfully through inpu
 </div>
 `;
 
-exports[`FileInput Component FileInput handle add file successfully through input 2`] = `
+exports[`FileInput Component handle add file successfully through input 2`] = `
 <div>
   <div
     class="container"
@@ -130,7 +130,7 @@ exports[`FileInput Component FileInput handle add file successfully through inpu
 </div>
 `;
 
-exports[`FileInput Component FileInput handle add file successfully through input 3`] = `
+exports[`FileInput Component handle add file successfully through input 3`] = `
 <div>
   <div
     class="container"
@@ -201,7 +201,7 @@ exports[`FileInput Component FileInput handle add file successfully through inpu
           </div>
           <div>
             <div>
-              ControlleMenu
+              ControlledMenu
               closed
               <div
                 class="container"
@@ -252,7 +252,7 @@ exports[`FileInput Component FileInput handle add file successfully through inpu
 </div>
 `;
 
-exports[`FileInput Component FileInput handle add file unsucessfully through input 1`] = `
+exports[`FileInput Component handle add file unsucessfully through input 1`] = `
 <div>
   <div
     class="container"
@@ -280,7 +280,7 @@ exports[`FileInput Component FileInput handle add file unsucessfully through inp
 </div>
 `;
 
-exports[`FileInput Component FileInput handle add file unsucessfully through input 2`] = `
+exports[`FileInput Component handle add file unsucessfully through input 2`] = `
 <div>
   <div
     class="container"
@@ -359,7 +359,7 @@ exports[`FileInput Component FileInput handle add file unsucessfully through inp
 </div>
 `;
 
-exports[`FileInput Component FileInput handle add file with timeout through input 1`] = `
+exports[`FileInput Component handle add file with timeout through input 1`] = `
 <div>
   <div
     class="container"
@@ -387,7 +387,7 @@ exports[`FileInput Component FileInput handle add file with timeout through inpu
 </div>
 `;
 
-exports[`FileInput Component FileInput handle add file with timeout through input 2`] = `
+exports[`FileInput Component handle add file with timeout through input 2`] = `
 <div>
   <div
     class="container"
@@ -466,7 +466,7 @@ exports[`FileInput Component FileInput handle add file with timeout through inpu
 </div>
 `;
 
-exports[`FileInput Component FileInput handle drag event for highlight 1`] = `
+exports[`FileInput Component handle drag event for highlight 1`] = `
 <div>
   <div
     class="container"
@@ -494,7 +494,7 @@ exports[`FileInput Component FileInput handle drag event for highlight 1`] = `
 </div>
 `;
 
-exports[`FileInput Component FileInput handle drag event for highlight 2`] = `
+exports[`FileInput Component handle drag event for highlight 2`] = `
 <div>
   <div
     class="container"
@@ -522,7 +522,7 @@ exports[`FileInput Component FileInput handle drag event for highlight 2`] = `
 </div>
 `;
 
-exports[`FileInput Component FileInput handle drag event for highlight 3`] = `
+exports[`FileInput Component handle drag event for highlight 3`] = `
 <div>
   <div
     class="container"
@@ -550,7 +550,7 @@ exports[`FileInput Component FileInput handle drag event for highlight 3`] = `
 </div>
 `;
 
-exports[`FileInput Component FileInput handle drop of file 1`] = `
+exports[`FileInput Component handle drop of file 1`] = `
 <div>
   <div
     class="container"
@@ -578,7 +578,7 @@ exports[`FileInput Component FileInput handle drop of file 1`] = `
 </div>
 `;
 
-exports[`FileInput Component FileInput handle drop of file 2`] = `
+exports[`FileInput Component handle drop of file 2`] = `
 <div>
   <div
     class="container"
@@ -679,7 +679,7 @@ exports[`FileInput Component FileInput handle drop of file 2`] = `
 </div>
 `;
 
-exports[`FileInput Component FileInput handle drop without dataTransfer 1`] = `
+exports[`FileInput Component handle drop without dataTransfer 1`] = `
 <div>
   <div
     class="container"
@@ -707,7 +707,7 @@ exports[`FileInput Component FileInput handle drop without dataTransfer 1`] = `
 </div>
 `;
 
-exports[`FileInput Component FileInput handle drop without dataTransfer 2`] = `
+exports[`FileInput Component handle drop without dataTransfer 2`] = `
 <div>
   <div
     class="container"
@@ -735,7 +735,7 @@ exports[`FileInput Component FileInput handle drop without dataTransfer 2`] = `
 </div>
 `;
 
-exports[`FileInput Component FileInput handle unsuccessfull add file when quota reached 1`] = `
+exports[`FileInput Component handle unsuccessfull add file when quota reached 1`] = `
 <div>
   <div
     class="container"
@@ -805,7 +805,7 @@ exports[`FileInput Component FileInput handle unsuccessfull add file when quota 
           </div>
           <div>
             <div>
-              ControlleMenu
+              ControlledMenu
               closed
               <div
                 class="container"
@@ -856,7 +856,7 @@ exports[`FileInput Component FileInput handle unsuccessfull add file when quota 
 </div>
 `;
 
-exports[`FileInput Component FileInput handle unsuccessfull add file when quota reached 2`] = `
+exports[`FileInput Component handle unsuccessfull add file when quota reached 2`] = `
 <div>
   <div
     class="container"
@@ -926,7 +926,7 @@ exports[`FileInput Component FileInput handle unsuccessfull add file when quota 
           </div>
           <div>
             <div>
-              ControlleMenu
+              ControlledMenu
               closed
               <div
                 class="container"
@@ -1027,7 +1027,7 @@ exports[`FileInput Component FileInput handle unsuccessfull add file when quota 
 </div>
 `;
 
-exports[`FileInput Component FileInput handles correctly deletion when no handler defined 1`] = `
+exports[`FileInput Component handles correctly deletion when no handler defined 1`] = `
 <div>
   <div
     class="container"
@@ -1097,7 +1097,7 @@ exports[`FileInput Component FileInput handles correctly deletion when no handle
           </div>
           <div>
             <div>
-              ControlleMenu
+              ControlledMenu
               closed
               <div
                 class="container"
@@ -1148,7 +1148,7 @@ exports[`FileInput Component FileInput handles correctly deletion when no handle
 </div>
 `;
 
-exports[`FileInput Component FileInput handles correctly deletion when no handler defined 2`] = `
+exports[`FileInput Component handles correctly deletion when no handler defined 2`] = `
 <div>
   <div
     class="container"
@@ -1176,7 +1176,7 @@ exports[`FileInput Component FileInput handles correctly deletion when no handle
 </div>
 `;
 
-exports[`FileInput Component FileInput handles delete rejections of a file 1`] = `
+exports[`FileInput Component handles delete rejections of a file 1`] = `
 <div>
   <div
     class="container"
@@ -1246,7 +1246,7 @@ exports[`FileInput Component FileInput handles delete rejections of a file 1`] =
           </div>
           <div>
             <div>
-              ControlleMenu
+              ControlledMenu
               closed
               <div
                 class="container"
@@ -1297,7 +1297,7 @@ exports[`FileInput Component FileInput handles delete rejections of a file 1`] =
 </div>
 `;
 
-exports[`FileInput Component FileInput handles delete rejections of a file 2`] = `
+exports[`FileInput Component handles delete rejections of a file 2`] = `
 <div>
   <div
     class="container"
@@ -1367,7 +1367,7 @@ exports[`FileInput Component FileInput handles delete rejections of a file 2`] =
           </div>
           <div>
             <div>
-              ControlleMenu
+              ControlledMenu
               closed
               <div
                 class="container"
@@ -1418,7 +1418,7 @@ exports[`FileInput Component FileInput handles delete rejections of a file 2`] =
 </div>
 `;
 
-exports[`FileInput Component FileInput handles download and delete of a file 1`] = `
+exports[`FileInput Component handles download and delete of a file 1`] = `
 <div>
   <div
     class="container"
@@ -1488,7 +1488,7 @@ exports[`FileInput Component FileInput handles download and delete of a file 1`]
           </div>
           <div>
             <div>
-              ControlleMenu
+              ControlledMenu
               closed
               <div
                 class="container"
@@ -1539,7 +1539,7 @@ exports[`FileInput Component FileInput handles download and delete of a file 1`]
 </div>
 `;
 
-exports[`FileInput Component FileInput handles download and delete of a file 2`] = `
+exports[`FileInput Component handles download and delete of a file 2`] = `
 <div>
   <div
     class="container"
@@ -1609,7 +1609,7 @@ exports[`FileInput Component FileInput handles download and delete of a file 2`]
           </div>
           <div>
             <div>
-              ControlleMenu
+              ControlledMenu
               closed
               <div
                 class="container"
@@ -1660,7 +1660,7 @@ exports[`FileInput Component FileInput handles download and delete of a file 2`]
 </div>
 `;
 
-exports[`FileInput Component FileInput handles download and delete of a file 3`] = `
+exports[`FileInput Component handles download and delete of a file 3`] = `
 <div>
   <div
     class="container"
@@ -1688,7 +1688,7 @@ exports[`FileInput Component FileInput handles download and delete of a file 3`]
 </div>
 `;
 
-exports[`FileInput Component FileInput handles download without download callback 1`] = `
+exports[`FileInput Component handles download without download callback 1`] = `
 <div>
   <div
     class="container"
@@ -1758,7 +1758,7 @@ exports[`FileInput Component FileInput handles download without download callbac
           </div>
           <div>
             <div>
-              ControlleMenu
+              ControlledMenu
               closed
               <div
                 class="container"
@@ -1809,7 +1809,7 @@ exports[`FileInput Component FileInput handles download without download callbac
 </div>
 `;
 
-exports[`FileInput Component FileInput handles download without download callback 2`] = `
+exports[`FileInput Component handles download without download callback 2`] = `
 <div>
   <div
     class="container"
@@ -1879,7 +1879,7 @@ exports[`FileInput Component FileInput handles download without download callbac
           </div>
           <div>
             <div>
-              ControlleMenu
+              ControlledMenu
               closed
               <div
                 class="container"
@@ -1930,7 +1930,7 @@ exports[`FileInput Component FileInput handles download without download callbac
 </div>
 `;
 
-exports[`FileInput Component FileInput renders 1`] = `
+exports[`FileInput Component renders properly 1`] = `
 <div>
   <div
     class="container"
@@ -1998,7 +1998,7 @@ exports[`FileInput Component FileInput renders 1`] = `
           </div>
           <div>
             <div>
-              ControlleMenu
+              ControlledMenu
               closed
               <div
                 class="container"
@@ -2047,7 +2047,7 @@ exports[`FileInput Component FileInput renders 1`] = `
 </div>
 `;
 
-exports[`FileInput Component FileInput renders without input value 1`] = `
+exports[`FileInput Component renders without input value 1`] = `
 <div>
   <div
     class="container"
@@ -2074,7 +2074,7 @@ exports[`FileInput Component FileInput renders without input value 1`] = `
 </div>
 `;
 
-exports[`FileInput Component FileInput renders without input value 2`] = `
+exports[`FileInput Component renders without input value 2`] = `
 <div>
   <div
     class="container"

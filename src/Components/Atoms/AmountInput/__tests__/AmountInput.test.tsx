@@ -96,7 +96,7 @@ describe('AmountInput Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('AmountInput renders triggers onChange', () => {
+  it('AmountInput renders triggers onChange', async () => {
     const onChangeMock = jest.fn();
 
     const { container } = render(
@@ -112,14 +112,14 @@ describe('AmountInput Component', () => {
 
     const input = screen.getByTestId('name');
 
-    userEvent.type(input, '123456789');
+    await userEvent.type(input, '123456789');
 
     expect(onChangeMock).toBeCalledTimes(9);
     expect(onChangeMock).toHaveBeenLastCalledWith(123456789);
     expect(container).toMatchSnapshot();
   });
 
-  it('AmountInput renders triggers onChange with min and max', () => {
+  it('AmountInput renders triggers onChange with min and max', async () => {
     const onChangeMock = jest.fn();
 
     const { container } = render(
@@ -128,26 +128,26 @@ describe('AmountInput Component', () => {
 
     const input = screen.getByTestId('name');
 
-    userEvent.type(input, '123');
+    await userEvent.type(input, '123');
 
     expect(onChangeMock).toBeCalledTimes(2);
     expect(onChangeMock).toHaveBeenLastCalledWith(12);
     expect(container).toMatchSnapshot();
 
-    userEvent.clear(input);
-    userEvent.type(input, '-123');
+    await userEvent.clear(input);
+    await userEvent.type(input, '-123');
     expect(onChangeMock).toBeCalledTimes(6);
     expect(onChangeMock).toHaveBeenLastCalledWith(-12);
     expect(container).toMatchSnapshot();
   });
 
-  it('AmountInput renders with empty input in read only', () => {
+  it('AmountInput renders with empty input in read only', async () => {
     const onChangeMock = jest.fn();
 
     const { container } = render(<AmountInput dataTestId='name' onChange={onChangeMock} readOnly />);
 
     const input = screen.getByTestId('name');
-    userEvent.type(input, '123456789');
+    await userEvent.type(input, '123456789');
     expect(onChangeMock).toBeCalledTimes(0);
     expect(container).toMatchSnapshot();
   });
@@ -162,7 +162,7 @@ describe('AmountInput Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('AmountInput renders with empty input in read only prefix and suffix', () => {
+  it('AmountInput renders with empty input in read only prefix and suffix', async () => {
     const onChangeMock = jest.fn();
 
     const { container } = render(
@@ -170,12 +170,12 @@ describe('AmountInput Component', () => {
     );
 
     const input = screen.getByTestId('name');
-    userEvent.type(input, '123456789');
+    await userEvent.type(input, '123456789');
     expect(onChangeMock).toBeCalledTimes(0);
     expect(container).toMatchSnapshot();
   });
 
-  it('AmountInput renders with empty input in read only prefix and suffix shorten', () => {
+  it('AmountInput renders with empty input in read only prefix and suffix shorten', async () => {
     const onChangeMock = jest.fn();
 
     const { container } = render(
@@ -183,12 +183,12 @@ describe('AmountInput Component', () => {
     );
 
     const input = screen.getByTestId('name');
-    userEvent.type(input, '123456789');
+    await userEvent.type(input, '123456789');
     expect(onChangeMock).toBeCalledTimes(0);
     expect(container).toMatchSnapshot();
   });
 
-  it('AmountInput renders with empty input in read only prefix and suffix shorten', () => {
+  it('AmountInput renders with empty input in read only prefix and suffix shorten', async () => {
     const onChangeMock = jest.fn();
 
     const { container } = render(
@@ -196,12 +196,12 @@ describe('AmountInput Component', () => {
     );
 
     const input = screen.getByTestId('name');
-    userEvent.type(input, '123456789');
+    await userEvent.type(input, '123456789');
     expect(onChangeMock).toBeCalledTimes(0);
     expect(container).toMatchSnapshot();
   });
 
-  it('AmountInput renders with in read only shorten highlighted prefix and suffix shorten', () => {
+  it('AmountInput renders with in read only shorten highlighted prefix and suffix shorten', async () => {
     const onChangeMock = jest.fn();
 
     const { container } = render(
@@ -218,12 +218,12 @@ describe('AmountInput Component', () => {
     );
 
     const input = screen.getByTestId('name');
-    userEvent.type(input, '123456789');
+    await userEvent.type(input, '123456789');
     expect(onChangeMock).toBeCalledTimes(0);
     expect(container).toMatchSnapshot();
   });
 
-  it('AmountInput renders with input in readonly highlighted shorten', () => {
+  it('AmountInput renders with input in readonly highlighted shorten', async () => {
     const onChangeMock = jest.fn();
 
     const { container } = render(
@@ -238,7 +238,7 @@ describe('AmountInput Component', () => {
     );
 
     const input = screen.getByTestId('name');
-    userEvent.type(input, '123456789');
+    await userEvent.type(input, '123456789');
     expect(onChangeMock).toBeCalledTimes(0);
     expect(container).toMatchSnapshot();
   });

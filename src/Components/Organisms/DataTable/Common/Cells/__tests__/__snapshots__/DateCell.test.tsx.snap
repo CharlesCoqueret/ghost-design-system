@@ -93,6 +93,52 @@ exports[`DateCell component DateCell renders in edit mode and handles change 1`]
 </div>
 `;
 
+exports[`DateCell component DateCell renders in edit mode and handles change 2`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class=""
+        >
+          <div
+            class="fieldGroup"
+          >
+            <div
+              class="container"
+            >
+              <div
+                class="react-datepicker-wrapper"
+              >
+                <div
+                  class="react-datepicker__input-container "
+                >
+                  <span
+                    aria-live="polite"
+                    class="react-datepicker__aria-live"
+                    role="alert"
+                  />
+                  <input
+                    autocomplete="off"
+                    class="input-date-picker-input"
+                    name="data"
+                    placeholder="MMM DD, YYYY"
+                    tabindex="0"
+                    type="text"
+                    value=""
+                  />
+                </div>
+              </div>
+              <div />
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
 exports[`DateCell component DateCell renders in edit mode via extra 1`] = `
 <div>
   <table>

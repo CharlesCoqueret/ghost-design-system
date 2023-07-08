@@ -126,7 +126,7 @@ exports[`ButtonCell component ButtonCell renders with more than 3 buttons and ha
             </div>
             <div>
               <div>
-                ControlleMenu
+                ControlledMenu
                 closed
                 <div
                   data-testid="BUTTON1"
@@ -189,7 +189,7 @@ exports[`ButtonCell component ButtonCell renders with more than 3 buttons and ha
             </div>
             <div>
               <div>
-                ControlleMenu
+                ControlledMenu
                 open
                 <div
                   data-testid="BUTTON1"

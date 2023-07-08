@@ -1,6 +1,5 @@
 import React, { PropsWithChildren, ReactElement } from 'react';
-import { NavLink, NavLinkProps } from 'react-router-dom';
-import { LocationDescriptor } from 'history';
+import { NavLink, NavLinkProps, To } from 'react-router-dom';
 import { Icon } from '../Icon';
 import { Tooltip } from '../Tooltip';
 
@@ -12,7 +11,7 @@ export interface ILinkProps extends NavLinkProps {
   /** Text displayed for the link (optional, default: undefined) */
   text?: string;
   /** Url of the destination in a string or Location format */
-  to: LocationDescriptor;
+  to: To;
   /** Tooltip content of the link (optional, default: undefined) */
   tooltip?: string;
 }

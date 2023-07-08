@@ -6,7 +6,7 @@ import FormLegacy from '../FormLegacy';
 import { FieldLegacyTypeEnum } from '../types';
 
 describe('FormLegacy Component', () => {
-  it('FormLegacy renders with description and sections', () => {
+  it('renders with description and sections', () => {
     const handleDataChangeMock = jest.fn();
     const { container } = render(
       <FormLegacy
@@ -40,7 +40,7 @@ describe('FormLegacy Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('FormLegacy renders with mandatory field', () => {
+  it('renders with mandatory field', () => {
     const handleDataChangeMock = jest.fn();
     const { container } = render(
       <FormLegacy<{ number?: number }>
@@ -60,7 +60,7 @@ describe('FormLegacy Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('FormLegacy renders without validation schema', () => {
+  it('renders without validation schema', () => {
     const handleDataChangeMock = jest.fn();
     console.error = jest.fn();
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { act, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import SwitchCell from '../SwitchCell';
@@ -180,9 +180,7 @@ describe('SwitchCell component', () => {
 
     const switchBox = await screen.findByTestId('DATA-TEST-ID-2');
 
-    act(() => {
-      userEvent.click(switchBox);
-    });
+    await userEvent.click(switchBox);
 
     expect(onChangeMock).toBeCalledTimes(1);
     expect(onChangeMock).toBeCalledWith([

@@ -3,9 +3,9 @@ import { ClickEvent, ControlledMenuProps, MenuItemProps } from '@szhsin/react-me
 
 const ControlledMenu = forwardRef((props: ControlledMenuProps, ref) => (
   <div>
-    ControlleMenu
+    ControlledMenu
     {props?.state}
-    {props?.children}
+    <>{props?.children}</>
     {ref ? 'has ref' : 'has no ref'}
   </div>
 ));
@@ -20,7 +20,8 @@ const MenuItem = (props: MenuItemProps & { ['data-testid']: string }) => {
           props.onClick(event as unknown as ClickEvent);
         }
       }}>
-      MenuItem{props.children}
+      MenuItem
+      <>{props?.children}</>
     </div>
   );
 };

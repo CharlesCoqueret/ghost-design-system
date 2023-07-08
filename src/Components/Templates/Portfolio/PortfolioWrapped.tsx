@@ -81,10 +81,6 @@ const PortfolioWrapped = <FilterType, PortfolioType, ResponseType, PaginationTyp
     setDirection(sortDirection);
   };
 
-  const onFilterChange = (value: Partial<FilterType> | undefined): void => {
-    setFilterValues(value);
-  };
-
   useEffect(() => {
     if (inView) {
       void fetchNextPage();
@@ -101,7 +97,7 @@ const PortfolioWrapped = <FilterType, PortfolioType, ResponseType, PaginationTyp
     <>
       {filter && (
         <div className={classnames(styles.filter, filterClassName)}>
-          <Filter {...filter} onChange={onFilterChange} />
+          <Filter {...filter} onChange={setFilterValues} />
         </div>
       )}
 

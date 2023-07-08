@@ -5,7 +5,7 @@ import userEvent from '@testing-library/user-event';
 import DynamicSearchCreatableInput from '../DynamicSearchCreatableInput';
 
 describe('DynamicSearchCreatableInput Component', () => {
-  it('DynamicSearchCreatableInput renders', async () => {
+  it('DynamicSearchCreatableInput renders properly', async () => {
     const handleCreateMock = jest.fn();
     const noOptionsMessageMock = jest.fn();
     const resolveValueMock = jest.fn().mockImplementation(() => {
@@ -141,7 +141,7 @@ describe('DynamicSearchCreatableInput Component', () => {
     expect(searchOptionsMock).toBeCalledWith('', expect.any(Function));
   });
 
-  it('DynamicSearchCreatableInput handles change', async () => {
+  it('DynamicSearchCreatableInput handles change with options', async () => {
     const handleCreateMock = jest.fn();
     const noOptionsMessageMock = jest.fn().mockImplementation(() => {
       return 'No options';
@@ -165,20 +165,13 @@ describe('DynamicSearchCreatableInput Component', () => {
     );
 
     expect(await screen.findByTestId('DATA-TEST-ID-spinner')).toBeTruthy();
-
     expect(screen.queryByTestId('DATA-TEST-ID-spinner')).toBeFalsy();
 
     const select = await screen.findByRole('combobox');
-    userEvent.type(select, 'option 2');
+    await userEvent.type(select, 'option 2{enter}');
 
     expect(container).toMatchSnapshot();
 
-    expect(await screen.findByTestId('DATA-TEST-ID-spinner')).toBeTruthy();
-    expect(screen.queryByTestId('DATA-TEST-ID-spinner')).toBeFalsy();
-
-    userEvent.type(select, '{enter}');
-
-    expect(container).toMatchSnapshot();
     expect(handleCreateMock).toBeCalledTimes(0);
     expect(resolveValueMock).toBeCalledTimes(0);
     expect(noOptionsMessageMock).toBeCalled();
@@ -215,14 +208,7 @@ describe('DynamicSearchCreatableInput Component', () => {
     expect(screen.queryByTestId('DATA-TEST-ID-spinner')).toBeFalsy();
 
     const select = await screen.findByRole('combobox');
-    userEvent.type(select, 'option 2');
-
-    expect(container).toMatchSnapshot();
-    expect(await screen.findByTestId('DATA-TEST-ID-spinner')).toBeTruthy();
-    expect(screen.queryByTestId('DATA-TEST-ID-spinner')).toBeFalsy();
-
-    // Let the underlying select component update its internal state
-    userEvent.type(select, '{enter}');
+    await userEvent.type(select, 'option 2{enter}');
 
     expect(container).toMatchSnapshot();
     expect(handleCreateMock).toBeCalledTimes(0);
@@ -496,7 +482,7 @@ describe('DynamicSearchCreatableInput Component', () => {
     expect(onChangeMock).toBeCalledTimes(0);
 
     const select = await screen.findByRole('combobox');
-    userEvent.type(select, '{backspace}');
+    await userEvent.type(select, '{backspace}');
 
     expect(container).toMatchSnapshot();
     expect(handleCreateMock).toBeCalledTimes(0);
@@ -575,14 +561,7 @@ describe('DynamicSearchCreatableInput Component', () => {
     expect(onChangeMock).toBeCalledTimes(0);
 
     const select = await screen.findByRole('combobox');
-    userEvent.type(select, 'abc');
-
-    expect(container).toMatchSnapshot();
-    expect(await screen.findByTestId('DATA-TEST-ID-spinner')).toBeTruthy();
-
-    expect(screen.queryByTestId('DATA-TEST-ID-spinner')).toBeFalsy();
-
-    userEvent.type(select, '{arrowdown}{enter}');
+    await userEvent.type(select, 'abc{arrowdown}{enter}');
 
     expect(container).toMatchSnapshot();
     expect(handleCreateMock).toBeCalledTimes(1);
@@ -591,13 +570,7 @@ describe('DynamicSearchCreatableInput Component', () => {
     expect(noOptionsMessageMock).toBeCalledTimes(1);
     expect(searchOptionsMock).toBeCalledTimes('abc'.length + 1);
     expect(searchOptionsMock).toBeCalledWith('abc', expect.any(Function));
-    expect(onChangeMock).toBeCalledTimes(0);
 
-    expect(await screen.findByTestId('DATA-TEST-ID-spinner')).toBeTruthy();
-
-    expect(screen.queryByTestId('DATA-TEST-ID-spinner')).toBeFalsy();
-
-    expect(container).toMatchSnapshot();
     expect(onChangeMock).toBeCalledTimes(1);
     expect(onChangeMock).toBeCalledWith('OPTION-CREATED');
   });
@@ -640,19 +613,7 @@ describe('DynamicSearchCreatableInput Component', () => {
     expect(onChangeMock).toBeCalledTimes(0);
 
     const select = await screen.findByRole('combobox');
-    userEvent.type(select, 'abc');
-
-    expect(container).toMatchSnapshot();
-    expect(await screen.findByTestId('DATA-TEST-ID-spinner')).toBeTruthy();
-
-    expect(screen.queryByTestId('DATA-TEST-ID-spinner')).toBeFalsy();
-
-    userEvent.type(select, '{arrowdown}{enter}');
-
-    expect(container).toMatchSnapshot();
-    expect(await screen.findByTestId('DATA-TEST-ID-spinner')).toBeTruthy();
-
-    expect(screen.queryByTestId('DATA-TEST-ID-spinner')).toBeFalsy();
+    await userEvent.type(select, 'abc{arrowdown}{enter}');
 
     expect(container).toMatchSnapshot();
     expect(handleCreateMock).toBeCalledTimes(1);

@@ -65,7 +65,7 @@ describe('SideBarItem Component', () => {
 
     const parentEntry = await screen.findByTestId('PARENT-TEST-ID');
 
-    userEvent.click(parentEntry);
+    await userEvent.click(parentEntry);
 
     expect(container).toMatchSnapshot();
 
@@ -75,7 +75,7 @@ describe('SideBarItem Component', () => {
 
     const childEntry = await screen.findByTestId('CHILD-TEST-ID');
 
-    userEvent.click(childEntry);
+    await userEvent.click(childEntry);
 
     expect(container).toMatchSnapshot();
   });

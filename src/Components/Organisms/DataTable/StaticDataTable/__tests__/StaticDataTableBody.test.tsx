@@ -6,7 +6,7 @@ import StaticDataTableBody from '../StaticDataTableBody';
 import { ColumnType } from '../../Common/types';
 
 describe('StaticDataTableBody component', () => {
-  it('StaticDataTableBody renders with number with compute total', () => {
+  it('renders with number with compute total', () => {
     const computeTotalMock = jest.fn();
 
     const { container } = render(
@@ -22,7 +22,7 @@ describe('StaticDataTableBody component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('StaticDataTableBody renders with number and no data', () => {
+  it('renders with number and no data', () => {
     const { container } = render(
       <table>
         <StaticDataTableBody<{ number: number }>
@@ -36,7 +36,7 @@ describe('StaticDataTableBody component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('StaticDataTableBody renders with number and no data with hidden column', () => {
+  it('renders with number and no data with hidden column', () => {
     const onRowSelectMock = jest.fn();
 
     const { container } = render(
@@ -52,7 +52,7 @@ describe('StaticDataTableBody component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('StaticDataTableBody renders with number and no data with no custom message', () => {
+  it('renders with number and no data with no custom message', () => {
     const onRowSelectMock = jest.fn();
 
     const { container, rerender } = render(
@@ -91,7 +91,7 @@ describe('StaticDataTableBody component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('StaticDataTableBody renders with number loading ', () => {
+  it('renders with number loading ', () => {
     const onRowSelectMock = jest.fn();
 
     const { container } = render(
@@ -108,7 +108,7 @@ describe('StaticDataTableBody component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('StaticDataTableBody renders with number loading with hidden column', () => {
+  it('renders with number loading with hidden column', () => {
     const { container } = render(
       <table>
         <StaticDataTableBody<{ number: number }>
@@ -122,7 +122,7 @@ describe('StaticDataTableBody component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('StaticDataTableBody renders with number selectable and handles selection', () => {
+  it('renders with number selectable and handles selection', async () => {
     const onRowSelectMock = jest.fn();
 
     const { container } = render(
@@ -139,14 +139,14 @@ describe('StaticDataTableBody component', () => {
     expect(container).toMatchSnapshot();
 
     const selectRow = screen.getByTestId('DATA-TEST-ID-select-row-0');
-    userEvent.click(selectRow);
+    await userEvent.click(selectRow);
 
     expect(container).toMatchSnapshot();
 
     expect(onRowSelectMock).toBeCalledTimes(1);
     expect(onRowSelectMock).toBeCalledWith([{ number: 1 }], { number: 1 }, 0);
 
-    userEvent.click(selectRow);
+    await userEvent.click(selectRow);
 
     expect(container).toMatchSnapshot();
 
@@ -154,7 +154,7 @@ describe('StaticDataTableBody component', () => {
     expect(onRowSelectMock).toBeCalledWith([], { number: 1 }, 0);
   });
 
-  it('StaticDataTableBody renders with number selectable row', () => {
+  it('renders with number selectable row', () => {
     const onRowSelectMock = jest.fn();
     const isSelectableMock = jest.fn().mockImplementation(() => {
       return true;
@@ -174,7 +174,7 @@ describe('StaticDataTableBody component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('StaticDataTableBody renders with number handles row click and row enter', () => {
+  it('renders with number handles row click and row enter', async () => {
     const onRowClickMock = jest.fn();
 
     const { container } = render(
@@ -191,20 +191,20 @@ describe('StaticDataTableBody component', () => {
     expect(container).toMatchSnapshot();
 
     const row = screen.getByTestId('DATA-TEST-ID-row-0');
-    userEvent.click(row);
+    await userEvent.click(row);
 
     expect(container).toMatchSnapshot();
 
     expect(onRowClickMock).toBeCalledTimes(1);
     expect(onRowClickMock).toBeCalledWith({ number: 1 }, 0);
 
-    userEvent.keyboard('{Enter}');
+    await userEvent.keyboard('{Enter}');
     expect(container).toMatchSnapshot();
 
     expect(onRowClickMock).toBeCalledTimes(2);
     expect(onRowClickMock).toBeCalledWith({ number: 1 }, 0);
 
-    userEvent.keyboard('a');
+    await userEvent.keyboard('a');
     expect(onRowClickMock).toBeCalledTimes(2);
   });
 });

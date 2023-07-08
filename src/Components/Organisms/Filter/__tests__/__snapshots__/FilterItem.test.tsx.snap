@@ -26,7 +26,7 @@ exports[`FilterItem Component FilterItem renders Column and title 1`] = `
     <div
       aria-hidden="false"
       class="body"
-      id="react-collapsed-panel-"
+      id="react-collapsed-panel-:r0:"
       role="region"
       style="box-sizing: border-box;"
     />

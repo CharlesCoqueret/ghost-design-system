@@ -1,12 +1,12 @@
 import React from 'react';
-import { render, screen, waitFor } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import FileGallery from '../FileGallery';
 import { FileStatusEnum } from '../types';
 
 describe('FileGallery Component', () => {
-  it('FileGallery renders and handles download and delete of done files', async () => {
+  it('renders and handles download and delete of done files', async () => {
     const updateFileDeleteMock = jest.fn().mockImplementation(async () => {
       return Promise.resolve();
     });
@@ -34,24 +34,24 @@ describe('FileGallery Component', () => {
 
     const downloadButton = await screen.findByTestId('TEST-ID-download');
 
-    userEvent.click(downloadButton);
+    await userEvent.click(downloadButton);
 
     expect(updateFileDownloadMock).toBeCalledTimes(1);
     expect(updateFileDownloadMock).toBeCalledWith(file);
 
     const deleteButton = await screen.findByTestId('TEST-ID-delete');
 
-    userEvent.click(deleteButton);
+    await userEvent.click(deleteButton);
 
     const confirmButton = screen.getByTestId('TEST-ID-confirm');
 
-    userEvent.click(confirmButton);
+    await userEvent.click(confirmButton);
 
     expect(updateFileDeleteMock).toBeCalledTimes(1);
     expect(updateFileDeleteMock).toBeCalledWith(file);
   });
 
-  it('FileGallery renders and handles delete of error files', async () => {
+  it('renders and handles delete of error files', async () => {
     const updateFileDeleteMock = jest.fn().mockImplementation(async () => {
       return Promise.resolve();
     });
@@ -81,13 +81,13 @@ describe('FileGallery Component', () => {
 
     const deleteButton = await screen.findByTestId('TEST-ID-delete');
 
-    userEvent.click(deleteButton);
+    await userEvent.click(deleteButton);
 
     expect(updateFileDeleteMock).toBeCalledTimes(1);
     expect(updateFileDeleteMock).toBeCalledWith(file);
   });
 
-  it('FileGallery renders and handles delete of uploading files', () => {
+  it('renders and handles delete of uploading files', () => {
     const updateFileDeleteMock = jest.fn();
     const updateFileDownloadMock = jest.fn();
 
@@ -112,7 +112,7 @@ describe('FileGallery Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('FileGallery renders readonly of uploading file', () => {
+  it('renders readonly of uploading file', () => {
     const updateFileDeleteMock = jest.fn();
     const updateFileDownloadMock = jest.fn();
 
@@ -138,7 +138,7 @@ describe('FileGallery Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('FileGallery renders disabled deleting file', () => {
+  it('renders disabled deleting file', () => {
     const updateFileDeleteMock = jest.fn();
     const updateFileDownloadMock = jest.fn();
 
@@ -162,7 +162,7 @@ describe('FileGallery Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('FileGallery handles download without datatestid', async () => {
+  it('handles download without datatestid', async () => {
     const updateFileDeleteMock = jest.fn();
     const updateFileDownloadMock = jest.fn().mockImplementation(async () => {
       return Promise.resolve();
@@ -182,19 +182,13 @@ describe('FileGallery Component', () => {
     expect(container).toMatchSnapshot();
 
     // Select download link
-    userEvent.tab();
-    userEvent.keyboard('{Enter}');
+    await userEvent.tab();
+    await userEvent.keyboard('{Enter}');
 
-    expect(container).toMatchSnapshot();
     expect(updateFileDownloadMock).toBeCalledTimes(1);
-
-    // Give time to updateFileDownloadMock to resolve
-    await waitFor(async () => {
-      await Promise.resolve();
-    });
   });
 
-  it('FileGallery handles delete without datatestid', async () => {
+  it('handles delete without datatestid', async () => {
     const updateFileDeleteMock = jest.fn().mockImplementation(async () => {
       return Promise.resolve();
     });
@@ -216,19 +210,14 @@ describe('FileGallery Component', () => {
     expect(container).toMatchSnapshot();
 
     // Select first delete button
-    userEvent.tab();
-    userEvent.keyboard('{Enter}');
+    await userEvent.tab();
+    await userEvent.keyboard('{Enter}');
 
     expect(container).toMatchSnapshot();
     expect(updateFileDeleteMock).toBeCalledTimes(1);
-
-    // Give time to updateFileDeleteMock to resolve
-    await waitFor(async () => {
-      await Promise.resolve();
-    });
   });
 
-  it('FileGallery handles uploading state without datatestid', () => {
+  it('handles uploading state without datatestid', () => {
     const updateFileDeleteMock = jest.fn();
     const updateFileDownloadMock = jest.fn();
 

@@ -1,32 +1,26 @@
 import React from 'react';
-import { DatePickerInput } from '..';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+
+import DatePickerInput from '../DatePickerInput';
 
 describe('DatePickerInput Component', () => {
   it('DatePickerInput renders handles changes', async () => {
     const onChangeMock = jest.fn();
 
-    render(<DatePickerInput onChange={onChangeMock} placeholder='TESTPLACEHOLDER' />);
+    const { container } = render(<DatePickerInput isClearable onChange={onChangeMock} placeholder='TESTPLACEHOLDER' />);
 
-    const inputNode = await screen.findByPlaceholderText('TESTPLACEHOLDER');
+    expect(container).toMatchSnapshot();
 
-    userEvent.type(inputNode, '3/2/22{enter}');
+    const inputNode = screen.getByPlaceholderText('TESTPLACEHOLDER');
+
+    await userEvent.type(inputNode, '3/2/22{enter}');
+
+    expect(container).toMatchSnapshot();
 
     // Using dynamic date instead of static value to ensure local time is taken into consideration.
     const expectedDate = new Date('Wed Mar 02 2022');
-
     expect(onChangeMock).toHaveBeenLastCalledWith(expectedDate);
-  });
-
-  it('DatePickerInput renders and changes without onChange prop', async () => {
-    const { container } = render(<DatePickerInput placeholder='TESTPLACEHOLDER' />);
-    expect(container).toMatchSnapshot();
-
-    const inputNode = await screen.findByPlaceholderText('TESTPLACEHOLDER');
-    userEvent.type(inputNode, '3/2/22{enter}');
-
-    expect(container).toMatchSnapshot();
   });
 
   it('DatePickerInput renders highlighted in readonly', () => {

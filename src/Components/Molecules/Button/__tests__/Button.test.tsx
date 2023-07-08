@@ -1,5 +1,5 @@
 import React from 'react';
-import { act, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { Button } from '..';
@@ -10,13 +10,13 @@ jest.unmock('@szhsin/react-menu');
 jest.unmock('react-dom');
 
 describe('Button Component', () => {
-  it('Button renders without label and icon', () => {
+  it('renders without label and icon', () => {
     const { baseElement } = render(<Button />);
 
     expect(baseElement).toMatchSnapshot();
   });
 
-  it('Button renders when loading', async () => {
+  it('renders when loading', async () => {
     const onClickMock = jest.fn();
     const { baseElement } = render(
       <Button
@@ -32,14 +32,12 @@ describe('Button Component', () => {
 
     const button = await screen.findByTestId('DATA-TEST-ID');
 
-    act(() => {
-      userEvent.click(button);
-    });
+    await userEvent.click(button);
 
     expect(onClickMock).toBeCalledTimes(0);
   });
 
-  it('Button renders and handle click', async () => {
+  it('renders and handle click', async () => {
     const onClickMock = jest.fn();
     const { baseElement } = render(
       <Button
@@ -55,14 +53,12 @@ describe('Button Component', () => {
 
     const button = await screen.findByTestId('DATA-TEST-ID');
 
-    act(() => {
-      userEvent.click(button);
-    });
+    await userEvent.click(button);
 
     expect(onClickMock).toBeCalledTimes(1);
   });
 
-  it('Button renders with list and handle open menu and click on item', async () => {
+  it('renders with list and handle open menu and click on item', async () => {
     const mainButtonClickMock = jest.fn();
     const button1ClickMock = jest.fn();
     const button2ClickMock = jest.fn();
@@ -84,9 +80,7 @@ describe('Button Component', () => {
 
     const mainButton = await screen.findByTestId('MAIN-BUTTON');
 
-    act(() => {
-      userEvent.click(mainButton);
-    });
+    await userEvent.click(mainButton);
 
     expect(baseElement).toMatchSnapshot();
     expect(mainButtonClickMock).toBeCalledTimes(1);
@@ -95,9 +89,7 @@ describe('Button Component', () => {
 
     const button1 = await screen.findByTestId('BUTTON1');
 
-    act(() => {
-      userEvent.click(button1);
-    });
+    await userEvent.click(button1);
 
     expect(baseElement).toMatchSnapshot();
     expect(mainButtonClickMock).toBeCalledTimes(1);
@@ -106,7 +98,7 @@ describe('Button Component', () => {
     expect(button2ClickMock).toBeCalledTimes(0);
   });
 
-  it('Button renders with list and handle open menu and close on click outside', async () => {
+  it('renders with list and handle open menu and close on click outside', async () => {
     const mainButtonClickMock = jest.fn();
 
     const { baseElement } = render(
@@ -125,29 +117,25 @@ describe('Button Component', () => {
 
     const mainButton = await screen.findByTestId('MAIN-BUTTON');
 
-    act(() => {
-      userEvent.click(mainButton);
-    });
+    await userEvent.click(mainButton);
 
     expect(baseElement).toMatchSnapshot();
     expect(mainButtonClickMock).toBeCalledTimes(1);
 
-    act(() => {
-      userEvent.click(baseElement);
-    });
+    await userEvent.click(baseElement);
 
     expect(baseElement).toMatchSnapshot();
     expect(mainButtonClickMock).toBeCalledTimes(1);
   });
 
-  it('Button renders with tooltip', () => {
+  it('renders with tooltip', () => {
     const { baseElement } = render(
       <Button label='Tooltip button' tooltip='TOOLTIP' tooltipDirection={MenuDirectionEnum.TOP} />,
     );
     expect(baseElement).toMatchSnapshot();
   });
 
-  it('Button renders with popover', async () => {
+  it('renders with popover', async () => {
     const button1ClickMock = jest.fn();
     const button2ClickMock = jest.fn();
 
@@ -179,24 +167,20 @@ describe('Button Component', () => {
 
     const mainButton = await screen.findByTestId('MAIN-BUTTON');
 
-    act(() => {
-      userEvent.click(mainButton);
-    });
+    await userEvent.click(mainButton);
 
     expect(baseElement).toMatchSnapshot();
     expect(button1ClickMock).toBeCalledTimes(0);
 
     const button1 = await screen.findByTestId('BUTTON1');
 
-    act(() => {
-      userEvent.click(button1);
-    });
+    await userEvent.click(button1);
 
     expect(baseElement).toMatchSnapshot();
     expect(button1ClickMock).toBeCalledTimes(1);
   });
 
-  it('Button renders with popover without buttons', async () => {
+  it('renders with popover without buttons', async () => {
     const { baseElement } = render(
       <Button
         dataTestId='MAIN-BUTTON'
@@ -211,15 +195,11 @@ describe('Button Component', () => {
 
     const mainButton = await screen.findByTestId('MAIN-BUTTON');
 
-    act(() => {
-      userEvent.click(mainButton);
-    });
+    await userEvent.click(mainButton);
 
     expect(baseElement).toMatchSnapshot();
 
-    act(() => {
-      userEvent.click(baseElement);
-    });
+    await userEvent.click(baseElement);
 
     expect(baseElement).toMatchSnapshot();
   });

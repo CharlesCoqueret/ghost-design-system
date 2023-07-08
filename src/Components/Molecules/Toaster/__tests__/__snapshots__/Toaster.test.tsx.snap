@@ -223,7 +223,7 @@ exports[`Toaster Component Toaster renders notify with options 1`] = `
 </div>
 `;
 
-exports[`Toaster Component Toaster renders notify without options  and clears 1`] = `
+exports[`Toaster Component Toaster renders notify without options and clears 1`] = `
 <div>
   <div>
     <div
@@ -251,7 +251,7 @@ exports[`Toaster Component Toaster renders notify without options  and clears 1`
 </div>
 `;
 
-exports[`Toaster Component Toaster renders notify without options  and clears 2`] = `
+exports[`Toaster Component Toaster renders notify without options and clears 2`] = `
 <div>
   <div>
     <div

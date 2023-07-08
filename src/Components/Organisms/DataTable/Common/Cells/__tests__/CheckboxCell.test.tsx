@@ -1,5 +1,5 @@
 import React from 'react';
-import { act, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import CheckboxCell from '../CheckboxCell';
@@ -180,9 +180,7 @@ describe('CheckboxCell component', () => {
 
     const checkbox = await screen.findByTestId('DATA-TEST-ID-2');
 
-    act(() => {
-      userEvent.click(checkbox);
-    });
+    await userEvent.click(checkbox);
 
     expect(onChangeMock).toBeCalledTimes(1);
     expect(onChangeMock).toBeCalledWith([

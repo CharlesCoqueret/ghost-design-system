@@ -44,7 +44,7 @@ exports[`PercentageCell component PercentageCell handles changes 2`] = `
               inputmode="numeric"
               name="data"
               type="text"
-              value=" %"
+              value=""
             />
           </div>
         </td>
@@ -98,7 +98,7 @@ exports[`PercentageCell component PercentageCell renders cell editing with no ro
               inputmode="numeric"
               name="data"
               type="text"
-              value=" %"
+              value=""
             />
           </div>
         </td>
@@ -153,7 +153,7 @@ exports[`PercentageCell component PercentageCell renders row editing with no row
               inputmode="numeric"
               name="data"
               type="text"
-              value=" %"
+              value=""
             />
           </div>
         </td>

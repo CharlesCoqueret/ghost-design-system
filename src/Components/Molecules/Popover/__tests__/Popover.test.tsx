@@ -21,7 +21,7 @@ describe('Popover Component', () => {
     );
   };
 
-  it('Popover renders', () => {
+  it('Popover renders', async () => {
     const onCloseMock = jest.fn();
     const { baseElement, rerender } = render(<MockComponent onCloseMock={onCloseMock} open={false} />);
 
@@ -30,7 +30,7 @@ describe('Popover Component', () => {
     rerender(<MockComponent onCloseMock={onCloseMock} open={true} />);
     expect(baseElement).toMatchSnapshot();
 
-    userEvent.click(document.body);
+    await userEvent.click(document.body);
     expect(onCloseMock).toBeCalledTimes(1);
   });
 });

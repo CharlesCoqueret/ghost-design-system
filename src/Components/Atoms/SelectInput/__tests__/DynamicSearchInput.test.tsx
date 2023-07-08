@@ -152,25 +152,18 @@ describe('DynamicSearchInput Component', () => {
     );
 
     expect(await screen.findByTestId('DATA-TEST-ID-spinner')).toBeTruthy();
-
     expect(screen.queryByTestId('DATA-TEST-ID-spinner')).toBeFalsy();
 
     expect(container).toMatchSnapshot();
 
     const select = await screen.findByRole('combobox');
-    userEvent.type(select, 'option 2');
+    await userEvent.type(select, 'option 2{enter}');
 
     expect(container).toMatchSnapshot();
 
-    expect(await screen.findByTestId('DATA-TEST-ID-spinner')).toBeTruthy();
-    expect(screen.queryByTestId('DATA-TEST-ID-spinner')).toBeFalsy();
-
-    userEvent.type(select, '{enter}');
-
-    expect(container).toMatchSnapshot();
     expect(resolveValueMock).toBeCalledTimes(0);
     expect(noOptionsMessageMock).toBeCalled();
-    expect(noOptionsMessageMock).toHaveBeenLastCalledWith({ inputValue: 'option 2' });
+    expect(noOptionsMessageMock).toHaveBeenLastCalledWith({ inputValue: 'option ' });
     expect(searchOptionsMock).toBeCalledTimes('option 2'.length + 1);
     expect(searchOptionsMock).toBeCalledWith('option 2', expect.any(Function));
     expect(onChangeMock).toBeCalledTimes(1);
@@ -206,14 +199,7 @@ describe('DynamicSearchInput Component', () => {
     expect(container).toMatchSnapshot();
 
     const select = await screen.findByRole('combobox');
-    userEvent.type(select, 'option 2');
-
-    expect(container).toMatchSnapshot();
-
-    expect(await screen.findByTestId('DATA-TEST-ID-spinner')).toBeTruthy();
-    expect(screen.queryByTestId('DATA-TEST-ID-spinner')).toBeFalsy();
-
-    userEvent.type(select, '{enter}');
+    await userEvent.type(select, 'option 2{enter}');
 
     expect(container).toMatchSnapshot();
     expect(resolveValueMock).toBeCalledTimes(1);
@@ -494,7 +480,7 @@ describe('DynamicSearchInput Component', () => {
     expect(onChangeMock).toBeCalledTimes(0);
 
     const select = await screen.findByRole('combobox');
-    userEvent.type(select, '{backspace}');
+    await userEvent.type(select, '{backspace}');
 
     expect(container).toMatchSnapshot();
     expect(resolveValueMock).toBeCalledTimes(1);

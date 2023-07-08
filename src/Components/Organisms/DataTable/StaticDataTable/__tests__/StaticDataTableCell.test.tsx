@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen, waitFor } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import * as yup from 'yup';
 
 import { ColumnType } from '../../Common/types';
@@ -240,9 +240,7 @@ describe('StaticDataTableCell component', () => {
       </table>,
     );
 
-    await waitFor(async () => {
-      await screen.findByText('label');
-    });
+    await screen.findByText('label');
 
     expect(container).toMatchSnapshot();
   });

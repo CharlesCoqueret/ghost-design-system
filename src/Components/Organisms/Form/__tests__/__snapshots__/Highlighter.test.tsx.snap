@@ -25,8 +25,4 @@ exports[`Highlighter Component renders with highlight and side by side 1`] = `
 </div>
 `;
 
-exports[`Highlighter Component renders with highlight and side by side with invalid Element 1`] = `
-<div>
-  
-</div>
-`;
+exports[`Highlighter Component renders with highlight and side by side with invalid Element 1`] = `<div />`;

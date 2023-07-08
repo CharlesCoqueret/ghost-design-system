@@ -1,244 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handles change 1`] = `
-<div>
-  <div
-    class="container"
-  >
-    <div
-      class=" css-1959ul7-container"
-    >
-      <span
-        class="css-1f43avz-a11yText-A11yText"
-        id="react-select-6-live-region"
-      />
-      <span
-        aria-atomic="false"
-        aria-live="polite"
-        aria-relevant="additions text"
-        class="css-1f43avz-a11yText-A11yText"
-      >
-        <span
-          id="aria-selection"
-        />
-        <span
-          id="aria-context"
-        >
-            Use Up and Down to choose options, press Enter to select the currently focused option, press Escape to exit the menu, press Tab to select the option and exit the menu.
-        </span>
-      </span>
-      <div
-        class=" css-3acy6q-control"
-      >
-        <div
-          class=" css-yhb162-ValueContainer"
-        >
-          <div
-            class=" css-166bipr-Input"
-            data-value="option 2"
-          >
-            <input
-              aria-autocomplete="list"
-              aria-controls="react-select-6-listbox"
-              aria-describedby="react-select-6-placeholder"
-              aria-expanded="true"
-              aria-haspopup="true"
-              aria-owns="react-select-6-listbox"
-              autocapitalize="none"
-              autocomplete="off"
-              autocorrect="off"
-              class=""
-              id="DATA-TEST-ID"
-              role="combobox"
-              spellcheck="false"
-              style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
-              tabindex="0"
-              type="text"
-              value="option 2"
-            />
-          </div>
-        </div>
-        <div
-          class=" css-1hb7zxy-IndicatorsContainer"
-        >
-          <div
-            aria-hidden="true"
-          >
-            <svg
-              aria-hidden="true"
-              class="icon size-1x spinner"
-              data-testid="DATA-TEST-ID-spinner"
-              focusable="false"
-              height="50"
-              icon="fal,spinner"
-              preserveAspectRatio="xMidYMid"
-              role="img"
-              style="background: transparent;"
-              viewBox="0 0 100 100"
-              width="50"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <circle
-                cx="50"
-                cy="50"
-                fill="transparent"
-                r="30"
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-width="10"
-              >
-                <animatetransform
-                  attributeName="transform"
-                  dur="2s"
-                  keyTimes="0;0.5;1"
-                  repeatCount="indefinite"
-                  type="rotate"
-                  values="0 50 50;180 50 50;720 50 50"
-                />
-                <animate
-                  attributeName="stroke-dasharray"
-                  dur="2s"
-                  keyTimes="0;0.5;1"
-                  repeatCount="indefinite"
-                  values="20 150; 150 20; 20 150"
-                />
-              </circle>
-            </svg>
-          </div>
-          <span
-            class=" css-1u9des2-indicatorSeparator"
-          />
-          <div
-            aria-hidden="true"
-          >
-            <i
-              class="icon icon"
-              data-testid="DATA-TEST-ID-magnifier"
-              icon="fal,magnifying-glass"
-            />
-          </div>
-        </div>
-      </div>
-      <div>
-        <div
-          class=" css-1yfmvl6-MenuPortal"
-        >
-          <div
-            class=" css-1a09ke2-menu"
-            id="react-select-6-listbox"
-          >
-            <div
-              class="css-bp8cua-ScrollManager"
-            />
-            <div
-              class=" css-1n6sfyn-MenuList"
-            >
-              <div
-                class=" css-zu7x0v-LoadingMessage"
-              >
-                Loading...
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <input
-        name="SELECT"
-        type="hidden"
-        value=""
-      />
-    </div>
-  </div>
-</div>
-`;
-
-exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handles change 2`] = `
-<div>
-  <div
-    class="container"
-  >
-    <div
-      class=" css-1959ul7-container"
-    >
-      <span
-        class="css-1f43avz-a11yText-A11yText"
-        id="react-select-6-live-region"
-      />
-      <span
-        aria-atomic="false"
-        aria-live="polite"
-        aria-relevant="additions text"
-        class="css-1f43avz-a11yText-A11yText"
-      />
-      <div
-        class=" css-1iiyd84-control"
-      >
-        <div
-          class=" css-yhb162-ValueContainer"
-        >
-          <div
-            class=" css-1dimb5e-singleValue"
-          >
-            option 2
-          </div>
-          <div
-            class=" css-qbdosj-Input"
-            data-value=""
-          >
-            <input
-              aria-autocomplete="list"
-              aria-expanded="false"
-              aria-haspopup="true"
-              autocapitalize="none"
-              autocomplete="off"
-              autocorrect="off"
-              class=""
-              id="DATA-TEST-ID"
-              role="combobox"
-              spellcheck="false"
-              style="opacity: 0; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
-              tabindex="0"
-              type="text"
-              value=""
-            />
-          </div>
-        </div>
-        <div
-          class=" css-1hb7zxy-IndicatorsContainer"
-        >
-          <div
-            aria-hidden="true"
-          >
-            <i
-              class="icon icon"
-              data-testid="DATA-TEST-ID-clear"
-              icon="fal,xmark"
-            />
-          </div>
-          <span
-            class=" css-1u9des2-indicatorSeparator"
-          />
-          <div
-            aria-hidden="true"
-          >
-            <i
-              class="icon icon"
-              data-testid="DATA-TEST-ID-magnifier"
-              icon="fal,magnifying-glass"
-            />
-          </div>
-        </div>
-      </div>
-      <input
-        name="SELECT"
-        type="hidden"
-        value="OPTION2"
-      />
-    </div>
-  </div>
-</div>
-`;
-
 exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handles change to undefined 1`] = `
 <div>
   <div
@@ -459,32 +220,26 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handl
         aria-live="polite"
         aria-relevant="additions text"
         class="css-1f43avz-a11yText-A11yText"
-      >
-        <span
-          id="aria-selection"
-        />
-        <span
-          id="aria-context"
-        >
-            Use Up and Down to choose options, press Enter to select the currently focused option, press Escape to exit the menu, press Tab to select the option and exit the menu.
-        </span>
-      </span>
+      />
       <div
-        class=" css-3acy6q-control"
+        class=" css-1iiyd84-control"
       >
         <div
           class=" css-yhb162-ValueContainer"
         >
           <div
-            class=" css-166bipr-Input"
-            data-value="option 2"
+            class=" css-1dimb5e-singleValue"
+          >
+            option 2
+          </div>
+          <div
+            class=" css-qbdosj-Input"
+            data-value=""
           >
             <input
               aria-autocomplete="list"
-              aria-controls="react-select-7-listbox"
-              aria-expanded="true"
+              aria-expanded="false"
               aria-haspopup="true"
-              aria-owns="react-select-7-listbox"
               autocapitalize="none"
               autocomplete="off"
               autocorrect="off"
@@ -492,60 +247,16 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handl
               id="DATA-TEST-ID"
               role="combobox"
               spellcheck="false"
-              style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+              style="opacity: 0; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
               tabindex="0"
               type="text"
-              value="option 2"
+              value=""
             />
           </div>
         </div>
         <div
           class=" css-1hb7zxy-IndicatorsContainer"
         >
-          <div
-            aria-hidden="true"
-          >
-            <svg
-              aria-hidden="true"
-              class="icon size-1x spinner"
-              data-testid="DATA-TEST-ID-spinner"
-              focusable="false"
-              height="50"
-              icon="fal,spinner"
-              preserveAspectRatio="xMidYMid"
-              role="img"
-              style="background: transparent;"
-              viewBox="0 0 100 100"
-              width="50"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <circle
-                cx="50"
-                cy="50"
-                fill="transparent"
-                r="30"
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-width="10"
-              >
-                <animatetransform
-                  attributeName="transform"
-                  dur="2s"
-                  keyTimes="0;0.5;1"
-                  repeatCount="indefinite"
-                  type="rotate"
-                  values="0 50 50;180 50 50;720 50 50"
-                />
-                <animate
-                  attributeName="stroke-dasharray"
-                  dur="2s"
-                  keyTimes="0;0.5;1"
-                  repeatCount="indefinite"
-                  values="20 150; 150 20; 20 150"
-                />
-              </circle>
-            </svg>
-          </div>
           <span
             class=" css-1u9des2-indicatorSeparator"
           />
@@ -560,40 +271,17 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handl
           </div>
         </div>
       </div>
-      <div>
-        <div
-          class=" css-1yfmvl6-MenuPortal"
-        >
-          <div
-            class=" css-1a09ke2-menu"
-            id="react-select-7-listbox"
-          >
-            <div
-              class="css-bp8cua-ScrollManager"
-            />
-            <div
-              class=" css-1n6sfyn-MenuList"
-            >
-              <div
-                class=" css-zu7x0v-LoadingMessage"
-              >
-                Loading...
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
       <input
         name="SELECT"
         type="hidden"
-        value="OPTION1"
+        value="OPTION2"
       />
     </div>
   </div>
 </div>
 `;
 
-exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handles change with no option string 2`] = `
+exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handles change with options 1`] = `
 <div>
   <div
     class="container"
@@ -603,7 +291,7 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handl
     >
       <span
         class="css-1f43avz-a11yText-A11yText"
-        id="react-select-7-live-region"
+        id="react-select-6-live-region"
       />
       <span
         aria-atomic="false"
@@ -647,6 +335,15 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handl
         <div
           class=" css-1hb7zxy-IndicatorsContainer"
         >
+          <div
+            aria-hidden="true"
+          >
+            <i
+              class="icon icon"
+              data-testid="DATA-TEST-ID-clear"
+              icon="fal,xmark"
+            />
+          </div>
           <span
             class=" css-1u9des2-indicatorSeparator"
           />
@@ -752,278 +449,6 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handl
 `;
 
 exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handles creation 2`] = `
-<div>
-  <div
-    class="container"
-  >
-    <div
-      class=" css-1959ul7-container"
-    >
-      <span
-        class="css-1f43avz-a11yText-A11yText"
-        id="react-select-12-live-region"
-      />
-      <span
-        aria-atomic="false"
-        aria-live="polite"
-        aria-relevant="additions text"
-        class="css-1f43avz-a11yText-A11yText"
-      >
-        <span
-          id="aria-selection"
-        />
-        <span
-          id="aria-context"
-        >
-            Use Up and Down to choose options, press Enter to select the currently focused option, press Escape to exit the menu, press Tab to select the option and exit the menu.
-        </span>
-      </span>
-      <div
-        class=" css-3acy6q-control"
-      >
-        <div
-          class=" css-yhb162-ValueContainer"
-        >
-          <div
-            class=" css-166bipr-Input"
-            data-value="abc"
-          >
-            <input
-              aria-autocomplete="list"
-              aria-controls="react-select-12-listbox"
-              aria-describedby="react-select-12-placeholder"
-              aria-expanded="true"
-              aria-haspopup="true"
-              aria-owns="react-select-12-listbox"
-              autocapitalize="none"
-              autocomplete="off"
-              autocorrect="off"
-              class=""
-              id="DATA-TEST-ID"
-              role="combobox"
-              spellcheck="false"
-              style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
-              tabindex="0"
-              type="text"
-              value="abc"
-            />
-          </div>
-        </div>
-        <div
-          class=" css-1hb7zxy-IndicatorsContainer"
-        >
-          <div
-            aria-hidden="true"
-          >
-            <svg
-              aria-hidden="true"
-              class="icon size-1x spinner"
-              data-testid="DATA-TEST-ID-spinner"
-              focusable="false"
-              height="50"
-              icon="fal,spinner"
-              preserveAspectRatio="xMidYMid"
-              role="img"
-              style="background: transparent;"
-              viewBox="0 0 100 100"
-              width="50"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <circle
-                cx="50"
-                cy="50"
-                fill="transparent"
-                r="30"
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-width="10"
-              >
-                <animatetransform
-                  attributeName="transform"
-                  dur="2s"
-                  keyTimes="0;0.5;1"
-                  repeatCount="indefinite"
-                  type="rotate"
-                  values="0 50 50;180 50 50;720 50 50"
-                />
-                <animate
-                  attributeName="stroke-dasharray"
-                  dur="2s"
-                  keyTimes="0;0.5;1"
-                  repeatCount="indefinite"
-                  values="20 150; 150 20; 20 150"
-                />
-              </circle>
-            </svg>
-          </div>
-          <span
-            class=" css-1u9des2-indicatorSeparator"
-          />
-          <div
-            aria-hidden="true"
-          >
-            <i
-              class="icon icon"
-              data-testid="DATA-TEST-ID-magnifier"
-              icon="fal,magnifying-glass"
-            />
-          </div>
-        </div>
-      </div>
-      <div>
-        <div
-          class=" css-1yfmvl6-MenuPortal"
-        >
-          <div
-            class=" css-1a09ke2-menu"
-            id="react-select-12-listbox"
-          >
-            <div
-              class="css-bp8cua-ScrollManager"
-            />
-            <div
-              class=" css-1n6sfyn-MenuList"
-            >
-              <div
-                class=" css-zu7x0v-LoadingMessage"
-              >
-                Loading...
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <input
-        name="SELECT"
-        type="hidden"
-        value=""
-      />
-    </div>
-  </div>
-</div>
-`;
-
-exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handles creation 3`] = `
-<div>
-  <div
-    class="container"
-  >
-    <div
-      class=" css-j5ssuk-container"
-    >
-      <span
-        class="css-1f43avz-a11yText-A11yText"
-        id="react-select-12-live-region"
-      />
-      <span
-        aria-atomic="false"
-        aria-live="polite"
-        aria-relevant="additions text"
-        class="css-1f43avz-a11yText-A11yText"
-      />
-      <div
-        class=" css-1l4rvl1-control"
-      >
-        <div
-          class=" css-yhb162-ValueContainer"
-        >
-          <div
-            class=" css-1jqq78o-placeholder"
-            id="react-select-12-placeholder"
-          >
-            Select...
-          </div>
-          <div
-            class=" css-1h01tm3-Input"
-            data-value=""
-          >
-            <input
-              aria-autocomplete="list"
-              aria-describedby="react-select-12-placeholder"
-              aria-expanded="false"
-              aria-haspopup="true"
-              autocapitalize="none"
-              autocomplete="off"
-              autocorrect="off"
-              class=""
-              disabled=""
-              id="DATA-TEST-ID"
-              role="combobox"
-              spellcheck="false"
-              style="opacity: 0; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
-              tabindex="0"
-              type="text"
-              value=""
-            />
-          </div>
-        </div>
-        <div
-          class=" css-1hb7zxy-IndicatorsContainer"
-        >
-          <div
-            aria-hidden="true"
-          >
-            <svg
-              aria-hidden="true"
-              class="icon size-1x spinner"
-              data-testid="DATA-TEST-ID-spinner"
-              focusable="false"
-              height="50"
-              icon="fal,spinner"
-              preserveAspectRatio="xMidYMid"
-              role="img"
-              style="background: transparent;"
-              viewBox="0 0 100 100"
-              width="50"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <circle
-                cx="50"
-                cy="50"
-                fill="transparent"
-                r="30"
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-width="10"
-              >
-                <animatetransform
-                  attributeName="transform"
-                  dur="2s"
-                  keyTimes="0;0.5;1"
-                  repeatCount="indefinite"
-                  type="rotate"
-                  values="0 50 50;180 50 50;720 50 50"
-                />
-                <animate
-                  attributeName="stroke-dasharray"
-                  dur="2s"
-                  keyTimes="0;0.5;1"
-                  repeatCount="indefinite"
-                  values="20 150; 150 20; 20 150"
-                />
-              </circle>
-            </svg>
-          </div>
-          <span
-            class=" css-894a34-indicatorSeparator"
-          />
-          <div
-            aria-hidden="true"
-          >
-            <i
-              class="icon icon"
-              data-testid="DATA-TEST-ID-magnifier"
-              icon="fal,magnifying-glass"
-            />
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handles creation 4`] = `
 <div>
   <div
     class="container"
@@ -1191,278 +616,6 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handl
 `;
 
 exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handles creation with undefined result 2`] = `
-<div>
-  <div
-    class="container"
-  >
-    <div
-      class=" css-1959ul7-container"
-    >
-      <span
-        class="css-1f43avz-a11yText-A11yText"
-        id="react-select-13-live-region"
-      />
-      <span
-        aria-atomic="false"
-        aria-live="polite"
-        aria-relevant="additions text"
-        class="css-1f43avz-a11yText-A11yText"
-      >
-        <span
-          id="aria-selection"
-        />
-        <span
-          id="aria-context"
-        >
-            Use Up and Down to choose options, press Enter to select the currently focused option, press Escape to exit the menu, press Tab to select the option and exit the menu.
-        </span>
-      </span>
-      <div
-        class=" css-3acy6q-control"
-      >
-        <div
-          class=" css-yhb162-ValueContainer"
-        >
-          <div
-            class=" css-166bipr-Input"
-            data-value="abc"
-          >
-            <input
-              aria-autocomplete="list"
-              aria-controls="react-select-13-listbox"
-              aria-describedby="react-select-13-placeholder"
-              aria-expanded="true"
-              aria-haspopup="true"
-              aria-owns="react-select-13-listbox"
-              autocapitalize="none"
-              autocomplete="off"
-              autocorrect="off"
-              class=""
-              id="DATA-TEST-ID"
-              role="combobox"
-              spellcheck="false"
-              style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
-              tabindex="0"
-              type="text"
-              value="abc"
-            />
-          </div>
-        </div>
-        <div
-          class=" css-1hb7zxy-IndicatorsContainer"
-        >
-          <div
-            aria-hidden="true"
-          >
-            <svg
-              aria-hidden="true"
-              class="icon size-1x spinner"
-              data-testid="DATA-TEST-ID-spinner"
-              focusable="false"
-              height="50"
-              icon="fal,spinner"
-              preserveAspectRatio="xMidYMid"
-              role="img"
-              style="background: transparent;"
-              viewBox="0 0 100 100"
-              width="50"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <circle
-                cx="50"
-                cy="50"
-                fill="transparent"
-                r="30"
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-width="10"
-              >
-                <animatetransform
-                  attributeName="transform"
-                  dur="2s"
-                  keyTimes="0;0.5;1"
-                  repeatCount="indefinite"
-                  type="rotate"
-                  values="0 50 50;180 50 50;720 50 50"
-                />
-                <animate
-                  attributeName="stroke-dasharray"
-                  dur="2s"
-                  keyTimes="0;0.5;1"
-                  repeatCount="indefinite"
-                  values="20 150; 150 20; 20 150"
-                />
-              </circle>
-            </svg>
-          </div>
-          <span
-            class=" css-1u9des2-indicatorSeparator"
-          />
-          <div
-            aria-hidden="true"
-          >
-            <i
-              class="icon icon"
-              data-testid="DATA-TEST-ID-magnifier"
-              icon="fal,magnifying-glass"
-            />
-          </div>
-        </div>
-      </div>
-      <div>
-        <div
-          class=" css-1yfmvl6-MenuPortal"
-        >
-          <div
-            class=" css-1a09ke2-menu"
-            id="react-select-13-listbox"
-          >
-            <div
-              class="css-bp8cua-ScrollManager"
-            />
-            <div
-              class=" css-1n6sfyn-MenuList"
-            >
-              <div
-                class=" css-zu7x0v-LoadingMessage"
-              >
-                Loading...
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <input
-        name="SELECT"
-        type="hidden"
-        value=""
-      />
-    </div>
-  </div>
-</div>
-`;
-
-exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handles creation with undefined result 3`] = `
-<div>
-  <div
-    class="container"
-  >
-    <div
-      class=" css-j5ssuk-container"
-    >
-      <span
-        class="css-1f43avz-a11yText-A11yText"
-        id="react-select-13-live-region"
-      />
-      <span
-        aria-atomic="false"
-        aria-live="polite"
-        aria-relevant="additions text"
-        class="css-1f43avz-a11yText-A11yText"
-      />
-      <div
-        class=" css-1l4rvl1-control"
-      >
-        <div
-          class=" css-yhb162-ValueContainer"
-        >
-          <div
-            class=" css-1jqq78o-placeholder"
-            id="react-select-13-placeholder"
-          >
-            Select...
-          </div>
-          <div
-            class=" css-1h01tm3-Input"
-            data-value=""
-          >
-            <input
-              aria-autocomplete="list"
-              aria-describedby="react-select-13-placeholder"
-              aria-expanded="false"
-              aria-haspopup="true"
-              autocapitalize="none"
-              autocomplete="off"
-              autocorrect="off"
-              class=""
-              disabled=""
-              id="DATA-TEST-ID"
-              role="combobox"
-              spellcheck="false"
-              style="opacity: 0; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
-              tabindex="0"
-              type="text"
-              value=""
-            />
-          </div>
-        </div>
-        <div
-          class=" css-1hb7zxy-IndicatorsContainer"
-        >
-          <div
-            aria-hidden="true"
-          >
-            <svg
-              aria-hidden="true"
-              class="icon size-1x spinner"
-              data-testid="DATA-TEST-ID-spinner"
-              focusable="false"
-              height="50"
-              icon="fal,spinner"
-              preserveAspectRatio="xMidYMid"
-              role="img"
-              style="background: transparent;"
-              viewBox="0 0 100 100"
-              width="50"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <circle
-                cx="50"
-                cy="50"
-                fill="transparent"
-                r="30"
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-width="10"
-              >
-                <animatetransform
-                  attributeName="transform"
-                  dur="2s"
-                  keyTimes="0;0.5;1"
-                  repeatCount="indefinite"
-                  type="rotate"
-                  values="0 50 50;180 50 50;720 50 50"
-                />
-                <animate
-                  attributeName="stroke-dasharray"
-                  dur="2s"
-                  keyTimes="0;0.5;1"
-                  repeatCount="indefinite"
-                  values="20 150; 150 20; 20 150"
-                />
-              </circle>
-            </svg>
-          </div>
-          <span
-            class=" css-894a34-indicatorSeparator"
-          />
-          <div
-            aria-hidden="true"
-          >
-            <i
-              class="icon icon"
-              data-testid="DATA-TEST-ID-magnifier"
-              icon="fal,magnifying-glass"
-            />
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handles creation with undefined result 4`] = `
 <div>
   <div
     class="container"
@@ -1863,84 +1016,6 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput handl
 </div>
 `;
 
-exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput renders 1`] = `
-<div>
-  <div
-    class="container"
-  >
-    <div
-      class=" css-1959ul7-container"
-    >
-      <span
-        class="css-1f43avz-a11yText-A11yText"
-        id="react-select-2-live-region"
-      />
-      <span
-        aria-atomic="false"
-        aria-live="polite"
-        aria-relevant="additions text"
-        class="css-1f43avz-a11yText-A11yText"
-      />
-      <div
-        class=" css-1iiyd84-control"
-      >
-        <div
-          class=" css-yhb162-ValueContainer"
-        >
-          <div
-            class=" css-1dimb5e-singleValue"
-          >
-            option 1
-          </div>
-          <div
-            class=" css-qbdosj-Input"
-            data-value=""
-          >
-            <input
-              aria-autocomplete="list"
-              aria-expanded="false"
-              aria-haspopup="true"
-              autocapitalize="none"
-              autocomplete="off"
-              autocorrect="off"
-              class=""
-              id="DATA-TEST-ID"
-              role="combobox"
-              spellcheck="false"
-              style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
-              tabindex="0"
-              type="text"
-              value=""
-            />
-          </div>
-        </div>
-        <div
-          class=" css-1hb7zxy-IndicatorsContainer"
-        >
-          <span
-            class=" css-1u9des2-indicatorSeparator"
-          />
-          <div
-            aria-hidden="true"
-          >
-            <i
-              class="icon icon"
-              data-testid="DATA-TEST-ID-magnifier"
-              icon="fal,magnifying-glass"
-            />
-          </div>
-        </div>
-      </div>
-      <input
-        name="SELECT"
-        type="hidden"
-        value="OPTION1"
-      />
-    </div>
-  </div>
-</div>
-`;
-
 exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput renders in error and disabled 1`] = `
 <div>
   <div
@@ -2061,6 +1136,84 @@ exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput rende
     >
       option 1
     </span>
+  </div>
+</div>
+`;
+
+exports[`DynamicSearchCreatableInput Component DynamicSearchCreatableInput renders properly 1`] = `
+<div>
+  <div
+    class="container"
+  >
+    <div
+      class=" css-1959ul7-container"
+    >
+      <span
+        class="css-1f43avz-a11yText-A11yText"
+        id="react-select-2-live-region"
+      />
+      <span
+        aria-atomic="false"
+        aria-live="polite"
+        aria-relevant="additions text"
+        class="css-1f43avz-a11yText-A11yText"
+      />
+      <div
+        class=" css-1iiyd84-control"
+      >
+        <div
+          class=" css-yhb162-ValueContainer"
+        >
+          <div
+            class=" css-1dimb5e-singleValue"
+          >
+            option 1
+          </div>
+          <div
+            class=" css-qbdosj-Input"
+            data-value=""
+          >
+            <input
+              aria-autocomplete="list"
+              aria-expanded="false"
+              aria-haspopup="true"
+              autocapitalize="none"
+              autocomplete="off"
+              autocorrect="off"
+              class=""
+              id="DATA-TEST-ID"
+              role="combobox"
+              spellcheck="false"
+              style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+              tabindex="0"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          class=" css-1hb7zxy-IndicatorsContainer"
+        >
+          <span
+            class=" css-1u9des2-indicatorSeparator"
+          />
+          <div
+            aria-hidden="true"
+          >
+            <i
+              class="icon icon"
+              data-testid="DATA-TEST-ID-magnifier"
+              icon="fal,magnifying-glass"
+            />
+          </div>
+        </div>
+      </div>
+      <input
+        name="SELECT"
+        type="hidden"
+        value="OPTION1"
+      />
+    </div>
   </div>
 </div>
 `;

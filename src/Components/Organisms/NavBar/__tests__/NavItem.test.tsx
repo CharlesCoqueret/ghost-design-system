@@ -1,11 +1,11 @@
 import React from 'react';
-import { act, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import NavItem from '../NavItem';
 
 describe('NavItem Component', () => {
-  it('renders alone', () => {
+  it('renders alone', async () => {
     const onClickMock = jest.fn();
 
     const { container } = render(
@@ -24,16 +24,12 @@ describe('NavItem Component', () => {
 
     const item = screen.getByTestId('DATA-TEST-ID');
 
-    act(() => {
-      userEvent.click(item);
-    });
+    await userEvent.click(item);
 
     expect(container).toMatchSnapshot();
     expect(onClickMock).toBeCalledTimes(1);
 
-    act(() => {
-      userEvent.click(item);
-    });
+    await userEvent.click(item);
 
     expect(container).toMatchSnapshot();
     expect(onClickMock).toBeCalledTimes(2);
@@ -49,7 +45,7 @@ describe('NavItem Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('renders with subitems', () => {
+  it('renders with subitems', async () => {
     const onClickMock = jest.fn();
     console.info = jest.fn();
 
@@ -74,18 +70,14 @@ describe('NavItem Component', () => {
 
     const item = screen.getByTestId('DATA-TEST-ID');
 
-    act(() => {
-      userEvent.click(item);
-    });
+    await userEvent.click(item);
 
     expect(container).toMatchSnapshot();
     expect(onClickMock).not.toBeCalled();
 
     const subitem = screen.getByTestId('SUBITEMDATA-TEST-ID');
 
-    act(() => {
-      userEvent.click(subitem);
-    });
+    await userEvent.click(subitem);
 
     expect(console.info).toBeCalledTimes(1);
     expect(console.info).toBeCalledWith('url pushed:', '#');
@@ -93,9 +85,7 @@ describe('NavItem Component', () => {
     expect(container).toMatchSnapshot();
     expect(onClickMock).toBeCalledTimes(1);
 
-    act(() => {
-      userEvent.click(item);
-    });
+    await userEvent.click(item);
 
     expect(container).toMatchSnapshot();
     expect(onClickMock).toBeCalledTimes(1);

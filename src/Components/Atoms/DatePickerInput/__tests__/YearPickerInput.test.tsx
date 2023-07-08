@@ -14,32 +14,16 @@ describe('YearPickerInput Component', () => {
 
     expect(container).toMatchSnapshot();
 
-    const inputNode = await screen.findByPlaceholderText('TESTPLACEHOLDER');
+    const inputNode = await screen.findByDisplayValue('1984');
 
-    userEvent.click(inputNode);
-    (inputNode as HTMLInputElement).select();
-    userEvent.type(inputNode, '1984{enter}');
+    await userEvent.clear(inputNode);
+    await userEvent.type(inputNode, '1984{enter}');
 
     // Using dynamic date instead of static value to ensure local time is taken into consideration.
     const expectedDate = new Date('1984');
 
-    expect(onChangeMock).toBeCalledTimes(3);
+    expect(onChangeMock).toBeCalledTimes(4);
     expect(onChangeMock).toHaveBeenLastCalledWith(expectedDate.getFullYear());
-
-    expect(container).toMatchSnapshot();
-  });
-
-  it('YearPickerInput renders and changes without onChange prop', async () => {
-    const { container } = render(<YearPickerInput placeholder='TESTPLACEHOLDER' />);
-
-    const inputNode = await screen.findByPlaceholderText('TESTPLACEHOLDER');
-
-    expect(container).toMatchSnapshot();
-
-    userEvent.click(inputNode);
-    userEvent.type(inputNode, '2022{enter}');
-
-    expect(inputNode).not.toBeNull();
 
     expect(container).toMatchSnapshot();
   });
@@ -51,17 +35,20 @@ describe('YearPickerInput Component', () => {
       <YearPickerInput onChange={onChangeMock} input={2022} placeholder='TESTPLACEHOLDER' />,
     );
 
-    const inputNode = await screen.findByPlaceholderText('TESTPLACEHOLDER');
-
-    userEvent.click(inputNode);
-    (inputNode as HTMLInputElement).selectionStart = 4;
-    (inputNode as HTMLInputElement).selectionEnd = 4;
-    userEvent.type(inputNode, '{backspace}'.repeat(4) + '{enter}');
-
     expect(container).toMatchSnapshot();
 
-    expect(onChangeMock).toBeCalledTimes(3);
+    const inputNode = await screen.findByDisplayValue('2022');
+
+    await userEvent.clear(inputNode);
+
+    expect(onChangeMock).toBeCalledTimes(1);
     expect(onChangeMock).toHaveBeenLastCalledWith(undefined);
+    expect(container).toMatchSnapshot();
+
+    await userEvent.type(inputNode, '2022{enter}');
+    expect(onChangeMock).toBeCalledTimes(4);
+    expect(onChangeMock).toHaveBeenLastCalledWith(2022);
+    expect(container).toMatchSnapshot();
   });
 
   it('YearPickerInput renders in readOnly, highlighted without portal', () => {

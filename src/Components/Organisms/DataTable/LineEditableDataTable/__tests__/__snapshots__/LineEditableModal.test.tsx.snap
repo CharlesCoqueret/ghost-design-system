@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`LineEditableModal component LineEditableModal renders with amount and submitting 1`] = `
+exports[`LineEditableModal component renders properly with amount and submitting 1`] = `
 <div>
   <div>
     <div
@@ -104,7 +104,7 @@ exports[`LineEditableModal component LineEditableModal renders with amount and s
 </div>
 `;
 
-exports[`LineEditableModal component LineEditableModal renders with amount hidden in form 1`] = `
+exports[`LineEditableModal component renders with amount hidden in form 1`] = `
 <div>
   <div>
     <div

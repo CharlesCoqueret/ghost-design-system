@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen, waitFor } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import * as yup from 'yup';
 
@@ -10,7 +10,7 @@ import { FieldLegacyTypeEnum } from '../../../FormLegacy/types';
 import { IFile } from '../../../../Atoms/FileInput';
 
 describe('LineEditableModal component', () => {
-  it('LineEditableModal renders with amount and submitting', () => {
+  it('renders properly with amount and submitting', async () => {
     const onCancelMock = jest.fn();
     const onCloseMock = jest.fn();
     const onSubmitMock = jest.fn();
@@ -36,16 +36,16 @@ describe('LineEditableModal component', () => {
     expect(container).toMatchSnapshot();
 
     const input = screen.getByDisplayValue(1);
-    userEvent.click(input);
-    userEvent.tab();
-    userEvent.tab();
-    userEvent.keyboard('{Enter}');
+    await userEvent.click(input);
+    await userEvent.tab();
+    await userEvent.tab();
+    await userEvent.keyboard('{Enter}');
 
     expect(onSubmitMock).toBeCalledTimes(1);
     expect(onSubmitMock).toBeCalledWith({ amount: 1 });
   });
 
-  it('LineEditableModal renders with amount hidden in form', () => {
+  it('renders with amount hidden in form', () => {
     const onCancelMock = jest.fn();
     const onCloseMock = jest.fn();
     const onSubmitMock = jest.fn();
@@ -73,7 +73,7 @@ describe('LineEditableModal component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('LineEditableModal renders with amount and cancelling', () => {
+  it('renders with amount and cancelling', async () => {
     console.error = jest.fn();
     const onCancelMock = jest.fn();
     const onCloseMock = jest.fn();
@@ -97,9 +97,9 @@ describe('LineEditableModal component', () => {
     );
 
     const input = screen.getByDisplayValue(1);
-    userEvent.click(input);
-    userEvent.tab();
-    userEvent.keyboard('{Enter}');
+    await userEvent.click(input);
+    await userEvent.tab();
+    await userEvent.keyboard('{Enter}');
 
     expect(onCancelMock).toBeCalledTimes(1);
     expect(onCancelMock).toBeCalledWith({ amount: 1 });
@@ -109,7 +109,7 @@ describe('LineEditableModal component', () => {
     );
   });
 
-  it('LineEditableModal renders with amount and submitting with invalid value', () => {
+  it('renders with amount and submitting with invalid value', async () => {
     //scrollIntoView is not implemented in jsdom
     window.HTMLElement.prototype.scrollIntoView = jest.fn();
     console.error = jest.fn();
@@ -139,17 +139,17 @@ describe('LineEditableModal component', () => {
     );
 
     const input = screen.getByDisplayValue(1);
-    userEvent.clear(input);
-    userEvent.tab();
-    userEvent.tab();
-    userEvent.keyboard('{Enter}');
+    await userEvent.clear(input);
+    await userEvent.tab();
+    await userEvent.tab();
+    await userEvent.keyboard('{Enter}');
 
     expect(onSubmitMock).toBeCalledTimes(0);
     expect(console.error).toBeCalledTimes(1);
     expect(console.error).toBeCalledWith({ amount: 'amount is a required field' });
   });
 
-  it('LineEditableModal renders with amount and custon button', async () => {
+  it('renders with amount and custon button', async () => {
     const onCancelMock = jest.fn();
     const onCloseMock = jest.fn();
     const onSubmitMock = jest.fn();
@@ -181,20 +181,17 @@ describe('LineEditableModal component', () => {
     );
 
     const input = screen.getByDisplayValue(1);
-    userEvent.click(input);
-    userEvent.tab();
-    userEvent.keyboard('{Enter}');
+    await userEvent.click(input);
+    await userEvent.tab();
+    await userEvent.keyboard('{Enter}');
 
     expect(onClickMock).toBeCalledTimes(1);
-    // Give some time to the promise to resolve
-    await waitFor(() => {
-      expect(onCloseMock).toBeCalledTimes(1);
-    });
+    expect(onCloseMock).toBeCalledTimes(1);
   });
 });
 
 describe('columnToFieldMapper helper', () => {
-  it('columnToFieldMapper converts', () => {
+  it('converts', () => {
     expect(
       columnToFieldMapper<{
         amount?: number;

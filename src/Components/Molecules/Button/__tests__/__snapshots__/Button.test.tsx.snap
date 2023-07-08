@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Button Component Button renders and handle click 1`] = `
+exports[`Button Component renders and handle click 1`] = `
 <body>
   <div>
     <button
@@ -28,7 +28,7 @@ exports[`Button Component Button renders and handle click 1`] = `
 </body>
 `;
 
-exports[`Button Component Button renders when loading 1`] = `
+exports[`Button Component renders when loading 1`] = `
 <body>
   <div>
     <button
@@ -92,7 +92,7 @@ exports[`Button Component Button renders when loading 1`] = `
 </body>
 `;
 
-exports[`Button Component Button renders with list and handle open menu and click on item 1`] = `
+exports[`Button Component renders with list and handle open menu and click on item 1`] = `
 <body>
   <div>
     <button
@@ -169,7 +169,7 @@ exports[`Button Component Button renders with list and handle open menu and clic
 </body>
 `;
 
-exports[`Button Component Button renders with list and handle open menu and click on item 2`] = `
+exports[`Button Component renders with list and handle open menu and click on item 2`] = `
 <body>
   <div>
     <button
@@ -246,7 +246,7 @@ exports[`Button Component Button renders with list and handle open menu and clic
 </body>
 `;
 
-exports[`Button Component Button renders with list and handle open menu and click on item 3`] = `
+exports[`Button Component renders with list and handle open menu and click on item 3`] = `
 <body>
   <div>
     <button
@@ -323,7 +323,7 @@ exports[`Button Component Button renders with list and handle open menu and clic
 </body>
 `;
 
-exports[`Button Component Button renders with list and handle open menu and close on click outside 1`] = `
+exports[`Button Component renders with list and handle open menu and close on click outside 1`] = `
 <body>
   <div>
     <button
@@ -398,7 +398,7 @@ exports[`Button Component Button renders with list and handle open menu and clos
 </body>
 `;
 
-exports[`Button Component Button renders with list and handle open menu and close on click outside 2`] = `
+exports[`Button Component renders with list and handle open menu and close on click outside 2`] = `
 <body>
   <div>
     <button
@@ -473,7 +473,7 @@ exports[`Button Component Button renders with list and handle open menu and clos
 </body>
 `;
 
-exports[`Button Component Button renders with list and handle open menu and close on click outside 3`] = `
+exports[`Button Component renders with list and handle open menu and close on click outside 3`] = `
 <body>
   <div>
     <button
@@ -548,7 +548,7 @@ exports[`Button Component Button renders with list and handle open menu and clos
 </body>
 `;
 
-exports[`Button Component Button renders with popover 1`] = `
+exports[`Button Component renders with popover 1`] = `
 <body>
   <div>
     <button
@@ -646,7 +646,7 @@ exports[`Button Component Button renders with popover 1`] = `
 </body>
 `;
 
-exports[`Button Component Button renders with popover 2`] = `
+exports[`Button Component renders with popover 2`] = `
 <body>
   <div>
     <button
@@ -744,7 +744,7 @@ exports[`Button Component Button renders with popover 2`] = `
 </body>
 `;
 
-exports[`Button Component Button renders with popover 3`] = `
+exports[`Button Component renders with popover 3`] = `
 <body>
   <div>
     <button
@@ -842,7 +842,7 @@ exports[`Button Component Button renders with popover 3`] = `
 </body>
 `;
 
-exports[`Button Component Button renders with popover without buttons 1`] = `
+exports[`Button Component renders with popover without buttons 1`] = `
 <body>
   <div>
     <button
@@ -905,7 +905,7 @@ exports[`Button Component Button renders with popover without buttons 1`] = `
 </body>
 `;
 
-exports[`Button Component Button renders with popover without buttons 2`] = `
+exports[`Button Component renders with popover without buttons 2`] = `
 <body>
   <div>
     <button
@@ -968,7 +968,7 @@ exports[`Button Component Button renders with popover without buttons 2`] = `
 </body>
 `;
 
-exports[`Button Component Button renders with popover without buttons 3`] = `
+exports[`Button Component renders with popover without buttons 3`] = `
 <body>
   <div>
     <button
@@ -1031,7 +1031,7 @@ exports[`Button Component Button renders with popover without buttons 3`] = `
 </body>
 `;
 
-exports[`Button Component Button renders with tooltip 1`] = `
+exports[`Button Component renders with tooltip 1`] = `
 <body>
   <div>
     <button
@@ -1050,7 +1050,7 @@ exports[`Button Component Button renders with tooltip 1`] = `
 </body>
 `;
 
-exports[`Button Component Button renders without label and icon 1`] = `
+exports[`Button Component renders without label and icon 1`] = `
 <body>
   <div />
 </body>

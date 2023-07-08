@@ -38,7 +38,7 @@ describe('ButtonCell component', () => {
     expect(container).toMatchSnapshot();
 
     const button = await screen.findByTestId('BUTTON1');
-    userEvent.click(button);
+    await userEvent.click(button);
 
     expect(button1ClickMock).toBeCalledTimes(1);
     expect(button1ClickMock).toBeCalledWith({ data: 'DATA' }, 0);
@@ -93,12 +93,12 @@ describe('ButtonCell component', () => {
     expect(container).toMatchSnapshot();
 
     const buttonMore = await screen.findByTestId('MORE');
-    userEvent.click(buttonMore);
+    await userEvent.click(buttonMore);
 
     expect(container).toMatchSnapshot();
 
     const button1 = await screen.findByTestId('BUTTON1');
-    userEvent.click(button1);
+    await userEvent.click(button1);
 
     expect(button1ClickMock).toBeCalledTimes(1);
     expect(button1ClickMock).toBeCalledWith({ data: 'DATA' }, 0);

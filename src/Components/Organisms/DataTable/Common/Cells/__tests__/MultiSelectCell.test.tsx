@@ -209,7 +209,7 @@ describe('MultiSelectCell component', () => {
     expect(container).toMatchSnapshot();
 
     const badge = await screen.findByRole('combobox');
-    userEvent.type(badge, 'label 2{enter}');
+    await userEvent.type(badge, 'label 2{enter}');
 
     expect(container).toMatchSnapshot();
     expect(onChangeMock).toBeCalledTimes(1);

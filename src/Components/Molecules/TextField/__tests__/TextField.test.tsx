@@ -31,7 +31,7 @@ describe('TextField Component', () => {
     expect(container).toMatchSnapshot();
 
     const inputNode = await screen.findByTestId('DATA-TEST-ID');
-    userEvent.type(inputNode, 'N');
+    await userEvent.type(inputNode, 'N');
 
     expect(onChangeMock).toBeCalledWith('N');
   });

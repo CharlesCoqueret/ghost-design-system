@@ -1,6 +1,5 @@
 import React from 'react';
-import { act, renderHook } from '@testing-library/react-hooks/dom';
-import { render } from '@testing-library/react';
+import { act, render, renderHook } from '@testing-library/react';
 
 import * as yup from 'yup';
 import { FieldLegacyTypeEnum } from '../types';

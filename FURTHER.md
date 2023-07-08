@@ -35,66 +35,66 @@ export \* from './MyComponent';
 export \* from './SomeOtherComponent';
 ```
 
-You can develop your new component using storybook as your playground. Once you have added the `.stories.tsx` file for you new component, you can run `npm run storybook` to start the service.
+You can develop your new component using storybook as your playground. Once you have added the `.stories.tsx` file for you new component, you can run `yarn storybook` to start the service.
 
 ## Tests
 
 ```console
-$ npm run test
+$ yarn test
 ```
 
 Watch
 
 ```console
-$ npm run test:watch
+$ yarn test:watch
 ```
 
 Coverage
 
 ```console
-$ npm run test:coverage
+$ yarn test:coverage
 ```
 
 ## Prettier
 
 ```console
-$ npm run format
+$ yarn format
 ```
 
 Validate project formatting
 
 ```console
-$ npm run format:check
+$ yarn format:check
 ```
 
 ## Lint
 
 ```console
-$ npm run lint
+$ yarn lint
 ```
 
 Fix
 
 ```console
-$ npm run lint:fix
+$ yarn lint:fix
 ```
 
 ## Storybook
 
 ```console
-$ npm run storybook
+$ yarn storybook
 ```
 
 Build storybook
 
 ```console
-$ npm run build-storybook
+$ yarn build-storybook
 ```
 
 ## Building your library
 
 ```console
-$ npm run build
+$ yarn build
 ```
 
 The build output will go into the `dist` directory

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`StaticDataTableBody component StaticDataTableBody renders with number and no data 1`] = `
+exports[`StaticDataTableBody component renders with number and no data 1`] = `
 <div>
   <table>
     <tbody>
@@ -30,7 +30,7 @@ exports[`StaticDataTableBody component StaticDataTableBody renders with number a
 </div>
 `;
 
-exports[`StaticDataTableBody component StaticDataTableBody renders with number and no data with hidden column 1`] = `
+exports[`StaticDataTableBody component renders with number and no data with hidden column 1`] = `
 <div>
   <table>
     <tbody>
@@ -60,7 +60,7 @@ exports[`StaticDataTableBody component StaticDataTableBody renders with number a
 </div>
 `;
 
-exports[`StaticDataTableBody component StaticDataTableBody renders with number and no data with no custom message 1`] = `
+exports[`StaticDataTableBody component renders with number and no data with no custom message 1`] = `
 <div>
   <table>
     <tbody>
@@ -90,7 +90,7 @@ exports[`StaticDataTableBody component StaticDataTableBody renders with number a
 </div>
 `;
 
-exports[`StaticDataTableBody component StaticDataTableBody renders with number and no data with no custom message 2`] = `
+exports[`StaticDataTableBody component renders with number and no data with no custom message 2`] = `
 <div>
   <table>
     <tbody>
@@ -120,7 +120,7 @@ exports[`StaticDataTableBody component StaticDataTableBody renders with number a
 </div>
 `;
 
-exports[`StaticDataTableBody component StaticDataTableBody renders with number and no data with no custom message 3`] = `
+exports[`StaticDataTableBody component renders with number and no data with no custom message 3`] = `
 <div>
   <table>
     <tbody>
@@ -150,7 +150,7 @@ exports[`StaticDataTableBody component StaticDataTableBody renders with number a
 </div>
 `;
 
-exports[`StaticDataTableBody component StaticDataTableBody renders with number handles row click and row enter 1`] = `
+exports[`StaticDataTableBody component renders with number handles row click and row enter 1`] = `
 <div>
   <table>
     <tbody>
@@ -181,7 +181,7 @@ exports[`StaticDataTableBody component StaticDataTableBody renders with number h
 </div>
 `;
 
-exports[`StaticDataTableBody component StaticDataTableBody renders with number handles row click and row enter 2`] = `
+exports[`StaticDataTableBody component renders with number handles row click and row enter 2`] = `
 <div>
   <table>
     <tbody>
@@ -212,7 +212,7 @@ exports[`StaticDataTableBody component StaticDataTableBody renders with number h
 </div>
 `;
 
-exports[`StaticDataTableBody component StaticDataTableBody renders with number handles row click and row enter 3`] = `
+exports[`StaticDataTableBody component renders with number handles row click and row enter 3`] = `
 <div>
   <table>
     <tbody>
@@ -243,7 +243,7 @@ exports[`StaticDataTableBody component StaticDataTableBody renders with number h
 </div>
 `;
 
-exports[`StaticDataTableBody component StaticDataTableBody renders with number loading  1`] = `
+exports[`StaticDataTableBody component renders with number loading  1`] = `
 <div>
   <table>
     <tbody>
@@ -263,7 +263,7 @@ exports[`StaticDataTableBody component StaticDataTableBody renders with number l
 </div>
 `;
 
-exports[`StaticDataTableBody component StaticDataTableBody renders with number loading with hidden column 1`] = `
+exports[`StaticDataTableBody component renders with number loading with hidden column 1`] = `
 <div>
   <table>
     <tbody>
@@ -283,7 +283,7 @@ exports[`StaticDataTableBody component StaticDataTableBody renders with number l
 </div>
 `;
 
-exports[`StaticDataTableBody component StaticDataTableBody renders with number selectable and handles selection 1`] = `
+exports[`StaticDataTableBody component renders with number selectable and handles selection 1`] = `
 <div>
   <table>
     <tbody>
@@ -328,7 +328,7 @@ exports[`StaticDataTableBody component StaticDataTableBody renders with number s
 </div>
 `;
 
-exports[`StaticDataTableBody component StaticDataTableBody renders with number selectable and handles selection 2`] = `
+exports[`StaticDataTableBody component renders with number selectable and handles selection 2`] = `
 <div>
   <table>
     <tbody>
@@ -373,7 +373,7 @@ exports[`StaticDataTableBody component StaticDataTableBody renders with number s
 </div>
 `;
 
-exports[`StaticDataTableBody component StaticDataTableBody renders with number selectable and handles selection 3`] = `
+exports[`StaticDataTableBody component renders with number selectable and handles selection 3`] = `
 <div>
   <table>
     <tbody>
@@ -418,7 +418,7 @@ exports[`StaticDataTableBody component StaticDataTableBody renders with number s
 </div>
 `;
 
-exports[`StaticDataTableBody component StaticDataTableBody renders with number selectable row 1`] = `
+exports[`StaticDataTableBody component renders with number selectable row 1`] = `
 <div>
   <table>
     <tbody>
@@ -463,7 +463,7 @@ exports[`StaticDataTableBody component StaticDataTableBody renders with number s
 </div>
 `;
 
-exports[`StaticDataTableBody component StaticDataTableBody renders with number with compute total 1`] = `
+exports[`StaticDataTableBody component renders with number with compute total 1`] = `
 <div>
   <table>
     <tbody>

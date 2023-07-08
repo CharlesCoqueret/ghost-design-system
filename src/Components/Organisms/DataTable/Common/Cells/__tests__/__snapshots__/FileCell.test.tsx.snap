@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`FileCell component FileCell handles change 1`] = `
+exports[`FileCell component handles change 1`] = `
 <div>
   <table>
     <tbody>
@@ -91,7 +91,7 @@ exports[`FileCell component FileCell handles change 1`] = `
 </div>
 `;
 
-exports[`FileCell component FileCell renders 1`] = `
+exports[`FileCell component renders properly 1`] = `
 <div>
   <table>
     <tbody>
@@ -164,7 +164,7 @@ exports[`FileCell component FileCell renders 1`] = `
 </div>
 `;
 
-exports[`FileCell component FileCell renders when hidden 1`] = `
+exports[`FileCell component renders when hidden 1`] = `
 <div>
   <table>
     <tbody>
@@ -238,7 +238,7 @@ exports[`FileCell component FileCell renders when hidden 1`] = `
 </div>
 `;
 
-exports[`FileCell component FileCell renders with forced value 1`] = `
+exports[`FileCell component renders with forced value 1`] = `
 <div>
   <table>
     <tbody>

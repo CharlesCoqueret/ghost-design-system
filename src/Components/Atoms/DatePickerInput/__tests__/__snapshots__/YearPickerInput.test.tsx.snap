@@ -31,7 +31,7 @@ exports[`YearPickerInput Component YearPickerInput renders and changes with empt
 </div>
 `;
 
-exports[`YearPickerInput Component YearPickerInput renders and changes without onChange prop 1`] = `
+exports[`YearPickerInput Component YearPickerInput renders and changes with empty value 2`] = `
 <div>
   <div
     class="container"
@@ -62,7 +62,7 @@ exports[`YearPickerInput Component YearPickerInput renders and changes without o
 </div>
 `;
 
-exports[`YearPickerInput Component YearPickerInput renders and changes without onChange prop 2`] = `
+exports[`YearPickerInput Component YearPickerInput renders and changes with empty value 3`] = `
 <div>
   <div
     class="container"
@@ -84,7 +84,7 @@ exports[`YearPickerInput Component YearPickerInput renders and changes without o
           placeholder="TESTPLACEHOLDER"
           tabindex="0"
           type="text"
-          value=""
+          value="2022"
         />
       </div>
     </div>

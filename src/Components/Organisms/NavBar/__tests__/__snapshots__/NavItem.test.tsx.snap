@@ -27,7 +27,7 @@ exports[`NavItem Component renders alone 1`] = `
   </div>
   <div>
     <div>
-      ControlleMenu
+      ControlledMenu
       closed
       <div
         data-testid="CUSTOM-SUB-ITEM"
@@ -65,7 +65,7 @@ exports[`NavItem Component renders alone 2`] = `
   </div>
   <div>
     <div>
-      ControlleMenu
+      ControlledMenu
       open
       <div
         data-testid="CUSTOM-SUB-ITEM"
@@ -103,7 +103,7 @@ exports[`NavItem Component renders alone 3`] = `
   </div>
   <div>
     <div>
-      ControlleMenu
+      ControlledMenu
       closed
       <div
         data-testid="CUSTOM-SUB-ITEM"
@@ -178,7 +178,7 @@ exports[`NavItem Component renders with subitems 1`] = `
   </div>
   <div>
     <div>
-      ControlleMenu
+      ControlledMenu
       closed
       <div>
         partial url
@@ -213,7 +213,7 @@ exports[`NavItem Component renders with subitems 2`] = `
   </div>
   <div>
     <div>
-      ControlleMenu
+      ControlledMenu
       open
       <div>
         partial url
@@ -248,7 +248,7 @@ exports[`NavItem Component renders with subitems 3`] = `
   </div>
   <div>
     <div>
-      ControlleMenu
+      ControlledMenu
       open
       <div>
         partial url
@@ -283,7 +283,7 @@ exports[`NavItem Component renders with subitems 4`] = `
   </div>
   <div>
     <div>
-      ControlleMenu
+      ControlledMenu
       closed
       <div>
         partial url

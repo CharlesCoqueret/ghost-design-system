@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`DatePickerInput Component DatePickerInput renders and changes without onChange prop 1`] = `
+exports[`DatePickerInput Component DatePickerInput renders handles changes 1`] = `
 <div>
   <div
     class="container"
@@ -31,7 +31,7 @@ exports[`DatePickerInput Component DatePickerInput renders and changes without o
 </div>
 `;
 
-exports[`DatePickerInput Component DatePickerInput renders and changes without onChange prop 2`] = `
+exports[`DatePickerInput Component DatePickerInput renders handles changes 2`] = `
 <div>
   <div
     class="container"

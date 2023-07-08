@@ -1,9 +1,9 @@
 import React from 'react';
 import { render } from '@testing-library/react';
+import { QueryClient, QueryClientProvider } from 'react-query';
 
 import { ColumnType } from '../../../Organisms/DataTable/Common/types';
 import { FilterTypeEnum } from '../../../Organisms/Filter/types';
-import { QueryClient, QueryClientProvider } from 'react-query';
 import PortfolioWrapped, { IPortfolioProps } from '../PortfolioWrapped';
 
 // Mocking RichTextField as suneditor which is problematic with Jest
@@ -18,60 +18,63 @@ jest.mock('react-intersection-observer', () => ({
   },
 }));
 
-describe('PortfolioWrapped', () => {
-  const convertData = jest.fn();
-  const getData = jest.fn();
-  const getNextPageParam = jest.fn();
-  const handleError = jest.fn();
+let props: IPortfolioProps<
+  { number: number },
+  { number: number },
+  Array<{ number: number }>,
+  { page: number; count: number }
+>;
 
-  const props: IPortfolioProps<
-    { number: number },
-    { number: number },
-    Array<{ number: number }>,
-    { page: number; count: number }
-  > = {
-    convertData,
-    getData,
-    getNextPageParam,
-    handleError,
-    filter: {
-      localization: {
-        advancedSearch: 'Advanced search',
-        advancedSearchTitle: 'Advanced search',
-        search: 'Search',
-        reset: 'Reset',
+describe('PortfolioWrapped', () => {
+  beforeEach(() => {
+    const convertData = jest.fn();
+    const getData = jest.fn();
+    const getNextPageParam = jest.fn();
+    const handleError = jest.fn();
+
+    props = {
+      convertData,
+      getData,
+      getNextPageParam,
+      handleError,
+      filter: {
+        localization: {
+          advancedSearch: 'Advanced search',
+          advancedSearchTitle: 'Advanced search',
+          search: 'Search',
+          reset: 'Reset',
+        },
+        searchBarItems: [
+          {
+            filterType: FilterTypeEnum.NUMBER,
+            dataIndex: 'number',
+            placeholder: 'Number',
+          },
+        ],
       },
-      searchBarItems: [
-        {
-          filterType: FilterTypeEnum.NUMBER,
-          dataIndex: 'number',
-          placeholder: 'Number',
-        },
-      ],
-    },
-    filterClassName: 'test-filter-classname',
-    table: {
-      columns: [
-        {
-          title: 'Number',
-          dataIndex: 'number',
-          editable: false,
-          type: ColumnType.NUMBER,
-          sorter: true,
-        },
-      ],
-    },
-    tableClassName: 'test-table-classname',
-  };
+      filterClassName: 'test-filter-classname',
+      table: {
+        columns: [
+          {
+            title: 'Number',
+            dataIndex: 'number',
+            editable: false,
+            type: ColumnType.NUMBER,
+            sorter: true,
+          },
+        ],
+      },
+      tableClassName: 'test-table-classname',
+    };
+  });
 
   afterEach(() => {
     jest.clearAllMocks();
   });
 
   it('should render filter component when filter prop is provided', () => {
-    const queryClient = new QueryClient();
     const { container } = render(
-      <QueryClientProvider client={queryClient}>
+      <QueryClientProvider client={new QueryClient()}>
         <PortfolioWrapped {...props} />
       </QueryClientProvider>,
     );
@@ -80,9 +83,8 @@ describe('PortfolioWrapped', () => {
   });
 
   it('should not render filter component when filter prop is not provided', () => {
-    const queryClient = new QueryClient();
     const { container } = render(
-      <QueryClientProvider client={queryClient}>
+      <QueryClientProvider client={new QueryClient()}>
         <PortfolioWrapped {...props} filter={undefined} />
       </QueryClientProvider>,
     );

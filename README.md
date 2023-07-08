@@ -71,6 +71,12 @@
 npm install ghost-design-system
 ```
 
+or
+
+```console
+yarn add ghost-design-system
+```
+
 3. Load the required icon set and initialize the ThemeProvider, for example in your `index.tsx` :
 
 ```tsx

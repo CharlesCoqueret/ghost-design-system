@@ -25,8 +25,4 @@ exports[`HighlighterLegacy Component HighlighterLegacy renders with highlight 1`
 </div>
 `;
 
-exports[`HighlighterLegacy Component HighlighterLegacy renders with highlight and inValidElement 1`] = `
-<div>
-  
-</div>
-`;
+exports[`HighlighterLegacy Component HighlighterLegacy renders with highlight and inValidElement 1`] = `<div />`;

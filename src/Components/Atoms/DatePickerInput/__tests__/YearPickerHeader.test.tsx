@@ -40,10 +40,10 @@ describe('YearPickerHeader Component', () => {
     const decreaseYear = await screen.findByTestId('TESTID-decreaseYear');
     const increaseYear = await screen.findByTestId('TESTID-increaseYear');
 
-    userEvent.click(increaseYear);
+    await userEvent.click(increaseYear);
     expect(increaseYearMock).toBeCalledTimes(1);
 
-    userEvent.click(decreaseYear);
+    await userEvent.click(decreaseYear);
     expect(decreaseYearMock).toBeCalledTimes(1);
   });
 

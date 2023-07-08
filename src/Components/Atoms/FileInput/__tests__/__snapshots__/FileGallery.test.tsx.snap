@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`FileGallery Component FileGallery handles delete without datatestid 1`] = `
+exports[`FileGallery Component handles delete without datatestid 1`] = `
 <div>
   <div
     class="container error"
@@ -52,7 +52,7 @@ exports[`FileGallery Component FileGallery handles delete without datatestid 1`]
 </div>
 `;
 
-exports[`FileGallery Component FileGallery handles delete without datatestid 2`] = `
+exports[`FileGallery Component handles delete without datatestid 2`] = `
 <div>
   <div
     class="container error"
@@ -79,6 +79,7 @@ exports[`FileGallery Component FileGallery handles delete without datatestid 2`]
       class="right"
     >
       <button
+        aria-describedby="tippy-5"
         class="button deleteIcon"
         color="reversed"
         tabindex="0"
@@ -104,7 +105,7 @@ exports[`FileGallery Component FileGallery handles delete without datatestid 2`]
 </div>
 `;
 
-exports[`FileGallery Component FileGallery handles download without datatestid 1`] = `
+exports[`FileGallery Component handles download without datatestid 1`] = `
 <div>
   <div
     class="container"
@@ -150,7 +151,7 @@ exports[`FileGallery Component FileGallery handles download without datatestid 1
       </div>
       <div>
         <div>
-          ControlleMenu
+          ControlledMenu
           closed
           <div
             class="container"
@@ -197,139 +198,7 @@ exports[`FileGallery Component FileGallery handles download without datatestid 1
 </div>
 `;
 
-exports[`FileGallery Component FileGallery handles download without datatestid 2`] = `
-<div>
-  <div
-    class="container"
-  >
-    <div
-      class="left"
-    >
-      <div
-        class="paperclipIcon"
-      >
-        <i
-          class="icon"
-          icon="fal,paperclip"
-        />
-      </div>
-      <div
-        class="name"
-        tabindex="-1"
-      >
-        NAME
-      </div>
-      <svg
-        aria-hidden="true"
-        class="icon size-1x spinnerIcon"
-        focusable="false"
-        height="50"
-        icon="fal,spinner"
-        preserveAspectRatio="xMidYMid"
-        role="img"
-        style="background: transparent;"
-        viewBox="0 0 100 100"
-        width="50"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <circle
-          cx="50"
-          cy="50"
-          fill="transparent"
-          r="30"
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-width="10"
-        >
-          <animatetransform
-            attributeName="transform"
-            dur="2s"
-            keyTimes="0;0.5;1"
-            repeatCount="indefinite"
-            type="rotate"
-            values="0 50 50;180 50 50;720 50 50"
-          />
-          <animate
-            attributeName="stroke-dasharray"
-            dur="2s"
-            keyTimes="0;0.5;1"
-            repeatCount="indefinite"
-            values="20 150; 150 20; 20 150"
-          />
-        </circle>
-      </svg>
-    </div>
-    <div
-      class="right"
-    >
-      <button
-        class="button deleteIcon"
-        color="reversed"
-        tabindex="0"
-        type="button"
-      >
-        <div
-          class="icon"
-        >
-          <i
-            class="icon"
-            icon="fal,trash-alt"
-          />
-        </div>
-      </button>
-      <div>
-        Delete
-      </div>
-      <div>
-        <div>
-          ControlleMenu
-          closed
-          <div
-            class="container"
-          >
-            <div
-              class="title"
-            >
-              Delete?
-            </div>
-            <div
-              class="buttons"
-            >
-              <button
-                class="button"
-                color="secondary"
-                tabindex="0"
-                type="button"
-              >
-                <div
-                  class="label"
-                >
-                  Cancel
-                </div>
-              </button>
-              <button
-                class="button"
-                color="primary"
-                tabindex="0"
-                type="button"
-              >
-                <div
-                  class="label"
-                >
-                  Confirm
-                </div>
-              </button>
-            </div>
-          </div>
-          has ref
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`FileGallery Component FileGallery handles uploading state without datatestid 1`] = `
+exports[`FileGallery Component handles uploading state without datatestid 1`] = `
 <div>
   <div
     class="container"
@@ -399,7 +268,7 @@ exports[`FileGallery Component FileGallery handles uploading state without datat
 </div>
 `;
 
-exports[`FileGallery Component FileGallery renders and handles delete of error files 1`] = `
+exports[`FileGallery Component renders and handles delete of error files 1`] = `
 <div>
   <div
     class="container error"
@@ -454,7 +323,7 @@ exports[`FileGallery Component FileGallery renders and handles delete of error f
 </div>
 `;
 
-exports[`FileGallery Component FileGallery renders and handles delete of uploading files 1`] = `
+exports[`FileGallery Component renders and handles delete of uploading files 1`] = `
 <div>
   <div
     class="container"
@@ -531,7 +400,7 @@ exports[`FileGallery Component FileGallery renders and handles delete of uploadi
 </div>
 `;
 
-exports[`FileGallery Component FileGallery renders and handles download and delete of done files 1`] = `
+exports[`FileGallery Component renders and handles download and delete of done files 1`] = `
 <div>
   <div
     class="container"
@@ -579,7 +448,7 @@ exports[`FileGallery Component FileGallery renders and handles download and dele
       </div>
       <div>
         <div>
-          ControlleMenu
+          ControlledMenu
           closed
           <div
             class="container"
@@ -628,7 +497,7 @@ exports[`FileGallery Component FileGallery renders and handles download and dele
 </div>
 `;
 
-exports[`FileGallery Component FileGallery renders disabled deleting file 1`] = `
+exports[`FileGallery Component renders disabled deleting file 1`] = `
 <div>
   <div
     class="container"
@@ -659,7 +528,7 @@ exports[`FileGallery Component FileGallery renders disabled deleting file 1`] = 
 </div>
 `;
 
-exports[`FileGallery Component FileGallery renders readonly of uploading file 1`] = `
+exports[`FileGallery Component renders readonly of uploading file 1`] = `
 <div>
   <div
     class="container"

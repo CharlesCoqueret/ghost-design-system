@@ -119,7 +119,7 @@ describe('PercentageCell component', () => {
 
     const PERCENTAGE = await screen.findByDisplayValue('1,234 %');
 
-    userEvent.clear(PERCENTAGE);
+    await userEvent.clear(PERCENTAGE);
 
     expect(container).toMatchSnapshot();
     expect(onChangeMock).toBeCalledTimes(1);

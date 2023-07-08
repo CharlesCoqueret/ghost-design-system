@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, waitFor } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import FileCell from '../FileCell';
@@ -7,7 +7,7 @@ import { ColumnType } from '../../types';
 import { FileStatusEnum, IFile } from '../../../../../Atoms/FileInput';
 
 describe('FileCell component', () => {
-  it('FileCell renders', () => {
+  it('renders properly', () => {
     const onDeleteMock = jest.fn();
 
     const { container } = render(
@@ -45,7 +45,7 @@ describe('FileCell component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('FileCell renders with forced value', () => {
+  it('renders with forced value', () => {
     const onDeleteMock = jest.fn();
 
     const { container } = render(
@@ -92,7 +92,7 @@ describe('FileCell component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('FileCell renders when hidden', () => {
+  it('renders when hidden', () => {
     const onDeleteMock = jest.fn();
 
     const { container } = render(
@@ -131,7 +131,7 @@ describe('FileCell component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('FileCell handles change', async () => {
+  it('handles change', async () => {
     const onDeleteMock = jest.fn().mockImplementation(async () => {
       return Promise.resolve();
     });
@@ -174,11 +174,11 @@ describe('FileCell component', () => {
 
     expect(container).toMatchSnapshot();
 
-    userEvent.tab();
-    userEvent.keyboard('{Enter}');
+    await userEvent.tab();
+    await userEvent.keyboard('{Enter}');
 
     expect(onDeleteMock).toBeCalledTimes(1);
-    expect(onChangeMock).toBeCalledTimes(1);
+    expect(onChangeMock).toBeCalledTimes(2);
     expect(onChangeMock).toBeCalledWith([
       {
         uid: '1',
@@ -189,11 +189,6 @@ describe('FileCell component', () => {
         error: 'Error message',
       },
     ]);
-
-    // Give promise time to resolve
-    await waitFor(async () => await Promise.resolve());
-
-    expect(onChangeMock).toBeCalledTimes(2);
     expect(onChangeMock).toBeCalledWith([]);
   });
 });

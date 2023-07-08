@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`LineEditableDataTable component LineEditableDataTable handles add new line with onNewLine 1`] = `
+exports[`LineEditableDataTable component handles add new line with onNewLine 1`] = `
 <div>
   <div>
     <table
@@ -65,7 +65,7 @@ exports[`LineEditableDataTable component LineEditableDataTable handles add new l
 </div>
 `;
 
-exports[`LineEditableDataTable component LineEditableDataTable handles add new line without onNewLine 1`] = `
+exports[`LineEditableDataTable component handles add new line without onNewLine 1`] = `
 <div>
   <div>
     <table
@@ -130,7 +130,7 @@ exports[`LineEditableDataTable component LineEditableDataTable handles add new l
 </div>
 `;
 
-exports[`LineEditableDataTable component LineEditableDataTable handles delete 1`] = `
+exports[`LineEditableDataTable component handles delete 1`] = `
 <div>
   <div>
     <table
@@ -217,7 +217,7 @@ exports[`LineEditableDataTable component LineEditableDataTable handles delete 1`
               </div>
               <div>
                 <div>
-                  ControlleMenu
+                  ControlledMenu
                   closed
                   <div
                     class="container"
@@ -270,7 +270,7 @@ exports[`LineEditableDataTable component LineEditableDataTable handles delete 1`
 </div>
 `;
 
-exports[`LineEditableDataTable component LineEditableDataTable handles delete with previous defined editedrowindex 1`] = `
+exports[`LineEditableDataTable component handles delete with previous defined editedrowindex 1`] = `
 <div>
   <div>
     <table
@@ -357,7 +357,7 @@ exports[`LineEditableDataTable component LineEditableDataTable handles delete wi
               </div>
               <div>
                 <div>
-                  ControlleMenu
+                  ControlledMenu
                   closed
                   <div
                     class="container"
@@ -517,7 +517,7 @@ exports[`LineEditableDataTable component LineEditableDataTable handles delete wi
 </div>
 `;
 
-exports[`LineEditableDataTable component LineEditableDataTable handles download 1`] = `
+exports[`LineEditableDataTable component handles download 1`] = `
 <div>
   <div>
     <table
@@ -611,7 +611,7 @@ exports[`LineEditableDataTable component LineEditableDataTable handles download 
 </div>
 `;
 
-exports[`LineEditableDataTable component LineEditableDataTable handles edit and submit 1`] = `
+exports[`LineEditableDataTable component handles edit and submit 1`] = `
 <div>
   <div>
     <table
@@ -705,7 +705,7 @@ exports[`LineEditableDataTable component LineEditableDataTable handles edit and 
 </div>
 `;
 
-exports[`LineEditableDataTable component LineEditableDataTable handles non deletable 1`] = `
+exports[`LineEditableDataTable component handles non deletable 1`] = `
 <div>
   <div>
     <table
@@ -780,7 +780,7 @@ exports[`LineEditableDataTable component LineEditableDataTable handles non delet
 </div>
 `;
 
-exports[`LineEditableDataTable component LineEditableDataTable handles non downloadable 1`] = `
+exports[`LineEditableDataTable component handles non downloadable 1`] = `
 <div>
   <div>
     <table
@@ -855,7 +855,7 @@ exports[`LineEditableDataTable component LineEditableDataTable handles non downl
 </div>
 `;
 
-exports[`LineEditableDataTable component LineEditableDataTable handles non editable content 1`] = `
+exports[`LineEditableDataTable component handles non editable content 1`] = `
 <div>
   <div>
     <table
@@ -930,7 +930,7 @@ exports[`LineEditableDataTable component LineEditableDataTable handles non edita
 </div>
 `;
 
-exports[`LineEditableDataTable component LineEditableDataTable handles sort 1`] = `
+exports[`LineEditableDataTable component handles sort 1`] = `
 <div>
   <div>
     <table
@@ -982,7 +982,7 @@ exports[`LineEditableDataTable component LineEditableDataTable handles sort 1`] 
 </div>
 `;
 
-exports[`LineEditableDataTable component LineEditableDataTable renders 1`] = `
+exports[`LineEditableDataTable component renders 1`] = `
 <div>
   <div>
     <table
@@ -1035,7 +1035,7 @@ exports[`LineEditableDataTable component LineEditableDataTable renders 1`] = `
 </div>
 `;
 
-exports[`LineEditableDataTable component LineEditableDataTable renders while loading 1`] = `
+exports[`LineEditableDataTable component renders while loading 1`] = `
 <div>
   <div>
     <table
@@ -1076,7 +1076,7 @@ exports[`LineEditableDataTable component LineEditableDataTable renders while loa
 </div>
 `;
 
-exports[`LineEditableDataTable component LineEditableDataTable renders with no data 1`] = `
+exports[`LineEditableDataTable component renders with no data 1`] = `
 <div>
   <div>
     <table
@@ -1129,7 +1129,7 @@ exports[`LineEditableDataTable component LineEditableDataTable renders with no d
 </div>
 `;
 
-exports[`LineEditableDataTable component LineEditableDataTable with custom modal button 1`] = `
+exports[`LineEditableDataTable component with custom modal button 1`] = `
 <div>
   <div>
     <table

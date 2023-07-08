@@ -5,7 +5,7 @@ import userEvent from '@testing-library/user-event';
 import { CheckboxField } from '../CheckboxField';
 
 describe('CheckboxField Component', () => {
-  it('CheckboxField renders and handles changes', async () => {
+  it('renders and handles changes', async () => {
     const onChangeMock = jest.fn();
 
     const { container } = render(
@@ -23,7 +23,7 @@ describe('CheckboxField Component', () => {
     expect(container).toMatchSnapshot();
 
     const label = await screen.findByTestId('DATA-TEST-ID-0');
-    userEvent.click(label);
+    await userEvent.click(label);
 
     expect(container).toMatchSnapshot();
     expect(onChangeMock).toBeCalledTimes(1);
@@ -36,7 +36,7 @@ describe('CheckboxField Component', () => {
     ]);
   });
 
-  it('CheckboxField renders with values in readonly', () => {
+  it('renders with values in readonly', () => {
     const { container } = render(
       <CheckboxField
         input={[
@@ -51,7 +51,7 @@ describe('CheckboxField Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('CheckboxField renders with values in disabled highligted', () => {
+  it('renders with values in disabled highligted', () => {
     const { container } = render(
       <CheckboxField
         input={[
@@ -77,7 +77,7 @@ describe('CheckboxField Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('CheckboxField renders with values with fieldSize and inline', () => {
+  it('renders with values with fieldSize and inline', () => {
     const { container } = render(
       <CheckboxField
         input={[

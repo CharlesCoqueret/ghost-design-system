@@ -4,11 +4,10 @@ import userEvent from '@testing-library/user-event';
 
 import Modal from '../Modal';
 
-afterEach(() => {
-  jest.useRealTimers();
-});
-
 describe('Modal Component', () => {
+  afterEach(() => {
+    jest.useRealTimers();
+  });
   it('Modal renders closed', () => {
     const { container } = render(
       <Modal show={false}>
@@ -41,14 +40,12 @@ describe('Modal Component', () => {
 
     const closeButton = await screen.findByTestId('TESTID');
 
-    act(() => {
-      userEvent.click(closeButton);
-    });
+    await userEvent.click(closeButton);
 
     expect(onHideMock).toHaveBeenCalledTimes(1);
   });
 
-  it('Modal renders handles click outside', () => {
+  it('Modal renders handles click outside', async () => {
     const onHideMock = jest.fn();
 
     const { container } = render(
@@ -58,14 +55,12 @@ describe('Modal Component', () => {
     );
     expect(container).toMatchSnapshot();
 
-    act(() => {
-      userEvent.click(document.body);
-    });
+    await userEvent.click(document.body);
 
     expect(onHideMock).toHaveBeenCalledTimes(1);
   });
 
-  it('Modal renders shakes when click outside when it is not allowed', () => {
+  it('Modal renders shakes when click outside when it is not allowed', async () => {
     const onHideMock = jest.fn();
 
     const { container } = render(
@@ -75,15 +70,13 @@ describe('Modal Component', () => {
     );
     expect(container).toMatchSnapshot();
 
-    act(() => {
-      userEvent.click(document.body);
-    });
+    await userEvent.click(document.body);
 
     expect(container).toMatchSnapshot();
     expect(onHideMock).toHaveBeenCalledTimes(0);
   });
 
-  it('Modal renders handles press escape', () => {
+  it('Modal renders handles press escape', async () => {
     const onHideMock = jest.fn();
 
     const { container } = render(
@@ -94,14 +87,12 @@ describe('Modal Component', () => {
 
     expect(container).toMatchSnapshot();
 
-    act(() => {
-      userEvent.type(document.body, '{escape}');
-    });
+    await userEvent.type(document.body, '{escape}');
 
     expect(onHideMock).toHaveBeenCalledTimes(1);
   });
 
-  it('Modal renders shakes when press escape when it is not allowed', () => {
+  it('Modal renders shakes when press escape when it is not allowed', async () => {
     const onHideMock = jest.fn();
     jest.useFakeTimers();
 
@@ -112,9 +103,7 @@ describe('Modal Component', () => {
     );
     expect(container).toMatchSnapshot();
 
-    act(() => {
-      userEvent.type(document.body, '{escape}');
-    });
+    await userEvent.setup({ delay: null }).type(document.body, '{escape}');
 
     expect(container).toMatchSnapshot();
 
@@ -144,7 +133,7 @@ describe('Modal Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('Modal renders handles tabbing', () => {
+  it('Modal renders handles tabbing', async () => {
     const onHideMock = jest.fn();
 
     const { container, rerender } = render(
@@ -162,26 +151,22 @@ describe('Modal Component', () => {
     expect(container).toMatchSnapshot();
 
     // Try to tab forward
-    userEvent.keyboard('{Tab}');
+    await userEvent.keyboard('{Tab}');
 
     // Try to tab backward
-    userEvent.keyboard('{Shift>}{Tab}{/Shift}');
+    await userEvent.keyboard('{Shift>}{Tab}{/Shift}');
 
     const input = screen.getByTestId('INPUT');
 
-    act(() => {
-      userEvent.click(input);
-    });
+    await userEvent.click(input);
 
     // Try to tab forward
-    userEvent.keyboard('{Tab}');
+    await userEvent.keyboard('{Tab}');
 
-    act(() => {
-      userEvent.click(input);
-    });
+    await userEvent.click(input);
 
     // Try to tab backward
-    userEvent.keyboard('{Shift>}{Tab}{/Shift}');
+    await userEvent.keyboard('{Shift>}{Tab}{/Shift}');
 
     expect(container).toMatchSnapshot();
   });

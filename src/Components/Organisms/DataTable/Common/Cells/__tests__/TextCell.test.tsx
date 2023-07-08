@@ -140,7 +140,7 @@ describe('TextCell component', () => {
     expect(container).toMatchSnapshot();
 
     const TEXT = await screen.findByTestId('DATA-TEST-ID');
-    userEvent.type(TEXT, '{backspace}');
+    await userEvent.type(TEXT, '{backspace}');
 
     expect(container).toMatchSnapshot();
     expect(onChangeMock).toBeCalledTimes(1);

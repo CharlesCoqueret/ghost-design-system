@@ -27,7 +27,7 @@ describe('StaticDataTableHeader component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('StaticDataTableHeader handles sort change ', () => {
+  it('StaticDataTableHeader handles sort change ', async () => {
     const onSortChangeMock = jest.fn();
 
     const { container, rerender } = render(
@@ -51,7 +51,7 @@ describe('StaticDataTableHeader component', () => {
 
     const sortButton = screen.getByTestId('DATA-TEST-ID-sort');
 
-    userEvent.click(sortButton);
+    await userEvent.click(sortButton);
 
     expect(onSortChangeMock).toBeCalledTimes(1);
     expect(onSortChangeMock).toBeCalledWith('number', SortDirectionEnum.DESC);
@@ -77,7 +77,7 @@ describe('StaticDataTableHeader component', () => {
 
     expect(container).toMatchSnapshot();
 
-    userEvent.click(sortButton);
+    await userEvent.click(sortButton);
 
     expect(onSortChangeMock).toBeCalledTimes(2);
     expect(onSortChangeMock).toBeCalledWith('number', SortDirectionEnum.ASC);
@@ -103,7 +103,7 @@ describe('StaticDataTableHeader component', () => {
 
     expect(container).toMatchSnapshot();
 
-    userEvent.keyboard('{Enter}');
+    await userEvent.keyboard('{Enter}');
 
     expect(onSortChangeMock).toBeCalledTimes(3);
     expect(onSortChangeMock).toBeCalledWith('number', undefined);
@@ -128,7 +128,7 @@ describe('StaticDataTableHeader component', () => {
 
     expect(container).toMatchSnapshot();
 
-    userEvent.keyboard('a');
+    await userEvent.keyboard('a');
 
     expect(onSortChangeMock).toBeCalledTimes(3);
   });

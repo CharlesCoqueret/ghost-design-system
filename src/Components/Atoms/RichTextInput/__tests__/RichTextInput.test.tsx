@@ -1,5 +1,5 @@
 import React, { ReactElement } from 'react';
-import { render, waitFor } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import 'jest-canvas-mock';
 
 describe('RichTextInput Component', () => {
@@ -79,9 +79,7 @@ describe('RichTextInput Component', () => {
       );
     }
 
-    await waitFor(() => {
-      expect(onChangeMock).toHaveBeenCalledTimes(1);
-    });
+    expect(onChangeMock).toHaveBeenCalledTimes(1);
 
     expect(onChangeMock).toBeCalledWith(
       '<img src="data:image/png;base64,00"> TEST <img src="data:test"> TEST <img src="data:image/png;base64,00">',
@@ -116,9 +114,7 @@ describe('RichTextInput Component', () => {
       onBlurCallback(new FocusEvent('event'), '<img src="http://test.com/logo.png" /> TEST');
     }
 
-    await waitFor(() => {
-      expect(onChangeMock).toHaveBeenCalledTimes(1);
-    });
+    expect(onChangeMock).toHaveBeenCalledTimes(1);
 
     expect(onChangeMock).toBeCalledWith('<img src="http://test.com/logo.png" /> TEST');
 

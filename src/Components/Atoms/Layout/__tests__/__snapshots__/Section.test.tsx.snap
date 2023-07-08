@@ -19,7 +19,7 @@ exports[`Section Component renders collapsible closed by default without separat
   <div
     aria-hidden="true"
     class="body"
-    id="react-collapsed-panel-"
+    id="react-collapsed-panel-:r1:"
     role="region"
     style="box-sizing: border-box; display: none; height: 0px; overflow: hidden;"
   >
@@ -51,7 +51,7 @@ exports[`Section Component renders not collapsible 1`] = `
   <div
     aria-hidden="false"
     class="body"
-    id="react-collapsed-panel-"
+    id="react-collapsed-panel-:r2:"
     role="region"
     style="box-sizing: border-box;"
   >
@@ -83,9 +83,9 @@ exports[`Section Component renders not collapsible 2`] = `
   <div
     aria-hidden="false"
     class="body"
-    id="react-collapsed-panel-"
+    id="react-collapsed-panel-:r2:"
     role="region"
-    style="box-sizing: border-box;"
+    style="box-sizing: border-box; display: block; overflow: hidden; height: 0px;"
   >
     <div
       id="CHILD1"
@@ -115,7 +115,7 @@ exports[`Section Component renders not collapsible with open initially ignored 1
   <div
     aria-hidden="false"
     class="body"
-    id="react-collapsed-panel-"
+    id="react-collapsed-panel-:r3:"
     role="region"
     style="box-sizing: border-box;"
   >
@@ -151,7 +151,7 @@ exports[`Section Component renders with separator 1`] = `
   <div
     aria-hidden="false"
     class="body"
-    id="react-collapsed-panel-"
+    id="react-collapsed-panel-:r0:"
     role="region"
     style="box-sizing: border-box;"
   >
@@ -187,9 +187,9 @@ exports[`Section Component renders with separator 2`] = `
   <div
     aria-hidden="true"
     class="body"
-    id="react-collapsed-panel-"
+    id="react-collapsed-panel-:r0:"
     role="region"
-    style="box-sizing: border-box;"
+    style="box-sizing: border-box; display: block; overflow: hidden; height: 0px; transition: height 500ms cubic-bezier(0.4, 0, 0.2, 1);"
   >
     <div
       id="CHILD1"
@@ -223,9 +223,9 @@ exports[`Section Component renders with separator 3`] = `
   <div
     aria-hidden="false"
     class="body"
-    id="react-collapsed-panel-"
+    id="react-collapsed-panel-:r0:"
     role="region"
-    style="box-sizing: border-box;"
+    style="box-sizing: border-box; display: block; overflow: hidden; height: 0px; transition: height 500ms cubic-bezier(0.4, 0, 0.2, 1);"
   >
     <div
       id="CHILD1"

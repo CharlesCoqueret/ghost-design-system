@@ -6,7 +6,7 @@ import StaticDataTable from '../StaticDataTable';
 import { ColumnType, SortDirectionEnum } from '../../Common/types';
 
 describe('StaticDataTable component', () => {
-  it('StaticDataTable renders and handles sort', () => {
+  it('renders and handles sort', async () => {
     const onSortChangeMock = jest.fn();
 
     const { container } = render(
@@ -28,19 +28,19 @@ describe('StaticDataTable component', () => {
     expect(container).toMatchSnapshot();
 
     const numberSort = screen.getByTestId('DATA-TEST-ID-number-sort');
-    userEvent.click(numberSort);
+    await userEvent.click(numberSort);
 
     expect(container).toMatchSnapshot();
     expect(onSortChangeMock).toBeCalledTimes(1);
     expect(onSortChangeMock).toBeCalledWith('number', SortDirectionEnum.DESC);
 
-    userEvent.click(numberSort);
+    await userEvent.click(numberSort);
 
     expect(container).toMatchSnapshot();
     expect(onSortChangeMock).toBeCalledTimes(2);
     expect(onSortChangeMock).toBeCalledWith('number', SortDirectionEnum.ASC);
 
-    userEvent.click(numberSort);
+    await userEvent.click(numberSort);
 
     expect(container).toMatchSnapshot();
     expect(onSortChangeMock).toBeCalledTimes(3);

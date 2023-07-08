@@ -57,7 +57,7 @@ describe('DataTableCellSelectable component', () => {
 
     const checkbox = await screen.findByTestId('DATA-TEST-ID');
 
-    userEvent.click(checkbox);
+    await userEvent.click(checkbox);
 
     expect(handleSelectClickMock).toBeCalledTimes(1);
     expect(handleSelectClickMock).toBeCalledWith(expect.anything(), false);
@@ -72,12 +72,12 @@ describe('DataTableCellSelectable component', () => {
       </table>,
     );
 
-    userEvent.keyboard('{Enter}');
+    await userEvent.keyboard('{Enter}');
 
     expect(handleSelectClickMock).toBeCalledTimes(2);
     expect(handleSelectClickMock).toBeCalledWith(expect.anything(), true);
 
-    userEvent.keyboard('a');
+    await userEvent.keyboard('a');
     expect(handleSelectClickMock).toBeCalledTimes(2);
   });
 
@@ -98,7 +98,7 @@ describe('DataTableCellSelectable component', () => {
 
     const checkbox = await screen.findByTestId('DATA-TEST-ID');
 
-    userEvent.click(checkbox);
+    await userEvent.click(checkbox);
 
     expect(console.error).toBeCalledTimes(1);
     expect(console.error).toBeCalledWith('Missing handleSelectClick');

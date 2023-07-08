@@ -6,7 +6,7 @@ import EditableDataTableBody from '../EditableDataTableBody';
 import { ColumnType } from '../../Common/types';
 
 describe('EditableDataTableCell component', () => {
-  it('EditableDataTableCell renders', () => {
+  it('renders', () => {
     const handleUpdateDataChangeMock = jest.fn();
     const onEditMock = jest.fn();
 
@@ -57,7 +57,7 @@ describe('EditableDataTableCell component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('EditableDataTableCell handles row selection', () => {
+  it('handles row selection', async () => {
     const handleUpdateDataChangeMock = jest.fn();
     const onEditMock = jest.fn();
     const onRowSelectMock = jest.fn();
@@ -78,16 +78,16 @@ describe('EditableDataTableCell component', () => {
 
     expect(container).toMatchSnapshot();
 
-    userEvent.tab();
+    await userEvent.tab();
     if (document.activeElement) {
-      userEvent.keyboard('{Enter}');
+      await userEvent.keyboard('{Enter}');
     }
 
     expect(onRowSelectMock).toBeCalledTimes(1);
     expect(onRowSelectMock).toBeCalledWith([{ number: 1 }], { number: 1 }, 0);
   });
 
-  it('EditableDataTableCell handles row click', () => {
+  it('handles row click', async () => {
     const handleUpdateDataChangeMock = jest.fn();
     const onEditMock = jest.fn();
     const onRowClickMock = jest.fn();
@@ -108,16 +108,16 @@ describe('EditableDataTableCell component', () => {
 
     expect(container).toMatchSnapshot();
 
-    userEvent.tab();
+    await userEvent.tab();
     if (document.activeElement) {
-      userEvent.keyboard('{Enter}');
+      await userEvent.keyboard('{Enter}');
     }
 
     expect(onRowClickMock).toBeCalledTimes(1);
     expect(onRowClickMock).toBeCalledWith({ number: 1 }, 0);
   });
 
-  it('EditableDataTableCell handles iseditable function', () => {
+  it('handles iseditable function', () => {
     const handleUpdateDataChangeMock = jest.fn();
     const onEditMock = jest.fn();
     const onRowClickMock = jest.fn();
@@ -141,7 +141,7 @@ describe('EditableDataTableCell component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('EditableDataTableCell handles iseditable function', () => {
+  it('handles iseditable function', () => {
     const handleUpdateDataChangeMock = jest.fn();
     const onEditMock = jest.fn();
     const onRowSelectMock = jest.fn();

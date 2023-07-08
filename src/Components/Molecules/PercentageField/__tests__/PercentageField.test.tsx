@@ -5,48 +5,48 @@ import userEvent from '@testing-library/user-event';
 import { PercentageField } from '..';
 
 describe('PercentageField Component', () => {
-  it('PercentageField renders', () => {
+  it('renders properly', () => {
     const { container } = render(<PercentageField name='name' />);
     expect(container).toMatchSnapshot();
   });
 
-  it('PercentageField renders with values in readonly', () => {
+  it('renders with values in readonly', () => {
     const { container } = render(<PercentageField input={12.34} name='name' readOnly />);
     expect(container).toMatchSnapshot();
   });
 
-  it('PercentageField renders with values in disabled highligted', () => {
+  it('renders with values in disabled highligted', () => {
     const { container } = render(<PercentageField input={12345.67} name='name' disabled highlighted />);
     expect(container).toMatchSnapshot();
   });
 
-  it('PercentageField renders with values with fieldSize and inline', () => {
+  it('renders with values with fieldSize and inline', () => {
     const { container } = render(<PercentageField input={1.23} name='name' inline fieldSize={6} />);
     expect(container).toMatchSnapshot();
   });
 
-  it('PercentageField renders with values set as string', () => {
+  it('renders with values set as string', () => {
     const { container } = render(<PercentageField input={'1.23'} name='name' />);
     expect(container).toMatchSnapshot();
   });
 
-  it('PercentageField renders with values set as undefined', () => {
+  it('renders with values set as undefined', () => {
     const { container } = render(<PercentageField input={undefined} name='name' />);
     expect(container).toMatchSnapshot();
   });
 
-  it('PercentageField does nothing when onChange is not defined', () => {
+  it('does nothing when onChange is not defined', async () => {
     const { container } = render(<PercentageField input={1.23} name='name' dataTestId='DATA-TEST-ID' />);
     expect(container).toMatchSnapshot();
 
     const inputNode = screen.getByTestId('DATA-TEST-ID');
 
-    userEvent.type(inputNode, '{backspace}');
+    await userEvent.type(inputNode, '{backspace}');
 
     expect(container).toMatchSnapshot();
   });
 
-  it('PercentageField handles change', () => {
+  it('handles change', async () => {
     const onChangeMock = jest.fn().mockImplementation(() => {});
 
     const { container } = render(
@@ -56,7 +56,7 @@ describe('PercentageField Component', () => {
 
     const inputNode = screen.getByTestId('DATA-TEST-ID');
 
-    userEvent.type(inputNode, '{backspace}');
+    await userEvent.type(inputNode, '{backspace}');
 
     expect(onChangeMock).toBeCalledTimes(1);
     expect(onChangeMock).toHaveBeenLastCalledWith(0.12);

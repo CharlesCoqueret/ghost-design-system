@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`PercentageField Component PercentageField does nothing when onChange is not defined 1`] = `
+exports[`PercentageField Component does nothing when onChange is not defined 1`] = `
 <div>
   <div
     class="fieldGroup"
@@ -18,7 +18,7 @@ exports[`PercentageField Component PercentageField does nothing when onChange is
 </div>
 `;
 
-exports[`PercentageField Component PercentageField does nothing when onChange is not defined 2`] = `
+exports[`PercentageField Component does nothing when onChange is not defined 2`] = `
 <div>
   <div
     class="fieldGroup"
@@ -36,7 +36,7 @@ exports[`PercentageField Component PercentageField does nothing when onChange is
 </div>
 `;
 
-exports[`PercentageField Component PercentageField handles change 1`] = `
+exports[`PercentageField Component handles change 1`] = `
 <div>
   <div
     class="fieldGroup"
@@ -54,7 +54,7 @@ exports[`PercentageField Component PercentageField handles change 1`] = `
 </div>
 `;
 
-exports[`PercentageField Component PercentageField handles change 2`] = `
+exports[`PercentageField Component handles change 2`] = `
 <div>
   <div
     class="fieldGroup"
@@ -72,7 +72,7 @@ exports[`PercentageField Component PercentageField handles change 2`] = `
 </div>
 `;
 
-exports[`PercentageField Component PercentageField renders 1`] = `
+exports[`PercentageField Component renders properly 1`] = `
 <div>
   <div
     class="fieldGroup"
@@ -83,13 +83,13 @@ exports[`PercentageField Component PercentageField renders 1`] = `
       inputmode="numeric"
       name="name"
       type="text"
-      value=" %"
+      value=""
     />
   </div>
 </div>
 `;
 
-exports[`PercentageField Component PercentageField renders with values in disabled highligted 1`] = `
+exports[`PercentageField Component renders with values in disabled highligted 1`] = `
 <div>
   <div
     class="fieldGroup"
@@ -107,7 +107,7 @@ exports[`PercentageField Component PercentageField renders with values in disabl
 </div>
 `;
 
-exports[`PercentageField Component PercentageField renders with values in readonly 1`] = `
+exports[`PercentageField Component renders with values in readonly 1`] = `
 <div>
   <div
     class="fieldGroup"
@@ -124,7 +124,7 @@ exports[`PercentageField Component PercentageField renders with values in readon
 </div>
 `;
 
-exports[`PercentageField Component PercentageField renders with values set as string 1`] = `
+exports[`PercentageField Component renders with values set as string 1`] = `
 <div>
   <div
     class="fieldGroup"
@@ -141,7 +141,7 @@ exports[`PercentageField Component PercentageField renders with values set as st
 </div>
 `;
 
-exports[`PercentageField Component PercentageField renders with values set as undefined 1`] = `
+exports[`PercentageField Component renders with values set as undefined 1`] = `
 <div>
   <div
     class="fieldGroup"
@@ -152,13 +152,13 @@ exports[`PercentageField Component PercentageField renders with values set as un
       inputmode="numeric"
       name="name"
       type="text"
-      value=" %"
+      value=""
     />
   </div>
 </div>
 `;
 
-exports[`PercentageField Component PercentageField renders with values with fieldSize and inline 1`] = `
+exports[`PercentageField Component renders with values with fieldSize and inline 1`] = `
 <div>
   <div
     class="fieldGroup size-6 inline"

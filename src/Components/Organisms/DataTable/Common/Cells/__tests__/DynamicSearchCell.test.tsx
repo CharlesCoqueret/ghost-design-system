@@ -150,7 +150,7 @@ describe('DynamicSearchCell component', () => {
     expect(container).toMatchSnapshot();
 
     const select = await screen.findByRole('combobox');
-    userEvent.type(select, '{backspace}');
+    await userEvent.type(select, '{backspace}');
 
     expect(container).toMatchSnapshot();
     expect(onChangeMock).toBeCalledTimes(1);
@@ -202,7 +202,7 @@ describe('DynamicSearchCell component', () => {
     expect(container).toMatchSnapshot();
 
     const select = await screen.findByRole('combobox');
-    userEvent.type(select, '{backspace}');
+    await userEvent.type(select, '{backspace}');
 
     expect(container).toMatchSnapshot();
     expect(noOptionsMessageMock).toBeCalledTimes(2);

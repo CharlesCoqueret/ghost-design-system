@@ -6,7 +6,7 @@ import FileInput from '../FileInput';
 import { FileStatusEnum } from '../types';
 
 describe('FileInput Component', () => {
-  it('FileInput renders', () => {
+  it('renders properly', () => {
     const onChangeMock = jest.fn();
     const onDeleteMock = jest.fn();
     const onDownloadMock = jest.fn();
@@ -24,7 +24,7 @@ describe('FileInput Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('FileInput renders without input value', () => {
+  it('renders without input value', () => {
     const onChangeMock = jest.fn();
     const onDeleteMock = jest.fn();
     const onDownloadMock = jest.fn();
@@ -54,7 +54,7 @@ describe('FileInput Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('FileInput handle add file successfully through input', () => {
+  it('handle add file successfully through input', async () => {
     let timeoutCallback: (() => void) | undefined = undefined;
     let progressCallback: ((event: ProgressEvent<XMLHttpRequestEventTarget>) => void) | undefined = undefined;
     let readystatechangeCallback: ((event: ProgressEvent<XMLHttpRequestEventTarget>) => void) | undefined = undefined;
@@ -117,7 +117,7 @@ describe('FileInput Component', () => {
     const file = new File(['hello'], 'hello.png', { type: 'image/png' });
 
     const input = screen.getByTestId('TEST-ID');
-    userEvent.upload(input, file);
+    await userEvent.upload(input, file);
 
     expect(onChangeMock).toBeCalledTimes(1);
     expect(onChangeMock).toBeCalledWith([
@@ -167,7 +167,7 @@ describe('FileInput Component', () => {
     ]);
   });
 
-  it('FileInput handle unsuccessfull add file when quota reached', () => {
+  it('handle unsuccessfull add file when quota reached', async () => {
     const onChangeMock = jest.fn();
     const onDeleteMock = jest.fn();
     const onDownloadMock = jest.fn();
@@ -189,7 +189,7 @@ describe('FileInput Component', () => {
     const file = new File(['hello'], 'hello.png', { type: 'image/png' });
 
     const input = screen.getByTestId('TEST-ID');
-    userEvent.upload(input, file);
+    await userEvent.upload(input, file);
 
     expect(onChangeMock).toBeCalledTimes(1);
     expect(onChangeMock).toBeCalledWith([
@@ -214,7 +214,7 @@ describe('FileInput Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('FileInput handle add file unsucessfully through input', () => {
+  it('handle add file unsucessfully through input', async () => {
     let timeoutCallback: (() => void) | undefined = undefined;
     let progressCallback: ((event: ProgressEvent<XMLHttpRequestEventTarget>) => void) | undefined = undefined;
     let readystatechangeCallback: ((event: ProgressEvent<XMLHttpRequestEventTarget>) => void) | undefined = undefined;
@@ -266,7 +266,7 @@ describe('FileInput Component', () => {
     const file = new File(['hello'], 'hello.png', { type: 'image/png' });
 
     const input = screen.getByTestId('TEST-ID');
-    userEvent.upload(input, file);
+    await userEvent.upload(input, file);
 
     expect(onChangeMock).toBeCalledTimes(1);
     expect(onChangeMock).toBeCalledWith([
@@ -304,7 +304,7 @@ describe('FileInput Component', () => {
     ]);
   });
 
-  it('FileInput handle add file with timeout through input', () => {
+  it('handle add file with timeout through input', async () => {
     let timeoutCallback: (() => void) | undefined = undefined;
     let progressCallback: ((event: ProgressEvent<XMLHttpRequestEventTarget>) => void) | undefined = undefined;
     let readystatechangeCallback: ((event: ProgressEvent<XMLHttpRequestEventTarget>) => void) | undefined = undefined;
@@ -356,7 +356,7 @@ describe('FileInput Component', () => {
     const file = new File(['hello'], 'hello.png', { type: 'image/png' });
 
     const input = screen.getByTestId('TEST-ID');
-    userEvent.upload(input, file);
+    await userEvent.upload(input, file);
 
     expect(onChangeMock).toBeCalledTimes(1);
     expect(onChangeMock).toBeCalledWith([
@@ -394,7 +394,7 @@ describe('FileInput Component', () => {
     ]);
   });
 
-  it('FileInput handle drag event for highlight', () => {
+  it('handle drag event for highlight', () => {
     const onChangeMock = jest.fn();
     const onDeleteMock = jest.fn();
     const onDownloadMock = jest.fn();
@@ -427,7 +427,7 @@ describe('FileInput Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('FileInput handle drop of file', async () => {
+  it('handle drop of file', async () => {
     const xhrMockObj = {
       addEventListener: jest.fn(),
       open: jest.fn(),
@@ -498,7 +498,7 @@ describe('FileInput Component', () => {
     ]);
   });
 
-  it('FileInput handle drop without dataTransfer', () => {
+  it('handle drop without dataTransfer', () => {
     const onChangeMock = jest.fn();
     const onDeleteMock = jest.fn();
     const onDownloadMock = jest.fn();
@@ -526,7 +526,7 @@ describe('FileInput Component', () => {
     expect(onChangeMock).toBeCalledTimes(0);
   });
 
-  it('FileInput handles download and delete of a file', async () => {
+  it('handles download and delete of a file', async () => {
     const onChangeMock = jest.fn();
     const onDeleteMock = jest.fn().mockImplementation(() => {
       return Promise.resolve();
@@ -551,10 +551,7 @@ describe('FileInput Component', () => {
     expect(container).toMatchSnapshot();
 
     const downloadButton = await screen.findByTestId('TEST-ID-download');
-    userEvent.click(downloadButton);
-
-    expect(await screen.findByTestId('TEST-ID-spinner')).toBeTruthy();
-    expect(screen.queryByTestId('TEST-ID-spinner')).toBeFalsy();
+    await userEvent.click(downloadButton);
 
     expect(container).toMatchSnapshot();
     expect(onDownloadMock).toBeCalledTimes(1);
@@ -562,21 +559,18 @@ describe('FileInput Component', () => {
 
     const deleteButton = await screen.findByTestId('TEST-ID-delete');
 
-    userEvent.click(deleteButton);
+    await userEvent.click(deleteButton);
 
     const confirmButton = screen.getByTestId('TEST-ID-confirm');
 
-    userEvent.click(confirmButton);
-
-    expect(await screen.findByTestId('TEST-ID-spinner')).toBeTruthy();
-    expect(screen.queryByTestId('TEST-ID-spinner')).toBeFalsy();
+    await userEvent.click(confirmButton);
 
     expect(container).toMatchSnapshot();
     expect(onDeleteMock).toBeCalledTimes(1);
     expect(onDeleteMock).toBeCalledWith({ uid: '1', name: 'AME', size: 1234, type: 'image/png', status: 'done' });
   });
 
-  it('FileInput handles correctly deletion when no handler defined', async () => {
+  it('handles correctly deletion when no handler defined', async () => {
     const onChangeMock = jest.fn();
     const onDownloadMock = jest.fn().mockImplementation(() => {
       return Promise.resolve();
@@ -598,21 +592,17 @@ describe('FileInput Component', () => {
 
     const deleteButton = await screen.findByTestId('TEST-ID-delete');
 
-    act(() => {
-      userEvent.click(deleteButton);
-    });
+    await userEvent.click(deleteButton);
 
     const confirmButton = screen.getByTestId('TEST-ID-confirm');
 
-    act(() => {
-      userEvent.click(confirmButton);
-    });
+    await userEvent.click(confirmButton);
 
     expect(onChangeMock).toBeCalledTimes(1);
     expect(container).toMatchSnapshot();
   });
 
-  it('FileInput handles delete rejections of a file', async () => {
+  it('handles delete rejections of a file', async () => {
     const onChangeMock = jest.fn();
     const onDeleteMock = jest.fn().mockImplementation(() => {
       return Promise.reject();
@@ -637,14 +627,11 @@ describe('FileInput Component', () => {
 
     const deleteButton = screen.getByTestId('TEST-ID-delete');
 
-    userEvent.click(deleteButton);
+    await userEvent.click(deleteButton);
 
     const confirmButton = screen.getByTestId('TEST-ID-confirm');
 
-    userEvent.click(confirmButton);
-
-    expect(await screen.findByTestId('TEST-ID-spinner')).toBeTruthy();
-    expect(screen.queryByTestId('TEST-ID-spinner')).toBeFalsy();
+    await userEvent.click(confirmButton);
 
     expect(onDeleteMock).toBeCalledTimes(1);
     expect(onDeleteMock).toBeCalledWith({ uid: '1', name: 'AME', size: 1234, type: 'image/png', status: 'done' });
@@ -652,7 +639,7 @@ describe('FileInput Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('FileInput handles download without download callback', async () => {
+  it('handles download without download callback', async () => {
     const onChangeMock = jest.fn();
     const onDeleteMock = jest.fn();
 
@@ -671,10 +658,7 @@ describe('FileInput Component', () => {
     expect(container).toMatchSnapshot();
 
     const downloadButton = await screen.findByTestId('TEST-ID-download');
-    userEvent.click(downloadButton);
-
-    expect(await screen.findByTestId('TEST-ID-spinner')).toBeTruthy();
-    expect(screen.queryByTestId('TEST-ID-spinner')).toBeFalsy();
+    await userEvent.click(downloadButton);
 
     expect(container).toMatchSnapshot();
   });

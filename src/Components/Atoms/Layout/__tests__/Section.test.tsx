@@ -5,7 +5,7 @@ import userEvent from '@testing-library/user-event';
 import Section from '../Section';
 
 describe('Section Component', () => {
-  it('renders with separator', () => {
+  it('renders with separator', async () => {
     const { container } = render(
       <Section collapsible={true} openInitially={true} title='TITLE' dataTestId='DATA-TEST-ID'>
         <div id='CHILD1' />
@@ -17,11 +17,11 @@ describe('Section Component', () => {
 
     const item = screen.getByTestId('DATA-TEST-ID');
 
-    userEvent.click(item);
+    await userEvent.click(item);
 
     expect(container).toMatchSnapshot();
 
-    userEvent.click(item);
+    await userEvent.click(item);
 
     expect(container).toMatchSnapshot();
   });
@@ -37,7 +37,7 @@ describe('Section Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('renders not collapsible', () => {
+  it('renders not collapsible', async () => {
     const { container } = render(
       <Section collapsible={false} openInitially={true} title='TITLE' dataTestId='DATA-TEST-ID'>
         <div id='CHILD1' />
@@ -49,7 +49,7 @@ describe('Section Component', () => {
 
     const item = screen.getByTestId('DATA-TEST-ID');
 
-    userEvent.click(item);
+    await userEvent.click(item);
 
     expect(container).toMatchSnapshot();
   });

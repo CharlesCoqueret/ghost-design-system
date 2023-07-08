@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CheckboxField Component CheckboxField renders and handles changes 1`] = `
+exports[`CheckboxField Component renders and handles changes 1`] = `
 <div>
   <div
     class="fieldGroup"
@@ -32,7 +32,7 @@ exports[`CheckboxField Component CheckboxField renders and handles changes 1`] =
 </div>
 `;
 
-exports[`CheckboxField Component CheckboxField renders and handles changes 2`] = `
+exports[`CheckboxField Component renders and handles changes 2`] = `
 <div>
   <div
     class="fieldGroup"
@@ -64,7 +64,7 @@ exports[`CheckboxField Component CheckboxField renders and handles changes 2`] =
 </div>
 `;
 
-exports[`CheckboxField Component CheckboxField renders with values in disabled highligted 1`] = `
+exports[`CheckboxField Component renders with values in disabled highligted 1`] = `
 <div>
   <div
     class="fieldGroup"
@@ -131,7 +131,7 @@ exports[`CheckboxField Component CheckboxField renders with values in disabled h
 </div>
 `;
 
-exports[`CheckboxField Component CheckboxField renders with values in readonly 1`] = `
+exports[`CheckboxField Component renders with values in readonly 1`] = `
 <div>
   <div
     class="fieldGroup"
@@ -162,7 +162,7 @@ exports[`CheckboxField Component CheckboxField renders with values in readonly 1
 </div>
 `;
 
-exports[`CheckboxField Component CheckboxField renders with values with fieldSize and inline 1`] = `
+exports[`CheckboxField Component renders with values with fieldSize and inline 1`] = `
 <div>
   <div
     class="fieldGroup size-6 inline"

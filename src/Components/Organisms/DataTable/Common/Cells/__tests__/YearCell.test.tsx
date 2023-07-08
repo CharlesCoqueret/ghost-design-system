@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { act, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import YearCell from '../YearCell';
@@ -29,24 +29,29 @@ describe('YearCell component', () => {
   });
 
   it('YearCell renders with forced value', () => {
-    const { container } = render(
-      <table>
-        <tbody>
-          <tr>
-            <YearCell
-              column={{
-                dataIndex: 'data',
-                title: 'YearCell',
-                type: ColumnType.YEAR,
-              }}
-              forcedValue={2022}
-              row={{ data: 2000 }}
-              rowIndex={0}
-            />
-          </tr>
-        </tbody>
-      </table>,
-    );
+    let container;
+
+    act(() => {
+      const renderValue = render(
+        <table>
+          <tbody>
+            <tr>
+              <YearCell
+                column={{
+                  dataIndex: 'data',
+                  title: 'YearCell',
+                  type: ColumnType.YEAR,
+                }}
+                forcedValue={2022}
+                row={{ data: 2000 }}
+                rowIndex={0}
+              />
+            </tr>
+          </tbody>
+        </table>,
+      );
+      container = renderValue.container;
+    });
 
     expect(container).toMatchSnapshot();
   });
@@ -75,38 +80,47 @@ describe('YearCell component', () => {
   });
 
   it('YearCell renders in edit mode and handles change', async () => {
-    const onChangeMock = jest.fn();
+    const onChangeMock = jest.fn().mockImplementation(() => {});
 
-    const { container } = render(
-      <table>
-        <tbody>
-          <tr>
-            <YearCell
-              column={{
-                dataIndex: 'data',
-                title: 'YearCell',
-                type: ColumnType.YEAR,
-              }}
-              editing
-              onChange={onChangeMock}
-              row={{ data: 2022 }}
-              rowIndex={0}
-            />
-          </tr>
-        </tbody>
-      </table>,
-    );
+    let container;
+
+    act(() => {
+      const renderValue = render(
+        <table>
+          <tbody>
+            <tr>
+              <YearCell
+                column={{
+                  dataIndex: 'data',
+                  title: 'YearCell',
+                  type: ColumnType.YEAR,
+                }}
+                editing
+                onChange={onChangeMock}
+                row={{ data: 2022 }}
+                rowIndex={0}
+              />
+            </tr>
+          </tbody>
+        </table>,
+      );
+      container = renderValue.container;
+    });
 
     expect(container).toMatchSnapshot();
 
-    const dateInput = await screen.findByDisplayValue(2022);
+    const dateInput = await screen.findByDisplayValue('2022');
 
-    userEvent.clear(dateInput);
+    await act(async () => {
+      await userEvent.setup({ delay: null }).clear(dateInput);
+    });
 
     expect(onChangeMock).toBeCalledTimes(1);
     expect(onChangeMock).toBeCalledWith(undefined);
 
-    userEvent.type(dateInput, '2000{enter}');
+    await act(async () => {
+      await userEvent.setup({ delay: null }).type(dateInput, '2000{enter}');
+    });
 
     expect(onChangeMock).toBeCalledTimes(4);
     expect(onChangeMock).toBeCalledWith(2000);

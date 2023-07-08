@@ -92,7 +92,7 @@ describe('MultiSelectInput Component', () => {
 
     const select = await screen.findByRole('combobox');
 
-    userEvent.type(select, 'option 2{enter}');
+    await userEvent.type(select, 'option 2{enter}');
 
     expect(onChangeMock).toBeCalledTimes(1);
     expect(onChangeMock).toBeCalledWith(['OPTION2']);
@@ -118,9 +118,9 @@ describe('MultiSelectInput Component', () => {
 
     const select = await screen.findByRole('combobox');
 
-    userEvent.type(select, '{enter}');
+    await userEvent.type(select, '{enter}');
 
-    userEvent.type(select, '{backspace}');
+    await userEvent.type(select, '{backspace}');
     expect(onChangeMock).toBeCalledTimes(2);
     expect(onChangeMock).toBeCalledWith(['OPTION1']);
     expect(onChangeMock).toBeCalledWith([]);

@@ -47,23 +47,23 @@ describe('DatePickerHeader Component', () => {
     expect((month as HTMLSelectElement).value).toBe('mars');
     expect((year as HTMLSelectElement).value).toBe('2022');
 
-    userEvent.click(increaseMonth);
+    await userEvent.click(increaseMonth);
     expect(increaseMonthMock).toBeCalledTimes(1);
 
-    userEvent.click(decreaseMonth);
+    await userEvent.click(decreaseMonth);
     expect(decreaseMonthMock).toBeCalledTimes(1);
 
-    userEvent.click(increaseYear);
+    await userEvent.click(increaseYear);
     expect(increaseYearMock).toBeCalledTimes(1);
 
-    userEvent.click(decreaseYear);
+    await userEvent.click(decreaseYear);
     expect(decreaseYearMock).toBeCalledTimes(1);
 
-    userEvent.selectOptions(month, 'janvier');
+    await userEvent.selectOptions(month, 'janvier');
     expect(changeMonthMock).toBeCalledTimes(1);
     expect(changeMonthMock).toBeCalledWith(0);
 
-    userEvent.selectOptions(year, '1984');
+    await userEvent.selectOptions(year, '1984');
     expect(changeYearMock).toBeCalledTimes(1);
     expect(changeYearMock).toBeCalledWith(1984);
   });
