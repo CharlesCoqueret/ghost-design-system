@@ -18,13 +18,8 @@ exports[`YearCell component YearCell renders 1`] = `
                 class="react-datepicker-wrapper"
               >
                 <div
-                  class="react-datepicker__input-container "
+                  class="react-datepicker__input-container"
                 >
-                  <span
-                    aria-live="polite"
-                    class="react-datepicker__aria-live"
-                    role="alert"
-                  />
                   <input
                     autocomplete="off"
                     class="input-year-picker-input-read-only"
@@ -65,13 +60,8 @@ exports[`YearCell component YearCell renders in edit mode and handles change 1`]
                 class="react-datepicker-wrapper"
               >
                 <div
-                  class="react-datepicker__input-container "
+                  class="react-datepicker__input-container"
                 >
-                  <span
-                    aria-live="polite"
-                    class="react-datepicker__aria-live"
-                    role="alert"
-                  />
                   <input
                     autocomplete="off"
                     class="input-year-picker-input"
@@ -111,13 +101,8 @@ exports[`YearCell component YearCell renders in edit mode via extra 1`] = `
                 class="react-datepicker-wrapper"
               >
                 <div
-                  class="react-datepicker__input-container "
+                  class="react-datepicker__input-container"
                 >
-                  <span
-                    aria-live="polite"
-                    class="react-datepicker__aria-live"
-                    role="alert"
-                  />
                   <input
                     autocomplete="off"
                     class="input-year-picker-input"
@@ -158,13 +143,8 @@ exports[`YearCell component YearCell renders when hidden 1`] = `
                 class="react-datepicker-wrapper"
               >
                 <div
-                  class="react-datepicker__input-container "
+                  class="react-datepicker__input-container"
                 >
-                  <span
-                    aria-live="polite"
-                    class="react-datepicker__aria-live"
-                    role="alert"
-                  />
                   <input
                     autocomplete="off"
                     class="input-year-picker-input-read-only"
@@ -205,13 +185,8 @@ exports[`YearCell component YearCell renders with forced value 1`] = `
                 class="react-datepicker-wrapper"
               >
                 <div
-                  class="react-datepicker__input-container "
+                  class="react-datepicker__input-container"
                 >
-                  <span
-                    aria-live="polite"
-                    class="react-datepicker__aria-live"
-                    role="alert"
-                  />
                   <input
                     autocomplete="off"
                     class="input-year-picker-input-read-only"

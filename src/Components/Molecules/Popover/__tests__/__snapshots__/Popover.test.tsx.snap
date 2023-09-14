@@ -13,7 +13,7 @@ exports[`Popover Component Popover renders 1`] = `
           aria-label="Menu"
           class="szh-menu szh-menu--state-closed szh-menu--dir-top"
           role="menu"
-          style="margin: 0px; display: none; position: absolute; left: 0px; top: 0px;"
+          style="margin: 0px; display: none; position: absolute; left: -9999px; top: -9999px;"
           tabindex="-1"
         >
           <li

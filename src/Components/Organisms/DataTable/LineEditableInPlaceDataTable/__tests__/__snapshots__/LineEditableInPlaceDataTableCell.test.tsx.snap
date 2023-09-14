@@ -267,13 +267,8 @@ exports[`LineEditableInPlaceDataTableCell component LineEditableInPlaceDataTable
                 class="react-datepicker-wrapper"
               >
                 <div
-                  class="react-datepicker__input-container "
+                  class="react-datepicker__input-container"
                 >
-                  <span
-                    aria-live="polite"
-                    class="react-datepicker__aria-live"
-                    role="alert"
-                  />
                   <input
                     autocomplete="off"
                     class="input-date-picker-input"
@@ -918,13 +913,8 @@ exports[`LineEditableInPlaceDataTableCell component LineEditableInPlaceDataTable
                 class="react-datepicker-wrapper"
               >
                 <div
-                  class="react-datepicker__input-container "
+                  class="react-datepicker__input-container"
                 >
-                  <span
-                    aria-live="polite"
-                    class="react-datepicker__aria-live"
-                    role="alert"
-                  />
                   <input
                     autocomplete="off"
                     class="input-year-picker-input"
