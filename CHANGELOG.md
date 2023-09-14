@@ -1,5 +1,17 @@
 # Changelog
 
+## 3.0.0 (2023-09-14)
+
+### Features
+
+### Bug fixes
+
+### Breaking changes
+
+- Atoms/Link no long accepts text, but uses children property instead
+- Use Yarn instead of npm
+- Use react18
+
 ## 2.0.0 (2023-04-01)
 
 ### Features

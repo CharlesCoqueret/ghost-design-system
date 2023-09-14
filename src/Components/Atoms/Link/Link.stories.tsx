@@ -9,11 +9,10 @@ export default {
 };
 
 const Template = (args: ILinkProps) => {
-  return <LinkComponent {...args} />;
+  return <LinkComponent {...args}>Link Text</LinkComponent>;
 };
 
 export const Link = Template.bind({
-  text: ' Link Text',
   to: { pathname: 'https://google.com' },
   tooltip: 'Information about the link in a tooltip',
   externalLink: true,

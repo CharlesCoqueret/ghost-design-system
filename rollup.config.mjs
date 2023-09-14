@@ -29,6 +29,10 @@ export default {
       console.error(warning.message);
       return;
     }
+    if (warning.code === 'MODULE_LEVEL_DIRECTIVE') {
+      console.error(warning.message);
+      return;
+    }
     throw new Error(warning);
   },
   plugins: [

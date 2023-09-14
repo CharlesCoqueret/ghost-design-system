@@ -208,8 +208,10 @@ const fields: Array<IFieldAndLayoutLegacyProps<IDataType>> = [
     description: (
       <div>
         <Typography.Text>Any description</Typography.Text>
-        <Link to='https://hamster.dance/hamsterdance/' text='external link' />
-        <Link to='#' text='internal link' />
+        <Link to='https://hamster.dance/hamsterdance/' externalLink>
+          external link
+        </Link>
+        <Link to='#'>internal link</Link>
       </div>
     ),
     fieldType: FieldLegacyTypeEnum.DESCRIPTION,
