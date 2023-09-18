@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import toast from './Toaster';
-import { Button, ColorButtonEnum } from '../Button';
+import { Button, ButtonColorEnum } from '../Button';
 import Modal from '../../Atoms/Modal/Modal';
 import ModalBody from '../../Atoms/Modal/ModalBody';
 import ModalFooter from '../../Atoms/Modal/ModalFooter';
@@ -55,7 +55,7 @@ const Template: ComponentStory<typeof toast.Toaster> = () => {
             <div>Lorem ipsum dolor sit amet.</div>
           </ModalBody>
           <ModalFooter>
-            <Button color={ColorButtonEnum.PRIMARY} label='Ok' onClick={closeModal} />
+            <Button color={ButtonColorEnum.PRIMARY} label='Ok' onClick={closeModal} />
           </ModalFooter>
         </Modal>
       </Section>

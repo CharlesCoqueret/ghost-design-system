@@ -2,7 +2,7 @@ import { useState, useRef } from 'react';
 import { Canvas, Meta, ArgsTable, Story } from '@storybook/addon-docs';
 
 import Popover from './Popover';
-import Button, { ColorButtonEnum } from '../Button/Button';
+import Button, { ButtonColorEnum } from '../Button/Button';
 
 <Meta
   title='Molecule/Popover'
@@ -33,21 +33,21 @@ export const Template = () => {
         onClick={() => {
           setOpen(true);
         }}
-        color={ColorButtonEnum.REVERSED}
+        color={ButtonColorEnum.REVERSED}
       />
       <Popover
         anchorRef={ref}
         buttons={[
           {
             label: 'Cancel',
-            color: ColorButtonEnum.SECONDARY,
+            color: ButtonColorEnum.SECONDARY,
             onClick: () => {
               setOpen(false);
             },
           },
           {
             label: 'Confirm',
-            color: ColorButtonEnum.PRIMARY,
+            color: ButtonColorEnum.PRIMARY,
             onClick: () => {
               setOpen(false);
             },

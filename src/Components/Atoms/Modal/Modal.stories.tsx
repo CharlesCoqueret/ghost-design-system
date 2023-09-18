@@ -4,7 +4,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Modal, { IModalProps } from './Modal';
 import ModalBody from './ModalBody';
 import ModalFooter from './ModalFooter';
-import { Button, ColorButtonEnum } from '../../Molecules/Button';
+import { Button, ButtonColorEnum } from '../../Molecules/Button';
 
 export default {
   title: 'Atom/Modal',
@@ -37,7 +37,7 @@ const Template: ComponentStory<typeof Modal> = (args: IModalProps) => {
           <div>Lorem ipsum dolor sit amet.</div>
         </ModalBody>
         <ModalFooter>
-          <Button color={ColorButtonEnum.PRIMARY} label='Ok' onClick={closeModal} />
+          <Button color={ButtonColorEnum.PRIMARY} label='Ok' onClick={closeModal} />
         </ModalFooter>
       </Modal>
     </>
@@ -77,8 +77,8 @@ const TemplateScroll: ComponentStory<typeof Modal> = (args: IModalProps) => {
             </p>
           </ModalBody>
           <ModalFooter>
-            <Button color={ColorButtonEnum.SECONDARY} label='cancel' onClick={closeModal} />
-            <Button color={ColorButtonEnum.PRIMARY} label='Submit' onClick={closeModal} />
+            <Button color={ButtonColorEnum.SECONDARY} label='cancel' onClick={closeModal} />
+            <Button color={ButtonColorEnum.PRIMARY} label='Submit' onClick={closeModal} />
           </ModalFooter>
         </Modal>
       </div>

@@ -4,7 +4,7 @@ import * as yup from 'yup';
 import cloneDeep from 'lodash/cloneDeep';
 
 import { IToggleEntry } from '../../Atoms/CheckBoxInput/types';
-import { ColorButtonEnum } from '../../Molecules/Button';
+import { ButtonColorEnum } from '../../Molecules/Button';
 import { FileStatusEnum, IFile } from '../../Atoms/FileInput';
 import { Link } from '../../Atoms/Link';
 import { Typography } from '../../Atoms/Typography';
@@ -52,14 +52,14 @@ const Template: ComponentStory<(props: IUseFormProps<IDataType>) => ReactElement
         actions={[
           {
             label: 'Submit',
-            color: ColorButtonEnum.PRIMARY,
+            color: ButtonColorEnum.PRIMARY,
             onClick: () => {
               console.log(`Submit ${JSON.stringify(submit())}`);
             },
           },
           {
             label: 'Reset',
-            color: ColorButtonEnum.SECONDARY,
+            color: ButtonColorEnum.SECONDARY,
             onClick: () => {
               console.log(`Reset ${JSON.stringify(reset())}`);
             },
@@ -193,12 +193,12 @@ const validationSchema: yup.ObjectSchema<IDataType> = yup.object({
   text: yup
     .string()
     .required()
-    .transform((value) => value.trim())
+    .transform((value: string) => value.trim())
     .min(3, 'minimun length is 3 without spaces at the end of beginning'),
   textarea: yup
     .string()
     .required()
-    .transform((value) => value.trim())
+    .transform((value: string) => value.trim())
     .min(3, 'minimun length is 10 without spaces at the end of beginning'),
   year: yup.number().min(1984, 'Date needs to be after 1984').required(),
 });

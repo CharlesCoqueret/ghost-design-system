@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { QueryFunctionContext, useInfiniteQuery } from 'react-query';
+import { QueryFunctionContext, QueryKey, useInfiniteQuery } from 'react-query';
 import { useInView } from 'react-intersection-observer';
 import classnames from 'classnames';
 
@@ -67,7 +67,7 @@ const PortfolioWrapped = <FilterType, PortfolioType, ResponseType, PaginationTyp
 
   const { data, error, isFetching, fetchNextPage } = useInfiniteQuery(
     ['portfolio', filterValues, sort, direction],
-    async (context: QueryFunctionContext) => {
+    async (context: QueryFunctionContext<QueryKey, PaginationType>) => {
       const { signal, pageParam } = context;
       return getData(filterValues, sort, direction, pageParam, signal);
     },
@@ -87,7 +87,7 @@ const PortfolioWrapped = <FilterType, PortfolioType, ResponseType, PaginationTyp
 
   useEffect(() => {
     if (inView) {
-      fetchNextPage();
+      void fetchNextPage();
     }
   }, [inView, data]);
 

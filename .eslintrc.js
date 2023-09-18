@@ -45,10 +45,19 @@ module.exports = {
   },
   overrides: [
     {
+      files: ['*.ts', '*.tsx'],
+      extends: ['plugin:@typescript-eslint/recommended-requiring-type-checking'],
+      parserOptions: {
+        project: ['./tsconfig.json'],
+      },
+    },
+    {
       files: ['*.test.tsx', '*.test.ts'],
       rules: {
-        '@typescript-eslint/no-var-requires': rules.OFF,
         '@typescript-eslint/no-empty-function': rules.OFF,
+        '@typescript-eslint/no-unsafe-assignment': rules.OFF,
+        '@typescript-eslint/no-unsafe-member-access': rules.OFF,
+        '@typescript-eslint/no-var-requires': rules.OFF,
       },
     },
   ],

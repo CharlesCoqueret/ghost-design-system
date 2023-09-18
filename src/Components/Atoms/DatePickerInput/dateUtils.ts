@@ -102,7 +102,7 @@ export type existingLocale =
 
 export const importFnsLocaleFile = async (locale: existingLocale): Promise<void> => {
   return await import(`date-fns/locale/${locale}/index.js`)
-    .then((localeDataset) => {
+    .then((localeDataset: globalThis.Locale) => {
       registerLocale(locale, localeDataset);
     })
     .catch(console.error);

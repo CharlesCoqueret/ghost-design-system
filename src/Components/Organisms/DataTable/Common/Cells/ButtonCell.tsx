@@ -3,7 +3,7 @@ import classnames from 'classnames';
 
 import { ICellProps } from './types';
 import { IColumnButton } from '../types';
-import { Button, ColorButtonEnum } from '../../../../Molecules/Button';
+import { Button, ButtonColorEnum } from '../../../../Molecules/Button';
 
 const DISPLAY_BUTTON_THRESHOLD = 3;
 
@@ -24,7 +24,7 @@ const ButtonCell = <T,>(props: ICellProps<T, IColumnButton<T>>): ReactElement =>
       <div className='table--cell--value--button'>
         {visibleButtons.length > DISPLAY_BUTTON_THRESHOLD ? (
           <Button
-            color={ColorButtonEnum.REVERSED}
+            color={ButtonColorEnum.REVERSED}
             dataTestId={dataTestId}
             icon={['fal', 'ellipsis']}
             itemList={column.buttons.map((item) => {
@@ -56,7 +56,7 @@ const ButtonCell = <T,>(props: ICellProps<T, IColumnButton<T>>): ReactElement =>
                     button.onClick(row, rowIndex);
                   }
                 }}
-                color={ColorButtonEnum.REVERSED}
+                color={ButtonColorEnum.REVERSED}
                 popover={
                   button.popover
                     ? {
@@ -64,12 +64,12 @@ const ButtonCell = <T,>(props: ICellProps<T, IColumnButton<T>>): ReactElement =>
                         buttons: [
                           {
                             label: button.popover.cancel,
-                            color: ColorButtonEnum.SECONDARY,
+                            color: ButtonColorEnum.SECONDARY,
                             dataTestId: 'cancel',
                           },
                           {
                             label: button.popover.confirm,
-                            color: ColorButtonEnum.PRIMARY,
+                            color: ButtonColorEnum.PRIMARY,
                             dataTestId: 'confirm',
                             onClick: () => {
                               if (button.onClick) {

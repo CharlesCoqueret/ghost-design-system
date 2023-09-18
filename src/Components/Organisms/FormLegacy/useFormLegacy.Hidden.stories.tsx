@@ -5,7 +5,7 @@ import * as yup from 'yup';
 import Section from '../../Atoms/Layout/Section';
 import { Typography } from '../../Atoms/Typography';
 import { IToggleEntry } from '../../Atoms/CheckBoxInput/types';
-import { ColorButtonEnum } from '../../Molecules/Button/Button';
+import { ButtonColorEnum } from '../../Molecules/Button/Button';
 import ActionBar from '../ActionBar/ActionBar';
 
 import useFormLegacy, { IUseFormProps } from './useFormLegacy';
@@ -35,14 +35,14 @@ const Template: ComponentStory<(props: IUseFormProps<IDataType>) => ReactElement
         actions={[
           {
             label: 'Submit',
-            color: ColorButtonEnum.PRIMARY,
+            color: ButtonColorEnum.PRIMARY,
             onClick: () => {
               console.log('submit', JSON.stringify(submit()));
             },
           },
           {
             label: 'Reset',
-            color: ColorButtonEnum.SECONDARY,
+            color: ButtonColorEnum.SECONDARY,
             onClick: () => {
               console.log('reset', JSON.stringify(reset()));
             },

@@ -1,19 +1,25 @@
 import React, { ChangeEvent, ReactElement } from 'react';
 import { ReactDatePickerCustomHeaderProps } from 'react-datepicker';
-import { Button, ColorButtonEnum } from '../../Molecules/Button';
+import { Button, ButtonColorEnum } from '../../Molecules/Button';
 
 import { getMonthInLocale } from './dateUtils';
 
 const DatePickerHeader = (locale?: string) =>
   function DatePickerHeaderInner(props: ReactDatePickerCustomHeaderProps & { dataTestId?: string }): ReactElement {
     const {
+      // eslint-disable-next-line @typescript-eslint/unbound-method
       changeMonth,
+      // eslint-disable-next-line @typescript-eslint/unbound-method
       changeYear,
       dataTestId,
       date,
+      // eslint-disable-next-line @typescript-eslint/unbound-method
       decreaseMonth,
+      // eslint-disable-next-line @typescript-eslint/unbound-method
       decreaseYear,
+      // eslint-disable-next-line @typescript-eslint/unbound-method
       increaseMonth,
+      // eslint-disable-next-line @typescript-eslint/unbound-method
       increaseYear,
       monthDate,
       nextMonthButtonDisabled,
@@ -36,7 +42,7 @@ const DatePickerHeader = (locale?: string) =>
       <div>
         <div className='react-datepicker__header-select-wrapper'>
           <Button
-            color={ColorButtonEnum.REVERSED}
+            color={ButtonColorEnum.REVERSED}
             dataTestId={dataTestId ? `${dataTestId}-decreaseMonth` : undefined}
             disabled={prevMonthButtonDisabled}
             icon={['fal', 'chevron-left']}
@@ -59,7 +65,7 @@ const DatePickerHeader = (locale?: string) =>
           </select>
 
           <Button
-            color={ColorButtonEnum.REVERSED}
+            color={ButtonColorEnum.REVERSED}
             dataTestId={dataTestId ? `${dataTestId}-increaseMonth` : undefined}
             disabled={nextMonthButtonDisabled}
             icon={['fal', 'chevron-right']}
@@ -69,7 +75,7 @@ const DatePickerHeader = (locale?: string) =>
 
         <div className='react-datepicker__header-select-wrapper'>
           <Button
-            color={ColorButtonEnum.REVERSED}
+            color={ButtonColorEnum.REVERSED}
             dataTestId={dataTestId ? `${dataTestId}-decreaseYear` : undefined}
             disabled={prevYearButtonDisabled}
             onClick={decreaseYear}
@@ -92,7 +98,7 @@ const DatePickerHeader = (locale?: string) =>
           </select>
 
           <Button
-            color={ColorButtonEnum.REVERSED}
+            color={ButtonColorEnum.REVERSED}
             dataTestId={dataTestId ? `${dataTestId}-increaseYear` : undefined}
             disabled={nextYearButtonDisabled}
             onClick={increaseYear}

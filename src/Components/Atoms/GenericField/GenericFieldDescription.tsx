@@ -32,7 +32,7 @@ const message = (props: IGenericFieldDescriptionProps): ReactElement => {
   return (
     <>
       {helperText && <div className={styles.helper}>{helperText}</div>}
-      {!readOnly && maxLength && <div className={styles.counter}>{`${inputLength} / ${maxLength}`}</div>}
+      {!readOnly && maxLength && <div className={styles.counter}>{`${inputLength || 0} / ${maxLength}`}</div>}
     </>
   );
 };

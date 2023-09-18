@@ -1,11 +1,8 @@
-import { Canvas, Meta, ArgsTable, Story, Source } from '@storybook/addon-docs';
+import { Canvas, Meta, ArgsTable, Story } from '@storybook/addon-docs';
 
 import Filter from './Filter';
 import { Alert, AlertType } from '../../Molecules/Alert';
 import { FilterTypeEnum } from './types';
-import { IToggleEntry } from '../../Atoms/CheckBoxInput';
-import { IOption } from '../../Atoms/SelectInput';
-import { Icon } from '../../Atoms';
 
 export const Template = (args) => {
   return <Filter {...args} />;
