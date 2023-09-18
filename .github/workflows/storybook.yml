@@ -23,15 +23,15 @@ jobs:
 
       - name: Configure npm
         run: |
-          yarn config set "@fortawesome:registry" https://npm.fontawesome.com/
-          yarn config set "//npm.fontawesome.com/:_authToken" ${{ secrets.FONTAWESOME_NPM_AUTH_TOKEN }}
+          npm config set "@fortawesome:registry" https://npm.fontawesome.com/
+          npm config set "//npm.fontawesome.com/:_authToken" ${{ secrets.FONTAWESOME_NPM_AUTH_TOKEN }}
 
       - name: Install, lint, test and build
         run: |
-          yarn install --frozen-lockfile
-          yarn lint
-          yarn test:coverage
-          yarn build-storybook
+          npm ci
+          npm run lint
+          npm run test:coverage
+          npm run build-storybook
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4

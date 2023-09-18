@@ -1,10 +1,16 @@
 # Changelog
 
-## 3.0.0 (2023-09-14)
-
-### Features
+## 3.0.1 (2023-09-18)
 
 ### Bug fixes
+
+- Organisms/Form force parsing yup validation error in useForm
+
+### Breaking changes
+
+- Use npm instead of yarn
+
+## 3.0.0 (2023-09-14)
 
 ### Breaking changes
 
