@@ -76,26 +76,24 @@ const FileGallery = (props: IFileGallery): ReactElement => {
             })}
             onClick={
               downloadable
-                ? () => {
+                ? async () => {
                     setDownloading(true);
-                    updateFileDownload(file)
-                      .catch()
-                      .finally(() => {
-                        setDownloading(false);
-                      });
+                    // TODO handle error
+                    await updateFileDownload(file).finally(() => {
+                      setDownloading(false);
+                    });
                   }
                 : undefined
             }
             onKeyUp={
               downloadable
-                ? (event: React.KeyboardEvent<HTMLElement>) => {
+                ? async (event: React.KeyboardEvent<HTMLElement>) => {
                     if (event.type === 'keyup' && event.key === 'Enter') {
                       setDownloading(true);
-                      updateFileDownload(file)
-                        .catch()
-                        .finally(() => {
-                          setDownloading(false);
-                        });
+                      // TODO handle error
+                      await updateFileDownload(file).finally(() => {
+                        setDownloading(false);
+                      });
                       return;
                     }
                   }

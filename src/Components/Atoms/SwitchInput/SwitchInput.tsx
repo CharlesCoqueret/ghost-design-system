@@ -90,7 +90,7 @@ const SwitchInput = (props: ISwitchInputProps): ReactElement => {
               />
               <span
                 aria-checked={option.checked}
-                aria-label={option.label.toString()}
+                aria-label={typeof option.label == 'string' ? option.label : undefined}
                 className={classnames({
                   [styles.primary]: option.checked && !(readOnly || disabled),
                   [styles.pebble]: !option.checked && !(readOnly || disabled),

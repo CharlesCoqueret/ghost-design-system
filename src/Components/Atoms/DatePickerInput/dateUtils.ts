@@ -7,7 +7,7 @@ interface IGlobalThis extends Window {
   __localeData__?: Record<string, Locale>;
 }
 
-export type existingLocale =
+export type ExistingLocale =
   | 'af'
   | 'ar'
   | 'ar-DZ'
@@ -97,10 +97,9 @@ export type existingLocale =
   | 'vi'
   | 'zh-CN'
   | 'zh-HK'
-  | 'zh-TW'
-  | string;
+  | 'zh-TW';
 
-export const importFnsLocaleFile = async (locale: existingLocale): Promise<void> => {
+export const importFnsLocaleFile = async (locale: ExistingLocale): Promise<void> => {
   return await import(`date-fns/locale/${locale}/index.js`)
     .then((localeDataset: globalThis.Locale) => {
       registerLocale(locale, localeDataset);
