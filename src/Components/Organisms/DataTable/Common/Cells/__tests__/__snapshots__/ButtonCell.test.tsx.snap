@@ -1,0 +1,231 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ButtonCell component ButtonCell renders and handles click 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class=""
+        >
+          <div
+            class="table--cell--value--button"
+          >
+            <button
+              class="button"
+              color="reversed"
+              data-testid="BUTTON1"
+              tabindex="0"
+              type="button"
+            >
+              <div
+                class="icon"
+              >
+                <i
+                  class="icon"
+                  icon="fal,briefcase"
+                />
+              </div>
+            </button>
+            <div>
+              Button 1
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`ButtonCell component ButtonCell renders hidden 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class=""
+          style="display: none;"
+        >
+          <div
+            class="table--cell--value--button"
+          >
+            <button
+              class="button"
+              color="reversed"
+              tabindex="0"
+              type="button"
+            >
+              <div
+                class="icon"
+              >
+                <i
+                  class="icon"
+                  icon="fal,briefcase"
+                />
+              </div>
+            </button>
+            <div>
+              Button 1
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`ButtonCell component ButtonCell renders hidden conditionnally 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class=""
+        >
+          <div
+            class="table--cell--value--button"
+          />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`ButtonCell component ButtonCell renders with more than 3 buttons and handle click with conditionnally hidden entries 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class=""
+        >
+          <div
+            class="table--cell--value--button"
+          >
+            <button
+              class="button"
+              color="reversed"
+              data-testid="MORE"
+              tabindex="0"
+              type="button"
+            >
+              <div
+                class="icon"
+              >
+                <i
+                  class="icon"
+                  icon="fal,ellipsis"
+                />
+              </div>
+            </button>
+            <div>
+              MOREACTION
+            </div>
+            <div>
+              <div>
+                ControlledMenu
+                closed
+                <div
+                  data-testid="BUTTON1"
+                >
+                  MenuItem
+                  Button 1
+                </div>
+                <div>
+                  MenuItem
+                  Button 2
+                </div>
+                <div>
+                  MenuItem
+                  Button 3
+                </div>
+                <div>
+                  MenuItem
+                  Button 4
+                </div>
+                has no ref
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`ButtonCell component ButtonCell renders with more than 3 buttons and handle click with conditionnally hidden entries 2`] = `
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class=""
+        >
+          <div
+            class="table--cell--value--button"
+          >
+            <button
+              class="button"
+              color="reversed"
+              data-testid="MORE"
+              tabindex="0"
+              type="button"
+            >
+              <div
+                class="icon"
+              >
+                <i
+                  class="icon"
+                  icon="fal,ellipsis"
+                />
+              </div>
+            </button>
+            <div>
+              MOREACTION
+            </div>
+            <div>
+              <div>
+                ControlledMenu
+                open
+                <div
+                  data-testid="BUTTON1"
+                >
+                  MenuItem
+                  Button 1
+                </div>
+                <div>
+                  MenuItem
+                  Button 2
+                </div>
+                <div>
+                  MenuItem
+                  Button 3
+                </div>
+                <div>
+                  MenuItem
+                  Button 4
+                </div>
+                has no ref
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`ButtonCell component ButtonCell runs an error when row is empty 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr />
+    </tbody>
+  </table>
+</div>
+`;

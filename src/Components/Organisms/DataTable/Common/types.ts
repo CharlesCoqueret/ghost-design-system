@@ -3,7 +3,7 @@ import * as yup from 'yup';
 
 import { IconProp } from '../../../Atoms/Icon';
 import { DateFormat } from '../../../Atoms/DatePickerInput';
-import { ColorButtonEnum } from '../../../Molecules/Button';
+import { ButtonColorEnum } from '../../../Molecules/Button';
 import { IAmountFieldProps } from '../../../Molecules/AmountField/AmountField';
 import { ISelectFieldProps } from '../../../Molecules/SelectField/SelectField';
 import { IBadgeProps } from '../../../Atoms/Badge/Badge';
@@ -470,8 +470,8 @@ export interface IExtraLineEditableDataTableProps<T extends yup.AnyObject> exten
     label: string;
     // If the execution of this action fails, notify the user and reject the call.
     onClick: (editRow: T, editedRowIndex: number) => Promise<void>;
-    // Color of the button (optional, default: ColorButtonEnum.SECONDARY)
-    color?: ColorButtonEnum;
+    // Color of the button (optional, default: ButtonColorEnum.SECONDARY)
+    color?: ButtonColorEnum;
   }>;
   /** Show side by side in modal (optional, default: false) */
   showChanges?: boolean;

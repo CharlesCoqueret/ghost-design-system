@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable handles canAddNewLine with onNewLine 1`] = `
+exports[`LineEditableInPlaceDataTable component handles canAddNewLine with onNewLine 1`] = `
 <div>
   <div>
     <table
@@ -65,7 +65,7 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
 </div>
 `;
 
-exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable handles canAddNewLine without onNewLine 1`] = `
+exports[`LineEditableInPlaceDataTable component handles canAddNewLine without onNewLine 1`] = `
 <div>
   <div>
     <table
@@ -130,7 +130,7 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
 </div>
 `;
 
-exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable handles edit and cancel 1`] = `
+exports[`LineEditableInPlaceDataTable component handles edit and cancel 1`] = `
 <div>
   <div>
     <table
@@ -225,7 +225,7 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
 </div>
 `;
 
-exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable handles edit and cancel 2`] = `
+exports[`LineEditableInPlaceDataTable component handles edit and cancel 2`] = `
 <div>
   <div>
     <table
@@ -340,7 +340,7 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
 </div>
 `;
 
-exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable handles edit and cancel 3`] = `
+exports[`LineEditableInPlaceDataTable component handles edit and cancel 3`] = `
 <div>
   <div>
     <table
@@ -455,7 +455,7 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
 </div>
 `;
 
-exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable handles edit and cancel 4`] = `
+exports[`LineEditableInPlaceDataTable component handles edit and cancel 4`] = `
 <div>
   <div>
     <table
@@ -550,7 +550,7 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
 </div>
 `;
 
-exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable handles edit and submit 1`] = `
+exports[`LineEditableInPlaceDataTable component handles edit and submit 1`] = `
 <div>
   <div>
     <table
@@ -645,7 +645,7 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
 </div>
 `;
 
-exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable handles edit and submit 2`] = `
+exports[`LineEditableInPlaceDataTable component handles edit and submit 2`] = `
 <div>
   <div>
     <table
@@ -760,7 +760,7 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
 </div>
 `;
 
-exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable handles edit and submit 3`] = `
+exports[`LineEditableInPlaceDataTable component handles edit and submit 3`] = `
 <div>
   <div>
     <table
@@ -856,7 +856,7 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
 </div>
 `;
 
-exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable handles non editable content 1`] = `
+exports[`LineEditableInPlaceDataTable component handles non editable content 1`] = `
 <div>
   <div>
     <table
@@ -931,7 +931,7 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
 </div>
 `;
 
-exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable handles onRowDelete and onRowDownload 1`] = `
+exports[`LineEditableInPlaceDataTable component handles onRowDelete and onRowDownload 1`] = `
 <div>
   <div>
     <table
@@ -1019,7 +1019,7 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
               </div>
               <div>
                 <div>
-                  ControlleMenu
+                  ControlledMenu
                   closed
                   <div
                     class="container"
@@ -1158,7 +1158,7 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
 </div>
 `;
 
-exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable handles onRowDelete and onRowDownload with custom localization 1`] = `
+exports[`LineEditableInPlaceDataTable component handles onRowDelete and onRowDownload with custom localization 1`] = `
 <div>
   <div>
     <table
@@ -1245,7 +1245,7 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
 </div>
 `;
 
-exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable handles sort 1`] = `
+exports[`LineEditableInPlaceDataTable component handles sort 1`] = `
 <div>
   <div>
     <table
@@ -1309,7 +1309,7 @@ exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable han
 </div>
 `;
 
-exports[`LineEditableInPlaceDataTable component LineEditableInPlaceDataTable renders 1`] = `
+exports[`LineEditableInPlaceDataTable component renders properly 1`] = `
 <div>
   <div>
     <table

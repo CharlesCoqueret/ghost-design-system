@@ -1,27 +1,7 @@
 import React from 'react';
-import { render, screen, waitFor } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import * as yup from 'yup';
-
-// Mocking suneditor which is problematic with Jest
-jest.mock('suneditor', () => {});
-jest.mock('suneditor/src/plugins/', () => {});
-jest.mock('suneditor/src/plugins/submenu/align', () => {});
-jest.mock('suneditor/src/plugins/command/blockquote', () => {});
-jest.mock('suneditor/src/plugins/submenu/fontColor', () => {});
-jest.mock('suneditor/src/plugins/submenu/fontSize', () => {});
-jest.mock('suneditor/src/plugins/submenu/formatBlock', () => {});
-jest.mock('suneditor/src/plugins/submenu/hiliteColor', () => {});
-jest.mock('suneditor/src/plugins/submenu/horizontalRule', () => {});
-jest.mock('suneditor/src/plugins/dialog/image', () => {});
-jest.mock('suneditor/src/plugins/dialog/link', () => {});
-jest.mock('suneditor/src/plugins/submenu/lineHeight', () => {});
-jest.mock('suneditor/src/plugins/submenu/list', () => {});
-jest.mock('suneditor/src/plugins/submenu/paragraphStyle', () => {});
-jest.mock('suneditor/src/plugins/submenu/table', () => {});
-jest.mock('suneditor-react', () => {});
-jest.mock('suneditor-react/dist', () => {});
-jest.mock('suneditor-react/dist/types/lang', () => {});
 
 import { ColumnType } from '../../Common/types';
 import LineEditableInPlaceDataTableCell from '../LineEditableInPlaceDataTableCell';
@@ -29,7 +9,7 @@ import { IToggleEntry } from '../../../../Atoms/CheckBoxInput';
 import { FileStatusEnum, IFile } from '../../../../Atoms/FileInput';
 
 describe('LineEditableInPlaceDataTableCell component', () => {
-  it('LineEditableInPlaceDataTableCell renders with amount and data test id', () => {
+  it('LineEditableInPlaceDataTableCell renders with amount and data test id', async () => {
     const handleUpdateDataChangeMock = jest.fn();
 
     const { container } = render(
@@ -57,16 +37,16 @@ describe('LineEditableInPlaceDataTableCell component', () => {
 
     expect(container).toMatchSnapshot();
 
-    userEvent.tab();
+    await userEvent.tab();
     if (document.activeElement) {
-      userEvent.type(document.activeElement, '2');
+      await userEvent.type(document.activeElement, '2');
     }
 
     expect(handleUpdateDataChangeMock).toBeCalledTimes(1);
     expect(handleUpdateDataChangeMock).toBeCalledWith(0, 'amount', 12);
   });
 
-  it('LineEditableInPlaceDataTableCell renders with badge', () => {
+  it('LineEditableInPlaceDataTableCell renders with badge', async () => {
     const handleUpdateDataChangeMock = jest.fn();
 
     const { container } = render(
@@ -99,13 +79,13 @@ describe('LineEditableInPlaceDataTableCell component', () => {
 
     expect(container).toMatchSnapshot();
 
-    const input = screen.getByRole('combobox');
-    userEvent.clear(input);
+    const input = await screen.findByRole('combobox');
+    await userEvent.type(input, '{backspace}');
 
     expect(handleUpdateDataChangeMock).toBeCalledTimes(1);
     expect(handleUpdateDataChangeMock).toBeCalledWith(0, 'badge', undefined);
 
-    userEvent.type(input, 'New value{Enter}');
+    await userEvent.type(input, 'New value{Enter}');
 
     expect(handleUpdateDataChangeMock).toBeCalledTimes(2);
     expect(handleUpdateDataChangeMock).toBeCalledWith(0, 'badge', 'NEWVALUE');
@@ -140,7 +120,7 @@ describe('LineEditableInPlaceDataTableCell component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('LineEditableInPlaceDataTableCell renders with checkbox', () => {
+  it('LineEditableInPlaceDataTableCell renders with checkbox', async () => {
     const handleUpdateDataChangeMock = jest.fn();
 
     const { container } = render(
@@ -168,7 +148,7 @@ describe('LineEditableInPlaceDataTableCell component', () => {
 
     expect(container).toMatchSnapshot();
 
-    userEvent.click(screen.getByLabelText('Label'));
+    await userEvent.click(screen.getByLabelText('Label'));
 
     expect(handleUpdateDataChangeMock).toBeCalledTimes(1);
     expect(handleUpdateDataChangeMock).toBeCalledWith(0, 'checkbox', [
@@ -204,7 +184,7 @@ describe('LineEditableInPlaceDataTableCell component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('LineEditableInPlaceDataTableCell renders with custom', () => {
+  it('LineEditableInPlaceDataTableCell renders with custom', async () => {
     const handleUpdateDataChangeMock = jest.fn();
     const customRenderMock = jest
       .fn()
@@ -245,9 +225,9 @@ describe('LineEditableInPlaceDataTableCell component', () => {
 
     expect(container).toMatchSnapshot();
 
-    userEvent.tab();
+    await userEvent.tab();
     if (document.activeElement) {
-      userEvent.clear(document.activeElement);
+      await userEvent.clear(document.activeElement);
     }
 
     expect(handleUpdateDataChangeMock).toBeCalledTimes(1);
@@ -283,21 +263,16 @@ describe('LineEditableInPlaceDataTableCell component', () => {
 
     expect(container).toMatchSnapshot();
 
-    userEvent.tab();
+    await userEvent.tab();
     if (document.activeElement) {
-      userEvent.clear(document.activeElement);
+      await userEvent.clear(document.activeElement);
     }
-
-    // Give time to the datePicker to handle its popup
-    await waitFor(async () => {
-      await Promise.resolve();
-    });
 
     expect(handleUpdateDataChangeMock).toBeCalledTimes(1);
     expect(handleUpdateDataChangeMock).toBeCalledWith(0, 'date', undefined);
   });
 
-  it('LineEditableInPlaceDataTableCell renders with description', async () => {
+  it('LineEditableInPlaceDataTableCell renders with description', () => {
     const handleUpdateDataChangeMock = jest.fn();
 
     const { container } = render(
@@ -361,21 +336,14 @@ describe('LineEditableInPlaceDataTableCell component', () => {
       </table>,
     );
 
-    await waitFor(async () => {
-      await screen.findByText('label');
-    });
+    await screen.findByText('label');
 
     expect(container).toMatchSnapshot();
 
-    userEvent.tab();
+    await userEvent.tab();
     if (document.activeElement) {
-      userEvent.clear(document.activeElement);
+      await userEvent.type(document.activeElement, '{backspace}');
     }
-
-    // Give time to the datePicker to handle its popup
-    await waitFor(async () => {
-      await Promise.resolve();
-    });
 
     expect(handleUpdateDataChangeMock).toBeCalledTimes(1);
     expect(handleUpdateDataChangeMock).toBeCalledWith(0, 'dynamicsearch', undefined);
@@ -426,11 +394,11 @@ describe('LineEditableInPlaceDataTableCell component', () => {
 
     expect(container).toMatchSnapshot();
 
-    userEvent.tab();
-    userEvent.keyboard('{Enter}');
+    await userEvent.tab();
+    await userEvent.keyboard('{Enter}');
 
     expect(onDeleteMock).toBeCalledTimes(1);
-    expect(handleUpdateDataChangeMock).toBeCalledTimes(1);
+    expect(handleUpdateDataChangeMock).toBeCalledTimes(2);
     expect(handleUpdateDataChangeMock).toBeCalledWith(0, 'file', [
       {
         uid: '1',
@@ -441,11 +409,6 @@ describe('LineEditableInPlaceDataTableCell component', () => {
         error: 'Error message',
       },
     ]);
-
-    // Give promise time to resolve
-    await waitFor(async () => await Promise.resolve());
-
-    expect(handleUpdateDataChangeMock).toBeCalledTimes(2);
     expect(handleUpdateDataChangeMock).toBeCalledWith(0, 'file', []);
   });
 
@@ -487,13 +450,13 @@ describe('LineEditableInPlaceDataTableCell component', () => {
     expect(container).toMatchSnapshot();
 
     const select = screen.getByRole('combobox');
-    userEvent.clear(select);
+    await userEvent.type(select, '{backspace}');
 
     expect(handleUpdateDataChangeMock).toBeCalledTimes(1);
     expect(handleUpdateDataChangeMock).toBeCalledWith(0, 'multiselect', []);
   });
 
-  it('LineEditableInPlaceDataTableCell renders with number', () => {
+  it('LineEditableInPlaceDataTableCell renders with number', async () => {
     const handleUpdateDataChangeMock = jest.fn();
 
     const { container } = render(
@@ -521,16 +484,16 @@ describe('LineEditableInPlaceDataTableCell component', () => {
 
     expect(container).toMatchSnapshot();
 
-    userEvent.tab();
+    await userEvent.tab();
     if (document.activeElement) {
-      userEvent.clear(document.activeElement);
+      await userEvent.clear(document.activeElement);
     }
 
     expect(handleUpdateDataChangeMock).toBeCalledTimes(1);
     expect(handleUpdateDataChangeMock).toBeCalledWith(0, 'number', undefined);
   });
 
-  it('LineEditableInPlaceDataTableCell renders with percentage', () => {
+  it('LineEditableInPlaceDataTableCell renders with percentage', async () => {
     const handleUpdateDataChangeMock = jest.fn();
 
     const { container } = render(
@@ -558,16 +521,16 @@ describe('LineEditableInPlaceDataTableCell component', () => {
 
     expect(container).toMatchSnapshot();
 
-    userEvent.tab();
+    await userEvent.tab();
     if (document.activeElement) {
-      userEvent.clear(document.activeElement);
+      await userEvent.clear(document.activeElement);
     }
 
     expect(handleUpdateDataChangeMock).toBeCalledTimes(1);
     expect(handleUpdateDataChangeMock).toBeCalledWith(0, 'percentage', undefined);
   });
 
-  it('LineEditableInPlaceDataTableCell renders with section', async () => {
+  it('LineEditableInPlaceDataTableCell renders with section', () => {
     const handleUpdateDataChangeMock = jest.fn();
 
     const { container } = render(
@@ -597,7 +560,7 @@ describe('LineEditableInPlaceDataTableCell component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('LineEditableInPlaceDataTableCell renders with switch', () => {
+  it('LineEditableInPlaceDataTableCell renders with switch', async () => {
     const handleUpdateDataChangeMock = jest.fn();
 
     const { container } = render(
@@ -625,7 +588,7 @@ describe('LineEditableInPlaceDataTableCell component', () => {
 
     expect(container).toMatchSnapshot();
 
-    userEvent.click(screen.getByLabelText('Label'));
+    await userEvent.click(screen.getByLabelText('Label'));
 
     expect(handleUpdateDataChangeMock).toBeCalledTimes(1);
     expect(handleUpdateDataChangeMock).toBeCalledWith(0, 'switch', [
@@ -633,7 +596,7 @@ describe('LineEditableInPlaceDataTableCell component', () => {
     ]);
   });
 
-  it('LineEditableInPlaceDataTableCell renders with table', async () => {
+  it('LineEditableInPlaceDataTableCell renders with table', () => {
     const handleUpdateDataChangeMock = jest.fn();
 
     const { container } = render(
@@ -673,7 +636,7 @@ describe('LineEditableInPlaceDataTableCell component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('LineEditableInPlaceDataTableCell renders with text', () => {
+  it('LineEditableInPlaceDataTableCell renders with text', async () => {
     const handleUpdateDataChangeMock = jest.fn();
 
     const { container } = render(
@@ -701,16 +664,16 @@ describe('LineEditableInPlaceDataTableCell component', () => {
 
     expect(container).toMatchSnapshot();
 
-    userEvent.tab();
+    await userEvent.tab();
     if (document.activeElement) {
-      userEvent.clear(document.activeElement);
+      await userEvent.clear(document.activeElement);
     }
 
     expect(handleUpdateDataChangeMock).toBeCalledTimes(1);
     expect(handleUpdateDataChangeMock).toBeCalledWith(0, 'text', '');
   });
 
-  it('LineEditableInPlaceDataTableCell renders with textarea', () => {
+  it('LineEditableInPlaceDataTableCell renders with textarea', async () => {
     const handleUpdateDataChangeMock = jest.fn();
 
     const { container } = render(
@@ -738,9 +701,9 @@ describe('LineEditableInPlaceDataTableCell component', () => {
 
     expect(container).toMatchSnapshot();
 
-    userEvent.tab();
+    await userEvent.tab();
     if (document.activeElement) {
-      userEvent.clear(document.activeElement);
+      await userEvent.clear(document.activeElement);
     }
 
     expect(handleUpdateDataChangeMock).toBeCalledTimes(1);
@@ -775,15 +738,10 @@ describe('LineEditableInPlaceDataTableCell component', () => {
 
     expect(container).toMatchSnapshot();
 
-    userEvent.tab();
+    await userEvent.tab();
     if (document.activeElement) {
-      userEvent.clear(document.activeElement);
+      await userEvent.clear(document.activeElement);
     }
-
-    // Give time to the yearPicker to handle its popup
-    await waitFor(async () => {
-      await Promise.resolve();
-    });
 
     expect(handleUpdateDataChangeMock).toBeCalledTimes(1);
     expect(handleUpdateDataChangeMock).toBeCalledWith(0, 'year', undefined);

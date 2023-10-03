@@ -1,5 +1,23 @@
 # Changelog
 
+## 3.0.1 (2023-09-18)
+
+### Bug fixes
+
+- Organisms/Form force parsing yup validation error in useForm
+
+### Breaking changes
+
+- Use npm instead of yarn
+
+## 3.0.0 (2023-09-14)
+
+### Breaking changes
+
+- Atoms/Link no long accepts text, but uses children property instead
+- Use Yarn instead of npm
+- Use react18
+
 ## 2.0.0 (2023-04-01)
 
 ### Features

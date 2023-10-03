@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FilterItem Component FilterItem renders CheckboxField 1`] = `
+<div>
+  <div>
+    Mocked CheckboxField props: 
+    {"input":[{"label":"LABEL","value":"VALUE"}],"inline":false}
+  </div>
+</div>
+`;
+
+exports[`FilterItem Component FilterItem renders Column and title 1`] = `
+<div>
+  <div
+    class="col"
+  >
+    <div
+      class="header"
+    >
+      <h2
+        class="typography h2"
+      >
+        TITLE
+      </h2>
+    </div>
+    <div
+      aria-hidden="false"
+      class="body"
+      id="react-collapsed-panel-:r0:"
+      role="region"
+      style="box-sizing: border-box;"
+    />
+    <div>
+      Mocked AmountField props: 
+      {"name":"number","inline":false}
+    </div>
+  </div>
+</div>
+`;
+
+exports[`FilterItem Component FilterItem renders DatePickerField 1`] = `
+<div>
+  <div>
+    Mocked DatePickerField props: 
+    {"name":"date","input":"2022-04-10T00:00:00.000Z","inline":false}
+  </div>
+</div>
+`;
+
+exports[`FilterItem Component FilterItem renders DynamicSearchField 1`] = `
+<div>
+  <div>
+    Mocked DynamicSearchField props: 
+    {"input":"value1","name":"dynamicsearch","inline":false}
+  </div>
+</div>
+`;
+
+exports[`FilterItem Component FilterItem renders MultiSelectField 1`] = `
+<div>
+  <div>
+    Mocked MultiSelectField props: 
+    {"input":["value1"],"name":"multiselect","numberOfItemLabel":"","numberOfItemsLabel":"","options":[],"inline":false}
+  </div>
+</div>
+`;
+
+exports[`FilterItem Component FilterItem renders Number / AmountField 1`] = `
+<div>
+  <div>
+    Mocked AmountField props: 
+    {"name":"number","input":-12.34,"inline":false}
+  </div>
+</div>
+`;
+
+exports[`FilterItem Component FilterItem renders SelectField 1`] = `
+<div>
+  <div>
+    Mocked SelectField props: 
+    {"input":"VALUE1","name":"select","options":[],"inline":false}
+  </div>
+</div>
+`;
+
+exports[`FilterItem Component FilterItem renders TextField 1`] = `
+<div>
+  <div>
+    Mocked TextField props: 
+    {"input":"TEXT","name":"text","inline":false}
+  </div>
+</div>
+`;

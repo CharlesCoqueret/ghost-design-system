@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { QueryFunctionContext, useInfiniteQuery } from 'react-query';
+import { QueryFunctionContext, QueryKey, useInfiniteQuery } from 'react-query';
 import { useInView } from 'react-intersection-observer';
 import classnames from 'classnames';
 
@@ -67,7 +67,7 @@ const PortfolioWrapped = <FilterType, PortfolioType, ResponseType, PaginationTyp
 
   const { data, error, isFetching, fetchNextPage } = useInfiniteQuery(
     ['portfolio', filterValues, sort, direction],
-    async (context: QueryFunctionContext) => {
+    async (context: QueryFunctionContext<QueryKey, PaginationType>) => {
       const { signal, pageParam } = context;
       return getData(filterValues, sort, direction, pageParam, signal);
     },
@@ -81,13 +81,9 @@ const PortfolioWrapped = <FilterType, PortfolioType, ResponseType, PaginationTyp
     setDirection(sortDirection);
   };
 
-  const onFilterChange = (value: Partial<FilterType> | undefined): void => {
-    setFilterValues(value);
-  };
-
   useEffect(() => {
     if (inView) {
-      fetchNextPage();
+      void fetchNextPage();
     }
   }, [inView, data]);
 
@@ -101,7 +97,7 @@ const PortfolioWrapped = <FilterType, PortfolioType, ResponseType, PaginationTyp
     <>
       {filter && (
         <div className={classnames(styles.filter, filterClassName)}>
-          <Filter {...filter} onChange={onFilterChange} />
+          <Filter {...filter} onChange={setFilterValues} />
         </div>
       )}
 

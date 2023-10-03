@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Highlighter Component renders properly 1`] = `
+<div>
+  <div />
+</div>
+`;
+
+exports[`Highlighter Component renders with highlight and side by side 1`] = `
+<div>
+  <div
+    class="row"
+  >
+    <div
+      class="col"
+    >
+      {}
+    </div>
+    <div
+      class="col"
+    >
+      {"highlighted":true,"input":"OLDDATA","readOnly":true}
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Highlighter Component renders with highlight and side by side with invalid Element 1`] = `<div />`;

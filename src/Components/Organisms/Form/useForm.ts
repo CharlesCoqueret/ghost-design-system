@@ -38,6 +38,16 @@ export interface IUseFormProps<T extends yup.AnyObject> {
   onChange: (field: keyof T, value: T[keyof T]) => void;
 }
 
+const parseErrorSchema = <T>(e: yup.ValidationError) => {
+  const newErrors = {} as Record<keyof T, string>;
+  e.inner.forEach((error) => {
+    if (error.path && !newErrors[error.path as keyof T]) {
+      newErrors[error.path as keyof T] = error.message;
+    }
+  });
+  return newErrors;
+};
+
 const yupErrorResolver = <T extends yup.AnyObject>(
   validationSchema: yup.ObjectSchema<T>,
   values: T,
@@ -45,14 +55,18 @@ const yupErrorResolver = <T extends yup.AnyObject>(
   try {
     validationSchema.validateSync(values, { abortEarly: false });
   } catch (e) {
+    // If error is yup.ValidationError type
     if (e instanceof yup.ValidationError) {
-      const newErrors = {} as Record<keyof T, string>;
-      e.inner.forEach((error) => {
-        if (error.path && !newErrors[error.path as keyof T]) {
-          newErrors[error.path as keyof T] = error.message;
-        }
-      });
-      return newErrors;
+      return parseErrorSchema(e);
+    }
+    // Else, we will try to resolve it and logging it.
+    else {
+      console.error('Error with incorrect type:', e, 'Trying to resolve it.');
+      try {
+        return parseErrorSchema(e as yup.ValidationError);
+      } catch {
+        console.error('Error with incorrect type that could not be resolved');
+      }
     }
   }
   return {} as Record<keyof T, string>;
@@ -148,18 +162,22 @@ const useForm = <T extends yup.AnyObject>(props: IUseFormProps<T>): IFormReturne
     setErrors({} as Record<keyof T, string>);
   };
 
-  const fieldsProps = Object.entries(values).reduce((acc, [fieldName, value]) => {
-    return {
-      ...acc,
-      [fieldName]: {
-        input: value,
-        onChange: handleChange(fieldName),
-        errorMessage: errors[fieldName],
-        touched: touched[fieldName] || false,
-        mandatory: mandatory[fieldName] || false,
-      },
-    };
-  }, {} as FieldProps<keyof T, T>);
+  const fieldsProps = Object.entries(values).reduce(
+    (acc, [fieldName, value]) => {
+      return {
+        ...acc,
+        [fieldName]: {
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+          input: value,
+          onChange: handleChange(fieldName),
+          errorMessage: errors[fieldName],
+          touched: touched[fieldName] || false,
+          mandatory: mandatory[fieldName] || false,
+        },
+      };
+    },
+    {} as FieldProps<keyof T, T>,
+  );
 
   return {
     fieldsProps,

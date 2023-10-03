@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node: [ 16 ]
+        node: [16]
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -22,7 +22,7 @@ jobs:
           node-version: ${{ matrix.node }}
 
       - name: Configure npm
-        run : |
+        run: |
           npm config set "@fortawesome:registry" https://npm.fontawesome.com/
           npm config set "//npm.fontawesome.com/:_authToken" ${{ secrets.FONTAWESOME_NPM_AUTH_TOKEN }}
 
@@ -40,7 +40,7 @@ jobs:
           folder: docs-build
           clean: true
           target-folder: docs
-      
+
       - name: Code Coverage
         uses: coverallsapp/github-action@master
         with:

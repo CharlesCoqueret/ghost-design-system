@@ -2,7 +2,7 @@ import React, { ReactElement } from 'react';
 import { ComponentStory } from '@storybook/react';
 import * as yup from 'yup';
 
-import { ColorButtonEnum } from '../../Molecules/Button';
+import { ButtonColorEnum } from '../../Molecules/Button';
 
 import useFormLegacy, { IUseFormProps } from './useFormLegacy';
 import { FieldLegacyTypeEnum, IFieldAndLayoutLegacyProps } from './types';
@@ -67,7 +67,9 @@ const validationSchema: yup.ObjectSchema<IDataType> = yup.object({
       if (!select1) {
         return schema.required();
       }
-      return schema.oneOf(option2[select1].map((option) => option.value)).required(`option2 must be defined`);
+      return schema
+        .oneOf(option2[select1 as keyof typeof option2].map((option) => option.value))
+        .required(`option2 must be defined`);
     }),
   select3: yup
     .mixed<string | number>()
@@ -76,7 +78,9 @@ const validationSchema: yup.ObjectSchema<IDataType> = yup.object({
       if (!select2) {
         return schema.required();
       }
-      return schema.oneOf(option3[select2].map((option) => option.value)).required(`option3 must be defined`);
+      return schema
+        .oneOf(option3[select2 as keyof typeof option3].map((option) => option.value))
+        .required(`option3 must be defined`);
     }),
 });
 
@@ -94,14 +98,14 @@ const Template: ComponentStory<(props: IUseFormProps<IDataType>) => ReactElement
         actions={[
           {
             label: 'Submit',
-            color: ColorButtonEnum.PRIMARY,
+            color: ButtonColorEnum.PRIMARY,
             onClick: () => {
               console.log('submit', JSON.stringify(submit()));
             },
           },
           {
             label: 'Reset',
-            color: ColorButtonEnum.SECONDARY,
+            color: ButtonColorEnum.SECONDARY,
             onClick: () => {
               console.log('reset', JSON.stringify(reset()));
             },

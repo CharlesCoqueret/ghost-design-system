@@ -2,7 +2,7 @@ import React, { ReactElement } from 'react';
 import { render } from '@testing-library/react';
 
 describe('LineEditableInPlaceDataTableCell richtext case', () => {
-  it('LineEditableInPlaceDataTableCell renders with richtext', () => {
+  it('renders with richtext', () => {
     let onChangeCallback: (newValue: string) => void = () => {
       return;
     };

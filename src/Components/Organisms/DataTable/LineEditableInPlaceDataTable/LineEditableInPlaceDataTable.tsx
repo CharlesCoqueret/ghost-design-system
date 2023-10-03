@@ -1,5 +1,5 @@
 import React, { ReactElement, useCallback, useState } from 'react';
-import { Button, ColorButtonEnum } from '../../../Molecules/Button';
+import { Button, ButtonColorEnum } from '../../../Molecules/Button';
 
 import StaticDataTableFooter from '../StaticDataTable/StaticDataTableFooter';
 import StaticDataTableHeader from '../StaticDataTable/StaticDataTableHeader';
@@ -205,7 +205,7 @@ const LineEditableInPlaceDataTable = <T,>(props: ILineEditableInPlaceDataTablePr
       {extra.canAddNewLine && extra.canAddNewLine() && (
         <Button
           className='gds-table-new-line'
-          color={ColorButtonEnum.PRIMARY}
+          color={ButtonColorEnum.PRIMARY}
           label={extra.localization?.addRow ?? 'Add row'}
           onClick={addNewLine}
           disabled={editedRowIndex !== undefined}

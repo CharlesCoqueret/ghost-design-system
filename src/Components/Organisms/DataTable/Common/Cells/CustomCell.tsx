@@ -26,7 +26,7 @@ const CustomCell = <T,>(props: ICellProps<T, IColumnCustom<T>>): ReactElement =>
       {typeof displayValue === 'string' ? (
         <Typography.Text ellipsis={column.ellipsis}>{displayValue}</Typography.Text>
       ) : (
-        displayValue
+        <>{displayValue}</>
       )}
     </td>
   );

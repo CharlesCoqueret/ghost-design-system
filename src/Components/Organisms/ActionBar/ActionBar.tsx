@@ -1,7 +1,7 @@
 import React, { ReactElement } from 'react';
 import classnames from 'classnames';
 
-import { Button, ColorButtonEnum, IButtonProps } from '../../Molecules/Button';
+import { Button, ButtonColorEnum, IButtonProps } from '../../Molecules/Button';
 import { Icon } from '../../Atoms/Icon';
 import Title from './Title';
 
@@ -75,7 +75,7 @@ const ActionBar = (props: IActionBarProps): ReactElement => {
               icon={['fal', 'arrow-left']}
               onClick={onBackClicked}
               tooltip={backTooltip}
-              color={ColorButtonEnum.REVERSED}
+              color={ButtonColorEnum.REVERSED}
             />
           </div>
         )}
@@ -116,7 +116,7 @@ const ActionBar = (props: IActionBarProps): ReactElement => {
                 <Button
                   key={basicAction.tooltip || basicAction.label}
                   {...basicAction}
-                  color={ColorButtonEnum.REVERSED}
+                  color={ButtonColorEnum.REVERSED}
                 />
               );
             })}

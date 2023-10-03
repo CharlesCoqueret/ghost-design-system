@@ -82,7 +82,7 @@ const CheckboxInput = (props: ICheckboxInputProps): ReactElement => {
             tabIndex={readOnly || disabled ? -1 : 0}>
             <div
               aria-checked={option.checked}
-              aria-label={option.label.toString()}
+              aria-label={typeof option.label == 'string' ? option.label : undefined}
               className={classnames(styles.checkboxMarker, {
                 [styles.checked]: option.checked,
                 [styles.disabled]: disabled,

@@ -1,0 +1,101 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Popover Component Popover renders 1`] = `
+<body>
+  <div>
+    <div />
+    <div>
+      <div
+        class="szh-menu-container"
+        style="position: absolute;"
+      >
+        <ul
+          aria-label="Menu"
+          class="szh-menu szh-menu--state-closed szh-menu--dir-top"
+          role="menu"
+          style="margin: 0px; display: none; position: absolute; left: -9999px; top: -9999px;"
+          tabindex="-1"
+        >
+          <li
+            aria-hidden="true"
+            role="menuitem"
+            style="position: absolute; left: 0px; top: 0px; display: block; outline: none;"
+            tabindex="-1"
+          />
+          <li
+            aria-hidden="true"
+            class="szh-menu__arrow szh-menu__arrow--dir-top"
+            role="menuitem"
+            style="display: block; position: absolute;"
+          />
+          <div
+            class="container"
+          >
+            <div
+              class="title"
+            />
+            <div
+              class="buttons"
+            />
+          </div>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div
+    id="popover-portal-id"
+  >
+    <div />
+  </div>
+</body>
+`;
+
+exports[`Popover Component Popover renders 2`] = `
+<body>
+  <div>
+    <div />
+    <div>
+      <div
+        class="szh-menu-container"
+        style="position: absolute;"
+      >
+        <ul
+          aria-label="Menu"
+          class="szh-menu szh-menu--state-open szh-menu--dir-top"
+          role="menu"
+          style="margin: 0px; position: absolute; left: 0px; top: 0px;"
+          tabindex="-1"
+        >
+          <li
+            aria-hidden="true"
+            role="menuitem"
+            style="position: absolute; left: 0px; top: 0px; display: block; outline: none;"
+            tabindex="-1"
+          />
+          <li
+            aria-hidden="true"
+            class="szh-menu__arrow szh-menu__arrow--dir-top"
+            role="menuitem"
+            style="display: block; position: absolute; left: 0px;"
+          />
+          <div
+            class="container"
+          >
+            <div
+              class="title"
+            />
+            <div
+              class="buttons"
+            />
+          </div>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div
+    id="popover-portal-id"
+  >
+    <div />
+  </div>
+</body>
+`;

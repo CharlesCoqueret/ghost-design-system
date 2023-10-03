@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react';
 import Numeral from 'numeral';
-import NumberFormat, { NumberFormatValues, SourceInfo } from 'react-number-format';
+import { NumericFormat, NumberFormatValues, SourceInfo } from 'react-number-format';
 import classnames from 'classnames';
 import compact from 'lodash/compact';
 
@@ -101,6 +101,7 @@ const AmountInput = (props: IAmountInputProps): ReactElement => {
   const numberFormatThousandSeparator = thousandsGroupStyle === ThousandsGroupStyle.NONE ? '' : thousandSeparator;
 
   const onValueChange = (newValue: NumberFormatValues, sourceInfo: SourceInfo): void => {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-enum-comparison
     if (sourceInfo.source !== 'prop' && onChange) {
       onChange(newValue.floatValue);
     }
@@ -126,7 +127,7 @@ const AmountInput = (props: IAmountInputProps): ReactElement => {
         </div>
       );
     }
-    if (thousandsGroupStyle === 'shorten') {
+    if (thousandsGroupStyle === ThousandsGroupStyle.SHORTEN) {
       return (
         <div
           className={classnames(
@@ -149,8 +150,7 @@ const AmountInput = (props: IAmountInputProps): ReactElement => {
       );
     }
     return (
-      <NumberFormat
-        allowEmptyFormatting
+      <NumericFormat
         autoComplete='off'
         className={classnames(
           styles.default,
@@ -165,7 +165,7 @@ const AmountInput = (props: IAmountInputProps): ReactElement => {
         decimalSeparator={decimalSeparator}
         displayType={'text'}
         id={name}
-        isNumericString={typeof input === 'string'}
+        valueIsNumericString={typeof input === 'string'}
         name={name}
         prefix={prefix ? `${prefix} ` : undefined}
         suffix={suffix ? ` ${suffix}` : undefined}
@@ -180,8 +180,7 @@ const AmountInput = (props: IAmountInputProps): ReactElement => {
    * Editable case
    */
   return (
-    <NumberFormat
-      allowEmptyFormatting
+    <NumericFormat
       allowNegative={allowNegative}
       autoComplete='off'
       className={classnames(
@@ -199,7 +198,7 @@ const AmountInput = (props: IAmountInputProps): ReactElement => {
         if (maxValue !== undefined && newValue.floatValue && newValue.floatValue > maxValue) return false;
         return true;
       }}
-      isNumericString={typeof input === 'string'}
+      valueIsNumericString={typeof input === 'string'}
       name={name}
       onValueChange={onValueChange}
       placeholder={placeholder}

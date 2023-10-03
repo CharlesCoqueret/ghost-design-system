@@ -1,27 +1,7 @@
 import React from 'react';
-import { render, screen, waitFor } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import * as yup from 'yup';
-
-// Mocking suneditor which is problematic with Jest
-jest.mock('suneditor', () => {});
-jest.mock('suneditor/src/plugins/', () => {});
-jest.mock('suneditor/src/plugins/submenu/align', () => {});
-jest.mock('suneditor/src/plugins/command/blockquote', () => {});
-jest.mock('suneditor/src/plugins/submenu/fontColor', () => {});
-jest.mock('suneditor/src/plugins/submenu/fontSize', () => {});
-jest.mock('suneditor/src/plugins/submenu/formatBlock', () => {});
-jest.mock('suneditor/src/plugins/submenu/hiliteColor', () => {});
-jest.mock('suneditor/src/plugins/submenu/horizontalRule', () => {});
-jest.mock('suneditor/src/plugins/dialog/image', () => {});
-jest.mock('suneditor/src/plugins/dialog/link', () => {});
-jest.mock('suneditor/src/plugins/submenu/lineHeight', () => {});
-jest.mock('suneditor/src/plugins/submenu/list', () => {});
-jest.mock('suneditor/src/plugins/submenu/paragraphStyle', () => {});
-jest.mock('suneditor/src/plugins/submenu/table', () => {});
-jest.mock('suneditor-react', () => {});
-jest.mock('suneditor-react/dist', () => {});
-jest.mock('suneditor-react/dist/types/lang', () => {});
 
 import { ColumnType } from '../../Common/types';
 import EditableDataTableCell from '../EditableDataTableCell';
@@ -29,7 +9,7 @@ import { IToggleEntry } from '../../../../Atoms/CheckBoxInput';
 import { FileStatusEnum, IFile } from '../../../../Atoms/FileInput';
 
 describe('EditableDataTableCell component', () => {
-  it('EditableDataTableCell renders with amount and data test id', () => {
+  it('EditableDataTableCell renders with amount and data test id', async () => {
     const handleUpdateDataChangeMock = jest.fn();
 
     const { container } = render(
@@ -55,16 +35,16 @@ describe('EditableDataTableCell component', () => {
 
     expect(container).toMatchSnapshot();
 
-    userEvent.tab();
+    await userEvent.tab();
     if (document.activeElement) {
-      userEvent.type(document.activeElement, '2');
+      await userEvent.type(document.activeElement, '2');
     }
 
     expect(handleUpdateDataChangeMock).toBeCalledTimes(1);
     expect(handleUpdateDataChangeMock).toBeCalledWith(0, 'amount', 12);
   });
 
-  it('EditableDataTableCell renders with badge', () => {
+  it('EditableDataTableCell renders with badge', async () => {
     const handleUpdateDataChangeMock = jest.fn();
 
     const { container } = render(
@@ -96,12 +76,12 @@ describe('EditableDataTableCell component', () => {
     expect(container).toMatchSnapshot();
 
     const input = screen.getByRole('combobox');
-    userEvent.clear(input);
+    await userEvent.type(input, '{backspace}');
 
     expect(handleUpdateDataChangeMock).toBeCalledTimes(1);
     expect(handleUpdateDataChangeMock).toBeCalledWith(0, 'badge', undefined);
 
-    userEvent.type(input, 'New value{Enter}');
+    await userEvent.type(input, 'New value{Enter}');
 
     expect(handleUpdateDataChangeMock).toBeCalledTimes(2);
     expect(handleUpdateDataChangeMock).toBeCalledWith(0, 'badge', 'NEWVALUE');
@@ -133,7 +113,7 @@ describe('EditableDataTableCell component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('EditableDataTableCell renders with checkbox', () => {
+  it('EditableDataTableCell renders with checkbox', async () => {
     const handleUpdateDataChangeMock = jest.fn();
 
     const { container } = render(
@@ -159,7 +139,7 @@ describe('EditableDataTableCell component', () => {
 
     expect(container).toMatchSnapshot();
 
-    userEvent.click(screen.getByLabelText('Label'));
+    await userEvent.click(screen.getByLabelText('Label'));
 
     expect(handleUpdateDataChangeMock).toBeCalledTimes(1);
     expect(handleUpdateDataChangeMock).toBeCalledWith(0, 'checkbox', [
@@ -193,7 +173,7 @@ describe('EditableDataTableCell component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('EditableDataTableCell renders with custom', () => {
+  it('EditableDataTableCell renders with custom', async () => {
     const handleUpdateDataChangeMock = jest.fn();
     const customRenderMock = jest
       .fn()
@@ -232,9 +212,9 @@ describe('EditableDataTableCell component', () => {
 
     expect(container).toMatchSnapshot();
 
-    userEvent.tab();
+    await userEvent.tab();
     if (document.activeElement) {
-      userEvent.clear(document.activeElement);
+      await userEvent.clear(document.activeElement);
     }
 
     expect(handleUpdateDataChangeMock).toBeCalledTimes(1);
@@ -268,21 +248,16 @@ describe('EditableDataTableCell component', () => {
 
     expect(container).toMatchSnapshot();
 
-    userEvent.tab();
+    await userEvent.tab();
     if (document.activeElement) {
-      userEvent.clear(document.activeElement);
+      await userEvent.clear(document.activeElement);
     }
-
-    // Give time to the datePicker to handle its popup
-    await waitFor(async () => {
-      await Promise.resolve();
-    });
 
     expect(handleUpdateDataChangeMock).toBeCalledTimes(1);
     expect(handleUpdateDataChangeMock).toBeCalledWith(0, 'date', undefined);
   });
 
-  it('EditableDataTableCell renders with description', async () => {
+  it('EditableDataTableCell renders with description', () => {
     const handleUpdateDataChangeMock = jest.fn();
 
     const { container } = render(
@@ -342,21 +317,14 @@ describe('EditableDataTableCell component', () => {
       </table>,
     );
 
-    await waitFor(async () => {
-      await screen.findByText('label');
-    });
+    await screen.findByText('label');
 
     expect(container).toMatchSnapshot();
 
-    userEvent.tab();
+    await userEvent.tab();
     if (document.activeElement) {
-      userEvent.clear(document.activeElement);
+      await userEvent.type(document.activeElement, '{backspace}');
     }
-
-    // Give time to the datePicker to handle its popup
-    await waitFor(async () => {
-      await Promise.resolve();
-    });
 
     expect(handleUpdateDataChangeMock).toBeCalledTimes(1);
     expect(handleUpdateDataChangeMock).toBeCalledWith(0, 'dynamicsearch', undefined);
@@ -405,11 +373,11 @@ describe('EditableDataTableCell component', () => {
 
     expect(container).toMatchSnapshot();
 
-    userEvent.tab();
-    userEvent.keyboard('{Enter}');
+    await userEvent.tab();
+    await userEvent.keyboard('{Enter}');
 
     expect(onDeleteMock).toBeCalledTimes(1);
-    expect(handleUpdateDataChangeMock).toBeCalledTimes(1);
+    expect(handleUpdateDataChangeMock).toBeCalledTimes(2);
     expect(handleUpdateDataChangeMock).toBeCalledWith(0, 'file', [
       {
         uid: '1',
@@ -420,11 +388,6 @@ describe('EditableDataTableCell component', () => {
         error: 'Error message',
       },
     ]);
-
-    // Give promise time to resolve
-    await waitFor(async () => await Promise.resolve());
-
-    expect(handleUpdateDataChangeMock).toBeCalledTimes(2);
     expect(handleUpdateDataChangeMock).toBeCalledWith(0, 'file', []);
   });
 
@@ -464,13 +427,13 @@ describe('EditableDataTableCell component', () => {
     expect(container).toMatchSnapshot();
 
     const select = screen.getByRole('combobox');
-    userEvent.clear(select);
+    await userEvent.type(select, '{backspace}');
 
     expect(handleUpdateDataChangeMock).toBeCalledTimes(1);
     expect(handleUpdateDataChangeMock).toBeCalledWith(0, 'multiselect', []);
   });
 
-  it('EditableDataTableCell renders with number', () => {
+  it('EditableDataTableCell renders with number', async () => {
     const handleUpdateDataChangeMock = jest.fn();
 
     const { container } = render(
@@ -496,16 +459,16 @@ describe('EditableDataTableCell component', () => {
 
     expect(container).toMatchSnapshot();
 
-    userEvent.tab();
+    await userEvent.tab();
     if (document.activeElement) {
-      userEvent.clear(document.activeElement);
+      await userEvent.clear(document.activeElement);
     }
 
     expect(handleUpdateDataChangeMock).toBeCalledTimes(1);
     expect(handleUpdateDataChangeMock).toBeCalledWith(0, 'number', undefined);
   });
 
-  it('EditableDataTableCell renders with percentage', () => {
+  it('EditableDataTableCell renders with percentage', async () => {
     const handleUpdateDataChangeMock = jest.fn();
 
     const { container } = render(
@@ -531,16 +494,16 @@ describe('EditableDataTableCell component', () => {
 
     expect(container).toMatchSnapshot();
 
-    userEvent.tab();
+    await userEvent.tab();
     if (document.activeElement) {
-      userEvent.clear(document.activeElement);
+      await userEvent.clear(document.activeElement);
     }
 
     expect(handleUpdateDataChangeMock).toBeCalledTimes(1);
     expect(handleUpdateDataChangeMock).toBeCalledWith(0, 'percentage', undefined);
   });
 
-  it('EditableDataTableCell renders with section', async () => {
+  it('EditableDataTableCell renders with section', () => {
     const handleUpdateDataChangeMock = jest.fn();
 
     const { container } = render(
@@ -568,7 +531,7 @@ describe('EditableDataTableCell component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('EditableDataTableCell renders with switch', () => {
+  it('EditableDataTableCell renders with switch', async () => {
     const handleUpdateDataChangeMock = jest.fn();
 
     const { container } = render(
@@ -594,7 +557,7 @@ describe('EditableDataTableCell component', () => {
 
     expect(container).toMatchSnapshot();
 
-    userEvent.click(screen.getByLabelText('Label'));
+    await userEvent.click(screen.getByLabelText('Label'));
 
     expect(handleUpdateDataChangeMock).toBeCalledTimes(1);
     expect(handleUpdateDataChangeMock).toBeCalledWith(0, 'switch', [
@@ -602,7 +565,7 @@ describe('EditableDataTableCell component', () => {
     ]);
   });
 
-  it('EditableDataTableCell renders with table', async () => {
+  it('EditableDataTableCell renders with table', () => {
     const handleUpdateDataChangeMock = jest.fn();
 
     const { container } = render(
@@ -640,7 +603,7 @@ describe('EditableDataTableCell component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('EditableDataTableCell renders with text', () => {
+  it('EditableDataTableCell renders with text', async () => {
     const handleUpdateDataChangeMock = jest.fn();
 
     const { container } = render(
@@ -666,16 +629,16 @@ describe('EditableDataTableCell component', () => {
 
     expect(container).toMatchSnapshot();
 
-    userEvent.tab();
+    await userEvent.tab();
     if (document.activeElement) {
-      userEvent.clear(document.activeElement);
+      await userEvent.clear(document.activeElement);
     }
 
     expect(handleUpdateDataChangeMock).toBeCalledTimes(1);
     expect(handleUpdateDataChangeMock).toBeCalledWith(0, 'text', '');
   });
 
-  it('EditableDataTableCell renders with textarea', () => {
+  it('EditableDataTableCell renders with textarea', async () => {
     const handleUpdateDataChangeMock = jest.fn();
 
     const { container } = render(
@@ -701,9 +664,9 @@ describe('EditableDataTableCell component', () => {
 
     expect(container).toMatchSnapshot();
 
-    userEvent.tab();
+    await userEvent.tab();
     if (document.activeElement) {
-      userEvent.clear(document.activeElement);
+      await userEvent.clear(document.activeElement);
     }
 
     expect(handleUpdateDataChangeMock).toBeCalledTimes(1);
@@ -736,15 +699,10 @@ describe('EditableDataTableCell component', () => {
 
     expect(container).toMatchSnapshot();
 
-    userEvent.tab();
+    await userEvent.tab();
     if (document.activeElement) {
-      userEvent.clear(document.activeElement);
+      await userEvent.clear(document.activeElement);
     }
-
-    // Give time to the yearPicker to handle its popup
-    await waitFor(async () => {
-      await Promise.resolve();
-    });
 
     expect(handleUpdateDataChangeMock).toBeCalledTimes(1);
     expect(handleUpdateDataChangeMock).toBeCalledWith(0, 'year', undefined);

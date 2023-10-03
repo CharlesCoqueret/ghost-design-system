@@ -23,21 +23,21 @@ describe('SwitchInput Component', () => {
     expect(onChangeMock).toBeCalledTimes(0);
   });
 
-  it('SwitchInput renders triggers onChange', () => {
+  it('SwitchInput renders triggers onChange', async () => {
     const onChangeMock = jest.fn();
 
     render(<SwitchInput dataTestId='DATA-TEST-ID' onChange={onChangeMock} input={options} />);
 
     const firstSwitch = screen.getByTestId('DATA-TEST-ID-0');
 
-    userEvent.click(firstSwitch);
+    await userEvent.click(firstSwitch);
     expect(onChangeMock).toBeCalledTimes(1);
     expect(onChangeMock).toHaveBeenLastCalledWith([
       { label: 'Switch label 0', value: 'KEY_0', checked: true },
       ...options.slice(1),
     ]);
 
-    userEvent.click(firstSwitch);
+    await userEvent.click(firstSwitch);
     expect(onChangeMock).toBeCalledTimes(2);
     expect(onChangeMock).toHaveBeenLastCalledWith([
       { label: 'Switch label 0', value: 'KEY_0', checked: false },
@@ -45,24 +45,24 @@ describe('SwitchInput Component', () => {
     ]);
   });
 
-  it('SwitchInput renders triggers onChange via keyboard', () => {
+  it('SwitchInput renders triggers onChange via keyboard', async () => {
     const onChangeMock = jest.fn();
 
     render(<SwitchInput onChange={onChangeMock} input={options} />);
 
-    userEvent.tab();
+    await userEvent.tab();
 
-    userEvent.keyboard('a');
+    await userEvent.keyboard('a');
     expect(onChangeMock).toBeCalledTimes(0);
 
-    userEvent.keyboard(' ');
+    await userEvent.keyboard(' ');
     expect(onChangeMock).toBeCalledTimes(1);
     expect(onChangeMock).toHaveBeenLastCalledWith([
       { label: 'Switch label 0', value: 'KEY_0', checked: true },
       ...options.slice(1),
     ]);
 
-    userEvent.keyboard(' ');
+    await userEvent.keyboard(' ');
     expect(onChangeMock).toBeCalledTimes(2);
     expect(onChangeMock).toHaveBeenLastCalledWith([
       { label: 'Switch label 0', value: 'KEY_0', checked: false },
@@ -70,31 +70,31 @@ describe('SwitchInput Component', () => {
     ]);
   });
 
-  it('SwitchInput renders does not trigger onChange when disabled', () => {
+  it('SwitchInput renders does not trigger onChange when disabled', async () => {
     const onChangeMock = jest.fn();
 
     render(<SwitchInput dataTestId='DATA-TEST-ID' onChange={onChangeMock} disabled input={options} />);
 
     const firstSwitch = screen.getByTestId('DATA-TEST-ID-0');
 
-    userEvent.click(firstSwitch);
+    await userEvent.click(firstSwitch);
     expect(onChangeMock).toBeCalledTimes(0);
 
-    userEvent.click(firstSwitch);
+    await userEvent.click(firstSwitch);
     expect(onChangeMock).toBeCalledTimes(0);
   });
 
-  it('SwitchInput renders does not trigger onChange when readOnly', () => {
+  it('SwitchInput renders does not trigger onChange when readOnly', async () => {
     const onChangeMock = jest.fn();
 
     render(<SwitchInput dataTestId='DATA-TEST-ID' onChange={onChangeMock} readOnly input={options} />);
 
     const firstSwitch = screen.getByTestId('DATA-TEST-ID-0');
 
-    userEvent.click(firstSwitch);
+    await userEvent.click(firstSwitch);
     expect(onChangeMock).toBeCalledTimes(0);
 
-    userEvent.click(firstSwitch);
+    await userEvent.click(firstSwitch);
     expect(onChangeMock).toBeCalledTimes(0);
   });
 

@@ -1,7 +1,8 @@
 import React from 'react';
-import toast from '../Toaster';
 import { act, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+
+import toast from '../Toaster';
 
 describe('Toaster Component', () => {
   beforeAll(() => {
@@ -24,7 +25,7 @@ describe('Toaster Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('Toaster renders notify without options  and clears', () => {
+  it('Toaster renders notify without options and clears', () => {
     const { container } = render(<toast.Toaster />);
     act(() => {
       toast.notify('NOTIFY');
@@ -125,10 +126,9 @@ describe('Toaster Component', () => {
 
     const closeButton = await screen.findByRole('button');
 
-    act(() => {
-      userEvent.click(closeButton);
+    await userEvent.setup({ delay: null }).click(closeButton);
 
-      // Run all timers to ensure all animations are over
+    act(() => {
       jest.runAllTimers();
     });
 

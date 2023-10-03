@@ -1,9 +1,11 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 
 // Disabling typescript for this file, as not all component have the exact same interface
 
 import React, { memo, PropsWithChildren, ReactElement } from 'react';
+import get from 'lodash/get';
 
 import { Col, Row } from '../../Atoms/Layout';
 
@@ -32,7 +34,7 @@ const HighlighterLegacy = (props: PropsWithChildren<IHighlighterLegacyProps>): R
                   disabled: undefined,
                   errorMessage: undefined,
                   extra: {
-                    ...child.props?.extra,
+                    ...get(child.props, 'extra', {}),
                     // For table use case
                     onEdit: undefined,
                     onRowEdit: undefined,

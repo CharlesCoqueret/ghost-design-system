@@ -1,0 +1,275 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FileField Component FileField renders 1`] = `
+<div>
+  <div
+    class="fieldGroup"
+  >
+    <div
+      class="container"
+    >
+      <div
+        class="droparea"
+      >
+        <label
+          class="label"
+        >
+          Click or drag file to upload
+          <input
+            accept="*/*"
+            multiple=""
+            tabindex="-1"
+            type="file"
+            value=""
+          />
+        </label>
+      </div>
+      <div
+        class="gallery"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`FileField Component FileField renders with values in disabled highligted 1`] = `
+<div>
+  <div
+    class="fieldGroup"
+  >
+    <div
+      class="container"
+    >
+      <div
+        class="droparea disabled"
+      >
+        <label
+          class="label"
+        >
+          Click or drag file to upload
+          <input
+            accept="*/*"
+            disabled=""
+            multiple=""
+            tabindex="-1"
+            type="file"
+            value=""
+          />
+        </label>
+      </div>
+      <div
+        class="gallery"
+      >
+        <div
+          class="container error"
+        >
+          <div
+            class="left"
+          >
+            <div
+              class="paperclipIcon"
+            >
+              <i
+                class="icon"
+                icon="fal,exclamation-triangle"
+              />
+            </div>
+            <div
+              class="name"
+              tabindex="-1"
+            >
+              file.pdf
+               (1.21 kB)
+            </div>
+          </div>
+          <div
+            class="right"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`FileField Component FileField renders with values in readonly 1`] = `
+<div>
+  <div
+    class="fieldGroup"
+  >
+    <div
+      class="container"
+    >
+      <div
+        class="droparea readonly"
+      >
+        <label
+          class="label"
+        >
+          Click or drag file to upload
+          <input
+            accept="*/*"
+            multiple=""
+            readonly=""
+            tabindex="-1"
+            type="file"
+            value=""
+          />
+        </label>
+      </div>
+      <div
+        class="gallery"
+      >
+        <div
+          class="container"
+        >
+          <div
+            class="left"
+          >
+            <div
+              class="paperclipIcon"
+            >
+              <i
+                class="icon"
+                icon="fal,paperclip"
+              />
+            </div>
+            <div
+              class="name downloadable"
+              tabindex="0"
+            >
+              file.pdf
+               (1.21 kB)
+            </div>
+          </div>
+          <div
+            class="right"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`FileField Component FileField renders with values with fieldSize and inline 1`] = `
+<div>
+  <div
+    class="fieldGroup size-6 inline"
+  >
+    <div
+      class="container"
+    >
+      <div
+        class="droparea"
+      >
+        <label
+          class="label"
+        >
+          Click or drag file to upload
+          <input
+            accept="*/*"
+            multiple=""
+            tabindex="-1"
+            type="file"
+            value=""
+          />
+        </label>
+      </div>
+      <div
+        class="gallery"
+      >
+        <div
+          class="container"
+        >
+          <div
+            class="left"
+          >
+            <div
+              class="paperclipIcon"
+            >
+              <i
+                class="icon"
+                icon="fal,paperclip"
+              />
+            </div>
+            <div
+              class="name downloadable"
+              tabindex="0"
+            >
+              file.pdf
+               (1.21 kB)
+            </div>
+          </div>
+          <div
+            class="right"
+          >
+            <button
+              class="button deleteIcon"
+              color="reversed"
+              tabindex="0"
+              type="button"
+            >
+              <div
+                class="icon"
+              >
+                <i
+                  class="icon"
+                  icon="fal,trash-alt"
+                />
+              </div>
+            </button>
+            <div>
+              Delete
+            </div>
+            <div>
+              <div>
+                ControlledMenu
+                closed
+                <div
+                  class="container"
+                >
+                  <div
+                    class="title"
+                  >
+                    Delete?
+                  </div>
+                  <div
+                    class="buttons"
+                  >
+                    <button
+                      class="button"
+                      color="secondary"
+                      tabindex="0"
+                      type="button"
+                    >
+                      <div
+                        class="label"
+                      >
+                        Cancel
+                      </div>
+                    </button>
+                    <button
+                      class="button"
+                      color="primary"
+                      tabindex="0"
+                      type="button"
+                    >
+                      <div
+                        class="label"
+                      >
+                        Confirm
+                      </div>
+                    </button>
+                  </div>
+                </div>
+                has ref
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

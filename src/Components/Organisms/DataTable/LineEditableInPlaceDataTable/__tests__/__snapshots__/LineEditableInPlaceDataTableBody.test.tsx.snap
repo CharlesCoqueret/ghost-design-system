@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`EditableDataTableCell component EditableDataTableCell handles iseditable function 1`] = `
+exports[`LineEditableInPlaceDataTableBody component handles iseditable function 1`] = `
 <div>
   <table>
     <tbody>
@@ -30,7 +30,7 @@ exports[`EditableDataTableCell component EditableDataTableCell handles iseditabl
 </div>
 `;
 
-exports[`EditableDataTableCell component EditableDataTableCell handles iseditable function 2`] = `
+exports[`LineEditableInPlaceDataTableBody component handles iseditable function 2`] = `
 <div>
   <table>
     <tbody>
@@ -60,7 +60,7 @@ exports[`EditableDataTableCell component EditableDataTableCell handles iseditabl
 </div>
 `;
 
-exports[`EditableDataTableCell component EditableDataTableCell handles iseditable function 3`] = `
+exports[`LineEditableInPlaceDataTableBody component handles iseditable function 3`] = `
 <div>
   <table>
     <tbody>
@@ -112,7 +112,7 @@ exports[`EditableDataTableCell component EditableDataTableCell handles iseditabl
 </div>
 `;
 
-exports[`EditableDataTableCell component EditableDataTableCell handles row click 1`] = `
+exports[`LineEditableInPlaceDataTableBody component handles row click 1`] = `
 <div>
   <table>
     <tbody>
@@ -142,7 +142,7 @@ exports[`EditableDataTableCell component EditableDataTableCell handles row click
 </div>
 `;
 
-exports[`EditableDataTableCell component EditableDataTableCell handles row selection 1`] = `
+exports[`LineEditableInPlaceDataTableBody component handles row selection 1`] = `
 <div>
   <table>
     <tbody>
@@ -185,7 +185,7 @@ exports[`EditableDataTableCell component EditableDataTableCell handles row selec
 </div>
 `;
 
-exports[`EditableDataTableCell component EditableDataTableCell renders 1`] = `
+exports[`LineEditableInPlaceDataTableBody component renders correctly 1`] = `
 <div>
   <table>
     <tbody>
@@ -215,7 +215,7 @@ exports[`EditableDataTableCell component EditableDataTableCell renders 1`] = `
 </div>
 `;
 
-exports[`EditableDataTableCell component EditableDataTableCell renders 2`] = `
+exports[`LineEditableInPlaceDataTableBody component renders correctly 2`] = `
 <div>
   <table>
     <tbody>
@@ -254,7 +254,7 @@ exports[`EditableDataTableCell component EditableDataTableCell renders 2`] = `
 </div>
 `;
 
-exports[`EditableDataTableCell component EditableDataTableCell renders 3`] = `
+exports[`LineEditableInPlaceDataTableBody component renders correctly 3`] = `
 <div>
   <table>
     <tbody>

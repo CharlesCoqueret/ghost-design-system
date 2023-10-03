@@ -29,6 +29,10 @@ export default {
       console.error(warning.message);
       return;
     }
+    if (warning.code === 'MODULE_LEVEL_DIRECTIVE') {
+      console.error(warning.message);
+      return;
+    }
     throw new Error(warning);
   },
   plugins: [
@@ -40,6 +44,6 @@ export default {
       autoModules: true,
       use: ['sass'],
     }),
-    typescript({ exclude: ['**/__tests__', '**/*.test.ts', '**/Fake*'] }),
+    typescript({ exclude: ['**/__mocks__/**', '**/__tests__/**', '**/Fake*'] }),
   ],
 };

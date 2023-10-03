@@ -1,7 +1,7 @@
 import React, { ReactElement, useState } from 'react';
 import classnames from 'classnames';
 
-import Button, { ColorButtonEnum } from '../../Molecules/Button/Button';
+import Button, { ButtonColorEnum } from '../../Molecules/Button/Button';
 import { Icon } from '../Icon';
 import { MenuDirectionEnum, Tooltip } from '../Tooltip';
 import { FileStatusEnum, IFile } from './types';
@@ -76,26 +76,24 @@ const FileGallery = (props: IFileGallery): ReactElement => {
             })}
             onClick={
               downloadable
-                ? () => {
+                ? async () => {
                     setDownloading(true);
-                    updateFileDownload(file)
-                      .catch()
-                      .finally(() => {
-                        setDownloading(false);
-                      });
+                    // TODO handle error
+                    await updateFileDownload(file).finally(() => {
+                      setDownloading(false);
+                    });
                   }
                 : undefined
             }
             onKeyUp={
               downloadable
-                ? (event: React.KeyboardEvent<HTMLElement>) => {
+                ? async (event: React.KeyboardEvent<HTMLElement>) => {
                     if (event.type === 'keyup' && event.key === 'Enter') {
                       setDownloading(true);
-                      updateFileDownload(file)
-                        .catch()
-                        .finally(() => {
-                          setDownloading(false);
-                        });
+                      // TODO handle error
+                      await updateFileDownload(file).finally(() => {
+                        setDownloading(false);
+                      });
                       return;
                     }
                   }
@@ -132,13 +130,13 @@ const FileGallery = (props: IFileGallery): ReactElement => {
             <Button
               className={styles.deleteIcon}
               icon={['fal', 'trash-alt']}
-              color={ColorButtonEnum.REVERSED}
+              color={ButtonColorEnum.REVERSED}
               dataTestId={dataTestId ? `${dataTestId}-delete` : undefined}
               onClick={
                 // If the file is in error, we can delete without confirmation
                 file.status === FileStatusEnum.ERROR
                   ? () => {
-                      updateFileDelete(file);
+                      void updateFileDelete(file);
                     }
                   : undefined
               }
@@ -150,16 +148,16 @@ const FileGallery = (props: IFileGallery): ReactElement => {
                       title: localization?.popoverTitle ?? 'Delete?',
                       buttons: [
                         {
-                          color: ColorButtonEnum.SECONDARY,
+                          color: ButtonColorEnum.SECONDARY,
                           dataTestId: dataTestId ? `${dataTestId}-cancel` : undefined,
                           label: localization?.popoverCancel ?? 'Cancel',
                         },
                         {
-                          color: ColorButtonEnum.PRIMARY,
+                          color: ButtonColorEnum.PRIMARY,
                           dataTestId: dataTestId ? `${dataTestId}-confirm` : undefined,
                           label: localization?.popoverConfirm ?? 'Confirm',
                           onClick: () => {
-                            updateFileDelete(file);
+                            void updateFileDelete(file);
                           },
                         },
                       ],

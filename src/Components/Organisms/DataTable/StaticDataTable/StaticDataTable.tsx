@@ -1,7 +1,5 @@
 import React, { ReactElement, useCallback, useState } from 'react';
 
-import usePropState from '../../../../hooks/use-prop-state';
-
 import StaticDataTableBody from './StaticDataTableBody';
 import StaticDataTableFooter from './StaticDataTableFooter';
 import StaticDataTableHeader from './StaticDataTableHeader';
@@ -27,7 +25,7 @@ export interface IStaticDataTableProps<T> {
 const StaticDataTable = <T,>(props: IStaticDataTableProps<T>): ReactElement => {
   const { data, columns, extra, loading, onSortChange, stickyHeader } = props;
 
-  const [currentData] = usePropState<Array<T>>(data);
+  const [currentData] = useState<Array<T>>(data);
   const [sortField, setSortField] = useState<keyof T | undefined>();
   const [sortDirection, setSortDirection] = useState<SortDirectionEnum | undefined>();
 

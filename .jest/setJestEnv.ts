@@ -1,5 +1,8 @@
 process.env.NODE_ENV = 'development';
 
+// @ts-ignore
+global.IS_REACT_ACT_ENVIRONMENT = true;
+
 // Ensure the document.fonts is defined
 Object.defineProperty(document, 'fonts', {
   value: {

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`LineEditableInPlaceDataTableCell richtext case LineEditableInPlaceDataTableCell renders with richtext 1`] = `
+exports[`LineEditableInPlaceDataTableCell richtext case renders with richtext 1`] = `
 <div>
   <table>
     <tbody>

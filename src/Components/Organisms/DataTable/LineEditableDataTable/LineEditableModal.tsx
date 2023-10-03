@@ -4,7 +4,7 @@ import cloneDeep from 'lodash/cloneDeep';
 import * as yup from 'yup';
 
 import { Modal, ModalBody, ModalFooter } from '../../../Atoms/Modal';
-import { Button, ColorButtonEnum } from '../../../Molecules/Button';
+import { Button, ButtonColorEnum } from '../../../Molecules/Button';
 import { FieldLegacyTypeEnum, IFieldAndLayoutLegacyProps } from '../../FormLegacy/types';
 import useFormLegacy from '../../FormLegacy/useFormLegacy';
 import { ColumnType, IColumnType, IExtraLineEditableDataTableProps } from '../Common/types';
@@ -301,24 +301,24 @@ const LineEditableModal = <T extends yup.AnyObject>(props: ILineEditableModalPro
           extra.rowEditExtraActions(row, rowIndex).map((button) => {
             return (
               <Button
-                color={button.color || ColorButtonEnum.SECONDARY}
+                color={button.color || ButtonColorEnum.SECONDARY}
                 key={button.label}
                 label={button.label}
-                onClick={async () => {
-                  button.onClick(row, rowIndex).then(onClose).catch();
+                onClick={() => {
+                  void button.onClick(row, rowIndex).then(onClose).catch();
                 }}
               />
             );
           })}
         <Button
-          color={ColorButtonEnum.SECONDARY}
+          color={ButtonColorEnum.SECONDARY}
           label={extra?.localization?.cancelButton ?? 'Cancel'}
           onClick={() => {
             onCancel(getData());
           }}
         />
         <Button
-          color={ColorButtonEnum.PRIMARY}
+          color={ButtonColorEnum.PRIMARY}
           label={extra?.localization?.submitButton ?? 'Submit'}
           onClick={() => {
             const result = submit();

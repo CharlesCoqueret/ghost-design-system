@@ -17,7 +17,7 @@ Platform and its version (iOS, macOS, Linux, ...)
 Browser (Firefox, Safari, ...)
 Version of the lib
 Node version
-NPM version
+YARN or NPM version
 
 **To Reproduce**
 Steps to reproduce the behavior:

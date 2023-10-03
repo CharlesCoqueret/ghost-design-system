@@ -64,7 +64,6 @@ const NavItem = (props: INavItemProps): ReactElement => {
 
   const ref = useRef<HTMLDivElement>(null);
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const skipOpen = useRef(false);
   const hasMenu =
     (subItems && subItems.length > 0) || customInfiniteScrollConfig !== undefined || customSubItem !== undefined;
 
@@ -74,9 +73,7 @@ const NavItem = (props: INavItemProps): ReactElement => {
 
   const toggleMenu = () => {
     if (hasMenu) {
-      if (!skipOpen.current) {
-        setIsOpen((prev) => !prev);
-      }
+      setIsOpen((prev) => !prev);
     }
   };
 
@@ -124,8 +121,7 @@ const NavItem = (props: INavItemProps): ReactElement => {
             onClose={closeMenu}
             key='controlledmenu'
             state={isOpen ? 'open' : 'closed'}
-            menuStyle={{ position: 'fixed' }}
-            skipOpen={skipOpen}>
+            menuStyle={{ position: 'fixed' }}>
             {subItems?.map((item): ReactElement => {
               return (
                 <NavLink to={item.link || '#'} key={item.label}>

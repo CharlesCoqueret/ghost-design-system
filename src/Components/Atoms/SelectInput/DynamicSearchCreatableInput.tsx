@@ -100,10 +100,10 @@ const DynamicSearchCreatableInput = (props: IDynamicSearchCreatableInputProps): 
     }
   };
 
-  const localHandleCreate = (newLabel: string) => {
+  const localHandleCreate = async (newLabel: string) => {
     setIsLoading(true);
     setIsCreating(true);
-    handleCreate(newLabel)
+    await handleCreate(newLabel)
       .then((newOption) => {
         setCurrentOption(newOption);
         if (onChange) {
@@ -208,6 +208,7 @@ const DynamicSearchCreatableInput = (props: IDynamicSearchCreatableInputProps): 
           setCurrentOption(option || undefined);
           setIsLoading(false);
         }}
+        // eslint-disable-next-line @typescript-eslint/no-misused-promises
         onCreateOption={localHandleCreate}
         placeholder={placeholder}
         styles={customStyles({ isInError: isInError && !(disabled && readOnly) })}

@@ -52,7 +52,7 @@ const FormFieldLegacy = <T,>(props: IFormFieldLegacyProps<T>): ReactElement => {
     validationError,
   } = props;
 
-  const errorMessage = validationError && validationError[field.dataIndex as keyof T];
+  const errorMessage = validationError && validationError[field.dataIndex];
 
   const localUsePortal = usePortal === undefined ? true : usePortal;
 
@@ -198,7 +198,6 @@ const FormFieldLegacy = <T,>(props: IFormFieldLegacyProps<T>): ReactElement => {
                 field.dataIndex,
                 newValue.filter((file) => file.status && file.status === FileStatusEnum.DONE) as unknown as T[keyof T],
               );
-              return Promise.resolve();
             }}
             onDelete={field.onDelete}
             onDownload={field.onDownload}

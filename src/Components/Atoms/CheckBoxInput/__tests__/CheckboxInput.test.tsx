@@ -22,21 +22,21 @@ describe('CheckboxInput Component', () => {
     expect(onChangeMock).toBeCalledTimes(0);
   });
 
-  it('CheckboxInput renders triggers onChange', () => {
+  it('CheckboxInput renders triggers onChange', async () => {
     const onChangeMock = jest.fn();
 
     render(<CheckboxInput dataTestId='DATA-TEST-ID' onChange={onChangeMock} input={options} />);
 
     const firstCheckbox = screen.getByTestId('DATA-TEST-ID-0');
 
-    userEvent.click(firstCheckbox);
+    await userEvent.click(firstCheckbox);
     expect(onChangeMock).toBeCalledTimes(1);
     expect(onChangeMock).toHaveBeenLastCalledWith([
       { label: 'checkbox label 0', value: 'KEY_0', checked: true },
       ...options.slice(1),
     ]);
 
-    userEvent.click(firstCheckbox);
+    await userEvent.click(firstCheckbox);
     expect(onChangeMock).toBeCalledTimes(2);
     expect(onChangeMock).toHaveBeenLastCalledWith([
       { label: 'checkbox label 0', value: 'KEY_0', checked: false },
@@ -44,23 +44,23 @@ describe('CheckboxInput Component', () => {
     ]);
   });
 
-  it('CheckboxInput renders triggers onChange via keyboard', () => {
+  it('CheckboxInput renders triggers onChange via keyboard', async () => {
     const onChangeMock = jest.fn();
 
     render(<CheckboxInput dataTestId='DATA-TEST-ID' onChange={onChangeMock} input={options} />);
 
-    userEvent.tab();
-    userEvent.keyboard('a');
+    await userEvent.tab();
+    await userEvent.keyboard('a');
     expect(onChangeMock).toBeCalledTimes(0);
 
-    userEvent.keyboard(' ');
+    await userEvent.keyboard(' ');
     expect(onChangeMock).toBeCalledTimes(1);
     expect(onChangeMock).toHaveBeenLastCalledWith([
       { label: 'checkbox label 0', value: 'KEY_0', checked: true },
       ...options.slice(1),
     ]);
 
-    userEvent.keyboard(' ');
+    await userEvent.keyboard(' ');
     expect(onChangeMock).toBeCalledTimes(2);
     expect(onChangeMock).toHaveBeenLastCalledWith([
       { label: 'checkbox label 0', value: 'KEY_0', checked: false },
@@ -68,31 +68,31 @@ describe('CheckboxInput Component', () => {
     ]);
   });
 
-  it('CheckboxInput renders does not trigger onChange when disabled', () => {
+  it('CheckboxInput renders does not trigger onChange when disabled', async () => {
     const onChangeMock = jest.fn();
 
     render(<CheckboxInput dataTestId='DATA-TEST-ID' disabled onChange={onChangeMock} input={options} />);
 
     const firstCheckbox = screen.getByTestId('DATA-TEST-ID-0');
 
-    userEvent.click(firstCheckbox);
+    await userEvent.click(firstCheckbox);
     expect(onChangeMock).toBeCalledTimes(0);
 
-    userEvent.click(firstCheckbox);
+    await userEvent.click(firstCheckbox);
     expect(onChangeMock).toBeCalledTimes(0);
   });
 
-  it('CheckboxInput renders does not trigger onChange when readOnly', () => {
+  it('CheckboxInput renders does not trigger onChange when readOnly', async () => {
     const onChangeMock = jest.fn();
 
     render(<CheckboxInput dataTestId='DATA-TEST-ID' onChange={onChangeMock} input={options} readOnly />);
 
     const firstCheckbox = screen.getByTestId('DATA-TEST-ID-0');
 
-    userEvent.click(firstCheckbox);
+    await userEvent.click(firstCheckbox);
     expect(onChangeMock).toBeCalledTimes(0);
 
-    userEvent.click(firstCheckbox);
+    await userEvent.click(firstCheckbox);
     expect(onChangeMock).toBeCalledTimes(0);
   });
 

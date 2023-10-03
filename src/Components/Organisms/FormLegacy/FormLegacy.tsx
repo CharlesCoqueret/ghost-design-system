@@ -67,7 +67,11 @@ const FormLegacy = <T extends yup.AnyObject>(props: IFormProps<T>): ReactElement
           );
         }
         if (field.fieldType === FieldLegacyTypeEnum.DESCRIPTION) {
-          return <Row key={`description-${index}`}>{field.description}</Row>;
+          return (
+            <Row key={`description-${index}`}>
+              <>{field.description}</>
+            </Row>
+          );
         }
 
         let isRequired = false;

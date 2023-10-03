@@ -30,7 +30,7 @@ exports[`NavItem unmocked Component renders with submenu gets closed 1`] = `
           aria-label="Menu"
           class="szh-menu szh-menu--state-closed szh-menu--dir-bottom"
           role="menu"
-          style="position: absolute; margin: 0px; display: none; left: 0px; top: 0px;"
+          style="position: absolute; margin: 0px; display: none; left: -9999px; top: -9999px;"
           tabindex="-1"
         >
           <li

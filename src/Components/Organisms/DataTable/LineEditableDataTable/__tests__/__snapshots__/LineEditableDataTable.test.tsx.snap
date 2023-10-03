@@ -1,0 +1,1195 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LineEditableDataTable component handles add new line with onNewLine 1`] = `
+<div>
+  <div>
+    <table
+      class="gds-table"
+    >
+      <thead>
+        <tr>
+          <th
+            class=""
+          >
+            <div
+              class="table--header-value"
+              tabindex="-1"
+            >
+              <span
+                class="typography table--header-value--title right ellipsis"
+                title="Number"
+              >
+                Number
+              </span>
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          class="no-data"
+        >
+          <td
+            colspan="1"
+          >
+            <div
+              class="no-data-container"
+            >
+              <div
+                class="no-data-text"
+              >
+                No data
+              </div>
+              <i
+                class="icon no-data-icon"
+                icon="fal,inbox"
+              />
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <button
+      class="button gds-table-new-line"
+      color="primary"
+      tabindex="0"
+      type="button"
+    >
+      <div
+        class="label"
+      >
+        addRow
+      </div>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`LineEditableDataTable component handles add new line without onNewLine 1`] = `
+<div>
+  <div>
+    <table
+      class="gds-table"
+    >
+      <thead>
+        <tr>
+          <th
+            class=""
+          >
+            <div
+              class="table--header-value"
+              tabindex="-1"
+            >
+              <span
+                class="typography table--header-value--title right ellipsis"
+                title="Number"
+              >
+                Number
+              </span>
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          class="no-data"
+        >
+          <td
+            colspan="1"
+          >
+            <div
+              class="no-data-container"
+            >
+              <div
+                class="no-data-text"
+              >
+                No data
+              </div>
+              <i
+                class="icon no-data-icon"
+                icon="fal,inbox"
+              />
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <button
+      class="button gds-table-new-line"
+      color="primary"
+      tabindex="0"
+      type="button"
+    >
+      <div
+        class="label"
+      >
+        Add row
+      </div>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`LineEditableDataTable component handles delete 1`] = `
+<div>
+  <div>
+    <table
+      class="gds-table"
+    >
+      <thead>
+        <tr>
+          <th
+            class=""
+          >
+            <div
+              class="table--header-value"
+              tabindex="-1"
+            >
+              <span
+                class="typography table--header-value--title right ellipsis"
+                title="Number"
+              >
+                Number
+              </span>
+            </div>
+          </th>
+          <th
+            class=""
+          >
+            <div
+              class="table--header-value"
+              tabindex="-1"
+            >
+              <span
+                class="typography table--header-value--title center ellipsis"
+                title="Actions"
+              >
+                Actions
+              </span>
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          class=""
+          tabindex="-1"
+        >
+          <td
+            class=""
+          >
+            <div
+              class="fieldGroup"
+            >
+              <span
+                autocomplete="off"
+                class="default readOnly table--cell-value--number-readonly"
+                id="number"
+                name="number"
+              >
+                1
+              </span>
+            </div>
+          </td>
+          <td
+            class=""
+          >
+            <div
+              class="table--cell--value--button"
+            >
+              <button
+                class="button"
+                color="reversed"
+                tabindex="0"
+                type="button"
+              >
+                <div
+                  class="icon"
+                >
+                  <i
+                    class="icon"
+                    icon="fal,trash-alt"
+                  />
+                </div>
+              </button>
+              <div>
+                Delete
+              </div>
+              <div>
+                <div>
+                  ControlledMenu
+                  closed
+                  <div
+                    class="container"
+                  >
+                    <div
+                      class="title"
+                    >
+                      Delete?
+                    </div>
+                    <div
+                      class="buttons"
+                    >
+                      <button
+                        class="button"
+                        color="secondary"
+                        data-testid="cancel"
+                        tabindex="0"
+                        type="button"
+                      >
+                        <div
+                          class="label"
+                        >
+                          Cancel
+                        </div>
+                      </button>
+                      <button
+                        class="button"
+                        color="primary"
+                        data-testid="confirm"
+                        tabindex="0"
+                        type="button"
+                      >
+                        <div
+                          class="label"
+                        >
+                          Confirm
+                        </div>
+                      </button>
+                    </div>
+                  </div>
+                  has ref
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;
+
+exports[`LineEditableDataTable component handles delete with previous defined editedrowindex 1`] = `
+<div>
+  <div>
+    <table
+      class="gds-table"
+    >
+      <thead>
+        <tr>
+          <th
+            class=""
+          >
+            <div
+              class="table--header-value"
+              tabindex="-1"
+            >
+              <span
+                class="typography table--header-value--title right ellipsis"
+                title="Number"
+              >
+                Number
+              </span>
+            </div>
+          </th>
+          <th
+            class=""
+          >
+            <div
+              class="table--header-value"
+              tabindex="-1"
+            >
+              <span
+                class="typography table--header-value--title center ellipsis"
+                title="Actions"
+              >
+                Actions
+              </span>
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          class=""
+          tabindex="-1"
+        >
+          <td
+            class=""
+          >
+            <div
+              class="fieldGroup"
+            >
+              <span
+                autocomplete="off"
+                class="default readOnly table--cell-value--number-readonly"
+                id="number"
+                name="number"
+              >
+                1
+              </span>
+            </div>
+          </td>
+          <td
+            class=""
+          >
+            <div
+              class="table--cell--value--button"
+            >
+              <button
+                class="button"
+                color="reversed"
+                tabindex="0"
+                type="button"
+              >
+                <div
+                  class="icon"
+                >
+                  <i
+                    class="icon"
+                    icon="fal,trash-alt"
+                  />
+                </div>
+              </button>
+              <div>
+                Delete
+              </div>
+              <div>
+                <div>
+                  ControlledMenu
+                  closed
+                  <div
+                    class="container"
+                  >
+                    <div
+                      class="title"
+                    >
+                      Delete?
+                    </div>
+                    <div
+                      class="buttons"
+                    >
+                      <button
+                        class="button"
+                        color="secondary"
+                        data-testid="cancel"
+                        tabindex="0"
+                        type="button"
+                      >
+                        <div
+                          class="label"
+                        >
+                          Cancel
+                        </div>
+                      </button>
+                      <button
+                        class="button"
+                        color="primary"
+                        data-testid="confirm"
+                        tabindex="0"
+                        type="button"
+                      >
+                        <div
+                          class="label"
+                        >
+                          Confirm
+                        </div>
+                      </button>
+                    </div>
+                  </div>
+                  has ref
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr
+          class=""
+          tabindex="-1"
+        >
+          <td
+            class=""
+          >
+            <div
+              class="fieldGroup"
+            >
+              <input
+                autocomplete="off"
+                class="default"
+                inputmode="numeric"
+                name="number"
+                placeholder="NUMBER"
+                type="text"
+                value="2"
+              />
+            </div>
+          </td>
+          <td
+            class=""
+          >
+            <div
+              class="table--cell--value--button"
+            />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div>
+      <div
+        class="overlay"
+      >
+        <div
+          class="container large"
+        >
+          <div
+            class="header"
+          >
+            <div
+              class="title"
+            >
+              Edit row
+            </div>
+          </div>
+          <div
+            class="container"
+          >
+            <div
+              class="col"
+            >
+              <div
+                class="fieldGroup"
+              >
+                <label
+                  class="label"
+                >
+                  Number
+                  <span
+                    class="mandatory"
+                  >
+                    *
+                  </span>
+                </label>
+                <input
+                  autocomplete="off"
+                  class="default"
+                  inputmode="numeric"
+                  name="number"
+                  placeholder="NUMBER"
+                  type="text"
+                  value="2"
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            class="container"
+          >
+            <button
+              class="button"
+              color="secondary"
+              tabindex="0"
+              type="button"
+            >
+              <div
+                class="label"
+              >
+                Cancel
+              </div>
+            </button>
+            <button
+              class="button"
+              color="primary"
+              tabindex="0"
+              type="button"
+            >
+              <div
+                class="label"
+              >
+                Submit
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`LineEditableDataTable component handles download 1`] = `
+<div>
+  <div>
+    <table
+      class="gds-table"
+    >
+      <thead>
+        <tr>
+          <th
+            class=""
+          >
+            <div
+              class="table--header-value"
+              tabindex="-1"
+            >
+              <span
+                class="typography table--header-value--title right ellipsis"
+                title="Number"
+              >
+                Number
+              </span>
+            </div>
+          </th>
+          <th
+            class=""
+          >
+            <div
+              class="table--header-value"
+              tabindex="-1"
+            >
+              <span
+                class="typography table--header-value--title center ellipsis"
+                title="Actions"
+              >
+                Actions
+              </span>
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          class=""
+          tabindex="-1"
+        >
+          <td
+            class=""
+          >
+            <div
+              class="fieldGroup"
+            >
+              <span
+                autocomplete="off"
+                class="default readOnly table--cell-value--number-readonly"
+                id="number"
+                name="number"
+              >
+                1
+              </span>
+            </div>
+          </td>
+          <td
+            class=""
+          >
+            <div
+              class="table--cell--value--button"
+            >
+              <button
+                class="button"
+                color="reversed"
+                tabindex="0"
+                type="button"
+              >
+                <div
+                  class="icon"
+                >
+                  <i
+                    class="icon"
+                    icon="fal,arrow-down-to-line"
+                  />
+                </div>
+              </button>
+              <div>
+                Download
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;
+
+exports[`LineEditableDataTable component handles edit and submit 1`] = `
+<div>
+  <div>
+    <table
+      class="gds-table"
+    >
+      <thead>
+        <tr>
+          <th
+            class=""
+          >
+            <div
+              class="table--header-value"
+              tabindex="-1"
+            >
+              <span
+                class="typography table--header-value--title right ellipsis"
+                title="Number"
+              >
+                Number
+              </span>
+            </div>
+          </th>
+          <th
+            class=""
+          >
+            <div
+              class="table--header-value"
+              tabindex="-1"
+            >
+              <span
+                class="typography table--header-value--title center ellipsis"
+                title="Actions"
+              >
+                Actions
+              </span>
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          class=""
+          tabindex="-1"
+        >
+          <td
+            class=""
+          >
+            <div
+              class="fieldGroup"
+            >
+              <span
+                autocomplete="off"
+                class="default readOnly table--cell-value--number-readonly"
+                id="number"
+                name="number"
+              >
+                1
+              </span>
+            </div>
+          </td>
+          <td
+            class=""
+          >
+            <div
+              class="table--cell--value--button"
+            >
+              <button
+                class="button"
+                color="reversed"
+                tabindex="0"
+                type="button"
+              >
+                <div
+                  class="icon"
+                >
+                  <i
+                    class="icon"
+                    icon="fal,pen"
+                  />
+                </div>
+              </button>
+              <div>
+                Edit
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;
+
+exports[`LineEditableDataTable component handles non deletable 1`] = `
+<div>
+  <div>
+    <table
+      class="gds-table"
+    >
+      <thead>
+        <tr>
+          <th
+            class=""
+          >
+            <div
+              class="table--header-value"
+              tabindex="-1"
+            >
+              <span
+                class="typography table--header-value--title right ellipsis"
+                title="Number"
+              >
+                Number
+              </span>
+            </div>
+          </th>
+          <th
+            class=""
+          >
+            <div
+              class="table--header-value"
+              tabindex="-1"
+            >
+              <span
+                class="typography table--header-value--title center ellipsis"
+                title="Actions"
+              >
+                Actions
+              </span>
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          class=""
+          tabindex="-1"
+        >
+          <td
+            class=""
+          >
+            <div
+              class="fieldGroup"
+            >
+              <span
+                autocomplete="off"
+                class="default readOnly table--cell-value--number-readonly"
+                id="number"
+                name="number"
+              >
+                1
+              </span>
+            </div>
+          </td>
+          <td
+            class=""
+          >
+            <div
+              class="table--cell--value--button"
+            />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;
+
+exports[`LineEditableDataTable component handles non downloadable 1`] = `
+<div>
+  <div>
+    <table
+      class="gds-table"
+    >
+      <thead>
+        <tr>
+          <th
+            class=""
+          >
+            <div
+              class="table--header-value"
+              tabindex="-1"
+            >
+              <span
+                class="typography table--header-value--title right ellipsis"
+                title="Number"
+              >
+                Number
+              </span>
+            </div>
+          </th>
+          <th
+            class=""
+          >
+            <div
+              class="table--header-value"
+              tabindex="-1"
+            >
+              <span
+                class="typography table--header-value--title center ellipsis"
+                title="Actions"
+              >
+                Actions
+              </span>
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          class=""
+          tabindex="-1"
+        >
+          <td
+            class=""
+          >
+            <div
+              class="fieldGroup"
+            >
+              <span
+                autocomplete="off"
+                class="default readOnly table--cell-value--number-readonly"
+                id="number"
+                name="number"
+              >
+                1
+              </span>
+            </div>
+          </td>
+          <td
+            class=""
+          >
+            <div
+              class="table--cell--value--button"
+            />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;
+
+exports[`LineEditableDataTable component handles non editable content 1`] = `
+<div>
+  <div>
+    <table
+      class="gds-table"
+    >
+      <thead>
+        <tr>
+          <th
+            class=""
+          >
+            <div
+              class="table--header-value"
+              tabindex="-1"
+            >
+              <span
+                class="typography table--header-value--title right ellipsis"
+                title="Number"
+              >
+                Number
+              </span>
+            </div>
+          </th>
+          <th
+            class=""
+          >
+            <div
+              class="table--header-value"
+              tabindex="-1"
+            >
+              <span
+                class="typography table--header-value--title center ellipsis"
+                title="actionColumn"
+              >
+                actionColumn
+              </span>
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          class=""
+          tabindex="-1"
+        >
+          <td
+            class=""
+          >
+            <div
+              class="fieldGroup"
+            >
+              <span
+                autocomplete="off"
+                class="default readOnly table--cell-value--number-readonly"
+                id="number"
+                name="number"
+              >
+                1
+              </span>
+            </div>
+          </td>
+          <td
+            class=""
+          >
+            <div
+              class="table--cell--value--button"
+            />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;
+
+exports[`LineEditableDataTable component handles sort 1`] = `
+<div>
+  <div>
+    <table
+      class="gds-table"
+    >
+      <thead>
+        <tr>
+          <th
+            class=""
+          >
+            <div
+              class="table--header-value table--header-value--sortable"
+              tabindex="0"
+            >
+              <span
+                class="typography table--header-value--title right ellipsis"
+                title="Number"
+              >
+                Number
+              </span>
+              <span
+                class="table--header-value--sorter"
+              >
+                <i
+                  class="icon"
+                  icon="fas,sort"
+                />
+              </span>
+            </div>
+            <div>
+              Click to sort
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          class="no-data"
+        >
+          <td
+            colspan="1"
+          >
+            Loading
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;
+
+exports[`LineEditableDataTable component renders 1`] = `
+<div>
+  <div>
+    <table
+      class="gds-table"
+    >
+      <thead>
+        <tr>
+          <th
+            class=""
+          >
+            <div
+              class="table--header-value"
+              tabindex="-1"
+            >
+              <span
+                class="typography table--header-value--title right ellipsis"
+                title="Number"
+              >
+                Number
+              </span>
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          class=""
+          tabindex="-1"
+        >
+          <td
+            class=""
+          >
+            <div
+              class="fieldGroup"
+            >
+              <span
+                autocomplete="off"
+                class="default readOnly table--cell-value--number-readonly"
+                id="number"
+                name="number"
+              >
+                1
+              </span>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;
+
+exports[`LineEditableDataTable component renders while loading 1`] = `
+<div>
+  <div>
+    <table
+      class="gds-table"
+    >
+      <thead>
+        <tr>
+          <th
+            class=""
+          >
+            <div
+              class="table--header-value"
+              tabindex="-1"
+            >
+              <span
+                class="typography table--header-value--title right ellipsis"
+                title="Number"
+              >
+                Number
+              </span>
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          class="no-data"
+        >
+          <td
+            colspan="1"
+          >
+            Loading
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;
+
+exports[`LineEditableDataTable component renders with no data 1`] = `
+<div>
+  <div>
+    <table
+      class="gds-table"
+    >
+      <thead>
+        <tr>
+          <th
+            class=""
+          >
+            <div
+              class="table--header-value"
+              tabindex="-1"
+            >
+              <span
+                class="typography table--header-value--title right ellipsis"
+                title="Number"
+              >
+                Number
+              </span>
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          class="no-data"
+        >
+          <td
+            colspan="1"
+          >
+            <div
+              class="no-data-container"
+            >
+              <div
+                class="no-data-text"
+              >
+                No data
+              </div>
+              <i
+                class="icon no-data-icon"
+                icon="fal,inbox"
+              />
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;
+
+exports[`LineEditableDataTable component with custom modal button 1`] = `
+<div>
+  <div>
+    <table
+      class="gds-table"
+    >
+      <thead>
+        <tr>
+          <th
+            class=""
+          >
+            <div
+              class="table--header-value"
+              tabindex="-1"
+            >
+              <span
+                class="typography table--header-value--title right ellipsis"
+                title="Number"
+              >
+                Number
+              </span>
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          class="no-data"
+        >
+          <td
+            colspan="1"
+          >
+            <div
+              class="no-data-container"
+            >
+              <div
+                class="no-data-text"
+              >
+                No data
+              </div>
+              <i
+                class="icon no-data-icon"
+                icon="fal,inbox"
+              />
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <button
+      class="button gds-table-new-line"
+      color="primary"
+      tabindex="0"
+      type="button"
+    >
+      <div
+        class="label"
+      >
+        Add row
+      </div>
+    </button>
+  </div>
+</div>
+`;

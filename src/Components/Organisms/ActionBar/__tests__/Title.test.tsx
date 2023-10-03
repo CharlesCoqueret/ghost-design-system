@@ -24,13 +24,13 @@ describe('Title Component', () => {
     expect(onTitleEditMock).not.toBeCalled();
   });
 
-  it('Title renders and handles changes', () => {
+  it('Title renders and handles changes', async () => {
     const onTitleEditMock = jest.fn();
 
     const { container } = render(<Title dataTestId='DATA-TEST-ID' onTitleEdit={onTitleEditMock} />);
     const input = screen.getByTestId('DATA-TEST-ID');
 
-    userEvent.type(input, 'ABCDE');
+    await userEvent.type(input, 'ABCDE');
     input.blur();
 
     expect((input as HTMLInputElement).value).toEqual('ABCDE');
@@ -40,14 +40,14 @@ describe('Title Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('Title renders and blurs on tab', () => {
+  it('Title renders and blurs on tab', async () => {
     const onTitleEditMock = jest.fn();
 
     const { container } = render(<Title dataTestId='DATA-TEST-ID' onTitleEdit={onTitleEditMock} />);
     const input = screen.getByTestId('DATA-TEST-ID');
 
-    userEvent.type(input, 'ABCDE');
-    userEvent.tab();
+    await userEvent.type(input, 'ABCDE');
+    await userEvent.tab();
 
     expect((input as HTMLInputElement).value).toEqual('ABCDE');
 
@@ -56,13 +56,13 @@ describe('Title Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('Title renders and blurs on enter', () => {
+  it('Title renders and blurs on enter', async () => {
     const onTitleEditMock = jest.fn();
 
     const { container } = render(<Title dataTestId='DATA-TEST-ID' onTitleEdit={onTitleEditMock} />);
     const input = screen.getByTestId('DATA-TEST-ID');
 
-    userEvent.type(input, 'ABCDE{enter}');
+    await userEvent.type(input, 'ABCDE{enter}');
 
     expect((input as HTMLInputElement).value).toEqual('ABCDE');
 
@@ -71,13 +71,13 @@ describe('Title Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('Title renders restores title when too short', () => {
+  it('Title renders restores title when too short', async () => {
     const onTitleEditMock = jest.fn();
 
     const { container } = render(<Title dataTestId='DATA-TEST-ID' title='TITLE' onTitleEdit={onTitleEditMock} />);
     const input = screen.getByTestId('DATA-TEST-ID');
 
-    userEvent.type(input, '{backspace}'.repeat(5) + '{delete}'.repeat(5) + '{enter}');
+    await userEvent.type(input, '{backspace}'.repeat(5) + '{delete}'.repeat(5) + '{enter}');
 
     expect((input as HTMLInputElement).value).toEqual('TITLE');
 
@@ -85,11 +85,11 @@ describe('Title Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('Title renders not editable', () => {
+  it('Title renders not editable', async () => {
     const { container } = render(<Title dataTestId='DATA-TEST-ID' title='TITLE' />);
     const input = screen.getByTestId('DATA-TEST-ID');
 
-    userEvent.type(input, 'ABCDE{enter}');
+    await userEvent.type(input, 'ABCDE{enter}');
 
     expect((input as HTMLInputElement).value).toEqual('TITLE');
 

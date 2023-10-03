@@ -219,7 +219,7 @@ exports[`EditableDataTable component EditableDataTable handles change, onRowDele
               </div>
               <div>
                 <div>
-                  ControlleMenu
+                  ControlledMenu
                   closed
                   <div
                     class="container"

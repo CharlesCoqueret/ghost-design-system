@@ -34,7 +34,7 @@ describe('TextAreaField Component', () => {
 
     const inputNode = await screen.findByTestId('DATA-TEST-ID');
 
-    userEvent.type(inputNode, 'N\n'.repeat(10));
+    await userEvent.type(inputNode, 'N\n'.repeat(10));
     expect(onChangeMock).toBeCalledTimes(20);
   });
 });

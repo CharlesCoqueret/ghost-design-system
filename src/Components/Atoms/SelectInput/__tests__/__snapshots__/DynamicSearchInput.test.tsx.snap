@@ -1,0 +1,1281 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DynamicSearchInput Component DynamicSearchInput handles change 1`] = `
+<div>
+  <div
+    class="container"
+  >
+    <div
+      class=" css-1959ul7-container"
+    >
+      <span
+        class="css-1f43avz-a11yText-A11yText"
+        id="react-select-6-live-region"
+      />
+      <span
+        aria-atomic="false"
+        aria-live="polite"
+        aria-relevant="additions text"
+        class="css-1f43avz-a11yText-A11yText"
+      />
+      <div
+        class=" css-1iiyd84-control"
+      >
+        <div
+          class=" css-yhb162-ValueContainer"
+        >
+          <div
+            class=" css-1jqq78o-placeholder"
+            id="react-select-6-placeholder"
+          >
+            Select...
+          </div>
+          <div
+            class=" css-qbdosj-Input"
+            data-value=""
+          >
+            <input
+              aria-autocomplete="list"
+              aria-describedby="react-select-6-placeholder"
+              aria-expanded="false"
+              aria-haspopup="true"
+              autocapitalize="none"
+              autocomplete="off"
+              autocorrect="off"
+              class=""
+              id="DATA-TEST-ID"
+              role="combobox"
+              spellcheck="false"
+              style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+              tabindex="0"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          class=" css-1hb7zxy-IndicatorsContainer"
+        >
+          <span
+            class=" css-1u9des2-indicatorSeparator"
+          />
+          <div
+            aria-hidden="true"
+          >
+            <i
+              class="icon icon"
+              data-testid="DATA-TEST-ID-magnifier"
+              icon="fal,magnifying-glass"
+            />
+          </div>
+        </div>
+      </div>
+      <input
+        name="SELECT"
+        type="hidden"
+        value=""
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`DynamicSearchInput Component DynamicSearchInput handles change 2`] = `
+<div>
+  <div
+    class="container"
+  >
+    <div
+      class=" css-1959ul7-container"
+    >
+      <span
+        class="css-1f43avz-a11yText-A11yText"
+        id="react-select-6-live-region"
+      />
+      <span
+        aria-atomic="false"
+        aria-live="polite"
+        aria-relevant="additions text"
+        class="css-1f43avz-a11yText-A11yText"
+      />
+      <div
+        class=" css-1iiyd84-control"
+      >
+        <div
+          class=" css-yhb162-ValueContainer"
+        >
+          <div
+            class=" css-1dimb5e-singleValue"
+          >
+            option 2
+          </div>
+          <div
+            class=" css-qbdosj-Input"
+            data-value=""
+          >
+            <input
+              aria-autocomplete="list"
+              aria-expanded="false"
+              aria-haspopup="true"
+              autocapitalize="none"
+              autocomplete="off"
+              autocorrect="off"
+              class=""
+              id="DATA-TEST-ID"
+              role="combobox"
+              spellcheck="false"
+              style="opacity: 0; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+              tabindex="0"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          class=" css-1hb7zxy-IndicatorsContainer"
+        >
+          <span
+            class=" css-1u9des2-indicatorSeparator"
+          />
+          <div
+            aria-hidden="true"
+          >
+            <i
+              class="icon icon"
+              data-testid="DATA-TEST-ID-magnifier"
+              icon="fal,magnifying-glass"
+            />
+          </div>
+        </div>
+      </div>
+      <input
+        name="SELECT"
+        type="hidden"
+        value="OPTION2"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`DynamicSearchInput Component DynamicSearchInput handles change clearable 1`] = `
+<div>
+  <div
+    class="container"
+  >
+    <div
+      class=" css-1959ul7-container"
+    >
+      <span
+        class="css-1f43avz-a11yText-A11yText"
+        id="react-select-8-live-region"
+      />
+      <span
+        aria-atomic="false"
+        aria-live="polite"
+        aria-relevant="additions text"
+        class="css-1f43avz-a11yText-A11yText"
+      />
+      <div
+        class=" css-1iiyd84-control"
+      >
+        <div
+          class=" css-yhb162-ValueContainer"
+        >
+          <div
+            class=" css-1dimb5e-singleValue"
+          >
+            option 1
+          </div>
+          <div
+            class=" css-qbdosj-Input"
+            data-value=""
+          >
+            <input
+              aria-autocomplete="list"
+              aria-expanded="false"
+              aria-haspopup="true"
+              autocapitalize="none"
+              autocomplete="off"
+              autocorrect="off"
+              class=""
+              id="react-select-8-input"
+              role="combobox"
+              spellcheck="false"
+              style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+              tabindex="0"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          class=" css-1hb7zxy-IndicatorsContainer"
+        >
+          <div
+            aria-hidden="true"
+          >
+            <i
+              class="icon icon"
+              icon="fal,xmark"
+            />
+          </div>
+          <span
+            class=" css-1u9des2-indicatorSeparator"
+          />
+          <div
+            aria-hidden="true"
+          >
+            <i
+              class="icon icon"
+              icon="fal,magnifying-glass"
+            />
+          </div>
+        </div>
+      </div>
+      <input
+        name="SELECT"
+        type="hidden"
+        value="OPTION1"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`DynamicSearchInput Component DynamicSearchInput handles change to undefined 1`] = `
+<div>
+  <div
+    class="container"
+  >
+    <div
+      class=" css-1959ul7-container"
+    >
+      <span
+        class="css-1f43avz-a11yText-A11yText"
+        id="react-select-11-live-region"
+      />
+      <span
+        aria-atomic="false"
+        aria-live="polite"
+        aria-relevant="additions text"
+        class="css-1f43avz-a11yText-A11yText"
+      />
+      <div
+        class=" css-1iiyd84-control"
+      >
+        <div
+          class=" css-yhb162-ValueContainer"
+        >
+          <div
+            class=" css-1dimb5e-singleValue"
+          >
+            option 1
+          </div>
+          <div
+            class=" css-qbdosj-Input"
+            data-value=""
+          >
+            <input
+              aria-autocomplete="list"
+              aria-expanded="false"
+              aria-haspopup="true"
+              autocapitalize="none"
+              autocomplete="off"
+              autocorrect="off"
+              class=""
+              id="DATA-TEST-ID"
+              role="combobox"
+              spellcheck="false"
+              style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+              tabindex="0"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          class=" css-1hb7zxy-IndicatorsContainer"
+        >
+          <div
+            aria-hidden="true"
+          >
+            <i
+              class="icon icon"
+              data-testid="DATA-TEST-ID-clear"
+              icon="fal,xmark"
+            />
+          </div>
+          <span
+            class=" css-1u9des2-indicatorSeparator"
+          />
+          <div
+            aria-hidden="true"
+          >
+            <i
+              class="icon icon"
+              data-testid="DATA-TEST-ID-magnifier"
+              icon="fal,magnifying-glass"
+            />
+          </div>
+        </div>
+      </div>
+      <input
+        name="SELECT"
+        type="hidden"
+        value="OPTION1"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`DynamicSearchInput Component DynamicSearchInput handles change to undefined 2`] = `
+<div>
+  <div
+    class="container"
+  >
+    <div
+      class=" css-1959ul7-container"
+    >
+      <span
+        class="css-1f43avz-a11yText-A11yText"
+        id="react-select-11-live-region"
+      />
+      <span
+        aria-atomic="false"
+        aria-live="polite"
+        aria-relevant="additions text"
+        class="css-1f43avz-a11yText-A11yText"
+      >
+        <span
+          id="aria-selection"
+        >
+          All selected options have been cleared.
+        </span>
+        <span
+          id="aria-context"
+        >
+            Use Up and Down to choose options, press Enter to select the currently focused option, press Escape to exit the menu, press Tab to select the option and exit the menu.
+        </span>
+      </span>
+      <div
+        class=" css-3acy6q-control"
+      >
+        <div
+          class=" css-yhb162-ValueContainer"
+        >
+          <div
+            class=" css-1jqq78o-placeholder"
+            id="react-select-11-placeholder"
+          >
+            Select...
+          </div>
+          <div
+            class=" css-qbdosj-Input"
+            data-value=""
+          >
+            <input
+              aria-autocomplete="list"
+              aria-controls="react-select-11-listbox"
+              aria-describedby="react-select-11-placeholder"
+              aria-expanded="true"
+              aria-haspopup="true"
+              aria-owns="react-select-11-listbox"
+              autocapitalize="none"
+              autocomplete="off"
+              autocorrect="off"
+              class=""
+              id="DATA-TEST-ID"
+              role="combobox"
+              spellcheck="false"
+              style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+              tabindex="0"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          class=" css-1hb7zxy-IndicatorsContainer"
+        >
+          <span
+            class=" css-1u9des2-indicatorSeparator"
+          />
+          <div
+            aria-hidden="true"
+          >
+            <i
+              class="icon icon"
+              data-testid="DATA-TEST-ID-magnifier"
+              icon="fal,magnifying-glass"
+            />
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          class=" css-1yfmvl6-MenuPortal"
+        >
+          <div
+            class=" css-1a09ke2-menu"
+            id="react-select-11-listbox"
+          >
+            <div
+              class="css-bp8cua-ScrollManager"
+            />
+            <div
+              class=" css-1n6sfyn-MenuList"
+            >
+              <div
+                class=" css-1wlit7h-NoOptionsMessage"
+              >
+                No options
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <input
+        name="SELECT"
+        type="hidden"
+        value=""
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`DynamicSearchInput Component DynamicSearchInput handles change with no option string 1`] = `
+<div>
+  <div
+    class="container"
+  >
+    <div
+      class=" css-1959ul7-container"
+    >
+      <span
+        class="css-1f43avz-a11yText-A11yText"
+        id="react-select-7-live-region"
+      />
+      <span
+        aria-atomic="false"
+        aria-live="polite"
+        aria-relevant="additions text"
+        class="css-1f43avz-a11yText-A11yText"
+      />
+      <div
+        class=" css-1iiyd84-control"
+      >
+        <div
+          class=" css-yhb162-ValueContainer"
+        >
+          <div
+            class=" css-1dimb5e-singleValue"
+          >
+            option 1
+          </div>
+          <div
+            class=" css-qbdosj-Input"
+            data-value=""
+          >
+            <input
+              aria-autocomplete="list"
+              aria-expanded="false"
+              aria-haspopup="true"
+              autocapitalize="none"
+              autocomplete="off"
+              autocorrect="off"
+              class=""
+              id="DATA-TEST-ID"
+              role="combobox"
+              spellcheck="false"
+              style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+              tabindex="0"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          class=" css-1hb7zxy-IndicatorsContainer"
+        >
+          <span
+            class=" css-1u9des2-indicatorSeparator"
+          />
+          <div
+            aria-hidden="true"
+          >
+            <i
+              class="icon icon"
+              data-testid="DATA-TEST-ID-magnifier"
+              icon="fal,magnifying-glass"
+            />
+          </div>
+        </div>
+      </div>
+      <input
+        name="SELECT"
+        type="hidden"
+        value="OPTION1"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`DynamicSearchInput Component DynamicSearchInput handles change with no option string 2`] = `
+<div>
+  <div
+    class="container"
+  >
+    <div
+      class=" css-1959ul7-container"
+    >
+      <span
+        class="css-1f43avz-a11yText-A11yText"
+        id="react-select-7-live-region"
+      />
+      <span
+        aria-atomic="false"
+        aria-live="polite"
+        aria-relevant="additions text"
+        class="css-1f43avz-a11yText-A11yText"
+      />
+      <div
+        class=" css-1iiyd84-control"
+      >
+        <div
+          class=" css-yhb162-ValueContainer"
+        >
+          <div
+            class=" css-1dimb5e-singleValue"
+          >
+            option 2
+          </div>
+          <div
+            class=" css-qbdosj-Input"
+            data-value=""
+          >
+            <input
+              aria-autocomplete="list"
+              aria-expanded="false"
+              aria-haspopup="true"
+              autocapitalize="none"
+              autocomplete="off"
+              autocorrect="off"
+              class=""
+              id="DATA-TEST-ID"
+              role="combobox"
+              spellcheck="false"
+              style="opacity: 0; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+              tabindex="0"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          class=" css-1hb7zxy-IndicatorsContainer"
+        >
+          <span
+            class=" css-1u9des2-indicatorSeparator"
+          />
+          <div
+            aria-hidden="true"
+          >
+            <i
+              class="icon icon"
+              data-testid="DATA-TEST-ID-magnifier"
+              icon="fal,magnifying-glass"
+            />
+          </div>
+        </div>
+      </div>
+      <input
+        name="SELECT"
+        type="hidden"
+        value="OPTION2"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`DynamicSearchInput Component DynamicSearchInput handles input change 1`] = `
+<div>
+  <div
+    class="container"
+  >
+    <div
+      class=" css-1959ul7-container"
+    >
+      <span
+        class="css-1f43avz-a11yText-A11yText"
+        id="react-select-10-live-region"
+      />
+      <span
+        aria-atomic="false"
+        aria-live="polite"
+        aria-relevant="additions text"
+        class="css-1f43avz-a11yText-A11yText"
+      />
+      <div
+        class=" css-1iiyd84-control"
+      >
+        <div
+          class=" css-yhb162-ValueContainer"
+        >
+          <div
+            class=" css-1dimb5e-singleValue"
+          >
+            option 1
+          </div>
+          <div
+            class=" css-qbdosj-Input"
+            data-value=""
+          >
+            <input
+              aria-autocomplete="list"
+              aria-expanded="false"
+              aria-haspopup="true"
+              autocapitalize="none"
+              autocomplete="off"
+              autocorrect="off"
+              class=""
+              id="DATA-TEST-ID"
+              role="combobox"
+              spellcheck="false"
+              style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+              tabindex="0"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          class=" css-1hb7zxy-IndicatorsContainer"
+        >
+          <span
+            class=" css-1u9des2-indicatorSeparator"
+          />
+          <div
+            aria-hidden="true"
+          >
+            <i
+              class="icon icon"
+              data-testid="DATA-TEST-ID-magnifier"
+              icon="fal,magnifying-glass"
+            />
+          </div>
+        </div>
+      </div>
+      <input
+        name="SELECT"
+        type="hidden"
+        value="OPTION1"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`DynamicSearchInput Component DynamicSearchInput handles input change 2`] = `
+<div>
+  <div
+    class="container"
+  >
+    <div
+      class=" css-1959ul7-container"
+    >
+      <span
+        class="css-1f43avz-a11yText-A11yText"
+        id="react-select-10-live-region"
+      />
+      <span
+        aria-atomic="false"
+        aria-live="polite"
+        aria-relevant="additions text"
+        class="css-1f43avz-a11yText-A11yText"
+      />
+      <div
+        class=" css-1iiyd84-control"
+      >
+        <div
+          class=" css-yhb162-ValueContainer"
+        >
+          <div
+            class=" css-1dimb5e-singleValue"
+          >
+            option 2
+          </div>
+          <div
+            class=" css-qbdosj-Input"
+            data-value=""
+          >
+            <input
+              aria-autocomplete="list"
+              aria-expanded="false"
+              aria-haspopup="true"
+              autocapitalize="none"
+              autocomplete="off"
+              autocorrect="off"
+              class=""
+              id="DATA-TEST-ID"
+              role="combobox"
+              spellcheck="false"
+              style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+              tabindex="0"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          class=" css-1hb7zxy-IndicatorsContainer"
+        >
+          <span
+            class=" css-1u9des2-indicatorSeparator"
+          />
+          <div
+            aria-hidden="true"
+          >
+            <i
+              class="icon icon"
+              data-testid="DATA-TEST-ID-magnifier"
+              icon="fal,magnifying-glass"
+            />
+          </div>
+        </div>
+      </div>
+      <input
+        name="SELECT"
+        type="hidden"
+        value="OPTION2"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`DynamicSearchInput Component DynamicSearchInput handles input change 3`] = `
+<div>
+  <div
+    class="container"
+  >
+    <div
+      class=" css-1959ul7-container"
+    >
+      <span
+        class="css-1f43avz-a11yText-A11yText"
+        id="react-select-10-live-region"
+      />
+      <span
+        aria-atomic="false"
+        aria-live="polite"
+        aria-relevant="additions text"
+        class="css-1f43avz-a11yText-A11yText"
+      />
+      <div
+        class=" css-1iiyd84-control"
+      >
+        <div
+          class=" css-yhb162-ValueContainer"
+        >
+          <div
+            class=" css-1jqq78o-placeholder"
+            id="react-select-10-placeholder"
+          >
+            Select...
+          </div>
+          <div
+            class=" css-qbdosj-Input"
+            data-value=""
+          >
+            <input
+              aria-autocomplete="list"
+              aria-describedby="react-select-10-placeholder"
+              aria-expanded="false"
+              aria-haspopup="true"
+              autocapitalize="none"
+              autocomplete="off"
+              autocorrect="off"
+              class=""
+              id="DATA-TEST-ID"
+              role="combobox"
+              spellcheck="false"
+              style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+              tabindex="0"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          class=" css-1hb7zxy-IndicatorsContainer"
+        >
+          <span
+            class=" css-1u9des2-indicatorSeparator"
+          />
+          <div
+            aria-hidden="true"
+          >
+            <i
+              class="icon icon"
+              data-testid="DATA-TEST-ID-magnifier"
+              icon="fal,magnifying-glass"
+            />
+          </div>
+        </div>
+      </div>
+      <input
+        name="SELECT"
+        type="hidden"
+        value=""
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`DynamicSearchInput Component DynamicSearchInput renders 1`] = `
+<div>
+  <div
+    class="container"
+  >
+    <div
+      class=" css-1959ul7-container"
+    >
+      <span
+        class="css-1f43avz-a11yText-A11yText"
+        id="react-select-2-live-region"
+      />
+      <span
+        aria-atomic="false"
+        aria-live="polite"
+        aria-relevant="additions text"
+        class="css-1f43avz-a11yText-A11yText"
+      />
+      <div
+        class=" css-1iiyd84-control"
+      >
+        <div
+          class=" css-yhb162-ValueContainer"
+        >
+          <div
+            class=" css-1dimb5e-singleValue"
+          >
+            option 1
+          </div>
+          <div
+            class=" css-qbdosj-Input"
+            data-value=""
+          >
+            <input
+              aria-autocomplete="list"
+              aria-expanded="false"
+              aria-haspopup="true"
+              autocapitalize="none"
+              autocomplete="off"
+              autocorrect="off"
+              class=""
+              id="DATA-TEST-ID"
+              role="combobox"
+              spellcheck="false"
+              style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+              tabindex="0"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          class=" css-1hb7zxy-IndicatorsContainer"
+        >
+          <span
+            class=" css-1u9des2-indicatorSeparator"
+          />
+          <div
+            aria-hidden="true"
+          >
+            <i
+              class="icon icon"
+              data-testid="DATA-TEST-ID-magnifier"
+              icon="fal,magnifying-glass"
+            />
+          </div>
+        </div>
+      </div>
+      <input
+        name="SELECT"
+        type="hidden"
+        value="OPTION1"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`DynamicSearchInput Component DynamicSearchInput renders in error and disabled 1`] = `
+<div>
+  <div
+    class="container"
+    data-testid="DATA-TEST-ID"
+  >
+    <span
+      class="typography"
+    >
+      option 1
+    </span>
+  </div>
+</div>
+`;
+
+exports[`DynamicSearchInput Component DynamicSearchInput renders in error without portal 1`] = `
+<div>
+  <div
+    class="container"
+  >
+    <div
+      class=" css-1959ul7-container"
+    >
+      <span
+        class="css-1f43avz-a11yText-A11yText"
+        id="react-select-9-live-region"
+      />
+      <span
+        aria-atomic="false"
+        aria-live="polite"
+        aria-relevant="additions text"
+        class="css-1f43avz-a11yText-A11yText"
+      />
+      <div
+        class=" css-d83tmf-control"
+      >
+        <div
+          class=" css-yhb162-ValueContainer"
+        >
+          <div
+            class=" css-1jqq78o-placeholder"
+            id="react-select-9-placeholder"
+          >
+            Select...
+          </div>
+          <div
+            class=" css-qbdosj-Input"
+            data-value=""
+          >
+            <input
+              aria-autocomplete="list"
+              aria-describedby="react-select-9-placeholder"
+              aria-expanded="false"
+              aria-haspopup="true"
+              autocapitalize="none"
+              autocomplete="off"
+              autocorrect="off"
+              class=""
+              id="DATA-TEST-ID"
+              role="combobox"
+              spellcheck="false"
+              style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+              tabindex="0"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          class=" css-1hb7zxy-IndicatorsContainer"
+        >
+          <span
+            class=" css-1u9des2-indicatorSeparator"
+          />
+          <div
+            aria-hidden="true"
+          >
+            <i
+              class="icon icon"
+              data-testid="DATA-TEST-ID-magnifier"
+              icon="fal,magnifying-glass"
+            />
+          </div>
+        </div>
+      </div>
+      <input
+        name="SELECT"
+        type="hidden"
+        value=""
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`DynamicSearchInput Component DynamicSearchInput renders in readOnly 1`] = `
+<div>
+  <div
+    class="container highlighted"
+    data-testid="DATA-TEST-ID"
+  >
+    <span
+      class="typography"
+    >
+      option 1
+    </span>
+  </div>
+</div>
+`;
+
+exports[`DynamicSearchInput Component DynamicSearchInput renders in readOnly without datatestid 1`] = `
+<div>
+  <div
+    class="container highlighted"
+  >
+    <span
+      class="typography"
+    >
+      option 1
+    </span>
+  </div>
+</div>
+`;
+
+exports[`DynamicSearchInput Component DynamicSearchInput renders when resolveValue rejects 1`] = `
+<div>
+  <div
+    class="container"
+  >
+    <div
+      class=" css-1959ul7-container"
+    >
+      <span
+        class="css-1f43avz-a11yText-A11yText"
+        id="react-select-4-live-region"
+      />
+      <span
+        aria-atomic="false"
+        aria-live="polite"
+        aria-relevant="additions text"
+        class="css-1f43avz-a11yText-A11yText"
+      />
+      <div
+        class=" css-1iiyd84-control"
+      >
+        <div
+          class=" css-yhb162-ValueContainer"
+        >
+          <div
+            class=" css-1jqq78o-placeholder"
+            id="react-select-4-placeholder"
+          >
+            Select...
+          </div>
+          <div
+            class=" css-qbdosj-Input"
+            data-value=""
+          >
+            <input
+              aria-autocomplete="list"
+              aria-describedby="react-select-4-placeholder"
+              aria-expanded="false"
+              aria-haspopup="true"
+              autocapitalize="none"
+              autocomplete="off"
+              autocorrect="off"
+              class=""
+              id="DATA-TEST-ID"
+              role="combobox"
+              spellcheck="false"
+              style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+              tabindex="0"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          class=" css-1hb7zxy-IndicatorsContainer"
+        >
+          <span
+            class=" css-1u9des2-indicatorSeparator"
+          />
+          <div
+            aria-hidden="true"
+          >
+            <i
+              class="icon icon"
+              data-testid="DATA-TEST-ID-magnifier"
+              icon="fal,magnifying-glass"
+            />
+          </div>
+        </div>
+      </div>
+      <input
+        name="SELECT"
+        type="hidden"
+        value=""
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`DynamicSearchInput Component DynamicSearchInput renders with invalid input value 1`] = `
+<div>
+  <div
+    class="container"
+  >
+    <div
+      class=" css-1959ul7-container"
+    >
+      <span
+        class="css-1f43avz-a11yText-A11yText"
+        id="react-select-3-live-region"
+      />
+      <span
+        aria-atomic="false"
+        aria-live="polite"
+        aria-relevant="additions text"
+        class="css-1f43avz-a11yText-A11yText"
+      />
+      <div
+        class=" css-1iiyd84-control"
+      >
+        <div
+          class=" css-yhb162-ValueContainer"
+        >
+          <div
+            class=" css-1jqq78o-placeholder"
+            id="react-select-3-placeholder"
+          >
+            Select...
+          </div>
+          <div
+            class=" css-qbdosj-Input"
+            data-value=""
+          >
+            <input
+              aria-autocomplete="list"
+              aria-describedby="react-select-3-placeholder"
+              aria-expanded="false"
+              aria-haspopup="true"
+              autocapitalize="none"
+              autocomplete="off"
+              autocorrect="off"
+              class=""
+              id="DATA-TEST-ID"
+              role="combobox"
+              spellcheck="false"
+              style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+              tabindex="0"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          class=" css-1hb7zxy-IndicatorsContainer"
+        >
+          <span
+            class=" css-1u9des2-indicatorSeparator"
+          />
+          <div
+            aria-hidden="true"
+          >
+            <i
+              class="icon icon"
+              data-testid="DATA-TEST-ID-magnifier"
+              icon="fal,magnifying-glass"
+            />
+          </div>
+        </div>
+      </div>
+      <input
+        name="SELECT"
+        type="hidden"
+        value=""
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`DynamicSearchInput Component DynamicSearchInput renders without input value 1`] = `
+<div>
+  <div
+    class="container"
+  >
+    <div
+      class=" css-1959ul7-container"
+    >
+      <span
+        class="css-1f43avz-a11yText-A11yText"
+        id="react-select-5-live-region"
+      />
+      <span
+        aria-atomic="false"
+        aria-live="polite"
+        aria-relevant="additions text"
+        class="css-1f43avz-a11yText-A11yText"
+      />
+      <div
+        class=" css-1iiyd84-control"
+      >
+        <div
+          class=" css-yhb162-ValueContainer"
+        >
+          <div
+            class=" css-1jqq78o-placeholder"
+            id="react-select-5-placeholder"
+          >
+            Select...
+          </div>
+          <div
+            class=" css-qbdosj-Input"
+            data-value=""
+          >
+            <input
+              aria-autocomplete="list"
+              aria-describedby="react-select-5-placeholder"
+              aria-expanded="false"
+              aria-haspopup="true"
+              autocapitalize="none"
+              autocomplete="off"
+              autocorrect="off"
+              class=""
+              id="DATA-TEST-ID"
+              role="combobox"
+              spellcheck="false"
+              style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+              tabindex="0"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          class=" css-1hb7zxy-IndicatorsContainer"
+        >
+          <span
+            class=" css-1u9des2-indicatorSeparator"
+          />
+          <div
+            aria-hidden="true"
+          >
+            <i
+              class="icon icon"
+              data-testid="DATA-TEST-ID-magnifier"
+              icon="fal,magnifying-glass"
+            />
+          </div>
+        </div>
+      </div>
+      <input
+        name="SELECT"
+        type="hidden"
+        value=""
+      />
+    </div>
+  </div>
+</div>
+`;

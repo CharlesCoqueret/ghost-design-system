@@ -3,8 +3,7 @@ import { ControlledMenu } from '@szhsin/react-menu';
 
 import { useOnClickOutside } from '../../../hooks';
 import { Portal } from '../../Atoms/Portal';
-import Button from '../Button/Button';
-import { IButtonProps } from '../Button/Button.props';
+import Button, { IButtonProps } from '../Button/Button';
 
 import styles from './Popover.module.scss';
 
@@ -25,7 +24,6 @@ const Popover = (props: IPopoverProps): ReactElement => {
   const { anchorRef, buttons, onClose, open, title } = props;
 
   const [isOpen, setIsOpen] = useState<boolean | undefined>(open);
-  const skipOpen = useRef(false);
   const menuRef = useRef(null);
 
   useOnClickOutside(menuRef, () => {
@@ -35,9 +33,7 @@ const Popover = (props: IPopoverProps): ReactElement => {
   });
 
   useEffect(() => {
-    if (!skipOpen.current) {
-      setIsOpen(open);
-    }
+    setIsOpen(open);
   }, [open]);
 
   return (
@@ -48,15 +44,14 @@ const Popover = (props: IPopoverProps): ReactElement => {
         align='center'
         direction='top'
         arrow
-        anchorRef={anchorRef}
-        skipOpen={skipOpen}>
+        anchorRef={anchorRef}>
         <div className={styles.container}>
           <div key='title' className={styles.title}>
             {title}
           </div>
           <div key='buttons' className={styles.buttons}>
             {buttons.map((button) => (
-              <Button key={`${button.label}-${button.icon?.toString()}`} {...button} />
+              <Button key={`button-${button.label || button.icon?.toString() || button.tooltip || ''}`} {...button} />
             ))}
           </div>
         </div>

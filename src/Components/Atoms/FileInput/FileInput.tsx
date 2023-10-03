@@ -341,7 +341,7 @@ const FileInput = (props: IFileInputProps): ReactElement => {
   const handleDrop = (event: DragEvent) => {
     const items = event.dataTransfer?.items;
     if (items) {
-      getFilesWebkitDataTransferItems(items, maxFolderDepth).then((files) => {
+      void getFilesWebkitDataTransferItems(items, maxFolderDepth).then((files) => {
         uploadFiles(files);
       });
     }
@@ -443,7 +443,7 @@ const FileInput = (props: IFileInputProps): ReactElement => {
               dataTestId={dataTestId}
               disabled={disabled}
               file={item}
-              key={`${item.uid}`}
+              key={`${item.name}`}
               localization={{
                 delete: localization?.delete,
                 popoverCancel: localization?.popoverCancel,

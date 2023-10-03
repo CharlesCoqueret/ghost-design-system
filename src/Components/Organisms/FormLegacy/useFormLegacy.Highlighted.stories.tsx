@@ -4,7 +4,7 @@ import cloneDeep from 'lodash/cloneDeep';
 import * as yup from 'yup';
 
 import { IToggleEntry } from '../../Atoms/CheckBoxInput/types';
-import { ColorButtonEnum } from '../../Molecules';
+import { ButtonColorEnum } from '../../Molecules';
 
 import useFormLegacy, { IUseFormProps } from './useFormLegacy';
 import { FieldLegacyTypeEnum, IFieldAndLayoutLegacyProps } from './types';
@@ -36,14 +36,14 @@ const Template: ComponentStory<(props: IUseFormProps<IDataType> & { title: strin
         actions={[
           {
             label: 'Submit',
-            color: ColorButtonEnum.PRIMARY,
+            color: ButtonColorEnum.PRIMARY,
             onClick: () => {
               console.log('submit', JSON.stringify(submit()));
             },
           },
           {
             label: 'Reset',
-            color: ColorButtonEnum.SECONDARY,
+            color: ButtonColorEnum.SECONDARY,
             onClick: () => {
               console.log('reset', JSON.stringify(reset()));
             },
@@ -94,8 +94,10 @@ const fields: Array<IFieldAndLayoutLegacyProps<IDataType>> = [
     description: (
       <div>
         <Typography.Text>Any description</Typography.Text>
-        <Link to='https://hamster.dance/hamsterdance/' text='external link' externalLink />
-        <Link to='#' text='internal link' />
+        <Link to='https://hamster.dance/hamsterdance/' externalLink>
+          external link
+        </Link>
+        <Link to='#'>internal link</Link>
       </div>
     ),
     fieldType: FieldLegacyTypeEnum.DESCRIPTION,
