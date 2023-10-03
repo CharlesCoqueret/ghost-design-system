@@ -85,7 +85,7 @@ exports[`Section Component renders not collapsible 2`] = `
     class="body"
     id="react-collapsed-panel-:r2:"
     role="region"
-    style="box-sizing: border-box; display: block; overflow: hidden; height: 0px;"
+    style="box-sizing: border-box;"
   >
     <div
       id="CHILD1"
@@ -189,7 +189,7 @@ exports[`Section Component renders with separator 2`] = `
     class="body"
     id="react-collapsed-panel-:r0:"
     role="region"
-    style="box-sizing: border-box; display: block; overflow: hidden; height: 0px; transition: height 500ms cubic-bezier(0.4, 0, 0.2, 1);"
+    style="box-sizing: border-box; display: block; overflow: hidden; height: 0px;"
   >
     <div
       id="CHILD1"
@@ -225,7 +225,7 @@ exports[`Section Component renders with separator 3`] = `
     class="body"
     id="react-collapsed-panel-:r0:"
     role="region"
-    style="box-sizing: border-box; display: block; overflow: hidden; height: 0px; transition: height 500ms cubic-bezier(0.4, 0, 0.2, 1);"
+    style="box-sizing: border-box; display: block; overflow: hidden; height: 0px;"
   >
     <div
       id="CHILD1"
